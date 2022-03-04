@@ -1,0 +1,27 @@
+{
+  "name": "decoupled-kit-js",
+  "version": "0.0.0",
+  "description": "Pantheon's Decoupled JavaScript starter kits and SDKs",
+  "main": "index.js",
+  "scripts": {
+    "test": "pnpm recursive test",
+    "build": "pnpm recursive run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pantheon-systems/decoupled-kit-js.git"
+  },
+  "keywords": [
+    "pantheon",
+    "pantheon-systems",
+    "decoupled",
+    "decoupled-kit",
+    "headless-cms-sdk"
+  ],
+  "author": "@pantheon-systems",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pantheon-systems/decoupled-kit-js/issues"
+  },
+  "homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme"
+}

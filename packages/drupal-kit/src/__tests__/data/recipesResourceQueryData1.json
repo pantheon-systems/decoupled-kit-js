@@ -1,0 +1,24 @@
+{
+  "data": {
+    "type": "recipes",
+    "id": "912e092f-a7d5-41ae-9e92-e23ffa357b28",
+    "attributes": {
+      "title": "Chorizo pasta",
+      "difficulty": "easy"
+    },
+    "links": {
+      "self": "https:\/\/live-contentacms.pantheonsite.io\/api\/recipes\/912e092f-a7d5-41ae-9e92-e23ffa357b28"
+    }
+  },
+  "jsonapi": {
+    "version": "1.0",
+    "meta": {
+      "links": {
+        "self": "http:\/\/jsonapi.org\/format\/1.0\/"
+      }
+    }
+  },
+  "links": {
+    "self": "https:\/\/live-contentacms.pantheonsite.io\/api\/recipes\/912e092f-a7d5-41ae-9e92-e23ffa357b28?fields%5Brecipes%5D=title%2Cdifficulty%2Cid"
+  }
+}
