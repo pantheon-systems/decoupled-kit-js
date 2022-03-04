@@ -25,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/pantheon-systems/decoupled-kit-js/issues"
   },
-  "homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme"
+  "homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
+  "dependencies": {
+    "@types/eslint": "^8.4.1",
+    "eslint": "^8.10.0"
+  }
 }
