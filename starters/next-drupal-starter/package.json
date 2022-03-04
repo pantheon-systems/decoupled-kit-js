@@ -1,0 +1,29 @@
+{
+  "name": "@pantheon-systems/next-drupal-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "cp -n .env.dev .env.local || true"
+  },
+  "dependencies": {
+    "@pantheon-systems/drupal-kit": "workspace:1.0.0",
+    "@tailwindcss/typography": "^0.4.1",
+    "dotenv": "^10.0.0",
+    "next": "^11.1.3",
+    "next-absolute-url": "^1.2.2",
+    "next-seo": "^4.28.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.0",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.7"
+  }
+}
