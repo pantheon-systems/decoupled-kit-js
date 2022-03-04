@@ -6,9 +6,11 @@ importers:
     specifiers:
       '@types/eslint': ^8.4.1
       eslint: ^8.10.0
+      husky: ^7.0.4
     dependencies:
       '@types/eslint': 8.4.1
       eslint: 8.10.0
+      husky: 7.0.4
 
   packages/drupal-kit:
     specifiers:
@@ -9050,7 +9052,6 @@ packages:
     resolution: {integrity: sha512-vbaCKN2QLtP/vD4yvs6iz6hBEo6wkSzs8HpRah1Z6aGmF2KW5PdYuAd7uX5a+OyBZHBhd+TFLqgjUgytQr4RvQ==}
     engines: {node: '>=12'}
     hasBin: true
-    dev: true
 
   /iconv-lite/0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}

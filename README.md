@@ -12,7 +12,7 @@ To setup the monorepo for development the following should be installed locally:
 ## Getting started
 
 1. Fork this repo
-1. clone your fork to you local machine
+1. clone your fork to your local machine
 1. run `pnpm install` to install dependencies for all packages and starters
 
 From here the workflow depends on what you're doing.
@@ -22,7 +22,7 @@ From here the workflow depends on what you're doing.
 - to build all starters in the monorepo, run `pnpm build:starters`
 - to build all projects in the monorepo, run `pnpm build:all`
 
-To run commands in targeted projects, folders, or workspaces, pnpm offers a filter flag.
+To run commands in targeted projects, folders, or workspaces, pnpm offers [a filter flag](https://pnpm.io/filtering).
 
 For example, to start the Gatsby starter from the root of the monorepo:
 
