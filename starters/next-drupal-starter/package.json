@@ -25,5 +25,8 @@
     "eslint-config-next": "12.1.0",
     "postcss": "^8.4.7",
     "tailwindcss": "^3.0.23"
+  },
+  "peerDependencies": {
+    "typescript": ">=3.3.1"
   }
 }

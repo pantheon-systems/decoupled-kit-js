@@ -1,23 +1,8 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "lib": ["ESNext", "DOM"],
-    "moduleResolution": "Node",
-    "strict": true,
-    "sourceMap": false,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "noEmit": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true
-  },
+  "extends": "../../tsconfig.json",
   "include": ["./src", "index.ts"],
-  "exclude": ["./**/__tests__", "./src/main.ts"],
   "typedocOptions": {
-    "entryPoints": ["./src"],
-    "exclude": ["./src/main.ts", "**/*.test.ts"],
-    "out": "docs"
+    "entryPoints": ["./src", "index.ts"],
+    "exclude": ["./**/__tests__", "./src/main.ts"],
   }
 }
