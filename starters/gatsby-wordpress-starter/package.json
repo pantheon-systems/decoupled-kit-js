@@ -1,7 +1,7 @@
 {
   "name": "@pantheon-systems/gatsby-wordpress-starter",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "A starter for a blog powered by Gatsby and Pantheon",
   "version": "1.0.0",
   "dependencies": {
     "@pantheon-systems/wordpress-kit": "workspace:1.0.0",
@@ -38,11 +38,6 @@
     "gatsby"
   ],
   "license": "0BSD",
-  "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
-  },
   "scripts": {
     "build": "gatsby build",
     "develop": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop -H 0.0.0.0",

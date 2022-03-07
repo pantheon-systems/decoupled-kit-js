@@ -1,4 +1,4 @@
-# Decoupled Bridge Node SDK
+# Pantheon Systems Drupal Kit
 
 Decoupling Drupal and Wordpress is hard. The goal for this SDK is to provider
 helpers to make it easier for customers to integrate backends into their node.js
@@ -13,7 +13,7 @@ repo will have includes for WP and for Drupal
 Short term, this package exists in a private Pantheon repository and can be
 installed as a dependency using:
 
-`npm install https://github.com/pantheon-systems/decoupled-node-sdk`
+`npm install https://github.com/pantheon-systems/decoupled-kit-js/packages/drupal-kit`
 
 You will be asked to authenticate with your Github credentials. All users who
 are part of the github decoupled team should have permission to install this
@@ -22,48 +22,48 @@ package.
 Long term this package will be public and available on npm. At that point it
 will be possible to install it using:
 
-`npm install @pantheon/decoupled-node-sdk`
+`npm install @pantheon-systems/drupal-kit`
 
 ## Usage
 
-Modules can be imported from the `@pantheon/decoupled-node-sdk` package. For
+Modules can be imported from the ` @pantheon-systems/drupal-kit` package. For
 example, to use Drupal State to source data from your CMS backend:
 
 Import DrupalState in your JavaScript application:
 
 ```
-import { DrupalState } from '@pantheon/decoupled-node-sdk';
+import { DrupalState } from ' @pantheon-systems/drupal-kit';
 ```
 
 Create an instance of the store and specify the root of your API:
 
 ```
 const store = new DrupalState({
-  apiBase: 'https://live-contentacms.pantheonsite.io',
-  apiPrefix: 'api', // apiPrefix defaults to 'jsonapi'
+  apiBase: 'https://dev-ds-demo.pantheonsite.io',
 });
 ```
 
 Get a collection of objects:
 
 ```
-const recipesFromApi = await store.getObject({ objectName: 'recipes' });
+const recipesFromApi = await store.getObject({ objectName: 'node--recipe' });
 ```
 
 Get a single object:
 
 ```
 const recipeFromStore = await store.getObject({
-  objectName: 'recipes',
-  id: 'a542e833-edfe-44a3-a6f1-7358b115af4b',
+  objectName: 'node--recipe',
+  id: '33386d32-a87c-44b9-b66b-3dd0bfc38dca',
 });
 ```
 
-For more information, consult the full [Drupal State documentation](https://drupal-state.netlify.app/)
+For more information, consult the full
+[Drupal State documentation](https://drupal-state.netlify.app/)
 
 To use `addApiRouteHeader`, you would first import it like so:
 
-`import { addApiRouteHeader } from '@pantheon/decoupled-node-sdk';`
+`import { addApiRouteHeader } from ' @pantheon-systems/drupal-kit';`
 
 Once the function is imported, you can use it as needed:
 

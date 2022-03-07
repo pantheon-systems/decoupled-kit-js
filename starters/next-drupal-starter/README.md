@@ -1,4 +1,4 @@
-# Decoupled Drupal Frontend Demo
+# Next Drupal Starter
 
 ## Demo Next.js Project setup
 
@@ -26,15 +26,16 @@ CLIENT_SECRET=
 
 5. open browser and type `http://drupalnext.lndo.site/`.
 
-## Pantheon Node SDK
+## Pantheon @pantheon-systems/drupal-kit
 
-The Pantheon Node SDK is included as a dependency in this project. This allows developers to make use
+The Pantheon @pantheon-systems/drupal-kit is included as a dependency in this project. This allows developers to make use
 of utility functions to simplify the process of building and maintaining a decoupled site on Pantheon,
 including:
 
 * addSurrogateKeyHeader()
+* updateMaxAge()
 
-Full documentation can be found at: https://github.com/pantheon-systems/decoupled-node-sdk
+Full documentation can be found at: https://github.com/pantheon-systems/decoupled-kit-js/packages/drupal-kit
 
 ## Example Pages
 

@@ -3,8 +3,7 @@ import { DrupalState } from '../index';
 import './style.css';
 
 const store = new DrupalState({
-  apiBase: 'https://live-contentacms.pantheonsite.io',
-  apiPrefix: 'api',
+  apiBase: 'https://dev-ds-demo.pantheonsite.io',
 });
 
 // Uncomment to enable auth example for local testing
@@ -15,7 +14,7 @@ const store = new DrupalState({
 //   clientSecret: 'client-secret',
 // });
 
-const recipesFromApi = await store.getObject({ objectName: 'recipes' });
+const recipesFromApi = await store.getObject({ objectName: 'node--recipe' });
 
 // const taxonomy = await authStore.getObject({
 //   objectName: 'taxonomy_vocabulary--taxonomy_vocabulary',
