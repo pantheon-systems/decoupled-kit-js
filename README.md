@@ -7,7 +7,11 @@ To setup the monorepo for development the following should be installed locally:
 
 1. Nodejs version 14 LTS. We reccomend using [nvm](https://github.com/nvm-sh/nvm)
 1. npm version 8.5.x
-1. The latest version of [pnpm](https://pnpm.io/installation)
+1. The latest version of [pnpm](https://pnpm.io/installation) (6.32.3 at time of writing) - You can set pnpm as your package manager using corepack with the following command:
+
+```bash
+corepack prepare pnpm@6.32.3 --activate
+```
 
 ## Getting started
 
@@ -27,5 +31,5 @@ To run commands in targeted projects, folders, or workspaces, pnpm offers [a fil
 For example, to start the Gatsby starter from the root of the monorepo:
 
 ```bash
-$ pnpm --filter '*/gatsby*' run develop
+pnpm --filter '*/gatsby*' run develop
 ```
