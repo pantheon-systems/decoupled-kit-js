@@ -27,7 +27,9 @@ importers:
       eslint: ^8.10.0
       eslint-config-prettier: ^8.5.0
       fetch-mock-jest: ^1.5.1
+      humps: ^2.0.1
       husky: ^7.0.4
+      isomorphic-fetch: ^3.0.0
       jest: ^27.5.1
       jest-junit: ^13.0.0
       jsona: ^1.9.7
@@ -48,7 +50,9 @@ importers:
       eslint: 8.10.0
       eslint-config-prettier: 8.5.0_eslint@8.10.0
       fetch-mock-jest: 1.5.1
+      humps: 2.0.1
       husky: 7.0.4
+      isomorphic-fetch: 3.0.0
       jest: 27.5.1
       jest-junit: 13.0.0
       jsona: 1.9.7
@@ -9092,7 +9096,6 @@ packages:
 
   /humps/2.0.1:
     resolution: {integrity: sha1-3QLqYIG9BWjcXQcxhEY5V7qe+ao=}
-    dev: false
 
   /husky/7.0.4:
     resolution: {integrity: sha512-vbaCKN2QLtP/vD4yvs6iz6hBEo6wkSzs8HpRah1Z6aGmF2KW5PdYuAd7uX5a+OyBZHBhd+TFLqgjUgytQr4RvQ==}
@@ -9634,7 +9637,6 @@ packages:
       whatwg-fetch: 3.6.2
     transitivePeerDependencies:
       - encoding
-    dev: false
 
   /isomorphic-ws/4.0.1_ws@7.4.5:
     resolution: {integrity: sha512-BhBvN2MBpWTaSHdWRb/bwdZJ1WaehQ2L1KngkCkfLUGF0mAWAT1sQUQacEmQ0jXkFw/czDXPNQSL5u2/Krsz1w==}
@@ -11182,7 +11184,6 @@ packages:
         optional: true
     dependencies:
       whatwg-url: 5.0.0
-    dev: false
 
   /node-gyp-build/4.3.0:
     resolution: {integrity: sha512-iWjXZvmboq0ja1pUGULQBexmxq8CV4xBhX7VDOTbL7ZR4FOowwY/VOtRxBN/yKxmdGoIp4j5ysNT4u3S2pDQ3Q==}
@@ -13950,7 +13951,6 @@ packages:
 
   /tr46/0.0.3:
     resolution: {integrity: sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=}
-    dev: false
 
   /tr46/1.0.1:
     resolution: {integrity: sha1-qLE/1r/SSJUZZ0zN5VujaTtwbQk=}
@@ -14469,7 +14469,6 @@ packages:
 
   /webidl-conversions/3.0.1:
     resolution: {integrity: sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=}
-    dev: false
 
   /webidl-conversions/4.0.2:
     resolution: {integrity: sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==}
@@ -14575,7 +14574,6 @@ packages:
 
   /whatwg-fetch/3.6.2:
     resolution: {integrity: sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==}
-    dev: false
 
   /whatwg-mimetype/2.3.0:
     resolution: {integrity: sha512-M4yMwr6mAnQz76TbJm914+gPpB/nCwvZbJU28cUD6dR004SAxDLOOSUaB1JDRqLtaOV/vi0IC5lEAGFgrjGv/g==}
@@ -14585,7 +14583,6 @@ packages:
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
-    dev: false
 
   /whatwg-url/6.5.0:
     resolution: {integrity: sha512-rhRZRqx/TLJQWUpQ6bmrt2UV4f0HCQ463yQuONJqC6fO2VoEb1pTYddbe59SkYq87aoM5A3bdhMZiUiVws+fzQ==}
