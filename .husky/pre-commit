@@ -2,3 +2,5 @@
 . "$(dirname "$0")/_/husky.sh"
 
 pnpm --filter './packages' run lint-staged --parallel=false
+pnpm --filter './starters' run lint --parallel=false
+pnpm test
