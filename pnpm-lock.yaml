@@ -147,6 +147,7 @@ importers:
       '@tailwindcss/typography': ^0.5.2
       autoprefixer: ^10.4.2
       dotenv: ^16.0.0
+      encoding: ^0.1.13
       eslint: 8.10.0
       eslint-config-next: 12.1.0
       next: ^12.1.0
@@ -167,6 +168,7 @@ importers:
       react-dom: 17.0.2_react@17.0.2
     devDependencies:
       autoprefixer: 10.4.2_postcss@8.4.7
+      encoding: 0.1.13
       eslint: 8.10.0
       eslint-config-next: 12.1.0_4c2038871e8233f2b143838d68f90b16
       postcss: 8.4.7
@@ -6273,6 +6275,12 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
+  /encoding/0.1.13:
+    resolution: {integrity: sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A==}
+    dependencies:
+      iconv-lite: 0.6.3
+    dev: true
+
   /end-of-stream/1.4.4:
     resolution: {integrity: sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==}
     dependencies:
@@ -9014,6 +9022,13 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       safer-buffer: 2.1.2
+
+  /iconv-lite/0.6.3:
+    resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      safer-buffer: 2.1.2
+    dev: true
 
   /icss-utils/5.1.0_postcss@8.4.7:
     resolution: {integrity: sha512-soFhflCVWLfRNOPU3iv5Z9VUdT44xFRbzjLsEzSr5AQmgqPMTHdU3PMT1Cf1ssx8fLNJDA1juftYl+PUcv3MqA==}

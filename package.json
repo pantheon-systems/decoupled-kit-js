@@ -8,7 +8,7 @@
     "build:pkgs": "pnpm --filter ./packages run build",
     "build:starters": "pnpm --filter ./starters run build",
     "build:all": "pnpm recursive run build",
-    "generate-docs": "pnpm --filter ./packages/ run typedoc"
+    "generate-docs": "pnpm --filter ./packages run typedoc"
   },
   "repository": {
     "type": "git",
