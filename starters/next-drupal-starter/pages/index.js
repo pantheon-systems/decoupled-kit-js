@@ -4,7 +4,7 @@ import Link from "next/link";
 import absoluteUrl from "next-absolute-url";
 import { NextSeo } from "next-seo";
 
-import { DrupalState, updateMaxAge } from "@pantheon-systems/drupal-kit";
+import { DrupalState } from "@pantheon-systems/drupal-kit";
 
 import styles from "../styles/Home.module.css";
 
@@ -89,15 +89,12 @@ export default function Home({ articles, hrefLang }) {
 
 export async function getServerSideProps(context) {
   const headers = new Headers(context.req.headers);
-  // After setting the browser and proxy cache maximum age in Drupal
+  // After setting the 'browser and proxy cache maximum age' in Drupal
   // the value can be accessed on context.req.headers
   // note: calls to Drupal that include authorization will default the
   // Cache-Control header's max-age value to null
   const cacheControlHeaderValue = headers.get("Cache-Control");
-  
-  // to use the shortest max-age value between Nextjs and Drupal,
-  // use the updateMaxAge() util from @pantheon-systems/drupal-kit
-  updateMaxAge(cacheControlHeaderValue, context.res)
+  console.log('cacheControlHeaderValue:', cacheControlHeaderValue)
   
   const { origin } = absoluteUrl(context.req);
   const { locales } = context;
