@@ -1,26 +1,46 @@
-#****************
-# placeholder config
-#****************
-#version: '2.1'
-#orbs:
-#  node: circleci/node@4.5
-#jobs:
-#  test:
-#    executor:
-#      name: node/default
-#      tag: '14.17'
-#    steps:
-#      - checkout
-#      - node/install-packages
-#      - run: npm run build
-#      - run: npm run test:ci
-#      - run: npm run typedoc
-#      - store_artifacts:
-#          path: docs
-#      - store_test_results:
-#          path: test-results
-#
-#workflows:
-#  test_node_sdk:
-#    jobs:
-#      - test
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+jobs:
+  test:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    docker:
+      - image: cimg/node:16.4
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    steps:
+      - checkout
+      - restore_cache:
+          # See the configuration reference documentation for more details on using restore_cache and save_cache steps
+          # https://circleci.com/docs/2.0/configuration-reference/?section=reference#save_cache
+          keys:
+            - node-deps-v1-{{ .Branch }}-{{checksum "pnpm-lock.yaml"}}
+      - run:
+          name: install pnpm
+          command: |
+            curl -f https://get.pnpm.io/v6.32.js | sudo node - add --global pnpm@6
+            pnpm config set store-dir ~/.pnpm-store
+      - run:
+          name: install packages
+          command: pnpm install
+      - save_cache:
+          key: node-deps-v1-{{ .Branch }}-{{checksum "pnpm-lock.yaml"}}
+          paths:
+            - ~/.pnpm-store
+      - run:
+          name: Run Tests
+          command: pnpm test
+      - run:
+          name: Build Packages
+          command: pnpm build:pkgs
+
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+workflows:
+  orb-free-workflow:
+    jobs:
+      - test
