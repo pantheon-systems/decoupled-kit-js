@@ -1,48 +1,42 @@
 import { useEffect, useState } from "react";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
-import Link from "next/link";
 import Head from "next/head";
-import Image from "next/image";
 
 const drupalUrl = "https://dev-ds-demo.pantheonsite.io";
 
 export default function Pagination({ data }) {
-  // console.log("data:", data);
-  // blur pixel for Next image component
-  const base64TransparentPixel =
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
-
   // configurable itemsPerPage
-  const itemsPerPage = 1;
-  // breakpoint
-  
-  
+  const itemsPerPage = 10;
+  // configurable breakpoints
+  // This value will be the start of the seperator.
+  const [breakStart, setBreakStart] = useState(6);
+  // This value will be the button to start with after seperator
+  const breakEnd = 12;
+  // how many buttons to add when the seperator is clicked
+  const breakAdd = 6;
+
   const [offset, setOffset] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [currentItems, setCurrentItems] = useState([]);
-  const [breakStart, setBreakStart] = useState(0)
-  
+
   useEffect(() => {
     const endOffset = offset + itemsPerPage;
     setCurrentItems(data.slice(offset, endOffset));
     setTotalPages(Math.ceil(data.length / itemsPerPage));
-    console.log(totalPages/3)
-  }, [data, offset, itemsPerPage]);
-  console.log('breakStart:', breakStart)
-  
+  }, [data, offset, itemsPerPage, breakStart]);
+
   const RenderData = () => {
-    // render data as images if they exist or the filename
-    return currentItems.map(({ title, id, body }, i) => {
+    return currentItems.map(({ title, id, body }) => {
       return (
-        <div>
-        <h2 className="transition-all ease-in text-center my-auto text-2xl" key={id}>
-          {title}
-        </h2>
-        <p className="max-w-prose text-center p-3 mx-auto my-2">
-          {body.value.substr(0, 150)}...
-        </p>
-        </div>
+        <article key={id}>
+          <h2 className="text-center my-auto text-2xl transform transition-all duration-150">
+            {title}
+          </h2>
+          <p className="max-w-prose text-center p-3 mx-auto my-2 transform transform transition-all duration-150">
+            {body.value.substr(0, 150)}...
+          </p>
+        </article>
       );
     });
   };
@@ -52,24 +46,56 @@ export default function Pagination({ data }) {
     const newOffset = ((clickedPage - 1) * itemsPerPage) % data.length;
     setOffset(Number(newOffset));
     setCurrentPage(Number(clickedPage));
-    console.log('totalPages:', totalPages)
-    
   };
 
   const RenderButtons = () => {
-    // the logic for the buttons will have to change if we want
-    // a 'break' like 1 2 3 ... 7 8 9
     const buttons = [];
+
     for (let i = 0; i < totalPages; i++) {
+      const keyId = keyId || 0;
+      const pageNumber = i + 1;
+
+      // seperator button
+      if (i === breakStart) {
+        if (breakStart + breakAdd >= totalPages) {
+          buttons.push(
+            <button
+              className={`h-24 w-16 sm:h-16 sm:w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 transition-all duration-250 ease-in ${
+                currentPage === pageNumber && "border-blue-700 border-2"
+              }`}
+              onClick={handlePageClick}
+              key={++keyId}
+            >
+              {pageNumber}
+            </button>
+          );
+          continue;
+        }
+        buttons.push(
+          <button
+            className={`h-24 w-16 sm:h-16 sm:w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300"
+          }`}
+            onClick={() => setBreakStart(breakStart + breakAdd)}
+            key={++keyId}
+          >
+            ...
+          </button>
+        );
+      }
+      // if we have a breakStart, don't render the middle buttons
+      if (pageNumber >= breakStart && pageNumber < breakEnd) {
+        ++keyId;
+        continue;
+      }
       buttons.push(
         <button
-          className={`h-24 w-16 sm:h-16 sm:w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 ${
-            currentPage === i + 1 && "border-blue-700 border-2"
+          className={`h-24 w-16 sm:h-16 sm:w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 transition-all duration-250 ease-in ${
+            currentPage === pageNumber && "border-blue-700 border-2"
           }`}
           onClick={handlePageClick}
-          key={i + 1 + offset}
+          key={++keyId}
         >
-          {i + 1}
+          {pageNumber}
         </button>
       );
     }
@@ -77,7 +103,7 @@ export default function Pagination({ data }) {
       <div className="flex flex-wrap flex-row justify-center mx-auto mt-auto mb-4">
         {/* back button */}
         <button
-          className="h-24 w-16 sm:h-16 sm:w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-l-2 border-t-2 border-b-2 border-black bg-white"
+          className="h-24 w-16 sm:h-16 sm:w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white transition-all duration-250 ease-in"
           disabled={Number(offset) === 0}
           onClick={() => {
             offset > 0 && setOffset(offset - itemsPerPage);
@@ -90,8 +116,8 @@ export default function Pagination({ data }) {
         {buttons.map((btn) => btn)}
         {/* next button */}
         <button
-          className="h-24 w-16 sm:h-16 sm:w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white"
-          disabled={offset > data.length - itemsPerPage}
+          className="h-24 w-16 sm:h-16 sm:w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white transition-all duration-250 ease-in"
+          disabled={offset >= data.length - itemsPerPage}
           onClick={() => {
             offset < data.length - itemsPerPage &&
               setOffset(offset + itemsPerPage);
@@ -106,21 +132,28 @@ export default function Pagination({ data }) {
 
   return (
     <>
-    <Head>
+      <Head>
         <title>Pagination example</title>
         <meta name="description" content="Powered by Pantheon Decoupled Kit" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-        <div className="max-h-screen w-max max-w-full mx-auto">
-      <main className="flex mx-auto flex-col">
-        <h1 className="text-4xl mx-auto my-4">Pagination example</h1>
-        <div className="flex flex-col min-h-4/5">
-          <RenderData />
-        </div>
-        <RenderButtons />
-      </main>
-    </div>
-  </>
+      <div className="prose container min-w-full min-h-screen max-w-screen mx-auto">
+        <main className="flex mx-auto flex-col">
+          <section className="mx-auto">
+            <h1 className="my-10">Pagination example</h1>
+            <h3 className="mb-4 prose-sm">
+              Page {currentPage}/{totalPages}
+            </h3>
+          </section>
+          <section>
+            <RenderData />
+          </section>
+          <div className="sticky bottom-0">
+            <RenderButtons />
+          </div>
+        </main>
+      </div>
+    </>
   );
 }
 
@@ -132,20 +165,18 @@ export async function getStaticProps() {
     debug: true,
   });
 
-  // using a query here reduces data fetched from 2.09 mb to 185kb
   const data = await store.getObject({
     objectName: "node--ds_example",
-    query: `{
-      title
-      id
-      body {
-        value
-      }
-    }`,
+    // query only finds first 50 results here, but not in codesandbox: https://codesandbox.io/s/drupal-state-query-all-rf9y51?file=/pages/test/index.js
+    // query: `{
+    //   title
+    //   id
+    //   body {
+    //     value
+    //   }
+    // }`,
     all: true,
   });
-  // console.log('data:', data)
-  
 
   return {
     props: {
