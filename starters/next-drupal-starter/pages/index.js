@@ -88,14 +88,6 @@ export default function Home({ articles, hrefLang }) {
 }
 
 export async function getServerSideProps(context) {
-  const headers = new Headers(context.req.headers);
-  // After setting the 'browser and proxy cache maximum age' in Drupal
-  // the value can be accessed on context.req.headers
-  // note: calls to Drupal that include authorization will default the
-  // Cache-Control header's max-age value to null
-  const cacheControlHeaderValue = headers.get("Cache-Control");
-  console.log('cacheControlHeaderValue:', cacheControlHeaderValue)
-  
   const { origin } = absoluteUrl(context.req);
   const { locales } = context;
   const hrefLang = locales.map((locale) => {
