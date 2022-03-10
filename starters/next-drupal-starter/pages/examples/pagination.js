@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
 import Head from "next/head";
+import Layout from "../../components/layout";
 
 const drupalUrl = "https://dev-ds-demo.pantheonsite.io";
 
@@ -131,21 +132,21 @@ export default function Pagination({ data }) {
   };
 
   return (
-    <>
+    <Layout>
       <Head>
         <title>Pagination example</title>
         <meta name="description" content="Powered by Pantheon Decoupled Kit" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="prose container min-w-full min-h-screen max-w-screen mx-auto">
+      <div className="container min-w-full max-h-full max-w-screen mx-auto mb-auto">
         <main className="flex mx-auto flex-col">
-          <section className="mx-auto">
+          <section className="prose mx-auto">
             <h1 className="my-10">Pagination example</h1>
             <h3 className="mb-4 prose-sm">
               Page {currentPage}/{totalPages}
             </h3>
           </section>
-          <section>
+          <section className="prose mx-auto">
             <RenderData />
           </section>
           <div className="sticky bottom-0">
@@ -153,7 +154,8 @@ export default function Pagination({ data }) {
           </div>
         </main>
       </div>
-    </>
+      {/* <Footer /> */}
+    </Layout>
   );
 }
 
