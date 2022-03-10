@@ -28,21 +28,6 @@ export default function Pagination({
   const [offset, setOffset] = useState((currentPageQuery - 1) * itemsPerPage);
   const [currentItems, setCurrentItems] = useState([]);
 
-  // Loading component
-  const [isLoading, setLoading] = useState(false);
-  const startLoading = () => setLoading(true);
-  const stopLoading = () => setLoading(false);
-  useEffect(() => {
-    //After the component is mounted set router event handlers
-    router.events.on("routeChangeStart", startLoading);
-    router.events.on("routeChangeComplete", stopLoading);
-
-    return () => {
-      router.events.off("routeChangeStart", startLoading);
-      router.events.off("routeChangeComplete", stopLoading);
-    };
-  }, []);
-
   // since we fetch ALL items, filtering the current items client side
   // further reduces API calls to the server
   useEffect(() => {
@@ -185,31 +170,22 @@ export default function Pagination({
         <meta name="description" content="Powered by Pantheon Decoupled Kit" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {isLoading ? (
-        <div className="flex justify-center items-center">
-          <div
-            className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full absolute top-50"
-            role="status"
-          ></div>
-        </div>
-      ) : (
-        <div className="prose container min-w-full min-h-screen max-w-screen mx-auto">
-          <main className="flex mx-auto flex-col">
-            <section className="mx-auto">
-              <h1 className="my-10">Pagination example</h1>
-              <h3 className="mb-8 prose-sm">
-                Page {currentPageQuery}/{totalPages}
-              </h3>
-            </section>
-            <section>
-              <RenderData />
-            </section>
-            <div className="sticky bottom-0">
-              <RenderButtons />
-            </div>
-          </main>
-        </div>
-      )}
+      <div className="prose container min-w-full min-h-screen max-w-screen mx-auto">
+        <main className="flex mx-auto flex-col">
+          <section className="mx-auto">
+            <h1 className="my-10">Pagination example</h1>
+            <h3 className="mb-8 prose-sm">
+              Page {currentPageQuery}/{totalPages}
+            </h3>
+          </section>
+          <section>
+            <RenderData />
+          </section>
+          <div className="sticky bottom-0">
+            <RenderButtons />
+          </div>
+        </main>
+      </div>
     </>
   );
 }
@@ -247,7 +223,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params: { page } }) {
+export async function getStaticProps() {
   const store = new DrupalState({
     apiBase: drupalUrl,
     apiPrefix: "jsonapi",
