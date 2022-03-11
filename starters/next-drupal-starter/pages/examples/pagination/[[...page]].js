@@ -23,7 +23,7 @@ export default function Pagination({
   const breakAdd = 6;
 
   const router = useRouter();
-  const currentPageQuery = Number(router.query.page);
+  const currentPageQuery = Number(router.query.page) || 1;
 
   const [offset, setOffset] = useState((currentPageQuery - 1) * itemsPerPage);
   const [currentItems, setCurrentItems] = useState([]);
@@ -38,6 +38,15 @@ export default function Pagination({
       )
     );
   }, [data, offset, itemsPerPage, breakStart, currentPageQuery]);
+
+  // track window width to appropriately hide and show buttons on small viewports
+  const [windowWidth, setWindowWidth] = useState();
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", () => {
+      setWindowWidth(window.innerWidth);
+    });
+  }, []);
 
   // Render the currentItems to the page
   const RenderData = () => {
@@ -70,29 +79,37 @@ export default function Pagination({
 
     for (let i = 0; i < totalPages; i++) {
       const pageNumber = Number(i + 1);
+      const defaultButton = (
+        <button
+          className={`
+        ${
+          windowWidth < 768 && currentPageQuery === pageNumber
+            ? "block"
+            : "hidden md:block"
+        }
+        h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 ${
+          currentPageQuery === pageNumber && "border-blue-700 border-2"
+        }
+        `}
+          onClick={handlePageClick}
+          key={pageNumber}
+        >
+          {pageNumber}
+        </button>
+      );
 
       // seperator button
       if (i === breakStart) {
         if (breakStart + breakAdd >= totalPages) {
-          buttons.push(
-            <button
-              className={`md:h-24 md:w-16 h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 transition-all duration-250 ease-in ${
-                currentPageQuery === pageNumber && "border-blue-700 border-2"
-              }`}
-              onClick={handlePageClick}
-              key={pageNumber}
-            >
-              {pageNumber}
-            </button>
-          );
+          buttons.push(defaultButton);
           continue;
         }
         buttons.push(
           <button
-            className={`md:h-24 md:w-16 h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300"
+            className={`hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300"
           }`}
             onClick={() => setBreakStart(breakStart + breakAdd)}
-            key={pageNumber}
+            key={"..."}
           >
             ...
           </button>
@@ -100,25 +117,18 @@ export default function Pagination({
       }
       // if we have a breakStart, don't render the middle buttons
       if (pageNumber >= breakStart && pageNumber < breakEnd) {
+        if (windowWidth < 768) {
+          buttons.push(defaultButton);
+        }
         continue;
       }
-      buttons.push(
-        <button
-          className={`md:h-24 md:w-16 h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 transition-all duration-250 ease-in ${
-            currentPageQuery === pageNumber && "border-blue-700 border-2"
-          }`}
-          onClick={handlePageClick}
-          key={pageNumber}
-        >
-          {pageNumber}
-        </button>
-      );
+      buttons.push(defaultButton);
     }
     return (
-      <div className="flex flex-wrap flex-row justify-center mx-auto mt-auto mb-4">
+      <div className="flex flex-row justify-center mx-auto mt-auto mb-4 grow">
         {/* back button */}
         <button
-          className="md:h-24 md:w-16 h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white transition-all duration-250 ease-in"
+          className="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white"
           disabled={Number(offset) === 0}
           onClick={() => {
             offset > 0 && setOffset(offset - itemsPerPage);
@@ -140,7 +150,7 @@ export default function Pagination({
         {buttons.map((btn) => btn)}
         {/* next button */}
         <button
-          className="md:h-24 md:w-16 h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white transition-all duration-250 ease-in"
+          className="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white"
           disabled={offset >= totalItems - itemsPerPage}
           onClick={() => {
             offset < totalItems - itemsPerPage &&
@@ -214,12 +224,14 @@ export async function getStaticPaths() {
   const arr = Array.from(Array(totalPages).keys());
 
   const paths = arr.map((page) => ({
-    params: { page: (page + 1).toString() },
+    params: { page: [(page + 1).toString()] },
   }));
+  // allows for  examples/pagination
+  paths.push({ params: { page: [""] } });
 
   return {
-    paths,
-    fallback: true,
+    paths: paths,
+    fallback: false,
   };
 }
 
