@@ -95,6 +95,7 @@ class PantheonDrupalState extends DrupalState {
         return {
           data: object.jsonapi.data,
           graphql: object.graphql,
+          links: object.jsonapi.links,
         };
       })) as TJsonApiBody;
     } else {
