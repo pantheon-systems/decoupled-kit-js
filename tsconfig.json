@@ -14,8 +14,16 @@
     "noImplicitReturns": true,
     "baseUrl": "./packages",
     "paths": {
-      "@pantheon-systems/drupal-kit": ["drupal-kit/src"],
-      "@pantheon-systems/wordpress-kit": ["wordpress-kit/src"]
+      "@pantheon-systems/drupal-kit/*": ["./drupal-kit/*"],
+      "@pantheon-systems/wordpress-kit/*": ["./wordpress-kit/*"]
     }
+  },
+  "typeDocOptions": {
+    "entryPoints": [
+      "@pantheon-systems/drupal-kit/src",
+      "@pantheon-systems/wordpress-kit/src"
+    ],
+    "included": ["./src", "index.ts"],
+    "exclude": ["main.ts"],
   }
 }

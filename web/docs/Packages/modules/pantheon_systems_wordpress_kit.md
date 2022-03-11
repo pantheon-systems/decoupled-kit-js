@@ -1,20 +1,18 @@
 ---
-id: "index"
-title: "Module: index"
-sidebar_label: "index"
+id: "pantheon_systems_wordpress_kit"
+title: "Module: @pantheon-systems/wordpress-kit"
+sidebar_label: "@pantheon-systems/wordpress-kit"
 sidebar_position: 0
 custom_edit_url: null
 ---
 
 ## Namespaces
 
-- [gql](../namespaces/.gql)
+- [gql](../namespaces/pantheon_systems_wordpress_kit.gql.md)
 
-## References
+## Classes
 
-### ApolloClientFactory
-
-Renames and re-exports [default](../classes/src_lib_ApolloClientFactory.default.md)
+- [ApolloClientFactory](../classes/pantheon_systems_wordpress_kit.ApolloClientFactory.md)
 
 ## Variables
 
