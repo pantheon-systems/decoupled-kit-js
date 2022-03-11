@@ -1,23 +1,23 @@
 ---
-id: "src_PantheonDrupalState.default"
-title: "Class: default"
-sidebar_label: "default"
+id: "pantheon_systems_drupal_kit.DrupalState"
+title: "Class: DrupalState"
+sidebar_label: "@pantheon-systems/drupal-kit.DrupalState"
 custom_edit_url: null
 ---
 
-[src/PantheonDrupalState](../modules/src_PantheonDrupalState.md).default
+[@pantheon-systems/drupal-kit](../modules/pantheon_systems_drupal_kit.md).DrupalState
 
 ## Hierarchy
 
 - `DrupalState`
 
-  ↳ **`default`**
+  ↳ **`DrupalState`**
 
 ## Constructors
 
 ### constructor
 
-• **new default**(`__namedParameters`)
+• **new DrupalState**(`__namedParameters`)
 
 #### Parameters
 
@@ -31,7 +31,7 @@ DrupalState.constructor
 
 #### Defined in
 
-[packages/drupal-kit/src/PantheonDrupalState.ts:16](https://github.com/CobyPear/decoupled-kit-js/blob/879269b/packages/drupal-kit/src/PantheonDrupalState.ts#L16)
+[packages/drupal-kit/src/PantheonDrupalState.ts:16](https://github.com/CobyPear/decoupled-kit-js/blob/8d34568/packages/drupal-kit/src/PantheonDrupalState.ts#L16)
 
 ## Properties
 
@@ -313,7 +313,7 @@ DrupalState.conditionalFetch
 
 #### Defined in
 
-[packages/drupal-kit/src/PantheonDrupalState.ts:44](https://github.com/CobyPear/decoupled-kit-js/blob/879269b/packages/drupal-kit/src/PantheonDrupalState.ts#L44)
+[packages/drupal-kit/src/PantheonDrupalState.ts:44](https://github.com/CobyPear/decoupled-kit-js/blob/8d34568/packages/drupal-kit/src/PantheonDrupalState.ts#L44)
 
 ___
 

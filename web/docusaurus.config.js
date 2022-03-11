@@ -11,41 +11,29 @@ const config = {
     "Utilities for building a decoupled front end that sources data from a CMS back end.",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "pantheon-systems", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  projectName: "decoupled-kit-js", // Usually your repo name.
 
   plugins: [
     [
       "docusaurus-plugin-typedoc",
+      // TODO: this works, but squashes everything into one category/package. Maybe this is ok?
+      // FIXME: needs work - it's reading node_modules for 'defined in'. Can we ignore this?
+      // It's also making the namespaces weird.
       {
-        id: "api-1",
-        entryPoints: ["../packages/drupal-kit/src"],
-        tsconfig: "../packages/drupal-kit/tsconfig.json",
-        entryPointStrategy: "expand",
-        out: "Packages/drupal-kit",
+        entryPoints: [
+          "../packages/drupal-kit",
+          "../packages/wordpress-kit",
+        ],
+        tsconfig: "../tsconfig.json",
+        entryPointStrategy: "packages",
         sidebar: {
-          categoryLabel: "drupal-kit",
+          fullNames: true,
         },
-      },
-    ],
-    // Plugin supposedly has a monorepo-friendly config, but it isn't working for me.
-    // https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc#monorepo-setup
-    // Multi instance approach is more verbose, but may provide more control
-    // https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/docusaurus-plugin-typedoc#multi-instance
-    [
-      "docusaurus-plugin-typedoc",
-      {
-        id: "api-2",
-        entryPoints: ["../packages/wordpress-kit/src"],
-        tsconfig: "../packages/wordpress-kit/tsconfig.json",
-        entryPointStrategy: "expand",
-        out: "Packages/wordpress-kit",
-        sidebar: {
-          categoryLabel: "wordpress-kit",
-        },
+        out: "Packages"
       },
     ],
   ],
@@ -58,15 +46,15 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl:
-          // TODO: Update with Doc Edit template
-          "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=doc-update-template.md&labels=documentation&title=Update+docs",
-        },
-        blog: {
-          showReadingTime: true,
-          // TODO: Update with Doc Edit template
-          editUrl:
+            // TODO: Update with Doc Edit template
             "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=doc-update-template.md&labels=documentation&title=Update+docs",
         },
+        // blog: {
+        //   showReadingTime: true,
+        //   // TODO: Update with Doc Edit template
+        //   editUrl:
+        //     "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=doc-update-template.md&labels=documentation&title=Update+docs",
+        // },
         theme: {
           customCss: [
             require.resolve("./src/css/custom.css"),
@@ -93,7 +81,6 @@ const config = {
             position: "left",
             label: "Docs",
           },
-          { to: "/blog", label: "Blog", position: "left" },
           {
             href: "https://github.com/pantheon-systems/decoupled-kit-js",
             label: "GitHub",
@@ -127,19 +114,6 @@ const config = {
               {
                 label: "Twitter",
                 href: "https://twitter.com/docusaurus",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
               },
             ],
           },

@@ -1,11 +1,11 @@
 ---
-id: "index.gql"
+id: "pantheon_systems_wordpress_kit.gql"
 title: "Namespace: gql"
-sidebar_label: "gql"
+sidebar_label: "@pantheon-systems/wordpress-kit.gql"
 custom_edit_url: null
 ---
 
-[index](../modules/).gql
+[@pantheon-systems/wordpress-kit](../modules/pantheon_systems_wordpress_kit.md).gql
 
 ## Variables
 
