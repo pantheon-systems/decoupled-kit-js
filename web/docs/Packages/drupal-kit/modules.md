@@ -1,15 +1,17 @@
 ---
 id: "modules"
-title: "@pantheon/decoupled-node-sdk"
-sidebar_label: "Exports"
+title: "@pantheon-systems/drupal-kit"
+sidebar_label: "Table of contents"
 sidebar_position: 0.5
+hide_table_of_contents: true
 custom_edit_url: null
 ---
 
 ## Modules
 
-- [PantheonDrupalState](modules/PantheonDrupalState.md)
-- [fetch/defaultFetch](modules/fetch_defaultFetch.md)
-- [types/types](modules/types_types.md)
-- [utils/addSurrogateKeyHeader](modules/utils_addSurrogateKeyHeader.md)
-- [utils/updateMaxAge](modules/utils_updateMaxAge.md)
+- [index](modules/)
+- [src/PantheonDrupalState](modules/src_PantheonDrupalState.md)
+- [src/fetch/defaultFetch](modules/src_fetch_defaultFetch.md)
+- [src/types/types](modules/src_types_types.md)
+- [src/utils/addSurrogateKeyHeader](modules/src_utils_addSurrogateKeyHeader.md)
+- [src/utils/updateMaxAge](modules/src_utils_updateMaxAge.md)

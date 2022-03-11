@@ -1,6 +1,6 @@
 ---
 id: "index"
-title: "@pantheon/wordpress-kit"
+title: "@pantheon-systems/wordpress-kit"
 slug: "/Packages/wordpress-kit/"
 sidebar_label: "Readme"
 sidebar_position: 0
@@ -17,7 +17,7 @@ end for a decoupled front end hosted on Pantheon.
 Short term, this package exists in a private Pantheon repository and can be
 installed as a dependency using:
 
-`npm install https://github.com/pantheon-systems/wordpress-kit`
+`npm install https://github.com/pantheon-systems/decoupled-kit-js/packages/wordpress-kit`
 
 You will be asked to authenticate with your Github credentials. All users who
 are part of the github decoupled team should have permission to install this
@@ -26,17 +26,17 @@ package.
 Long term this package will be public and available on npm. At that point it
 will be possible to install it using:
 
-`npm install @pantheon/wordpress-kit`
+`npm install @pantheon-systems/wordpress-kit`
 
 ## Usage
 
-Modules can be imported from the `@pantheon/wordpress-kit` package. For example,
-to use the Apollo Client instance provided by this package
+Modules can be imported from the `@pantheon-systems/wordpress-kit` package. For
+example, to use the Apollo Client instance provided by this package
 
 Import the module in your JavaScript application:
 
 ```
-import { ApolloClientFactory } from '@pantheon/wordpress-kit';
+import { ApolloClientFactory } from '@pantheon-systems/wordpress-kit';
 ```
 
 Create an instance of the client and specify your API:
