@@ -57,15 +57,15 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          // TODO: Update with Doc Edit template
+          "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=doc-update-template.md&labels=documentation&title=Update+docs",
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
+          // TODO: Update with Doc Edit template
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=doc-update-template.md&labels=documentation&title=Update+docs",
         },
         theme: {
           customCss: [
@@ -95,7 +95,7 @@ const config = {
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "https://github.com/pantheon-systems",
+            href: "https://github.com/pantheon-systems/decoupled-kit-js",
             label: "GitHub",
             position: "right",
           },
