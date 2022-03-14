@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="min-w-full text-white bg-black p-4 mt-8">
-      <div className="flex mt-4 p-2">
+      <div className="flex my-4 p-2">
         <span className="mx-auto">
           © {new Date().getFullYear()} Built with{" "}
           <a
