@@ -22,7 +22,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/lib/ApolloClientFactory.ts:15](https://github.com/CobyPear/decoupled-kit-js/blob/819d62a/packages/wordpress-kit/src/lib/ApolloClientFactory.ts#L15)
+[src/lib/ApolloClientFactory.ts:15](https://github.com/CobyPear/decoupled-kit-js/blob/571dabb/packages/wordpress-kit/src/lib/ApolloClientFactory.ts#L15)
 
 ## Properties
 
@@ -32,7 +32,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/lib/ApolloClientFactory.ts:13](https://github.com/CobyPear/decoupled-kit-js/blob/819d62a/packages/wordpress-kit/src/lib/ApolloClientFactory.ts#L13)
+[src/lib/ApolloClientFactory.ts:13](https://github.com/CobyPear/decoupled-kit-js/blob/571dabb/packages/wordpress-kit/src/lib/ApolloClientFactory.ts#L13)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[src/lib/ApolloClientFactory.ts:12](https://github.com/CobyPear/decoupled-kit-js/blob/819d62a/packages/wordpress-kit/src/lib/ApolloClientFactory.ts#L12)
+[src/lib/ApolloClientFactory.ts:12](https://github.com/CobyPear/decoupled-kit-js/blob/571dabb/packages/wordpress-kit/src/lib/ApolloClientFactory.ts#L12)
 
 ## Methods
 
@@ -58,4 +58,4 @@ Creates an instance of ApolloClient using the specified uri and cache.
 
 #### Defined in
 
-[src/lib/ApolloClientFactory.ts:26](https://github.com/CobyPear/decoupled-kit-js/blob/819d62a/packages/wordpress-kit/src/lib/ApolloClientFactory.ts#L26)
+[src/lib/ApolloClientFactory.ts:26](https://github.com/CobyPear/decoupled-kit-js/blob/571dabb/packages/wordpress-kit/src/lib/ApolloClientFactory.ts#L26)

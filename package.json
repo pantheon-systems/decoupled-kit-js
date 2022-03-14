@@ -8,7 +8,7 @@
     "build:pkgs": "pnpm --filter ./packages run build",
     "build:starters": "pnpm --filter ./starters run build",
     "build:all": "pnpm recursive run build",
-    "generate-docs": "pnpm typedoc --entryPointStrategy packages './packages/*'",
+    "generate-docs": "pnpm --filter ./web clear && pnpm --filter ./web build",
     "postinstall": "pnpm build:pkgs"
   },
   "repository": {
@@ -33,7 +33,7 @@
     "@rollup/plugin-typescript": "^8.3.1",
     "@types/eslint": "^8.4.1",
     "@types/jest": "^27.4.1",
-    "@types/react": "^17.0.39",
+    "@types/react": "17.0.40",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
     "eslint": "^8.10.0",
@@ -55,6 +55,7 @@
   "packageManager": "pnpm@6.32.3",
   "pnpm": {
     "overrides": {
+      "@types/react": "17.0.40",
       "node-fetch@<2.6.7": ">=2.6.7",
       "ansi-regex@>2.1.1 <5.0.1": ">=5.0.1",
       "nth-check@<2.0.1": ">=2.0.1",
