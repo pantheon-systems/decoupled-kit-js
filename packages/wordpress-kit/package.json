@@ -13,7 +13,6 @@
       "require": "./dist/wordpress-kit.umd.js"
     }
   },
-  "typedocMain": "index.ts",
   "prettier": {
     "singleQuote": true,
     "arrowParens": "avoid",
