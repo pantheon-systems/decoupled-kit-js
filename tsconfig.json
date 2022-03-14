@@ -19,11 +19,6 @@
     }
   },
   "typeDocOptions": {
-    "entryPoints": [
-      "@pantheon-systems/drupal-kit/src",
-      "@pantheon-systems/wordpress-kit/src"
-    ],
-    "included": ["./src", "index.ts"],
-    "exclude": ["main.ts"],
+    "includes": ["src"]
   }
 }
