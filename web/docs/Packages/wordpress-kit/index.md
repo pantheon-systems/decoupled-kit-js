@@ -1,7 +1,7 @@
 ---
 id: "index"
 title: "decoupled-kit-js"
-slug: "/Packages/"
+slug: "/Packages/wordpress-kit/"
 sidebar_label: "Readme"
 sidebar_position: 0
 custom_edit_url: null

@@ -3,6 +3,10 @@
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const generateTypeDocOptions = require("./generateTypedocOptions.js");
+
+const drupalKitTypedocOptions = generateTypeDocOptions("drupal-kit", 0);
+const wordpressKitTypedocOptions = generateTypeDocOptions("wordpress-kit", 1);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -20,20 +24,17 @@ const config = {
   plugins: [
     [
       "docusaurus-plugin-typedoc",
-      // TODO: this works, but squashes everything into one category/package. Maybe this is ok?
-      // FIXME: needs work - it's reading node_modules for 'defined in'. Can we ignore this?
-      // It's also making the namespaces weird.
       {
-        entryPoints: [
-          "../packages/drupal-kit",
-          "../packages/wordpress-kit",
-        ],
-        tsconfig: "../tsconfig.json",
-        entryPointStrategy: "packages",
-        sidebar: {
-          fullNames: true,
-        },
-        out: "Packages"
+        id: "api-1",
+        ...drupalKitTypedocOptions,
+        cleanOutputDir: true,
+      },
+    ],
+    [
+      "docusaurus-plugin-typedoc",
+      {
+        id: "api-2",
+        ...wordpressKitTypedocOptions,
       },
     ],
   ],
@@ -46,12 +47,10 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl:
-            // TODO: Update with Doc Edit template
             "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=doc-update-template.md&labels=documentation&title=Update+docs",
         },
         // blog: {
         //   showReadingTime: true,
-        //   // TODO: Update with Doc Edit template
         //   editUrl:
         //     "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=doc-update-template.md&labels=documentation&title=Update+docs",
         // },

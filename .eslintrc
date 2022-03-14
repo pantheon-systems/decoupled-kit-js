@@ -5,6 +5,9 @@
     "tsconfigRootDir": ".",
     "project": ["./tsconfig.json"]
   },
+  "env": {
+    "node": true
+  },
   "plugins": ["@typescript-eslint"],
   "extends": [
     "eslint:recommended",
