@@ -4,7 +4,7 @@ version: 2.1
 # Run Rennovate in CircleCI
 # see https://circleci.com/developer/orbs/orb/daniel-shuy/renovate
 orbs:
-  rennovate: daniel-shuy/renovate@3.1.0
+  renovate: daniel-shuy/renovate@3.1.0
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
@@ -47,10 +47,10 @@ workflows:
   orb-free-workflow:
     jobs:
       - test
-  rennovate:
+  renovate:
     jobs:
-      - rennovate/self-hosted:
-          config_file_path: rennovate.json
+      - renovate/self-hosted:
+          config_file_path: renovate.json
     nightly:
       triggers:
         - schedule:
