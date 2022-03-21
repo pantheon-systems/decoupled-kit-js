@@ -62,6 +62,9 @@ jobs:
       - run:
           name: audit dependendies
           command: pnpm audit --json > .pnpm_audit.json
+      - run:
+          name: clean .pnpm_audit.json
+          command: rm .pnpm_audit.json
       #- run:
           #name: audit dependencies with --fix
           #command: pnpm audit --fix > .pnpm_audit_overrides.json
