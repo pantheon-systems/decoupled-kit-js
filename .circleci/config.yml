@@ -61,7 +61,18 @@ jobs:
           command: pnpm install --ignore-scripts
       - run:
           name: audit dependencies with --fix
-          command: pnpm audit --fix > .pnpm_audit_overrides.json
+          command: pnpm audit --fix
+      - run:
+          name: install overrides
+          command: pnpm install
+      # commit package.json and pnpm-lock if there's a diff
+      - run:
+          name: commit overrides
+          command: git switch -c nightly-audit &&
+           git add package.json pnpm-lock.yaml &&
+           git commit -m "Nightly audit run on $(date +%D)" &&
+           git push origin nightly-audit
+      # create a PR
       - run: # should only fail if there are vulns to be addressed manually
           name: audit dependendies
           command: pnpm audit --json > .pnpm_audit.json
