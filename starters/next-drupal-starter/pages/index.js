@@ -26,7 +26,7 @@ export default function Home({ articles, hrefLang }) {
           </h1>
 
           <p className="text-2xl">
-            <div className="bg-black text-white rounded flex items-center justify-center p-4 ">
+            <span className="bg-black text-white rounded flex items-center justify-center p-4 ">
               Decoupled hosting by{" "}
               <Image
                 src="/pantheon.svg"
@@ -34,7 +34,7 @@ export default function Home({ articles, hrefLang }) {
                 width={191}
                 height={60}
               />
-            </div>
+            </span>
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export default function Home({ articles, hrefLang }) {
             return (
               <Link
                 passHref
-                href={`${article.path.langcode}${article.path.alias}`}
+                href={`/${article.path.langcode}${article.path.alias}`}
                 key={article.id}
               >
                 <div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 hover:border-indigo-500">
