@@ -64,10 +64,17 @@ jobs:
           name: install packages
           command: pnpm install --ignore-scripts
       - run:
-          name: audit dependencies
-          command: pnpm audit --fix --json > .pnpm_audit.json
+          name: audit dependendies
+          command: pnpm audit --json > .pnpm_audit.json
+      - run:
+          name: audit dependencies with --fix
+          command: pnpm audit --fix --json > .pnpm_audit_overrides.json
       - store_artifacts:
           path: .pnpm_audit.json
+          destination: .pnpm_audit
+      - store_artifacts:
+          path: .pnpm_audit_overrides.json
+          destination: .pnpm_audit
 
 
 # Invoke jobs via workflows
