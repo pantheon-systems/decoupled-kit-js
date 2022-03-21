@@ -64,7 +64,7 @@ jobs:
           command: pnpm audit --fix
       - run:
           name: install overrides
-          command: pnpm install
+          command: pnpm install --frozen-lockfile=false
       # commit package.json and pnpm-lock if there's a diff
       - run:
           name: commit overrides
