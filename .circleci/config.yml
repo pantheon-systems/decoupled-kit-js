@@ -45,6 +45,9 @@ jobs:
       - image: cimg/node:16.4
     # run pnpm audit --fix nightly and opens a PR if there are vulns
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "aa:bd:a8:9a:ce:f8:98:43:ea:4e:cf:97:5e:39:29:f1"
       - checkout
       - restore_cache:
           # See the configuration reference documentation for more details on using restore_cache and save_cache steps
@@ -64,22 +67,22 @@ jobs:
           command: pnpm audit --fix
       - run:
           name: install overrides
-          command: pnpm install --frozen-lockfile=false
+          command: pnpm install --frozen-lockfile=false --ignore-scripts
       # commit package.json and pnpm-lock if there's a diff
       - run:
           name: commit overrides
-          command: git switch -c nightly-audit &&
+          command: git config user.name "CobyPear" &&
+           git config user.email "coby.sher@pantheon.io" &&
+           git switch -c nightly-audit-$(date +"%D") &&
            git add package.json pnpm-lock.yaml &&
-           git commit -m "Nightly audit run on $(date +%D)" &&
-           git push origin nightly-audit
+           git commit -m "Nightly audit run on $(date +"%T")" &&
+           git push origin nightly-audit-$(date +"%D")
       # create a PR
       - run: # should only fail if there are vulns to be addressed manually
           name: audit dependendies
           command: pnpm audit --json > .pnpm_audit.json
       - store_artifacts:
           path: .pnpm_audit.json
-      - store_artifacts:
-          path: .pnpm_audit_overrides.json
 
 
 # Invoke jobs via workflows
