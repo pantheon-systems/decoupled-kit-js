@@ -79,8 +79,8 @@ jobs:
            git push origin nightly-audit-$(date +"%D")
       - run:
           name: open PR
-          command: >  
-                      curl -X POST -H "Authorization: token $CIRCLECI_AUDIT_PR_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/pantheon-systems/decoupled-kit-js/pulls -d '{"head":"nightly-audit-$(date +"%D")","base":"canary"}'
+          command: >
+                      curl -X POST -H "Authorization: token $CIRCLECI_AUDIT_PR_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/pantheon-systems/decoupled-kit-js/pulls -d '{"head":"nightly-audit-"'"$(date +"%D")"'"","base":"canary"}'
       # create a PR
       - run: # should only fail if there are vulns to be addressed manually
           name: audit dependendies
