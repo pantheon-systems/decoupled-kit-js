@@ -3,16 +3,20 @@ import Link from "next/link";
 
 export default function Footer() {
   const ExampleMenu = () => (
-    <nav className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {menuData.map(({ title, id, url }) => {
-        return (
-          <Link key={id} href={url}>
-            <a className="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300 mx-2 p-3">
-              {title}
-            </a>
-          </Link>
-        );
-      })}
+    <nav className="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg">
+      <ul>
+        {menuData.map(({ title, id, url }) => {
+          return (
+            <li key={id} className="list-disc text-blue-300 ml-3">
+              <Link href={url}>
+                <a className="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300">
+                  {title}
+                </a>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     </nav>
   );
 

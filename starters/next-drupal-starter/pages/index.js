@@ -25,17 +25,15 @@ export default function Home({ articles, hrefLang }) {
             </a>
           </h1>
 
-          <p className="text-2xl">
-            <span className="bg-black text-white rounded flex items-center justify-center p-4 ">
-              Decoupled hosting by{" "}
-              <Image
-                src="/pantheon.svg"
-                alt="Pantheon Logo"
-                width={191}
-                height={60}
-              />
-            </span>
-          </p>
+          <div className="md:text-2xl text-md bg-black text-white rounded flex items-center justify-center p-4 ">
+            Decoupled hosting by
+            <Image
+              src="/pantheon.svg"
+              alt="Pantheon Logo"
+              width={191}
+              height={60}
+            />
+          </div>
         </div>
 
         <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
