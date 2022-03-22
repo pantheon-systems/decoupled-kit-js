@@ -75,13 +75,13 @@ jobs:
            git config user.email "coby.sher@pantheon.io" &&
            git switch -c nightly-audit-$(date +"%D") &&
            git add package.json pnpm-lock.yaml &&
-           git commit -m "Nightly audit run on $(date +"%T")" &&
+           git commit -m "Nightly audit run at $(date +"%T")" &&
            git push origin nightly-audit-$(date +"%D")
+      # create a PR
       - run:
           name: open PR
           command: >
-                      curl -X POST -H "Authorization: token $CIRCLECI_AUDIT_PR_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/pantheon-systems/decoupled-kit-js/pulls -d '{"head":"nightly-audit-'"$(date +"%D")"'","base":"canary", "title": "Nightly Audit on '"$(date +"%D")"'"}'
-      # create a PR
+                      curl -X POST -H "Authorization: token $CIRCLECI_AUDIT_PR_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/pantheon-systems/decoupled-kit-js/pulls -d '{"head":"nightly-audit-'"$(date +"%D")"'","base":"canary", "title": "Nightly Audit on '"$(date +"%D")"'", "body": "Beep Boop 🤖 - Please merge me to dispose of npm gremlins!"}'
       - run: # should only fail if there are vulns to be addressed manually
           name: audit dependendies
           command: pnpm audit --json > .pnpm_audit.json
@@ -93,6 +93,13 @@ jobs:
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   orb-free-workflow:
+    when:
+      not: << pipeline.trigger_source >>
     jobs:
       - test
+  nightly-audit:
+    when:
+      and:
+        - equal: [ scheduled_pipeline, << pipeline.trigger_source >> ]
+    jobs:
       - audit
