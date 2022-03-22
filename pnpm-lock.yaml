@@ -9,6 +9,8 @@ overrides:
   ws@>=7.0.0 <7.4.6: '>=7.4.6'
   browserslist@>=4.0.0 <4.16.5: '>=4.16.5'
   immer@<8.0.1: '>=8.0.1'
+  ansi-html@<0.0.8: '>=0.0.8'
+  minimist@<=1.2.5: <0.0.0
 
 importers:
 
@@ -1711,7 +1713,7 @@ packages:
   /@gatsbyjs/webpack-hot-middleware/2.25.2:
     resolution: {integrity: sha512-IFxleSfFQlvEXho2sDRa0PM+diTI+6tlb38jeUo/Lsi+mDzyjPte5Cj4aWL6PR8FpKGMl+DYfq1jxNvjH2gqkA==}
     dependencies:
-      ansi-html: 0.0.7
+      ansi-html: 0.0.9
       html-entities: 2.3.2
       querystring: 0.2.1
       strip-ansi: 6.0.1
@@ -1874,14 +1876,14 @@ packages:
       graphql: 15.8.0
       graphql-ws: 4.9.0_graphql@15.8.0
       is-promise: 4.0.0
-      isomorphic-ws: 4.0.1_ws@7.4.5
+      isomorphic-ws: 4.0.1_ws@7.5.7
       lodash: 4.17.21
       meros: 1.1.4
       subscriptions-transport-ws: 0.9.19_graphql@15.8.0
       sync-fetch: 0.3.0
       tslib: 2.2.0
       valid-url: 1.0.9
-      ws: 7.4.5
+      ws: 7.5.7
     transitivePeerDependencies:
       - '@types/node'
       - bufferutil
@@ -3291,7 +3293,7 @@ packages:
       webpack-plugin-serve:
         optional: true
     dependencies:
-      ansi-html: 0.0.7
+      ansi-html: 0.0.9
       error-stack-parser: 2.0.7
       html-entities: 1.4.0
       native-url: 0.2.6
@@ -3313,7 +3315,7 @@ packages:
       '@rematch/core': '>=1.0.0-alpha.0'
     dependencies:
       '@rematch/core': 1.4.0
-      immer: 4.0.2
+      immer: 9.0.12
     dev: false
 
   /@rollup/plugin-typescript/8.3.1_9b5c82c55927e566d84839ef2a6a3665:
@@ -4255,8 +4257,8 @@ packages:
     dependencies:
       type-fest: 0.21.3
 
-  /ansi-html/0.0.7:
-    resolution: {integrity: sha1-gTWEAhliqenm/QOflA0S9WynhZ4=}
+  /ansi-html/0.0.9:
+    resolution: {integrity: sha512-ozbS3LuenHVxNRh/wdnN16QapUHzauqSomAl1jwwJRRsGwFwtj644lIhxfWu0Fy0acCij2+AEgHvjscq3dlVXg==}
     engines: {'0': node >= 0.8.0}
     hasBin: true
     dev: false
@@ -4946,17 +4948,6 @@ packages:
   /browser-process-hrtime/1.0.0:
     resolution: {integrity: sha512-9o5UecI3GhkpM6DrXr69PblIuWxPKk9Y0jHBRhdocZ2y7YECBFCsHm79Pr3OyR2AvjhDkabFJaDJMYRazHgsow==}
 
-  /browserslist/4.14.2:
-    resolution: {integrity: sha512-HI4lPveGKUR0x2StIz+2FXfDk9SfVMrxn6PLh1JeGUwcuoDkdKZebWiyLRJ68iIPDpMI4JLVDf7S7XzslgWOhw==}
-    engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
-    hasBin: true
-    dependencies:
-      caniuse-lite: 1.0.30001313
-      electron-to-chromium: 1.4.75
-      escalade: 3.1.1
-      node-releases: 1.1.77
-    dev: false
-
   /browserslist/4.19.3:
     resolution: {integrity: sha512-XK3X4xtKJ+Txj8G5c30B4gsm71s69lqXlkYui4s6EkKxuv49qjYlY6oVd+IFJ73d4YymtM3+djvvt/R/iJwwDg==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
@@ -5609,7 +5600,9 @@ packages:
   /cross-fetch/3.1.4:
     resolution: {integrity: sha512-1eAtFWdIubi6T4XPy6ei9iUFoKpUkIF971QLN8lIvvvwueI65+Nw5haMNKUwfJxabqlIIDODJKGrQ66gxC0PbQ==}
     dependencies:
-      node-fetch: 2.6.1
+      node-fetch: 2.6.7
+    transitivePeerDependencies:
+      - encoding
     dev: false
 
   /cross-spawn/6.0.5:
@@ -5698,7 +5691,7 @@ packages:
       boolbase: 1.0.0
       css-what: 3.4.2
       domutils: 1.7.0
-      nth-check: 1.0.2
+      nth-check: 2.0.1
     dev: false
 
   /css-select/4.2.1:
@@ -9054,12 +9047,8 @@ packages:
     engines: {node: '>=0.9.0'}
     dev: false
 
-  /immer/4.0.2:
-    resolution: {integrity: sha512-Q/tm+yKqnKy4RIBmmtISBlhXuSDrB69e9EKTYiIenIKQkXBQir43w+kN/eGiax3wt1J0O1b2fYcNqLSbEcXA7w==}
-    dev: false
-
-  /immer/8.0.1:
-    resolution: {integrity: sha512-aqXhGP7//Gui2+UrEtvxZxSquQVXTpZ7KDxfCcKAF3Vysvw0CViVaW9RZ1j1xlIYqaaaipBoqdqeibkc18PNvA==}
+  /immer/9.0.12:
+    resolution: {integrity: sha512-lk7UNmSbAukB5B6dh9fnh5D0bJTOFKxVg2cyJWTYrWRfhLrLMBquONcUs3aFq507hNoIZEDDh8lb8UtOizSMhA==}
     dev: false
 
   /import-fresh/3.3.0:
@@ -9553,12 +9542,12 @@ packages:
     transitivePeerDependencies:
       - encoding
 
-  /isomorphic-ws/4.0.1_ws@7.4.5:
+  /isomorphic-ws/4.0.1_ws@7.5.7:
     resolution: {integrity: sha512-BhBvN2MBpWTaSHdWRb/bwdZJ1WaehQ2L1KngkCkfLUGF0mAWAT1sQUQacEmQ0jXkFw/czDXPNQSL5u2/Krsz1w==}
     peerDependencies:
       ws: '*'
     dependencies:
-      ws: 7.4.5
+      ws: 7.5.7
     dev: false
 
   /istanbul-lib-coverage/3.2.0:
@@ -11084,11 +11073,6 @@ packages:
     resolution: {integrity: sha1-n7CwmbzSoCGUDmA8ZCVNwAPZp6g=}
     dev: false
 
-  /node-fetch/2.6.1:
-    resolution: {integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==}
-    engines: {node: 4.x || >=6.0.0}
-    dev: false
-
   /node-fetch/2.6.7:
     resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
     engines: {node: 4.x || >=6.0.0}
@@ -11111,10 +11095,6 @@ packages:
   /node-object-hash/2.3.10:
     resolution: {integrity: sha512-jY5dPJzw6NHd/KPSfPKJ+IHoFS81/tJ43r34ZeNMXGzCOM8jwQDCD12HYayKIB6MuznrnqIYy2e891NA2g0ibA==}
     engines: {node: '>=0.10.0'}
-    dev: false
-
-  /node-releases/1.1.77:
-    resolution: {integrity: sha512-rB1DUFUNAN4Gn9keO2K1efO35IDK7yKHCdCaIMvFO7yUYmmZYeDjnGKle26G4rwj+LKRQpjyUUvMkPglwGCYNQ==}
     dev: false
 
   /node-releases/2.0.2:
@@ -11165,12 +11145,6 @@ packages:
       console-control-strings: 1.1.0
       gauge: 2.7.4
       set-blocking: 2.0.0
-    dev: false
-
-  /nth-check/1.0.2:
-    resolution: {integrity: sha512-WeBOdju8SnzPN5vTUJYxYUxLeXpCaVP5i5e0LF8fg7WORF2Wd7wFX/pk0tYZk7s8T+J7VLy0Da6J1+wCT0AtHg==}
-    dependencies:
-      boolbase: 1.0.0
     dev: false
 
   /nth-check/2.0.1:
@@ -12368,7 +12342,7 @@ packages:
     dependencies:
       '@babel/code-frame': 7.10.4
       address: 1.1.2
-      browserslist: 4.14.2
+      browserslist: 4.19.3
       chalk: 2.4.2
       cross-spawn: 7.0.3
       detect-port-alt: 1.1.6
@@ -12379,7 +12353,7 @@ packages:
       global-modules: 2.0.0
       globby: 11.0.1
       gzip-size: 5.1.1
-      immer: 8.0.1
+      immer: 9.0.12
       is-root: 2.1.0
       loader-utils: 2.0.0
       open: 7.4.2
@@ -13516,7 +13490,7 @@ packages:
       graphql: 15.8.0
       iterall: 1.3.0
       symbol-observable: 1.2.0
-      ws: 7.4.5
+      ws: 7.5.7
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -14700,19 +14674,6 @@ packages:
       is-typedarray: 1.0.0
       signal-exit: 3.0.7
       typedarray-to-buffer: 3.1.5
-
-  /ws/7.4.5:
-    resolution: {integrity: sha512-xzyu3hFvomRfXKH8vOFMU3OguG6oOvhXMo3xsGy3xWExqaM2dxBbVxuD99O7m3ZUFMvvscsZDqxfgMaRr/Nr1g==}
-    engines: {node: '>=8.3.0'}
-    peerDependencies:
-      bufferutil: ^4.0.1
-      utf-8-validate: ^5.0.2
-    peerDependenciesMeta:
-      bufferutil:
-        optional: true
-      utf-8-validate:
-        optional: true
-    dev: false
 
   /ws/7.4.6:
     resolution: {integrity: sha512-YmhHDO4MzaDLB+M9ym/mDA5z0naX8j7SIlT8f8z+I0VtzsRbekxEutHSme7NPS2qE8StCYQNUnfWdXta/Yu85A==}
