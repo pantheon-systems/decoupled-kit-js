@@ -8,33 +8,37 @@ const { DrupalState } = require("@pantheon-systems/drupal-kit");
  * @see https://github.com/vercel/next.js/discussions/10949#discussioncomment-958694
  */
 const getLayoutData = async () => {
+  const locales = ["en", "es"];
   const drupalUrl = "https://dev-ds-demo.pantheonsite.io";
 
-  const store = new DrupalState({
-    apiBase: drupalUrl,
-    apiPrefix: "jsonapi",
-  });
-
-  try {
-    console.log("Fetching menuData...");
-    const menuData = await store.getObject({
-      objectName: "menu_items--main",
-      all: true,
+  locales.forEach(async (locale) => {
+    const store = new DrupalState({
+      apiBase: drupalUrl,
+      apiPrefix: "jsonapi",
+      defaultLocale: locale,
     });
 
-    if (menuData) {
-      console.log("Writing menuData to public/menuData.json...");
-      fs.writeFileSync(
-        "public/menuData.json",
-        JSON.stringify(menuData, null, 2)
+    try {
+      console.log("Fetching menuData...");
+      const menuData = await store.getObject({
+        objectName: "menu_items--main",
+        all: true,
+      });
+
+      if (menuData) {
+        console.log(`Writing menuData to public/${locale}-menuData.json...`);
+        fs.writeFileSync(
+          `public/${locale}-menuData.json`,
+          JSON.stringify(menuData, null, 2)
+        );
+      }
+    } catch (error) {
+      throw new Error(
+        "There was a problem fetching menu data from Drupal: ",
+        error
       );
     }
-  } catch (error) {
-    throw new Error(
-      "There was a problem fetching menu data from Drupal: ",
-      error
-    );
-  }
+  });
 };
 
 module.exports = getLayoutData;

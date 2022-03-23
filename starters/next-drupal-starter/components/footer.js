@@ -1,25 +1,34 @@
-import menuData from "../public/menuData.json";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useMemo } from "react";
 
 export default function Footer() {
-  const ExampleMenu = () => (
-    <nav className="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg">
-      <ul>
-        {menuData.map(({ title, id, url }) => {
-          return (
-            <li key={id} className="list-disc text-blue-300 ml-3">
-              <Link href={url.replace(/\/en\/?/, '/')}>
-                <a className="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300">
-                  {title}
-                </a>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
+  const { locale } = useRouter();
+
+  const menuData = useMemo(
+    () => require(`../public/${locale}-menuData.json`),
+    [locale]
   );
 
+  const ExampleMenu = () => {
+    return (
+      <nav className="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg">
+        <ul>
+          {menuData.map(({ title, id, url }) => {
+            return (
+              <li key={id} className="list-disc text-blue-300 ml-3">
+                <Link href={url}>
+                  <a className="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300">
+                    {title}
+                  </a>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    );
+  };
   return (
     <footer className="min-w-full max-w-screen text-white bg-black p-4 mt-8">
       <ExampleMenu />
