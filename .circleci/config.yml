@@ -92,15 +92,12 @@ jobs:
 workflows:
   orb-free-workflow:
     when:
-      or: # Run test job when trigger is webhook or API
-        - equal: [webhook, << pipeline.trigger_source >>]
-        - equal: [api, << pipeline.trigger_source >>]
+      not: # Run test job when trigger is not the scheduled pipeline
+        equal: [scheduled_pipeline, << pipeline.trigger_source >>]
     jobs:
       - test
   nightly-audit:
     when:
-      and: # run audit job when triggered from sheculed pipeline
-        - equal: [scheduled_pipeline, << pipeline.trigger_source >>]
-        - equal: ["nightly audit", << pipeline.schedule.name >>]
+        equal: ["nightly audit", << pipeline.schedule.name >>]
     jobs:
       - audit
