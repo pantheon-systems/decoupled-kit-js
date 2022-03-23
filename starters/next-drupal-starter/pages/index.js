@@ -25,17 +25,15 @@ export default function Home({ articles, hrefLang }) {
             </a>
           </h1>
 
-          <p className="text-2xl">
-            <div className="bg-black text-white rounded flex items-center justify-center p-4 ">
-              Decoupled hosting by{" "}
-              <Image
-                src="/pantheon.svg"
-                alt="Pantheon Logo"
-                width={191}
-                height={60}
-              />
-            </div>
-          </p>
+          <div className="md:text-2xl text-md bg-black text-white rounded flex items-center justify-center p-4 ">
+            Decoupled hosting by
+            <Image
+              src="/pantheon.svg"
+              alt="Pantheon Logo"
+              width={191}
+              height={60}
+            />
+          </div>
         </div>
 
         <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
@@ -46,7 +44,7 @@ export default function Home({ articles, hrefLang }) {
             return (
               <Link
                 passHref
-                href={`${article.path.langcode}${article.path.alias}`}
+                href={`/${article.path.langcode}${article.path.alias}`}
                 key={article.id}
               >
                 <div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 hover:border-indigo-500">
