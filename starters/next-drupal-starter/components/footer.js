@@ -8,7 +8,7 @@ export default function Footer() {
         {menuData.map(({ title, id, url }) => {
           return (
             <li key={id} className="list-disc text-blue-300 ml-3">
-              <Link href={url}>
+              <Link href={url.replace(/\/en\/?/, '/')}>
                 <a className="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300">
                   {title}
                 </a>
