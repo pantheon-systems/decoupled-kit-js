@@ -39,3 +39,9 @@ To run lint in the starters (filter by directory):
 ```bash
 pnpm --filter ./starters lint
 ```
+
+To run documentation:
+
+```bash
+pnpm --filter ./web start
+```
