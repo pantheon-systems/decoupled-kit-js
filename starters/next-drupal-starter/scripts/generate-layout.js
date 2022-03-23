@@ -13,7 +13,6 @@ const getLayoutData = async () => {
   const store = new DrupalState({
     apiBase: drupalUrl,
     apiPrefix: "jsonapi",
-    defaultLocale: "en",
   });
 
   try {
