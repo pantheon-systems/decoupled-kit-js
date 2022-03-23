@@ -90,14 +90,16 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
+  nightly-audit:
+    when:
+      and:
+        - equal: [scheduled_pipeline, << pipeline.trigger_source >>]
+        - equal: ["nightly audit", << pipeline.schedule.name >>]
+    jobs:
+      - audit
   orb-free-workflow:
     when:
       not: # Run test job when trigger is not the scheduled pipeline
         equal: [scheduled_pipeline, << pipeline.trigger_source >>]
     jobs:
       - test
-  nightly-audit:
-    when:
-        equal: ["nightly audit", << pipeline.schedule.name >>]
-    jobs:
-      - audit
