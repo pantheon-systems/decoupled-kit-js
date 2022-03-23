@@ -20,6 +20,10 @@ IMG_DOMAIN=
 PREVIEW_SECRET=
 CLIENT_ID=
 CLIENT_SECRET=
+# this value can also bet set in the command line
+# before running commands for example
+# FRONTEND_URL=example.com npm run build
+FRONTEND_URL=
 ```
 
 4. run `lando start`
