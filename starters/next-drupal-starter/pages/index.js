@@ -20,7 +20,7 @@ export default function Home({ articles, hrefLang }) {
           <h1 className="prose text-4xl text-center h-full">
             Welcome to{" "}
             <a
-              className="text-blue-600 no-underline hover:underline hover:text-blue-400 active:text-purple-500 focus:text-purple-400 visited:text-purple-700"
+              className="text-blue-600 no-underline"
               href="https://nextjs.org"
             >
               Next.js!
