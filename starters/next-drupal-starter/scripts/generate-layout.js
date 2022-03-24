@@ -9,20 +9,18 @@ const { DrupalState } = require("@pantheon-systems/drupal-kit");
  */
 const getLayoutData = async () => {
   const locales = ["en", "es"];
-  const drupalUrl = "https://dev-ds-demo.pantheonsite.io";
+  const drupalUrl = process.env.BACKEND_URL;
 
   locales.forEach(async (locale) => {
     const store = new DrupalState({
       apiBase: drupalUrl,
-      apiPrefix: "jsonapi",
       defaultLocale: locale,
     });
 
     try {
-      console.log("Fetching menuData...");
+      console.log(`Fetching ${locale} menuData...`);
       const menuData = await store.getObject({
         objectName: "menu_items--main",
-        all: true,
       });
 
       if (menuData) {
