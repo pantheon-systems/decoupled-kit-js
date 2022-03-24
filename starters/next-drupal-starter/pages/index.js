@@ -16,22 +16,27 @@ export default function Home({ articles, hrefLang }) {
         languageAlternates={hrefLang || false}
       />
       <>
-        <div className="prose sm:prose-xl mt-6 flex flex-col mx-auto">
+        <div className="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit">
           <h1 className="prose text-4xl text-center h-full">
             Welcome to{" "}
-            <a className="text-blue-700" href="https://nextjs.org">
+            <a
+              className="text-blue-600 no-underline hover:underline hover:text-blue-400 active:text-purple-500 focus:text-purple-400 visited:text-purple-700"
+              href="https://nextjs.org"
+            >
               Next.js!
             </a>
           </h1>
 
-          <div className="md:text-2xl text-md bg-black text-white rounded flex items-center justify-center p-4 ">
-            Decoupled hosting by
-            <Image
-              src="/pantheon.svg"
-              alt="Pantheon Logo"
-              width={191}
-              height={60}
-            />
+          <div className="text-2xl">
+            <div className="bg-black text-white rounded flex items-center justify-center p-4">
+              Decoupled hosting by{" "}
+              <Image
+                src="/pantheon.svg"
+                alt="Pantheon Logo"
+                width={191}
+                height={60}
+              />
+            </div>
           </div>
         </div>
 
