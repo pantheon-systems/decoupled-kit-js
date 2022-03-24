@@ -46,7 +46,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "aa:bd:a8:9a:ce:f8:98:43:ea:4e:cf:97:5e:39:29:f1"
+            - "$SSH_FINGERPRINT"
       - checkout
       - restore_cache:
           # See the configuration reference documentation for more details on using restore_cache and save_cache steps
@@ -70,8 +70,8 @@ jobs:
       # commit package.json and pnpm-lock if there's a diff
       - run:
           name: commit overrides
-          command: git config user.name "CobyPear" &&
-            git config user.email "coby.sher@pantheon.io" &&
+          command: git config user.name "$GITHUB_USER" &&
+            git config user.email "$GITHUB_EMAIL" &&
             git switch -c nightly-audit-$(date +"%D") &&
             git add package.json pnpm-lock.yaml &&
             git commit -m "Nightly audit run at $(date +"%T")" &&
@@ -80,8 +80,8 @@ jobs:
       - run:
           name: open PR
           command: >
-            curl -X POST -H "Authorization: token $CIRCLECI_AUDIT_PR_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/pantheon-systems/decoupled-kit-js/pulls -d '{"head":"nightly-audit-'"$(date +"%D")"'","base":"canary", "title": "Nightly Audit on '"$(date +"%D")"'", "body": "Beep Boop 🤖 - Please merge me to dispose of npm gremlins!"}'
-      - run: # should only fail if there are vulns to be addressed manually
+            curl -X POST -H "Authorization: token $CIRCLECI_AUDIT_PR_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/pantheon-systems/decoupled-kit-js/pulls -d '{"head":"nightly-audit-'"$(date +"%D")"'","base":"canary", "title": "Nightly Audit on '"$(date +"%D")"'", "body": "Beep Boop 🤖 - Please merge me to dispose of npm gremlins! If this workflow failed, please check the artifacts in Circle CI for more information"}'
+      - run: # should only fail if there are vulns to be addressed manually.
           name: audit dependendies
           command: pnpm audit --json > .pnpm_audit.json
       - store_artifacts:
