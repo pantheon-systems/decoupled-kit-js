@@ -4,7 +4,6 @@
   "description": "A starter for a blog powered by Gatsby and Pantheon",
   "version": "1.0.0",
   "dependencies": {
-    "@pantheon-systems/wordpress-kit": "workspace:1.0.0",
     "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.2",
     "gatsby": "^4.9.1",
