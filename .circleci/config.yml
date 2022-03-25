@@ -46,7 +46,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "$SSH_FINGERPRINT"
+            - $SSH_FINGERPRINT
       - checkout
       - restore_cache:
           # See the configuration reference documentation for more details on using restore_cache and save_cache steps
