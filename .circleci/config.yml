@@ -64,6 +64,10 @@ jobs:
       - run:
           name: audit dependencies with --fix
           command: pnpm audit --fix
+      # remove node_modules and pnpm-lock.yml to honor new overrides
+      - run:
+          name: remove node_modules and pnpm-lock.yml
+          command: rm -rf node_modules pnpm-lock.yml
       - run:
           name: install overrides
           command: pnpm install --frozen-lockfile=false --ignore-scripts
