@@ -14,9 +14,6 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const PageTemplate = ({ data: { page }, pageContext: { next, previous } }) => {
-  console.log("page:", page)
-  console.log(next, previous)
-
   /**
    * serverData is fetched on the server by the query executed inside getServerData()
    * @apollo/client is used to query the WPGraphQL layer directly.
