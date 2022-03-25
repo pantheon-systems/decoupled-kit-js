@@ -44,9 +44,12 @@ jobs:
       - image: cimg/node:16.4
     # run pnpm audit --fix nightly and opens a PR if there are vulns
     steps:
+      - run:
+          name: inject ssh
+          command: export CI_SSH_FINGERPRINT=$SSH_FINGERPRINT
       - add_ssh_keys:
           fingerprints:
-            - $SSH_FINGERPRINT
+            - $CI_SSH_FINGERPRINT
       - checkout
       - restore_cache:
           # See the configuration reference documentation for more details on using restore_cache and save_cache steps
