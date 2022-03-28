@@ -1,14 +1,9 @@
 import React from "react"
 import parse from "html-react-parser"
 import Layout from "../components/layout"
-import { client, gql } from "../lib/apollo-client"
 import { Link } from "gatsby"
 
-const SSRPageList = ({
-  serverData: {
-    data: { pages },
-  },
-}) => {
+const PageIndexTemplate = ({ pageContext: { pages } }) => {
   /**
    * there is no excerpt field available for
    * pages, let's make our own
@@ -98,18 +93,18 @@ const SSRPageList = ({
     <Layout>
       <h1>Pages</h1>
       <ul>
-        {pages.nodes?.length ? (
-          pages.nodes?.map(page => (
-            <li key={page.slug}>
+        {pages.length ? (
+          pages.map(({ page: { title, date, content, slug } }) => (
+            <li key={slug}>
               <article className="post-list-item">
                 <header>
                   <h2>
-                    <Link to={`/${page.slug}`}>
-                      <span>{parse(page.title)}</span>
+                    <Link to={`/${slug}`}>
+                      <span>{parse(title)}</span>
                     </Link>
                   </h2>
-                  <small>{new Date(page.date).toDateString()}</small>
-                  {getExcerpt(page.content, page.slug)}
+                  <small>{new Date(date).toDateString()}</small>
+                  {getExcerpt(content, slug)}
                 </header>
               </article>
             </li>
@@ -125,40 +120,4 @@ const SSRPageList = ({
   )
 }
 
-export default SSRPageList
-
-export const getServerData = async () => {
-  try {
-    const PAGE_LIST_QUERY = gql`
-      {
-        pages(first: 20) {
-          nodes {
-            slug
-            title
-            content
-            date
-          }
-        }
-      }
-    `
-
-    const { data } = await client.query({
-      query: PAGE_LIST_QUERY,
-    })
-
-    return {
-      props: {
-        data: data,
-      },
-    }
-  } catch (error) {
-    /**
-     * TODO?: handle 500 errors
-     * currently 500 errors result in a blank page with no info
-     * even with a 500.js page defined under src/pages, because we
-     * are going around Gatsby's graphql layer, it doesn't serve
-     * the 500 page.
-     */
-    console.log(error.graphQLErrors)
-  }
-}
+export default PageIndexTemplate

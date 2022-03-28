@@ -19,7 +19,7 @@ const Layout = ({ isHomePage, children }) => {
   `)
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col min-w-fit">
       <div
         className="my-0 mx-auto py-10 px-5 max-w-screen-sm"
         data-is-root-path={isHomePage}
