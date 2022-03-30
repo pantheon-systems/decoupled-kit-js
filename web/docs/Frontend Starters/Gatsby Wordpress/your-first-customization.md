@@ -4,15 +4,9 @@ title: "Your First Wordpress Customization"
 slug: "/Frontend Starters/Gatsby Wordpress/Your First Wordpress Customization"
 ---
 
-## Introduction
-
-> Gatsby enables developers to build fast, secure, and powerful websites using a React-based framework and innovative data layer that makes integrating different content, APIs, and services into one web experience incredibly simple.
-
-via https://www.gatsbyjs.com/why-gatsby/
-
 ## Before You Begin
 
-This guide assumes the reader has working knowledge of React, little to no knowledge of Gatsby.
+This guide assumes the reader has working knowledge of [React](https://reactjs.org/), little to no knowledge of [Gatsby](https://www.gatsbyjs.com/).
 
 ## Gatsby's GraphQL Layer
 
@@ -30,44 +24,41 @@ See https://www.gatsbyjs.com/docs/reference/graphql-data-layer/ for an in depth 
 
 ## Sourcing Data From WordPress
 
-Let's build a query together and use it for a new page.
-The query will let us grab the last 5 posts and their associated comments.
-If you're familiar with GraphQL IDEs, feel free to type in the fields in the middle pane instead of selecting them from the **Explorer** pane.
+Let's build a few queries together to use for some new pages.
+The index page will display the last 5 posts with a link to each post.
+Each post page will display the post as well as any comments that belong to that post.
+
+There will be two queries, plus an additional query to use with Gatsby's `createPages` utility.
+One query is for the index page, and the other is for the individual blog posts.
+
+### Index Page Query
+
+For the index page we want to limit the data to the last 5 blog posts in descending order.
+If you're familiar with GraphiQL IDEs, feel free to type in the fields in the
+middle pane instead of selecting them from the **Explorer** pane.
 
 1. Start your Gatsby app with the `WPGRAPHQL_URL` environment variable set
-1. Navigate to `http://localhost:8000/___graphql`
+1. Navigate to the GraphiQL IDE at `http://localhost:8000/___graphql`
 1. From the **Explorer** pane on the left side of the page, select `allWpPost`.
 1. Add the **limit** variable and set it to 5.
 1. Under **limit**, select **sort** > **fields** and then from the dropdown select **date**. You may type 'date' while the dropdown is open to help select it.
 1. Set **order** to **DESC**
-1. Select **allWpPost** > **nodes**. Select **content** and **date**.
+1. Select **allWpPost** > **nodes**. Select **title**, **uri**, and **date**.
 1. Select **allWpPost** > **author** > **nodes**, and select **name**
-1. Select **allWpPost** > **comments** > **nodes**. Select **content** and **author** > **node** > **name**
-
-Now you may test the query in the editor with the play button at the top. Results will be displayed in the pane to the right.
 
 Our query should look like this:
 
 ```graphql
-query MyQuery {
+query IndexPage {
   allWpPost(limit: 5, sort: { fields: date, order: DESC }) {
     nodes {
-      content
+      id
+      title
       date
+      uri
       author {
         node {
           name
-        }
-      }
-      comments {
-        nodes {
-          content
-          date
-          author {
-            node {
-              name
-            }
-          }
         }
       }
     }
@@ -75,73 +66,174 @@ query MyQuery {
 }
 ```
 
+Now you may test the query in the editor with the play button at the top.
+Results will be displayed in the pane to the right. Copy the ID of a post to help test the next section.
+
+### Individual Post Query
+
+For the individual pages, we will want some more detail.
+We will have the post id [available to us via `pageContext`](https://www.gatsbyjs.com/docs/creating-and-modifying-pages/#creating-pages-in-gatsby-nodejs) which we can use
+to get more info on the individual post.
+
+1. Start your Gatsby app with the `WPGRAPHQL_URL` environment variable set
+1. Navigate to the GraphiQL IDE at `http://localhost:8000/___graphql`
+1. Open the **Query Variables** pane on the bottom of the page.
+1. Set a variable `id` equal to the ID you noted down from the last section.
+   For example:
+
+  ```json
+  {
+    "id": "cG9zdDo0Mw=="
+  }
+  ```
+
+1. From the **Explorer** pane on the left side of the page, select `wpPost`.
+1. Select **wpPost** > **id** > **eq:**. Click the **$** to insert the variable into the query. You may need to rename the variable or edit the query manually.
+   At this point you should have the following:
+
+  ```graphql
+  query PostWithCommentsById($id: String!) {
+  wpPost(id: {eq: $id}) {
+
+    }
+  }
+  ```
+
+1. Select **wpPost** > **content**, and **date** > **formatString** input `"MM/YY"
+1. Select **wpPost** > **author** > **node**, and select **name**
+1. Select **wpPost** > **comments** > **nodes**. Select **content**, **title**, **date** > **formatString** input `"MM/YY hh:mmA"`. Also select **author** > **node** > **name**
+
+The query should look like the following:
+
+```graphql
+query PostWithCommentsById($id: String!) {
+  wpPost(id: { eq: $id }) {
+    author {
+      node {
+        name
+      }
+    }
+    comments {
+      nodes {
+        author {
+          node {
+            name
+          }
+        }
+        content
+        date(formatString: "MM/YY hh:mmA")
+      }
+    }
+    title
+    content
+    date(formatString: "MM/YY")
+  }
+}
+```
+
 ## Consuming the Data in Gatsby
 
-If you're recieving the data you need, you may now copy this query into a page or static query. To do so, open the **Code Exporter** tab. From here you may choose the query type of your choice - Page Query, StaticQuery, StaticQuery hook, or createPages.
+Now we should have two queries, `IndexPage`, and `PostWithComments`. We'll need one more short query for the `createPages` API. It will be included in the next section.
 
-Here is an example of the createPages code which can be added to `gatsby-node.js` and the pages will be fetched and created at build time
+:::info
 
-```javascript
+Gatsby's GraphiQL IDE's **Code Exporter** tab generates code snippets based on the current
+query in the editor pane. Choose from Page Query, StaticQuery hook, StaticQuery, and
+createPages.
+
+:::
+### Creating Templates
+
+Part of creating pages with Gatsby invloves [specifying a template](https://www.gatsbyjs.com/docs/programmatically-create-pages-from-data/#specifying-a-template). In this section, we'll use the queries we created to create a template for the index page and the individual posts.
+
+1. In your Gatsby project, create a new file in the `templates` directory called `last-five-index.js`
+1. To keep things simple, we'll use the **Code Exporter** tab from the GraphiQL IDE. Select **Page query** from the dropdown menu and copy the code into `last-five-index.js`.
+
+That's it! Follow the same instructions to create a template for the individual posts with the filename `last-file-post.js`. If you lost your query you can use the **History** tab to get it back, or copy the examples from the previous sections.
+
+### Routing with `createPages`
+
+We'll need to construct one more short query in order to tell Gatsby to generate pages at certain paths. Notice that this query is a stripped down version of the previous query, because all we need is the slug.
+
+Here is an example of the `createPages` code which can be added to `gatsby-node.js` and the pages will be fetched and created at build time.
+We want the `uri` as the slug for our new page, and the `id` to pass into our Page Query.
+
+```javascript title=gatsby-node.js
 const path = require(`path`);
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const result = await graphql(`
-    {
-      allWpPost(limit: 5, sort: { fields: date, order: DESC }) {
-        nodes {
-          content
-          date
-          author {
-            node {
-              name
-            }
-          }
-          comments {
-            nodes {
-              content
-              date
-              author {
-                node {
-                  name
-                }
-              }
-            }
-          }
-        }
+  {
+    allWpPost(limit: 5, sort: {fields: date, order: DESC}) {
+      nodes {
+        id
+        uri
       }
     }
+  }
   `);
-  const templatePath = path.resolve(`PATH/TO/TEMPLATE.js`);
+  const indexTemplatePath = path.resolve(`./src/templates/last-five-post.js`);
 
-  result.data.allWpPost.forEach((node) => {
+  result.data.allWpPost.nodes.forEach((node) => {
     createPage({
-      path: NODE_SLUG,
-      component: templatePath,
+      path: node.uri,
+      component: indexTemplatePath,
+      // The context is passed as props to the component as well
+      // as into the component's GraphQL query.
       context: {
-        // set up the page context here
-        content: node.content,
-        date: node.date,
-        author: node.author.node.name,
-        comments: node.comments.nodes,
+        id: node.id,
       },
     });
   });
 };
 ```
 
-Replace `PATH/TO/TEMPLATE.js` with the filepath to the template file that will consume this data.
-See [Specifying a Template](https://www.gatsbyjs.com/docs/programmatically-create-pages-from-data/#specifying-a-template) for more information.
+We've edited the code from the **Code Exporter** tab slightly.
 
-Replace `NODE_SLUG` with the path you want the page to be accessed at, for example `'/last-five'`
+- Pointed the `templatePath` to our template from the previous step
+- Passed `node.uri` to the `path` property of `createPage`
+- Passed `node.id` to the context of `createPage
 
-Set `context` up however you want to consume data. These props will be passed to the component specified as the `templatePath`.
+This code should generate 5 pages, one for each of the last 5 blog posts. Now inside of our template, we can use the query we created
+
+For our index page, add the following code to `gatsby-node.js`:
+
+```javascript title=gatsby-node.js
+const path = require(`path`);
+
+exports.createPages = async ({ graphql, actions }) => {
+  // ... previous code here
+
+  // new code starts here
+  const postTemplatePath = path.resolve(`./src/templates/last-five-index.js`);
+  createPage({
+    path: "/last-five",
+    component: postTemplatePath,
+  });
+};
+```
 
 For more information on Gatsby's `createPage`, see [the API reference](https://www.gatsbyjs.com/docs/reference/config-files/actions/#createPage) and [Creating Pages in `gatsby-node.js`](https://www.gatsbyjs.com/docs/creating-and-modifying-pages/#creating-pages-in-gatsby-nodejs)
 
-:::note
+## Next Steps
 
-The variables used in this query are not dynamic, this query may be used as a static query. If you want any variables to be dynamic, it would have to be a page query.
+From here, it's time to see the code in action. Start the app if it's not already running and head to `http://localhost:8000/last-five`. 
+You should see your `last-five-index.js` template rendered with the data from the Page query.
 
-:::
+Now navigate to `http://localhost:8000/{uri of one of your posts}`. 
+(You should be able to see the post uris on the `/last-five` route, or check your GraphiQL IDE.)
+The `last-five-post.js` template should be rendered there.
+
+
+From here you should be able to query Gatsby's GraphQL layer to get the data you need right where you need it.
+
+## Conclusion
+
+In this guide, we walked through the following:
+
+- Built GraphQL queries in Gatsby's GraphiQL IDE
+- Created page templates
+- Sourced data from WordPress for use in a Gatsby application
+- Dynamically created new routes based on GraphQL queries
