@@ -1,12 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "../components/layout";
-
-import absoluteUrl from "next-absolute-url";
 import { NextSeo } from "next-seo";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
 
 const drupalUrl = process.env.backendUrl;
+
 export default function Home({ articles, hrefLang }) {
   return (
     <Layout>
@@ -76,8 +75,8 @@ export default function Home({ articles, hrefLang }) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const { origin } = absoluteUrl(context.req);
+export async function getStaticProps(context) {
+  const origin = process.env.FRONTEND_URL;
   const { locales } = context;
   const hrefLang = locales.map((locale) => {
     return {
@@ -87,46 +86,16 @@ export async function getServerSideProps(context) {
   });
   // TODO - determine apiRoot from environment variables
   const store = new DrupalState({
-    apiBase: drupalUrl,
+    apiBase: process.env.BACKEND_URL,
     defaultLocale: context.locale,
   });
 
   store.params.addInclude(["field_media_image.field_media_image"]);
   const articles = await store.getObject({
     objectName: "node--article",
-    res: context.res,
-  });
-
-  // The calls below are unnecessary for rendering the page, but demonstrates
-  // both that surrogate keys are de-duped when added to the response, and also
-  // that they are bubbled up for GraphQL link queries.
-
-  // A duplicate resource to ensure that keys are de-duped.
-  await store.getObject({
-    objectName: "node--article",
-    id: articles[0].id,
-    query: `{
-      id
-      title
-    }`,
-    res: context.res,
-  });
-  store.params.clear();
-
-  // A new resource to ensure that keys are bubbled up.
-  await store.getObject({
-    objectName: "node--page",
-    query: `{
-      id
-      title
-    }`,
-    res: context.res,
   });
 
   return {
-    props: {
-      articles,
-      hrefLang,
-    },
+    props: { articles, hrefLang },
   };
 }
