@@ -81,6 +81,7 @@ to get more info on the individual post.
 1. Set a variable `id` equal to the ID you noted down from the last section.
    For example:
 
+<!-- prettier-ignore -->
   ```json
   {
     "id": "cG9zdDo0Mw=="
@@ -91,6 +92,7 @@ to get more info on the individual post.
 1. Select **wpPost** > **id** > **eq:**. Click the **$** to insert the variable into the query. You may need to rename the variable or edit the query manually.
    At this point you should have the following:
 
+<!-- prettier-ignore -->
   ```graphql
   query PostWithCommentsById($id: String!) {
     wpPost(id: {eq: $id}) {
@@ -213,14 +215,14 @@ All we need for this page is a component. We will use the Page Query from the **
 The file should like like this:
 
 ```jsx title=src/pages/last-five.js
-import React from "react"
-import { graphql } from "gatsby"
+import React from "react";
+import { graphql } from "gatsby";
 
-const ComponentName = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
+const ComponentName = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>;
 
 export const query = graphql`
   {
-    allWpPost(limit: 5, sort: {fields: date, order: DESC}) {
+    allWpPost(limit: 5, sort: { fields: date, order: DESC }) {
       nodes {
         id
         title
@@ -234,12 +236,13 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default ComponentName
+export default ComponentName;
 ```
 
 That's all for this page. Check out the next section to see how everything works together.
+
 ## Next Steps
 
 From here, it's time to see the code in action. Start the app if it's not already running and head to `http://localhost:8000/last-five`.
