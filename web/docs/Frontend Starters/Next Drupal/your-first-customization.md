@@ -115,8 +115,13 @@ Notice the only real difference for this page - besides the fact we are fetching
 
 ## Next Steps
 
+From here, it's time to see the code in action. Start the app if it's not already running and head to `http://localhost:3000/articles`. 
+You should see the SSR'd `Articles` page. 
+Check `http://localhost:3000/recipes` to see the SSG'd `Recipies` page.
+
 From this point, you may want to style the `Articles` and `Recipes` components, or move on to another custom page.
 
 ## Conclusion
 
 In this guide we created a new page using SSR and SSG utilizing Drupal State to fetch data from our Drupal instance.
+You now have what you need to create pages in Next.js with data sourced from Drupal!
