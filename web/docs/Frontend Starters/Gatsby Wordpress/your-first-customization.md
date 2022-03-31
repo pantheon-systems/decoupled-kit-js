@@ -207,7 +207,7 @@ Next, we will create our index page in the next section with a different routing
 
 For pages that don't need to be dynamically created, we can define routes in `src/pages`. See [Define routes in `src/pages`](https://www.gatsbyjs.com/docs/reference/routing/creating-routes/#define-routes-in-srcpages) for more information.
 
-All we need for this page is a component. We will use the Page Query from the **Code Exporter** tab.
+All we need for this page is a component and our index page query. We will use the Page Query from the **Code Exporter** tab.
 
 1. Create a new file in `src/pages` called `last-five.js`
 1. Paste in the component from the **Code Exporter** tab
