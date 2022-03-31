@@ -25,7 +25,7 @@ See https://www.gatsbyjs.com/docs/reference/graphql-data-layer/ for an in depth 
 ## Sourcing Data From WordPress
 
 Let's build a few queries together to use for some new pages.
-The index page will display the last 5 posts with a link to each post.
+The index page will display the last 5 posts.
 Each post page will display the post as well as any comments that belong to that post.
 
 There will be two queries, plus an additional query to use with Gatsby's `createPages` utility.
@@ -133,7 +133,7 @@ query PostWithCommentsById($id: String!) {
 
 ## Consuming the Data in Gatsby
 
-Now we should have two queries, `IndexPage`, and `PostWithComments`. We'll need one more short query for the `createPages` API. It will be included in the next section.
+Now we should have two queries, `IndexPage`, and `PostWithCommentsById`. We'll need one more short query for the `createPages` API. It will be included in the next section.
 
 :::info
 
