@@ -81,23 +81,23 @@ to get more info on the individual post.
 1. Set a variable `id` equal to the ID you noted down from the last section.
    For example:
 
-```json
-{
-  "id": "cG9zdDo0Mw=="
-}
-```
+  ```json
+  {
+    "id": "cG9zdDo0Mw=="
+  }
+  ```
 
 1. From the **Explorer** pane on the left side of the page, select `wpPost`.
 1. Select **wpPost** > **id** > **eq:**. Click the **$** to insert the variable into the query. You may need to rename the variable or edit the query manually.
    At this point you should have the following:
 
-```graphql
-query PostWithCommentsById($id: String!) {
-  wpPost(id: {eq: $id}) {
+  ```graphql
+  query PostWithCommentsById($id: String!) {
+    wpPost(id: {eq: $id}) {
 
+    }
   }
-}
-```
+  ```
 
 1. Select **wpPost** > **content**, and **date** > **formatString** input `"MM/YY"
 1. Select **wpPost** > **author** > **node**, and select **name**
@@ -147,10 +147,8 @@ createPages.
 
 Part of creating pages with Gatsby involves [specifying a template](https://www.gatsbyjs.com/docs/programmatically-create-pages-from-data/#specifying-a-template). In this section, we'll use the queries we created to create a template for the index page and the individual posts.
 
-1. In your Gatsby project, create a new file in the `templates` directory called `last-five-index.js`
-1. To keep things simple, we'll use the **Code Exporter** tab from the GraphiQL IDE. Select **Page query** from the dropdown menu and copy the code into `last-five-index.js`.
-
-That's it! Follow the same instructions to create a template for the individual posts with the filename `last-five-post.js`. If you lost your query you can use the **History** tab to get it back, or copy the examples from the previous sections.
+1. In your Gatsby project, create a new file in the `src/templates` directory called `last-five-post.js`
+1. To keep things simple, we'll use the **Code Exporter** tab from the GraphiQL IDE. Select **Page query** from the dropdown menu and copy the code into `last-five-post.js`.
 
 ### Routing with `createPages`
 
@@ -199,29 +197,53 @@ We've edited the code from the **Code Exporter** tab slightly.
 
 This code should generate 5 pages, one for each of the last 5 blog posts. Now inside of our template, we can use the query we created
 
-For our index page, add the following code to `gatsby-node.js`:
-
-```javascript title=gatsby-node.js
-const path = require(`path`);
-
-exports.createPages = async ({ graphql, actions }) => {
-  // ... previous code here
-
-  // new code starts here
-  const postTemplatePath = path.resolve(`./src/templates/last-five-index.js`);
-  createPage({
-    path: "/last-five",
-    component: postTemplatePath,
-  });
-};
-```
-
 For more information on Gatsby's `createPage`, see [the API reference](https://www.gatsbyjs.com/docs/reference/config-files/actions/#createPage) and [Creating Pages in `gatsby-node.js`](https://www.gatsbyjs.com/docs/creating-and-modifying-pages/#creating-pages-in-gatsby-nodejs)
 
+Next, we will create our index page in the next section with a different routing technique.
+
+### Index Page
+
+For pages that don't need to be dynamically created, we can define routes in `src/pages`. See [Define routes in `src/pages`](https://www.gatsbyjs.com/docs/reference/routing/creating-routes/#define-routes-in-srcpages) for more information.
+
+All we need for this page is a component. We will use the Page Query from the **Code Exporter** tab.
+
+1. Create a new file in `src/pages` called `last-five.js`
+1. Paste in the component from the **Code Exporter** tab
+
+The file should like like this:
+
+```jsx title=src/pages/last-five.js
+import React from "react"
+import { graphql } from "gatsby"
+
+const ComponentName = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
+
+export const query = graphql`
+  {
+    allWpPost(limit: 5, sort: {fields: date, order: DESC}) {
+      nodes {
+        id
+        title
+        date
+        uri
+        author {
+          node {
+            name
+          }
+        }
+      }
+    }
+  }
+`
+
+export default ComponentName
+```
+
+That's all for this page. Check out the next section to see how everything works together.
 ## Next Steps
 
 From here, it's time to see the code in action. Start the app if it's not already running and head to `http://localhost:8000/last-five`.
-You should see your `last-five-index.js` template rendered with the data from the Page query.
+You should see your `last-five.js` page rendered with the data from the Page query.
 
 Now navigate to `http://localhost:8000/{uri of one of your posts}`.
 (You should be able to see the post uris on the `/last-five` route, or check your GraphiQL IDE.)
