@@ -11,7 +11,7 @@ This guide assumes the reader has working knowledge of [React](https://reactjs.o
 ## Data Fetching in Next.js
 
 Next.js offers various ways to fetch data and render content. Please see the Next.js [Data Fetching Overview](https://nextjs.org/docs/basic-features/data-fetching/overview) for an in depth look at each.
-For the purposes of this guide, we will cover creating a page with SSR and SSG.
+For the purposes of this guide, we will cover creating a page with [Server Side Rendering (SSR)](https://nextjs.org/docs/basic-features/pages#server-side-rendering) and [Static Site Generation (SSG)](https://nextjs.org/docs/basic-features/pages#static-generation-recommended).
 
 :::info
 If you're not sure when to use SSR vs SSG, check out these articles: [When Should I Use `getServerSideProps`](https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props#when-should-i-use-getserversideprops) and [When Should I Use `getStaticProps`](https://nextjs.org/docs/basic-features/data-fetching/get-static-props#when-should-i-use-getstaticprops)
@@ -20,7 +20,6 @@ If you're not sure when to use SSR vs SSG, check out these articles: [When Shoul
 ### Fetching Drupal Content with DrupalState
 
 The `next-drupal-starter` has a dependency on `@pantheon-systems/drupal-kit`, which implements [Drupal State](https://project.pages.drupalcode.org/drupal_state/en/introduction/) - a tool that helps fetch and store data from Drupal into the local app state.
-With Pantheon's powerful infrastructure, we can choose to render pages server side or statically on a per-page basis.
 
 ### SSR Example
 
@@ -66,7 +65,7 @@ export async function getServerSideProps(context) {
 
 ### SSG Example
 
-If we want to use SSG, use [`getStaticProps`](https://nextjs.org/docs/basic-features/data-fetching/get-static-props) to generate these pages at _build_ time instead of _request_ time.
+If we want to use SSG, export [`getStaticProps`](https://nextjs.org/docs/basic-features/data-fetching/get-static-props) from a page to generate that page at _build_ time instead of _request_ time.
 
 Let's build a page using `getStaticProps` that lists recipes from our Drupal instance.
 
@@ -115,11 +114,10 @@ Notice the only real difference for this page - besides the fact we are fetching
 
 ## Next Steps
 
-From here, it's time to see the code in action. Start the app if it's not already running and head to `http://localhost:3000/articles`. 
-You should see the SSR'd `Articles` page. 
+From here, it's time to see the code in action. Start the app if it's not already running and head to `http://localhost:3000/articles`. You should see the SSR'd `Articles` page.
 Check `http://localhost:3000/recipes` to see the SSG'd `Recipies` page.
 
-From this point, you may want to style the `Articles` and `Recipes` components, or move on to another custom page.
+From this point, you may want to adjust the markup and style of the `Articles` and `Recipes` components, or move on to another custom page. For more information on composing react components, see [Composing Components](https://reactjs.org/docs/components-and-props.html#composing-components)
 
 ## Conclusion
 
