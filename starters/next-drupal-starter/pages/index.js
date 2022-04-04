@@ -3,10 +3,11 @@ import Link from "next/link";
 import Layout from "../components/layout";
 import { NextSeo } from "next-seo";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
+import { isMultiLanguage } from "../lib/isMultiLanguage";
 
 const drupalUrl = process.env.backendUrl;
 
-export default function Home({ articles, hrefLang }) {
+export default function Home({ articles, hrefLang, multiLanguage }) {
   return (
     <Layout>
       <NextSeo
@@ -43,24 +44,38 @@ export default function Home({ articles, hrefLang }) {
           {/* Check to see if this is an object before mapping */}
           {articles.map((article) => {
             const imgSrc =
-              drupalUrl + article.field_media_image.field_media_image.uri.url;
+              article.field_media_image?.field_media_image?.uri?.url || "";
             return (
               <Link
                 passHref
-                href={`/${article.path.langcode}${article.path.alias}`}
+                href={`${multiLanguage ? article.path.langcode : ""}${
+                  article.path.alias
+                }`}
                 key={article.id}
               >
                 <div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 hover:border-indigo-500">
                   <div className="flex-shrink-0 relative h-40">
-                    <Image
-                      src={imgSrc}
-                      layout="fill"
-                      objectFit="cover"
-                      alt={
-                        article.field_media_image.field_media_image
-                          .resourceIdObjMeta.alt
-                      }
-                    />
+                    {/* if thre's no imgSrc, default to Pantheon logo */}
+                    {imgSrc !== "" ? (
+                      <Image
+                        src={drupalUrl + imgSrc}
+                        layout="fill"
+                        objectFit="cover"
+                        alt={
+                          article.field_media_image?.field_media_image
+                            ?.resourceIdObjMeta.alt
+                        }
+                      />
+                    ) : (
+                      <div className="bg-black">
+                        <Image
+                          src="/pantheon.svg"
+                          alt="Pantheon Logo"
+                          width={324}
+                          height={160}
+                        />
+                      </div>
+                    )}
                   </div>
                   <h2 className="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900">
                     {article.title} &rarr;
@@ -78,6 +93,9 @@ export default function Home({ articles, hrefLang }) {
 export async function getStaticProps(context) {
   const origin = process.env.FRONTEND_URL;
   const { locales } = context;
+  // if there is more than one language in context.locales,
+  // assume multilanguage is enabled.
+  const multiLanguage = isMultiLanguage(locales)
   const hrefLang = locales.map((locale) => {
     return {
       hrefLang: locale,
@@ -87,7 +105,9 @@ export async function getStaticProps(context) {
   // TODO - determine apiRoot from environment variables
   const store = new DrupalState({
     apiBase: process.env.BACKEND_URL,
-    defaultLocale: context.locale,
+    // if multilanguage NOT enabled, passing in a locale here will
+    // break calls to Drupal, so pass an empty string.
+    defaultLocale: multiLanguage ? context.locale : "",
   });
 
   store.params.addInclude(["field_media_image.field_media_image"]);
@@ -96,6 +116,6 @@ export async function getStaticProps(context) {
   });
 
   return {
-    props: { articles, hrefLang },
+    props: { articles, hrefLang, multiLanguage },
   };
 }

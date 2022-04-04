@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/layout";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
+import { isMultiLanguage } from "../../lib/isMultiLanguage";
 
 const drupalUrl = process.env.backendUrl;
 
@@ -49,10 +50,11 @@ export default function Home({ taxonomies }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locales, locale }) {
+  const multiLanguage = isMultiLanguage(locales);
   const authstore = new DrupalState({
     apiBase: drupalUrl,
-    defaultLocale: "en",
+    defaultLocale: multiLanguage ? locale : "",
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
     debug: true,

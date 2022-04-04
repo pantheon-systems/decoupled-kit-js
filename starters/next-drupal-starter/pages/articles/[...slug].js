@@ -7,11 +7,12 @@ import {
 } from "@pantheon-systems/drupal-kit";
 import { NextSeo } from "next-seo";
 
+import { isMultiLanguage } from "../../lib/isMultiLanguage";
+
 const drupalUrl = process.env.backendUrl;
 
 export default function Home({ article, hrefLang }) {
-  const imgSrc =
-    drupalUrl + article.field_media_image?.field_media_image?.uri?.url;
+  const imgSrc = article.field_media_image?.field_media_image?.uri?.url || "";
   return (
     <Layout>
       <NextSeo
@@ -27,17 +28,19 @@ export default function Home({ article, hrefLang }) {
         </Link>
 
         <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
-          <div
-            className="relative w-full rounded-lg shadow-lg overflow-hidden mb-10"
-            style={{ height: "50vh" }}
-          >
-            <Image
-              src={imgSrc}
-              layout="fill"
-              objectFit="cover"
-              alt={article.title}
-            />
-          </div>
+          {imgSrc ? (
+            <div
+              className="relative w-full rounded-lg shadow-lg overflow-hidden mb-10"
+              style={{ height: "50vh" }}
+            >
+              <Image
+                src={imgSrc}
+                layout="fill"
+                objectFit="cover"
+                alt={article.title}
+              />
+            </div>
+          ) : null}
           <div dangerouslySetInnerHTML={{ __html: article.body.value }} />
         </div>
       </article>
@@ -46,13 +49,14 @@ export default function Home({ article, hrefLang }) {
 }
 
 export async function getStaticPaths(context) {
+  const multiLanguage = isMultiLanguage(context.locales);
   // TODO - locale increases the complexity enough here that creating a usePaths
   // hook would be a good idea.
   // Get paths for each locale.
   const pathsByLocale = context.locales.map(async (locale) => {
     const store = new DrupalState({
       apiBase: drupalUrl,
-      defaultLocale: locale,
+      defaultLocale: multiLanguage ? locale : "",
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
     });
@@ -69,10 +73,11 @@ export async function getStaticPaths(context) {
         `,
     });
     return articles.map((article) => {
-      const slug = article.path.alias.split("/");
-      slug.shift();
-      slug.shift();
-      return { params: { slug: slug }, locale: locale };
+      // matches everything after /articles/
+      const match = article.path.alias.match(/^\/articles\/(.*)$/);
+      const slug = match[1];
+
+      return { params: { slug: [slug] }, locale: locale };
     });
   });
 
@@ -89,15 +94,16 @@ export async function getStaticPaths(context) {
 }
 
 export async function getStaticProps(context) {
+  const multiLanguage = isMultiLanguage(context.locales);
   // TODO - determine apiBase from environment variables
   const store = new DrupalState({
     apiBase: drupalUrl,
-    defaultLocale: context.locale,
+    defaultLocale: multiLanguage ? context.locale : "",
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
   });
 
-  const slug = `/articles/${context.params.slug.join("/")}`;
+  const slug = `/articles/${context.params.slug[0]}`;
 
   // if preview, use preview endpoint and add to store.
   if (context?.previewData?.key) {
@@ -131,7 +137,7 @@ export async function getStaticProps(context) {
   const article = await store.getObjectByPath({
     objectName: "node--article",
     // Prefix the slug with the current locale
-    path: `${context.locale}${slug}`,
+    path: `${multiLanguage ? context.locale : ""}${slug}`,
     query: `
         {
           id
@@ -157,7 +163,7 @@ export async function getStaticProps(context) {
   const paths = locales.map(async (locale) => {
     const storeByLocales = new DrupalState({
       apiBase: drupalUrl,
-      defaultLocale: locale,
+      defaultLocale: multiLanguage ? locale : "",
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
     });
