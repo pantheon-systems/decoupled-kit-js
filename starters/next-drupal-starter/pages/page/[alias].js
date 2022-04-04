@@ -3,6 +3,7 @@ import Link from "next/link";
 import Layout from "../../components/layout";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
 import { NextSeo } from "next-seo";
+import { isMultiLanguage } from "../../lib/isMultiLanguage";
 
 const drupalUrl = process.env.backendUrl;
 
@@ -31,13 +32,14 @@ export default function Home({ page, hrefLang }) {
 }
 
 export async function getStaticPaths(context) {
+  const multiLanguage = isMultiLanguage(context.locales);
   // TODO - locale increases the complexity enough here that creating a usePaths
   // hook would be a good idea.
   // Get paths for each locale.
   const pathsByLocale = context.locales.map(async (locale) => {
     const store = new DrupalState({
       apiBase: drupalUrl,
-      defaultLocale: locale,
+      defaultLocale: multiLanguage ? locale : "",
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
     });
@@ -72,16 +74,17 @@ export async function getStaticPaths(context) {
 }
 
 export async function getStaticProps(context) {
+  const multiLanguage = isMultiLanguage(context.locales);
   const store = new DrupalState({
     apiBase: drupalUrl,
-    defaultLocale: context.locale,
+    defaultLocale: multiLanguage ? context.locale : "",
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
   });
 
   const page = await store.getObjectByPath({
     objectName: "node--page",
-    path: `${context.locale}/${context.params.alias}`,
+    path: `${multiLanguage ? context.locale : ""}/${context.params.alias}`,
     query: `
         {
           id
@@ -100,7 +103,7 @@ export async function getStaticProps(context) {
   const paths = locales.map(async (locale) => {
     const storeByLocales = new DrupalState({
       apiBase: drupalUrl,
-      defaultLocale: locale,
+      defaultLocale: multiLanguage ? locale : "",
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
     });

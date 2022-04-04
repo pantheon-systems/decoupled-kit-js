@@ -3,6 +3,7 @@ import Link from "next/link";
 import Layout from "../components/layout";
 import { NextSeo } from "next-seo";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
+import { isMultiLanguage } from "../lib/isMultiLanguage";
 
 const drupalUrl = process.env.backendUrl;
 
@@ -94,7 +95,7 @@ export async function getStaticProps(context) {
   const { locales } = context;
   // if there is more than one language in context.locales,
   // assume multilanguage is enabled.
-  const multiLanguage = locales.length > 1 ? true : false;
+  const multiLanguage = isMultiLanguage(locales)
   const hrefLang = locales.map((locale) => {
     return {
       hrefLang: locale,

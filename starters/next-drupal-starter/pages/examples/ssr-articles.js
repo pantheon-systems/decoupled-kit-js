@@ -5,6 +5,7 @@ import Layout from "../../components/layout";
 import absoluteUrl from "next-absolute-url";
 import { NextSeo } from "next-seo";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
+import { isMultiLanguage } from "../../lib/isMultiLanguage";
 
 const drupalUrl = process.env.backendUrl;
 export default function SSRArticlesList({ articles, hrefLang }) {
@@ -53,6 +54,8 @@ export default function SSRArticlesList({ articles, hrefLang }) {
 export async function getServerSideProps(context) {
   const { origin } = absoluteUrl(context.req);
   const { locales } = context;
+  const multiLanguage = isMultiLanguage(locales)
+
   const hrefLang = locales.map((locale) => {
     return {
       hrefLang: locale,
@@ -62,7 +65,7 @@ export async function getServerSideProps(context) {
   // TODO - determine apiRoot from environment variables
   const store = new DrupalState({
     apiBase: drupalUrl,
-    defaultLocale: context.locale,
+    defaultLocale: multiLanguage ? context.locale : "",
   });
 
   store.params.addInclude(["field_media_image.field_media_image"]);
