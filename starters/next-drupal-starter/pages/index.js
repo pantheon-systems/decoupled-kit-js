@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import Layout from "../components/layout";
 import { NextSeo } from "next-seo";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
 import { isMultiLanguage } from "../lib/isMultiLanguage";
+import Layout from "../components/layout";
 
 const drupalUrl = process.env.backendUrl;
 
@@ -42,7 +42,7 @@ export default function Home({ articles, hrefLang, multiLanguage }) {
 
         <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
           {/* Check to see if this is an object before mapping */}
-          {articles.map((article) => {
+          {articles?.map((article) => {
             const imgSrc =
               article.field_media_image?.field_media_image?.uri?.url || "";
             return (
@@ -95,27 +95,41 @@ export async function getStaticProps(context) {
   const { locales } = context;
   // if there is more than one language in context.locales,
   // assume multilanguage is enabled.
-  const multiLanguage = isMultiLanguage(locales)
+  const multiLanguage = isMultiLanguage(locales);
   const hrefLang = locales.map((locale) => {
     return {
       hrefLang: locale,
       href: origin + "/" + locale,
     };
   });
-  // TODO - determine apiRoot from environment variables
-  const store = new DrupalState({
-    apiBase: process.env.BACKEND_URL,
-    // if multilanguage NOT enabled, passing in a locale here will
-    // break calls to Drupal, so pass an empty string.
-    defaultLocale: multiLanguage ? context.locale : "",
-  });
 
-  store.params.addInclude(["field_media_image.field_media_image"]);
-  const articles = await store.getObject({
-    objectName: "node--article",
-  });
+  try {
+    // TODO - determine apiRoot from environment variables
+    const store = new DrupalState({
+      apiBase: process.env.BACKEND_URL,
+      // if multilanguage NOT enabled, passing in a locale here will
+      // break calls to Drupal, so pass an empty string.
+      // defaultLocale: multiLanguage ? context.locale : "",
+    });
 
-  return {
-    props: { articles, hrefLang, multiLanguage },
-  };
+    store.params.addInclude(["field_media_image.field_media_image"]);
+    const articles = await store.getObject({
+      objectName: "node--article",
+    });
+
+    if (!articles) {
+      throw new Error(
+        "No articles returned. Make sure the objectName and store.params are valid!"
+      );
+    }
+
+    return {
+      props: { articles, hrefLang, multiLanguage },
+    };
+  } catch (error) {
+    console.error("Unable to fetch articles: ", error);
+    return {
+      props: {},
+    };
+  }
 }

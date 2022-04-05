@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import Layout from "../../components/layout";
+import { NextSeo } from "next-seo";
 import {
   DrupalState,
   fetchJsonapiEndpoint,
 } from "@pantheon-systems/drupal-kit";
-import { NextSeo } from "next-seo";
-
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
+import Layout from "../../components/layout";
 
 const drupalUrl = process.env.backendUrl;
 
