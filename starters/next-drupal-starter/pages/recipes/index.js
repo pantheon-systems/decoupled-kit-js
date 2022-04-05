@@ -6,7 +6,7 @@ import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import Layout from "../../components/layout";
 
 const drupalUrl = process.env.backendUrl;
-export default function Recipies({ recipes, hrefLang }) {
+export default function Recipes({ recipes, hrefLang }) {
   function RecipesList() {
     return (
       <section>
