@@ -7,7 +7,6 @@ import Layout from "../../components/layout";
 
 const drupalUrl = process.env.backendUrl;
 export default function Recipies({ recipes, hrefLang }) {
-  console.log(recipes.field_media_image);
   function RecipesList() {
     return (
       <section>
@@ -102,10 +101,12 @@ export async function getStaticProps(context) {
     apiBase: process.env.BACKEND_URL,
     defaultLocale: multiLanguage ? locale : "",
   });
+
   store.params.addInclude([
     "field_media_image.field_media_image",
     "field_recipe_category",
   ]);
+
   try {
     const recipes = await store.getObject({
       objectName: "node--recipe",
@@ -113,18 +114,14 @@ export async function getStaticProps(context) {
         id
         title
         field_media_image
-        field_recipe_category {
-          name
-            }
-         path {
-           alias
-         }
+        field_recipe_category
+         path
        }`,
     });
 
     if (!recipes) {
       throw new Error(
-        "No articles returned. Make sure the objectName and store.params are valid!: ",
+        "No recipes returned. Make sure the objectName and store.params are valid!: ",
         error
       );
     }
