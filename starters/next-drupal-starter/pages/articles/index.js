@@ -1,14 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import Layout from "../../components/layout";
-
-import absoluteUrl from "next-absolute-url";
 import { NextSeo } from "next-seo";
+import absoluteUrl from "next-absolute-url";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
+import { isMultiLanguage } from "../../lib/isMultiLanguage";
+import Layout from "../../components/layout";
 
 const drupalUrl = process.env.backendUrl;
 export default function SSRArticlesList({ articles, hrefLang }) {
-  // articles = null;
   return (
     <Layout>
       <NextSeo
@@ -24,7 +23,7 @@ export default function SSRArticlesList({ articles, hrefLang }) {
         <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
           {articles?.map((article) => {
             const imgSrc =
-              drupalUrl + article.field_media_image.field_media_image.uri.url;
+              article.field_media_image?.field_media_image?.uri?.url || "";
             return (
               <Link
                 passHref
@@ -33,15 +32,26 @@ export default function SSRArticlesList({ articles, hrefLang }) {
               >
                 <div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 hover:border-indigo-500">
                   <div className="flex-shrink-0 relative h-40">
-                    <Image
-                      src={imgSrc}
-                      layout="fill"
-                      objectFit="cover"
-                      alt={
-                        article.field_media_image.field_media_image
-                          .resourceIdObjMeta.alt
-                      }
-                    />
+                    {imgSrc !== "" ? (
+                      <Image
+                        src={drupalUrl + imgSrc}
+                        layout="fill"
+                        objectFit="cover"
+                        alt={
+                          article.field_media_image?.field_media_image
+                            ?.resourceIdObjMeta.alt
+                        }
+                      />
+                    ) : (
+                      <div className="bg-black">
+                        <Image
+                          src="/pantheon.svg"
+                          alt="Pantheon Logo"
+                          width={324}
+                          height={160}
+                        />
+                      </div>
+                    )}
                   </div>
                   <h2 className="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900">
                     {article.title} &rarr;
@@ -59,58 +69,72 @@ export default function SSRArticlesList({ articles, hrefLang }) {
 }
 
 export async function getServerSideProps(context) {
-  const { origin } = absoluteUrl(context.req);
-  const { locales } = context;
-  const multiLanguage = isMultiLanguage(locales)
+  try {
+    const { origin } = absoluteUrl(context.req);
+    const { locales } = context;
+    const multiLanguage = isMultiLanguage(locales);
 
-  const hrefLang = locales.map((locale) => {
+    const hrefLang = locales.map((locale) => {
+      return {
+        hrefLang: locale,
+        href: origin + "/" + locale,
+      };
+    });
+
+    // TODO - determine apiRoot from environment variables
+    const store = new DrupalState({
+      apiBase: drupalUrl,
+      defaultLocale: multiLanguage ? context.locale : "",
+    });
+
+    store.params.addInclude(["field_media_image.field_media_image"]);
+    const articles = await store.getObject({
+      objectName: "node--article",
+      res: context.res,
+    });
+
+    if (!articles) {
+      throw new Error(
+        "No articles returned. Make sure the objectName and store.params are valid!"
+      );
+    }
+
+    // The calls below are unnecessary for rendering the page, but demonstrates
+    // both that surrogate keys are de-duped when added to the response, and also
+    // that they are bubbled up for GraphQL link queries.
+
+    // A duplicate resource to ensure that keys are de-duped.
+    await store.getObject({
+      objectName: "node--article",
+      id: articles[0].id,
+      query: `{
+        id
+        title
+      }`,
+      res: context.res,
+    });
+    store.params.clear();
+
+    // A new resource to ensure that keys are bubbled up.
+    await store.getObject({
+      objectName: "node--page",
+      query: `{
+        id
+        title
+      }`,
+      res: context.res,
+    });
+
     return {
-      hrefLang: locale,
-      href: origin + "/" + locale,
+      props: {
+        articles,
+        hrefLang,
+      },
     };
-  });
-  // TODO - determine apiRoot from environment variables
-  const store = new DrupalState({
-    apiBase: drupalUrl,
-    defaultLocale: multiLanguage ? context.locale : "",
-  });
-
-  store.params.addInclude(["field_media_image.field_media_image"]);
-  const articles = await store.getObject({
-    objectName: "node--article",
-    res: context.res,
-  });
-
-  // The calls below are unnecessary for rendering the page, but demonstrates
-  // both that surrogate keys are de-duped when added to the response, and also
-  // that they are bubbled up for GraphQL link queries.
-
-  // A duplicate resource to ensure that keys are de-duped.
-  await store.getObject({
-    objectName: "node--article",
-    id: articles[0].id,
-    query: `{
-      id
-      title
-    }`,
-    res: context.res,
-  });
-  store.params.clear();
-
-  // A new resource to ensure that keys are bubbled up.
-  await store.getObject({
-    objectName: "node--page",
-    query: `{
-      id
-      title
-    }`,
-    res: context.res,
-  });
-
-  return {
-    props: {
-      articles,
-      hrefLang,
-    },
-  };
+  } catch (error) {
+    console.error("Unable to fetch articles: ", error);
+    return {
+      props: {},
+    };
+  }
 }
