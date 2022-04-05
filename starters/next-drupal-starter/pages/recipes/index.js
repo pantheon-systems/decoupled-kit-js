@@ -65,7 +65,7 @@ export default function Recipies({ recipes, hrefLang }) {
             )}
           </div>
         ) : (
-          <h2 className="text-xl text-center mt-14">No articles found 🏜</h2>
+          <h2 className="text-xl text-center mt-14">No recipes found 🏜</h2>
         )}
       </section>
     );
