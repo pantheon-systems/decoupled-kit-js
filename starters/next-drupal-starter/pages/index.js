@@ -96,7 +96,6 @@ export async function getStaticProps(context) {
   // if there is more than one language in context.locales,
   // assume multilanguage is enabled.
   const multiLanguage = isMultiLanguage(locales);
-
   const hrefLang = locales.map((locale) => {
     return {
       hrefLang: locale,
