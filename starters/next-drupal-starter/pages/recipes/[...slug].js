@@ -136,14 +136,14 @@ export async function getStaticProps(context) {
         field_ingredients
         field_recipe_instruction
         field_summary
-        field_media_image 
+        field_media_image
         field_recipe_category {
           name
-            }
-         path {
-           alias
-         }
-       }`,
+        }
+        path {
+          alias
+        }
+      }`,
     });
 
     if (!recipe) {

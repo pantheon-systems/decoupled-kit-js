@@ -30,7 +30,7 @@ export default function Footer() {
     );
   };
   return (
-    <footer className="w-full text-white bg-black p-4 mt-8">
+    <footer className="w-full text-white bg-black p-4 mt-12">
       <ExampleMenu />
       <div className="flex my-4 p-2">
         <span className="mx-auto">

@@ -115,8 +115,8 @@ export async function getStaticProps(context) {
         title
         field_media_image
         field_recipe_category
-         path
-       }`,
+        path
+      }`,
     });
 
     if (!recipes) {
