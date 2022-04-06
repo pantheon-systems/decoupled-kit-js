@@ -109,7 +109,7 @@ export async function getStaticProps(context) {
       apiBase: process.env.BACKEND_URL,
       // if multilanguage NOT enabled, passing in a locale here will
       // break calls to Drupal, so pass an empty string.
-      // defaultLocale: multiLanguage ? context.locale : "",
+      defaultLocale: multiLanguage ? context.locale : "",
     });
 
     store.params.addInclude(["field_media_image.field_media_image"]);
