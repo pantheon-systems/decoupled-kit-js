@@ -64,12 +64,6 @@ jobs:
       - run:
           name: audit dependencies with --fix
           command: pnpm audit --fix
-      - run:
-          name: exit if no fixes
-          command: |
-            if [ $? = 0 ]; then
-              circleci-agent step halt
-            fi
       # remove node_modules and pnpm-lock.yml to honor new overrides
       - run:
           name: remove node_modules and pnpm-lock.yml
@@ -80,7 +74,7 @@ jobs:
       - run:
           name: exit if no fixes
           command: |
-            if [ -z "$(git diff)"" ]; then
+            if [ -z "$(git diff)" ]; then
               circleci-agent step halt
             fi
       # commit package.json and pnpm-lock if there's a diff
