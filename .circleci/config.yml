@@ -77,6 +77,12 @@ jobs:
       - run:
           name: install overrides
           command: pnpm install --frozen-lockfile=false --ignore-scripts
+      - run:
+          name: exit if no fixes
+          command: |
+            if [ -z "$(git diff)"" ]; then
+              circleci-agent step halt
+            fi
       # commit package.json and pnpm-lock if there's a diff
       - run:
           name: commit overrides
