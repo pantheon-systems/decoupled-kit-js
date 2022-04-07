@@ -28,37 +28,39 @@ export default function Recipes({ recipes, hrefLang }) {
                     href={`/${path.langcode}${path.alias}`}
                     key={id}
                   >
-                    <div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 hover:border-indigo-500">
-                      <div className="flex-shrink-0 relative h-40">
-                        {imgSrc !== "" ? (
-                          <Image
-                            src={drupalUrl + imgSrc}
-                            layout="fill"
-                            objectFit="cover"
-                            alt={
-                              field_media_image?.field_media_image
-                                ?.resourceIdObjMeta?.alt ||
-                              field_media_image.field_media_image.filename
-                            }
-                          />
-                        ) : (
-                          <div className="bg-black">
+                    <a>
+                      <div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 hover:border-indigo-500">
+                        <div className="flex-shrink-0 relative h-40">
+                          {imgSrc !== "" ? (
                             <Image
-                              src="/pantheon.svg"
-                              alt="Pantheon Logo"
-                              width={324}
-                              height={160}
+                              src={drupalUrl + imgSrc}
+                              layout="fill"
+                              objectFit="cover"
+                              alt={
+                                field_media_image?.field_media_image
+                                  ?.resourceIdObjMeta?.alt ||
+                                field_media_image.field_media_image.filename
+                              }
                             />
-                          </div>
-                        )}
+                          ) : (
+                            <div className="bg-black">
+                              <Image
+                                src="/pantheon.svg"
+                                alt="Pantheon Logo"
+                                width={324}
+                                height={160}
+                              />
+                            </div>
+                          )}
+                        </div>
+                        <h2 className="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900">
+                          {title} &rarr;
+                        </h2>
+                        <span className="text-right pb-2 pr-3 text-sm text-slate-400">
+                          {field_recipe_category[0].name}
+                        </span>
                       </div>
-                      <h2 className="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900">
-                        {title} &rarr;
-                      </h2>
-                      <span className="text-right pb-2 pr-3 text-sm text-slate-400">
-                        {field_recipe_category[0].name}
-                      </span>
-                    </div>
+                    </a>
                   </Link>
                 );
               }

@@ -19,8 +19,8 @@ export default function Home({ page, hrefLang }) {
       <article className="prose lg:prose-xl mt-10 mx-auto">
         <h1>{page.title}</h1>
 
-        <Link passHref href="/">
-          <span className="w-full underline cursor-pointer">Home &rarr;</span>
+        <Link passHref href="/pages">
+          <a className="font-normal">Pages &rarr;</a>
         </Link>
 
         <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">

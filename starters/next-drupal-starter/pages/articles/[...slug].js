@@ -23,7 +23,7 @@ export default function Home({ article, hrefLang }) {
         <h1>{article.title}</h1>
 
         <Link passHref href="/">
-          <span className="w-full underline cursor-pointer">Home &rarr;</span>
+          <a className="font-nomral">Home &rarr;</a>
         </Link>
 
         <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
