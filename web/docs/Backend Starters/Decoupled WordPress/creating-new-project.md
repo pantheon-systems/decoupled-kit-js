@@ -1,7 +1,3 @@
----
-sidebar_position: 2
----
-
 # Creating a New Project
 
 ## Prerequisites
@@ -24,11 +20,13 @@ sidebar_position: 2
 - Run the `terminus build:project:create` as follows:
 
   ```
-  terminus build:project:create --team='{My Team Name}' --template-repository="git@github.com:pantheon-systems/decoupled-drupal.git" pantheon-systems/decoupled-drupal --ci-template='git@github.com:pantheon-systems/advanced-ci-templates' --visibility private {PROJECT_NAME} --stability=dev --profile="pantheon_decoupled_profile"
+  terminus build:project:create --team='{My Team Name}' --template-repository="git@github.com:pantheon-systems/decoupled-wordpress.git" pantheon-systems/decoupled-wordpress --ci-template='git@github.com:pantheon-systems/advanced-ci-templates' --visibility private {PROJECT_NAME} --stability=dev
   ```
 
-  Replace `{PROJECT_NAME}` with your project name - for example `decoupled-drupal`.
+  Replace {PROJECT_NAME} with a Project name for example `decoupled-wordpress`.
 
   Replace {My Team Name} with your team name - for example `My Agency`. This can also be omitted.
 
 **Note:** This will result in a Github repository being created for this new codebase, a site being created on Pantheon and a CircleCI project being created for automated deployments.
+
+**Note:** This will result in a Github repository being created for this new codebase, a site being created on Pantheon and a CircleCI project being created for automated deployments with the `{PROJECT_NAME}`.
