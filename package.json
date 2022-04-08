@@ -30,6 +30,7 @@
   "homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
   "devDependencies": {
     "@algolia/client-search": "^4.9.1",
+    "@changesets/cli": "^2.22.0",
     "@rollup/plugin-typescript": "^8.3.1",
     "@types/eslint": "^8.4.1",
     "@types/jest": "^27.4.1",

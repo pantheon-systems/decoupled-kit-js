@@ -1,0 +1,11 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
+  "changelog": "@changesets/cli/changelog",
+  "commit": true,
+  "fixed": [["@pantheon-systems/*-kit"]],
+  "linked": [],
+  "access": "restricted",
+  "baseBranch": "canary",
+  "updateInternalDependencies": "patch",
+  "ignore": ["@pantheon-systems/*-starter"]
+}
