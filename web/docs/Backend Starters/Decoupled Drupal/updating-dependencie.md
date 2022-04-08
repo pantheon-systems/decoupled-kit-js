@@ -1,6 +1,6 @@
 # Updating Drupal dependencies
 
-Dependencies can be update by the following two ways:
+Dependencies can be updated following two ways:
 
 ## 1. Update dependencies manually using composer
 
@@ -15,4 +15,4 @@ For more info:
 
 ## 2. Update dependencies automatically using [terminus-clu-plugin](https://github.com/pantheon-systems/terminus-clu-plugin)
 
-This plugin create pull requests based on composer.lock updates and it will be enabled automatically if the project was created using our recommended terminus [build tools project create command](https://getpantheon.atlassian.net/wiki/spaces/VULCAN/pages/2296610966/Testing+Decoupled+Kit#Installing-decoupled-drupal-(CMS-Backend-only)-on-Pantheon-with-CI).
+Alternatively, composer security updates can be applied automatically using the [Terminus CLU](https://github.com/pantheon-systems/terminus-clu-plugin) (Composer Lock Updater) Plugin. This plugin automatically creates pull requests based on composer.lock updates. If your project was created using our recommended terminus [build tools project create command](creating-new-project.md) then this plugin has been configured automatically.
