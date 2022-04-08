@@ -1,4 +1,4 @@
-# Updating Drupal dependencies
+# Updating Drupal Dependencies
 
 Dependencies can be updated following two ways:
 
@@ -10,6 +10,7 @@ The Drupal project uses composer to manage dependencies. The dependencies can be
 - Update Contributed module: `composer update drupal/modulename --with-dependencies`
 
 For more info:
+
 - [Updating Drupal core via Composer](https://www.drupal.org/docs/updating-drupal/updating-drupal-core-via-composer)
 - [Updating Modules and Themes using Composer](https://www.drupal.org/docs/updating-drupal/updating-modules-and-themes-using-composer)
 

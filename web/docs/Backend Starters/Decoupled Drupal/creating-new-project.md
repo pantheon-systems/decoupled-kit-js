@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Creating a new Project
+# Creating a New Project
 
 ## Prerequisites
 
@@ -28,6 +28,7 @@ sidebar_position: 2
   ```
 
   Replace `{PROJECT_NAME}` with your project name - for example `decoupled-drupal`.
+
   Replace {My Team Name} with your team name - for example `My Agency`. This can also be omitted.
 
 **Note:** This will result in a Github repository being created for this new codebase, a site being created on Pantheon and a CircleCI project being created for automated deployments.
