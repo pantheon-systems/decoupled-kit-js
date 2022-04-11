@@ -1,0 +1,67 @@
+{
+  "type": "recipes",
+  "id": "a542e833-edfe-44a3-a6f1-7358b115af4b",
+  "internalId": 1,
+  "isPublished": true,
+  "title": "Frankfurter salad with mustard dressing",
+  "createdAt": "2017-12-31T12:57:13+0100",
+  "updatedAt": "2017-12-31T12:57:13+0100",
+  "isPromoted": true,
+  "path": {
+    "alias": null,
+    "pid": null,
+    "langcode": "en"
+  },
+  "difficulty": "easy",
+  "ingredients": [
+    "675 g (1.5 lb) small new salad potatoes such as Pink Fir Apple",
+    "3 eggs (not too fresh for hard-boiled eggs)",
+    "350 g (12 oz) frankfurters - Siamese cats love Frankfurters!",
+    "1 lettuce",
+    " chopped.  Any type will do",
+    " a Chinese cabbage worked well the last time I made this.",
+    "1 packet of young spinach leaves or rocket leaves",
+    " about 225 g (8 oz)",
+    "A handful of chives",
+    " chopped (if in season)",
+    "Dressing",
+    "3 tablespoons (30 ml) olive oil",
+    "1 tablespoon (15 ml) white wine vinegar",
+    "Pinch of sugar",
+    "Pinch of salt",
+    "Dash of lemon juice",
+    "2 teaspoons (10 ml) American squeezy mustard",
+    "1 teaspoon (5 ml) caraway seeds",
+    " crushed in a pestle and mortar"
+  ],
+  "numberOfServices": null,
+  "preparationTime": 5,
+  "instructions": "Bring the potatoes to boil and simmer for 15 minutes in lightly salted water,Drain, cover and keep warm,Hard-boil the eggs for 12 minutes, refresh in cold water, peel and cut into quarters,With a very sharp knife, make a corkscrew shaped score around frankfurters from one end to the other,Bring to the boil and simmer for 5 minutes, drain and keep warm,Add the dressing ingredients to a bowl and whisk well until combined.  Alternatively use a salad shaker or a screw-topped jar,Mix half of the dressing with the spinach and lettuce leaves and the other half with the potatoes and the frankfurters,Divide the salad amongst 4 large plates and dress with the hard-boiled eggs,Season to taste and serve immediately",
+  "totalTime": 25,
+  "links": {
+    "self": "https://live-contentacms.pantheonsite.io/api/recipes/a542e833-edfe-44a3-a6f1-7358b115af4b"
+  },
+  "contentType": {
+    "type": "contentTypes",
+    "id": "ff85086b-db11-4ba6-8eaf-5197d6ad026c"
+  },
+  "owner": {
+    "type": "users",
+    "id": "e12c370f-a118-420b-b096-f5d7a08b5640"
+  },
+  "category": {
+    "type": "categories",
+    "id": "529406be-17fa-4080-b98d-19d23eaabb7b"
+  },
+  "image": {
+    "type": "images",
+    "id": "872aa7b3-1b1d-45d2-8bf9-5dd7cb07238f"
+  },
+  "tags": [
+    {
+      "type": "tags",
+      "id": "df453b94-175f-422d-a090-bd5eb2f004f3"
+    }
+  ],
+  "relationshipNames": ["contentType", "owner", "category", "image", "tags"]
+}

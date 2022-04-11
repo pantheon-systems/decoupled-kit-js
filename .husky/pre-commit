@@ -1,0 +1,6 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+pnpm --filter ./packages lint-staged --workspace-concurrency=1
+pnpm --filter ./starters lint
+pnpm test
