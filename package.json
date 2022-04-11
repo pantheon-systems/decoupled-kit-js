@@ -23,7 +23,7 @@
     "headless-cms-sdk"
   ],
   "author": "@pantheon-systems",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/pantheon-systems/decoupled-kit-js/issues"
   },
