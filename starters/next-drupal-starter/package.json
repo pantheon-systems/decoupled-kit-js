@@ -1,7 +1,8 @@
 {
   "name": "@pantheon-systems/next-drupal-starter",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "license": "GPL-3.0-or-later",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,7 +11,7 @@
     "postinstall": "cp -n .env.dev .env.local || true"
   },
   "dependencies": {
-    "@pantheon-systems/drupal-kit": "workspace:1.0.0",
+    "@pantheon-systems/drupal-kit": "^1.0.0",
     "@tailwindcss/typography": "^0.5.2",
     "dotenv": "^16.0.0",
     "next": "^12.1.0",

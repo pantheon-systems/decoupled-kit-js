@@ -1,6 +1,6 @@
 {
   "name": "decoupled-kit-js",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Pantheon's Decoupled JavaScript starter kits and SDKs",
   "main": "index.js",
   "scripts": {
@@ -23,13 +23,14 @@
     "headless-cms-sdk"
   ],
   "author": "@pantheon-systems",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/pantheon-systems/decoupled-kit-js/issues"
   },
   "homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
   "devDependencies": {
     "@algolia/client-search": "^4.9.1",
+    "@changesets/cli": "^2.22.0",
     "@rollup/plugin-typescript": "^8.3.1",
     "@types/eslint": "^8.4.1",
     "@types/jest": "^27.4.1",
@@ -67,7 +68,8 @@
       "ansi-html@<0.0.8": ">=0.0.8",
       "trim@<0.0.3": ">=0.0.3",
       "node-forge@<1.3.0": ">=1.3.0",
-      "minimist@<=1.2.5": ">=1.2.6"
+      "minimist@<=1.2.5": ">=1.2.6",
+      "@pantheon-systems/drupal-kit": "workspace:^1.0.0"
     }
   }
 }

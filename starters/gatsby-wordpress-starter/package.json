@@ -36,7 +36,7 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "0BSD",
+  "license": "GPL-3.0-or-later",
   "scripts": {
     "build": "gatsby build",
     "develop": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop -H 0.0.0.0",
