@@ -1,0 +1,20 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "fixed": [],
+  "linked": [
+    [
+      "@pantheon-systems/drupal-kit",
+      "@pantheon-systems/next-drupal-starter"
+    ],
+    [
+      "@pantheon-systems/wordpress-kit",
+      "@pantheon-systems/gatsby-wordpress-starter"
+    ]
+  ],
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": []
+}

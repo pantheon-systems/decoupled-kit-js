@@ -1,6 +1,5 @@
 # Pantheon Systems Decoupled Kits
 
-
 ## Prerequisites
 
 To setup the monorepo for development the following should be installed locally:
@@ -45,3 +44,20 @@ To run documentation:
 ```bash
 pnpm --filter ./web start
 ```
+
+## Versions and Releases
+
+### Generating a changeset
+
+To generate a new changeset, run `pnpm changeset` in the root of the repository. The generated markdown files in the `.changeset` directory should be committed to the repository.
+
+### Creating a new version
+
+- Run `pnpm changeset version`. This will bump the versions of the packages previously specified with pnpm changeset (and any dependents of those) and update the changelog files.
+- Run `pnpm install`. This will update the lockfile and rebuild packages.
+- Commit the changes.
+
+### Publishing a new version
+
+- Confirm your publishing scope by running `pnpm config get scope` this should be `@pantheon-systems`. If not, it can be changed with `pnpm config set scope @pantheon-systems`.
+- To publish, run `pnpm publish -r --access public`. This command will publish all public packages that have bumped versions not yet present in the registry.
