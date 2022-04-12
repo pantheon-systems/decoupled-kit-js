@@ -20,7 +20,7 @@ export default function Recipe({ recipe, hrefLang }) {
           <h1>{recipe.title}</h1>
           <div className="flex flex-row justify-between">
             <Link passHref href="/recipes">
-              <span className="underline cursor-pointer">Recipes &rarr;</span>
+              <a className="font-normal">Recipes &rarr;</a>
             </Link>
             <span className="text pb-2 pr-3 text-sm text-slate-400">
               {recipe.field_recipe_category[0].name}
