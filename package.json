@@ -1,6 +1,7 @@
 {
   "name": "decoupled-kit-js",
   "version": "1.0.0",
+  "private": true,
   "description": "Pantheon's Decoupled JavaScript starter kits and SDKs",
   "main": "index.js",
   "scripts": {
