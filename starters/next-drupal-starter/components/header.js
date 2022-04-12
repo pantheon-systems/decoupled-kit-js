@@ -5,25 +5,22 @@ export default function Header() {
   const router = useRouter();
 
   return (
-    <div className="my-0 mx-auto py-10 px-5 max-w-screen-sm">
-      <header className="text-lg">
-        <nav>
-          <ul className="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between">
-            {[
-              ["🏠 Home", "/"],
-              ["📑 Pages", "/pages"],
-              ["📰 Articles", "/articles"],
-              ["🍳 Recipes", "/recipes"],
-            ].map(([title, href]) => (
-              <li className="mx-4" key={href}>
-                <Link className="text-lg font-sans" href={href}>
-                  <a className="hover:underline">{title}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </header>
+    <div className="my-0 pt-10 px-5 text-xl">
+      <nav>
+        <ul className="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto">
+          {[
+            ["🏠 Home", "/"],
+            ["📰 Articles", "/articles"],
+            ["📑 Pages", "/pages"],
+          ].map(([title, href]) => (
+            <li className={`${href === "/" ? "mr-auto" : "mx-4"}`} key={href}>
+              <Link className="font-sans" href={href}>
+                <a className="hover:underline">{title}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   );
 }
