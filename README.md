@@ -50,8 +50,11 @@ To run documentation:
 pnpm --filter ./web start
 ```
 
-## Bugs and Feature Requests
+## Bug Reports and Feature Requests
 
+[Open a bug report here](https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml)
+
+[Open a feature request here](https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=feature-request-template.yml)
 
 ## Versions and Releases
 
