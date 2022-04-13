@@ -15,6 +15,8 @@ overrides:
   node-forge@<1.3.0: '>=1.3.0'
   minimist@<=1.2.5: '>=1.2.6'
   '@pantheon-systems/drupal-kit': workspace:^1.0.0
+  moment@<2.29.2: '>=2.29.2'
+  async@<3.2.2: '>=3.2.2'
 
 importers:
 
@@ -6177,20 +6179,6 @@ packages:
       retry: 0.13.1
     dev: false
 
-  /async/1.5.2:
-    resolution: {integrity: sha1-7GphrlZIDAw8skHJVhjiCJL5Zyo=}
-    dev: false
-
-  /async/2.6.3:
-    resolution: {integrity: sha512-zflvls11DCy+dQWzTW2dzuilv8Z5X/pjfmZOWba6TNIVDm+2UDaJmXSOXlasHKfNBs8oo3M0aT50fDEWfKZjXg==}
-    dependencies:
-      lodash: 4.17.21
-    dev: false
-
-  /async/3.2.0:
-    resolution: {integrity: sha512-TR2mEZFVOj2pLStYxLht7TyfuRzaydfpxr3k9RpHIzMgw7A64dzsdqCxH1WJyQdoe8T10nDXd9wnEigmiuHIZw==}
-    dev: false
-
   /async/3.2.3:
     resolution: {integrity: sha512-spZRyzKL5l5BZQrr/6m/SqFdBN0q3OCI0f9rjfBzCMBIP4p75P620rR3gTmaksNOhmzgdxcaxdNfMy6anrbM0g==}
     dev: false
@@ -6836,7 +6824,7 @@ packages:
   /cache-manager/2.11.1:
     resolution: {integrity: sha512-XhUuc9eYwkzpK89iNewFwtvcDYMUsvtwzHeyEOPJna/WsVsXcrzsA1ft2M0QqPNunEzLhNCYPo05tEfG+YuNow==}
     dependencies:
-      async: 1.5.2
+      async: 3.2.3
       lodash.clonedeep: 4.5.0
       lru-cache: 4.0.0
     dev: false
@@ -6844,7 +6832,7 @@ packages:
   /cache-manager/3.6.0:
     resolution: {integrity: sha512-D4GJZhyYgprYM30ZEPOn9kkdwdPUumX3ujbNbl7FYjcRViRvAgY53k6pO/82wNsm7c4aHVgXfR12/3huA47qnA==}
     dependencies:
-      async: 3.2.0
+      async: 3.2.3
       lodash: 4.17.21
       lru-cache: 6.0.0
     dev: false
@@ -14819,7 +14807,7 @@ packages:
     resolution: {integrity: sha512-Se+2isanIcEqf2XMHjyUKskczxbPH7dQnlMjXX6+dybayyHvAf/TCgyMRlzf/B6QDhAEFOGes0pzRo3by4AbMA==}
     engines: {node: '>= 0.12.0'}
     dependencies:
-      async: 2.6.3
+      async: 3.2.3
       debug: 3.2.7
       mkdirp: 0.5.6
     dev: false
