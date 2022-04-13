@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-      - canary
 env:
   CI: true
   PNPM_CACHE_FOLDER: .pnpm-store
