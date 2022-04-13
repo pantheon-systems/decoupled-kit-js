@@ -19,7 +19,8 @@
     "build:all": "pnpm recursive run build",
     "generate-docs": "pnpm --filter ./web clear && pnpm --filter ./web build",
     "postinstall": "pnpm build:pkgs",
-    "publish": "pnpm ci:publish"
+    "ci:version": "changeset version",
+    "ci:publish": "changeset publish"
   },
   "keywords": [
     "pantheon",
