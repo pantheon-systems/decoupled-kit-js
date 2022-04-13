@@ -1,0 +1,6 @@
+/// <reference types="react" />
+import type { CodeViewerProps } from "../CodeViewer";
+/**
+ * @category Components
+ */
+export declare const SandpackTranspiledCode: (props: CodeViewerProps) => JSX.Element;

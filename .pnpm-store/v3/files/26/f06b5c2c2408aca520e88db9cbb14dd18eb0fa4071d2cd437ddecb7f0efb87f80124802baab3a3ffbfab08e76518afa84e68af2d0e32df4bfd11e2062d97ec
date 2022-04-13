@@ -1,0 +1,18 @@
+import * as React from "react";
+import type { SandpackPredefinedTemplate, SandpackSetup, SandpackThemeProp } from "../types";
+export interface SandpackRunnerProps {
+    code?: string;
+    template?: SandpackPredefinedTemplate;
+    customSetup?: SandpackSetup;
+    theme?: SandpackThemeProp;
+    options?: {
+        showNavigator?: boolean;
+        bundlerUrl?: string;
+        startRoute?: string;
+        classes?: Record<string, string>;
+    };
+}
+/**
+ * @category Components
+ */
+export declare const SandpackRunner: React.FC<SandpackRunnerProps>;

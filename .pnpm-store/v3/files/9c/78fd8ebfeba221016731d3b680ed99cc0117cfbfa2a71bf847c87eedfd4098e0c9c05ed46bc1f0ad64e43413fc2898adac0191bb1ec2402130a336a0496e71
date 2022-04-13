@@ -1,0 +1,111 @@
+var __defProp = Object.defineProperty;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
+var __export = (target, all) => {
+  __markAsModule(target);
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+
+// src/iframe-protocol.ts
+__export(exports, {
+  IFrameProtocol: () => IFrameProtocol
+});
+var IFrameProtocol = class {
+  constructor(iframe, origin) {
+    this.globalListeners = {};
+    this.globalListenersCount = 0;
+    this.channelListeners = {};
+    this.channelListenersCount = 0;
+    this.channelId = Math.floor(Math.random() * 1e6);
+    this.frameWindow = iframe.contentWindow;
+    this.origin = origin;
+    this.globalListeners = [];
+    this.channelListeners = [];
+    this.eventListener = this.eventListener.bind(this);
+    if (typeof window !== "undefined") {
+      window.addEventListener("message", this.eventListener);
+    }
+  }
+  cleanup() {
+    window.removeEventListener("message", this.eventListener);
+    this.globalListeners = {};
+    this.channelListeners = {};
+    this.globalListenersCount = 0;
+    this.channelListenersCount = 0;
+  }
+  register() {
+    if (!this.frameWindow) {
+      return;
+    }
+    this.frameWindow.postMessage({
+      type: "register-frame",
+      origin: document.location.origin,
+      id: this.channelId
+    }, this.origin);
+  }
+  dispatch(message) {
+    if (!this.frameWindow) {
+      return;
+    }
+    this.frameWindow.postMessage(__spreadValues({
+      $id: this.channelId,
+      codesandbox: true
+    }, message), this.origin);
+  }
+  globalListen(listener) {
+    if (typeof listener !== "function") {
+      return () => {
+        return;
+      };
+    }
+    const listenerId = this.globalListenersCount;
+    this.globalListeners[listenerId] = listener;
+    this.globalListenersCount++;
+    return () => {
+      delete this.globalListeners[listenerId];
+    };
+  }
+  channelListen(listener) {
+    if (typeof listener !== "function") {
+      return () => {
+        return;
+      };
+    }
+    const listenerId = this.channelListenersCount;
+    this.channelListeners[listenerId] = listener;
+    this.channelListenersCount++;
+    return () => {
+      delete this.channelListeners[listenerId];
+    };
+  }
+  eventListener(evt) {
+    if (evt.source !== this.frameWindow) {
+      return;
+    }
+    const message = evt.data;
+    if (!message.codesandbox) {
+      return;
+    }
+    Object.values(this.globalListeners).forEach((listener) => listener(message));
+    if (message.$id !== this.channelId) {
+      return;
+    }
+    Object.values(this.channelListeners).forEach((listener) => listener(message));
+  }
+};
+//# sourceMappingURL=iframe-protocol.js.map

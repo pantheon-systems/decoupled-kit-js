@@ -1,0 +1,13 @@
+// src/types.ts
+var SandpackLogLevel;
+(function(SandpackLogLevel2) {
+  SandpackLogLevel2[SandpackLogLevel2["None"] = 0] = "None";
+  SandpackLogLevel2[SandpackLogLevel2["Error"] = 10] = "Error";
+  SandpackLogLevel2[SandpackLogLevel2["Warning"] = 20] = "Warning";
+  SandpackLogLevel2[SandpackLogLevel2["Info"] = 30] = "Info";
+  SandpackLogLevel2[SandpackLogLevel2["Debug"] = 40] = "Debug";
+})(SandpackLogLevel || (SandpackLogLevel = {}));
+export {
+  SandpackLogLevel
+};
+//# sourceMappingURL=types.js.map

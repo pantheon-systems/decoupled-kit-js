@@ -1,0 +1,9 @@
+{{#with comment}}
+
+{{#if hasVisibleComponent}}
+
+{{{comments}}}
+
+{{/if}}
+
+{{/with}}

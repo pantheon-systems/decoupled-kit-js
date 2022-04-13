@@ -1,0 +1,324 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DrupalJsonApiParams = void 0;
+const qs = require("qs");
+class DrupalJsonApiParams {
+    /**
+     * Optionaly initialize with a previously stored query/object/query string.
+     *
+     * @category Init
+     */
+    constructor(input) {
+        this.data = {
+            filter: {},
+            include: [],
+            page: undefined,
+            sort: [],
+            fields: {},
+        };
+        this.initialize(input);
+    }
+    /**
+     * Add custom parameter to the query.
+     *
+     * E.g. usage
+     *
+     * ```js
+     * apiParams
+     *   // To add `foo=bar` to the query.
+     *   .addCustomParam({foo: 'bar'})
+     *   // To add `foo[bar]=baz` to the query.
+     *   .addCustomParam({ foo: {bar: 'baz'}})
+     *   // To add `bar[0]=a&bar[1]=b&bar[2]=c` to the query.
+     *   .addCustomParam({ bar: ['a', 'b', 'c']})
+     * ```
+     *
+     * @param input The parameter object
+     *
+     * @category Helper
+     */
+    addCustomParam(input) {
+        this.data = Object.assign(Object.assign({}, this.data), input);
+    }
+    /**
+     * Add JSON:API field.
+     *
+     * The name of this method might be miss leading. Use this to explicitely request for specific fields on an entity.
+     *
+     * @param type Resource type
+     * @param fields Array of field names in the given resource type
+     *
+     * @category JSON:API Query
+     */
+    addFields(type, fields) {
+        this.data.fields[type] = fields.join(',');
+        return this;
+    }
+    /**
+     * Add JSON:API sort.
+     *
+     * Used to return the list of items in specific order.
+     *
+     * [Read more about Sort in Drupal.org Documentation](https://www.drupal.org/docs/8/modules/jsonapi/sorting)
+     *
+     * @param path A 'path' identifies a field on a resource
+     * @param direction Sort direction `ASC` or `DESC`
+     *
+     * @category JSON:API Query
+     */
+    addSort(path, direction) {
+        let prefix = '';
+        if (direction !== undefined && direction === 'DESC') {
+            prefix = '-';
+        }
+        this.data.sort = this.data.sort.concat(prefix + path);
+        return this;
+    }
+    /**
+     * Add JSON:API page limit.
+     *
+     * Use to restrict max amount of items returned in the listing.
+     * Using this for pagination is tricky, and make sure you read
+     * the following document on Drupal.org to implement it correctly.
+     *
+     * [Read more about Pagination in Drupal.org Documentation](https://www.drupal.org/docs/8/core/modules/jsonapi-module/pagination)
+     *
+     * @param limit Number of items to limit to
+     *
+     * @category JSON:API Query
+     */
+    addPageLimit(limit) {
+        this.data.page = { limit };
+        return this;
+    }
+    /**
+     * Add JSON:API include.
+     *
+     * Used to add referenced resources inside same request.
+     * Thereby preventing additional api calls.
+     *
+     * [Read more about Includes in Drupal.org Documentation](https://www.drupal.org/docs/8/modules/jsonapi/includes)
+     *
+     * @param fields Array of field names
+     *
+     * @category JSON:API Query
+     */
+    addInclude(fields) {
+        this.data.include = this.data.include.concat(fields);
+        return this;
+    }
+    /**
+     * Add JSON:API group.
+     *
+     * @param name Name of the group
+     * @param conjunction All groups have conjunctions and a conjunction is either `AND` or `OR`.
+     * @param memberOf Name of the group, this group belongs to
+     *
+     * @category JSON:API Query
+     */
+    addGroup(name, conjunction = 'OR', memberOf) {
+        this.data.filter[name] = {
+            group: Object.assign({ conjunction }, (memberOf !== undefined && { memberOf })),
+        };
+        return this;
+    }
+    /**
+     * Add JSON:API filter.
+     *
+     * Following values can be used for the operator. If none is provided, it assumes "`=`" by default.
+     * ```
+     *   '=', '<>',
+     *   '>', '>=', '<', '<=',
+     *   'STARTS_WITH', 'CONTAINS', 'ENDS_WITH',
+     *   'IN', 'NOT IN',
+     *   'BETWEEN', 'NOT BETWEEN',
+     *   'IS NULL', 'IS NOT NULL'
+     * ```
+     *
+     * **NOTE: Make sure you match the value supplied based on the operators used as per the table below**
+     *
+     * | Value Type | Operator | Comment |
+     * | ---   | ---  | ---         |
+     * | `string`     | `=`, `<>`, `>`, `>=`, `<`, `<=`, `STARTS_WITH`, `CONTAINS`, `ENDS_WITH` | |
+     * | `string[]`    | `IN`, `NOT IN` | |
+     * | `string[]` _size 2_ | `BETWEEN`, `NOT BETWEEN` | The first item is used for min (start of the range), and the second item is used for max (end of the range).
+     * | `null`    | `IS NULL`, `IS NOT NULL` | Must use `null`
+     *
+     * [Read more about filter in Drupal.org Documentation](https://www.drupal.org/docs/8/core/modules/jsonapi-module/filtering)
+     *
+     * @param path A 'path' identifies a field on a resource
+     * @param value string[] | null` | A 'value' is the thing you compare against. For operators like "IN" which supports multiple parameters, you can supply an array.
+     * @param operator An 'operator' is a method of comparison
+     * @param memberOf Name of the group, the filter belongs to
+     *
+     * @category JSON:API Query
+     */
+    addFilter(path, value, operator = '=', memberOf) {
+        const name = this.getIndexId(this.data.filter, path);
+        // Allow null values only for IS NULL and IS NOT NULL operators.
+        if (value === null) {
+            if (!(operator === 'IS NULL' || operator === 'IS NOT NULL')) {
+                throw new TypeError(`Value cannot be null for the operator "${operator}"`);
+            }
+            this.data.filter[name] = {
+                condition: Object.assign(Object.assign({ path }, { operator }), (memberOf !== undefined && { memberOf })),
+            };
+            return this;
+        }
+        if (Array.isArray(value)) {
+            switch (operator) {
+                case 'BETWEEN':
+                case 'NOT BETWEEN':
+                    if (value.length !== 2) {
+                        throw new TypeError(`Value must consists of 2 items for the "${operator}"`);
+                    }
+                    break;
+                case 'IN':
+                case 'NOT IN':
+                    break;
+                default:
+                    throw new TypeError(`Value cannot be an array for the operator "${operator}"`);
+            }
+            this.data.filter[name] = {
+                condition: Object.assign(Object.assign({ path,
+                    value }, { operator }), (memberOf !== undefined && { memberOf })),
+            };
+            return this;
+        }
+        // Validate filter
+        if (operator === '=' && memberOf === undefined && this.data.filter[path] === undefined) {
+            this.data.filter[path] = value;
+            return this;
+        }
+        this.data.filter[name] = {
+            condition: Object.assign(Object.assign({ path,
+                value }, (operator !== '=' && { operator })), (memberOf !== undefined && { memberOf })),
+        };
+        return this;
+    }
+    /**
+     * @ignore
+     */
+    getIndexId(obj, proposedKey) {
+        let key;
+        if (obj[proposedKey] === undefined) {
+            key = proposedKey;
+        }
+        else {
+            key = Object.keys(obj).length.toString();
+        }
+        return key;
+    }
+    /**
+     * Get query object.
+     *
+     * @category Helper
+     */
+    getQueryObject() {
+        const foo = JSON.parse(JSON.stringify(this.data));
+        if (!!this.data.include.length) {
+            foo.include = this.data.include.join(',');
+        }
+        if (!!this.data.sort.length) {
+            foo.sort = this.data.sort.join(',');
+        }
+        return foo;
+    }
+    /**
+     * Get query string.
+     *
+     * @category Helper
+     */
+    getQueryString(options) {
+        const data = this.getQueryObject();
+        return qs.stringify(data, options);
+    }
+    /**
+     * Clear all parameters added so far.
+     *
+     * @category Helper
+     */
+    clear() {
+        this.data = {
+            filter: {},
+            include: [],
+            page: undefined,
+            sort: [],
+            fields: {},
+        };
+        return this;
+    }
+    /**
+     * Initialize with a previously stored query object.
+     *
+     * @category Init
+     */
+    initializeWithQueryObject(input) {
+        this.clear();
+        const keys = Object.keys(input);
+        keys.forEach(key => {
+            switch (key) {
+                case 'sort':
+                    if (input.sort.length) {
+                        this.data.sort = input.sort.split(',');
+                    }
+                    break;
+                case 'include':
+                    if (input.include.length) {
+                        this.data.include = input.include.split(',');
+                    }
+                    break;
+                default:
+                    this.data[key] = input[key];
+            }
+        });
+        return this;
+    }
+    /**
+     * Initialize with a previously stored query string.
+     *
+     * @category Init
+     */
+    initializeWithQueryString(input) {
+        this.clear();
+        this.initializeWithQueryObject(qs.parse(input));
+        return this;
+    }
+    /**
+     * Clone a given DrupalJsonApiParam object.
+     *
+     * @category Helper
+     */
+    clone(input) {
+        const data = JSON.parse(JSON.stringify(input.getQueryObject()));
+        this.initializeWithQueryObject(data);
+        return this;
+    }
+    /**
+     * Initialize with a previously stored query/object/query string.
+     *
+     * @category Init
+     */
+    initialize(input) {
+        if (input === undefined) {
+            this.initializeWithQueryString('');
+        }
+        else if (typeof input === 'object') {
+            try {
+                // if the input has getQueryObject() we attempt to clone.
+                input.getQueryObject();
+                this.clone(input);
+            }
+            catch (error) {
+                // In any case if cloning failed, we attempt to initialize
+                // with query object.
+                this.initializeWithQueryObject(input);
+            }
+        }
+        else {
+            this.initializeWithQueryString(input);
+        }
+        return this;
+    }
+}
+exports.DrupalJsonApiParams = DrupalJsonApiParams;

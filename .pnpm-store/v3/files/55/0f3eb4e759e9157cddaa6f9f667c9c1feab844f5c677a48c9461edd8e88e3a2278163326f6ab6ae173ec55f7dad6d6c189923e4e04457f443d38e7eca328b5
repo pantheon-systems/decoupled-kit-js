@@ -1,0 +1,9 @@
+import { GenericIndex, fetchAdapter } from '../types/types';
+/**
+ * Get an index of resource links for the API
+ * @param apiRoot url to the root of JSON:API
+ * @param fetch fetch compatible function
+ * @returns a promise containing an object with an index of resource links
+ */
+declare const fetchApiIndex: (apiRoot: string, fetch?: fetchAdapter) => Promise<void | GenericIndex>;
+export default fetchApiIndex;

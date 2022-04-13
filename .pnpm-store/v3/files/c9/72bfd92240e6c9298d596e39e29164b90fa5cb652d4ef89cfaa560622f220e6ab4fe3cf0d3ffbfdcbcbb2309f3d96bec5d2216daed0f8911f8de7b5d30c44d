@@ -1,0 +1,98 @@
+/// <reference types="node" />
+import { ServerResponse } from 'http';
+import { StoreApi, GetState, SetState, Subscribe, Destroy, State, PartialState } from 'zustand/vanilla';
+import { DrupalJsonApiParams } from 'drupal-jsonapi-params';
+import { TJsonApiBody } from 'jsona/lib/JsonaTypes';
+import { DrupalStateConfig, GenericIndex, GetObjectParams, GetObjectByPathParams, ApolloClientWithHeaders, fetchAdapter, queryResponse } from './types/types';
+declare class DrupalState {
+    apiBase: string;
+    apiPrefix: string;
+    defaultLocale?: string;
+    apiRoot: string;
+    private clientId;
+    private clientSecret;
+    fetchAdapter?: fetchAdapter;
+    auth: boolean;
+    private token;
+    debug: boolean;
+    store: StoreApi<State>;
+    getState: GetState<State>;
+    setState: SetState<State>;
+    subscribe: Subscribe<State>;
+    destroy: Destroy;
+    client: ApolloClientWithHeaders;
+    private dataFormatter;
+    /**
+     * DrupalJsonApiParams - see [https://www.npmjs.com/package/drupal-jsonapi-params](https://www.npmjs.com/package/drupal-jsonapi-params)
+     */
+    params: DrupalJsonApiParams;
+    constructor({ apiBase, apiPrefix, defaultLocale, clientId, clientSecret, fetchAdapter, debug, }: DrupalStateConfig);
+    /**
+     * Format apiBase, apiPrefix, and combine into apiRoot.
+     * @returns a fully qualified JSON:API root endpoint URL
+     */
+    assembleApiRoot(): string;
+    /**
+     * Assembles a correctly formatted JSON:API endpoint URL.
+     * @param objectName - The resource type we're fetching.
+     * @param index a JSON:API resource endpoint
+     * @param id id of an individual resource
+     * @param query user provided GraphQL query
+     * @returns a full endpoint URL or a relative endpoint URL is a query is provided
+     */
+    assembleEndpoint(objectName: string, index: string | GenericIndex, id?: string, query?: string | boolean): string;
+    /**
+     * Assembles an authorization header using an existing token if valid, or by
+     * fetching a new token if necessary.
+     * @returns a string containing an authorization header value
+     */
+    getAuthHeader(): Promise<string>;
+    /**
+     * Wraps {@link fetch/fetchApiIndex} function so it can be overridden.
+     */
+    fetchApiIndex(apiRoot: string): Promise<void | GenericIndex>;
+    /**
+     *
+     * Wraps {@link fetch/fetchJsonapiEndpoint} function so it can be overridden.
+     */
+    fetchJsonapiEndpoint(endpoint: string, requestInit: {} | undefined, res: ServerResponse | boolean): Promise<void | Response>;
+    /**
+     * If a query is provided, fetches data using apollo-link-json-api, otherwise uses out fetch method.
+     * @param endpoint the assembled JSON:API endpoint
+     * @param query the specified GraphQL query
+     * @param objectName Name of object to retrieve. Ex: node--article
+     * @param res response object
+     * @returns data fetched from JSON:API endpoint
+     */
+    conditionalFetch(endpoint: string, query?: string | boolean, objectName?: string | boolean, res?: ServerResponse | boolean): Promise<TJsonApiBody | queryResponse | void>;
+    /**
+     * Get the contents of the root API from local state if it exists, or fetch
+     * it from Drupal if it doesn't exist in local state.
+     * @returns a promise containing an index of api links
+     */
+    private getApiIndex;
+    /**
+     * Get an object by path alias from local state if it exists, or fetch it from Drupal if
+     * it doesn't exist in local state.
+     * @param objectName Name of object to retrieve. Ex: node--article
+     * @param path Path Alias of a specific resource
+     * @param res response object
+     * @param query user provided GraphQL query
+     * @returns a promise containing deserialized JSON:API data for the requested
+     * object
+     */
+    getObjectByPath({ objectName, path, res, query, }: GetObjectByPathParams): Promise<PartialState<State>>;
+    /**
+     * Get an object from local state if it exists, or fetch it from Drupal if
+     * it doesn't exist in local state.
+     * @param objectName Name of object to retrieve. Ex: node--article
+     * @param id id of a specific resource
+     * @param res response object
+     * @param query user provided GraphQL query
+     * @param all a boolean value. If true, fetch all objects in a collection.
+     * @returns a promise containing deserialized JSON:API data for the requested
+     * object
+     */
+    getObject({ objectName, id, res, query, all, }: GetObjectParams): Promise<PartialState<State>>;
+}
+export default DrupalState;

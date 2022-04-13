@@ -1,0 +1,7 @@
+import * as React from "react";
+declare type DevToolsTheme = "dark" | "light";
+export declare const SandpackReactDevTools: ({ clientId, theme, ...props }: {
+    clientId?: string | undefined;
+    theme?: "light" | "dark" | undefined;
+} & React.HtmlHTMLAttributes<unknown>) => JSX.Element | null;
+export {};

@@ -1,0 +1,37 @@
+import { JsonApiLink } from './jsonApiLink';
+interface ResourceIdentifier {
+    id: string;
+    type: string;
+}
+declare type RelationshipData = ResourceIdentifier | Array<ResourceIdentifier>;
+interface LinkObject {
+    href?: string;
+    meta?: object;
+}
+declare type Link = string | LinkObject;
+interface Links {
+    [key: string]: Link;
+}
+interface RelationshipInfo {
+    links?: Links;
+    data?: RelationshipData;
+    meta?: object;
+}
+interface Relationships {
+    [relationshipName: string]: RelationshipInfo;
+}
+interface Resource {
+    id: string;
+    type: string;
+    attributes?: object;
+    links?: Links;
+    meta?: object;
+    relationships?: Relationships;
+    __relationships_denormalizing?: boolean;
+}
+declare const jsonapiResponseTransformer: (response: Response, typeNameNormalizer: JsonApiLink.TypeNameNormalizer, includeJsonapi: boolean) => Promise<Resource | Resource[] | {
+    graphql: Resource | Resource[];
+    jsonapi: any;
+    __typename: string;
+}>;
+export default jsonapiResponseTransformer;

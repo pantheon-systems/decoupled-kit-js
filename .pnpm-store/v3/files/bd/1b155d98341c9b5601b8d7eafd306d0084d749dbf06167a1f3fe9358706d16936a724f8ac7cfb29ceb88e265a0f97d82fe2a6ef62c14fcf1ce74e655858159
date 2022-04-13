@@ -1,0 +1,13 @@
+/// <reference types="node" />
+import { ServerResponse } from 'http';
+import { fetchAdapter } from '../types/types';
+/**
+ * fetch data from a JSON:API endpoint
+ * @param apiUrl the api url for the JSON:API endpoint
+ * @param requestInit fetch initialization object
+ * @param _res response object
+ * @param fetch fetch compatible function
+ * @returns a promise containing the data for the JSON:API response
+ */
+declare const fetchJsonapiEndpoint: (apiUrl: string, requestInit?: {}, _res?: boolean | ServerResponse | undefined, fetch?: fetchAdapter) => Promise<void | Response>;
+export default fetchJsonapiEndpoint;

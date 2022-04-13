@@ -1,0 +1,23 @@
+import * as React from "react";
+import type { SandpackTheme, SandpackThemeProp } from "../types";
+/**
+ * @hidden
+ */
+declare const SandpackThemeContext: React.Context<{
+    theme: SandpackTheme;
+    id: string;
+}>;
+/**
+ * @category Theme
+ */
+declare const SandpackThemeProvider: React.FC<{
+    theme?: SandpackThemeProp;
+}>;
+/**
+ * @hidden
+ */
+declare const SandpackThemeConsumer: React.Consumer<{
+    theme: SandpackTheme;
+    id: string;
+}>;
+export { SandpackThemeProvider, SandpackThemeConsumer, SandpackThemeContext };

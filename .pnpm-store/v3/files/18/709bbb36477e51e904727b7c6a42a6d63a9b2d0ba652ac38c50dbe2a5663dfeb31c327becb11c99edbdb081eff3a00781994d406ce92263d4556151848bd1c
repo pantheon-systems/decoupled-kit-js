@@ -1,0 +1,2 @@
+import type { SandpackPredefinedTemplate, SandboxTemplate } from "../types";
+export declare const SANDBOX_TEMPLATES: Record<SandpackPredefinedTemplate, SandboxTemplate>;

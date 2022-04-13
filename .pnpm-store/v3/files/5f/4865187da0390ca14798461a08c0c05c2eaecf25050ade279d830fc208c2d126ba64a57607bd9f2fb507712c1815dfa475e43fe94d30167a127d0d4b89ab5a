@@ -1,0 +1,88 @@
+{
+  "name": "@codesandbox/sandpack-react",
+  "version": "0.14.9",
+  "description": "",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codesandbox/sandpack"
+  },
+  "license": "Apache-2.0",
+  "author": "CodeSandbox",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "sideEffects": [
+    "dist/index.css"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "yarn run clean",
+    "build": "node build.js && yarn run build:types && yarn build:css",
+    "build:publish": "yarn build",
+    "build:types": "tsc -p tsconfig.json",
+    "build:css": "postcss src/styles/index.css -o dist/index.css -u autoprefixer -u cssnano",
+    "start": "tsc -p tsconfig.esm.json --watch",
+    "storybook": "start-storybook -p 6006 --no-dll",
+    "build-storybook": "build-storybook --no-dll",
+    "typecheck": "tsc",
+    "chromatic": "chromatic --project-token CHROMATIC_PROJECT_TOKEN"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "@code-hike/classer": "^0.0.0-aa6efee",
+    "@codemirror/closebrackets": "^0.19.0",
+    "@codemirror/commands": "^0.19.6",
+    "@codemirror/comment": "^0.19.0",
+    "@codemirror/gutter": "^0.19.9",
+    "@codemirror/highlight": "^0.19.6",
+    "@codemirror/history": "^0.19.0",
+    "@codemirror/lang-css": "^0.19.3",
+    "@codemirror/lang-html": "^0.19.4",
+    "@codemirror/lang-javascript": "^0.19.3",
+    "@codemirror/language": "^0.19.7",
+    "@codemirror/matchbrackets": "^0.19.3",
+    "@codemirror/state": "^0.19.6",
+    "@codemirror/view": "^0.19.32",
+    "@codesandbox/sandpack-client": "^0.14.8",
+    "@react-hook/intersection-observer": "^3.1.1",
+    "codesandbox-import-util-types": "^2.2.3",
+    "codesandbox-import-utils": "^2.2.3",
+    "lodash.isequal": "^4.5.0",
+    "react-devtools-inline": "4.4.0",
+    "react-is": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@storybook/addon-actions": "^6.1.9",
+    "@storybook/addon-essentials": "^6.1.9",
+    "@storybook/addon-knobs": "^6.1.9",
+    "@storybook/addon-links": "^6.1.9",
+    "@storybook/react": "^6.1.9",
+    "@types/fs-extra": "^5.0.4",
+    "@types/glob": "^5.0.35",
+    "@types/lodash.isequal": "^4.5.2",
+    "@types/node": "^9.4.6",
+    "@types/react": "^17.0.2",
+    "autoprefixer": "^10.2.4",
+    "babel-loader": "^7.1.5",
+    "chromatic": "^6.3.3",
+    "cross-env": "^5.1.3",
+    "cssnano": "^4.1.10",
+    "dotenv": "^8.2.0",
+    "postcss": "^8.2.6",
+    "postcss-cli": "^8.3.1",
+    "rimraf": "^2.6.1",
+    "storybook-addon-jsx": "^7.3.4",
+    "typescript": "4.0.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17",
+    "react-dom": "^16.8.0 || ^17"
+  },
+  "gitHead": "b385e61bd02f1f42b42726056e13df0ec8a3f083"
+}

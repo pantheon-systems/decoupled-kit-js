@@ -1,0 +1,9 @@
+/// <reference types="react" />
+export interface NavigatorProps {
+    clientId?: string;
+    onURLChange?: (newURL: string) => void;
+}
+/**
+ * @category Components
+ */
+export declare const Navigator: ({ clientId, onURLChange, }: NavigatorProps) => JSX.Element;

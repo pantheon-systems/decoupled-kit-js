@@ -1,0 +1,32 @@
+import { checkDocument, removeDirectivesFromDocument } from 'apollo-utilities';
+var connectionRemoveConfig = {
+    test: function (directive) { return directive.name.value === 'jsonapi'; },
+    remove: true,
+};
+var removed = new Map();
+export function removeRestSetsFromDocument(query) {
+    var cached = removed.get(query);
+    if (cached)
+        return cached;
+    checkDocument(query);
+    var docClone = removeDirectivesFromDocument([connectionRemoveConfig], query);
+    removed.set(query, docClone);
+    return docClone;
+}
+export var mapObject = function (obj, fn) {
+    return Object.entries(obj)
+        .map(fn)
+        .reduce(function (acc, _a) {
+        var k = _a[0], v = _a[1];
+        acc[k] = v;
+        return acc;
+    }, {});
+};
+export var mapObjectValues = function (obj, fn) {
+    return mapObject(obj, function (_a) {
+        var k = _a[0], v = _a[1];
+        return [k, fn(v)];
+    });
+};
+export var identity = function (v) { return v; };
+//# sourceMappingURL=utils.js.map

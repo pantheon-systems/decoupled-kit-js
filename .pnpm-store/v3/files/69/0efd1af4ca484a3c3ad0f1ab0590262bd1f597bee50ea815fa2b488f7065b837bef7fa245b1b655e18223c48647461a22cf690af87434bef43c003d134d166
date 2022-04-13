@@ -1,0 +1,1011 @@
+var _templateObject;
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+import _regeneratorRuntime from "@babel/runtime/regenerator";
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+import create from 'zustand/vanilla';
+import { JsonApiLink } from 'apollo-link-json-api';
+import { ApolloClient, InMemoryCache, gql, ApolloError } from '@apollo/client/core';
+import Jsona from 'jsona';
+import { DrupalJsonApiParams } from 'drupal-jsonapi-params';
+import { camelize } from 'humps';
+import deepmerge from 'deepmerge';
+import fetch from 'isomorphic-fetch';
+/**
+ * fetch data from a JSON:API endpoint
+ * @param apiUrl the api url for the JSON:API endpoint
+ * @param requestInit fetch initialization object
+ * @param res response object
+ * @returns a promise containing the data for the JSON:API response
+ */
+
+var defaultFetch = function defaultFetch(apiUrl) {
+  var requestInit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+  var // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _res = arguments.length > 2 ? arguments[2] : undefined;
+
+  return fetch(apiUrl, requestInit);
+};
+/**
+ * Get an index of resource links for the API
+ * @param apiRoot url to the root of JSON:API
+ * @param fetch fetch compatible function
+ * @returns a promise containing an object with an index of resource links
+ */
+
+
+var _fetchApiIndex = function fetchApiIndex(apiRoot) {
+  var fetch = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : defaultFetch;
+  var apiIndex = fetch(apiRoot).then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    return data.links || false;
+  })["catch"](function (error) {
+    return console.error('API index fetch failed', error);
+  });
+  return apiIndex;
+};
+/**
+ * fetch data from a JSON:API endpoint
+ * @param apiUrl the api url for the JSON:API endpoint
+ * @param requestInit fetch initialization object
+ * @param _res response object
+ * @param fetch fetch compatible function
+ * @returns a promise containing the data for the JSON:API response
+ */
+
+
+var _fetchJsonapiEndpoint = function fetchJsonapiEndpoint(apiUrl) {
+  var requestInit = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+  var // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _res = arguments.length > 2 ? arguments[2] : undefined;
+
+  var fetch = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : defaultFetch;
+  var collection = fetch(apiUrl, requestInit, _res).then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    return data;
+  })["catch"](function (error) {
+    return console.error('JSON:API fetch failed', error);
+  });
+  return collection;
+};
+/**
+ * helper function to make it easier to resolve a path to an entity ID
+ * @param apiUrl the api url for the JON:API endpoint
+ * @param path the path to the node
+ * @param requestInit fetch initialization object
+ * @param res response object
+ * @param fetch fetch compatible function
+ * @returns a promise containing the data for the JSON:API response
+ */
+
+
+var translatePath = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee(apiUrl, path) {
+    var requestInit,
+        _res,
+        fetch,
+        response,
+        _args = arguments;
+
+    return _regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            requestInit = _args.length > 2 && _args[2] !== undefined ? _args[2] : {};
+            _res = _args.length > 3 && _args[3] !== undefined ? _args[3] : false;
+            fetch = _args.length > 4 && _args[4] !== undefined ? _args[4] : defaultFetch;
+            _context.next = 5;
+            return _fetchJsonapiEndpoint(apiUrl + '?path=' + path + '&_format=json', requestInit, _res, fetch);
+
+          case 5:
+            response = _context.sent;
+            return _context.abrupt("return", response);
+
+          case 7:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function translatePath(_x, _x2) {
+    return _ref.apply(this, arguments);
+  };
+}();
+/**
+ * Fetch a token from Drupal
+ * @param apiUrl the api url for the JON:API endpoint
+ * @param tokenFetchBody object containing body parameters for the token request
+ * @param fetch fetch compatible function
+ * @returns a promise containing the token api response
+ */
+
+
+var fetchToken = function fetchToken(apiUrl, tokenFetchBody) {
+  var fetch = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : defaultFetch;
+  // Convert body object to parameter string
+  var body = Object.keys(tokenFetchBody).map(function (key) {
+    return "".concat(key, "=").concat(tokenFetchBody[key]);
+  }).join('&');
+  var tokenPayload = fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: body
+  }).then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    return data;
+  })["catch"](function (error) {
+    return console.error('Token fetch failed', error);
+  });
+  return tokenPayload;
+};
+
+var DrupalState = /*#__PURE__*/function () {
+  /**
+   * DrupalJsonApiParams - see [https://www.npmjs.com/package/drupal-jsonapi-params](https://www.npmjs.com/package/drupal-jsonapi-params)
+   */
+  function DrupalState(_ref2) {
+    var apiBase = _ref2.apiBase,
+        _ref2$apiPrefix = _ref2.apiPrefix,
+        apiPrefix = _ref2$apiPrefix === void 0 ? 'jsonapi' : _ref2$apiPrefix,
+        defaultLocale = _ref2.defaultLocale,
+        clientId = _ref2.clientId,
+        clientSecret = _ref2.clientSecret,
+        _ref2$fetchAdapter = _ref2.fetchAdapter,
+        fetchAdapter = _ref2$fetchAdapter === void 0 ? defaultFetch : _ref2$fetchAdapter,
+        _ref2$debug = _ref2.debug,
+        debug = _ref2$debug === void 0 ? false : _ref2$debug;
+
+    _classCallCheck(this, DrupalState);
+
+    _defineProperty(this, "apiBase", void 0);
+
+    _defineProperty(this, "apiPrefix", void 0);
+
+    _defineProperty(this, "defaultLocale", void 0);
+
+    _defineProperty(this, "apiRoot", void 0);
+
+    _defineProperty(this, "clientId", void 0);
+
+    _defineProperty(this, "clientSecret", void 0);
+
+    _defineProperty(this, "fetchAdapter", void 0);
+
+    _defineProperty(this, "auth", void 0);
+
+    _defineProperty(this, "token", {
+      accessToken: '',
+      validUntil: 0,
+      tokenType: ''
+    });
+
+    _defineProperty(this, "debug", void 0);
+
+    _defineProperty(this, "store", void 0);
+
+    _defineProperty(this, "getState", void 0);
+
+    _defineProperty(this, "setState", void 0);
+
+    _defineProperty(this, "subscribe", void 0);
+
+    _defineProperty(this, "destroy", void 0);
+
+    _defineProperty(this, "client", void 0);
+
+    _defineProperty(this, "dataFormatter", void 0);
+
+    _defineProperty(this, "params", void 0);
+
+    this.apiBase = apiBase;
+    this.apiPrefix = apiPrefix;
+    this.defaultLocale = defaultLocale;
+    this.apiRoot = this.assembleApiRoot(); // TODO - .env support? Or should the consuming app be responsible for that?
+
+    this.clientId = clientId;
+    this.clientSecret = clientSecret;
+    this.auth = this.clientId && this.clientSecret ? true : false;
+    this.fetchAdapter = fetchAdapter;
+    this.debug = debug;
+    this.dataFormatter = new Jsona();
+    this.params = new DrupalJsonApiParams();
+    !this.debug || console.log('Debug mode:', debug);
+    this.store = create(function () {
+      return {};
+    });
+    var _this$store = this.store,
+        getState = _this$store.getState,
+        setState = _this$store.setState,
+        subscribe = _this$store.subscribe,
+        destroy = _this$store.destroy;
+    this.getState = getState;
+    this.setState = setState;
+    this.subscribe = subscribe;
+    this.destroy = destroy; // TODO - fix JsonApiLink type defs - unknown feels like a hack.
+
+    var jsonApiLink = new JsonApiLink({
+      uri: this.apiRoot,
+      customFetch: this.fetchAdapter
+    });
+    this.client = new ApolloClient({
+      link: jsonApiLink,
+      cache: new InMemoryCache()
+    });
+  }
+  /**
+   * Format apiBase, apiPrefix, and combine into apiRoot.
+   * @returns a fully qualified JSON:API root endpoint URL
+   */
+
+
+  _createClass(DrupalState, [{
+    key: "assembleApiRoot",
+    value: function assembleApiRoot() {
+      // Format apiBase - ensure it doesn't have a trailing /
+      this.apiBase = this.apiBase.replace(/\/\s*$/, ''); // Format apiPrefix - ensure it doesn't have a leading / and does have a
+      // trailing /
+
+      this.apiPrefix = this.apiPrefix.replace(/^\s*\//, '');
+      this.apiPrefix = this.apiPrefix.slice(-1) === '/' ? this.apiPrefix : "".concat(this.apiPrefix, "/");
+
+      if (this.defaultLocale) {
+        return "".concat(this.apiBase, "/").concat(this.defaultLocale, "/").concat(this.apiPrefix);
+      } else {
+        return "".concat(this.apiBase, "/").concat(this.apiPrefix);
+      }
+    } // Todo - Various error handling
+
+    /**
+     * Assembles a correctly formatted JSON:API endpoint URL.
+     * @param objectName - The resource type we're fetching.
+     * @param index a JSON:API resource endpoint
+     * @param id id of an individual resource
+     * @param query user provided GraphQL query
+     * @returns a full endpoint URL or a relative endpoint URL is a query is provided
+     */
+
+  }, {
+    key: "assembleEndpoint",
+    value: function assembleEndpoint(objectName, index) {
+      var id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+      var query = arguments.length > 3 ? arguments[3] : undefined;
+      var endpoint = ''; // TODO - probably need some additional error handling here
+
+      if (index === undefined || _typeof(index) === undefined) {
+        throw new Error("Error: The following index is not a string. Check the object name, id and, apiBase:\n\t index: ".concat(JSON.stringify(index), "\n\t id: ").concat(id, "\n\t objectName: ").concat(objectName));
+      } else if (typeof index === 'string') {
+        endpoint = index;
+      } else {
+        endpoint = index.href;
+      }
+
+      if (id) {
+        endpoint += "/".concat(id);
+      }
+
+      if (query) {
+        // if a query exists we don't want the apiBase on the endpoint
+        // as it will make the gqlQuery in conditionalFetch fail
+        endpoint = endpoint.replace( // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        "".concat(this.apiBase).concat("/".concat(this.defaultLocale) || '', "/").concat(this.apiPrefix), '');
+        var fields = [];
+        var gqlObject = gql(query);
+        gqlObject.definitions.forEach(function (definition) {
+          var iterableDefinitions = definition;
+          iterableDefinitions.selectionSet.selections.forEach(function (selection) {
+            if (selection.kind === 'Field') {
+              fields.push(selection.name.value);
+            }
+          });
+        });
+        this.params.addFields(objectName, fields); // Check here to make sure apiRoot has trailing slash?
+
+        endpoint = endpoint.replace(this.apiRoot, '');
+      }
+
+      if (this.params.getQueryString()) {
+        endpoint += "?".concat(this.params.getQueryString());
+      }
+
+      return endpoint;
+    }
+    /**
+     * Assembles an authorization header using an existing token if valid, or by
+     * fetching a new token if necessary.
+     * @returns a string containing an authorization header value
+     */
+
+  }, {
+    key: "getAuthHeader",
+    value: function () {
+      var _getAuthHeader = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee2() {
+        var tokenRequestBody, tokenResponse;
+        return _regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                if (!(this.token.validUntil - 10 * 1000 > Date.now())) {
+                  _context2.next = 4;
+                  break;
+                }
+
+                !this.debug || console.log('Using existing auth token');
+                _context2.next = 10;
+                break;
+
+              case 4:
+                !this.debug || console.log('Fetching new auth token');
+                tokenRequestBody = {
+                  grant_type: 'client_credentials',
+                  client_id: this.clientId,
+                  client_secret: this.clientSecret
+                };
+                _context2.next = 8;
+                return fetchToken("".concat(this.apiBase, "/oauth/token"), tokenRequestBody, this.fetchAdapter);
+
+              case 8:
+                tokenResponse = _context2.sent;
+                this.token = {
+                  accessToken: tokenResponse.access_token,
+                  validUntil: Date.now() + tokenResponse.expires_in * 1000,
+                  tokenType: tokenResponse.token_type
+                };
+
+              case 10:
+                return _context2.abrupt("return", "".concat(this.token.tokenType, " ").concat(this.token.accessToken));
+
+              case 11:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function getAuthHeader() {
+        return _getAuthHeader.apply(this, arguments);
+      }
+
+      return getAuthHeader;
+    }()
+    /**
+     * Wraps {@link fetch/fetchApiIndex} function so it can be overridden.
+     */
+
+  }, {
+    key: "fetchApiIndex",
+    value: function () {
+      var _fetchApiIndex2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee3(apiRoot) {
+        return _regeneratorRuntime.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return _fetchApiIndex(apiRoot, this.fetchAdapter);
+
+              case 2:
+                return _context3.abrupt("return", _context3.sent);
+
+              case 3:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this);
+      }));
+
+      function fetchApiIndex(_x3) {
+        return _fetchApiIndex2.apply(this, arguments);
+      }
+
+      return fetchApiIndex;
+    }()
+    /**
+     *
+     * Wraps {@link fetch/fetchJsonapiEndpoint} function so it can be overridden.
+     */
+
+  }, {
+    key: "fetchJsonapiEndpoint",
+    value: function () {
+      var _fetchJsonapiEndpoint2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee4(endpoint) {
+        var requestInit,
+            res,
+            _args4 = arguments;
+        return _regeneratorRuntime.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                requestInit = _args4.length > 1 && _args4[1] !== undefined ? _args4[1] : {};
+                res = _args4.length > 2 ? _args4[2] : undefined;
+                _context4.next = 4;
+                return _fetchJsonapiEndpoint(endpoint, requestInit, res, this.fetchAdapter);
+
+              case 4:
+                return _context4.abrupt("return", _context4.sent);
+
+              case 5:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, this);
+      }));
+
+      function fetchJsonapiEndpoint(_x4) {
+        return _fetchJsonapiEndpoint2.apply(this, arguments);
+      }
+
+      return fetchJsonapiEndpoint;
+    }()
+    /**
+     * If a query is provided, fetches data using apollo-link-json-api, otherwise uses out fetch method.
+     * @param endpoint the assembled JSON:API endpoint
+     * @param query the specified GraphQL query
+     * @param objectName Name of object to retrieve. Ex: node--article
+     * @param res response object
+     * @returns data fetched from JSON:API endpoint
+     */
+
+  }, {
+    key: "conditionalFetch",
+    value: function () {
+      var _conditionalFetch = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee5(endpoint) {
+        var query,
+            objectName,
+            res,
+            requestInit,
+            authHeader,
+            headers,
+            queryObjectName,
+            gqlQuery,
+            response,
+            data,
+            object,
+            result,
+            _args5 = arguments;
+        return _regeneratorRuntime.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                query = _args5.length > 1 && _args5[1] !== undefined ? _args5[1] : false;
+                objectName = _args5.length > 2 && _args5[2] !== undefined ? _args5[2] : false;
+                res = _args5.length > 3 && _args5[3] !== undefined ? _args5[3] : false;
+                requestInit = {};
+                authHeader = '';
+
+                if (!(this.clientId && this.clientSecret)) {
+                  _context5.next = 12;
+                  break;
+                }
+
+                headers = new Headers();
+                _context5.next = 9;
+                return this.getAuthHeader();
+
+              case 9:
+                authHeader = _context5.sent;
+                headers.append('Authorization', authHeader);
+                requestInit = {
+                  headers: headers
+                };
+
+              case 12:
+                if (!query) {
+                  _context5.next = 31;
+                  break;
+                }
+
+                _context5.prev = 13;
+                this.client.link.headers = {
+                  Authorization: authHeader
+                };
+                queryObjectName = camelize(objectName);
+                gqlQuery = gql(_templateObject || (_templateObject = _taggedTemplateLiteral(["{\n              ", " @jsonapi(path: \"", "\", includeJsonapi: true)\n                {\n                  jsonapi\n                  graphql\n                  ", "\n                }\n              }"])), queryObjectName, endpoint, query);
+                _context5.next = 19;
+                return this.client.query({
+                  query: gqlQuery
+                });
+
+              case 19:
+                response = _context5.sent;
+                data = response.data;
+                object = data[queryObjectName];
+                result = {
+                  data: object.jsonapi.data,
+                  graphql: object.graphql,
+                  links: object.jsonapi.links
+                };
+                return _context5.abrupt("return", new Promise(function (resolve, reject) {
+                  resolve(result);
+
+                  if (response.errors || response.error) {
+                    reject(response.errors || response.error);
+                  }
+                }));
+
+              case 26:
+                _context5.prev = 26;
+                _context5.t0 = _context5["catch"](13);
+
+                if (_context5.t0 instanceof ApolloError) {
+                  _context5.t0.graphQLErrors.forEach(function (e, i) {
+                    return console.error("Error ".concat(i + 1, ": ").concat(JSON.stringify(e, null, 2)));
+                  });
+                } else {
+                  console.error(_context5.t0);
+                }
+
+              case 29:
+                _context5.next = 34;
+                break;
+
+              case 31:
+                _context5.next = 33;
+                return this.fetchJsonapiEndpoint(endpoint, requestInit, res);
+
+              case 33:
+                return _context5.abrupt("return", _context5.sent);
+
+              case 34:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5, this, [[13, 26]]);
+      }));
+
+      function conditionalFetch(_x5) {
+        return _conditionalFetch.apply(this, arguments);
+      }
+
+      return conditionalFetch;
+    }()
+    /**
+     * Get the contents of the root API from local state if it exists, or fetch
+     * it from Drupal if it doesn't exist in local state.
+     * @returns a promise containing an index of api links
+     */
+
+  }, {
+    key: "getApiIndex",
+    value: function () {
+      var _getApiIndex = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee6() {
+        var state, dsApiIndex, dsApiIndexData, updatedState;
+        return _regeneratorRuntime.wrap(function _callee6$(_context6) {
+          while (1) {
+            switch (_context6.prev = _context6.next) {
+              case 0:
+                // TODO: this should be optimized so we don't have create a full copy of
+                // the store.
+                state = this.getState();
+                dsApiIndex = state.dsApiIndex;
+
+                if (dsApiIndex) {
+                  _context6.next = 9;
+                  break;
+                }
+
+                _context6.next = 5;
+                return this.fetchApiIndex(this.apiRoot);
+
+              case 5:
+                dsApiIndexData = _context6.sent;
+                // TODO - consider adding this to the DrupalState class rather than adding
+                // data that we rely on to the store.
+                this.setState({
+                  dsApiIndex: dsApiIndexData
+                });
+                updatedState = this.getState();
+                return _context6.abrupt("return", updatedState.dsApiIndex);
+
+              case 9:
+                return _context6.abrupt("return", dsApiIndex);
+
+              case 10:
+              case "end":
+                return _context6.stop();
+            }
+          }
+        }, _callee6, this);
+      }));
+
+      function getApiIndex() {
+        return _getApiIndex.apply(this, arguments);
+      }
+
+      return getApiIndex;
+    }()
+    /**
+     * Get an object by path alias from local state if it exists, or fetch it from Drupal if
+     * it doesn't exist in local state.
+     * @param objectName Name of object to retrieve. Ex: node--article
+     * @param path Path Alias of a specific resource
+     * @param res response object
+     * @param query user provided GraphQL query
+     * @returns a promise containing deserialized JSON:API data for the requested
+     * object
+     */
+
+  }, {
+    key: "getObjectByPath",
+    value: function () {
+      var _getObjectByPath = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee7(_ref3) {
+        var objectName, path, res, _ref3$query, query, currentState, dsPathTranslations, requestInit, authHeader, headers, response, pathTranslationsState, updatedPathTranslationState, newPathTranslationState, updatedState, pathTranslations, id, object;
+
+        return _regeneratorRuntime.wrap(function _callee7$(_context7) {
+          while (1) {
+            switch (_context7.prev = _context7.next) {
+              case 0:
+                objectName = _ref3.objectName, path = _ref3.path, res = _ref3.res, _ref3$query = _ref3.query, query = _ref3$query === void 0 ? false : _ref3$query;
+                currentState = this.getState();
+                dsPathTranslations = currentState.dsPathTranslations;
+
+                if (dsPathTranslations !== null && dsPathTranslations !== void 0 && dsPathTranslations["".concat(path)]) {
+                  _context7.next = 18;
+                  break;
+                }
+
+                !this.debug || console.log("No match for ".concat(path, " in dsPathTranslations - calling translatePath.")); // TODO - abstract helper method to assemble requestInit and authHeader
+
+                requestInit = {};
+                authHeader = '';
+
+                if (!(this.clientId && this.clientSecret)) {
+                  _context7.next = 14;
+                  break;
+                }
+
+                headers = new Headers();
+                _context7.next = 11;
+                return this.getAuthHeader();
+
+              case 11:
+                authHeader = _context7.sent;
+                headers.append('Authorization', authHeader);
+                requestInit = {
+                  headers: headers
+                };
+
+              case 14:
+                _context7.next = 16;
+                return translatePath(this.apiBase + '/router/translate-path', path, requestInit, false, this.fetchAdapter);
+
+              case 16:
+                response = _context7.sent;
+
+                if (response) {
+                  pathTranslationsState = currentState['dsPathTranslations'];
+
+                  if (pathTranslationsState) {
+                    // If dsPathTranslaitons exists in state, add the new path to it.
+                    updatedPathTranslationState = _objectSpread(_objectSpread({}, pathTranslationsState), {}, _defineProperty({}, path, response));
+                    this.setState(_defineProperty({}, 'dsPathTranslations', updatedPathTranslationState));
+                  } else {
+                    newPathTranslationState = _defineProperty({}, path, response);
+                    this.setState(_defineProperty({}, 'dsPathTranslations', newPathTranslationState));
+                  }
+                }
+
+              case 18:
+                updatedState = this.getState();
+                pathTranslations = updatedState.dsPathTranslations;
+                id = pathTranslations["".concat(path)].entity.uuid;
+                _context7.next = 23;
+                return this.getObject({
+                  objectName: objectName,
+                  id: id,
+                  res: res,
+                  query: query
+                });
+
+              case 23:
+                object = _context7.sent;
+                return _context7.abrupt("return", object);
+
+              case 25:
+              case "end":
+                return _context7.stop();
+            }
+          }
+        }, _callee7, this);
+      }));
+
+      function getObjectByPath(_x6) {
+        return _getObjectByPath.apply(this, arguments);
+      }
+
+      return getObjectByPath;
+    }()
+    /**
+     * Get an object from local state if it exists, or fetch it from Drupal if
+     * it doesn't exist in local state.
+     * @param objectName Name of object to retrieve. Ex: node--article
+     * @param id id of a specific resource
+     * @param res response object
+     * @param query user provided GraphQL query
+     * @param all a boolean value. If true, fetch all objects in a collection.
+     * @returns a promise containing deserialized JSON:API data for the requested
+     * object
+     */
+
+  }, {
+    key: "getObject",
+    value: function () {
+      var _getObject = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee9(_ref4) {
+        var _collectionState$link,
+            _collectionState$link2,
+            _this = this;
+
+        var objectName, id, _ref4$res, res, _ref4$query, query, _ref4$all, all, state, collectionState, resourceState, resource, matchedResourceState, serializedState, dsApiIndex, endpoint, resourceData, objectResourceState, updatedResourceState, newResourceState, _dsApiIndex, _endpoint, collectionData, fetchedCollectionState, links, normalizeNextLink, nextLink, getNextPageEndpoint, getNextPage, nextPageEndpoint, results, currentLinks, _nextLink, gqlCollectionState;
+
+        return _regeneratorRuntime.wrap(function _callee9$(_context9) {
+          while (1) {
+            switch (_context9.prev = _context9.next) {
+              case 0:
+                objectName = _ref4.objectName, id = _ref4.id, _ref4$res = _ref4.res, res = _ref4$res === void 0 ? false : _ref4$res, _ref4$query = _ref4.query, query = _ref4$query === void 0 ? false : _ref4$query, _ref4$all = _ref4.all, all = _ref4$all === void 0 ? false : _ref4$all;
+                state = this.getState(); // Check for collection in the store
+
+                collectionState = state[objectName]; // If an id is provided, find and return a resource
+
+                if (!id) {
+                  _context9.next = 27;
+                  break;
+                }
+
+                resourceState = state["".concat(objectName, "Resources")]; // If requested resource is in the resource store, return that
+
+                if (!resourceState) {
+                  _context9.next = 10;
+                  break;
+                }
+
+                resource = resourceState[id];
+
+                if (!resource) {
+                  _context9.next = 10;
+                  break;
+                }
+
+                !this.debug || console.log("Matched resource ".concat(id, " in state"));
+                return _context9.abrupt("return", resource !== null && resource !== void 0 && resource.graphql ? resource.graphql : this.dataFormatter.deserialize(resource));
+
+              case 10:
+                if (!(collectionState !== null && collectionState !== void 0 && collectionState.data && !query)) {
+                  _context9.next = 16;
+                  break;
+                }
+
+                // If the collection is in the store, check for the resource
+                matchedResourceState = collectionState.data.filter(function (item) {
+                  return item['id'] === id;
+                }); // If resource already exists within collection, return that.
+
+                if (!matchedResourceState) {
+                  _context9.next = 16;
+                  break;
+                }
+
+                !this.debug || console.log("Matched resource ".concat(id, " in collection")); // Should this be added to ResourceState as well?
+
+                serializedState = {
+                  data: matchedResourceState.pop()
+                };
+                return _context9.abrupt("return", this.dataFormatter.deserialize(serializedState));
+
+              case 16:
+                // Resource isn't in state, so fetch it from Drupal
+                !this.debug || console.log("Fetch Resource ".concat(id, " and add to state"));
+                _context9.next = 19;
+                return this.getApiIndex();
+
+              case 19:
+                dsApiIndex = _context9.sent;
+                endpoint = this.assembleEndpoint(objectName, dsApiIndex[objectName], id, query);
+                _context9.next = 23;
+                return this.conditionalFetch(endpoint, query, "".concat(objectName, "Resources"), res);
+
+              case 23:
+                resourceData = _context9.sent;
+                objectResourceState = state["".concat(objectName, "Resources")];
+
+                if (objectResourceState) {
+                  // If the resource state exists, add the new resource to it.
+                  updatedResourceState = _objectSpread(_objectSpread({}, objectResourceState), {}, _defineProperty({}, id, resourceData));
+                  this.setState(_defineProperty({}, "".concat(objectName, "Resources"), updatedResourceState));
+                } else {
+                  newResourceState = _defineProperty({}, id, resourceData);
+                  this.setState(_defineProperty({}, "".concat(objectName, "Resources"), newResourceState));
+                }
+
+                return _context9.abrupt("return", query ? resourceData.graphql : this.dataFormatter.deserialize(resourceData));
+
+              case 27:
+                if (!(!collectionState || query && !collectionState.graphql || (_collectionState$link = collectionState.links) !== null && _collectionState$link !== void 0 && _collectionState$link.next && !((_collectionState$link2 = collectionState.links) !== null && _collectionState$link2 !== void 0 && _collectionState$link2.last) && all)) {
+                  _context9.next = 60;
+                  break;
+                }
+
+                !this.debug || console.log("Fetch Collection ".concat(objectName, " and add to state"));
+                _context9.next = 31;
+                return this.getApiIndex();
+
+              case 31:
+                _dsApiIndex = _context9.sent;
+                _endpoint = this.assembleEndpoint(objectName, _dsApiIndex[objectName], id, query);
+                _context9.next = 35;
+                return this.conditionalFetch(_endpoint, query, objectName, res);
+
+              case 35:
+                collectionData = _context9.sent;
+                fetchedCollectionState = {};
+                fetchedCollectionState[objectName] = collectionData;
+                this.setState(fetchedCollectionState); // if the all flag is present
+                // and if there is a next page
+                // aka >50 items available,
+                // fetch them and add to store
+
+                if (!all) {
+                  _context9.next = 57;
+                  break;
+                }
+
+                links = collectionData === null || collectionData === void 0 ? void 0 : collectionData.links; // the shape of { links } is not consistent so normalize it here
+
+                normalizeNextLink = function normalizeNextLink(linkObj) {
+                  var _linkObj$next;
+
+                  if (linkObj === undefined || !linkObj.next) {
+                    return '';
+                  } else if (typeof linkObj.next === 'string') {
+                    return linkObj.next;
+                  } else if (typeof ((_linkObj$next = linkObj.next) === null || _linkObj$next === void 0 ? void 0 : _linkObj$next.href) === 'string') {
+                    return linkObj.next.href;
+                  }
+
+                  return '';
+                };
+
+                nextLink = normalizeNextLink(links);
+
+                if (!nextLink) {
+                  _context9.next = 57;
+                  break;
+                }
+
+                !this.debug || console.log("Found 'next' link - attempting to fetch next page of results for ".concat(objectName)); // helper function to parse the next page endpoint in case there is a query
+
+                getNextPageEndpoint = function getNextPageEndpoint(nextLink) {
+                  var nextPageEndpoint;
+
+                  if (query && objectName.includes('--')) {
+                    var querySafeName = objectName.split('--').join('/');
+                    nextPageEndpoint = "".concat(querySafeName).concat(id ? "/".concat(id) : '', "?").concat(nextLink.split('?')[1]);
+                  } else {
+                    nextPageEndpoint = nextLink;
+                  }
+
+                  return nextPageEndpoint;
+                }; // helper function to fetch and add next page's data to the store
+
+
+                getNextPage = /*#__PURE__*/function () {
+                  var _ref5 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee8(nextPageEndpoint) {
+                    var nextPage, currentState, mergedCollection;
+                    return _regeneratorRuntime.wrap(function _callee8$(_context8) {
+                      while (1) {
+                        switch (_context8.prev = _context8.next) {
+                          case 0:
+                            if (!(nextPageEndpoint === '')) {
+                              _context8.next = 2;
+                              break;
+                            }
+
+                            return _context8.abrupt("return", {});
+
+                          case 2:
+                            _context8.next = 4;
+                            return _this.conditionalFetch(nextPageEndpoint, query, objectName, res);
+
+                          case 4:
+                            nextPage = _context8.sent;
+                            currentState = _this.getState(); // using deepmerge to merge arrays instead of overwriting them
+
+                            mergedCollection = deepmerge(currentState[objectName], nextPage);
+                            currentState[objectName] = mergedCollection;
+
+                            _this.setState(currentState);
+
+                            return _context8.abrupt("return", nextPage.links);
+
+                          case 10:
+                          case "end":
+                            return _context8.stop();
+                        }
+                      }
+                    }, _callee8);
+                  }));
+
+                  return function getNextPage(_x8) {
+                    return _ref5.apply(this, arguments);
+                  };
+                }();
+
+                nextPageEndpoint = getNextPageEndpoint(nextLink); // if current page has a next page, get that data too
+
+              case 48:
+                _context9.next = 50;
+                return getNextPage(nextPageEndpoint);
+
+              case 50:
+                currentLinks = _context9.sent;
+                results = this.getState();
+                links = currentLinks;
+                _nextLink = normalizeNextLink(currentLinks);
+                nextPageEndpoint = getNextPageEndpoint(_nextLink);
+
+              case 55:
+                if (links.next) {
+                  _context9.next = 48;
+                  break;
+                }
+
+              case 56:
+                return _context9.abrupt("return", query ? results[objectName].graphql : this.dataFormatter.deserialize(results[objectName]));
+
+              case 57:
+                return _context9.abrupt("return", query ? collectionData.graphql : this.dataFormatter.deserialize(collectionData));
+
+              case 60:
+                !this.debug || console.log("Matched collection ".concat(objectName, " in state"));
+                gqlCollectionState = collectionState;
+                return _context9.abrupt("return", query ? gqlCollectionState.graphql : this.dataFormatter.deserialize(collectionState));
+
+              case 63:
+              case "end":
+                return _context9.stop();
+            }
+          }
+        }, _callee9, this);
+      }));
+
+      function getObject(_x7) {
+        return _getObject.apply(this, arguments);
+      }
+
+      return getObject;
+    }()
+  }]);
+
+  return DrupalState;
+}();
+
+export { DrupalState, _fetchApiIndex as fetchApiIndex, _fetchJsonapiEndpoint as fetchJsonapiEndpoint, fetchToken, translatePath };

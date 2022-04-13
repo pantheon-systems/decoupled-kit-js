@@ -1,0 +1,132 @@
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SwitchCaseJsonMapper = exports.SwitchCaseModelMapper = void 0;
+var simplePropertyMappers_1 = require("./simplePropertyMappers");
+var SwitchCaseModelMapper = /** @class */ (function (_super) {
+    __extends(SwitchCaseModelMapper, _super);
+    function SwitchCaseModelMapper(options) {
+        var _this = _super.call(this) || this;
+        var _a = options || {}, _b = _a.switchAttributes, switchAttributes = _b === void 0 ? true : _b, _c = _a.switchRelationships, switchRelationships = _c === void 0 ? true : _c, _d = _a.switchType, switchType = _d === void 0 ? true : _d, _e = _a.switchChar, switchChar = _e === void 0 ? '-' : _e;
+        _this.switchAttributes = switchAttributes;
+        _this.switchRelationships = switchRelationships;
+        _this.switchType = switchType;
+        _this.switchChar = switchChar;
+        return _this;
+    }
+    SwitchCaseModelMapper.prototype.getType = function (model) {
+        var _this = this;
+        var type = _super.prototype.getType.call(this, model);
+        if (!this.switchType || !type) {
+            return type;
+        }
+        return type.replace(/([a-z][A-Z0-9])/g, function (g) { return g[0] + _this.switchChar + g[1].toLowerCase(); });
+    };
+    SwitchCaseModelMapper.prototype.getAttributes = function (model) {
+        var _this = this;
+        var camelCasedAttributes = _super.prototype.getAttributes.call(this, model);
+        if (!this.switchAttributes || !camelCasedAttributes) {
+            return camelCasedAttributes;
+        }
+        var kebabAttributes = {};
+        Object.keys(camelCasedAttributes).forEach(function (name) {
+            var kebabName = name.replace(/([a-z][A-Z0-9])/g, function (g) { return g[0] + _this.switchChar + g[1].toLowerCase(); });
+            kebabAttributes[kebabName] = camelCasedAttributes[name];
+        });
+        return kebabAttributes;
+    };
+    SwitchCaseModelMapper.prototype.getRelationships = function (model) {
+        var _this = this;
+        var camelCasedRelationships = _super.prototype.getRelationships.call(this, model);
+        if (!this.switchRelationships || !camelCasedRelationships) {
+            return camelCasedRelationships;
+        }
+        var kebabRelationships = {};
+        Object.keys(camelCasedRelationships).forEach(function (name) {
+            var kebabName = name.replace(/([a-z][A-Z0-9])/g, function (g) { return g[0] + _this.switchChar + g[1].toLowerCase(); });
+            kebabRelationships[kebabName] = camelCasedRelationships[name];
+        });
+        return kebabRelationships;
+    };
+    return SwitchCaseModelMapper;
+}(simplePropertyMappers_1.ModelPropertiesMapper));
+exports.SwitchCaseModelMapper = SwitchCaseModelMapper;
+var SwitchCaseJsonMapper = /** @class */ (function (_super) {
+    __extends(SwitchCaseJsonMapper, _super);
+    function SwitchCaseJsonMapper(options) {
+        var _this = _super.call(this) || this;
+        var _a = options || {}, _b = _a.camelizeAttributes, camelizeAttributes = _b === void 0 ? true : _b, _c = _a.camelizeRelationships, camelizeRelationships = _c === void 0 ? true : _c, _d = _a.camelizeType, camelizeType = _d === void 0 ? true : _d, _e = _a.camelizeMeta, camelizeMeta = _e === void 0 ? false : _e, _f = _a.switchChar, switchChar = _f === void 0 ? '-' : _f;
+        _this.camelizeAttributes = camelizeAttributes;
+        _this.camelizeRelationships = camelizeRelationships;
+        _this.camelizeType = camelizeType;
+        _this.camelizeMeta = camelizeMeta;
+        _this.switchChar = switchChar;
+        return _this;
+    }
+    SwitchCaseJsonMapper.prototype.createModel = function (type) {
+        if (!this.camelizeType) {
+            return { type: type };
+        }
+        var regex = new RegExp(this.switchChar + "([a-z0-9])", 'g');
+        var camelizedType = type.replace(regex, function (g) { return g[1].toUpperCase(); });
+        return { type: camelizedType };
+    };
+    SwitchCaseJsonMapper.prototype.setAttributes = function (model, attributes) {
+        var _this = this;
+        if (!this.camelizeAttributes) {
+            return _super.prototype.setAttributes.call(this, model, attributes);
+        }
+        Object.keys(attributes).forEach(function (propName) {
+            var regex = new RegExp(_this.switchChar + "([a-z0-9])", 'g');
+            var camelName = propName.replace(regex, function (g) { return g[1].toUpperCase(); });
+            model[camelName] = attributes[propName];
+        });
+    };
+    SwitchCaseJsonMapper.prototype.setMeta = function (model, meta) {
+        var _this = this;
+        if (!this.camelizeMeta) {
+            return _super.prototype.setMeta.call(this, model, meta);
+        }
+        model.meta = {};
+        Object.keys(meta).forEach(function (propName) {
+            var regex = new RegExp(_this.switchChar + "([a-z0-9])", 'g');
+            var camelName = propName.replace(regex, function (g) { return g[1].toUpperCase(); });
+            model.meta[camelName] = meta[propName];
+        });
+    };
+    SwitchCaseJsonMapper.prototype.setRelationships = function (model, relationships) {
+        var _this = this;
+        // call super.setRelationships first, just for not to copy paste setRelationships logic
+        _super.prototype.setRelationships.call(this, model, relationships);
+        if (!this.camelizeRelationships) {
+            return;
+        }
+        // then change relationship names case if needed
+        model[simplePropertyMappers_1.RELATIONSHIP_NAMES_PROP].forEach(function (kebabName, i) {
+            var regex = new RegExp(_this.switchChar + "([a-z0-9])", 'g');
+            var camelName = kebabName.replace(regex, function (g) { return g[1].toUpperCase(); });
+            if (camelName !== kebabName) {
+                model[camelName] = model[kebabName];
+                delete model[kebabName];
+                model[simplePropertyMappers_1.RELATIONSHIP_NAMES_PROP][i] = camelName;
+            }
+        });
+    };
+    return SwitchCaseJsonMapper;
+}(simplePropertyMappers_1.JsonPropertiesMapper));
+exports.SwitchCaseJsonMapper = SwitchCaseJsonMapper;
+//# sourceMappingURL=switchCasePropertyMappers.js.map

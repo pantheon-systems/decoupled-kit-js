@@ -1,0 +1,2 @@
+export { JsonApiLink, PathBuilder } from './jsonApiLink';
+//# sourceMappingURL=index.js.map

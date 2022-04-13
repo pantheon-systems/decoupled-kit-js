@@ -1,0 +1,11 @@
+/// <reference types="node" />
+import { ServerResponse } from 'http';
+/**
+ * fetch data from a JSON:API endpoint
+ * @param apiUrl the api url for the JSON:API endpoint
+ * @param requestInit fetch initialization object
+ * @param res response object
+ * @returns a promise containing the data for the JSON:API response
+ */
+declare const defaultFetch: (apiUrl: RequestInfo, requestInit?: {}, _res?: boolean | ServerResponse | undefined) => Promise<Response>;
+export default defaultFetch;

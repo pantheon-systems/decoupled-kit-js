@@ -1,0 +1,89 @@
+// src/iframe-protocol.ts
+var IFrameProtocol = class {
+  constructor(iframe, origin) {
+    this.globalListeners = {};
+    this.globalListenersCount = 0;
+    this.channelListeners = {};
+    this.channelListenersCount = 0;
+    this.channelId = Math.floor(Math.random() * 1e6);
+    this.frameWindow = iframe.contentWindow;
+    this.origin = origin;
+    this.globalListeners = [];
+    this.channelListeners = [];
+    this.eventListener = this.eventListener.bind(this);
+    if (typeof window !== "undefined") {
+      window.addEventListener("message", this.eventListener);
+    }
+  }
+  cleanup() {
+    window.removeEventListener("message", this.eventListener);
+    this.globalListeners = {};
+    this.channelListeners = {};
+    this.globalListenersCount = 0;
+    this.channelListenersCount = 0;
+  }
+  register() {
+    if (!this.frameWindow) {
+      return;
+    }
+    this.frameWindow.postMessage({
+      type: "register-frame",
+      origin: document.location.origin,
+      id: this.channelId
+    }, this.origin);
+  }
+  dispatch(message) {
+    if (!this.frameWindow) {
+      return;
+    }
+    this.frameWindow.postMessage({
+      $id: this.channelId,
+      codesandbox: true,
+      ...message
+    }, this.origin);
+  }
+  globalListen(listener) {
+    if (typeof listener !== "function") {
+      return () => {
+        return;
+      };
+    }
+    const listenerId = this.globalListenersCount;
+    this.globalListeners[listenerId] = listener;
+    this.globalListenersCount++;
+    return () => {
+      delete this.globalListeners[listenerId];
+    };
+  }
+  channelListen(listener) {
+    if (typeof listener !== "function") {
+      return () => {
+        return;
+      };
+    }
+    const listenerId = this.channelListenersCount;
+    this.channelListeners[listenerId] = listener;
+    this.channelListenersCount++;
+    return () => {
+      delete this.channelListeners[listenerId];
+    };
+  }
+  eventListener(evt) {
+    if (evt.source !== this.frameWindow) {
+      return;
+    }
+    const message = evt.data;
+    if (!message.codesandbox) {
+      return;
+    }
+    Object.values(this.globalListeners).forEach((listener) => listener(message));
+    if (message.$id !== this.channelId) {
+      return;
+    }
+    Object.values(this.channelListeners).forEach((listener) => listener(message));
+  }
+};
+export {
+  IFrameProtocol
+};
+//# sourceMappingURL=iframe-protocol.js.map

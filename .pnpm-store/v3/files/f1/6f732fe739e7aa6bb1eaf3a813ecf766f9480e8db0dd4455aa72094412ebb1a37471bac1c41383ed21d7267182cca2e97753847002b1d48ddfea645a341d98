@@ -1,0 +1,78 @@
+version: 2.0
+references:
+  triggerable-by-tag: &triggerable-by-tag
+    # For a tag push unaffected by any filters, CircleCI skips the job
+    # https://circleci.com/docs/2.0/workflows/#git-tag-job-execution
+    filters:
+      tags:
+        only: /.*/
+  env: &env
+    docker:
+      - image: circleci/node:12
+
+jobs:
+  checkout_code:
+    <<: *env
+    steps:
+      - checkout
+      - restore_cache:
+          key: npm-cache-{{ checksum "package-lock.json" }}
+      - run: if [ ! -d "node_modules" ]; then npm ci; fi
+      - save_cache:
+          key: npm-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+
+  lint:
+    <<: *env
+    steps:
+      - checkout
+      - restore_cache:
+          key: npm-cache-{{ checksum "package-lock.json" }}
+      - run: make lint-ci
+
+  test:
+    <<: *env
+    steps:
+      - checkout
+      - restore_cache:
+          key: npm-cache-{{ checksum "package-lock.json" }}
+      - run: make test
+
+  deploy:
+    <<: *env
+    steps:
+      - checkout
+      - restore_cache:
+          key: npm-cache-{{ checksum "package-lock.json" }}
+      - run: 'echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ${HOME}/.npmrc'
+      - run: npm version --no-git-tag-version ${CIRCLE_TAG}
+      - run: npm publish --access public
+
+workflows:
+  version: 2
+  checkout_and_test:
+    jobs:
+      - checkout_code: *triggerable-by-tag
+      - test:
+          <<: *triggerable-by-tag
+          requires:
+            - checkout_code
+      - lint:
+          <<: *triggerable-by-tag
+          requires:
+            - checkout_code
+      - test:
+          <<: *triggerable-by-tag
+          requires:
+            - checkout_code
+      - deploy:
+          context: wheresrhys-npm-publish
+          requires:
+            - test
+            - lint
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v?\d+\.\d+\.\d+(?:-(beta|alpha)\.\d+)?$/

@@ -1,0 +1,61 @@
+{
+  "name": "jsona",
+  "description": "Provide data formatters (data model builder & json builder) to work with JSON API specification v1.0 in your JavaScript / TypeScript code",
+  "version": "1.9.7",
+  "keywords": [
+    "json-api",
+    "jsonapi",
+    "json:api",
+    "json-api-redux",
+    "json api redux",
+    "json-api angular",
+    "json api typescript",
+    "data formatter",
+    "data converter",
+    "data serializer",
+    "formatter",
+    "converter",
+    "serializer",
+    "json api json",
+    "json",
+    "redux-object",
+    "rest",
+    "rest api",
+    "graphql",
+    "graphql alternative",
+    "json-api-normalizer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olosegres/jsona"
+  },
+  "bugs": {
+    "url": "https://github.com/olosegres/jsona/issues"
+  },
+  "homepage": "https://github.com/olosegres/jsona#readme",
+  "author": "Sergei Solo <olosegres@gmail.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^4.2.4",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.11.5",
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2",
+    "ts-mocha": "^8.0.0",
+    "typescript": "^4.2.4"
+  },
+  "scripts": {
+    "clean": "rm -rf ./lib/*",
+    "compile": "./node_modules/.bin/tsc",
+    "precompile": "npm run clean",
+    "preversion": "npm run compile && npm test",
+    "test-compile": "tsc --p tsconfig.test.json",
+    "test": "npm run test-compile && env NODE_ENV=test ts-mocha ./**/*.test.ts"
+  }
+}

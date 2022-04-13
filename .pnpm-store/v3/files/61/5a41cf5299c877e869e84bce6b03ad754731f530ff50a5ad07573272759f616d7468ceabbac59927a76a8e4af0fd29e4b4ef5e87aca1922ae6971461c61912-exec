@@ -1,0 +1,30 @@
+{
+    "name": "@types/humps",
+    "version": "2.0.1",
+    "description": "TypeScript definitions for humps",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/humps",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Niklas Mollenhauer",
+            "url": "https://github.com/nikeee",
+            "githubUsername": "nikeee"
+        },
+        {
+            "name": "Piotr Błażejewicz",
+            "url": "https://github.com/peterblazejewicz",
+            "githubUsername": "peterblazejewicz"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/humps"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "64bb592a6e7facbd8d6c14458a2d560b85aa86017ad111fc22583742716320ed",
+    "typeScriptVersion": "3.6"
+}

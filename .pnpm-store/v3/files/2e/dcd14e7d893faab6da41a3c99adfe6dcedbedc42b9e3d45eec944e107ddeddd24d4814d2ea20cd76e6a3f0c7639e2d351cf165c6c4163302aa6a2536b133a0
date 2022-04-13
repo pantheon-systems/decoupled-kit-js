@@ -1,0 +1,11 @@
+import { fetchAdapter, stringIndex } from '../types/types';
+import { TJsonApiBody } from 'jsona/lib/JsonaTypes';
+/**
+ * Fetch a token from Drupal
+ * @param apiUrl the api url for the JON:API endpoint
+ * @param tokenFetchBody object containing body parameters for the token request
+ * @param fetch fetch compatible function
+ * @returns a promise containing the token api response
+ */
+declare const fetchToken: (apiUrl: string, tokenFetchBody: stringIndex, fetch?: fetchAdapter) => Promise<void | TJsonApiBody>;
+export default fetchToken;

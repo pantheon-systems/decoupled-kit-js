@@ -1,0 +1,176 @@
+/// <reference types="node" />
+import type { BundlerState, ListenerFunction, SandpackBundlerFiles, SandpackError, SandpackMessage, UnsubscribeFunction, ReactDevToolsMode, SandpackLogLevel } from "@codesandbox/sandpack-client";
+import { SandpackClient } from "@codesandbox/sandpack-client";
+import * as React from "react";
+import type { SandpackContext, SandboxEnvironment, FileResolver, SandpackStatus, EditorState, SandpackPredefinedTemplate, SandpackSetup, SandpackInitMode } from "../types";
+/**
+ * @category Provider
+ */
+declare const Sandpack: React.Context<SandpackContext | null>;
+export interface SandpackProviderState {
+    files: SandpackBundlerFiles;
+    environment?: SandboxEnvironment;
+    activePath: string;
+    openPaths: string[];
+    startRoute?: string;
+    bundlerState?: BundlerState;
+    error: SandpackError | null;
+    sandpackStatus: SandpackStatus;
+    editorState: EditorState;
+    renderHiddenIframe: boolean;
+    initMode: SandpackInitMode;
+    reactDevTools?: ReactDevToolsMode;
+}
+export interface SandpackProviderProps {
+    template?: SandpackPredefinedTemplate;
+    customSetup?: SandpackSetup;
+    activePath?: string;
+    openPaths?: string[];
+    recompileMode?: "immediate" | "delayed";
+    recompileDelay?: number;
+    autorun?: boolean;
+    /**
+     * This provides a way to control how some components are going to
+     * be initialized on the page. The CodeEditor and the Preview components
+     * are quite expensive and might overload the memory usage, so this gives
+     * a certain control of when to initialize them.
+     */
+    initMode?: SandpackInitMode;
+    initModeObserverOptions?: IntersectionObserverInit;
+    bundlerURL?: string;
+    logLevel?: SandpackLogLevel;
+    startRoute?: string;
+    skipEval?: boolean;
+    fileResolver?: FileResolver;
+    externalResources?: string[];
+}
+/**
+ * Main context provider that should wraps your entire component.
+ * Use * [`useSandpack`](/api/react/#usesandpack) hook, which gives you the entire context object to play with.
+ *
+ * @category Provider
+ * @noInheritDoc
+ */
+declare class SandpackProvider extends React.PureComponent<SandpackProviderProps, SandpackProviderState> {
+    static defaultProps: {
+        skipEval: boolean;
+        recompileMode: string;
+        recompileDelay: number;
+        autorun: boolean;
+    };
+    lazyAnchorRef: React.RefObject<HTMLDivElement>;
+    preregisteredIframes: Record<string, HTMLIFrameElement>;
+    clients: Record<string, SandpackClient>;
+    errorScreenRegistered: React.MutableRefObject<boolean>;
+    openInCSBRegistered: React.MutableRefObject<boolean>;
+    loadingScreenRegistered: React.MutableRefObject<boolean>;
+    intersectionObserver?: IntersectionObserver;
+    queuedListeners: Record<string, Record<string, ListenerFunction>>;
+    unsubscribeQueuedListeners: Record<string, Record<string, UnsubscribeFunction>>;
+    unsubscribe?: UnsubscribeFunction;
+    debounceHook?: number;
+    timeoutHook: NodeJS.Timer | null;
+    initializeSandpackIframeHook: NodeJS.Timer | null;
+    constructor(props: SandpackProviderProps);
+    /**
+     * @hidden
+     */
+    handleMessage: (msg: SandpackMessage) => void;
+    /**
+     * @hidden
+     */
+    registerReactDevTools: (value: ReactDevToolsMode) => void;
+    /**
+     * @hidden
+     */
+    updateCurrentFile: (newCode: string) => void;
+    /**
+     * @hidden
+     */
+    updateFile: (path: string, newCode: string) => void;
+    /**
+     * @hidden
+     */
+    updateClients: () => void;
+    /**
+     * @hidden
+     */
+    initializeSandpackIframe(): void;
+    /**
+     * @hidden
+     */
+    componentDidMount(): void;
+    /**
+     * @hidden
+     */
+    componentDidUpdate(prevProps: SandpackProviderProps): void;
+    /**
+     * @hidden
+     */
+    componentWillUnmount(): void;
+    /**
+     * @hidden
+     */
+    createClient: (iframe: HTMLIFrameElement, clientId: string) => SandpackClient;
+    /**
+     * @hidden
+     */
+    runSandpack: () => void;
+    /**
+     * @hidden
+     */
+    registerBundler: (iframe: HTMLIFrameElement, clientId: string) => void;
+    /**
+     * @hidden
+     */
+    unregisterBundler: (clientId: string) => void;
+    /**
+     * @hidden
+     */
+    unregisterAllClients: () => void;
+    /**
+     * @hidden
+     */
+    setActiveFile: (activePath: string) => void;
+    /**
+     * @hidden
+     */
+    openFile: (path: string) => void;
+    /**
+     * @hidden
+     */
+    closeFile: (path: string) => void;
+    /**
+     * @hidden
+     */
+    deleteFile: (path: string) => void;
+    /**
+     * @hidden
+     */
+    dispatchMessage: (message: SandpackMessage, clientId?: string | undefined) => void;
+    /**
+     * @hidden
+     */
+    addListener: (listener: ListenerFunction, clientId?: string | undefined) => UnsubscribeFunction;
+    /**
+     * @hidden
+     */
+    resetFile: (path: string) => void;
+    /**
+     * @hidden
+     */
+    resetAllFiles: () => void;
+    /**
+     * @hidden
+     */
+    _getSandpackState: () => SandpackContext;
+    /**
+     * @hidden
+     */
+    render(): React.ReactElement;
+}
+/**
+ * @category Provider
+ */
+declare const SandpackConsumer: React.Consumer<SandpackContext | null>;
+export { SandpackProvider, SandpackConsumer, Sandpack as SandpackReactContext };

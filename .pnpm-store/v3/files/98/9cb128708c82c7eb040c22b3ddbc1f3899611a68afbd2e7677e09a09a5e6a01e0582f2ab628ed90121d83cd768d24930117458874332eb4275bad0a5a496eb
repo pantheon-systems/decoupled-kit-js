@@ -1,0 +1,5 @@
+import * as React from "react";
+/**
+ * @category Components
+ */
+export declare const ErrorOverlay: React.FC;

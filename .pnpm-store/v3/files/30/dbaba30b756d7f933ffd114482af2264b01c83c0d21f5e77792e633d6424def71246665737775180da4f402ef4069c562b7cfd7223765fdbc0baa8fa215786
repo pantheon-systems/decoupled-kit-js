@@ -1,0 +1,2 @@
+import type { SandboxTemplate } from "../types";
+export declare const VANILLA_TYPESCRIPT_TEMPLATE: SandboxTemplate;

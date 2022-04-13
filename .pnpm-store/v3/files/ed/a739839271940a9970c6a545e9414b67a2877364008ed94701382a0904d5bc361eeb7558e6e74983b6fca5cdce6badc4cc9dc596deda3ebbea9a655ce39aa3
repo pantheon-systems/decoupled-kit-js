@@ -1,0 +1,10 @@
+import type { SandpackClientDispatch, SandpackClientListen, SandpackState } from "../types";
+export interface UseSandpackReturnType {
+    sandpack: SandpackState;
+    dispatch: SandpackClientDispatch;
+    listen: SandpackClientListen;
+}
+/**
+ * @category Hooks
+ */
+export declare function useSandpack(): UseSandpackReturnType;

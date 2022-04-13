@@ -1,0 +1,114 @@
+{
+  "name": "@gdwc/drupal-state",
+  "version": "2.5.2",
+  "files": [
+    "lib.{js,ts}",
+    "dist",
+    "src/drupalState.{js,ts}",
+    "src/fetch/*.{js,ts}",
+    "src/types/*.ts"
+  ],
+  "main": "./dist/drupal-state.umd.js",
+  "module": "./dist/drupal-state.es.js",
+  "types": "./dist/declarations/lib.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/drupal-state.es.js",
+      "require": "./dist/drupal-state.umd.js"
+    },
+    "./fetchApiIndex": "./src/fetch/fetchApiIndex.js",
+    "./fetchJsonapiEndpoint": "./src/fetch/fetchJsonapiEndpoint.js"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "avoid",
+    "proseWrap": "always"
+  },
+  "lint-staged": {
+    "*.{js,ts,md,mdx}": "prettier --write"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && rollup -c",
+    "serve": "vite preview",
+    "typedoc": "typedoc",
+    "test": "jest --coverage",
+    "test:ci": "JEST_JUNIT_OUTPUT_DIR='./test-results/jest' jest --ci --reporters=default --reporters=jest-junit",
+    "eslint": "eslint --ext .js,.ts src --ignore-path .gitignore",
+    "eslint:fix": "eslint --ext .js,.ts src --fix --ignore-path .gitignore",
+    "prettier": "prettier \"**/*.{js,ts,md}\" --check --ignore-path .gitignore",
+    "prettier:fix": "prettier \"**/*.{js,ts,md}\" --write --ignore-path .gitignore",
+    "lint-staged": "lint-staged",
+    "prepare": "npm run build && husky install",
+    "postpublish": "rm src/*.js && rm src/**/*.js",
+    "postinstall": "patch-package",
+    "release": "dotenv release-it --",
+    "dpdm": "dpdm lib.ts",
+    "rollup": "rollup -c",
+    "build:docs": "npm run astro:build && npm run typedoc",
+    "astro:dev": "astro dev --project-root web",
+    "astro:build": "astro build --config astro.config.prod.mjs --project-root web",
+    "astro:preview": "astro preview --project-root web"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.drupalcode.org/project/drupal_state.git"
+  },
+  "homepage": "https://www.drupal.org/project/drupal_state",
+  "bugs": {
+    "url": "https://www.drupal.org/project/issues/drupal_state"
+  },
+  "keywords": [
+    "drupal",
+    "decoupled",
+    "zustand"
+  ],
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "@astrojs/renderer-preact": "^0.4.0",
+    "@babel/plugin-transform-runtime": "^7.16.10",
+    "@babel/preset-env": "^7.15.8",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-typescript": "^8.2.5",
+    "@snowpack/plugin-dotenv": "^2.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "@vitejs/plugin-legacy": "^1.6.1",
+    "astro": "^0.22.9",
+    "dotenv-cli": "^4.0.0",
+    "dpdm": "^3.7.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "fetch-mock-jest": "^1.5.1",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "prettier": "2.3.2",
+    "release-it": "^14.11.5",
+    "rollup": "^2.56.3",
+    "typedoc": "^0.21.6",
+    "typescript": "^4.3.2",
+    "vite": "^2.4.4"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.4.15",
+    "@babel/runtime": "^7.16.7",
+    "@docsearch/react": "^1.0.0-alpha.28",
+    "@types/humps": "^2.0.1",
+    "@types/isomorphic-fetch": "0.0.35",
+    "@types/jest": "^27.0.1",
+    "apollo-link": "^1.2.14",
+    "apollo-link-json-api": "^0.1.2",
+    "drupal-jsonapi-params": "^1.2.2",
+    "graphql": "^15.6.0",
+    "graphql-anywhere": "^4.2.7",
+    "humps": "^2.0.1",
+    "isomorphic-fetch": "^3.0.0",
+    "jest": "^27.0.6",
+    "jest-junit": "^12.2.0",
+    "jsona": "^1.9.7",
+    "patch-package": "^6.4.7",
+    "qs": "^6.10.1",
+    "ts-jest": "^27.0.5",
+    "zustand": "^3.5.7"
+  }
+}

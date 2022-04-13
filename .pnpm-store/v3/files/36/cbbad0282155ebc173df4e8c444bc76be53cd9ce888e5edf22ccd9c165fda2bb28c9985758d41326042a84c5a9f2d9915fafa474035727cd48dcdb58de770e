@@ -1,0 +1,7 @@
+import * as React from "react";
+/**
+ * @category Components
+ */
+export declare const SandpackStack: React.FC<{
+    customStyle?: React.CSSProperties;
+}>;

@@ -1,0 +1,48 @@
+import type { SandpackTheme, SandpackPredefinedTheme, SandpackSyntaxStyle } from "../types";
+/**
+ * @category Theme
+ */
+export declare const defaultLight: SandpackTheme;
+/**
+ * @category Theme
+ */
+export declare const defaultDark: SandpackTheme;
+/**
+ * @category Theme
+ */
+export declare const sandpackDark: SandpackTheme;
+/**
+ * @category Theme
+ */
+export declare const aquaBlueTheme: SandpackTheme;
+/**
+ * @category Theme
+ */
+export declare const githubLightTheme: SandpackTheme;
+/**
+ * @category Theme
+ */
+export declare const nightOwlTheme: SandpackTheme;
+/**
+ * @category Theme
+ */
+export declare const monokaiProTheme: SandpackTheme;
+/**
+ * @category Theme
+ */
+export declare const SANDPACK_THEMES: Record<SandpackPredefinedTheme, SandpackTheme>;
+/**
+ * @category Theme
+ */
+export declare const createThemeObject: (inputTheme?: import("../types").DeepPartial<SandpackTheme> | "light" | "dark" | "sandpack-dark" | "night-owl" | "aqua-blue" | "github-light" | "monokai-pro" | "auto" | undefined) => {
+    id: string;
+    theme: SandpackTheme;
+};
+/**
+ * @category Theme
+ */
+export declare const getThemeStyleSheet: (theme: SandpackTheme, themeId: string) => string;
+/**
+ * @category Theme
+ */
+export declare const getSyntaxStyle: (token: string | SandpackSyntaxStyle) => SandpackSyntaxStyle;

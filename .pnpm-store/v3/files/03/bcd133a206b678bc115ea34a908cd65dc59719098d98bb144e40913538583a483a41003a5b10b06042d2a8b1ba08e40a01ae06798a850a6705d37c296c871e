@@ -1,0 +1,51 @@
+import * as React from "react";
+import type { SandpackCodeOptions, FileResolver, SandpackFiles, SandpackInitMode, SandpackPredefinedTemplate, SandpackSetup, SandpackThemeProp } from "../types";
+export interface SandpackProps {
+    files?: SandpackFiles;
+    template?: SandpackPredefinedTemplate;
+    customSetup?: SandpackSetup;
+    theme?: SandpackThemeProp;
+    options?: {
+        openPaths?: string[];
+        activePath?: string;
+        editorWidthPercentage?: number;
+        editorHeight?: React.CSSProperties["height"];
+        classes?: Record<string, string>;
+        showNavigator?: boolean;
+        showLineNumbers?: boolean;
+        showInlineErrors?: boolean;
+        showTabs?: boolean;
+        closableTabs?: boolean;
+        wrapContent?: boolean;
+        /**
+         * This provides a way to control how some components are going to
+         * be initialized on the page. The CodeEditor and the Preview components
+         * are quite expensive and might overload the memory usage, so this gives
+         * a certain control of when to initialize them.
+         */
+        initMode?: SandpackInitMode;
+        initModeObserverOptions?: IntersectionObserverInit;
+        bundlerURL?: string;
+        startRoute?: string;
+        skipEval?: boolean;
+        fileResolver?: FileResolver;
+        externalResources?: string[];
+        autorun?: boolean;
+        recompileMode?: "immediate" | "delayed";
+        recompileDelay?: number;
+        codeEditor?: SandpackCodeOptions;
+        /**
+         * This disables editing of content by the user in all files.
+         */
+        readOnly?: boolean;
+        /**
+         * Controls the visibility of Read-only label, which will only
+         * appears when `readOnly` is `true`
+         */
+        showReadOnly?: boolean;
+    };
+}
+/**
+ * @category Presets
+ */
+export declare const Sandpack: React.FC<SandpackProps>;

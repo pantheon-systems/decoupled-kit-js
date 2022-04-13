@@ -1,0 +1,9 @@
+import * as React from "react";
+import type { SandpackThemeProp } from "../types";
+export interface SandpackLayoutProps extends React.HtmlHTMLAttributes<unknown> {
+    theme?: SandpackThemeProp;
+}
+/**
+ * @category Theme
+ */
+export declare const SandpackLayout: React.FC<SandpackLayoutProps>;

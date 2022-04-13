@@ -1,0 +1,3 @@
+import type { SandpackTheme } from "../types";
+export declare const injectThemeStyleSheet: (theme: SandpackTheme, themeId: string) => void;
+export declare const getDarkModePreference: () => boolean;

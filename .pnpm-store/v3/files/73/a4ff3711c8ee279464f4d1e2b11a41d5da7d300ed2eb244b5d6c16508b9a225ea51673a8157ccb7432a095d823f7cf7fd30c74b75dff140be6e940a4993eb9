@@ -1,0 +1,12 @@
+import type { SandpackBundlerFiles } from "@codesandbox/sandpack-client";
+import * as React from "react";
+export interface Props {
+    prefixedPath: string;
+    files: SandpackBundlerFiles;
+    selectFile: (path: string) => void;
+    activePath: string;
+    depth?: number;
+}
+export declare class ModuleList extends React.PureComponent<Props> {
+    render(): JSX.Element;
+}

@@ -1,0 +1,21 @@
+var __defProp = Object.defineProperty;
+var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
+var __export = (target, all) => {
+  __markAsModule(target);
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+
+// src/types.ts
+__export(exports, {
+  SandpackLogLevel: () => SandpackLogLevel
+});
+var SandpackLogLevel;
+(function(SandpackLogLevel2) {
+  SandpackLogLevel2[SandpackLogLevel2["None"] = 0] = "None";
+  SandpackLogLevel2[SandpackLogLevel2["Error"] = 10] = "Error";
+  SandpackLogLevel2[SandpackLogLevel2["Warning"] = 20] = "Warning";
+  SandpackLogLevel2[SandpackLogLevel2["Info"] = 30] = "Info";
+  SandpackLogLevel2[SandpackLogLevel2["Debug"] = 40] = "Debug";
+})(SandpackLogLevel || (SandpackLogLevel = {}));
+//# sourceMappingURL=types.js.map

@@ -1,0 +1,2 @@
+import type { SandboxTemplate } from "../types";
+export declare const REACT_TEMPLATE: SandboxTemplate;

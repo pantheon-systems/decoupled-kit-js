@@ -1,0 +1,478 @@
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
+var __export = (target, all) => {
+  __markAsModule(target);
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __reExport = (target, module2, desc) => {
+  if (module2 && typeof module2 === "object" || typeof module2 === "function") {
+    for (let key of __getOwnPropNames(module2))
+      if (!__hasOwnProp.call(target, key) && key !== "default")
+        __defProp(target, key, { get: () => module2[key], enumerable: !(desc = __getOwnPropDesc(module2, key)) || desc.enumerable });
+  }
+  return target;
+};
+var __toModule = (module2) => {
+  return __reExport(__markAsModule(__defProp(module2 != null ? __create(__getProtoOf(module2)) : {}, "default", module2 && module2.__esModule && "default" in module2 ? { get: () => module2.default, enumerable: true } : { value: module2, enumerable: true })), module2);
+};
+var __async = (__this, __arguments, generator) => {
+  return new Promise((resolve, reject) => {
+    var fulfilled = (value) => {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    };
+    var rejected = (value) => {
+      try {
+        step(generator.throw(value));
+      } catch (e) {
+        reject(e);
+      }
+    };
+    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+    step((generator = generator.apply(__this, __arguments)).next());
+  });
+};
+
+// src/client.ts
+__export(exports, {
+  SandpackClient: () => SandpackClient
+});
+var import_templates = __toModule(require("codesandbox-import-utils/lib/create-sandbox/templates"));
+var import_lodash = __toModule(require("lodash.isequal"));
+
+// src/file-resolver-protocol.ts
+var generateId = () => Math.floor(Math.random() * 1e6 + Math.random() * 1e6);
+var getConstructorName = (x) => {
+  try {
+    return x.constructor.name;
+  } catch (e) {
+    return "";
+  }
+};
+var Protocol = class {
+  constructor(type, handleMessage, target) {
+    this.type = type;
+    this.handleMessage = handleMessage;
+    this.target = target;
+    this.outgoingMessages = new Set();
+    this._messageListener = (e) => __async(this, null, function* () {
+      const { data } = e;
+      if (data.$type !== this.getTypeId()) {
+        return;
+      }
+      if (this.outgoingMessages.has(data.$id)) {
+        return;
+      }
+      const result = yield this.handleMessage(data.$data);
+      const returnMessage = {
+        $originId: this.internalId,
+        $type: this.getTypeId(),
+        $data: result,
+        $id: data.$id
+      };
+      if (e.source) {
+        e.source.postMessage(returnMessage, "*");
+      } else {
+        this._postMessage(returnMessage);
+      }
+    });
+    this.createConnection();
+    this.internalId = generateId();
+    this.isWorker = getConstructorName(target) === "Worker";
+  }
+  getTypeId() {
+    return `p-${this.type}`;
+  }
+  createConnection() {
+    self.addEventListener("message", this._messageListener);
+  }
+  dispose() {
+    self.removeEventListener("message", this._messageListener);
+  }
+  sendMessage(data) {
+    return new Promise((resolve) => {
+      const messageId = generateId();
+      const message = {
+        $originId: this.internalId,
+        $type: this.getTypeId(),
+        $data: data,
+        $id: messageId
+      };
+      this.outgoingMessages.add(messageId);
+      const listenFunction = (e) => {
+        const { data: data2 } = e;
+        if (data2.$type === this.getTypeId() && data2.$id === messageId && data2.$originId !== this.internalId) {
+          resolve(data2.$data);
+          self.removeEventListener("message", listenFunction);
+        }
+      };
+      self.addEventListener("message", listenFunction);
+      this._postMessage(message);
+    });
+  }
+  _postMessage(m) {
+    if (this.isWorker || typeof DedicatedWorkerGlobalScope !== "undefined" && this.target instanceof DedicatedWorkerGlobalScope) {
+      this.target.postMessage(m);
+    } else {
+      this.target.postMessage(m, "*");
+    }
+  }
+};
+
+// src/iframe-protocol.ts
+var IFrameProtocol = class {
+  constructor(iframe, origin) {
+    this.globalListeners = {};
+    this.globalListenersCount = 0;
+    this.channelListeners = {};
+    this.channelListenersCount = 0;
+    this.channelId = Math.floor(Math.random() * 1e6);
+    this.frameWindow = iframe.contentWindow;
+    this.origin = origin;
+    this.globalListeners = [];
+    this.channelListeners = [];
+    this.eventListener = this.eventListener.bind(this);
+    if (typeof window !== "undefined") {
+      window.addEventListener("message", this.eventListener);
+    }
+  }
+  cleanup() {
+    window.removeEventListener("message", this.eventListener);
+    this.globalListeners = {};
+    this.channelListeners = {};
+    this.globalListenersCount = 0;
+    this.channelListenersCount = 0;
+  }
+  register() {
+    if (!this.frameWindow) {
+      return;
+    }
+    this.frameWindow.postMessage({
+      type: "register-frame",
+      origin: document.location.origin,
+      id: this.channelId
+    }, this.origin);
+  }
+  dispatch(message) {
+    if (!this.frameWindow) {
+      return;
+    }
+    this.frameWindow.postMessage(__spreadValues({
+      $id: this.channelId,
+      codesandbox: true
+    }, message), this.origin);
+  }
+  globalListen(listener) {
+    if (typeof listener !== "function") {
+      return () => {
+        return;
+      };
+    }
+    const listenerId = this.globalListenersCount;
+    this.globalListeners[listenerId] = listener;
+    this.globalListenersCount++;
+    return () => {
+      delete this.globalListeners[listenerId];
+    };
+  }
+  channelListen(listener) {
+    if (typeof listener !== "function") {
+      return () => {
+        return;
+      };
+    }
+    const listenerId = this.channelListenersCount;
+    this.channelListeners[listenerId] = listener;
+    this.channelListenersCount++;
+    return () => {
+      delete this.channelListeners[listenerId];
+    };
+  }
+  eventListener(evt) {
+    if (evt.source !== this.frameWindow) {
+      return;
+    }
+    const message = evt.data;
+    if (!message.codesandbox) {
+      return;
+    }
+    Object.values(this.globalListeners).forEach((listener) => listener(message));
+    if (message.$id !== this.channelId) {
+      return;
+    }
+    Object.values(this.channelListeners).forEach((listener) => listener(message));
+  }
+};
+
+// src/utils.ts
+function createPackageJSON(dependencies = {}, devDependencies = {}, entry = "/index.js") {
+  return JSON.stringify({
+    name: "sandpack-project",
+    main: entry,
+    dependencies,
+    devDependencies
+  }, null, 2);
+}
+function addPackageJSONIfNeeded(files, dependencies, devDependencies, entry) {
+  const newFiles = __spreadValues({}, files);
+  if (!newFiles["/package.json"]) {
+    if (!dependencies) {
+      throw new Error("No dependencies specified, please specify either a package.json or dependencies.");
+    }
+    if (!entry) {
+      throw new Error("Missing 'entry' parameter. Either specify an entry point, or pass in a package.json with the 'main' field set.");
+    }
+    newFiles["/package.json"] = {
+      code: createPackageJSON(dependencies, devDependencies, entry)
+    };
+  }
+  return newFiles;
+}
+function extractErrorDetails(msg) {
+  if (msg.title === "SyntaxError") {
+    const { title, path, message, line, column } = msg;
+    return { title, path, message, line, column };
+  }
+  const relevantStackFrame = getRelevantStackFrame(msg.payload.frames);
+  if (!relevantStackFrame) {
+    return { message: msg.message };
+  }
+  const errorInCode = getErrorInOriginalCode(relevantStackFrame);
+  const errorLocation = getErrorLocation(relevantStackFrame);
+  const errorMessage = formatErrorMessage(relevantStackFrame._originalFileName, msg.message, errorLocation, errorInCode);
+  return {
+    message: errorMessage,
+    title: msg.title,
+    path: relevantStackFrame._originalFileName,
+    line: relevantStackFrame._originalLineNumber,
+    column: relevantStackFrame._originalColumnNumber
+  };
+}
+function getRelevantStackFrame(frames) {
+  if (!frames) {
+    return;
+  }
+  return frames.find((frame) => !!frame._originalFileName);
+}
+function getErrorLocation(errorFrame) {
+  return errorFrame ? ` (${errorFrame._originalLineNumber}:${errorFrame._originalColumnNumber})` : ``;
+}
+function getErrorInOriginalCode(errorFrame) {
+  const lastScriptLine = errorFrame._originalScriptCode[errorFrame._originalScriptCode.length - 1];
+  const numberOfLineNumberCharacters = lastScriptLine.lineNumber.toString().length;
+  const leadingCharacterOffset = 2;
+  const barSeparatorCharacterOffset = 3;
+  const extraLineLeadingSpaces = leadingCharacterOffset + numberOfLineNumberCharacters + barSeparatorCharacterOffset + errorFrame._originalColumnNumber;
+  return errorFrame._originalScriptCode.reduce((result, scriptLine) => {
+    const leadingChar = scriptLine.highlight ? ">" : " ";
+    const lineNumber = scriptLine.lineNumber.toString().length === numberOfLineNumberCharacters ? `${scriptLine.lineNumber}` : ` ${scriptLine.lineNumber}`;
+    const extraLine = scriptLine.highlight ? "\n" + " ".repeat(extraLineLeadingSpaces) + "^" : "";
+    return result + "\n" + leadingChar + " " + lineNumber + " | " + scriptLine.content + extraLine;
+  }, "");
+}
+function formatErrorMessage(filePath, message, location, errorInCode) {
+  return `${filePath}: ${message}${location}
+${errorInCode}`;
+}
+
+// src/client.ts
+var BUNDLER_URL = false ? "http://localhost:3000/" : `https://${"0.14.8" == null ? void 0 : "0.14.8".replace(/\./g, "-")}-sandpack.codesandbox.io/`;
+var SandpackClient = class {
+  constructor(selector, sandboxInfo, options = {}) {
+    this.getTranspilerContext = () => new Promise((resolve) => {
+      const unsubscribe = this.listen((message) => {
+        if (message.type === "transpiler-context") {
+          resolve(message.data);
+          unsubscribe();
+        }
+      });
+      this.dispatch({ type: "get-transpiler-context" });
+    });
+    var _a;
+    this.options = options;
+    this.sandboxInfo = sandboxInfo;
+    this.bundlerURL = options.bundlerURL || BUNDLER_URL;
+    this.bundlerState = void 0;
+    this.errors = [];
+    this.status = "initializing";
+    if (typeof selector === "string") {
+      this.selector = selector;
+      const element = document.querySelector(selector);
+      if (!element) {
+        throw new Error(`No element found for selector '${selector}'`);
+      }
+      this.element = element;
+      this.iframe = document.createElement("iframe");
+      this.initializeElement();
+    } else {
+      this.element = selector;
+      this.iframe = selector;
+    }
+    if (!this.iframe.getAttribute("sandbox")) {
+      this.iframe.setAttribute("sandbox", "allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts");
+    }
+    const urlSource = options.startRoute ? new URL(options.startRoute, this.bundlerURL).toString() : this.bundlerURL;
+    (_a = this.iframe.contentWindow) == null ? void 0 : _a.location.replace(urlSource);
+    this.iframeProtocol = new IFrameProtocol(this.iframe, this.bundlerURL);
+    this.unsubscribeGlobalListener = this.iframeProtocol.globalListen((mes) => {
+      if (mes.type !== "initialized" || !this.iframe.contentWindow) {
+        return;
+      }
+      this.iframeProtocol.register();
+      if (this.options.fileResolver) {
+        this.fileResolverProtocol = new Protocol("file-resolver", (data) => __async(this, null, function* () {
+          if (data.m === "isFile") {
+            return this.options.fileResolver.isFile(data.p);
+          }
+          return this.options.fileResolver.readFile(data.p);
+        }), this.iframe.contentWindow);
+      }
+      this.updatePreview(this.sandboxInfo, true);
+    });
+    this.unsubscribeChannelListener = this.iframeProtocol.channelListen((mes) => {
+      switch (mes.type) {
+        case "start": {
+          this.errors = [];
+          break;
+        }
+        case "status": {
+          this.status = mes.status;
+          break;
+        }
+        case "action": {
+          if (mes.action === "show-error") {
+            this.errors = [...this.errors, extractErrorDetails(mes)];
+          }
+          break;
+        }
+        case "state": {
+          this.bundlerState = mes.state;
+          break;
+        }
+      }
+    });
+  }
+  cleanup() {
+    this.unsubscribeChannelListener();
+    this.unsubscribeGlobalListener();
+    this.iframeProtocol.cleanup();
+  }
+  updateOptions(options) {
+    if (!(0, import_lodash.default)(this.options, options)) {
+      this.options = options;
+      this.updatePreview();
+    }
+  }
+  updatePreview(sandboxInfo = this.sandboxInfo, isInitializationCompile) {
+    var _a, _b, _c;
+    this.sandboxInfo = sandboxInfo;
+    const files = this.getFiles();
+    const modules = Object.keys(files).reduce((prev, next) => __spreadProps(__spreadValues({}, prev), {
+      [next]: {
+        code: files[next].code,
+        path: next
+      }
+    }), {});
+    let packageJSON = JSON.parse(createPackageJSON(this.sandboxInfo.dependencies, this.sandboxInfo.devDependencies, this.sandboxInfo.entry));
+    try {
+      packageJSON = JSON.parse(files["/package.json"].code);
+    } catch (e) {
+      console.error("Could not parse package.json file: " + e.message);
+    }
+    const normalizedModules = Object.keys(files).reduce((prev, next) => __spreadProps(__spreadValues({}, prev), {
+      [next]: {
+        content: files[next].code,
+        path: next
+      }
+    }), {});
+    this.dispatch({
+      type: "compile",
+      codesandbox: true,
+      version: 3,
+      isInitializationCompile,
+      modules,
+      reactDevTools: this.options.reactDevTools,
+      externalResources: this.options.externalResources || [],
+      hasFileResolver: Boolean(this.options.fileResolver),
+      disableDependencyPreprocessing: this.sandboxInfo.disableDependencyPreprocessing,
+      template: this.sandboxInfo.template || (0, import_templates.getTemplate)(packageJSON, normalizedModules),
+      showOpenInCodeSandbox: (_a = this.options.showOpenInCodeSandbox) != null ? _a : true,
+      showErrorScreen: (_b = this.options.showErrorScreen) != null ? _b : true,
+      showLoadingScreen: (_c = this.options.showLoadingScreen) != null ? _c : true,
+      skipEval: this.options.skipEval || false,
+      clearConsoleDisabled: !this.options.clearConsoleOnFirstCompile,
+      logLevel: this.options.logLevel
+    });
+  }
+  dispatch(message) {
+    this.iframeProtocol.dispatch(message);
+  }
+  listen(listener) {
+    return this.iframeProtocol.channelListen(listener);
+  }
+  getCodeSandboxURL() {
+    const files = this.getFiles();
+    const paramFiles = Object.keys(files).reduce((prev, next) => __spreadProps(__spreadValues({}, prev), {
+      [next.replace("/", "")]: {
+        content: files[next].code,
+        isBinary: false
+      }
+    }), {});
+    return fetch("https://codesandbox.io/api/v1/sandboxes/define?json=1", {
+      method: "POST",
+      body: JSON.stringify({ files: paramFiles }),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    }).then((x) => x.json()).then((res) => ({
+      sandboxId: res.sandbox_id,
+      editorUrl: `https://codesandbox.io/s/${res.sandbox_id}`,
+      embedUrl: `https://codesandbox.io/embed/${res.sandbox_id}`
+    }));
+  }
+  getFiles() {
+    const { sandboxInfo } = this;
+    if (sandboxInfo.files["/package.json"] === void 0) {
+      return addPackageJSONIfNeeded(sandboxInfo.files, sandboxInfo.dependencies, sandboxInfo.devDependencies, sandboxInfo.entry);
+    }
+    return this.sandboxInfo.files;
+  }
+  initializeElement() {
+    this.iframe.style.border = "0";
+    this.iframe.style.width = this.options.width || "100%";
+    this.iframe.style.height = this.options.height || "100%";
+    this.iframe.style.overflow = "hidden";
+    if (!this.element.parentNode) {
+      throw new Error("Given element does not have a parent.");
+    }
+    this.element.parentNode.replaceChild(this.iframe, this.element);
+  }
+};
+//# sourceMappingURL=client.js.map

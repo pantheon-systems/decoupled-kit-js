@@ -1,0 +1,102 @@
+import Protocol from "./file-resolver-protocol";
+import { IFrameProtocol } from "./iframe-protocol";
+import type { Dependencies, SandpackBundlerFiles, BundlerState, ClientStatus, UnsubscribeFunction, SandpackMessage, ListenerFunction, SandpackError, ReactDevToolsMode } from "./types";
+import type { SandpackLogLevel } from ".";
+export interface ClientOptions {
+    /**
+     * Paths to external resources
+     */
+    externalResources?: string[];
+    /**
+     * Location of the bundler.
+     */
+    bundlerURL?: string;
+    /**
+     * Level of logging to do in the bundler
+     */
+    logLevel?: SandpackLogLevel;
+    /**
+     * Relative path that the iframe loads (eg: /about)
+     */
+    startRoute?: string;
+    /**
+     * Width of iframe.
+     */
+    width?: string;
+    /**
+     * Height of iframe.
+     */
+    height?: string;
+    /**
+     * If we should skip the third step: evaluation.
+     */
+    skipEval?: boolean;
+    /**
+     * Boolean flags to trigger certain UI elements in the bundler
+     */
+    showOpenInCodeSandbox?: boolean;
+    showErrorScreen?: boolean;
+    showLoadingScreen?: boolean;
+    /**
+     * The bundler will clear the console if you set this to true, everytime the iframe refreshes / starts the first compile
+     */
+    clearConsoleOnFirstCompile?: boolean;
+    /**
+     * You can pass a custom file resolver that is responsible for resolving files.
+     * We will use this to get all files from the file system.
+     */
+    fileResolver?: {
+        isFile: (path: string) => Promise<boolean>;
+        readFile: (path: string) => Promise<string>;
+    };
+    reactDevTools?: ReactDevToolsMode;
+}
+export interface SandboxInfo {
+    files: SandpackBundlerFiles;
+    dependencies?: Dependencies;
+    devDependencies?: Dependencies;
+    entry?: string;
+    /**
+     * What template we use, if not defined we infer the template from the dependencies or files.
+     *
+     * @type {string}
+     */
+    template?: string;
+    /**
+     * Only use unpkg for fetching the dependencies, no preprocessing. It's slower, but doesn't talk
+     * to AWS.
+     */
+    disableDependencyPreprocessing?: boolean;
+}
+export declare class SandpackClient {
+    selector: string | undefined;
+    element: Element;
+    iframe: HTMLIFrameElement;
+    iframeProtocol: IFrameProtocol;
+    options: ClientOptions;
+    fileResolverProtocol?: Protocol;
+    bundlerURL: string;
+    bundlerState?: BundlerState;
+    errors: SandpackError[];
+    status: ClientStatus;
+    sandboxInfo: SandboxInfo;
+    unsubscribeGlobalListener: UnsubscribeFunction;
+    unsubscribeChannelListener: UnsubscribeFunction;
+    constructor(selector: string | HTMLIFrameElement, sandboxInfo: SandboxInfo, options?: ClientOptions);
+    cleanup(): void;
+    updateOptions(options: ClientOptions): void;
+    updatePreview(sandboxInfo?: SandboxInfo, isInitializationCompile?: boolean): void;
+    dispatch(message: SandpackMessage): void;
+    listen(listener: ListenerFunction): UnsubscribeFunction;
+    /**
+     * Get the URL of the contents of the current sandbox
+     */
+    getCodeSandboxURL(): Promise<{
+        sandboxId: string;
+        editorUrl: string;
+        embedUrl: string;
+    }>;
+    getTranspilerContext: () => Promise<Record<string, Record<string, unknown>>>;
+    private getFiles;
+    private initializeElement;
+}

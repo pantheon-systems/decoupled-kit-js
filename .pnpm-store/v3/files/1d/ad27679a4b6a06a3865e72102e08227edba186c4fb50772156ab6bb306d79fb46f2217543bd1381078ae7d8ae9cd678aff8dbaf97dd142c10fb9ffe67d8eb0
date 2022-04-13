@@ -1,0 +1,22 @@
+import * as React from "react";
+import { RefreshButton } from "./RefreshButton";
+export declare type ViewportSizePreset = "iPhone X" | "Pixel 2" | "iPad" | "Moto G4" | "Surface Duo";
+export declare type ViewportSize = ViewportSizePreset | "auto" | {
+    width: number;
+    height: number;
+};
+export declare type ViewportOrientation = "portrait" | "landscape";
+export interface PreviewProps {
+    customStyle?: React.CSSProperties;
+    viewportSize?: ViewportSize;
+    viewportOrientation?: ViewportOrientation;
+    showNavigator?: boolean;
+    showOpenInCodeSandbox?: boolean;
+    showRefreshButton?: boolean;
+    showSandpackErrorOverlay?: boolean;
+}
+export { RefreshButton };
+/**
+ * @category Components
+ */
+export declare const SandpackPreview: ({ customStyle, showNavigator, showRefreshButton, showOpenInCodeSandbox, showSandpackErrorOverlay, viewportSize, viewportOrientation, }: PreviewProps) => JSX.Element;

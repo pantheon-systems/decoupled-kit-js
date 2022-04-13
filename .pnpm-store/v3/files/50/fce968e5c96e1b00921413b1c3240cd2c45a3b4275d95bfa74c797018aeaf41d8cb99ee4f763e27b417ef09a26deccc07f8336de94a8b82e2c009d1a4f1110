@@ -1,0 +1,99 @@
+var __defProp = Object.defineProperty;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
+var __export = (target, all) => {
+  __markAsModule(target);
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+
+// src/utils.ts
+__export(exports, {
+  addPackageJSONIfNeeded: () => addPackageJSONIfNeeded,
+  createPackageJSON: () => createPackageJSON,
+  extractErrorDetails: () => extractErrorDetails
+});
+function createPackageJSON(dependencies = {}, devDependencies = {}, entry = "/index.js") {
+  return JSON.stringify({
+    name: "sandpack-project",
+    main: entry,
+    dependencies,
+    devDependencies
+  }, null, 2);
+}
+function addPackageJSONIfNeeded(files, dependencies, devDependencies, entry) {
+  const newFiles = __spreadValues({}, files);
+  if (!newFiles["/package.json"]) {
+    if (!dependencies) {
+      throw new Error("No dependencies specified, please specify either a package.json or dependencies.");
+    }
+    if (!entry) {
+      throw new Error("Missing 'entry' parameter. Either specify an entry point, or pass in a package.json with the 'main' field set.");
+    }
+    newFiles["/package.json"] = {
+      code: createPackageJSON(dependencies, devDependencies, entry)
+    };
+  }
+  return newFiles;
+}
+function extractErrorDetails(msg) {
+  if (msg.title === "SyntaxError") {
+    const { title, path, message, line, column } = msg;
+    return { title, path, message, line, column };
+  }
+  const relevantStackFrame = getRelevantStackFrame(msg.payload.frames);
+  if (!relevantStackFrame) {
+    return { message: msg.message };
+  }
+  const errorInCode = getErrorInOriginalCode(relevantStackFrame);
+  const errorLocation = getErrorLocation(relevantStackFrame);
+  const errorMessage = formatErrorMessage(relevantStackFrame._originalFileName, msg.message, errorLocation, errorInCode);
+  return {
+    message: errorMessage,
+    title: msg.title,
+    path: relevantStackFrame._originalFileName,
+    line: relevantStackFrame._originalLineNumber,
+    column: relevantStackFrame._originalColumnNumber
+  };
+}
+function getRelevantStackFrame(frames) {
+  if (!frames) {
+    return;
+  }
+  return frames.find((frame) => !!frame._originalFileName);
+}
+function getErrorLocation(errorFrame) {
+  return errorFrame ? ` (${errorFrame._originalLineNumber}:${errorFrame._originalColumnNumber})` : ``;
+}
+function getErrorInOriginalCode(errorFrame) {
+  const lastScriptLine = errorFrame._originalScriptCode[errorFrame._originalScriptCode.length - 1];
+  const numberOfLineNumberCharacters = lastScriptLine.lineNumber.toString().length;
+  const leadingCharacterOffset = 2;
+  const barSeparatorCharacterOffset = 3;
+  const extraLineLeadingSpaces = leadingCharacterOffset + numberOfLineNumberCharacters + barSeparatorCharacterOffset + errorFrame._originalColumnNumber;
+  return errorFrame._originalScriptCode.reduce((result, scriptLine) => {
+    const leadingChar = scriptLine.highlight ? ">" : " ";
+    const lineNumber = scriptLine.lineNumber.toString().length === numberOfLineNumberCharacters ? `${scriptLine.lineNumber}` : ` ${scriptLine.lineNumber}`;
+    const extraLine = scriptLine.highlight ? "\n" + " ".repeat(extraLineLeadingSpaces) + "^" : "";
+    return result + "\n" + leadingChar + " " + lineNumber + " | " + scriptLine.content + extraLine;
+  }, "");
+}
+function formatErrorMessage(filePath, message, location, errorInCode) {
+  return `${filePath}: ${message}${location}
+${errorInCode}`;
+}
+//# sourceMappingURL=utils.js.map

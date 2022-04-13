@@ -1,0 +1,168 @@
+declare type AtLeastOneProperty<T, U = {
+    [K in keyof T]: Pick<T, K>;
+}> = Partial<T> & U[keyof U];
+export interface IModelPropertiesMapper {
+    getId(model: TJsonaModel): string | number;
+    getType(model: TJsonaModel): string;
+    getAttributes(model: TJsonaModel): TAnyKeyValueObject;
+    getRelationships(model: TJsonaModel): TJsonaRelationships;
+}
+export interface IJsonPropertiesMapper {
+    createModel(type: string): TJsonaModel;
+    setId(model: TJsonaModel, id: string | number): void;
+    setAttributes(model: TJsonaModel, attributes: TAnyKeyValueObject): void;
+    setMeta(model: TJsonaModel, meta: TAnyKeyValueObject): void;
+    setLinks(model: TJsonaModel, links: TAnyKeyValueObject): void;
+    setResourceIdObjMeta(model: TJsonaModel, meta: TResourceIdObj): void;
+    setRelationships(model: TJsonaModel, relationships: TJsonaRelationships): void;
+    setRelationshipLinks(parentModel: TJsonaModel, relationName: string, links: TJsonApiLinks): void;
+    setRelationshipMeta(parentModel: TJsonaModel, relationName: string, meta: TAnyKeyValueObject): void;
+}
+export interface IJsonaModelBuilder {
+    build(): TJsonaModel | Array<TJsonaModel>;
+}
+export interface IDeserializeCache {
+    getCachedModel(data: TJsonApiData): TJsonaModel | null;
+    handleModel(model: TJsonaModel, data: TJsonApiData): void;
+    createCacheKey(data: TJsonApiData): string;
+}
+export interface IDeserializeCacheConstructor {
+    new (): IDeserializeCache;
+}
+export interface IJsonaDeserializer extends IJsonaModelBuilder {
+    setDeserializeCache(dc: IDeserializeCache): void;
+    setPropertiesMapper(pm: IJsonPropertiesMapper): void;
+    setJsonParsedObject(body: TJsonApiBody): void;
+    buildModelByData(data: TJsonApiData): TJsonaModel;
+    buildRelationsByData(data: TJsonApiData, model: TJsonaModel): TJsonaRelationships | null;
+    buildDataFromIncludedOrData(id: string | number, type: string): TJsonApiData;
+    buildDataInObject(): {
+        [key: string]: TJsonApiData;
+    };
+    buildIncludedInObject(): {
+        [key: string]: TJsonApiData;
+    };
+}
+export interface IJsonDeserializerConstructor {
+    new (propertiesMapper: IJsonPropertiesMapper, deserializeCache: IDeserializeCache, options: any): any;
+}
+export interface IModelsSerializer {
+    setPropertiesMapper(propertiesMapper: IModelPropertiesMapper): any;
+    setStuff(stuff: any): any;
+    setIncludeNames(includeNames: TJsonaDenormalizedIncludeNames | TJsonaNormalizedIncludeNamesTree): any;
+    build(): TJsonApiBody;
+    buildDataByModel(model: TJsonaModel | null): TJsonApiData;
+    buildRelationshipsByModel(model: TJsonaModel): any;
+    buildIncludedByModel(model: TJsonaModel, includeTree: TJsonaNormalizedIncludeNamesTree, builtIncluded: TJsonaUniqueIncluded): void;
+    buildIncludedItem(relationModel: TJsonaModel, subIncludeTree: TJsonaNormalizedIncludeNamesTree, builtIncluded: TJsonaUniqueIncluded): any;
+}
+export interface IModelsSerializerConstructor {
+    new (propertiesMapper?: IModelPropertiesMapper): IModelsSerializer;
+}
+export declare type TDeserializeOptions = {
+    preferNestedDataFromData?: boolean;
+};
+export declare type TAnyKeyValueObject = {
+    [key: string]: any;
+};
+export declare type TJsonApiBody = {
+    data?: TJsonApiData | TJsonApiData[];
+    included?: Array<TJsonApiData>;
+};
+export declare type TJsonApiData = {
+    type: string;
+    id?: string | number;
+    attributes?: TAnyKeyValueObject;
+    meta?: TAnyKeyValueObject;
+    links?: TJsonApiLinks;
+    relationships?: TJsonApiRelationships;
+};
+export declare type TJsonApiRelationshipData = {
+    type: string;
+    id: string | number;
+    meta?: TAnyKeyValueObject;
+};
+declare type FullTJsonApiRelation = {
+    data: TJsonApiRelationshipData | Array<TJsonApiRelationshipData> | null;
+    links: TJsonApiLinks;
+    meta: TAnyKeyValueObject;
+};
+export declare type TJsonApiRelation = AtLeastOneProperty<FullTJsonApiRelation>;
+declare type LinkKey = "self" | "related" | "first" | "prev" | "next" | "last";
+declare type LinkObjectMember = string | {
+    href?: string;
+    meta?: TAnyKeyValueObject;
+} | null;
+export declare type TJsonApiLinks = {
+    [key in LinkKey]?: LinkObjectMember;
+};
+export declare type TJsonApiRelationships = {
+    [relationName: string]: TJsonApiRelation;
+};
+export declare type TJsonaUniqueIncluded = {
+    [entityTypeId: string]: TJsonApiData;
+};
+/**
+ * TJsonaDenormalizedIncludeNames example:
+ * 'user.town.country'
+ */
+export declare type TJsonaIncludeNamesChain = string;
+/**
+ * TJsonaDenormalizedIncludeNames example:
+ * ['user', 'user.town', 'user.town.country', 'comments', 'comments.author']
+ */
+export declare type TJsonaDenormalizedIncludeNames = Array<TJsonaIncludeNamesChain>;
+/**
+ * TJsonaNormalizedIncludeNamesTree example:
+ * {
+ *  user: {
+ *      town: {
+ *          country: null
+ *      }
+ *  comments: {
+ *      author: null
+ *  }
+ */
+export declare type TJsonaNormalizedIncludeNamesTree = {
+    [relationName: string]: null | TJsonaNormalizedIncludeNamesTree;
+};
+export declare type TJsonaModel = {
+    [propertyName: string]: any;
+};
+export declare type TResourceIdObj = {
+    [propertyName: string]: any;
+};
+export declare type TJsonaRelationshipBuild = () => (TJsonaModel | Array<TJsonaModel>);
+export declare type TJsonaRelationships = {
+    [relationName: string]: TJsonaRelationshipBuild | TJsonaModel | Array<TJsonaModel>;
+};
+export declare type TReduxObject = {
+    [entityType: string]: {
+        [entityId: string]: TReduxObjectModel;
+    };
+};
+export declare type TReduxObjectModel = {
+    id: number | string;
+    attributes?: TAnyKeyValueObject;
+    relationships?: TJsonApiRelationships;
+};
+export declare type TReduxObjectRelation = {
+    data: {
+        id: string | Array<string>;
+        type: string;
+    };
+};
+export declare type SwitchCaseModelMapperOptionsType = {
+    switchAttributes?: boolean;
+    switchRelationships?: boolean;
+    switchType?: boolean;
+    switchChar?: string;
+};
+export declare type SwitchCaseJsonMapperOptionsType = {
+    camelizeAttributes?: boolean;
+    camelizeRelationships?: boolean;
+    camelizeType?: boolean;
+    camelizeMeta?: boolean;
+    switchChar?: string;
+};
+export {};

@@ -1,0 +1,12 @@
+import type { SandpackBundlerFile } from "@codesandbox/sandpack-client";
+import type { SandpackProviderProps } from "../contexts/sandpackContext";
+import type { SandboxEnvironment, SandboxTemplate, SandpackSetup } from "../types";
+export interface SandpackContextInfo {
+    activePath: string;
+    openPaths: string[];
+    files: Record<string, SandpackBundlerFile>;
+    environment: SandboxEnvironment;
+}
+export declare const getSandpackStateFromProps: (props: SandpackProviderProps) => SandpackContextInfo;
+export declare const getSetup: (template?: "svelte" | "angular" | "react" | "react-ts" | "vanilla" | "vanilla-ts" | "vue" | "vue3" | undefined, inputSetup?: SandpackSetup | undefined) => SandboxTemplate;
+export declare const createSetupFromUserInput: (setup?: SandpackSetup | undefined) => Partial<SandboxTemplate> | null;

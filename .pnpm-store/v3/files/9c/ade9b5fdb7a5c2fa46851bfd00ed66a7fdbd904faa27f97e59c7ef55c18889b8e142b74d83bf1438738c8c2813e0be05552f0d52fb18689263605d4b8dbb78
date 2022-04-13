@@ -1,0 +1,20 @@
+import { ServerResponse } from 'http';
+import fetch from 'isomorphic-fetch';
+
+/**
+ * fetch data from a JSON:API endpoint
+ * @param apiUrl the api url for the JSON:API endpoint
+ * @param requestInit fetch initialization object
+ * @param res response object
+ * @returns a promise containing the data for the JSON:API response
+ */
+const defaultFetch = (
+  apiUrl: RequestInfo,
+  requestInit = {},
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _res?: ServerResponse | boolean
+): Promise<Response> => {
+  return fetch(apiUrl, requestInit);
+};
+
+export default defaultFetch;

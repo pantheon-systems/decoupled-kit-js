@@ -1,0 +1,53 @@
+{
+  "name": "drupal-jsonapi-params",
+  "version": "1.2.3",
+  "description": "Drupal JSON-API params",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "docs": "typedoc --options typedoc.json --out api --theme ./node_modules/typedoc-neo-theme/bin/default"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d34dman/drupal-jsonapi-params.git"
+  },
+  "keywords": [
+    "Drupal",
+    "JSON-API",
+    "javascript"
+  ],
+  "author": "D34dMan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d34dman/drupal-jsonapi-params/issues"
+  },
+  "homepage": "https://github.com/d34dman/drupal-jsonapi-params#readme",
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/qs": "^6.9.3",
+    "codecov": "^3.7.0",
+    "jest": "^27.4.5",
+    "prettier": "^1.19.1",
+    "ts-jest": "^27.1.2",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typedoc": "^0.20.36",
+    "typedoc-neo-theme": "^1.1.1",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "qs": "^6.10.0"
+  }
+}

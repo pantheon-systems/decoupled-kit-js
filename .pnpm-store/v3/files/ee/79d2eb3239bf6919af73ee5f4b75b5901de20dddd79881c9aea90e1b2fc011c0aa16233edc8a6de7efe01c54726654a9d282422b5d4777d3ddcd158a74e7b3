@@ -1,0 +1,14 @@
+import { ServerResponse } from 'http';
+import { TJsonApiBody } from 'jsona/lib/JsonaTypes';
+import { fetchAdapter } from '../types/types';
+/**
+ * helper function to make it easier to resolve a path to an entity ID
+ * @param apiUrl the api url for the JON:API endpoint
+ * @param path the path to the node
+ * @param requestInit fetch initialization object
+ * @param res response object
+ * @param fetch fetch compatible function
+ * @returns a promise containing the data for the JSON:API response
+ */
+declare const translatePath: (apiUrl: string, path: string, requestInit?: {}, _res?: ServerResponse | boolean, fetch?: fetchAdapter) => Promise<void | TJsonApiBody>;
+export default translatePath;

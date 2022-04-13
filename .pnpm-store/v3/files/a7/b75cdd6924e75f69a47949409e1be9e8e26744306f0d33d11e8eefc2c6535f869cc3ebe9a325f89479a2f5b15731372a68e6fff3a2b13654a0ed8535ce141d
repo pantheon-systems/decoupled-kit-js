@@ -1,0 +1,2999 @@
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+var __export = (target, all) => {
+  __markAsModule(target);
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __reExport = (target, module2, desc) => {
+  if (module2 && typeof module2 === "object" || typeof module2 === "function") {
+    for (let key of __getOwnPropNames(module2))
+      if (!__hasOwnProp.call(target, key) && key !== "default")
+        __defProp(target, key, { get: () => module2[key], enumerable: !(desc = __getOwnPropDesc(module2, key)) || desc.enumerable });
+  }
+  return target;
+};
+var __toModule = (module2) => {
+  return __reExport(__markAsModule(__defProp(module2 != null ? __create(__getProtoOf(module2)) : {}, "default", module2 && module2.__esModule && "default" in module2 ? { get: () => module2.default, enumerable: true } : { value: module2, enumerable: true })), module2);
+};
+
+// src/index.ts
+__export(exports, {
+  BackwardIcon: () => BackwardIcon,
+  CloseIcon: () => CloseIcon,
+  CodeEditor: () => CodeMirror,
+  DirectoryIcon: () => DirectoryIcon,
+  ErrorOverlay: () => ErrorOverlay,
+  ExportIcon: () => ExportIcon,
+  FADE_ANIMATION_DURATION: () => FADE_ANIMATION_DURATION,
+  FileIcon: () => FileIcon,
+  FileTabs: () => FileTabs,
+  ForwardIcon: () => ForwardIcon,
+  LoadingOverlay: () => LoadingOverlay,
+  Navigator: () => Navigator,
+  OpenInCodeSandboxButton: () => OpenInCodeSandboxButton,
+  RefreshButton: () => RefreshButton,
+  RefreshIcon: () => RefreshIcon,
+  RunButton: () => RunButton,
+  RunIcon: () => RunIcon,
+  SANDPACK_THEMES: () => SANDPACK_THEMES,
+  Sandpack: () => Sandpack2,
+  SandpackCodeEditor: () => SandpackCodeEditor,
+  SandpackCodeViewer: () => SandpackCodeViewer,
+  SandpackConsumer: () => SandpackConsumer,
+  SandpackLayout: () => SandpackLayout,
+  SandpackPreview: () => SandpackPreview,
+  SandpackProvider: () => SandpackProvider,
+  SandpackReactContext: () => Sandpack,
+  SandpackReactDevTools: () => SandpackReactDevTools,
+  SandpackRunner: () => SandpackRunner,
+  SandpackStack: () => SandpackStack,
+  SandpackThemeConsumer: () => SandpackThemeConsumer,
+  SandpackThemeContext: () => SandpackThemeContext,
+  SandpackThemeProvider: () => SandpackThemeProvider,
+  SandpackTranspiledCode: () => SandpackTranspiledCode,
+  UnstyledOpenInCodeSandboxButton: () => UnstyledOpenInCodeSandboxButton,
+  aquaBlueTheme: () => aquaBlueTheme,
+  createThemeObject: () => createThemeObject,
+  defaultDark: () => defaultDark,
+  defaultLight: () => defaultLight,
+  getSyntaxStyle: () => getSyntaxStyle,
+  getThemeStyleSheet: () => getThemeStyleSheet,
+  githubLightTheme: () => githubLightTheme,
+  monokaiProTheme: () => monokaiProTheme,
+  nightOwlTheme: () => nightOwlTheme,
+  sandpackDark: () => sandpackDark,
+  useActiveCode: () => useActiveCode,
+  useErrorMessage: () => useErrorMessage,
+  useLoadingOverlayState: () => useLoadingOverlayState,
+  useSandpack: () => useSandpack,
+  useSandpackNavigation: () => useSandpackNavigation,
+  useSandpackTheme: () => useSandpackTheme,
+  useTranspiledCode: () => useTranspiledCode
+});
+
+// src/presets/Sandpack.tsx
+var import_classer14 = __toModule(require("@code-hike/classer"));
+var React22 = __toModule(require("react"));
+
+// src/common/Layout.tsx
+var import_classer2 = __toModule(require("@code-hike/classer"));
+var React4 = __toModule(require("react"));
+
+// src/contexts/themeContext.tsx
+var import_classer = __toModule(require("@code-hike/classer"));
+var React = __toModule(require("react"));
+
+// src/utils/domUtils.ts
+var injectThemeStyleSheet = (theme, themeId) => {
+  if (typeof document !== "undefined") {
+    const existingStyleTagForTheme = document.head.querySelector(`style[data-sandpack-theme-id=${themeId}]`);
+    if (!existingStyleTagForTheme) {
+      const styleTag = document.createElement("style");
+      styleTag.setAttribute("data-sandpack-theme-id", themeId);
+      styleTag.textContent = getThemeStyleSheet(theme, themeId);
+      document.head.appendChild(styleTag);
+    }
+  }
+};
+var QUERY = "(prefers-color-scheme: dark)";
+var isRenderingOnServer = typeof window === "undefined";
+var getDarkModePreference = () => {
+  return isRenderingOnServer ? false : window.matchMedia(QUERY).matches;
+};
+
+// src/utils/stringUtils.ts
+var getFileName = (filePath) => {
+  const lastIndexOfSlash = filePath.lastIndexOf("/");
+  return filePath.slice(lastIndexOfSlash + 1);
+};
+var calculateNearestUniquePath = (currentPath, otherPaths) => {
+  const currentPathParts = (currentPath[0] === "/" ? currentPath.slice(1) : currentPath).split("/");
+  const resultPathParts = [];
+  if (currentPathParts.length === 1) {
+    resultPathParts.unshift(currentPathParts[0]);
+  } else {
+    for (let fileIndex = 0; fileIndex < otherPaths.length; fileIndex++) {
+      const otherPathParts = otherPaths[fileIndex].split("/");
+      for (let partsFromEnd = 1; partsFromEnd <= currentPathParts.length; partsFromEnd++) {
+        const currentPathPart = currentPathParts[currentPathParts.length - partsFromEnd];
+        const otherPathPart = otherPathParts[otherPathParts.length - partsFromEnd];
+        if (resultPathParts.length < partsFromEnd) {
+          resultPathParts.unshift(currentPathPart);
+        }
+        if (currentPathPart !== otherPathPart) {
+          break;
+        }
+      }
+    }
+  }
+  if (resultPathParts.length < currentPathParts.length) {
+    resultPathParts.unshift("..");
+  }
+  return resultPathParts.join("/");
+};
+var hexToRGB = (hex) => {
+  let r = "0";
+  let g = "0";
+  let b = "0";
+  if (hex.length === 4) {
+    r = "0x" + hex[1] + hex[1];
+    g = "0x" + hex[2] + hex[2];
+    b = "0x" + hex[3] + hex[3];
+  } else if (hex.length === 7) {
+    r = "0x" + hex[1] + hex[2];
+    g = "0x" + hex[3] + hex[4];
+    b = "0x" + hex[5] + hex[6];
+  }
+  return {
+    red: +r,
+    green: +g,
+    blue: +b
+  };
+};
+var hexToCSSRGBa = (hex, alpha) => {
+  if (hex.startsWith("#") && (hex.length === 4 || hex.length === 7)) {
+    const { red, green, blue } = hexToRGB(hex);
+    return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+  }
+  return hex;
+};
+var isDarkColor = (color) => {
+  let r = 0;
+  let g = 0;
+  let b = 0;
+  if (color.startsWith("#")) {
+    if (color.length < 7) {
+      return true;
+    }
+    r = parseInt(color.substr(1, 2), 16);
+    g = parseInt(color.substr(3, 2), 16);
+    b = parseInt(color.substr(5, 2), 16);
+  } else {
+    const rgbValues = color.replace("rgb(", "").replace("rgba(", "").replace(")", "").split(",");
+    if (rgbValues.length < 3) {
+      return true;
+    }
+    r = parseInt(rgbValues[0], 10);
+    g = parseInt(rgbValues[1], 10);
+    b = parseInt(rgbValues[2], 10);
+  }
+  const yiq = (r * 299 + g * 587 + b * 114) / 1e3;
+  return yiq < 128;
+};
+var generateRandomId = () => Math.floor(Math.random() * 1e4).toString();
+
+// src/themes/index.ts
+var defaultLight = {
+  palette: {
+    activeText: "#1f2933",
+    defaultText: "#757678",
+    inactiveText: "#e4e7eb",
+    activeBackground: "#e4e7eb",
+    defaultBackground: "#f8f9fb",
+    inputBackground: "#ffffff",
+    accent: "#64D2FF",
+    errorBackground: "#ffcdca",
+    errorForeground: "#811e18"
+  },
+  syntax: {
+    plain: "#151515",
+    comment: { color: "#999", fontStyle: "italic" },
+    keyword: "#0971F1",
+    tag: "#0971F1",
+    punctuation: "#151515",
+    definition: "#151515",
+    property: "#151515",
+    static: "#FF453A",
+    string: "#BF5AF2"
+  },
+  typography: {
+    bodyFont: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    monoFont: '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
+    fontSize: "14px",
+    lineHeight: "1.4"
+  }
+};
+var defaultDark = {
+  palette: {
+    activeText: "#FFFFFF",
+    defaultText: "#999999",
+    inactiveText: "#343434",
+    activeBackground: "#343434",
+    defaultBackground: "#040404",
+    inputBackground: "#242424",
+    accent: "#6caedd",
+    errorBackground: "#ffcdca",
+    errorForeground: "#811e18"
+  },
+  syntax: {
+    plain: "#FFFFFF",
+    comment: { color: "#757575", fontStyle: "italic" },
+    keyword: "#77B7D7",
+    tag: "#DFAB5C",
+    punctuation: "#ffffff",
+    definition: "#86D9CA",
+    property: "#77B7D7",
+    static: "#C64640",
+    string: "#977CDC"
+  },
+  typography: {
+    bodyFont: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    monoFont: '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
+    fontSize: "14px",
+    lineHeight: "1.4"
+  }
+};
+var sandpackDark = {
+  palette: {
+    activeText: "#90e86f",
+    defaultText: "#5a5a5a",
+    inactiveText: "#1a1a1a",
+    activeBackground: "#272727",
+    defaultBackground: "#151515",
+    inputBackground: "#2e2e2e",
+    accent: "#90e86f",
+    errorBackground: "#dac1fb",
+    errorForeground: "#b08df8"
+  },
+  syntax: {
+    plain: "#f0fdaf",
+    comment: { color: "#757575", fontStyle: "italic" },
+    keyword: "#e5fd78",
+    tag: "#f0fdaf",
+    punctuation: "#ffffff",
+    definition: "#eeeeee",
+    property: "#90e86f",
+    static: "#ffffff",
+    string: "#dafecf"
+  },
+  typography: {
+    bodyFont: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    monoFont: '"Fira Code", "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
+    fontSize: "14px",
+    lineHeight: "1.6"
+  }
+};
+var aquaBlueTheme = {
+  palette: {
+    activeText: "#1f2933",
+    defaultText: "#737373",
+    inactiveText: "#e4e7eb",
+    activeBackground: "#e4e7eb",
+    defaultBackground: "#f8f9fb",
+    inputBackground: "#ffffff",
+    accent: "#6caedd",
+    errorBackground: "#ffcdca",
+    errorForeground: "#811e18"
+  },
+  syntax: {
+    plain: "#1F2933",
+    comment: { color: "#A7B6C2", fontStyle: "italic" },
+    keyword: "#1A56DB",
+    tag: "#1A56DB",
+    punctuation: "#394b59",
+    definition: "#A23DAD",
+    property: "#14919B",
+    static: "#1A56DB",
+    string: "#1992D4"
+  },
+  typography: {
+    bodyFont: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    monoFont: '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
+    fontSize: "14px",
+    lineHeight: "1.4"
+  }
+};
+var githubLightTheme = {
+  palette: {
+    activeText: "#24292e",
+    defaultText: "#959da5",
+    inactiveText: "#e4e7eb",
+    activeBackground: "#e4e7eb",
+    defaultBackground: "#ffffff",
+    inputBackground: "#ffffff",
+    accent: "#c8c8fa",
+    errorBackground: "#ffcdca",
+    errorForeground: "#811e18"
+  },
+  syntax: {
+    keyword: "#d73a49",
+    property: "#005cc5",
+    plain: "#24292e",
+    static: "#032f62",
+    string: "#032f62",
+    definition: "#6f42c1",
+    punctuation: "#24292e",
+    tag: "#22863a",
+    comment: {
+      color: "#6a737d",
+      fontStyle: "normal"
+    }
+  },
+  typography: {
+    bodyFont: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    monoFont: '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
+    fontSize: "14px",
+    lineHeight: "1.4"
+  }
+};
+var nightOwlTheme = {
+  palette: {
+    activeText: "rgb(197, 228, 253)",
+    defaultText: "rgb(105, 136, 161)",
+    inactiveText: "rgb(78, 82, 97)",
+    activeBackground: "rgb(58, 62, 77)",
+    defaultBackground: "rgb(1, 22, 39)",
+    inputBackground: "rgb(11, 41, 66)",
+    accent: "#7fdbca",
+    errorBackground: "#ffcdca",
+    errorForeground: "#811e18"
+  },
+  syntax: {
+    plain: "#d6deeb",
+    comment: { color: "#999999", fontStyle: "italic" },
+    keyword: { color: "#c792ea", fontStyle: "italic" },
+    tag: "#7fdbca",
+    punctuation: "#7fdbca",
+    definition: "#82aaff",
+    property: { color: "#addb67", fontStyle: "italic" },
+    static: "#f78c6c",
+    string: "#ecc48d"
+  },
+  typography: {
+    bodyFont: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    monoFont: '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
+    fontSize: "14px",
+    lineHeight: "1.4"
+  }
+};
+var monokaiProTheme = {
+  palette: {
+    activeText: "rgb(252, 252, 250)",
+    defaultText: "rgb(147, 146, 147)",
+    inactiveText: "#444344",
+    activeBackground: "#444344",
+    defaultBackground: "rgb(45, 42, 46)",
+    inputBackground: "rgb(25, 24, 26)",
+    accent: "rgb(255, 216, 102)",
+    errorBackground: "#ffcdca",
+    errorForeground: "#811e18"
+  },
+  syntax: {
+    plain: "rgb(252, 252, 250)",
+    comment: { color: "#757575", fontStyle: "italic" },
+    keyword: "rgb(255, 97, 136)",
+    tag: "rgb(120, 220, 232)",
+    punctuation: "rgb(147, 146, 147)",
+    definition: "rgb(169, 220, 118)",
+    property: { color: "rgb(120, 220, 232)", fontStyle: "italic" },
+    static: "rgb(171, 157, 242)",
+    string: "rgb(255, 216, 102)"
+  },
+  typography: {
+    bodyFont: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    monoFont: '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
+    fontSize: "14px",
+    lineHeight: "1.4"
+  }
+};
+var SANDPACK_THEMES = {
+  light: defaultLight,
+  dark: defaultDark,
+  "sandpack-dark": sandpackDark,
+  "night-owl": nightOwlTheme,
+  "aqua-blue": aquaBlueTheme,
+  "monokai-pro": monokaiProTheme,
+  "github-light": githubLightTheme
+};
+var createThemeObject = (inputTheme) => {
+  const defaultLightTheme = defaultLight;
+  const defaultLightThemeKey = "default";
+  const defaultDarkTheme = defaultDark;
+  const defaultDarkThemeKey = "default-dark";
+  if (inputTheme === void 0) {
+    return {
+      theme: defaultLightTheme,
+      id: defaultLightThemeKey
+    };
+  }
+  if (inputTheme === "auto") {
+    return getDarkModePreference() ? {
+      theme: defaultDarkTheme,
+      id: defaultDarkThemeKey
+    } : {
+      theme: defaultLightTheme,
+      id: defaultLightThemeKey
+    };
+  }
+  if (typeof inputTheme === "string") {
+    const predefinedTheme = SANDPACK_THEMES[inputTheme];
+    if (!predefinedTheme) {
+      throw new Error(`Invalid theme '${inputTheme}' provided.`);
+    }
+    return {
+      theme: predefinedTheme,
+      id: inputTheme != null ? inputTheme : defaultLightThemeKey
+    };
+  }
+  const theme = {
+    palette: __spreadValues(__spreadValues({}, defaultLightTheme.palette), inputTheme == null ? void 0 : inputTheme.palette),
+    syntax: __spreadValues(__spreadValues({}, defaultLightTheme.syntax), inputTheme == null ? void 0 : inputTheme.syntax),
+    typography: __spreadValues(__spreadValues({}, defaultLightTheme.typography), inputTheme == null ? void 0 : inputTheme.typography)
+  };
+  const id = simpleHashFunction(JSON.stringify(theme));
+  return {
+    theme,
+    id: `sp-${id}`
+  };
+};
+var simpleHashFunction = (str) => {
+  let hash = 0;
+  for (let i = 0; i < str.length; hash &= hash) {
+    hash = 31 * hash + str.charCodeAt(i++);
+  }
+  return Math.abs(hash);
+};
+var getThemeStyleSheet = (theme, themeId) => `
+.sp-wrapper.sp-${themeId} {
+  --sp-colors-fg-active: ${theme.palette.activeText};
+  --sp-colors-fg-default: ${theme.palette.defaultText};
+  --sp-colors-fg-inactive: ${theme.palette.inactiveText || theme.palette.activeBackground};
+  --sp-colors-bg-active: ${theme.palette.activeBackground || theme.palette.inactiveText};
+  --sp-colors-bg-default: ${theme.palette.defaultBackground};
+  --sp-colors-bg-default-overlay: ${hexToCSSRGBa(theme.palette.defaultBackground, 0.8)};
+  --sp-colors-bg-input: ${theme.palette.inputBackground};
+  --sp-colors-accent: ${theme.palette.accent};
+  --sp-colors-bg-error: ${theme.palette.errorBackground};
+  --sp-colors-fg-error: ${theme.palette.errorForeground};
+  --sp-font-size: ${theme.typography.fontSize};
+  --sp-font-body: ${theme.typography.bodyFont};
+  --sp-font-mono: ${theme.typography.monoFont};
+  --sp-line-height: ${theme.typography.lineHeight};
+`;
+var getSyntaxStyle = (token) => {
+  if (typeof token === "string") {
+    return { color: token };
+  }
+  return token;
+};
+
+// src/contexts/themeContext.tsx
+var SandpackThemeContext = React.createContext({
+  theme: defaultLight,
+  id: "light"
+});
+var SandpackThemeProvider = (props) => {
+  const { theme, id } = createThemeObject(props.theme);
+  const c = (0, import_classer.useClasser)("sp");
+  if (props.theme) {
+    injectThemeStyleSheet(theme, id);
+  }
+  return /* @__PURE__ */ React.createElement(SandpackThemeContext.Provider, {
+    value: {
+      theme,
+      id
+    }
+  }, /* @__PURE__ */ React.createElement("div", {
+    className: c("wrapper", id)
+  }, props.children));
+};
+var SandpackThemeConsumer = SandpackThemeContext.Consumer;
+
+// src/hooks/useSandpack.ts
+var React3 = __toModule(require("react"));
+
+// src/contexts/sandpackContext.tsx
+var import_sandpack_client2 = __toModule(require("@codesandbox/sandpack-client"));
+var import_lodash = __toModule(require("lodash.isequal"));
+var React2 = __toModule(require("react"));
+
+// src/utils/sandpackUtils.ts
+var import_sandpack_client = __toModule(require("@codesandbox/sandpack-client"));
+
+// src/templates/angular.ts
+var ANGULAR_TEMPLATE = {
+  files: {
+    "/src/app/app.component.css": {
+      code: `div {
+    text-align: center;
+}              
+`
+    },
+    "/src/app/app.component.html": {
+      code: `<div>
+<h1>
+    {{ helloWorld }}
+</h1>
+</div>         
+`
+    },
+    "/src/app/app.component.ts": {
+      code: `import { Component } from "@angular/core";
+
+@Component({
+    selector: "app-root",
+    templateUrl: "./app.component.html",
+     styleUrls: ["./app.component.css"]
+})
+export class AppComponent {
+    helloWorld = "hello world";
+}                   
+`
+    },
+    "/src/app/app.module.ts": {
+      code: `import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+            
+import { AppComponent } from "./app.component";
+            
+@NgModule({
+    declarations: [AppComponent],
+    imports: [BrowserModule],
+    providers: [],
+    bootstrap: [AppComponent]
+})
+export class AppModule {}           
+`
+    },
+    "/src/index.html": {
+      code: `<!doctype html>
+<html lang="en">
+            
+<head>
+    <meta charset="utf-8">
+    <title>Angular</title>
+    <base href="/">
+            
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+            
+<body>
+   <app-root></app-root>
+</body>
+            
+</html>
+`
+    },
+    "/src/main.ts": {
+      code: `import { enableProdMode } from "@angular/core";
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+            
+import { AppModule } from "./app/app.module";            
+
+platformBrowserDynamic()
+    .bootstrapModule(AppModule)
+    .catch(err => console.log(err));
+            
+`
+    },
+    "/src/polyfills.ts": {
+      code: `import "core-js/proposals/reflect-metadata";   
+            import "zone.js/dist/zone";
+`
+    }
+  },
+  dependencies: {
+    "@angular/core": "^11.2.0",
+    "@angular/platform-browser": "^11.2.0",
+    "@angular/platform-browser-dynamic": "^11.2.0",
+    "@angular/common": "^11.2.0",
+    "@angular/compiler": "^11.2.0",
+    "zone.js": "0.11.3",
+    "core-js": "3.8.3",
+    rxjs: "6.6.3"
+  },
+  entry: "/src/main.ts",
+  main: "/src/app/app.component.ts",
+  environment: "angular-cli"
+};
+
+// src/templates/react.ts
+var REACT_TEMPLATE = {
+  files: {
+    "/App.js": {
+      code: `export default function App() {
+  return <h1>Hello World</h1>
+}
+`
+    },
+    "/index.js": {
+      code: `import React, { StrictMode } from "react";
+import ReactDOM from "react-dom";
+import "./styles.css";
+
+import App from "./App";
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  rootElement
+);`
+    },
+    "/styles.css": {
+      code: `body {
+  font-family: sans-serif;
+  -webkit-font-smoothing: auto;
+  -moz-font-smoothing: auto;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: auto;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+h1 {
+  font-size: 1.5rem;
+}`
+    },
+    "/public/index.html": {
+      code: `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>`
+    }
+  },
+  dependencies: {
+    react: "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-scripts": "^4.0.0"
+  },
+  entry: "/index.js",
+  main: "/App.js",
+  environment: "create-react-app"
+};
+
+// src/templates/react-typescript.ts
+var REACT_TYPESCRIPT_TEMPLATE = {
+  files: {
+    "tsconfig.json": {
+      code: `{
+    "include": [
+        "./**/*"
+    ],
+    "compilerOptions": {
+        "strict": true,
+        "esModuleInterop": true,
+        "lib": [
+            "dom",
+            "es2015"
+        ],
+        "jsx": "react-jsx"
+    }
+}`
+    },
+    "/App.tsx": {
+      code: `export default function App(): JSX.Element {
+  return <h1>Hello World</h1>
+}
+`
+    },
+    "/index.tsx": {
+      code: `import React, { StrictMode } from "react";
+import ReactDOM from "react-dom";
+import "./styles.css";
+
+import App from "./App";
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  rootElement
+);`
+    },
+    "/styles.css": {
+      code: `body {
+  font-family: sans-serif;
+  -webkit-font-smoothing: auto;
+  -moz-font-smoothing: auto;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: auto;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+h1 {
+  font-size: 1.5rem;
+}`
+    },
+    "/public/index.html": {
+      code: `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>`
+    }
+  },
+  dependencies: {
+    react: "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-scripts": "^4.0.0"
+  },
+  devDependencies: {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    typescript: "^4.0.0"
+  },
+  entry: "/index.tsx",
+  main: "/App.tsx",
+  environment: "create-react-app"
+};
+
+// src/templates/svelte.ts
+var SVELTE_TEMPLATE = {
+  environment: "svelte",
+  main: "/index.js",
+  entry: "/index.js",
+  files: {
+    "/App.svelte": {
+      code: `<style>
+  main {
+    font-family: sans-serif;
+    text-align: center;
+  }
+</style>
+
+<script>
+  let name = 'world';
+<\/script>
+
+<main>
+  <h1>Hello {name}!</h1>
+</main>`
+    },
+    "/index.js": {
+      code: `import App from "./App.svelte";
+
+const app = new App({
+  target: document.body
+});
+
+export default app;
+      `
+    },
+    "/public/index.html": {
+      code: `<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Svelte app</title>
+
+    <link rel="stylesheet" href="public/bundle.css" />
+  </head>
+
+  <body>
+    <script src="bundle.js"><\/script>
+  </body>
+</html>`
+    }
+  },
+  dependencies: {
+    svelte: "^3.0.0"
+  }
+};
+
+// src/templates/vanilla.ts
+var VANILLA_TEMPLATE = {
+  files: {
+    "/src/index.js": {
+      code: `import "./styles.css";
+
+document.getElementById("app").innerHTML = \`
+<h1>Hello Vanilla!</h1>
+<div>
+  We use the same configuration as Parcel to bundle this sandbox, you can find more
+  info about Parcel 
+  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
+</div>
+\`;
+`
+    },
+    "/src/styles.css": {
+      code: `body {
+  font-family: sans-serif;
+}
+      `
+    },
+    "/index.html": {
+      code: `<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Parcel Sandbox</title>
+  <meta charset="UTF-8" />
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script src="src/index.js">
+  <\/script>
+</body>
+
+</html>`
+    }
+  },
+  dependencies: {},
+  entry: "/src/index.js",
+  main: "/src/index.js",
+  environment: "parcel"
+};
+
+// src/templates/vanilla-typescript.ts
+var VANILLA_TYPESCRIPT_TEMPLATE = {
+  files: {
+    "tsconfig.json": {
+      code: `{
+  "compilerOptions": {
+    "strict": true,
+    "module": "commonjs",
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "rootDir": "src",
+    "moduleResolution": "node"
+  }
+}`
+    },
+    "/src/index.ts": {
+      code: `import "./styles.css";
+
+document.getElementById("app").innerHTML = \`
+<h1>Hello Vanilla!</h1>
+<div>
+  We use the same configuration as Parcel to bundle this sandbox, you can find more
+  info about Parcel 
+  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
+</div>
+\`;
+`
+    },
+    "/src/styles.css": {
+      code: `body {
+  font-family: sans-serif;
+}
+      `
+    },
+    "/index.html": {
+      code: `<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Parcel Sandbox</title>
+  <meta charset="UTF-8" />
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script src="src/index.ts">
+  <\/script>
+</body>
+
+</html>`
+    }
+  },
+  dependencies: {},
+  devDependencies: {
+    typescript: "^4.0.0"
+  },
+  entry: "/src/index.ts",
+  main: "/src/index.ts",
+  environment: "parcel"
+};
+
+// src/templates/vue.ts
+var VUE_TEMPLATE = {
+  files: {
+    "/src/App.vue": {
+      code: `<template>
+  <main id="app">
+    <h1>Hello world</h1>
+  </main>
+</template>
+
+<script>
+export default {
+  name: "App",
+};
+<\/script>
+
+<style>
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
+`
+    },
+    "/src/main.js": {
+      code: `import Vue from "vue";
+import App from "./App.vue";
+
+Vue.config.productionTip = false;
+
+new Vue({
+  render: h => h(App)
+}).$mount("#app");
+`
+    },
+    "/public/index.html": {
+      code: `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title>codesandbox</title>
+  </head>
+  <body>
+    <noscript>
+      <strong
+        >We're sorry but codesandbox doesn't work properly without JavaScript
+        enabled. Please enable it to continue.</strong
+      >
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
+`
+    }
+  },
+  dependencies: {
+    vue: "^2.6.11",
+    "@vue/cli-plugin-babel": "4.1.1"
+  },
+  entry: "/src/main.js",
+  main: "/src/App.vue",
+  environment: "vue-cli"
+};
+
+// src/templates/vue3.ts
+var VUE_TEMPLATE_3 = {
+  files: {
+    "/src/App.vue": {
+      code: `<template>
+  <main id="app">
+    <h1>{{ helloWorld }}</h1>
+  </main>
+</template>
+                             
+<script>
+import { ref } from "vue";
+export default {
+   name: "App",
+   setup() {
+      const helloWorld = ref("hello world");
+      return { helloWorld };
+   }
+};
+<\/script>
+                             
+<style>
+#app {
+font-family: Avenir, Helvetica, Arial, sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+text-align: center;
+color: #2c3e50;
+margin-top: 60px;
+}
+</style>   
+`
+    },
+    "/src/main.js": {
+      code: `import { createApp } from 'vue'
+import App from './App.vue'
+            
+createApp(App).mount('#app')            
+`
+    },
+    "/public/index.html": {
+      code: `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>codesandbox</title>
+  </head>
+  <body>
+    <noscript>
+      <strong
+        >We're sorry but codesandbox doesn't work properly without JavaScript
+        enabled. Please enable it to continue.</strong
+      >
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
+`
+    }
+  },
+  dependencies: {
+    "core-js": "^3.6.5",
+    vue: "^3.0.0-0",
+    "@vue/cli-plugin-babel": "4.5.0"
+  },
+  entry: "/src/main.js",
+  main: "/src/App.vue",
+  environment: "vue-cli"
+};
+
+// src/templates/index.tsx
+var SANDBOX_TEMPLATES = {
+  react: REACT_TEMPLATE,
+  "react-ts": REACT_TYPESCRIPT_TEMPLATE,
+  vue: VUE_TEMPLATE,
+  vanilla: VANILLA_TEMPLATE,
+  "vanilla-ts": VANILLA_TYPESCRIPT_TEMPLATE,
+  vue3: VUE_TEMPLATE_3,
+  angular: ANGULAR_TEMPLATE,
+  svelte: SVELTE_TEMPLATE
+};
+
+// src/utils/sandpackUtils.ts
+var getSandpackStateFromProps = (props) => {
+  var _a, _b;
+  const projectSetup = getSetup(props.template, props.customSetup);
+  let openPaths = (_a = props.openPaths) != null ? _a : [];
+  let activePath = props.activePath;
+  if (openPaths.length === 0 && ((_b = props.customSetup) == null ? void 0 : _b.files)) {
+    const inputFiles = props.customSetup.files;
+    Object.keys(inputFiles).forEach((filePath) => {
+      const file = inputFiles[filePath];
+      if (typeof file === "string") {
+        openPaths.push(filePath);
+        return;
+      }
+      if (!activePath && file.active) {
+        activePath = filePath;
+        if (file.hidden === true) {
+          openPaths.push(filePath);
+        }
+      }
+      if (!file.hidden) {
+        openPaths.push(filePath);
+      }
+    });
+  }
+  if (openPaths.length === 0) {
+    openPaths = Object.keys(projectSetup.files).reduce((acc, key) => {
+      if (!projectSetup.files[key].hidden) {
+        acc.push(key);
+      }
+      return acc;
+    }, []);
+  }
+  if (!activePath || !projectSetup.files[activePath]) {
+    activePath = projectSetup.main || openPaths[0];
+  }
+  if (!openPaths.includes(activePath)) {
+    openPaths.push(activePath);
+  }
+  if (!projectSetup.files[activePath]) {
+    throw new Error(`${activePath} was set as the active file but was not provided`);
+  }
+  const files = (0, import_sandpack_client.addPackageJSONIfNeeded)(projectSetup.files, projectSetup.dependencies || {}, projectSetup.devDependencies || {}, projectSetup.entry);
+  const environment = projectSetup.environment;
+  const existOpenPath = openPaths.filter((file) => files[file]);
+  return { openPaths: existOpenPath, activePath, files, environment };
+};
+var getSetup = (template, inputSetup) => {
+  const setup = createSetupFromUserInput(inputSetup);
+  if (!template) {
+    if (!setup) {
+      return SANDBOX_TEMPLATES.vanilla;
+    }
+    if (!setup.files || Object.keys(setup.files).length === 0) {
+      throw new Error(`When using the customSetup without a template, you must pass at least one file for sandpack to work`);
+    }
+    return setup;
+  }
+  const baseTemplate = SANDBOX_TEMPLATES[template];
+  if (!baseTemplate) {
+    throw new Error(`Invalid template '${template}' provided.`);
+  }
+  if (!setup) {
+    return baseTemplate;
+  }
+  return {
+    files: __spreadValues(__spreadValues({}, baseTemplate.files), setup.files),
+    dependencies: __spreadValues(__spreadValues({}, baseTemplate.dependencies), setup.dependencies),
+    devDependencies: __spreadValues(__spreadValues({}, baseTemplate.devDependencies), setup.devDependencies),
+    entry: setup.entry || baseTemplate.entry,
+    main: setup.main || baseTemplate.main,
+    environment: setup.environment || baseTemplate.environment
+  };
+};
+var createSetupFromUserInput = (setup) => {
+  if (!setup) {
+    return null;
+  }
+  if (!setup.files) {
+    return setup;
+  }
+  const { files } = setup;
+  const convertedFiles = Object.keys(files).reduce((acc, key) => {
+    if (typeof files[key] === "string") {
+      acc[key] = { code: files[key] };
+    } else {
+      acc[key] = files[key];
+    }
+    return acc;
+  }, {});
+  return __spreadProps(__spreadValues({}, setup), {
+    files: convertedFiles
+  });
+};
+
+// src/contexts/sandpackContext.tsx
+var Sandpack = React2.createContext(null);
+var BUNDLER_TIMEOUT = 3e4;
+var SandpackProvider = class extends React2.PureComponent {
+  constructor(props) {
+    super(props);
+    this.timeoutHook = null;
+    this.initializeSandpackIframeHook = null;
+    this.handleMessage = (msg) => {
+      if (this.timeoutHook) {
+        clearTimeout(this.timeoutHook);
+      }
+      if (msg.type === "state") {
+        this.setState({ bundlerState: msg.state });
+      } else if (msg.type === "done" && !msg.compilatonError) {
+        this.setState({ error: null });
+      } else if (msg.type === "action" && msg.action === "show-error") {
+        this.setState({ error: (0, import_sandpack_client2.extractErrorDetails)(msg) });
+      } else if (msg.type === "action" && msg.action === "notification" && msg.notificationType === "error") {
+        this.setState({
+          error: { message: msg.title }
+        });
+      }
+    };
+    this.registerReactDevTools = (value) => {
+      this.setState({ reactDevTools: value });
+    };
+    this.updateCurrentFile = (newCode) => {
+      this.updateFile(this.state.activePath, newCode);
+    };
+    this.updateFile = (path, newCode) => {
+      var _a;
+      if (newCode === ((_a = this.state.files[this.state.activePath]) == null ? void 0 : _a.code)) {
+        return;
+      }
+      const { files } = this.state;
+      const newFiles = __spreadProps(__spreadValues({}, files), {
+        [path]: { code: newCode }
+      });
+      this.setState({ files: newFiles }, this.updateClients);
+    };
+    this.updateClients = () => {
+      const { files, sandpackStatus } = this.state;
+      const { recompileMode, recompileDelay } = this.props;
+      if (sandpackStatus !== "running") {
+        return;
+      }
+      if (recompileMode === "immediate") {
+        Object.values(this.clients).forEach((client) => {
+          client.updatePreview({
+            files
+          });
+        });
+      }
+      if (recompileMode === "delayed") {
+        window.clearTimeout(this.debounceHook);
+        this.debounceHook = window.setTimeout(() => {
+          Object.values(this.clients).forEach((client) => {
+            client.updatePreview({
+              files: this.state.files
+            });
+          });
+        }, recompileDelay);
+      }
+    };
+    this.createClient = (iframe, clientId) => {
+      const client = new import_sandpack_client2.SandpackClient(iframe, {
+        files: this.state.files,
+        template: this.state.environment
+      }, {
+        externalResources: this.props.externalResources,
+        bundlerURL: this.props.bundlerURL,
+        logLevel: this.props.logLevel,
+        startRoute: this.props.startRoute,
+        fileResolver: this.props.fileResolver,
+        skipEval: this.props.skipEval,
+        showOpenInCodeSandbox: !this.openInCSBRegistered.current,
+        showErrorScreen: !this.errorScreenRegistered.current,
+        showLoadingScreen: !this.loadingScreenRegistered.current,
+        reactDevTools: this.state.reactDevTools
+      });
+      if (typeof this.unsubscribe !== "function") {
+        this.unsubscribe = client.listen(this.handleMessage);
+        this.timeoutHook = setTimeout(() => {
+          this.setState({ sandpackStatus: "timeout" });
+        }, BUNDLER_TIMEOUT);
+      }
+      if (this.queuedListeners[clientId]) {
+        Object.keys(this.queuedListeners[clientId]).forEach((listenerId) => {
+          const listener = this.queuedListeners[clientId][listenerId];
+          const unsubscribe = client.listen(listener);
+          this.unsubscribeQueuedListeners[clientId][listenerId] = unsubscribe;
+        });
+        this.queuedListeners[clientId] = {};
+      }
+      const globalListeners = Object.entries(this.queuedListeners.global);
+      globalListeners.forEach(([listenerId, listener]) => {
+        const unsubscribe = client.listen(listener);
+        this.unsubscribeQueuedListeners[clientId][listenerId] = unsubscribe;
+      });
+      return client;
+    };
+    this.runSandpack = () => {
+      Object.keys(this.preregisteredIframes).forEach((clientId) => {
+        const iframe = this.preregisteredIframes[clientId];
+        this.clients[clientId] = this.createClient(iframe, clientId);
+      });
+      this.setState({ sandpackStatus: "running" });
+    };
+    this.registerBundler = (iframe, clientId) => {
+      if (this.state.sandpackStatus === "running") {
+        this.clients[clientId] = this.createClient(iframe, clientId);
+      } else {
+        this.preregisteredIframes[clientId] = iframe;
+      }
+    };
+    this.unregisterBundler = (clientId) => {
+      var _a;
+      const client = this.clients[clientId];
+      if (client) {
+        client.cleanup();
+        (_a = client.iframe.contentWindow) == null ? void 0 : _a.location.replace("about:blank");
+        delete this.clients[clientId];
+      } else {
+        delete this.preregisteredIframes[clientId];
+      }
+      if (this.timeoutHook) {
+        clearTimeout(this.timeoutHook);
+      }
+      this.setState({ sandpackStatus: "idle" });
+    };
+    this.unregisterAllClients = () => {
+      Object.keys(this.clients).map(this.unregisterBundler);
+      if (typeof this.unsubscribe === "function") {
+        this.unsubscribe();
+        this.unsubscribe = void 0;
+      }
+    };
+    this.setActiveFile = (activePath) => {
+      this.setState({ activePath });
+    };
+    this.openFile = (path) => {
+      this.setState(({ openPaths }) => {
+        const newPaths = openPaths.includes(path) ? openPaths : [...openPaths, path];
+        return {
+          activePath: path,
+          openPaths: newPaths
+        };
+      });
+    };
+    this.closeFile = (path) => {
+      if (this.state.openPaths.length === 1) {
+        return;
+      }
+      this.setState(({ openPaths, activePath }) => {
+        const indexOfRemovedPath = openPaths.indexOf(path);
+        const newPaths = openPaths.filter((openPath) => openPath !== path);
+        return {
+          activePath: path === activePath ? indexOfRemovedPath === 0 ? openPaths[1] : openPaths[indexOfRemovedPath - 1] : activePath,
+          openPaths: newPaths
+        };
+      });
+    };
+    this.deleteFile = (path) => {
+      this.setState(({ openPaths, files }) => {
+        const newPaths = openPaths.filter((openPath) => openPath !== path);
+        const newFiles = Object.keys(files).reduce((acc, filePath) => {
+          if (filePath === path) {
+            return acc;
+          }
+          acc[filePath] = files[filePath];
+          return acc;
+        }, {});
+        return {
+          openPaths: newPaths,
+          files: newFiles
+        };
+      });
+      this.updateClients();
+    };
+    this.dispatchMessage = (message, clientId) => {
+      if (this.state.sandpackStatus !== "running") {
+        console.warn("dispatch cannot be called while in idle mode");
+        return;
+      }
+      if (clientId) {
+        this.clients[clientId].dispatch(message);
+      } else {
+        Object.values(this.clients).forEach((client) => {
+          client.dispatch(message);
+        });
+      }
+    };
+    this.addListener = (listener, clientId) => {
+      if (clientId) {
+        if (this.clients[clientId]) {
+          const unsubscribeListener = this.clients[clientId].listen(listener);
+          return unsubscribeListener;
+        } else {
+          const listenerId = generateRandomId();
+          this.queuedListeners[clientId] = this.queuedListeners[clientId] || {};
+          this.unsubscribeQueuedListeners[clientId] = this.unsubscribeQueuedListeners[clientId] || {};
+          this.queuedListeners[clientId][listenerId] = listener;
+          const unsubscribeListener = () => {
+            if (this.queuedListeners[clientId][listenerId]) {
+              delete this.queuedListeners[clientId][listenerId];
+            } else if (this.unsubscribeQueuedListeners[clientId][listenerId]) {
+              this.unsubscribeQueuedListeners[clientId][listenerId]();
+              delete this.unsubscribeQueuedListeners[clientId][listenerId];
+            }
+          };
+          return unsubscribeListener;
+        }
+      } else {
+        const listenerId = generateRandomId();
+        this.queuedListeners.global[listenerId] = listener;
+        const clients = Object.values(this.clients);
+        const currentClientUnsubscribeListeners = clients.map((client) => client.listen(listener));
+        const unsubscribeListener = () => {
+          const unsubscribeQueuedClients = Object.values(this.unsubscribeQueuedListeners);
+          unsubscribeQueuedClients.forEach((listenerOfClient) => {
+            const listenerFunctions = Object.values(listenerOfClient);
+            listenerFunctions.forEach((unsubscribe) => unsubscribe());
+          });
+          currentClientUnsubscribeListeners.forEach((unsubscribe) => unsubscribe());
+        };
+        return unsubscribeListener;
+      }
+    };
+    this.resetFile = (path) => {
+      const { files } = getSandpackStateFromProps(this.props);
+      this.setState((prevState) => ({
+        files: __spreadProps(__spreadValues({}, prevState.files), { [path]: files[path] })
+      }), this.updateClients);
+    };
+    this.resetAllFiles = () => {
+      const { files } = getSandpackStateFromProps(this.props);
+      this.setState({ files }, this.updateClients);
+    };
+    this._getSandpackState = () => {
+      const {
+        files,
+        activePath,
+        openPaths,
+        startRoute,
+        bundlerState,
+        editorState,
+        error,
+        sandpackStatus,
+        environment,
+        initMode
+      } = this.state;
+      return {
+        files,
+        environment,
+        openPaths,
+        activePath,
+        startRoute,
+        error,
+        bundlerState,
+        status: sandpackStatus,
+        editorState,
+        initMode,
+        clients: this.clients,
+        closeFile: this.closeFile,
+        deleteFile: this.deleteFile,
+        dispatch: this.dispatchMessage,
+        errorScreenRegisteredRef: this.errorScreenRegistered,
+        lazyAnchorRef: this.lazyAnchorRef,
+        listen: this.addListener,
+        loadingScreenRegisteredRef: this.loadingScreenRegistered,
+        openFile: this.openFile,
+        openInCSBRegisteredRef: this.openInCSBRegistered,
+        registerBundler: this.registerBundler,
+        resetAllFiles: this.resetAllFiles,
+        resetFile: this.resetFile,
+        runSandpack: this.runSandpack,
+        setActiveFile: this.setActiveFile,
+        unregisterBundler: this.unregisterBundler,
+        updateCurrentFile: this.updateCurrentFile,
+        updateFile: this.updateFile,
+        registerReactDevTools: this.registerReactDevTools
+      };
+    };
+    const { activePath, openPaths, files, environment } = getSandpackStateFromProps(props);
+    this.state = {
+      files,
+      environment,
+      openPaths,
+      activePath,
+      startRoute: this.props.startRoute,
+      bundlerState: void 0,
+      error: null,
+      sandpackStatus: this.props.autorun ? "initial" : "idle",
+      editorState: "pristine",
+      renderHiddenIframe: false,
+      initMode: this.props.initMode || "lazy",
+      reactDevTools: void 0
+    };
+    this.queuedListeners = { global: {} };
+    this.unsubscribeQueuedListeners = {};
+    this.preregisteredIframes = {};
+    this.clients = {};
+    this.lazyAnchorRef = React2.createRef();
+    this.errorScreenRegistered = React2.createRef();
+    this.openInCSBRegistered = React2.createRef();
+    this.loadingScreenRegistered = React2.createRef();
+  }
+  initializeSandpackIframe() {
+    var _a, _b;
+    if (!this.props.autorun) {
+      return;
+    }
+    const observerOptions = (_a = this.props.initModeObserverOptions) != null ? _a : {
+      rootMargin: `1000px 0px`
+    };
+    if (this.intersectionObserver && this.lazyAnchorRef.current) {
+      (_b = this.intersectionObserver) == null ? void 0 : _b.unobserve(this.lazyAnchorRef.current);
+    }
+    if (this.lazyAnchorRef.current && this.state.initMode === "lazy") {
+      this.intersectionObserver = new IntersectionObserver((entries) => {
+        var _a2;
+        if (entries.some((entry) => entry.isIntersecting)) {
+          this.initializeSandpackIframeHook = setTimeout(() => {
+            this.runSandpack();
+          }, 50);
+          if (this.lazyAnchorRef.current) {
+            (_a2 = this.intersectionObserver) == null ? void 0 : _a2.unobserve(this.lazyAnchorRef.current);
+          }
+        }
+      }, observerOptions);
+      this.intersectionObserver.observe(this.lazyAnchorRef.current);
+    } else if (this.lazyAnchorRef.current && this.state.initMode === "user-visible") {
+      this.intersectionObserver = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          this.initializeSandpackIframeHook = setTimeout(() => {
+            this.runSandpack();
+          }, 50);
+        } else {
+          if (this.initializeSandpackIframeHook) {
+            clearTimeout(this.initializeSandpackIframeHook);
+          }
+          Object.keys(this.clients).map(this.unregisterBundler);
+          this.unregisterAllClients();
+        }
+      }, observerOptions);
+      this.intersectionObserver.observe(this.lazyAnchorRef.current);
+    } else {
+      this.initializeSandpackIframeHook = setTimeout(() => this.runSandpack(), 50);
+    }
+  }
+  componentDidMount() {
+    this.initializeSandpackIframe();
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.initMode !== this.props.initMode && this.props.initMode) {
+      this.setState({ initMode: this.props.initMode }, this.initializeSandpackIframe);
+    }
+    const { activePath, openPaths, files, environment } = getSandpackStateFromProps(this.props);
+    if (prevProps.template !== this.props.template || prevProps.activePath !== this.props.activePath || !(0, import_lodash.default)(prevProps.openPaths, this.props.openPaths) || !(0, import_lodash.default)(prevProps.customSetup, this.props.customSetup)) {
+      this.setState({ activePath, openPaths, files, environment });
+      if (this.state.sandpackStatus !== "running") {
+        return;
+      }
+      Object.values(this.clients).forEach((client) => client.updatePreview({
+        files,
+        template: environment
+      }));
+    }
+    const editorState = (0, import_lodash.default)(files, this.state.files) ? "pristine" : "dirty";
+    if (editorState !== this.state.editorState) {
+      this.setState({ editorState });
+    }
+  }
+  componentWillUnmount() {
+    if (typeof this.unsubscribe === "function") {
+      this.unsubscribe();
+    }
+    if (this.timeoutHook) {
+      clearTimeout(this.timeoutHook);
+    }
+    if (this.debounceHook) {
+      clearTimeout(this.debounceHook);
+    }
+    if (this.initializeSandpackIframeHook) {
+      clearTimeout(this.initializeSandpackIframeHook);
+    }
+    if (this.intersectionObserver) {
+      this.intersectionObserver.disconnect();
+    }
+  }
+  render() {
+    const { children } = this.props;
+    return /* @__PURE__ */ React2.createElement(Sandpack.Provider, {
+      value: this._getSandpackState()
+    }, children);
+  }
+};
+SandpackProvider.defaultProps = {
+  skipEval: false,
+  recompileMode: "delayed",
+  recompileDelay: 500,
+  autorun: true
+};
+var SandpackConsumer = Sandpack.Consumer;
+
+// src/hooks/useSandpack.ts
+function useSandpack() {
+  const sandpack = React3.useContext(Sandpack);
+  if (sandpack === null) {
+    throw new Error(`useSandpack can only be used inside components wrapped by 'SandpackProvider'`);
+  }
+  const _a = sandpack, { dispatch, listen } = _a, rest = __objRest(_a, ["dispatch", "listen"]);
+  return {
+    sandpack: __spreadValues({}, rest),
+    dispatch,
+    listen
+  };
+}
+
+// src/common/Layout.tsx
+var SandpackLayout = (_a) => {
+  var _b = _a, {
+    children,
+    theme
+  } = _b, props = __objRest(_b, [
+    "children",
+    "theme"
+  ]);
+  const { sandpack } = useSandpack();
+  const c = (0, import_classer2.useClasser)("sp");
+  return /* @__PURE__ */ React4.createElement(SandpackThemeProvider, {
+    theme
+  }, /* @__PURE__ */ React4.createElement("div", __spreadValues({
+    ref: sandpack.lazyAnchorRef,
+    className: c("layout")
+  }, props), children));
+};
+
+// src/components/CodeEditor/index.tsx
+var import_classer7 = __toModule(require("@code-hike/classer"));
+var React12 = __toModule(require("react"));
+
+// src/common/RunButton.tsx
+var import_classer3 = __toModule(require("@code-hike/classer"));
+var React6 = __toModule(require("react"));
+
+// src/icons/index.tsx
+var React5 = __toModule(require("react"));
+var SVG = (props) => /* @__PURE__ */ React5.createElement("svg", __spreadValues({
+  fill: "currentColor",
+  height: "24",
+  viewBox: "0 0 24 24",
+  width: "24",
+  xmlns: "http://www.w3.org/2000/svg"
+}, props));
+var RunIcon = () => /* @__PURE__ */ React5.createElement(SVG, {
+  viewBox: "0 0 17 16"
+}, /* @__PURE__ */ React5.createElement("path", {
+  d: "M11.0792 8.1078C11.2793 8.25007 11.27 8.55012 11.0616 8.67981L6.02535 11.8135C5.79638 11.956 5.5 11.7913 5.5 11.5216L5.5 8.40703L5.5 4.80661C5.5 4.52735 5.81537 4.36463 6.04296 4.52647L11.0792 8.1078Z"
+}));
+var BackwardIcon = () => /* @__PURE__ */ React5.createElement(SVG, null, /* @__PURE__ */ React5.createElement("path", {
+  d: "M8.99126 12.2106L14.0455 6.98196L13.2998 6.21057L7.5 12.2106L13.2998 18.2106L14.0455 17.3924L8.99126 12.2106Z"
+}));
+var ForwardIcon = () => /* @__PURE__ */ React5.createElement(SVG, null, /* @__PURE__ */ React5.createElement("path", {
+  d: "M13.5087 12.2105L8.45455 17.4392L9.2002 18.2106L15 12.2106L9.2002 6.21057L8.45455 7.02875L13.5087 12.2105Z"
+}));
+var RefreshIcon = () => /* @__PURE__ */ React5.createElement(SVG, null, /* @__PURE__ */ React5.createElement("path", {
+  clipRule: "evenodd",
+  d: "M16.48 12.8571C16.0883 15.1705 14.1389 16.9286 11.7931 16.9286C9.16499 16.9286 7.03448 14.722 7.03448 12C7.03448 9.27803 9.16499 7.07143 11.7931 7.07143C13.6797 7.07143 15.3099 8.20855 16.0796 9.85714L14.2759 9.85714V11.1429H16.48H16.7586H17.5275H18V6.85714L16.7586 6.85714V8.90778C15.7449 7.16536 13.9004 6 11.7931 6C8.59366 6 6 8.68629 6 12C6 15.3137 8.59366 18 11.7931 18C14.7116 18 17.126 15.7648 17.5275 12.8571H16.48Z",
+  fillRule: "evenodd"
+}));
+var ExportIcon = () => /* @__PURE__ */ React5.createElement("svg", {
+  stroke: "currentColor",
+  fill: "none",
+  height: "24",
+  viewBox: "0 0 24 24",
+  width: "24",
+  xmlns: "http://www.w3.org/2000/svg"
+}, /* @__PURE__ */ React5.createElement("path", {
+  d: "M10.5714 7H8.07143C7.4797 7 7 7.4797 7 8.07143V15.9286C7 16.5203 7.4797 17 8.07143 17H15.9286C16.5203 17 17 16.5203 17 15.9286V13.4286"
+}), /* @__PURE__ */ React5.createElement("path", {
+  d: "M14.1429 7H16.8929C16.952 7 17 7.04798 17 7.10714V9.85715"
+}), /* @__PURE__ */ React5.createElement("path", {
+  d: "M11.2858 12.7143L16.8572 7.14282"
+}));
+var DirectoryIcon = ({
+  isOpen = false
+}) => /* @__PURE__ */ React5.createElement(SVG, {
+  height: "20",
+  viewBox: "0 0 1024 1024",
+  width: "20"
+}, isOpen ? /* @__PURE__ */ React5.createElement("path", {
+  d: "M928 444H820V330.4c0-17.7-14.3-32-32-32H473L355.7 186.2c-1.5-1.4-3.5-2.2-5.5-2.2H96c-17.7 0-32 14.3-32 32v592c0 17.7 14.3 32 32 32h698c13 0 24.8-7.9 29.7-20l134-332c1.5-3.8 2.3-7.9 2.3-12 0-17.7-14.3-32-32-32z m-180 0H238c-13 0-24.8 7.9-29.7 20L136 643.2V256h188.5l119.6 114.4H748V444z"
+}) : /* @__PURE__ */ React5.createElement("path", {
+  d: "M880 298.4H521L403.7 186.2c-1.5-1.4-3.5-2.2-5.5-2.2H144c-17.7 0-32 14.3-32 32v592c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V330.4c0-17.7-14.3-32-32-32z"
+}));
+var FileIcon = () => /* @__PURE__ */ React5.createElement(SVG, {
+  height: "20",
+  viewBox: "0 0 1024 1024",
+  width: "20"
+}, /* @__PURE__ */ React5.createElement("path", {
+  d: "M309.333333 192a32 32 0 0 0-32 32v576c0 17.664 14.336 32 32 32h384a32 32 0 0 0 32-32v-384h-128a96 96 0 0 1-96-96v-128h-192z m256 45.226667l114.773334 114.773333H597.333333a32 32 0 0 1-32-32V237.226667zM213.333333 224A96 96 0 0 1 309.333333 128h224a32 32 0 0 1 22.613334 9.386667l224 224c6.016 5.973333 9.386667 14.122667 9.386666 22.613333v416A96 96 0 0 1 693.333333 896h-384A96 96 0 0 1 213.333333 800V224z"
+}));
+var CloseIcon = () => /* @__PURE__ */ React5.createElement(SVG, {
+  height: "8",
+  viewBox: "0 0 16 16",
+  width: "8"
+}, /* @__PURE__ */ React5.createElement("path", {
+  d: "M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"
+}));
+
+// src/common/RunButton.tsx
+var RunButton = () => {
+  const c = (0, import_classer3.useClasser)("sp");
+  const { sandpack } = useSandpack();
+  return /* @__PURE__ */ React6.createElement("button", {
+    className: c("button"),
+    onClick: () => sandpack.runSandpack(),
+    style: {
+      position: "absolute",
+      bottom: "var(--sp-space-2)",
+      right: "var(--sp-space-2)"
+    },
+    type: "button"
+  }, /* @__PURE__ */ React6.createElement(RunIcon, null), "Run");
+};
+
+// src/common/Stack.tsx
+var import_classer4 = __toModule(require("@code-hike/classer"));
+var React7 = __toModule(require("react"));
+var SandpackStack = ({
+  children,
+  customStyle
+}) => {
+  const c = (0, import_classer4.useClasser)("sp");
+  return /* @__PURE__ */ React7.createElement("div", {
+    className: c("stack"),
+    style: customStyle
+  }, children);
+};
+
+// src/hooks/useActiveCode.ts
+var useActiveCode = () => {
+  var _a;
+  const { sandpack } = useSandpack();
+  return {
+    code: sandpack.files[sandpack.activePath].code,
+    readOnly: (_a = sandpack.files[sandpack.activePath].readOnly) != null ? _a : false,
+    updateCode: sandpack.updateCurrentFile
+  };
+};
+
+// src/components/FileTabs/index.tsx
+var import_classer5 = __toModule(require("@code-hike/classer"));
+var React8 = __toModule(require("react"));
+var FileTabs = ({ closableTabs }) => {
+  const { sandpack } = useSandpack();
+  const c = (0, import_classer5.useClasser)("sp");
+  const { activePath, openPaths, setActiveFile } = sandpack;
+  const handleCloseFile = (ev) => {
+    ev.stopPropagation();
+    const tabElm = ev.target.closest("[data-active]");
+    const pathToClose = tabElm == null ? void 0 : tabElm.getAttribute("title");
+    if (!pathToClose) {
+      return;
+    }
+    sandpack.closeFile(pathToClose);
+  };
+  const getTriggerText = (currentPath) => {
+    const documentFileName = getFileName(currentPath);
+    const pathsWithDuplicateFileNames = openPaths.reduce((prev, curr) => {
+      if (curr === currentPath) {
+        return prev;
+      }
+      const fileName = getFileName(curr);
+      if (fileName === documentFileName) {
+        prev.push(curr);
+        return prev;
+      }
+      return prev;
+    }, []);
+    if (pathsWithDuplicateFileNames.length === 0) {
+      return documentFileName;
+    } else {
+      return calculateNearestUniquePath(currentPath, pathsWithDuplicateFileNames);
+    }
+  };
+  return /* @__PURE__ */ React8.createElement("div", {
+    className: c("tabs"),
+    translate: "no"
+  }, /* @__PURE__ */ React8.createElement("div", {
+    "aria-label": "Select active file",
+    className: c("tabs-scrollable-container"),
+    role: "tablist"
+  }, openPaths.map((filePath) => /* @__PURE__ */ React8.createElement("button", {
+    key: filePath,
+    "aria-selected": filePath === activePath,
+    className: c("tab-button"),
+    "data-active": filePath === activePath,
+    onClick: () => setActiveFile(filePath),
+    role: "tab",
+    title: filePath,
+    type: "button"
+  }, getTriggerText(filePath), closableTabs && openPaths.length > 1 && /* @__PURE__ */ React8.createElement("span", {
+    className: c("close-button"),
+    onClick: handleCloseFile
+  }, /* @__PURE__ */ React8.createElement(CloseIcon, null))))));
+};
+
+// src/components/CodeEditor/CodeMirror.tsx
+var import_classer6 = __toModule(require("@code-hike/classer"));
+var import_closebrackets = __toModule(require("@codemirror/closebrackets"));
+var import_commands = __toModule(require("@codemirror/commands"));
+var import_comment = __toModule(require("@codemirror/comment"));
+var import_gutter = __toModule(require("@codemirror/gutter"));
+var import_highlight2 = __toModule(require("@codemirror/highlight"));
+var import_history = __toModule(require("@codemirror/history"));
+var import_matchbrackets = __toModule(require("@codemirror/matchbrackets"));
+var import_state = __toModule(require("@codemirror/state"));
+var import_view4 = __toModule(require("@codemirror/view"));
+var import_intersection_observer = __toModule(require("@react-hook/intersection-observer"));
+var React11 = __toModule(require("react"));
+
+// src/hooks/useSandpackTheme.ts
+var React9 = __toModule(require("react"));
+var useSandpackTheme = () => {
+  const { theme, id } = React9.useContext(SandpackThemeContext);
+  return { theme, themeId: id };
+};
+
+// src/components/CodeEditor/highlightDecorators.ts
+var import_view2 = __toModule(require("@codemirror/view"));
+
+// src/components/CodeEditor/utils.ts
+var import_highlight = __toModule(require("@codemirror/highlight"));
+var import_lang_css = __toModule(require("@codemirror/lang-css"));
+var import_lang_html = __toModule(require("@codemirror/lang-html"));
+var import_lang_javascript = __toModule(require("@codemirror/lang-javascript"));
+var import_view = __toModule(require("@codemirror/view"));
+var React10 = __toModule(require("react"));
+var getCodeMirrorPosition = (doc, { line, column }) => {
+  return doc.line(line).from + (column != null ? column : 0) - 1;
+};
+var getEditorTheme = (theme) => import_view.EditorView.theme({
+  "&": {
+    backgroundColor: theme.palette.defaultBackground,
+    color: getSyntaxStyle(theme.syntax.plain).color || theme.palette.activeText,
+    height: "100%"
+  },
+  "&.cm-editor.cm-focused": {
+    outline: "none"
+  },
+  ".cm-activeLine": {
+    backgroundColor: hexToCSSRGBa(theme.palette.activeBackground, 0.5)
+  },
+  ".cm-errorLine": {
+    backgroundColor: hexToCSSRGBa(theme.palette.errorBackground, 0.2)
+  },
+  ".cm-matchingBracket, .cm-nonmatchingBracket": {
+    color: "inherit",
+    background: theme.palette.activeBackground
+  },
+  ".cm-content": {
+    padding: 0,
+    caretColor: theme.palette.activeText
+  },
+  ".cm-scroller": {
+    fontFamily: theme.typography.monoFont,
+    lineHeight: theme.typography.lineHeight
+  },
+  ".cm-gutters": {
+    backgroundColor: theme.palette.defaultBackground,
+    color: theme.palette.defaultText,
+    border: "none"
+  },
+  ".cm-gutter.cm-lineNumbers": {
+    paddingLeft: "var(--sp-space-1)",
+    paddingRight: "var(--sp-space-1)"
+  },
+  ".cm-lineNumbers .cm-gutterElement": {
+    padding: 0
+  },
+  ".cm-line": {
+    padding: "0 var(--sp-space-3)"
+  }
+});
+var getSyntaxHighlight = (theme) => {
+  var _a;
+  return import_highlight.HighlightStyle.define([
+    { tag: import_highlight.tags.link, textDecoration: "underline" },
+    { tag: import_highlight.tags.emphasis, fontStyle: "italic" },
+    { tag: import_highlight.tags.strong, fontWeight: "bold" },
+    __spreadValues({
+      tag: import_highlight.tags.keyword
+    }, getSyntaxStyle(theme.syntax.keyword)),
+    __spreadValues({
+      tag: [import_highlight.tags.atom, import_highlight.tags.number, import_highlight.tags.bool]
+    }, getSyntaxStyle(theme.syntax.static)),
+    __spreadValues({
+      tag: import_highlight.tags.tagName
+    }, getSyntaxStyle(theme.syntax.tag)),
+    __spreadValues({ tag: import_highlight.tags.variableName }, getSyntaxStyle(theme.syntax.plain)),
+    __spreadValues({
+      tag: import_highlight.tags.function(import_highlight.tags.variableName)
+    }, getSyntaxStyle(theme.syntax.definition)),
+    __spreadValues({
+      tag: import_highlight.tags.definition(import_highlight.tags.function(import_highlight.tags.variableName))
+    }, getSyntaxStyle(theme.syntax.definition)),
+    __spreadValues({
+      tag: import_highlight.tags.propertyName
+    }, getSyntaxStyle(theme.syntax.property)),
+    __spreadValues({
+      tag: [import_highlight.tags.literal, import_highlight.tags.inserted]
+    }, getSyntaxStyle((_a = theme.syntax.string) != null ? _a : theme.syntax.static)),
+    __spreadValues({ tag: import_highlight.tags.punctuation }, getSyntaxStyle(theme.syntax.punctuation)),
+    __spreadValues({ tag: import_highlight.tags.comment }, getSyntaxStyle(theme.syntax.comment))
+  ]);
+};
+var getLanguageFromFile = (filePath, fileType) => {
+  if (!filePath && !fileType)
+    return "javascript";
+  let extension = fileType;
+  if (!extension && filePath) {
+    const extensionDotIndex = filePath.lastIndexOf(".");
+    extension = filePath.slice(extensionDotIndex + 1);
+  }
+  switch (extension) {
+    case "js":
+    case "jsx":
+      return "javascript";
+    case "ts":
+    case "tsx":
+      return "typescript";
+    case "html":
+    case "svelte":
+    case "vue":
+      return "html";
+    case "css":
+    case "less":
+    case "scss":
+      return "css";
+    default:
+      return "javascript";
+  }
+};
+var getCodeMirrorLanguage = (extension) => {
+  const options = {
+    javascript: (0, import_lang_javascript.javascript)({ jsx: true, typescript: false }),
+    typescript: (0, import_lang_javascript.javascript)({ jsx: true, typescript: true }),
+    html: (0, import_lang_html.html)(),
+    css: (0, import_lang_css.css)()
+  };
+  return options[extension];
+};
+var useCombinedRefs = (...refs) => React10.useCallback((element) => refs.forEach((ref) => {
+  if (!ref) {
+    return;
+  }
+  if (typeof ref === "function") {
+    return ref(element);
+  }
+  ref.current = element;
+}), refs);
+
+// src/components/CodeEditor/highlightDecorators.ts
+function highlightDecorators(positions) {
+  return import_view2.ViewPlugin.fromClass(class {
+    constructor(view) {
+      this.decorations = this.getDecoration(view);
+    }
+    update(update) {
+      return;
+    }
+    getDecoration(view) {
+      if (!positions)
+        return import_view2.Decoration.none;
+      const rangesDecorators = positions.map((item) => {
+        var _a, _b, _c;
+        const lineDeco2 = import_view2.Decoration.line({
+          attributes: { class: (_a = item.className) != null ? _a : "" }
+        });
+        const markDeco = import_view2.Decoration.mark({
+          class: (_b = item.className) != null ? _b : "",
+          attributes: (_c = item.elementAttributes) != null ? _c : void 0
+        });
+        const positionLineStart = getCodeMirrorPosition(view.state.doc, {
+          line: item.line,
+          column: item.startColumn
+        }) + 1;
+        if (item.startColumn && item.endColumn) {
+          const positionLineEnd = getCodeMirrorPosition(view.state.doc, {
+            line: item.line,
+            column: item.endColumn
+          }) + 1;
+          return markDeco.range(positionLineStart, positionLineEnd);
+        }
+        return lineDeco2.range(positionLineStart);
+      });
+      return import_view2.Decoration.set(rangesDecorators);
+    }
+  }, {
+    decorations: (v) => v.decorations
+  });
+}
+
+// src/components/CodeEditor/highlightInlineError.ts
+var import_view3 = __toModule(require("@codemirror/view"));
+function highlightInlineError() {
+  return activeLineHighlighter;
+}
+var lineDeco = import_view3.Decoration.line({ attributes: { class: "cm-errorLine" } });
+var activeLineHighlighter = import_view3.ViewPlugin.fromClass(class {
+  constructor() {
+    this.decorations = import_view3.Decoration.none;
+  }
+  update(update) {
+    let message = null;
+    update.transactions.forEach((trans) => {
+      var _a;
+      (_a = trans.annotations) == null ? void 0 : _a.forEach((element) => {
+        if (element.type === "error") {
+          message = element;
+        }
+        if (element.type === "clean-error") {
+          message = element;
+        }
+      });
+    });
+    if (message !== null) {
+      this.decorations = this.getDecoration(update.view, message);
+    }
+  }
+  getDecoration(view, message) {
+    if (message === null || message.type === "clean-error") {
+      return import_view3.Decoration.none;
+    }
+    if (message.type === "error") {
+      const position = getCodeMirrorPosition(view.state.doc, {
+        line: message.value
+      }) + 1;
+      return import_view3.Decoration.set([lineDeco.range(position)]);
+    }
+    return import_view3.Decoration.none;
+  }
+}, {
+  decorations: (v) => v.decorations
+});
+
+// src/components/CodeEditor/CodeMirror.tsx
+var CodeMirror = React11.forwardRef(({
+  code,
+  filePath,
+  fileType,
+  onCodeUpdate,
+  showLineNumbers = false,
+  showInlineErrors = false,
+  wrapContent = false,
+  editorState = "pristine",
+  readOnly = false,
+  showReadOnly = true,
+  decorators,
+  initMode = "lazy",
+  id,
+  extensions = [],
+  extensionsKeymap = []
+}, ref) => {
+  const wrapper = React11.useRef(null);
+  const cmView = React11.useRef();
+  const { theme, themeId } = useSandpackTheme();
+  const [internalCode, setInternalCode] = React11.useState(code);
+  const [shouldInitEditor, setShouldInitEditor] = React11.useState(initMode === "immediate");
+  const c = (0, import_classer6.useClasser)("sp");
+  const { listen } = useSandpack();
+  const ariaId = React11.useRef(id != null ? id : generateRandomId());
+  const { isIntersecting } = (0, import_intersection_observer.default)(wrapper, {
+    rootMargin: "600px 0px",
+    threshold: 0.2
+  });
+  React11.useImperativeHandle(ref, () => ({
+    getCodemirror: () => cmView.current
+  }));
+  React11.useEffect(() => {
+    const mode = initMode === "lazy" || initMode === "user-visible";
+    if (mode && isIntersecting) {
+      setShouldInitEditor(true);
+    }
+  }, [initMode, isIntersecting]);
+  const languageExtension = getLanguageFromFile(filePath, fileType);
+  const langSupport = getCodeMirrorLanguage(languageExtension);
+  const sortedDecorators = React11.useMemo(() => decorators ? decorators.sort((d1, d2) => d1.line - d2.line) : decorators, [decorators]);
+  React11.useEffect(() => {
+    if (!wrapper.current || !shouldInitEditor)
+      return;
+    const timer = setTimeout(function delayCodeEditorInit() {
+      const customCommandsKeymap = [
+        {
+          key: "Tab",
+          run: import_commands.insertTab
+        },
+        {
+          key: "Shift-Tab",
+          run: import_commands.indentLess
+        },
+        {
+          key: "Escape",
+          run: () => {
+            if (readOnly)
+              return true;
+            if (wrapper.current) {
+              wrapper.current.focus();
+            }
+            return true;
+          }
+        },
+        {
+          key: "mod-Backspace",
+          run: import_commands.deleteGroupBackward
+        }
+      ];
+      const extensionList = [
+        (0, import_view4.highlightSpecialChars)(),
+        (0, import_history.history)(),
+        (0, import_closebrackets.closeBrackets)(),
+        import_view4.keymap.of([
+          ...import_closebrackets.closeBracketsKeymap,
+          ...import_commands.defaultKeymap,
+          ...import_history.historyKeymap,
+          ...import_comment.commentKeymap,
+          ...customCommandsKeymap,
+          ...extensionsKeymap
+        ]),
+        langSupport,
+        import_highlight2.defaultHighlightStyle.fallback,
+        getEditorTheme(theme),
+        getSyntaxHighlight(theme),
+        ...extensions
+      ];
+      if (readOnly) {
+        extensionList.push(import_state.EditorState.readOnly.of(true));
+        extensionList.push(import_view4.EditorView.editable.of(false));
+      } else {
+        extensionList.push((0, import_matchbrackets.bracketMatching)());
+        extensionList.push((0, import_view4.highlightActiveLine)());
+      }
+      if (sortedDecorators) {
+        extensionList.push(highlightDecorators(sortedDecorators));
+      }
+      if (wrapContent) {
+        extensionList.push(import_view4.EditorView.lineWrapping);
+      }
+      if (showLineNumbers) {
+        extensionList.push((0, import_gutter.lineNumbers)());
+      }
+      if (showInlineErrors) {
+        extensionList.push(highlightInlineError());
+      }
+      const startState = import_state.EditorState.create({
+        doc: code,
+        extensions: extensionList
+      });
+      const parentDiv = wrapper.current;
+      const existingPlaceholder = parentDiv.querySelector(".sp-pre-placeholder");
+      if (existingPlaceholder) {
+        parentDiv.removeChild(existingPlaceholder);
+      }
+      const view = new import_view4.EditorView({
+        state: startState,
+        parent: parentDiv,
+        dispatch: (tr) => {
+          view.update([tr]);
+          if (tr.docChanged) {
+            const newCode = tr.newDoc.sliceString(0, tr.newDoc.length);
+            setInternalCode(newCode);
+            onCodeUpdate == null ? void 0 : onCodeUpdate(newCode);
+          }
+        }
+      });
+      view.contentDOM.setAttribute("data-gramm", "false");
+      if (!readOnly) {
+        view.contentDOM.setAttribute("tabIndex", "-1");
+        view.contentDOM.setAttribute("aria-describedby", `exit-instructions-${ariaId.current}`);
+      }
+      cmView.current = view;
+    }, 0);
+    return () => {
+      var _a;
+      (_a = cmView.current) == null ? void 0 : _a.destroy();
+      clearTimeout(timer);
+    };
+  }, [
+    shouldInitEditor,
+    showLineNumbers,
+    wrapContent,
+    themeId,
+    sortedDecorators
+  ]);
+  React11.useEffect(() => {
+    if (cmView.current && editorState === "dirty" && window.matchMedia("(min-width: 768px)").matches) {
+      cmView.current.contentDOM.focus();
+    }
+  }, []);
+  React11.useEffect(() => {
+    if (cmView.current && code !== internalCode) {
+      const view = cmView.current;
+      view.dispatch({
+        changes: { from: 0, to: view.state.doc.length, insert: code },
+        selection: view.state.selection
+      });
+    }
+  }, [code]);
+  React11.useEffect(function messageToInlineError() {
+    if (!showInlineErrors)
+      return;
+    const unsubscribe = listen((message) => {
+      const view = cmView.current;
+      if (message.type === "success") {
+        view == null ? void 0 : view.dispatch({
+          annotations: [
+            {
+              type: "clean-error",
+              value: null
+            }
+          ],
+          changes: {
+            from: 0,
+            to: view.state.doc.length,
+            insert: view.state.doc
+          },
+          selection: view.state.selection
+        });
+      }
+      if (message.type === "action" && message.action === "show-error" && "line" in message) {
+        view == null ? void 0 : view.dispatch({
+          annotations: [
+            {
+              type: "error",
+              value: message.line
+            }
+          ]
+        });
+      }
+    });
+    return () => unsubscribe();
+  }, [listen, showInlineErrors]);
+  const handleContainerKeyDown = (evt) => {
+    if (evt.key === "Enter" && cmView.current) {
+      evt.preventDefault();
+      cmView.current.contentDOM.focus();
+    }
+  };
+  const combinedRef = useCombinedRefs(wrapper, ref);
+  if (readOnly) {
+    return /* @__PURE__ */ React11.createElement("pre", {
+      ref: combinedRef,
+      className: c("cm", editorState, languageExtension),
+      translate: "no"
+    }, /* @__PURE__ */ React11.createElement("code", {
+      className: c("pre-placeholder")
+    }, code), readOnly && showReadOnly && /* @__PURE__ */ React11.createElement("span", {
+      className: c("read-only")
+    }, "Read-only"));
+  }
+  return /* @__PURE__ */ React11.createElement("div", {
+    ref: combinedRef,
+    "aria-describedby": `enter-instructions-${ariaId.current}`,
+    "aria-label": filePath ? `Code Editor for ${getFileName(filePath)}` : `Code Editor`,
+    className: c("cm", editorState, languageExtension),
+    onKeyDown: handleContainerKeyDown,
+    role: "group",
+    tabIndex: 0,
+    translate: "no"
+  }, /* @__PURE__ */ React11.createElement("pre", {
+    className: c("pre-placeholder"),
+    style: {
+      marginLeft: showLineNumbers ? 28 : 0
+    }
+  }, code), /* @__PURE__ */ React11.createElement(React11.Fragment, null, /* @__PURE__ */ React11.createElement("p", {
+    id: `enter-instructions-${ariaId.current}`,
+    style: { display: "none" }
+  }, "To enter the code editing mode, press Enter. To exit the edit mode, press Escape"), /* @__PURE__ */ React11.createElement("p", {
+    id: `exit-instructions-${ariaId.current}`,
+    style: { display: "none" }
+  }, "You are editing the code. To exit the edit mode, press Escape")));
+});
+
+// src/components/CodeEditor/index.tsx
+var SandpackCodeEditor = React12.forwardRef(({
+  customStyle,
+  showTabs,
+  showLineNumbers = false,
+  showInlineErrors = false,
+  showRunButton = true,
+  wrapContent = false,
+  closableTabs = false,
+  initMode,
+  extensions,
+  extensionsKeymap,
+  id,
+  readOnly,
+  showReadOnly
+}, ref) => {
+  const { sandpack } = useSandpack();
+  const { code, updateCode, readOnly: readOnlyFile } = useActiveCode();
+  const { activePath, status, editorState } = sandpack;
+  const shouldShowTabs = showTabs != null ? showTabs : sandpack.openPaths.length > 1;
+  const c = (0, import_classer7.useClasser)("sp");
+  const handleCodeUpdate = (newCode) => {
+    updateCode(newCode);
+  };
+  return /* @__PURE__ */ React12.createElement(SandpackStack, {
+    customStyle
+  }, shouldShowTabs && /* @__PURE__ */ React12.createElement(FileTabs, {
+    closableTabs
+  }), /* @__PURE__ */ React12.createElement("div", {
+    className: c("code-editor")
+  }, /* @__PURE__ */ React12.createElement(CodeMirror, {
+    key: activePath,
+    ref,
+    code,
+    editorState,
+    extensions,
+    extensionsKeymap,
+    filePath: activePath,
+    id,
+    initMode: initMode || sandpack.initMode,
+    onCodeUpdate: handleCodeUpdate,
+    readOnly: readOnly || readOnlyFile,
+    showInlineErrors,
+    showLineNumbers,
+    showReadOnly,
+    wrapContent
+  }), showRunButton && status === "idle" ? /* @__PURE__ */ React12.createElement(RunButton, null) : null));
+});
+
+// src/components/Preview/index.tsx
+var import_classer13 = __toModule(require("@code-hike/classer"));
+var React21 = __toModule(require("react"));
+
+// src/common/ErrorOverlay.tsx
+var import_classer8 = __toModule(require("@code-hike/classer"));
+var React14 = __toModule(require("react"));
+
+// src/hooks/useErrorMessage.ts
+var React13 = __toModule(require("react"));
+var useErrorMessage = () => {
+  var _a;
+  const { sandpack } = useSandpack();
+  const { error } = sandpack;
+  React13.useEffect(() => {
+    sandpack.errorScreenRegisteredRef.current = true;
+  }, []);
+  return (_a = error == null ? void 0 : error.message) != null ? _a : null;
+};
+
+// src/common/ErrorOverlay.tsx
+var ErrorOverlay = ({ children }) => {
+  const errorMessage = useErrorMessage();
+  const c = (0, import_classer8.useClasser)("sp");
+  if (!errorMessage && !children) {
+    return null;
+  }
+  return /* @__PURE__ */ React14.createElement("div", {
+    className: c("overlay", "error"),
+    translate: "no"
+  }, /* @__PURE__ */ React14.createElement("div", {
+    className: c("error-message")
+  }, errorMessage || children));
+};
+
+// src/common/LoadingOverlay.tsx
+var import_classer10 = __toModule(require("@code-hike/classer"));
+var React18 = __toModule(require("react"));
+
+// src/hooks/useLoadingOverlayState.ts
+var React15 = __toModule(require("react"));
+var FADE_ANIMATION_DURATION = 200;
+var useLoadingOverlayState = (clientId, externalLoading) => {
+  const { sandpack, listen } = useSandpack();
+  const [state, setState] = React15.useState("LOADING");
+  React15.useEffect(() => {
+    sandpack.loadingScreenRegisteredRef.current = true;
+    const unsubscribe = listen((message) => {
+      if (message.type === "start" && message.firstLoad === true) {
+        setState("LOADING");
+      }
+      if (message.type === "done") {
+        setState((prev) => {
+          return prev === "LOADING" ? "PRE_FADING" : "HIDDEN";
+        });
+      }
+    }, clientId);
+    return () => {
+      unsubscribe();
+    };
+  }, [clientId, sandpack.status === "idle"]);
+  React15.useEffect(() => {
+    let fadeTimeout;
+    if (state === "PRE_FADING" && !externalLoading) {
+      setState("FADING");
+    } else if (state === "FADING") {
+      fadeTimeout = setTimeout(() => setState("HIDDEN"), FADE_ANIMATION_DURATION);
+    }
+    return () => {
+      clearTimeout(fadeTimeout);
+    };
+  }, [state, externalLoading]);
+  if (sandpack.status === "timeout") {
+    return "TIMEOUT";
+  }
+  if (sandpack.status !== "running") {
+    return "HIDDEN";
+  }
+  return state;
+};
+
+// src/common/OpenInCodeSandboxButton/OpenInCodeSandboxButton.tsx
+var import_classer9 = __toModule(require("@code-hike/classer"));
+var React17 = __toModule(require("react"));
+
+// src/common/OpenInCodeSandboxButton/UnstyledOpenInCodeSandboxButton.tsx
+var import_define = __toModule(require("codesandbox-import-utils/lib/api/define"));
+var React16 = __toModule(require("react"));
+var CSB_URL = "https://codesandbox.io/api/v1/sandboxes/define";
+var getFileParameters = (files, environment) => {
+  const normalizedFiles = Object.keys(files).reduce((prev, next) => {
+    const fileName = next.replace("/", "");
+    const value = {
+      content: files[next].code,
+      isBinary: false
+    };
+    return __spreadProps(__spreadValues({}, prev), { [fileName]: value });
+  }, {});
+  return (0, import_define.getParameters)(__spreadValues({
+    files: normalizedFiles
+  }, environment ? { template: environment } : null));
+};
+var UnstyledOpenInCodeSandboxButton = (_a) => {
+  var _b = _a, { children } = _b, props = __objRest(_b, ["children"]);
+  var _a2, _b2, _c;
+  const { sandpack } = useSandpack();
+  const formRef = React16.useRef(null);
+  const [paramsValues, setParamsValues] = React16.useState();
+  React16.useEffect(function debounce() {
+    const timer = setTimeout(() => {
+      const params = getFileParameters(sandpack.files, sandpack.environment);
+      const searchParams = new URLSearchParams({
+        parameters: params,
+        query: new URLSearchParams({
+          file: sandpack.activePath,
+          "from-sandpack": "true"
+        }).toString()
+      });
+      setParamsValues(searchParams);
+    }, 600);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [sandpack.activePath, sandpack.environment, sandpack.files]);
+  React16.useEffect(function registerUsage() {
+    sandpack.openInCSBRegisteredRef.current = true;
+  }, []);
+  if (((_c = (_b2 = (_a2 = paramsValues == null ? void 0 : paramsValues.get) == null ? void 0 : _a2.call(paramsValues, "parameters")) == null ? void 0 : _b2.length) != null ? _c : 0) > 1500) {
+    return /* @__PURE__ */ React16.createElement("button", __spreadValues({
+      onClick: () => {
+        var _a3;
+        return (_a3 = formRef.current) == null ? void 0 : _a3.submit();
+      },
+      title: "Open in CodeSandbox"
+    }, props), /* @__PURE__ */ React16.createElement("form", {
+      ref: formRef,
+      action: CSB_URL,
+      method: "POST",
+      target: "_blank"
+    }, Array.from(paramsValues, ([k, v]) => /* @__PURE__ */ React16.createElement("input", {
+      key: k,
+      name: k,
+      type: "hidden",
+      value: v
+    }))), children);
+  }
+  return /* @__PURE__ */ React16.createElement("a", __spreadValues({
+    href: `${CSB_URL}?${paramsValues == null ? void 0 : paramsValues.toString()}`,
+    rel: "noreferrer noopener",
+    target: "_blank",
+    title: "Open in CodeSandbox"
+  }, props), children);
+};
+
+// src/common/OpenInCodeSandboxButton/OpenInCodeSandboxButton.tsx
+var OpenInCodeSandboxButton = () => {
+  const c = (0, import_classer9.useClasser)("sp");
+  return /* @__PURE__ */ React17.createElement(UnstyledOpenInCodeSandboxButton, {
+    className: c("button", "icon-standalone")
+  }, /* @__PURE__ */ React17.createElement(ExportIcon, null));
+};
+
+// src/common/LoadingOverlay.tsx
+var LoadingOverlay = ({
+  clientId,
+  loading
+}) => {
+  const loadingOverlayState = useLoadingOverlayState(clientId, loading);
+  const c = (0, import_classer10.useClasser)("sp");
+  if (loadingOverlayState === "HIDDEN") {
+    return null;
+  }
+  if (loadingOverlayState === "TIMEOUT") {
+    return /* @__PURE__ */ React18.createElement("div", {
+      className: c("overlay", "error")
+    }, /* @__PURE__ */ React18.createElement("div", {
+      className: c("error-message")
+    }, "Unable to establish connection with the sandpack bundler. Make sure you are online or try again later. If the problem persists, please report it via", " ", /* @__PURE__ */ React18.createElement("a", {
+      className: c("error-message"),
+      href: "mailto:hello@codesandbox.io?subject=Sandpack Timeout Error"
+    }, "email"), " ", "or submit an issue on", " ", /* @__PURE__ */ React18.createElement("a", {
+      className: c("error-message"),
+      href: "https://github.com/codesandbox/sandpack/issues",
+      rel: "noreferrer noopener",
+      target: "_blank"
+    }, "GitHub.")));
+  }
+  const stillLoading = loadingOverlayState === "LOADING" || loadingOverlayState === "PRE_FADING";
+  return /* @__PURE__ */ React18.createElement("div", {
+    className: c("overlay", "loading"),
+    style: {
+      opacity: stillLoading ? 1 : 0,
+      transition: `opacity ${FADE_ANIMATION_DURATION}ms ease-out`
+    }
+  }, /* @__PURE__ */ React18.createElement("div", {
+    className: "sp-cube-wrapper",
+    title: "Open in CodeSandbox"
+  }, /* @__PURE__ */ React18.createElement(OpenInCodeSandboxButton, null), /* @__PURE__ */ React18.createElement("div", {
+    className: "sp-cube"
+  }, /* @__PURE__ */ React18.createElement("div", {
+    className: "sp-sides"
+  }, /* @__PURE__ */ React18.createElement("div", {
+    className: "sp-top"
+  }), /* @__PURE__ */ React18.createElement("div", {
+    className: "sp-right"
+  }), /* @__PURE__ */ React18.createElement("div", {
+    className: "sp-bottom"
+  }), /* @__PURE__ */ React18.createElement("div", {
+    className: "sp-left"
+  }), /* @__PURE__ */ React18.createElement("div", {
+    className: "sp-front"
+  }), /* @__PURE__ */ React18.createElement("div", {
+    className: "sp-back"
+  })))));
+};
+
+// src/components/Navigator/index.tsx
+var import_classer11 = __toModule(require("@code-hike/classer"));
+var React19 = __toModule(require("react"));
+
+// src/components/Navigator/utils.tsx
+var splitUrl = (url) => {
+  const match = url.match(/(https?:\/\/.*?)\//);
+  if (match && match[1]) {
+    return [match[1], url.replace(match[1], "")];
+  }
+  return [url, "/"];
+};
+
+// src/components/Navigator/index.tsx
+var Navigator = ({
+  clientId,
+  onURLChange
+}) => {
+  var _a;
+  const [baseUrl, setBaseUrl] = React19.useState("");
+  const { sandpack, dispatch, listen } = useSandpack();
+  const [relativeUrl, setRelativeUrl] = React19.useState((_a = sandpack.startRoute) != null ? _a : "/");
+  const [backEnabled, setBackEnabled] = React19.useState(false);
+  const [forwardEnabled, setForwardEnabled] = React19.useState(false);
+  const c = (0, import_classer11.useClasser)("sp");
+  React19.useEffect(() => {
+    const unsub = listen((message) => {
+      if (message.type === "urlchange") {
+        const { url, back, forward } = message;
+        const [newBaseUrl, newRelativeUrl] = splitUrl(url);
+        setBaseUrl(newBaseUrl);
+        setRelativeUrl(newRelativeUrl);
+        setBackEnabled(back);
+        setForwardEnabled(forward);
+      }
+    }, clientId);
+    return () => unsub();
+  }, []);
+  const handleInputChange = (e) => {
+    const path = e.target.value.startsWith("/") ? e.target.value : `/${e.target.value}`;
+    setRelativeUrl(path);
+  };
+  const handleKeyDown = (e) => {
+    if (e.code === "Enter") {
+      e.preventDefault();
+      e.stopPropagation();
+      if (typeof onURLChange === "function") {
+        onURLChange(baseUrl + e.currentTarget.value);
+      }
+    }
+  };
+  const handleRefresh = () => {
+    dispatch({ type: "refresh" });
+  };
+  const handleBack = () => {
+    dispatch({ type: "urlback" });
+  };
+  const handleForward = () => {
+    dispatch({ type: "urlforward" });
+  };
+  return /* @__PURE__ */ React19.createElement("div", {
+    className: c("navigator")
+  }, /* @__PURE__ */ React19.createElement("button", {
+    "aria-label": "Go back one page",
+    className: c("button", "icon"),
+    disabled: !backEnabled,
+    onClick: handleBack,
+    type: "button"
+  }, /* @__PURE__ */ React19.createElement(BackwardIcon, null)), /* @__PURE__ */ React19.createElement("button", {
+    "aria-label": "Go forward one page",
+    className: c("button", "icon"),
+    disabled: !forwardEnabled,
+    onClick: handleForward,
+    type: "button"
+  }, /* @__PURE__ */ React19.createElement(ForwardIcon, null)), /* @__PURE__ */ React19.createElement("button", {
+    "aria-label": "Refresh page",
+    className: c("button", "icon"),
+    onClick: handleRefresh,
+    type: "button"
+  }, /* @__PURE__ */ React19.createElement(RefreshIcon, null)), /* @__PURE__ */ React19.createElement("input", {
+    "aria-label": "Current Sandpack URL",
+    className: c("input"),
+    name: "Current Sandpack URL",
+    onChange: handleInputChange,
+    onKeyDown: handleKeyDown,
+    type: "text",
+    value: relativeUrl
+  }));
+};
+
+// src/components/Preview/RefreshButton.tsx
+var import_classer12 = __toModule(require("@code-hike/classer"));
+var React20 = __toModule(require("react"));
+
+// src/hooks/useSandpackNavigation.ts
+var useSandpackNavigation = (clientId) => {
+  const { dispatch } = useSandpack();
+  return {
+    refresh: () => dispatch({ type: "refresh" }, clientId),
+    back: () => dispatch({ type: "urlback" }, clientId),
+    forward: () => dispatch({ type: "urlforward" }, clientId)
+  };
+};
+
+// src/components/Preview/RefreshButton.tsx
+var RefreshButton = ({
+  clientId
+}) => {
+  const { refresh } = useSandpackNavigation(clientId);
+  const c = (0, import_classer12.useClasser)("sp");
+  return /* @__PURE__ */ React20.createElement("button", {
+    className: c("button", "icon-standalone"),
+    onClick: refresh,
+    title: "Refresh Sandpack",
+    type: "button"
+  }, /* @__PURE__ */ React20.createElement(RefreshIcon, null));
+};
+
+// src/components/Preview/index.tsx
+var SandpackPreview = ({
+  customStyle,
+  showNavigator = false,
+  showRefreshButton = true,
+  showOpenInCodeSandbox = true,
+  showSandpackErrorOverlay = true,
+  viewportSize = "auto",
+  viewportOrientation = "portrait"
+}) => {
+  const { sandpack, listen } = useSandpack();
+  const [iframeComputedHeight, setComputedAutoHeight] = React21.useState(null);
+  const {
+    status,
+    registerBundler,
+    unregisterBundler,
+    errorScreenRegisteredRef,
+    openInCSBRegisteredRef,
+    loadingScreenRegisteredRef
+  } = sandpack;
+  const c = (0, import_classer13.useClasser)("sp");
+  const clientId = React21.useRef(generateRandomId());
+  const iframeRef = React21.useRef(null);
+  openInCSBRegisteredRef.current = true;
+  errorScreenRegisteredRef.current = true;
+  loadingScreenRegisteredRef.current = true;
+  React21.useEffect(() => {
+    const iframeElement = iframeRef.current;
+    const clientIdValue = clientId.current;
+    registerBundler(iframeElement, clientIdValue);
+    const unsubscribe = listen((message) => {
+      if (message.type === "resize") {
+        setComputedAutoHeight(message.height);
+      }
+    }, clientIdValue);
+    return () => {
+      unsubscribe();
+      unregisterBundler(clientIdValue);
+    };
+  }, []);
+  const handleNewURL = (newUrl) => {
+    if (!iframeRef.current) {
+      return;
+    }
+    iframeRef.current.src = newUrl;
+  };
+  const viewportStyle = computeViewportSize(viewportSize, viewportOrientation);
+  return /* @__PURE__ */ React21.createElement(SandpackStack, {
+    customStyle: __spreadValues(__spreadValues({}, customStyle), viewportStyle)
+  }, showNavigator ? /* @__PURE__ */ React21.createElement(Navigator, {
+    clientId: clientId.current,
+    onURLChange: handleNewURL
+  }) : null, /* @__PURE__ */ React21.createElement("div", {
+    className: c("preview-container")
+  }, /* @__PURE__ */ React21.createElement("iframe", {
+    ref: iframeRef,
+    className: c("preview-iframe"),
+    style: {
+      height: viewportSize === "auto" && iframeComputedHeight ? iframeComputedHeight : void 0
+    },
+    title: "Sandpack Preview"
+  }), showSandpackErrorOverlay ? /* @__PURE__ */ React21.createElement(ErrorOverlay, null) : null, /* @__PURE__ */ React21.createElement("div", {
+    className: c("preview-actions")
+  }, !showNavigator && showRefreshButton && status === "running" ? /* @__PURE__ */ React21.createElement(RefreshButton, {
+    clientId: clientId.current
+  }) : null, showOpenInCodeSandbox ? /* @__PURE__ */ React21.createElement(OpenInCodeSandboxButton, null) : null), /* @__PURE__ */ React21.createElement(LoadingOverlay, {
+    clientId: clientId.current
+  })));
+};
+var VIEWPORT_SIZE_PRESET_MAP = {
+  "iPhone X": { x: 375, y: 812 },
+  iPad: { x: 768, y: 1024 },
+  "Pixel 2": { x: 411, y: 731 },
+  "Moto G4": { x: 360, y: 640 },
+  "Surface Duo": { x: 540, y: 720 }
+};
+var computeViewportSize = (viewport, orientation) => {
+  if (viewport === "auto") {
+    return {};
+  }
+  if (typeof viewport === "string") {
+    const { x, y } = VIEWPORT_SIZE_PRESET_MAP[viewport];
+    return orientation === "portrait" ? { width: x, height: y } : { width: y, height: x };
+  }
+  return viewport;
+};
+
+// src/presets/Sandpack.tsx
+var Sandpack2 = (props) => {
+  var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _A, _B, _C, _D;
+  const userInputSetup = props.files ? __spreadProps(__spreadValues({}, props.customSetup), {
+    files: __spreadValues(__spreadValues({}, (_a = props.customSetup) == null ? void 0 : _a.files), props.files)
+  }) : props.customSetup;
+  const previewOptions = {
+    showNavigator: (_b = props.options) == null ? void 0 : _b.showNavigator
+  };
+  const codeEditorOptions = {
+    showTabs: (_c = props.options) == null ? void 0 : _c.showTabs,
+    showLineNumbers: (_d = props.options) == null ? void 0 : _d.showLineNumbers,
+    showInlineErrors: (_e = props.options) == null ? void 0 : _e.showInlineErrors,
+    wrapContent: (_f = props.options) == null ? void 0 : _f.wrapContent,
+    closableTabs: (_g = props.options) == null ? void 0 : _g.closableTabs,
+    initMode: (_h = props.options) == null ? void 0 : _h.initMode,
+    extensions: (_j = (_i = props.options) == null ? void 0 : _i.codeEditor) == null ? void 0 : _j.extensions,
+    extensionsKeymap: (_l = (_k = props.options) == null ? void 0 : _k.codeEditor) == null ? void 0 : _l.extensionsKeymap,
+    readOnly: (_m = props.options) == null ? void 0 : _m.readOnly,
+    showReadOnly: (_n = props.options) == null ? void 0 : _n.showReadOnly
+  };
+  const providerOptions = {
+    openPaths: (_o = props.options) == null ? void 0 : _o.openPaths,
+    activePath: (_p = props.options) == null ? void 0 : _p.activePath,
+    recompileMode: (_q = props.options) == null ? void 0 : _q.recompileMode,
+    recompileDelay: (_r = props.options) == null ? void 0 : _r.recompileDelay,
+    autorun: (_t = (_s = props.options) == null ? void 0 : _s.autorun) != null ? _t : true,
+    bundlerURL: (_u = props.options) == null ? void 0 : _u.bundlerURL,
+    startRoute: (_v = props.options) == null ? void 0 : _v.startRoute,
+    skipEval: (_w = props.options) == null ? void 0 : _w.skipEval,
+    fileResolver: (_x = props.options) == null ? void 0 : _x.fileResolver,
+    initMode: (_y = props.options) == null ? void 0 : _y.initMode,
+    initModeObserverOptions: (_z = props.options) == null ? void 0 : _z.initModeObserverOptions,
+    externalResources: (_A = props.options) == null ? void 0 : _A.externalResources
+  };
+  const editorPart = ((_B = props.options) == null ? void 0 : _B.editorWidthPercentage) || 50;
+  const previewPart = 100 - editorPart;
+  const editorHeight = (_C = props.options) == null ? void 0 : _C.editorHeight;
+  return /* @__PURE__ */ React22.createElement(SandpackProvider, __spreadValues({
+    customSetup: userInputSetup,
+    template: props.template
+  }, providerOptions), /* @__PURE__ */ React22.createElement(import_classer14.ClasserProvider, {
+    classes: (_D = props.options) == null ? void 0 : _D.classes
+  }, /* @__PURE__ */ React22.createElement(SandpackLayout, {
+    theme: props.theme
+  }, /* @__PURE__ */ React22.createElement(SandpackCodeEditor, __spreadProps(__spreadValues({}, codeEditorOptions), {
+    customStyle: {
+      height: editorHeight,
+      flexGrow: editorPart,
+      flexShrink: editorPart,
+      minWidth: 700 * (editorPart / (previewPart + editorPart))
+    }
+  })), /* @__PURE__ */ React22.createElement(SandpackPreview, __spreadProps(__spreadValues({}, previewOptions), {
+    customStyle: {
+      height: editorHeight,
+      flexGrow: previewPart,
+      flexShrink: previewPart,
+      minWidth: 700 * (previewPart / (previewPart + editorPart))
+    }
+  })))));
+};
+
+// src/presets/SandpackRunner.tsx
+var import_classer15 = __toModule(require("@code-hike/classer"));
+var React23 = __toModule(require("react"));
+var SandpackRunner = ({
+  code,
+  template,
+  customSetup,
+  options,
+  theme
+}) => {
+  var _a;
+  const mainFile = (_a = customSetup == null ? void 0 : customSetup.main) != null ? _a : SANDBOX_TEMPLATES[template || "vanilla"].main;
+  const userInput = code ? __spreadProps(__spreadValues({}, customSetup), {
+    files: __spreadProps(__spreadValues({}, customSetup == null ? void 0 : customSetup.files), {
+      [mainFile]: code
+    })
+  }) : customSetup;
+  return /* @__PURE__ */ React23.createElement(SandpackProvider, {
+    bundlerURL: options == null ? void 0 : options.bundlerUrl,
+    customSetup: userInput,
+    startRoute: options == null ? void 0 : options.startRoute,
+    template
+  }, /* @__PURE__ */ React23.createElement(import_classer15.ClasserProvider, {
+    classes: options == null ? void 0 : options.classes
+  }, /* @__PURE__ */ React23.createElement(SandpackLayout, {
+    theme
+  }, /* @__PURE__ */ React23.createElement(SandpackPreview, {
+    showNavigator: options == null ? void 0 : options.showNavigator
+  }))));
+};
+
+// src/components/CodeViewer/index.tsx
+var React24 = __toModule(require("react"));
+var SandpackCodeViewer = React24.forwardRef(({
+  showTabs,
+  showLineNumbers,
+  decorators,
+  code: propCode,
+  initMode,
+  wrapContent
+}, ref) => {
+  const { sandpack } = useSandpack();
+  const { code } = useActiveCode();
+  const shouldShowTabs = showTabs != null ? showTabs : sandpack.openPaths.length > 1;
+  return /* @__PURE__ */ React24.createElement(SandpackStack, null, shouldShowTabs ? /* @__PURE__ */ React24.createElement(FileTabs, null) : null, /* @__PURE__ */ React24.createElement(CodeMirror, {
+    ref,
+    code: propCode != null ? propCode : code,
+    decorators,
+    filePath: sandpack.activePath,
+    initMode: initMode || sandpack.initMode,
+    showLineNumbers,
+    showReadOnly: false,
+    wrapContent,
+    readOnly: true
+  }), sandpack.status === "idle" ? /* @__PURE__ */ React24.createElement(RunButton, null) : null);
+});
+
+// src/components/TranspiledCode/index.tsx
+var import_classer16 = __toModule(require("@code-hike/classer"));
+var React25 = __toModule(require("react"));
+
+// src/hooks/useTranspiledCode.ts
+function getTranspiledCode(sandpack) {
+  var _a, _b;
+  const { activePath, bundlerState } = sandpack;
+  if (bundlerState == null) {
+    return null;
+  }
+  const tModule = bundlerState.transpiledModules[activePath + ":"];
+  return (_b = (_a = tModule == null ? void 0 : tModule.source) == null ? void 0 : _a.compiledCode) != null ? _b : null;
+}
+var useTranspiledCode = () => {
+  const { sandpack } = useSandpack();
+  if (sandpack.status !== "running") {
+    return null;
+  }
+  return getTranspiledCode(sandpack);
+};
+
+// src/components/TranspiledCode/index.tsx
+var SandpackTranspiledCode = (props) => {
+  const { sandpack } = useSandpack();
+  const transpiledCode = useTranspiledCode();
+  const c = (0, import_classer16.useClasser)("sp");
+  const hiddenIframeRef = React25.useRef(null);
+  React25.useEffect(() => {
+    const hiddenIframe = hiddenIframeRef.current;
+    if (hiddenIframe) {
+      sandpack.registerBundler(hiddenIframe, "hidden");
+    }
+    return () => {
+      sandpack.unregisterBundler("hidden");
+    };
+  }, []);
+  return /* @__PURE__ */ React25.createElement("div", {
+    className: c("transpiled-code")
+  }, transpiledCode && /* @__PURE__ */ React25.createElement(SandpackCodeViewer, __spreadValues({
+    code: transpiledCode,
+    initMode: sandpack.initMode
+  }, props)), /* @__PURE__ */ React25.createElement("iframe", {
+    ref: hiddenIframeRef,
+    style: { display: "none" },
+    title: "transpiled sandpack code"
+  }), /* @__PURE__ */ React25.createElement(ErrorOverlay, null), /* @__PURE__ */ React25.createElement(LoadingOverlay, {
+    clientId: "hidden"
+  }));
+};
+
+// src/components/ReactDevTools/index.tsx
+var import_classer17 = __toModule(require("@code-hike/classer"));
+var React26 = __toModule(require("react"));
+var SandpackReactDevTools = (_a) => {
+  var _b = _a, {
+    clientId,
+    theme
+  } = _b, props = __objRest(_b, [
+    "clientId",
+    "theme"
+  ]);
+  const { listen, sandpack } = useSandpack();
+  const { theme: sandpackTheme } = useSandpackTheme();
+  const c = (0, import_classer17.useClasser)("sp");
+  const reactDevtools = React26.useRef();
+  const [ReactDevTools, setDevTools] = React26.useState(null);
+  React26.useEffect(() => {
+    import("react-devtools-inline/frontend").then((module2) => {
+      reactDevtools.current = module2;
+    });
+  }, []);
+  React26.useEffect(() => {
+    const unsubscribe = listen((msg) => {
+      var _a2;
+      if (msg.type === "activate-react-devtools") {
+        const client = clientId ? sandpack.clients[clientId] : Object.values(sandpack.clients)[0];
+        const contentWindow = (_a2 = client == null ? void 0 : client.iframe) == null ? void 0 : _a2.contentWindow;
+        if (reactDevtools.current && contentWindow) {
+          setDevTools(reactDevtools.current.initialize(contentWindow));
+        }
+      }
+    });
+    return unsubscribe;
+  }, [reactDevtools, clientId, listen, sandpack.clients]);
+  React26.useEffect(() => {
+    sandpack.registerReactDevTools("legacy");
+  }, []);
+  if (!ReactDevTools)
+    return null;
+  const getBrowserTheme = () => {
+    if (theme)
+      return theme;
+    const isDarkTheme = isDarkColor(sandpackTheme.palette.defaultBackground);
+    return isDarkTheme ? "dark" : "light";
+  };
+  return /* @__PURE__ */ React26.createElement("div", __spreadValues({
+    className: c("devtools")
+  }, props), /* @__PURE__ */ React26.createElement(ReactDevTools, {
+    browserTheme: getBrowserTheme()
+  }));
+};
+
+// src/index.ts
+__reExport(exports, __toModule(require("@code-hike/classer")));
+//# sourceMappingURL=index.js.map

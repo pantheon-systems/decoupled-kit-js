@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/utils/gatsby-version.ts"],"names":["usingGatsbyV4OrGreater","Number"],"mappings":";;;;AAIO,MAAMA,sBAAsB,GAAGC,MAAM,KAAN,IAAiC,CAAhE","sourcesContent":["declare const _CFLAGS_: {\n  GATSBY_MAJOR: string\n}\n\nexport const usingGatsbyV4OrGreater = Number(_CFLAGS_.GATSBY_MAJOR) >= 4\n"],"file":"gatsby-version.js"}

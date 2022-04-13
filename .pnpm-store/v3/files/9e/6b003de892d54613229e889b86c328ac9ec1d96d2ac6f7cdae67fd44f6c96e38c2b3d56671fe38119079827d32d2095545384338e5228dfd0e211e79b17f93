@@ -1,0 +1,11 @@
+/// <reference types="node" />
+import { ServerResponse } from 'http';
+/**
+ * fetch data from a JSON:API endpoint and bubble up surrogate keys if possible
+ * @param apiUrl the api url for the JON:API endpoint
+ * @param requestInit fetch initialization object
+ * @param res response object
+ * @returns a promise containing the data for the JSON:API response
+ */
+declare const superCustomFetch: (apiUrl: RequestInfo, requestInit: RequestInit, _res?: boolean | ServerResponse | undefined) => Promise<Response>;
+export default superCustomFetch;

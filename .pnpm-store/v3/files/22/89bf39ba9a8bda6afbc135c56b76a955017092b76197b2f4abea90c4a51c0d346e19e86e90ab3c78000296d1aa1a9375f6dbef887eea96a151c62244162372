@@ -1,0 +1,24 @@
+import { IModelPropertiesMapper, IJsonPropertiesMapper, TAnyKeyValueObject, TJsonaModel, TJsonaRelationships, SwitchCaseModelMapperOptionsType, SwitchCaseJsonMapperOptionsType } from './JsonaTypes';
+import { ModelPropertiesMapper, JsonPropertiesMapper } from './simplePropertyMappers';
+export declare class SwitchCaseModelMapper extends ModelPropertiesMapper implements IModelPropertiesMapper {
+    switchAttributes: boolean;
+    switchRelationships: boolean;
+    switchType: boolean;
+    switchChar: string;
+    constructor(options?: SwitchCaseModelMapperOptionsType);
+    getType(model: TJsonaModel): any;
+    getAttributes(model: TJsonaModel): {};
+    getRelationships(model: TJsonaModel): {};
+}
+export declare class SwitchCaseJsonMapper extends JsonPropertiesMapper implements IJsonPropertiesMapper {
+    camelizeAttributes: boolean;
+    camelizeRelationships: boolean;
+    camelizeType: boolean;
+    camelizeMeta: boolean;
+    switchChar: string;
+    constructor(options?: SwitchCaseJsonMapperOptionsType);
+    createModel(type: string): TJsonaModel;
+    setAttributes(model: TJsonaModel, attributes: TAnyKeyValueObject): void;
+    setMeta(model: TJsonaModel, meta: TAnyKeyValueObject): void;
+    setRelationships(model: TJsonaModel, relationships: TJsonaRelationships): void;
+}

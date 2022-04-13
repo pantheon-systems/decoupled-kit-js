@@ -1,0 +1,213 @@
+import { OperationTypeNode } from 'graphql';
+import { ApolloLink, Observable, Operation, NextLink, FetchResult } from 'apollo-link';
+export declare namespace JsonApiLink {
+    type URI = string;
+    type Endpoint = string;
+    interface EndpointOptions {
+        uri: Endpoint;
+    }
+    interface Endpoints {
+        [endpointKey: string]: Endpoint | EndpointOptions;
+    }
+    type Header = string;
+    interface HeadersHash {
+        [headerKey: string]: Header;
+    }
+    type InitializationHeaders = HeadersHash | Headers | string[][];
+    type HeadersMergePolicy = (...headerGroups: Headers[]) => Headers;
+    interface TypeNameNormalizer {
+        (typeName: string): string;
+    }
+    interface FieldNameNormalizer {
+        (fieldName: string, keypath?: string[]): string;
+    }
+    interface SerializedBody {
+        body: any;
+        headers: InitializationHeaders;
+    }
+    interface Serializer {
+        (data: any, headers: Headers): SerializedBody;
+    }
+    interface Serializers {
+        [bodySerializer: string]: Serializer;
+    }
+    type CustomFetch = (request: RequestInfo, init: RequestInit) => Promise<Response>;
+    interface JsonApiLinkHelperProps {
+        /** Arguments passed in via normal graphql parameters */
+        args: {
+            [key: string]: any;
+        };
+        /** Arguments added via @export(as: ) directives */
+        exportVariables: {
+            [key: string]: any;
+        };
+        /** Arguments passed directly to @jsonapi(params: ) */
+        /** Apollo Context */
+        context: {
+            [key: string]: any;
+        };
+        /** All arguments passed to the `@jsonapi(...)` directive */
+        '@jsonapi': {
+            [key: string]: any;
+        };
+    }
+    interface PathBuilderProps extends JsonApiLinkHelperProps {
+        replacer: (opts: JsonApiLinkHelperProps) => string;
+    }
+    /**
+     * Used for any Error from the server when requests:
+     * - terminate with HTTP Status >= 300
+     * - and the response contains no data or errors
+     */
+    type ServerError = Error & {
+        response: Response;
+        result: any;
+        statusCode: number;
+    };
+    type Options = {
+        /**
+         * The URI to use when fetching operations.
+         *
+         * Optional if endpoints provides a default.
+         */
+        uri?: URI;
+        /**
+         * A root endpoint (uri) to apply paths to or a map of endpoints.
+         */
+        endpoints?: Endpoints;
+        /**
+         * An object representing values to be sent as headers on the request.
+         */
+        headers?: InitializationHeaders;
+        /**
+         * A function that takes the JSON API `type` and converts it to a GraphQL compliant `__typename`
+         */
+        typeNameNormalizer?: TypeNameNormalizer;
+        /**
+         * A function that takes the response field name and converts it into a GraphQL compliant name
+         *
+         */
+        fieldNameNormalizer?: FieldNameNormalizer;
+        /**
+         * A function that takes a GraphQL-compliant field name and converts it back into an endpoint-specific name
+         * Can be overridden at the mutation-call-site (in the rest-directive).
+         */
+        fieldNameDenormalizer?: FieldNameNormalizer;
+        /**
+         * The credentials policy you want to use for the fetch call.
+         */
+        credentials?: RequestCredentials;
+        /**
+         * Use a custom fetch to handle REST calls.
+         */
+        customFetch?: CustomFetch;
+        /**
+         * Add serializers that will serialize the body before it is emitted and will pass on
+         * headers to update the request.
+         */
+        bodySerializers?: Serializers;
+        /**
+         * Set the default serializer for the link
+         * @default JSON serialization
+         */
+        defaultSerializer?: Serializer;
+    };
+    /** @jsonapi(...) Directive Options */
+    interface DirectiveOptions {
+        /**
+         * What HTTP method to use.
+         * @default `GET`
+         */
+        method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
+        /** What GraphQL type to name the response */
+        type?: string;
+        /**
+         * What path (including query) to use
+         * - @optional if you provide @see DirectiveOptions.pathBuilder
+         */
+        path?: string;
+        /**
+         * What endpoint to select from the map of endpoints available to this link.
+         * @default `JsonApiLink.endpoints[DEFAULT_ENDPOINT_KEY]`
+         */
+        endpoint?: string;
+        /**
+         * Function that constructs a request path out of the Environmental
+         *  state when processing this @jsonapi(...) call.
+         *
+         * - @optional if you provide: @see DirectiveOptions.path
+         * - **note**: providing this function means it's your responsibility to call
+         *             encodeURIComponent directly if needed!
+         *
+         * Warning: This is an Advanced API and we are looking for syntactic & ergonomics feedback.
+         */
+        pathBuilder?: (props: PathBuilderProps) => string;
+        /**
+         * Optional method that constructs a RequestBody out of the Environmental state
+         * when processing this @jsonapi(...) call.
+         * @default function that extracts the bodyKey from the args.
+         *
+         * Warning: This is an Advanced API and we are looking for syntactic & ergonomics feedback.
+         */
+        bodyBuilder?: (props: JsonApiLinkHelperProps) => object;
+        /**
+         * Optional serialization function or a key that will be used look up the serializer to serialize the request body before transport.
+         * @default if null will fallback to the default serializer
+         */
+        bodySerializer?: JsonApiLink.Serializer | string;
+        /**
+         * A per-request name denormalizer, this permits special endpoints to have their
+         * field names remapped differently from the default.
+         * @default Uses JsonApiLink.fieldNameDenormalizer
+         */
+        fieldNameDenormalizer?: JsonApiLink.FieldNameNormalizer;
+        /**
+         * Restructures the query result to give access to the full response.
+         * Puts the flattened resource(s) under a `graphql` key, and returns the
+         * original response body structure under a `jsonapi` key.
+         * @default false
+         */
+        includeJsonapi?: boolean;
+    }
+}
+/** Internal Tool that Parses Paths for JsonApiLink -- This API should be considered experimental */
+export declare class PathBuilder {
+    /** For accelerating the replacement of paths that are used a lot */
+    private static cache;
+    /** Table to limit the amount of nagging (due to probable API Misuse) we do to once per path per launch */
+    private static warnTable;
+    /** Regexp that finds things that are eligible for variable replacement */
+    private static argReplacement;
+    static replacerForPath(path: string): (props: JsonApiLink.PathBuilderProps) => string;
+}
+/**
+ * Helper that makes sure our headers are of the right type to pass to Fetch
+ */
+export declare const normalizeHeaders: (headers: JsonApiLink.InitializationHeaders) => Headers;
+/**
+ * Returns a new Headers Group that contains all the headers.
+ * - If there are duplicates, they will be in the returned header set multiple times!
+ */
+export declare const concatHeadersMergePolicy: JsonApiLink.HeadersMergePolicy;
+/**
+ * This merge policy deletes any matching headers from the link's default headers.
+ * - Pass headersToOverride array & a headers arg to context and this policy will automatically be selected.
+ */
+export declare const overrideHeadersMergePolicy: (linkHeaders: Headers, headersToOverride: string[], requestHeaders: Headers) => Headers;
+export declare const overrideHeadersMergePolicyHelper: (linkHeaders: Headers, headersToOverride: string[], requestHeaders: Headers) => Headers;
+export declare const validateRequestMethodForOperationType: (method: string, operationType: OperationTypeNode) => void;
+/**
+ * JsonApiLink is an apollo-link for communicating with REST services using GraphQL on the client-side
+ */
+export declare class JsonApiLink extends ApolloLink {
+    private readonly endpoints;
+    private readonly headers;
+    private readonly typeNameNormalizer;
+    private readonly fieldNameNormalizer;
+    private readonly fieldNameDenormalizer;
+    private readonly credentials;
+    private readonly customFetch;
+    private readonly serializers;
+    constructor({ uri, endpoints, headers, typeNameNormalizer, fieldNameNormalizer, fieldNameDenormalizer, customFetch, credentials, bodySerializers, defaultSerializer, }: JsonApiLink.Options);
+    request(operation: Operation, forward?: NextLink): Observable<FetchResult> | null;
+}

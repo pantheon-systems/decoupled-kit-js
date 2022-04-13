@@ -1,0 +1,17 @@
+import { HighlightStyle } from "@codemirror/highlight";
+import type { LanguageSupport } from "@codemirror/language";
+import type { Extension } from "@codemirror/state";
+import type { Text } from "@codemirror/text";
+import * as React from "react";
+import type { SandpackTheme } from "../../types";
+export declare const getCodeMirrorPosition: (doc: Text, { line, column }: {
+    line: number;
+    column?: number | undefined;
+}) => number;
+export declare const getEditorTheme: (theme: SandpackTheme) => Extension;
+export declare const getSyntaxHighlight: (theme: SandpackTheme) => HighlightStyle;
+declare type SandpackLanguageSupport = "javascript" | "typescript" | "html" | "css";
+export declare const getLanguageFromFile: (filePath?: string | undefined, fileType?: string | undefined) => SandpackLanguageSupport;
+export declare const getCodeMirrorLanguage: (extension: SandpackLanguageSupport) => LanguageSupport;
+export declare const useCombinedRefs: <T extends unknown>(...refs: React.Ref<T>[]) => React.Ref<T>;
+export {};

@@ -1,0 +1,701 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
+import { ApolloLink, Observable, } from 'apollo-link';
+import { hasDirectives, getMainDefinition, getFragmentDefinitions, createFragmentMap, addTypenameToDocument, isField, isInlineFragment, resultKeyNameFromField, } from 'apollo-utilities';
+import jsonApiTransformer from './jsonApiTransformer';
+import global from './global';
+import { graphql } from 'graphql-anywhere/lib/async';
+import * as qs from 'qs';
+import { removeRestSetsFromDocument, identity } from './utils';
+var quickFindJsonApiDirective = function (field) {
+    if (field.directives && field.directives.length) {
+        return field.directives.find(function (directive) { return 'jsonapi' === directive.name.value; });
+    }
+};
+/**
+ * The way graphql works today, it doesn't hand us the AST tree for our query, it hands us the ROOT
+ * This method searches for REST-directive-attached nodes that are named to match this query.
+ *
+ * A little bit of wasted compute, but alternative would be a patch in graphql-anywhere.
+ *
+ * @param resultKey SearchKey for REST directive-attached item matching this sub-query
+ * @param current current node in the REST-JSON-response
+ * @param mainDefinition Parsed Query Definition
+ * @param fragmentMap Map of Named Fragments
+ * @param currentSelectionSet Current selection set we're filtering by
+ */
+function findRestDirectivesThenInsertNullsForOmittedFields(resultKey, current, // currentSelectionSet starts at root, so wait until we're inside a Field tagged with an @jsonapi directive to activate!
+mainDefinition, fragmentMap, currentSelectionSet) {
+    if (currentSelectionSet == null ||
+        null == current ||
+        typeof current === 'number' ||
+        typeof current === 'boolean' ||
+        typeof current === 'string') {
+        return current;
+    }
+    currentSelectionSet.selections.forEach(function (node) {
+        if (isInlineFragment(node)) {
+            findRestDirectivesThenInsertNullsForOmittedFields(resultKey, current, mainDefinition, fragmentMap, node.selectionSet);
+        }
+        else if (node.kind === 'FragmentSpread') {
+            var fragment = fragmentMap[node.name.value];
+            findRestDirectivesThenInsertNullsForOmittedFields(resultKey, current, mainDefinition, fragmentMap, fragment.selectionSet);
+        }
+        else if (isField(node)) {
+            var name_1 = resultKeyNameFromField(node);
+            if (name_1 === resultKey && quickFindJsonApiDirective(node)) {
+                // Jackpot! We found our selectionSet!
+                insertNullsForAnyOmittedFields(current, mainDefinition, fragmentMap, node.selectionSet);
+            }
+            else {
+                findRestDirectivesThenInsertNullsForOmittedFields(resultKey, current, mainDefinition, fragmentMap, node.selectionSet);
+            }
+        }
+        else {
+            // This will give a TypeScript build-time error if you did something wrong or the AST changes!
+            return (function (node) {
+                throw new Error('Unhandled Node Type in SelectionSetNode.selections');
+            })(node);
+        }
+    });
+    // Return current to have our result pass to next link in async promise chain!
+    return current;
+}
+/**
+ * Recursively walks a handed object in parallel with the Query SelectionSet,
+ *  and inserts `null` for any field that is missing from the response.
+ *
+ * This is needed because ApolloClient will throw an error automatically if it's
+ *  missing -- effectively making all of rest-link's selections implicitly non-optional.
+ *
+ * @param current Current object we're patching
+ * @param mainDefinition Parsed Query Definition
+ * @param fragmentMap Map of Named Fragments
+ * @param currentSelectionSet Current selection set we're filtering by
+ */
+function insertNullsForAnyOmittedFields(current, // currentSelectionSet starts at root, so wait until we're inside a Field tagged with an @jsonapi directive to activate!
+mainDefinition, fragmentMap, currentSelectionSet) {
+    if (currentSelectionSet == null ||
+        null == current ||
+        typeof current === 'number' ||
+        typeof current === 'boolean' ||
+        typeof current === 'string') {
+        return;
+    }
+    if (Array.isArray(current)) {
+        // If our current value is an array, process our selection set for each entry.
+        current.forEach(function (c) {
+            return insertNullsForAnyOmittedFields(c, mainDefinition, fragmentMap, currentSelectionSet);
+        });
+        return;
+    }
+    currentSelectionSet.selections.forEach(function (node) {
+        if (isInlineFragment(node)) {
+            insertNullsForAnyOmittedFields(current, mainDefinition, fragmentMap, node.selectionSet);
+        }
+        else if (node.kind === 'FragmentSpread') {
+            var fragment = fragmentMap[node.name.value];
+            insertNullsForAnyOmittedFields(current, mainDefinition, fragmentMap, fragment.selectionSet);
+        }
+        else if (isField(node)) {
+            var value = current[node.name.value];
+            if (node.name.value === '__typename') {
+                // Don't mess with special fields like __typename
+            }
+            else if (typeof value === 'undefined') {
+                // Patch in a null where the field would have been marked as missing
+                current[node.name.value] = null;
+            }
+            else if (value != null &&
+                typeof value === 'object' &&
+                node.selectionSet != null) {
+                insertNullsForAnyOmittedFields(value, mainDefinition, fragmentMap, node.selectionSet);
+            }
+            else {
+                // Other types (string, number) do not need recursive patching!
+            }
+        }
+        else {
+            // This will give a TypeScript build-time error if you did something wrong or the AST changes!
+            return (function (node) {
+                throw new Error('Unhandled Node Type in SelectionSetNode.selections');
+            })(node);
+        }
+    });
+}
+var getEndpointOptions = function (endpoints, endpoint) {
+    var result = endpoints[endpoint || DEFAULT_ENDPOINT_KEY] ||
+        endpoints[DEFAULT_ENDPOINT_KEY];
+    if (typeof result === 'string') {
+        return { uri: result };
+    }
+    return result;
+};
+/** Internal Tool that Parses Paths for JsonApiLink -- This API should be considered experimental */
+var PathBuilder = /** @class */ (function () {
+    function PathBuilder() {
+    }
+    PathBuilder.replacerForPath = function (path) {
+        if (path in PathBuilder.cache) {
+            return PathBuilder.cache[path];
+        }
+        var queryOrigStartIndex = path.indexOf('?');
+        var pathBits = path.split(PathBuilder.argReplacement);
+        var chunkActions = [];
+        var hasBegunQuery = false;
+        pathBits.reduce(function (processedCount, bit) {
+            if (bit === '' || bit === '{}') {
+                // Empty chunk, do nothing
+                return processedCount + bit.length;
+            }
+            var nextIndex = processedCount + bit.length;
+            if (bit[0] === '{' && bit[bit.length - 1] === '}') {
+                // Replace some args!
+                var _keyPath_1 = bit.slice(1, bit.length - 1).split('.');
+                chunkActions.push(function (props, useQSEncoder) {
+                    try {
+                        var value = PathBuilderLookupValue(props, _keyPath_1);
+                        if (!useQSEncoder ||
+                            (typeof value !== 'object' || value == null)) {
+                            return String(value);
+                        }
+                        else {
+                            return qs.stringify(value);
+                        }
+                    }
+                    catch (e) {
+                        var key = [path, _keyPath_1.join('.')].join('|');
+                        if (!(key in PathBuilder.warnTable)) {
+                            console.warn('Warning: JsonApiLink caught an error while unpacking', key, "This tends to happen if you forgot to pass a parameter needed for creating an @jsonapi(path, or if JsonApiLink was configured to deeply unpack a path parameter that wasn't provided. This message will only log once per detected instance. Trouble-shooting hint: check @jsonapi(path: and the variables provided to this query.");
+                            PathBuilder.warnTable[key] = true;
+                        }
+                        return '';
+                    }
+                });
+            }
+            else {
+                chunkActions.push(bit);
+                if (!hasBegunQuery && nextIndex >= queryOrigStartIndex) {
+                    hasBegunQuery = true;
+                    chunkActions.push(true);
+                }
+            }
+            return nextIndex;
+        }, 0);
+        var result = function (props) {
+            var hasEnteredQuery = false;
+            var tmp = chunkActions.reduce(function (accumulator, action) {
+                if (typeof action === 'string') {
+                    return accumulator + action;
+                }
+                else if (typeof action === 'boolean') {
+                    hasEnteredQuery = true;
+                    return accumulator;
+                }
+                else {
+                    return accumulator + action(props, hasEnteredQuery);
+                }
+            }, '');
+            return tmp;
+        };
+        return (PathBuilder.cache[path] = result);
+    };
+    /** For accelerating the replacement of paths that are used a lot */
+    PathBuilder.cache = {};
+    /** Table to limit the amount of nagging (due to probable API Misuse) we do to once per path per launch */
+    PathBuilder.warnTable = {};
+    /** Regexp that finds things that are eligible for variable replacement */
+    PathBuilder.argReplacement = /({[._a-zA-Z0-9]*})/;
+    return PathBuilder;
+}());
+export { PathBuilder };
+/** Private Helper Function */
+function PathBuilderLookupValue(tmp, keyPath) {
+    if (keyPath.length === 0) {
+        return tmp;
+    }
+    var remainingKeyPath = __spreadArrays(keyPath); // Copy before mutating
+    var key = remainingKeyPath.shift();
+    return PathBuilderLookupValue(tmp[key], remainingKeyPath);
+}
+/**
+ * Some keys should be passed through transparently without normalizing/de-normalizing
+ */
+var noMangleKeys = ['__typename'];
+/** Recursively descends the provided object tree and converts all the keys */
+var convertObjectKeys = function (object, __converter, keypath) {
+    if (keypath === void 0) { keypath = []; }
+    var converter = null;
+    if (__converter.length != 2) {
+        converter = function (name, keypath) {
+            return __converter(name);
+        };
+    }
+    else {
+        converter = __converter;
+    }
+    if (object == null || typeof object !== 'object') {
+        // Object is a scalar or null / undefined => no keys to convert!
+        return object;
+    }
+    // FileList/File are only available in some browser contexts
+    // Notably: *not available* in react-native.
+    if ((global.FileList && object instanceof FileList) ||
+        (global.File && object instanceof File)) {
+        // Object is a FileList or File object => no keys to convert!
+        return object;
+    }
+    if (Array.isArray(object)) {
+        return object.map(function (o, index) {
+            return convertObjectKeys(o, converter, __spreadArrays(keypath, [String(index)]));
+        });
+    }
+    return Object.keys(object).reduce(function (acc, key) {
+        var value = object[key];
+        if (noMangleKeys.indexOf(key) !== -1) {
+            acc[key] = value;
+            return acc;
+        }
+        var nestedKeyPath = __spreadArrays(keypath, [key]);
+        acc[converter(key, nestedKeyPath)] = convertObjectKeys(value, converter, nestedKeyPath);
+        return acc;
+    }, {});
+};
+var noOpNameNormalizer = function (name) {
+    return name;
+};
+/**
+ * Helper that makes sure our headers are of the right type to pass to Fetch
+ */
+export var normalizeHeaders = function (headers) {
+    // Make sure that our headers object is of the right type
+    if (headers instanceof Headers) {
+        return headers;
+    }
+    else {
+        return new Headers(headers || {});
+    }
+};
+/**
+ * Returns a new Headers Group that contains all the headers.
+ * - If there are duplicates, they will be in the returned header set multiple times!
+ */
+export var concatHeadersMergePolicy = function () {
+    var headerGroups = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        headerGroups[_i] = arguments[_i];
+    }
+    return headerGroups.reduce(function (accumulator, current) {
+        if (!current) {
+            return accumulator;
+        }
+        if (!current.forEach) {
+            current = normalizeHeaders(current);
+        }
+        current.forEach(function (value, key) {
+            accumulator.append(key, value);
+        });
+        return accumulator;
+    }, new Headers());
+};
+/**
+ * This merge policy deletes any matching headers from the link's default headers.
+ * - Pass headersToOverride array & a headers arg to context and this policy will automatically be selected.
+ */
+export var overrideHeadersMergePolicy = function (linkHeaders, headersToOverride, requestHeaders) {
+    var result = new Headers();
+    linkHeaders.forEach(function (value, key) {
+        if (headersToOverride.indexOf(key) !== -1) {
+            return;
+        }
+        result.append(key, value);
+    });
+    return concatHeadersMergePolicy(result, requestHeaders || new Headers());
+};
+export var overrideHeadersMergePolicyHelper = overrideHeadersMergePolicy; // Deprecated name
+var makeOverrideHeadersMergePolicy = function (headersToOverride) {
+    return function (linkHeaders, requestHeaders) {
+        return overrideHeadersMergePolicy(linkHeaders, headersToOverride, requestHeaders);
+    };
+};
+var SUPPORTED_HTTP_VERBS = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'];
+export var validateRequestMethodForOperationType = function (method, operationType) {
+    switch (operationType) {
+        case 'query':
+            if (SUPPORTED_HTTP_VERBS.indexOf(method.toUpperCase()) !== -1) {
+                return;
+            }
+            throw new Error("A \"query\" operation can only support \"GET\" requests but got \"" + method + "\".");
+        case 'mutation':
+            if (SUPPORTED_HTTP_VERBS.indexOf(method.toUpperCase()) !== -1) {
+                return;
+            }
+            throw new Error('"mutation" operations do not support that HTTP-verb');
+        case 'subscription':
+            throw new Error('A "subscription" operation is not supported yet.');
+        default:
+            var _exhaustiveCheck = operationType;
+            return _exhaustiveCheck;
+    }
+};
+/**
+ * Utility to build & throw a JS Error from a "failed" REST-response
+ * @param response: HTTP Response object for this request
+ * @param result: Promise that will render the body of the response
+ * @param message: Human-facing error message
+ */
+var rethrowServerSideError = function (response, result, message) {
+    var error = new Error(message);
+    error.response = response;
+    error.statusCode = response.status;
+    error.result = result;
+    throw error;
+};
+var addTypeToNode = function (node, typename) {
+    if (node === null || node === undefined || typeof node !== 'object') {
+        return node;
+    }
+    if (!Array.isArray(node)) {
+        node['__typename'] = typename;
+        return node;
+    }
+    return node.map(function (item) {
+        return addTypeToNode(item, typename);
+    });
+};
+var resolver = function (fieldName, root, args, context, info) { return __awaiter(void 0, void 0, void 0, function () {
+    var directives, isLeaf, resultKey, exportVariablesByNode, exportVariables, copyExportVariables, aliasedNode, preAliasingNode, isATypeCall, isNotAJsonApiCall, credentials, endpoints, headers, customFetch, operationType, mainDefinition, fragmentDefinitions, typeNameNormalizer, fieldNameNormalizer, linkLevelNameDenormalizer, serializers, fragmentMap, _a, path, endpoint, pathBuilder, endpointOption, neitherPathsProvided, allParams, pathWithParams, _b, method, perRequestNameDenormalizer, includeJsonapi, body, overrideHeaders, serializedBody, requestParams, requestUrl, response, result, err_1, parsed, error_1;
+    return __generator(this, function (_c) {
+        switch (_c.label) {
+            case 0:
+                directives = info.directives, isLeaf = info.isLeaf, resultKey = info.resultKey;
+                exportVariablesByNode = context.exportVariablesByNode;
+                exportVariables = exportVariablesByNode.get(root) || {};
+                copyExportVariables = function (result) {
+                    if (result instanceof Array) {
+                        result.forEach(copyExportVariables);
+                    }
+                    else {
+                        // export variables are stored keyed on the node they are for
+                        exportVariablesByNode.set(result, __assign({}, exportVariables));
+                    }
+                    return result;
+                };
+                aliasedNode = (root || {})[resultKey];
+                preAliasingNode = (root || {})[fieldName];
+                isATypeCall = directives && directives.type;
+                if (!isLeaf && isATypeCall) {
+                    // @type(name: ) is only supported inside apollo-link-json-api at this time
+                    // so use the preAliasingNode as we're responsible for implementing aliasing!
+                    // Also: exit early, since @type(name: ) && @jsonapi() can't both exist on the same node.
+                    if (directives.jsonapi) {
+                        throw new Error('Invalid use of @type(name: ...) directive on a call that also has @jsonapi(...)');
+                    }
+                    return [2 /*return*/, addTypeToNode(preAliasingNode, directives.type.name)];
+                }
+                isNotAJsonApiCall = !directives || !directives.jsonapi;
+                if (isNotAJsonApiCall) {
+                    // This is not tagged with @jsonapi()
+                    // This might not belong to us so return the aliasNode version preferentially
+                    return [2 /*return*/, copyExportVariables(aliasedNode || preAliasingNode)];
+                }
+                credentials = context.credentials, endpoints = context.endpoints, headers = context.headers, customFetch = context.customFetch, operationType = context.operationType, mainDefinition = context.mainDefinition, fragmentDefinitions = context.fragmentDefinitions, typeNameNormalizer = context.typeNameNormalizer, fieldNameNormalizer = context.fieldNameNormalizer, linkLevelNameDenormalizer = context.fieldNameDenormalizer, serializers = context.serializers;
+                fragmentMap = createFragmentMap(fragmentDefinitions);
+                _a = directives.jsonapi, path = _a.path, endpoint = _a.endpoint, pathBuilder = _a.pathBuilder;
+                endpointOption = getEndpointOptions(endpoints, endpoint);
+                neitherPathsProvided = path == null && pathBuilder == null;
+                if (neitherPathsProvided) {
+                    throw new Error("One of (\"path\" | \"pathBuilder\") must be set in the @jsonapi() directive. This request had neither, please add one");
+                }
+                if (!pathBuilder) {
+                    if (path.includes(':')) {
+                        throw new Error("'@jsonapi(path:' contains a ':' colon, this format is not supported");
+                    }
+                    pathBuilder = PathBuilder.replacerForPath(path);
+                }
+                allParams = {
+                    args: args,
+                    exportVariables: exportVariables,
+                    context: context,
+                    '@jsonapi': directives.jsonapi,
+                    replacer: pathBuilder,
+                };
+                pathWithParams = pathBuilder(allParams);
+                _b = directives.jsonapi, method = _b.method, perRequestNameDenormalizer = _b.fieldNameDenormalizer, includeJsonapi = _b.includeJsonapi;
+                if (!method) {
+                    method = 'GET';
+                }
+                if (!includeJsonapi) {
+                    includeJsonapi = false;
+                }
+                body = undefined;
+                overrideHeaders = undefined;
+                if (-1 === ['GET', 'DELETE'].indexOf(method)) {
+                    body = convertObjectKeys(allParams.args.input, perRequestNameDenormalizer ||
+                        linkLevelNameDenormalizer ||
+                        noOpNameNormalizer);
+                    serializedBody = void 0;
+                    serializedBody = serializers[DEFAULT_SERIALIZER_KEY](body, headers);
+                    body = serializedBody.body;
+                    overrideHeaders = new Headers(serializedBody.headers);
+                }
+                validateRequestMethodForOperationType(method, operationType || 'query');
+                requestParams = __assign({ method: method, headers: overrideHeaders || headers, body: body }, (credentials ? { credentials: credentials } : {}));
+                requestUrl = "" + endpointOption.uri + pathWithParams;
+                return [4 /*yield*/, (customFetch || fetch)(requestUrl, requestParams)];
+            case 1:
+                response = _c.sent();
+                context.responses.push(response);
+                if (!response.ok) return [3 /*break*/, 6];
+                if (!(response.status === 204 ||
+                    response.headers.get('Content-Length') === '0')) return [3 /*break*/, 2];
+                // HTTP-204 means "no-content", similarly Content-Length implies the same
+                // This commonly occurs when you POST/PUT to the server, and it acknowledges
+                // success, but doesn't return your Resource.
+                result = {};
+                return [3 /*break*/, 5];
+            case 2:
+                _c.trys.push([2, 4, , 5]);
+                return [4 /*yield*/, jsonApiTransformer(response, typeNameNormalizer, includeJsonapi)];
+            case 3:
+                result = _c.sent();
+                return [3 /*break*/, 5];
+            case 4:
+                err_1 = _c.sent();
+                console.warn('An error occurred in jsonApiTransformer:');
+                throw err_1;
+            case 5: return [3 /*break*/, 13];
+            case 6:
+                if (!(response.status === 404)) return [3 /*break*/, 7];
+                // In a GraphQL context a missing resource should be indicated by
+                // a null value rather than throwing a network error
+                result = null;
+                return [3 /*break*/, 13];
+            case 7:
+                parsed = void 0;
+                _c.label = 8;
+            case 8:
+                _c.trys.push([8, 10, , 12]);
+                return [4 /*yield*/, response.clone().json()];
+            case 9:
+                parsed = _c.sent();
+                return [3 /*break*/, 12];
+            case 10:
+                error_1 = _c.sent();
+                return [4 /*yield*/, response.clone().text()];
+            case 11:
+                // its not json
+                parsed = _c.sent();
+                return [3 /*break*/, 12];
+            case 12:
+                rethrowServerSideError(response, parsed, "Response not successful: Received status code " + response.status);
+                _c.label = 13;
+            case 13:
+                if (fieldNameNormalizer !== null) {
+                    result = convertObjectKeys(result, fieldNameNormalizer);
+                }
+                result = findRestDirectivesThenInsertNullsForOmittedFields(resultKey, result, mainDefinition, fragmentMap, mainDefinition.selectionSet);
+                return [2 /*return*/, copyExportVariables(result)];
+        }
+    });
+}); };
+/**
+ * Default key to use when the @jsonapi directive omits the "endpoint" parameter.
+ */
+var DEFAULT_ENDPOINT_KEY = '';
+/**
+ * Default key to use when the @jsonapi directive omits the "bodySerializers" parameter.
+ */
+var DEFAULT_SERIALIZER_KEY = '';
+var DEFAULT_JSON_SERIALIZER = function (data, headers) {
+    if (!headers.has('content-type')) {
+        headers.append('Content-Type', 'application/vnd.api+json');
+    }
+    return {
+        body: JSON.stringify(data),
+        headers: headers,
+    };
+};
+/**
+ * JsonApiLink is an apollo-link for communicating with REST services using GraphQL on the client-side
+ */
+var JsonApiLink = /** @class */ (function (_super) {
+    __extends(JsonApiLink, _super);
+    function JsonApiLink(_a) {
+        var _b;
+        var uri = _a.uri, endpoints = _a.endpoints, headers = _a.headers, typeNameNormalizer = _a.typeNameNormalizer, fieldNameNormalizer = _a.fieldNameNormalizer, fieldNameDenormalizer = _a.fieldNameDenormalizer, customFetch = _a.customFetch, credentials = _a.credentials, bodySerializers = _a.bodySerializers, defaultSerializer = _a.defaultSerializer;
+        var _this = _super.call(this) || this;
+        var fallback = {};
+        fallback[DEFAULT_ENDPOINT_KEY] = uri || '';
+        _this.endpoints = Object.assign({}, endpoints || fallback);
+        if (uri == null && endpoints == null) {
+            throw new Error('A JsonApiLink must be initialized with either 1 uri, or a map of keyed-endpoints');
+        }
+        if (uri != null) {
+            var currentDefaultURI = (endpoints || {})[DEFAULT_ENDPOINT_KEY];
+            if (currentDefaultURI != null && currentDefaultURI != uri) {
+                throw new Error("JsonApiLink was configured with a default uri that doesn't match what's passed in to the endpoints map.");
+            }
+            _this.endpoints[DEFAULT_ENDPOINT_KEY] = uri;
+        }
+        if (_this.endpoints[DEFAULT_ENDPOINT_KEY] == null) {
+            console.warn('JsonApiLink configured without a default URI. All @jsonapi(…) directives must provide an endpoint key!');
+        }
+        if (bodySerializers &&
+            bodySerializers.hasOwnProperty(DEFAULT_SERIALIZER_KEY)) {
+            console.warn('JsonApiLink was configured to override the default serializer! This may result in unexpected behavior');
+        }
+        _this.typeNameNormalizer = typeNameNormalizer || identity;
+        _this.fieldNameNormalizer = fieldNameNormalizer || null;
+        _this.fieldNameDenormalizer = fieldNameDenormalizer || null;
+        _this.headers = normalizeHeaders(headers);
+        _this.credentials = credentials || null;
+        _this.customFetch = customFetch;
+        _this.serializers = __assign((_b = {}, _b[DEFAULT_SERIALIZER_KEY] = defaultSerializer || DEFAULT_JSON_SERIALIZER, _b), (bodySerializers || {}));
+        return _this;
+    }
+    JsonApiLink.prototype.request = function (operation, forward) {
+        var query = operation.query, variables = operation.variables, getContext = operation.getContext, setContext = operation.setContext;
+        var context = getContext();
+        var isJsonApiQuery = hasDirectives(['jsonapi'], query);
+        if (!isJsonApiQuery) {
+            return forward(operation);
+        }
+        var nonRest = removeRestSetsFromDocument(query);
+        // 1. Use the user's merge policy if any
+        var headersMergePolicy = context.headersMergePolicy;
+        if (headersMergePolicy == null &&
+            Array.isArray(context.headersToOverride)) {
+            // 2.a. Override just the passed in headers, if user provided that optional array
+            headersMergePolicy = makeOverrideHeadersMergePolicy(context.headersToOverride);
+        }
+        else if (headersMergePolicy == null) {
+            // 2.b Glue the link (default) headers to the request-context headers
+            headersMergePolicy = concatHeadersMergePolicy;
+        }
+        var headers = headersMergePolicy(this.headers, context.headers);
+        if (!headers.has('Accept')) {
+            // Since we assume a json body on successful responses set the Accept
+            // header accordingly if it is not provided by the user
+            headers.append('Accept', 'application/vnd.api+json');
+        }
+        var credentials = context.credentials || this.credentials;
+        var queryWithTypename = addTypenameToDocument(query);
+        var mainDefinition = getMainDefinition(query);
+        var fragmentDefinitions = getFragmentDefinitions(query);
+        var operationType = (mainDefinition || {}).operation || 'query';
+        var requestContext = {
+            headers: headers,
+            endpoints: this.endpoints,
+            // Provide an empty map for this request's exports to be stuffed into
+            exportVariablesByNode: new Map(),
+            credentials: credentials,
+            customFetch: this.customFetch,
+            operationType: operationType,
+            typeNameNormalizer: this.typeNameNormalizer,
+            fieldNameNormalizer: this.fieldNameNormalizer,
+            fieldNameDenormalizer: this.fieldNameDenormalizer,
+            mainDefinition: mainDefinition,
+            fragmentDefinitions: fragmentDefinitions,
+            serializers: this.serializers,
+            responses: [],
+        };
+        var resolverOptions = {};
+        var obs;
+        if (nonRest && forward) {
+            operation.query = nonRest;
+            obs = forward(operation);
+        }
+        else
+            obs = Observable.of({ data: {} });
+        return obs.flatMap(function (_a) {
+            var data = _a.data, errors = _a.errors;
+            return new Observable(function (observer) {
+                graphql(resolver, queryWithTypename, data, requestContext, variables, resolverOptions)
+                    .then(function (data) {
+                    setContext({
+                        restResponses: (context.restResponses || []).concat(requestContext.responses),
+                    });
+                    observer.next({ data: data, errors: errors });
+                    observer.complete();
+                })
+                    .catch(function (err) {
+                    if (err.name === 'AbortError')
+                        return;
+                    if (err.result && err.result.errors) {
+                        observer.next(err.result);
+                    }
+                    observer.error(err);
+                });
+            });
+        });
+    };
+    return JsonApiLink;
+}(ApolloLink));
+export { JsonApiLink };
+//# sourceMappingURL=jsonApiLink.js.map

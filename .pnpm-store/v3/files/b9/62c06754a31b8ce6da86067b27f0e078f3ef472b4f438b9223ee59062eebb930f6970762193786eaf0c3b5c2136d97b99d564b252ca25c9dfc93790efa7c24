@@ -1,0 +1,11 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+/// <reference types="@docusaurus/module-type-aliases" />
+import { type Route } from '@generated/routes';
+export declare function findHomePageRoute(routes?: Route[]): Route | undefined;
+export declare function useHomePageRoute(): Route | undefined;
+//# sourceMappingURL=routesUtils.d.ts.map

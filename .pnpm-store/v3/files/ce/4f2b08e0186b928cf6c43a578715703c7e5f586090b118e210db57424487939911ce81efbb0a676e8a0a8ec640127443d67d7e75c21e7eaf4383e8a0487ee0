@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/utils/url-to-path.ts"],"names":["link","pathname"],"mappings":";;;;;AAAA;;eAEgBA,IAAD,IAA0B,gBAAMA,IAAN,EAAYC,Q","sourcesContent":["import { parse } from \"url\"\n\nexport default (link: string): string => parse(link).pathname\n"],"file":"url-to-path.js"}
