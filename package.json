@@ -10,7 +10,9 @@
     "build:starters": "pnpm --filter ./starters run build",
     "build:all": "pnpm recursive run build",
     "generate-docs": "pnpm --filter ./web clear && pnpm --filter ./web build",
-    "postinstall": "pnpm build:pkgs"
+    "postinstall": "pnpm build:pkgs",
+    "ci:version": "changeset version",
+    "ci:publish": "changeset publish"
   },
   "repository": {
     "type": "git",
