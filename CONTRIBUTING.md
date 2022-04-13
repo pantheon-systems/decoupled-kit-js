@@ -1,5 +1,8 @@
 # Contributing to this project
 
+Thank you for your interest in contributing to 
+Pantheon's Decoupled Kit ⚡️!
+
 ## Getting started and Prerequisites
 
 Check the [prerequisites](https://github.com/pantheon-systems/decoupled-kit-js/#prerequisites) and [getting started](https://github.com/pantheon-systems/decoupled-kit-js/#getting-started) to get setup for development.
@@ -21,7 +24,7 @@ All module code should be written in TypeScript.
 
 ### Running A Local Development Server
 
-The `pnpm --filter ./packages/{package name} dev` can be run for local development. 
+The `pnpm --filter ./packages/{package name} dev` can be run for local development.
 It will watch for changes and launch `index.html` at http://localhost:3000. `index.html` loads
 `src/main.ts` which can be used for demonstration purposes and local
 development.
@@ -86,3 +89,7 @@ To contribute to the starters, you will need a backend to develop against.
 ### gatsby-wordpress-starter
 
 <!-- Instructions on how to spin up a backend for local deveopment here -->
+
+## Notes for Maintainers
+
+When merging pull requests, please use the "Merge Commit" option on the pull request in GitHub.
