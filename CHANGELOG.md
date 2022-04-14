@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [1.0.2] - 2022-04-14
+
+`[next-drupal-starter]`
+
+- Use PANTHEON_CMS_ENDPOINT to determine BACKEND_URL and IMAGE_DOMAIN when possible.
+- Ignore .pnpm-store
+
+## [1.0.1] - 2022-04-13
+
+`[next-drupal-starter] [gatsby-wordpress-starter]`
+
+- Add package-lock.json to gatsby-wordpress-starter and next-drupal-starter for distribution.
+
 ## [1.0.0] - 2022-04-11
 
 ### Added
