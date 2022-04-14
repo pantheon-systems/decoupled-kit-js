@@ -5,6 +5,8 @@ import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
 import Layout from "../../components/layout";
 
+import { DRUPAL_URL, IMAGE_URL } from "../../lib/constants.js";
+
 export default function Recipe({ recipe, hrefLang }) {
   const imgSrc = recipe.field_media_image?.field_media_image?.uri?.url || "";
 
@@ -30,7 +32,7 @@ export default function Recipe({ recipe, hrefLang }) {
         {imgSrc ? (
           <div className="relative max-w-lg mx-auto min-w-full h-[50vh] rounded-lg shadow-lg overflow-hidden mt-12 mb-10">
             <Image
-              src={imgSrc}
+              src={IMAGE_URL + imgSrc}
               layout="fill"
               objectFit="cover"
               alt={recipe.title}
@@ -77,7 +79,7 @@ export async function getStaticPaths(context) {
   // Get paths for each locale.
   const pathsByLocale = locales.map(async (locale) => {
     const store = new DrupalState({
-      apiBase: process.env.BACKEND_URL,
+      apiBase: DRUPAL_URL,
       defaultLocale: multiLanguage ? locale : "",
     });
 
@@ -118,7 +120,7 @@ export async function getStaticProps(context) {
   const multiLanguage = isMultiLanguage(locales);
 
   const store = new DrupalState({
-    apiBase: process.env.BACKEND_URL,
+    apiBase: DRUPAL_URL,
     defaultLocale: multiLanguage ? locale : "",
   });
   store.params.addInclude([
@@ -157,7 +159,7 @@ export async function getStaticProps(context) {
     // Load all the paths for the current recipe.
     const paths = locales.map(async (locale) => {
       const storeByLocales = new DrupalState({
-        apiBase: process.env.BACKEND_URL,
+        apiBase: DRUPAL_URL,
         defaultLocale: multiLanguage ? locale : "",
       });
       const { path } = await storeByLocales.getObject({
