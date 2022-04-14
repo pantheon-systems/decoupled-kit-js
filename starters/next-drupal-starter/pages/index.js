@@ -4,8 +4,7 @@ import { NextSeo } from "next-seo";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
 import { isMultiLanguage } from "../lib/isMultiLanguage";
 import Layout from "../components/layout";
-
-const drupalUrl = process.env.backendUrl;
+import { DRUPAL_URL, IMAGE_URL } from "../lib/constants.js";
 
 export default function Home({ articles, hrefLang, multiLanguage }) {
   return (
@@ -59,7 +58,7 @@ export default function Home({ articles, hrefLang, multiLanguage }) {
                       {/* if thre's no imgSrc, default to Pantheon logo */}
                       {imgSrc !== "" ? (
                         <Image
-                          src={drupalUrl + imgSrc}
+                          src={IMAGE_URL + imgSrc}
                           layout="fill"
                           objectFit="cover"
                           alt={
@@ -108,7 +107,7 @@ export async function getStaticProps(context) {
   try {
     // TODO - determine apiRoot from environment variables
     const store = new DrupalState({
-      apiBase: process.env.BACKEND_URL,
+      apiBase: DRUPAL_URL,
       // if multilanguage NOT enabled, passing in a locale here will
       // break calls to Drupal, so pass an empty string.
       defaultLocale: multiLanguage ? context.locale : "",
