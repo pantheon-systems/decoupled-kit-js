@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
 import Head from "next/head";
 import { useRouter } from "next/router";
-
 import Layout from "../../../components/layout";
 
 // To use your configured backend, use:
-// const drupalUrl = process.env.backendUrl;
+// const drupalUrl = DRUPAL_URL
 
 // Example paginated data set
 const drupalUrl = "https://dev-ds-demo.pantheonsite.io";

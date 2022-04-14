@@ -1,39 +1,37 @@
 const path = require("path");
-const dotenv = require("dotenv");
 const getLocales = require("./scripts/get-locales");
 
-// Register envars for dev, test, live or local if available
-switch (process.env.BACKEND_ENV) {
-  case "dev":
-    dotenv.config({ path: path.resolve(process.cwd(), ".env.dev") });
-  case "test":
-    dotenv.config({ path: path.resolve(process.cwd(), ".env.test") });
-  case "live":
-    dotenv.config({ path: path.resolve(process.cwd(), ".env.live") });
-  default:
-    dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
-}
+// Load the .env.local env file
+require("dotenv").config({ path: path.resolve(process.cwd(), ".env.local") });
 
-if (
-  process.env.BACKEND_ENV === undefined &&
-  process.env.BACKEND_SITE === undefined
-) {
-  process.env.BACKEND_ENV = "dev";
-  process.env.BACKEND_SITE = "demo-decoupled-bridge";
-}
+// Fallback to PANTHEON_CMS_ENDPOINT if BACKEND_URL is not set
+let backendUrl, imageDomain;
+if (process.env.BACKEND_URL === undefined) {
+  backendUrl = process.env.PANTHEON_CMS_ENDPOINT;
+  imageDomain =
+    process.env.IMAGE_DOMAIN ||
+    process.env.PANTHEON_CMS_ENDPOINT?.replace(/^https:\/\//, "");
 
-const env = process.env.BACKEND_ENV;
-const site = process.env.BACKEND_SITE;
+  process.env.BACKEND_URL = process.env.PANTHEON_CMS_ENDPOINT;
+} else {
+  backendUrl = process.env.BACKEND_URL;
+  imageDomain =
+    process.env.IMAGE_DOMAIN ||
+    process.env.BACKEND_URL.replace(/^https:\/\//, "");
+}
+// remove trailing slash from iamgeDomain if it exists
+imageDomain = imageDomain.replace(/\/$/, "");
 
 module.exports = async () => {
   const nextConfig = {
     env: {
-      backendUrl:
-        process.env.BACKEND_URL || `https://${env}-${site}.pantheonsite.io`,
+      backendUrl: backendUrl,
+      // set imageUrl if IMAGE_DOMAIN is set in env vars to override default
+      imageUrl: `https://${imageDomain}`,
     },
     reactStrictMode: true,
     images: {
-      domains: [process.env.IMG_DOMAIN || `${env}-${site}.pantheonsite.io`],
+      domains: [imageDomain],
     },
     i18n: {
       locales: await getLocales(),
@@ -44,7 +42,7 @@ module.exports = async () => {
         {
           // inline-images can still be fetched from their source
           source: "/sites/default/:path*",
-          destination: `${process.env.BACKEND_URL}/sites/default/:path*`,
+          destination: `${backendUrl}/sites/default/:path*`,
         },
       ];
     },
