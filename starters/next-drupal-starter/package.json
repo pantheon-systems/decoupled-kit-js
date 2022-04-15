@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "cp -n .env.dev .env.local || true"
+    "postinstall": "cp -n .env.example .env.local || true"
   },
   "dependencies": {
     "@pantheon-systems/drupal-kit": "^1.0.0",

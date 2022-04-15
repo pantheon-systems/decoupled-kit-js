@@ -7,8 +7,7 @@ import {
 } from "@pantheon-systems/drupal-kit";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import Layout from "../../components/layout";
-
-const drupalUrl = process.env.backendUrl;
+import { DRUPAL_URL, IMAGE_URL } from "../../lib/constants.js";
 
 export default function Home({ article, hrefLang }) {
   const imgSrc = article.field_media_image?.field_media_image?.uri?.url || "";
@@ -33,7 +32,7 @@ export default function Home({ article, hrefLang }) {
               style={{ height: "50vh" }}
             >
               <Image
-                src={imgSrc}
+                src={IMAGE_URL + imgSrc}
                 layout="fill"
                 objectFit="cover"
                 alt={article.title}
@@ -54,7 +53,7 @@ export async function getStaticPaths(context) {
   // Get paths for each locale.
   const pathsByLocale = context.locales.map(async (locale) => {
     const store = new DrupalState({
-      apiBase: drupalUrl,
+      apiBase: DRUPAL_URL,
       defaultLocale: multiLanguage ? locale : "",
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
@@ -96,7 +95,7 @@ export async function getStaticProps(context) {
   const multiLanguage = isMultiLanguage(context.locales);
   // TODO - determine apiBase from environment variables
   const store = new DrupalState({
-    apiBase: drupalUrl,
+    apiBase: DRUPAL_URL,
     defaultLocale: multiLanguage ? context.locale : "",
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
@@ -161,7 +160,7 @@ export async function getStaticProps(context) {
   // Load all the paths for the current article.
   const paths = locales.map(async (locale) => {
     const storeByLocales = new DrupalState({
-      apiBase: drupalUrl,
+      apiBase: DRUPAL_URL,
       defaultLocale: multiLanguage ? locale : "",
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,

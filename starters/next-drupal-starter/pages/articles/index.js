@@ -5,8 +5,9 @@ import absoluteUrl from "next-absolute-url";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import Layout from "../../components/layout";
+import { DRUPAL_URL, IMAGE_URL } from "../../lib/constants.js"
 
-const drupalUrl = process.env.backendUrl;
+
 export default function SSRArticlesList({ articles, hrefLang }) {
   return (
     <Layout>
@@ -34,7 +35,7 @@ export default function SSRArticlesList({ articles, hrefLang }) {
                   <div className="flex-shrink-0 relative h-40">
                     {imgSrc !== "" ? (
                       <Image
-                        src={drupalUrl + imgSrc}
+                        src={IMAGE_URL + imgSrc}
                         layout="fill"
                         objectFit="cover"
                         alt={
@@ -83,7 +84,7 @@ export async function getServerSideProps(context) {
 
     // TODO - determine apiRoot from environment variables
     const store = new DrupalState({
-      apiBase: drupalUrl,
+      apiBase: DRUPAL_URL,
       defaultLocale: multiLanguage ? context.locale : "",
     });
 

@@ -4,8 +4,9 @@ import { NextSeo } from "next-seo";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import Layout from "../../components/layout";
+import { DRUPAL_URL, IMAGE_URL } from "../../lib/constants.js";
 
-const drupalUrl = process.env.backendUrl;
+
 export default function Recipes({ recipes, hrefLang }) {
   function RecipesList() {
     return (
@@ -33,7 +34,7 @@ export default function Recipes({ recipes, hrefLang }) {
                         <div className="flex-shrink-0 relative h-40">
                           {imgSrc !== "" ? (
                             <Image
-                              src={drupalUrl + imgSrc}
+                              src={IMAGE_URL + imgSrc}
                               layout="fill"
                               objectFit="cover"
                               alt={
@@ -100,7 +101,7 @@ export async function getStaticProps(context) {
   });
 
   const store = new DrupalState({
-    apiBase: process.env.BACKEND_URL,
+    apiBase: DRUPAL_URL,
     defaultLocale: multiLanguage ? locale : "",
   });
 
