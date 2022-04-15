@@ -7,7 +7,7 @@ __Option 1__: Use `create-next-app`
 1. In your terminal, run the following command:
 
 ```bash
-npx create-next-app -e https://github.com/pantheon-systems/next-drupal-starter
+npx create-next-app -e https://github.com/pantheon-systems/next-drupal-starter --use-npm
 ```
 
 2. Follow the prompts in your terminal to complete the setup.
