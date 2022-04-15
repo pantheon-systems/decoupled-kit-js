@@ -1,8 +1,16 @@
 {
   "name": "decoupled-kit-js",
-  "version": "1.0.0",
   "private": true,
-  "description": "Pantheon's Decoupled JavaScript starter kits and SDKs",
+  "version": "1.0.0",
+  "description": "Pantheon Decoupled Kit Monorepo",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
+  "bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pantheon-systems/decoupled-kit-js"
+  },
+  "author": "@pantheon-systems",
   "main": "index.js",
   "scripts": {
     "test": "pnpm recursive test",
@@ -14,10 +22,6 @@
     "ci:version": "changeset version",
     "ci:publish": "changeset publish"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pantheon-systems/decoupled-kit-js.git"
-  },
   "keywords": [
     "pantheon",
     "pantheon-systems",
@@ -25,12 +29,6 @@
     "decoupled-kit",
     "headless-cms-sdk"
   ],
-  "author": "@pantheon-systems",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/pantheon-systems/decoupled-kit-js/issues"
-  },
-  "homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
   "devDependencies": {
     "@algolia/client-search": "^4.9.1",
     "@changesets/cli": "^2.22.0",

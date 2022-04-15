@@ -1,5 +1,6 @@
 ---
 name: Fix or Update Docs Content
+title: "[docs]: "
 about: Report a documentation bug, typo, or minor issue
 labels: documentation
 
