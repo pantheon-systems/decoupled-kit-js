@@ -9,12 +9,11 @@ const getLocales = require("./get-locales");
  */
 const getLayoutData = async () => {
   const locales = await getLocales();
-  const drupalUrl = process.env.BACKEND_URL;
 
   try {
     locales.forEach(async (locale) => {
       const store = new DrupalState({
-        apiBase: drupalUrl,
+        apiBase: process.env.BACKEND_URL,
         defaultLocale: locales.length <= 1 ? "" : locale,
       });
       let menuData;

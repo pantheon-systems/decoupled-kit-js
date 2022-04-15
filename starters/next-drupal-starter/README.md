@@ -1,22 +1,37 @@
-# Next Drupal Starter
+# Pantheon Decoupled Kit Next Drupal Starter
 
-## Demo Next.js Project setup
+There are two ways to get started with the Next Drupal Starter:
 
-1. Clone this repo:
+__Option 1__: Use `create-next-app`
+
+1. In your terminal, run the following command:
+
+```bash
+npx create-next-app -e https://github.com/pantheon-systems/next-drupal-starter --use-npm
 ```
-git clone git@github.com:pantheon-systems/decoupled-drupal-frontend-demo.git
+
+2. Follow the prompts in your terminal to complete the setup.
+
+
+__Option 2__: Clone the repo
+1. Clone this repo:
+
+```bash
+git clone git@github.com:pantheon-systems/next-drupal-starter.git
 ```
 
 2. Install node modules
-```
+
+```bash
 cd decoupled-drupal-frontend-demo && npm install
 ```
 
-3. update following lines in `.env.local`
+For either option, update following lines in `.env.local`
+
 ```
 BACKEND_URL=
 FRONTEND_URL=
-IMG_DOMAIN=
+IMAGE_DOMAIN=
 PREVIEW_SECRET=
 CLIENT_ID=
 CLIENT_SECRET=
@@ -26,9 +41,9 @@ CLIENT_SECRET=
 FRONTEND_URL=
 ```
 
-4. run `lando start`
+4. Run `lando start`
 
-5. open browser and type `http://drupalnext.lndo.site/`.
+5. Open a browser and navigate to `http://drupalnext.lndo.site/`.
 
 ## Pantheon @pantheon-systems/drupal-kit
 
@@ -36,11 +51,16 @@ The Pantheon @pantheon-systems/drupal-kit is included as a dependency in this pr
 of utility functions to simplify the process of building and maintaining a decoupled site on Pantheon,
 including:
 
-* addSurrogateKeyHeader()
-* updateMaxAge()
+- addSurrogateKeyHeader()
+- updateMaxAge()
 
-Full documentation can be found at: https://github.com/pantheon-systems/decoupled-kit-js/packages/drupal-kit
+Full documentation can be found at: https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packages/drupal-kit
 
 ## Example Pages
 
-* examples/auth-api - a simple example that sources data from an endpoint that requires authorization.
+- examples/auth-api - a simple example that sources data from an endpoint that requires authorization.
+- examples/pagination - an example that sources paged data from JSON:API and paginates it client side.
+
+## Customizing the Starter
+
+For a guide on creating your first Next Drupal customization, see [Your First Drupal Customization](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next%20Drupal/your-first-customization.md)

@@ -1,16 +1,16 @@
-# Decoupled WordPress Gatsby Frontend Demo
+# Pantheon Decoupled Kit Gatsby WordPress Starter
 
 ## Gatsby Project setup
 
 1. Clone this repo:
 
-```
-git clone git@github.com:pantheon-systems/decoupled-wp-gatsby-frontend-demo.git
+```bash
+git clone git@github.com:pantheon-systems/gatsby-wordpress-starter.git
 ```
 
 2. Install node modules
 
-```
+```bash
 cd decoupled-wp-gatsby-frontend-demo && npm install
 ```
 
@@ -43,3 +43,7 @@ Other commands:
 
 - `lando node` - runs the Gatsby development server (which should also run on `lando start`).
 - `lando gatsby <command>` - run Gatsby cli commands.
+
+## Customizing the Starter
+
+For a guide on creating your first Gatsby WordPress customization, see [Your First WordPress Customization](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Gatsby%20Wordpress/your-first-customization.md)
