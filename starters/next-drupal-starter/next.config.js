@@ -4,22 +4,20 @@ const getLocales = require("./scripts/get-locales");
 // Load the .env.local env file
 require("dotenv").config({ path: path.resolve(process.cwd(), ".env.local") });
 
-// Fallback to PANTHEON_CMS_ENDPOINT if BACKEND_URL is not set
 let backendUrl, imageDomain;
 if (process.env.BACKEND_URL === undefined) {
-  backendUrl = process.env.PANTHEON_CMS_ENDPOINT;
-  imageDomain =
-    process.env.IMAGE_DOMAIN ||
-    process.env.PANTHEON_CMS_ENDPOINT?.replace(/^https:\/\//, "");
+  backendUrl = `https://${process.env.PANTHEON_CMS_ENDPOINT}`;
+  imageDomain = process.env.IMAGE_DOMAIN || process.env.PANTHEON_CMS_ENDPOINT;
 
-  process.env.BACKEND_URL = process.env.PANTHEON_CMS_ENDPOINT;
+  // populate BACKEND_URL as a fallback and for build scripts
+  process.env.BACKEND_URL = `https://${process.env.PANTHEON_CMS_ENDPOINT}`;
 } else {
   backendUrl = process.env.BACKEND_URL;
   imageDomain =
     process.env.IMAGE_DOMAIN ||
     process.env.BACKEND_URL.replace(/^https:\/\//, "");
 }
-// remove trailing slash from iamgeDomain if it exists
+// remove trailing slash if it exists
 imageDomain = imageDomain.replace(/\/$/, "");
 
 module.exports = async () => {

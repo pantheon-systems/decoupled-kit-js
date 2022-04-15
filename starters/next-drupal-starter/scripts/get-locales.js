@@ -1,4 +1,5 @@
 const fetch = require("isomorphic-fetch");
+
 const getLocales = async () => {
   try {
     const res = await fetch(
@@ -16,4 +17,5 @@ const getLocales = async () => {
     return ["en"];
   }
 };
+
 module.exports = getLocales;
