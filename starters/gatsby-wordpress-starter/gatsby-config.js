@@ -1,26 +1,13 @@
 const path = require("path")
-const dotenv = require("dotenv")
+require("dotenv").config({
+  path: path.resolve(process.cwd(), ".env.local"),
+})
 
-// Register envars for dev, test, live or local if available
-switch (process.env.BACKEND_ENV) {
-  case "dev":
-    dotenv.config({ path: path.resolve(process.cwd(), ".env.dev") })
-  case "test":
-    dotenv.config({ path: path.resolve(process.cwd(), ".env.test") })
-  case "live":
-    dotenv.config({ path: path.resolve(process.cwd(), ".env.live") })
-  default:
-    dotenv.config({
-      path: path.resolve(process.cwd(), ".env.local"),
-    })
-}
-
-const env = process.env.BACKEND_ENV
-const site = process.env.BACKEND_SITE
-// Use URL from .env if it exists, otherwise fall back on constructing
-// Pantheon site URL
+// Use URL from .env if it exists, otherwise fall back on the
+// Pantheon CMS endpoint
 const url =
-  process.env.WPGRAPHQL_URL || `https://${env}-${site}.pantheonsite.io/graphql`
+  process.env.WPGRAPHQL_URL ||
+  `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`
 
 /**
  * 👋 Hey there!
@@ -97,6 +84,6 @@ module.exports = {
      * To learn more, visit: https://gatsby.dev/offline
      */
     // `gatsby-plugin-offline`,
-    'gatsby-plugin-pnpm'
+    "gatsby-plugin-pnpm",
   ],
 }
