@@ -2,7 +2,7 @@
   "name": "decoupled-kit-js",
   "private": true,
   "version": "1.0.0",
-  "description": "Pantheon Decoupled Kit's Gatsby WordPress Starter",
+  "description": "Pantheon Decoupled Kit Monorepo",
   "license": "GPL-3.0-or-later",
   "homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
   "bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",

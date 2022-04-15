@@ -1,6 +1,6 @@
 # Contributing to this project
 
-Thank you for your interest in contributing to 
+Thank you for your interest in contributing to
 Pantheon's Decoupled Kit ⚡️!
 
 ## Getting started and Prerequisites
@@ -38,20 +38,18 @@ VSCode users can format code on save using the
 and
 [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 extensions. These extensions will be suggested when loading the project if they
-have not already been installed. An example settings file is included in
-`.vscode/example.settings.json`. Save this file as `.vscode/settings.json` or
-incorporate the contents into your existing settings.json file to enable format
-on save in your project.
+have not already been installed. A settings file is included in
+`.vscode/settings.json`.
 
 Formatting on save is highly recommended as it should resolve most formatting
 issues before the pre-commit hook runs.
 
 Formatting and linting can also be run manually using the following commands:
 
-- `npm run eslint` - checks linting
-- `npm run eslint:fix` - attempts to fix any linting issues
-- `npm run prettier` - checks formatting
-- `npm run prettier:fix` - attempts to fix any formatting issues
+- `pnpm --filter ./packages lint-staged` - Runs lint-staged for packages
+- `pnpm --filter ./starters lint` - Runs lint for starters
+- `pnpm prettier -r` - Runs prettier for each package and starter
+- `pnpm prettier:fix -r` - Attempts to fix any formatting issues
 
 ## Testing
 
@@ -65,11 +63,20 @@ testing and the files should be named `<fileName>.test.ts`.
 
 ## Documentation
 
-All new code should be documented. Documentation is provided by
-[TypeDoc](https://typedoc.org/).
+All new code written in packages should include [TypeDoc](https://typedoc.org/) style comments.
+These comments are used to generate the API reference in `web/docs`
 
-To generate documentation run `pnpm typedoc` The result will be in the `web/docs`
+Some docs in this folder are manually authored.
+If you believe a feature or change warrants documentation of this kind,
+for example a new feature in a starter please provide it
+in the appropriate place in `web/docs`
+
+To generate documentation run `pnpm generate-docs` The result will be in the `web/docs`
 folder.
+
+The docs site can be run locally with `pnpm --filter ./web start`.
+
+View the site at `http://localhost:3000`
 
 TODOS:
 

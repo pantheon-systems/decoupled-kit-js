@@ -1,5 +1,19 @@
 # Pantheon Decoupled Kit Next Drupal Starter
 
+There are two ways to get started with the Next Drupal Starter:
+
+__Option 1__: Use `create-next-app`
+
+1. In your terminal, run the following command:
+
+```bash
+npx create-next-app -e https://github.com/pantheon-systems/next-drupal-starter
+```
+
+2. Follow the prompts in your terminal to complete the setup.
+
+
+__Option 2__: Clone the repo
 1. Clone this repo:
 
 ```bash
@@ -12,12 +26,12 @@ git clone git@github.com:pantheon-systems/next-drupal-starter.git
 cd decoupled-drupal-frontend-demo && npm install
 ```
 
-3. Update following lines in `.env.local`
+For either option, update following lines in `.env.local`
 
 ```
 BACKEND_URL=
 FRONTEND_URL=
-IMG_DOMAIN=
+IMAGE_DOMAIN=
 PREVIEW_SECRET=
 CLIENT_ID=
 CLIENT_SECRET=

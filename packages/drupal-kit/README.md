@@ -1,9 +1,9 @@
 # Pantheon Systems Drupal Kit
 
-Decoupling Drupal is hard. The goal for this package is to provide
-helpers to make it easier for customers to integrate backends into their node.js
-frontends regardless of the frontend framework. If you use Next or Nuxt or the
-next big thing you can use this to make the hook up to your backend.
+Decoupling Drupal is hard. The goal for this package is to provide helpers to
+make it easier for customers to integrate backends into their node.js frontends
+regardless of the frontend framework. If you use Next or Nuxt or the next big
+thing you can use this to make the hook up to your backend.
 
 ## Installation
 
@@ -46,7 +46,7 @@ const recipeFromStore = await store.getObject({
 ```
 
 For more information, consult the full
-[Drupal State documentation](https://drupal-state.netlify.app/)
+[Drupal State documentation](https://project.pages.drupalcode.org/drupal_state)
 
 To use `addApiRouteHeader`, you would first import it like so:
 
@@ -56,27 +56,13 @@ Once the function is imported, you can use it as needed:
 
 `addApiRouteHeader(response.url, context.res);`
 
-## MVP Helpers
-
-- Api Calls
-- Caching (Cache Tag/Surrogate Key Bubbling)
-  - [addApiRouteHeader](modules/utils_addApiRouteHeader.html)
-- Routing
-- Redirects
-- Hello world
-
-## Aspirational Helpers
-
-- Forms
-- Webforms
-- Preview
-- Revisions
-- Taxonomy
-- Menu
-
 ## API Reference
 
-To see the API reference, [visit our monorepo](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Packages/drupal-kit/modules.md)
+To see the API reference,
+[visit our monorepo](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Packages/drupal-kit/modules.md)
+
 ## Contributing
 
-Please see the [Contributing guide in our monorepo](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/CONTRIBUTING.md) to contribute to the project.
+Please see the
+[Contributing guide in our monorepo](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/CONTRIBUTING.md)
+to contribute to the project.
