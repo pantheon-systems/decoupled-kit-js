@@ -1,5 +1,12 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 1.0.2
+
+### Patch Changes
+
+- 0b51630: Refined environment variable fallback
+- f9974ac: Update READMEs and package.json metadata
+
 ## 1.0.1
 
 ### Patch Changes
