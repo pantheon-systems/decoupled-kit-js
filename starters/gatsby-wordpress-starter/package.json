@@ -1,7 +1,7 @@
 {
   "name": "@pantheon-systems/gatsby-wordpress-starter",
-  "private": true,
   "version": "1.0.1",
+  "private": true,
   "description": "Pantheon Decoupled Kit's Gatsby WordPress Starter",
   "license": "GPL-3.0-or-later",
   "homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
