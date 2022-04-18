@@ -19,6 +19,15 @@ BACKEND_URL=https://my-drupal-site.pantheon.site/
 IMAGE_DOMAIN=my-drupal-site.pantheon.site
 ```
 
+If your site is translated and you would like the hreflang metadata set correctly, 
+you may set `FRONTEND_URL` to the URL of your frontend site:
+
+```
+FRONTEND_URL=https://my-frontend-site.pantheon.site
+```
+
+For development, this value can be set to any string, or `http://localhost:3000`
+
 ## Decoupled Preview
 
 To enable Decoupled Preview, the following environment variables must be set
@@ -40,6 +49,9 @@ CLIENT_SECRET
 In the Pantheon Dashboard, link your CMS site to your decoupled site. This will allow you
 to skip setting the `BACKEND_URL` and `IMAGE_DOMAIN` in the dashboard.
 You can override this behavior by setting the values as usual.
+
+The environment variables for Decoupled Preview and `FRONTEND_URL` must
+be set via the dashboard.
 
 If for some reason you are unable to link your CMS site through the dashboard,
 the `BACKEND_URL` and `IMAGE_DOMAIN` can be set manually in the **Build** section of the dashboard.
