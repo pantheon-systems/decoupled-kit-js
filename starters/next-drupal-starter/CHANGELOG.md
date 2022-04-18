@@ -1,5 +1,17 @@
 # @pantheon-systems/next-drupal-starter
 
+## 1.0.4
+
+### Patch Changes
+
+- 8a13bf2: [next-drupal] Remove postinstall script, refine readme for .env configuration
+
+## 1.0.3
+
+### Patch Changes
+
+- 9f7bc9a: [next-drupal] Change .env.local to .env.development.local so it does not load in production
+
 ## 1.0.2
 
 ### Patch Changes
