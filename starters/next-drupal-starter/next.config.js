@@ -3,7 +3,9 @@ const getLocales = require("./scripts/get-locales");
 
 // Load the .env file for local development
 // .env.development.local by default
-require("dotenv").config({ path: path.resolve(process.cwd(), ".env.development.local") });
+require("dotenv").config({
+  path: path.resolve(process.cwd(), ".env.development.local"),
+});
 
 let backendUrl, imageDomain;
 if (process.env.BACKEND_URL === undefined) {
