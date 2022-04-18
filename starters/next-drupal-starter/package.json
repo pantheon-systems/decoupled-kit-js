@@ -15,8 +15,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "cp -n .env.example .env.development.local || true"
+    "lint": "next lint"
   },
   "dependencies": {
     "@pantheon-systems/drupal-kit": "^1.0.2",

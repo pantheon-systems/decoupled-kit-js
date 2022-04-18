@@ -23,22 +23,25 @@ git clone git@github.com:pantheon-systems/next-drupal-starter.git
 2. Install node modules
 
 ```bash
-cd decoupled-drupal-frontend-demo && npm install
+cd next-drupal-starter && npm install
 ```
 
-For either option, update following lines in `.env.local`
+For either option, create a `.env.development.local` file and update it with the following:
+(See .env.example for an example)
 
 ```
 BACKEND_URL=
-FRONTEND_URL=
 IMAGE_DOMAIN=
-PREVIEW_SECRET=
-CLIENT_ID=
-CLIENT_SECRET=
+
 # this value can also bet set in the command line
 # before running commands for example
 # FRONTEND_URL=example.com npm run build
 FRONTEND_URL=
+
+# These variables are needed to enable Preview
+PREVIEW_SECRET=
+CLIENT_ID=
+CLIENT_SECRET=
 ```
 
 4. Run `lando start`
