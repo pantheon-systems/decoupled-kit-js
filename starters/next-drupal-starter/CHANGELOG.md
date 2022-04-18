@@ -1,5 +1,11 @@
 # @pantheon-systems/next-drupal-starter
 
+## 1.0.4
+
+### Patch Changes
+
+- 8a13bf2: [next-drupal] Remove postinstall script, refine readme for .env configuration
+
 ## 1.0.3
 
 ### Patch Changes
