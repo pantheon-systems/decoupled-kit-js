@@ -7,49 +7,71 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Pantheon Systems Decoupled Kits
+# Pantheon Systems Drupal Kit
 
-## Prerequisites
+Decoupling Drupal is hard. The goal for this package is to provide helpers to
+make it easier for customers to integrate backends into their node.js frontends
+regardless of the frontend framework. If you use Next or Nuxt or the next big
+thing you can use this to make the hook up to your backend.
 
-To setup the monorepo for development the following should be installed locally:
+## Installation
 
-1. Nodejs version 16 LTS. We reccomend using [nvm](https://github.com/nvm-sh/nvm)
-1. npm version 8.x.x
-1. The latest version of [pnpm](https://pnpm.io/installation) (6.32.3 at time of writing) - You can set pnpm as your package manager using corepack with the following command:
+To install this package to use in your application:
 
-```bash
-corepack prepare pnpm@6.32.3 --activate
+`npm install @pantheon-systems/drupal-kit`
+
+## Usage
+
+Modules can be imported from the ` @pantheon-systems/drupal-kit` package. For
+example, to use Drupal State to source data from your CMS backend:
+
+Import DrupalState in your JavaScript application:
+
+```
+import { DrupalState } from ' @pantheon-systems/drupal-kit';
 ```
 
-## Getting started
+Create an instance of the store and specify the root of your API:
 
-1. Fork this repo
-1. clone your fork to your local machine
-1. run `pnpm install` to install dependencies for all packages and starters
-
-From here the workflow depends on what you're doing.
-
-- to test all projects in the monorepo that have a test script, run `pnpm test`
-- to build all packages in the monorepo, run `pnpm build:pkgs`
-- to build all starters in the monorepo, run `pnpm build:starters`
-- to build all projects in the monorepo, run `pnpm build:all`
-
-To run commands in targeted projects, folders, or workspaces, pnpm offers [a filter flag](https://pnpm.io/filtering).
-
-For example, to start the Gatsby starter from the root of the monorepo (filter by namespace):
-
-```bash
-pnpm --filter '*/gatsby*' run develop
+```
+const store = new DrupalState({
+  apiBase: 'https://dev-ds-demo.pantheonsite.io',
+});
 ```
 
-To run lint in the starters (filter by directory):
+Get a collection of objects:
 
-```bash
-pnpm --filter ./starters lint
+```
+const recipesFromApi = await store.getObject({ objectName: 'node--recipe' });
 ```
 
-To run documentation:
+Get a single object:
 
-```bash
-pnpm --filter ./web start
 ```
+const recipeFromStore = await store.getObject({
+  objectName: 'node--recipe',
+  id: '33386d32-a87c-44b9-b66b-3dd0bfc38dca',
+});
+```
+
+For more information, consult the full
+[Drupal State documentation](https://project.pages.drupalcode.org/drupal_state)
+
+To use `addApiRouteHeader`, you would first import it like so:
+
+`import { addApiRouteHeader } from ' @pantheon-systems/drupal-kit';`
+
+Once the function is imported, you can use it as needed:
+
+`addApiRouteHeader(response.url, context.res);`
+
+## API Reference
+
+To see the API reference,
+[visit our monorepo](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Packages/drupal-kit/modules.md)
+
+## Contributing
+
+Please see the
+[Contributing guide in our monorepo](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/CONTRIBUTING.md)
+to contribute to the project.
