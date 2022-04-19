@@ -23,6 +23,9 @@ if (process.env.BACKEND_URL === undefined) {
 // remove trailing slash if it exists
 imageDomain = imageDomain.replace(/\/$/, "");
 
+// expose FRONTEND_URL to properly set hrefLang
+process.env.NEXT_PUBLIC_FRONTEND_URL = process.env.FRONTEND_URL;
+
 module.exports = async () => {
   const nextConfig = {
     env: {
