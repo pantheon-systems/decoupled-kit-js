@@ -92,7 +92,7 @@ export default function Home({ articles, hrefLang, multiLanguage }) {
 }
 
 export async function getStaticProps(context) {
-  const origin = process.env.FRONTEND_URL;
+  const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   const { locales } = context;
   // if there is more than one language in context.locales,
   // assume multilanguage is enabled.

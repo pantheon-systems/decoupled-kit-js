@@ -155,7 +155,7 @@ export async function getStaticProps(context) {
       `,
   });
 
-  const origin = process.env.FRONTEND_URL;
+  const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   const { locales } = context;
   // Load all the paths for the current article.
   const paths = locales.map(async (locale) => {
