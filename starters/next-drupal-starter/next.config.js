@@ -25,7 +25,9 @@ imageDomain = imageDomain.replace(/\/$/, "");
 
 // expose FRONTEND_URL to properly set hrefLang
 // and remove trailing slash
-process.env.NEXT_PUBLIC_FRONTEND_URL = process.env.FRONTEND_URL.replace(/\/$/, "");;
+process.env.NEXT_PUBLIC_FRONTEND_URL = process.env.FRONTEND_URL
+  ? process.env.FRONTEND_URL?.replace(/\/$/, "")
+  : "";
 
 module.exports = async () => {
   const nextConfig = {
