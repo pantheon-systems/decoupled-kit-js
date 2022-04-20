@@ -30,7 +30,7 @@ const BlogIndex = ({
       <div className="bg-black text-white rounded flex items-center justify-center p-4">
         Decoupled WordPress on{" "}
         <img
-          src="/pantheon.svg"
+          src="/pantheon.png"
           className="-top-28"
           alt="Vercel Logo"
           width="191px"
