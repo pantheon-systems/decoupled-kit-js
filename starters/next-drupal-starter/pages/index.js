@@ -28,7 +28,7 @@ export default function Home({ articles, hrefLang, multiLanguage }) {
 
           <div className="text-2xl">
             <div className="bg-black text-white rounded flex items-center justify-center p-4">
-              Decoupled hosting by{" "}
+              Decoupled Drupal on{" "}
               <Image
                 src="/pantheon.svg"
                 alt="Pantheon Logo"

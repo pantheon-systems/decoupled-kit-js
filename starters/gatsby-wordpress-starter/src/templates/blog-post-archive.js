@@ -28,7 +28,7 @@ const BlogIndex = ({
       <Seo title="All posts" />
 
       <div className="bg-black text-white rounded flex items-center justify-center p-4">
-        Decoupled hosting by{" "}
+        Decoupled WordPress on{" "}
         <img
           src="/pantheon.svg"
           className="-top-28"
