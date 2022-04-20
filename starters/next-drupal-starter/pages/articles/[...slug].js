@@ -32,6 +32,7 @@ export default function Home({ article, hrefLang }) {
               style={{ height: "50vh" }}
             >
               <Image
+                priority
                 src={IMAGE_URL + imgSrc}
                 layout="fill"
                 objectFit="cover"
