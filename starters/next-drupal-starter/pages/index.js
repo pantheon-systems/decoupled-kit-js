@@ -69,7 +69,7 @@ export default function Home({ articles, hrefLang, multiLanguage }) {
                       ) : (
                         <div className="bg-black">
                           <Image
-                            src="/pantheon.svg"
+                            src="/pantheon.png"
                             alt="Pantheon Logo"
                             width={324}
                             height={160}
