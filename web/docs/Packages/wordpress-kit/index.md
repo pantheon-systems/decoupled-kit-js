@@ -7,49 +7,43 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-# Pantheon Systems Decoupled Kits
+# WordPress Kit
 
-## Prerequisites
+Utilities to help simplify the process of sourcing data from a WordPress back
+end for a decoupled front end hosted on Pantheon.
 
-To setup the monorepo for development the following should be installed locally:
+## Installation
 
-1. Nodejs version 16 LTS. We reccomend using [nvm](https://github.com/nvm-sh/nvm)
-1. npm version 8.x.x
-1. The latest version of [pnpm](https://pnpm.io/installation) (6.32.3 at time of writing) - You can set pnpm as your package manager using corepack with the following command:
+To install this package to use in your application:
 
-```bash
-corepack prepare pnpm@6.32.3 --activate
+`npm install @pantheon-systems/wordpress-kit`
+
+## Usage
+
+Modules can be imported from the `@pantheon-systems/wordpress-kit` package. For
+example, to use the Apollo Client instance provided by this package
+
+Import the module in your JavaScript application:
+
+```
+import { ApolloClientFactory } from '@pantheon-systems/wordpress-kit';
 ```
 
-## Getting started
+Create an instance of the client and specify your API:
 
-1. Fork this repo
-1. clone your fork to your local machine
-1. run `pnpm install` to install dependencies for all packages and starters
-
-From here the workflow depends on what you're doing.
-
-- to test all projects in the monorepo that have a test script, run `pnpm test`
-- to build all packages in the monorepo, run `pnpm build:pkgs`
-- to build all starters in the monorepo, run `pnpm build:starters`
-- to build all projects in the monorepo, run `pnpm build:all`
-
-To run commands in targeted projects, folders, or workspaces, pnpm offers [a filter flag](https://pnpm.io/filtering).
-
-For example, to start the Gatsby starter from the root of the monorepo (filter by namespace):
-
-```bash
-pnpm --filter '*/gatsby*' run develop
+```
+const client = new ApolloClientFactory(
+  'http://localhost:4000/graphql'
+).create();
 ```
 
-To run lint in the starters (filter by directory):
+## API Reference
 
-```bash
-pnpm --filter ./starters lint
-```
+To see the API reference,
+[visit our monorepo](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Packages/drupal-kit/modules.md)
 
-To run documentation:
+## Contributing
 
-```bash
-pnpm --filter ./web start
-```
+Please see the
+[Contributing guide in our monorepo](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/CONTRIBUTING.md)
+for more information on contributing to the project.
