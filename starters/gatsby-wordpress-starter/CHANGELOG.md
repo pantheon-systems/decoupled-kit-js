@@ -1,5 +1,11 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 1.0.3
+
+### Patch Changes
+
+- 4b390e4: Update homepage callout text and logo.
+
 ## 1.0.2
 
 ### Patch Changes

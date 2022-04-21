@@ -1,5 +1,13 @@
 # @pantheon-systems/next-drupal-starter
 
+## 1.0.5
+
+### Patch Changes
+
+- f684b85: Expose FRONTEND_URL to properly set hrefLang
+- 4b390e4: Update homepage callout text and logo.
+- 86f5025: Adds `sharp` to next-drupal-starter for production image processing
+
 ## 1.0.4
 
 ### Patch Changes
