@@ -38,7 +38,7 @@ export default function PagesList({ hrefLang, pages }) {
 }
 
 export async function getStaticProps(context) {
-  const origin = process.env.FRONTEND_URL;
+  const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   const { locales, locale } = context;
   const multiLanguage = isMultiLanguage(locales);
 
