@@ -24,7 +24,7 @@ sidebar_position: 2
 - Run the `terminus build:project:create` as follows:
 
   ```
-  terminus build:project:create --team='{My Team Name}' --template-repository="git@github.com:pantheon-systems/decoupled-drupal.git" pantheon-systems/decoupled-drupal --ci-template='git@github.com:pantheon-systems/advanced-ci-templates' --visibility private {PROJECT_NAME} --stability=dev --profile="pantheon_decoupled_profile"
+  terminus build:project:create --team='{My Team Name}' --template-repository="git@github.com:pantheon-systems/decoupled-drupal-recommended.git" pantheon-systems/decoupled-drupal-recommended --ci-template='git@github.com:pantheon-systems/advanced-ci-templates' --visibility private {PROJECT_NAME} --stability=dev --profile="pantheon_decoupled_profile"
   ```
 
   Replace `{PROJECT_NAME}` with your project name - for example `decoupled-drupal`.
