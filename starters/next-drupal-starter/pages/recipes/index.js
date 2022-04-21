@@ -6,7 +6,6 @@ import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import Layout from "../../components/layout";
 import { DRUPAL_URL, IMAGE_URL } from "../../lib/constants.js";
 
-
 export default function Recipes({ recipes, hrefLang }) {
   function RecipesList() {
     return (
@@ -46,7 +45,7 @@ export default function Recipes({ recipes, hrefLang }) {
                           ) : (
                             <div className="bg-black">
                               <Image
-                                src="/pantheon.svg"
+                                src="/pantheon.png"
                                 alt="Pantheon Logo"
                                 width={324}
                                 height={160}
@@ -89,7 +88,7 @@ export default function Recipes({ recipes, hrefLang }) {
 }
 
 export async function getStaticProps(context) {
-  const origin = process.env.FRONTEND_URL;
+  const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   const { locales, locale } = context;
   const multiLanguage = isMultiLanguage(locales);
 

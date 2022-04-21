@@ -10,6 +10,7 @@ const generateTypedocOptions = (packageName, position) => {
   const options = {
     entryPoints: [`../packages/${packageName}`],
     tsconfig: `../packages/${packageName}/tsconfig.json`,
+    readme: `../packages/${packageName}/README.md`,
     out: `Packages/${packageName}`,
     entryPointStrategy: "expand",
     exclude: ["main.ts", "**/node_modules/**"],
