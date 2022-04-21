@@ -5,8 +5,7 @@ import absoluteUrl from "next-absolute-url";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import Layout from "../../components/layout";
-import { DRUPAL_URL, IMAGE_URL } from "../../lib/constants.js"
-
+import { DRUPAL_URL, IMAGE_URL } from "../../lib/constants.js";
 
 export default function SSRArticlesList({ articles, hrefLang }) {
   return (
@@ -46,7 +45,7 @@ export default function SSRArticlesList({ articles, hrefLang }) {
                     ) : (
                       <div className="bg-black">
                         <Image
-                          src="/pantheon.svg"
+                          src="/pantheon.png"
                           alt="Pantheon Logo"
                           width={324}
                           height={160}
