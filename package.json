@@ -72,7 +72,8 @@
       "minimist@<=1.2.5": ">=1.2.6",
       "@pantheon-systems/drupal-kit": "workspace:^1.0.0",
       "moment@<2.29.2": ">=2.29.2",
-      "async@<3.2.2": ">=3.2.2"
+      "async@<3.2.2": ">=3.2.2",
+      "cross-fetch@<3.1.5": ">=3.1.5"
     }
   }
 }
