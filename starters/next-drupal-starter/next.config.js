@@ -30,18 +30,21 @@ process.env.NEXT_PUBLIC_FRONTEND_URL = process.env.FRONTEND_URL
   : "";
 
 module.exports = async () => {
+  const locales = await getLocales()
   const nextConfig = {
     env: {
       backendUrl: backendUrl,
       // set imageUrl if IMAGE_DOMAIN is set in env vars to override default
       imageUrl: `https://${imageDomain}`,
+      // makes locales available to lib/dsContext.js
+      locales: locales,
     },
     reactStrictMode: true,
     images: {
       domains: [imageDomain],
     },
     i18n: {
-      locales: await getLocales(),
+      locales: locales,
       defaultLocale: "en",
     },
     async rewrites() {

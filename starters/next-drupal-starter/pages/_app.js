@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import { DrupalStateWrapper } from "../lib/dsContext";
 
 function MyApp({ Component, pageProps }) {
   // make sure we don't output invalid `hrefLang` values
@@ -6,7 +7,11 @@ function MyApp({ Component, pageProps }) {
     delete pageProps.hrefLang;
   }
 
-  return <Component {...pageProps} />;
+  return (
+    <DrupalStateWrapper>
+      <Component {...pageProps} />;
+    </DrupalStateWrapper>
+  );
 }
 
 export default MyApp;
