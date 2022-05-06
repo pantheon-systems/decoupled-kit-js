@@ -30,7 +30,7 @@ process.env.NEXT_PUBLIC_FRONTEND_URL = process.env.FRONTEND_URL
   : "";
 
 module.exports = async () => {
-  const locales = await getLocales()
+  const locales = await getLocales();
   const nextConfig = {
     env: {
       backendUrl: backendUrl,
@@ -56,15 +56,6 @@ module.exports = async () => {
         },
       ];
     },
-    // In order to have the same layout data on each page, we need to fetch the data at buildtime
-    // and save it to a local file.
-    // see https://maxkarlsson.dev/blog/layout-in-next-js-from-external-source for more info
-    // webpack: (config, { isServer }) => {
-    //   if (isServer) {
-    //     require("./scripts/generate-layout")();
-    //   }
-    //   return config;
-    // },
   };
 
   return nextConfig;
