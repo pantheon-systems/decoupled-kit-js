@@ -1,10 +1,14 @@
+import { NextSeo } from "next-seo";
+import { IMAGE_URL } from "../lib/constants.js";
+import { isMultiLanguage } from "../lib/isMultiLanguage";
+import {
+  getCurrentLocaleStore,
+  globalDrupalStateStores,
+} from "../lib/drupalStateContext";
+
 import Image from "next/image";
 import Link from "next/link";
-import { NextSeo } from "next-seo";
-import { DrupalState } from "@pantheon-systems/drupal-kit";
-import { isMultiLanguage } from "../lib/isMultiLanguage";
 import Layout from "../components/layout";
-import { DRUPAL_URL, IMAGE_URL } from "../lib/constants.js";
 
 export default function Home({ articles, hrefLang, multiLanguage }) {
   return (
@@ -53,7 +57,7 @@ export default function Home({ articles, hrefLang, multiLanguage }) {
                 key={article.id}
               >
                 <a>
-                  <div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 hover:border-indigo-500">
+                  <div className="flex flex-col h-full rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 hover:border-indigo-500">
                     <div className="flex-shrink-0 relative h-40">
                       {/* if thre's no imgSrc, default to Pantheon logo */}
                       {imgSrc !== "" ? (
@@ -105,13 +109,10 @@ export async function getStaticProps(context) {
   });
 
   try {
-    // TODO - determine apiRoot from environment variables
-    const store = new DrupalState({
-      apiBase: DRUPAL_URL,
-      // if multilanguage NOT enabled, passing in a locale here will
-      // break calls to Drupal, so pass an empty string.
-      defaultLocale: multiLanguage ? context.locale : "",
-    });
+    const store = getCurrentLocaleStore(
+      context.locale,
+      globalDrupalStateStores
+    );
 
     store.params.addInclude(["field_media_image.field_media_image"]);
     const articles = await store.getObject({

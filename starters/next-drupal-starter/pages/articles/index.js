@@ -1,11 +1,11 @@
+import absoluteUrl from "next-absolute-url";
+import { NextSeo } from "next-seo";
+import { IMAGE_URL } from "../../lib/constants.js";
+import { getCurrentLocaleStore, globalDrupalStateStores } from "../../lib/drupalStateContext";
+
 import Image from "next/image";
 import Link from "next/link";
-import { NextSeo } from "next-seo";
-import absoluteUrl from "next-absolute-url";
-import { DrupalState } from "@pantheon-systems/drupal-kit";
-import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import Layout from "../../components/layout";
-import { DRUPAL_URL, IMAGE_URL } from "../../lib/constants.js";
 
 export default function SSRArticlesList({ articles, hrefLang }) {
   return (
@@ -72,7 +72,6 @@ export async function getServerSideProps(context) {
   try {
     const { origin } = absoluteUrl(context.req);
     const { locales } = context;
-    const multiLanguage = isMultiLanguage(locales);
 
     const hrefLang = locales.map((locale) => {
       return {
@@ -81,11 +80,10 @@ export async function getServerSideProps(context) {
       };
     });
 
-    // TODO - determine apiRoot from environment variables
-    const store = new DrupalState({
-      apiBase: DRUPAL_URL,
-      defaultLocale: multiLanguage ? context.locale : "",
-    });
+    const store = getCurrentLocaleStore(
+      context.locale,
+      globalDrupalStateStores
+    );
 
     store.params.addInclude(["field_media_image.field_media_image"]);
     const articles = await store.getObject({

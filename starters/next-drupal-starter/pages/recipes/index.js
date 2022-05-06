@@ -1,10 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
 import { NextSeo } from "next-seo";
-import { DrupalState } from "@pantheon-systems/drupal-kit";
+import { IMAGE_URL } from "../../lib/constants.js";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
+import { getCurrentLocaleStore, globalDrupalStateStores } from "../../lib/drupalStateContext";
+
+import Link from "next/link";
+import Image from "next/image";
 import Layout from "../../components/layout";
-import { DRUPAL_URL, IMAGE_URL } from "../../lib/constants.js";
 
 export default function Recipes({ recipes, hrefLang }) {
   function RecipesList() {
@@ -99,10 +100,7 @@ export async function getStaticProps(context) {
     };
   });
 
-  const store = new DrupalState({
-    apiBase: DRUPAL_URL,
-    defaultLocale: multiLanguage ? locale : "",
-  });
+  const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 
   store.params.addInclude([
     "field_media_image.field_media_image",
