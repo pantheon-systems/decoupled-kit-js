@@ -1,6 +1,9 @@
 import { NextSeo } from "next-seo";
 import { IMAGE_URL } from "../../lib/constants.js";
-import { getCurrentLocaleStore, globalDrupalStateStores } from "../../lib/drupalStateContext.js";
+import {
+  getCurrentLocaleStore,
+  globalDrupalStateStores,
+} from "../../lib/drupalStateContext.js";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
 
 import Link from "next/link";
@@ -117,6 +120,8 @@ export async function getStaticProps(context) {
 
   const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 
+  // clear params to prevent duplicates
+  store.params.clear();
   store.params.addInclude([
     "field_media_image.field_media_image",
     "field_recipe_category",

@@ -51,7 +51,7 @@ export default function Home({ articles, hrefLang, multiLanguage }) {
             return (
               <Link
                 passHref
-                href={`/${multiLanguage ? article.path.langcode : ""}${
+                href={`${multiLanguage ? `/${article.path.langcode}` : ""}${
                   article.path.alias
                 }`}
                 key={article.id}
@@ -71,14 +71,12 @@ export default function Home({ articles, hrefLang, multiLanguage }) {
                           }
                         />
                       ) : (
-                        <div className="bg-black">
-                          <Image
-                            src="/pantheon.png"
-                            alt="Pantheon Logo"
-                            width={324}
-                            height={160}
-                          />
-                        </div>
+                        <Image
+                          src="/pantheon.png"
+                          alt="Pantheon Logo"
+                          layout="fill"
+                          className="bg-black"
+                        />
                       )}
                     </div>
                     <h2 className="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900">
@@ -114,7 +112,9 @@ export async function getStaticProps(context) {
       globalDrupalStateStores
     );
 
+    store.params.clear();
     store.params.addInclude(["field_media_image.field_media_image"]);
+
     const articles = await store.getObject({
       objectName: "node--article",
     });

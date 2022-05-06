@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <DrupalStateWrapper>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </DrupalStateWrapper>
   );
 }

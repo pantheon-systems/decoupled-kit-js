@@ -1,6 +1,5 @@
 import { NextSeo } from "next-seo";
 import { IMAGE_URL } from "../../lib/constants.js";
-import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import { getCurrentLocaleStore, globalDrupalStateStores } from "../../lib/drupalStateContext";
 
 import Link from "next/link";
@@ -91,7 +90,6 @@ export default function Recipes({ recipes, hrefLang }) {
 export async function getStaticProps(context) {
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   const { locales, locale } = context;
-  const multiLanguage = isMultiLanguage(locales);
 
   const hrefLang = locales.map((locale) => {
     return {
@@ -102,6 +100,7 @@ export async function getStaticProps(context) {
 
   const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 
+  store.params.clear();
   store.params.addInclude([
     "field_media_image.field_media_image",
     "field_recipe_category",

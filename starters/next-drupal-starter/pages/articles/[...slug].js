@@ -2,7 +2,10 @@ import { NextSeo } from "next-seo";
 import { IMAGE_URL } from "../../lib/constants.js";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import { fetchJsonapiEndpoint } from "@pantheon-systems/drupal-kit";
-import { getCurrentLocaleStore, globalDrupalStateAuthStores} from "../../lib/drupalStateContext";
+import {
+  getCurrentLocaleStore,
+  globalDrupalStateAuthStores,
+} from "../../lib/drupalStateContext";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -121,8 +124,9 @@ export async function getStaticProps(context) {
     });
   }
 
-  // If preview mode, get the preview data from the store, other wise fetch from the api.
+  store.params.clear();
   store.params.addInclude(["field_media_image.field_media_image"]);
+  // If preview mode, get the preview data from the store, other wise fetch from the api.
   const article = await store.getObjectByPath({
     objectName: "node--article",
     // Prefix the slug with the current locale

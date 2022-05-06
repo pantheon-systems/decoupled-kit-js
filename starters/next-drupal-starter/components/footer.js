@@ -6,9 +6,9 @@ import { useDSContext, getCurrentLocaleStore } from "../lib/drupalStateContext";
 export default function Footer() {
   const { locale } = useRouter();
   const [menuData, setMenuData] = useState();
-  const globalStores = useDSContext();
-
-  const store = getCurrentLocaleStore(locale, globalStores);
+  const { stores } = useDSContext();
+  const store = getCurrentLocaleStore(locale, stores);
+  store.params.clear();
 
   useEffect(() => {
     const fetchMenuData = async () => {
@@ -19,7 +19,7 @@ export default function Footer() {
         setMenuData(data);
       } catch (error) {
         // set error to global state for handling elsewhere
-        store.setState({ error: error });
+        store?.setState({ error: error });
       }
     };
     fetchMenuData();

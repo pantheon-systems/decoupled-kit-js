@@ -1,13 +1,17 @@
 import absoluteUrl from "next-absolute-url";
 import { NextSeo } from "next-seo";
 import { IMAGE_URL } from "../../lib/constants.js";
-import { getCurrentLocaleStore, globalDrupalStateStores } from "../../lib/drupalStateContext";
+import { isMultiLanguage } from "../../lib/isMultiLanguage.js";
+import {
+  getCurrentLocaleStore,
+  globalDrupalStateStores,
+} from "../../lib/drupalStateContext";
 
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/layout";
 
-export default function SSRArticlesList({ articles, hrefLang }) {
+export default function SSRArticlesList({ articles, hrefLang, multiLanguage }) {
   return (
     <Layout>
       <NextSeo
@@ -27,7 +31,9 @@ export default function SSRArticlesList({ articles, hrefLang }) {
             return (
               <Link
                 passHref
-                href={`/${article.path.langcode}${article.path.alias}`}
+                href={`${multiLanguage ? `/${article.path.langcode}` : ""}${
+                  article.path.alias
+                }`}
                 key={article.id}
               >
                 <div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 hover:border-indigo-500">
@@ -43,14 +49,12 @@ export default function SSRArticlesList({ articles, hrefLang }) {
                         }
                       />
                     ) : (
-                      <div className="bg-black">
-                        <Image
-                          src="/pantheon.png"
-                          alt="Pantheon Logo"
-                          width={324}
-                          height={160}
-                        />
-                      </div>
+                      <Image
+                        src="/pantheon.png"
+                        alt="Pantheon Logo"
+                        layout="fill"
+                        className="bg-black"
+                      />
                     )}
                   </div>
                   <h2 className="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900">
@@ -72,7 +76,9 @@ export async function getServerSideProps(context) {
   try {
     const { origin } = absoluteUrl(context.req);
     const { locales } = context;
-
+    // if there is more than one language in context.locales,
+    // assume multilanguage is enabled.
+    const multiLanguage = isMultiLanguage(locales);
     const hrefLang = locales.map((locale) => {
       return {
         hrefLang: locale,
@@ -85,7 +91,9 @@ export async function getServerSideProps(context) {
       globalDrupalStateStores
     );
 
+    store.params.clear();
     store.params.addInclude(["field_media_image.field_media_image"]);
+
     const articles = await store.getObject({
       objectName: "node--article",
       res: context.res,
@@ -127,6 +135,7 @@ export async function getServerSideProps(context) {
       props: {
         articles,
         hrefLang,
+        multiLanguage,
       },
     };
   } catch (error) {

@@ -7,8 +7,6 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../components/layout";
 
-const drupalUrl = process.env.backendUrl;
-
 export default function Home({ taxonomies }) {
   return (
     <Layout>
@@ -55,6 +53,7 @@ export default function Home({ taxonomies }) {
 export async function getStaticProps({ locales, locale }) {
   const authstore = getCurrentLocaleStore(locale, globalDrupalStateAuthStores);
 
+  authstore.params.clear();
   const taxonomies = await authstore.getObject({
     objectName: "taxonomy_vocabulary--taxonomy_vocabulary",
   });
