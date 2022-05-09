@@ -5,6 +5,12 @@
 This WordPress Project uses [composer](https://getcomposer.org) to manage dependencies. A new plugin/theme can be added using the following composer require command:
 
 ```
+composer require <namespace>/<packagename>
+```
+
+For example:
+
+```
 composer require wpackagist-plugin/akismet
 ```
 
@@ -16,6 +22,12 @@ For more info:
 
 The dependencies can be updated using the following composer update command:
 For updating any plugin/theme:
+
+```
+composer update <namespace>/<packagename>
+```
+
+For example:
 
 ```
 composer update wpackagist-plugin/akismet --with-dependencies
