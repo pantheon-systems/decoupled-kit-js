@@ -1,14 +1,17 @@
-import Image from "next/image";
-import Link from "next/link";
 import { NextSeo } from "next-seo";
+import { IMAGE_URL } from "../../lib/constants.js";
+import {
+  getCurrentLocaleStore,
+  globalDrupalStateStores,
+} from "../../lib/drupalStateContext.js";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
-import { DrupalState } from "@pantheon-systems/drupal-kit";
+
+import Link from "next/link";
+import Image from "next/image";
 import Layout from "../../components/layout";
 
-import { DRUPAL_URL, IMAGE_URL } from "../../lib/constants.js";
-
 export default function Recipe({ recipe, hrefLang }) {
-  const imgSrc = recipe.field_media_image?.field_media_image?.uri?.url || "";
+  const imgSrc = recipe?.field_media_image?.field_media_image?.uri?.url || "";
 
   return (
     <Layout>
@@ -73,15 +76,11 @@ export default function Recipe({ recipe, hrefLang }) {
 
 export async function getStaticPaths(context) {
   const { locales } = context;
-  const multiLanguage = isMultiLanguage(context.locales);
   // TODO - locale increases the complexity enough here that creating a usePaths
   // hook would be a good idea.
   // Get paths for each locale.
   const pathsByLocale = locales.map(async (locale) => {
-    const store = new DrupalState({
-      apiBase: DRUPAL_URL,
-      defaultLocale: multiLanguage ? locale : "",
-    });
+    const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 
     const recipes = await store.getObject({
       objectName: "node--recipe",
@@ -119,10 +118,10 @@ export async function getStaticProps(context) {
   const { locales, locale } = context;
   const multiLanguage = isMultiLanguage(locales);
 
-  const store = new DrupalState({
-    apiBase: DRUPAL_URL,
-    defaultLocale: multiLanguage ? locale : "",
-  });
+  const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
+
+  // clear params to prevent duplicates
+  store.params.clear();
   store.params.addInclude([
     "field_media_image.field_media_image",
     "field_recipe_category",
@@ -144,6 +143,7 @@ export async function getStaticProps(context) {
         }
         path {
           alias
+          langcode
         }
       }`,
     });
@@ -158,10 +158,10 @@ export async function getStaticProps(context) {
     const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
     // Load all the paths for the current recipe.
     const paths = locales.map(async (locale) => {
-      const storeByLocales = new DrupalState({
-        apiBase: DRUPAL_URL,
-        defaultLocale: multiLanguage ? locale : "",
-      });
+      const storeByLocales = getCurrentLocaleStore(
+        locale,
+        globalDrupalStateStores
+      );
       const { path } = await storeByLocales.getObject({
         objectName: "node--recipe",
         id: recipe.id,

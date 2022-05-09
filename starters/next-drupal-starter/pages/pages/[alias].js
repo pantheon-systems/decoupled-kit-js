@@ -1,9 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
-import Layout from "../../components/layout";
-import { DrupalState } from "@pantheon-systems/drupal-kit";
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
+import { getCurrentLocaleStore, globalDrupalStateAuthStores } from "../../lib/drupalStateContext";
+
+import Link from "next/link";
+import Layout from "../../components/layout";
 
 const drupalUrl = process.env.backendUrl;
 
@@ -37,12 +37,7 @@ export async function getStaticPaths(context) {
   // hook would be a good idea.
   // Get paths for each locale.
   const pathsByLocale = context.locales.map(async (locale) => {
-    const store = new DrupalState({
-      apiBase: drupalUrl,
-      defaultLocale: multiLanguage ? locale : "",
-      clientId: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-    });
+    const store = getCurrentLocaleStore(locale, globalDrupalStateAuthStores);
 
     const pages = await store.getObject({
       objectName: "node--page",
@@ -75,12 +70,10 @@ export async function getStaticPaths(context) {
 
 export async function getStaticProps(context) {
   const multiLanguage = isMultiLanguage(context.locales);
-  const store = new DrupalState({
-    apiBase: drupalUrl,
-    defaultLocale: multiLanguage ? context.locale : "",
-    clientId: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
-  });
+  const store = getCurrentLocaleStore(
+    context.locale,
+    globalDrupalStateAuthStores
+  );
 
   const page = await store.getObjectByPath({
     objectName: "node--page",
@@ -92,6 +85,7 @@ export async function getStaticProps(context) {
           body
           path {
             alias
+            langcode
           }
         }
       `,
@@ -101,12 +95,10 @@ export async function getStaticProps(context) {
   const { locales } = context;
   // Load all the paths for the current page content type.
   const paths = locales.map(async (locale) => {
-    const storeByLocales = new DrupalState({
-      apiBase: drupalUrl,
-      defaultLocale: multiLanguage ? locale : "",
-      clientId: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-    });
+    const storeByLocales = getCurrentLocaleStore(
+      locale,
+      globalDrupalStateAuthStores
+    );
     const { path } = await storeByLocales.getObject({
       objectName: "node--page",
       id: page.id,

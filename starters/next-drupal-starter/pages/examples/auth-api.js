@@ -1,11 +1,11 @@
+import {
+  getCurrentLocaleStore,
+  globalDrupalStateAuthStores,
+} from "../../lib/drupalStateContext";
+
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/layout";
-import { DrupalState } from "@pantheon-systems/drupal-kit";
-import { isMultiLanguage } from "../../lib/isMultiLanguage";
-
-const drupalUrl = process.env.backendUrl;
 
 export default function Home({ taxonomies }) {
   return (
@@ -51,15 +51,9 @@ export default function Home({ taxonomies }) {
 }
 
 export async function getStaticProps({ locales, locale }) {
-  const multiLanguage = isMultiLanguage(locales);
-  const authstore = new DrupalState({
-    apiBase: drupalUrl,
-    defaultLocale: multiLanguage ? locale : "",
-    clientId: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
-    debug: true,
-  });
+  const authstore = getCurrentLocaleStore(locale, globalDrupalStateAuthStores);
 
+  authstore.params.clear();
   const taxonomies = await authstore.getObject({
     objectName: "taxonomy_vocabulary--taxonomy_vocabulary",
   });

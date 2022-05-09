@@ -1,3 +1,4 @@
+import { DrupalStateWrapper } from "../lib/drupalStateContext";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
@@ -6,7 +7,11 @@ function MyApp({ Component, pageProps }) {
     delete pageProps.hrefLang;
   }
 
-  return <Component {...pageProps} />;
+  return (
+    <DrupalStateWrapper>
+      <Component {...pageProps} />
+    </DrupalStateWrapper>
+  );
 }
 
 export default MyApp;
