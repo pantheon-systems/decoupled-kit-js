@@ -1,8 +1,10 @@
 # Managing WordPress Dependencies
 
+This WordPress Project uses [composer](https://getcomposer.org) to manage dependencies.
+
 ## 1. Adding a new plugin/theme:
 
-This WordPress Project uses [composer](https://getcomposer.org) to manage dependencies. A new plugin/theme can be added using the following composer require command:
+A new plugin/theme can be added using the following composer require command:
 
 ```
 composer require <namespace>/<packagename>
@@ -24,7 +26,7 @@ The dependencies can be updated using the following composer update command:
 For updating any plugin/theme:
 
 ```
-composer update <namespace>/<packagename>
+composer update <namespace>/<packagename> --with-dependencies
 ```
 
 For example:
