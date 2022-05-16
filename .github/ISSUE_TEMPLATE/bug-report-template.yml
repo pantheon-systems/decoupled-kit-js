@@ -1,7 +1,7 @@
 name: "Bug report"
 description: Report a bug
 title: "[bug]: "
-label: bug
+labels: bug
 body:
   - type: markdown
     attributes:
@@ -28,6 +28,18 @@ body:
       label: Logs
       description: "Please include browser console and server logs around the time this bug occurred. Please try not to insert an image but copy paste the log text."
       render: shell
+  - type: checkboxes
+    id: where-is-the-bug
+    attributes:
+      label: Which packages/starters are effected?
+      description: Check all that apply
+      options:
+        - label: next-drupal
+        - label: gatsby-wordpress
+        - label: drupal-kit
+        - label: wordpress-kit
+        - label: documentation
+        - label: monorepo
   - type: dropdown
     id: severity
     attributes:
