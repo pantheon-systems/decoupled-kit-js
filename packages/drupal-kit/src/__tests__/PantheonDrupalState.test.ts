@@ -16,6 +16,11 @@ import recipesResourceQueryData1 from './data/recipesResourceQueryData1.json';
 import recipesResourceQueryObject1 from './data/recipesResourceQueryObject1.json';
 import tokenResponse from './data/token.json';
 
+const mockCustomOnError = jest.fn((err: Error) => {
+  console.log('There was an error!');
+  console.error(err.message);
+});
+
 describe('drupalState', () => {
   beforeEach(() => {
     fetchMock.mockClear();
@@ -205,5 +210,32 @@ describe('drupalState', () => {
       })
     ).toEqual(recipesResourceQueryObject1);
     expect(fetchMock).toBeCalledTimes(2);
+  });
+
+  test('Custom onError handler should be called if an error is thrown', async () => {
+    const store: DrupalState = new DrupalState({
+      apiBase: 'https://dev-ds-demo.pantheonsite.io',
+      apiPrefix: 'jsonapi',
+      debug: true,
+      onError: mockCustomOnError,
+    });
+    store.setState({ dsApiIndex: indexResponse.links });
+    fetchMock.mock(
+      'https://dev-ds-demo.pantheonsite.io/jsonapi/node/recpe',
+      {
+        status: 404,
+        body: {},
+      },
+      { overwriteRoutes: true }
+    );
+    const result = await store.getObject({
+      objectName: 'node--recie',
+    });
+    try {
+      expect(result).toThrowError();
+      expect(result).toEqual(undefined);
+    } catch (error) {
+      expect(mockCustomOnError).toBeCalledTimes(1);
+    }
   });
 });
