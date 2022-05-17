@@ -1,5 +1,11 @@
 # @pantheon-systems/drupal-kit
 
+## 1.1.1
+
+### Patch Changes
+
+- Re-publishing after a CI error
+
 ## 1.1.0
 
 ### Minor Changes
