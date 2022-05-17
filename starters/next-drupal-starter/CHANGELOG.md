@@ -1,5 +1,13 @@
 # @pantheon-systems/next-drupal-starter
 
+## 1.1.0
+
+### Patch Changes
+
+- 64b63dc: [drupal-kit][next-drupal-starter] Update DrupalState version
+- Updated dependencies [64b63dc]
+  - @pantheon-systems/drupal-kit@1.1.0
+
 ## 1.0.5
 
 ### Patch Changes
