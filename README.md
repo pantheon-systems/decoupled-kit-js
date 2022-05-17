@@ -7,13 +7,13 @@
 To setup the monorepo for development the following should be installed locally:
 
 1. Nodejs version 16 LTS. We reccomend using [nvm](https://github.com/nvm-sh/nvm)
-1. npm version 8.x.x
-1. The latest version of [pnpm](https://pnpm.io/installation)
+1. [npm](https://docs.npmjs.com/cli/v8/commands/npm) version 8.x.x
+1. [pnpm](https://pnpm.io/installation) version 7.1.0
 
-We recommend using npm
+We recommend using npm to install pnpm
 
 ```bash
-npm install -g pnpm@6.32.6
+npm install -g pnpm@7.1.0
 ```
 
 ## Getting started
@@ -35,19 +35,19 @@ To run commands in targeted projects, folders, or workspaces, pnpm offers [a fil
 For example, to start the Gatsby starter from the root of the monorepo (filter by namespace):
 
 ```bash
-pnpm --filter ./starters/gatsby-wordpress-starter' develop
+pnpm --filter './starters/gatsby-wordpress-starter' develop
 ```
 
 To run lint in the starters (filter by directory):
 
 ```bash
-pnpm --filter ./starters lint
+pnpm --filter './starters/**' lint
 ```
 
 To run documentation:
 
 ```bash
-pnpm --filter ./web start
+pnpm --filter './web' start
 ```
 
 ## Bug Reports and Feature Requests
