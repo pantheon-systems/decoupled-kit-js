@@ -1,6 +1,9 @@
 import { NextSeo } from "next-seo";
 import { IMAGE_URL } from "../../lib/constants.js";
-import { getCurrentLocaleStore, globalDrupalStateStores } from "../../lib/drupalStateContext";
+import {
+  getCurrentLocaleStore,
+  globalDrupalStateStores,
+} from "../../lib/drupalStateContext";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -118,12 +121,6 @@ export async function getStaticProps(context) {
       }`,
     });
 
-    if (!recipes) {
-      throw new Error(
-        "No recipes returned. Make sure the objectName and store.params are valid!: ",
-        error
-      );
-    }
 
     return {
       props: {

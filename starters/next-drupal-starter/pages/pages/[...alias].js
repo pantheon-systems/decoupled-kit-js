@@ -1,6 +1,9 @@
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
-import { getCurrentLocaleStore, globalDrupalStateAuthStores } from "../../lib/drupalStateContext";
+import {
+  getCurrentLocaleStore,
+  globalDrupalStateAuthStores,
+} from "../../lib/drupalStateContext";
 
 import Link from "next/link";
 import Layout from "../../components/layout";
@@ -51,8 +54,10 @@ export async function getStaticPaths(context) {
       `,
     });
     return pages.map((page) => {
-      const path = page.path.alias.substring(1);
-      return { params: { alias: path }, locale: locale };
+      const match = page.path.alias.match(/^\/pages\/(.*)$/);
+      const alias = match[1];
+
+      return { params: { alias: [alias] }, locale: locale };
     });
   });
 
@@ -69,15 +74,19 @@ export async function getStaticPaths(context) {
 }
 
 export async function getStaticProps(context) {
+  const { locales, locale } = context;
   const multiLanguage = isMultiLanguage(context.locales);
   const store = getCurrentLocaleStore(
     context.locale,
     globalDrupalStateAuthStores
   );
+  store.params.clear();
 
+  const alias = `/pages/${context.params.alias[0]}`;
+  
   const page = await store.getObjectByPath({
     objectName: "node--page",
-    path: `${multiLanguage ? context.locale : ""}/${context.params.alias}`,
+    path: `${multiLanguage ? locale : ""}${alias}`,
     query: `
         {
           id
@@ -92,7 +101,6 @@ export async function getStaticProps(context) {
   });
 
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
-  const { locales } = context;
   // Load all the paths for the current page content type.
   const paths = locales.map(async (locale) => {
     const storeByLocales = getCurrentLocaleStore(
@@ -119,7 +127,7 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      page: page,
+      page,
       hrefLang,
       revalidate: 60,
     },

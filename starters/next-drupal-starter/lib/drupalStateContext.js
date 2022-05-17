@@ -5,14 +5,14 @@ import { DrupalState } from "@pantheon-systems/drupal-kit";
 const DrupalStateContext = createContext();
 
 // For each locale, make an instance of DrupalState (LocaleStore)
-const makeLocaleStores = (locales, auth = false) =>
+const makeLocaleStores = ({ locales, auth = false, debug = false }) =>
   locales.length > 1
     ? locales.map(
         (locale) =>
           new DrupalState({
             apiBase: DRUPAL_URL,
             defaultLocale: locale,
-            debug: true,
+            debug: debug,
             ...(auth && {
               clientId: process.env.CLIENT_ID,
               clientSecret: process.env.CLIENT_SECRET,
@@ -22,7 +22,7 @@ const makeLocaleStores = (locales, auth = false) =>
     : [
         new DrupalState({
           apiBase: DRUPAL_URL,
-          debug: true,
+          debug: debug,
           ...(auth && {
             clientId: process.env.CLIENT_ID,
             clientSecret: process.env.CLIENT_SECRET,
@@ -32,11 +32,16 @@ const makeLocaleStores = (locales, auth = false) =>
 
 // exporting so we can reuse in
 // getStaticProps and getServerSideProps
-export const globalDrupalStateStores = makeLocaleStores(process.env.locales);
-export const globalDrupalStateAuthStores = makeLocaleStores(
-  process.env.locales,
-  true
-);
+export const globalDrupalStateStores = makeLocaleStores({
+  locales: process.env.locales,
+  debug: process.env.DEBUG_MODE || false,
+});
+
+export const globalDrupalStateAuthStores = makeLocaleStores({
+  locales: process.env.locales,
+  auth: true,
+  debug: process.env.DEBUG_MODE || false,
+});
 
 export function DrupalStateWrapper({ children }) {
   return (
