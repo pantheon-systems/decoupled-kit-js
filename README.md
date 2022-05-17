@@ -1,25 +1,22 @@
-Pantheon Decoupled 
-
-[Example](#example)
-[Example2](#example2)
-[Third Example](#third-example)
-[Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
-
-
-
 # Pantheon Systems Decoupled Kits
 
 [![CircleCI](https://circleci.com/gh/pantheon-systems/decoupled-kit-js/tree/canary.svg?style=svg)](https://circleci.com/gh/pantheon-systems/decoupled-kit-js/tree/canary)
 
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Versions and Releases](#versions-and-releases)
+- [Reporting](#bug-reports-and-feature-requests)
+- [Further Reading](#further-reading)
+
 ## Prerequisites
 
-To configure the monorepo for development the following should be installed locally:
+To configure the monorepo for development, the following should be installed locally:
 
-1. Nodejs version 16 LTS. We recomemnd using [nvm](https://github.com/nvm-sh/nvm)
-1. npm version 8.x.x
-1. The latest version of [pnpm](https://pnpm.io/installation)
+- Nodejs version 16 LTS. We recomemnd using [nvm](https://github.com/nvm-sh/nvm)
+- npm version 8.x.x
+- The latest version of [pnpm](https://pnpm.io/installation)
 
-    We recommend using npm. Use the following command to install:
+    We recommend using npm. Run the following command to install:
 
     ```bash
     npm install -g pnpm@6.32.6
@@ -78,22 +75,21 @@ There are several scripts you can use on your monorepo.
     ```bash
     pnpm --filter ./web start
     ```
-
-## Bug Reports and Feature Requests
-
-[Open a bug report here](https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml)
-
-[Open a feature request here](https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=feature-request-template.yml)
+------------------
 
 ## Versions and Releases
 
 ### Generating a Changeset
 
-Generate a new changeset, run `pnpm changeset` in the root of the repository. The generated markdown files in the `.changeset` directory should be committed to the repository.
+To generate a new changeset, run `pnpm changeset` in the root of the repository. The generated Markdown files in the `.changeset` directory should be committed to the repository.
 
 ### Creating a New Version
 
-- Run `pnpm changeset version`. This will bump the versions of the packages previously specified with pnpm changeset (and any dependents of those) and update the changelog files.
+- To increase the versions of the packages and dependencies previously specified with `pnpm changeset` and update the changelog files, run the following command:
+  ```
+  pnpm changeset version
+  ```
+  
 - Run `pnpm install`. This will update the lockfile and rebuild packages.
 - Commit the changes.
 
@@ -105,11 +101,17 @@ Generate a new changeset, run `pnpm changeset` in the root of the repository. Th
   ``` 
   Alternatively, you can use the command `pnpm config set scope @pantheon-systems`.
   
-- To publish all public packages that have bumped versions not yet present in the registry, use the following command:
+- To publish all public packages that have versions that are not currently in the registry, use the following command:
   ```
   pnpm publish -r --access public
   ```
+---------------------------
+## Bug Reports and Feature Requests
 
-### Further Reading
+ - Is the code in this repository not working as expected? Open a bug report [here](https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml)
+
+ - Is there something you would like to see added to this project? Open a feature request [here](https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=feature-request-template.yml)
+
+## Further Reading
 
 For more information on contributing to this project, see [CONTRIBUTING.md](./CONTRIBUTING.md)
