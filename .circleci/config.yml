@@ -22,9 +22,9 @@ jobs:
       - run:
           name: install pnpm
           command: |
-            corepack enable
-            corepack prepare pnpm@7.1.0 --activate
-            sudo pnpm config set store-dir ~/.pnpm-store
+            sudo corepack enable
+            sudo corepack prepare pnpm@7.1.0 --activate
+            pnpm config set store-dir ~/.pnpm-store
       - run:
           name: install packages
           command: pnpm install --ignore-scripts
@@ -57,9 +57,9 @@ jobs:
       - run:
           name: install pnpm
           command: |
-            corepack enable
-            corepack prepare pnpm@7.1.0 --activate
-            sudo pnpm config set store-dir ~/.pnpm-store
+            sudo corepack enable
+            sudo corepack prepare pnpm@7.1.0 --activate
+            pnpm config set store-dir ~/.pnpm-store
       - run:
           name: install packages
           command: pnpm install --ignore-scripts
