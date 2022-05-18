@@ -8,6 +8,7 @@
 - [Reporting](#bug-reports-and-feature-requests)
 - [Further Reading](#further-reading)
 
+
 ## Prerequisites
 
 To configure the monorepo for development, the following should be installed locally:
@@ -39,6 +40,7 @@ To configure the monorepo for development, the following should be installed loc
 
 There are several scripts you can use on your monorepo.
 
+
 - Test all projects in the monorepo that have a test script:
   ```bash
   pnpm test
@@ -56,16 +58,17 @@ There are several scripts you can use on your monorepo.
   pnpm build:all
   ```
 
- - Run commands in a targeted project, folder, or workspace, using the `pnpm` [filter flag](https://pnpm.io/filtering).
+- Run commands in a targeted project, folder, or workspace, using the `pnpm` [filter flag](https://pnpm.io/filtering).
 
-   For example, to start the Gatsby starter from the root of the monorepo (filter by namespace):
+  For example, to start the Gatsby starter from the root of the monorepo (filter by namespace):
+   
+   ```bash
+   pnpm --filter ./starters/gatsby-wordpress-starter' develop
+   ```
 
-    ```bash
-    pnpm --filter ./starters/gatsby-wordpress-starter' develop
-    ```
 
  - Lint in the starters and filter by directory:
-
+ 
     ```bash
     pnpm --filter ./starters lint
     ```
