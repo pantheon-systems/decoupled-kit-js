@@ -63,7 +63,7 @@ There are several scripts you can use on your monorepo.
   For example, to start the Gatsby starter from the root of the monorepo (filter by namespace):
    
    ```bash
-   pnpm --filter ./starters/gatsby-wordpress-starter' develop
+   pnpm --filter './starters/gatsby-wordpress-starter' develop
    ```
 
 
@@ -76,7 +76,7 @@ There are several scripts you can use on your monorepo.
 -  Run documentation:
 
     ```bash
-    pnpm --filter ./web start
+    pnpm --filter './web start'
     ```
 ------------------
 
