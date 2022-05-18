@@ -70,7 +70,7 @@ There are several scripts you can use on your monorepo.
  - Lint in the starters and filter by directory:
  
     ```bash
-    pnpm --filter ./starters lint
+    pnpm --filter './starters/**' lint
     ```
 
 -  Run documentation:
