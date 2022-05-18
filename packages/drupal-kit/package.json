@@ -51,6 +51,8 @@
   },
   "devDependencies": {
     "@apollo/client": "^3.5.10",
+    "@types/humps": "^2.0.1",
+    "@types/isomorphic-fetch": "^0.0.35",
     "humps": "^2.0.1",
     "isomorphic-fetch": "^3.0.0",
     "jsona": "^1.9.7"
