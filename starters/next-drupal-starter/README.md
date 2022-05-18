@@ -33,6 +33,10 @@ For either option, create a `.env.development.local` file and update it with the
 BACKEND_URL=
 IMAGE_DOMAIN=
 
+# Used to set the debug mode for the DrupalState store(s)
+# If not set, debug mode for the store(s) defaults to false
+DEBUG_MODE=
+
 # this value can also bet set in the command line
 # before running commands for example
 # FRONTEND_URL=example.com npm run build
