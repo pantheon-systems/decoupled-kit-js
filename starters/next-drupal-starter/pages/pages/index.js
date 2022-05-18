@@ -70,6 +70,7 @@ export async function getStaticProps(context) {
         body
         path {
           alias
+          langcode
         }
       }
     `,
