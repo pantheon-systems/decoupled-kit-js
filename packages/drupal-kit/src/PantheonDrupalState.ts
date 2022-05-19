@@ -21,6 +21,7 @@ class PantheonDrupalState extends DrupalState {
     clientSecret,
     fetchAdapter = defaultFetch,
     debug = false,
+    onError,
   }: DrupalStateConfig) {
     super({
       apiBase,
@@ -30,6 +31,7 @@ class PantheonDrupalState extends DrupalState {
       clientSecret,
       fetchAdapter,
       debug,
+      onError,
     });
   }
 
@@ -85,6 +87,7 @@ class PantheonDrupalState extends DrupalState {
         await this.fetchJsonapiEndpoint(
           `${this.apiRoot}${endpoint}`,
           requestInit,
+          this.onError,
           res
         );
       }
@@ -102,6 +105,7 @@ class PantheonDrupalState extends DrupalState {
       return (await this.fetchJsonapiEndpoint(
         endpoint,
         requestInit,
+        this.onError,
         res
       )) as TJsonApiBody;
     }

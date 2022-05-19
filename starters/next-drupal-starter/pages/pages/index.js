@@ -1,10 +1,14 @@
 import { NextSeo } from "next-seo";
-import { getCurrentLocaleStore, globalDrupalStateStores} from "../../lib/drupalStateContext";
+import { isMultiLanguage } from "../../lib/isMultiLanguage.js";
+import {
+  getCurrentLocaleStore,
+  globalDrupalStateStores,
+} from "../../lib/drupalStateContext";
 
 import Link from "next/link";
 import Layout from "../../components/layout";
 
-export default function PagesList({ hrefLang, pages }) {
+export default function PagesList({ hrefLang, pages, multiLanguage }) {
   return (
     <Layout>
       <NextSeo
@@ -22,7 +26,12 @@ export default function PagesList({ hrefLang, pages }) {
               <li className="prose justify-items-start" key={id}>
                 <h2>{title}</h2>
                 <div dangerouslySetInnerHTML={{ __html: body.summary }} />
-                <Link passHref href={`/pages${path.alias}`}>
+                <Link
+                  passHref
+                  href={`${multiLanguage ? `/${path.langcode}` : ""}${
+                    path.alias
+                  }`}
+                >
                   <a className="font-normal underline">Read more →</a>
                 </Link>
               </li>
@@ -39,7 +48,9 @@ export default function PagesList({ hrefLang, pages }) {
 export async function getStaticProps(context) {
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   const { locales, locale } = context;
-
+  // if there is more than one language in context.locales,
+  // assume multilanguage is enabled.
+  const multiLanguage = isMultiLanguage(locales);
   const hrefLang = locales.map((locale) => {
     return {
       hrefLang: locale,
@@ -59,22 +70,21 @@ export async function getStaticProps(context) {
         body
         path {
           alias
+          langcode
         }
       }
     `,
     });
 
     if (!pages) {
-      throw new Error(
-        "No pages returned. Make sure the objectName and store.params are valid!: ",
-        error
-      );
+      return { props: {} };
     }
 
     return {
       props: {
         pages,
         hrefLang,
+        multiLanguage,
       },
       revalidate: 60,
     };

@@ -82,31 +82,43 @@ export async function getStaticPaths(context) {
   const pathsByLocale = locales.map(async (locale) => {
     const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 
-    const recipes = await store.getObject({
-      objectName: "node--recipe",
-      query: `
-        {
-          id
-          path {
-            alias
+    try {
+      const recipes = await store.getObject({
+        objectName: "node--recipe",
+        query: `
+          {
+            id
+            path {
+              alias
+            }
           }
-        }
-      `,
-    });
+        `,
+      });
 
-    return recipes.map((recipe) => {
-      const match = recipe.path.alias.match(/^\/recipes\/(.*)$/);
-      const slug = match[1];
+      return recipes.map((recipe) => {
+        const match = recipe.path.alias.match(/^\/recipes\/(.*)$/);
+        const slug = match[1];
 
-      return { params: { slug: [slug] }, locale: locale };
-    });
+        return { params: { slug: [slug] }, locale: locale };
+      });
+    } catch (error) {
+      console.error("No recipes found: ", error);
+      return null;
+    }
   });
 
   // Resolve all promises returned as part of pathsByLocale.
-  const paths = await Promise.all(pathsByLocale).then((values) => {
+  let paths = await Promise.all(pathsByLocale).then((values) => {
     // Flatten the array of arrays into a single array.
     return [].concat(...values);
   });
+
+  if (paths[0] === null) {
+    // clear paths so if there are no
+    // recipes, no pages will attempt
+    // to render at build time.
+    paths = [];
+  }
 
   return {
     paths,
@@ -149,10 +161,7 @@ export async function getStaticProps(context) {
     });
 
     if (!recipe) {
-      throw new Error(
-        "No recipe returned. Make sure the objectName and store.params are valid!: ",
-        error
-      );
+      return { props: {} };
     }
 
     const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;

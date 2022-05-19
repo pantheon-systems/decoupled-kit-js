@@ -1,6 +1,6 @@
 {
   "name": "@pantheon-systems/drupal-kit",
-  "version": "1.0.2",
+  "version": "1.1.1",
   "description": "Pantheon Decoupled Kit's Drupal Kit",
   "license": "GPL-3.0-or-later",
   "homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -51,12 +51,14 @@
   },
   "devDependencies": {
     "@apollo/client": "^3.5.10",
+    "@types/humps": "^2.0.1",
+    "@types/isomorphic-fetch": "^0.0.35",
     "humps": "^2.0.1",
     "isomorphic-fetch": "^3.0.0",
     "jsona": "^1.9.7"
   },
   "dependencies": {
-    "@gdwc/drupal-state": "^2.5.2"
+    "@gdwc/drupal-state": "^2.6.0"
   },
   "peerDependencies": {
     "graphql": ">=14.0.0 <15.0.0 || >=15.0.0 <16.0.0 || >=16.0.0 <17.0.0",

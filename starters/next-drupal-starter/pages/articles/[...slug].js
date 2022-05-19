@@ -89,11 +89,13 @@ export async function getStaticPaths(context) {
 }
 
 export async function getStaticProps(context) {
-  const multiLanguage = isMultiLanguage(context.locales);
+  const { locales, locale } = context;
+  const multiLanguage = isMultiLanguage(locales);
   const store = getCurrentLocaleStore(
     context.locale,
     globalDrupalStateAuthStores
   );
+  store.params.clear();
 
   const slug = `/articles/${context.params.slug[0]}`;
 
@@ -126,13 +128,12 @@ export async function getStaticProps(context) {
     });
   }
 
-  store.params.clear();
   store.params.addInclude(["field_media_image.field_media_image"]);
   // If preview mode, get the preview data from the store, other wise fetch from the api.
   const article = await store.getObjectByPath({
     objectName: "node--article",
     // Prefix the slug with the current locale
-    path: `${multiLanguage ? context.locale : ""}${slug}`,
+    path: `${multiLanguage ? locale : ""}${slug}`,
     query: `
         {
           id
@@ -154,7 +155,6 @@ export async function getStaticProps(context) {
   });
 
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
-  const { locales } = context;
   // Load all the paths for the current article.
   const paths = locales.map(async (locale) => {
     const localeStore = getCurrentLocaleStore(

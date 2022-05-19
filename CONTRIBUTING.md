@@ -24,7 +24,7 @@ All module code should be written in TypeScript.
 
 ### Running A Local Development Server
 
-The `pnpm --filter ./packages/{package name} dev` can be run for local development.
+The `pnpm --filter './packages/{package name}' dev` can be run for local development.
 It will watch for changes and launch `index.html` at http://localhost:3000. `index.html` loads
 `src/main.ts` which can be used for demonstration purposes and local
 development.
@@ -46,15 +46,15 @@ issues before the pre-commit hook runs.
 
 Formatting and linting can also be run manually using the following commands:
 
-- `pnpm --filter ./packages lint-staged` - Runs lint-staged for packages
-- `pnpm --filter ./starters lint` - Runs lint for starters
+- `pnpm --filter './packages/**' lint-staged` - Runs lint-staged for packages
+- `pnpm --filter './starters/**' lint` - Runs lint for starters
 - `pnpm prettier -r` - Runs prettier for each package and starter
 - `pnpm prettier:fix -r` - Attempts to fix any formatting issues
 
 ## Testing
 
 This project is configured to run [Jest](https://facebook.github.io/jest/) tests
-via `pnpm --filter ./packages test`. All new code is expected to be covered by tests and these
+via `pnpm --filter './packages/**' test`. All new code is expected to be covered by tests and these
 tests will run as part of our CI process and will also be run locally as a
 pre-commit hook.
 
@@ -74,7 +74,7 @@ in the appropriate place in `web/docs`
 To generate documentation run `pnpm generate-docs` The result will be in the `web/docs`
 folder.
 
-The docs site can be run locally with `pnpm --filter ./web start`.
+The docs site can be run locally with `pnpm --filter './web' start`.
 
 View the site at `http://localhost:3000`
 
