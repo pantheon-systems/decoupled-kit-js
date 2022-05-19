@@ -17,7 +17,7 @@ __Option 2__: Clone the repo
 1. Clone this repo:
 
 ```bash
-git clone git@github.com:pantheon-systems/next-drupal-starter.git
+git clone git@github.com:pantheon-systems/decoupled-kit-js.git
 ```
 
 2. Install node modules
