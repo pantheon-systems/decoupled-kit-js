@@ -1,8 +1,4 @@
----
-name: Pull Request
-about: Open a Pull Request
----
-<!--- ** Partial or incorrectly filled out PRs may be asked for more info.--->
+ <!--- ** Partial or incorrectly filled out PRs may be asked for more info.--->
 
 ## What changes were made?
 

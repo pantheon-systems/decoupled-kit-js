@@ -1,10 +1,13 @@
-import Image from "next/image";
-import Link from "next/link";
 import { NextSeo } from "next-seo";
-import { DrupalState } from "@pantheon-systems/drupal-kit";
-import { isMultiLanguage } from "../../lib/isMultiLanguage";
+import { IMAGE_URL } from "../../lib/constants.js";
+import {
+  getCurrentLocaleStore,
+  globalDrupalStateStores,
+} from "../../lib/drupalStateContext";
+
+import Link from "next/link";
+import Image from "next/image";
 import Layout from "../../components/layout";
-import { DRUPAL_URL, IMAGE_URL } from "../../lib/constants.js";
 
 export default function Recipes({ recipes, hrefLang }) {
   function RecipesList() {
@@ -90,7 +93,6 @@ export default function Recipes({ recipes, hrefLang }) {
 export async function getStaticProps(context) {
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   const { locales, locale } = context;
-  const multiLanguage = isMultiLanguage(locales);
 
   const hrefLang = locales.map((locale) => {
     return {
@@ -99,11 +101,9 @@ export async function getStaticProps(context) {
     };
   });
 
-  const store = new DrupalState({
-    apiBase: DRUPAL_URL,
-    defaultLocale: multiLanguage ? locale : "",
-  });
+  const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 
+  store.params.clear();
   store.params.addInclude([
     "field_media_image.field_media_image",
     "field_recipe_category",
@@ -121,12 +121,6 @@ export async function getStaticProps(context) {
       }`,
     });
 
-    if (!recipes) {
-      throw new Error(
-        "No recipes returned. Make sure the objectName and store.params are valid!: ",
-        error
-      );
-    }
 
     return {
       props: {
