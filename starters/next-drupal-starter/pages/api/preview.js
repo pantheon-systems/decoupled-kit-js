@@ -4,7 +4,7 @@ const preview = async (req, res) => {
   // Check the secret and next parameters
   // This secret should only be known to this API route and the CMS
   if (req.query.secret !== process.env.PREVIEW_SECRET || !req.query.slug) {
-    return res.status(401).json({ message: "Invalid token" });
+    return res.redirect("/500", 401);
   }
 
   // returns the store that matches the locale found in the requested url
@@ -30,12 +30,12 @@ const preview = async (req, res) => {
       path: req.query.slug,
     });
   } catch (error) {
-    return res.status(401).json({ message: error.message });
+    return res.redirect("/500", 400);
   }
 
   // If the content doesn't exist prevent preview mode from being enabled
   if (!content) {
-    return res.status(401).json({ message: "Invalid slug" });
+    return res.redirect("/500", 404);
   }
 
   // Enable Preview Mode by setting a cookie
