@@ -30,18 +30,21 @@ process.env.NEXT_PUBLIC_FRONTEND_URL = process.env.FRONTEND_URL
   : "";
 
 module.exports = async () => {
+  const locales = await getLocales();
   const nextConfig = {
     env: {
       backendUrl: backendUrl,
       // set imageUrl if IMAGE_DOMAIN is set in env vars to override default
       imageUrl: `https://${imageDomain}`,
+      // makes locales available to lib/drupalStateContext.js
+      locales: locales,
     },
     reactStrictMode: true,
     images: {
       domains: [imageDomain],
     },
     i18n: {
-      locales: await getLocales(),
+      locales: locales,
       defaultLocale: "en",
     },
     async rewrites() {
@@ -52,15 +55,6 @@ module.exports = async () => {
           destination: `${backendUrl}/sites/default/:path*`,
         },
       ];
-    },
-    // In order to have the same layout data on each page, we need to fetch the data at buildtime
-    // and save it to a local file.
-    // see https://maxkarlsson.dev/blog/layout-in-next-js-from-external-source for more info
-    webpack: (config, { isServer }) => {
-      if (isServer) {
-        require("./scripts/generate-layout")();
-      }
-      return config;
     },
   };
 

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
-import Head from "next/head";
 import { useRouter } from "next/router";
+
+import Head from "next/head";
 import Layout from "../../../components/layout";
 
 // To use your configured backend, use:
