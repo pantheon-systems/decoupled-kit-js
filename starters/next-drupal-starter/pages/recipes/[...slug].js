@@ -10,6 +10,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/layout";
 
+// This file can safely be removed if the Drupal
+// instance is not sourcing Umami data
 export default function Recipe({ recipe, hrefLang }) {
   const imgSrc = recipe?.field_media_image?.field_media_image?.uri?.url || "";
 

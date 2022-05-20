@@ -9,6 +9,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/layout";
 
+// This file can safely be removed if the Drupal
+// instance is not sourcing Umami data
 export default function Recipes({ recipes, hrefLang }) {
   function RecipesList() {
     return (
