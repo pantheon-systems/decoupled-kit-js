@@ -61,7 +61,6 @@ export default function GridList({ contentArr, contentType, multiLanguage }) {
       ) : (
         <h2 className="text-xl text-center mt-14">No {contentType} found 🏜</h2>
       )}
-      )
     </>
   );
 }

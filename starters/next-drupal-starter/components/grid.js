@@ -1,7 +1,7 @@
-export default function Grid({ gap = "5", cols = "3", children }) {
+export default function Grid({ cols = "3", children }) {
   return (
     <div
-      className={`mt-12 grid gap-${gap.toString()} max-w-content mx-auto lg:grid-cols-${cols.toString()} lg:max-w-screen-lg`}
+      className={`mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-${String(cols)} lg:max-w-screen-lg`}
     >
       {children}
     </div>
