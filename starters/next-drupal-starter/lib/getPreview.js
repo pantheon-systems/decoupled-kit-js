@@ -8,7 +8,6 @@ import { fetchJsonapiEndpoint } from "@pantheon-systems/drupal-kit";
  * @param {import('next').GetServerSidePropsContext |
  * import('next').GetStaticPropsContext} previewData Nextjs context
  * @param {string} node The node to be previewed example 'node--article'
- * @param {array} includes an array of store.params
  */
 export async function getPreview(context, node) {
   const store = getCurrentLocaleStore(
