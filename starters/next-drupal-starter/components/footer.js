@@ -8,19 +8,16 @@ export default function Footer() {
   const [menuData, setMenuData] = useState();
   const { stores } = useDSContext();
   const store = getCurrentLocaleStore(locale, stores);
-  store.params.clear();
 
   useEffect(() => {
     const fetchMenuData = async () => {
       try {
+        store.params.clear();
         const data = await store.getObject({
           objectName: "menu_items--main",
         });
         setMenuData(data);
-      } catch (error) {
-        // set error to global state for handling elsewhere
-        store?.setState({ error: error });
-      }
+      } catch (error) {}
     };
     fetchMenuData();
   }, [store]);

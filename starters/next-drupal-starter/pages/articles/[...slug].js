@@ -109,11 +109,13 @@ export async function getStaticProps(context) {
         },
       };
     }
-
     const previewData = await fetchJsonapiEndpoint(
       `${store.apiRoot}decoupled-preview/${context.previewData.key}?include=field_media_image.field_media_image`,
       requestInit
     );
+    if (previewData.errors) {
+      throw previewData.errors[0].detail;
+    }
     const uuid = previewData.data.id;
 
     store.setState({ "node--articleResources": { [uuid]: previewData } });
