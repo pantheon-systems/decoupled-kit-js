@@ -4,6 +4,7 @@ import {
   getCurrentLocaleStore,
   globalDrupalStateAuthStores,
 } from "../../lib/drupalStateContext";
+import { getPreview } from "../../lib/getPreview";
 
 import Link from "next/link";
 import Layout from "../../components/layout";
@@ -86,6 +87,8 @@ export async function getStaticProps(context) {
   store.params.clear();
 
   const alias = `/pages/${context.params.alias[0]}`;
+
+  context.preview && (await getPreview(context, "node--page"));
 
   const page = await store.getObjectByPath({
     objectName: "node--page",

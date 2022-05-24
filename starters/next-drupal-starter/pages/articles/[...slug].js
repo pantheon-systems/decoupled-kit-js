@@ -1,6 +1,6 @@
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
-import { fetchJsonapiEndpoint } from "@pantheon-systems/drupal-kit";
+import { getPreview } from "../../lib/getPreview";
 import {
   getCurrentLocaleStore,
   globalDrupalStateAuthStores,
@@ -68,40 +68,13 @@ export async function getStaticProps(context) {
     context.locale,
     globalDrupalStateAuthStores
   );
-  store.params.clear();
-
-  const slug = `/articles/${context.params.slug[0]}`;
-
-  // if preview, use preview endpoint and add to store.
-  if (context?.previewData?.key) {
-    let requestInit = {};
-    if (process.env.CLIENT_ID && process.env.CLIENT_SECRET) {
-      requestInit = {
-        headers: {
-          Authorization: await store.getAuthHeader(),
-        },
-      };
-    }
-    const previewData = await fetchJsonapiEndpoint(
-      `${store.apiRoot}decoupled-preview/${context.previewData.key}?include=field_media_image.field_media_image`,
-      requestInit
-    );
-    if (previewData.errors) {
-      throw previewData.errors[0].detail;
-    }
-    const uuid = previewData.data.id;
-
-    store.setState({ "node--articleResources": { [uuid]: previewData } });
-  }
-
-  // if a revision, pass resourceVersion parameter.
-  if (context?.previewData?.resourceVersionId) {
-    store.params.addCustomParam({
-      resourceVersion: `id:${context.previewData.resourceVersionId}`,
-    });
-  }
-
+  store.params.clear();  
   store.params.addInclude(["field_media_image.field_media_image"]);
+  
+  const slug = `/articles/${context.params.slug[0]}`;
+  // if preview, use preview endpoint and add to store.
+  context.preview && await getPreview(context, "node--article");
+
   // If preview mode, get the preview data from the store, other wise fetch from the api.
   const article = await store.getObjectByPath({
     objectName: "node--article",

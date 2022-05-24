@@ -2,10 +2,10 @@ import { NextSeo } from "next-seo";
 import { IMAGE_URL } from "../../lib/constants.js";
 import {
   getCurrentLocaleStore,
-  globalDrupalStateStores,
+  globalDrupalStateAuthStores,
 } from "../../lib/drupalStateContext.js";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
-
+import { getPreview } from "../../lib/getPreview";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/layout";
@@ -82,7 +82,7 @@ export async function getStaticPaths(context) {
   // hook would be a good idea.
   // Get paths for each locale.
   const pathsByLocale = locales.map(async (locale) => {
-    const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
+    const store = getCurrentLocaleStore(locale, globalDrupalStateAuthStores);
 
     try {
       const recipes = await store.getObject({
@@ -132,7 +132,7 @@ export async function getStaticProps(context) {
   const { locales, locale } = context;
   const multiLanguage = isMultiLanguage(locales);
 
-  const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
+  const store = getCurrentLocaleStore(locale, globalDrupalStateAuthStores);
 
   // clear params to prevent duplicates
   store.params.clear();
@@ -141,6 +141,9 @@ export async function getStaticProps(context) {
     "field_recipe_category",
   ]);
   const slug = `/recipes/${context.params.slug[0]}`;
+
+  context.preview && (await getPreview(context, "node--recipe"));
+
   try {
     const recipe = await store.getObjectByPath({
       objectName: "node--recipe",
@@ -171,7 +174,7 @@ export async function getStaticProps(context) {
     const paths = locales.map(async (locale) => {
       const storeByLocales = getCurrentLocaleStore(
         locale,
-        globalDrupalStateStores
+        globalDrupalStateAuthStores
       );
       const { path } = await storeByLocales.getObject({
         objectName: "node--recipe",
