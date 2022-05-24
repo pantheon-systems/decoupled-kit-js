@@ -19,7 +19,7 @@ export default function Paginator({
   const router = useRouter();
   // get current path from router.pathname
   // and trim off catchalls
-  const currentRoute = routing && router.pathname.replace(/\/\[\[.*\]\]$/, "");
+  const currentRoute = routing && router.pathname.replace(/\/{1}\[{1,2}.*\]{1,2}$/, "");
 
   const [currentPageQuery, setCurrentPageQuery] = useState(
     Number(router.query.page) || 1
