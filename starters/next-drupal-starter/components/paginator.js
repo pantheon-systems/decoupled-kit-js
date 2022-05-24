@@ -3,23 +3,23 @@ import { useRouter } from "next/router";
 
 export default function Paginator({
   data,
-  totalPages,
-  totalItems,
   itemsPerPage,
+  breakpoints,
   routing,
 }) {
   // configurable breakpoints
   // This value will be the start of the seperator.
-  const [breakStart, setBreakStart] = useState(6);
+  const [breakStart, setBreakStart] = useState(breakpoints?.start || null);
   // This value will be the button to start with after seperator
-  const breakEnd = 12;
+  const breakEnd = breakpoints?.end || null;
   // how many buttons to add when the seperator is clicked
-  const breakAdd = 6;
+  const breakAdd = breakpoints?.add || null;
 
   const router = useRouter();
   // get current path from router.pathname
   // and trim off catchalls
-  const currentRoute = routing && router.pathname.replace(/\/{1}\[{1,2}.*\]{1,2}$/, "");
+  const currentRoute =
+    routing && router.pathname.replace(/\/{1}\[{1,2}.*\]{1,2}$/, "");
 
   const [currentPageQuery, setCurrentPageQuery] = useState(
     Number(router.query.page) || 1
@@ -27,6 +27,11 @@ export default function Paginator({
 
   const [offset, setOffset] = useState((currentPageQuery - 1) * itemsPerPage);
   const [currentItems, setCurrentItems] = useState([]);
+  const [totalItems, setTotalItems] = useState(data.length);
+
+  const [totalPages, setTotalPages] = useState(
+    Math.ceil(data.length / itemsPerPage)
+  );
 
   // since we fetch ALL items, filtering the current items client side
   // further reduces API calls to the server
@@ -167,7 +172,7 @@ export default function Paginator({
     }
     // returns the row of buttons
     return (
-      <div className="flex flex-row justify-center mx-auto mt-auto mb-4 grow">
+      <div className="flex flex-row justify-center mx-auto mt-auto mb-4">
         {/* back button */}
         <button
           className="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white"

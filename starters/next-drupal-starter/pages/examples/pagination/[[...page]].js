@@ -12,12 +12,10 @@ import Layout from "../../../components/layout";
 // Example paginated data set
 const drupalUrl = "https://dev-ds-demo.pantheonsite.io";
 
-export default function Pagination({
-  data,
-  totalPages,
-  totalItems,
-  itemsPerPage,
-}) {
+export default function Pagination({ data }) {
+  // configurable itemsPerPage
+  const itemsPerPage = 10;
+
   return (
     <Layout>
       <Head>
@@ -31,9 +29,8 @@ export default function Pagination({
             <h1 className="my-10">Pagination example</h1>
             <Paginator
               data={data}
-              totalPages={totalPages}
-              totalItems={totalItems}
               itemsPerPage={itemsPerPage}
+              breakpoints={{ start: 6, end: 12, add: 6}}
               routing
             />
           </section>
@@ -99,18 +96,9 @@ export async function getStaticProps() {
     all: true,
   });
 
-  // configurable itemsPerPage
-  const itemsPerPage = 10;
-
-  const totalPages = Math.ceil(data.length / itemsPerPage);
-  const totalItems = data.length;
-
   return {
     props: {
       data,
-      totalItems,
-      itemsPerPage,
-      totalPages,
       revalidate: 60,
     },
   };
