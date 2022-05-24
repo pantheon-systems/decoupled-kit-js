@@ -42,6 +42,9 @@ export async function getStaticPaths(context) {
   const pathsByLocale = context.locales.map(async (locale) => {
     const store = getCurrentLocaleStore(locale, globalDrupalStateAuthStores);
 
+    // clear params in case they pollute call to get node--page
+    store.params.clear();
+
     const pages = await store.getObject({
       objectName: "node--page",
       query: `
@@ -83,7 +86,7 @@ export async function getStaticProps(context) {
   store.params.clear();
 
   const alias = `/pages/${context.params.alias[0]}`;
-  
+
   const page = await store.getObjectByPath({
     objectName: "node--page",
     path: `${multiLanguage ? locale : ""}${alias}`,

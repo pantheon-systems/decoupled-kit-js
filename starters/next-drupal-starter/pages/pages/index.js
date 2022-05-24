@@ -60,6 +60,9 @@ export async function getStaticProps(context) {
 
   const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 
+  // clear params in case they pollute call to get node--page
+  store.params.clear();
+
   try {
     const pages = await store.getObject({
       objectName: "node--page",
