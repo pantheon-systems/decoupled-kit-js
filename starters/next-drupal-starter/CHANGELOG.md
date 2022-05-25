@@ -1,5 +1,12 @@
 # @pantheon-systems/next-drupal-starter
 
+## 1.1.2
+
+### Patch Changes
+
+- fdae978: [next-drupal-starter] Extract DrupalState stores into React Context
+- ce38441: [next-drupal-starter] Preview redirects based on data and better error handling for preview
+
 ## 1.1.0
 
 ### Patch Changes
