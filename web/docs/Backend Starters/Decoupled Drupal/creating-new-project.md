@@ -32,3 +32,23 @@ sidebar_position: 2
   Replace {My Team Name} with your team name - for example `My Agency`. This can also be omitted.
 
 **Note:** This will result in a Github repository being created for this new codebase, a site being created on Pantheon and a CircleCI project being created for automated deployments.
+
+### Additional Options
+
+_Installing with Umami demo data_
+
+The installation command above will create a backend with limited example content. To instead create a site with Drupal's Umami demo data set, change the profile flag to:
+
+`--profile="pantheon_decoupled_umami_demo"`
+
+In your `terminus build:project:create` command.
+
+_Using other git hosts or CI services_
+
+Terminus build tools supports a number of other combinations of git hosts and CI services.
+
+For example, to use GitHub actions as your CI service, you could add the following additional flag to your `terminus build:project:create` command:
+
+`--ci=githubactions`
+
+For more information, consult the [available services section of the build tools documentation](https://github.com/pantheon-systems/terminus-build-tools-plugin#available-services)
