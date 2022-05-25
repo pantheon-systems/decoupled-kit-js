@@ -1,31 +1,69 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
+import { useDSContext, getCurrentLocaleStore } from "../lib/drupalStateContext";
 
 export default function Footer() {
   const { locale } = useRouter();
+  const [menuData, setMenuData] = useState();
+  const { stores } = useDSContext();
+  const store = getCurrentLocaleStore(locale, stores);
 
-  const menuData = useMemo(
-    () => require(`../public/${locale}-menuData.json`),
-    [locale]
-  );
+  useEffect(() => {
+    const fetchMenuData = async () => {
+      try {
+        store.params.clear();
+        const data = await store.getObject({
+          objectName: "menu_items--main",
+        });
+        setMenuData(data);
+      } catch (error) {}
+    };
+    fetchMenuData();
+  }, [store]);
 
   const ExampleMenu = () => {
-    return (
-      <nav className="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg">
-        <ul>
-          {menuData.map(({ title, id, url }) => {
-            return (
-              <li key={id} className="list-disc text-blue-300 ml-3">
-                <Link href={url}>
+    const menuArr = [];
+    if (menuData) {
+      // some not so great code to account for nested menu elements
+      for (let i = 0; i < menuData.length; i++) {
+        if (menuData[i + 1] && menuData[i + 1].parent) {
+          menuArr.push(
+            <ul key={menuData[i].id}>
+              <li className="list-disc text-blue-300 ml-3">
+                <Link href={menuData[i].url}>
                   <a className="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300">
-                    {title}
+                    {menuData[i].title}
                   </a>
                 </Link>
               </li>
-            );
-          })}
-        </ul>
+              <li className="list-disc text-blue-300 ml-8">
+                <Link href={menuData[i + 1].url}>
+                  <a className="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300">
+                    {menuData[i + 1].title}
+                  </a>
+                </Link>
+              </li>
+            </ul>
+          );
+          // increment iterator to skip the next render
+          i++;
+        } else {
+          menuArr.push(
+            <li key={menuData[i].id} className="list-disc text-blue-300 ml-3">
+              <Link href={menuData[i].url}>
+                <a className="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300">
+                  {menuData[i].title}
+                </a>
+              </Link>
+            </li>
+          );
+        }
+      }
+    }
+    return (
+      <nav className="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg">
+        <ul>{menuArr?.map((menu) => menu)}</ul>
       </nav>
     );
   };

@@ -1,14 +1,19 @@
-import Image from "next/image";
-import Link from "next/link";
 import { NextSeo } from "next-seo";
+import { IMAGE_URL } from "../../lib/constants.js";
+import {
+  getCurrentLocaleStore,
+  globalDrupalStateStores,
+} from "../../lib/drupalStateContext.js";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
-import { DrupalState } from "@pantheon-systems/drupal-kit";
+
+import Link from "next/link";
+import Image from "next/image";
 import Layout from "../../components/layout";
 
-import { DRUPAL_URL, IMAGE_URL } from "../../lib/constants.js";
-
+// This file can safely be removed if the Drupal
+// instance is not sourcing Umami data
 export default function Recipe({ recipe, hrefLang }) {
-  const imgSrc = recipe.field_media_image?.field_media_image?.uri?.url || "";
+  const imgSrc = recipe?.field_media_image?.field_media_image?.uri?.url || "";
 
   return (
     <Layout>
@@ -73,41 +78,49 @@ export default function Recipe({ recipe, hrefLang }) {
 
 export async function getStaticPaths(context) {
   const { locales } = context;
-  const multiLanguage = isMultiLanguage(context.locales);
   // TODO - locale increases the complexity enough here that creating a usePaths
   // hook would be a good idea.
   // Get paths for each locale.
   const pathsByLocale = locales.map(async (locale) => {
-    const store = new DrupalState({
-      apiBase: DRUPAL_URL,
-      defaultLocale: multiLanguage ? locale : "",
-    });
+    const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 
-    const recipes = await store.getObject({
-      objectName: "node--recipe",
-      query: `
-        {
-          id
-          path {
-            alias
+    try {
+      const recipes = await store.getObject({
+        objectName: "node--recipe",
+        query: `
+          {
+            id
+            path {
+              alias
+            }
           }
-        }
-      `,
-    });
+        `,
+      });
 
-    return recipes.map((recipe) => {
-      const match = recipe.path.alias.match(/^\/recipes\/(.*)$/);
-      const slug = match[1];
+      return recipes.map((recipe) => {
+        const match = recipe.path.alias.match(/^\/recipes\/(.*)$/);
+        const slug = match[1];
 
-      return { params: { slug: [slug] }, locale: locale };
-    });
+        return { params: { slug: [slug] }, locale: locale };
+      });
+    } catch (error) {
+      console.error("No recipes found: ", error);
+      return null;
+    }
   });
 
   // Resolve all promises returned as part of pathsByLocale.
-  const paths = await Promise.all(pathsByLocale).then((values) => {
+  let paths = await Promise.all(pathsByLocale).then((values) => {
     // Flatten the array of arrays into a single array.
     return [].concat(...values);
   });
+
+  if (paths[0] === null) {
+    // clear paths so if there are no
+    // recipes, no pages will attempt
+    // to render at build time.
+    paths = [];
+  }
 
   return {
     paths,
@@ -119,10 +132,10 @@ export async function getStaticProps(context) {
   const { locales, locale } = context;
   const multiLanguage = isMultiLanguage(locales);
 
-  const store = new DrupalState({
-    apiBase: DRUPAL_URL,
-    defaultLocale: multiLanguage ? locale : "",
-  });
+  const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
+
+  // clear params to prevent duplicates
+  store.params.clear();
   store.params.addInclude([
     "field_media_image.field_media_image",
     "field_recipe_category",
@@ -144,24 +157,22 @@ export async function getStaticProps(context) {
         }
         path {
           alias
+          langcode
         }
       }`,
     });
 
     if (!recipe) {
-      throw new Error(
-        "No recipe returned. Make sure the objectName and store.params are valid!: ",
-        error
-      );
+      return { props: {} };
     }
 
     const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
     // Load all the paths for the current recipe.
     const paths = locales.map(async (locale) => {
-      const storeByLocales = new DrupalState({
-        apiBase: DRUPAL_URL,
-        defaultLocale: multiLanguage ? locale : "",
-      });
+      const storeByLocales = getCurrentLocaleStore(
+        locale,
+        globalDrupalStateStores
+      );
       const { path } = await storeByLocales.getObject({
         objectName: "node--recipe",
         id: recipe.id,

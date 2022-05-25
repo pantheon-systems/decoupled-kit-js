@@ -1,9 +1,12 @@
-import Image from "next/image";
-import Link from "next/link";
-import Layout from "../../components/layout";
-import { DrupalState } from "@pantheon-systems/drupal-kit";
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
+import {
+  getCurrentLocaleStore,
+  globalDrupalStateAuthStores,
+} from "../../lib/drupalStateContext";
+
+import Link from "next/link";
+import Layout from "../../components/layout";
 
 const drupalUrl = process.env.backendUrl;
 
@@ -37,12 +40,10 @@ export async function getStaticPaths(context) {
   // hook would be a good idea.
   // Get paths for each locale.
   const pathsByLocale = context.locales.map(async (locale) => {
-    const store = new DrupalState({
-      apiBase: drupalUrl,
-      defaultLocale: multiLanguage ? locale : "",
-      clientId: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-    });
+    const store = getCurrentLocaleStore(locale, globalDrupalStateAuthStores);
+
+    // clear params in case they pollute call to get node--page
+    store.params.clear();
 
     const pages = await store.getObject({
       objectName: "node--page",
@@ -56,8 +57,10 @@ export async function getStaticPaths(context) {
       `,
     });
     return pages.map((page) => {
-      const path = page.path.alias.substring(1);
-      return { params: { alias: path }, locale: locale };
+      const match = page.path.alias.match(/^\/pages\/(.*)$/);
+      const alias = match[1];
+
+      return { params: { alias: [alias] }, locale: locale };
     });
   });
 
@@ -74,17 +77,19 @@ export async function getStaticPaths(context) {
 }
 
 export async function getStaticProps(context) {
+  const { locales, locale } = context;
   const multiLanguage = isMultiLanguage(context.locales);
-  const store = new DrupalState({
-    apiBase: drupalUrl,
-    defaultLocale: multiLanguage ? context.locale : "",
-    clientId: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
-  });
+  const store = getCurrentLocaleStore(
+    context.locale,
+    globalDrupalStateAuthStores
+  );
+  store.params.clear();
+
+  const alias = `/pages/${context.params.alias[0]}`;
 
   const page = await store.getObjectByPath({
     objectName: "node--page",
-    path: `${multiLanguage ? context.locale : ""}/${context.params.alias}`,
+    path: `${multiLanguage ? locale : ""}${alias}`,
     query: `
         {
           id
@@ -92,21 +97,19 @@ export async function getStaticProps(context) {
           body
           path {
             alias
+            langcode
           }
         }
       `,
   });
 
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
-  const { locales } = context;
   // Load all the paths for the current page content type.
   const paths = locales.map(async (locale) => {
-    const storeByLocales = new DrupalState({
-      apiBase: drupalUrl,
-      defaultLocale: multiLanguage ? locale : "",
-      clientId: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-    });
+    const storeByLocales = getCurrentLocaleStore(
+      locale,
+      globalDrupalStateAuthStores
+    );
     const { path } = await storeByLocales.getObject({
       objectName: "node--page",
       id: page.id,
@@ -127,7 +130,7 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      page: page,
+      page,
       hrefLang,
       revalidate: 60,
     },

@@ -1,16 +1,18 @@
+import { NextSeo } from "next-seo";
+import { IMAGE_URL } from "../../lib/constants.js";
+import { isMultiLanguage } from "../../lib/isMultiLanguage";
+import { fetchJsonapiEndpoint } from "@pantheon-systems/drupal-kit";
+import {
+  getCurrentLocaleStore,
+  globalDrupalStateAuthStores,
+} from "../../lib/drupalStateContext";
+
 import Image from "next/image";
 import Link from "next/link";
-import { NextSeo } from "next-seo";
-import {
-  DrupalState,
-  fetchJsonapiEndpoint,
-} from "@pantheon-systems/drupal-kit";
-import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import Layout from "../../components/layout";
-import { DRUPAL_URL, IMAGE_URL } from "../../lib/constants.js";
 
 export default function Home({ article, hrefLang }) {
-  const imgSrc = article.field_media_image?.field_media_image?.uri?.url || "";
+  const imgSrc = article?.field_media_image?.field_media_image?.uri?.url || "";
   return (
     <Layout>
       <NextSeo
@@ -48,17 +50,11 @@ export default function Home({ article, hrefLang }) {
 }
 
 export async function getStaticPaths(context) {
-  const multiLanguage = isMultiLanguage(context.locales);
   // TODO - locale increases the complexity enough here that creating a usePaths
   // hook would be a good idea.
   // Get paths for each locale.
   const pathsByLocale = context.locales.map(async (locale) => {
-    const store = new DrupalState({
-      apiBase: DRUPAL_URL,
-      defaultLocale: multiLanguage ? locale : "",
-      clientId: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-    });
+    const store = getCurrentLocaleStore(locale, globalDrupalStateAuthStores);
 
     const articles = await store.getObject({
       objectName: "node--article",
@@ -93,14 +89,13 @@ export async function getStaticPaths(context) {
 }
 
 export async function getStaticProps(context) {
-  const multiLanguage = isMultiLanguage(context.locales);
-  // TODO - determine apiBase from environment variables
-  const store = new DrupalState({
-    apiBase: DRUPAL_URL,
-    defaultLocale: multiLanguage ? context.locale : "",
-    clientId: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
-  });
+  const { locales, locale } = context;
+  const multiLanguage = isMultiLanguage(locales);
+  const store = getCurrentLocaleStore(
+    context.locale,
+    globalDrupalStateAuthStores
+  );
+  store.params.clear();
 
   const slug = `/articles/${context.params.slug[0]}`;
 
@@ -114,11 +109,13 @@ export async function getStaticProps(context) {
         },
       };
     }
-
     const previewData = await fetchJsonapiEndpoint(
       `${store.apiRoot}decoupled-preview/${context.previewData.key}?include=field_media_image.field_media_image`,
       requestInit
     );
+    if (previewData.errors) {
+      throw previewData.errors[0].detail;
+    }
     const uuid = previewData.data.id;
 
     store.setState({ "node--articleResources": { [uuid]: previewData } });
@@ -131,12 +128,12 @@ export async function getStaticProps(context) {
     });
   }
 
-  // If preview mode, get the preview data from the store, other wise fetch from the api.
   store.params.addInclude(["field_media_image.field_media_image"]);
+  // If preview mode, get the preview data from the store, other wise fetch from the api.
   const article = await store.getObjectByPath({
     objectName: "node--article",
     // Prefix the slug with the current locale
-    path: `${multiLanguage ? context.locale : ""}${slug}`,
+    path: `${multiLanguage ? locale : ""}${slug}`,
     query: `
         {
           id
@@ -144,6 +141,7 @@ export async function getStaticProps(context) {
           body
           path {
             alias
+            langcode
           }
           field_media_image {
             field_media_image {
@@ -157,16 +155,13 @@ export async function getStaticProps(context) {
   });
 
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
-  const { locales } = context;
   // Load all the paths for the current article.
   const paths = locales.map(async (locale) => {
-    const storeByLocales = new DrupalState({
-      apiBase: DRUPAL_URL,
-      defaultLocale: multiLanguage ? locale : "",
-      clientId: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-    });
-    const { path } = await storeByLocales.getObject({
+    const localeStore = getCurrentLocaleStore(
+      locale,
+      globalDrupalStateAuthStores
+    );
+    const { path } = await localeStore.getObject({
       objectName: "node--article",
       id: article.id,
     });

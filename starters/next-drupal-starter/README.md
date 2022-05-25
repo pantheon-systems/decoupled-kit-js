@@ -2,7 +2,7 @@
 
 There are two ways to get started with the Next Drupal Starter:
 
-__Option 1__: Use `create-next-app`
+**Option 1**: Use `create-next-app`
 
 1. In your terminal, run the following command:
 
@@ -12,8 +12,8 @@ npx create-next-app -e https://github.com/pantheon-systems/next-drupal-starter -
 
 2. Follow the prompts in your terminal to complete the setup.
 
+**Option 2**: Clone the repo
 
-__Option 2__: Clone the repo
 1. Clone this repo:
 
 ```bash
@@ -32,6 +32,10 @@ For either option, create a `.env.development.local` file and update it with the
 ```
 BACKEND_URL=
 IMAGE_DOMAIN=
+
+# Used to set the debug mode for the DrupalState store(s)
+# If not set, debug mode for the store(s) defaults to false
+DEBUG_MODE=
 
 # this value can also bet set in the command line
 # before running commands for example
@@ -65,5 +69,8 @@ Full documentation can be found at: https://github.com/pantheon-systems/decouple
 - examples/pagination - an example that sources paged data from JSON:API and paginates it client side.
 
 ## Customizing the Starter
+
+The `pages/recipes` directory can be safely removed if you are using a Drupal instance that does not
+source the Umami demo data
 
 For a guide on creating your first Next Drupal customization, see [Your First Drupal Customization](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next%20Drupal/your-first-customization.md)
