@@ -30,7 +30,7 @@ export default function SSRArticlesListTemplate({ articles, hrefLang, multiLangu
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   try {
     const { origin } = absoluteUrl(context.req);
     const { locales } = context;

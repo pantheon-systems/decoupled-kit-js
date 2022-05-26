@@ -9,7 +9,11 @@ import Image from "next/image";
 import GridList from "../components/grid-list.js";
 import Layout from "../components/layout";
 
-export default function HomepageTemplate({ articles, hrefLang, multiLanguage }) {
+export default function HomepageTemplate({
+  articles,
+  hrefLang,
+  multiLanguage,
+}) {
   const HomepageHeader = () => (
     <div className="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit">
       <h1 className="prose text-4xl text-center h-full">
