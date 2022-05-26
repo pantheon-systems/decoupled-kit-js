@@ -29,4 +29,14 @@
 
 **Note:** This will result in a Github repository being created for this new codebase, a site being created on Pantheon and a CircleCI project being created for automated deployments.
 
-**Note:** This will result in a Github repository being created for this new codebase, a site being created on Pantheon and a CircleCI project being created for automated deployments with the `{PROJECT_NAME}`.
+### Additional Options
+
+_Using other git hosts or CI services_
+
+Terminus build tools supports a number of other combinations of git hosts and CI services.
+
+For example, to use GitHub actions as your CI service, you could add the following additional flag to your `terminus build:project:create` command:
+
+`--ci=githubactions`
+
+For more information, consult the [available services section of the build tools documentation](https://github.com/pantheon-systems/terminus-build-tools-plugin#available-services)
