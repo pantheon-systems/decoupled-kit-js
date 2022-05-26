@@ -1,4 +1,3 @@
-import absoluteUrl from "next-absolute-url";
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../../lib/isMultiLanguage.js";
 import {
@@ -10,7 +9,11 @@ import PageHeader from "../../components/page-header.js";
 import GridList from "../../components/grid-list.js";
 import Layout from "../../components/layout";
 
-export default function SSRArticlesListTemplate({ articles, hrefLang, multiLanguage }) {
+export default function SSRArticlesListTemplate({
+  articles,
+  hrefLang,
+  multiLanguage,
+}) {
   return (
     <Layout>
       <NextSeo
@@ -32,7 +35,7 @@ export default function SSRArticlesListTemplate({ articles, hrefLang, multiLangu
 
 export async function getStaticProps(context) {
   try {
-    const { origin } = absoluteUrl(context.req);
+    const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
     const { locales } = context;
     // if there is more than one language in context.locales,
     // assume multilanguage is enabled.
