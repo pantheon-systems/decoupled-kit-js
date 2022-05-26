@@ -9,7 +9,7 @@ import {
 import Article from "../../components/article.js";
 import Layout from "../../components/layout";
 
-export default function Home({ article, hrefLang }) {
+export default function ArticleTemplate({ article, hrefLang }) {
   return (
     <Layout>
       <NextSeo

@@ -10,7 +10,7 @@ import PageHeader from "../../components/page-header.js";
 import GridList from "../../components/grid-list.js";
 import Layout from "../../components/layout";
 
-export default function SSRArticlesList({ articles, hrefLang, multiLanguage }) {
+export default function SSRArticlesListTemplate({ articles, hrefLang, multiLanguage }) {
   return (
     <Layout>
       <NextSeo

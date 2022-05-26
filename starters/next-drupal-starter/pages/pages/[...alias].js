@@ -11,7 +11,7 @@ import Layout from "../../components/layout";
 const drupalUrl = process.env.backendUrl;
 
 // TODO - Much of this is duplicated in the article/[id].js file. Abstract this out into modules and components.
-export default function Home({ page, hrefLang }) {
+export default function PageTemplate({ page, hrefLang }) {
   return (
     <Layout>
       <NextSeo

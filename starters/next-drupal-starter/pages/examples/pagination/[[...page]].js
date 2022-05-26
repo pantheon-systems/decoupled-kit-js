@@ -12,7 +12,7 @@ import Layout from "../../../components/layout";
 // Example paginated data set
 const drupalUrl = "https://dev-ds-demo.pantheonsite.io";
 
-export default function Pagination({ data }) {
+export default function PaginationExampleTemplate({ data }) {
   // configurable itemsPerPage
   const itemsPerPage = 10;
 

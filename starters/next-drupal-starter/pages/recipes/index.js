@@ -11,7 +11,7 @@ import GridList from "../../components/grid-list";
 
 // This file can safely be removed if the Drupal
 // instance is not sourcing Umami data
-export default function Recipes({ recipes, hrefLang, multiLanguage }) {
+export default function RecipeListTemplate({ recipes, hrefLang, multiLanguage }) {
   return (
     <Layout>
       <NextSeo
