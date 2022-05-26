@@ -30,4 +30,4 @@ a promise containing the data for the JSON:API response
 
 #### Defined in
 
-[src/fetch/defaultFetch.ts:13](https://github.com/backlineint/decoupled-kit-js/blob/33b5eb77/packages/drupal-kit/src/fetch/defaultFetch.ts#L13)
+[src/fetch/defaultFetch.ts:13](https://github.com/backlineint/decoupled-kit-js/blob/741488ba/packages/drupal-kit/src/fetch/defaultFetch.ts#L13)

@@ -20,7 +20,7 @@
 - Run the `terminus build:project:create` as follows:
 
   ```
-  terminus build:project:create --team='{My Team Name}' --template-repository="git@github.com:pantheon-systems/decoupled-wordpress.git" pantheon-systems/decoupled-wordpress --ci-template='git@github.com:pantheon-systems/advanced-ci-templates' --visibility private {PROJECT_NAME} --stability=dev
+  terminus build:project:create --team='{My Team Name}' --template-repository="git@github.com:pantheon-systems/decoupled-wordpress-recommended.git" pantheon-systems/decoupled-wordpress-recommended --ci-template='git@github.com:pantheon-systems/advanced-ci-templates' --visibility private {PROJECT_NAME} --stability=dev
   ```
 
   Replace {PROJECT_NAME} with a Project name for example `decoupled-wordpress`.
