@@ -8,3 +8,4 @@ for dir in ./starters/*
     npm i --package-lock-only
     cd ../../
   done
+  
