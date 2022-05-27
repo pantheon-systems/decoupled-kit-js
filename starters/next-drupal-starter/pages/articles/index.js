@@ -5,8 +5,8 @@ import {
   globalDrupalStateStores,
 } from "../../lib/drupalStateContext";
 
+import { withGrid, ArticleGridItem } from "../../components/grid.js";
 import PageHeader from "../../components/page-header.js";
-import GridList from "../../components/grid-list.js";
 import Layout from "../../components/layout";
 
 export default function SSRArticlesListTemplate({
@@ -14,6 +14,7 @@ export default function SSRArticlesListTemplate({
   hrefLang,
   multiLanguage,
 }) {
+  const ArticleGrid = withGrid(ArticleGridItem);
   return (
     <Layout>
       <NextSeo
@@ -23,8 +24,8 @@ export default function SSRArticlesListTemplate({
       />
       <PageHeader title="Articles" />
       <section>
-        <GridList
-          contentArr={articles}
+        <ArticleGrid
+          data={articles}
           contentType="articles"
           multiLanguage={multiLanguage}
         />

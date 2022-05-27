@@ -5,13 +5,19 @@ import {
   globalDrupalStateStores,
 } from "../../lib/drupalStateContext";
 
+import { RecipeGridItem, withGrid } from "../../components/grid";
 import Layout from "../../components/layout";
 import PageHeader from "../../components/page-header";
-import GridList from "../../components/grid-list";
 
 // This file can safely be removed if the Drupal
 // instance is not sourcing Umami data
-export default function RecipeListTemplate({ recipes, hrefLang, multiLanguage }) {
+export default function RecipeListTemplate({
+  recipes,
+  hrefLang,
+  multiLanguage,
+}) {
+  const RecipeGrid = withGrid(RecipeGridItem);
+
   return (
     <Layout>
       <NextSeo
@@ -21,8 +27,8 @@ export default function RecipeListTemplate({ recipes, hrefLang, multiLanguage })
       />
       <PageHeader title="Recipes" />
       <section>
-        <GridList
-          contentArr={recipes}
+        <RecipeGrid
+          data={recipes}
           contentType="recipes"
           multiLanguage={multiLanguage}
         />
@@ -59,6 +65,7 @@ export async function getStaticProps(context) {
         title
         field_media_image
         field_recipe_category
+        field_recipe_instruction
         path
       }`,
     });

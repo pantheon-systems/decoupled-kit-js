@@ -5,8 +5,8 @@ import {
   globalDrupalStateStores,
 } from "../lib/drupalStateContext";
 
+import { ArticleGridItem, withGrid } from "../components/grid";
 import Image from "next/image";
-import GridList from "../components/grid-list.js";
 import Layout from "../components/layout";
 
 export default function HomepageTemplate({
@@ -40,6 +40,8 @@ export default function HomepageTemplate({
     </div>
   );
 
+  const ArticleGrid = withGrid(ArticleGridItem);
+
   return (
     <Layout>
       <NextSeo
@@ -50,8 +52,8 @@ export default function HomepageTemplate({
       <>
         <HomepageHeader />
         <section>
-          <GridList
-            contentArr={articles}
+          <ArticleGrid
+            data={articles}
             contentType="articles"
             multiLanguage={multiLanguage}
           />
