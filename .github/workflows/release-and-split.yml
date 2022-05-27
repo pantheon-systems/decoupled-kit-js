@@ -10,6 +10,9 @@ on:
 jobs:
   version:
     name: version and publish
+    env:
+      CI: true
+      PNPM_CACHE_FOLDER: .pnpm-store
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
