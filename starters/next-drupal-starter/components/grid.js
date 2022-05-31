@@ -27,11 +27,11 @@ export const withGrid = (Component) => {
             })}
           </Grid>
         ) : (
-          props.contentType ?? (
+          props.contentType ? (
             <h2 className="text-xl text-center mt-14">
               No {props.contentType} found 🏜
             </h2>
-          )
+          ) : null
         )}
       </>
     );
