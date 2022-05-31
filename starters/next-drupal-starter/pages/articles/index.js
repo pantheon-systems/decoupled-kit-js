@@ -1,4 +1,3 @@
-import absoluteUrl from "next-absolute-url";
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../../lib/isMultiLanguage.js";
 import {
@@ -6,11 +5,16 @@ import {
   globalDrupalStateStores,
 } from "../../lib/drupalStateContext";
 
+import { withGrid, ArticleGridItem } from "../../components/grid.js";
 import PageHeader from "../../components/page-header.js";
-import GridList from "../../components/grid-list.js";
 import Layout from "../../components/layout";
 
-export default function SSRArticlesList({ articles, hrefLang, multiLanguage }) {
+export default function SSRArticlesListTemplate({
+  articles,
+  hrefLang,
+  multiLanguage,
+}) {
+  const ArticleGrid = withGrid(ArticleGridItem);
   return (
     <Layout>
       <NextSeo
@@ -20,8 +24,8 @@ export default function SSRArticlesList({ articles, hrefLang, multiLanguage }) {
       />
       <PageHeader title="Articles" />
       <section>
-        <GridList
-          contentArr={articles}
+        <ArticleGrid
+          data={articles}
           contentType="articles"
           multiLanguage={multiLanguage}
         />
@@ -32,7 +36,7 @@ export default function SSRArticlesList({ articles, hrefLang, multiLanguage }) {
 
 export async function getServerSideProps(context) {
   try {
-    const { origin } = absoluteUrl(context.req);
+    const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
     const { locales } = context;
     // if there is more than one language in context.locales,
     // assume multilanguage is enabled.

@@ -5,11 +5,15 @@ import {
   globalDrupalStateStores,
 } from "../lib/drupalStateContext";
 
+import { ArticleGridItem, withGrid } from "../components/grid";
 import Image from "next/image";
-import GridList from "../components/grid-list.js";
 import Layout from "../components/layout";
 
-export default function Home({ articles, hrefLang, multiLanguage }) {
+export default function HomepageTemplate({
+  articles,
+  hrefLang,
+  multiLanguage,
+}) {
   const HomepageHeader = () => (
     <div className="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit">
       <h1 className="prose text-4xl text-center h-full">
@@ -36,6 +40,8 @@ export default function Home({ articles, hrefLang, multiLanguage }) {
     </div>
   );
 
+  const ArticleGrid = withGrid(ArticleGridItem);
+
   return (
     <Layout>
       <NextSeo
@@ -46,8 +52,8 @@ export default function Home({ articles, hrefLang, multiLanguage }) {
       <>
         <HomepageHeader />
         <section>
-          <GridList
-            contentArr={articles}
+          <ArticleGrid
+            data={articles}
             contentType="articles"
             multiLanguage={multiLanguage}
           />

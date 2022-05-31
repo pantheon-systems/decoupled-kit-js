@@ -9,7 +9,7 @@ import Layout from "../../components/layout";
 import PageHeader from "../../components/page-header.js";
 import Link from "next/link";
 
-export default function PagesList({ hrefLang, pages, multiLanguage }) {
+export default function PageListTemplate({ hrefLang, pages, multiLanguage }) {
   return (
     <Layout>
       <NextSeo

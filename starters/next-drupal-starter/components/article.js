@@ -2,11 +2,10 @@ import { IMAGE_URL } from "../lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Article({ article }) {
-  const imgSrc = article?.field_media_image?.field_media_image?.uri?.url || "";
+export default function Article({ imgSrc, title, body }) {
   return (
     <article className="prose lg:prose-xl mt-10 mx-auto">
-      <h1>{article.title}</h1>
+      <h1>{title}</h1>
 
       <Link passHref href="/">
         <a className="font-nomral">Home &rarr;</a>
@@ -23,11 +22,11 @@ export default function Article({ article }) {
               src={IMAGE_URL + imgSrc}
               layout="fill"
               objectFit="cover"
-              alt={article.title}
+              alt={title}
             />
           </div>
         ) : null}
-        <div dangerouslySetInnerHTML={{ __html: article.body.value }} />
+        <div dangerouslySetInnerHTML={{ __html: body }} />
       </div>
     </article>
   );

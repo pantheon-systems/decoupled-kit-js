@@ -1,12 +1,25 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
-export default function Paginator({
-  data,
-  itemsPerPage,
-  breakpoints,
-  routing,
-}) {
+/**
+ *
+ * @param {Array} props.data The data to be paginated
+ * @param {Number} props.itemsPerPage The number of items to display on each page
+ * @param {{ start: Number, end: Number, add: Number }} props.breakpoints Breakpoints has 3 properties: start, end, and add. Set to {} for no breakpoint.
+ * start: where to start the breakpoint
+ * end: where to end the breakpoint
+ * add: how manu buttons to add when the breakpoint is clicked
+ * ***
+ * note: (`add` * x) + `start` = `end` where x is a number of clicks it takes to fill in all of the buttons
+ * For example: If there are 25 buttons and the start = 5 and end = 25, then add should be 5 or 10.
+ * ***
+ * @param {Boolean} props.routing If true, shallow routing will be enabled. Check the examples/pagination route to see it in action
+ * @param {React.Component} props.Component React Component that takes in currentItems as props and maps over them.
+ * currentItems is a subset of data, so any component that works for data will work here.
+ * @see {@link https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/starters/next-drupal-starter/pages/examples/pagination/[[...page]].js} for an example implementation
+ * @returns Component with data rendered by the passed in Component and page buttons
+ */
+const Paginator = ({ data, itemsPerPage, breakpoints, Component, routing }) => {
   // configurable breakpoints
   // This value will be the start of the seperator.
   const [breakStart, setBreakStart] = useState(breakpoints?.start || null);
@@ -82,7 +95,6 @@ export default function Paginator({
   };
 
   const handlePageClick = (event) => {
-    let clickedPage;
     const {
       target: { id },
     } = event;
@@ -202,11 +214,14 @@ export default function Paginator({
         Page {currentPageQuery}/{totalPages}
       </h3>
       <section>
-        <RenderData />
+        {/* Component passed in that will render the data */}
+        {Component ? <Component currentItems={currentItems} /> : <RenderData />}
       </section>
       <div className="sticky lg:bottom-12 bottom-4">
         <RenderButtons />
       </div>
     </div>
   );
-}
+};
+
+export default Paginator;
