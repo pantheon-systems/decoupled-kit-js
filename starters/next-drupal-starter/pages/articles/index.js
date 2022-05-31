@@ -34,7 +34,7 @@ export default function SSRArticlesListTemplate({
   );
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   try {
     const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
     const { locales } = context;
