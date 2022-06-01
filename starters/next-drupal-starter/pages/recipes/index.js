@@ -69,6 +69,7 @@ export async function getStaticProps(context) {
         path
       }`,
     });
+    store.params.clear();
 
     return {
       props: {
