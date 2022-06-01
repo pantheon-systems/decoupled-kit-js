@@ -131,8 +131,10 @@ export async function getStaticPaths(context) {
 export async function getStaticProps(context) {
   const { locales, locale } = context;
   const multiLanguage = isMultiLanguage(locales);
+  const lang = context.preview ? context.previewData.previewLang : locale;
+  const store = getCurrentLocaleStore(lang, globalDrupalStateAuthStores);
 
-  const store = getCurrentLocaleStore(locale, globalDrupalStateAuthStores);
+  const slug = `/recipes/${context.params.slug[0]}`;
 
   // clear params to prevent duplicates
   store.params.clear();
@@ -140,14 +142,12 @@ export async function getStaticProps(context) {
     "field_media_image.field_media_image",
     "field_recipe_category",
   ]);
-  const slug = `/recipes/${context.params.slug[0]}`;
-
   context.preview && (await getPreview(context, "node--recipe"));
 
   try {
     const recipe = await store.getObjectByPath({
       objectName: "node--recipe",
-      path: `${multiLanguage ? locale : ""}${slug}`,
+      path: `${multiLanguage ? lang : ""}${slug}`,
       query: `{
         id
         title
@@ -164,6 +164,8 @@ export async function getStaticProps(context) {
         }
       }`,
     });
+
+    store.params.clear();
 
     if (!recipe) {
       return { props: {} };

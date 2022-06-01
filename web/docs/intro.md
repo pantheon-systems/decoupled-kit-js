@@ -75,4 +75,4 @@ To generate a new changeset, run `pnpm changeset` in the root of the repository.
 
 ### Further reading
 
-For more information on contributing to this project, see [CONTRIBUTING.md](./CONTRIBUTING.md)
+For more information on contributing to this project, see [CONTRIBUTING.md](https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/CONTRIBUTING.md)

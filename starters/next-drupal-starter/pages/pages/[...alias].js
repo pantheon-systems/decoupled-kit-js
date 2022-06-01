@@ -8,6 +8,7 @@ import { getPreview } from "../../lib/getPreview";
 
 import Link from "next/link";
 import Layout from "../../components/layout";
+import { createGetAccessor } from "typescript";
 
 export default function PageTemplate({ page, hrefLang }) {
   return (
@@ -76,19 +77,17 @@ export async function getStaticPaths(context) {
 export async function getStaticProps(context) {
   const { locales, locale } = context;
   const multiLanguage = isMultiLanguage(context.locales);
-  const store = getCurrentLocaleStore(
-    context.locale,
-    globalDrupalStateAuthStores
-  );
-  store.params.clear();
+  const lang = context.preview ? context.previewData.previewLang : locale;
+  const store = getCurrentLocaleStore(lang, globalDrupalStateAuthStores);
 
   const alias = `/pages/${context.params.alias[0]}`;
 
+  store.params.clear();
   context.preview && (await getPreview(context, "node--page"));
 
   const page = await store.getObjectByPath({
     objectName: "node--page",
-    path: `${multiLanguage ? locale : ""}${alias}`,
+    path: `${multiLanguage ? lang : ""}${alias}`,
     query: `
         {
           id
@@ -101,6 +100,8 @@ export async function getStaticProps(context) {
         }
       `,
   });
+
+  store.params.clear();
 
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   // Load all the paths for the current page content type.
