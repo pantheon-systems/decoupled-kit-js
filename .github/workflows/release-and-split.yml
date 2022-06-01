@@ -32,10 +32,12 @@ jobs:
         run: pnpm config set store-dir $PNPM_CACHE_FOLDER
       - name: install dependencies
         run: pnpm install
+      - name: make script runnable
+      - run: chmod +x ".github/scripts/update-lockfiles.sh"
       - name: create and publish versions
         uses: changesets/action@v1
         with:
-          version: ./update-lockfiles.sh
+          version: .github/scripts/update-lockfiles.sh
           commit: "Update versions"
           title: "Update versions"
           publish: pnpm ci:publish
