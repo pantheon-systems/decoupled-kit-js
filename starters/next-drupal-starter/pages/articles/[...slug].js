@@ -74,7 +74,9 @@ export async function getStaticProps(context) {
   const slug = `/articles/${context.params.slug[0]}`;
   // if preview, use preview endpoint and add to store.
   context.preview && await getPreview(context, "node--article");
+  store.params.clear();
 
+  store.params.addInclude(["field_media_image.field_media_image"]);
   // If preview mode, get the preview data from the store, other wise fetch from the api.
   const article = await store.getObjectByPath({
     objectName: "node--article",
@@ -99,6 +101,8 @@ export async function getStaticProps(context) {
         }
       `,
   });
+
+  store.params.clear();
 
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   // Load all the paths for the current article.

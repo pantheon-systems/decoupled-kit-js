@@ -26,11 +26,11 @@ export const withGrid = (Component) => {
               return <Component key={i} content={content} {...props} />;
             })}
           </Grid>
-        ) : (
+        ) : props.contentType ? (
           <h2 className="text-xl text-center mt-14">
-            No {contentType} found 🏜
+            No {props.contentType} found 🏜
           </h2>
-        )}
+        ) : null}
       </>
     );
   };
@@ -40,7 +40,7 @@ export const withGrid = (Component) => {
 
 // For use with withGrid
 export const ArticleGridItem = ({ content: article, multiLanguage }) => {
-  const imgSrc = article.field_media_image.field_media_image.uri.url || "";
+  const imgSrc = article?.field_media_image?.field_media_image?.uri?.url || "";
   return (
     <Link
       passHref
@@ -78,7 +78,7 @@ export const ArticleGridItem = ({ content: article, multiLanguage }) => {
 
 // For use with withGrid
 export const RecipeGridItem = ({ content: recipe, multiLanguage }) => {
-  const imgSrc = recipe.field_media_image.field_media_image.uri.url || "";
+  const imgSrc = recipe?.field_media_image?.field_media_image?.uri?.url || "";
   return (
     <Link
       passHref
@@ -108,9 +108,11 @@ export const RecipeGridItem = ({ content: recipe, multiLanguage }) => {
           <h2 className="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900">
             {recipe.title} &rarr;
           </h2>
-          <span className="text-right pb-2 pr-3 text-sm text-slate-400">
-            {recipe.field_recipe_category[0].name}
-          </span>
+          {recipe?.field_recipe_category?.length > 0 ? (
+            <span className="text-right pb-2 pr-3 text-sm text-slate-400">
+              {recipe?.field_recipe_category[0].name}
+            </span>
+          ) : null}
         </div>
       </a>
     </Link>

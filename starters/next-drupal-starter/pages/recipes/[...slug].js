@@ -176,6 +176,7 @@ export async function getStaticProps(context) {
         locale,
         globalDrupalStateAuthStores
       );
+      storeByLocales.params.clear();
       const { path } = await storeByLocales.getObject({
         objectName: "node--recipe",
         id: recipe.id,
