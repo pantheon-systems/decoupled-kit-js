@@ -33,7 +33,7 @@ jobs:
       - name: install dependencies
         run: pnpm install
       - name: make script runnable
-      - run: chmod +x ".github/scripts/update-lockfiles.sh"
+        run: chmod +x ".github/scripts/update-lockfiles.sh"
       - name: create and publish versions
         uses: changesets/action@v1
         with:
