@@ -1,16 +1,47 @@
 import { NextSeo } from "next-seo";
-import { IMAGE_URL } from "../lib/constants.js";
 import { isMultiLanguage } from "../lib/isMultiLanguage";
 import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
 } from "../lib/drupalStateContext";
 
+import { ArticleGridItem, withGrid } from "../components/grid";
 import Image from "next/image";
-import Link from "next/link";
 import Layout from "../components/layout";
 
-export default function Home({ articles, hrefLang, multiLanguage }) {
+export default function HomepageTemplate({
+  articles,
+  hrefLang,
+  multiLanguage,
+}) {
+  const HomepageHeader = () => (
+    <div className="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit">
+      <h1 className="prose text-4xl text-center h-full">
+        Welcome to{" "}
+        <a
+          className="text-blue-600 no-underline hover:underline"
+          href="https://nextjs.org"
+        >
+          Next.js!
+        </a>
+      </h1>
+
+      <div className="text-2xl">
+        <div className="bg-black text-white rounded flex items-center justify-center p-4">
+          Decoupled Drupal on{" "}
+          <Image
+            src="/pantheon.png"
+            alt="Pantheon Logo"
+            width={191}
+            height={60}
+          />
+        </div>
+      </div>
+    </div>
+  );
+
+  const ArticleGrid = withGrid(ArticleGridItem);
+
   return (
     <Layout>
       <NextSeo
@@ -19,75 +50,14 @@ export default function Home({ articles, hrefLang, multiLanguage }) {
         languageAlternates={hrefLang || false}
       />
       <>
-        <div className="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit">
-          <h1 className="prose text-4xl text-center h-full">
-            Welcome to{" "}
-            <a
-              className="text-blue-600 no-underline hover:underline"
-              href="https://nextjs.org"
-            >
-              Next.js!
-            </a>
-          </h1>
-
-          <div className="text-2xl">
-            <div className="bg-black text-white rounded flex items-center justify-center p-4">
-              Decoupled Drupal on{" "}
-              <Image
-                src="/pantheon.png"
-                alt="Pantheon Logo"
-                width={191}
-                height={60}
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
-          {/* Check to see if this is an object before mapping */}
-          {articles?.map((article) => {
-            const imgSrc =
-              article.field_media_image?.field_media_image?.uri?.url || "";
-            return (
-              <Link
-                passHref
-                href={`${multiLanguage ? `/${article.path.langcode}` : ""}${
-                  article.path.alias
-                }`}
-                key={article.id}
-              >
-                <a>
-                  <div className="flex flex-col h-full rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 hover:border-indigo-500">
-                    <div className="flex-shrink-0 relative h-40">
-                      {/* if thre's no imgSrc, default to Pantheon logo */}
-                      {imgSrc !== "" ? (
-                        <Image
-                          src={IMAGE_URL + imgSrc}
-                          layout="fill"
-                          objectFit="cover"
-                          alt={
-                            article.field_media_image?.field_media_image
-                              ?.resourceIdObjMeta.alt
-                          }
-                        />
-                      ) : (
-                        <Image
-                          src="/pantheon.png"
-                          alt="Pantheon Logo"
-                          layout="fill"
-                          className="bg-black"
-                        />
-                      )}
-                    </div>
-                    <h2 className="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900">
-                      {article.title} &rarr;
-                    </h2>
-                  </div>
-                </a>
-              </Link>
-            );
-          })}
-        </div>
+        <HomepageHeader />
+        <section>
+          <ArticleGrid
+            data={articles}
+            contentType="articles"
+            multiLanguage={multiLanguage}
+          />
+        </section>
       </>
     </Layout>
   );

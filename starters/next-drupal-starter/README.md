@@ -34,7 +34,7 @@ BACKEND_URL=
 IMAGE_DOMAIN=
 
 # Used to set the debug mode for the DrupalState store(s)
-# If not set, debug mode for the store(s) defaults to false
+# If not set, debug mode for the store(s) is set to false
 DEBUG_MODE=
 
 # this value can also bet set in the command line

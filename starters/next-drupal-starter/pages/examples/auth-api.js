@@ -7,7 +7,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../components/layout";
 
-export default function Home({ taxonomies }) {
+export default function AuthApiExampleTemplate({ taxonomies }) {
   return (
     <Layout>
       <Head>

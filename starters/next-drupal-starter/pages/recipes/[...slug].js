@@ -12,7 +12,7 @@ import Layout from "../../components/layout";
 
 // This file can safely be removed if the Drupal
 // instance is not sourcing Umami data
-export default function Recipe({ recipe, hrefLang }) {
+export default function RecipeTemplate({ recipe, hrefLang }) {
   const imgSrc = recipe?.field_media_image?.field_media_image?.uri?.url || "";
 
   return (
@@ -173,6 +173,7 @@ export async function getStaticProps(context) {
         locale,
         globalDrupalStateStores
       );
+      storeByLocales.params.clear();
       const { path } = await storeByLocales.getObject({
         objectName: "node--recipe",
         id: recipe.id,

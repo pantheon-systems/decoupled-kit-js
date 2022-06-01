@@ -1,7 +1,7 @@
 import { DrupalStateWrapper } from "../lib/drupalStateContext";
 import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   // make sure we don't output invalid `hrefLang` values
   if (!process.env.NEXT_PUBLIC_FRONTEND_URL) {
     delete pageProps.hrefLang;
@@ -14,4 +14,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default App;
