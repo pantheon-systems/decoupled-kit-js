@@ -100,7 +100,7 @@ export async function getStaticProps(context) {
       resourceVersion: `id:${context.previewData.resourceVersionId}`,
     });
   }
-
+  store.params.clear();
   store.params.addInclude(["field_media_image.field_media_image"]);
   // If preview mode, get the preview data from the store, other wise fetch from the api.
   const article = await store.getObjectByPath({
@@ -126,6 +126,8 @@ export async function getStaticProps(context) {
         }
       `,
   });
+
+  store.params.clear();
 
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   // Load all the paths for the current article.

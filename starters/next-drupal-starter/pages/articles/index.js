@@ -60,38 +60,13 @@ export async function getServerSideProps(context) {
       objectName: "node--article",
       res: context.res,
     });
+    store.params.clear();
 
     if (!articles) {
       throw new Error(
         "No articles returned. Make sure the objectName and store.params are valid!"
       );
     }
-
-    // The calls below are unnecessary for rendering the page, but demonstrates
-    // both that surrogate keys are de-duped when added to the response, and also
-    // that they are bubbled up for GraphQL link queries.
-
-    // A duplicate resource to ensure that keys are de-duped.
-    await store.getObject({
-      objectName: "node--article",
-      id: articles[0].id,
-      query: `{
-        id
-        title
-      }`,
-      res: context.res,
-    });
-    store.params.clear();
-
-    // A new resource to ensure that keys are bubbled up.
-    await store.getObject({
-      objectName: "node--page",
-      query: `{
-        id
-        title
-      }`,
-      res: context.res,
-    });
 
     return {
       props: {
