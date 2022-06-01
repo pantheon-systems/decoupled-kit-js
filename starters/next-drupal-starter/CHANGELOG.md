@@ -1,5 +1,11 @@
 # @pantheon-systems/next-drupal-starter
 
+## 1.1.3
+
+### Patch Changes
+
+- 40c4a56: [next-drupal-starter] Created components based on pages to DRY up code
+
 ## 1.1.2
 
 ### Patch Changes
