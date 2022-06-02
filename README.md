@@ -76,7 +76,7 @@ There are several scripts you can use on your monorepo.
 -  Run documentation:
 
     ```bash
-    pnpm --filter './web start'
+    pnpm --filter './web' start
     ```
 ------------------
 

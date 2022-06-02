@@ -41,7 +41,7 @@ export async function getStaticProps(context) {
   const multilanguage = isMultilanguage(context.locales);
   // Sets our current language. If preview, use the previewLang,
   // otherwise use the current locale.
-  const lang = context.preview ? context.previewData.previewLang : locale;
+  const lang = context.preview ? context.previewData.previewLang : context.locale;
   // set the store based on the language
   const store = getCurrentLocaleStore(lang, globalDrupalStateAuthStores);
   // gets preview data from the Drupal instance, or in the case of a revision,
