@@ -23,18 +23,25 @@ export default function AuthApiExampleTemplate({ articles }) {
         </Link>
 
         <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
-          {articles.length > 0 && (
+          {articles?.length > 0 ? (
             <p>
-               NextJS was able to successfuly make an authenticated request to
-              Drupal!
+              🎉 NextJS was able to successfuly make an authenticated request to
+              Drupal! 🎉
             </p>
-          )}
-          {articles.length === 0 && (
-            <p>
-              NextJS was unable to make an authorized request to the Drupal API.
-              Please check your .env file to ensure that your CLIENT_ID and
-              CLIENT_SECRET are set correctly.
-            </p>
+          ) : (
+            <>
+              <p>
+                NextJS was unable to make an authorized request to the Drupal
+                API. Please check your .env.development.local file to ensure
+                that your CLIENT_ID and CLIENT_SECRET are set correctly.
+              </p>
+              <p>
+                For more information on how to set these values, please see{" "}
+                <a href="https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next%20Drupal/setting-environment-variables.md">
+                  Setting Environment Variables
+                </a>
+              </p>
+            </>
           )}
         </div>
       </div>
@@ -43,16 +50,29 @@ export default function AuthApiExampleTemplate({ articles }) {
 }
 
 export async function getStaticProps({ locale }) {
-  const authstore = getCurrentLocaleStore(locale, globalDrupalStateAuthStores);
+  const authStore = getCurrentLocaleStore(locale, globalDrupalStateAuthStores);
+  authStore.params.clear();
 
-  authstore.params.clear();
-  const articles = await authstore.getObject({
-    objectName: "node--article",
-  });
-  return {
-    props: {
-      articles,
-      revalidate: 60,
-    },
-  };
+  if (!authStore.auth) {
+    return { props: {} };
+  }
+
+  try {
+    const articles = await authStore.getObject({
+      objectName: "node--article",
+    });
+    return {
+      props: {
+        articles,
+        revalidate: 60,
+      },
+    };
+  } catch (error) {
+    process.env.DEBUG_MODE &&
+      console.error(
+        "Error occured while fetching the autorized example: ",
+        error
+      );
+    return { props: {} };
+  }
 }
