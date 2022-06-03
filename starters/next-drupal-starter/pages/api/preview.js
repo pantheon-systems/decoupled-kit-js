@@ -40,9 +40,15 @@ const preview = async (req, res) => {
 
   // Enable Preview Mode by setting a cookie
   if (req.query.resourceVersionId) {
-    res.setPreviewData({ resourceVersionId: req.query.resourceVersionId });
+    res.setPreviewData({
+      resourceVersionId: req.query.resourceVersionId,
+      previewLang: store.defaultLocale || "en",
+    });
   } else if (req.query.key) {
-    res.setPreviewData({ key: req.query.key });
+    res.setPreviewData({
+      key: req.query.key,
+      previewLang: store.defaultLocale || "en",
+    });
   } else {
     res.setPreviewData({});
   }
