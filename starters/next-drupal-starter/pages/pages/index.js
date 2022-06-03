@@ -24,7 +24,7 @@ export default function PageListTemplate({ hrefLang, pages, multiLanguage }) {
             pages?.map(({ id, title, body, path }) => (
               <li className="prose justify-items-start" key={id}>
                 <h2>{title}</h2>
-                <div dangerouslySetInnerHTML={{ __html: body.summary }} />
+                <div dangerouslySetInnerHTML={{ __html: body?.summary }} />
                 <Link
                   passHref
                   href={`${multiLanguage ? `/${path.langcode}` : ""}${
