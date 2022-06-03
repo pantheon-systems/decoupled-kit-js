@@ -8,7 +8,6 @@ import { getPreview } from "../../lib/getPreview";
 
 import Link from "next/link";
 import Layout from "../../components/layout";
-import { createGetAccessor } from "typescript";
 
 export default function PageTemplate({ page, hrefLang }) {
   return (
