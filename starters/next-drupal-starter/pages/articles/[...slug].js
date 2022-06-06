@@ -65,7 +65,7 @@ export async function getStaticProps(context) {
   const { locales, locale } = context;
   const multiLanguage = isMultiLanguage(locales);
   const lang = context.preview ? context.previewData.previewLang : locale;
-  
+
   const store = getCurrentLocaleStore(lang, globalDrupalStateAuthStores);
 
   const slug = `/articles/${context.params.slug[0]}`;
@@ -97,6 +97,8 @@ export async function getStaticProps(context) {
           }
         }
       `,
+    // if preview is true, force a fetch to Drupal
+    refresh: context.preview,
   });
 
   store.params.clear();
