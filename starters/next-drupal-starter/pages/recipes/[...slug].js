@@ -176,8 +176,8 @@ export async function getStaticProps(context) {
       props: {
         recipe,
         hrefLang,
-        revalidate: 60,
       },
+      revalidate: 60,
     };
   } catch (error) {
     console.error("Unable to fetch recipe: ", error);

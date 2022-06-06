@@ -119,7 +119,7 @@ export async function getStaticProps(context) {
       body: article.body.value,
       imgSrc: article.field_media_image?.field_media_image?.uri?.url || "",
       hrefLang,
-      revalidate: 60,
     },
+    revalidate: 60,
   };
 }
