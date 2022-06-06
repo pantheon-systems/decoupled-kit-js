@@ -136,6 +136,8 @@ export async function getStaticProps(context) {
           langcode
         }
       }`,
+      // if preview is true, force a fetch to Drupal
+      refresh: context.preview
     });
 
     store.params.clear();
