@@ -166,7 +166,6 @@ importers:
       eslint: 8.10.0
       eslint-config-next: 12.1.0
       next: ^12.1.5
-      next-absolute-url: ^1.2.2
       next-seo: ^5.4.0
       postcss: ^8.4.12
       react: 17.0.2
@@ -178,7 +177,6 @@ importers:
       '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.24
       dotenv: 16.0.0
       next: 12.1.5_sfoxds7t5ydpegc3knd667wn6m
-      next-absolute-url: 1.2.2
       next-seo: 5.4.0_o4i27axobvqklq47h4i5u4k3jq
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -13573,7 +13571,7 @@ packages:
     dependencies:
       universalify: 2.0.0
     optionalDependencies:
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
     dev: false
 
   /jsx-ast-utils/3.2.1:
@@ -14611,10 +14609,6 @@ packages:
 
   /neo-async/2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
-
-  /next-absolute-url/1.2.2:
-    resolution: {integrity: sha512-Z2+LZXQTthhw2je9u4eq8QWXxXd57a6b54x9exBfQX4Dct6YxaMjcXZWNLHd9AOlCue84EsMpdSGP7wACqUnPg==}
-    dev: false
 
   /next-seo/5.4.0_o4i27axobvqklq47h4i5u4k3jq:
     resolution: {integrity: sha512-R9DhajPwJnR/lsF2hZ8cN8uqr5CVITsRrCG1AF5+ufcaybKYOvnH8sH9MaH4/hpkps3PQ9H71S7J7SPYixAYzQ==}
@@ -19125,7 +19119,7 @@ packages:
     engines: {node: '>=10.13.0'}
     dependencies:
       glob-to-regexp: 0.4.1
-      graceful-fs: 4.2.9
+      graceful-fs: 4.2.10
     dev: false
 
   /wbuf/1.7.3:
