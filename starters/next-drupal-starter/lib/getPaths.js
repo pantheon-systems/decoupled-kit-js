@@ -40,15 +40,15 @@ export const getPaths = async (
 
       // map over the data fetch to extract the path name
       return data.map((datum) => {
-        const regex = new RegExp(`^\/${urlAliasPrefix}\/(.*)$`);
-        const match = datum.path.alias.match(regex);
-        let path;
-        if (match[1]) {
-          path = match[1];
-        }
-
+        // remove the url prefix and split the path to handle
+        // dynamic routes like /articles/my-article and /articles/featured/my-article
+        const regex = new RegExp(`/?${urlAliasPrefix}/?`);
+        const path = datum.path.alias?.replace(regex, "").split("/");
         // return the path object.
-        return { params: { [`${dynamicRouteName}`]: [path] }, locale: locale };
+        return {
+          params: { [`${dynamicRouteName}`]: path },
+          locale: locale,
+        };
       });
     } catch (error) {
       // if set to failGracefully, return null.

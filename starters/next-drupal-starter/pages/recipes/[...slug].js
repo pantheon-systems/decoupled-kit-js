@@ -94,7 +94,7 @@ export async function getStaticPaths(context) {
       fallback: false,
     };
   } catch (error) {
-    console.error('Failed to fetch paths for recipes:' , error);
+    console.error("Failed to fetch paths for recipes:", error);
   }
 }
 
@@ -107,7 +107,10 @@ export async function getStaticProps(context) {
     context.preview ? globalDrupalStateAuthStores : globalDrupalStateStores
   );
 
-  const slug = `/recipes/${context.params.slug[0]}`;
+  // handle nested slugs like /recipes/featured
+  const slug = `/recipes${context.params.slug
+    .map((segment) => `/${segment}`)
+    .join("")}`;
 
   // clear params to prevent duplicates
   store.params.clear();
@@ -137,7 +140,7 @@ export async function getStaticProps(context) {
         }
       }`,
       // if preview is true, force a fetch to Drupal
-      refresh: context.preview
+      refresh: context.preview,
     });
 
     store.params.clear();

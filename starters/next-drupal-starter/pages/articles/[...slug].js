@@ -53,7 +53,10 @@ export async function getStaticProps(context) {
     context.preview ? globalDrupalStateAuthStores : globalDrupalStateStores
   );
 
-  const slug = `/articles/${context.params.slug[0]}`;
+  // handle nested slugs like /article/featured
+  const slug = `/articles${context.params.slug
+    .map((segment) => `/${segment}`)
+    .join("")}`;
 
   store.params.clear();
   // if preview, use preview endpoint and add to store.

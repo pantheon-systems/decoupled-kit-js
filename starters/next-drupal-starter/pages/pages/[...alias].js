@@ -62,7 +62,10 @@ export async function getStaticProps(context) {
     context.preview ? globalDrupalStateAuthStores : globalDrupalStateStores
   );
 
-  const alias = `/pages/${context.params.alias[0]}`;
+  // handle nested alias like /pages/featured
+  const alias = `/pages${context.params.alias
+    .map((segment) => `/${segment}`)
+    .join("")}`;
 
   store.params.clear();
   context.preview && (await getPreview(context, "node--page"));
