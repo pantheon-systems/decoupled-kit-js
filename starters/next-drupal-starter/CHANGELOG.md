@@ -1,5 +1,16 @@
 # @pantheon-systems/next-drupal-starter
 
+## 1.1.4
+
+### Patch Changes
+
+- 0fb93d0: [drupal-kit] Upgrade @gdwc/drupal-state to v2.7.0
+  [next-drupal-starter] Use the new refresh option when preview is true
+- 3f35b8a: [next-drupal-starter] Refactor examples/auth-api
+- 9483b9e: [next-drupal-starter] Added helper function for handling preview data and preview implemented on all content types
+- Updated dependencies [0fb93d0]
+  - @pantheon-systems/drupal-kit@1.1.4
+
 ## 1.1.3
 
 ### Patch Changes
