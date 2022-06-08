@@ -1,6 +1,6 @@
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
-import { fetchJsonapiEndpoint } from "@pantheon-systems/drupal-kit";
+import { getPreview } from "../../lib/getPreview";
 import {
   getCurrentLocaleStore,
   globalDrupalStateAuthStores,
@@ -64,49 +64,21 @@ export async function getStaticPaths(context) {
 export async function getStaticProps(context) {
   const { locales, locale } = context;
   const multiLanguage = isMultiLanguage(locales);
-  const store = getCurrentLocaleStore(
-    context.locale,
-    globalDrupalStateAuthStores
-  );
-  store.params.clear();
+  const lang = context.preview ? context.previewData.previewLang : locale;
+
+  const store = getCurrentLocaleStore(lang, globalDrupalStateAuthStores);
 
   const slug = `/articles/${context.params.slug[0]}`;
 
-  // if preview, use preview endpoint and add to store.
-  if (context?.previewData?.key) {
-    let requestInit = {};
-    if (process.env.CLIENT_ID && process.env.CLIENT_SECRET) {
-      requestInit = {
-        headers: {
-          Authorization: await store.getAuthHeader(),
-        },
-      };
-    }
-    const previewData = await fetchJsonapiEndpoint(
-      `${store.apiRoot}decoupled-preview/${context.previewData.key}?include=field_media_image.field_media_image`,
-      requestInit
-    );
-    if (previewData.errors) {
-      throw previewData.errors[0].detail;
-    }
-    const uuid = previewData.data.id;
-
-    store.setState({ "node--articleResources": { [uuid]: previewData } });
-  }
-
-  // if a revision, pass resourceVersion parameter.
-  if (context?.previewData?.resourceVersionId) {
-    store.params.addCustomParam({
-      resourceVersion: `id:${context.previewData.resourceVersionId}`,
-    });
-  }
   store.params.clear();
+  // if preview, use preview endpoint and add to store.
   store.params.addInclude(["field_media_image.field_media_image"]);
-  // If preview mode, get the preview data from the store, other wise fetch from the api.
+  context.preview && (await getPreview(context, "node--article"));
+
   const article = await store.getObjectByPath({
     objectName: "node--article",
     // Prefix the slug with the current locale
-    path: `${multiLanguage ? locale : ""}${slug}`,
+    path: `${multiLanguage ? lang : ""}${slug}`,
     query: `
         {
           id
@@ -125,6 +97,8 @@ export async function getStaticProps(context) {
           }
         }
       `,
+    // if preview is true, force a fetch to Drupal
+    refresh: context.preview,
   });
 
   store.params.clear();

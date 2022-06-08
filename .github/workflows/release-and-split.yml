@@ -45,6 +45,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
   packages_split:
+    # only run this job after version and publish has finished
+    needs: version
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}

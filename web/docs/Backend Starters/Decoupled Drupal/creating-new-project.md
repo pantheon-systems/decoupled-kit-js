@@ -51,4 +51,8 @@ For example, to use GitHub actions as your CI service, you could add the followi
 
 `--ci=githubactions`
 
+Other possible values are `circleci`, `gitlab-pipelines` and `bitbucket-pipelines`.
+
+Note: if using Github Actions, your token should have the "workflow" scope.
+
 For more information, consult the [available services section of the build tools documentation](https://github.com/pantheon-systems/terminus-build-tools-plugin#available-services)

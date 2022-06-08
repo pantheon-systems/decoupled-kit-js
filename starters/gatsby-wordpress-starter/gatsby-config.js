@@ -38,6 +38,14 @@ module.exports = {
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
         url,
+        // If your WordPress server is overloaded during a build,
+        // try the following settings to reduce concurrency.
+        // see https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-wordpress/docs/plugin-options.md#schemarequestconcurrency
+        // schema: {
+        //   perPage: 20, // default 100
+        //   requestConcurrency: 5, // default 15
+        //   previewRequestConcurrency: 2, // default 5
+        // },
       },
     },
 

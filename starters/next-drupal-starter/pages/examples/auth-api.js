@@ -7,7 +7,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../components/layout";
 
-export default function AuthApiExampleTemplate({ taxonomies }) {
+export default function AuthApiExampleTemplate({ articles }) {
   return (
     <Layout>
       <Head>
@@ -23,26 +23,25 @@ export default function AuthApiExampleTemplate({ taxonomies }) {
         </Link>
 
         <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
-          {taxonomies.length > 0 && (
+          {articles?.length > 0 ? (
             <p>
-              If NextJS is able to make authorized requests to the Drupal API,
-              you will see a list of taxonomy types below:
+              🎉 NextJS was able to successfuly make an authenticated request to
+              Drupal! 🎉
             </p>
-          )}
-          {taxonomies.length > 0 &&
-            taxonomies.map((taxonomy) => {
-              return (
-                <p key={taxonomy.id}>
-                  {taxonomy.name}: {taxonomy.description}
-                </p>
-              );
-            })}
-          {taxonomies.length === 0 && (
-            <p>
-              NextJS was unable to make an authorized request to the Drupal API.
-              Please check your .env file to ensure that your CLIENT_ID and
-              CLIENT_SECRET are set correctly.
-            </p>
+          ) : (
+            <>
+              <p>
+                NextJS was unable to make an authorized request to the Drupal
+                API. Please check your .env.development.local file to ensure
+                that your CLIENT_ID and CLIENT_SECRET are set correctly.
+              </p>
+              <p>
+                For more information on how to set these values, please see{" "}
+                <a href="https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next%20Drupal/setting-environment-variables.md">
+                  Setting Environment Variables
+                </a>
+              </p>
+            </>
           )}
         </div>
       </div>
@@ -50,17 +49,30 @@ export default function AuthApiExampleTemplate({ taxonomies }) {
   );
 }
 
-export async function getStaticProps({ locales, locale }) {
-  const authstore = getCurrentLocaleStore(locale, globalDrupalStateAuthStores);
+export async function getStaticProps({ locale }) {
+  const authStore = getCurrentLocaleStore(locale, globalDrupalStateAuthStores);
+  authStore.params.clear();
 
-  authstore.params.clear();
-  const taxonomies = await authstore.getObject({
-    objectName: "taxonomy_vocabulary--taxonomy_vocabulary",
-  });
-  return {
-    props: {
-      taxonomies: taxonomies,
-      revalidate: 60,
-    },
-  };
+  if (!authStore.auth) {
+    return { props: {} };
+  }
+
+  try {
+    const articles = await authStore.getObject({
+      objectName: "node--article",
+    });
+    return {
+      props: {
+        articles,
+        revalidate: 60,
+      },
+    };
+  } catch (error) {
+    process.env.DEBUG_MODE &&
+      console.error(
+        "Error occured while fetching the autorized example: ",
+        error
+      );
+    return { props: {} };
+  }
 }
