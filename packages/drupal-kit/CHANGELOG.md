@@ -1,5 +1,12 @@
 # @pantheon-systems/drupal-kit
 
+## 1.1.4
+
+### Patch Changes
+
+- 0fb93d0: [drupal-kit] Upgrade @gdwc/drupal-state to v2.7.0
+  [next-drupal-starter] Use the new refresh option when preview is true
+
 ## 1.1.1
 
 ### Patch Changes
