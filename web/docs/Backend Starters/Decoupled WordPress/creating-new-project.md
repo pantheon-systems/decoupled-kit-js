@@ -37,7 +37,7 @@
 
 ### Additional Options
 
-#### Using other git hosts or CI services
+#### Using Other Git Hosts or CI Services
 
 Terminus build tools supports a number of other combinations of git hosts and CI services.
 
