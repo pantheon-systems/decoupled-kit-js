@@ -27,7 +27,7 @@ export default function PageListTemplate({ hrefLang, pages, multiLanguage }) {
                 <div dangerouslySetInnerHTML={{ __html: body?.summary }} />
                 <Link
                   passHref
-                  href={`${multiLanguage ? `/${path.langcode}` : ""}${
+                  href={`${multiLanguage ? `/${hrefLang?.langcode}` : ""}${
                     path.alias
                   }`}
                 >

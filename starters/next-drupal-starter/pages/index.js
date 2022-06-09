@@ -97,6 +97,7 @@ export async function getStaticProps(context) {
 
     return {
       props: { articles, hrefLang, multiLanguage },
+      revalidate: 60,
     };
   } catch (error) {
     console.error("Unable to fetch articles: ", error);
