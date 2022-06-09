@@ -16,11 +16,11 @@ fetch data from a JSON:API endpoint, bubbling up surrogate keys if possible
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `apiUrl` | `RequestInfo` | the api url for the JSON:API endpoint |
-| `requestInit` | `RequestInit` | fetch initialization object |
-| `res?` | `boolean` \| `ServerResponse` | response object |
+| Name          | Type                          | Description                           |
+| :------------ | :---------------------------- | :------------------------------------ |
+| `apiUrl`      | `RequestInfo`                 | the api url for the JSON:API endpoint |
+| `requestInit` | `RequestInit`                 | fetch initialization object           |
+| `res?`        | `boolean` \| `ServerResponse` | response object                       |
 
 #### Returns
 
@@ -30,4 +30,4 @@ a promise containing the data for the JSON:API response
 
 #### Defined in
 
-[src/fetch/defaultFetch.ts:13](https://github.com/backlineint/decoupled-kit-js/blob/fa1ceead/packages/drupal-kit/src/fetch/defaultFetch.ts#L13)
+[src/fetch/defaultFetch.ts:13](https://github.com/pantheon-systems/decoupled-kit-js/blob/fa1ceead/packages/drupal-kit/src/fetch/defaultFetch.ts#L13)

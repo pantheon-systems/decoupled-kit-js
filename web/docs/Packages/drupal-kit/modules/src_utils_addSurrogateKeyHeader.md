@@ -16,10 +16,10 @@ Adds an aggregated list of surrogate keys in the working response.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `keys` | ``null`` \| `string` | Value for surrogate-key header in API response. |
-| `res` | `ServerResponse` | The active http.ServerResponse object. |
+| Name   | Type               | Description                                     |
+| :----- | :----------------- | :---------------------------------------------- |
+| `keys` | `null` \| `string` | Value for surrogate-key header in API response. |
+| `res`  | `ServerResponse`   | The active http.ServerResponse object.          |
 
 #### Returns
 
@@ -29,4 +29,4 @@ The current known unique set of surrogate keys.
 
 #### Defined in
 
-[src/utils/addSurrogateKeyHeader.ts:9](https://github.com/backlineint/decoupled-kit-js/blob/fa1ceead/packages/drupal-kit/src/utils/addSurrogateKeyHeader.ts#L9)
+[src/utils/addSurrogateKeyHeader.ts:9](https://github.com/pantheon-systems/decoupled-kit-js/blob/fa1ceead/packages/drupal-kit/src/utils/addSurrogateKeyHeader.ts#L9)
