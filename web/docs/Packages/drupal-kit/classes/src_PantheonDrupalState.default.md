@@ -21,8 +21,8 @@ custom_edit_url: null
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name                | Type                |
+| :------------------ | :------------------ |
 | `__namedParameters` | `DrupalStateConfig` |
 
 #### Overrides
@@ -31,7 +31,7 @@ DrupalState.constructor
 
 #### Defined in
 
-[src/PantheonDrupalState.ts:16](https://github.com/backlineint/decoupled-kit-js/blob/c1e81350/packages/drupal-kit/src/PantheonDrupalState.ts#L16)
+[src/PantheonDrupalState.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/fa1ceead/packages/drupal-kit/src/PantheonDrupalState.ts#L16)
 
 ## Methods
 
@@ -43,12 +43,12 @@ If a query is provided, fetches data using apollo-link-json-api, otherwise uses 
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `endpoint` | `string` | `undefined` | the assembled JSON:API endpoint |
-| `query` | `string` \| `boolean` | `false` | the specified GraphQL query |
-| `objectName` | `string` \| `boolean` | `false` | Name of object to retrieve. Ex: node--article |
-| `res` | `boolean` \| `ServerResponse` | `false` | response object |
+| Name         | Type                          | Default value | Description                                   |
+| :----------- | :---------------------------- | :------------ | :-------------------------------------------- |
+| `endpoint`   | `string`                      | `undefined`   | the assembled JSON:API endpoint               |
+| `query`      | `string` \| `boolean`         | `false`       | the specified GraphQL query                   |
+| `objectName` | `string` \| `boolean`         | `false`       | Name of object to retrieve. Ex: node--article |
+| `res`        | `boolean` \| `ServerResponse` | `false`       | response object                               |
 
 #### Returns
 
@@ -62,4 +62,4 @@ DrupalState.conditionalFetch
 
 #### Defined in
 
-[src/PantheonDrupalState.ts:46](https://github.com/backlineint/decoupled-kit-js/blob/c1e81350/packages/drupal-kit/src/PantheonDrupalState.ts#L46)
+[src/PantheonDrupalState.ts:46](https://github.com/pantheon-systems/decoupled-kit-js/blob/fa1ceead/packages/drupal-kit/src/PantheonDrupalState.ts#L46)
