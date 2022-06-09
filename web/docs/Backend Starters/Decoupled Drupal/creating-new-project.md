@@ -35,14 +35,14 @@ sidebar_position: 2
 
   Replace `{PROJECT_NAME}` with your project name - for example `decoupled-drupal`.
 
-  Replace `{My Team Name}` with your team name - for example `My Agency`. This can also be omitted.
+  Replace `'{My Team Name}'` with your team name - for example `My Agency`. This can also be omitted.
 
 
 **Note:** This will result in a Github repository being created for this new codebase under the authenticated user's namespace (unless the `--org` option is used), a site being created on Pantheon and a CircleCI project being created for automated deployments.
 
 ### Additional Options
 
-#### Installing with Umami demo data
+#### Installing with Umami Demo Data
 
 The installation command above will create a backend with limited example content. To instead create a site with Drupal's Umami demo data set, change the profile flag to:
 
@@ -50,7 +50,7 @@ The installation command above will create a backend with limited example conten
 
 In your `terminus build:project:create` command.
 
-#### Using other git hosts or CI services
+#### Using Other Git Hosts or CI Services
 
 Terminus build tools supports a number of other combinations of git hosts and CI services.
 
