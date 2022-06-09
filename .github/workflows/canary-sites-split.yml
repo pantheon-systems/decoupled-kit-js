@@ -1,0 +1,36 @@
+name: "Split Canary Sites"
+
+on:
+  push:
+    branches:
+      - canary
+
+# split the starers to repos to be deployed on the platform
+# for easy QA testing
+jobs:
+  packages_split_canary:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # define package to repository map
+        include:
+          - local_path: "starters/next-drupal-starter"
+            split_repository: "next-drupal-starter-umami-canary"
+    steps:
+      - uses: actions/checkout@v2
+      - uses: "symplify/monorepo-split-github-action@2.1"
+        with:
+          # ↓ split <local_path> directory
+          package_directory: "${{ matrix.local_path }}"
+
+          # ↓ into https://github.com/org/split_repository repository
+          repository_organization: "pantheon-systems"
+          repository_name: "${{ matrix.split_repository }}"
+
+          # ↓ the user signed under the split commit
+          user_name: "brian-ci"
+          user_email: "brian.perry@pantheon.io"
