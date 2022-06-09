@@ -119,7 +119,7 @@ export async function getStaticProps(context) {
     props: {
       page,
       hrefLang,
-      revalidate: 60,
     },
+    revalidate: 60,
   };
 }
