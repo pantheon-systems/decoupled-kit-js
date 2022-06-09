@@ -64,8 +64,8 @@ export async function getStaticProps({ locale }) {
     return {
       props: {
         articles,
-        revalidate: 60,
       },
+      revalidate: 60,
     };
   } catch (error) {
     process.env.DEBUG_MODE &&

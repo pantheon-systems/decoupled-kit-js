@@ -59,7 +59,8 @@ export async function getStaticProps(context) {
   // returning the data to the component.
 
   return {
-    props: { article, revalidate: 60 },
+    props: { article },
+    revalidate: 60,
   };
 }
 ```

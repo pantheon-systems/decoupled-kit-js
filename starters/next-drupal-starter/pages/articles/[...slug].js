@@ -1,9 +1,11 @@
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import { getPreview } from "../../lib/getPreview";
+import { getPaths } from "../../lib/getPaths";
 import {
   getCurrentLocaleStore,
   globalDrupalStateAuthStores,
+  globalDrupalStateStores,
 } from "../../lib/drupalStateContext";
 
 import Article from "../../components/article.js";
@@ -23,42 +25,22 @@ export default function ArticleTemplate({ title, body, imgSrc, hrefLang }) {
 }
 
 export async function getStaticPaths(context) {
-  // TODO - locale increases the complexity enough here that creating a usePaths
-  // hook would be a good idea.
-  // Get paths for each locale.
-  const pathsByLocale = context.locales.map(async (locale) => {
-    const store = getCurrentLocaleStore(locale, globalDrupalStateAuthStores);
+  try {
+    const paths = await getPaths(
+      context,
+      globalDrupalStateStores,
+      "node--article",
+      "slug",
+      "articles"
+    );
 
-    const articles = await store.getObject({
-      objectName: "node--article",
-      query: `
-          {
-            id
-            path {
-              alias
-            }
-          }
-        `,
-    });
-    return articles.map((article) => {
-      // matches everything after /articles/
-      const match = article.path.alias.match(/^\/articles\/(.*)$/);
-      const slug = match[1];
-
-      return { params: { slug: [slug] }, locale: locale };
-    });
-  });
-
-  // Resolve all promises returned as part of pathsByLocale.
-  const paths = await Promise.all(pathsByLocale).then((values) => {
-    // Flatten the array of arrays into a single array.
-    return [].concat(...values);
-  });
-
-  return {
-    paths,
-    fallback: false,
-  };
+    return {
+      paths,
+      fallback: false,
+    };
+  } catch (error) {
+    console.error("Failed to fetch paths for articles:", error);
+  }
 }
 
 export async function getStaticProps(context) {
@@ -66,9 +48,15 @@ export async function getStaticProps(context) {
   const multiLanguage = isMultiLanguage(locales);
   const lang = context.preview ? context.previewData.previewLang : locale;
 
-  const store = getCurrentLocaleStore(lang, globalDrupalStateAuthStores);
+  const store = getCurrentLocaleStore(
+    lang,
+    context.preview ? globalDrupalStateAuthStores : globalDrupalStateStores
+  );
 
-  const slug = `/articles/${context.params.slug[0]}`;
+  // handle nested slugs like /article/featured
+  const slug = `/articles${context.params.slug
+    .map((segment) => `/${segment}`)
+    .join("")}`;
 
   store.params.clear();
   // if preview, use preview endpoint and add to store.
@@ -108,7 +96,7 @@ export async function getStaticProps(context) {
   const paths = locales.map(async (locale) => {
     const localeStore = getCurrentLocaleStore(
       locale,
-      globalDrupalStateAuthStores
+      context.preview ? globalDrupalStateAuthStores : globalDrupalStateStores
     );
     const { path } = await localeStore.getObject({
       objectName: "node--article",
@@ -132,9 +120,9 @@ export async function getStaticProps(context) {
     props: {
       title: article.title,
       body: article.body.value,
-      imgSrc: article.field_media_image.field_media_image.uri.url,
+      imgSrc: article.field_media_image?.field_media_image?.uri?.url || "",
       hrefLang,
-      revalidate: 60,
     },
+    revalidate: 60,
   };
 }
