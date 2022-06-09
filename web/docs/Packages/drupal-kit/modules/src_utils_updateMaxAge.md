@@ -29,4 +29,4 @@ The shortest cache-control header found in JSON:API responses.
 
 #### Defined in
 
-[src/utils/updateMaxAge.ts:9](https://github.com/pantheon-systems/decoupled-kit-js/blob/7a7ddb2/packages/drupal-kit/src/utils/updateMaxAge.ts#L9)
+[src/utils/updateMaxAge.ts:9](https://github.com/backlineint/decoupled-kit-js/blob/fa1ceead/packages/drupal-kit/src/utils/updateMaxAge.ts#L9)
