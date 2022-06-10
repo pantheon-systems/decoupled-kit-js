@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
 import { DrupalState } from "@pantheon-systems/drupal-kit";
-import { useRouter } from "next/router";
+
+import {
+  getCurrentLocaleStore,
+  globalDrupalStateStores,
+} from "../../../lib/drupalStateContext";
 
 import Paginator from "../../../components/paginator";
 import Head from "next/head";
@@ -12,7 +15,7 @@ import Layout from "../../../components/layout";
 // Example paginated data set
 const drupalUrl = "https://dev-ds-demo.pantheonsite.io";
 
-export default function PaginationExampleTemplate({ data }) {
+export default function PaginationExampleTemplate({ data, footerMenu }) {
   // configurable itemsPerPage
   const itemsPerPage = 10;
 
@@ -35,7 +38,7 @@ export default function PaginationExampleTemplate({ data }) {
   };
 
   return (
-    <Layout>
+    <Layout footerMenu={footerMenu}>
       <Head>
         <title>Pagination example</title>
         <meta name="description" content="Powered by Pantheon Decoupled Kit" />
@@ -94,8 +97,8 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps() {
-  const store = new DrupalState({
+export async function getStaticProps(context) {
+  const exampleStore = new DrupalState({
     apiBase: drupalUrl,
     apiPrefix: "jsonapi",
     defaultLocale: "en",
@@ -103,7 +106,7 @@ export async function getStaticProps() {
   });
 
   // using a query here results in a payload of 641kb, down from 2.09mb without a query!
-  const data = await store.getObject({
+  const data = await exampleStore.getObject({
     objectName: "node--ds_example",
     query: `{
       title
@@ -115,9 +118,15 @@ export async function getStaticProps() {
     all: true,
   });
 
+  const store = getCurrentLocaleStore(context.locale, globalDrupalStateStores);
+  const footerMenu = await store.getObject({
+    objectName: "menu_items--main",
+  });
+
   return {
     props: {
       data,
+      footerMenu,
     },
     revalidate: 60,
   };

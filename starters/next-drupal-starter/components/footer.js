@@ -1,27 +1,6 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { useDSContext, getCurrentLocaleStore } from "../lib/drupalStateContext";
 
-export default function Footer() {
-  const { locale } = useRouter();
-  const [menuData, setMenuData] = useState();
-  const { stores } = useDSContext();
-  const store = getCurrentLocaleStore(locale, stores);
-
-  useEffect(() => {
-    const fetchMenuData = async () => {
-      try {
-        store.params.clear();
-        const data = await store.getObject({
-          objectName: "menu_items--main",
-        });
-        setMenuData(data);
-      } catch (error) {}
-    };
-    fetchMenuData();
-  }, [store]);
-
+export default function Footer({ menuData }) {
   const ExampleMenu = () => {
     const menuArr = [];
     if (menuData) {
