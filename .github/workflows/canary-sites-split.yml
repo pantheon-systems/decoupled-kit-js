@@ -20,6 +20,8 @@ jobs:
         include:
           - local_path: "starters/next-drupal-starter"
             split_repository: "next-drupal-starter-umami-canary"
+          - local_path: "starters/next-drupal-starter"
+            split_repository: "next-drupal-starter-default-canary"
           - local_path: "starters/gatsby-wordpress-starter"
             split_repository: "gatsby-wordpress-starter-default-canary"
     steps:
