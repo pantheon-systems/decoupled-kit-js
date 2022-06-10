@@ -33,7 +33,7 @@ For development, this value can be set to any string, or `http://localhost:3000`
 
 To enable Decoupled Preview, the following environment variables must be set
 in the `.env.development.local` for local dev and in the Pantheon dashboard for production or
-Multdev environments.
+Multidev environments.
 
 ```
 PREVIEW_SECRET
@@ -42,7 +42,7 @@ CLIENT_SECRET
 ```
 
 - `PREVIEW_SECRET` - Set the Preview Secret here: {your Backend URL}/admin/structure/dp-preview-site/example_nextjs_preview
-- `CLIENT_ID` - Visable as the UUID for the “Example Consumer” here: {your Backend URL}/en/admin/config/services/consumer
+- `CLIENT_ID` - Visible as the UUID for the “Example Consumer” here: {your Backend URL}/en/admin/config/services/consumer
 - `CLIENT_SECRET` - Set the Client Secret here: {your Backend URL}/admin/config/services/consumer/2/edit
 
 See [Implementing Preview](./implementing-preview.md) for more information on how to implement Decoupled Preview with Next.js and Drupal.
