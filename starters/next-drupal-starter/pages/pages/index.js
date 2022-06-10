@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../../lib/isMultiLanguage.js";
 import {
@@ -15,6 +16,7 @@ export default function PageListTemplate({
   footerMenu,
   multiLanguage,
 }) {
+  const { locale } = useRouter();
   return (
     <Layout footerMenu={footerMenu}>
       <NextSeo
@@ -32,7 +34,7 @@ export default function PageListTemplate({
                 <div dangerouslySetInnerHTML={{ __html: body?.summary }} />
                 <Link
                   passHref
-                  href={`${multiLanguage ? `/${hrefLang?.langcode}` : ""}${
+                  href={`${multiLanguage ? `/${path.langcode || locale}` : ""}${
                     path.alias
                   }`}
                 >

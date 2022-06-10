@@ -19,7 +19,14 @@ import { useRouter } from "next/router";
  * @see {@link https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/starters/next-drupal-starter/pages/examples/pagination/[[...page]].js} for an example implementation
  * @returns Component with data rendered by the passed in Component and page buttons
  */
-const Paginator = ({ data, itemsPerPage, breakpoints, Component, routing }) => {
+const Paginator = ({
+  data,
+  itemsPerPage,
+  breakpoints,
+  Component,
+  routing,
+  ...props
+}) => {
   // configurable breakpoints
   // This value will be the start of the seperator.
   const [breakStart, setBreakStart] = useState(breakpoints?.start || null);
@@ -215,7 +222,11 @@ const Paginator = ({ data, itemsPerPage, breakpoints, Component, routing }) => {
       </h3>
       <section>
         {/* Component passed in that will render the data */}
-        {Component ? <Component currentItems={currentItems} /> : <RenderData />}
+        {Component ? (
+          <Component currentItems={currentItems} {...props} />
+        ) : (
+          <RenderData />
+        )}
       </section>
       <div className="sticky lg:bottom-12 bottom-4">
         <RenderButtons />
