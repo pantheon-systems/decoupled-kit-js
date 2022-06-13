@@ -17,7 +17,7 @@ export const Grid = ({ cols = "3", children }) => {
 
 // a Higher Order Component to use Grid
 export const withGrid = (Component) => {
-  const GridedComponent = ({ data }, ...props) => {
+  const GridedComponent = ({ data, ...props }) => {
     return (
       <>
         {data ? (
@@ -39,12 +39,16 @@ export const withGrid = (Component) => {
 };
 
 // For use with withGrid
-export const ArticleGridItem = ({ content: article, multiLanguage }) => {
+export const ArticleGridItem = ({
+  content: article,
+  multiLanguage,
+  locale,
+}) => {
   const imgSrc = article?.field_media_image?.field_media_image?.uri?.url || "";
   return (
     <Link
       passHref
-      href={`${multiLanguage ? `/${article.path.langcode}` : ""}${
+      href={`${multiLanguage ? `/${article.path.langcode || locale}` : ""}${
         article.path.alias
       }`}
     >
@@ -77,12 +81,12 @@ export const ArticleGridItem = ({ content: article, multiLanguage }) => {
 };
 
 // For use with withGrid
-export const RecipeGridItem = ({ content: recipe, multiLanguage }) => {
+export const RecipeGridItem = ({ content: recipe, multiLanguage, locale }) => {
   const imgSrc = recipe?.field_media_image?.field_media_image?.uri?.url || "";
   return (
     <Link
       passHref
-      href={`${multiLanguage ? `/${recipe.path.langcode}` : ""}${
+      href={`${multiLanguage ? `/${recipe.path.langcode || locale}` : ""}${
         recipe.path.alias
       }`}
     >
