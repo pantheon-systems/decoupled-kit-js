@@ -41,7 +41,8 @@ export async function getStaticPaths(context) {
       globalDrupalStateStores,
       "node--page",
       "alias",
-      "pages"
+      // basic pages are not prefixed by default
+       "pages"
     );
 
     return {
@@ -63,7 +64,7 @@ export async function getStaticProps(context) {
   );
 
   // handle nested alias like /pages/featured
-  const alias = `/pages${context.params.alias
+  const alias = `${context.params.alias
     .map((segment) => `/${segment}`)
     .join("")}`;
 
@@ -72,6 +73,7 @@ export async function getStaticProps(context) {
 
   const page = await store.getObjectByPath({
     objectName: "node--page",
+    // note: pages are not prefixed by default.
     path: `${multiLanguage ? lang : ""}${alias}`,
     query: `
         {
