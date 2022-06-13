@@ -42,7 +42,7 @@ export async function getStaticPaths(context) {
       "node--page",
       "alias",
       // basic pages are not prefixed by default
-       "pages"
+      "pages"
     );
 
     return {
@@ -70,25 +70,47 @@ export async function getStaticProps(context) {
 
   store.params.clear();
   context.preview && (await getPreview(context, "node--page"));
-
-  const page = await store.getObjectByPath({
-    objectName: "node--page",
-    // note: pages are not prefixed by default.
-    path: `${multiLanguage ? lang : ""}${alias}`,
-    query: `
-        {
-          id
-          title
-          body
-          path {
-            alias
-            langcode
+  let page;
+  try {
+    page = await store.getObjectByPath({
+      objectName: "node--page",
+      // note: pages are not prefixed by default.
+      path: `${multiLanguage ? lang : ""}${alias}`,
+      query: `
+          {
+            id
+            title
+            body
+            path {
+              alias
+              langcode
+            }
           }
-        }
-      `,
-    // if preview is true, force a fetch to Drupal
-    refresh: context.preview,
-  });
+        `,
+      // if preview is true, force a fetch to Drupal
+      refresh: context.preview,
+    });
+  } catch (error) {
+    // retry the fetch with `/pages` prefix
+    page = await store.getObjectByPath({
+      objectName: "node--page",
+      // note: pages are not prefixed by default.
+      path: `${multiLanguage ? lang : ""}/pages${alias}`,
+      query: `
+            {
+              id
+              title
+              body
+              path {
+                alias
+                langcode
+              }
+            }
+          `,
+      // if preview is true, force a fetch to Drupal
+      refresh: context.preview,
+    });
+  }
 
   store.params.clear();
 
