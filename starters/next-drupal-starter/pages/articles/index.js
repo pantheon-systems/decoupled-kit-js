@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../../lib/isMultiLanguage.js";
 import {
@@ -15,6 +16,7 @@ export default function SSRArticlesListTemplate({
   hrefLang,
   multiLanguage,
 }) {
+  const { locale } = useRouter();
   const ArticleGrid = withGrid(ArticleGridItem);
   return (
     <Layout footerMenu={footerMenu}>
@@ -29,6 +31,7 @@ export default function SSRArticlesListTemplate({
           data={articles}
           contentType="articles"
           multiLanguage={multiLanguage}
+          locale={locale}
         />
       </section>
     </Layout>
@@ -38,7 +41,7 @@ export default function SSRArticlesListTemplate({
 export async function getServerSideProps(context) {
   try {
     const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
-    const { locales } = context;
+    const { locale, locales } = context;
     // if there is more than one language in context.locales,
     // assume multilanguage is enabled.
     const multiLanguage = isMultiLanguage(locales);
@@ -49,10 +52,7 @@ export async function getServerSideProps(context) {
       };
     });
 
-    const store = getCurrentLocaleStore(
-      context.locale,
-      globalDrupalStateStores
-    );
+    const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 
     store.params.clear();
     store.params.addInclude(["field_media_image.field_media_image"]);
