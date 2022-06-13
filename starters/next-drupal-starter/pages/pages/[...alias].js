@@ -41,6 +41,7 @@ export async function getStaticPaths(context) {
       globalDrupalStateStores,
       "node--page",
       "alias",
+      // basic pages are not prefixed by default
       "pages"
     );
 
@@ -63,30 +64,53 @@ export async function getStaticProps(context) {
   );
 
   // handle nested alias like /pages/featured
-  const alias = `/pages${context.params.alias
+  const alias = `${context.params.alias
     .map((segment) => `/${segment}`)
     .join("")}`;
 
   store.params.clear();
   context.preview && (await getPreview(context, "node--page"));
-
-  const page = await store.getObjectByPath({
-    objectName: "node--page",
-    path: `${multiLanguage ? lang : ""}${alias}`,
-    query: `
-        {
-          id
-          title
-          body
-          path {
-            alias
-            langcode
+  let page;
+  try {
+    page = await store.getObjectByPath({
+      objectName: "node--page",
+      // note: pages are not prefixed by default.
+      path: `${multiLanguage ? lang : ""}${alias}`,
+      query: `
+          {
+            id
+            title
+            body
+            path {
+              alias
+              langcode
+            }
           }
-        }
-      `,
-    // if preview is true, force a fetch to Drupal
-    refresh: context.preview,
-  });
+        `,
+      // if preview is true, force a fetch to Drupal
+      refresh: context.preview,
+    });
+  } catch (error) {
+    // retry the fetch with `/pages` prefix
+    page = await store.getObjectByPath({
+      objectName: "node--page",
+      // note: pages are not prefixed by default.
+      path: `${multiLanguage ? lang : ""}/pages${alias}`,
+      query: `
+            {
+              id
+              title
+              body
+              path {
+                alias
+                langcode
+              }
+            }
+          `,
+      // if preview is true, force a fetch to Drupal
+      refresh: context.preview,
+    });
+  }
 
   store.params.clear();
 

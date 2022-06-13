@@ -34,7 +34,7 @@ export default function PageListTemplate({
                 <div dangerouslySetInnerHTML={{ __html: body?.summary }} />
                 <Link
                   passHref
-                  href={`${multiLanguage ? `/${path.langcode || locale}` : ""}${
+                  href={`${multiLanguage ? `/${path?.langcode || locale}` : ""}${path.alias.includes('/pages') ? '' : '/pages'}${
                     path.alias
                   }`}
                 >

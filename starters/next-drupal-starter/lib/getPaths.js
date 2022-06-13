@@ -42,7 +42,8 @@ export const getPaths = async (
       return data.map((datum) => {
         // remove the url prefix and split the path to handle
         // dynamic routes like /articles/my-article and /articles/featured/my-article
-        const regex = new RegExp(`/?${urlAliasPrefix}/?`);
+        // will also work for content that is not prefixed
+        const regex = new RegExp(`/?(${urlAliasPrefix})?/?`);
         const path = datum.path.alias?.replace(regex, "").split("/");
         // return the path object.
         return {
