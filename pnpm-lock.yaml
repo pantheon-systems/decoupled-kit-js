@@ -195,17 +195,17 @@ importers:
       autoprefixer: ^10.4.4
       eslint: 8.17.0
       eslint-config-next: 12.1.6
-      next: 12.1.6
+      next: ^12.1.5
       postcss: ^8.4.12
-      react: 18.1.0
-      react-dom: 18.1.0
+      react: 17.0.2
+      react-dom: 17.0.2
       sharp: ^0.30.4
       tailwindcss: ^3.0.24
     dependencies:
       '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.24
-      next: 12.1.6_ef5jwxihqo6n7gxfmzogljlgcm
-      react: 18.1.0
-      react-dom: 18.1.0_react@18.1.0
+      next: 12.1.6_sfoxds7t5ydpegc3knd667wn6m
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       sharp: 0.30.4
     devDependencies:
       autoprefixer: 10.4.4_postcss@8.4.12
@@ -9577,7 +9577,7 @@ packages:
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.17.0
       eslint-plugin-react: 7.29.4_eslint@8.17.0
       eslint-plugin-react-hooks: 4.5.0_eslint@8.17.0
-      next: 12.1.6_ef5jwxihqo6n7gxfmzogljlgcm
+      next: 12.1.6_sfoxds7t5ydpegc3knd667wn6m
     transitivePeerDependencies:
       - eslint-import-resolver-webpack
       - supports-color
@@ -15113,7 +15113,7 @@ packages:
       - babel-plugin-macros
     dev: false
 
-  /next/12.1.6_ef5jwxihqo6n7gxfmzogljlgcm:
+  /next/12.1.6_sfoxds7t5ydpegc3knd667wn6m:
     resolution: {integrity: sha512-cebwKxL3/DhNKfg9tPZDQmbRKjueqykHHbgaoG4VBRH3AHQJ2HO0dbKFiS1hPhe1/qgc2d/hFeadsbPicmLD+A==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -15134,9 +15134,9 @@ packages:
       '@next/env': 12.1.6
       caniuse-lite: 1.0.30001341
       postcss: 8.4.5
-      react: 18.1.0
-      react-dom: 18.1.0_react@18.1.0
-      styled-jsx: 5.0.2_react@18.1.0
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      styled-jsx: 5.0.2_react@17.0.2
     optionalDependencies:
       '@next/swc-android-arm-eabi': 12.1.6
       '@next/swc-android-arm64': 12.1.6
@@ -16838,16 +16838,6 @@ packages:
       scheduler: 0.20.2
     dev: false
 
-  /react-dom/18.1.0_react@18.1.0:
-    resolution: {integrity: sha512-fU1Txz7Budmvamp7bshe4Zi32d0ll7ect+ccxNu9FlObT605GOEB8BfO4tmRJ39R5Zj831VCpvQ05QPBW5yb+w==}
-    peerDependencies:
-      react: ^18.1.0
-    dependencies:
-      loose-envify: 1.4.0
-      react: 18.1.0
-      scheduler: 0.22.0
-    dev: false
-
   /react-error-overlay/6.0.10:
     resolution: {integrity: sha512-mKR90fX7Pm5seCOfz8q9F+66VCc1PGsWSBxKbITjfKVQHMNF2zudxHnMdJiB1fRCb+XsbQV9sO9DCkgsMQgBIA==}
     dev: false
@@ -17003,13 +16993,6 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-
-  /react/18.1.0:
-    resolution: {integrity: sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ==}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      loose-envify: 1.4.0
-    dev: false
 
   /read-chunk/3.2.0:
     resolution: {integrity: sha512-CEjy9LCzhmD7nUpJ1oVOE6s/hBkejlcJEgLQHVnQznOSilOPb+kpKktlLfFDK3/WP43+F80xkUTM2VOkYoSYvQ==}
@@ -17535,12 +17518,6 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-    dev: false
-
-  /scheduler/0.22.0:
-    resolution: {integrity: sha512-6QAm1BgQI88NPYymgGQLCZgvep4FyePDWFpXVK+zNSUgHwlqpJy8VEh8Et0KxTACS4VWwMousBElAZOH9nkkoQ==}
-    dependencies:
-      loose-envify: 1.4.0
     dev: false
 
   /schema-utils/2.7.0:
@@ -18462,7 +18439,7 @@ packages:
       react: 17.0.2
     dev: false
 
-  /styled-jsx/5.0.2_react@18.1.0:
+  /styled-jsx/5.0.2_react@17.0.2:
     resolution: {integrity: sha512-LqPQrbBh3egD57NBcHET4qcgshPks+yblyhPlH2GY8oaDgKs8SK4C3dBh3oSJjgzJ3G5t1SYEZGHkP+QEpX9EQ==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
@@ -18475,7 +18452,7 @@ packages:
       babel-plugin-macros:
         optional: true
     dependencies:
-      react: 18.1.0
+      react: 17.0.2
     dev: false
 
   /stylehacks/5.1.0_postcss@8.4.12:

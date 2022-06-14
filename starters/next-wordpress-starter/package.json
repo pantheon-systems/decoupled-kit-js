@@ -1,7 +1,16 @@
 {
-  "name": "next-wordpress-starter",
+  "name": "@pantheon-systems/next-wordpress-starter",
   "version": "0.1.0",
   "private": true,
+  "description": "Pantheon Decoupled Kit's Next WordPress Starter",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
+  "bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pantheon-systems/decoupled-kit-js"
+  },
+  "author": "@pantheon-systems",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,9 +19,9 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.2",
-    "next": "12.1.6",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
+    "next": "^12.1.5",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "sharp": "^0.30.4"
   },
   "devDependencies": {
