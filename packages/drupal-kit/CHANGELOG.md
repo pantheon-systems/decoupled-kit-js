@@ -1,5 +1,11 @@
 # @pantheon-systems/drupal-kit
 
+## 1.1.5
+
+### Patch Changes
+
+- bde6a66: [next-drupal-starter] Small fixes to `getStaticProps` on some pages
+
 ## 1.1.4
 
 ### Patch Changes

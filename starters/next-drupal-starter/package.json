@@ -1,6 +1,6 @@
 {
   "name": "@pantheon-systems/next-drupal-starter",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "private": true,
   "description": "Pantheon Decoupled Kit's Next Drupal Starter",
   "license": "GPL-3.0-or-later",
@@ -18,7 +18,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@pantheon-systems/drupal-kit": "^1.1.4",
+    "@pantheon-systems/drupal-kit": "^1.1.5",
     "@tailwindcss/typography": "^0.5.2",
     "dotenv": "^16.0.0",
     "next": "^12.1.5",
