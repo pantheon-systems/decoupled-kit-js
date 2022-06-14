@@ -1,6 +1,6 @@
 # Pantheon Decoupled Kit Next WordPress Starter
 
-🔜
+More information on this starter coming soon.
 
 <!-- 
 There are two ways to get started with the Next WordPress Starter:
