@@ -1,5 +1,16 @@
 # @pantheon-systems/next-drupal-starter
 
+## 1.1.5
+
+### Patch Changes
+
+- 4fd56af: [next-drupal-starter] Bugfixes to page path
+- c8d3127: [next-drupal-starter] Added helper function to consolidate code from getStaticPaths
+- 27ee3e1: Resolved regression preventing footer menu from rendering.
+- 62595b7: [next-drupal-starter] Minor bugfixes to grid component and more robust handling of href locale
+- Updated dependencies [bde6a66]
+  - @pantheon-systems/drupal-kit@1.1.5
+
 ## 1.1.4
 
 ### Patch Changes
