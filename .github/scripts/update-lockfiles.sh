@@ -1,5 +1,4 @@
-# This script will update the package-lock.json files in the starter kits before
-# publishing
+# This script will update the package-lock.json files in the starter kits before publishing
 pnpm ci:version
 
 for dir in ./starters/*
