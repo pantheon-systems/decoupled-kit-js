@@ -58,7 +58,7 @@
     "jsona": "^1.9.7"
   },
   "dependencies": {
-    "@gdwc/drupal-state": "^2.7.0"
+    "@gdwc/drupal-state": "3.0.0"
   },
   "peerDependencies": {
     "graphql": ">=14.0.0 <15.0.0 || >=15.0.0 <16.0.0 || >=16.0.0 <17.0.0",
