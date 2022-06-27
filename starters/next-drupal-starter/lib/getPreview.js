@@ -6,10 +6,12 @@ import { fetchJsonapiEndpoint } from "@pantheon-systems/drupal-kit";
 /**
  *
  * @param {import('next').GetServerSidePropsContext |
- * import('next').GetStaticPropsContext} previewData Nextjs context
- * @param {string} node The node to be previewed example 'node--article'
+ * import('next').GetStaticPropsContext} previewData - Nextjs context
+ * @param {string} node - The node to be previewed example 'node--article'
+ * @param {string | undefined} params - JSON:API params to include on the fetched Drupal JSON:API endpoint
+ * @see https://www.drupal.org/docs/core-modules-and-themes/core-modules/jsonapi-module/fetching-resources-get for more information on constructing valid JSON:API querystring
  */
-export async function getPreview(context, node) {
+export async function getPreview(context, node, params) {
   // preview language may not match the current locale.
   // Get language from context.previewData
   const { previewLang } = context.previewData;
@@ -30,12 +32,10 @@ export async function getPreview(context, node) {
         };
       }
 
-      // get params from store
-      const params = store.params.getQueryString()
-        ? `?${store.params.getQueryString()}`
-        : "";
       const fetchedPreviewData = await fetchJsonapiEndpoint(
-        `${store.apiRoot}decoupled-preview/${context.previewData.key}${params}`,
+        `${store.apiRoot}decoupled-preview/${context.previewData.key}${
+          params ? `?${params}` : ""
+        }`,
         requestInit
       );
 
@@ -54,8 +54,7 @@ export async function getPreview(context, node) {
   if (context?.previewData?.resourceVersionId) {
     process.env.DEBUG_MODE &&
       console.log(
-        `Adding recource version ID param ${
-        context?.previewData?.resourceVersionId}...`
+        `Adding resource version ID param ${context?.previewData?.resourceVersionId}...`
       );
 
     store.params.addCustomParam({

@@ -55,12 +55,6 @@ export async function getStaticProps(context) {
 
   const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 
-  store.params.clear();
-  store.params.addInclude([
-    "field_media_image.field_media_image",
-    "field_recipe_category",
-  ]);
-
   try {
     const recipes = await store.getObject({
       objectName: "node--recipe",
@@ -72,8 +66,9 @@ export async function getStaticProps(context) {
         field_recipe_instruction
         path
       }`,
+      params:
+        "include=field_media_image.field_media_image,field_recipe_category",
     });
-    store.params.clear();
 
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
@@ -91,7 +86,8 @@ export async function getStaticProps(context) {
   } catch (error) {
     console.error("Unable to fetch data for recipes: ", error);
     return {
-      props: {},
+      notFound: true,
+      revalidate: 5,
     };
   }
 }

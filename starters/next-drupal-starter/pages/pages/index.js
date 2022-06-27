@@ -34,7 +34,9 @@ export default function PageListTemplate({
                 <div dangerouslySetInnerHTML={{ __html: body?.summary }} />
                 <Link
                   passHref
-                  href={`${multiLanguage ? `/${path?.langcode || locale}` : ""}${path.alias.includes('/pages') ? '' : '/pages'}${
+                  href={`${
+                    multiLanguage ? `/${path?.langcode || locale}` : ""
+                  }${path.alias.includes("/pages") ? "" : "/pages"}${
                     path.alias
                   }`}
                 >
@@ -66,9 +68,6 @@ export async function getStaticProps(context) {
 
   const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 
-  // clear params in case they pollute call to get node--page
-  store.params.clear();
-
   try {
     const pages = await store.getObject({
       objectName: "node--page",
@@ -85,13 +84,12 @@ export async function getStaticProps(context) {
     `,
     });
 
-    store.params.clear();
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
     });
 
     if (!pages) {
-      return { props: { footerMenu } };
+      return { props: { footerMenu }, revalidate: 5 };
     }
 
     return {
@@ -106,7 +104,8 @@ export async function getStaticProps(context) {
   } catch (error) {
     console.error("Unable to fetch data for pages: ", error);
     return {
-      props: {},
+      notFound: true,
+      revalidate: 5,
     };
   }
 }

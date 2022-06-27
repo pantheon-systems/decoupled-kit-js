@@ -68,7 +68,6 @@ export async function getStaticProps(context) {
     .map((segment) => `/${segment}`)
     .join("")}`;
 
-  store.params.clear();
   context.preview && (await getPreview(context, "node--page"));
   let page;
   try {
@@ -111,8 +110,6 @@ export async function getStaticProps(context) {
       refresh: context.preview,
     });
   }
-
-  store.params.clear();
 
   const footerMenu = await store.getObject({
     objectName: "menu_items--main",
