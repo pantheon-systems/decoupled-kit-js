@@ -53,12 +53,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.5.10",
+    "graphql": "^14.0.0 || ^15.0.0 || ^16.0.0",
     "isomorphic-fetch": "^3.0.0"
-  },
-  "peerDependencies": {
-    "react": ">=16.8.0 <17.0.0",
-    "tslib": "*",
-    "typescript": "4.0.x || 4.1.x || 4.2.x || 4.3.x || 4.4.x || 4.5.x",
-    "graphql": ">=14.0.0 <15.0.0 || >=15.0.0 <16.0.0 || >=16.0.0 <17.0.0"
   }
 }
