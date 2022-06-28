@@ -114,7 +114,8 @@ export async function getStaticProps(context) {
 
   const params =
     "include=field_media_image.field_media_image,field_recipe_category";
-  context.preview && (await getPreview(context, "node--recipe", params));
+  const previewParams =
+    context.preview && (await getPreview(context, "node--recipe", params));
 
   try {
     const recipe = await store.getObjectByPath({
@@ -137,7 +138,7 @@ export async function getStaticProps(context) {
       }`,
       // if preview is true, force a fetch to Drupal
       refresh: context.preview,
-      params,
+      params: context.preview ? previewParams : params,
     });
 
     const footerMenu = await store.getObject({

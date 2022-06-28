@@ -62,7 +62,8 @@ export async function getStaticProps(context) {
 
   const params = "include=field_media_image.field_media_image";
   // if preview, use preview endpoint and add to store.
-  context.preview && (await getPreview(context, "node--article", params));
+  const previewParams =
+    context.preview && (await getPreview(context, "node--article", params));
 
   const article = await store.getObjectByPath({
     objectName: "node--article",
@@ -88,7 +89,7 @@ export async function getStaticProps(context) {
       `,
     // if preview is true, force a fetch to Drupal
     refresh: context.preview,
-    params,
+    params: context.preview ? previewParams : params,
   });
 
   const footerMenu = await store.getObject({

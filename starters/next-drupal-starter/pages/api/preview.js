@@ -46,6 +46,7 @@ const preview = async (req, res) => {
   // Enable Preview Mode by setting a cookie
   if (req.query.resourceVersionId) {
     res.setPreviewData({
+      key: req.query.key,
       resourceVersionId: req.query.resourceVersionId,
       previewLang: store.defaultLocale || "en",
     });
@@ -59,7 +60,11 @@ const preview = async (req, res) => {
   }
 
   // Redirect to the path from the fetched content
-  res.redirect(objectName === 'page' ? `/${content.path.langcode}/pages/${content.path.alias}` : content.path.alias);
+  res.redirect(
+    objectName === "page"
+      ? `/${content.path.langcode}/pages/${content.path.alias}`
+      : content.path.alias
+  );
 };
 
 export default preview;

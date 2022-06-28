@@ -68,7 +68,9 @@ export async function getStaticProps(context) {
     .map((segment) => `/${segment}`)
     .join("")}`;
 
-  context.preview && (await getPreview(context, "node--page"));
+  const previewParams =
+    context.preview && (await getPreview(context, "node--page"));
+
   let page;
   try {
     page = await store.getObjectByPath({
@@ -88,6 +90,7 @@ export async function getStaticProps(context) {
         `,
       // if preview is true, force a fetch to Drupal
       refresh: context.preview,
+      params: context.preview && previewParams,
     });
   } catch (error) {
     // retry the fetch with `/pages` prefix
@@ -108,6 +111,7 @@ export async function getStaticProps(context) {
           `,
       // if preview is true, force a fetch to Drupal
       refresh: context.preview,
+      params: context.preview && previewParams,
     });
   }
 
