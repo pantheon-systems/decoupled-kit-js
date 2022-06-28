@@ -1,4 +1,4 @@
-import ApolloClientFactory from './src/lib/ApolloClientFactory';
-import { gql, ApolloProvider } from '@apollo/client';
+import GraphqlClientFactory from './src/lib/GraphqlClientFactory';
+import { gql } from 'graphql-request';
 
-export { ApolloClientFactory, gql, ApolloProvider };
+export { GraphqlClientFactory, gql };

@@ -14,6 +14,7 @@ overrides:
   trim@<0.0.3: '>=0.0.3'
   node-forge@<1.3.0: '>=1.3.0'
   minimist@<=1.2.5: '>=1.2.6'
+  '@pantheon-systems/wordpress-kit': workspace:^1.0.0
   '@pantheon-systems/drupal-kit': workspace:^1.0.0
   moment@<2.29.2: '>=2.29.2'
   async@<3.2.2: '>=3.2.2'
@@ -105,16 +106,11 @@ importers:
 
   packages/wordpress-kit:
     specifiers:
-      '@apollo/client': ^3.5.10
-      '@types/isomorphic-fetch': ^0.0.35
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
-      isomorphic-fetch: ^3.0.0
+      graphql-request: ^4.3.0
     dependencies:
-      '@apollo/client': 3.6.9_graphql@16.5.0
       graphql: 16.5.0
-      isomorphic-fetch: 3.0.0
-    devDependencies:
-      '@types/isomorphic-fetch': 0.0.35
+      graphql-request: 4.3.0_graphql@16.5.0
 
   starters/gatsby-wordpress-starter:
     specifiers:
@@ -212,6 +208,7 @@ importers:
 
   starters/next-wordpress-starter:
     specifiers:
+      '@pantheon-systems/wordpress-kit': workspace:^1.0.0
       '@tailwindcss/typography': ^0.5.2
       autoprefixer: ^10.4.4
       eslint: 8.17.0
@@ -223,6 +220,7 @@ importers:
       sharp: ^0.30.4
       tailwindcss: ^3.0.24
     dependencies:
+      '@pantheon-systems/wordpress-kit': link:../../packages/wordpress-kit
       '@tailwindcss/typography': 0.5.2_tailwindcss@3.1.4
       next: 12.1.6_sfoxds7t5ydpegc3knd667wn6m
       react: 17.0.2
@@ -402,38 +400,7 @@ packages:
       zen-observable-ts: 1.2.3
     dev: true
 
-  /@apollo/client/3.6.9_5d33slzn54cnsyp4ta7twtp2ca:
-    resolution: {integrity: sha512-Y1yu8qa2YeaCUBVuw08x8NHenFi0sw2I3KCu7Kw9mDSu86HmmtHJkCAifKVrN2iPgDTW/BbP3EpSV8/EQCcxZA==}
-    peerDependencies:
-      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
-      graphql-ws: ^5.5.5
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      subscriptions-transport-ws: ^0.9.0 || ^0.11.0
-    peerDependenciesMeta:
-      graphql-ws:
-        optional: true
-      react:
-        optional: true
-      subscriptions-transport-ws:
-        optional: true
-    dependencies:
-      '@graphql-typed-document-node/core': 3.1.1_graphql@15.8.0
-      '@wry/context': 0.6.1
-      '@wry/equality': 0.5.2
-      '@wry/trie': 0.3.1
-      graphql: 15.8.0
-      graphql-tag: 2.12.6_graphql@15.8.0
-      hoist-non-react-statics: 3.3.2
-      optimism: 0.16.1
-      prop-types: 15.8.1
-      react: 16.14.0
-      symbol-observable: 4.0.0
-      ts-invariant: 0.10.3
-      tslib: 2.4.0
-      zen-observable-ts: 1.2.5
-    dev: false
-
-  /@apollo/client/3.6.9_graphql@16.5.0:
+  /@apollo/client/3.6.9_houdruxgufmyuig6gd43kaofj4:
     resolution: {integrity: sha512-Y1yu8qa2YeaCUBVuw08x8NHenFi0sw2I3KCu7Kw9mDSu86HmmtHJkCAifKVrN2iPgDTW/BbP3EpSV8/EQCcxZA==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -3473,6 +3440,7 @@ packages:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       graphql: 16.5.0
+    dev: true
 
   /@hapi/address/2.1.4:
     resolution: {integrity: sha512-QD1PhQk+s31P1ixsX0H0Suoupp3VMXzIVMSwobR3F3MSUO2YCV0B7xqLcUw/Bh8yuvd3LhpyqLQWTNcRmp6IdQ==}
@@ -9405,10 +9373,10 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.29.0_eslint@8.17.0
+      '@typescript-eslint/parser': 5.29.0_eslint@8.10.0
       debug: 3.2.7
       eslint-import-resolver-node: 0.3.6
-      eslint-import-resolver-typescript: 2.7.1_3yxiwxzsqipdmy4jwrlv6vgfmy
+      eslint-import-resolver-typescript: 2.7.1_iwaynwhiegrrsv6g3xp42z6p6u
       find-up: 2.1.0
     transitivePeerDependencies:
       - supports-color
@@ -11827,6 +11795,19 @@ packages:
       graphql-playground-html: 1.6.30
     dev: false
 
+  /graphql-request/4.3.0_graphql@16.5.0:
+    resolution: {integrity: sha512-2v6hQViJvSsifK606AliqiNiijb1uwWp6Re7o0RTyH+uRTv/u7Uqm2g4Fjq/LgZIzARB38RZEvVBFOQOVdlBow==}
+    peerDependencies:
+      graphql: 14 - 16
+    dependencies:
+      cross-fetch: 3.1.5
+      extract-files: 9.0.0
+      form-data: 3.0.1
+      graphql: 16.5.0
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
   /graphql-tag/2.12.6_graphql@15.8.0:
     resolution: {integrity: sha512-FdSNcu2QQcWnM2VNvSCCDCVS5PpPqpzgFT8+GXzqJuoDd0CBncxCY278u4mhRO7tMgo2JjgJA5aZ+nWSQ/Z+xg==}
     engines: {node: '>=10'}
@@ -11845,6 +11826,7 @@ packages:
     dependencies:
       graphql: 16.5.0
       tslib: 2.4.0
+    dev: true
 
   /graphql-type-json/0.3.2_graphql@15.8.0:
     resolution: {integrity: sha512-J+vjof74oMlCWXSvt0DOf2APEdZOCdubEvGDUAlqH//VBYcOYsGgRW7Xzorr44LvkjiuvecWc8fChxuZZbChtg==}
