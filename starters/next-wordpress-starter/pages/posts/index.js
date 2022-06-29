@@ -2,9 +2,7 @@ import { NextSeo } from "next-seo";
 
 import PageHeader from "../../components/page-header.js";
 import Layout from "../../components/layout";
-
-import { client } from "../../lib/WordpressClient";
-import { gql } from "@pantheon-systems/wordpress-kit";
+import { getFooterMenu } from "../../lib/Menus.js";
 
 export default function PostsListTemplate({ menuItems }) {
   return (
@@ -26,38 +24,11 @@ export default function PostsListTemplate({ menuItems }) {
 }
 
 export async function getStaticProps() {
-  const query = gql`
-    query FooterMenuQuery {
-      menus(where: { location: FOOTER }) {
-        edges {
-          node {
-            id
-            menuItems {
-              edges {
-                node {
-                  id
-                  uri
-                  label
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
-
-  const data = await client.request(query);
-
-  const footerMenu = data.menus.edges.flatMap((node) => {
-    return node.node.menuItems.edges.map((menuItem) => {
-      return menuItem.node;
-    });
-  });
+  const menuItems = await getFooterMenu();
 
   return {
     props: {
-      menuItems: footerMenu,
+      menuItems,
     },
   };
 }

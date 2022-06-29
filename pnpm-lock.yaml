@@ -400,7 +400,38 @@ packages:
       zen-observable-ts: 1.2.3
     dev: true
 
-  /@apollo/client/3.6.9_houdruxgufmyuig6gd43kaofj4:
+  /@apollo/client/3.6.9_5d33slzn54cnsyp4ta7twtp2ca:
+    resolution: {integrity: sha512-Y1yu8qa2YeaCUBVuw08x8NHenFi0sw2I3KCu7Kw9mDSu86HmmtHJkCAifKVrN2iPgDTW/BbP3EpSV8/EQCcxZA==}
+    peerDependencies:
+      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+      graphql-ws: ^5.5.5
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      subscriptions-transport-ws: ^0.9.0 || ^0.11.0
+    peerDependenciesMeta:
+      graphql-ws:
+        optional: true
+      react:
+        optional: true
+      subscriptions-transport-ws:
+        optional: true
+    dependencies:
+      '@graphql-typed-document-node/core': 3.1.1_graphql@15.8.0
+      '@wry/context': 0.6.1
+      '@wry/equality': 0.5.2
+      '@wry/trie': 0.3.1
+      graphql: 15.8.0
+      graphql-tag: 2.12.6_graphql@15.8.0
+      hoist-non-react-statics: 3.3.2
+      optimism: 0.16.1
+      prop-types: 15.8.1
+      react: 16.14.0
+      symbol-observable: 4.0.0
+      ts-invariant: 0.10.3
+      tslib: 2.4.0
+      zen-observable-ts: 1.2.5
+    dev: false
+
+  /@apollo/client/3.6.9_graphql@16.5.0:
     resolution: {integrity: sha512-Y1yu8qa2YeaCUBVuw08x8NHenFi0sw2I3KCu7Kw9mDSu86HmmtHJkCAifKVrN2iPgDTW/BbP3EpSV8/EQCcxZA==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
