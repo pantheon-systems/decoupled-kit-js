@@ -1,5 +1,16 @@
 # @pantheon-systems/drupal-kit
 
+## 2.0.0
+
+### Major Changes
+
+- de12430: [drupal-kit] Upgraded `@gdwc/drupal-state` to version 3.0.0
+
+  ### Breaking
+
+  `PantheonDrupalState` no longer stores DrupalJsonapiParams in its state.
+  See https://git.drupalcode.org/project/drupal_state#request-parameters for more information.
+
 ## 1.1.5
 
 ### Patch Changes
