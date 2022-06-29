@@ -112,13 +112,10 @@ export async function getStaticProps(context) {
     .map((segment) => `/${segment}`)
     .join("")}`;
 
-  // clear params to prevent duplicates
-  store.params.clear();
-  store.params.addInclude([
-    "field_media_image.field_media_image",
-    "field_recipe_category",
-  ]);
-  context.preview && (await getPreview(context, "node--recipe"));
+  const params =
+    "include=field_media_image.field_media_image,field_recipe_category";
+  const previewParams =
+    context.preview && (await getPreview(context, "node--recipe", params));
 
   try {
     const recipe = await store.getObjectByPath({
@@ -141,16 +138,15 @@ export async function getStaticProps(context) {
       }`,
       // if preview is true, force a fetch to Drupal
       refresh: context.preview,
+      params: context.preview ? previewParams : params,
     });
-
-    store.params.clear();
 
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
     });
 
     if (!recipe) {
-      return { props: { footerMenu } };
+      return { props: { footerMenu }, revalidate: 5 };
     }
 
     const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
@@ -160,7 +156,6 @@ export async function getStaticProps(context) {
         locale,
         context.preview ? globalDrupalStateAuthStores : globalDrupalStateStores
       );
-      storeByLocales.params.clear();
       const { path } = await storeByLocales.getObject({
         objectName: "node--recipe",
         id: recipe.id,
@@ -190,7 +185,8 @@ export async function getStaticProps(context) {
   } catch (error) {
     console.error("Unable to fetch data for recipe: ", error);
     return {
-      props: {},
+      notFound: true,
+      revalidate: 5,
     };
   }
 }

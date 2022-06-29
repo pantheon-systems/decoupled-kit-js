@@ -62,6 +62,6 @@
     "typescript": ">=3.8 <5.0"
   },
   "dependencies": {
-    "@gdwc/drupal-state": "^2.7.0"
+    "@gdwc/drupal-state": "3.0.0"
   }
 }

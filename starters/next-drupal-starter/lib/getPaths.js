@@ -22,8 +22,6 @@ export const getPaths = async (
   // Get paths for each locale.
   const pathsByLocale = context?.locales.map(async (locale) => {
     const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
-    store.params.clear();
-
     try {
       // fetch the node from Drupal
       const data = await store.getObject({
