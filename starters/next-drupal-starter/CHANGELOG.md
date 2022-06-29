@@ -1,5 +1,21 @@
 # @pantheon-systems/next-drupal-starter
 
+## 2.0.0
+
+### Major Changes
+
+- de12430: [next-drupal-starter] Updated starter to work with the new version of drupal-kit
+
+  ### Breaking
+
+  `PantheonDrupalState` from the `drupal-kit` dependency no longer stores DrupalJsonapiParams in its state.
+  See https://git.drupalcode.org/project/drupal_state#request-parameters for more information.
+
+### Patch Changes
+
+- Updated dependencies [de12430]
+  - @pantheon-systems/drupal-kit@2.0.0
+
 ## 1.1.5
 
 ### Patch Changes
