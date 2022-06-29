@@ -83,20 +83,17 @@ export async function getStaticProps(context) {
       globalDrupalStateStores
     );
 
-    store.params.clear();
-    store.params.addInclude(["field_media_image.field_media_image"]);
-
     const articles = await store.getObject({
       objectName: "node--article",
+      params: "include=field_media_image.field_media_image",
     });
 
     if (!articles) {
       throw new Error(
-        "No articles returned. Make sure the objectName and store.params are valid!"
+        "No articles returned. Make sure the objectName and params are valid!"
       );
     }
 
-    store.params.clear();
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
     });
@@ -108,7 +105,8 @@ export async function getStaticProps(context) {
   } catch (error) {
     console.error("Unable to fetch data for articles page: ", error);
     return {
-      props: {},
+      notFound: true,
+      revalidate: 5,
     };
   }
 }

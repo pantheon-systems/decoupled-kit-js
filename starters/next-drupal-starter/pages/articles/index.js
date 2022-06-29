@@ -54,14 +54,11 @@ export async function getServerSideProps(context) {
 
     const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 
-    store.params.clear();
-    store.params.addInclude(["field_media_image.field_media_image"]);
-
     const articles = await store.getObject({
       objectName: "node--article",
       res: context.res,
+      params: "include=field_media_image.field_media_image",
     });
-    store.params.clear();
 
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
@@ -69,7 +66,7 @@ export async function getServerSideProps(context) {
 
     if (!articles) {
       throw new Error(
-        "No articles returned. Make sure the objectName and store.params are valid!"
+        "No articles returned. Make sure the objectName and params are valid!"
       );
     }
 
@@ -84,7 +81,8 @@ export async function getServerSideProps(context) {
   } catch (error) {
     console.error("Unable to fetch data for article page: ", error);
     return {
-      props: {},
+      notFound: true,
+      revalidate: 5,
     };
   }
 }
