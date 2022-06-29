@@ -51,7 +51,6 @@ export default function AuthApiExampleTemplate({ articles, footerMenu }) {
 
 export async function getStaticProps({ locale }) {
   const authStore = getCurrentLocaleStore(locale, globalDrupalStateAuthStores);
-  authStore.params.clear();
 
   if (!authStore.auth) {
     return { props: {} };

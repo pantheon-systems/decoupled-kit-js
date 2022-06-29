@@ -6,10 +6,13 @@ import { fetchJsonapiEndpoint } from "@pantheon-systems/drupal-kit";
 /**
  *
  * @param {import('next').GetServerSidePropsContext |
- * import('next').GetStaticPropsContext} previewData Nextjs context
- * @param {string} node The node to be previewed example 'node--article'
+ * import('next').GetStaticPropsContext} previewData - Nextjs context
+ * @param {string} node - The node to be previewed example 'node--article'
+ * @param {string | undefined} params - JSON:API params to include on the fetched Drupal JSON:API endpoint
+ * @see https://www.drupal.org/docs/core-modules-and-themes/core-modules/jsonapi-module/fetching-resources-get for more information on constructing valid JSON:API querystring
+ * @returns {Promise<string>} params - The JSON:API params to include on the fetched Drupal JSON:API endpoint in case of a revision
  */
-export async function getPreview(context, node) {
+export async function getPreview(context, node, params) {
   // preview language may not match the current locale.
   // Get language from context.previewData
   const { previewLang } = context.previewData;
@@ -17,7 +20,7 @@ export async function getPreview(context, node) {
   // Get the store for the preview language.
   const store = getCurrentLocaleStore(previewLang, globalDrupalStateAuthStores);
   try {
-    if (context.previewData.key) {
+    if (context.previewData) {
       process.env.DEBUG_MODE &&
         console.log("Fetching preview data from Drupal and adding to state...");
       // set the auth headers
@@ -30,12 +33,20 @@ export async function getPreview(context, node) {
         };
       }
 
-      // get params from store
-      const params = store.params.getQueryString()
-        ? `?${store.params.getQueryString()}`
-        : "";
+      // if a revision, pass resourceVersion parameter.
+      if (context?.previewData?.resourceVersionId) {
+        process.env.DEBUG_MODE &&
+          console.log(
+            `Adding resource version ID param ${context?.previewData?.resourceVersionId}...`
+          );
+        const leadingChar = params ? "&" : "";
+        params += `${leadingChar}resourceVersion=id:${context.previewData.resourceVersionId}`;
+      }
+
       const fetchedPreviewData = await fetchJsonapiEndpoint(
-        `${store.apiRoot}decoupled-preview/${context.previewData.key}${params}`,
+        `${store.apiRoot}decoupled-preview/${context.previewData.key}${
+          params ? `?${params}` : ""
+        }`,
         requestInit
       );
 
@@ -47,19 +58,8 @@ export async function getPreview(context, node) {
       // set the preview data in the store
       store.setState({ [`${node}Resources`]: { [uuid]: fetchedPreviewData } });
     }
+    return params;
   } catch (error) {
     throw error;
-  }
-  // if a revision, pass resourceVersion parameter.
-  if (context?.previewData?.resourceVersionId) {
-    process.env.DEBUG_MODE &&
-      console.log(
-        `Adding recource version ID param ${
-        context?.previewData?.resourceVersionId}...`
-      );
-
-    store.params.addCustomParam({
-      resourceVersion: `id:${context.previewData.resourceVersionId}`,
-    });
   }
 }
