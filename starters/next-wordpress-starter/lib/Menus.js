@@ -4,7 +4,7 @@ import { client } from "./WordpressClient";
 export async function getFooterMenu() {
   const query = gql`
     query FooterMenuQuery {
-      menus(where: { location: FOOTER }) {
+      menus(where: { slug: "Example Menu" }) {
         edges {
           node {
             id
