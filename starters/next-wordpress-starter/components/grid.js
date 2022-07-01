@@ -27,6 +27,8 @@ export const withGrid = (Component) => {
 
 export const PostGridItem = ({ content: post }) => {
   const imgSrc = post?.featuredImage?.node.sourceUrl || "";
+  const altText = post?.featuredImage?.node.altText || post.title;
+
   return (
     <Link passHref href={post.uri}>
       <a>
@@ -37,7 +39,7 @@ export const PostGridItem = ({ content: post }) => {
                 src={imgSrc}
                 layout="fill"
                 objectFit="cover"
-                alt={post.title}
+                alt={altText}
               />
             ) : (
               <Image
