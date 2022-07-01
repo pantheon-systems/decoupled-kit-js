@@ -9,6 +9,9 @@ require("dotenv").config({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  env: {
+    backendUrl: process.env.WPGRAPHQL_URL,
+  },
 };
 
 module.exports = nextConfig;

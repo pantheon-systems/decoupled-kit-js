@@ -1,10 +1,10 @@
-import { ApolloClientFactory } from '../index';
+import { GraphqlClientFactory } from '../index';
 
 import './style.css';
 
 // Additional examples for local development purposes can be added here.
 
-const client = new ApolloClientFactory(
+const client = new GraphqlClientFactory(
   'https://dev-wp-canary.pantheonsite.io/wp/graphql/'
 ).create();
 
