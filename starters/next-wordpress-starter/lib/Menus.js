@@ -4,18 +4,13 @@ import { client } from "./WordpressClient";
 export async function getFooterMenu() {
   const query = gql`
     query FooterMenuQuery {
-      menus(where: { slug: "Example Menu" }) {
-        edges {
-          node {
-            id
-            menuItems {
-              edges {
-                node {
-                  id
-                  uri
-                  label
-                }
-              }
+      menu(idType: NAME, id: "Example Menu") {
+        menuItems {
+          edges {
+            node {
+              id
+              uri
+              label
             }
           }
         }
@@ -23,13 +18,11 @@ export async function getFooterMenu() {
     }
   `;
 
-  const data = await client.request(query);
+  const {
+    menu: {
+      menuItems: { edges },
+    },
+  } = await client.request(query);
 
-  const footerMenu = data.menus.edges.flatMap((node) => {
-    return node.node.menuItems.edges.map((menuItem) => {
-      return menuItem.node;
-    });
-  });
-
-  return footerMenu;
+  return edges.map(({ node }) => node);
 }
