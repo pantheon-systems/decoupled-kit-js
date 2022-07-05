@@ -14,12 +14,12 @@ To configure the monorepo for development, the following should be installed loc
 
 - Nodejs version 16 LTS. We recomemnd using [nvm](https://github.com/nvm-sh/nvm)
 - [npm](https://docs.npmjs.com/cli/v8/commands/npm) version 8.x.x
-- [pnpm](https://pnpm.io/installation) version 7.1.0
+- [pnpm](https://pnpm.io/installation) version 7.4.0
 
   We recommend using npm. Run the following command to install:
 
   ```bash
-  npm install -g pnpm@7.1.0
+  npm install -g pnpm@7.4.0
   ```
 
 ## Getting Started
