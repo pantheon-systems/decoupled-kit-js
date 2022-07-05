@@ -15,7 +15,7 @@ import Layout from "../../components/layout";
 // This file can safely be removed if the Drupal
 // instance is not sourcing Umami data
 export default function RecipeTemplate({ recipe, footerMenu, hrefLang }) {
-  const imgSrc = recipe?.field_media_image?.field_media_image?.uri?.url || "";
+  const imgSrc = recipe?.field_media_image?.field_media_image?.uri?.url;
 
   return (
     <Layout footerMenu={footerMenu}>
@@ -159,6 +159,7 @@ export async function getStaticProps(context) {
       const { path } = await storeByLocales.getObject({
         objectName: "node--recipe",
         id: recipe.id,
+        params: context.preview ? previewParams : params,
       });
       return path;
     });

@@ -56,6 +56,21 @@ export async function getServerSideProps(context) {
 
     const articles = await store.getObject({
       objectName: "node--article",
+      query: `{
+        id
+        title
+        path {
+          alias
+          langcode
+        }
+        field_media_image {
+          field_media_image {
+            uri {
+              url
+            }
+          }
+        }
+      }`,
       res: context.res,
       params: "include=field_media_image.field_media_image",
     });
@@ -82,7 +97,6 @@ export async function getServerSideProps(context) {
     console.error("Unable to fetch data for article page: ", error);
     return {
       notFound: true,
-      revalidate: 5,
     };
   }
 }

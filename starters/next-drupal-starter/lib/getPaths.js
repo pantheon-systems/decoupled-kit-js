@@ -26,14 +26,6 @@ export const getPaths = async (
       // fetch the node from Drupal
       const data = await store.getObject({
         objectName: node,
-        query: `
-            {
-              id
-              path {
-                alias
-              }
-            }
-          `,
       });
 
       // map over the data fetch to extract the path name
