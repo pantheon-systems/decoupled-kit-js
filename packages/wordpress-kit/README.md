@@ -12,18 +12,18 @@ To install this package to use in your application:
 ## Usage
 
 Modules can be imported from the `@pantheon-systems/wordpress-kit` package. For
-example, to use the Apollo Client instance provided by this package
+example, to use the graphql-request Client instance provided by this package
 
 Import the module in your JavaScript application:
 
 ```
-import { ApolloClientFactory } from '@pantheon-systems/wordpress-kit';
+import { GraphqlClientFactory } from '@pantheon-systems/wordpress-kit';
 ```
 
 Create an instance of the client and specify your API:
 
 ```
-const client = new ApolloClientFactory(
+const client = new GraphqlClientFactory(
   'http://localhost:4000/graphql'
 ).create();
 ```

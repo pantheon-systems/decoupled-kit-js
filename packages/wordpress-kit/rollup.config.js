@@ -1,11 +1,10 @@
 import typescript from '@rollup/plugin-typescript';
 
 const globals = {
-  '@apollo/client': 'apolloClient',
-  'isomorphic-fetch': 'isomorphicFetch',
+  'graphql-request': 'graphqlRequest',
 };
 
-const external = ['@apollo/client', 'isomorphic-fetch'];
+const external = ['graphql-request'];
 
 export default [
   {
