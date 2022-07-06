@@ -1,5 +1,11 @@
 # @pantheon-systems/next-drupal-starter
 
+## 2.0.1
+
+### Patch Changes
+
+- 05573a8: [next-drupal-starter] Remove query from getPaths call to store.getObject to prevent subsequent calls from getting incorrect data from the store
+
 ## 2.0.0
 
 ### Major Changes
