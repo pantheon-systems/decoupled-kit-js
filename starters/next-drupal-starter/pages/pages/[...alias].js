@@ -129,6 +129,7 @@ export async function getStaticProps(context) {
     const { path } = await storeByLocales.getObject({
       objectName: "node--page",
       id: page.id,
+      params: context.preview && previewParams,
     });
     return path;
   });

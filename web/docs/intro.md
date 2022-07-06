@@ -19,7 +19,7 @@ To configure the monorepo for development, the following should be installed loc
   We recommend using npm. Run the following command to install:
 
   ```bash
-  npm install -g pnpm@7.1.0
+  npm install -g pnpm@7.4.0
   ```
 
 ## Getting Started

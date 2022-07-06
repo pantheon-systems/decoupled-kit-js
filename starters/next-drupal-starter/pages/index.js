@@ -85,6 +85,21 @@ export async function getStaticProps(context) {
 
     const articles = await store.getObject({
       objectName: "node--article",
+      query: `{
+        id
+        title
+        path {
+          alias
+          langcode
+        }
+        field_media_image {
+          field_media_image {
+            uri {
+              url
+            }
+          }
+        }
+      }`,
       params: "include=field_media_image.field_media_image",
     });
 

@@ -48,12 +48,8 @@
     "lint-staged": "lint-staged",
     "rollup": "rollup -c"
   },
-  "devDependencies": {
-    "@types/isomorphic-fetch": "^0.0.35"
-  },
   "dependencies": {
-    "@apollo/client": "^3.5.10",
     "graphql": "^14.0.0 || ^15.0.0 || ^16.0.0",
-    "isomorphic-fetch": "^3.0.0"
+    "graphql-request": "^4.3.0"
   }
 }
