@@ -1,6 +1,12 @@
 import { globalDrupalStateAuthStores } from "../../lib/drupalStateContext";
 
 const preview = async (req, res) => {
+  const validObjectName = (objName) => {
+    const defaultValidNames = ["article", "page", "recipe"];
+    const result = defaultValidNames.filter((name) => objName === name);
+
+    return !!result.length;
+  };
   // Check the secret and next parameters
   // This secret should only be known to this API route and the CMS
   if (req.query.secret !== process.env.PREVIEW_SECRET || !req.query.slug) {
@@ -21,11 +27,16 @@ const preview = async (req, res) => {
 
   const matches = req.query.slug.match(regex);
   let objectName = matches.groups.objectName.replace(/s$/, ""); // remove plural
-  // SERIOUS ASSUMPTIONS BEGIN HERE:
+
+  // 🚨 SERIOUS ASSUMPTIONS BEGIN HERE 🚨
   // objectName will match `en` if previewing a page like about-umami
   // so the getObjectByPath and the redirect will fail.
-  // This is a temporary workaround:
-  objectName = objectName === store.defaultLocale ? "page" : objectName;
+  // This also handles nested pages like /nested/page
+  // This is a temporary workaround until we get the object name back from the query params:
+  objectName =
+    objectName === store.defaultLocale || !validObjectName(objectName)
+      ? "page"
+      : objectName;
 
   // verify the content exists
   let content;
@@ -35,6 +46,8 @@ const preview = async (req, res) => {
       path: req.query.slug,
     });
   } catch (error) {
+    process.env.DEBUG_MODE &&
+      console.error("Error verifying preview content: ", error);
     return res.redirect("/500");
   }
 
@@ -60,11 +73,7 @@ const preview = async (req, res) => {
   }
 
   // Redirect to the path from the fetched content
-  res.redirect(
-    objectName === "page"
-      ? `/${content.path.langcode}/pages/${content.path.alias}`
-      : content.path.alias
-  );
+  res.redirect(content.path.alias);
 };
 
 export default preview;

@@ -1,6 +1,6 @@
 import { getCurrentLocaleStore } from "./drupalStateContext";
 /**
- * @description Helper function to get the current path nedded for getStaticPaths
+ * @description Helper function to get the current path needed for getStaticPaths
  * @param {import('next').GetStaticPathsContext} context - Nextjs getStaticPaths context
  * @param {import('@pantheon-systems/drupal-kit').DrupalState} globalDrupalStateStores - Drupal state stores from drupalStateContext.js. Can be auth'd stores or non auth'd stores.
  * @param {string} node - The node to fetch from Drupal. This will be passed to DrupalState.getObject as the objectName.
