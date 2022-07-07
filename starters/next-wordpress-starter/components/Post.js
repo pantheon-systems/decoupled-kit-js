@@ -7,7 +7,7 @@ export default function Post({
   return (
     <article className="prose lg:prose-xl mt-10 mx-auto">
       <h1>{title}</h1>
-      <p className="text-sm text-gray-600">{date}</p>
+      <p className="text-sm text-gray-600">{new Date(date).toDateString()}</p>
 
       <Link passHref href="/">
         <a className="font-normal">Home &rarr;</a>
