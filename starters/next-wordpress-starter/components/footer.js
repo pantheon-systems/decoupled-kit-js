@@ -10,7 +10,7 @@ export default function Footer({ menuItems = [] }) {
               key={id}
               className="list-disc text-blue-300 hover:text-blue-100 ml-3"
             >
-              <Link href={uri}>
+              <Link href={`/posts${uri}`}>
                 <a className="hover:underline focus:text-purple-600  active:text-purple-300">
                   {label}
                 </a>

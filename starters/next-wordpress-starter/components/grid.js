@@ -30,7 +30,7 @@ export const PostGridItem = ({ content: post }) => {
   const altText = post?.featuredImage?.node.altText || post.title;
 
   return (
-    <Link passHref href={post.uri}>
+    <Link passHref href={`/posts${post.uri}`}>
       <a>
         <div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500">
           <div className="flex-shrink-0 relative h-40">
