@@ -1,32 +1,36 @@
-import { IMAGE_URL } from "../lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Article({ imgSrc, title, body }) {
+export default function Post({
+  post: { title, date, featuredImage, content },
+}) {
   return (
     <article className="prose lg:prose-xl mt-10 mx-auto">
       <h1>{title}</h1>
+      <p className="text-sm text-gray-600">{date}</p>
 
       <Link passHref href="/">
         <a className="font-normal">Home &rarr;</a>
       </Link>
-
       <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
-        {imgSrc ? (
+        {featuredImage && (
           <div
             className="relative w-full rounded-lg shadow-lg overflow-hidden mb-10"
             style={{ height: "50vh" }}
           >
             <Image
               priority
-              src={IMAGE_URL + imgSrc}
+              src={featuredImage.node.sourceUrl}
               layout="fill"
               objectFit="cover"
-              alt={title}
+              alt="Featured Image"
             />
           </div>
-        ) : null}
-        <div dangerouslySetInnerHTML={{ __html: body }} />
+        )}
+      </div>
+
+      <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
+        <div dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     </article>
   );
