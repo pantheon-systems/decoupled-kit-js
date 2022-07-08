@@ -58,3 +58,37 @@ export const PostGridItem = ({ content: post }) => {
     </Link>
   );
 };
+
+export const PageGridItem = ({ content: page }) => {
+  const imgSrc = page?.featuredImage?.node.sourceUrl || "";
+  const altText = page?.featuredImage?.node.altText || page.title;
+
+  return (
+    <Link passHref href={`/pages${page.uri}`}>
+      <a>
+        <div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500">
+          <div className="flex-shrink-0 relative h-40">
+            {imgSrc !== "" ? (
+              <Image
+                src={imgSrc}
+                layout="fill"
+                objectFit="cover"
+                alt={altText}
+              />
+            ) : (
+              <Image
+                src="/pantheon.png"
+                alt="Pantheon Logo"
+                layout="fill"
+                className="bg-black"
+              />
+            )}
+          </div>
+          <h2 className="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900">
+            {page.title} &rarr;
+          </h2>
+        </div>
+      </a>
+    </Link>
+  );
+};
