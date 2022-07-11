@@ -1,7 +1,6 @@
 ---
 id: "index"
 title: "decoupled-kit-js"
-slug: "/Packages/drupal-kit/"
 sidebar_label: "Readme"
 sidebar_position: 0
 custom_edit_url: null

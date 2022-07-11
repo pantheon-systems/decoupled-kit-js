@@ -1,12 +1,12 @@
 ---
 id: "gatsby-wordpress-intro"
-title: "Introduction And "
+title: "Introduction"
 slug: "/Frontend Starters/Gatsby Wordpress/Introduction"
 ---
 
 ## Before You Begin
 
-The Pantheon `gatsby-wordpress-starter` uses Gatsby v4 and has been tested using nodejs v16 with npm v8.
+The Pantheon `gatsby-wordpress-starter` uses Gatsby v4 and has been tested using [nodejs v16 with npm v8](https://nodejs.org/en/download/).
 You may want to install the gatsby cli globally, or [use `npx`](https://www.npmjs.com/package/npx)
 
 ## Why Use The Gatsby WordPress Starter?
