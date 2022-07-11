@@ -23,7 +23,7 @@ export default function Page({
               src={featuredImage.node.sourceUrl}
               layout="fill"
               objectFit="cover"
-              alt={featuredImage.node.altText}
+              alt={featuredImage.node.altText || title}
             />
           </div>
         )}
