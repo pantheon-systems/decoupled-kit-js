@@ -5,7 +5,7 @@ import Page from "../../components/page";
 import { getFooterMenu } from "../../lib/Menus";
 import { getAllPagesUri, getPageByUri } from "../../lib/Pages";
 
-export default function PostListTemplate({ menuItems, page }) {
+export default function PageListTemplate({ menuItems, page }) {
   return (
     <Layout footerMenu={menuItems}>
       <NextSeo

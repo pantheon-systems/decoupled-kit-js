@@ -9,8 +9,8 @@ export default function Page({
       <h1>{title}</h1>
       <p className="text-sm text-gray-600">{new Date(date).toDateString()}</p>
 
-      <Link passHref href="/">
-        <a className="font-normal">Home &rarr;</a>
+      <Link passHref href="/pages">
+        <a className="font-normal">Pages &rarr;</a>
       </Link>
       <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
         {featuredImage && (
@@ -23,7 +23,7 @@ export default function Page({
               src={featuredImage.node.sourceUrl}
               layout="fill"
               objectFit="cover"
-              alt="Featured Image"
+              alt={featuredImage.node.altText}
             />
           </div>
         )}
