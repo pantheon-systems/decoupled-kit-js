@@ -39,26 +39,31 @@ export async function getPreview(context, node, params) {
           console.log(
             `Adding resource version ID param ${context?.previewData?.resourceVersionId}...`
           );
+        if (params === undefined) {
+          params = "";
+        }
         const leadingChar = params ? "&" : "";
         params += `${leadingChar}resourceVersion=id:${context.previewData.resourceVersionId}`;
       }
 
       // Only fetch preview data if it is not a revision
       else {
-      const fetchedPreviewData = await fetchJsonapiEndpoint(
-        `${store.apiRoot}decoupled-preview/${context.previewData.key}${
-          params ? `?${params}` : ""
-        }`,
-        requestInit
-      );
+        const fetchedPreviewData = await fetchJsonapiEndpoint(
+          `${store.apiRoot}decoupled-preview/${context.previewData.key}${
+            params ? `?${params}` : ""
+          }`,
+          requestInit
+        );
 
-      if (fetchedPreviewData.errors) {
-        throw fetchedPreviewData?.errors.forEach(({ detail }) => detail);
-      }
-      const uuid = fetchedPreviewData.data.id;
+        if (fetchedPreviewData.errors) {
+          throw fetchedPreviewData?.errors.forEach(({ detail }) => detail);
+        }
+        const uuid = fetchedPreviewData.data.id;
 
-      // set the preview data in the store
-      store.setState({ [`${node}Resources`]: { [uuid]: fetchedPreviewData } });
+        // set the preview data in the store
+        store.setState({
+          [`${node}Resources`]: { [uuid]: fetchedPreviewData },
+        });
       }
     }
     return params;
