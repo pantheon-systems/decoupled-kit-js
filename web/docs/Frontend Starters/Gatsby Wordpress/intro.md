@@ -12,8 +12,8 @@ You may want to install the gatsby cli globally, or [use `npx`](https://www.npmj
 ## Why Use The Gatsby WordPress Starter?
 
 The `gatsby-wordpress-starter` is designed as a starting point to for a Gatsby site that consumes data from
-a WordPress backend - specifically a WordPress backend on Pantheon configured with the `decoupled_wordpress`
-and `wordpress_graphql` plugins installed.
+a WordPress backend - specifically a WordPress backend configured with the `pantheon-decoupled`
+and `wp-graphql` plugins installed.
 
 The starter has a dependency on the `@pantheon-systems/wordpress-kit`, which
 includes some helpers that maximize any available features of the WordPress backend.
