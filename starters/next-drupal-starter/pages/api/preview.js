@@ -19,30 +19,12 @@ const preview = async (req, res) => {
     const regex = new RegExp(`/${defaultLocale}/`);
     return defaultLocale ? regex.test(req.url) : true;
   });
-
-  // get the object name from the slug
-  const regex = new RegExp(
-    `^(?:/${store.defaultLocale}/|/)(?<objectName>.*)/.*$`
-  );
-
-  const matches = req.query.slug.match(regex);
-  let objectName = matches.groups.objectName.replace(/s$/, ""); // remove plural
-
-  // 🚨 SERIOUS ASSUMPTIONS BEGIN HERE 🚨
-  // objectName will match `en` if previewing a page like about-umami
-  // so the getObjectByPath and the redirect will fail.
-  // This also handles nested pages like /nested/page
-  // This is a temporary workaround until we get the object name back from the query params:
-  objectName =
-    objectName === store.defaultLocale || !validObjectName(objectName)
-      ? "page"
-      : objectName;
-
+  const objectName = req.query.objectName;
   // verify the content exists
   let content;
   try {
     content = await store.getObjectByPath({
-      objectName: `node--${objectName}`,
+      objectName: objectName,
       path: req.query.slug,
     });
   } catch (error) {
@@ -73,7 +55,11 @@ const preview = async (req, res) => {
   }
 
   // Redirect to the path from the fetched content
-  res.redirect(content.path.alias);
+  res.redirect(
+    objectName === "node--page"
+      ? `/${content.path.langcode}/pages/${content.path.alias}`
+      : content.path.alias
+  );
 };
 
 export default preview;

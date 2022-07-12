@@ -1,10 +1,31 @@
 import { gql } from "@pantheon-systems/wordpress-kit";
 import { client } from "./WordpressClient";
 
-export async function getLatestPosts() {
+export async function getAllPagesUri() {
   const query = gql`
-    query LatestPostsQuery {
-      posts(first: 10) {
+    query AllPages {
+      pages {
+        edges {
+          node {
+            id
+            uri
+          }
+        }
+      }
+    }
+  `;
+
+  const {
+    pages: { edges },
+  } = await client.request(query);
+
+  return edges.map(({ node }) => node.uri.replaceAll("/", ""));
+}
+
+export async function getLatestPages() {
+  const query = gql`
+    query LatestPagesQuery {
+      pages(first: 10) {
         edges {
           node {
             id
@@ -23,16 +44,16 @@ export async function getLatestPosts() {
   `;
 
   const {
-    posts: { edges },
+    pages: { edges },
   } = await client.request(query);
 
   return edges.map(({ node }) => node);
 }
 
-export async function getPostBySlug(slug) {
+export async function getPageByUri(uri) {
   const query = gql`
-    query PostBySlugQuery($slug: ID!) {
-      post(id: $slug, idType: SLUG) {
+    query PageByUriuery($uri: ID!) {
+      page(id: $uri, idType: URI) {
         title
         date
         featuredImage {
@@ -46,7 +67,7 @@ export async function getPostBySlug(slug) {
     }
   `;
 
-  const { post } = await client.request(query, { slug });
+  const { page } = await client.request(query, { uri });
 
-  return post;
+  return page;
 }

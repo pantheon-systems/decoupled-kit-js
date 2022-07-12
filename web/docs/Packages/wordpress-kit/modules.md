@@ -9,4 +9,4 @@ custom_edit_url: null
 ## Modules
 
 - [index](modules/)
-- [src/lib/ApolloClientFactory](modules/src_lib_ApolloClientFactory.md)
+- [src/lib/GraphqlClientFactory](modules/src_lib_GraphqlClientFactory.md)

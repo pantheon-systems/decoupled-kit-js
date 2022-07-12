@@ -8,6 +8,6 @@ custom_edit_url: null
 
 ## References
 
-### ApolloClientFactory
+### GraphqlClientFactory
 
-Renames and re-exports [default](../classes/src_lib_ApolloClientFactory.default.md)
+Renames and re-exports [default](../classes/src_lib_GraphqlClientFactory.default.md)
