@@ -136,8 +136,8 @@ export async function getStaticProps(context) {
           langcode
         }
       }`,
-      // if preview is true, force a fetch to Drupal
-      refresh: context.preview,
+      // if previewing a revision, force a fetch to Drupal
+      refresh: context?.previewData?.resourceVersionId ? true : false,
       params: context.preview ? previewParams : params,
     });
 
