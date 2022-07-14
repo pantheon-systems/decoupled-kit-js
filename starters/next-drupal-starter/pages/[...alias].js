@@ -115,7 +115,7 @@ export async function getServerSideProps(context) {
       jsonapi: { resourceName },
     } = await translatePath(
       `${store.apiBase}/router/translate-path/`,
-      `/${lang}/${path}`,
+      path,
       {}
     );
 
@@ -133,6 +133,8 @@ export async function getServerSideProps(context) {
       objectName: resourceName,
       id: uuid,
       params: context.preview ? previewParams : params,
+      // if previewing a revision, force a fetch to Drupal
+      refresh: context?.previewData?.resourceVersionId ? true : false,
     });
 
     const footerMenu = await store.getObject({
@@ -141,7 +143,7 @@ export async function getServerSideProps(context) {
 
     return { props: { pageData, hrefLang, footerMenu } };
   } catch (error) {
-    console.error(`Unable to fetch data: `, error);
+    console.error(`There was an error while fetching data: `, error);
     return {
       notFound: true,
     };
