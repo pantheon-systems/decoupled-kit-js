@@ -7,7 +7,7 @@ import {
   getCurrentLocaleStore,
   globalDrupalStateAuthStores,
   globalDrupalStateStores,
-} from "../../lib/drupalStateContext.js";
+} from "../../lib/drupalStateContext.jsx";
 import Link from "next/link";
 import Image from "next/image";
 import Layout from "../../components/layout";
