@@ -2,9 +2,10 @@ import typescript from '@rollup/plugin-typescript';
 
 const globals = {
   'graphql-request': 'graphqlRequest',
+  'tailwindcss/plugin': 'tailwindcssPlugin',
 };
 
-const external = ['graphql-request'];
+const external = ['graphql-request', 'tailwindcss/plugin'];
 
 export default [
   {
