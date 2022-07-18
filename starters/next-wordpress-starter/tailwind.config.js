@@ -1,6 +1,6 @@
 const { tailwindcssPlugin } = require("@pantheon-systems/wordpress-kit");
 
-/** @type {import('tailwindcss').Config} */
+/** @type {import('@pantheon-systems/wordpress-kit').TailwindcssConfig} */
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",

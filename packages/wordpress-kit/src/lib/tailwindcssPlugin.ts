@@ -1,6 +1,161 @@
 import plugin from 'tailwindcss/plugin';
 
-const mergeToConfig = {
+import type { Config } from 'tailwindcss';
+
+type ColorConfig = {
+  primary?: string;
+  secondary?: string;
+  darkGray?: string;
+  lightGray?: string;
+  white?: string;
+};
+
+type PaddingConfig = {
+  backgroundX?: string;
+  backgroundY?: string;
+};
+
+type FontSizeConfig = {
+  '7xl'?: string;
+  '4xl'?: string;
+  xl?: string;
+  sm?: string;
+};
+
+type WordpressMapConfig = {
+  theme?: {
+    extend?: {
+      /**
+       * The colors mapped from the code editor in the WordPress admin.
+       * @example
+       * ```
+       *primary: '#0070f3',
+       *secondary: '#ff4081',
+       *darkGray: '#333',
+       *lightGray: '#fafafa',
+       *white: '#fff',
+       * ```
+       *
+       *@default
+       * ```
+       *primary: value of "blue-500" or '#0073a8',
+       *secondary: value of "gray-500" or '#005075',
+       *darkGray: value of "neutral-800" or '#333333',
+       *lightGray: value of "neutral-500" or '#666666',
+       *white: value of "white" or '#ffffff',
+       * ```
+       */
+      colors?: ColorConfig;
+      /**
+       * Padding applied when the block has a background color.
+       * @example
+       * ```
+       *backgroundX: '2rem',
+       *backgroundY: '1rem',
+       * ```
+       *
+       * @default
+       * ```
+       * backgroundX: value of p-5 or '1.25rem',
+       * backgroundY: value of p-9 or '2.35rem',
+       * ```
+       */
+      padding?: PaddingConfig;
+      /**
+       * The font size map for the code editor in the WordPress admin.
+       *
+       * ```
+       * huge: text-7xl
+       * large: text-4xl
+       * normal: text-xl
+       * small: text-sm
+       *```
+       *
+       * @example
+       * ```
+       *"7xl": 5rem;
+       *"4xl": 4rem;
+       *xl: 2rem;
+       *sm: 1rem;
+       * ```
+       *
+       * @default
+       * ```
+       * "7xl": '5rem',
+       * "4xl": '4rem',
+       * xl: '1.25rem',
+       * sm: '1rem',
+       */
+      fontSize?: FontSizeConfig;
+    };
+    /**
+     * The colors mapped from the code editor in the WordPress admin.
+     * @example
+     * ```
+     *primary: '#0070f3',
+     *secondary: '#ff4081',
+     *darkGray: '#333',
+     *lightGray: '#fafafa',
+     *white: '#fff',
+     * ```
+     *
+     *@default
+     * ```
+     *primary: value of "blue-500" or '#0073a8',
+     *secondary: value of "gray-500" or '#005075',
+     *darkGray: value of "neutral-800" or '#333333',
+     *lightGray: value of "neutral-500" or '#666666',
+     *white: value of "white" or '#ffffff',
+     * ```
+     */
+    colors?: ColorConfig;
+    /**
+     * Padding applied when the block has a background color.
+     * @example
+     * ```
+     *backgroundX: '2rem',
+     *backgroundY: '1rem',
+     * ```
+     *
+     * @default
+     * ```
+     * backgroundX: value of p-5 or '1.25rem',
+     * backgroundY: value of p-9 or '2.35rem',
+     * ```
+     */
+    padding?: PaddingConfig;
+    /**
+     * The font size map for the code editor in the WordPress admin.
+     *
+     * ```
+     * huge: text-7xl
+     * large: text-4xl
+     * normal: text-xl
+     * small: text-sm
+     *```
+     *
+     * @example
+     * ```
+     *"7xl": 5rem;
+     *"4xl": 4rem;
+     *xl: 2rem;
+     *sm: 1rem;
+     * ```
+     *
+     * @default
+     * ```
+     * "7xl": '5rem',
+     * "4xl": '4rem',
+     * xl: '1.25rem',
+     * sm: '1rem',
+     */
+    fontSize?: FontSizeConfig;
+  };
+};
+
+export type TailwindcssConfig = Config & WordpressMapConfig;
+
+const mergeToConfig: Config = {
   content: [],
   safelist: [
     '.has-primary-color',
@@ -25,7 +180,7 @@ const mergeToConfig = {
 };
 
 export default plugin(function ({ addUtilities, theme }) {
-  const fontSizeUtilties = {
+  const fontSizeUtilities = {
     '.has-huge-font-size': {
       fontSize: `${theme('fontSize.7xl', '5rem')} !important`,
     },
@@ -40,7 +195,7 @@ export default plugin(function ({ addUtilities, theme }) {
     },
   };
 
-  const colorUtilties = {
+  const colorUtilities = {
     '.has-primary-color': {
       color: theme('colors.primary') || theme('colors.blue.500') || '#0073a8',
     },
@@ -65,7 +220,7 @@ export default plugin(function ({ addUtilities, theme }) {
     theme('padding.5', '1.25em')
   )} ${theme('padding.backgroundY', theme('padding.9', '2.35em'))}`;
 
-  const backgroundUtilties = {
+  const backgroundUtilities = {
     '.has-background': {
       padding: backgroundPadding,
     },
@@ -90,7 +245,7 @@ export default plugin(function ({ addUtilities, theme }) {
     },
   };
 
-  const dropCapUtilties = {
+  const dropCapUtilities = {
     '.has-drop-cap': {
       '&:first-letter': {
         float: 'left',
@@ -105,9 +260,9 @@ export default plugin(function ({ addUtilities, theme }) {
   };
 
   addUtilities([
-    colorUtilties,
-    fontSizeUtilties,
-    backgroundUtilties,
-    dropCapUtilties,
+    colorUtilities,
+    fontSizeUtilities,
+    backgroundUtilities,
+    dropCapUtilities,
   ]);
 }, mergeToConfig);
