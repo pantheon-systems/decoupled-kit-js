@@ -45,7 +45,7 @@ export async function getPreview(context, node, params) {
         const leadingChar = params ? "&" : "";
         params += `${leadingChar}resourceVersion=id:${context.previewData.resourceVersionId}`;
       }
-
+      
       // Only fetch preview data if it is not a revision
       else {
         const fetchedPreviewData = await fetchJsonapiEndpoint(

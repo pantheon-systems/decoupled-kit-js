@@ -34,7 +34,7 @@ class PantheonDrupalState extends DrupalState {
       onError,
     });
   }
-
+  
   /**
    * If a query is provided, fetches data using apollo-link-json-api, otherwise uses out fetch method.
    * @param endpoint the assembled JSON:API endpoint
