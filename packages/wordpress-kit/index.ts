@@ -1,4 +1,8 @@
 import GraphqlClientFactory from './src/lib/GraphqlClientFactory';
+import tailwindcssPlugin from './src/lib/tailwindcssPlugin';
 import { gql } from 'graphql-request';
 
-export { GraphqlClientFactory, gql };
+import type { TailwindcssConfig } from './src/lib/tailwindcssPlugin';
+
+export { GraphqlClientFactory, gql, tailwindcssPlugin };
+export type { TailwindcssConfig };
