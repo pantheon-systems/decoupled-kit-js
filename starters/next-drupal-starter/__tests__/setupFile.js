@@ -41,6 +41,11 @@ const defaultProfileHandlers = [
     method: "get",
     status: 200,
   },
+  {
+    endpoint: "https://default/jsonapi/decoupled-preview/xxxx",
+    method: "get",
+    status: 404,
+  },
 ];
 
 const umamiProfileHandlers = [
@@ -80,6 +85,11 @@ const umamiProfileHandlers = [
     mockData: umamiEsPreview,
     method: "get",
     status: 200,
+  },
+  {
+    endpoint: "https://umami/en/jsonapi/decoupled-preview/xxxx",
+    method: "get",
+    status: 404,
   },
 ];
 

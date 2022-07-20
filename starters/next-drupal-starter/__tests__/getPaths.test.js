@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, } from "vitest";
 import { getPaths } from "../lib/getPaths";
 import { globalDrupalStateStores } from "../lib/drupalStateContext";
 
@@ -36,5 +36,21 @@ describe("getPaths()", () => {
     );
 
     expect(paths).toEqual([]);
+  });
+  it("should throw an error if the node is invalid and failGracefully is false", async () => {
+    try {
+      await getPaths(
+        mockContext,
+        globalDrupalStateStores,
+        "node--x",
+        "slug",
+        "pages",
+        false
+      );
+    } catch (error) {
+      expect(error.message).toEqual(
+        `Invalid objectName.\nCheck that node--x is a valid node in your Drupal instance or local store`
+      );
+    }
   });
 });
