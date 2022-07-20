@@ -1,13 +1,7 @@
-import { afterEach, describe, it, expect, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import { getPreview } from "../lib/getPreview";
 
-const mockGetPreview = vi.fn().mockImplementation(getPreview);
-
 describe("getPreview()", () => {
-  afterEach(() => {
-    vi.clearAllMocks();
-  });
-
   it("should return preview parameters if there is a revision in the preview data", async () => {
     const mockContext = {
       previewData: {
@@ -15,7 +9,7 @@ describe("getPreview()", () => {
         previewLang: "en",
       },
     };
-    const params = await mockGetPreview(
+    const params = await getPreview(
       mockContext,
       "node--article",
       "includes=field_media_image.field_media_image"
@@ -23,7 +17,6 @@ describe("getPreview()", () => {
     expect(params).toEqual(
       "includes=field_media_image.field_media_image&resourceVersion=id:123"
     );
-    expect(mockGetPreview).toHaveBeenCalledOnce();
   });
   it("should not modify parameters if there is no revision in previewData", async () => {
     const umamiKey = "1_00517b73-f66c-43eb-93b1-444a68ab97d8";
@@ -35,9 +28,8 @@ describe("getPreview()", () => {
         key: PROFILE === "umami" ? umamiKey : defaultKey,
       },
     };
-    const params = await mockGetPreview(mockContext, "node--article", "");
+    const params = await getPreview(mockContext, "node--article", "");
     expect(params).toEqual("");
-    expect(mockGetPreview).toHaveBeenCalledOnce();
   });
   if (PROFILE === "umami") {
     it("should preview data for the non-default language", async () => {
@@ -49,9 +41,8 @@ describe("getPreview()", () => {
           key: previewKey,
         },
       };
-      const params = await mockGetPreview(mockContext, "node--article", "");
+      const params = await getPreview(mockContext, "node--article", "");
       expect(params).toEqual("");
-      expect(mockGetPreview).toHaveBeenCalledOnce();
     });
   }
 });
