@@ -7,6 +7,10 @@ export default defineConfig(({ mode }) => {
   return {
     test: {
       setupFiles: ["__tests__/setupFile.js"],
+      coverage: {
+        reportsDirectory: `./coverage/${mode}`
+        
+      }
     },
     plugins: [react()],
     define: {

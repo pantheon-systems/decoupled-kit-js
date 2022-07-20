@@ -14,7 +14,7 @@
     "id": "d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0",
     "links": {
       "self": {
-        "href": "https://default-decoupled-drupal-qa.pantheonsite.io/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0?resourceVersion=id%3A"
+        "href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0?resourceVersion=id%3A"
       }
     },
     "attributes": {
@@ -62,10 +62,10 @@
         },
         "links": {
           "related": {
-            "href": "https://default-decoupled-drupal-qa.pantheonsite.io/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/node_type?resourceVersion"
+            "href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/node_type?resourceVersion"
           },
           "self": {
-            "href": "https://default-decoupled-drupal-qa.pantheonsite.io/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/relationships/node_type?resourceVersion"
+            "href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/relationships/node_type?resourceVersion"
           }
         }
       },
@@ -79,10 +79,10 @@
         },
         "links": {
           "related": {
-            "href": "https://default-decoupled-drupal-qa.pantheonsite.io/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/revision_uid?resourceVersion"
+            "href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/revision_uid?resourceVersion"
           },
           "self": {
-            "href": "https://default-decoupled-drupal-qa.pantheonsite.io/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/relationships/revision_uid?resourceVersion"
+            "href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/relationships/revision_uid?resourceVersion"
           }
         }
       },
@@ -96,10 +96,10 @@
         },
         "links": {
           "related": {
-            "href": "https://default-decoupled-drupal-qa.pantheonsite.io/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/uid?resourceVersion"
+            "href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/uid?resourceVersion"
           },
           "self": {
-            "href": "https://default-decoupled-drupal-qa.pantheonsite.io/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/relationships/uid?resourceVersion"
+            "href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/relationships/uid?resourceVersion"
           }
         }
       },
@@ -113,10 +113,10 @@
         },
         "links": {
           "related": {
-            "href": "https://default-decoupled-drupal-qa.pantheonsite.io/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/field_media_image?resourceVersion"
+            "href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/field_media_image?resourceVersion"
           },
           "self": {
-            "href": "https://default-decoupled-drupal-qa.pantheonsite.io/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/relationships/field_media_image?resourceVersion"
+            "href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/relationships/field_media_image?resourceVersion"
           }
         }
       },
@@ -124,10 +124,10 @@
         "data": [],
         "links": {
           "related": {
-            "href": "https://default-decoupled-drupal-qa.pantheonsite.io/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/field_tags?resourceVersion"
+            "href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/field_tags?resourceVersion"
           },
           "self": {
-            "href": "https://default-decoupled-drupal-qa.pantheonsite.io/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/relationships/field_tags?resourceVersion"
+            "href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/relationships/field_tags?resourceVersion"
           }
         }
       }
@@ -135,7 +135,7 @@
   },
   "links": {
     "self": {
-      "href": "https://default-decoupled-drupal-qa.pantheonsite.io/jsonapi/decoupled-preview/1_d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0"
+      "href": "https://default/jsonapi/decoupled-preview/1_d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0"
     }
   }
 }
