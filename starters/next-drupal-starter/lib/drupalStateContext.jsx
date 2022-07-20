@@ -5,7 +5,7 @@ import { DrupalState } from "@pantheon-systems/drupal-kit";
 const DrupalStateContext = createContext();
 
 // For each locale, make an instance of DrupalState (LocaleStore)
-const makeLocaleStores = ({ locales, auth = false, debug = false }) =>
+export const makeLocaleStores = ({ locales, auth = false, debug = false }) =>
   locales.length > 1
     ? locales.map(
         (locale) =>

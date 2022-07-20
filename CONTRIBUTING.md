@@ -91,11 +91,17 @@ To contribute to the starters, you will need a backend to develop against.
 
 ### next-drupal-starter
 
-<!-- Instructions on how to spin up a backend for local deveopment here -->
+#### Testing
 
+- Unit and snapshot tests are written using [vitest](https://vitest.dev). Tests should be written in the `__tests__` directory.
+- Test data should be in `__tests__/data`, preferably in a json format.
+- Fetch calls should be mocked with [msw](https://mswjs.io) so that tests do not rely on a running backend to pass.
+- Tests should be written with the two data profiles in mind: the Umami demo data profile, and the Default example data profile.
+
+<!-- Instructions on how to spin up a backend for local development here -->
 ### gatsby-wordpress-starter
 
-<!-- Instructions on how to spin up a backend for local deveopment here -->
+<!-- Instructions on how to spin up a backend for local development here -->
 
 ## Notes for Maintainers
 
