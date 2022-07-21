@@ -1,5 +1,11 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.1.0
+
+### Minor Changes
+
+- 0db7b52: Created a plugin for tailwind, that supports the block editor classes
+
 ## 2.0.0
 
 ### Major Changes
