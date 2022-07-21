@@ -8,7 +8,7 @@ export default function Article({ imgSrc, title, body }) {
       <h1>{title}</h1>
 
       <Link passHref href="/">
-        <a className="font-nomral">Home &rarr;</a>
+        <a className="font-normal">Home &rarr;</a>
       </Link>
 
       <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">

@@ -10,7 +10,7 @@ This guide assumes the reader has working knowledge of [React](https://reactjs.o
 
 ## Gatsby's GraphQL Layer
 
-The [`gatsby-source-wordpress` plugin](https://www.gatsbyjs.com/plugins/gatsby-source-wordpress/) makes use of the [WPGraphQL WordPress plugin](https://www.wpgraphql.com/) in order to efficently cache WordPress data in Gatsby. This plugin is configured to successuflly source data out of the box. To do so, provide your GraphQL Endpoint in `.env.local` as WPGRAPHQL_URL. For example:
+The [`gatsby-source-wordpress` plugin](https://www.gatsbyjs.com/plugins/gatsby-source-wordpress/) makes use of the [WPGraphQL WordPress plugin](https://www.wpgraphql.com/) in order to efficiently cache WordPress data in Gatsby. This plugin is configured to successfully source data out of the box. To do so, provide your GraphQL Endpoint in `.env.local` as WPGRAPHQL_URL. For example:
 
 ```
 WPGRAPHQL_URL=https://dev-my-wordpress-site.pantheon.site/wp/graphql

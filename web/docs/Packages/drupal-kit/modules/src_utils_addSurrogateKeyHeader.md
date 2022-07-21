@@ -29,4 +29,4 @@ The current known unique set of surrogate keys.
 
 #### Defined in
 
-[src/utils/addSurrogateKeyHeader.ts:9](https://github.com/pantheon-systems/decoupled-kit-js/blob/fa1ceead/packages/drupal-kit/src/utils/addSurrogateKeyHeader.ts#L9)
+[src/utils/addSurrogateKeyHeader.ts:9](https://github.com/pantheon-systems/decoupled-kit-js/blob/f9c3fa0/packages/drupal-kit/src/utils/addSurrogateKeyHeader.ts#L9)
