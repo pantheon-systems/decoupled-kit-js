@@ -60,6 +60,8 @@ jobs:
             split_repository: "gatsby-wordpress-starter"
           - local_path: "starters/next-drupal-starter"
             split_repository: "next-drupal-starter"
+          - local_path: "starters/next-wordpress-starter"
+            split_repository: "next-wordpress-starter"
     steps:
       - uses: actions/checkout@v2
 
