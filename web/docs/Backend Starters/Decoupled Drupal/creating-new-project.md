@@ -1,25 +1,139 @@
 ---
-sidebar_position: 2
+# Creating a New Project
 ---
 
-# Creating a New Project
+## Choosing an approach
 
-## Prerequisites
+### Use build tools if:
+
+- Testing is an important part of your workflow
+
+- You don’t want to worry about manually pushing changes to your GH repo.
+
+### Use dashboard upstream:
+
+- The simplest possible setup
+
+- Pantheon repo is your source of truth
+
+- GitHub is your default VCS and CircleCI is your CI provider then this approach will automatically default to both these options. For other options use the build tools approach
+
+### Installing using dashboard upstream
+- Create an empty upstream site:
+
+#### Via the Pantheon Dashboard at this link: 
+- https://dashboard.pantheon.io/sites/create?upstream_id=4c7176de-e079-eed1-154d-44d5a9945b65
+
+#### Or alternatively via terminus:
+
+```
+terminus site:create my-new-site "My New Site" empty --org='Decoupled Demo'
+```
+
+#### In the Pantheon Admin Dashboard:
+
+** Switch development mode to git
+
+** Click the upgrade button, and change the site plan to performance medium. 
+
+** Clone your sites repo on your local
+
+** Change into the newly cloned directory
+
+** Add remote for the decoupled upstream: `git remote add upstream https://github.com/pantheon-systems/decoupled-drupal-composer-managed`
+
+** Checkout the main branch from upstream:
+
+```
+
+git fetch upstream main
+
+git checkout -t upstream/main
+
+```
+
+** Reset the master branch to match main, then force push that to the Dev environment:
+
+```
+
+git branch -D master
+
+git checkout -b master
+
+git push origin master --force
+
+```
+
+**Note:** Make sure code has synced and all active workflows are complete in the UI.
+Click on the ‘visit development site’ button to Install via the UI, selecting either the Pantheon Decoupled Profile, or Pantheon Decoupled Umami Demo profiles.
+
+## Installing using build tools
+### Prerequisites
 
 - Composer (required for CMS backends): [Install Globally](https://getcomposer.org/download/)
 - [Generate machine token](https://pantheon.io/docs/machine-tokens#create-a-machine-token) & [Authenticate into Terminus](https://pantheon.io/docs/machine-tokens#authenticate-into-terminus)
 - [Install Terminus](https://pantheon.io/docs/terminus/install) (3.0.0 above required)
 - Also install the following plugins:
   - `terminus self:plugin:install terminus-build-tools-plugin`
-  - `terminus self:plugin:install terminus-power-tools`
+  - `terminus self:plugin:remove terminus-power-tools`
   - `terminus self:plugin:install terminus-secrets-plugin`
   - Reload the terminus plugins: `terminus self:plugin:reload`
   - Clear cache for composer: `composer clear-cache`
   - Validate that the required plugins are installed: `terminus self:plugin:list`
 - Create [Github Personal access tokens](https://github.com/settings/tokens)
 - Create [CircleCI Personal API Tokens](https://app.circleci.com/settings/user/tokens)
+- Create [Bitbucket app password](https://bitbucket.org/account/settings/app-passwords/)  for your [username](https://bitbucket.org/account/settings/username/change/)
+- Create [GitLab Personal API Tokens](https://gitlab.com/-/profile/personal_access_tokens)
 
-## Installation
+### Installation
+1.  Run the `terminus build:project:create` as follows for Github with CircleCI: 
+  ```
+  terminus build:project:create \
+    --team='Pantheon Employees' \
+    --template-repository="git@github.com:pantheon-systems/decoupled-drupal-composer-managed.git" pantheon-upstreams/decoupled-drupal-composer-managed \
+    --visibility private {PROJECT_NAME} \
+    --profile="pantheon_decoupled_profile" \
+    --stability=dev
+  ```
+
+2. Run the `terminus build:project:create` as follows for Github with Github Actions:
+  ```
+  terminus build:project:create \
+    --team='{My Team Name}' \
+    --ci=githubactions \
+    --template-repository="git@github.com:pantheon-systems/decoupled-drupal-composer-managed.git" pantheon-upstreams/decoupled-drupal-composer-managed \
+    --visibility private {PROJECT_NAME} \
+    --profile="pantheon_decoupled_profile" \
+    --stability=dev
+  ```
+
+3. Run the `terminus build:project:create` as follows for Bitbucket with Bitbucket pipelines:
+  ```
+  terminus build:project:create \
+    --team='{My Team Name}' \
+    --git=bitbucket \
+    --ci=bitbucketpipelines \
+    --template-repository="git@github.com:pantheon-systems/decoupled-drupal-composer-managed.git" pantheon-upstreams/decoupled-drupal-composer-managed \
+    --visibility private {PROJECT_NAME} \
+    --profile="pantheon_decoupled_profile" \
+    --stability=dev
+  ```
+
+4. Run the `terminus build:project:create` as follows for Gitlab with gitlabci:
+  ```
+  terminus build:project:create \
+    --team='{My Team Name}' \
+    --git=gitlab \
+    --ci=gitlabci \
+    --template-repository="git@github.com:pantheon-systems/decoupled-  drupal-composer-managed.git" pantheon-upstreams/decoupled-drupal-composer-managed \
+    --visibility private {PROJECT_NAME} \
+    --profile="pantheon_decoupled_profile" \
+    --stability=dev
+  ```
+
+## Deprecated
+
+### Installation
 
 - Run the `terminus build:project:create` as follows:
 
@@ -70,3 +184,4 @@ For more information, consult the [available services section of the build tools
 If you would like the repo created to be under a GitHub organization instead of the authenticated user's namespace, you can use the `--org` option.
 
 For information on additional options, consult the [command options section of the build tools documentation](https://github.com/pantheon-systems/terminus-build-tools-plugin#command-options).
+
