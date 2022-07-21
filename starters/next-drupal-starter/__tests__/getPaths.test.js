@@ -1,4 +1,3 @@
-import { describe, it, expect, } from "vitest";
 import { getPaths } from "../lib/getPaths";
 import { globalDrupalStateStores } from "../lib/drupalStateContext";
 
