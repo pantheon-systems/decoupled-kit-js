@@ -1,5 +1,14 @@
 # @pantheon-systems/next-drupal-starter
 
+## 2.0.2
+
+### Patch Changes
+
+- 1af68d0: [next-drupal-starter] Use objectName from the req.query in /api/preview
+- d5a07c9: [next-drupal-starter] Fixed a bug with previewing revisions
+- 9515782: [next-drupal-starter] Added unit tests
+- 2f72e82: Fix a typo in the class of the link in the Article component
+
 ## 2.0.1
 
 ### Patch Changes
