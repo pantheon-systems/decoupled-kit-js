@@ -8,7 +8,7 @@
 - [Reporting](#bug-reports-and-feature-requests)
 - [Further Reading](#further-reading)
 
-## Prerequisites
+## Prerequisites ##
 
 To configure the monorepo for development, the following should be installed locally:
 
