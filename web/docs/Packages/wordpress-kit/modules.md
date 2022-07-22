@@ -10,3 +10,4 @@ custom_edit_url: null
 
 - [index](modules/)
 - [src/lib/GraphqlClientFactory](modules/src_lib_GraphqlClientFactory.md)
+- [src/lib/tailwindcssPlugin](modules/src_lib_tailwindcssPlugin.md)
