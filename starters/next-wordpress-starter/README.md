@@ -1,8 +1,5 @@
 # Pantheon Decoupled Kit Next WordPress Starter
 
-More information on this starter coming soon.
-
-<!-- 
 There are two ways to get started with the Next WordPress Starter:
 
 **Option 1**: Use `create-next-app`
@@ -36,12 +33,17 @@ For either option, create a `.env.development.local` file and update it with the
 WPGRAPHQL_URL=
 ```
 
-4. Run `lando start`
-
-5. Open a browser and navigate to `http://drupalnext.lndo.site/`.
+3. Run `npm run dev` to start in dev mode, or `npm run build && npm start` to start in production mode.
 
 ## Pantheon @pantheon-systems/wordpress-kit
 
-Coming soon!
+The Pantheon @pantheon-systems/wordpress-kit is included as a dependency in this project. This allows developers to make use
+of utility functions to simplify the process of building and maintaining a decoupled site on Pantheon,
+including:
 
--->
+- GraphqlClientFactory()
+- tailwindcssPlugin
+
+The `tailwindcssPlugin` is included in this project and is used to map WordPress Block Editor styles to Tailwind styles.
+
+Full documentation can be found at: https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packages/wordpress-kit

@@ -11,3 +11,15 @@ custom_edit_url: null
 ### GraphqlClientFactory
 
 Renames and re-exports [default](../classes/src_lib_GraphqlClientFactory.default.md)
+
+---
+
+### TailwindcssConfig
+
+Re-exports [TailwindcssConfig](src_lib_tailwindcssPlugin.md#tailwindcssconfig)
+
+---
+
+### tailwindcssPlugin
+
+Renames and re-exports [default](src_lib_tailwindcssPlugin.md#default)

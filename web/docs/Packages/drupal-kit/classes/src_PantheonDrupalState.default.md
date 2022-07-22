@@ -31,7 +31,7 @@ DrupalState.constructor
 
 #### Defined in
 
-[src/PantheonDrupalState.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/f9c3fa0/packages/drupal-kit/src/PantheonDrupalState.ts#L16)
+[src/PantheonDrupalState.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/0f0d168/packages/drupal-kit/src/PantheonDrupalState.ts#L16)
 
 ## Methods
 
@@ -62,4 +62,4 @@ DrupalState.conditionalFetch
 
 #### Defined in
 
-[src/PantheonDrupalState.ts:46](https://github.com/pantheon-systems/decoupled-kit-js/blob/f9c3fa0/packages/drupal-kit/src/PantheonDrupalState.ts#L46)
+[src/PantheonDrupalState.ts:46](https://github.com/pantheon-systems/decoupled-kit-js/blob/0f0d168/packages/drupal-kit/src/PantheonDrupalState.ts#L46)
