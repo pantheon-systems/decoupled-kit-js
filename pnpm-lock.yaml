@@ -23,6 +23,7 @@ overrides:
   devcert@<1.2.1: '>=1.2.1'
   jpeg-js@<0.4.4: '>=0.4.4'
   got@<11.8.5: '>=11.8.5'
+  parse-path@<5.0.0: '>=5.0.0'
 
 patchedDependencies: {}
 
@@ -118,26 +119,26 @@ importers:
 
   starters/gatsby-wordpress-starter:
     specifiers:
-      '@babel/core': '>=7.12.3 <8.0.0'
-      '@tailwindcss/typography': ^0.5.2
-      autoprefixer: ^10.4.4
+      '@babel/core': ^7.18.9
+      '@tailwindcss/typography': ^0.5.4
+      autoprefixer: ^10.4.7
       dumper.js: ^1.3.1
       gatsby: 4.19.0
-      gatsby-plugin-image: ^2.12.1
-      gatsby-plugin-manifest: ^4.12.1
-      gatsby-plugin-offline: ^5.12.1
+      gatsby-plugin-image: ^2.19.0
+      gatsby-plugin-manifest: ^4.19.0
+      gatsby-plugin-offline: ^5.19.0
       gatsby-plugin-pnpm: ^1.2.10
-      gatsby-plugin-postcss: ^5.12.1
-      gatsby-plugin-react-helmet: ^5.12.1
-      gatsby-plugin-sharp: ^4.12.1
-      gatsby-source-filesystem: ^4.12.1
-      gatsby-source-wordpress: ^6.12.1
-      gatsby-transformer-sharp: ^4.12.1
-      graphql: '>=14.2.0 <15.0.0 || >=15.0.0 <16.0.0 || >=16.0.0 <17.0.0'
-      html-react-parser: ^1.4.10
+      gatsby-plugin-postcss: ^5.19.0
+      gatsby-plugin-react-helmet: ^5.19.0
+      gatsby-plugin-sharp: ^4.19.0
+      gatsby-source-filesystem: ^4.19.0
+      gatsby-source-wordpress: ^6.19.0
+      gatsby-transformer-sharp: ^4.19.0
+      graphql: ^16.5.0
+      html-react-parser: ^1.4.14
       lodash: ^4.17.21
       mitt: ^3.0.0
-      postcss: ^8.4.12
+      postcss: ^8.4.14
       prettier: 2.5.1
       react: 17.0.2
       react-dom: 17.0.2
@@ -145,7 +146,7 @@ importers:
       tailwindcss: 3.0.24
       typeface-merriweather: 1.1.13
       typeface-montserrat: 1.1.13
-      webpack: ^4.0.0 || ^5.0.0
+      webpack: ^5.73.0
     dependencies:
       '@tailwindcss/typography': 0.5.4_tailwindcss@3.0.24
       autoprefixer: 10.4.7_postcss@8.4.14
@@ -5520,7 +5521,7 @@ packages:
   /@types/eslint/8.4.5:
     resolution: {integrity: sha512-dhsC09y1gpJWnK+Ff4SGvCuSnk9DaU0BJZSzOwa6GVSg65XtTugLBITDAAzRU5duGBoXBHpdR/9jHGxJjNflJQ==}
     dependencies:
-      '@types/estree': 1.0.0
+      '@types/estree': 0.0.51
       '@types/json-schema': 7.0.11
 
   /@types/estree/0.0.39:
@@ -5532,6 +5533,7 @@ packages:
 
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
+    dev: false
 
   /@types/express-serve-static-core/4.17.29:
     resolution: {integrity: sha512-uMd++6dMKS32EOuw1Uli3e3BPgdLIXmezcfHv7N4c1s3gkhikBplORPpMq3fuWkxncZN1reb16d5n8yhQ80x7Q==}
@@ -8714,7 +8716,7 @@ packages:
     engines: {node: '>= 4.2.1'}
     hasBin: true
     dependencies:
-      address: 1.2.0
+      address: 1.1.2
       debug: 2.6.9
     transitivePeerDependencies:
       - supports-color
@@ -8725,7 +8727,7 @@ packages:
     engines: {node: '>= 4.2.1'}
     hasBin: true
     dependencies:
-      address: 1.2.0
+      address: 1.1.2
       debug: 2.6.9
     transitivePeerDependencies:
       - supports-color
@@ -15500,13 +15502,10 @@ packages:
     resolution: {integrity: sha512-twN+njEipszzlMJd4ONUYgSfZPDxgHhT9Ahed5uTigpQn90FggW4SA/AIPq/6a149fTbE9qBEcSwE3FAEp6wQQ==}
     dev: false
 
-  /parse-path/4.0.4:
-    resolution: {integrity: sha512-Z2lWUis7jlmXC1jeOG9giRO2+FsuyNipeQ43HAjqAZjwSe3SEf+q/84FGPHoso3kyntbxa4c4i77t3m6fGf8cw==}
+  /parse-path/5.0.0:
+    resolution: {integrity: sha512-qOpH55/+ZJ4jUu/oLO+ifUKjFPNZGfnPJtzvGzKN/4oLMil5m9OH4VpOj6++9/ytJcfks4kzH2hhi87GL/OU9A==}
     dependencies:
-      is-ssh: 1.4.0
-      protocols: 1.4.8
-      qs: 6.11.0
-      query-string: 6.14.1
+      protocols: 2.0.1
     dev: false
 
   /parse-url/6.0.2:
@@ -15514,7 +15513,7 @@ packages:
     dependencies:
       is-ssh: 1.4.0
       normalize-url: 6.1.0
-      parse-path: 4.0.4
+      parse-path: 5.0.0
       protocols: 1.4.8
     dev: false
 
@@ -16531,7 +16530,7 @@ packages:
     engines: {node: '>=14'}
     dependencies:
       '@babel/code-frame': 7.18.6
-      address: 1.2.0
+      address: 1.1.2
       browserslist: 4.21.2
       chalk: 4.1.2
       cross-spawn: 7.0.3
