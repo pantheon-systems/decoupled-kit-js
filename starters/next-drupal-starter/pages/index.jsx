@@ -16,7 +16,7 @@ export default function HomepageTemplate({
   multiLanguage,
 }) {
   const HomepageHeader = () => (
-    <div className="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit" data-testid="homepage-header">
+    <div className="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit">
       <h1 className="prose text-4xl text-center h-full">
         Welcome to{" "}
         <a

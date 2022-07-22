@@ -17,7 +17,8 @@ export default defineConfig(({ mode }) => {
           __dirname,
           "__tests__",
           "__snapshots__",
-          `${mode}-${testPath.split("__tests__/")[1]}${snapExtension}`
+          mode,
+          `${testPath.split("snapshotTests/")[1]}${snapExtension}`
         ),
     },
     plugins: [react()],

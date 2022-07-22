@@ -1,0 +1,270 @@
+// Vitest Snapshot v1
+
+exports[`default <ArticleTemplate /> > should render with default profile articles 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+  >
+    <div
+      class="my-0 pt-10 px-5 text-xl"
+    >
+      <nav>
+        <ul
+          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+        >
+          <li
+            class="mr-auto"
+          >
+            <a
+              class="hover:underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/articles"
+            >
+              📰 Articles
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <article
+        class="prose lg:prose-xl mt-10 mx-auto"
+      >
+        <h1>
+          This is an Example Article
+        </h1>
+        <a
+          class="font-normal"
+          href="/"
+        >
+          Home →
+        </a>
+        <div
+          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+        >
+          <div
+            class="relative w-full rounded-lg shadow-lg overflow-hidden mb-10"
+            style="height: 50vh;"
+          >
+            <img
+              alt="This is an Example Article"
+              src="https://default/sites/default/files/pizza.jpg"
+            />
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper dignissim cras tincidunt lobortis feugiat. Augue lacus viverra vitae congue eu consequat ac felis. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Pulvinar elementum integer enim neque. At tempor commodo ullamcorper a lacus vestibulum. Nec tincidunt praesent semper feugiat nibh. Nisl nisi scelerisque eu ultrices vitae auctor eu augue ut. Bibendum neque egestas congue quisque egestas diam. Pellentesque elit ullamcorper dignissim cras.
+            </p>
+            
+
+
+            <p>
+              Quis lectus nulla at volutpat diam ut venenatis tellus in. Tempus urna et pharetra pharetra. Eu consequat ac felis donec. Donec ultrices tincidunt arcu non sodales neque sodales ut. Suscipit tellus mauris a diam maecenas sed enim ut. Semper eget duis at tellus at urna condimentum mattis. Dictum fusce ut placerat orci nulla pellentesque dignissim enim. Porta lorem mollis aliquam ut porttitor leo. Eu sem integer vitae justo eget magna fermentum iaculis eu. Amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus. Laoreet sit amet cursus sit amet dictum sit amet justo. Ac placerat vestibulum lectus mauris ultrices eros. Fermentum iaculis eu non diam phasellus vestibulum lorem sed. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis. Odio ut sem nulla pharetra. Urna molestie at elementum eu facilisis sed odio.
+            </p>
+            
+
+
+            <p>
+              Non enim praesent elementum facilisis leo vel fringilla. Risus commodo viverra maecenas accumsan lacus vel. Eget egestas purus viverra accumsan in. Nunc congue nisi vitae suscipit tellus mauris a diam maecenas. Ipsum nunc aliquet bibendum enim. Turpis nunc eget lorem dolor sed viverra. Quis risus sed vulputate odio ut enim blandit volutpat. Etiam sit amet nisl purus in mollis nunc sed. At lectus urna duis convallis convallis tellus. Feugiat in ante metus dictum at tempor commodo ullamcorper a. Volutpat commodo sed egestas egestas. Eget egestas purus viverra accumsan in nisl nisi scelerisque eu. Aliquet nibh praesent tristique magna sit amet purus. Dignissim diam quis enim lobortis scelerisque. Posuere sollicitudin aliquam ultrices sagittis. Tristique sollicitudin nibh sit amet commodo nulla facilisi. Scelerisque viverra mauris in aliquam. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.
+            </p>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer
+      class="w-full text-white bg-black p-4 mt-12"
+    >
+      <nav
+        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="list-disc text-blue-300 ml-3"
+          >
+            <a
+              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="flex my-4 p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2022 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://www.drupal.org/"
+          >
+            Drupal
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`default <SSRArticlesListTemplate /> > should render with default profile articles 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+  >
+    <div
+      class="my-0 pt-10 px-5 text-xl"
+    >
+      <nav>
+        <ul
+          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+        >
+          <li
+            class="mr-auto"
+          >
+            <a
+              class="hover:underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/articles"
+            >
+              📰 Articles
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <header
+        class="prose text-2xl mx-auto mt-20"
+      >
+        <h1
+          class="text-center mx-auto"
+        >
+          Articles
+        </h1>
+      </header>
+      <section>
+        <div
+          class="mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+        >
+          <a
+            href="/articles/example-article"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="This is an Example Article"
+                  src="https://default/sites/default/files/pizza.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                This is an Example Article →
+              </h2>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="w-full text-white bg-black p-4 mt-12"
+    >
+      <nav
+        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="list-disc text-blue-300 ml-3"
+          >
+            <a
+              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="flex my-4 p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2022 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://www.drupal.org/"
+          >
+            Drupal
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
