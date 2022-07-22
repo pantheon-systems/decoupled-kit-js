@@ -1,8 +1,9 @@
 import { NextSeo } from "next-seo";
-import Layout from "../components/layout";
 import Image from "next/image";
-import { getFooterMenu } from "../lib/Menus";
+import Layout from "../components/layout";
 import { PostGridItem, withGrid } from "../components/grid";
+
+import { getFooterMenu } from "../lib/Menus";
 import { getLatestPosts } from "../lib/Posts";
 
 export default function Home({ menuItems, posts }) {
