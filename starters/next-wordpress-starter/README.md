@@ -31,9 +31,12 @@ For either option, create a `.env.development.local` file and update it with the
 
 ```
 WPGRAPHQL_URL=
+IMAGE_DOMAIN=
 ```
 
 3. Run `npm run dev` to start in dev mode, or `npm run build && npm start` to start in production mode.
+
+4. Open a browser and navigate to `http://localhost:3000`.
 
 ## Pantheon @pantheon-systems/wordpress-kit
 
