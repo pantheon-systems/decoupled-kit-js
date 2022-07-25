@@ -1,16 +1,18 @@
 ---
-# Creating a New Project
+sidebar_position: 2
 ---
 
-## Choosing an approach
+# Creating a New Project
 
-### Use build tools if:
+## Choosing an Approach
+
+### Use Build Tools if:
 
 - Testing is an important part of your workflow
 
 - You don’t want to worry about manually pushing changes to your GH repo.
 
-### Use dashboard upstream:
+### Use Dashboard Upstream if:
 
 - The simplest possible setup
 
@@ -18,23 +20,25 @@
 
 - GitHub is your default VCS and CircleCI is your CI provider then this approach will automatically default to both these options. For other options use the build tools approach
 
-### Installing using dashboard upstream
+### Installing using Dashboard Upstream
 - Create an empty upstream site:
 
 #### Via the Pantheon Dashboard at this link: 
 - https://dashboard.pantheon.io/sites/create?upstream_id=4c7176de-e079-eed1-154d-44d5a9945b65
 
-#### Or alternatively via terminus:
+#### Or Alternatively via Terminus:
 
 ```
-terminus site:create my-new-site "My New Site" empty --org='Decoupled Demo'
+terminus site:create my-new-site "Describe Site" empty --org='My Team Name'
 ```
+
+Replace `'{My Team Name}'` with your team name - for example `My Agency`. This can also be omitted.
 
 #### In the Pantheon Admin Dashboard:
 
-** Switch development mode to git
+Switch **Development Mode** to **Git**
 
-** Click the upgrade button, and change the site plan to performance medium. 
+Click the **Upgrade** button, and change the site plan to **Performance** > **Medium**. 
 
 ** Clone your sites repo on your local
 
@@ -64,10 +68,12 @@ git push origin master --force
 
 ```
 
-**Note:** Make sure code has synced and all active workflows are complete in the UI.
-Click on the ‘visit development site’ button to Install via the UI, selecting either the Pantheon Decoupled Profile, or Pantheon Decoupled Umami Demo profiles.
+:::Note
+Make sure code has synced and all active workflows are complete in the UI.
+Click on the **Visit Development Site** button to Install via the UI—selecting either the Pantheon Decoupled Profile, or Pantheon Decoupled Umami Demo profiles.
+:::
 
-## Installing using build tools
+## Installing using Build Tools
 ### Prerequisites
 
 - Composer (required for CMS backends): [Install Globally](https://getcomposer.org/download/)
@@ -96,6 +102,10 @@ Click on the ‘visit development site’ button to Install via the UI, selectin
     --stability=dev
   ```
 
+  Replace `{PROJECT_NAME}` with your project name - for example `decoupled-drupal`.
+
+  Replace `'{My Team Name}'` with your team name - for example `My Agency`. This can also be omitted.
+
 2. Run the `terminus build:project:create` as follows for Github with Github Actions:
   ```
   terminus build:project:create \
@@ -106,6 +116,10 @@ Click on the ‘visit development site’ button to Install via the UI, selectin
     --profile="pantheon_decoupled_profile" \
     --stability=dev
   ```
+
+  Replace `{PROJECT_NAME}` with your project name - for example `decoupled-drupal`.
+
+  Replace `'{My Team Name}'` with your team name - for example `My Agency`. This can also be omitted.
 
 3. Run the `terminus build:project:create` as follows for Bitbucket with Bitbucket pipelines:
   ```
@@ -119,6 +133,10 @@ Click on the ‘visit development site’ button to Install via the UI, selectin
     --stability=dev
   ```
 
+  Replace `{PROJECT_NAME}` with your project name - for example `decoupled-drupal`.
+
+  Replace `'{My Team Name}'` with your team name - for example `My Agency`. This can also be omitted.
+
 4. Run the `terminus build:project:create` as follows for Gitlab with gitlabci:
   ```
   terminus build:project:create \
@@ -130,6 +148,10 @@ Click on the ‘visit development site’ button to Install via the UI, selectin
     --profile="pantheon_decoupled_profile" \
     --stability=dev
   ```
+
+  Replace `{PROJECT_NAME}` with your project name - for example `decoupled-drupal`.
+
+  Replace `'{My Team Name}'` with your team name - for example `My Agency`. This can also be omitted.
 
 ## Deprecated
 
