@@ -1,7 +1,8 @@
 import { NextSeo } from "next-seo";
 import { PageGridItem, withGrid } from "../../components/grid";
 import Layout from "../../components/layout";
-import PageHeader from "../../components/page-header.js";
+import PageHeader from "../../components/page-header";
+
 import { getFooterMenu } from "../../lib/Menus";
 import { getLatestPages } from "../../lib/Pages";
 
