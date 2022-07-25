@@ -21,24 +21,24 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.2",
-    "autoprefixer": "^10.4.4",
-    "gatsby": "^4.16.0",
-    "gatsby-plugin-image": "^2.12.1",
-    "gatsby-plugin-manifest": "^4.12.1",
-    "gatsby-plugin-offline": "^5.12.1",
+    "@tailwindcss/typography": "^0.5.4",
+    "autoprefixer": "^10.4.7",
+    "gatsby": "4.19.0",
+    "gatsby-plugin-image": "^2.19.0",
+    "gatsby-plugin-manifest": "^4.19.0",
+    "gatsby-plugin-offline": "^5.19.0",
     "gatsby-plugin-pnpm": "^1.2.10",
-    "gatsby-plugin-postcss": "^5.12.1",
-    "gatsby-plugin-react-helmet": "^5.12.1",
-    "gatsby-plugin-sharp": "^4.12.1",
-    "gatsby-source-filesystem": "^4.12.1",
-    "gatsby-source-wordpress": "^6.12.1",
-    "gatsby-transformer-sharp": "^4.12.1",
-    "graphql": ">=14.2.0 <15.0.0 || >=15.0.0 <16.0.0 || >=16.0.0 <17.0.0",
-    "html-react-parser": "^1.4.10",
+    "gatsby-plugin-postcss": "^5.19.0",
+    "gatsby-plugin-react-helmet": "^5.19.0",
+    "gatsby-plugin-sharp": "^4.19.0",
+    "gatsby-source-filesystem": "^4.19.0",
+    "gatsby-source-wordpress": "^6.19.0",
+    "gatsby-transformer-sharp": "^4.19.0",
+    "graphql": "^16.5.0",
+    "html-react-parser": "^1.4.14",
     "lodash": "^4.17.21",
     "mitt": "^3.0.0",
-    "postcss": "^8.4.12",
+    "postcss": "^8.4.14",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-helmet": "6.1.0",
@@ -47,9 +47,9 @@
     "typeface-montserrat": "1.1.13"
   },
   "devDependencies": {
-    "@babel/core": ">=7.12.3 <8.0.0",
+    "@babel/core": "^7.18.9",
     "dumper.js": "^1.3.1",
     "prettier": "2.5.1",
-    "webpack": "^4.0.0 || ^5.0.0"
+    "webpack": "^5.73.0"
   }
 }
