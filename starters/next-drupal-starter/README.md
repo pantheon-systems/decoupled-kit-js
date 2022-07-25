@@ -77,7 +77,8 @@ For a guide on creating your first Next Drupal customization, see [Your First Dr
 
 ## Tests
 
-Tests are written with [`vitest`](https://vitest.dev/). All new functionality should have unit tests or snapshot tests where applicable.`
+Tests are written with [`vitest`](https://vitest.dev/). All new functionality should have unit tests or snapshot tests where applicable.
+Snapshot tests are using [`@testing-library/react`](https://testing-library.com/docs/react-testing-library/intro/)
 
 Any fetch calls should be mocked with [`msw`](https://mswjs.io/docs/basics/request-matching) in [setupFile.js](./__tests__/setupFile.js)
 
@@ -88,7 +89,8 @@ See our [Backend Starters](https://github.com/pantheon-systems/decoupled-kit-js/
 ### Commands
 
 This section assumes the package manager in use is `npm`. If you are not using `npm`, replace `npm` with the name of your package manager.
-To run the tests for both profiles sequentially:
+
+To run all tests for both profiles sequentially:
 
 ```bash
 npm test
