@@ -333,6 +333,10 @@ const mergeToConfig: Config = {
     ...backgroundColorClasses,
     ...fontSizeClasses,
     '.has-drop-cap',
+
+    '.wp-block-quote',
+    '.is-style-plain',
+    '.is-style-large',
   ],
 };
 
@@ -362,10 +366,6 @@ export default plugin(function ({ addUtilities, theme }) {
     }),
     {}
   );
-
-  console.log(theme('fontSizes'));
-
-  console.log(fontSizeUtilities);
 
   const backgroundPadding = `${theme(
     'padding.backgroundX',
@@ -403,10 +403,41 @@ export default plugin(function ({ addUtilities, theme }) {
     },
   };
 
+  const quoteUtilities = {
+    '.is-style-plain': {
+      cite: {
+        fontStyle: 'normal',
+        fontSize: '0.8rem',
+      },
+      quotes: 'none',
+      border: 'none',
+      fontStyle: 'normal',
+    },
+    '.is-style-large': {
+      cite: {
+        fontStyle: 'italic',
+        fontSize: '1.2rem',
+      },
+      margin: '0',
+      fontSize: '2.5rem',
+      quotes: 'none',
+      border: 'none',
+      fontStyle: 'normal',
+    },
+
+    '.wp-block-quote': {
+      cite: {
+        fontStyle: 'normal',
+        fontSize: '0.8rem',
+      },
+    },
+  };
+
   addUtilities([
     colorUtilities,
     fontSizeUtilities,
     backgroundUtilities,
     dropCapUtilities,
+    quoteUtilities,
   ]);
 }, mergeToConfig);
