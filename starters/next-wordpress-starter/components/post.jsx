@@ -30,7 +30,10 @@ export default function Post({
       </div>
 
       <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
-        <div dangerouslySetInnerHTML={{ __html: content }} />
+        <div
+          className="break-words"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
       </div>
     </article>
   );
