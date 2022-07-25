@@ -28,11 +28,11 @@ const Paginator = ({
   ...props
 }) => {
   // configurable breakpoints
-  // This value will be the start of the seperator.
+  // This value will be the start of the separator.
   const [breakStart, setBreakStart] = useState(breakpoints?.start || null);
-  // This value will be the button to start with after seperator
+  // This value will be the button to start with after separator
   const breakEnd = breakpoints?.end || null;
-  // how many buttons to add when the seperator is clicked
+  // how many buttons to add when the separator is clicked
   const breakAdd = breakpoints?.add || null;
 
   const router = useRouter();
@@ -163,7 +163,7 @@ const Paginator = ({
         </button>
       );
 
-      // seperator button
+      // separator button
       if (i === breakStart) {
         if (breakStart + breakAdd >= totalPages) {
           buttons.push(defaultButton);

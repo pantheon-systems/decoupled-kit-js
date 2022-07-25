@@ -19129,7 +19129,7 @@ packages:
   /typedoc-plugin-markdown/3.12.0_typedoc@0.22.18:
     resolution: {integrity: sha512-yKl7/KWD8nP6Ot6OzMLLc8wBzN3CmkBoI/YQzxT62a9xmDgxyeTxGbHbkUoSzhKFqMI3SR0AqV6prAhVKbYnxw==}
     peerDependencies:
-      typedoc: '>=0.22.0'
+      typedoc: '>=0.23.0'
     dependencies:
       handlebars: 4.7.7
       typedoc: 0.22.18

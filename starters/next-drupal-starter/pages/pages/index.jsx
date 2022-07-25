@@ -7,7 +7,7 @@ import {
 } from "../../lib/drupalStateContext";
 
 import Layout from "../../components/layout";
-import PageHeader from "../../components/page-header.js";
+import PageHeader from "../../components/page-header";
 import Link from "next/link";
 
 export default function PageListTemplate({

@@ -1,0 +1,389 @@
+// Vitest Snapshot v1
+
+exports[`default <PaginationExampleTemplate /> > should render a success message if authenticated 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+  >
+    <div
+      class="my-0 pt-10 px-5 text-xl"
+    >
+      <nav>
+        <ul
+          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+        >
+          <li
+            class="mr-auto"
+          >
+            <a
+              class="hover:underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/articles"
+            >
+              📰 Articles
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <div
+        class="prose container min-w-full min-h-screen max-w-screen mx-auto"
+      >
+        <main
+          class="flex mx-auto flex-col"
+        >
+          <section
+            class="mx-auto"
+          >
+            <h1
+              class="my-10"
+            >
+              Pagination example
+            </h1>
+            <div
+              class="max-w-screen-md"
+            >
+              <h3
+                class="mb-8 prose-sm"
+              >
+                Page 1/18
+              </h3>
+              <section>
+                <article
+                  class="flex flex-col p-3 w-fit mx-auto mb-10"
+                >
+                  <h2
+                    class="justify-start my-auto text-2xl mb-2"
+                  >
+                    Usitas
+                  </h2>
+                  <p
+                    class="max-w-prose my-2"
+                  >
+                    Comis defui ex ille lobortis molior premo ulciscor. Diam huic iustum mauris quia voco. Commodo ibidem iriure nibh nostrud olim scisco vereor. Conventi...
+                  </p>
+                </article>
+                <article
+                  class="flex flex-col p-3 w-fit mx-auto mb-10"
+                >
+                  <h2
+                    class="justify-start my-auto text-2xl mb-2"
+                  >
+                    Comis Ex
+                  </h2>
+                  <p
+                    class="max-w-prose my-2"
+                  >
+                    Brevitas conventio cui dolor minim os. Amet lenis quibus. Adipiscing exerci ille immitto lucidus roto valetudo volutpat. Caecus causa dolore eros eum ...
+                  </p>
+                </article>
+                <article
+                  class="flex flex-col p-3 w-fit mx-auto mb-10"
+                >
+                  <h2
+                    class="justify-start my-auto text-2xl mb-2"
+                  >
+                    Caecus Enim Macto Persto
+                  </h2>
+                  <p
+                    class="max-w-prose my-2"
+                  >
+                    Blandit erat luptatum praesent refoveo veniam. Bene distineo veniam. Eu facilisi feugiat ille. Molior nunc proprius turpis. Abdo eu similis. Accumsan ...
+                  </p>
+                </article>
+                <article
+                  class="flex flex-col p-3 w-fit mx-auto mb-10"
+                >
+                  <h2
+                    class="justify-start my-auto text-2xl mb-2"
+                  >
+                    In
+                  </h2>
+                  <p
+                    class="max-w-prose my-2"
+                  >
+                    Adipiscing at ex hos. Ratis refero tamen. Amet interdico jus pala rusticus typicus. Gravis importunus interdico iriure pala paratus paulatim populus r...
+                  </p>
+                </article>
+                <article
+                  class="flex flex-col p-3 w-fit mx-auto mb-10"
+                >
+                  <h2
+                    class="justify-start my-auto text-2xl mb-2"
+                  >
+                    Appellatio Eros Letalis
+                  </h2>
+                  <p
+                    class="max-w-prose my-2"
+                  >
+                    Conventio in interdico saluto vulputate. Camur commoveo elit feugiat macto meus nutus similis utinam vulputate. Paulatim premo usitas. Consectetuer er...
+                  </p>
+                </article>
+                <article
+                  class="flex flex-col p-3 w-fit mx-auto mb-10"
+                >
+                  <h2
+                    class="justify-start my-auto text-2xl mb-2"
+                  >
+                    Dolus Iaceo Tum Verto
+                  </h2>
+                  <p
+                    class="max-w-prose my-2"
+                  >
+                    Jumentum neo quidne tincidunt ut. Iaceo ideo jugis velit. Adipiscing damnum euismod neque pertineo praemitto tation te valde valetudo. Capto enim leni...
+                  </p>
+                </article>
+                <article
+                  class="flex flex-col p-3 w-fit mx-auto mb-10"
+                >
+                  <h2
+                    class="justify-start my-auto text-2xl mb-2"
+                  >
+                    Defui Exputo Gilvus Suscipit
+                  </h2>
+                  <p
+                    class="max-w-prose my-2"
+                  >
+                    Capto diam iaceo pertineo plaga quidem quidne suscipere ullamcorper virtus. Antehabeo distineo eu euismod iusto letalis natu sino suscipit. Appellatio...
+                  </p>
+                </article>
+                <article
+                  class="flex flex-col p-3 w-fit mx-auto mb-10"
+                >
+                  <h2
+                    class="justify-start my-auto text-2xl mb-2"
+                  >
+                    Eros Iriure Venio Vulpes
+                  </h2>
+                  <p
+                    class="max-w-prose my-2"
+                  >
+                    Adipiscing conventio fere iaceo magna quidne sed. Facilisis ratis scisco uxor. Elit exerci ymo zelus. Comis ea nutus pala quae refero sudo te ut. Aute...
+                  </p>
+                </article>
+                <article
+                  class="flex flex-col p-3 w-fit mx-auto mb-10"
+                >
+                  <h2
+                    class="justify-start my-auto text-2xl mb-2"
+                  >
+                    Eligo Praemitto
+                  </h2>
+                  <p
+                    class="max-w-prose my-2"
+                  >
+                    Erat haero iaceo nibh odio ratis roto. Aptent typicus valde. Aliquam macto melior quadrum suscipere. Facilisis fere nibh paulatim tego vicis.
+
+Erat et...
+                  </p>
+                </article>
+                <article
+                  class="flex flex-col p-3 w-fit mx-auto mb-10"
+                >
+                  <h2
+                    class="justify-start my-auto text-2xl mb-2"
+                  >
+                    Abluo Aliquam Inhibeo Luptatum
+                  </h2>
+                  <p
+                    class="max-w-prose my-2"
+                  >
+                    Abluo defui odio vel. Dolus ludus molior ullamcorper. Et letalis meus utrum uxor vel. Ad amet defui hos imputo praesent roto ut uxor. Augue erat eum l...
+                  </p>
+                </article>
+              </section>
+              <div
+                class="sticky lg:bottom-12 bottom-4"
+              >
+                <div
+                  class="flex flex-row justify-center mx-auto mt-auto mb-4"
+                >
+                  <button
+                    class="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white"
+                    disabled=""
+                    id="back-btn"
+                  >
+                    &lt;
+                  </button>
+                  <button
+                    class="
+          block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-blue-700 border-2
+          "
+                  >
+                    1
+                  </button>
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    2
+                  </button>
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    3
+                  </button>
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    4
+                  </button>
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    5
+                  </button>
+                  <button
+                    class="hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300\\"
+            }"
+                  >
+                    ...
+                  </button>
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    12
+                  </button>
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    13
+                  </button>
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    14
+                  </button>
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    15
+                  </button>
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    16
+                  </button>
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    17
+                  </button>
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    18
+                  </button>
+                  <button
+                    class="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white"
+                    id="next-btn"
+                  >
+                    &gt;
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </main>
+    <footer
+      class="w-full text-white bg-black p-4 mt-12"
+    >
+      <nav
+        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="list-disc text-blue-300 ml-3"
+          >
+            <a
+              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="flex my-4 p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2022 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://www.drupal.org/"
+          >
+            Drupal
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

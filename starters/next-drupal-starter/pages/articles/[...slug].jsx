@@ -8,7 +8,7 @@ import {
   globalDrupalStateStores,
 } from "../../lib/drupalStateContext";
 
-import Article from "../../components/article.js";
+import Article from "../../components/article";
 import Layout from "../../components/layout";
 
 export default function ArticleTemplate({ article, hrefLang, footerMenu }) {
