@@ -77,9 +77,10 @@ For a guide on creating your first Next Drupal customization, see [Your First Dr
 
 ## Tests
 
-Tests are written with [`vitest`](https://vitest.dev/). All new functionality should have unit tests or snapshot tests where applicable.`
+Tests are written with [`vitest`](https://vitest.dev/). All new functionality should have unit tests or snapshot tests where applicable.
+Snapshot tests are using [`@testing-library/react`](https://testing-library.com/docs/react-testing-library/intro/).
 
-Any fetch calls should be mocked with [`msw`](https://mswjs.io/docs/basics/request-matching) in [setupFile.js](./__tests__/setupFile.js)
+Any fetch calls should be mocked with [`msw`](https://mswjs.io/docs/basics/request-matching) in [setupFile.js](./__tests__/setupFile.js).
 
 There are two data profiles to test against: the [Umami profile](https://www.drupal.org/project/pantheon_decoupled_umami_demo) and the [Default profile](https://www.drupal.org/project/pantheon_decoupled).
 These profiles are available as Drupal modules and contain data to render the frontend with.
@@ -88,13 +89,14 @@ See our [Backend Starters](https://github.com/pantheon-systems/decoupled-kit-js/
 ### Commands
 
 This section assumes the package manager in use is `npm`. If you are not using `npm`, replace `npm` with the name of your package manager.
-To run the tests for both profiles sequentially:
+
+To run all tests for both profiles sequentially:
 
 ```bash
 npm test
 ```
 
-To run the test for a single profile:
+To run the tests for a single profile in watch mode:
 
 ```bash
 # test against the umami profile data
@@ -102,3 +104,21 @@ npm run test:umami
 # tests against the default profile data
 npm run test:default
 ```
+
+### Updating Snapshots
+
+Snapshots should be updated when presentational changes are made.
+If a new page route is added, create a new snapshot test for it, and include any data needed to run that test successfully.
+Please commit the updated snapshots along with your changes.
+
+To update a snapshot:
+
+Run the following helper command:
+
+```bash
+npm run update-snapshots
+```
+
+Or, run the test for a single profile in watch mode (see above), then in the terminal press the **u** key.
+This will update the snapshot for the running profile
+Be sure to update the snapshot for both profiles.

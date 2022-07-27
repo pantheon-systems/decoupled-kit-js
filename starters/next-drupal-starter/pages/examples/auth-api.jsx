@@ -25,8 +25,8 @@ export default function AuthApiExampleTemplate({ articles, footerMenu }) {
         <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
           {articles?.length > 0 ? (
             <p>
-              🎉 NextJS was able to successfuly make an authenticated request to
-              Drupal! 🎉
+              🎉 NextJS was able to successfully make an authenticated request
+              to Drupal! 🎉
             </p>
           ) : (
             <>
