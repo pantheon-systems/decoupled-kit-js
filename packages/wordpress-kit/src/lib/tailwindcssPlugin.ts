@@ -106,10 +106,10 @@ export default plugin(function ({ addUtilities, theme }) {
         cite: {
           textTransform: 'uppercase',
           fontSize: theme('fontSize.xl', '1.5rem'),
+          fontStyle: 'normal',
         },
         border: 'none',
         color: 'inherit',
-        fontStyle: 'normal',
         quotes: 'none',
       },
       borderColor: 'currentColor',
