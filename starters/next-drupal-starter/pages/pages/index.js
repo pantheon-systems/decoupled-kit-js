@@ -36,9 +36,7 @@ export default function PageListTemplate({
                   passHref
                   href={`${
                     multiLanguage ? `/${path?.langcode || locale}` : ""
-                  }${path.alias.includes("/pages") ? "" : "/pages"}${
-                    path.alias
-                  }`}
+                  }${path.alias}`}
                 >
                   <a className="font-normal underline">Read more →</a>
                 </Link>

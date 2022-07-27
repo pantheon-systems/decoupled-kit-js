@@ -1,57 +1,55 @@
-import { isMultiLanguage } from "../lib/isMultiLanguage";
 import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
   globalDrupalStateAuthStores,
 } from "../lib/drupalStateContext";
 import { getPreview } from "../lib/getPreview";
-// TODO: should we export this from drupal-kit?
-import { translatePath } from "@gdwc/drupal-state";
+import { translatePath } from "@pantheon-systems/drupal-kit";
 import { NextSeo } from "next-seo";
 
+import Link from "next/link";
 import Layout from "../components/layout";
 import Recipe from "../components/recipe";
 import Article from "../components/article";
 
 export default function CatchAllRoute({ pageData, hrefLang, footerMenu }) {
   const RenderPage = () => {
-    if (pageData.type === "node--page") {
+    if (pageData?.type === "node--page") {
       const {
-        id,
         title,
         body: { value },
       } = pageData;
       return (
         <>
-          {id ? (
-            <article className="prose lg:prose-xl mt-10 mx-auto">
-              <h1>{title}</h1>
-
-              <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
-                <div dangerouslySetInnerHTML={{ __html: value }} />
-              </div>
-            </article>
-          ) : null}
+          <article className="prose lg:prose-xl mt-10 mx-auto">
+            <h1>{title}</h1>
+            <Link passHref href="/pages">
+              <a className="font-normal">Pages &rarr;</a>
+            </Link>
+            <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
+              <div dangerouslySetInnerHTML={{ __html: value }} />
+            </div>
+          </article>
         </>
       );
     }
 
-    if (pageData.type === "node--article") {
+    if (pageData?.type === "node--article") {
       const {
         title,
-        body: { processed },
+        body: { value },
         field_media_image,
       } = pageData;
       return (
         <Article
           title={title}
-          body={processed}
+          body={value}
           imgSrc={field_media_image?.field_media_image?.uri.url}
         />
       );
     }
 
-    if (pageData.type === "node--recipe") {
+    if (pageData?.type === "node--recipe") {
       const {
         title,
         field_recipe_category,
@@ -71,7 +69,11 @@ export default function CatchAllRoute({ pageData, hrefLang, footerMenu }) {
         />
       );
     }
-    return null;
+    return (
+      <>
+        <h2 className="text-xl text-center mt-14">No content found 🏜</h2>
+      </>
+    );
   };
   return (
     <Layout footerMenu={footerMenu}>
@@ -85,14 +87,20 @@ export default function CatchAllRoute({ pageData, hrefLang, footerMenu }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: "blocking",
+  };
+}
+
+export async function getStaticProps(context) {
   try {
     const {
       locale,
       locales,
       params: { alias },
     } = context;
-    const multiLanguage = isMultiLanguage(locales);
     const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
     const hrefLang = locales.map((locale) => {
       return {
@@ -109,7 +117,7 @@ export async function getServerSideProps(context) {
 
     // get the path from the params
     const path = Array.isArray(alias) ? alias.join("/") : alias;
-    // get the uuid and resource name from @gdwc/drupal-state/translatePath
+    // get the uuid and resource name from the resource's path alias
     const {
       entity: { uuid },
       jsonapi: { resourceName },
@@ -128,6 +136,46 @@ export async function getServerSideProps(context) {
         : "";
     const previewParams =
       context.preview && (await getPreview(context, resourceName, params));
+
+    // using a query to workaround jsona deserializer error
+    const queries = {
+      "node--recipe": `{
+        title
+        field_recipe_category
+        field_ingredients
+        field_recipe_instruction
+        field_media_image {
+          field_media_image {
+            uri {
+              url
+            }
+          }
+        }
+      
+      }`,
+      "node--article": `{
+        type
+        title
+        body {
+          value
+        }
+        field_media_image {
+          field_media_image {
+            uri {
+              url
+            }
+          }
+        }
+      }`,
+      "node--page": `{
+        type
+        title
+        body {
+          value
+        }
+      }`,
+    };
+
     // fetch page data
     const pageData = await store.getObject({
       objectName: resourceName,
@@ -135,13 +183,13 @@ export async function getServerSideProps(context) {
       params: context.preview ? previewParams : params,
       // if previewing a revision, force a fetch to Drupal
       refresh: context?.previewData?.resourceVersionId ? true : false,
+      query: queries[resourceName],
     });
 
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
     });
-
-    return { props: { pageData, hrefLang, footerMenu } };
+    return { props: { pageData, hrefLang, footerMenu }, revalidate: 60 };
   } catch (error) {
     console.error(`There was an error while fetching data: `, error);
     return {
