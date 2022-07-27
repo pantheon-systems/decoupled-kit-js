@@ -101,11 +101,11 @@ export default plugin(function ({ addUtilities, theme }) {
     '.wp-block-pullquote': {
       blockquote: {
         p: {
-          fontSize: theme('fontSize.4xl', '2.5rem'),
+          fontSize: '1.8em',
         },
         cite: {
           textTransform: 'uppercase',
-          fontSize: theme('fontSize.xl', '1.5rem'),
+          fontSize: '.8em',
           fontStyle: 'normal',
         },
         border: 'none',
