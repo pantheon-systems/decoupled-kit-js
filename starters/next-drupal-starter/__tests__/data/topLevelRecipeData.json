@@ -149,9 +149,7 @@
           "drupal_internal__target_id": 1
         }
       },
-      "relationshipNames": [
-        "uid"
-      ]
+      "relationshipNames": ["uid"]
     },
     "field_media_image": {
       "type": "file--file",
@@ -187,9 +185,7 @@
           "drupal_internal__target_id": 1
         }
       },
-      "relationshipNames": [
-        "uid"
-      ]
+      "relationshipNames": ["uid"]
     },
     "relationshipNames": [
       "bundle",

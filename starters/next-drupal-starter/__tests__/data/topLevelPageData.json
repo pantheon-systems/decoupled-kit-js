@@ -54,9 +54,5 @@
       "drupal_internal__target_id": 1
     }
   },
-  "relationshipNames": [
-    "node_type",
-    "revision_uid",
-    "uid"
-  ]
+  "relationshipNames": ["node_type", "revision_uid", "uid"]
 }
