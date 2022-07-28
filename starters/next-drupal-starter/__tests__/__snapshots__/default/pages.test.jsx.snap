@@ -63,7 +63,7 @@ exports[`default <PageListTemplate /> > should render with default profile pages
       >
         <ul>
           <li
-            class="prose justify-items-start"
+            class="prose justify-items-start mt-8"
           >
             <h2>
               Test Page With Embedded Image-test page-local
@@ -77,7 +77,7 @@ exports[`default <PageListTemplate /> > should render with default profile pages
             </a>
           </li>
           <li
-            class="prose justify-items-start"
+            class="prose justify-items-start mt-8"
           >
             <h2>
               My Page-preview test

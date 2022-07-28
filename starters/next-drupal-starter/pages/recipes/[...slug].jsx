@@ -6,7 +6,7 @@ import {
   getCurrentLocaleStore,
   globalDrupalStateAuthStores,
   globalDrupalStateStores,
-} from "../../lib/drupalStateContext.js";
+} from "../../lib/drupalStateContext";
 
 import Layout from "../../components/layout";
 import Recipe from "../../components/recipe";

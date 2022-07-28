@@ -49,7 +49,7 @@ export default function CatchAllRoute({ pageData, hrefLang, footerMenu }) {
       );
     }
 
-    if (pageData?.type === "node--recipe") {
+    if (pageData.type === "node--recipe") {
       const {
         title,
         field_recipe_category,
@@ -140,6 +140,7 @@ export async function getStaticProps(context) {
     // using a query to workaround jsona deserializer error
     const queries = {
       "node--recipe": `{
+        type
         title
         field_recipe_category
         field_ingredients
