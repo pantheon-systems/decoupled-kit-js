@@ -43,8 +43,11 @@
     Logged in as <Your email-id with Pantheon>
     Verifying that you have access to <Name of your Pantheon site>...
 ```
+- Running `lando pull` will create a .lando.yml file with your backend CMS site name and site-id
 
-- You may use any of the following urls from the 'lando start' command output on your shell to access your site in your browser
+- Run `lando start` again so your container can use the latest code, db, and files
+
+- In order to access your site running locally in a lando container, you may use any of the following urls from the 'lando start' command output on your shell to access your site in your browser
   - APPSERVER_NGINX URLS
   - EDGE_SSL URLS
   - EDGE URLS
