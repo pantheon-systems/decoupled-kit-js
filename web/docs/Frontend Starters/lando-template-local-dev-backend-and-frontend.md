@@ -20,7 +20,7 @@
 
 ### Known Issues
 
-- If your lando site is inaccessible after step 1, it could be because `npm install` didn't run inside your container. Follow the following steps -
+- If your lando site is inaccessible after step 1, it could be because `npm install` didn't run inside your container. Follow these steps -
     - Log into your container by running `lando ssh`
     - Run `npm install` inside the container
     - Exit the container and run `lando start` again
