@@ -99,9 +99,25 @@ export default plugin(function ({ addUtilities, theme }) {
 
   const pullQuoteUtilities = {
     '.wp-block-pullquote': {
+      '&.alignleft': {
+        float: 'left',
+        maxWidth: '30rem',
+        minWidth: '20rem',
+      },
+      '&.alignright': {
+        float: 'right',
+        maxWidth: '30rem',
+        minWidth: '20rem',
+      },
+      '&.alignwide': {
+        maxWidth: '850px',
+      },
+      '&.alignfull': {
+        maxWidth: 'none',
+      },
       blockquote: {
         p: {
-          fontSize: '1.8em',
+          fontSize: theme('fontSize.4xl', '2.5rem'),
         },
         cite: {
           textTransform: 'uppercase',
@@ -112,6 +128,8 @@ export default plugin(function ({ addUtilities, theme }) {
         color: 'inherit',
         quotes: 'none',
       },
+      margin: 'auto',
+      maxWidth: '650px',
       borderColor: 'currentColor',
       borderWidth: '3px 0',
       marginBottom: '0',
