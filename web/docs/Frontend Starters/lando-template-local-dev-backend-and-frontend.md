@@ -15,7 +15,7 @@
 - Follow these [instructions](https://github.com/pantheon-systems/next-drupal-starter#pantheon-decoupled-kit-next-drupal-starter) there to start your local lando environment
 
 2. Your CMS Backend
-- Follow these [instructions](https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web)
+- Follow these [instructions](https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Backend%20Starters/Decoupled%20Drupal/lando-template-for-local-dev-backend-only.md)
 - lando will update your `.lando.yml` file with the backend CMS site name and site id
 
 ### Known Issues
