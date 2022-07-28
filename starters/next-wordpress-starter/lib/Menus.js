@@ -24,5 +24,10 @@ export async function getFooterMenu() {
     },
   } = await client.request(query);
 
-  return edges.map(({ node }) => node);
+  return edges.map(({ node }) => ({
+    ...node,
+    uri: node.uri.startsWith("http") ? formatUri(node.uri) : node.uri,
+  }));
 }
+
+const formatUri = (uri) => new URL(uri).pathname;
