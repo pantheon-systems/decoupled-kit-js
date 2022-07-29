@@ -23,6 +23,7 @@ export const mergeToConfig: Config = {
     '.has-background',
     ...backgroundColorClasses,
     ...fontSizeClasses,
+    '.wp-block-table',
     '.has-drop-cap',
     '.has-text-align-center',
     '.has-text-align-right',

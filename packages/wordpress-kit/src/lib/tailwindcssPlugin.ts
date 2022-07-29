@@ -4,7 +4,7 @@ import { Color } from '../types/tailwindcssPlugin';
 import { mergeToConfig } from './tailwindCssPlugin/config';
 import { colorList, fontSizeList } from './tailwindCssPlugin/constants';
 
-export default plugin(function ({ addUtilities, theme }) {
+export default plugin(function ({ addUtilities, theme, addComponents }) {
   const getColor = (color: Color) =>
     theme(
       `colors.${color.themeName}`,
@@ -174,6 +174,50 @@ export default plugin(function ({ addUtilities, theme }) {
     {}
   );
 
+  const tableComponent = {
+    '.wp-block-table': {
+      td: {
+        padding: '0.5em',
+      },
+      table: {
+        thead: {
+          tr: {
+            borderColor: 'inherit',
+            th: {
+              padding: '0.5em',
+              color: 'inherit',
+            },
+          },
+          borderColor: 'inherit',
+        },
+        tbody: {
+          borderColor: 'inherit',
+          tr: {
+            borderColor: 'inherit',
+          },
+        },
+        '&.has-fixed-layout': {
+          width: '100%',
+          tableLayout: 'fixed',
+        },
+      },
+      figcaption: {
+        fontSize: '.5em',
+        textAlign: 'center',
+      },
+      '&.is-style-stripes': {
+        margin: '0',
+        table: {
+          tbody: {
+            'tr:nth-child(odd)': {
+              backgroundColor: theme('colors.stripes', '#f2f2f2'),
+            },
+          },
+        },
+      },
+    },
+  };
+
   addUtilities([
     backgroundUtilities,
     borderColorUtilities,
@@ -184,4 +228,6 @@ export default plugin(function ({ addUtilities, theme }) {
     quoteUtilities,
     textAlignUtilities,
   ]);
+
+  addComponents(tableComponent);
 }, mergeToConfig);
