@@ -53,6 +53,18 @@ export default plugin(function ({ addUtilities, theme }) {
     }
   );
 
+  const textAlignUtilities = {
+    '.has-text-align-center': {
+      textAlign: 'center',
+    },
+    '.has-text-align-right': {
+      textAlign: 'right',
+    },
+    '.has-text-align-left': {
+      textAlign: 'left',
+    },
+  };
+
   const dropCapUtilities = {
     '.has-drop-cap': {
       '&:first-letter': {
@@ -90,6 +102,18 @@ export default plugin(function ({ addUtilities, theme }) {
     },
 
     '.wp-block-quote': {
+      'p:empty': {
+        quotes: 'none',
+      },
+      '&.has-text-align-center': {
+        border: 'none',
+      },
+      '&.has-text-align-right': {
+        borderLeft: 'none',
+        paddingRight: '1.06em',
+        borderRightWidth: '0.25rem',
+        borderRightColor: '#e5e7eb',
+      },
       cite: {
         fontStyle: 'normal',
         fontSize: '0.8rem',
@@ -158,5 +182,6 @@ export default plugin(function ({ addUtilities, theme }) {
     fontSizeUtilities,
     pullQuoteUtilities,
     quoteUtilities,
+    textAlignUtilities,
   ]);
 }, mergeToConfig);
