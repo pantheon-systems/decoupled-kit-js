@@ -9,7 +9,7 @@ export async function getFooterMenu() {
           edges {
             node {
               id
-              uri
+              path
               label
             }
           }
@@ -24,10 +24,5 @@ export async function getFooterMenu() {
     },
   } = await client.request(query);
 
-  return edges.map(({ node }) => ({
-    ...node,
-    uri: node.uri.startsWith("http") ? formatUri(node.uri) : node.uri,
-  }));
+  return edges.map(({ node }) => node);
 }
-
-const formatUri = (uri) => new URL(uri).pathname;
