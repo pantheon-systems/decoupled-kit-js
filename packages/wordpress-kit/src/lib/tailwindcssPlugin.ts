@@ -148,6 +148,7 @@ export default plugin(function ({ addUtilities, theme }) {
           fontSize: '.8em',
           fontStyle: 'normal',
         },
+        paddingRight: '1em',
         border: 'none',
         color: 'inherit',
         quotes: 'none',
@@ -159,7 +160,6 @@ export default plugin(function ({ addUtilities, theme }) {
       marginBottom: '0',
       marginTop: '0',
       padding: '2em 0',
-      textAlign: 'center',
     },
   };
 
