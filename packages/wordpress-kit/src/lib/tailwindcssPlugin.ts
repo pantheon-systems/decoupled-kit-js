@@ -197,12 +197,14 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
           },
         },
         '&.has-fixed-layout': {
-          width: '100%',
+          width: 'unset',
           tableLayout: 'fixed',
         },
+        maxWidth: '650px',
+        margin: 'auto',
       },
       figcaption: {
-        fontSize: '.5em',
+        fontSize: '.9rem',
         textAlign: 'center',
       },
       '&.is-style-stripes': {
@@ -215,6 +217,28 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
           },
         },
       },
+      '&.alignwide': {
+        padding: '0 1.5rem',
+        table: {
+          maxWidth: '850px',
+        },
+      },
+      '&.alignfull': {
+        [`@media (min-width:${theme(
+          'screen.xl',
+          '1280px'
+        )})` as '@media(min-width:1280px)`']: {
+          marginLeft: 'calc(-1 * max(1rem, 10vw))',
+          marginRight: 'calc(-1 * max(1rem, 10vw))',
+        },
+        width: 'unset',
+        table: {
+          maxWidth: 'none',
+        },
+        padding: '0',
+      },
+      overflowX: 'auto',
+      padding: '0 2.5rem',
     },
   };
 
