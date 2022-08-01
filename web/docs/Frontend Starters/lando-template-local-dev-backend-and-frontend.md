@@ -15,7 +15,7 @@
         mkdir fe;\
          > cd fe;\
          > git clone https://github.com/pantheon-systems/next-drupal-starter .
-      ```   
+         
 
 - Create a lando file similar to the one below:
         ```
@@ -38,10 +38,11 @@
             service: node
         npm:
             service: node
-        ```
+        
 
 - Create an environment file for the lando front end node.js site, similar to the one below:
-    ```# Copy as .env.development.local to override envars for local development
+    ```
+        # Copy as .env.development.local to override envars for local development
         BACKEND_URL=https://your-pantheon-CMS-backend-site.pantheonsite.io
         #FRONTEND_URL=
         IMAGE_DOMAIN=your-pantheon-CMS-backend-site.pantheonsite.io
@@ -52,7 +53,8 @@
 
         # Sets debug mode for instance of DrupalState.
         # Leave empty to turn off debug mode
-        DEBUG_MODE=```
+        DEBUG_MODE=
+    
 
 - For more details please refer to these instructions [instructions](https://github.com/pantheon-systems/next-drupal-starter#pantheon-decoupled-kit-next-drupal-starter)
 
