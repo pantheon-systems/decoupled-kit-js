@@ -61,7 +61,7 @@ DEBUG_MODE=
 
 - For more details please refer to these instructions [instructions](https://github.com/pantheon-systems/next-drupal-starter#pantheon-decoupled-kit-next-drupal-starter)
 
-- Run `lando start` [known-issues]
+- Run `lando start` [known-issues](#known-issues)
 
 2. Your CMS Backend
 - If your current directory is `fe`, switch into the parent directory e.g. `cd ..`
