@@ -11,13 +11,15 @@
 1. Your NextJS front end site
 
 - In your current directory create a new sub-directory e.g. "fe". Clone this front end repo into the "fe" sub-directory [next-drupal-starter](https://github.com/pantheon-systems/next-drupal-starter):
-    - ```mkdir fe;\
+    ```
+        mkdir fe;\
          > cd fe;\
          > git clone https://github.com/pantheon-systems/next-drupal-starter .
       ```   
 
 - Create a lando file similar to the one below:
-     ```name: your-lando-project-name
+        ```
+        name: your-lando-project-name
         services:
         node:
             type: 'node:16'
@@ -35,7 +37,8 @@
         node:
             service: node
         npm:
-            service: node```
+            service: node
+        ```
 
 - Create an environment file for the lando front end node.js site, similar to the one below:
     ```# Copy as .env.development.local to override envars for local development
