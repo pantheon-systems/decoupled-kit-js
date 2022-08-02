@@ -18,6 +18,7 @@ export type ColorConfig = {
   darkGray?: string;
   lightGray?: string;
   white?: string;
+  stripes?: string;
 };
 
 export type PaddingConfig = {

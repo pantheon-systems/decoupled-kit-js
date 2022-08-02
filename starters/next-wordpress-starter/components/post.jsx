@@ -5,7 +5,7 @@ export default function Post({
   post: { title, date, featuredImage, content },
 }) {
   return (
-    <article className="prose lg:prose-xl mt-10 mx-auto">
+    <article className="prose lg:prose-xl mt-10 mx-auto max-w-screen-lg p-4">
       <h1>{title}</h1>
       <p className="text-sm text-gray-600">{new Date(date).toDateString()}</p>
 
@@ -23,18 +23,16 @@ export default function Post({
               src={featuredImage.node.sourceUrl}
               layout="fill"
               objectFit="cover"
-              alt="Featured Image"
+              alt={featuredImage.node.alt || "Featured Image"}
             />
           </div>
         )}
       </div>
 
-      <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
-        <div
-          className="break-words"
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
-      </div>
+      <div
+        className="break-words mt-12"
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
     </article>
   );
 }

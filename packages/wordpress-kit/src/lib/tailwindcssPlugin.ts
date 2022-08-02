@@ -4,7 +4,7 @@ import { Color } from '../types/tailwindcssPlugin';
 import { mergeToConfig } from './tailwindCssPlugin/config';
 import { colorList, fontSizeList } from './tailwindCssPlugin/constants';
 
-export default plugin(function ({ addUtilities, theme }) {
+export default plugin(function ({ addUtilities, theme, addComponents }) {
   const getColor = (color: Color) =>
     theme(
       `colors.${color.themeName}`,
@@ -174,6 +174,76 @@ export default plugin(function ({ addUtilities, theme }) {
     {}
   );
 
+  const tableComponent = {
+    '.wp-block-table': {
+      td: {
+        padding: '0.5em',
+      },
+      table: {
+        thead: {
+          tr: {
+            borderColor: 'inherit',
+            th: {
+              padding: '0.5em',
+              color: 'inherit',
+            },
+          },
+          borderColor: 'inherit',
+        },
+        tbody: {
+          borderColor: 'inherit',
+          tr: {
+            borderColor: 'inherit',
+          },
+        },
+        '&.has-fixed-layout': {
+          width: 'unset',
+          tableLayout: 'fixed',
+        },
+        maxWidth: '650px',
+        margin: 'auto',
+      },
+      figcaption: {
+        fontSize: '.9rem',
+        textAlign: 'center',
+      },
+      '&.is-style-stripes': {
+        margin: '0',
+        table: {
+          tbody: {
+            'tr:nth-child(odd)': {
+              backgroundColor: theme('colors.stripes', '#f2f2f2'),
+            },
+          },
+        },
+      },
+      '&.alignwide': {
+        padding: '0 1.5rem',
+        table: {
+          maxWidth: '850px',
+        },
+      },
+      '&.alignfull': {
+        [`@media (min-width:${theme(
+          'screen.xl',
+          '1280px'
+        )})` as '@media(min-width:1280px)`']: {
+          // sets a negative margin to allow full width tables to span past the
+          // width its parent container
+          marginLeft: 'calc(-1 * max(1rem, 10vw))',
+          marginRight: 'calc(-1 * max(1rem, 10vw))',
+        },
+        width: 'unset',
+        table: {
+          maxWidth: 'none',
+        },
+        padding: '0',
+      },
+      overflowX: 'auto',
+      padding: '0 2.5rem',
+    },
+  };
+
   addUtilities([
     backgroundUtilities,
     borderColorUtilities,
@@ -184,4 +254,6 @@ export default plugin(function ({ addUtilities, theme }) {
     quoteUtilities,
     textAlignUtilities,
   ]);
+
+  addComponents(tableComponent);
 }, mergeToConfig);
