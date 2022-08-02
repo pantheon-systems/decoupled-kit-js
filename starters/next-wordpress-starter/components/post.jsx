@@ -12,19 +12,22 @@ export default function Post({
       <Link passHref href="/">
         <a className="font-normal">Home &rarr;</a>
       </Link>
-      {featuredImage && (
-        <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
-          <div className="relative rounded-lg shadow-lg overflow-hidden mb-10 w-[50vh]">
+      <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
+        {featuredImage && (
+          <div
+            className="relative w-full rounded-lg shadow-lg overflow-hidden mb-10"
+            style={{ height: "50vh" }}
+          >
             <Image
               priority
               src={featuredImage.node.sourceUrl}
               layout="fill"
               objectFit="cover"
-              alt="Featured Image"
+              alt={featuredImage.node.alt || "Featured Image"}
             />
           </div>
-        </div>
-      )}
+        )}
+      </div>
 
       <div
         className="break-words mt-12"

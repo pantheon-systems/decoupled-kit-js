@@ -228,6 +228,8 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
           'screen.xl',
           '1280px'
         )})` as '@media(min-width:1280px)`']: {
+          // sets a negative margin to allow full width tables to span past the
+          // width its parent container
           marginLeft: 'calc(-1 * max(1rem, 10vw))',
           marginRight: 'calc(-1 * max(1rem, 10vw))',
         },
