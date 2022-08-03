@@ -1,5 +1,18 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.4.1
+
+### Patch Changes
+
+- d96e395: Change js files to jsx to follow vite spec
+- 94f95a2: Change from URI property to path in FooterMenuQuery
+- Updated dependencies [d96e395]
+- Updated dependencies [d4f9c8a]
+- Updated dependencies [7380376]
+- Updated dependencies [3683ced]
+- Updated dependencies [31e9144]
+  - @pantheon-systems/wordpress-kit@2.2.0
+
 ## 0.4.0
 
 ### Minor Changes

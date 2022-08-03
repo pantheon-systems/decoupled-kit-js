@@ -1,5 +1,11 @@
 # @pantheon-systems/next-drupal-starter
 
+## 2.0.3
+
+### Patch Changes
+
+- e73d956: [next-drupal-starter] Added snapshot tests for each page route
+
 ## 2.0.2
 
 ### Patch Changes
