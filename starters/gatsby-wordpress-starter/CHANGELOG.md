@@ -1,5 +1,15 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 1.1.0
+
+### Minor Changes
+
+- f71f71e: [gatsby-wordpress-starter] Reverts upgrade to gatsby 4.16.0
+
+### Patch Changes
+
+- 8ddf7bf: [gatsby-wordpress-starter] Updated dependencies in the gatsby-wordpress-starter
+
 ## 1.0.3
 
 ### Patch Changes
