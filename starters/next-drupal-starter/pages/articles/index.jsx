@@ -6,8 +6,8 @@ import {
   globalDrupalStateStores,
 } from "../../lib/drupalStateContext";
 
-import { withGrid, ArticleGridItem } from "../../components/grid.js";
-import PageHeader from "../../components/page-header.js";
+import { withGrid, ArticleGridItem } from "../../components/grid";
+import PageHeader from "../../components/page-header";
 import Layout from "../../components/layout";
 
 export default function SSRArticlesListTemplate({

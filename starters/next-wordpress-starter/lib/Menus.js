@@ -9,7 +9,7 @@ export async function getFooterMenu() {
           edges {
             node {
               id
-              uri
+              path
               label
             }
           }

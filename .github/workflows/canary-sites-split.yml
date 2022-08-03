@@ -24,6 +24,8 @@ jobs:
             split_repository: "next-drupal-starter-default-canary"
           - local_path: "starters/gatsby-wordpress-starter"
             split_repository: "gatsby-wordpress-starter-default-canary"
+          - local_path: "starters/next-wordpress-starter"
+            split_repository: "next-wordpress-starter-default-canary"
     steps:
       - uses: actions/checkout@v2
       - uses: "symplify/monorepo-split-github-action@2.1"

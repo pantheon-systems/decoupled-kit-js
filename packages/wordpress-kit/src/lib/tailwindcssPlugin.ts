@@ -1,247 +1,67 @@
 import plugin from 'tailwindcss/plugin';
 
-import type { Config } from 'tailwindcss';
+import { Color } from '../types/tailwindcssPlugin';
+import { mergeToConfig } from './tailwindCssPlugin/config';
+import { colorList, fontSizeList } from './tailwindCssPlugin/constants';
 
-type ColorConfig = {
-  primary?: string;
-  secondary?: string;
-  darkGray?: string;
-  lightGray?: string;
-  white?: string;
-};
+export default plugin(function ({ addUtilities, theme, addComponents }) {
+  const getColor = (color: Color) =>
+    theme(
+      `colors.${color.themeName}`,
+      theme(`colors.${color.tailwindDefault}`, color.hexDefault)
+    );
 
-type PaddingConfig = {
-  backgroundX?: string;
-  backgroundY?: string;
-};
+  const colorUtilities = colorList.reduce(
+    (acc, color) => ({
+      ...acc,
+      [`.has-${color.name}-color`]: {
+        color: getColor(color),
+      },
+    }),
+    {}
+  );
 
-type FontSizeConfig = {
-  '7xl'?: string;
-  '4xl'?: string;
-  xl?: string;
-  sm?: string;
-};
-
-type WordpressMapConfig = {
-  theme?: {
-    extend?: {
-      /**
-       * The colors mapped from the code editor in the WordPress admin.
-       * @example
-       * ```
-       *primary: '#0070f3',
-       *secondary: '#ff4081',
-       *darkGray: '#333',
-       *lightGray: '#fafafa',
-       *white: '#fff',
-       * ```
-       *
-       *@default
-       * ```
-       *primary: value of "blue-500" or '#0073a8',
-       *secondary: value of "gray-500" or '#005075',
-       *darkGray: value of "neutral-800" or '#333333',
-       *lightGray: value of "neutral-500" or '#666666',
-       *white: value of "white" or '#ffffff',
-       * ```
-       */
-      colors?: ColorConfig;
-      /**
-       * Padding applied when the block has a background color.
-       * @example
-       * ```
-       *backgroundX: '2rem',
-       *backgroundY: '1rem',
-       * ```
-       *
-       * @default
-       * ```
-       * backgroundX: value of p-5 or '1.25rem',
-       * backgroundY: value of p-9 or '2.35rem',
-       * ```
-       */
-      padding?: PaddingConfig;
-      /**
-       * The font size map for the code editor in the WordPress admin.
-       *
-       * ```
-       * huge: text-7xl
-       * large: text-4xl
-       * normal: text-xl
-       * small: text-sm
-       *```
-       *
-       * @example
-       * ```
-       *"7xl": 5rem;
-       *"4xl": 4rem;
-       *xl: 2rem;
-       *sm: 1rem;
-       * ```
-       *
-       * @default
-       * ```
-       * "7xl": '5rem',
-       * "4xl": '4rem',
-       * xl: '1.25rem',
-       * sm: '1rem',
-       */
-      fontSize?: FontSizeConfig;
-    };
-    /**
-     * The colors mapped from the code editor in the WordPress admin.
-     * @example
-     * ```
-     *primary: '#0070f3',
-     *secondary: '#ff4081',
-     *darkGray: '#333',
-     *lightGray: '#fafafa',
-     *white: '#fff',
-     * ```
-     *
-     *@default
-     * ```
-     *primary: value of "blue-500" or '#0073a8',
-     *secondary: value of "gray-500" or '#005075',
-     *darkGray: value of "neutral-800" or '#333333',
-     *lightGray: value of "neutral-500" or '#666666',
-     *white: value of "white" or '#ffffff',
-     * ```
-     */
-    colors?: ColorConfig;
-    /**
-     * Padding applied when the block has a background color.
-     * @example
-     * ```
-     *backgroundX: '2rem',
-     *backgroundY: '1rem',
-     * ```
-     *
-     * @default
-     * ```
-     * backgroundX: value of p-5 or '1.25rem',
-     * backgroundY: value of p-9 or '2.35rem',
-     * ```
-     */
-    padding?: PaddingConfig;
-    /**
-     * The font size map for the code editor in the WordPress admin.
-     *
-     * ```
-     * huge: text-7xl
-     * large: text-4xl
-     * normal: text-xl
-     * small: text-sm
-     *```
-     *
-     * @example
-     * ```
-     *"7xl": 5rem;
-     *"4xl": 4rem;
-     *xl: 2rem;
-     *sm: 1rem;
-     * ```
-     *
-     * @default
-     * ```
-     * "7xl": '5rem',
-     * "4xl": '4rem',
-     * xl: '1.25rem',
-     * sm: '1rem',
-     */
-    fontSize?: FontSizeConfig;
-  };
-};
-
-export type TailwindcssConfig = Config & WordpressMapConfig;
-
-const mergeToConfig: Config = {
-  content: [],
-  safelist: [
-    '.has-primary-color',
-    '.has-secondary-color',
-    '.has-dark-gray-color',
-    '.has-white-color',
-
-    '.has-background',
-    '.has-primary-background-color',
-    '.has-secondary-background-color',
-    '.has-dark-gray-background-color',
-    '.has-white-background-color',
-
-    '.has-huge-font-size',
-    '.has-large-font-size',
-    '.has-normal-font-size',
-    '.has-small-font-size',
-    '.has-light-gray-color',
-
-    '.has-drop-cap',
-  ],
-};
-
-export default plugin(function ({ addUtilities, theme }) {
-  const fontSizeUtilities = {
-    '.has-huge-font-size': {
-      fontSize: `${theme('fontSize.7xl', '5rem')} !important`,
-    },
-    '.has-large-font-size': {
-      fontSize: `${theme('fontSize.4xl', '4rem')} !important`,
-    },
-    '.has-normal-font-size': {
-      fontSize: `${theme('fontSize.xl', '1.25rem')} !important`,
-    },
-    '.has-small-font-size': {
-      fontSize: `${theme('fontSize.sm', '1rem')} !important`,
-    },
-  };
-
-  const colorUtilities = {
-    '.has-primary-color': {
-      color: theme('colors.primary') || theme('colors.blue.500') || '#0073a8',
-    },
-    '.has-secondary-color': {
-      color: theme('colors.secondary') || theme('colors.gray.500') || '#005075',
-    },
-    '.has-dark-gray-color': {
-      color:
-        theme('colors.darkGray') || theme('colors.neutral.800') || '#333333',
-    },
-    '.has-light-gray-color': {
-      color:
-        theme('colors.lightGray') || theme('colors.neutral.500') || '#666666',
-    },
-    '.has-white-color': {
-      color: theme('colors.white') || '#ffffff',
-    },
-  };
+  const fontSizeUtilities = fontSizeList.reduce(
+    (acc, fontSize) => ({
+      ...acc,
+      [`.has-${fontSize.name}-font-size`]: {
+        fontSize: `${theme(
+          `fontSize.${fontSize.tailwind}`,
+          `${fontSize.default}`
+        )} !important`,
+      },
+    }),
+    {}
+  );
 
   const backgroundPadding = `${theme(
     'padding.backgroundX',
     theme('padding.5', '1.25em')
   )} ${theme('padding.backgroundY', theme('padding.9', '2.35em'))}`;
 
-  const backgroundUtilities = {
-    '.has-background': {
-      padding: backgroundPadding,
+  const backgroundUtilities = colorList.reduce(
+    (acc, color) => ({
+      ...acc,
+      [`.has-${color.name}-background-color`]: {
+        backgroundColor: getColor(color),
+      },
+    }),
+    {
+      '.has-background': {
+        padding: backgroundPadding,
+      },
+    }
+  );
+
+  const textAlignUtilities = {
+    '.has-text-align-center': {
+      textAlign: 'center',
     },
-    '.has-primary-background-color': {
-      backgroundColor:
-        theme('colors.primary') || theme('colors.blue.500') || '#0073a8',
+    '.has-text-align-right': {
+      textAlign: 'right',
     },
-    '.has-secondary-background-color': {
-      backgroundColor:
-        theme('colors.secondary') || theme('colors.gray.500') || '#005075',
-    },
-    '.has-dark-gray-background-color': {
-      backgroundColor:
-        theme('colors.darkGray') || theme('colors.neutral.800') || '#333333',
-    },
-    '.has-light-gray-background-color': {
-      backgroundColor:
-        theme('colors.lightGray') || theme('colors.neutral.500') || '#666666',
-    },
-    '.has-white-background-color': {
-      backgroundColor: theme('colors.white') || '#ffffff',
+    '.has-text-align-left': {
+      textAlign: 'left',
     },
   };
 
@@ -249,7 +69,7 @@ export default plugin(function ({ addUtilities, theme }) {
     '.has-drop-cap': {
       '&:first-letter': {
         float: 'left',
-        fontSize: '3.75rem',
+        fontSize: '3.25em',
         lineHeight: '0.68',
         fontWeight: 'bolder',
         margin: '1rem 1rem 0 0',
@@ -259,10 +79,181 @@ export default plugin(function ({ addUtilities, theme }) {
     },
   };
 
+  const quoteUtilities = {
+    '.is-style-plain': {
+      cite: {
+        fontStyle: 'normal',
+        fontSize: '0.8rem',
+      },
+      quotes: 'none',
+      border: 'none',
+      fontStyle: 'normal',
+    },
+    '.is-style-large': {
+      cite: {
+        fontStyle: 'italic',
+        fontSize: '1.2rem',
+      },
+      margin: '0',
+      fontSize: '2.5rem',
+      quotes: 'none',
+      border: 'none',
+      fontStyle: 'normal',
+    },
+
+    '.wp-block-quote': {
+      'p:empty': {
+        quotes: 'none',
+      },
+      '&.has-text-align-center': {
+        border: 'none',
+      },
+      '&.has-text-align-right': {
+        borderLeft: 'none',
+        paddingRight: '1.06em',
+        borderRightWidth: '0.25rem',
+        borderRightColor: '#e5e7eb',
+      },
+      cite: {
+        fontStyle: 'normal',
+        fontSize: '0.8rem',
+      },
+    },
+  };
+
+  const pullQuoteUtilities = {
+    '.wp-block-pullquote': {
+      '&.alignleft': {
+        float: 'left',
+        maxWidth: '30rem',
+        minWidth: '20rem',
+      },
+      '&.alignright': {
+        float: 'right',
+        maxWidth: '30rem',
+        minWidth: '20rem',
+      },
+      '&.alignwide': {
+        maxWidth: '850px',
+      },
+      '&.alignfull': {
+        maxWidth: 'none',
+      },
+      blockquote: {
+        p: {
+          fontSize: theme('fontSize.4xl', '2.5rem'),
+        },
+        cite: {
+          textTransform: 'uppercase',
+          fontSize: '.8em',
+          fontStyle: 'normal',
+        },
+        paddingRight: '1em',
+        border: 'none',
+        color: 'inherit',
+        quotes: 'none',
+      },
+      margin: 'auto',
+      maxWidth: '650px',
+      borderColor: 'currentColor',
+      borderWidth: '3px 0',
+      marginBottom: '0',
+      marginTop: '0',
+      padding: '2em 0',
+    },
+  };
+
+  const borderColorUtilities = colorList.reduce(
+    (acc, color) => ({
+      ...acc,
+      [`.has-${color.name}-border-color`]: {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        borderColor: `${getColor(color)} !important`,
+      },
+    }),
+    {}
+  );
+
+  const tableComponent = {
+    '.wp-block-table': {
+      td: {
+        padding: '0.5em',
+      },
+      table: {
+        thead: {
+          tr: {
+            borderColor: 'inherit',
+            th: {
+              padding: '0.5em',
+              color: 'inherit',
+            },
+          },
+          borderColor: 'inherit',
+        },
+        tbody: {
+          borderColor: 'inherit',
+          tr: {
+            borderColor: 'inherit',
+          },
+        },
+        '&.has-fixed-layout': {
+          width: 'unset',
+          tableLayout: 'fixed',
+        },
+        maxWidth: '650px',
+        margin: 'auto',
+      },
+      figcaption: {
+        fontSize: '.9rem',
+        textAlign: 'center',
+      },
+      '&.is-style-stripes': {
+        margin: '0',
+        table: {
+          tbody: {
+            'tr:nth-child(odd)': {
+              backgroundColor: theme('colors.stripes', '#f2f2f2'),
+            },
+          },
+        },
+      },
+      '&.alignwide': {
+        padding: '0 1.5rem',
+        table: {
+          maxWidth: '850px',
+        },
+      },
+      '&.alignfull': {
+        [`@media (min-width:${theme(
+          'screen.xl',
+          '1280px'
+        )})` as '@media(min-width:1280px)`']: {
+          // sets a negative margin to allow full width tables to span past the
+          // width its parent container
+          marginLeft: 'calc(-1 * max(1rem, 10vw))',
+          marginRight: 'calc(-1 * max(1rem, 10vw))',
+        },
+        width: 'unset',
+        table: {
+          maxWidth: 'none',
+        },
+        padding: '0',
+      },
+      overflowX: 'auto',
+      padding: '0 2.5rem',
+    },
+  };
+
   addUtilities([
-    colorUtilities,
-    fontSizeUtilities,
     backgroundUtilities,
+    borderColorUtilities,
+    colorUtilities,
     dropCapUtilities,
+    fontSizeUtilities,
+    pullQuoteUtilities,
+    quoteUtilities,
+    textAlignUtilities,
   ]);
+
+  addComponents(tableComponent);
 }, mergeToConfig);

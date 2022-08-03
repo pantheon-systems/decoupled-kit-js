@@ -19,6 +19,7 @@
     "test": "vitest run --mode umami && vitest run --mode default",
     "test:umami": "vitest --mode umami",
     "test:default": "vitest --mode default",
+    "update-snapshots": "vitest run --mode umami --update --silent && vitest run --mode default --update --silent",
     "coverage": "vitest run --mode umami --coverage && vitest run --mode default --coverage"
   },
   "dependencies": {

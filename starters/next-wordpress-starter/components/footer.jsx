@@ -4,13 +4,13 @@ export default function Footer({ menuItems = [] }) {
   const FooterMenu = () => (
     <nav className="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg">
       <ul>
-        {menuItems.map(({ label, uri, id }) => {
+        {menuItems.map(({ label, path, id }) => {
           return (
             <li
               key={id}
               className="list-disc text-blue-300 hover:text-blue-100 ml-3"
             >
-              <Link href={`/posts${uri}`}>
+              <Link href={`/posts${path}`}>
                 <a className="hover:underline focus:text-purple-600  active:text-purple-300">
                   {label}
                 </a>
