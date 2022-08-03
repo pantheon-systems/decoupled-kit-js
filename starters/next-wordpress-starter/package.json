@@ -1,6 +1,6 @@
 {
   "name": "@pantheon-systems/next-wordpress-starter",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "private": true,
   "description": "Pantheon Decoupled Kit's Next WordPress Starter",
   "license": "GPL-3.0-or-later",
@@ -18,7 +18,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@pantheon-systems/wordpress-kit": "^2.1.0",
+    "@pantheon-systems/wordpress-kit": "^2.2.0",
     "@tailwindcss/typography": "^0.5.2",
     "dotenv": "^16.0.0",
     "next": "^12.1.5",
