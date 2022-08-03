@@ -13,14 +13,24 @@
   "author": "@pantheon-systems",
   "main": "index.js",
   "scripts": {
-    "test": "pnpm recursive test",
+    "build:all": "pnpm recursive run build",
+    "build:gatsby-wp": "pnpm --filter './starters/gatsby-wordpress-starter' run build",
+    "build:next-drupal": "pnpm --filter './starters/next-drupal-starter' run build",
+    "build:next-wp": "pnpm --filter './starters/next-wordpress-starter' run build",
     "build:pkgs": "pnpm --filter './packages/**' run build",
     "build:starters": "pnpm --filter './starters/**' run build",
-    "build:all": "pnpm recursive run build",
+    "ci:publish": "changeset publish",
+    "ci:version": "changeset version",
+    "dev:gatsby-wp": "pnpm --filter './starters/gatsby-wordpress-starter' develop",
+    "dev:next-drupal": "pnpm --filter './starters/next-drupal-starter' dev",
+    "dev:next-wp": "pnpm --filter './starters/next-wordpress-starter' dev",
     "generate-docs": "pnpm --filter './web/**' clear && pnpm --filter './web/**' build",
     "postinstall": "pnpm build:pkgs",
-    "ci:version": "changeset version",
-    "ci:publish": "changeset publish"
+    "serve:gatsby-wp": "pnpm -F './starters/gatsby-wordpress-starter' serve",
+    "start:gatsby-wp": "pnpm -F './starters/gatsby-wordpress-starter' start",
+    "start:next-drupal": "pnpm -F './starters/next-drupal-starter' start",
+    "start:next-wp": "pnpm -F './starters/next-wordpress-starter' start",
+    "test": "pnpm recursive test"
   },
   "keywords": [
     "pantheon",
