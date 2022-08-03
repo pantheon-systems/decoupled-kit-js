@@ -4,14 +4,14 @@ export const colorList: Color[] = [
   {
     name: 'primary',
     themeName: 'primary',
-    tailwindDefault: 'blue.500',
-    hexDefault: '#0073a8',
+    tailwindDefault: 'teal.900',
+    hexDefault: '#1a4548',
   },
   {
     name: 'secondary',
     themeName: 'secondary',
-    tailwindDefault: 'gray.500',
-    hexDefault: '#005075',
+    tailwindDefault: 'orange.200',
+    hexDefault: '#ffe2c7',
   },
   {
     name: 'dark-gray',
@@ -35,8 +35,8 @@ export const colorList: Color[] = [
   {
     name: 'tertiary',
     themeName: 'tertiary',
-    tailwindDefault: 'teal.800',
-    hexDefault: '#00a8e1',
+    tailwindDefault: 'stone.100',
+    hexDefault: '#f6f6f6',
   },
   {
     name: 'background',
@@ -48,19 +48,19 @@ export const colorList: Color[] = [
     name: 'foreground',
     themeName: 'foreground',
     tailwindDefault: 'black',
-    hexDefault: '#000',
+    hexDefault: '#000000',
   },
   {
     name: 'pale-pink',
     themeName: 'palePink',
-    tailwindDefault: 'pink.100',
+    tailwindDefault: 'rose.400',
     hexDefault: '#ffb3d7',
   },
   {
     name: 'cyan-bluish-gray',
     themeName: 'cyanBluishGray',
     tailwindDefault: 'neutral.300',
-    hexDefault: '#ABB8C3',
+    hexDefault: '#abb8c3',
   },
   {
     name: 'vivid-red',
@@ -71,7 +71,7 @@ export const colorList: Color[] = [
   {
     name: 'luminous-vivid-orange',
     themeName: 'luminousVividOrange',
-    tailwindDefault: 'orange.600',
+    tailwindDefault: 'orange.500',
     hexDefault: '#ff6900',
   },
   {
@@ -89,7 +89,7 @@ export const colorList: Color[] = [
   {
     name: 'vivid-green-cyan',
     themeName: 'vividGreenCyan',
-    tailwindDefault: 'green.700',
+    tailwindDefault: 'green.500',
     hexDefault: '#00d084',
   },
   {
@@ -101,13 +101,13 @@ export const colorList: Color[] = [
   {
     name: 'vivid-cyan-blue',
     themeName: 'vividCyanBlue',
-    tailwindDefault: 'cyan.600',
+    tailwindDefault: 'sky.600',
     hexDefault: '#0693e3',
   },
   {
     name: 'vivid-purple',
     themeName: 'vividPurple',
-    tailwindDefault: 'purple.600',
+    tailwindDefault: 'purple.500',
     hexDefault: '#9b51e0',
   },
 ];
