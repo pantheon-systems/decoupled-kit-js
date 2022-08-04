@@ -1,6 +1,6 @@
 import { getCurrentLocaleStore } from "./drupalStateContext";
 /**
- * @description Helper function to get the current path nedded for getStaticPaths
+ * @description Helper function to get the current path needed for getStaticPaths
  * @param {import('next').GetStaticPathsContext} context - Nextjs getStaticPaths context
  * @param {import('@pantheon-systems/drupal-kit').DrupalState} globalDrupalStateStores - Drupal state stores from drupalStateContext.js. Can be auth'd stores or non auth'd stores.
  * @param {string} node - The node to fetch from Drupal. This will be passed to DrupalState.getObject as the objectName.
@@ -27,19 +27,24 @@ export const getPaths = async (
       const data = await store.getObject({
         objectName: node,
       });
+      // filter out data that does not have the urlAliasPrefix in the path alias
+      // so the catch all route works.
       // map over the data fetch to extract the path name
-      return data.map((datum) => {
-        // remove the url prefix and split the path to handle
-        // dynamic routes like /articles/my-article and /articles/featured/my-article
-        // will also work for content that is not prefixed
-        const regex = new RegExp(`/?(${urlAliasPrefix})?/?`);
-        const path = datum.path.alias.replace(regex, "").split("/");
-        // return the path object.
-        return {
-          params: { [`${dynamicRouteName}`]: path },
-          locale: locale,
-        };
-      });
+      return data
+        .filter(({ path: { alias } }) => alias.includes(urlAliasPrefix))
+        .map((datum) => {
+          // remove the url prefix and split the path to handle
+          // dynamic routes like /articles/my-article and /articles/featured/my-article
+          // will also work for content that is not prefixed
+          const regex = new RegExp(`/?(${urlAliasPrefix})?/?`);
+          const path = datum.path.alias.replace(regex, "").split("/");
+
+          // return the path object.
+          return {
+            params: { [`${dynamicRouteName}`]: path },
+            locale: locale,
+          };
+        });
     } catch (error) {
       // if set to failGracefully, return null.
       if (failGracefully) {

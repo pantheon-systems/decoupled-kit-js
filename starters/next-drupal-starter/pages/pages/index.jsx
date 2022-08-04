@@ -29,16 +29,14 @@ export default function PageListTemplate({
         <ul>
           {pages ? (
             pages?.map(({ id, title, body, path }) => (
-              <li className="prose justify-items-start" key={id}>
+              <li className="prose justify-items-start mt-8" key={id}>
                 <h2>{title}</h2>
                 <div dangerouslySetInnerHTML={{ __html: body?.summary }} />
                 <Link
                   passHref
                   href={`${
                     multiLanguage ? `/${path?.langcode || locale}` : ""
-                  }${path.alias.includes("/pages") ? "" : "/pages"}${
-                    path.alias
-                  }`}
+                  }${path.alias}`}
                 >
                   <a className="font-normal underline">Read more →</a>
                 </Link>
