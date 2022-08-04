@@ -4,21 +4,13 @@
 
 - Install [docker](https://docs.docker.com/get-docker/)
 - Install [lando](https://docs.lando.dev/getting-started/installation.html)
-- [Generate Pantheon Machine Token](https://pantheon.io/docs/machine-tokens#create-a-machine-token) & [Authenticate into Terminus](https://pantheon.io/docs/machine-tokens#authenticate-into-terminus)
+- [Generate Pantheon Machine Token](https://pantheon.io/docs/machine-tokens#create-a-machine-token)
 
 ## Local Development with Lando for -
 
 1. Your NextJS front end site
 
-- In your current directory create a new sub-directory e.g. "fe". Clone this front end repo into the "fe" sub-directory [next-drupal-starter](https://github.com/pantheon-systems/next-drupal-starter):
-        
-```
-mkdir fe;\
-> cd fe;\
-> git clone https://github.com/pantheon-systems/next-drupal-starter .
-```    
-
-- Create a lando file similar to the one below:
+- Create a `.lando.yml` lando file similar to the one below:
         
 ```
 name: your-lando-project-name
@@ -42,6 +34,12 @@ npm:
     service: node
 ``` 
 
+- In your current directory create a new sub-directory e.g. "fe". Clone this front end repo into the "fe" sub-directory [next-drupal-starter](https://github.com/pantheon-systems/next-drupal-starter):
+        
+```
+git clone https://github.com/pantheon-systems/next-drupal-starter fe && cd fe
+```    
+
 - Create an environment file for the lando front end node.js site, similar to the one below:
         
 ```
@@ -61,10 +59,11 @@ DEBUG_MODE=
 
 - For more details please refer to these instructions [instructions](https://github.com/pantheon-systems/next-drupal-starter#pantheon-decoupled-kit-next-drupal-starter)
 
-- Run `lando start` [Known Issues](#known-issues)
+- Run `lando start`
+    [Known Issues](#known-issues)
 
 2. Your CMS Backend
-- If your current directory is `fe`, switch into the parent directory e.g. `cd ..`
+- Switch into the directory containing the .lando.yml file
 
 - Follow these [instructions](https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Backend%20Starters/Decoupled%20Drupal/lando-template-for-local-dev-backend-only.md)
 
