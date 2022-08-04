@@ -1,7 +1,7 @@
 ---
 id: "next-drupal-env-vars"
 title: "Setting Environment Variables"
-slug: "/Frontend Starters/Next/Next Drupal/Setting Environment Variables"
+slug: "/Frontend Starters/Next.js/Next.js + Drupal/Setting Environment Variables"
 ---
 
 ## Local Development

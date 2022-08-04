@@ -1,7 +1,7 @@
 ---
 id: "next-wordpress-customization"
 title: "Your First Next.js & WordPress Customization"
-slug: "/Frontend Starters/Next/Next WordPress/Your First Next.js & WordPress Customization"
+slug: "/Frontend Starters/Next.js/Next.js + WordPress/Your First Next.js & WordPress Customization"
 ---
 
 ## Before You Begin
@@ -21,7 +21,7 @@ If you're not sure when to use SSR vs SSG, check out these articles: [When Shoul
 
 The `next-wordpress-starter` has a dependency on `@pantheon-systems/wordpress-kit`, which contains a GraphQL client to help us fetch data from WordPress. Be sure to use as few instances of the client as possible. Here is an example of how to use the client:
 
-```js title=lib/wordPressClient.js
+```js title=lib/wordpress-client.js
 import { GraphqlClientFactory } from "@pantheon-systems/wordpress-kit";
 
 // you may need to expose this variable in your next.config.js
@@ -53,7 +53,7 @@ To render a page with Server Side Rendering (SSR) in Next.js, export an async fu
 ```jsx title=pages/articles/index.js
 // Import the WordPress GraphQL client we made in the last section and the gql template tag
 // helper convenience function that is re-exported in the wordpress-kit from 'graphql-request'
-import { client } from "./lib/wordPressClient";
+import { client } from "./lib/wordpress-client";
 import { gql } from "@pantheon-systems/wordpress-kit";
 
 export default function Posts({ posts }) {
@@ -83,7 +83,7 @@ export async function getServerSideProps(context) {
     }
   `;
 
-  const posts = await client.request(query);
+  const { posts } = await client.request(query);
 
   return {
     props: {
@@ -102,7 +102,7 @@ Let's build a page using `getStaticProps` that lists recipes from our Drupal ins
 ```jsx title=pages/pages/index.js
 // Import the WordPress GraphQL client we made in the last section and the gql template tag
 // helper convenience function that is re-exported in the wordpress-kit from 'graphql-request'
-import { client } from "./lib/wordPressClient";
+import { client } from "../../lib/wordpress-client";
 import { gql } from "@pantheon-systems/wordpress-kit";
 
 export default function Pages({ pages }) {
@@ -125,6 +125,8 @@ export async function getStaticProps(context) {
     }
   `;
 
+  const { pages } = await client.request(query);
+
   return {
     props: {
       pages,
@@ -137,13 +139,11 @@ Notice the key difference for this page–besides the fact we are fetching pages
 
 ## Next Steps
 
-From here, it's time to see the code in action. Start the app if it's not already running and head to `http://localhost:3000/articles`. You should see the SSR'd `Articles` page.
-Check `http://localhost:3000/recipes` to see the SSG'd `Recipies` page.
+From here, it's time to see the code in action. Start the app if it's not already running and head to `http://localhost:3000/posts`. You should see the SSR'd `Articles` page.
+Check `http://localhost:3000/pages` to see the SSG'd `Pages` page.
 
 From this point, you may want to adjust the markup and style of the `Articles` and `Recipes` components, or move on to another custom page. For more information on composing react components, see [Composing Components](https://reactjs.org/docs/components-and-props.html#composing-components)
 
 ## Conclusion
 
-In this guide we created a new page using SSR and SSG utilizing the `@pantheon-systems/wordpress-kit` and the GraphiQL IDE to craft a query and fetch data from our WordPress instance.
-
-You now have what you need to create pages in Next.js with data sourced from WordPress!
+In this guide we created a new page using SSR and SSG utilizing the `@pantheon-systems/wordpress-kit` and the GraphiQL IDE in our WordPress instance to craft a query and fetch the data.

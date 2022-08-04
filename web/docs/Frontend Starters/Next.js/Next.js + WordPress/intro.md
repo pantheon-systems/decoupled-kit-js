@@ -1,7 +1,7 @@
 ---
 id: "next-wordpress-intro"
 title: "Introduction"
-slug: "/Frontend Starters/Next/Next WordPress/Introduction"
+slug: "/Frontend Starters/Next.js/Next.js + WordPress/Introduction"
 ---
 
 ## Before You Begin

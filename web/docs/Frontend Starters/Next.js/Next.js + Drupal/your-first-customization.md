@@ -1,7 +1,7 @@
 ---
 id: "next-drupal-customization"
 title: "Your First Next.js & Drupal Customization"
-slug: "/Frontend Starters/Next/Next Drupal/Your First Next.js & Drupal Customization"
+slug: "/Frontend Starters/Next.js/Next.js + Drupal/Your First Next.js & Drupal Customization"
 ---
 
 ## Before You Begin
@@ -115,11 +115,11 @@ Notice the only real difference for this page–besides the fact we are fetching
 ## Next Steps
 
 From here, it's time to see the code in action. Start the app if it's not already running and head to `http://localhost:3000/articles`. You should see the SSR'd `Articles` page.
-Check `http://localhost:3000/recipes` to see the SSG'd `Recipies` page.
+Check `http://localhost:3000/recipes` to see the SSG'd `Recipes` page.
 
 From this point, you may want to adjust the markup and style of the `Articles` and `Recipes` components, or move on to another custom page. For more information on composing react components, see [Composing Components](https://reactjs.org/docs/components-and-props.html#composing-components)
 
 ## Conclusion
 
 In this guide we created a new page using SSR and SSG utilizing Drupal State to fetch data from our Drupal instance.
-You now have what you need to create pages in Next.js with data sourced from Drupal!
+

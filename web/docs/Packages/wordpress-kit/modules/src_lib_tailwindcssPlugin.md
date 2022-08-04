@@ -6,16 +6,6 @@ sidebar_position: 0
 custom_edit_url: null
 ---
 
-## Type Aliases
-
-### TailwindcssConfig
-
-Ƭ **TailwindcssConfig**: `Config` & `WordpressMapConfig`
-
-#### Defined in
-
-[src/lib/tailwindcssPlugin.ts:156](https://github.com/pantheon-systems/decoupled-kit-js/blob/0f0d168/packages/wordpress-kit/src/lib/tailwindcssPlugin.ts#L156)
-
 ## Variables
 
 ### default
@@ -24,4 +14,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/lib/tailwindcssPlugin.ts:182](https://github.com/pantheon-systems/decoupled-kit-js/blob/0f0d168/packages/wordpress-kit/src/lib/tailwindcssPlugin.ts#L182)
+[src/lib/tailwindcssPlugin.ts:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/3caad45/packages/wordpress-kit/src/lib/tailwindcssPlugin.ts#L7)

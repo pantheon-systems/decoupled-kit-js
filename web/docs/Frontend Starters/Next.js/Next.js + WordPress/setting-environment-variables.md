@@ -1,7 +1,7 @@
 ---
 id: "next-wordpress-env-vars"
 title: "Setting Environment Variables"
-slug: "/Frontend Starters/Next/Next Wordpress/Setting Environment Variables"
+slug: "/Frontend Starters/Next.js/Next.js + WordPress/Setting Environment Variables"
 ---
 
 ## Local Development

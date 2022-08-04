@@ -1,7 +1,7 @@
 ---
 id: "gatsby-wordpress-customization"
-title: "Your First Wordpress Customization"
-slug: "/Frontend Starters/Gatsby Wordpress/Your First Wordpress Customization"
+title: "Your First WordPress Customization"
+slug: "/Frontend Starters/Gatsby WordPress/Your First WordPress Customization"
 ---
 
 ## Before You Begin
