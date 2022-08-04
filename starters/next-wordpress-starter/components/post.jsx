@@ -4,6 +4,23 @@ import Link from "next/link";
 export default function Post({
   post: { title, date, featuredImage, content },
 }) {
+  let rxSrc, imgSrc, rxPath, imgPath;
+  let srcUrl = "";
+  try {
+    rxSrc = new RegExp(".+/(.+.+$)"); //We will get the file name
+    imgSrc = rxSrc.exec(featuredImage.node.sourceUrl)[1];
+    rxPath = new RegExp("http[s]?:\\/\\/?[^\\/]+\\/(.*[/]{1}.*/).+.+$");
+    imgPath = rxPath.exec(featuredImage.node.sourceUrl)[1];
+    if (process.env.IMAGE_DOMAIN)
+      srcUrl = "https://" + process.env.IMAGE_DOMAIN + "/" + imgPath + imgSrc;
+    else srcUrl = featuredImage.node.sourceUrl;
+  } catch (e) {
+    console.log(
+      "Regexp of image domain construction failed. This is the error: " + e
+    );
+    srcUrl = featuredImage.node.sourceUrl;
+  }
+
   return (
     <article className="prose lg:prose-xl mt-10 mx-auto max-w-screen-lg p-4">
       <h1>{title}</h1>
@@ -20,7 +37,7 @@ export default function Post({
           >
             <Image
               priority
-              src={featuredImage.node.sourceUrl}
+              src={srcUrl}
               layout="fill"
               objectFit="cover"
               alt={featuredImage.node.alt || "Featured Image"}

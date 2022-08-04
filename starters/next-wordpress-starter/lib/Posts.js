@@ -14,6 +14,9 @@ export async function getLatestPosts() {
               node {
                 altText
                 sourceUrl
+                mediaDetails {
+                  file
+                }
               }
             }
           }
@@ -39,6 +42,9 @@ export async function getPostBySlug(slug) {
           node {
             altText
             sourceUrl
+            mediaDetails {
+              file
+            }
           }
         }
         content
