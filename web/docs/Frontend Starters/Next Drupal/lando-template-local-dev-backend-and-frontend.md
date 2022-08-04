@@ -60,7 +60,8 @@ DEBUG_MODE=
 - For more details please refer to these instructions [instructions](https://github.com/pantheon-systems/next-drupal-starter#pantheon-decoupled-kit-next-drupal-starter)
 
 - Run `lando start`
-    [Known Issues](#known-issues)
+
+- [Known Issues](#known-issues)
 
 2. Your CMS Backend
 - Switch into the directory containing the .lando.yml file
