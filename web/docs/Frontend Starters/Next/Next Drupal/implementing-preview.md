@@ -1,7 +1,7 @@
 ---
 id: "next-drupal-preview"
 title: "Implementing Decoupled Preview"
-slug: "/Frontend Starters/Next Drupal/Implementing Preview"
+slug: "/Frontend Starters/Next/Next Drupal/Implementing Preview"
 ---
 
 ## Before You Begin
@@ -17,7 +17,7 @@ Drupal instance.
 1. Set the URL to point to http(s)://{YOUR_SITE_URL}/api/preview replacing `{YOUR_SITE_URL}` with the URL of your frontend site, or `localhost:3000` for testing preview locally.
 1. Set a secret for the Preview Site and note this value down.
 
-Now you have all of the credentials needed to make authenticated requests to the Drupal instace, including the ability to preview content!
+Now you have all of the credentials needed to make authenticated requests to the Drupal instance, including the ability to preview content!
 
 See [Setting Environment Variables](./setting-environment-variables.md) for more information on how to set these variables in your local development environment or on the Pantheon Dashboard.
 

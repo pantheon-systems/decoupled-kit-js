@@ -1,7 +1,7 @@
 ---
 id: "next-drupal-customization"
-title: "Your First Next Drupal Customization"
-slug: "/Frontend Starters/Next Drupal/Your First Drupal Customization"
+title: "Your First Next.js & Drupal Customization"
+slug: "/Frontend Starters/Next/Next Drupal/Your First Next.js & Drupal Customization"
 ---
 
 ## Before You Begin
@@ -91,7 +91,7 @@ export async function getStaticProps(context) {
         title
         field_ingredients
         field_number_of_servings
-        field_preperation_time
+        field_preparation_time
         field_recipe_instruction
         field_summary
         created
@@ -110,7 +110,7 @@ export async function getStaticProps(context) {
 }
 ```
 
-Notice the only real difference for this page - besides the fact we are fetching recipes instead of articles - is the use of `getStaticProps` instead of `getServerSideProps`.
+Notice the only real difference for this page–besides the fact we are fetching recipes instead of articles–is the use of `getStaticProps` instead of `getServerSideProps`.
 
 ## Next Steps
 
