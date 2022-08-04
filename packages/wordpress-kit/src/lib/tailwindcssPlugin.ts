@@ -174,6 +174,12 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
     {}
   );
 
+  const borderInheritance = {
+    borderColor: 'inherit',
+    borderStyle: 'inherit',
+    borderWidth: 'inherit',
+  };
+
   const tableComponent = {
     '.wp-block-table': {
       td: {
@@ -182,18 +188,39 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
       table: {
         thead: {
           tr: {
-            borderColor: 'inherit',
+            ...borderInheritance,
             th: {
               padding: '0.5em',
               color: 'inherit',
+              textAlign: 'center',
+              '&.has-text-align-left': {
+                textAlign: 'left',
+              },
+              '&.has-text-align-right': {
+                textAlign: 'right',
+              },
             },
           },
-          borderColor: 'inherit',
+          ...borderInheritance,
         },
         tbody: {
-          borderColor: 'inherit',
+          ...borderInheritance,
           tr: {
-            borderColor: 'inherit',
+            ...borderInheritance,
+            td: {
+              ...borderInheritance,
+            },
+          },
+        },
+        tfoot: {
+          ...borderInheritance,
+          tr: {
+            ...borderInheritance,
+            td: {
+              padding: '0.5em',
+              color: 'inherit',
+              ...borderInheritance,
+            },
           },
         },
         '&.has-fixed-layout': {
@@ -202,6 +229,7 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
         },
         maxWidth: '650px',
         margin: 'auto',
+        ...borderInheritance,
       },
       figcaption: {
         fontSize: '.9rem',

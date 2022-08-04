@@ -33,27 +33,53 @@ export type FontSizeConfig = {
   sm?: string;
 };
 
-export type WordpressMapConfig = {
+export type WordPressMapConfig = {
   theme?: {
     extend?: {
       /**
-       * The colors mapped from the code editor in the WordPress admin.
+       * The colors mapped from the block editor in the WordPress admin.
        * @example
        * ```
-       *primary: '#0070f3',
-       *secondary: '#ff4081',
-       *darkGray: '#333',
-       *lightGray: '#fafafa',
-       *white: '#fff',
+       *primary: #0073a8
+       *secondary: #005075
+       *tertiary: #00a8e1
+       *darkGray: #333333
+       *lightGray: #666666
+       *background: #ffffff
+       *white: #ffffff
+       *foreground: #00000
+       *palePink: #ffb3d7
+       *cyanBluishGray: #ABB8C3
+       *vividRed: #cf2e2e
+       *luminousVividOrange: #ff6900
+       *luminousVividAmber: #fcb900
+       *lightGreenCyan: #7bdcb5
+       *vividGreenCyan: #00d084
+       *paleCyanBlue: #00bcd4
+       *vividCyanBlue: #0693e3
+       *vividPurple: #9b51e0
        * ```
        *
        *@default
        * ```
-       *primary: value of "blue-500" or '#0073a8',
-       *secondary: value of "gray-500" or '#005075',
-       *darkGray: value of "neutral-800" or '#333333',
-       *lightGray: value of "neutral-500" or '#666666',
-       *white: value of "white" or '#ffffff',
+       *primary: value of blue.500 or #0073a8
+       *secondary: value of gray.500 or #005075
+       *darkGray: value of neutral.800 or #333333
+       *lightGray: value of neutral.500 or #666666
+       *white: value of white or #ffffff
+       *tertiary: value of teal.800 or #00a8e1
+       *background: value of white or #ffffff
+       *foreground: value of black or #000
+       *palePink: value of pink.100 or #ffb3d7
+       *cyanBluishGray: value of neutral.300 or #ABB8C3
+       *vividRed: value of red.700 or #cf2e2e
+       *luminousVividOrange: value of orange.600 or #ff6900
+       *luminousVividAmber: value of amber.400 or #fcb900
+       *lightGreenCyan: value of emerald.300 or #7bdcb5
+       *vividGreenCyan: value of green.700 or #00d084
+       *paleCyanBlue: value of sky.300 or #00bcd4
+       *vividCyanBlue: value of cyan.600 or #0693e3
+       *vividPurple: value of purple.600 or #9b51e0
        * ```
        */
       colors?: ColorConfig;
@@ -100,23 +126,49 @@ export type WordpressMapConfig = {
       fontSize?: FontSizeConfig;
     };
     /**
-     * The colors mapped from the code editor in the WordPress admin.
+     * The colors mapped from the block editor in the WordPress admin.
      * @example
      * ```
-     *primary: '#0070f3',
-     *secondary: '#ff4081',
-     *darkGray: '#333',
-     *lightGray: '#fafafa',
-     *white: '#fff',
+     *primary: #0073a8
+     *secondary: #005075
+     *tertiary: #00a8e1
+     *darkGray: #333333
+     *lightGray: #666666
+     *background: #ffffff
+     *white: #ffffff
+     *foreground: #00000
+     *palePink: #ffb3d7
+     *cyanBluishGray: #ABB8C3
+     *vividRed: #cf2e2e
+     *luminousVividOrange: #ff6900
+     *luminousVividAmber: #fcb900
+     *lightGreenCyan: #7bdcb5
+     *vividGreenCyan: #00d084
+     *paleCyanBlue: #00bcd4
+     *vividCyanBlue: #0693e3
+     *vividPurple: #9b51e0
      * ```
      *
      *@default
      * ```
-     *primary: value of "blue-500" or '#0073a8',
-     *secondary: value of "gray-500" or '#005075',
-     *darkGray: value of "neutral-800" or '#333333',
-     *lightGray: value of "neutral-500" or '#666666',
-     *white: value of "white" or '#ffffff',
+     *primary: value of blue.500 or #0073a8
+     *secondary: value of gray.500 or #005075
+     *darkGray: value of neutral.800 or #333333
+     *lightGray: value of neutral.500 or #666666
+     *white: value of white or #ffffff
+     *tertiary: value of teal.800 or #00a8e1
+     *background: value of white or #ffffff
+     *foreground: value of black or #000
+     *palePink: value of pink.100 or #ffb3d7
+     *cyanBluishGray: value of neutral.300 or #ABB8C3
+     *vividRed: value of red.700 or #cf2e2e
+     *luminousVividOrange: value of orange.600 or #ff6900
+     *luminousVividAmber: value of amber.400 or #fcb900
+     *lightGreenCyan: value of emerald.300 or #7bdcb5
+     *vividGreenCyan: value of green.700 or #00d084
+     *paleCyanBlue: value of sky.300 or #00bcd4
+     *vividCyanBlue: value of cyan.600 or #0693e3
+     *vividPurple: value of purple.600 or #9b51e0
      * ```
      */
     colors?: ColorConfig;
@@ -177,4 +229,4 @@ export type FontSize = {
   default: string;
 };
 
-export type TailwindcssConfig = Config & WordpressMapConfig;
+export type TailwindcssConfig = Config & WordPressMapConfig;
