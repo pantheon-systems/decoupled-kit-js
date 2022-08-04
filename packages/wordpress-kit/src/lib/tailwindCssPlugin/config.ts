@@ -32,5 +32,6 @@ export const mergeToConfig: Config = {
     '.is-style-plain',
     '.is-style-large',
     '.wp-block-pullquote',
+    '.wp-block-image',
   ],
 };

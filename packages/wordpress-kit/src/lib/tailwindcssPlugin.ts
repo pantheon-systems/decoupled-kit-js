@@ -272,6 +272,60 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
     },
   };
 
+  const imageComponent = {
+    '.wp-block-image': {
+      figcaption: {
+        fontSize: '.9rem',
+        textAlign: 'center',
+        wordBreak: 'break-word',
+      },
+      img: {
+        maxWidth: '650px',
+        borderRadius: 'inherit',
+      },
+      '&.alignleft': {
+        float: 'left',
+        marginRight: '1.5rem',
+        marginTop: '0',
+      },
+      '&.alignright': {
+        float: 'right',
+        marginLeft: '1.5rem',
+        marginTop: '0',
+      },
+      '&.alignwide': {
+        img: {
+          maxWidth: '850px',
+        },
+      },
+      '&.alignfull': {
+        [`@media (min-width:${theme(
+          'screen.xl',
+          '1280px'
+        )})` as '@media(min-width:1280px)`']: {
+          // sets a negative margin to allow full width images to span past the
+          // width its parent container
+          marginLeft: 'calc(-1 * max(1rem, 10vw))',
+          marginRight: 'calc(-1 * max(1rem, 10vw))',
+        },
+        width: 'unset',
+        img: {
+          width: '100%',
+          height: 'auto',
+          maxWidth: 'none',
+        },
+        padding: '0',
+      },
+      '&.is-style-rounded': {
+        img: {
+          borderRadius: '9999px',
+        },
+      },
+      display: 'grid',
+      placeItems: 'center',
+    },
+  };
+
   addUtilities([
     backgroundUtilities,
     borderColorUtilities,
@@ -283,5 +337,5 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
     textAlignUtilities,
   ]);
 
-  addComponents(tableComponent);
+  addComponents([tableComponent, imageComponent]);
 }, mergeToConfig);
