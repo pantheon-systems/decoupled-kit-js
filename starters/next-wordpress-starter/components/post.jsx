@@ -11,6 +11,9 @@ export default function Post({
     imgSrc = rxSrc.exec(featuredImage.node.sourceUrl)[1];
     rxPath = new RegExp("http[s]?:\\/\\/?[^\\/]+\\/(.*[/]{1}.*/).+.+$");
     imgPath = rxPath.exec(featuredImage.node.sourceUrl)[1];
+    if (imgSrc == null || imgPath == null) {
+      throw "Regexp of image domain construction failed";
+    }
     if (process.env.IMAGE_DOMAIN)
       srcUrl = "https://" + process.env.IMAGE_DOMAIN + "/" + imgPath + imgSrc;
     else srcUrl = featuredImage.node.sourceUrl;
