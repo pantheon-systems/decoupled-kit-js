@@ -1,19 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import { getUrlPath } from "../lib/getUrlPath";
-
 import { IMAGE_URL } from "../lib/constants";
 
 export default function Post({
   post: { title, date, featuredImage, content },
 }) {
   let srcUrl = getUrlPath(featuredImage.node.sourceUrl);
-  if (srcUrl == null) {
-    srcUrl = featuredImage.node.sourceUrl;
-  } else {
-    srcUrl = IMAGE_URL + srcUrl;
-  }
 
   return (
     <article className="prose lg:prose-xl mt-10 mx-auto max-w-screen-lg p-4">
@@ -31,7 +24,7 @@ export default function Post({
           >
             <Image
               priority
-              src={srcUrl}
+              src={IMAGE_URL + srcUrl}
               layout="fill"
               objectFit="cover"
               alt={featuredImage.node.alt || "Featured Image"}
