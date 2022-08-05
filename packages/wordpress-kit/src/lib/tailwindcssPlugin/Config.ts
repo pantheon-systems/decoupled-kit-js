@@ -1,5 +1,5 @@
 import { Config } from 'tailwindcss';
-import { colorList, fontSizeList } from './constants';
+import { colorList, fontSizeList } from './Constants';
 
 const colorClasses = colorList.map(color => `.has-${color.name}-color`);
 

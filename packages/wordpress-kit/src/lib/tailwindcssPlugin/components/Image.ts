@@ -33,7 +33,7 @@ export const imageComponent = ({
       },
     },
     '&.alignfull': {
-      [`@media (min-width:${minWidth})` as unknown as mediaType]: {
+      [`@media (min-width:${minWidth})` as mediaType]: {
         // sets a negative margin to allow full width images to span past the
         // width its parent container
         marginLeft: 'calc(-1 * max(1rem, 10vw))',
