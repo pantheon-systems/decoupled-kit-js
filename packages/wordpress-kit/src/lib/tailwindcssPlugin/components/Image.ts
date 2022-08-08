@@ -1,6 +1,6 @@
 type mediaType = '@media (min-width: 768px)';
 
-export const imageComponent = ({
+const ImageComponent = ({
   alignFull: { minWidth },
 }: {
   alignFull: { minWidth: string };
@@ -57,3 +57,5 @@ export const imageComponent = ({
     placeItems: 'center',
   },
 });
+
+export default ImageComponent;

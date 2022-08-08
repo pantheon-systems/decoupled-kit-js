@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import { ThemeConfig } from 'tailwindcss/types/config';
 
 export type ColorConfig = {
   primary?: string;
@@ -229,4 +230,22 @@ export type FontSize = {
   default: string;
 };
 
+export type GradientColors = {
+  color: string;
+  position: string;
+};
+
 export type TailwindcssConfig = Config & WordPressMapConfig;
+
+export type ThemeType = <
+  T =
+    | Partial<
+        ThemeConfig & {
+          extend: Partial<ThemeConfig>;
+        }
+      >
+    | undefined
+>(
+  path?: string | undefined,
+  defaultValue?: T | undefined
+) => T;
