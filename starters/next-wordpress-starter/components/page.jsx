@@ -6,7 +6,7 @@ import { IMAGE_URL } from "../lib/constants";
 export default function Page({
   page: { title, date, featuredImage, content },
 }) {
-  let srcUrl = getUrlPath(featuredImage.node.sourceUrl);
+  const srcUrl = featuredImage?.node?.sourceUrl && getUrlPath(featuredImage.node.sourceUrl);
 
   return (
     <article className="prose lg:prose-xl mt-10 mx-auto">
