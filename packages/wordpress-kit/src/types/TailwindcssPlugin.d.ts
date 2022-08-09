@@ -237,15 +237,13 @@ export type GradientColors = {
 
 export type TailwindcssConfig = Config & WordPressMapConfig;
 
-export type ThemeType = <
-  T =
-    | Partial<
-        ThemeConfig & {
-          extend: Partial<ThemeConfig>;
-        }
-      >
-    | undefined
->(
+type PartialThemeConfig = Partial<
+  ThemeConfig & {
+    extend: Partial<ThemeConfig>;
+  }
+>;
+
+export type ThemeType = <T = PartialThemeConfig | undefined>(
   path?: string | undefined,
   defaultValue?: T | undefined
 ) => T;

@@ -1,4 +1,4 @@
-const Quote = {
+export const Quote = {
   '.is-style-plain': {
     cite: {
       fontStyle: 'normal',
@@ -39,5 +39,3 @@ const Quote = {
     },
   },
 };
-
-export default Quote;

@@ -1,4 +1,4 @@
-const PullQuoteComponent = ({ quoteSize }: { quoteSize: string }) => ({
+export const PullQuoteComponent = ({ quoteSize }: { quoteSize: string }) => ({
   '.wp-block-pullquote': {
     '&.alignleft': {
       float: 'left',
@@ -39,5 +39,3 @@ const PullQuoteComponent = ({ quoteSize }: { quoteSize: string }) => ({
     padding: '2em 0',
   },
 });
-
-export default PullQuoteComponent;
