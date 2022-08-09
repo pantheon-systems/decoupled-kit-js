@@ -1,9 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getUrlPath } from "../lib/getUrlPath";
+import { IMAGE_URL } from "../lib/constants";
 
 export default function Post({
   post: { title, date, featuredImage, content },
 }) {
+  const srcUrl = featuredImage?.node?.sourceUrl && getUrlPath(featuredImage.node.sourceUrl);
+
   return (
     <article className="prose lg:prose-xl mt-10 mx-auto max-w-screen-lg p-4">
       <h1>{title}</h1>
@@ -20,7 +24,7 @@ export default function Post({
           >
             <Image
               priority
-              src={featuredImage.node.sourceUrl}
+              src={IMAGE_URL + srcUrl}
               layout="fill"
               objectFit="cover"
               alt={featuredImage.node.alt || "Featured Image"}

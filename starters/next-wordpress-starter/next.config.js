@@ -11,6 +11,7 @@ const nextConfig = {
   reactStrictMode: true,
   env: {
     backendUrl: process.env.WPGRAPHQL_URL,
+    imageUrl: `https://${process.env.IMAGE_DOMAIN}`,
   },
   images: {
     domains: [process.env.IMAGE_DOMAIN],
