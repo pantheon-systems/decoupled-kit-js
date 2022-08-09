@@ -14,7 +14,7 @@ To configure the monorepo for development, the following should be installed loc
 
 - Nodejs version 16 LTS. We recomemnd using [nvm](https://github.com/nvm-sh/nvm)
 - [npm](https://docs.npmjs.com/cli/v8/commands/npm) version 8.x.x
-- [pnpm](https://pnpm.io/installation) version 7.1.0
+- [pnpm](https://pnpm.io/installation) version 7.4.0
 
   We recommend using npm. Run the following command to install:
 
@@ -85,28 +85,10 @@ There are several scripts you can use on your monorepo.
 
 To generate a new changeset, run `pnpm changeset` in the root of the repository. The generated Markdown files in the `.changeset` directory should be committed to the repository.
 
-### Creating a New Version
+### Creating and Publishing New Versions
 
-- To increase the versions of the packages and dependencies previously specified with `pnpm changeset` and update the changelog files, run the following command:
-  ```
-  pnpm changeset version
-  ```
-- Run `pnpm install`. This will update the lockfile and rebuild packages.
-- Commit the changes.
-
-### Publishing a New Version
-
-- Confirm your publishing scope by running the following command in `pantheon-systems`:
-  ```
-  pnpm config get scope
-  ```
-  Alternatively, you can use the command `pnpm config set scope @pantheon-systems`.
-- To publish all public packages that have versions that are not currently in the registry, use the following command:
-  ```
-  pnpm publish -r --access public
-  ```
-
----
+Versions and releases are created as part of our CI process and typically should
+not be created manually.
 
 ## Bug Reports and Feature Requests
 
@@ -116,4 +98,4 @@ To generate a new changeset, run `pnpm changeset` in the root of the repository.
 
 ## Further Reading
 
-For more information on contributing to this project, see [CONTRIBUTING.md](https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/CONTRIBUTING.md)
+For more information on contributing to this project, see [CONTRIBUTING.md](./CONTRIBUTING.md)

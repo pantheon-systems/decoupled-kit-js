@@ -1,7 +1,7 @@
 ---
 id: "gatsby-wordpress-intro"
 title: "Introduction"
-slug: "/Frontend Starters/Gatsby Wordpress/Introduction"
+slug: "/Frontend Starters/Gatsby WordPress/Introduction"
 ---
 
 ## Before You Begin

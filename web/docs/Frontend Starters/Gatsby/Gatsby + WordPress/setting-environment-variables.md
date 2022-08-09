@@ -1,7 +1,7 @@
 ---
 id: "gatsby-wordpress-env-vars"
 title: "Setting Environment Variables"
-slug: "/Frontend Starters/Gatsby Wordpress/Setting Environment Variables"
+slug: "/Frontend Starters/Gatsby WordPress/Setting Environment Variables"
 ---
 
 ## Local Development
