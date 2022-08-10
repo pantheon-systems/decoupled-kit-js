@@ -46,8 +46,7 @@
     "eslint:fix": "eslint --ext .js,.ts src --fix --ignore-path .gitignore",
     "prettier": "prettier \"**/*.{js,ts,md}\" --check --ignore-path .gitignore",
     "prettier:fix": "prettier \"**/*.{js,ts,md}\" --write --ignore-path .gitignore",
-    "lint-staged": "lint-staged",
-    "rollup": "rollup -c"
+    "lint-staged": "lint-staged"
   },
   "devDependencies": {
     "@testing-library/react": "12.1.5",
