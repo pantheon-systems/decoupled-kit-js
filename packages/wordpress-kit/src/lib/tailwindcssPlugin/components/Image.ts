@@ -1,6 +1,6 @@
 type mediaType = '@media (min-width: 768px)';
 
-export const imageComponent = ({
+export const ImageComponent = ({
   alignFull: { minWidth },
 }: {
   alignFull: { minWidth: string };

@@ -1,5 +1,5 @@
 import { Config } from 'tailwindcss';
-import { colorList, fontSizeList } from './Constants';
+import { colorList, fontSizeList, gradientList } from './Constants';
 
 const colorClasses = colorList.map(color => `.has-${color.name}-color`);
 
@@ -15,10 +15,15 @@ const fontSizeClasses = fontSizeList.map(
   fontSize => `.has-${fontSize.name}-font-size`
 );
 
+const gradientClasses = gradientList.map(
+  gradient => `.has-${gradient.name}-gradient-background`
+);
+
 export const mergeToConfig: Config = {
   content: [],
   safelist: [
     ...colorClasses,
+    ...gradientClasses,
     ...borderColorClasses,
     '.has-background',
     ...backgroundColorClasses,
