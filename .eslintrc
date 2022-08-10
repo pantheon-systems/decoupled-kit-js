@@ -21,6 +21,7 @@
     "rollup.config.js",
     "vite.config.js",
     "jest.config.js",
-    "./starters/next-*-starter/**/*"
+    "./starters/next-*-starter/**/*",
+    "./packages/nextjs-kit/utils/**/*"
   ]
 }
