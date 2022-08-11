@@ -21,14 +21,14 @@ export default function AuthApiExampleTemplate({ articles, footerMenu }) {
           <p>
             This page outlines a growing list of common use cases that can be
             used as a reference when building using this starter kit. If you
-            don't need them for your site, feel free to delete the
+            don&apos;t need them for your site, feel free to delete the
             `pages/examples` directory in your codebase.
           </p>
           <ul>
             <li>
               <Link href="/examples/auth-api">API Authorization</Link> -
               confirms that Next.js is able to make authenticated requests to
-              Drupal's API.
+              Drupal&apos;s API.
             </li>
             <li>
               <Link href="/examples/ssg-isr">SSG and ISR</Link> - by default, this starter kit is optimized for SSR and
