@@ -1,0 +1,12 @@
+// Vitest Snapshot v1
+
+exports[`<Test /> > should render 'test' 1`] = `
+<DocumentFragment>
+  <h2>
+    world
+  </h2>
+  <h3>
+    hello
+  </h3>
+</DocumentFragment>
+`;
