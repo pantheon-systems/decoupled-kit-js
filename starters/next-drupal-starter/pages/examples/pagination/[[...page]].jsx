@@ -97,6 +97,8 @@ export async function getStaticPaths() {
   };
 }
 
+// Using getStaticProps here with ISR will have a substantial impact on
+// performance due to the large payload.
 export async function getStaticProps(context) {
   const exampleStore = new DrupalState({
     apiBase: drupalUrl,
