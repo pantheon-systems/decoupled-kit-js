@@ -3,7 +3,7 @@ import { isMultiLanguage } from "../lib/isMultiLanguage";
 import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
-} from "../lib/drupalStateContext";
+} from "../lib/stores";
 
 import { ArticleGridItem, withGrid } from "../components/grid";
 import Image from "next/image";

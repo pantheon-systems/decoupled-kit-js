@@ -4,7 +4,7 @@ import { isMultiLanguage } from "../../lib/isMultiLanguage.js";
 import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
-} from "../../lib/drupalStateContext";
+} from "../../lib/stores";
 
 import Layout from "../../components/layout";
 import PageHeader from "../../components/page-header";

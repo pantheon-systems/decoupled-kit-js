@@ -1,4 +1,4 @@
-import { getCurrentLocaleStore } from "./drupalStateContext";
+import { getCurrentLocaleStore } from "./stores";
 /**
  * @description Helper function to get the current path needed for getStaticPaths
  * @param {import('next').GetStaticPathsContext} context - Nextjs getStaticPaths context
