@@ -58,11 +58,13 @@ export async function getPreview(context, node, params) {
         if (fetchedPreviewData.errors) {
           throw fetchedPreviewData?.errors.forEach(({ detail }) => detail);
         }
-        const uuid = fetchedPreviewData.data.id;
+        const resourceKey = params
+          ? `${fetchedPreviewData.data.id}-${params}`
+          : fetchedPreviewData.data.id;
 
         // set the preview data in the store
         store.setState({
-          [`${node}Resources`]: { [uuid]: fetchedPreviewData },
+          [`${node}Resources`]: { [resourceKey]: fetchedPreviewData },
         });
       }
     }

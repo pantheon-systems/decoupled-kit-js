@@ -182,8 +182,6 @@ export async function getStaticProps(context) {
       objectName: resourceName,
       id: uuid,
       params: context.preview ? previewParams : params,
-      // if previewing a revision, force a fetch to Drupal
-      refresh: context?.previewData?.resourceVersionId ? true : false,
       query: queries[resourceName],
     });
 
