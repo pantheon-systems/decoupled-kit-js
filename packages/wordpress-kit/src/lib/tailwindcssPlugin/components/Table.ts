@@ -6,7 +6,7 @@ const borderInheritance = {
   borderWidth: 'inherit',
 };
 
-export const tableComponent = ({
+export const TableComponent = ({
   stripeColor,
   alignFull: { minWidth },
 }: {

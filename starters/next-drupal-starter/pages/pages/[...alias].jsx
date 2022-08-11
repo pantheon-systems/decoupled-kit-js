@@ -67,7 +67,7 @@ export async function getServerSideProps(context) {
       // note: pages are not prefixed by default.
       path: `${multiLanguage ? lang : ""}/pages${alias}`,
       params: context.preview && previewParams,
-      refresh:  true,
+      refresh: true,
       res: context.res,
     });
   }

@@ -93,6 +93,6 @@ export async function getServerSideProps(context) {
       article,
       hrefLang,
       footerMenu,
-    }
+    },
   };
 }
