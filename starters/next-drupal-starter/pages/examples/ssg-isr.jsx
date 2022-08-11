@@ -8,7 +8,7 @@ import {
 import { ArticleGridItem, withGrid } from "../../components/grid";
 import Layout from "../../components/layout";
 
-export default function HomepageTemplate({
+export default function SSGISRExampleTemplate({
   articles,
   footerMenu,
   hrefLang,
@@ -75,6 +75,7 @@ export async function getStaticProps(context) {
     const articles = await store.getObject({
       objectName: "node--article",
       params: "include=field_media_image.field_media_image",
+      refresh: true,
     });
 
     if (!articles) {
@@ -85,6 +86,7 @@ export async function getStaticProps(context) {
 
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
+      refresh: true,
     });
 
     return {

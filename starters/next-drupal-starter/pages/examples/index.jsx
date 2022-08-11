@@ -2,7 +2,12 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "../../components/layout";
 
-export default function AuthApiExampleTemplate({ articles, footerMenu }) {
+import {
+  getCurrentLocaleStore,
+  globalDrupalStateStores,
+} from "../../lib/drupalStateContext";
+
+export default function ExamplesPageTemplate({ footerMenu }) {
   return (
     <Layout footerMenu={footerMenu}>
       <Head>
@@ -44,5 +49,25 @@ export default function AuthApiExampleTemplate({ articles, footerMenu }) {
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps(context) {
+  const { locale } = context;
+  const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
+
+  try {
+    const footerMenu = await store.getObject({
+      objectName: "menu_items--main",
+    });
+
+    return {
+      props: {
+        footerMenu,
+      },
+      revalidate: 60,
+    };
+  } catch (error) {
+    console.error(error);
+  }
 }
 
