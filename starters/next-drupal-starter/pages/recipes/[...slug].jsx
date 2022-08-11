@@ -98,8 +98,6 @@ export async function getStaticProps(context) {
           langcode
         }
       }`,
-      // if previewing a revision, force a fetch to Drupal
-      refresh: context?.previewData?.resourceVersionId ? true : false,
       params: context.preview ? previewParams : params,
     });
 

@@ -88,8 +88,6 @@ export async function getStaticProps(context) {
             }
           }
         `,
-      // if previewing a revision, force a fetch to Drupal
-      refresh: context?.previewData?.resourceVersionId ? true : false,
       params: context.preview && previewParams,
     });
   } catch (error) {
@@ -109,8 +107,6 @@ export async function getStaticProps(context) {
               }
             }
           `,
-      // if previewing a revision, force a fetch to Drupal
-      refresh: context?.previewData?.resourceVersionId ? true : false,
       params: context.preview && previewParams,
     });
   }
