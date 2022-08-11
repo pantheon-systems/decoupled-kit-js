@@ -72,13 +72,7 @@ export async function getStaticPaths() {
   const data = await store.getObject({
     objectName: "node--ds_example",
     all: true,
-    query: `{
-      title
-      id
-      body {
-        value
-      }
-    }`,
+    params: "fields[node--ds_example]=title,body"
   });
   const itemsPerPage = 10;
   const totalPages = Math.ceil(data.length / itemsPerPage);
@@ -107,16 +101,12 @@ export async function getStaticProps(context) {
     debug: process.env.DEBUG_MODE || false,
   });
 
-  // using a query here results in a payload of 641kb, down from 2.09mb without a query!
   const data = await exampleStore.getObject({
     objectName: "node--ds_example",
-    query: `{
-      title
-      id
-      body {
-        value
-      }
-    }`,
+    // This reduces the payload slightly, but still returns unnecessary data for
+    // the body field. What I really wan't is fields[node--ds_example]=title,body.value
+    // But that doesn't have the desired effect.
+    params: "fields[node--ds_example]=title,body",
     all: true,
   });
 
