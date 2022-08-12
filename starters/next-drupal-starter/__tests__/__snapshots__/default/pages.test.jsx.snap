@@ -42,6 +42,16 @@ exports[`default <PageListTemplate /> > should render with default profile pages
               📑 Pages
             </a>
           </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -179,6 +189,16 @@ exports[`default <PageTemplate /> > should render with default profile page 1`] 
               href="/pages"
             >
               📑 Pages
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
             </a>
           </li>
         </ul>

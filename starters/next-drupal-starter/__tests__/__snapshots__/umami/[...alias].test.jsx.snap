@@ -42,6 +42,16 @@ exports[`umami <CatchAllRoute /> > should render a page 1`] = `
               📑 Pages
             </a>
           </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -183,6 +193,16 @@ exports[`umami <CatchAllRoute /> > should render a recipe 1`] = `
               href="/pages"
             >
               📑 Pages
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
             </a>
           </li>
         </ul>
@@ -406,6 +426,16 @@ exports[`umami <CatchAllRoute /> > should render an article 1`] = `
               href="/pages"
             >
               📑 Pages
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
             </a>
           </li>
         </ul>

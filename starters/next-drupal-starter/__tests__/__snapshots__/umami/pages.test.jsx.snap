@@ -42,6 +42,16 @@ exports[`umami <PageListTemplate /> > should render with umami profile pages 1`]
               📑 Pages
             </a>
           </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -213,6 +223,16 @@ exports[`umami <PageTemplate /> > should render with umami profile page 1`] = `
               href="/pages"
             >
               📑 Pages
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
             </a>
           </li>
         </ul>
