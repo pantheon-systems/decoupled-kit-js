@@ -7,6 +7,7 @@ import {
 
 import { ArticleGridItem, withGrid } from "../../components/grid";
 import Layout from "../../components/layout";
+import PageHeader from "../../components/page-header";
 
 export default function SSGISRExampleTemplate({
   articles,
@@ -14,14 +15,6 @@ export default function SSGISRExampleTemplate({
   hrefLang,
   multiLanguage,
 }) {
-  const HomepageHeader = () => (
-    <div className="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit">
-      <h1 className="prose text-4xl text-center h-full">
-        Articles
-      </h1>
-    </div>
-  );
-
   const ArticleGrid = withGrid(ArticleGridItem);
 
   return (
@@ -32,13 +25,15 @@ export default function SSGISRExampleTemplate({
         languageAlternates={hrefLang || false}
       />
       <>
-        <HomepageHeader />
+        <PageHeader title="Articles" />
         <div className="mt-8 prose lg:prose-xl max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
           <p>
-            <em>By default, this starter kit is optimized for SSR and Edge
-              Caching on Pantheon. This example instead uses Incremental Static
-              Regeneration and is provided as a reference for cases where Next.js
-              static generation options would be beneficial.</em>
+            <em>
+              By default, this starter kit is optimized for SSR and Edge Caching
+              on Pantheon. This example instead uses Incremental Static
+              Regeneration and is provided as a reference for cases where
+              Next.js static generation options would be beneficial.
+            </em>
           </p>
         </div>
         <section>
