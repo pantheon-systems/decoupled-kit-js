@@ -1,7 +1,6 @@
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import { getPreview } from "../../lib/getPreview";
-import { getPaths } from "../../lib/getPaths";
 import {
   getCurrentLocaleStore,
   globalDrupalStateAuthStores,
@@ -26,26 +25,7 @@ export default function ArticleTemplate({ article, hrefLang, footerMenu }) {
   );
 }
 
-export async function getStaticPaths(context) {
-  try {
-    const paths = await getPaths(
-      context,
-      globalDrupalStateStores,
-      "node--article",
-      "slug",
-      "articles"
-    );
-
-    return {
-      paths,
-      fallback: false,
-    };
-  } catch (error) {
-    console.error("Failed to fetch paths for articles:", error);
-  }
-}
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const { locales, locale } = context;
   const multiLanguage = isMultiLanguage(locales);
   const lang = context.preview ? context.previewData.previewLang : locale;
@@ -69,29 +49,15 @@ export async function getStaticProps(context) {
     objectName: "node--article",
     // Prefix the slug with the current locale
     path: `${multiLanguage ? lang : ""}${slug}`,
-    query: `
-        {
-          id
-          title
-          body
-          path {
-            alias
-            langcode
-          }
-          field_media_image {
-            field_media_image {
-              uri {
-                url
-              }
-            }
-          }
-        }
-      `,
     params: context.preview ? previewParams : params,
+    refresh: true,
+    res: context.res,
   });
 
   const footerMenu = await store.getObject({
     objectName: "menu_items--main",
+    refresh: true,
+    res: context.res,
   });
 
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
@@ -105,6 +71,8 @@ export async function getStaticProps(context) {
       objectName: "node--article",
       id: article.id,
       params: context.preview ? previewParams : params,
+      refresh: true,
+      res: context.res,
     });
     return path;
   });
@@ -126,6 +94,5 @@ export async function getStaticProps(context) {
       hrefLang,
       footerMenu,
     },
-    revalidate: 60,
   };
 }

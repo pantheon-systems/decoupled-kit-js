@@ -87,14 +87,7 @@ export default function CatchAllRoute({ pageData, hrefLang, footerMenu }) {
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [],
-    fallback: "blocking",
-  };
-}
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   try {
     const {
       locale,
@@ -137,58 +130,21 @@ export async function getStaticProps(context) {
     const previewParams =
       context.preview && (await getPreview(context, resourceName, params));
 
-    // using a query to workaround jsona deserializer error
-    const queries = {
-      "node--recipe": `{
-        type
-        title
-        field_recipe_category
-        field_ingredients
-        field_recipe_instruction
-        field_media_image {
-          field_media_image {
-            uri {
-              url
-            }
-          }
-        }
-      
-      }`,
-      "node--article": `{
-        type
-        title
-        body {
-          value
-        }
-        field_media_image {
-          field_media_image {
-            uri {
-              url
-            }
-          }
-        }
-      }`,
-      "node--page": `{
-        type
-        title
-        body {
-          value
-        }
-      }`,
-    };
-
     // fetch page data
     const pageData = await store.getObject({
       objectName: resourceName,
       id: uuid,
       params: context.preview ? previewParams : params,
-      query: queries[resourceName],
+      refresh: true,
+      res: context.res,
     });
 
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
+      refresh: true,
+      res: context.res,
     });
-    return { props: { pageData, hrefLang, footerMenu }, revalidate: 60 };
+    return { props: { pageData, hrefLang, footerMenu } };
   } catch (error) {
     console.error(`There was an error while fetching data: `, error);
     return {

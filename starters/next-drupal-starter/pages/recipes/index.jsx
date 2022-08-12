@@ -41,7 +41,7 @@ export default function RecipeListTemplate({
   );
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   const { locales, locale } = context;
   const multiLanguage = isMultiLanguage(locales);
@@ -58,20 +58,16 @@ export async function getStaticProps(context) {
   try {
     const recipes = await store.getObject({
       objectName: "node--recipe",
-      query: `{
-        id
-        title
-        field_media_image
-        field_recipe_category
-        field_recipe_instruction
-        path
-      }`,
       params:
         "include=field_media_image.field_media_image,field_recipe_category",
+      refresh: true,
+      res: context.res,
     });
 
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
+      refresh: true,
+      res: context.res,
     });
 
     return {
@@ -81,13 +77,11 @@ export async function getStaticProps(context) {
         hrefLang,
         multiLanguage,
       },
-      revalidate: 60,
     };
   } catch (error) {
     console.error("Unable to fetch data for recipes: ", error);
     return {
       notFound: true,
-      revalidate: 5,
     };
   }
 }
