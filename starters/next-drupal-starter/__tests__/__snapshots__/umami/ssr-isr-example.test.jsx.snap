@@ -58,15 +58,15 @@ exports[`umami <SSGISRExampleTemplate /> > should render with umami profile arti
     <main
       class="mb-auto"
     >
-      <div
-        class="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit"
+      <header
+        class="prose text-2xl mx-auto mt-20"
       >
         <h1
-          class="prose text-4xl text-center h-full"
+          class="text-center mx-auto"
         >
           Articles
         </h1>
-      </div>
+      </header>
       <div
         class="mt-8 prose lg:prose-xl max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
       >
