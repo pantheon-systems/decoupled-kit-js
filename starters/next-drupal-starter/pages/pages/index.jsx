@@ -51,7 +51,7 @@ export default function PageListTemplate({
   );
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   const { locales, locale } = context;
   // if there is more than one language in context.locales,
@@ -69,25 +69,18 @@ export async function getStaticProps(context) {
   try {
     const pages = await store.getObject({
       objectName: "node--page",
-      query: `
-      {
-        id
-        title
-        body
-        path {
-          alias
-          langcode
-        }
-      }
-    `,
+      refresh: true,
+      res: context.res,
     });
 
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
+      refresh: true,
+      res: context.res,
     });
 
     if (!pages) {
-      return { props: { footerMenu }, revalidate: 5 };
+      return { props: { footerMenu } };
     }
 
     return {
@@ -97,13 +90,11 @@ export async function getStaticProps(context) {
         hrefLang,
         multiLanguage,
       },
-      revalidate: 60,
     };
   } catch (error) {
     console.error("Unable to fetch data for pages: ", error);
     return {
       notFound: true,
-      revalidate: 5,
     };
   }
 }

@@ -1,7 +1,6 @@
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import { getPreview } from "../../lib/getPreview";
-import { getPaths } from "../../lib/getPaths";
 import {
   getCurrentLocaleStore,
   globalDrupalStateAuthStores,
@@ -34,27 +33,7 @@ export default function PageTemplate({ page, footerMenu, hrefLang }) {
   );
 }
 
-export async function getStaticPaths(context) {
-  try {
-    const paths = await getPaths(
-      context,
-      globalDrupalStateStores,
-      "node--page",
-      "alias",
-      // basic pages are not prefixed by default
-      "pages"
-    );
-
-    return {
-      paths,
-      fallback: false,
-    };
-  } catch (error) {
-    console.error("Failed to fetch paths for pages:", error);
-  }
-}
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const { locales, locale } = context;
   const multiLanguage = isMultiLanguage(context.locales);
   const lang = context.preview ? context.previewData.previewLang : locale;
@@ -77,18 +56,9 @@ export async function getStaticProps(context) {
       objectName: "node--page",
       // note: pages are not prefixed by default.
       path: `${multiLanguage ? lang : ""}${alias}`,
-      query: `
-          {
-            id
-            title
-            body
-            path {
-              alias
-              langcode
-            }
-          }
-        `,
       params: context.preview && previewParams,
+      refresh: true,
+      res: context.res,
     });
   } catch (error) {
     // retry the fetch with `/pages` prefix
@@ -96,23 +66,16 @@ export async function getStaticProps(context) {
       objectName: "node--page",
       // note: pages are not prefixed by default.
       path: `${multiLanguage ? lang : ""}/pages${alias}`,
-      query: `
-            {
-              id
-              title
-              body
-              path {
-                alias
-                langcode
-              }
-            }
-          `,
       params: context.preview && previewParams,
+      refresh: true,
+      res: context.res,
     });
   }
 
   const footerMenu = await store.getObject({
     objectName: "menu_items--main",
+    refresh: true,
+    res: context.res,
   });
 
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
@@ -126,6 +89,8 @@ export async function getStaticProps(context) {
       objectName: "node--page",
       id: page.id,
       params: context.preview && previewParams,
+      refresh: true,
+      res: context.res,
     });
     return path;
   });
@@ -147,6 +112,5 @@ export async function getStaticProps(context) {
       footerMenu,
       hrefLang,
     },
-    revalidate: 60,
   };
 }

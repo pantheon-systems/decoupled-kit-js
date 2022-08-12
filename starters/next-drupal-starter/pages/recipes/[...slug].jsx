@@ -1,7 +1,6 @@
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import { getPreview } from "../../lib/getPreview";
-import { getPaths } from "../../lib/getPaths";
 import {
   getCurrentLocaleStore,
   globalDrupalStateAuthStores,
@@ -40,27 +39,7 @@ export default function RecipeTemplate({ recipe, footerMenu, hrefLang }) {
   );
 }
 
-export async function getStaticPaths(context) {
-  try {
-    const paths = await getPaths(
-      context,
-      globalDrupalStateStores,
-      "node--recipe",
-      "slug",
-      "recipes",
-      true // failGracefully
-    );
-
-    return {
-      paths,
-      fallback: false,
-    };
-  } catch (error) {
-    console.error("Failed to fetch paths for recipes:", error);
-  }
-}
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const { locales, locale } = context;
   const multiLanguage = isMultiLanguage(locales);
   const lang = context.preview ? context.previewData.previewLang : locale;
@@ -83,30 +62,19 @@ export async function getStaticProps(context) {
     const recipe = await store.getObjectByPath({
       objectName: "node--recipe",
       path: `${multiLanguage ? lang : ""}${slug}`,
-      query: `{
-        id
-        title
-        field_ingredients
-        field_recipe_instruction
-        field_summary
-        field_media_image
-        field_recipe_category {
-          name
-        }
-        path {
-          alias
-          langcode
-        }
-      }`,
+      refresh: true,
+      res: context.res,
       params: context.preview ? previewParams : params,
     });
 
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
+      refresh: true,
+      res: context.res,
     });
 
     if (!recipe) {
-      return { props: { footerMenu }, revalidate: 5 };
+      return { props: { footerMenu } };
     }
 
     const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
@@ -120,6 +88,8 @@ export async function getStaticProps(context) {
         objectName: "node--recipe",
         id: recipe.id,
         params: context.preview ? previewParams : params,
+        refresh: true,
+        res: context.res,
       });
       return path;
     });
@@ -141,13 +111,11 @@ export async function getStaticProps(context) {
         footerMenu,
         hrefLang,
       },
-      revalidate: 60,
     };
   } catch (error) {
     console.error("Unable to fetch data for recipe: ", error);
     return {
       notFound: true,
-      revalidate: 5,
     };
   }
 }

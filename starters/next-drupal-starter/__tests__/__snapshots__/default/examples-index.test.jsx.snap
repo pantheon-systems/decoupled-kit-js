@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`default <HomepageTemplate /> > should render with default profile articles 1`] = `
+exports[`default <ExamplesPageTemplate /> > should render 1`] = `
 <DocumentFragment>
   <div
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
@@ -59,61 +59,51 @@ exports[`default <HomepageTemplate /> > should render with default profile artic
       class="mb-auto"
     >
       <div
-        class="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit"
+        class="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen"
       >
-        <h1
-          class="prose text-4xl text-center h-full"
-        >
-          Welcome to 
-          <a
-            class="text-blue-600 no-underline hover:underline"
-            href="https://nextjs.org"
-          >
-            Next.js!
-          </a>
+        <h1>
+          Examples
         </h1>
-        <div
-          class="text-2xl"
+        <span
+          class="w-full underline cursor-pointer"
+          href="/"
         >
-          <div
-            class="bg-black text-white rounded flex items-center justify-center p-4"
-          >
-            Decoupled Drupal on 
-            <img
-              alt="Pantheon Logo"
-              src="/pantheon.png"
-              width="191"
-            />
-          </div>
+          Home →
+        </span>
+        <div
+          class="max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+        >
+          <p>
+            This page outlines a growing list of common use cases that can be used as a reference when building using this starter kit. If you don't need them for your site, feel free to delete the \`pages/examples\` directory in your codebase.
+          </p>
+          <ul>
+            <li>
+              <a
+                href="/examples/auth-api"
+              >
+                API Authorization
+              </a>
+               - confirms that Next.js is able to make authenticated requests to Drupal's API.
+            </li>
+            <li>
+              <a
+                href="/examples/ssg-isr"
+              >
+                SSG and ISR
+              </a>
+               - by default, this starter kit is optimized for SSR and Edge Caching on Pantheon. This example is provided for cases where Next.js static generation options would be beneficial.
+            </li>
+            <li>
+              <a
+                href="/examples/pagination"
+              >
+                Pagination
+              </a>
+               - a paginated list with a large dataset.
+            </li>
+          </ul>
         </div>
       </div>
-      <section>
-        <div
-          class="mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
-        >
-          <a
-            href="/articles/example-article"
-          >
-            <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
-            >
-              <div
-                class="flex-shrink-0 relative h-40"
-              >
-                <img
-                  alt="This is an Example Article"
-                  src="https://default/sites/default/files/pizza.jpg"
-                />
-              </div>
-              <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
-              >
-                This is an Example Article →
-              </h2>
-            </div>
-          </a>
-        </div>
-      </section>
     </main>
     <footer
       class="w-full text-white bg-black p-4 mt-12"

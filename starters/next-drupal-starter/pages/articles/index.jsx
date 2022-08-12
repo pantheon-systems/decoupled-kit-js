@@ -56,27 +56,15 @@ export async function getServerSideProps(context) {
 
     const articles = await store.getObject({
       objectName: "node--article",
-      query: `{
-        id
-        title
-        path {
-          alias
-          langcode
-        }
-        field_media_image {
-          field_media_image {
-            uri {
-              url
-            }
-          }
-        }
-      }`,
       res: context.res,
+      refresh: true,
       params: "include=field_media_image.field_media_image",
     });
 
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
+      res: context.res,
+      refresh: true,
     });
 
     if (!articles) {
