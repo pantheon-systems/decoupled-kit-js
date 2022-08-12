@@ -2,7 +2,6 @@ import { ServerResponse } from 'http';
 import fetch from 'isomorphic-fetch';
 
 import addSurrogateKeyHeader from '../utils/addSurrogateKeyHeader';
-import updateMaxAge from '../utils/updateMaxAge';
 /**
  * fetch data from a JSON:API endpoint, bubbling up surrogate keys if possible
  * @param apiUrl the api url for the JSON:API endpoint
@@ -20,9 +19,16 @@ const defaultFetch = (
   const headers = requestInit?.headers
     ? (requestInit.headers as Headers)
     : new Headers();
-  // If we have the response object, add the debug header.
-  if (res) {
+
+  // If we have the response object, add the debug header for fetch requests
+  // and set appropriate cache-control headers on the active response.
+  if (res && typeof res !== 'boolean') {
     headers.set('Pantheon-Debug', '1');
+    // TODO - validate correct cache control strategy
+    res.setHeader(
+      'Cache-Control',
+      'public, s-maxage=10, stale-while-revalidate=600'
+    );
   }
   // Set the updated headers for fetch.
   requestInit.headers = headers;
@@ -36,13 +42,6 @@ const defaultFetch = (
       if (res && response.headers.has('Surrogate-Key-Raw')) {
         addSurrogateKeyHeader(
           response.headers.get('Surrogate-Key-Raw'),
-          res as ServerResponse
-        );
-      }
-
-      if ((res as ServerResponse) && response.headers.has('Cache-Control')) {
-        updateMaxAge(
-          response.headers.get('Cache-Control') as string,
           res as ServerResponse
         );
       }
