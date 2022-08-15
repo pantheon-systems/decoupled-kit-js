@@ -1,0 +1,46 @@
+// Vitest Snapshot v1
+
+exports[`<Header /> > should render 'header' 1`] = `
+<DocumentFragment>
+  <div
+    class="my-0 pt-10 px-5 text-xl"
+  >
+    <nav>
+      <ul
+        class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+      >
+        <li
+          class="mr-auto"
+        >
+          <a
+            class="hover:underline"
+            href="/"
+          >
+            Home
+          </a>
+        </li>
+        <li
+          class="mx-4"
+        >
+          <a
+            class="hover:underline"
+            href="/posts"
+          >
+            Posts
+          </a>
+        </li>
+        <li
+          class="mx-4"
+        >
+          <a
+            class="hover:underline"
+            href="/pages"
+          >
+            Pages
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</DocumentFragment>
+`;
