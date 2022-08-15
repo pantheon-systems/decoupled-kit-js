@@ -7,9 +7,9 @@ interface HeaderProps {
 }
 
 /**
- * This is a test component. This is an example typedoc comment
+ * This is a Header component.
  *
- * @param {Props} props
+ * @param {Props} headers holds the title and href of each route to be displayed
  * @returns React.JSX.Element
  */
 

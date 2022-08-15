@@ -7,6 +7,13 @@ interface MenuProps {
   children: JSX.Element;
 }
 
+/**
+ * This is a Footer component.
+ *
+ * @param {Props} menuItems holds the title, href, and id of each route to be displayed
+ * @param {Props} children  copyright display and information to be passed in by the user
+ * @returns React.JSX.Element
+ */
 const Footer: React.FC<MenuProps> = ({ menuItems, children }: MenuProps) => {
   const FooterMenu = () => (
     <nav className="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg">
