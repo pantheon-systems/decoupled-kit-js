@@ -77,8 +77,10 @@ export async function getServerSideProps(context) {
       // console.log(articles[0]);
       // console.log("Sorted \n");
       // console.log(sortAlphabetical(articles, "desc")[0]);
-      articles = sortAlphabetical(articles, "desc");
+      let sortedArticles = sortAlphabetical(articles, "desc");
+      articles = sortedArticles;
     }
+    console.log(articles);
 
     return {
       props: {
