@@ -1,5 +1,5 @@
 import { getPreview } from "../lib/getPreview";
-import { globalDrupalStateAuthStores } from "../lib/drupalStateContext";
+import { globalDrupalStateAuthStores } from "../lib/stores";
 
 import umamiPreview from "./data/umamiPreview.json";
 import defaultProfilePreview from "./data/defaultProfilePreview.json";

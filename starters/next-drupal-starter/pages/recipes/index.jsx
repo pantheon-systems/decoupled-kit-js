@@ -4,7 +4,7 @@ import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
-} from "../../lib/drupalStateContext";
+} from "../../lib/stores";
 
 import { RecipeGridItem, withGrid } from "../../components/grid";
 import Layout from "../../components/layout";

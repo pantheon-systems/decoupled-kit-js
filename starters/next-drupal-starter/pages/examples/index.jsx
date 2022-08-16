@@ -5,7 +5,7 @@ import Layout from "../../components/layout";
 import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
-} from "../../lib/drupalStateContext";
+} from "../../lib/stores";
 
 export default function ExamplesPageTemplate({ footerMenu }) {
   return (

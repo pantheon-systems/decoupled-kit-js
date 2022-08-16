@@ -3,7 +3,7 @@ import { DrupalState } from "@pantheon-systems/drupal-kit";
 import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
-} from "../../../lib/drupalStateContext";
+} from "../../../lib/stores";
 
 import Paginator from "../../../components/paginator";
 import Head from "next/head";

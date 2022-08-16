@@ -1,8 +1,8 @@
-import { getCurrentLocaleStore } from "./drupalStateContext";
+import { getCurrentLocaleStore } from "./stores";
 /**
  * @description Helper function to get the current path needed for getStaticPaths
  * @param {import('next').GetStaticPathsContext} context - Nextjs getStaticPaths context
- * @param {import('@pantheon-systems/drupal-kit').DrupalState} globalDrupalStateStores - Drupal state stores from drupalStateContext.js. Can be auth'd stores or non auth'd stores.
+ * @param {import('@pantheon-systems/drupal-kit').DrupalState} globalDrupalStateStores - Drupal state stores from lib/stores.js. Can be auth'd stores or non auth'd stores.
  * @param {string} node - The node to fetch from Drupal. This will be passed to DrupalState.getObject as the objectName.
  * @param {string} dynamicRouteName - The name of the dynamic route. For example, if using getPath in /pages/articles/[slug] then dynamicRouteName would be "slug".
  * @param {string} urlAliasPrefix - The prefix of the path alias set in Drupal.

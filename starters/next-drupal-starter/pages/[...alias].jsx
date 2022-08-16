@@ -2,7 +2,7 @@ import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
   globalDrupalStateAuthStores,
-} from "../lib/drupalStateContext";
+} from "../lib/stores";
 import { getPreview } from "../lib/getPreview";
 import { translatePath } from "@pantheon-systems/drupal-kit";
 import { NextSeo } from "next-seo";
