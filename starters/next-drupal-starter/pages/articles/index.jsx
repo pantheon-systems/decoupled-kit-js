@@ -5,6 +5,7 @@ import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
 } from "../../lib/stores";
+import { sortAlphabetical } from "../../lib/sortAlphabetical.js";
 
 import { withGrid, ArticleGridItem } from "../../components/grid";
 import PageHeader from "../../components/page-header";
@@ -54,7 +55,7 @@ export async function getServerSideProps(context) {
 
     const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 
-    const articles = await store.getObject({
+    let articles = await store.getObject({
       objectName: "node--article",
       res: context.res,
       refresh: true,
@@ -71,6 +72,12 @@ export async function getServerSideProps(context) {
       throw new Error(
         "No articles returned. Make sure the objectName and params are valid!"
       );
+    } else {
+      // console.log("\n Here articles \n");
+      // console.log(articles[0]);
+      // console.log("Sorted \n");
+      // console.log(sortAlphabetical(articles, "desc")[0]);
+      articles = sortAlphabetical(articles, "desc");
     }
 
     return {
