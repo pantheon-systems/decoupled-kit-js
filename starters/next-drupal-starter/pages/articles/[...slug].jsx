@@ -5,7 +5,7 @@ import {
   getCurrentLocaleStore,
   globalDrupalStateAuthStores,
   globalDrupalStateStores,
-} from "../../lib/drupalStateContext";
+} from "../../lib/stores";
 
 import Article from "../../components/article";
 import Layout from "../../components/layout";

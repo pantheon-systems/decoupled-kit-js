@@ -1,4 +1,4 @@
-import { globalDrupalStateAuthStores } from "../../lib/drupalStateContext";
+import { globalDrupalStateAuthStores } from "../../lib/stores";
 
 const preview = async (req, res) => {
 
