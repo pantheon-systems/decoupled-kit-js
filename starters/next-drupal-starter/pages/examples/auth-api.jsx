@@ -59,12 +59,12 @@ export async function getServerSideProps(context) {
   try {
     const articles = await authStore.getObject({
       objectName: "node--article",
-      refresh: true,
+      refresh: !BUILD_MODE,
       res: context.res,
     });
     const footerMenu = await authStore.getObject({
       objectName: "menu_items--main",
-      refresh: true,
+      refresh: !BUILD_MODE,
       res: context.res,
     });
     return {

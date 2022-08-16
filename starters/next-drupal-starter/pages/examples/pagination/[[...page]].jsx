@@ -4,6 +4,7 @@ import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
 } from "../../../lib/stores";
+import { BUILD_MODE } from "../../../lib/constants";
 
 import Paginator from "../../../components/paginator";
 import Head from "next/head";
@@ -118,6 +119,7 @@ export async function getStaticProps(context) {
       }
     }`,
     all: true,
+    refresh: !BUILD_MODE,
   });
 
   const store = getCurrentLocaleStore(context.locale, globalDrupalStateStores);

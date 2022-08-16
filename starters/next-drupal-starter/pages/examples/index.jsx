@@ -6,6 +6,7 @@ import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
 } from "../../lib/stores";
+import { BUILD_MODE } from "../../lib/constants";
 
 export default function ExamplesPageTemplate({ footerMenu }) {
   return (
@@ -36,9 +37,10 @@ export default function ExamplesPageTemplate({ footerMenu }) {
               Drupal&apos;s API.
             </li>
             <li>
-              <Link href="/examples/ssg-isr">SSG and ISR</Link> - by default, this starter kit is optimized for SSR and
-              Edge Caching on Pantheon. This example is provided for cases where
-              Next.js static generation options would be beneficial.
+              <Link href="/examples/ssg-isr">SSG and ISR</Link> - by default,
+              this starter kit is optimized for SSR and Edge Caching on
+              Pantheon. This example is provided for cases where Next.js static
+              generation options would be beneficial.
             </li>
             <li>
               <Link href="/examples/pagination">Pagination</Link> - a paginated
@@ -58,6 +60,7 @@ export async function getStaticProps(context) {
   try {
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
+      refresh: !BUILD_MODE,
     });
 
     return {
@@ -70,4 +73,3 @@ export async function getStaticProps(context) {
     console.error(error);
   }
 }
-
