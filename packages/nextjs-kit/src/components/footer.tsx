@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Menu } from '../lib/interfaces';
+import { Menu } from '../index';
 
 interface MenuProps {
   menuItems: Menu[];
@@ -12,7 +12,7 @@ interface MenuProps {
  *
  * @param {Props} menuItems holds the title, href, and id of each route to be displayed
  * @param {Props} children  copyright display and information to be passed in by the user
- * @returns React.JSX.Element
+ * @returns {React.JSX.Element}
  */
 const Footer: React.FC<MenuProps> = ({ menuItems, children }: MenuProps) => {
   const FooterMenu = () => (

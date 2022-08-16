@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`<Header /> > should render 'header' 1`] = `
+exports[`<Footer /> > should render 'footer' 1`] = `
 <DocumentFragment>
   <footer
     class="w-full text-white bg-black p-4 mt-12"

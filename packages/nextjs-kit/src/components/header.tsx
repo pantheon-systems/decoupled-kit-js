@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Headers } from '../lib/interfaces';
+import { Headers } from '../index';
 
 interface HeaderProps {
   headers: Headers[];
@@ -10,7 +10,7 @@ interface HeaderProps {
  * This is a Header component.
  *
  * @param {Props} headers holds the title and href of each route to be displayed
- * @returns React.JSX.Element
+ * @returns {React.JSX.Element}
  */
 
 const Header: React.FC<HeaderProps> = ({ headers }: HeaderProps) => {

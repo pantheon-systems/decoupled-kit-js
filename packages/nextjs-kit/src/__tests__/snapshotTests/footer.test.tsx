@@ -24,8 +24,8 @@ const footerMenu = [
   },
 ];
 
-describe('<Header />', () => {
-  it("should render 'header'", () => {
+describe('<Footer />', () => {
+  it("should render 'footer'", () => {
     const { asFragment } = render(
       <Footer menuItems={footerMenu}>
         <span className="mx-auto">
