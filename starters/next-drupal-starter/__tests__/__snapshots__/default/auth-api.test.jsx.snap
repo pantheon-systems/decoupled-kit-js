@@ -74,12 +74,20 @@ exports[`default <AuthApiExampleTemplate /> > should render a failure message if
           class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
         >
           <p>
-            NextJS was unable to make an authorized request to the Drupal API. Please check your .env.development.local file to ensure that your CLIENT_ID and CLIENT_SECRET are set correctly.
+            Next.js was unable to make an authorized request to the Drupal API. Please check your .env.development.local file to ensure that your 
+            <code>
+              CLIENT_ID
+            </code>
+             and 
+            <code>
+              CLIENT_SECRET
+            </code>
+             are set correctly.
           </p>
           <p>
             For more information on how to set these values, please see 
             <a
-              href="https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next%20Drupal/setting-environment-variables.md"
+              href="https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next.js/Next.js%20%2B%20Drupal/setting-environment-variables.md"
             >
               Setting Environment Variables
             </a>
@@ -207,7 +215,7 @@ exports[`default <AuthApiExampleTemplate /> > should render a success message if
           class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
         >
           <p>
-            🎉 NextJS was able to successfully make an authenticated request to Drupal! 🎉
+            🎉 Next.js was able to successfully make an authenticated request to Drupal! 🎉
           </p>
         </div>
       </div>
