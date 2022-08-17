@@ -17,16 +17,7 @@ export default function PageListTemplate({ menuItems, page }) {
   );
 }
 
-export async function getStaticPaths() {
-  const uris = await getAllPagesUri();
-
-  return {
-    paths: uris.map((uri) => ({ params: { uri } })),
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params: { uri } }) {
+export async function getServerSideProps({ params: { uri } }) {
   const menuItems = await getFooterMenu();
   const page = await getPageByUri(uri);
 

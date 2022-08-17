@@ -49,7 +49,7 @@ export default function Home({ menuItems, posts }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const menuItems = await getFooterMenu();
   const posts = await getLatestPosts();
 
