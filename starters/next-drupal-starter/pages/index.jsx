@@ -3,7 +3,7 @@ import { isMultiLanguage } from "../lib/isMultiLanguage";
 import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
-} from "../lib/drupalStateContext";
+} from "../lib/stores";
 
 import { ArticleGridItem, withGrid } from "../components/grid";
 import Image from "next/image";
@@ -64,7 +64,7 @@ export default function HomepageTemplate({
   );
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   const { locales } = context;
   // if there is more than one language in context.locales,
@@ -85,22 +85,9 @@ export async function getStaticProps(context) {
 
     const articles = await store.getObject({
       objectName: "node--article",
-      query: `{
-        id
-        title
-        path {
-          alias
-          langcode
-        }
-        field_media_image {
-          field_media_image {
-            uri {
-              url
-            }
-          }
-        }
-      }`,
       params: "include=field_media_image.field_media_image",
+      refresh: true,
+      res: context.res,
     });
 
     if (!articles) {
@@ -111,17 +98,17 @@ export async function getStaticProps(context) {
 
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
+      refresh: true,
+      res: context.res,
     });
 
     return {
       props: { articles, hrefLang, multiLanguage, footerMenu },
-      revalidate: 60,
     };
   } catch (error) {
     console.error("Unable to fetch data for articles page: ", error);
     return {
       notFound: true,
-      revalidate: 5,
     };
   }
 }
