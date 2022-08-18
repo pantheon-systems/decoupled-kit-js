@@ -9,34 +9,36 @@ exports[`<Footer /> > should render 'footer' 1`] = `
       class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
     >
       <ul>
+        <ul>
+          <li
+            class="list-disc text-blue-300 ml-3"
+          >
+            <a
+              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="list-disc text-blue-300 ml-8"
+          >
+            <a
+              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              href="/articles"
+            >
+              Articles
+            </a>
+          </li>
+        </ul>
         <li
-          class="list-disc text-blue-300 hover:text-blue-100 ml-3"
+          class="list-disc text-blue-300 ml-3"
         >
           <a
-            class="hover:underline focus:text-purple-600  active:text-purple-300"
-            href="/posts"
+            class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+            href="/pages"
           >
-            Home
-          </a>
-        </li>
-        <li
-          class="list-disc text-blue-300 hover:text-blue-100 ml-3"
-        >
-          <a
-            class="hover:underline focus:text-purple-600  active:text-purple-300"
-            href="/posts/posts"
-          >
-            Posts
-          </a>
-        </li>
-        <li
-          class="list-disc text-blue-300 hover:text-blue-100 ml-3"
-        >
-          <a
-            class="hover:underline focus:text-purple-600  active:text-purple-300"
-            href="/posts/pages"
-          >
-            HPagesome
+            Pages
           </a>
         </li>
       </ul>

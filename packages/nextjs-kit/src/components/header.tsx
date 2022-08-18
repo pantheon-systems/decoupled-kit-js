@@ -1,33 +1,38 @@
 import React from 'react';
 import Link from 'next/link';
-import { Headers } from '../index';
+import { HeaderData } from '../types/index';
 
 interface HeaderProps {
-  headers: Headers[];
+  navItems: HeaderData[];
 }
 
 /**
  * This is a Header component.
  *
- * @param {Props} headers holds the title and href of each route to be displayed
+ * @param {HeaderProps} headers holds the title and href of each route to be displayed
  * @returns {React.JSX.Element}
  */
 
-const Header: React.FC<HeaderProps> = ({ headers }: HeaderProps) => {
+const Header: React.FC<HeaderProps> = ({
+  navItems,
+}: HeaderProps): JSX.Element => {
   return (
     <div className="my-0 pt-10 px-5 text-xl">
       <nav>
         <ul className="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto">
-          {headers.map(item => (
-            <li
-              className={`${item.href === '/' ? 'mr-auto' : 'mx-4'}`}
-              key={item.href}
-            >
-              <Link className="font-sans" href={item.href}>
-                <a className="hover:underline">{item.title}</a>
-              </Link>
-            </li>
-          ))}
+          {navItems.map(item => {
+            item.align = item.align !== undefined ? item.align : 'right';
+            return (
+              <li
+                className={`${item.align === 'right' ? 'mr-auto' : 'mx-4'}`}
+                key={item.href}
+              >
+                <Link className="font-sans" href={item.href}>
+                  <a className="hover:underline">{item.title}</a>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </div>

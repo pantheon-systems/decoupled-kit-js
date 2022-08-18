@@ -6,28 +6,28 @@ import Footer from '../../components/footer';
  * @vitest-environment jsdom
  */
 
-const footerMenu = [
+const footerMenuData = [
   {
-    label: 'Home',
-    path: '/',
-    id: 'homeTest',
+    linkText: 'Home',
+    href: '/',
+    parent: '',
   },
   {
-    label: 'Posts',
-    path: '/posts',
-    id: 'postsTest',
+    linkText: 'Articles',
+    href: '/articles',
+    parent: 'Home',
   },
   {
-    label: 'HPagesome',
-    path: '/pages',
-    id: 'homePages',
+    linkText: 'Pages',
+    href: '/pages',
+    parent: null,
   },
 ];
 
 describe('<Footer />', () => {
   it("should render 'footer'", () => {
     const { asFragment } = render(
-      <Footer menuItems={footerMenu}>
+      <Footer footerMenuItems={footerMenuData}>
         <span className="mx-auto">
           © {new Date().getFullYear()} Built with{' '}
           <a
