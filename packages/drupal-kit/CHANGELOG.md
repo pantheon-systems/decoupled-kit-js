@@ -1,5 +1,15 @@
 # @pantheon-systems/drupal-kit
 
+## 2.1.0
+
+### Minor Changes
+
+- 92d0c44: [drupal-kit] Upgrade DrupalState dependency to 3.1.0
+
+### Patch Changes
+
+- 88671a4: [drupal-kit] Added `translatePath` to drupal-kit exports
+
 ## 2.0.0
 
 ### Major Changes

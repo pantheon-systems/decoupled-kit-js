@@ -2,6 +2,7 @@ import {
   getCurrentLocaleStore,
   globalDrupalStateAuthStores,
 } from "../../lib/stores";
+import { BUILD_MODE } from "../../lib/constants";
 
 import Head from "next/head";
 import Link from "next/link";
@@ -25,19 +26,20 @@ export default function AuthApiExampleTemplate({ articles, footerMenu }) {
         <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
           {articles?.length > 0 ? (
             <p>
-              🎉 NextJS was able to successfully make an authenticated request
+              🎉 Next.js was able to successfully make an authenticated request
               to Drupal! 🎉
             </p>
           ) : (
             <>
               <p>
-                NextJS was unable to make an authorized request to the Drupal
+                Next.js was unable to make an authorized request to the Drupal
                 API. Please check your .env.development.local file to ensure
-                that your CLIENT_ID and CLIENT_SECRET are set correctly.
+                that your <code>CLIENT_ID</code> and <code>CLIENT_SECRET</code>{" "}
+                are set correctly.
               </p>
               <p>
                 For more information on how to set these values, please see{" "}
-                <a href="https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next%20Drupal/setting-environment-variables.md">
+                <a href="https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next.js/Next.js%20%2B%20Drupal/setting-environment-variables.md">
                   Setting Environment Variables
                 </a>
               </p>
@@ -50,7 +52,10 @@ export default function AuthApiExampleTemplate({ articles, footerMenu }) {
 }
 
 export async function getServerSideProps(context) {
-  const authStore = getCurrentLocaleStore(context.locale, globalDrupalStateAuthStores);
+  const authStore = getCurrentLocaleStore(
+    context.locale,
+    globalDrupalStateAuthStores
+  );
 
   if (!authStore.auth) {
     return { props: {} };
@@ -71,7 +76,7 @@ export async function getServerSideProps(context) {
       props: {
         articles,
         footerMenu,
-      }
+      },
     };
   } catch (error) {
     process.env.DEBUG_MODE &&
