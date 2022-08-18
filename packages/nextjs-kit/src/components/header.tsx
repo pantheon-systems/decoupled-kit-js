@@ -9,7 +9,7 @@ interface HeaderProps {
 /**
  * This is a Header component.
  *
- * @param {HeaderProps} headers holds the title and href of each route to be displayed
+ * @param {HeaderProps} navItems holds the title, href, and alignment of each route to be displayed
  * @returns {React.JSX.Element}
  */
 

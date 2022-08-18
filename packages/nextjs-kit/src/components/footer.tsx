@@ -10,7 +10,7 @@ interface FooterMenuProps {
 /**
  * This is a Footer component.
  *
- * @param {Props} footerMenuItems holds the title, href, and id of each route to be displayed
+ * @param {Props} footerMenuItems holds the linkText, href, and parent of each route to be displayed
  * @param {Props} children  copyright display and information to be passed in by the user
  * @returns {React.JSX.Element}
  */
