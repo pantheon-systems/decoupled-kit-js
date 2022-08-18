@@ -5,7 +5,7 @@ import { client } from "../../lib/WordpressClient";
 import { getFooterMenu } from "../../lib/Menus";
 import Layout from "../../components/layout";
 
-export default function AuthApiExampleTemplate({ menuItems, SSRPosts }) {
+export default function AuthApiExampleTemplate({ menuItems, privatePosts }) {
   return (
     <Layout footerMenu={menuItems}>
       <Head>
@@ -21,7 +21,7 @@ export default function AuthApiExampleTemplate({ menuItems, SSRPosts }) {
         </Link>
 
         <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
-          {SSRPosts?.length > 0 ? (
+          {privatePosts?.length > 0 ? (
             <p>
               🎉 Next.js was able to successfully make an authenticated request
               to Wordpress! 🎉
@@ -81,7 +81,7 @@ export async function getServerSideProps(context) {
   } = await client.request(query);
 
   const menuItems = await getFooterMenu();
-  const SSRPosts = edges.map(({ node }) => node);
+  const privatePosts = edges.map(({ node }) => node);
 
   if (process.env.DEBUG_MODE) {
     console.log(process.env.WP_APPLICATION_USERNAME);
@@ -95,7 +95,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       menuItems,
-      SSRPosts,
+      privatePosts,
     },
   };
 }
