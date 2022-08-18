@@ -3,7 +3,8 @@ import { DrupalState } from "@pantheon-systems/drupal-kit";
 import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
-} from "../../../lib/drupalStateContext";
+} from "../../../lib/stores";
+import { BUILD_MODE } from "../../../lib/constants";
 
 import Paginator from "../../../components/paginator";
 import Head from "next/head";
@@ -97,6 +98,8 @@ export async function getStaticPaths() {
   };
 }
 
+// Using getStaticProps here with ISR will have a substantial impact on
+// performance due to the large payload.
 export async function getStaticProps(context) {
   const exampleStore = new DrupalState({
     apiBase: drupalUrl,
@@ -116,6 +119,7 @@ export async function getStaticProps(context) {
       }
     }`,
     all: true,
+    refresh: !BUILD_MODE,
   });
 
   const store = getCurrentLocaleStore(context.locale, globalDrupalStateStores);

@@ -1,9 +1,6 @@
-import {
-  makeLocaleStores,
-  getCurrentLocaleStore,
-} from "../lib/drupalStateContext";
+import { makeLocaleStores, getCurrentLocaleStore } from "../lib/stores";
 
-suite("drupalStateContext Utils", () => {
+suite("stores", () => {
   describe("makeLocaleStores()", () => {
     it("should make 2 stores if there are 2 locales", () => {
       const locales = ["en", "es"];

@@ -1,5 +1,19 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.5.0
+
+### Minor Changes
+
+- 0ac5ecf: [next-wordpress-starter] Use IMAGE_DOMAIN + image url in all instances of the next/image component
+
+### Patch Changes
+
+- Updated dependencies [68a2d36]
+- Updated dependencies [960e2e8]
+- Updated dependencies [ba2a226]
+- Updated dependencies [a940098]
+  - @pantheon-systems/wordpress-kit@2.3.0
+
 ## 0.4.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`umami <HomepageTemplate /> > should render with umami profile articles 1`] = `
+exports[`umami <SSGISRExampleTemplate /> > should render with umami profile articles 1`] = `
 <DocumentFragment>
   <div
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
@@ -58,34 +58,23 @@ exports[`umami <HomepageTemplate /> > should render with umami profile articles 
     <main
       class="mb-auto"
     >
-      <div
-        class="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit"
+      <header
+        class="prose text-2xl mx-auto mt-20"
       >
         <h1
-          class="prose text-4xl text-center h-full"
+          class="text-center mx-auto"
         >
-          Welcome to 
-          <a
-            class="text-blue-600 no-underline hover:underline"
-            href="https://nextjs.org"
-          >
-            Next.js!
-          </a>
+          Articles
         </h1>
-        <div
-          class="text-2xl"
-        >
-          <div
-            class="bg-black text-white rounded flex items-center justify-center p-4"
-          >
-            Decoupled Drupal on 
-            <img
-              alt="Pantheon Logo"
-              src="/pantheon.png"
-              width="191"
-            />
-          </div>
-        </div>
+      </header>
+      <div
+        class="mt-8 prose lg:prose-xl max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+      >
+        <p>
+          <em>
+            By default, this starter kit is optimized for SSR and Edge Caching on Pantheon. This example instead uses Incremental Static Regeneration and is provided as a reference for cases where Next.js static generation options would be beneficial.
+          </em>
+        </p>
       </div>
       <section>
         <div

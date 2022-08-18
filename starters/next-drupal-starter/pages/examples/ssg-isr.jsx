@@ -1,46 +1,21 @@
 import { NextSeo } from "next-seo";
-import { isMultiLanguage } from "../lib/isMultiLanguage";
+import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
-} from "../lib/stores";
+} from "../../lib/stores";
+import { BUILD_MODE } from "../../lib/constants";
 
-import { ArticleGridItem, withGrid } from "../components/grid";
-import Image from "next/image";
-import Layout from "../components/layout";
+import { ArticleGridItem, withGrid } from "../../components/grid";
+import Layout from "../../components/layout";
+import PageHeader from "../../components/page-header";
 
-export default function HomepageTemplate({
+export default function SSGISRExampleTemplate({
   articles,
   footerMenu,
   hrefLang,
   multiLanguage,
 }) {
-  const HomepageHeader = () => (
-    <div className="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit">
-      <h1 className="prose text-4xl text-center h-full">
-        Welcome to{" "}
-        <a
-          className="text-blue-600 no-underline hover:underline"
-          href="https://nextjs.org"
-        >
-          Next.js!
-        </a>
-      </h1>
-
-      <div className="text-2xl">
-        <div className="bg-black text-white rounded flex items-center justify-center p-4">
-          Decoupled Drupal on{" "}
-          <Image
-            src="/pantheon.png"
-            alt="Pantheon Logo"
-            width={191}
-            height={60}
-          />
-        </div>
-      </div>
-    </div>
-  );
-
   const ArticleGrid = withGrid(ArticleGridItem);
 
   return (
@@ -51,7 +26,17 @@ export default function HomepageTemplate({
         languageAlternates={hrefLang || false}
       />
       <>
-        <HomepageHeader />
+        <PageHeader title="Articles" />
+        <div className="mt-8 prose lg:prose-xl max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
+          <p>
+            <em>
+              By default, this starter kit is optimized for SSR and Edge Caching
+              on Pantheon. This example instead uses Incremental Static
+              Regeneration and is provided as a reference for cases where
+              Next.js static generation options would be beneficial.
+            </em>
+          </p>
+        </div>
         <section>
           <ArticleGrid
             data={articles}
@@ -64,7 +49,7 @@ export default function HomepageTemplate({
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   const { locales } = context;
   // if there is more than one language in context.locales,
@@ -86,8 +71,7 @@ export async function getServerSideProps(context) {
     const articles = await store.getObject({
       objectName: "node--article",
       params: "include=field_media_image.field_media_image",
-      refresh: true,
-      res: context.res,
+      refresh: !BUILD_MODE,
     });
 
     if (!articles) {
@@ -98,17 +82,18 @@ export async function getServerSideProps(context) {
 
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
-      refresh: true,
-      res: context.res,
+      refresh: !BUILD_MODE,
     });
 
     return {
       props: { articles, hrefLang, multiLanguage, footerMenu },
+      revalidate: 60,
     };
   } catch (error) {
     console.error("Unable to fetch data for articles page: ", error);
     return {
       notFound: true,
+      revalidate: 5,
     };
   }
 }
