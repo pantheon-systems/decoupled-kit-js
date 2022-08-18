@@ -83,15 +83,6 @@ export async function getServerSideProps(context) {
   const menuItems = await getFooterMenu();
   const privatePosts = edges.map(({ node }) => node);
 
-  if (process.env.DEBUG_MODE) {
-    console.log(process.env.WP_APPLICATION_USERNAME);
-    console.log(
-      btoa(
-        `${process.env.WP_APPLICATION_USERNAME}:${process.env.WP_APPLICATION_PASSWORD}`
-      )
-    );
-    console.log(edges);
-  }
   return {
     props: {
       menuItems,
