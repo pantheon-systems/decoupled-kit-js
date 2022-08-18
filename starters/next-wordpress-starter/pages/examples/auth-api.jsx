@@ -24,19 +24,19 @@ export default function AuthApiExampleTemplate({ menuItems, privatePosts }) {
           {privatePosts?.length > 0 ? (
             <p>
               🎉 Next.js was able to successfully make an authenticated request
-              to Wordpress! 🎉
+              to WordPress! 🎉
             </p>
           ) : (
             <>
               <p>
                 Next.js was unable to make an authorized request to the
-                Wordpress API. Please check your .env.development.local file to
+                WordPress API. Please check your .env.development.local file to
                 ensure that your WP_APPLICATION_USERNAME and
                 WP_APPLICATION_PASSWORD are set correctly.
               </p>
               <p>
                 For more information on how to set these values, please see{" "}
-                <a href="https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next%20Wordpress/setting-environment-variables.md">
+                <a href="https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next%20WordPress/setting-environment-variables.md">
                   Setting Environment Variables
                 </a>
               </p>
@@ -62,14 +62,6 @@ export async function getServerSideProps(context) {
         edges {
           node {
             id
-            uri
-            title
-            featuredImage {
-              node {
-                altText
-                sourceUrl
-              }
-            }
           }
         }
       }
