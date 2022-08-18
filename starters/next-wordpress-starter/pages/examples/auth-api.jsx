@@ -31,8 +31,8 @@ export default function AuthApiExampleTemplate({ menuItems, privatePosts }) {
               <p>
                 Next.js was unable to make an authorized request to the
                 WordPress API. Please check your .env.development.local file to
-                ensure that your WP_APPLICATION_USERNAME and
-                WP_APPLICATION_PASSWORD are set correctly.
+                ensure that your <code>WP_APPLICATION_USERNAME</code> and
+                <code>WP_APPLICATION_PASSWORD</code> are set correctly.
               </p>
               <p>
                 For more information on how to set these values, please see{" "}
