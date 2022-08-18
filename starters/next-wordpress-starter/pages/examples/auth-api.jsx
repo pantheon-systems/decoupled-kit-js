@@ -36,7 +36,7 @@ export default function AuthApiExampleTemplate({ menuItems, privatePosts }) {
               </p>
               <p>
                 For more information on how to set these values, please see{" "}
-                <a href="https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next%20WordPress/setting-environment-variables.md">
+                <a href="https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next.js/Next.js%20%2B%20WordPress/setting-environment-variables.md">
                   Setting Environment Variables
                 </a>
               </p>
