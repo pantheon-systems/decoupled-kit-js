@@ -1,34 +1,51 @@
 const path = require("path");
 const getLocales = require("./scripts/get-locales");
-
-// Load the .env file for local development
-// .env.development.local by default
-require("dotenv").config({
-  path: path.resolve(process.cwd(), ".env.development.local"),
-});
+const fs = require("fs");
 
 let backendUrl, imageDomain;
-if (process.env.BACKEND_URL === undefined) {
-  backendUrl = `https://${process.env.PANTHEON_CMS_ENDPOINT}`;
-  imageDomain = process.env.IMAGE_DOMAIN || process.env.PANTHEON_CMS_ENDPOINT;
+try {
+  // Load the .env file for local development
+  // .env.development.local by default
+  if (!fs.existsSync(path.resolve(process.cwd(), ".env.development.local"))) {
+    throw new Error(
+      "Please set a .env.development.local file with the critical environment variables."
+    );
+  }
 
-  // populate BACKEND_URL as a fallback and for build scripts
-  process.env.BACKEND_URL = `https://${process.env.PANTHEON_CMS_ENDPOINT}`;
-} else {
-  backendUrl = process.env.BACKEND_URL;
-  imageDomain =
-    process.env.IMAGE_DOMAIN ||
-    process.env.BACKEND_URL.replace(/^https:\/\//, "");
+  require("dotenv").config({
+    path: path.resolve(process.cwd(), ".env.development.local"),
+  });
+
+  if (process.env.IMAGE_DOMAIN === undefined) {
+    throw new Error(
+      "Please set IMAGE_DOMAIN in the .env.development.local file"
+    );
+  }
+
+  if (process.env.BACKEND_URL === undefined) {
+    backendUrl = `https://${process.env.PANTHEON_CMS_ENDPOINT}`;
+    imageDomain = process.env.IMAGE_DOMAIN || process.env.PANTHEON_CMS_ENDPOINT;
+
+    // populate BACKEND_URL as a fallback and for build scripts
+    process.env.BACKEND_URL = `https://${process.env.PANTHEON_CMS_ENDPOINT}`;
+  } else {
+    backendUrl = process.env.BACKEND_URL;
+    imageDomain =
+      process.env.IMAGE_DOMAIN ||
+      process.env.BACKEND_URL.replace(/^https:\/\//, "");
+  }
+  // remove trailing slash if it exists
+  imageDomain = imageDomain.replace(/\/$/, "");
+
+  // expose FRONTEND_URL to properly set hrefLang
+  // and remove trailing slash
+  process.env.NEXT_PUBLIC_FRONTEND_URL = process.env.FRONTEND_URL
+    ? process.env.FRONTEND_URL?.replace(/\/$/, "")
+    : "";
+} catch (e) {
+  console.error(e);
+  process.exit(1);
 }
-// remove trailing slash if it exists
-imageDomain = imageDomain.replace(/\/$/, "");
-
-// expose FRONTEND_URL to properly set hrefLang
-// and remove trailing slash
-process.env.NEXT_PUBLIC_FRONTEND_URL = process.env.FRONTEND_URL
-  ? process.env.FRONTEND_URL?.replace(/\/$/, "")
-  : "";
-
 module.exports = async () => {
   const locales = await getLocales();
   const nextConfig = {

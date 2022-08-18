@@ -1,14 +1,24 @@
 const path = require("path")
-require("dotenv").config({
-  path: path.resolve(process.cwd(), ".env.local"),
-})
+const fs = require("fs")
+try {
+  if (!fs.existsSync(path.resolve(process.cwd(), ".env.development.local"))) {
+    throw new Error(
+      "Please set a .env.development.local file with critical environment variables."
+    )
+  }
 
+  require("dotenv").config({
+    path: path.resolve(process.cwd(), ".env.development.local"),
+  })
+} catch (e) {
+  console.error(e)
+  process.exit(1)
+}
 // Use URL from .env if it exists, otherwise fall back on the
 // Pantheon CMS endpoint
 const url =
   process.env.WPGRAPHQL_URL ||
   `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`
-
 /**
  * 👋 Hey there!
  * This file is the starting point for your new WordPress/Gatsby site! 🚀
