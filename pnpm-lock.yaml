@@ -204,7 +204,6 @@ importers:
   starters/next-drupal-starter:
     specifiers:
       '@pantheon-systems/drupal-kit': workspace:*
-      '@pantheon-systems/nextjs-kit': workspace:*
       '@tailwindcss/typography': ^0.5.2
       '@testing-library/react': 12.1.5
       '@vitejs/plugin-react': ^2.0.0
@@ -225,7 +224,6 @@ importers:
       vitest: ^0.18.0
     dependencies:
       '@pantheon-systems/drupal-kit': link:../../packages/drupal-kit
-      '@pantheon-systems/nextjs-kit': link:../../packages/nextjs-kit
       '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.6
       dotenv: 16.0.1
       next: 12.2.3_gdjom6r726p3grwsawiv52ijca
@@ -248,7 +246,6 @@ importers:
 
   starters/next-wordpress-starter:
     specifiers:
-      '@pantheon-systems/nextjs-kit': workspace:*
       '@pantheon-systems/wordpress-kit': workspace:*
       '@tailwindcss/typography': ^0.5.2
       autoprefixer: ^10.4.4
@@ -263,7 +260,6 @@ importers:
       sharp: ^0.30.4
       tailwindcss: ^3.0.24
     dependencies:
-      '@pantheon-systems/nextjs-kit': link:../../packages/nextjs-kit
       '@pantheon-systems/wordpress-kit': link:../../packages/wordpress-kit
       '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.6
       dotenv: 16.0.1
