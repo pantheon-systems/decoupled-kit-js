@@ -1,21 +1,24 @@
 const path = require("path")
 const fs = require("fs")
-try {
-  if (!fs.existsSync(path.resolve(process.cwd(), ".env.development.local"))) {
-    throw new Error(
-      "Please set a .env.development.local file with critical environment variables."
-    )
-  }
 
-  require("dotenv").config({
-    path: path.resolve(process.cwd(), ".env.development.local"),
-  })
-} catch (e) {
-  console.error(e)
-  process.exit(1)
-}
+require("dotenv").config({
+  path: path.resolve(process.cwd(), ".env.development.local"),
+})
+
 // Use URL from .env if it exists, otherwise fall back on the
 // Pantheon CMS endpoint
+try {
+  if (
+    process.env.BACKEND_URL === undefined &&
+    process.env.PANTHEON_CMS_ENDPOINT === undefined
+  ) {
+    throw new Error(
+      "Please set critical environment variables PANTHEON_CMS_ENDPOINT or BACKEND_URL."
+    )
+  }
+} catch (e) {
+  console.error(e)
+}
 const url =
   process.env.WPGRAPHQL_URL ||
   `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`
