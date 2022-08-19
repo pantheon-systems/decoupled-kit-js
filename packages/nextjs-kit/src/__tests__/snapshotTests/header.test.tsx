@@ -6,27 +6,24 @@ import Header from '../../components/header';
  * @vitest-environment jsdom
  */
 
-const headerData = [
+const navItems = [
   {
-    title: 'Home',
+    linkText: 'Home',
     href: '/',
-    align: 'right',
   },
   {
-    title: 'Posts',
+    linkText: 'Posts',
     href: '/posts',
-    align: 'left',
   },
   {
-    title: 'Pages',
+    linkText: 'Pages',
     href: '/pages',
-    align: 'left',
   },
 ];
 
 describe('<Header />', () => {
   it("should render 'header'", () => {
-    const { asFragment } = render(<Header navItems={headerData} />);
+    const { asFragment } = render(<Header navItems={navItems} />);
 
     expect(asFragment()).toMatchSnapshot();
   });

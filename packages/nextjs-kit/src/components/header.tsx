@@ -1,16 +1,32 @@
 import React from 'react';
 import Link from 'next/link';
-import { HeaderData } from '../types/index';
+import { LinkProps } from '../types/index';
 
 interface HeaderProps {
-  navItems: HeaderData[];
+  navItems: LinkProps[];
 }
 
 /**
- * This is a Header component.
+ * This is a Footer component.
  *
- * @param {HeaderProps} navItems holds the title, href, and alignment of each route to be displayed
- * @returns {React.JSX.Element}
+ * @param {HeaderProps} props - The props needed for the header component
+ * @param {LinkProps[]} props.navItems - An array of header menu items
+ * @example
+ * ```
+ * const navItems = [
+ * {
+ *   linkText: 'Home',
+ *   href: '/',
+ * },
+ * {
+ *   linkText: 'Posts',
+ *   href: '/posts',
+ * },
+ * ...
+ *  ]
+ * ```
+ * @param {ReactChildren} props.children
+ * @returns {JSX.Element} A footer component with a nav menu
  */
 
 const Header: React.FC<HeaderProps> = ({
@@ -21,14 +37,13 @@ const Header: React.FC<HeaderProps> = ({
       <nav>
         <ul className="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto">
           {navItems.map(item => {
-            item.align = item.align !== undefined ? item.align : 'right';
             return (
               <li
-                className={`${item.align === 'right' ? 'mr-auto' : 'mx-4'}`}
+                className={`${item.href === '/' ? 'mr-auto' : 'mx-4'}`}
                 key={item.href}
               >
                 <Link className="font-sans" href={item.href}>
-                  <a className="hover:underline">{item.title}</a>
+                  <a className="hover:underline">{item.linkText}</a>
                 </Link>
               </li>
             );

@@ -10,10 +10,29 @@ interface FooterMenuProps {
 /**
  * This is a Footer component.
  *
- * @param {Props} footerMenuItems holds the linkText, href, and parent of each route to be displayed
- * @param {Props} children  copyright display and information to be passed in by the user
- * @returns {React.JSX.Element}
+ * @param {FooterMenuProps} props - The props needed for the footer component
+ * @param {FooterMenuItem[]} props.footerMenuItems - An array of footer menu items
+ * @example
+ * ```
+ * const footerMenuItems = [
+ *  {
+ *   href: '/',
+ *   title: 'Home',
+ *  },
+ * {
+ *  href: '/articles',
+ *  title: 'Articles',
+ *  parent: 'home',
+ * },
+ * ...
+ *  ]
+ * ```
+ * @param {ReactChildren} props.children
+ * @returns {JSX.Element} A footer component with a nav menu
  */
+
+const hasParent = (item: FooterMenuItem): item is FooterMenuItem =>
+  item.parentId ? true : item.parent ? true : false;
 const Footer: React.FC<FooterMenuProps> = ({
   footerMenuItems,
   children,
@@ -23,7 +42,7 @@ const Footer: React.FC<FooterMenuProps> = ({
     if (footerMenuItems) {
       // some not so great code to account for nested menu elements
       for (let i = 0; i < footerMenuItems.length; i++) {
-        if (footerMenuItems[i + 1] && footerMenuItems[i + 1].parent) {
+        if (footerMenuItems[i + 1] && hasParent(footerMenuItems[i + 1])) {
           menuArr.push(
             <ul key={i}>
               <li className="list-disc text-blue-300 ml-3">
