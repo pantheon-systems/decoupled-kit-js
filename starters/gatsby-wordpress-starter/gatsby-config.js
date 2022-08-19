@@ -7,18 +7,16 @@ require("dotenv").config({
 
 // Use URL from .env if it exists, otherwise fall back on the
 // Pantheon CMS endpoint
-try {
-  if (
-    process.env.BACKEND_URL === undefined &&
-    process.env.PANTHEON_CMS_ENDPOINT === undefined
-  ) {
-    throw new Error(
-      "Please set critical environment variables PANTHEON_CMS_ENDPOINT or BACKEND_URL."
-    )
-  }
-} catch (e) {
-  console.error(e)
+
+if (
+  process.env.WPGRAPHQL_URL === undefined &&
+  process.env.PANTHEON_CMS_ENDPOINT === undefined
+) {
+  throw new Error(
+    "Please set critical environment variables PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL."
+  )
 }
+
 const url =
   process.env.WPGRAPHQL_URL ||
   `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`
