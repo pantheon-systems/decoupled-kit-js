@@ -10,6 +10,8 @@ import { withGrid, ArticleGridItem } from "../../components/grid";
 import PageHeader from "../../components/page-header";
 import Layout from "../../components/layout";
 
+import { sortChar } from "@pantheon-systems/nextjs-kit/sortChar";
+
 export default function SSRArticlesListTemplate({
   articles,
   footerMenu,
@@ -54,7 +56,7 @@ export async function getServerSideProps(context) {
 
     const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 
-    const articles = await store.getObject({
+    let articles = await store.getObject({
       objectName: "node--article",
       res: context.res,
       refresh: true,
@@ -71,6 +73,8 @@ export async function getServerSideProps(context) {
       throw new Error(
         "No articles returned. Make sure the objectName and params are valid!"
       );
+    } else {
+      sortChar({ data: articles, key: "title", direction: "asc" });
     }
 
     return {

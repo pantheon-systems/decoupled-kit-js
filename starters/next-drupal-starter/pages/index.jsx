@@ -1,13 +1,12 @@
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../lib/isMultiLanguage";
-import {
-  getCurrentLocaleStore,
-  globalDrupalStateStores,
-} from "../lib/stores";
+import { getCurrentLocaleStore, globalDrupalStateStores } from "../lib/stores";
 
 import { ArticleGridItem, withGrid } from "../components/grid";
 import Image from "next/image";
 import Layout from "../components/layout";
+
+import { sortChar } from "@pantheon-systems/nextjs-kit/sortChar";
 
 export default function HomepageTemplate({
   articles,
@@ -94,6 +93,8 @@ export async function getServerSideProps(context) {
       throw new Error(
         "No articles returned. Make sure the objectName and params are valid!"
       );
+    } else {
+      sortChar({ data: articles, key: "title", direction: "asc" });
     }
 
     const footerMenu = await store.getObject({
