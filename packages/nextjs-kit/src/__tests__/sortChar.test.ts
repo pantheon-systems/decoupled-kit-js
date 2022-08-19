@@ -1,4 +1,5 @@
 import { sortChar } from '../lib/sortChar';
+
 const unsortedNum = [
   {
     num: 100,
@@ -66,17 +67,26 @@ const descChar = [
     char: 'AAA',
   },
 ];
+
 describe('sortChar()', () => {
   it('should return the unsorted numbers in a sorted ascending order', () => {
-    expect(sortChar(unsortedNum, 'num', 'ascending')).toEqual(sortedAsc);
+    expect(
+      sortChar({ data: unsortedNum, key: 'num', direction: 'ASC' })
+    ).toEqual(sortedAsc);
   });
   it('should return the unsorted numbers in a sorted descending order', () => {
-    expect(sortChar(unsortedNum, 'num', 'descending')).toEqual(sortedDesc);
+    expect(
+      sortChar({ data: unsortedNum, key: 'num', direction: 'DESC' })
+    ).toEqual(sortedDesc);
   });
   it('should return the unsorted characters in an alphabetical ascending order', () => {
-    expect(sortChar(unsortedChar, 'char', 'ascending')).toEqual(ascChar);
+    expect(
+      sortChar({ data: unsortedChar, key: 'char', direction: 'asc' })
+    ).toEqual(ascChar);
   });
   it('should return the unsorted numbers in an alphabetical descending order', () => {
-    expect(sortChar(unsortedChar, 'char', 'descending')).toEqual(descChar);
+    expect(
+      sortChar({ data: unsortedChar, key: 'char', direction: 'desc' })
+    ).toEqual(descChar);
   });
 });

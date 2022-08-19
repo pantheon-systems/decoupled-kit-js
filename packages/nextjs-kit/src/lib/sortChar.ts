@@ -1,3 +1,5 @@
+import { DataToSort, ASC, DESC } from '../types';
+
 /**
  *
  * @param {Array<Record<string, string | number>>} obj object to sort
@@ -11,20 +13,29 @@
  * There is a named and default export so that we can
  * support submodules for the ESModule build and a single entrypoint for the UMD build
  */
-export const sortChar = (
-  obj: Array<Record<string, string | number>>,
-  key: string,
-  direction: string
-) => {
-  if (direction === 'ascending') {
-    obj.sort((a, b) => (a[key] < b[key] ? -1 : a[key] > b[key] ? 1 : 0));
+
+export const sortChar = (sortObj: DataToSort) => {
+  if (Object.values(ASC).includes(sortObj.direction as ASC)) {
+    sortObj.data.sort((a, b) =>
+      a[sortObj.key] < b[sortObj.key]
+        ? -1
+        : a[sortObj.key] > b[sortObj.key]
+        ? 1
+        : 0
+    );
   }
 
-  if (direction === 'descending') {
-    obj.sort((a, b) => (a[key] > b[key] ? -1 : a[key] < b[key] ? 1 : 0));
+  if (Object.values(DESC).includes(sortObj.direction as DESC)) {
+    sortObj.data.sort((a, b) =>
+      a[sortObj.key] > b[sortObj.key]
+        ? -1
+        : a[sortObj.key] < b[sortObj.key]
+        ? 1
+        : 0
+    );
   }
 
-  return obj;
+  return sortObj.data;
 };
 
 export default sortChar;

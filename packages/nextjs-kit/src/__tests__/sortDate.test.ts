@@ -44,11 +44,15 @@ const sortedDesc = [
   },
 ];
 
-describe('sortChar()', () => {
+describe('sortDate()', () => {
   it('should return the unsorted numbers in a sorted ascending order', () => {
-    expect(sortDate(unsortedDates, 'date', 'ascending')).toEqual(sortedAsc);
+    expect(
+      sortDate({ data: unsortedDates, key: 'date', direction: 'ASC' })
+    ).toEqual(sortedAsc);
   });
   it('should return the unsorted numbers in a sorted descending order', () => {
-    expect(sortDate(unsortedDates, 'date', 'descending')).toEqual(sortedDesc);
+    expect(
+      sortDate({ data: unsortedDates, key: 'date', direction: 'DESC' })
+    ).toEqual(sortedDesc);
   });
 });
