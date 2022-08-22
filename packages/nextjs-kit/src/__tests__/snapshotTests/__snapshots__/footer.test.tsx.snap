@@ -11,7 +11,7 @@ exports[`<Footer /> > should render 'footer' 1`] = `
       <ul>
         <ul>
           <li
-            class="list-disc text-blue-300 ml-3"
+            class="list-disc text-blue-300"
           >
             <a
               class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
@@ -21,7 +21,7 @@ exports[`<Footer /> > should render 'footer' 1`] = `
             </a>
           </li>
           <li
-            class="list-disc text-blue-300 ml-8"
+            class="list-disc text-blue-300 ml-3"
           >
             <a
               class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
@@ -32,7 +32,7 @@ exports[`<Footer /> > should render 'footer' 1`] = `
           </li>
         </ul>
         <li
-          class="list-disc text-blue-300 ml-3"
+          class="list-disc text-blue-300"
         >
           <a
             class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"

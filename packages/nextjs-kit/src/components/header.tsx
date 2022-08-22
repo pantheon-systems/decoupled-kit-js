@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { LinkProps } from '../types/index';
+import { LinkProps } from '../types';
 
 interface HeaderProps {
   navItems: LinkProps[];
@@ -25,8 +25,8 @@ interface HeaderProps {
  * ...
  *  ]
  * ```
- * @param {ReactChildren} props.children
- * @returns {JSX.Element} A footer component with a nav menu
+ * @param {React.ReactChildren} props.children - an instance of React.ReactChildren
+ * @returns {JSX.Element} A header component with a nav menu
  */
 
 const Header: React.FC<HeaderProps> = ({

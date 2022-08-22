@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { FooterMenuItem } from '../types/index';
+import { FooterMenuItem, hasParent } from '../types';
 
 interface FooterMenuProps {
   footerMenuItems: FooterMenuItem[];
@@ -27,12 +27,9 @@ interface FooterMenuProps {
  * ...
  *  ]
  * ```
- * @param {ReactChildren} props.children
+ * @param {React.ReactChild} props.children - an instance of React.ReactChild
  * @returns {JSX.Element} A footer component with a nav menu
  */
-
-const hasParent = (item: FooterMenuItem): item is FooterMenuItem =>
-  item.parentId ? true : item.parent ? true : false;
 const Footer: React.FC<FooterMenuProps> = ({
   footerMenuItems,
   children,
@@ -45,14 +42,14 @@ const Footer: React.FC<FooterMenuProps> = ({
         if (footerMenuItems[i + 1] && hasParent(footerMenuItems[i + 1])) {
           menuArr.push(
             <ul key={i}>
-              <li className="list-disc text-blue-300 ml-3">
+              <li className="list-disc text-blue-300">
                 <Link href={footerMenuItems[i].href}>
                   <a className="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300">
                     {footerMenuItems[i].linkText}
                   </a>
                 </Link>
               </li>
-              <li className="list-disc text-blue-300 ml-8">
+              <li className="list-disc text-blue-300 ml-3">
                 <Link href={footerMenuItems[i + 1].href}>
                   <a className="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300">
                     {footerMenuItems[i + 1].linkText}
@@ -65,7 +62,7 @@ const Footer: React.FC<FooterMenuProps> = ({
           i++;
         } else {
           menuArr.push(
-            <li key={i} className="list-disc text-blue-300 ml-3">
+            <li key={i} className="list-disc text-blue-300">
               <Link href={footerMenuItems[i].href}>
                 <a className="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300">
                   {footerMenuItems[i].linkText}
