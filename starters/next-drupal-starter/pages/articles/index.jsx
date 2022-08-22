@@ -13,7 +13,7 @@ import Layout from "../../components/layout";
 import { sortChar } from "@pantheon-systems/nextjs-kit/sortChar";
 
 export default function SSRArticlesListTemplate({
-  articles,
+  sortedArticles,
   footerMenu,
   hrefLang,
   multiLanguage,
@@ -30,7 +30,7 @@ export default function SSRArticlesListTemplate({
       <PageHeader title="Articles" />
       <section>
         <ArticleGrid
-          data={articles}
+          data={sortedArticles}
           contentType="articles"
           multiLanguage={multiLanguage}
           locale={locale}
@@ -56,7 +56,7 @@ export async function getServerSideProps(context) {
 
     const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 
-    let articles = await store.getObject({
+    const articles = await store.getObject({
       objectName: "node--article",
       res: context.res,
       refresh: true,
@@ -69,17 +69,21 @@ export async function getServerSideProps(context) {
       refresh: true,
     });
 
+    const sortedArticles = sortChar({
+      data: articles,
+      key: "title",
+      direction: "asc",
+    });
+
     if (!articles) {
       throw new Error(
         "No articles returned. Make sure the objectName and params are valid!"
       );
-    } else {
-      sortChar({ data: articles, key: "title", direction: "asc" });
     }
 
     return {
       props: {
-        articles,
+        sortedArticles,
         hrefLang,
         multiLanguage,
         footerMenu,

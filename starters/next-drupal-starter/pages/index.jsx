@@ -9,7 +9,7 @@ import Layout from "../components/layout";
 import { sortChar } from "@pantheon-systems/nextjs-kit/sortChar";
 
 export default function HomepageTemplate({
-  articles,
+  sortedArticles,
   footerMenu,
   hrefLang,
   multiLanguage,
@@ -53,7 +53,7 @@ export default function HomepageTemplate({
         <HomepageHeader />
         <section>
           <ArticleGrid
-            data={articles}
+            data={sortedArticles}
             contentType="articles"
             multiLanguage={multiLanguage}
           />
@@ -89,12 +89,16 @@ export async function getServerSideProps(context) {
       res: context.res,
     });
 
+    const sortedArticles = sortChar({
+      data: articles,
+      key: "title",
+      direction: "asc",
+    });
+
     if (!articles) {
       throw new Error(
         "No articles returned. Make sure the objectName and params are valid!"
       );
-    } else {
-      sortChar({ data: articles, key: "title", direction: "asc" });
     }
 
     const footerMenu = await store.getObject({
@@ -104,7 +108,7 @@ export async function getServerSideProps(context) {
     });
 
     return {
-      props: { articles, hrefLang, multiLanguage, footerMenu },
+      props: { sortedArticles, hrefLang, multiLanguage, footerMenu },
     };
   } catch (error) {
     console.error("Unable to fetch data for articles page: ", error);
