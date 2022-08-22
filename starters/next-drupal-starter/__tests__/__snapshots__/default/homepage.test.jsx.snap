@@ -88,31 +88,11 @@ exports[`default <HomepageTemplate /> > should render with default profile artic
         </div>
       </div>
       <section>
-        <div
-          class="mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+        <h2
+          class="text-xl text-center mt-14"
         >
-          <a
-            href="/articles/example-article"
-          >
-            <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
-            >
-              <div
-                class="flex-shrink-0 relative h-40"
-              >
-                <img
-                  alt="This is an Example Article"
-                  src="https://default/sites/default/files/pizza.jpg"
-                />
-              </div>
-              <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
-              >
-                This is an Example Article →
-              </h2>
-            </div>
-          </a>
-        </div>
+          No articles found 🏜
+        </h2>
       </section>
     </main>
     <footer
