@@ -1,6 +1,6 @@
 const path = require("path")
 require("dotenv").config({
-  path: path.resolve(process.cwd(), ".env.local"),
+  path: path.resolve(process.cwd(), ".env.development.local"),
 })
 
 // Use URL from .env if it exists, otherwise fall back on the
