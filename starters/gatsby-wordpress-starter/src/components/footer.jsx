@@ -21,34 +21,44 @@ const Footer = () => {
     }
   `)
 
-  return (
-    <div className="mt-auto m-w-screen">
-      <footer className="text-white rounded-t sticky bottom-0 bg-black p-4 mt-4">
-        <nav className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {nodes.map(({ id, label, path }, i) => {
-            return (
+  const FooterMenu = () => (
+    <nav className="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg">
+      <ul>
+        {nodes.map(({ id, label, path }, i) => {
+          return (
+            <li
+              key={id + i}
+              className="ml-3 list-disc text-blue-300 hover:text-blue-100"
+            >
               <Link
-                key={id + i}
-                className="text-blue-300 hover:text-blue-100 focus:text-purple-600 active:text-purple-300 mx-2 p-3"
+                className="text-blue-300 hover:text-blue-100 focus:text-purple-600 active:text-purple-300 "
                 to={`${path}`}
               >
-                ↪ {label}
+                {label}
               </Link>
-            )
-          })}
-        </nav>
-        <div className="flex mt-4 p-2">
+            </li>
+          )
+        })}
+      </ul>
+    </nav>
+  )
+
+  return (
+    <div className="mt-auto m-w-screen">
+      <footer className="text-white rounded-t sticky bottom-0 bg-black p-4 mt-12">
+        <FooterMenu />
+        <div className="flex my-4 p-2">
           <span className="mx-auto">
             © {new Date().getFullYear()} Built with{" "}
             <a
-              className="text-purple-300 hover:text-blue-100"
+              className="text-purple-300 underline hover:text-blue-100"
               href="https://www.gatsbyjs.com"
             >
               Gatsby
             </a>{" "}
             and{" "}
             <a
-              className="text-blue-200 hover:text-blue-100"
+              className="text-blue-200 underline hover:text-blue-100"
               href="https://wordpress.org/"
             >
               WordPress
