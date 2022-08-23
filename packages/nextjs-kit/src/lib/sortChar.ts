@@ -1,14 +1,12 @@
 import { DataToSort } from '../types';
 
 /**
+ * Sorts any character object on a specific key in a direction of the users choice.
  *
- * @param {DataToSort['data']} sortObj.data - The data sort
- * @param {DataToSort['key']} sortObj.key - Key to sort object by
- * @param  {DataToSort['direction']} sortObj.direction - Direction to sort the data
- * @returns {Record<string, string | number>[]} An array of data sorted by the given key and direction
- * @remarks
- * This is a function to sort any character object on a specific key in a direction of the users choice.
- *
+ * @param sortObj.data - The data sort
+ * @param sortObj.key - Key to sort object by
+ * @param sortObj.direction - Direction to sort the data
+ * @returns An array of data sorted by the given key and direction
  */
 
 export const sortChar = (sortObj: DataToSort) => {
