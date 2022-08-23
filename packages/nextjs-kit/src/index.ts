@@ -1,6 +1,7 @@
 // entrypoint for the umd rollup build - note the default exports
-import testLib from './lib/testLib';
 import Header from './components/header';
 import Footer from './components/footer';
+import sortChar from './lib/sortChar';
+import sortDate from './lib/sortDate';
 
-export default { Header, Footer, testLib };
+export default { Header, Footer, sortChar, sortDate };

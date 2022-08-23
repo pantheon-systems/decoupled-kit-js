@@ -9,11 +9,12 @@ import {
 import { RecipeGridItem, withGrid } from "../../components/grid";
 import Layout from "../../components/layout";
 import PageHeader from "../../components/page-header";
+import { sortDate } from "@pantheon-systems/nextjs-kit/sortDate";
 
 // This file can safely be removed if the Drupal
 // instance is not sourcing Umami data
 export default function RecipeListTemplate({
-  recipes,
+  sortedRecipes,
   footerMenu,
   hrefLang,
   multiLanguage,
@@ -31,7 +32,7 @@ export default function RecipeListTemplate({
       <PageHeader title="Recipes" />
       <section>
         <RecipeGrid
-          data={recipes}
+          data={sortedRecipes}
           contentType="recipes"
           multiLanguage={multiLanguage}
           locale={locale}
@@ -70,9 +71,21 @@ export async function getServerSideProps(context) {
       res: context.res,
     });
 
+    if (!recipes) {
+      throw new Error(
+        "No recipes returned. Make sure the objectName and params are valid!"
+      );
+    }
+
+    const sortedRecipes = sortDate({
+      data: recipes,
+      key: "created",
+      direction: "desc",
+    });
+
     return {
       props: {
-        recipes,
+        sortedRecipes,
         footerMenu,
         hrefLang,
         multiLanguage,

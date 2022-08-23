@@ -1,3 +1,8 @@
+export interface DataToSort {
+  data: Record<string, string | number>[];
+  key: string;
+  direction: 'asc' | 'ASC' | 'desc' | 'DESC';
+}
 export interface LinkProps {
   linkText: string;
   href: string;
