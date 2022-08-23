@@ -296,11 +296,178 @@ exports[`umami <SSRArticlesListTemplate /> > should render with umami profile ar
         </h1>
       </header>
       <section>
-        <h2
-          class="text-xl text-center mt-14"
+        <div
+          class="mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
         >
-          No articles found 🏜
-        </h2>
+          <a
+            href="/articles/give-it-a-go-and-grow-your-own-herbs"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Give it a go and grow your own herbs"
+                  src="https://umami/sites/default/files/home-grown-herbs.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Give it a go and grow your own herbs →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/the-real-deal-for-supermarket-savvy-shopping"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="The real deal for supermarket savvy shopping"
+                  src="https://umami/sites/default/files/supermarket-savvy-umami.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                The real deal for supermarket savvy shopping →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/baking-mishaps-our-troubleshooting-tips"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Baking mishaps - our troubleshooting tips"
+                  src="https://umami/sites/default/files/chocolate-brownie-umami.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Baking mishaps - our troubleshooting tips →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/skip-the-spirits-with-delicious-mocktails"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Skip the spirits with delicious mocktails"
+                  src="https://umami/sites/default/files/mojito-mocktail.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Skip the spirits with delicious mocktails →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/give-your-oatmeal-the-ultimate-makeover"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Give your oatmeal the ultimate makeover"
+                  src="https://umami/sites/default/files/oatmeal-fruit-syrup-topping.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Give your oatmeal the ultimate makeover →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/the-umami-guide-to-our-favourite-mushrooms"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="The Umami guide to our favorite mushrooms"
+                  src="https://umami/sites/default/files/mushrooms-umami.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                The Umami guide to our favorite mushrooms →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/lets-hear-it-for-carrots"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Let's hear it for carrots "
+                  src="https://umami/sites/default/files/heritage-carrots.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Let's hear it for carrots  →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/dairy-free-and-delicious-milk-chocolate"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Dairy-free and delicious milk chocolate"
+                  src="https://umami/sites/default/files/vegan-chocolate.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Dairy-free and delicious milk chocolate →
+              </h2>
+            </div>
+          </a>
+        </div>
       </section>
     </main>
     <footer
