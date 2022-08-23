@@ -89,17 +89,17 @@ export async function getServerSideProps(context) {
       res: context.res,
     });
 
-    const sortedArticles = sortChar({
-      data: articles,
-      key: "title",
-      direction: "asc",
-    });
-
     if (!articles) {
       throw new Error(
         "No articles returned. Make sure the objectName and params are valid!"
       );
     }
+
+    const sortedArticles = sortChar({
+      data: articles,
+      key: "title",
+      direction: "asc",
+    });
 
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",

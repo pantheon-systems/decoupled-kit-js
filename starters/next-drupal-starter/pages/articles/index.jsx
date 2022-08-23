@@ -69,17 +69,17 @@ export async function getServerSideProps(context) {
       refresh: true,
     });
 
-    const sortedArticles = sortChar({
-      data: articles,
-      key: "title",
-      direction: "asc",
-    });
-
     if (!articles) {
       throw new Error(
         "No articles returned. Make sure the objectName and params are valid!"
       );
     }
+
+    const sortedArticles = sortChar({
+      data: articles,
+      key: "title",
+      direction: "asc",
+    });
 
     return {
       props: {
