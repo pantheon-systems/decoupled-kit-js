@@ -6,7 +6,7 @@ import { ArticleGridItem, withGrid } from "../components/grid";
 import Image from "next/image";
 import Layout from "../components/layout";
 
-import { sortChar } from "@pantheon-systems/nextjs-kit/sortChar";
+import { sortDate } from "@pantheon-systems/nextjs-kit/sortDate";
 
 export default function HomepageTemplate({
   sortedArticles,
@@ -95,9 +95,9 @@ export async function getServerSideProps(context) {
       );
     }
 
-    const sortedArticles = sortChar({
+    const sortedArticles = sortDate({
       data: articles,
-      key: "title",
+      key: "changed",
       direction: "asc",
     });
 
