@@ -98,7 +98,7 @@ export async function getServerSideProps(context) {
     const sortedArticles = sortDate({
       data: articles,
       key: "changed",
-      direction: "asc",
+      direction: "desc",
     });
 
     const footerMenu = await store.getObject({

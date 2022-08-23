@@ -45,12 +45,12 @@ const sortedDesc = [
 ];
 
 describe('sortDate()', () => {
-  it('should return the unsorted numbers in a sorted ascending order', () => {
+  it('should return the unsorted dates in a sorted ascending order', () => {
     expect(
       sortDate({ data: unsortedDates, key: 'date', direction: 'ASC' })
     ).toEqual(sortedAsc);
   });
-  it('should return the unsorted numbers in a sorted descending order', () => {
+  it('should return the unsorted dates in a sorted descending order', () => {
     expect(
       sortDate({ data: unsortedDates, key: 'date', direction: 'DESC' })
     ).toEqual(sortedDesc);

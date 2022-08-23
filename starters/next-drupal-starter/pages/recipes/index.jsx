@@ -79,8 +79,8 @@ export async function getServerSideProps(context) {
 
     const sortedRecipes = sortDate({
       data: recipes,
-      key: "changed",
-      direction: "asc",
+      key: "created",
+      direction: "desc",
     });
 
     return {
