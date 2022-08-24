@@ -33,10 +33,12 @@ sidebar_position: 2
     terminus site:create my-new-site "Describe Site" empty --org='My Team Name' c76c0e51-ad85-41d7-b095-a98a75869760
     ```
 
-  **Note:**
+  :::note
 
   - Replace `'{My Team Name}'` with your team name - for example `My Agency`. This can also be omitted.
   - `c76c0e51-ad85-41d7-b095-a98a75869760` is upstream_id for Decoupled Drupal Composer Managed.
+
+  :::
 
 ## Install Drupal:
 
@@ -71,7 +73,7 @@ Visit the Site by clicking on the **Visit Development Site** button to Install v
 ```
 terminus build:project:create \
   --team='{My Team Name}' \
-  --template-repository="git@github.com:pantheon-systems/decoupled-drupal-composer-managed.git" pantheon-upstreams/decoupled-drupal-composer-managed \
+  --template-repository="git@github.com:pantheon-upstreams/decoupled-drupal-composer-managed.git" pantheon-upstreams/decoupled-drupal-composer-managed \
   --visibility private {PROJECT_NAME} \
   --profile="pantheon_decoupled_profile" \
   --stability=dev
