@@ -6,8 +6,15 @@ const globals = {
   'react-dom': 'reactDom',
   'react/jsx-runtime': 'reactJsxRuntime',
   next: 'next',
+  'next/link': 'Link',
 };
-const external = ['react', 'react-dom', 'react/jsx-runtime', 'next'];
+const external = [
+  'react',
+  'react-dom',
+  'react/jsx-runtime',
+  'next',
+  'next/link',
+];
 
 export default [
   {

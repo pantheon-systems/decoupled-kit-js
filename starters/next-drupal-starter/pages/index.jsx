@@ -1,16 +1,15 @@
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../lib/isMultiLanguage";
-import {
-  getCurrentLocaleStore,
-  globalDrupalStateStores,
-} from "../lib/stores";
+import { getCurrentLocaleStore, globalDrupalStateStores } from "../lib/stores";
 
 import { ArticleGridItem, withGrid } from "../components/grid";
 import Image from "next/image";
 import Layout from "../components/layout";
 
+import { sortDate } from "@pantheon-systems/nextjs-kit/sortDate";
+
 export default function HomepageTemplate({
-  articles,
+  sortedArticles,
   footerMenu,
   hrefLang,
   multiLanguage,
@@ -54,7 +53,7 @@ export default function HomepageTemplate({
         <HomepageHeader />
         <section>
           <ArticleGrid
-            data={articles}
+            data={sortedArticles}
             contentType="articles"
             multiLanguage={multiLanguage}
           />
@@ -96,6 +95,12 @@ export async function getServerSideProps(context) {
       );
     }
 
+    const sortedArticles = sortDate({
+      data: articles,
+      key: "changed",
+      direction: "desc",
+    });
+
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
       refresh: true,
@@ -103,7 +108,7 @@ export async function getServerSideProps(context) {
     });
 
     return {
-      props: { articles, hrefLang, multiLanguage, footerMenu },
+      props: { sortedArticles, hrefLang, multiLanguage, footerMenu },
     };
   } catch (error) {
     console.error("Unable to fetch data for articles page: ", error);

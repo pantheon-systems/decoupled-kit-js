@@ -10,8 +10,10 @@ import { withGrid, ArticleGridItem } from "../../components/grid";
 import PageHeader from "../../components/page-header";
 import Layout from "../../components/layout";
 
+import { sortDate } from "@pantheon-systems/nextjs-kit/sortDate";
+
 export default function SSRArticlesListTemplate({
-  articles,
+  sortedArticles,
   footerMenu,
   hrefLang,
   multiLanguage,
@@ -28,7 +30,7 @@ export default function SSRArticlesListTemplate({
       <PageHeader title="Articles" />
       <section>
         <ArticleGrid
-          data={articles}
+          data={sortedArticles}
           contentType="articles"
           multiLanguage={multiLanguage}
           locale={locale}
@@ -73,9 +75,15 @@ export async function getServerSideProps(context) {
       );
     }
 
+    const sortedArticles = sortDate({
+      data: articles,
+      key: "changed",
+      direction: "desc",
+    });
+
     return {
       props: {
-        articles,
+        sortedArticles,
         hrefLang,
         multiLanguage,
         footerMenu,
