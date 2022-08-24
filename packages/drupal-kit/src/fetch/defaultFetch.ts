@@ -11,7 +11,7 @@ const defaultCacheControlValue =
  * @param apiUrl the api url for the JSON:API endpoint
  * @param requestInit fetch initialization object
  * @param res response object
- * @param cacheControlHeader optional value to override cache control header
+ * @param cacheControl optional value to override cache control header, defaults to 'public, s-maxage=10, stale-while-revalidate=600'
  * @returns a promise containing the data for the JSON:API response
  */
 const defaultFetch = (
