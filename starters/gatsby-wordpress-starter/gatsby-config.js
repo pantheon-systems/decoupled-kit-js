@@ -9,14 +9,6 @@ const url =
   process.env.WPGRAPHQL_URL ||
   `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`
 
-/**
- * 👋 Hey there!
- * This file is the starting point for your new WordPress/Gatsby site! 🚀
- * For more information about what this file is and does, see
- * https://www.gatsbyjs.com/docs/gatsby-config/
- *
- */
-
 module.exports = {
   /**
    * Adding plugins to this array adds them to your Gatsby site.

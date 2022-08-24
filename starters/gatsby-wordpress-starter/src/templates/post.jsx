@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-// We're using Gutenberg so we need the block styles
+
+// We're using Gutenberg so  we need the block styles
 // these are copied into this project due to a conflict in the postCSS
 // version used by the Gatsby and @wordpress packages that causes build
 // failures.
@@ -10,32 +11,30 @@ import "../css/@wordpress/block-library/build-style/theme.css"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Page from "../components/page"
+import Post from "../components/post"
 
-const PageTemplate = ({ data: { page }, pageContext: { next, previous } }) => {
-  /**
-   * serverData is fetched on the server by the query executed inside getServerData()
-   * @apollo/client is used to query the WPGraphQL layer directly.
-   */
-
+const PostTemplate = ({ data: { previous, next, post } }) => {
   return (
     <Layout>
-      {/* Todo - add truncated content as description */}
-      <Seo title={page.title} />
-      <Page page={page} next={next} previous={previous} />
+      <Seo title={post.title} description={post.excerpt} />
+      <Post post={post} next={next} previous={previous} />
     </Layout>
   )
 }
 
-export default PageTemplate
+export default PostTemplate
 
 export const pageQuery = graphql`
-  query PageById(
+  query PostById(
     # these variables are passed in via createPage.pageContext in gatsby-node.js
     $id: String!
+    $previousPostId: String
+    $nextPostId: String
   ) {
-    page: wpPage(id: { eq: $id }) {
+    # selecting the current post by id
+    post: wpPost(id: { eq: $id }) {
       id
+      excerpt
       content
       title
       date(formatString: "MMMM DD, YYYY")
@@ -53,6 +52,16 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+    # this gets us the previous post by id (if it exists)
+    previous: wpPost(id: { eq: $previousPostId }) {
+      uri
+      title
+    }
+    # this gets us the next post by id (if it exists)
+    next: wpPost(id: { eq: $nextPostId }) {
+      uri
+      title
     }
   }
 `

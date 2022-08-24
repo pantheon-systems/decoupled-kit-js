@@ -44,29 +44,27 @@ const Footer = () => {
   )
 
   return (
-    <div className="mt-auto m-w-screen">
-      <footer className="text-white rounded-t sticky bottom-0 bg-black p-4 mt-12">
-        <FooterMenu />
-        <div className="flex my-4 p-2">
-          <span className="mx-auto">
-            © {new Date().getFullYear()} Built with{" "}
-            <a
-              className="text-purple-300 underline hover:text-blue-100"
-              href="https://www.gatsbyjs.com"
-            >
-              Gatsby
-            </a>{" "}
-            and{" "}
-            <a
-              className="text-blue-200 underline hover:text-blue-100"
-              href="https://wordpress.org/"
-            >
-              WordPress
-            </a>
-          </span>
-        </div>
-      </footer>
-    </div>
+    <footer className="w-full text-white bg-black p-4 mt-12">
+      <FooterMenu />
+      <div className="flex my-4 p-2">
+        <span className="mx-auto">
+          © {new Date().getFullYear()} Built with{" "}
+          <a
+            className="text-purple-300 underline hover:text-blue-100"
+            href="https://www.gatsbyjs.com"
+          >
+            Gatsby
+          </a>{" "}
+          and{" "}
+          <a
+            className="text-blue-200 underline hover:text-blue-100"
+            href="https://wordpress.org/"
+          >
+            WordPress
+          </a>
+        </span>
+      </div>
+    </footer>
   )
 }
 
