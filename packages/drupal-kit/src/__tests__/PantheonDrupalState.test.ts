@@ -21,6 +21,13 @@ const mockCustomOnError = jest.fn((err: Error) => {
   console.error(err.message);
 });
 
+const mockResponse: any = () => {
+  const res = {
+    setHeader: jest.fn(),
+  };
+  return res;
+};
+
 describe('drupalState', () => {
   beforeEach(() => {
     fetchMock.mockClear();
@@ -237,5 +244,34 @@ describe('drupalState', () => {
     } catch (error) {
       expect(mockCustomOnError).toBeCalledTimes(1);
     }
+  });
+
+  test('Confirm that cache control header is set if response object is provided', async () => {
+    const store: DrupalState = new DrupalState({
+      apiBase: 'https://live-contentacms.pantheonsite.io',
+      apiPrefix: 'api',
+      debug: true,
+    });
+    const res = mockResponse();
+    store.setState({ dsApiIndex: indexResponse.links });
+    fetchMock.mock(
+      'https://live-contentacms.pantheonsite.io/api/recipes/a542e833-edfe-44a3-a6f1-7358b115af4b',
+      {
+        status: 200,
+        body: recipesResourceData1,
+      }
+    );
+    expect(
+      await store.getObject({
+        objectName: 'recipes',
+        id: 'a542e833-edfe-44a3-a6f1-7358b115af4b',
+        res: res,
+      })
+    ).toEqual(recipesResourceObject1);
+    expect(fetchMock).toBeCalledTimes(1);
+    expect(res.setHeader.mock.calls[0][0]).toBe('Cache-Control');
+    expect(res.setHeader.mock.calls[0][1]).toBe(
+      'public, s-maxage=10, stale-while-revalidate=600'
+    );
   });
 });

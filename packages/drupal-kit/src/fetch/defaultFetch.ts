@@ -2,18 +2,24 @@ import { ServerResponse } from 'http';
 import fetch from 'isomorphic-fetch';
 
 import addSurrogateKeyHeader from '../utils/addSurrogateKeyHeader';
+
+const defaultCacheControlValue =
+  'public, s-maxage=10, stale-while-revalidate=600';
+
 /**
  * fetch data from a JSON:API endpoint, bubbling up surrogate keys if possible
  * @param apiUrl the api url for the JSON:API endpoint
  * @param requestInit fetch initialization object
  * @param res response object
+ * @param cacheControlHeader optional value to override cache control header
  * @returns a promise containing the data for the JSON:API response
  */
 const defaultFetch = (
   apiUrl: RequestInfo,
   requestInit: RequestInit = {},
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  res?: ServerResponse | boolean
+  res?: ServerResponse | boolean,
+  cacheControl: string = defaultCacheControlValue
 ): Promise<Response> => {
   // Use the existing request headers, or create a new headers object.
   const headers = requestInit?.headers
@@ -23,13 +29,12 @@ const defaultFetch = (
   // If we have the response object, add the debug header for fetch requests
   // and set appropriate cache-control headers on the active response.
   if (res && typeof res !== 'boolean') {
+    // Ensure api response contains surrogate key headers.
     headers.set('Pantheon-Debug', '1');
-    // TODO - validate correct cache control strategy
-    res.setHeader(
-      'Cache-Control',
-      'public, s-maxage=10, stale-while-revalidate=600'
-    );
+
+    res.setHeader('Cache-Control', cacheControl);
   }
+
   // Set the updated headers for fetch.
   requestInit.headers = headers;
 
