@@ -57,7 +57,7 @@ tooling:
 
 Note: Replace `%SITE-NAME%`, `%PANTHEON_SITE_ID%`, and `%PORT-NUMBER%`, with site name, site id and required port number for the frontend site.
 
-- Clone the Front-end Site code base into the `./frontend` directory.
+- Clone the Front-end Site code base into the `./frontend` directory. You will most likely want to add this directory to your `.gitignore` file for the project.
   ```
   cd frontend
   git clone git@github.com:pantheon-systems/example-fe-site.git .
