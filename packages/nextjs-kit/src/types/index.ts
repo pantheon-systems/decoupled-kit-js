@@ -21,3 +21,25 @@ export type FooterMenuItem = LinkProps & {
  */
 export const hasParent = (item: FooterMenuItem): item is FooterMenuItem =>
   item.parentId ? true : item.parent ? true : false;
+
+export const isNumber = (item: number | null | undefined): item is number =>
+  typeof item === 'number';
+export interface PaginatorObj {
+  id: string;
+  title: string;
+  body: {
+    value: string;
+  };
+}
+
+export interface Pagination {
+  data: PaginatorObj[];
+  itemsPerPage: number;
+  breakpoints: {
+    start: number;
+    end: number;
+    add: number;
+  };
+  routing: boolean;
+  Component: React.ElementType;
+}
