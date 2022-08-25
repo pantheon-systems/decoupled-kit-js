@@ -1,27 +1,18 @@
-# Local Development Documentation
+# Local Development
 
-## Backend Setup
+## Before You Begin
 
-- Copy the below line into `.lando.yml` in the root of the project:
+The example local environment configurations outlined below are based on [Lando](https://lando.dev/). To install Lando, follow the [Lando installation instructions](https://docs.lando.dev/getting-started/installation.html).
 
-```
-name: %SITE_NAME%
-recipe: pantheon
-config:
-  framework: wordpress
-  site: %SITE_NAME%
+Depending on your role, you may only need a local backend environment, or you may instead prefer a local environment that can run both the back-end and front-end. The following sections outline the steps to set up a local environment for each of these use cases.
 
-```
+## Backend Only Setup
 
-Note: Replace `%SITE-NAME%` with site name.
+If you are creating a local environment for your WordPress backend only, you can use the default Pantheon recipe provided by Lando. For more information, see the [Getting Started section of the Lando Pantheon Plugin documentation](https://docs.lando.dev/pantheon/getting-started.html).
 
-- `lando start`
+## Combined Frontend and Backend Setup
 
-## Frontend + Backend Setup
-
-### lando setup for [decoupled-wordpress-composer-managed](https://github.com/pantheon-systems/decoupled-wordpress-composer-managed)
-
-- Create `.lando.yml` into the root of the project.
+- Create `.lando.yml` in the root of the project.
 - Copy the following config into `.lando.yml`
 
 ```
@@ -30,6 +21,7 @@ recipe: pantheon
 config:
   framework: wordpress
   site: %SITE_NAME%
+  id: %PANTHEON_SITE_ID%
 
 proxy:
   frontend:
@@ -63,14 +55,14 @@ tooling:
       - "yarn --cwd=/app/frontend"
 ```
 
-Note: Replace `%SITE-NAME%`, `%PORT-NUMBER%` with site name and required port number for the frontend site.
+Note: Replace `%SITE-NAME%`, `%PANTHEON_SITE_ID%`, and `%PORT-NUMBER%`, with site name, site id and required port number for the frontend site.
 
-- Clone the Frontend site code base into `./frontend` directory.
+- Clone the Front-end Site code base into the `./frontend` directory.
   ```
   cd frontend
   git clone git@github.com:pantheon-systems/example-fe-site.git .
   ```
-- Create the required environment variables files for the Frontend site.
-- Do `lando start` to start the containers.
-- Install the WordPress site and activate the plugin `WP Gatsby` if your Frontend site is Gatsby.
-- To start the Frontend site run `lando npm run develop`. The frontend site will be available at `%SITE_NAME%-fe.lndo.site:%PORT-NUMBER%`
+- Consult `.env.example` to create the required environment variables files for your Front-end Site.
+- Run `lando start` to start the containers.
+- Install the WordPress site and activate the plugin `WP Gatsby` if your Front-end Site is using Gatsby.
+- To start your Front-end site, run `lando npm run develop`. It will now be available at the URL specified in the `proxy` section of the `.lando.yml` file.
