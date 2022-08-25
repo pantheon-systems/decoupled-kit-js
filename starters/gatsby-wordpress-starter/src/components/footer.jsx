@@ -32,7 +32,7 @@ const Footer = () => {
             >
               <Link
                 className="text-blue-300 hover:text-blue-100 focus:text-purple-600 active:text-purple-300 "
-                to={`${path}`}
+                to={`/posts${path}`}
               >
                 {label}
               </Link>
