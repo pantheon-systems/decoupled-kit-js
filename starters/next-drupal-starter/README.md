@@ -73,7 +73,7 @@ Full documentation can be found at: https://github.com/pantheon-systems/decouple
 The `pages/recipes` directory can be safely removed if you are using a Drupal instance that does not
 source the Umami demo data
 
-For a guide on creating your first Next Drupal customization, see [Your First Drupal Customization](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next%20Drupal/your-first-customization.md)
+For a guide on creating your first Next Drupal customization, see [Your First Drupal Customization](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next.js/Next.js%20%2B%20Drupal/your-first-customization.md)
 
 ## Tests
 

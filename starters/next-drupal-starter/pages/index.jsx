@@ -1,16 +1,15 @@
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../lib/isMultiLanguage";
-import {
-  getCurrentLocaleStore,
-  globalDrupalStateStores,
-} from "../lib/drupalStateContext";
+import { getCurrentLocaleStore, globalDrupalStateStores } from "../lib/stores";
 
 import { ArticleGridItem, withGrid } from "../components/grid";
 import Image from "next/image";
 import Layout from "../components/layout";
 
+import { sortDate } from "@pantheon-systems/nextjs-kit/sortDate";
+
 export default function HomepageTemplate({
-  articles,
+  sortedArticles,
   footerMenu,
   hrefLang,
   multiLanguage,
@@ -54,7 +53,7 @@ export default function HomepageTemplate({
         <HomepageHeader />
         <section>
           <ArticleGrid
-            data={articles}
+            data={sortedArticles}
             contentType="articles"
             multiLanguage={multiLanguage}
           />
@@ -64,7 +63,7 @@ export default function HomepageTemplate({
   );
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   const { locales } = context;
   // if there is more than one language in context.locales,
@@ -85,22 +84,9 @@ export async function getStaticProps(context) {
 
     const articles = await store.getObject({
       objectName: "node--article",
-      query: `{
-        id
-        title
-        path {
-          alias
-          langcode
-        }
-        field_media_image {
-          field_media_image {
-            uri {
-              url
-            }
-          }
-        }
-      }`,
       params: "include=field_media_image.field_media_image",
+      refresh: true,
+      res: context.res,
     });
 
     if (!articles) {
@@ -109,19 +95,25 @@ export async function getStaticProps(context) {
       );
     }
 
+    const sortedArticles = sortDate({
+      data: articles,
+      key: "changed",
+      direction: "desc",
+    });
+
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
+      refresh: true,
+      res: context.res,
     });
 
     return {
-      props: { articles, hrefLang, multiLanguage, footerMenu },
-      revalidate: 60,
+      props: { sortedArticles, hrefLang, multiLanguage, footerMenu },
     };
   } catch (error) {
     console.error("Unable to fetch data for articles page: ", error);
     return {
       notFound: true,
-      revalidate: 5,
     };
   }
 }

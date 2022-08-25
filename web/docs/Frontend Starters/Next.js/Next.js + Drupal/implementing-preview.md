@@ -32,7 +32,7 @@ import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import {
   getCurrentLocaleStore,
   globalDrupalStateAuthStores,
-} from "../../lib/drupalStateContext";
+} from "../../lib/stores";
 
 // your React component here
 

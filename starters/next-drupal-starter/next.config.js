@@ -36,7 +36,7 @@ module.exports = async () => {
       backendUrl: backendUrl,
       // set imageUrl if IMAGE_DOMAIN is set in env vars to override default
       imageUrl: `https://${imageDomain}`,
-      // makes locales available to lib/drupalStateContext.js
+      // makes locales available to lib/stores.js
       locales: locales,
     },
     reactStrictMode: true,

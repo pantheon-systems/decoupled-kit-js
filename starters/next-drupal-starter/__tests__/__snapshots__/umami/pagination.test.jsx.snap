@@ -42,6 +42,16 @@ exports[`umami <PaginationExampleTemplate /> > should render a success message i
               📑 Pages
             </a>
           </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
         </ul>
       </nav>
     </div>

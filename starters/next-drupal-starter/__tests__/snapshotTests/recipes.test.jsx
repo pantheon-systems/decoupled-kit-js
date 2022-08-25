@@ -25,7 +25,7 @@ if (PROFILE === "umami") {
 
       const { asFragment } = render(
         <RecipeListTemplate
-          recipes={data.recipes}
+          sortedRecipes={data.recipes}
           footerMenu={data.footerMenu}
         />
       );

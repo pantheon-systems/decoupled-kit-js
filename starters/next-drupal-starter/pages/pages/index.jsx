@@ -4,15 +4,16 @@ import { isMultiLanguage } from "../../lib/isMultiLanguage.js";
 import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
-} from "../../lib/drupalStateContext";
+} from "../../lib/stores";
 
 import Layout from "../../components/layout";
 import PageHeader from "../../components/page-header";
 import Link from "next/link";
+import { sortDate } from "@pantheon-systems/nextjs-kit/sortDate";
 
 export default function PageListTemplate({
   hrefLang,
-  pages,
+  sortedPages,
   footerMenu,
   multiLanguage,
 }) {
@@ -27,8 +28,8 @@ export default function PageListTemplate({
       <PageHeader title="Pages" />
       <div className="mt-12 mx-auto max-w-[50vw]">
         <ul>
-          {pages ? (
-            pages?.map(({ id, title, body, path }) => (
+          {sortedPages ? (
+            sortedPages?.map(({ id, title, body, path }) => (
               <li className="prose justify-items-start mt-8" key={id}>
                 <h2>{title}</h2>
                 <div dangerouslySetInnerHTML={{ __html: body?.summary }} />
@@ -51,7 +52,7 @@ export default function PageListTemplate({
   );
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   const { locales, locale } = context;
   // if there is more than one language in context.locales,
@@ -69,41 +70,38 @@ export async function getStaticProps(context) {
   try {
     const pages = await store.getObject({
       objectName: "node--page",
-      query: `
-      {
-        id
-        title
-        body
-        path {
-          alias
-          langcode
-        }
-      }
-    `,
+      refresh: true,
+      res: context.res,
     });
 
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
+      refresh: true,
+      res: context.res,
     });
 
     if (!pages) {
-      return { props: { footerMenu }, revalidate: 5 };
+      return { props: { footerMenu } };
     }
+
+    const sortedPages = sortDate({
+      data: pages,
+      key: "changed",
+      direction: "asc",
+    });
 
     return {
       props: {
-        pages,
+        sortedPages,
         footerMenu,
         hrefLang,
         multiLanguage,
       },
-      revalidate: 60,
     };
   } catch (error) {
     console.error("Unable to fetch data for pages: ", error);
     return {
       notFound: true,
-      revalidate: 5,
     };
   }
 }

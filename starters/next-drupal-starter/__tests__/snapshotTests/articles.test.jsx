@@ -30,7 +30,7 @@ describe(`${PROFILE} <SSRArticlesListTemplate />`, () => {
 
     const { asFragment } = render(
       <SSRArticlesListTemplate
-        articles={data.articles}
+        sortedArticles={data.articles}
         footerMenu={data.footerMenu}
       />
     );

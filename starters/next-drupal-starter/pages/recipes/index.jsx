@@ -4,16 +4,17 @@ import { isMultiLanguage } from "../../lib/isMultiLanguage";
 import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
-} from "../../lib/drupalStateContext";
+} from "../../lib/stores";
 
 import { RecipeGridItem, withGrid } from "../../components/grid";
 import Layout from "../../components/layout";
 import PageHeader from "../../components/page-header";
+import { sortDate } from "@pantheon-systems/nextjs-kit/sortDate";
 
 // This file can safely be removed if the Drupal
 // instance is not sourcing Umami data
 export default function RecipeListTemplate({
-  recipes,
+  sortedRecipes,
   footerMenu,
   hrefLang,
   multiLanguage,
@@ -31,7 +32,7 @@ export default function RecipeListTemplate({
       <PageHeader title="Recipes" />
       <section>
         <RecipeGrid
-          data={recipes}
+          data={sortedRecipes}
           contentType="recipes"
           multiLanguage={multiLanguage}
           locale={locale}
@@ -41,7 +42,7 @@ export default function RecipeListTemplate({
   );
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
   const { locales, locale } = context;
   const multiLanguage = isMultiLanguage(locales);
@@ -58,36 +59,42 @@ export async function getStaticProps(context) {
   try {
     const recipes = await store.getObject({
       objectName: "node--recipe",
-      query: `{
-        id
-        title
-        field_media_image
-        field_recipe_category
-        field_recipe_instruction
-        path
-      }`,
       params:
         "include=field_media_image.field_media_image,field_recipe_category",
+      refresh: true,
+      res: context.res,
     });
 
     const footerMenu = await store.getObject({
       objectName: "menu_items--main",
+      refresh: true,
+      res: context.res,
+    });
+
+    if (!recipes) {
+      throw new Error(
+        "No recipes returned. Make sure the objectName and params are valid!"
+      );
+    }
+
+    const sortedRecipes = sortDate({
+      data: recipes,
+      key: "created",
+      direction: "desc",
     });
 
     return {
       props: {
-        recipes,
+        sortedRecipes,
         footerMenu,
         hrefLang,
         multiLanguage,
       },
-      revalidate: 60,
     };
   } catch (error) {
     console.error("Unable to fetch data for recipes: ", error);
     return {
       notFound: true,
-      revalidate: 5,
     };
   }
 }
