@@ -23,7 +23,7 @@
     "coverage": "vitest run --mode umami --coverage && vitest run --mode default --coverage"
   },
   "dependencies": {
-    "@pantheon-systems/drupal-kit": "^2.1.0",
+    "@pantheon-systems/drupal-kit": "*",
     "@pantheon-systems/nextjs-kit": "*",
     "@tailwindcss/typography": "^0.5.2",
     "dotenv": "^16.0.0",
