@@ -13,7 +13,7 @@ exports.createPages = async gatsbyUtilities => {
   if (posts.length) {
     await createPostArchive({ posts, gatsbyUtilities })
     await createIndividualPostPages({ posts, gatsbyUtilities })
-    await createPostIndex({ gatsbyUtilities })
+    await createPostIndex({ posts, gatsbyUtilities })
   }
 }
 
@@ -56,7 +56,7 @@ const createIndividualPostPages = async ({ posts, gatsbyUtilities }) =>
     )
   )
 
-async function createPostArchive({ posts, gatsbyUtilities }) {
+async function getPostPerPage({ gatsbyUtilities }) {
   const graphqlResult = await gatsbyUtilities.graphql(/* GraphQL */ `
     {
       wp {
@@ -67,7 +67,11 @@ async function createPostArchive({ posts, gatsbyUtilities }) {
     }
   `)
 
-  const { postsPerPage } = graphqlResult.data.wp.readingSettings
+  return graphqlResult.data.wp.readingSettings.postsPerPage
+}
+
+async function createPostArchive({ posts, gatsbyUtilities }) {
+  const postsPerPage = await getPostPerPage({ gatsbyUtilities })
 
   const postsChunkedIntoArchivePages = chunk(posts, postsPerPage)
   const totalPages = postsChunkedIntoArchivePages.length
@@ -100,11 +104,38 @@ async function createPostArchive({ posts, gatsbyUtilities }) {
   )
 }
 
-async function createPostIndex({ gatsbyUtilities }) {
-  await gatsbyUtilities.actions.createPage({
-    component: path.resolve("./src/templates/postsIndex.jsx"),
-    path: "/posts",
-  })
+async function createPostIndex({ posts, gatsbyUtilities }) {
+  const postsPerPage = await getPostPerPage({ gatsbyUtilities })
+
+  const postsChunkedIntoArchivePages = chunk(posts, postsPerPage)
+  const totalPages = postsChunkedIntoArchivePages.length
+
+  return Promise.all(
+    postsChunkedIntoArchivePages.map(async (_posts, index) => {
+      const pageNumber = index + 1
+
+      const getPagePath = page => {
+        if (page > 0 && page <= totalPages) {
+          return page === 1 ? `/posts` : `/posts?page=${page}`
+        }
+
+        return null
+      }
+
+      await gatsbyUtilities.actions.createPage({
+        path: getPagePath(pageNumber),
+
+        component: path.resolve(`./src/templates/postsIndex.jsx`),
+
+        context: {
+          offset: index * postsPerPage,
+          postsPerPage,
+          nextPagePath: getPagePath(pageNumber + 1),
+          previousPagePath: getPagePath(pageNumber - 1),
+        },
+      })
+    })
+  )
 }
 
 async function createPageIndex({ pages, gatsbyUtilities }) {

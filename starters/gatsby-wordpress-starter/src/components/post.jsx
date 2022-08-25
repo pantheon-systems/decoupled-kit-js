@@ -10,7 +10,7 @@ const Post = ({
   next,
 }) => {
   const imageData = {
-    gastbyImage:
+    gatsbyImage:
       featuredImage?.node?.localFile?.childImageSharp.gatsbyImageData,
     altText: featuredImage?.node?.altText || title,
   }
@@ -25,11 +25,11 @@ const Post = ({
       </Link>
 
       <div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
-        {imageData.gastbyImage && (
+        {imageData.gatsbyImage && (
           <div className="relative w-full rounded-lg shadow-lg overflow-hidden mb-10">
             <GatsbyImage
               priority
-              image={imageData.gastbyImage}
+              image={imageData.gatsbyImage}
               layout="fill"
               objectFit="cover"
               alt={imageData.altText}

@@ -1,11 +1,14 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { withGrid, PostGridItem } from "../components/grid"
 
-const PostIndexTemplate = ({ data }) => {
+const PostIndexTemplate = ({
+  data,
+  pageContext: { nextPagePath, previousPagePath },
+}) => {
   const posts = data.allWpPost.nodes
 
   const PostGrid = withGrid(PostGridItem)
@@ -19,6 +22,20 @@ const PostIndexTemplate = ({ data }) => {
       <section>
         <PostGrid data={posts} />
       </section>
+
+      <nav className="flex max-w-5xl mx-auto mt-8">
+        {previousPagePath && (
+          <Link className="underline font-medium" to={previousPagePath}>
+            {" "}
+            ← Previous page
+          </Link>
+        )}
+        {nextPagePath && (
+          <Link className="underline font-medium ml-auto" to={nextPagePath}>
+            Next page →
+          </Link>
+        )}
+      </nav>
     </Layout>
   )
 }
@@ -26,8 +43,12 @@ const PostIndexTemplate = ({ data }) => {
 export default PostIndexTemplate
 
 export const pageQuery = graphql`
-  query PostArchive {
-    allWpPost(sort: { fields: [date], order: DESC }) {
+  query PostList($offset: Int!, $postsPerPage: Int!) {
+    allWpPost(
+      sort: { fields: [date], order: DESC }
+      limit: $postsPerPage
+      skip: $offset
+    ) {
       nodes {
         excerpt
         uri

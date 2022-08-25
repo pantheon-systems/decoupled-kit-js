@@ -39,13 +39,20 @@ const Index = ({ data, pageContext: { nextPagePath, previousPagePath } }) => {
       <section>
         <PostGrid data={posts} />
       </section>
-      {previousPagePath && (
-        <>
-          <Link to={previousPagePath}>Previous page</Link>
-          <br />
-        </>
-      )}
-      {nextPagePath && <Link to={nextPagePath}>Next page</Link>}
+
+      <nav className="flex max-w-5xl mx-auto mt-8">
+        {previousPagePath && (
+          <Link className="underline font-medium" to={previousPagePath}>
+            {" "}
+            ← Previous page
+          </Link>
+        )}
+        {nextPagePath && (
+          <Link className="underline font-medium ml-auto" to={nextPagePath}>
+            Next page →
+          </Link>
+        )}
+      </nav>
     </Layout>
   )
 }
