@@ -46,6 +46,7 @@ const RenderCurrentItems: React.FC<PaginationItemProps> = ({
     </React.Fragment>
   );
 };
+
 describe(`<Paginator />`, () => {
   it('should render the paginated data', () => {
     const { asFragment } = render(

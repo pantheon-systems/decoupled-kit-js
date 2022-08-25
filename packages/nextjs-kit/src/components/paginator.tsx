@@ -4,18 +4,19 @@ import { PaginatorObj, isNumber } from '../types';
 
 /**
  *
- * @param {Array} props.data The data to be paginated
- * @param {Number} props.itemsPerPage The number of items to display on each page
- * @param {{ start: Number, end: Number, add: Number }} props.breakpoints Breakpoints has 3 properties: start, end, and add. Set to {} for no breakpoint.
+ * @param props - The props needed for the paginator component
+ * @param props.data - An array of paginator objects
+ * @param props.itemsPerPage - How many items to display per page
+ * @param props.breakpoints - Breakpoints has 3 properties: start, end, and add. Set to {} for no breakpoint.
  * start: where to start the breakpoint
  * end: where to end the breakpoint
- * add: how manu buttons to add when the breakpoint is clicked
+ * add: how many buttons to add when the breakpoint is clicked
  * ***
  * note: (`add` * x) + `start` = `end` where x is a number of clicks it takes to fill in all of the buttons
  * For example: If there are 25 buttons and the start = 5 and end = 25, then add should be 5 or 10.
  * ***
- * @param {Boolean} props.routing If true, shallow routing will be enabled. Check the examples/pagination route to see it in action
- * @param {React.Component} props.Component React Component that takes in currentItems as props and maps over them.
+ * @param props.routing If true, shallow routing will be enabled. Check the examples/pagination route to see it in action
+ * @param props.Component React Component that takes in currentItems as props and maps over them.
  * currentItems is a subset of data, so any component that works for data will work here.
  * @see {@link https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/starters/next-drupal-starter/pages/examples/pagination/[[...page]].js} for an example implementation
  * @returns Component with data rendered by the passed in Component and page buttons
@@ -67,7 +68,6 @@ const Paginator: React.FC<PaginationProps> = ({
   const [totalItems] = useState<number>(data.length);
 
   const [totalPages] = useState<number>(Math.ceil(data.length / itemsPerPage));
-  // Profiler tab for optimization
 
   // since we fetch ALL items, filtering the current items client side
   // further reduces API calls to the server
@@ -178,7 +178,6 @@ const Paginator: React.FC<PaginationProps> = ({
 
       // separator button
       if (i === breakStart) {
-        // check on null, type predicate
         if (isNumber(breakAdd)) {
           if (breakStart + breakAdd >= totalPages) {
             buttons.push(defaultButton);

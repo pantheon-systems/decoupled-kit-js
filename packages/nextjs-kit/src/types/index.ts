@@ -31,15 +31,3 @@ export interface PaginatorObj {
     value: string;
   };
 }
-
-export interface Pagination {
-  data: PaginatorObj[];
-  itemsPerPage: number;
-  breakpoints: {
-    start: number;
-    end: number;
-    add: number;
-  };
-  routing: boolean;
-  Component: React.ElementType;
-}
