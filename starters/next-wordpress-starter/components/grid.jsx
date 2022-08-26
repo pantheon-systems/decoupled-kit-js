@@ -28,7 +28,7 @@ export const withGrid = (Component) => {
 };
 
 export const PostGridItem = ({ content: post }) => {
-  const imgSrc = getUrlPath(post?.featuredImage?.node.sourceUrl) || null;
+  const imgSrc = getUrlPath(post?.featuredImage?.node?.sourceUrl);
   const altText = post?.featuredImage?.node.altText || post.title;
 
   return (
@@ -62,7 +62,7 @@ export const PostGridItem = ({ content: post }) => {
 };
 
 export const PageGridItem = ({ content: page }) => {
-  const imgSrc = getUrlPath(page?.featuredImage?.node.sourceUrl);
+  const imgSrc = getUrlPath(page?.featuredImage?.node?.sourceUrl);
   const altText = page?.featuredImage?.node.altText || page.title;
 
   return (

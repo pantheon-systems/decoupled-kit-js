@@ -11,6 +11,7 @@ if (process.env.WPGRAPHQL_URL === undefined) {
   backendUrl = `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`;
   imageDomain = process.env.IMAGE_DOMAIN || process.env.PANTHEON_CMS_ENDPOINT;
 
+  // populate WPGRAPHQL_URL as a fallback and for build scripts
   process.env.WPGRAPHQL_URL = `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`;
 } else {
   backendUrl = process.env.WPGRAPHQL_URL;
