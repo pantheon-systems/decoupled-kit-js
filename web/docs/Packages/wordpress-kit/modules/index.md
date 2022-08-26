@@ -16,10 +16,10 @@ ___
 
 ### TailwindcssConfig
 
-Re-exports [TailwindcssConfig](src_types_tailwindcssPlugin.md#tailwindcssconfig)
+Re-exports [TailwindcssConfig](src_types_TailwindcssPlugin.md#tailwindcssconfig)
 
 ___
 
 ### tailwindcssPlugin
 
-Renames and re-exports [default](src_lib_tailwindcssPlugin.md#default)
+Renames and re-exports [default](src_lib_TailwindcssPlugin.md#default)
