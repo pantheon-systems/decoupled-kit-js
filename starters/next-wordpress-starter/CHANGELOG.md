@@ -34,7 +34,7 @@
 - b7e9b1f: Added pages grid in the route /pages, getting data by static generating
 - 2f72e82: Added the Post component to the `/posts/[slug]` route that renders a post from WordPress.
 - d49504b: Added the dynamic route [uri] inside /pages that fetch statically the page data
-- 0db7b52: Imported tailwind plugin from Wordpress-Kit
+- 0db7b52: Imported tailwind plugin from WordPress-Kit
 - 04f4e0c: Added to the /post route the post grid with server side rendering
 
 ### Patch Changes
