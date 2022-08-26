@@ -23,7 +23,7 @@ const PostIndexTemplate = ({
         <PostGrid data={posts} />
       </section>
 
-      <nav className="flex max-w-5xl mx-auto mt-8">
+      <nav className="flex max-w-5xl mx-auto mt-8 px-6">
         {previousPagePath && (
           <Link className="underline font-medium" to={previousPagePath}>
             {" "}

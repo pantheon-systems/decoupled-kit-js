@@ -44,7 +44,7 @@ const Page = ({
 
       <hr className="mt-10" />
 
-      <nav className="flex flex-wrap">
+      <nav className="flex flex-wrap px-6">
         {previous && (
           <Link className="underline font-medium" to={`/pages${previous.uri}`}>
             ← {parse(previous.title)}
