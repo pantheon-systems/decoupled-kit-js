@@ -10,14 +10,14 @@ let backendUrl, imageDomain;
 if (process.env.WPGRAPHQL_URL === undefined) {
   backendUrl = `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`;
   imageDomain = process.env.IMAGE_DOMAIN || process.env.PANTHEON_CMS_ENDPOINT;
+
+  process.env.WPGRAPHQL_URL = `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`;
 } else {
   backendUrl = process.env.WPGRAPHQL_URL;
-  imageDomain =
-    process.env.IMAGE_DOMAIN ||
-    process.env.WPGRAPHQL_URL.replace(/^https?:\/\//g, "");
+  imageDomain = process.env.IMAGE_DOMAIN || process.env.WPGRAPHQL_URL;
 }
 // remove trailing slash if it exists
-imageDomain = imageDomain.replace(/\/wp\/graphql$/, "");
+imageDomain = imageDomain.replace(/\/$/, "");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
