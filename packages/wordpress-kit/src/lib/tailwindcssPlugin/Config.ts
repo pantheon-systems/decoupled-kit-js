@@ -39,5 +39,6 @@ export const mergeToConfig: Config = {
     '.wp-block-pullquote',
     '.wp-block-image',
     '.wp-block-gallery',
+    '.wp-block-audio',
   ],
 };
