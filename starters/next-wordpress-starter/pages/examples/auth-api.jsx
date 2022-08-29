@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { gql } from "@pantheon-systems/wordpress-kit";
-import { client } from "../../lib/WordpressClient";
+import { client } from "../../lib/WordPressClient";
 import { getFooterMenu } from "../../lib/Menus";
 import Layout from "../../components/layout";
 
