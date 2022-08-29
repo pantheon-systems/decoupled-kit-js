@@ -21,7 +21,6 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.4",
     "gatsby": "4.16.0",
     "gatsby-plugin-image": "^2.12.1",
@@ -42,11 +41,13 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-helmet": "6.1.0",
-    "tailwindcss": "3.0.24",
     "typeface-merriweather": "1.1.13",
     "typeface-montserrat": "1.1.13"
   },
   "devDependencies": {
+    "tailwindcss": "^3.0.24",
+    "@tailwindcss/typography": "^0.5.2",
+    "@pantheon-systems/wordpress-kit": "^2.3.0",
     "@babel/core": ">=7.12.3 <8.0.0",
     "dumper.js": "^1.3.1",
     "prettier": "2.5.1",

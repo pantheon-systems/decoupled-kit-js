@@ -16,7 +16,7 @@ const Layout = ({ isHomePage, children }) => {
                 className={`${href === "/" ? "mr-auto" : "mx-4"}`}
                 key={`key-${i}`}
               >
-                <Link className="text-lg font-sans" to={href}>
+                <Link className="font-sans hover:underline" to={href}>
                   {title}
                 </Link>
               </li>

@@ -16,7 +16,7 @@ const Post = ({
   }
 
   return (
-    <article className="prose lg:prose-xl mt-10 mx-auto">
+    <article className="prose lg:prose-xl mt-10 mx-auto max-w-screen-lg p-4">
       <h1>{title}</h1>
       <p className="text-sm text-gray-600">{new Date(date).toDateString()}</p>
 
@@ -48,24 +48,20 @@ const Post = ({
 
       <hr className="mt-10" />
 
-      <nav>
-        <ul className="flex flex-wrap justify-between p-0 list-none">
-          <li>
-            {previous && (
-              <Link to={`/posts${previous.uri}`} rel="prev">
-                ← {parse(previous.title)}
-              </Link>
-            )}
-          </li>
-
-          <li>
-            {next && (
-              <Link to={`/posts${next.uri}`} rel="next">
-                {parse(next.title)} →
-              </Link>
-            )}
-          </li>
-        </ul>
+      <nav className="flex flex-wrap px-6">
+        {previous && (
+          <Link className="underline font-medium" to={`/posts${previous.uri}`}>
+            ← {parse(previous.title)}
+          </Link>
+        )}
+        {next && (
+          <Link
+            className="underline font-medium ml-auto"
+            to={`/posts${next.uri}`}
+          >
+            {parse(next.title)} →
+          </Link>
+        )}
       </nav>
     </article>
   )

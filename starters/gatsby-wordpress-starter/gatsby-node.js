@@ -116,7 +116,7 @@ async function createPostIndex({ posts, gatsbyUtilities }) {
 
       const getPagePath = page => {
         if (page > 0 && page <= totalPages) {
-          return page === 1 ? `/posts` : `/posts?page=${page}`
+          return page === 1 ? `/posts` : `/posts/page/${page}`
         }
 
         return null
