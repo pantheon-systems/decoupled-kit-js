@@ -8,7 +8,7 @@ Depending on your role, you may only need a local backend environment, or you ma
 
 ## Backend Only Setup
 
-If you are creating a local environment for your WordPress backend only, you can use the default Pantheon recipe provided by Lando. For more information, see the [Getting Started section of the Lando Pantheon Plugin documentation](https://docs.lando.dev/pantheon/getting-started.html).
+If you are creating a local environment for your Drupal backend only, you can use the default Pantheon recipe provided by Lando. For more information, see the [Getting Started section of the Lando Pantheon Plugin documentation](https://docs.lando.dev/pantheon/getting-started.html).
 
 ## Combined Frontend and Backend Setup
 
@@ -22,7 +22,6 @@ config:
   framework: drupal9
   site: %SITE_NAME%
   id: %PANTHEON_SITE_ID%
-  xdebug: false
 
 proxy:
   frontend:
@@ -33,13 +32,6 @@ excludes:
   - node_modules
 
 services:
-  appserver:
-    xdebug: false
-    config:
-      php: .vscode/php.ini
-    overrides:
-      environment:
-        XDEBUG_MODE: null
   frontend:
     type: node:16
     globals:
@@ -51,19 +43,6 @@ services:
     scanner: false
 
 tooling:
-  xdebug-on:
-    service: appserver
-    description: Enable xdebug for nginx.
-    cmd: >-
-      docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm && echo "Enabling xdebug"
-    user: root
-  xdebug-off:
-    service: appserver
-    description: CUSTOM Disable xdebug for nginx.
-    cmd: >-
-      rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2
-      php-fpm && echo "Disabling xdebug"
-    user: root
   node:
     service: frontend
   npm:
