@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { IMAGE_URL } from "../lib/constants";
+import { getUrlPath } from "../lib/getUrlPath";
 
 export const withGrid = (Component) => {
   const GridedComponent = ({ data, ...props }) => {
@@ -26,7 +28,7 @@ export const withGrid = (Component) => {
 };
 
 export const PostGridItem = ({ content: post }) => {
-  const imgSrc = post?.featuredImage?.node.sourceUrl || "";
+  const imgSrc = getUrlPath(post?.featuredImage?.node?.sourceUrl);
   const altText = post?.featuredImage?.node.altText || post.title;
 
   return (
@@ -34,9 +36,9 @@ export const PostGridItem = ({ content: post }) => {
       <a>
         <div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500">
           <div className="flex-shrink-0 relative h-40">
-            {imgSrc !== "" ? (
+            {imgSrc !== null ? (
               <Image
-                src={imgSrc}
+                src={IMAGE_URL + imgSrc}
                 layout="fill"
                 objectFit="cover"
                 alt={altText}
@@ -60,7 +62,7 @@ export const PostGridItem = ({ content: post }) => {
 };
 
 export const PageGridItem = ({ content: page }) => {
-  const imgSrc = page?.featuredImage?.node.sourceUrl || "";
+  const imgSrc = getUrlPath(page?.featuredImage?.node?.sourceUrl);
   const altText = page?.featuredImage?.node.altText || page.title;
 
   return (
@@ -68,9 +70,9 @@ export const PageGridItem = ({ content: page }) => {
       <a>
         <div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500">
           <div className="flex-shrink-0 relative h-40">
-            {imgSrc !== "" ? (
+            {imgSrc !== null ? (
               <Image
-                src={imgSrc}
+                src={IMAGE_URL + imgSrc}
                 layout="fill"
                 objectFit="cover"
                 alt={altText}

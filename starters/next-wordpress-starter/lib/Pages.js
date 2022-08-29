@@ -1,5 +1,5 @@
 import { gql } from "@pantheon-systems/wordpress-kit";
-import { client } from "./WordpressClient";
+import { client } from "./WordPressClient";
 
 export async function getAllPagesUri() {
   const query = gql`

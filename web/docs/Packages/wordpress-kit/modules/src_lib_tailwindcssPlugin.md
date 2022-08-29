@@ -1,7 +1,7 @@
 ---
-id: "src_lib_tailwindcssPlugin"
-title: "Module: src/lib/tailwindcssPlugin"
-sidebar_label: "src/lib/tailwindcssPlugin"
+id: "src_lib_TailwindcssPlugin"
+title: "Module: src/lib/TailwindcssPlugin"
+sidebar_label: "src/lib/TailwindcssPlugin"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -14,4 +14,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/lib/tailwindcssPlugin.ts:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/3caad45/packages/wordpress-kit/src/lib/tailwindcssPlugin.ts#L7)
+[src/lib/TailwindcssPlugin.ts:13](https://github.com/pantheon-systems/decoupled-kit-js/blob/fe58c2b6/packages/wordpress-kit/src/lib/TailwindcssPlugin.ts#L13)
