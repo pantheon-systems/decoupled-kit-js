@@ -3,6 +3,19 @@ require("dotenv").config({
   path: path.resolve(process.cwd(), ".env.development.local"),
 })
 
+if (
+  process.env.WPGRAPHQL_URL === undefined &&
+  process.env.PANTHEON_CMS_ENDPOINT === undefined
+) {
+  let message
+  if (process.env.NODE_ENV === "development") {
+    message = `No WPGRAPHQL_URL found.\nSee the README.md for information on setting this variable locally.`
+  } else if (process.env.NODE_ENV === "production") {
+    message = `No CMS Endpoint found.\nLink a CMS or set the WPGRAPHQL_URL environment variable in the settings tab in the dashboard\nIf your site does not require a backend to build, remove this check from the gatsby-config.js.`
+  }
+  throw new Error(message)
+}
+
 // Use URL from .env if it exists, otherwise fall back on the
 // Pantheon CMS endpoint
 const url =
