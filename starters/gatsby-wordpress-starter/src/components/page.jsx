@@ -44,24 +44,20 @@ const Page = ({
 
       <hr className="mt-10" />
 
-      <nav>
-        <ul className="flex flex-wrap justify-between p-0 list-none">
-          <li>
-            {previous && (
-              <Link to={`/pages${previous.uri}`} rel="prev">
-                ← {parse(previous.title)}
-              </Link>
-            )}
-          </li>
-
-          <li>
-            {next && (
-              <Link to={`/pages${next.uri}`} rel="next">
-                {parse(next.title)} →
-              </Link>
-            )}
-          </li>
-        </ul>
+      <nav className="flex flex-wrap px-6">
+        {previous && (
+          <Link className="underline font-medium" to={`/pages${previous.uri}`}>
+            ← {parse(previous.title)}
+          </Link>
+        )}
+        {next && (
+          <Link
+            className="underline font-medium ml-auto"
+            to={`/pages${next.uri}`}
+          >
+            {parse(next.title)} →
+          </Link>
+        )}
       </nav>
     </article>
   )
