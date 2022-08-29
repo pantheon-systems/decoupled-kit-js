@@ -8,7 +8,7 @@ on:
 # Releases a canary tagged version of the packages
 jobs:
   version:
-    name: version and publish
+    name: canary version and publish
     env:
       CI: true
       PNPM_CACHE_FOLDER: .pnpm-store
