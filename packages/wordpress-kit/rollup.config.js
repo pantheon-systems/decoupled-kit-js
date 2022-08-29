@@ -24,7 +24,7 @@ export default [
     output: {
       file: 'dist/wordpress-kit.umd.js',
       format: 'umd',
-      name: 'WordpressKit',
+      name: 'WordPressKit',
       globals,
     },
     plugins: [typescript()],

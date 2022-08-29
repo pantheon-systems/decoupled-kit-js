@@ -41,7 +41,7 @@ describe('<Footer />', () => {
             className="text-blue-500 underline hover:text-blue-100"
             href="https://www.wordpress.com/"
           >
-            Wordpress
+            WordPress
           </a>
         </span>
       </Footer>
