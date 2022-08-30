@@ -10,6 +10,7 @@
     "type": "git",
     "url": "https://github.com/pantheon-systems/decoupled-kit-js"
   },
+  "prettier": "./configs/prettier",
   "author": "@pantheon-systems",
   "main": "index.js",
   "scripts": {
@@ -74,6 +75,7 @@
       "@pantheon-systems/wordpress-kit": "workspace:*",
       "@pantheon-systems/drupal-kit": "workspace:*",
       "@pantheon-systems/nextjs-kit": "workspace:*",
+      "@pantheon-systems/eslint-config": "workspace:*",
       "@types/react": "17.0.40",
       "node-fetch@<2.6.7": ">=2.6.7",
       "ansi-regex@>2.1.1 <5.0.1": ">=5.0.1",

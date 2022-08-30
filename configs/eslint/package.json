@@ -1,0 +1,23 @@
+{
+	"name": "@pantheon-systems/eslint-config",
+	"private": true,
+	"version": "0.0.0",
+	"description": "Eslint configs for the @pantheon-systems decoupled SDK npm packages",
+	"files": [
+		"./index.js",
+		"./react.js"
+	],
+	"main": "./index.js",
+	"dependencies": {
+		"@typescript-eslint/parser": "^5.13.0"
+	},
+	"peerDependencies": {
+		"@typescript-eslint/eslint-plugin": "^5.13.0",
+		"eslint": ">=8",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-jsx-a11y": "^6.6.1",
+		"eslint-plugin-react": "^7.31.1",
+		"eslint-plugin-react-hooks": "^4.6.0"
+	}
+}
