@@ -3,7 +3,7 @@ name: "Split Canary Sites"
 # run this job on after canary_release has completed
 on:
   workflow_run:
-    workflows: [canary_release]
+    workflows: [Canary Release]
     types:
       - completed
 
