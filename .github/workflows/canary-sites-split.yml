@@ -1,14 +1,17 @@
 name: "Split Canary Sites"
 
+# run this job on after canary_release has completed
 on:
-  push:
-    branches:
-      - canary
+  workflow_run:
+    workflows: [canary_release]
+    types:
+      - completed
 
 # split the starers to repos to be deployed on the platform
 # for easy QA testing
 jobs:
-  packages_split_canary:
+  # this job should only run if canary_release was successful
+  on-success:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}

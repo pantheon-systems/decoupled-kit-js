@@ -7,7 +7,7 @@ on:
 
 # Releases a canary tagged version of the packages
 jobs:
-  version:
+  canary_release:
     name: canary version and publish
     env:
       CI: true
