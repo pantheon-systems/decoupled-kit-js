@@ -1,5 +1,19 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.0.0-canary.0
+
+### Major Changes
+
+- ad89e4a: Change the style to follow same guidelines than other starters
+
+### Minor Changes
+
+- d487850: Remove of the remaining CSS and moved tailwind to dev dependencies
+
+### Patch Changes
+
+- 56ec318: Added a helpful error message in case a CMS backend endpoint is not set
+
 ## 1.1.0
 
 ### Minor Changes
