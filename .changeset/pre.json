@@ -10,5 +10,15 @@
     "@pantheon-systems/next-wordpress-starter": "0.5.0",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "cold-gorillas-speak",
+    "eighty-seas-raise",
+    "gentle-tools-glow",
+    "short-bears-shave",
+    "short-crabs-mate",
+    "six-lions-appear",
+    "ten-monkeys-remain",
+    "violet-shrimps-act",
+    "witty-parrots-listen"
+  ]
 }
