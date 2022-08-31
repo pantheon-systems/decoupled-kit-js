@@ -24,7 +24,7 @@ export const hasParent = (item: FooterMenuItem): item is FooterMenuItem =>
 
 export const isNumber = (item: number | null | undefined): item is number =>
   typeof item === 'number';
-export interface PaginatorObj {
+export interface PaginatorRenderObj {
   id: string;
   title: string;
   body: {

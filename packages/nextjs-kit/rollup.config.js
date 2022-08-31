@@ -7,6 +7,7 @@ const globals = {
   'react/jsx-runtime': 'reactJsxRuntime',
   next: 'next',
   'next/link': 'Link',
+  'next/router': 'Router',
 };
 const external = [
   'react',
@@ -14,6 +15,7 @@ const external = [
   'react/jsx-runtime',
   'next',
   'next/link',
+  'next/router',
 ];
 
 export default [

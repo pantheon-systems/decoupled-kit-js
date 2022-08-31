@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import Paginator from '../../components/paginator';
 import examplePaginationData from '../data/examplePaginationData.json';
-import { PaginatorObj } from '../../types/index';
+import { PaginatorRenderObj } from '../../types/index';
 import React from 'react';
 import { vi } from 'vitest';
 
@@ -21,7 +21,7 @@ vi.mock('next/router', () => ({
  */
 
 interface PaginationItemProps {
-  currentItems: PaginatorObj[];
+  currentItems: PaginatorRenderObj[];
 }
 const RenderCurrentItems: React.FC<PaginationItemProps> = ({
   currentItems,

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { PaginatorObj, isNumber } from '../types';
+import { isNumber } from '../types';
 
 /**
  *
@@ -8,6 +8,8 @@ import { PaginatorObj, isNumber } from '../types';
  * @param props.data - An array of paginator objects
  * @param props.itemsPerPage - How many items to display per page
  * @param props.breakpoints - Breakpoints has 3 properties: start, end, and add. Set to {} for no breakpoint.
+ * @remarks
+ *
  * start: where to start the breakpoint
  * end: where to end the breakpoint
  * add: how many buttons to add when the breakpoint is clicked
@@ -15,6 +17,7 @@ import { PaginatorObj, isNumber } from '../types';
  * note: (`add` * x) + `start` = `end` where x is a number of clicks it takes to fill in all of the buttons
  * For example: If there are 25 buttons and the start = 5 and end = 25, then add should be 5 or 10.
  * ***
+ *
  * @param props.routing If true, shallow routing will be enabled. Check the examples/pagination route to see it in action
  * @param props.Component React Component that takes in currentItems as props and maps over them.
  * currentItems is a subset of data, so any component that works for data will work here.
@@ -23,7 +26,7 @@ import { PaginatorObj, isNumber } from '../types';
  */
 
 interface PaginationProps {
-  data: PaginatorObj[];
+  data: Array<object>;
   itemsPerPage: number;
   breakpoints: {
     start: number;
@@ -56,15 +59,15 @@ const Paginator: React.FC<PaginationProps> = ({
   // get current path from router.pathname
   // and trim off catchalls
   const currentRoute = router.pathname.replace(/\/{1}\[{1,2}.*\]{1,2}$/, '');
-
+  const routeKey = Object.keys(router.query)[0];
   const [currentPageQuery, setCurrentPageQuery] = useState<number>(
-    Number(router.query.page) || 1
+    Number(router.query[routeKey]) || 1
   );
 
   const [offset, setOffset] = useState<number>(
     (currentPageQuery - 1) * itemsPerPage
   );
-  const [currentItems, setCurrentItems] = useState<Array<PaginatorObj>>([]);
+  const [currentItems, setCurrentItems] = useState<Array<object>>([]);
   const [totalItems] = useState<number>(data.length);
 
   const [totalPages] = useState<number>(Math.ceil(data.length / itemsPerPage));
@@ -102,32 +105,6 @@ const Paginator: React.FC<PaginationProps> = ({
       setWindowWidth(window.innerWidth);
     });
   }, []);
-  // Render the currentItems to the page
-  const RenderData = () => {
-    return (
-      <React.Fragment>
-        {currentItems.map(data => {
-          return (
-            <article
-              key={data.id}
-              className="flex flex-col p-3 w-fit mx-auto mb-10"
-            >
-              {data?.title && (
-                <h2 className="justify-start my-auto text-2xl mb-2">
-                  {data.title}
-                </h2>
-              )}
-              {data?.body?.value && (
-                <p className="max-w-prose my-2">
-                  {data?.body.value.substring(0, 150)}...
-                </p>
-              )}
-            </article>
-          );
-        })}
-      </React.Fragment>
-    );
-  };
 
   const handlePageClick: React.MouseEventHandler<HTMLButtonElement> = event => {
     if ((event.target as Element).id === 'next-btn') {
@@ -245,7 +222,7 @@ const Paginator: React.FC<PaginationProps> = ({
       </h3>
       <section>
         {/* Component passed in that will render the data */}
-        {Component ? <Component currentItems={currentItems} /> : <RenderData />}
+        <Component currentItems={currentItems} />
       </section>
       <div className="sticky lg:bottom-12 bottom-4">
         <RenderButtons />
@@ -254,4 +231,4 @@ const Paginator: React.FC<PaginationProps> = ({
   );
 };
 
-export default React.memo(Paginator);
+export default Paginator;
