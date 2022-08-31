@@ -23,9 +23,3 @@ ___
 ### defaultFetch
 
 Renames and re-exports [default](src_fetch_defaultFetch.md#default)
-
-___
-
-### updateMaxAge
-
-Renames and re-exports [default](src_utils_updateMaxAge.md#default)

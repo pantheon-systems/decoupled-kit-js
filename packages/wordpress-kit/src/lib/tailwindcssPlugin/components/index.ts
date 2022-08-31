@@ -3,6 +3,7 @@ import { PullQuoteComponent } from './PullQuote';
 import { TableComponent } from './Table';
 import { Quote } from './Quote';
 import { GalleryComponent } from './Gallery';
+import { AudioComponent } from './Audio';
 
 export {
   ImageComponent,
@@ -10,4 +11,5 @@ export {
   TableComponent,
   Quote,
   GalleryComponent,
+  AudioComponent,
 };

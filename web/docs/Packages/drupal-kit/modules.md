@@ -13,4 +13,3 @@ custom_edit_url: null
 - [src/fetch/defaultFetch](modules/src_fetch_defaultFetch.md)
 - [src/types/types](modules/src_types_types.md)
 - [src/utils/addSurrogateKeyHeader](modules/src_utils_addSurrogateKeyHeader.md)
-- [src/utils/updateMaxAge](modules/src_utils_updateMaxAge.md)

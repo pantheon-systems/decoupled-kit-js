@@ -1,5 +1,16 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.0.1-canary.0
+
+### Patch Changes
+
+- 0158d9d: Implemented the `sortDate` helper on all relevant index pages
+- 56ec318: Added a helpful error message in case a CMS backend endpoint is not set
+- Updated dependencies [0158d9d]
+- Updated dependencies [52e470a]
+  - @pantheon-systems/nextjs-kit@0.1.1-canary.0
+  - @pantheon-systems/drupal-kit@2.2.0-canary.0
+
 ## 3.0.0
 
 ### Major Changes

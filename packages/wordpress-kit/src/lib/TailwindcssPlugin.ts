@@ -6,6 +6,7 @@ import {
   PullQuoteComponent,
   TableComponent,
   GalleryComponent,
+  AudioComponent,
 } from './tailwindcssPlugin/components';
 import { mergeToConfig } from './tailwindcssPlugin/Config';
 import { ColorUtilities, FontsUtilities } from './tailwindcssPlugin/utilities';
@@ -35,6 +36,10 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
     alignFull: { minWidth: theme('screen.xl', '1280px') },
   });
 
+  const audio = AudioComponent({
+    alignFull: { minWidth: theme('screen.xl', '1280px') },
+  });
+
   addUtilities([
     color.getBackgroundUtilities(),
     color.getBorderColorUtilities(),
@@ -46,5 +51,5 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
     quoteUtilities,
   ]);
 
-  addComponents([table, image, pullQuote, gallery]);
+  addComponents([table, image, pullQuote, gallery, audio]);
 }, mergeToConfig);
