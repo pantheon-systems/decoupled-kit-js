@@ -1,5 +1,11 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.6.0-canary.1
+
+### Patch Changes
+
+- f6134ed: Fix file name for WordPressClient
+
 ## 0.6.0-canary.0
 
 ### Minor Changes
