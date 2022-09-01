@@ -1,5 +1,19 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.6.0
+
+### Minor Changes
+
+- 25ea80e: Fixed IMAGE_DOMAIN env var which was being incorrectly set in some cases
+- 50309dd: [next-wordpress] Add example page fetch via Authenticated API
+
+### Patch Changes
+
+- f6134ed: Fix file name for WordPressClient
+- 56ec318: Added a helpful error message in case a CMS backend endpoint is not set
+- Updated dependencies [62ba36b]
+  - @pantheon-systems/wordpress-kit@2.4.0
+
 ## 0.6.0-canary.1
 
 ### Patch Changes
