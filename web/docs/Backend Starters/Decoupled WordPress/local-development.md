@@ -31,6 +31,9 @@ excludes:
   - frontend/node_modules
   - node_modules
 
+env_file:
+  - frontend/.env
+
 services:
   frontend:
     type: node:16
