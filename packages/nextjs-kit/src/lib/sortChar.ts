@@ -23,5 +23,3 @@ export const sortChar = (sortObj: DataToSort) => {
   });
   return sortedArticles.data;
 };
-
-export default sortChar;

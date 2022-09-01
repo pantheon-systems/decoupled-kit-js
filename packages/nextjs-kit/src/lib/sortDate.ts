@@ -25,5 +25,3 @@ export const sortDate = (sortObj: DataToSort) => {
   });
   return sortedDates.data;
 };
-
-export default sortDate;
