@@ -1,5 +1,13 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.0.1-canary.1
+
+### Patch Changes
+
+- 598f7ca: Update imports from nextjs-kit
+- Updated dependencies [598f7ca]
+  - @pantheon-systems/nextjs-kit@1.0.0-canary.1
+
 ## 3.0.1-canary.0
 
 ### Patch Changes

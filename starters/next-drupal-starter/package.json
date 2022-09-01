@@ -1,6 +1,6 @@
 {
   "name": "@pantheon-systems/next-drupal-starter",
-  "version": "3.0.1-canary.0",
+  "version": "3.0.1-canary.1",
   "private": true,
   "description": "Pantheon Decoupled Kit's Next Drupal Starter",
   "license": "GPL-3.0-or-later",
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@pantheon-systems/drupal-kit": "2.2.0-canary.0",
-    "@pantheon-systems/nextjs-kit": "0.1.1-canary.0",
+    "@pantheon-systems/nextjs-kit": "1.0.0-canary.1",
     "@tailwindcss/typography": "^0.5.2",
     "dotenv": "^16.0.0",
     "next": "^12.1.5",
