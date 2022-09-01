@@ -1,5 +1,11 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.0.0-canary.1
+
+### Patch Changes
+
+- b5cd4de: Re-add the package-lock.json
+
 ## 2.0.0-canary.0
 
 ### Major Changes
