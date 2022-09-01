@@ -1,5 +1,11 @@
 # @pantheon-systems/drupal-kit
 
+## 2.2.0
+
+### Minor Changes
+
+- 52e470a: drupal-kit's defaultFetch was updated to set a cache control header of `cache-control: public, s-maxage=10, stale-while-revalidate=600` if a response object is passed.
+
 ## 2.2.0-canary.0
 
 ### Minor Changes
