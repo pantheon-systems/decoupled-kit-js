@@ -258,7 +258,6 @@ importers:
 
   starters/next-wordpress-starter:
     specifiers:
-      '@pantheon-systems/nextjs-kit': workspace:*
       '@pantheon-systems/wordpress-kit': workspace:*
       '@tailwindcss/typography': ^0.5.2
       autoprefixer: ^10.4.4
@@ -273,7 +272,6 @@ importers:
       sharp: ^0.30.4
       tailwindcss: ^3.0.24
     dependencies:
-      '@pantheon-systems/nextjs-kit': link:../../packages/nextjs-kit
       '@pantheon-systems/wordpress-kit': link:../../packages/wordpress-kit
       '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.6
       dotenv: 16.0.1
@@ -10397,10 +10395,10 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.30.7_eslint@8.10.0
+      '@typescript-eslint/parser': 5.30.7_eslint@8.17.0
       debug: 3.2.7
       eslint-import-resolver-node: 0.3.6
-      eslint-import-resolver-typescript: 2.7.1_iwaynwhiegrrsv6g3xp42z6p6u
+      eslint-import-resolver-typescript: 2.7.1_3yxiwxzsqipdmy4jwrlv6vgfmy
       find-up: 2.1.0
     transitivePeerDependencies:
       - supports-color
@@ -15712,7 +15710,7 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 12.2.3_gdjom6r726p3grwsawiv52ijca
+      next: 12.2.3_sfoxds7t5ydpegc3knd667wn6m
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     dev: false
