@@ -14,7 +14,7 @@ git clone git@github.com:pantheon-systems/gatsby-wordpress-starter.git
 cd decoupled-wp-gatsby-frontend-demo && npm install
 ```
 
-3. Save `.env.example` as `.env.local` add/update following lines:
+3. Save `.env.example` as `.env.development.local` add/update following lines:
 
 ```
 WPGRAPHQL_URL=

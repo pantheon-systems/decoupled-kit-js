@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../../lib/isMultiLanguage.js";
+import { sortDate } from "@pantheon-systems/nextjs-kit";
 import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
@@ -12,7 +13,7 @@ import Link from "next/link";
 
 export default function PageListTemplate({
   hrefLang,
-  pages,
+  sortedPages,
   footerMenu,
   multiLanguage,
 }) {
@@ -27,8 +28,8 @@ export default function PageListTemplate({
       <PageHeader title="Pages" />
       <div className="mt-12 mx-auto max-w-[50vw]">
         <ul>
-          {pages ? (
-            pages?.map(({ id, title, body, path }) => (
+          {sortedPages ? (
+            sortedPages?.map(({ id, title, body, path }) => (
               <li className="prose justify-items-start mt-8" key={id}>
                 <h2>{title}</h2>
                 <div dangerouslySetInnerHTML={{ __html: body?.summary }} />
@@ -83,9 +84,15 @@ export async function getServerSideProps(context) {
       return { props: { footerMenu } };
     }
 
+    const sortedPages = sortDate({
+      data: pages,
+      key: "changed",
+      direction: "asc",
+    });
+
     return {
       props: {
-        pages,
+        sortedPages,
         footerMenu,
         hrefLang,
         multiLanguage,

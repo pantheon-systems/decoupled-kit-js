@@ -11,26 +11,30 @@ To install this package to use in your application:
 
 ## Usage
 
-`@pantheon-systems/nextjs-kit` is available as an ES or UMD module. The ES
-module includes submodules. Components use default exports while utilities use
-named exports. If using ES Modules import the submodules directly. Otherwise,
-all imports will be from `@pantheon-systems/nextjs-kit`
+`@pantheon-systems/nextjs-kit` is available as an ES or UMD module. Components
+and utility functions are available as named exports with type declarations and
+TSDoc comments included.
 
 To import a component:
 
 ```js
-// ES Modules
-import Component from '@pantheon-systems/nextjs-kit/component';
-// UMD
-import Component from '@pantheon-systems/nextjs-kit';
+import { Component } from '@pantheon-systems/nextjs-kit';
+```
+
+To apply the styles from the `nextjs-kit`, import the css into your main `_app`
+component
+
+```js
+// pages/_app.jsx
+
+import '@pantheon-systems/nextjs-kit/style.css'
+
+...
 ```
 
 To import a helper utility:
 
 ```js
-// ES Modules
-import { utility } from '@pantheon-systems/nextjs-kit/utility';
-// UMD
 import { utility } from '@pantheon-systems/nextjs-kit';
 ```
 
@@ -43,11 +47,10 @@ import { utility } from '@pantheon-systems/nextjs-kit';
 - Components should be created in the `src/components` folder and should include
   a default export.
 - Utilities for use in a Next.js app should be created in the `src/lib`
-  directory and should include named AND default exports.
+  directory.
 - Utilities for use in this Library that are not exposed as part of the API
   should be created in the `utils` directory
-- There are multiple entry points for building the library. Follow the
-  established pattern to maintain proper code splitting and module resolution.
+- Follow the established export pattern to maintain proper module resolution.
 
 Please see the
 [Contributing guide in our monorepo](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/CONTRIBUTING.md)
