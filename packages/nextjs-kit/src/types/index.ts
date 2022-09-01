@@ -24,10 +24,8 @@ export const hasParent = (item: FooterMenuItem): item is FooterMenuItem =>
 
 export const isNumber = (item: number | null | undefined): item is number =>
   typeof item === 'number';
-export interface PaginatorRenderObj {
-  id: string;
-  title: string;
-  body: {
-    value: string;
-  };
-}
+
+// type predicate that determines an element is an HTMLElement:
+export const isHTMLElement = (element: unknown): element is HTMLElement => {
+  return element instanceof HTMLElement;
+};

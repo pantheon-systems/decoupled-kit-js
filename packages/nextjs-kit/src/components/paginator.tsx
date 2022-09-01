@@ -1,32 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { isNumber } from '../types';
+import { isNumber, isHTMLElement } from '../types';
 
-/**
- *
- * @param props - The props needed for the paginator component
- * @param props.data - An array of paginator objects
- * @param props.itemsPerPage - How many items to display per page
- * @param props.breakpoints - Breakpoints has 3 properties: start, end, and add. Set to {} for no breakpoint.
- * @remarks
- *
- * start: where to start the breakpoint
- * end: where to end the breakpoint
- * add: how many buttons to add when the breakpoint is clicked
- * ***
- * note: (`add` * x) + `start` = `end` where x is a number of clicks it takes to fill in all of the buttons
- * For example: If there are 25 buttons and the start = 5 and end = 25, then add should be 5 or 10.
- * ***
- *
- * @param props.routing If true, shallow routing will be enabled. Check the examples/pagination route to see it in action
- * @param props.Component React Component that takes in currentItems as props and maps over them.
- * currentItems is a subset of data, so any component that works for data will work here.
- * @see {@link https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/starters/next-drupal-starter/pages/examples/pagination/[[...page]].js} for an example implementation
- * @returns Component with data rendered by the passed in Component and page buttons
- */
-
-interface PaginationProps {
-  data: Array<object>;
+interface PaginationProps<Type> {
+  data: Type[];
   itemsPerPage: number;
   breakpoints: {
     start: number;
@@ -37,13 +14,44 @@ interface PaginationProps {
   Component: React.ElementType;
 }
 
-const Paginator: React.FC<PaginationProps> = ({
+/**
+ *
+ * @param props - The props needed for the paginator component
+ * @param props.data - An array of paginator objects
+ * @param props.itemsPerPage - How many items to display per page
+ * @param props.breakpoints - Breakpoints has 3 properties: start, end, and add. Set to {} for no breakpoint.
+ * @remarks
+ * start: where to start the breakpoint
+ *
+ * end: where to end the breakpoint
+ *
+ * add: how many buttons to add when the breakpoint is clicked
+ *
+ * (`add` * x) + `start` = `end` where x is a number of clicks it takes to fill in all of the buttons
+ * For example: If there are 25 buttons and the start = 5 and end = 25, then add should be 5 or 10.
+ * @param props.routing If true, shallow routing will be enabled. Check the examples/pagination route to see it in action
+ * @see {@link https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/starters/next-drupal-starter/pages/examples/pagination/[[...page]].js} for an example implementation
+ * @param props.Component React Component that takes in currentItems as props and maps over them.
+ * currentItems is a subset of `props.data`, so any component that works for data will work here.
+ * @returns Component with data rendered by the passed in Component and page buttons
+ * @example
+ * ```
+ * <Paginator
+ *   data={data}
+ *   itemsPerPage={itemsPerPage}
+ *   breakpoints={{ start: 6, end: 12, add: 6 }}
+ *   routing
+ *   Component={MyComponent}
+ * />
+ * ```
+ */
+const Paginator = <Type extends object>({
   data,
   breakpoints,
   itemsPerPage,
   routing,
   Component,
-}: PaginationProps) => {
+}: PaginationProps<Type>) => {
   // configurable breakpoints
   // This value will be the start of the separator.
   const [breakStart, setBreakStart] = useState<number | null>(
@@ -67,7 +75,7 @@ const Paginator: React.FC<PaginationProps> = ({
   const [offset, setOffset] = useState<number>(
     (currentPageQuery - 1) * itemsPerPage
   );
-  const [currentItems, setCurrentItems] = useState<Array<object>>([]);
+  const [currentItems, setCurrentItems] = useState<object[]>([]);
   const [totalItems] = useState<number>(data.length);
 
   const [totalPages] = useState<number>(Math.ceil(data.length / itemsPerPage));
@@ -107,21 +115,22 @@ const Paginator: React.FC<PaginationProps> = ({
   }, []);
 
   const handlePageClick: React.MouseEventHandler<HTMLButtonElement> = event => {
-    if ((event.target as Element).id === 'next-btn') {
+    if (!isHTMLElement(event.target)) return;
+    if (event.target.id === 'next-btn') {
       // set new offset
       offset < totalItems - itemsPerPage &&
         setOffset(Number(offset) + Number(itemsPerPage));
       // set the current page
       currentPageQuery < totalPages &&
         setCurrentPageQuery(Number(currentPageQuery + 1));
-    } else if ((event.target as Element).id === 'back-btn') {
+    } else if (event.target.id === 'back-btn') {
       // set new offset
       offset >= 0 && setOffset(offset - itemsPerPage);
       // set the current page
       currentPageQuery > 1 && setCurrentPageQuery(Number(currentPageQuery - 1));
     } else {
       // the number of the page button clicked
-      const clickedPage = Number((event.target as Element).innerHTML);
+      const clickedPage = Number(event.target.innerHTML);
       setCurrentPageQuery(clickedPage);
     }
   };
