@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { isNumber, isHTMLElement } from '../types';
 
-interface PaginationProps<Type> {
+export interface PaginationProps<Type> {
   data: Type[];
   itemsPerPage: number;
   breakpoints: {
@@ -75,7 +75,7 @@ const Paginator = <Type extends object>({
   const [offset, setOffset] = useState<number>(
     (currentPageQuery - 1) * itemsPerPage
   );
-  const [currentItems, setCurrentItems] = useState<object[]>([]);
+  const [currentItems, setCurrentItems] = useState<Type[]>([]);
   const [totalItems] = useState<number>(data.length);
 
   const [totalPages] = useState<number>(Math.ceil(data.length / itemsPerPage));
