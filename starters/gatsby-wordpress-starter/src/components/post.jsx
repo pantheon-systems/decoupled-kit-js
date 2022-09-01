@@ -14,8 +14,6 @@ const Post = ({
     altText: featuredImage?.node?.altText || title,
   }
 
-  console.log({ previous, next })
-
   return (
     <article className="prose lg:prose-xl mt-10 mx-auto max-w-screen-lg p-4">
       <h1>{title}</h1>
