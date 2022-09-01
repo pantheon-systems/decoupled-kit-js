@@ -16,6 +16,7 @@ const external = [
   'next',
   'next/link',
 ];
+
 /** @type {import('vite').defineConfig} */
 export default defineConfig(() => {
   return {
