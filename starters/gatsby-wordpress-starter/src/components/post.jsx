@@ -2,7 +2,6 @@ import React from "react"
 
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import parse from "html-react-parser"
 
 const Post = ({
   post: { title, date, content, featuredImage },
@@ -39,9 +38,10 @@ const Post = ({
       </div>
 
       {content ? (
-        <section className="prose lg:prose-xl" itemProp="articleBody">
-          {parse(content)}
-        </section>
+        <div
+          className="break-words mt-12"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
       ) : (
         <p>Sorry, no page data was found at this route.</p>
       )}
@@ -51,7 +51,7 @@ const Post = ({
       <nav className="flex flex-wrap px-6">
         {previous && (
           <Link className="underline font-medium" to={`/posts${previous.uri}`}>
-            ← {parse(previous.title)}
+            ← {previous.title}
           </Link>
         )}
         {next && (
@@ -59,7 +59,7 @@ const Post = ({
             className="underline font-medium ml-auto"
             to={`/posts${next.uri}`}
           >
-            {parse(next.title)} →
+            {next.title} →
           </Link>
         )}
       </nav>

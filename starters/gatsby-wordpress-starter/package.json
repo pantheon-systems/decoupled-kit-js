@@ -34,7 +34,6 @@
     "gatsby-source-wordpress": "^6.12.1",
     "gatsby-transformer-sharp": "^4.12.1",
     "graphql": ">=14.2.0 <15.0.0 || >=15.0.0 <16.0.0 || >=16.0.0 <17.0.0",
-    "html-react-parser": "^1.4.10",
     "lodash": "^4.17.21",
     "mitt": "^3.0.0",
     "postcss": "^8.4.12",
