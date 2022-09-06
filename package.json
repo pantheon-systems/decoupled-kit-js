@@ -55,6 +55,7 @@
     "@typescript-eslint/parser": "^5.13.0",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "fetch-mock-jest": "^1.5.1",
     "husky": "^7.0.4",
     "jest": "^27.5.1",

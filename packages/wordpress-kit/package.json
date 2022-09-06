@@ -27,13 +27,7 @@
     "arrowParens": "avoid",
     "proseWrap": "always"
   },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{md,mdx}": "prettier --write"
-  },
+  "lint-staged": "@pantheon-systems/configs/lint-staged",
   "scripts": {
     "dev": "vite",
     "build": "tsc && rollup -c",
@@ -53,6 +47,7 @@
     "graphql-request": "^4.3.0"
   },
   "devDependencies": {
+    "@pantheon-systems/eslint-config": "*",
     "tailwindcss": "^3.1.6"
   },
   "peerDependencies": {
