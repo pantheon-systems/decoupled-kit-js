@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
 import { isMultiLanguage } from "../../lib/isMultiLanguage.js";
+import { sortDate } from "@pantheon-systems/nextjs-kit";
 import {
   getCurrentLocaleStore,
   globalDrupalStateStores,
@@ -9,7 +10,6 @@ import {
 import Layout from "../../components/layout";
 import PageHeader from "../../components/page-header";
 import Link from "next/link";
-import { sortDate } from "@pantheon-systems/nextjs-kit/sortDate";
 
 export default function PageListTemplate({
   hrefLang,

@@ -90,6 +90,10 @@ To generate a new changeset, run `pnpm changeset` in the root of the repository.
 Versions and releases are created as part of our CI process and typically should
 not be created manually.
 
+#### Canary Releases
+
+Each push to the `canary` (default) branch triggers the `canary-release.yml` GitHub Action workflow which will open a PR back to the repo, and on merge it will release any package with a changeset to the `canary` tag on GitHub and npm.
+
 ## Bug Reports and Feature Requests
 
 - Is the code in this repository not working as expected? Open a bug report [here](https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml)

@@ -11,22 +11,22 @@
   },
   "author": "@pantheon-systems",
   "files": [
-    "dist",
-    "src/sdk.{js,ts}"
+    "dist"
   ],
-  "main": "./dist/umd/nextjs-kit.umd.js",
-  "module": "./dist/es/*-es.js",
+  "main": "./dist/nextjs-kit.umd.js",
+  "module": "./dist/nextjs-kit.es.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/es",
-      "require": "./dist/umd/nextjs-kit.umd.js"
+      "require": "./dist/nextjs-kit.umd.js",
+      "import": "./dist/nextjs-kit.es.js"
     },
-    "./*": "./dist/es/*.js"
+    "./style.css": "./dist/style.css"
   },
   "prettier": "@pantheon-systems/configs/prettier",
   "scripts": {
-    "build": "tsc && rollup -c",
-    "watch": "tsc && rollup -c -w",
+    "build": "tsc && vite build",
+    "watch": "tsc && vite build --watch",
     "typedoc": "typedoc",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -42,11 +42,14 @@
     "@pantheon-systems/configs": "*",
     "@testing-library/react": "12.1.5",
     "@vitejs/plugin-react": "^2.0.0",
+    "autoprefixer": "^10.4.4",
     "c8": "^7.12.0",
     "next": "12.1.6",
+    "postcss": "^8.4.12",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "tailwindcss": "3.1.6",
+    "vite-plugin-dts": "^1.4.1",
     "vitest": "^0.18.0"
   },
   "peerDependencies": {
