@@ -33,8 +33,8 @@
     "update-snapshots": "vitest run --update",
     "eslint": "eslint --ext .js,.ts,.jsx,.tsx src --ignore-path .gitignore",
     "eslint:fix": "eslint --ext .js,.ts,.jsx,.tsx src --fix --ignore-path .gitignore",
-    "prettier": "prettier \"**/*.{js,ts,md}\" --check --ignore-path .gitignore",
-    "prettier:fix": "prettier \"**/*.{js,ts,md}\" --write --ignore-path .gitignore",
+    "prettier": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --check --ignore-path ../../.prettierignore",
+    "prettier:fix": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --write --ignore-path ../../.prettierignore",
     "lint-staged": "lint-staged"
   },
   "devDependencies": {

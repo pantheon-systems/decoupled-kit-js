@@ -4,6 +4,7 @@ overrides:
   '@pantheon-systems/wordpress-kit': workspace:*
   '@pantheon-systems/drupal-kit': workspace:*
   '@pantheon-systems/nextjs-kit': workspace:*
+  '@pantheon-systems/configs': workspace:*
   '@pantheon-systems/eslint-config': workspace:*
   '@types/react': 17.0.40
   node-fetch@<2.6.7: '>=2.6.7'
@@ -98,7 +99,7 @@ importers:
     specifiers:
       '@apollo/client': ^3.5.10
       '@gdwc/drupal-state': 3.1.0
-      '@pantheon-systems/configs': '*'
+      '@pantheon-systems/configs': workspace:*
       '@pantheon-systems/eslint-config': workspace:*
       '@types/humps': ^2.0.1
       '@types/isomorphic-fetch': ^0.0.35
@@ -127,7 +128,7 @@ importers:
 
   packages/nextjs-kit:
     specifiers:
-      '@pantheon-systems/configs': '*'
+      '@pantheon-systems/configs': workspace:*
       '@pantheon-systems/eslint-config': workspace:*
       '@testing-library/react': 12.1.5
       '@vitejs/plugin-react': ^2.0.0
@@ -151,7 +152,7 @@ importers:
 
   packages/wordpress-kit:
     specifiers:
-      '@pantheon-systems/configs': '*'
+      '@pantheon-systems/configs': workspace:*
       '@pantheon-systems/eslint-config': workspace:*
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
       graphql-request: ^4.3.0

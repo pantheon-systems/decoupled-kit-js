@@ -10,7 +10,6 @@
     "type": "git",
     "url": "https://github.com/pantheon-systems/decoupled-kit-js"
   },
-  "prettier": "./configs/prettier",
   "author": "@pantheon-systems",
   "main": "index.js",
   "scripts": {

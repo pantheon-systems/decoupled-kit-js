@@ -1,57 +1,57 @@
 {
-  "name": "@pantheon-systems/wordpress-kit",
-  "version": "2.3.0",
-  "description": "Pantheon Decoupled Kit's WordPress Kit",
-  "license": "GPL-3.0-or-later",
-  "homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
-  "bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pantheon-systems/decoupled-kit-js"
-  },
-  "author": "@pantheon-systems",
-  "files": [
-    "dist",
-    "src/sdk.{js,ts}"
-  ],
-  "main": "./dist/wordpress-kit.umd.js",
-  "module": "./dist/wordpress-kit.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/wordpress-kit.es.js",
-      "require": "./dist/wordpress-kit.umd.js"
-    }
-  },
-  "prettier": "@pantheon-systems/config/prettier",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && rollup -c",
-    "serve": "vite preview",
-    "typedoc": "typedoc",
-    "test": "jest",
-    "test:ci": "JEST_JUNIT_OUTPUT_DIR='./test-results/jest' jest --ci --reporters=default --reporters=jest-junit",
-    "eslint": "eslint --ext .js,.ts src --ignore-path .gitignore",
-    "eslint:fix": "eslint --ext .js,.ts src --fix --ignore-path .gitignore",
-    "prettier": "prettier \"**/*.{js,ts,md}\" --check --ignore-path .gitignore",
-    "prettier:fix": "prettier \"**/*.{js,ts,md}\" --write --ignore-path .gitignore",
-    "lint-staged": "lint-staged",
-    "rollup": "rollup -c"
-  },
-  "dependencies": {
-    "graphql": "^14.0.0 || ^15.0.0 || ^16.0.0",
-    "graphql-request": "^4.3.0"
-  },
-  "devDependencies": {
-    "@pantheon-systems/configs": "*",
-    "@pantheon-systems/eslint-config": "*",
-    "tailwindcss": "^3.1.6"
-  },
-  "peerDependencies": {
-    "tailwindcss": "^3.1.6"
-  },
-  "peerDependenciesMeta": {
-    "tailwindcss": {
-      "optional": true
-    }
-  }
+	"name": "@pantheon-systems/wordpress-kit",
+	"version": "2.3.0",
+	"description": "Pantheon Decoupled Kit's WordPress Kit",
+	"license": "GPL-3.0-or-later",
+	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
+	"bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pantheon-systems/decoupled-kit-js"
+	},
+	"author": "@pantheon-systems",
+	"files": [
+		"dist",
+		"src/sdk.{js,ts}"
+	],
+	"main": "./dist/wordpress-kit.umd.js",
+	"module": "./dist/wordpress-kit.es.js",
+	"exports": {
+		".": {
+			"import": "./dist/wordpress-kit.es.js",
+			"require": "./dist/wordpress-kit.umd.js"
+		}
+	},
+	"prettier": "@pantheon-systems/configs/prettier",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && rollup -c",
+		"serve": "vite preview",
+		"typedoc": "typedoc",
+		"test": "jest",
+		"test:ci": "JEST_JUNIT_OUTPUT_DIR='./test-results/jest' jest --ci --reporters=default --reporters=jest-junit",
+		"eslint": "eslint --ext .ts src --ignore-path .gitignore",
+		"eslint:fix": "eslint --ext .ts src --fix --ignore-path .gitignore",
+		"prettier": "prettier \"**/*.{ts,md}\" --check --ignore-path ../../.prettierignore",
+		"prettier:fix": "prettier \"**/*.{ts,md}\" --write --ignore-path ../../.prettierignore",
+		"lint-staged": "lint-staged",
+		"rollup": "rollup -c"
+	},
+	"dependencies": {
+		"graphql": "^14.0.0 || ^15.0.0 || ^16.0.0",
+		"graphql-request": "^4.3.0"
+	},
+	"devDependencies": {
+		"@pantheon-systems/configs": "*",
+		"@pantheon-systems/eslint-config": "*",
+		"tailwindcss": "^3.1.6"
+	},
+	"peerDependencies": {
+		"tailwindcss": "^3.1.6"
+	},
+	"peerDependenciesMeta": {
+		"tailwindcss": {
+			"optional": true
+		}
+	}
 }

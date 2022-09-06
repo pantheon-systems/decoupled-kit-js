@@ -3,6 +3,9 @@ pnpm-lock.yaml
 CHANGELOG.md
 LICENSE.md
 CODE_OF_CONDUCT.md
-.*rc
+
 dist
+*.test.*
+.*rc
 *.d.ts
+*.config.js
