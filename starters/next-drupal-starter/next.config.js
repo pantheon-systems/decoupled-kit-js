@@ -31,7 +31,7 @@ if (process.env.BACKEND_URL === undefined) {
   backendUrl = process.env.BACKEND_URL;
   imageDomain =
     process.env.IMAGE_DOMAIN ||
-    process.env.BACKEND_URL.replace(/^https:\/\//, "");
+    process.env.BACKEND_URL.replace(/^https?:\/\//, "");
 }
 // remove trailing slash if it exists
 imageDomain = imageDomain.replace(/\/$/, "");
