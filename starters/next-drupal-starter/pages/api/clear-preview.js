@@ -1,6 +1,7 @@
 export default function handler(req, res) {
-  console.log('Clearing preview data...')
+  const redirect = new URL(req.headers.referer).pathname;
+  console.log("Clearing preview data...");
   // clear the previewData cookie and redirect to homepage
   res.clearPreviewData();
-  res.redirect("/");
+  res.redirect(redirect);
 }
