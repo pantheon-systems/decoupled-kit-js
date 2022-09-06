@@ -23,16 +23,16 @@
   "dependencies": {
     "autoprefixer": "^10.4.4",
     "gatsby": "4.22.0",
-    "gatsby-plugin-image": "^2.12.1",
-    "gatsby-plugin-manifest": "^4.12.1",
-    "gatsby-plugin-offline": "^5.12.1",
+    "gatsby-plugin-image": "^2.22.0",
+    "gatsby-plugin-manifest": "^4.22.0",
+    "gatsby-plugin-offline": "^5.22.0",
     "gatsby-plugin-pnpm": "^1.2.10",
-    "gatsby-plugin-postcss": "^5.12.1",
-    "gatsby-plugin-react-helmet": "^5.12.1",
-    "gatsby-plugin-sharp": "^4.12.1",
-    "gatsby-source-filesystem": "^4.12.1",
-    "gatsby-source-wordpress": "^6.12.1",
-    "gatsby-transformer-sharp": "^4.12.1",
+    "gatsby-plugin-postcss": "^5.22.0",
+    "gatsby-plugin-react-helmet": "^5.22.0",
+    "gatsby-plugin-sharp": "^4.22.0",
+    "gatsby-source-filesystem": "^4.22.0",
+    "gatsby-source-wordpress": "^6.22.0",
+    "gatsby-transformer-sharp": "^4.22.0",
     "graphql": ">=14.2.0 <15.0.0 || >=15.0.0 <16.0.0 || >=16.0.0 <17.0.0",
     "lodash": "^4.17.21",
     "mitt": "^3.0.0",
@@ -44,12 +44,12 @@
     "typeface-montserrat": "1.1.13"
   },
   "devDependencies": {
-    "tailwindcss": "^3.0.24",
-    "@tailwindcss/typography": "^0.5.2",
-    "@pantheon-systems/wordpress-kit": "^2.4.0",
     "@babel/core": ">=7.12.3 <8.0.0",
+    "@pantheon-systems/wordpress-kit": "^2.4.0",
+    "@tailwindcss/typography": "^0.5.2",
     "dumper.js": "^1.3.1",
     "prettier": "2.5.1",
+    "tailwindcss": "^3.0.24",
     "webpack": "^4.0.0 || ^5.0.0"
   }
 }
