@@ -17,7 +17,7 @@
     "build:gatsby-wp": "pnpm --filter './starters/gatsby-wordpress-starter' build",
     "build:nextjs-kit": "pnpm --filter './packages/nextjs-kit' build",
     "build:next-drupal": "pnpm --filter './starters/next-drupal-starter' build:mono",
-    "build:next-wp": "pnpm --filter './starters/next-wordpress-starter' build",
+    "build:next-wp": "pnpm --filter './starters/next-wordpress-starter' build:mono",
     "build:pkgs": "pnpm --filter './packages/**' build",
     "build:starters": "pnpm --filter './starters/**' build",
     "ci:publish": "changeset publish",
@@ -30,7 +30,7 @@
     "serve:gatsby-wp": "pnpm --filter './starters/gatsby-wordpress-starter' serve",
     "start:gatsby-wp": "pnpm --filter './starters/gatsby-wordpress-starter' start",
     "start:next-drupal": "pnpm --filter './starters/next-drupal-starter' start:mono",
-    "start:next-wp": "pnpm -filter './starters/next-wordpress-starter' start",
+    "start:next-wp": "pnpm -filter './starters/next-wordpress-starter' start:mono",
     "test": "pnpm recursive test",
     "update-snapshots:nextjs-kit": "pnpm --filter './packages/nextjs-kit' update-snapshots",
     "watch:nextjs-kit": "pnpm --filter './packages/nextjs-kit' watch"
