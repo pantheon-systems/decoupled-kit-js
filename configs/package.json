@@ -12,9 +12,10 @@
 	},
 	"author": "@pantheon-systems",
 	"files": [
-		"prettier.config.js",
-		"lint-staged.config.js"
+		"./prettier.config.js",
+		"./lint-staged.config.js"
 	],
+	"prettier": "./prettier.config.js",
 	"exports": {
 		"./prettier": "./prettier.config.js",
 		"./lint-staged": "./lint-staged.config.js"

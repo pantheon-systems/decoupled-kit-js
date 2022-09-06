@@ -76,6 +76,7 @@
       "@pantheon-systems/wordpress-kit": "workspace:*",
       "@pantheon-systems/drupal-kit": "workspace:*",
       "@pantheon-systems/nextjs-kit": "workspace:*",
+      "@pantheon-systems/configs": "workspace:*",
       "@pantheon-systems/eslint-config": "workspace:*",
       "@types/react": "17.0.40",
       "node-fetch@<2.6.7": ">=2.6.7",

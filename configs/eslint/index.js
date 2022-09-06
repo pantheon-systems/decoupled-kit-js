@@ -18,5 +18,6 @@ module.exports = {
 		'rollup.config.js',
 		'vite.config.js',
 		'jest.config.js',
+		'lint-staged.config.js',
 	],
 };

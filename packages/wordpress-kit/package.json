@@ -22,12 +22,7 @@
       "require": "./dist/wordpress-kit.umd.js"
     }
   },
-  "prettier": {
-    "singleQuote": true,
-    "arrowParens": "avoid",
-    "proseWrap": "always"
-  },
-  "lint-staged": "@pantheon-systems/configs/lint-staged",
+  "prettier": "@pantheon-systems/config/prettier",
   "scripts": {
     "dev": "vite",
     "build": "tsc && rollup -c",
@@ -47,6 +42,7 @@
     "graphql-request": "^4.3.0"
   },
   "devDependencies": {
+    "@pantheon-systems/configs": "*",
     "@pantheon-systems/eslint-config": "*",
     "tailwindcss": "^3.1.6"
   },
