@@ -1,32 +1,40 @@
 import { useState } from "react";
 
-export default function PreviewRibbion() {
+export default function PreviewRibbon() {
   const [show, setShow] = useState(true);
+  const [showText, setShowText] = useState(true);
 
   return (
     <div
-      className={`flex justify-between items-center h-14 transition-all fixed px-8 py-2 z-10 bg-[#3017A1] text-white ${
-        show ? "w-full p-16 top-0 right-0" : "right-0 w-24"
+      onTransitionEndCapture={(transition) => {
+        if (transition.propertyName === "transform") {
+          show ? setTimeout(() => setShowText(true), 150) : setShowText(false);
+        }
+      }}
+      className={`overflow-hidden flex justify-between items-center min-h-[3.5rem] h-14 px-8 py-2 z-10 bg-[#3017A1] text-white transition-all delay-150 w-full ${
+        !show ? "justify-start translate-x-[calc(100%-5rem)] pl-4" : ""
       }`}
     >
-      {show ? (
+      {showText && (
         <>
-          <p className="mr-auto">Preview Mode Enabled</p>
+          <span className="mr-auto self-center">Preview Mode Enabled</span>
           <a
-            className="mr-12 border text-black border-black px-4 py-2 bg-yellow-300"
+            className="justify-self-end border text-black border-black w-fit max-w- px-4 py-2 mr-12 bg-yellow-300"
             href="/api/clear-preview"
           >
             Exit Preview Mode
           </a>
-          <button onClick={() => setShow(false)}>
-            <img className="w-8" src="/collapse.svg"></img>
-          </button>
         </>
-      ) : (
-        <button onClick={() => setShow(true)}>
-          <img className="w-8 rotate-180" src="/collapse.svg"></img>
-        </button>
       )}
+      <button
+        className={`self-center delay-200 ${showText ? "self-end" : ""}`}
+        onClick={() => setShow(!show)}
+      >
+        <img
+          className={`w-8 transition-all ${show ? "rotate-180" : ""}`}
+          src="/collapse.svg"
+        />
+      </button>
     </div>
   );
 }

@@ -106,8 +106,6 @@ export async function getServerSideProps(context) {
     });
   });
 
-  console.log("preview", context.preview);
-
   return {
     props: {
       page,
