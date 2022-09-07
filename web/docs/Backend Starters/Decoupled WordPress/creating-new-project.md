@@ -4,19 +4,6 @@ title: "Creating a New WordPress Project"
 slug: "/Backend Starters/Decoupled WordPress/Creating a New Project"
 sidebar_position: 2
 ---
-## Choosing an Approach
-
-### Use Build Tools if:
-
-- Testing is an important part of your workflow
-
-- You don’t want to manually push changes to your code repo.
-
-### Use Dashboard Upstream if:
-
-- You require a simpler setup
-
-- The Pantheon repository is your source of truth
 
 ### Installing using Dashboard Upstream
 
