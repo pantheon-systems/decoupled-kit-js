@@ -1,7 +1,8 @@
 name: "Feature Request"
 description: Suggest a feature
 title: "[feat]: "
-labels: enhancement
+labels:
+  - enhancement
 body:
   - type: markdown
     attributes:
