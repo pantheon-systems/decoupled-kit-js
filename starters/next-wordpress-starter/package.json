@@ -13,15 +13,17 @@
   "author": "@pantheon-systems",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build && cp -r .next/static .next/standalone/.next && cp -r public .next/standalone",
+    "start": "node .next/standalone/server.js",
+    "build:mono": "next build",
+    "start:mono": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@pantheon-systems/wordpress-kit": "2.4.0",
     "@tailwindcss/typography": "^0.5.2",
     "dotenv": "^16.0.0",
-    "next": "^12.1.5",
+    "next": "^12.2.5",
     "next-seo": "^5.4.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
