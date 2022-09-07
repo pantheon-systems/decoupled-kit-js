@@ -1,5 +1,11 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.0.1-canary.0
+
+### Patch Changes
+
+- 66aeea3: Upgraded next to latest version, changed starter kits to build and start using standalone output mode.
+
 ## 1.0.0
 
 ### Major Changes

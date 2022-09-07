@@ -1,5 +1,12 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.6.1-canary.0
+
+### Patch Changes
+
+- 8943464: Derive IMAGE_DOMAIN from the backend url when it is https or http
+- 66aeea3: Upgraded next to latest version, changed starter kits to build and start using standalone output mode.
+
 ## 0.6.0
 
 ### Minor Changes
