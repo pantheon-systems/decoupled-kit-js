@@ -5,7 +5,7 @@ slug: "/Backend Starters/Decoupled WordPress/Creating a New Project"
 sidebar_position: 2
 ---
 
-### Installing using Dashboard Upstream
+### Installing using Upstream
 
 - Create from Decoupled WordPress Composer Managed upstream:
 
