@@ -10,5 +10,11 @@
     "@pantheon-systems/next-wordpress-starter": "0.6.0",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "four-pans-protect",
+    "fuzzy-numbers-wink",
+    "mean-crabs-sin",
+    "seven-suns-shave",
+    "sharp-jokes-begin"
+  ]
 }
