@@ -28,7 +28,12 @@ if (process.env.WPGRAPHQL_URL === undefined) {
   process.env.WPGRAPHQL_URL = `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`;
 } else {
   backendUrl = process.env.WPGRAPHQL_URL;
-  imageDomain = process.env.IMAGE_DOMAIN || process.env.WPGRAPHQL_URL;
+  imageDomain =
+    process.env.IMAGE_DOMAIN ||
+    process.env.WPGRAPHQL_URL.replace(/\/wp\/graphql$/, "").replace(
+      /^https?:\/\//,
+      ""
+    );
 }
 // remove trailing slash if it exists
 imageDomain = imageDomain.replace(/\/$/, "");
