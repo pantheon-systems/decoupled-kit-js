@@ -3,7 +3,7 @@
 exports[`Umami <RecipeListTemplate /> > should render with umami profile recipes 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
   >
     <div
       class="my-0 pt-10 px-5 text-xl"
@@ -403,7 +403,7 @@ exports[`Umami <RecipeListTemplate /> > should render with umami profile recipes
 exports[`Umami <RecipeTemplate /> > should render with a umami profile recipe 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
   >
     <div
       class="my-0 pt-10 px-5 text-xl"
