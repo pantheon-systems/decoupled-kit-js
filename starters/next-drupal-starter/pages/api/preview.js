@@ -1,7 +1,6 @@
 import { globalDrupalStateAuthStores } from "../../lib/stores";
 
 const preview = async (req, res) => {
-
   // Check the secret and next parameters
   // This secret should only be known to this API route and the CMS
   if (req.query.secret !== process.env.PREVIEW_SECRET || !req.query.slug) {
@@ -50,7 +49,7 @@ const preview = async (req, res) => {
   }
 
   // Redirect to the path from the fetched content
-  res.redirect(content.path.alias);
+  res.redirect(`${content.path.alias}?timestamp=${Date.now()}`);
 };
 
 export default preview;
