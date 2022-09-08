@@ -1,0 +1,26 @@
+{
+	"name": "@pantheon-systems/configs",
+	"version": "0.0.0",
+	"description": "Pantheon Decoupled Kit's Configs",
+	"license": "GPL-3.0-or-later",
+	"private": true,
+	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
+	"bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pantheon-systems/decoupled-kit-js"
+	},
+	"author": "@pantheon-systems",
+	"files": [
+		"./prettier.config.js",
+		"./lint-staged.config.js"
+	],
+	"prettier": "./prettier.config.js",
+	"exports": {
+		"./prettier": "./prettier.config.js",
+		"./lint-staged": "./lint-staged.config.js"
+	},
+	"peerDependencies": {
+		"prettier": ">=2.5.1"
+	}
+}
