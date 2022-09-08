@@ -7,10 +7,11 @@ import defaultProfileFooterMenu from "../data/defaultProfileMenuItemsMainData.js
 
 vi.mock("next/router", () => ({
   useRouter: () => ({
-    locale: "en",
-    pathname: "",
+    locale: 'en',
+    pathname: 'test/path',
+    push: vi.fn(),
     query: {
-      page: "/examples/pagination/[[...page]]",
+      page: '/examples/pagination/[[...page]]',
     },
   }),
 }));

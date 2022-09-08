@@ -6,7 +6,7 @@ import {
 } from "../../../lib/stores";
 import { BUILD_MODE } from "../../../lib/constants";
 
-import Paginator from "../../../components/paginator";
+import { Paginator } from "@pantheon-systems/nextjs-kit";
 import Head from "next/head";
 import Layout from "../../../components/layout";
 
