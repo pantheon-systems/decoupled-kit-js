@@ -1,5 +1,14 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.0.2-canary.0
+
+### Patch Changes
+
+- 8943464: Derive IMAGE_DOMAIN from the backend url when it is https or http
+- 66aeea3: Upgraded next to latest version, changed starter kits to build and start using standalone output mode.
+- Updated dependencies [66aeea3]
+  - @pantheon-systems/nextjs-kit@1.0.1-canary.0
+
 ## 3.0.1
 
 ### Patch Changes

@@ -48,6 +48,7 @@ const nextConfig = {
   images: {
     domains: [imageDomain],
   },
+  output: "standalone",
 };
 
 module.exports = nextConfig;
