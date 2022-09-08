@@ -30,7 +30,7 @@ sidebar_position: 2
   - Or Alternatively via Terminus:
 
     ```
-    terminus site:create my-new-site "Describe Site" empty --org='My Team Name' c76c0e51-ad85-41d7-b095-a98a75869760
+    terminus site:create my-new-site "Describe Site" --org='My Team Name' c76c0e51-ad85-41d7-b095-a98a75869760
     ```
 
   :::note
