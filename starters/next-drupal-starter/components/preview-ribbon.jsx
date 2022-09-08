@@ -6,7 +6,7 @@ export default function PreviewRibbon() {
   const [show, setShow] = useState(true);
 
   return (
-    <div className="overflow-hidden">
+    <div>
       <div
         className={`flex justify-between items-center min-h-[3.5rem] h-14 px-8 py-2 bg-[#3017A1] text-white transition-all duration-300 w-full ${
           !show ? "justify-start translate-x-[calc(100%-5rem)] pl-4" : ""

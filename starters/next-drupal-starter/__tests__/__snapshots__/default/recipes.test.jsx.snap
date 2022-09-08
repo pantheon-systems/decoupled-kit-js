@@ -3,7 +3,7 @@
 exports[`Default <RecipeListTemplate /> > should render a 404 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
   >
     <div
       class="my-0 pt-10 px-5 text-xl"
@@ -104,7 +104,7 @@ exports[`Default <RecipeListTemplate /> > should render a 404 1`] = `
 exports[`Default <RecipeTemplate /> > should render a 404 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
   >
     <div
       class="my-0 pt-10 px-5 text-xl"
