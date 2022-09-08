@@ -5,9 +5,9 @@ Pantheon's Decoupled Kit ⚡️!
 
 ## Getting started and Prerequisites
 
-Check the [prerequisites](https://github.com/pantheon-systems/decoupled-kit-js/#prerequisites) and [getting started](https://github.com/pantheon-systems/decoupled-kit-js/#getting-started) to get setup for development.
+Check the [prerequisites](https://github.com/pantheon-systems/decoupled-kit-js/#prerequisites-start-here!) and [getting started](https://github.com/pantheon-systems/decoupled-kit-js/#setup-the-monorepo) to get setup for development.
 
-If you find a bug or have a feature request, please open an issue or a start a discusson.
+If you find a bug or have a feature request, please open an issue or a start a discussion.
 
 ## Packages
 
@@ -15,16 +15,19 @@ You should be able to get started developing on the packages right away. They ha
 
 ### Adding New Modules
 
-CMS specific modules should be created in `packages/drupal-kit` or `packages/worpress-kit` respectively.
+CMS specific modules should be created in `packages/drupal-kit` or `packages/wordpress-kit` respectively.
 
-Exports for any modules that are intended to be available within the distributed
-package should be added to `index.js`.
+Framework/library specific modules should be created in `packages/{framework/library name}-kit`. For example, `packages/nextjs-kit`
 
-All module code should be written in TypeScript.
+Exports for any modules that are intended to be available within the distributed package should be added to `index.ts`.
+
+All module code should be written in TypeScript. Use [TSDoc](https://tsdoc.org/) comments on all exported code. The TSDoc comments are used for API reference generation, so please include an example and remarks when appropriate.
 
 ### Running A Local Development Server
 
-The `pnpm --filter './packages/{package name}' dev` can be run for local development.
+####
+
+The can be run for local development.
 It will watch for changes and launch `index.html` at http://localhost:3000. `index.html` loads
 `src/main.ts` which can be used for demonstration purposes and local
 development.
@@ -33,8 +36,8 @@ development.
 
 Linting and formatting will run for all staged files as a pre-commit hook.
 
-VSCode users can format code on save using the
-[Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+VS Code users can format code on save using the
+[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 and
 [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 extensions. These extensions will be suggested when loading the project if they
@@ -99,6 +102,7 @@ To contribute to the starters, you will need a backend to develop against.
 - Tests should be written with the two data profiles in mind: the Umami demo data profile, and the Default example data profile.
 
 <!-- Instructions on how to spin up a backend for local development here -->
+
 ### gatsby-wordpress-starter
 
 <!-- Instructions on how to spin up a backend for local development here -->
