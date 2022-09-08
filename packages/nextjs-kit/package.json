@@ -1,7 +1,7 @@
 {
   "name": "@pantheon-systems/nextjs-kit",
   "version": "1.0.1-canary.0",
-  "description": "Pantheon Decoupled Kit's Nextjs Kit",
+  "description": "Pantheon Decoupled Kit's Next.js Kit",
   "license": "GPL-3.0-or-later",
   "homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
   "bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",
@@ -23,18 +23,7 @@
     },
     "./style.css": "./dist/style.css"
   },
-  "prettier": {
-    "singleQuote": true,
-    "arrowParens": "avoid",
-    "proseWrap": "always"
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{md,mdx}": "prettier --write"
-  },
+  "prettier": "@pantheon-systems/configs/prettier",
   "scripts": {
     "build": "tsc && vite build",
     "watch": "tsc && vite build --watch",
@@ -42,14 +31,15 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "update-snapshots": "vitest run --update",
-    "eslint": "eslint --ext .js,.ts src --ignore-path .gitignore",
-    "eslint:fix": "eslint --ext .js,.ts src --fix --ignore-path .gitignore",
-    "prettier": "prettier \"**/*.{js,ts,md}\" --check --ignore-path .gitignore",
-    "prettier:fix": "prettier \"**/*.{js,ts,md}\" --write --ignore-path .gitignore",
+    "eslint": "eslint --ext .js,.ts,.jsx,.tsx src --ignore-path .gitignore",
+    "eslint:fix": "eslint --ext .js,.ts,.jsx,.tsx src --fix --ignore-path .gitignore",
+    "prettier": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --check --ignore-path ../../.prettierignore",
+    "prettier:fix": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --write --ignore-path ../../.prettierignore",
     "lint-staged": "lint-staged"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.2",
+    "@pantheon-systems/eslint-config": "*",
+    "@pantheon-systems/configs": "*",
     "@testing-library/react": "12.1.5",
     "@vitejs/plugin-react": "^2.0.0",
     "autoprefixer": "^10.4.4",
