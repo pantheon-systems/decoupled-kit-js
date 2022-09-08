@@ -3,14 +3,10 @@ import Link from "next/link";
 
 import PageHeader from "../../components/page-header";
 import Layout from "../../components/layout";
-import { withGrid, PostGridItem } from "../../components/grid";
 
 import { getFooterMenu } from "../../lib/Menus";
-import { getLatestPosts } from "../../lib/Posts";
 
-export default function PostsListTemplate({ menuItems, SSRPosts }) {
-  const PostGrid = withGrid(PostGridItem);
-
+export default function PostsListTemplate({ menuItems }) {
   return (
     <Layout footerMenu={menuItems}>
       <NextSeo
@@ -47,12 +43,10 @@ export default function PostsListTemplate({ menuItems, SSRPosts }) {
 
 export async function getServerSideProps() {
   const menuItems = await getFooterMenu();
-  const SSRPosts = await getLatestPosts();
 
   return {
     props: {
       menuItems,
-      SSRPosts,
     },
   };
 }
