@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 export default function Header() {
-
   return (
     <div className="my-0 pt-10 px-5 text-xl">
       <nav>
