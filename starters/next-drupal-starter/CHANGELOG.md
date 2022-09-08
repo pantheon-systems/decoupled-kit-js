@@ -1,5 +1,17 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.1.0-canary.1
+
+### Minor Changes
+
+- e5de512: Added ribbon in preview mode, and refactor clear to go back to the article/page
+- 960244e: Added timestamp as query parameter to break cache
+
+### Patch Changes
+
+- Updated dependencies [547ee6e]
+  - @pantheon-systems/nextjs-kit@1.1.0-canary.1
+
 ## 3.0.2-canary.0
 
 ### Patch Changes
