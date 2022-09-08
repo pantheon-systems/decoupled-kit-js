@@ -3,6 +3,9 @@ import Paginator from '../../components/paginator';
 import examplePaginationData from '../data/examplePaginationData.json';
 import React from 'react';
 import { vi } from 'vitest';
+// import { useRouter } from 'next/router';
+import { RouterMock } from '../../__mocks__/next/router';
+// vi.mock('next/router');
 
 vi.mock('next/router', () => ({
   useRouter: () => ({
@@ -14,6 +17,10 @@ vi.mock('next/router', () => ({
     },
   }),
 }));
+
+// export useRouter mock from mocks folder
+// let spy = vi.spyOn(RouterMock, 'routerMock');
+const spy = vi.spyOn(RouterMock(), 'push');
 
 interface PaginatorRenderObj {
   id: string;
@@ -57,39 +64,25 @@ const RenderCurrentItems: React.FC<PaginationItemProps> = ({
 describe(`<Paginator />`, () => {
   it('should render the paginated data', () => {
     const { asFragment } = render(
-      <div className="prose container min-w-full min-h-screen max-w-screen mx-auto">
-        <main className="flex mx-auto flex-col">
-          <section className="mx-auto">
-            <h1 className="my-10">Pagination example</h1>
-            <Paginator
-              data={examplePaginationData}
-              itemsPerPage={10}
-              breakpoints={{ start: 6, end: 12, add: 6 }}
-              routing={true}
-              Component={RenderCurrentItems}
-            />
-          </section>
-        </main>
-      </div>
+      <Paginator
+        data={examplePaginationData}
+        itemsPerPage={10}
+        breakpoints={{ start: 6, end: 12, add: 6 }}
+        routing={true}
+        Component={RenderCurrentItems}
+      />
     );
     expect(asFragment()).toMatchSnapshot();
   });
   it('back button is disabled on first page', () => {
     render(
-      <div className="prose container min-w-full min-h-screen max-w-screen mx-auto">
-        <main className="flex mx-auto flex-col">
-          <section className="mx-auto">
-            <h1 className="my-10">Pagination example</h1>
-            <Paginator
-              data={examplePaginationData}
-              itemsPerPage={10}
-              breakpoints={{ start: 6, end: 12, add: 6 }}
-              routing={true}
-              Component={RenderCurrentItems}
-            />
-          </section>
-        </main>
-      </div>
+      <Paginator
+        data={examplePaginationData}
+        itemsPerPage={10}
+        breakpoints={{ start: 6, end: 12, add: 6 }}
+        routing={true}
+        Component={RenderCurrentItems}
+      />
     );
     expect(
       (document.getElementById('back-btn') as HTMLButtonElement).disabled
@@ -98,20 +91,13 @@ describe(`<Paginator />`, () => {
 
   it('next button is disabled on last page', () => {
     render(
-      <div className="prose container min-w-full min-h-screen max-w-screen mx-auto">
-        <main className="flex mx-auto flex-col">
-          <section className="mx-auto">
-            <h1 className="my-10">Pagination example</h1>
-            <Paginator
-              data={examplePaginationData}
-              itemsPerPage={60}
-              breakpoints={{ start: 6, end: 12, add: 6 }}
-              routing={true}
-              Component={RenderCurrentItems}
-            />
-          </section>
-        </main>
-      </div>
+      <Paginator
+        data={examplePaginationData}
+        itemsPerPage={60}
+        breakpoints={{ start: 6, end: 12, add: 6 }}
+        routing={true}
+        Component={RenderCurrentItems}
+      />
     );
     fireEvent.click(screen.getByText('>'));
     fireEvent.click(screen.getByText('>'));
@@ -122,20 +108,13 @@ describe(`<Paginator />`, () => {
 
   it('check breakpoints', () => {
     render(
-      <div className="prose container min-w-full min-h-screen max-w-screen mx-auto">
-        <main className="flex mx-auto flex-col">
-          <section className="mx-auto">
-            <h1 className="my-10">Pagination example</h1>
-            <Paginator
-              data={examplePaginationData}
-              itemsPerPage={10}
-              breakpoints={{ start: 2, end: 12, add: 6 }}
-              routing={true}
-              Component={RenderCurrentItems}
-            />
-          </section>
-        </main>
-      </div>
+      <Paginator
+        data={examplePaginationData}
+        itemsPerPage={10}
+        breakpoints={{ start: 2, end: 12, add: 6 }}
+        routing={true}
+        Component={RenderCurrentItems}
+      />
     );
     expect(screen.queryAllByText('2')).toHaveLength(0);
     fireEvent.click(screen.getByText('...'));
@@ -143,43 +122,44 @@ describe(`<Paginator />`, () => {
   });
   it('check next button works', () => {
     const { asFragment } = render(
-      <div className="prose container min-w-full min-h-screen max-w-screen mx-auto">
-        <main className="flex mx-auto flex-col">
-          <section className="mx-auto">
-            <h1 className="my-10">Pagination example</h1>
-            <Paginator
-              data={examplePaginationData}
-              itemsPerPage={10}
-              breakpoints={{ start: 6, end: 12, add: 6 }}
-              routing={true}
-              Component={RenderCurrentItems}
-            />
-          </section>
-        </main>
-      </div>
+      <Paginator
+        data={examplePaginationData}
+        itemsPerPage={10}
+        breakpoints={{ start: 6, end: 12, add: 6 }}
+        routing={true}
+        Component={RenderCurrentItems}
+      />
     );
     fireEvent.click(screen.getByText('>'));
     expect(asFragment()).toMatchSnapshot();
   });
   it('check back button works', () => {
     const { asFragment } = render(
-      <div className="prose container min-w-full min-h-screen max-w-screen mx-auto">
-        <main className="flex mx-auto flex-col">
-          <section className="mx-auto">
-            <h1 className="my-10">Pagination example</h1>
-            <Paginator
-              data={examplePaginationData}
-              itemsPerPage={10}
-              breakpoints={{ start: 6, end: 12, add: 6 }}
-              routing={true}
-              Component={RenderCurrentItems}
-            />
-          </section>
-        </main>
-      </div>
+      <Paginator
+        data={examplePaginationData}
+        itemsPerPage={10}
+        breakpoints={{ start: 6, end: 12, add: 6 }}
+        routing={true}
+        Component={RenderCurrentItems}
+      />
     );
     fireEvent.click(screen.getByText('>'));
     fireEvent.click(screen.getByText('<'));
     expect(asFragment()).toMatchSnapshot();
+  });
+  it('check router push', () => {
+    render(
+      <Paginator
+        data={examplePaginationData}
+        itemsPerPage={10}
+        breakpoints={{ start: 6, end: 12, add: 6 }}
+        routing={true}
+        Component={RenderCurrentItems}
+      />
+    );
+
+    fireEvent.click(screen.getByText('>'));
+    console.log(spy);
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 });
