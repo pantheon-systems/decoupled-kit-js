@@ -10,16 +10,16 @@ import { DataToSort } from '../types';
  */
 
 export const sortChar = (sortObj: DataToSort) => {
-  const sortedArticles = sortObj;
-  sortedArticles.data.sort((a, b) => {
-    const direction = sortedArticles.direction.toLowerCase();
-    const left = direction === 'asc' ? b : a;
-    const right = direction === 'asc' ? a : b;
-    return left[sortedArticles.key] > right[sortedArticles.key]
-      ? -1
-      : left[sortedArticles.key] < right[sortedArticles.key]
-      ? 1
-      : 0;
-  });
-  return sortedArticles.data;
+	const sortedArticles = sortObj;
+	sortedArticles.data.sort((a, b) => {
+		const direction = sortedArticles.direction.toLowerCase();
+		const left = direction === 'asc' ? b : a;
+		const right = direction === 'asc' ? a : b;
+		return left[sortedArticles.key] > right[sortedArticles.key]
+			? -1
+			: left[sortedArticles.key] < right[sortedArticles.key]
+			? 1
+			: 0;
+	});
+	return sortedArticles.data;
 };
