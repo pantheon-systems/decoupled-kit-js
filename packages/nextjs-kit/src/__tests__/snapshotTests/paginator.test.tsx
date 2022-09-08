@@ -3,9 +3,6 @@ import Paginator from '../../components/paginator';
 import examplePaginationData from '../data/examplePaginationData.json';
 import React from 'react';
 import { vi } from 'vitest';
-// import { useRouter } from 'next/router';
-import { RouterMock } from '../../__mocks__/next/router';
-// vi.mock('next/router');
 
 vi.mock('next/router', () => ({
   useRouter: () => ({
@@ -17,10 +14,6 @@ vi.mock('next/router', () => ({
     },
   }),
 }));
-
-// export useRouter mock from mocks folder
-// let spy = vi.spyOn(RouterMock, 'routerMock');
-const spy = vi.spyOn(RouterMock(), 'push');
 
 interface PaginatorRenderObj {
   id: string;
@@ -146,20 +139,5 @@ describe(`<Paginator />`, () => {
     fireEvent.click(screen.getByText('>'));
     fireEvent.click(screen.getByText('<'));
     expect(asFragment()).toMatchSnapshot();
-  });
-  it('check router push', () => {
-    render(
-      <Paginator
-        data={examplePaginationData}
-        itemsPerPage={10}
-        breakpoints={{ start: 6, end: 12, add: 6 }}
-        routing={true}
-        Component={RenderCurrentItems}
-      />
-    );
-
-    fireEvent.click(screen.getByText('>'));
-    console.log(spy);
-    expect(spy).toHaveBeenCalledTimes(1);
   });
 });
