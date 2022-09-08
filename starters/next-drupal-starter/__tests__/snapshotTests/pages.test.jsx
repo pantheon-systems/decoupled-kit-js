@@ -29,7 +29,7 @@ describe(`${PROFILE} <PageListTemplate />`, () => {
           };
 
     const { asFragment } = render(
-      <PageListTemplate pages={data.pages} footerMenu={data.footerMenu} />
+      <PageListTemplate sortedPages={data.pages} footerMenu={data.footerMenu} />
     );
     expect(asFragment()).toMatchSnapshot();
   });

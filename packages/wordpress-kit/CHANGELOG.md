@@ -1,5 +1,29 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.4.0
+
+### Minor Changes
+
+- 62ba36b: Added audio block support
+
+## 2.4.0-canary.0
+
+### Minor Changes
+
+- 62ba36b: Added audio block support
+
+## 2.3.0
+
+### Minor Changes
+
+- 68a2d36: Add support for gradient backgrounds, and moved utitlities to separated folder
+- ba2a226: Add support for Gallery block from WP block editor
+- a940098: Add styles for image blocks
+
+### Patch Changes
+
+- 960e2e8: Change the default colors to follow WP6 and fix border styles in tables
+
 ## 2.2.0
 
 ### Minor Changes

@@ -1,0 +1,20 @@
+{
+  "mode": "pre",
+  "tag": "canary",
+  "initialVersions": {
+    "@pantheon-systems/drupal-kit": "2.2.0",
+    "@pantheon-systems/nextjs-kit": "1.0.0",
+    "@pantheon-systems/wordpress-kit": "2.4.0",
+    "@pantheon-systems/gatsby-wordpress-starter": "2.0.0",
+    "@pantheon-systems/next-drupal-starter": "3.0.1",
+    "@pantheon-systems/next-wordpress-starter": "0.6.0",
+    "web": "1.0.0"
+  },
+  "changesets": [
+    "four-pans-protect",
+    "fuzzy-numbers-wink",
+    "mean-crabs-sin",
+    "seven-suns-shave",
+    "sharp-jokes-begin"
+  ]
+}

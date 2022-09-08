@@ -23,7 +23,10 @@ describe(`${PROFILE} <HomepageTemplate />`, () => {
           };
 
     const { asFragment } = render(
-      <HomepageTemplate articles={data.articles} footerMenu={data.footerMenu} />
+      <HomepageTemplate
+        sortedArticles={data.articles}
+        footerMenu={data.footerMenu}
+      />
     );
     expect(asFragment()).toMatchSnapshot();
   });

@@ -13,11 +13,11 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Supports Drupal and Wordpress',
+    title: 'Supports Drupal and WordPress',
     Svg: require('@site/static/img/B_Fist.svg').default,
     description: (
       <>
-        Pantheon Decoupled Kits lets you focus on delievering the right experience to the right channel. Speed up your WebOps with Decoupled Drupal or Wordpress on Pantheon.
+        Pantheon Decoupled Kits lets you focus on delivering the right experience to the right channel. Speed up your WebOps with Decoupled Drupal or WordPress on Pantheon.
       </>
     ),
   },

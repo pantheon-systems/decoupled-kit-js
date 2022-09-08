@@ -1,5 +1,69 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.0.2-canary.0
+
+### Patch Changes
+
+- 8943464: Derive IMAGE_DOMAIN from the backend url when it is https or http
+- 66aeea3: Upgraded next to latest version, changed starter kits to build and start using standalone output mode.
+- Updated dependencies [66aeea3]
+  - @pantheon-systems/nextjs-kit@1.0.1-canary.0
+
+## 3.0.1
+
+### Patch Changes
+
+- 598f7ca: Update imports from nextjs-kit
+- 0158d9d: Implemented the `sortDate` helper on all relevant index pages
+- 56ec318: Added a helpful error message in case a CMS backend endpoint is not set
+- Updated dependencies [0158d9d]
+- Updated dependencies [598f7ca]
+- Updated dependencies [52e470a]
+  - @pantheon-systems/nextjs-kit@1.0.0
+  - @pantheon-systems/drupal-kit@2.2.0
+
+## 3.0.1-canary.1
+
+### Patch Changes
+
+- 598f7ca: Update imports from nextjs-kit
+- Updated dependencies [598f7ca]
+  - @pantheon-systems/nextjs-kit@1.0.0-canary.1
+
+## 3.0.1-canary.0
+
+### Patch Changes
+
+- 0158d9d: Implemented the `sortDate` helper on all relevant index pages
+- 56ec318: Added a helpful error message in case a CMS backend endpoint is not set
+- Updated dependencies [0158d9d]
+- Updated dependencies [52e470a]
+  - @pantheon-systems/nextjs-kit@0.1.1-canary.0
+  - @pantheon-systems/drupal-kit@2.2.0-canary.0
+
+## 3.0.0
+
+### Major Changes
+
+- bedb924: ## Breaking Change
+
+  Removed `DrupalStateContext` that was wrapping the application. If you were using `dsContext` you will need to reimplement it after upgrading. If you were not utilizing the `dsContext`, you may need to update your imports from `drupalStateContext` to `stores`.
+
+### Minor Changes
+
+- 0ca05c4: Changed starter kit default to SSR, added examples index page and ISR example.
+- 88671a4: [next-drupal-starter] Added a catchall route for basic content types: recipe, article, and page.
+- 575c4cc: [next-drupal-starter] Refactor getPreview to use params on the key to take advantage of DrupalState 3.1.0 features
+
+### Patch Changes
+
+- 7d35547: Updated snapshot tests and adjusted ISR example to use PageHeader component.
+- eea71a7: Fix import for BUILD_MODE in `pages/examples/auth-api`
+- 71dd9ed: Add BUILD_MODE constant as a switch for DrupalState's refresh option
+- Updated dependencies [88671a4]
+- Updated dependencies [92d0c44]
+  - @pantheon-systems/drupal-kit@2.1.0
+
 ## 2.0.3
 
 ### Patch Changes

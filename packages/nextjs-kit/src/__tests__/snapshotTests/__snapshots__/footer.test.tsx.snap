@@ -1,0 +1,70 @@
+// Vitest Snapshot v1
+
+exports[`<Footer /> > should render 'footer' 1`] = `
+<DocumentFragment>
+  <footer
+    class="w-full text-white bg-black p-4 mt-12"
+  >
+    <nav
+      class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+    >
+      <ul>
+        <ul>
+          <li
+            class="list-disc text-blue-300"
+          >
+            <a
+              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="list-disc text-blue-300 ml-3"
+          >
+            <a
+              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              href="/articles"
+            >
+              Articles
+            </a>
+          </li>
+        </ul>
+        <li
+          class="list-disc text-blue-300"
+        >
+          <a
+            class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+            href="/pages"
+          >
+            Pages
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div
+      class="flex my-4 p-2"
+    >
+      <span
+        class="mx-auto"
+      >
+        © 2022 Built with 
+        <a
+          class="text-white hover:text-blue-100 underline"
+          href="https://nextjs.org/"
+        >
+          Next.js
+        </a>
+         and 
+        <a
+          class="text-blue-500 underline hover:text-blue-100"
+          href="https://www.wordpress.com/"
+        >
+          WordPress
+        </a>
+      </span>
+    </div>
+  </footer>
+</DocumentFragment>
+`;

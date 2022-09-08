@@ -1,5 +1,27 @@
 # @pantheon-systems/drupal-kit
 
+## 2.2.0
+
+### Minor Changes
+
+- 52e470a: drupal-kit's defaultFetch was updated to set a cache control header of `cache-control: public, s-maxage=10, stale-while-revalidate=600` if a response object is passed.
+
+## 2.2.0-canary.0
+
+### Minor Changes
+
+- 52e470a: drupal-kit's defaultFetch was updated to set a cache control header of `cache-control: public, s-maxage=10, stale-while-revalidate=600` if a response object is passed.
+
+## 2.1.0
+
+### Minor Changes
+
+- 92d0c44: [drupal-kit] Upgrade DrupalState dependency to 3.1.0
+
+### Patch Changes
+
+- 88671a4: [drupal-kit] Added `translatePath` to drupal-kit exports
+
 ## 2.0.0
 
 ### Major Changes

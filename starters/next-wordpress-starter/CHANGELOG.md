@@ -1,5 +1,59 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.6.1-canary.0
+
+### Patch Changes
+
+- 8943464: Derive IMAGE_DOMAIN from the backend url when it is https or http
+- 66aeea3: Upgraded next to latest version, changed starter kits to build and start using standalone output mode.
+
+## 0.6.0
+
+### Minor Changes
+
+- 25ea80e: Fixed IMAGE_DOMAIN env var which was being incorrectly set in some cases
+- 50309dd: [next-wordpress] Add example page fetch via Authenticated API
+
+### Patch Changes
+
+- f6134ed: Fix file name for WordPressClient
+- 56ec318: Added a helpful error message in case a CMS backend endpoint is not set
+- Updated dependencies [62ba36b]
+  - @pantheon-systems/wordpress-kit@2.4.0
+
+## 0.6.0-canary.1
+
+### Patch Changes
+
+- f6134ed: Fix file name for WordPressClient
+
+## 0.6.0-canary.0
+
+### Minor Changes
+
+- 25ea80e: Fixed IMAGE_DOMAIN env var which was being incorrectly set in some cases
+- 50309dd: [next-wordpress] Add example page fetch via Authenticated API
+
+### Patch Changes
+
+- 56ec318: Added a helpful error message in case a CMS backend endpoint is not set
+- Updated dependencies [62ba36b]
+  - @pantheon-systems/wordpress-kit@2.4.0-canary.0
+
+## 0.5.0
+
+### Minor Changes
+
+- 0ac5ecf: [next-wordpress-starter] Use IMAGE_DOMAIN + image url in all instances of the next/image component
+
+### Patch Changes
+
+- Updated dependencies [68a2d36]
+- Updated dependencies [960e2e8]
+- Updated dependencies [ba2a226]
+- Updated dependencies [a940098]
+  - @pantheon-systems/wordpress-kit@2.3.0
+
 ## 0.4.1
 
 ### Patch Changes
@@ -20,7 +74,7 @@
 - b7e9b1f: Added pages grid in the route /pages, getting data by static generating
 - 2f72e82: Added the Post component to the `/posts/[slug]` route that renders a post from WordPress.
 - d49504b: Added the dynamic route [uri] inside /pages that fetch statically the page data
-- 0db7b52: Imported tailwind plugin from Wordpress-Kit
+- 0db7b52: Imported tailwind plugin from WordPress-Kit
 - 04f4e0c: Added to the /post route the post grid with server side rendering
 
 ### Patch Changes
