@@ -36,6 +36,7 @@ importers:
     specifiers:
       '@algolia/client-search': ^4.9.1
       '@changesets/cli': ^2.22.0
+      '@pantheon-systems/configs': workspace:*
       '@rollup/plugin-typescript': ^8.3.1
       '@types/eslint': ^8.4.1
       '@types/jest': ^27.4.1
@@ -62,6 +63,7 @@ importers:
     devDependencies:
       '@algolia/client-search': 4.14.1
       '@changesets/cli': 2.24.0
+      '@pantheon-systems/configs': link:configs
       '@rollup/plugin-typescript': 8.3.3_eyloj6y475u23ebclztytpcwgm
       '@types/eslint': 8.4.5
       '@types/jest': 27.5.2
@@ -252,7 +254,6 @@ importers:
       next: ^12.2.5
       next-seo: ^5.4.0
       postcss: ^8.4.12
-      prettier: 2.5.1
       react: 17.0.2
       react-dom: 17.0.2
       sharp: ^0.30.4
@@ -278,7 +279,6 @@ importers:
       eslint-config-next: 12.1.0_eslint@8.10.0+next@12.2.5
       msw: 0.44.2_encoding@0.1.13
       postcss: 8.4.14
-      prettier: 2.5.1
       tailwindcss: 3.1.6
       vitest: 0.18.1_c8@7.12.0
 
@@ -11105,10 +11105,10 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.30.7_eslint@8.17.0
+      '@typescript-eslint/parser': 5.30.7_eslint@8.10.0
       debug: 3.2.7
       eslint-import-resolver-node: 0.3.6
-      eslint-import-resolver-typescript: 2.7.1_3yxiwxzsqipdmy4jwrlv6vgfmy
+      eslint-import-resolver-typescript: 2.7.1_iwaynwhiegrrsv6g3xp42z6p6u
       find-up: 2.1.0
     transitivePeerDependencies:
       - supports-color
@@ -16098,7 +16098,7 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 12.2.5_sfoxds7t5ydpegc3knd667wn6m
+      next: 12.2.5_oj5jbg2ldmqbgxwq3dy6abnm5a
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     dev: false
