@@ -136,11 +136,7 @@ describe('drupalState', () => {
       await store.getObject({
         objectName: 'recipes',
         id: '912e092f-a7d5-41ae-9e92-e23ffa357b28',
-        query: `{
-          title
-          difficulty
-          id
-        }`,
+        params: 'fields[recipes]=title,difficulty,id',
       })
     ).toEqual(recipesResourceQueryObject1);
     expect(fetchMock).toBeCalledTimes(1);
@@ -164,10 +160,7 @@ describe('drupalState', () => {
     expect(
       await store.getObject({
         objectName: 'categories',
-        query: `{
-          name
-          id
-        }`,
+        params: 'fields[categories]=name,id',
       })
     ).toEqual(categoriesCollectionObjectQuery);
     expect(fetchMock).toBeCalledTimes(1);
@@ -209,11 +202,7 @@ describe('drupalState', () => {
       await store.getObject({
         objectName: 'recipes',
         id: '912e092f-a7d5-41ae-9e92-e23ffa357b28',
-        query: `{
-          title
-          difficulty
-          id
-        }`,
+        params: 'fields[recipes]=title,difficulty,id',
       })
     ).toEqual(recipesResourceQueryObject1);
     expect(fetchMock).toBeCalledTimes(2);

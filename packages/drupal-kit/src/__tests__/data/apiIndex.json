@@ -1,28 +1,56 @@
 {
   "data": [],
   "links": {
-    "self": "https://live-contentacms.pantheonsite.io/api",
-    "blocks": "https://live-contentacms.pantheonsite.io/api/blocks",
-    "comments": "https://live-contentacms.pantheonsite.io/api/comments",
-    "reviews": "https://live-contentacms.pantheonsite.io/api/reviews",
-    "commentTypes": "https://live-contentacms.pantheonsite.io/api/commentTypes",
-    "consumer--consumer": "https://live-contentacms.pantheonsite.io/api/consumer/consumer",
-    "files": "https://live-contentacms.pantheonsite.io/api/files",
-    "graphql_query_map--graphql_query_map": "https://live-contentacms.pantheonsite.io/api/graphql_query_map/graphql_query_map",
-    "imageStyles": "https://live-contentacms.pantheonsite.io/api/imageStyles",
-    "mediaBundles": "https://live-contentacms.pantheonsite.io/api/mediaBundles",
-    "images": "https://live-contentacms.pantheonsite.io/api/images",
-    "articles": "https://live-contentacms.pantheonsite.io/api/articles",
-    "pages": "https://live-contentacms.pantheonsite.io/api/pages",
-    "recipes": "https://live-contentacms.pantheonsite.io/api/recipes",
-    "node--tutorial": "https://live-contentacms.pantheonsite.io/api/node/tutorial",
-    "contentTypes": "https://live-contentacms.pantheonsite.io/api/contentTypes",
-    "menus": "https://live-contentacms.pantheonsite.io/api/menus",
-    "vocabularies": "https://live-contentacms.pantheonsite.io/api/vocabularies",
-    "categories": "https://live-contentacms.pantheonsite.io/api/categories",
-    "tags": "https://live-contentacms.pantheonsite.io/api/tags",
-    "roles": "https://live-contentacms.pantheonsite.io/api/roles",
-    "users": "https://live-contentacms.pantheonsite.io/api/users",
-    "menuLinks": "https://live-contentacms.pantheonsite.io/api/menuLinks"
+    "self": { "href": "https://live-contentacms.pantheonsite.io/api" },
+    "blocks": { "href": "https://live-contentacms.pantheonsite.io/api/blocks" },
+    "comments": {
+      "href": "https://live-contentacms.pantheonsite.io/api/comments"
+    },
+    "reviews": {
+      "href": "https://live-contentacms.pantheonsite.io/api/reviews"
+    },
+    "commentTypes": {
+      "href": "https://live-contentacms.pantheonsite.io/api/commentTypes"
+    },
+    "consumer--consumer": {
+      "href": "https://live-contentacms.pantheonsite.io/api/consumer/consumer"
+    },
+    "files": { "href": "https://live-contentacms.pantheonsite.io/api/files" },
+    "graphql_query_map--graphql_query_map": {
+      "href": "https://live-contentacms.pantheonsite.io/api/graphql_query_map/graphql_query_map"
+    },
+    "imageStyles": {
+      "href": "https://live-contentacms.pantheonsite.io/api/imageStyles"
+    },
+    "mediaBundles": {
+      "href": "https://live-contentacms.pantheonsite.io/api/mediaBundles"
+    },
+    "images": { "href": "https://live-contentacms.pantheonsite.io/api/images" },
+    "articles": {
+      "href": "https://live-contentacms.pantheonsite.io/api/articles"
+    },
+    "pages": { "href": "https://live-contentacms.pantheonsite.io/api/pages" },
+    "recipes": {
+      "href": "https://live-contentacms.pantheonsite.io/api/recipes"
+    },
+    "node--tutorial": {
+      "href": "https://live-contentacms.pantheonsite.io/api/node/tutorial"
+    },
+    "contentTypes": {
+      "href": "https://live-contentacms.pantheonsite.io/api/contentTypes"
+    },
+    "menus": { "href": "https://live-contentacms.pantheonsite.io/api/menus" },
+    "vocabularies": {
+      "href": "https://live-contentacms.pantheonsite.io/api/vocabularies"
+    },
+    "categories": {
+      "href": "https://live-contentacms.pantheonsite.io/api/categories"
+    },
+    "tags": { "href": "https://live-contentacms.pantheonsite.io/api/tags" },
+    "roles": { "href": "https://live-contentacms.pantheonsite.io/api/roles" },
+    "users": { "href": "https://live-contentacms.pantheonsite.io/api/users" },
+    "menuLinks": {
+      "href": "https://live-contentacms.pantheonsite.io/api/menuLinks"
+    }
   }
 }

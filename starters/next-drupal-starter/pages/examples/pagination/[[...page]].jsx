@@ -73,13 +73,7 @@ export async function getStaticPaths() {
   const data = await store.getObject({
     objectName: "node--ds_example",
     all: true,
-    query: `{
-      title
-      id
-      body {
-        value
-      }
-    }`,
+    params: "fields[node--ds_example]=title,body",
   });
   const itemsPerPage = 10;
   const totalPages = Math.ceil(data.length / itemsPerPage);
@@ -109,15 +103,10 @@ export async function getStaticProps(context) {
   });
 
   // using a query here results in a payload of 641kb, down from 2.09mb without a query!
+  // drupal json api params
   const data = await exampleStore.getObject({
     objectName: "node--ds_example",
-    query: `{
-      title
-      id
-      body {
-        value
-      }
-    }`,
+    params: "fields[node--ds_example]=title,body",
     all: true,
     refresh: !BUILD_MODE,
   });
@@ -126,7 +115,7 @@ export async function getStaticProps(context) {
   const footerMenu = await store.getObject({
     objectName: "menu_items--main",
   });
-
+  console.log(data);
   return {
     props: {
       data,
