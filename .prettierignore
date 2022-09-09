@@ -4,9 +4,13 @@ CHANGELOG.md
 LICENSE.md
 CODE_OF_CONDUCT.md
 
-build
-dist
+.cache
 .docusaurus
+.next
+build
+coverage
+dist
+public
 
 *.test.*
 .*rc

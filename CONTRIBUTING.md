@@ -99,6 +99,7 @@ To contribute to the starters, you will need a backend to develop against.
 - Tests should be written with the two data profiles in mind: the Umami demo data profile, and the Default example data profile.
 
 <!-- Instructions on how to spin up a backend for local development here -->
+
 ### gatsby-wordpress-starter
 
 <!-- Instructions on how to spin up a backend for local development here -->
