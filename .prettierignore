@@ -4,7 +4,10 @@ CHANGELOG.md
 LICENSE.md
 CODE_OF_CONDUCT.md
 
+build
 dist
+.docusaurus
+
 *.test.*
 .*rc
 *.d.ts

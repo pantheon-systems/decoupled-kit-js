@@ -1,7 +1,7 @@
 ---
-id: "src_types_TailwindcssPlugin"
-title: "Module: src/types/TailwindcssPlugin"
-sidebar_label: "src/types/TailwindcssPlugin"
+id: 'src_types_TailwindcssPlugin'
+title: 'Module: src/types/TailwindcssPlugin'
+sidebar_label: 'src/types/TailwindcssPlugin'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -133,7 +133,8 @@ custom_edit_url: null
 
 ### PartialThemeConfig
 
-Ƭ **PartialThemeConfig**: `Partial`<`ThemeConfig` & { `extend`: `Partial`<`ThemeConfig`\> }\>
+Ƭ **PartialThemeConfig**: `Partial`<`ThemeConfig` & { `extend`:
+`Partial`<`ThemeConfig`\> }\>
 
 #### Defined in
 
@@ -143,7 +144,8 @@ custom_edit_url: null
 
 ### TailwindcssConfig
 
-Ƭ **TailwindcssConfig**: `Config` & [`WordPressMapConfig`](src_types_TailwindcssPlugin.md#wordpressmapconfig)
+Ƭ **TailwindcssConfig**: `Config` &
+[`WordPressMapConfig`](src_types_TailwindcssPlugin.md#wordpressmapconfig)
 
 #### Defined in
 

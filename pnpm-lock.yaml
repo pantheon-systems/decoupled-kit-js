@@ -318,6 +318,8 @@ importers:
       '@docusaurus/core': 2.0.0-beta.22
       '@docusaurus/preset-classic': 2.0.0-beta.22
       '@mdx-js/react': ^1.6.22
+      '@pantheon-systems/configs': workspace:*
+      '@pantheon-systems/eslint-config': workspace:*
       '@types/react': 17.0.40
       clsx: ^1.1.1
       docusaurus-plugin-typedoc: ^0.17.3
@@ -336,6 +338,8 @@ importers:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     devDependencies:
+      '@pantheon-systems/configs': link:../configs
+      '@pantheon-systems/eslint-config': link:../configs/eslint
       '@types/react': 17.0.40
       docusaurus-plugin-typedoc: 0.17.5_aloluj7zvlfyvqowvwuqxomy3q
       typedoc: 0.22.18
@@ -5823,7 +5827,7 @@ packages:
       '@parcel/diagnostic': 2.6.2
       '@parcel/fs': 2.6.2_@parcel+core@2.6.2
       '@parcel/logger': 2.6.2
-      '@parcel/types': 2.6.2_@parcel+core@2.6.2
+      '@parcel/types': 2.6.2
       '@parcel/utils': 2.6.2
       '@parcel/workers': 2.6.2_@parcel+core@2.6.2
       semver: 5.7.1
@@ -5981,6 +5985,18 @@ packages:
       react-refresh: 0.9.0
     transitivePeerDependencies:
       - '@parcel/core'
+    dev: false
+
+  /@parcel/types/2.6.2:
+    resolution: {integrity: sha512-MV8BFpCIs2jMUvK2RHqzkoiuOQ//JIbrD1zocA2YRW3zuPL/iABvbAABJoXpoPCKikVWOoCWASgBfWQo26VvJQ==}
+    dependencies:
+      '@parcel/cache': 2.6.2_@parcel+core@2.6.2
+      '@parcel/diagnostic': 2.6.2
+      '@parcel/fs': 2.6.2_@parcel+core@2.6.2
+      '@parcel/package-manager': 2.6.2_@parcel+core@2.6.2
+      '@parcel/source-map': 2.1.0
+      '@parcel/workers': 2.6.2_@parcel+core@2.6.2
+      utility-types: 3.10.0
     dev: false
 
   /@parcel/types/2.6.2_@parcel+core@2.6.2:
@@ -11098,10 +11114,10 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.30.7_eslint@8.10.0
+      '@typescript-eslint/parser': 5.30.7_eslint@8.17.0
       debug: 3.2.7
       eslint-import-resolver-node: 0.3.6
-      eslint-import-resolver-typescript: 2.7.1_iwaynwhiegrrsv6g3xp42z6p6u
+      eslint-import-resolver-typescript: 2.7.1_3yxiwxzsqipdmy4jwrlv6vgfmy
       find-up: 2.1.0
     transitivePeerDependencies:
       - supports-color
@@ -16091,7 +16107,7 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 12.2.5_oj5jbg2ldmqbgxwq3dy6abnm5a
+      next: 12.2.5_sfoxds7t5ydpegc3knd667wn6m
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     dev: false

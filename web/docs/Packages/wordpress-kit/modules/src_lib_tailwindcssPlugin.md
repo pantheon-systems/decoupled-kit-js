@@ -1,7 +1,7 @@
 ---
-id: "src_lib_TailwindcssPlugin"
-title: "Module: src/lib/TailwindcssPlugin"
-sidebar_label: "src/lib/TailwindcssPlugin"
+id: 'src_lib_TailwindcssPlugin'
+title: 'Module: src/lib/TailwindcssPlugin'
+sidebar_label: 'src/lib/TailwindcssPlugin'
 sidebar_position: 0
 custom_edit_url: null
 ---
