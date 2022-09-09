@@ -1,4 +1,4 @@
-import { DataToSort } from '../types';
+import { SortOptions } from '../types';
 
 /**
  * Sorts any character object on a specific key in a direction of the users choice.
@@ -9,7 +9,7 @@ import { DataToSort } from '../types';
  * @returns An array of data sorted by the given key and direction
  */
 
-export const sortChar = (sortObj: DataToSort) => {
+export const sortChar = (sortObj: SortOptions) => {
 	const sortedArticles = sortObj;
 	sortedArticles.data.sort((a, b) => {
 		const direction = sortedArticles.direction.toLowerCase();

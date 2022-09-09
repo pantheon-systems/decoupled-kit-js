@@ -1,4 +1,4 @@
-import { DataToSort } from '../types';
+import { SortOptions } from '../types';
 
 /**
  * Sorts any date field of an object on a specific key in a direction of the users choice.
@@ -8,7 +8,7 @@ import { DataToSort } from '../types';
  * @param sortObj.direction - Direction to sort the data
  * @returns An array of data sorted by the given key and direction
  */
-export const sortDate = (sortObj: DataToSort) => {
+export const sortDate = (sortObj: SortOptions) => {
 	const sortedDates = sortObj;
 	sortedDates.data.sort((a, b) => {
 		const direction = sortedDates.direction.toLowerCase();

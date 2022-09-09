@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/next-drupal-starter",
-	"version": "3.0.2-canary.0",
+	"version": "3.1.0-canary.1",
 	"private": true,
 	"description": "Pantheon Decoupled Kit's Next Drupal Starter",
 	"license": "GPL-3.0-or-later",
@@ -22,13 +22,11 @@
 		"test:umami": "vitest --mode umami",
 		"test:default": "vitest --mode default",
 		"update-snapshots": "vitest run --mode umami --update --silent && vitest run --mode default --update --silent",
-		"coverage": "vitest run --mode umami --coverage && vitest run --mode default --coverage",
-		"prettier": "prettier \"**/*.{js,jsx,md}\" --check --ignore-path .prettierignore",
-		"prettier:fix": "prettier \"**/*.{js,jsx,,md}\" --write --ignore-path .prettierignore"
+		"coverage": "vitest run --mode umami --coverage && vitest run --mode default --coverage"
 	},
 	"dependencies": {
 		"@pantheon-systems/drupal-kit": "2.2.0",
-		"@pantheon-systems/nextjs-kit": "1.0.1-canary.0",
+		"@pantheon-systems/nextjs-kit": "1.1.0-canary.1",
 		"@tailwindcss/typography": "^0.5.2",
 		"dotenv": "^16.0.0",
 		"next": "^12.2.5",
@@ -47,7 +45,6 @@
 		"eslint-config-next": "12.1.0",
 		"msw": "^0.44.2",
 		"postcss": "^8.4.12",
-		"prettier": "2.5.1",
 		"tailwindcss": "^3.0.24",
 		"vitest": "^0.18.0"
 	}

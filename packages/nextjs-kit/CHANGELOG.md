@@ -1,5 +1,12 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.1.0-canary.1
+
+### Minor Changes
+
+- 547ee6e: Added Paginator component, added TSDoc comments to exported types and
+  interfaces
+
 ## 1.0.1-canary.0
 
 ### Patch Changes

@@ -9,6 +9,7 @@ export default function Header() {
             ["🏠 Home", "/"],
             ["📰 Posts", "/posts"],
             ["📑 Pages", "/pages"],
+            ["⚛️ Examples", "/examples"],
           ].map(([title, href]) => (
             <li className={`${href === "/" ? "mr-auto" : "mx-4"}`} key={href}>
               <Link className="font-sans" href={href}>

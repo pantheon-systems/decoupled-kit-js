@@ -23,7 +23,7 @@ export default function PageListTemplate({ menuItems, pages }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const menuItems = await getFooterMenu();
   const pages = await getLatestPages();
 

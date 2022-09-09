@@ -34,6 +34,7 @@ export default function PreviewRibbon() {
 					height={32}
 					width={32}
 					src="/collapse.svg"
+					alt=""
 				/>
 			</button>
 		</div>

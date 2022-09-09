@@ -1,5 +1,11 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.7.0-canary.1
+
+### Minor Changes
+
+- dad84cd: Change next-wordpress-starter to use SSR for all routes and added ISR example.
+
 ## 0.6.1-canary.0
 
 ### Patch Changes
