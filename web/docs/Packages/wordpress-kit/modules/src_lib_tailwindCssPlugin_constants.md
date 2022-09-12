@@ -1,7 +1,7 @@
 ---
-id: 'src_lib_tailwindcssPlugin_Constants'
-title: 'Module: src/lib/tailwindcssPlugin/Constants'
-sidebar_label: 'src/lib/tailwindcssPlugin/Constants'
+id: "src_lib_tailwindcssPlugin_Constants"
+title: "Module: src/lib/tailwindcssPlugin/Constants"
+sidebar_label: "src/lib/tailwindcssPlugin/Constants"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -20,8 +20,7 @@ custom_edit_url: null
 
 ### fontSizeList
 
-• `Const` **fontSizeList**:
-[`FontSize`](src_types_TailwindcssPlugin.md#fontsize)[]
+• `Const` **fontSizeList**: [`FontSize`](src_types_TailwindcssPlugin.md#fontsize)[]
 
 #### Defined in
 
@@ -31,9 +30,7 @@ custom_edit_url: null
 
 ### gradientList
 
-• `Const` **gradientList**: { `colors`: { `color`: `string` = 'secondary';
-`position`: `string` = '0%' }[] ; `direction`: `string` = 'to bottom'; `name`:
-`string` = 'vertical-secondary-to-tertiary' }[]
+• `Const` **gradientList**: { `colors`: { `color`: `string` = 'secondary'; `position`: `string` = '0%' }[] ; `direction`: `string` = 'to bottom'; `name`: `string` = 'vertical-secondary-to-tertiary' }[]
 
 #### Defined in
 

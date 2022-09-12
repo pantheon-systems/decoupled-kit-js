@@ -1,7 +1,7 @@
 ---
-id: 'src_lib_tailwindcssPlugin_components_Image'
-title: 'Module: src/lib/tailwindcssPlugin/components/Image'
-sidebar_label: 'src/lib/tailwindcssPlugin/components/Image'
+id: "src_lib_tailwindcssPlugin_components_Image"
+title: "Module: src/lib/tailwindcssPlugin/components/Image"
+sidebar_label: "src/lib/tailwindcssPlugin/components/Image"
 sidebar_position: 0
 custom_edit_url: null
 ---

@@ -1,6 +1,3 @@
 {
-"extends": "@pantheon-systems/eslint-config/react",
-  "parserOptions": {
-    "project": ["./tsconfig.json"]
-  }
+"extends": "../../.eslintrc"
 }

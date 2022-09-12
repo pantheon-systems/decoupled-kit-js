@@ -1,11 +1,5 @@
 # @pantheon-systems/wordpress-kit
 
-## 2.4.0
-
-### Minor Changes
-
-- 62ba36b: Added audio block support
-
 ## 2.4.0-canary.0
 
 ### Minor Changes

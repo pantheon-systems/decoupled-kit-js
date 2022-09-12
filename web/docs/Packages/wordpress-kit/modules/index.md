@@ -1,7 +1,7 @@
 ---
-id: 'index'
-title: 'Module: index'
-sidebar_label: 'index'
+id: "index"
+title: "Module: index"
+sidebar_label: "index"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -10,16 +10,15 @@ custom_edit_url: null
 
 ### GraphqlClientFactory
 
-Renames and re-exports
-[default](../classes/src_lib_GraphqlClientFactory.default.md)
+Renames and re-exports [default](../classes/src_lib_GraphqlClientFactory.default.md)
 
----
+___
 
 ### TailwindcssConfig
 
 Re-exports [TailwindcssConfig](src_types_TailwindcssPlugin.md#tailwindcssconfig)
 
----
+___
 
 ### tailwindcssPlugin
 

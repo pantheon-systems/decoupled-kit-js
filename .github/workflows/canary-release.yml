@@ -34,6 +34,8 @@ jobs:
       - name: create and publish versions
         uses: changesets/action@v1
         with:
+          # here we are in `pre` mode
+          # via the .changesets/pre.json file
           version: pnpm ci:version
           publish: pnpm ci:publish
           commit: "canary-release"

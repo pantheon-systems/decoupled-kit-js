@@ -1,0 +1,27 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "tsconfigRootDir": ".",
+    "project": ["./tsconfig.json"]
+  },
+  "env": {
+    "node": true
+  },
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier"
+  ],
+  "ignorePatterns": [
+    "main.ts",
+    "*.test.ts",
+    "rollup.config.js",
+    "vite.config.js",
+    "jest.config.js",
+    "./starters/next-*-starter/**/*",
+    "./packages/nextjs-kit/utils/**/*"
+  ]
+}

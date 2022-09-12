@@ -1,7 +1,7 @@
 ---
-id: 'src_fetch_defaultFetch'
-title: 'Module: src/fetch/defaultFetch'
-sidebar_label: 'src/fetch/defaultFetch'
+id: "src_fetch_defaultFetch"
+title: "Module: src/fetch/defaultFetch"
+sidebar_label: "src/fetch/defaultFetch"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -10,8 +10,7 @@ custom_edit_url: null
 
 ### default
 
-▸ **default**(`apiUrl`, `requestInit?`, `res?`, `cacheControl?`):
-`Promise`<`Response`\>
+▸ **default**(`apiUrl`, `requestInit?`, `res?`, `cacheControl?`): `Promise`<`Response`\>
 
 fetch data from a JSON:API endpoint, bubbling up surrogate keys if possible
 

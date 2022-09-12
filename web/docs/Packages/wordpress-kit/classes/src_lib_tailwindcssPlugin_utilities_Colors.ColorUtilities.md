@@ -1,7 +1,7 @@
 ---
-id: 'src_lib_tailwindcssPlugin_utilities_Colors.ColorUtilities'
-title: 'Class: ColorUtilities'
-sidebar_label: 'ColorUtilities'
+id: "src_lib_tailwindcssPlugin_utilities_Colors.ColorUtilities"
+title: "Class: ColorUtilities"
+sidebar_label: "ColorUtilities"
 custom_edit_url: null
 ---
 
@@ -40,8 +40,7 @@ color.getBorderColorUtilities() // returns the border color utilities
 
 ### theme
 
-• `Private` **theme**:
-[`ThemeType`](../modules/src_types_TailwindcssPlugin.md#themetype)
+• `Private` **theme**: [`ThemeType`](../modules/src_types_TailwindcssPlugin.md#themetype)
 
 #### Defined in
 
@@ -51,8 +50,7 @@ color.getBorderColorUtilities() // returns the border color utilities
 
 ### findColor
 
-▸ `Private` **findColor**(`colorName`):
-[`Color`](../modules/src_types_TailwindcssPlugin.md#color)
+▸ `Private` **findColor**(`colorName`): [`Color`](../modules/src_types_TailwindcssPlugin.md#color)
 
 Finds a color by themeName
 
@@ -80,7 +78,8 @@ Color
 
 ▸ `Private` **formatGradientColors**(`colors`): `string`
 
-**`remarks`** to be used in the linear-gradient css function.
+**`remarks`**
+to be used in the linear-gradient css function.
 
 #### Parameters
 
@@ -104,8 +103,8 @@ A string to be used as a css gradient. Example: '#000000 50%, #ffffff 100%'
 
 ▸ **getBackgroundUtilities**(): `Object`
 
-Takes the colors from the colorList constant to build an object with the
-background colors and a padding.
+Takes the colors from the colorList constant to
+build an object with the background colors and a padding.
 
 #### Returns
 
@@ -118,7 +117,8 @@ background colors and a padding.
 }
 ```
 
-@example const backgroundUtilities = getBackgroundUtilities();
+@example
+const backgroundUtilities = getBackgroundUtilities();
 
 ```
 {
@@ -147,8 +147,8 @@ background colors and a padding.
 
 ▸ **getBorderColorUtilities**(): `Object`
 
-Takes the colors from the colorList constant to build the borderColor utilities
-object
+Takes the colors from the colorList constant to
+build the borderColor utilities object
 
 #### Returns
 
@@ -161,7 +161,8 @@ object
 }
 ```
 
-@example const backgroundUtilities = getBackgroundUtilities();
+@example
+const backgroundUtilities = getBackgroundUtilities();
 
 ```
 {
@@ -182,8 +183,8 @@ object
 
 ▸ `Private` **getColor**(`color`): `string`
 
-Checks if the color is in the theme colors list is a tailwind default color. If
-not, returns a hex color.
+Checks if the color is in the theme colors list
+is a tailwind default color. If not, returns a hex color.
 
 #### Parameters
 
@@ -207,10 +208,11 @@ string - A string with the color value
 
 ▸ **getColorUtilities**(): `Object`
 
-Takes the colors from the colorList constant and build an object with the
-following structure:
+Takes the colors from the colorList constant and
+build an object with the following structure:
 
-**`example`** const colorUtilities = getColorUtilities();
+**`example`**
+const colorUtilities = getColorUtilities();
 
 ```
 {
@@ -225,8 +227,7 @@ following structure:
 
 `Object`
 
-`` {[`.has-${colorName}-color`]: { color: 'colorValue' }, ... } `` - color
-utilities.
+`` {[`.has-${colorName}-color`]: { color: 'colorValue' }, ... } `` - color utilities.
 
 #### Defined in
 
@@ -238,10 +239,11 @@ utilities.
 
 ▸ **getGradientUtilities**(): `Object`
 
-Takes the gradients from the gradientList constant to build the gradient
-utilities object.
+Takes the gradients from the gradientList constant to
+build the gradient utilities object.
 
-**`example`** const backgroundUtilities = getBackgroundUtilities();
+**`example`**
+const backgroundUtilities = getBackgroundUtilities();
 
 ```
 {
@@ -256,8 +258,7 @@ utilities object.
 
 `Object`
 
-`` {[`.has-${gradientName}-gradient`]: { background: linear-gradient(direction , color colorPosition, color colorPosition) }, ... } `` -
-gradient utilities.
+`` {[`.has-${gradientName}-gradient`]: { background: linear-gradient(direction , color colorPosition, color colorPosition) }, ... } `` - gradient utilities.
 
 #### Defined in
 

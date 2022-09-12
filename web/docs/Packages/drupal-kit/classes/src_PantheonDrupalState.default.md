@@ -1,7 +1,7 @@
 ---
-id: 'src_PantheonDrupalState.default'
-title: 'Class: default'
-sidebar_label: 'default'
+id: "src_PantheonDrupalState.default"
+title: "Class: default"
+sidebar_label: "default"
 custom_edit_url: null
 ---
 
@@ -37,11 +37,9 @@ DrupalState.constructor
 
 ### conditionalFetch
 
-▸ **conditionalFetch**(`endpoint`, `query?`, `objectName?`, `res?`):
-`Promise`<`TJsonApiBody`\>
+▸ **conditionalFetch**(`endpoint`, `query?`, `objectName?`, `res?`): `Promise`<`TJsonApiBody`\>
 
-If a query is provided, fetches data using apollo-link-json-api, otherwise uses
-out fetch method.
+If a query is provided, fetches data using apollo-link-json-api, otherwise uses out fetch method.
 
 #### Parameters
 

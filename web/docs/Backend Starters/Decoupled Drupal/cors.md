@@ -1,10 +1,6 @@
 # CORS Configuration
 
-Your decoupled site may require configuration to allow
-[cross-origin resource sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
-By default, sites created using the decouled-drupal project opt-in to
-[Drupal's CORS support](https://www.drupal.org/node/2715637) with a very
-permissive configuration for local development:
+Your decoupled site may require configuration to allow [cross-origin resource sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). By default, sites created using the decouled-drupal project opt-in to [Drupal's CORS support](https://www.drupal.org/node/2715637) with a very permissive configuration for local development:
 
 ```yaml title="web/sites/default/cors.decoupled.services.yml"
 # Configure Cross-Site HTTP requests (CORS).
@@ -17,19 +13,19 @@ parameters:
     # Specify allowed headers, like 'x-allowed-header'.
     allowedHeaders:
       [
-        'x-csrf-token',
-        'authorization',
-        'content-type',
-        'accept',
-        'origin',
-        'x-requested-with',
-        'access-control-allow-origin',
-        'x-allowed-header',
+        "x-csrf-token",
+        "authorization",
+        "content-type",
+        "accept",
+        "origin",
+        "x-requested-with",
+        "access-control-allow-origin",
+        "x-allowed-header",
       ]
     # Specify allowed request methods, specify ['*'] to allow all possible ones.
-    allowedMethods: ['*']
+    allowedMethods: ["*"]
     # Configure requests allowed from specific origins.
-    allowedOrigins: ['*']
+    allowedOrigins: ["*"]
     # Sets the Access-Control-Expose-Headers header.
     exposedHeaders: true
     # Sets the Access-Control-Max-Age header.
@@ -38,9 +34,4 @@ parameters:
     supportsCredentials: true
 ```
 
-Since the appropriate CORS configuration in production and pre-production
-environments may vary on a project by project basis, the above configuration is
-only loaded for local development. We recommend configuring
-[production and pre-production service configurations](https://pantheon.io/docs/services-yml#production-and-pre-production-service-configurations)
-to set the appropriate CORS configuration for your Pantheon environments if
-necessary.
+Since the appropriate CORS configuration in production and pre-production environments may vary on a project by project basis, the above configuration is only loaded for local development. We recommend configuring [production and pre-production service configurations](https://pantheon.io/docs/services-yml#production-and-pre-production-service-configurations) to set the appropriate CORS configuration for your Pantheon environments if necessary.

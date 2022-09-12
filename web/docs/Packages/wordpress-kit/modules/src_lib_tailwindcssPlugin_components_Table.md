@@ -1,7 +1,7 @@
 ---
-id: 'src_lib_tailwindcssPlugin_components_Table'
-title: 'Module: src/lib/tailwindcssPlugin/components/Table'
-sidebar_label: 'src/lib/tailwindcssPlugin/components/Table'
+id: "src_lib_tailwindcssPlugin_components_Table"
+title: "Module: src/lib/tailwindcssPlugin/components/Table"
+sidebar_label: "src/lib/tailwindcssPlugin/components/Table"
 sidebar_position: 0
 custom_edit_url: null
 ---

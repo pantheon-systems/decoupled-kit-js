@@ -1,7 +1,7 @@
 ---
-id: 'src_lib_tailwindcssPlugin_components_PullQuote'
-title: 'Module: src/lib/tailwindcssPlugin/components/PullQuote'
-sidebar_label: 'src/lib/tailwindcssPlugin/components/PullQuote'
+id: "src_lib_tailwindcssPlugin_components_PullQuote"
+title: "Module: src/lib/tailwindcssPlugin/components/PullQuote"
+sidebar_label: "src/lib/tailwindcssPlugin/components/PullQuote"
 sidebar_position: 0
 custom_edit_url: null
 ---
