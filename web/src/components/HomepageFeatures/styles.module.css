@@ -1,13 +1,13 @@
 .features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 2rem 0;
+	width: 100%;
 }
 
 .featureSvg {
-  height: 200px;
-  width: 200px;
-  background-color: white;
-  border-radius: 100px;
+	height: 200px;
+	width: 200px;
+	background-color: white;
+	border-radius: 100px;
 }

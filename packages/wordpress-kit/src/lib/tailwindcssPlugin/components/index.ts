@@ -6,10 +6,10 @@ import { GalleryComponent } from './Gallery';
 import { AudioComponent } from './Audio';
 
 export {
-  ImageComponent,
-  PullQuoteComponent,
-  TableComponent,
-  Quote,
-  GalleryComponent,
-  AudioComponent,
+	ImageComponent,
+	PullQuoteComponent,
+	TableComponent,
+	Quote,
+	GalleryComponent,
+	AudioComponent,
 };

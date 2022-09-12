@@ -24,39 +24,39 @@ EFD121
 */
 
 :root {
-  --ifm-color-primary: #3017A1;
-  --ifm-color-primary-dark: #99A3AB;
-  --ifm-color-primary-darker: #616A71;
-  --ifm-color-primary-darkest: #2B353D;
-  --ifm-color-primary-light: #eaeff2;
-  --ifm-color-primary-lighter: #f1f1f1;
-  --ifm-color-primary-lightest: #ffffff;
-  --ifm-code-font-size: 95%;
+	--ifm-color-primary: #3017a1;
+	--ifm-color-primary-dark: #99a3ab;
+	--ifm-color-primary-darker: #616a71;
+	--ifm-color-primary-darkest: #2b353d;
+	--ifm-color-primary-light: #eaeff2;
+	--ifm-color-primary-lighter: #f1f1f1;
+	--ifm-color-primary-lightest: #ffffff;
+	--ifm-code-font-size: 95%;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme="dark"] {
-  --ifm-color-primary: #efd121;
-  --ifm-color-primary-dark: #99A3AB;
-  --ifm-color-primary-darker: #616A71;
-  --ifm-color-primary-darkest: #2B353D;
-  --ifm-color-primary-light: #f1f1f1;
-  --ifm-color-primary-lighter: #99a3ab;
-  --ifm-color-primary-lightest: #dbe1e5;
+[data-theme='dark'] {
+	--ifm-color-primary: #efd121;
+	--ifm-color-primary-dark: #99a3ab;
+	--ifm-color-primary-darker: #616a71;
+	--ifm-color-primary-darkest: #2b353d;
+	--ifm-color-primary-light: #f1f1f1;
+	--ifm-color-primary-lighter: #99a3ab;
+	--ifm-color-primary-lightest: #dbe1e5;
 }
 
 .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.1);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
+	background-color: rgba(0, 0, 0, 0.1);
+	display: block;
+	margin: 0 calc(-1 * var(--ifm-pre-padding));
+	padding: 0 var(--ifm-pre-padding);
 }
 
-[data-theme="dark"] .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.3);
+[data-theme='dark'] .docusaurus-highlight-code-line {
+	background-color: rgba(0, 0, 0, 0.3);
 }
 
 .navbar__logo {
-  background-color: #FFFFFF;
-  border-radius: 100px;
+	background-color: #ffffff;
+	border-radius: 100px;
 }

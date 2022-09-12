@@ -1,6 +1,3 @@
 {
-  "extends": ["../.eslintrc"],
-  "rules": {
-    "@typescript-eslint/no-var-requires": "off"
-  }
+  "extends": ["@pantheon-systems/eslint-config"]
 }

@@ -3,7 +3,7 @@
 exports[`default <AuthApiExampleTemplate /> > should render a failure message if unauthenticated 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
   >
     <div
       class="my-0 pt-10 px-5 text-xl"
@@ -144,7 +144,7 @@ exports[`default <AuthApiExampleTemplate /> > should render a failure message if
 exports[`default <AuthApiExampleTemplate /> > should render a success message if authenticated 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
   >
     <div
       class="my-0 pt-10 px-5 text-xl"
