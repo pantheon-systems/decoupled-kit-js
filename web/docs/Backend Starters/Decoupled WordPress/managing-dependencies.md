@@ -1,6 +1,7 @@
 # Managing WordPress Dependencies
 
-This WordPress Project uses [composer](https://getcomposer.org) to manage dependencies.
+This WordPress Project uses [composer](https://getcomposer.org) to manage
+dependencies.
 
 ## 1. Adding a new plugin/theme:
 
@@ -22,8 +23,8 @@ For more info:
 
 ## 2. Update dependencies manually using composer
 
-The dependencies can be updated using the following composer update command:
-For updating any plugin/theme:
+The dependencies can be updated using the following composer update command: For
+updating any plugin/theme:
 
 ```
 composer update <namespace>/<packagename> --with-dependencies
@@ -41,4 +42,10 @@ For more info:
 
 ## 3. Update dependencies automatically using [terminus-clu-plugin](https://github.com/pantheon-systems/terminus-clu-plugin)
 
-Alternatively, composer security updates can be applied automatically using the [Terminus CLU](https://github.com/pantheon-systems/terminus-clu-plugin) (Composer Lock Updater) Plugin. This plugin automatically creates pull requests based on composer.lock updates. If your project was created using our recommended terminus [build tools project create command](creating-new-project.md) then this plugin has been configured automatically.
+Alternatively, composer security updates can be applied automatically using the
+[Terminus CLU](https://github.com/pantheon-systems/terminus-clu-plugin)
+(Composer Lock Updater) Plugin. This plugin automatically creates pull requests
+based on composer.lock updates. If your project was created using our
+recommended terminus
+[build tools project create command](creating-new-project.md) then this plugin
+has been configured automatically.

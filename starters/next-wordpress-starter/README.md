@@ -26,27 +26,30 @@ git clone git@github.com:pantheon-systems/next-wordpress-starter.git
 cd next-wordpress-starter && npm install
 ```
 
-For either option, create a `.env.development.local` file and update it with the following:
-(See .env.example for an example)
+For either option, create a `.env.development.local` file and update it with the
+following: (See .env.example for an example)
 
 ```
 WPGRAPHQL_URL=
 IMAGE_DOMAIN=
 ```
 
-3. Run `npm run dev` to start in dev mode, or `npm run build && npm start` to start in production mode.
+3. Run `npm run dev` to start in dev mode, or `npm run build && npm start` to
+   start in production mode.
 
 4. Open a browser and navigate to `http://localhost:3000`.
 
 ## Pantheon @pantheon-systems/wordpress-kit
 
-The Pantheon @pantheon-systems/wordpress-kit is included as a dependency in this project. This allows developers to make use
-of utility functions to simplify the process of building and maintaining a decoupled site on Pantheon,
-including:
+The Pantheon @pantheon-systems/wordpress-kit is included as a dependency in this
+project. This allows developers to make use of utility functions to simplify the
+process of building and maintaining a decoupled site on Pantheon, including:
 
 - GraphqlClientFactory()
 - tailwindcssPlugin
 
-The `tailwindcssPlugin` is included in this project and is used to map WordPress Block Editor styles to Tailwind styles.
+The `tailwindcssPlugin` is included in this project and is used to map WordPress
+Block Editor styles to Tailwind styles.
 
-Full documentation can be found at: https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packages/wordpress-kit
+Full documentation can be found at:
+https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packages/wordpress-kit

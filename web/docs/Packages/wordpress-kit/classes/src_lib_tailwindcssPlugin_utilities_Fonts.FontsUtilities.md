@@ -1,7 +1,7 @@
 ---
-id: "src_lib_tailwindcssPlugin_utilities_Fonts.FontsUtilities"
-title: "Class: FontsUtilities"
-sidebar_label: "FontsUtilities"
+id: 'src_lib_tailwindcssPlugin_utilities_Fonts.FontsUtilities'
+title: 'Class: FontsUtilities'
+sidebar_label: 'FontsUtilities'
 custom_edit_url: null
 ---
 
@@ -84,7 +84,8 @@ fonts.getFontSizeUtilities() // returns the font size utilities
 
 ### theme
 
-• `Private` **theme**: [`ThemeType`](../modules/src_types_TailwindcssPlugin.md#themetype)
+• `Private` **theme**:
+[`ThemeType`](../modules/src_types_TailwindcssPlugin.md#themetype)
 
 #### Defined in
 
@@ -96,8 +97,8 @@ fonts.getFontSizeUtilities() // returns the font size utilities
 
 ▸ **getFontSizeUtilities**(): `Object`
 
-Generates the font size utilities based on the
-font size list that includes tailwind's default font size values and sensible defaults.
+Generates the font size utilities based on the font size list that includes
+tailwind's default font size values and sensible defaults.
 
 **`example`**
 

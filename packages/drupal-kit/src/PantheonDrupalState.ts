@@ -7,27 +7,27 @@ import { TJsonApiBody } from 'jsona/lib/JsonaTypes';
 import { DrupalStateConfig } from '@gdwc/drupal-state/dist/declarations/src/types/types';
 
 class PantheonDrupalState extends DrupalState {
-  constructor({
-    apiBase,
-    apiPrefix = 'jsonapi',
-    defaultLocale,
-    clientId,
-    clientSecret,
-    fetchAdapter = defaultFetch,
-    debug = false,
-    onError,
-  }: DrupalStateConfig) {
-    super({
-      apiBase,
-      apiPrefix,
-      defaultLocale,
-      clientId,
-      clientSecret,
-      fetchAdapter,
-      debug,
-      onError,
-    });
-  }
+	constructor({
+		apiBase,
+		apiPrefix = 'jsonapi',
+		defaultLocale,
+		clientId,
+		clientSecret,
+		fetchAdapter = defaultFetch,
+		debug = false,
+		onError,
+	}: DrupalStateConfig) {
+		super({
+			apiBase,
+			apiPrefix,
+			defaultLocale,
+			clientId,
+			clientSecret,
+			fetchAdapter,
+			debug,
+			onError,
+		});
+	}
 
   /**
    * If a query is provided, fetches data using apollo-link-json-api, otherwise uses out fetch method.
@@ -53,13 +53,53 @@ class PantheonDrupalState extends DrupalState {
       };
     }
 
-    return (await this.fetchJsonapiEndpoint(
-      endpoint,
-      requestInit,
-      this.onError,
-      res
-    )) as TJsonApiBody;
-  }
+		if (query) {
+			this.client.link.headers = { Authorization: authHeader };
+
+			const queryObjectName = camelize(objectName as string);
+			const gqlQuery = gql`{
+        ${queryObjectName} @jsonapi(path: "${endpoint}", includeJsonapi: true)
+          {
+            jsonapi
+            graphql
+            ${query}
+          }
+        }`;
+
+			// This will bubble up surrogate keys to the response, but also currently
+			// results in a redundant API call. The suggested long term solution is to
+			// take on this enhancement to Drupal State:
+			// https://www.drupal.org/project/drupal_state/issues/3238685 and then
+			// refactor here to eliminate this redundant call. It should also be
+			// possible to eliminate most of the other fetch related overrides here as
+			// well.
+			if (res) {
+				await this.fetchJsonapiEndpoint(
+					`${this.apiRoot}${endpoint}`,
+					requestInit,
+					this.onError,
+					res,
+				);
+			}
+
+			return (await this.client.query({ query: gqlQuery }).then((response) => {
+				const data = response.data as keyedResources;
+				const object = data[queryObjectName] as jsonapiLinkObject;
+				return {
+					data: object.jsonapi.data,
+					graphql: object.graphql,
+					links: object.jsonapi.links,
+				};
+			})) as TJsonApiBody;
+		} else {
+			return (await this.fetchJsonapiEndpoint(
+				endpoint,
+				requestInit,
+				this.onError,
+				res,
+			)) as TJsonApiBody;
+		}
+	}
 }
 
 export default PantheonDrupalState;
