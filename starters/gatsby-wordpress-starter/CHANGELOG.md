@@ -4,12 +4,14 @@
 
 ### Minor Changes
 
-- a52944b: Removed html-react-parser and rendered the content of the posts and pages by insert html
+- a52944b: Removed html-react-parser and rendered the content of the posts and
+  pages by insert html
 
 ### Patch Changes
 
 - dc9e31a: Upgraded Gatsby to 4.22.0 and upgraded all Gatsby related packages.
-- 5e43ec3: Upgrade Gatsby and general dependencies to resolve error running in develop mode.
+- 5e43ec3: Upgrade Gatsby and general dependencies to resolve error running in
+  develop mode.
 
 ## 2.0.0
 
@@ -24,7 +26,8 @@
 ### Patch Changes
 
 - b5cd4de: Re-add the package-lock.json
-- 56ec318: Added a helpful error message in case a CMS backend endpoint is not set
+- 56ec318: Added a helpful error message in case a CMS backend endpoint is not
+  set
 
 ## 2.0.0-canary.1
 
@@ -44,7 +47,8 @@
 
 ### Patch Changes
 
-- 56ec318: Added a helpful error message in case a CMS backend endpoint is not set
+- 56ec318: Added a helpful error message in case a CMS backend endpoint is not
+  set
 
 ## 1.1.0
 
@@ -54,7 +58,8 @@
 
 ### Patch Changes
 
-- 8ddf7bf: [gatsby-wordpress-starter] Updated dependencies in the gatsby-wordpress-starter
+- 8ddf7bf: [gatsby-wordpress-starter] Updated dependencies in the
+  gatsby-wordpress-starter
 
 ## 1.0.3
 
@@ -73,4 +78,5 @@
 
 ### Patch Changes
 
-- 81e00e7: Add package-lock.json to gatsby-wordpress-starter and next-drupal-starter for distribution.
+- 81e00e7: Add package-lock.json to gatsby-wordpress-starter and
+  next-drupal-starter for distribution.

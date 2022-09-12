@@ -1,55 +1,72 @@
-import { globalDrupalStateAuthStores } from "../../lib/stores";
+import { globalDrupalStateAuthStores, getCurrentLocaleStore } from './stores';
+import { fetchJsonapiEndpoint } from '@pantheon-systems/drupal-kit';
+/**
+ *
+ * @param {import('next').GetServerSidePropsContext |
+ * import('next').GetStaticPropsContext} previewData - Nextjs context
+ * @param {string} node - The node to be previewed example 'node--article'
+ * @param {string | undefined} params - JSON:API params to include on the fetched Drupal JSON:API endpoint
+ * @see https://www.drupal.org/docs/core-modules-and-themes/core-modules/jsonapi-module/fetching-resources-get for more information on constructing valid JSON:API querystring
+ * @returns {Promise<string>} params - The JSON:API params to include on the fetched Drupal JSON:API endpoint in case of a revision
+ */
+export async function getPreview(context, node, params) {
+	// preview language may not match the current locale.
+	// Get language from context.previewData
+	const { previewLang } = context.previewData;
 
-const preview = async (req, res) => {
-  // Check the secret and next parameters
-  // This secret should only be known to this API route and the CMS
-  if (req.query.secret !== process.env.PREVIEW_SECRET || !req.query.slug) {
-    return res.redirect("/500");
-  }
+	// Get the store for the preview language.
+	const store = getCurrentLocaleStore(previewLang, globalDrupalStateAuthStores);
+	try {
+		if (context.previewData) {
+			process.env.DEBUG_MODE &&
+				console.log('Fetching preview data from Drupal and adding to state...');
+			// set the auth headers
+			let requestInit = {};
+			if (process.env.CLIENT_ID && process.env.CLIENT_SECRET) {
+				requestInit = {
+					headers: {
+						Authorization: await store.getAuthHeader(),
+					},
+				};
+			}
 
-  // returns the store that matches the locale found in the requested url
-  // or the only store if using a monolingual backend
-  const [store] = globalDrupalStateAuthStores.filter(({ defaultLocale }) => {
-    const regex = new RegExp(`/${defaultLocale}/`);
-    return defaultLocale ? regex.test(req.url) : true;
-  });
-  const objectName = req.query.objectName;
-  // verify the content exists
-  let content;
-  try {
-    content = await store.getObjectByPath({
-      objectName: objectName,
-      path: req.query.slug,
-    });
-  } catch (error) {
-    process.env.DEBUG_MODE &&
-      console.error("Error verifying preview content: ", error);
-    return res.redirect("/500");
-  }
+			// if a revision, pass resourceVersion parameter.
+			if (context?.previewData?.resourceVersionId) {
+				process.env.DEBUG_MODE &&
+					console.log(
+						`Adding resource version ID param ${context?.previewData?.resourceVersionId}...`,
+					);
+				if (params === undefined) {
+					params = '';
+				}
+				const leadingChar = params ? '&' : '';
+				params += `${leadingChar}resourceVersion=id:${context.previewData.resourceVersionId}`;
+			}
 
-  // If the content doesn't exist prevent preview mode from being enabled
-  if (!content) {
-    return res.redirect("/500");
-  }
+			// Only fetch preview data if it is not a revision
+			else {
+				const fetchedPreviewData = await fetchJsonapiEndpoint(
+					`${store.apiRoot}decoupled-preview/${context.previewData.key}${
+						params ? `?${params}` : ''
+					}`,
+					requestInit,
+				);
 
-  // Enable Preview Mode by setting a cookie
-  if (req.query.resourceVersionId) {
-    res.setPreviewData({
-      key: req.query.key,
-      resourceVersionId: req.query.resourceVersionId,
-      previewLang: store.defaultLocale || "en",
-    });
-  } else if (req.query.key) {
-    res.setPreviewData({
-      key: req.query.key,
-      previewLang: store.defaultLocale || "en",
-    });
-  } else {
-    res.setPreviewData({});
-  }
+				if (fetchedPreviewData.errors) {
+					throw fetchedPreviewData?.errors.forEach(({ detail }) => detail);
+				}
+				const resourceKey = params
+					? `${fetchedPreviewData.data.id}-${params}`
+					: fetchedPreviewData.data.id;
 
-  // Redirect to the path from the fetched content
-  res.redirect(`${content.path.alias}?timestamp=${Date.now()}`);
-};
-
-export default preview;
+				// set the preview data in the store
+				store.setState({
+					[`${node}Resources`]: { [resourceKey]: fetchedPreviewData },
+				});
+			}
+		}
+		return params;
+	} catch (error) {
+		throw error;
+	}
+}

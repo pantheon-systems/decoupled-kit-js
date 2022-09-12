@@ -1,51 +1,51 @@
 {
-  "name": "@pantheon-systems/next-drupal-starter",
-  "version": "3.1.0-canary.1",
-  "private": true,
-  "description": "Pantheon Decoupled Kit's Next Drupal Starter",
-  "license": "GPL-3.0-or-later",
-  "homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
-  "bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pantheon-systems/decoupled-kit-js"
-  },
-  "author": "@pantheon-systems",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build && cp -r .next/static .next/standalone/.next && cp -r public .next/standalone",
-    "start": "node .next/standalone/server.js",
-    "build:mono": "next build",
-    "start:mono": "next start",
-    "lint": "next lint",
-    "test": "vitest run --mode umami && vitest run --mode default",
-    "test:umami": "vitest --mode umami",
-    "test:default": "vitest --mode default",
-    "update-snapshots": "vitest run --mode umami --update --silent && vitest run --mode default --update --silent",
-    "coverage": "vitest run --mode umami --coverage && vitest run --mode default --coverage"
-  },
-  "dependencies": {
-    "@pantheon-systems/drupal-kit": "2.2.0",
-    "@pantheon-systems/nextjs-kit": "1.1.0-canary.1",
-    "@tailwindcss/typography": "^0.5.2",
-    "dotenv": "^16.0.0",
-    "next": "^12.2.5",
-    "next-seo": "^5.4.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "sharp": "^0.30.4"
-  },
-  "devDependencies": {
-    "@testing-library/react": "12.1.5",
-    "@vitejs/plugin-react": "^2.0.0",
-    "autoprefixer": "^10.4.4",
-    "c8": "^7.12.0",
-    "encoding": "^0.1.13",
-    "eslint": "8.10.0",
-    "eslint-config-next": "12.1.0",
-    "msw": "^0.44.2",
-    "postcss": "^8.4.12",
-    "tailwindcss": "^3.0.24",
-    "vitest": "^0.18.0"
-  }
+	"name": "@pantheon-systems/next-drupal-starter",
+	"version": "3.1.0-canary.1",
+	"private": true,
+	"description": "Pantheon Decoupled Kit's Next Drupal Starter",
+	"license": "GPL-3.0-or-later",
+	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
+	"bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pantheon-systems/decoupled-kit-js"
+	},
+	"author": "@pantheon-systems",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build && cp -r .next/static .next/standalone/.next && cp -r public .next/standalone",
+		"start": "node .next/standalone/server.js",
+		"build:mono": "next build",
+		"start:mono": "next start",
+		"lint": "next lint",
+		"test": "vitest run --mode umami && vitest run --mode default",
+		"test:umami": "vitest --mode umami",
+		"test:default": "vitest --mode default",
+		"update-snapshots": "vitest run --mode umami --update --silent && vitest run --mode default --update --silent",
+		"coverage": "vitest run --mode umami --coverage && vitest run --mode default --coverage"
+	},
+	"dependencies": {
+		"@pantheon-systems/drupal-kit": "2.2.0",
+		"@pantheon-systems/nextjs-kit": "1.1.0-canary.1",
+		"@tailwindcss/typography": "^0.5.2",
+		"dotenv": "^16.0.0",
+		"next": "^12.2.5",
+		"next-seo": "^5.4.0",
+		"react": "17.0.2",
+		"react-dom": "17.0.2",
+		"sharp": "^0.30.4"
+	},
+	"devDependencies": {
+		"@testing-library/react": "12.1.5",
+		"@vitejs/plugin-react": "^2.0.0",
+		"autoprefixer": "^10.4.4",
+		"c8": "^7.12.0",
+		"encoding": "^0.1.13",
+		"eslint": "8.10.0",
+		"eslint-config-next": "12.1.0",
+		"msw": "^0.44.2",
+		"postcss": "^8.4.12",
+		"tailwindcss": "^3.0.24",
+		"vitest": "^0.18.0"
+	}
 }

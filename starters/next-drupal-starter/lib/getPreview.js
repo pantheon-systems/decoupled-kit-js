@@ -1,8 +1,5 @@
-import {
-  globalDrupalStateAuthStores,
-  getCurrentLocaleStore,
-} from "./stores";
-import { fetchJsonapiEndpoint } from "@pantheon-systems/drupal-kit";
+import { globalDrupalStateAuthStores, getCurrentLocaleStore } from './stores';
+import { fetchJsonapiEndpoint } from '@pantheon-systems/drupal-kit';
 /**
  *
  * @param {import('next').GetServerSidePropsContext |
@@ -13,63 +10,63 @@ import { fetchJsonapiEndpoint } from "@pantheon-systems/drupal-kit";
  * @returns {Promise<string>} params - The JSON:API params to include on the fetched Drupal JSON:API endpoint in case of a revision
  */
 export async function getPreview(context, node, params) {
-  // preview language may not match the current locale.
-  // Get language from context.previewData
-  const { previewLang } = context.previewData;
+	// preview language may not match the current locale.
+	// Get language from context.previewData
+	const { previewLang } = context.previewData;
 
-  // Get the store for the preview language.
-  const store = getCurrentLocaleStore(previewLang, globalDrupalStateAuthStores);
-  try {
-    if (context.previewData) {
-      process.env.DEBUG_MODE &&
-        console.log("Fetching preview data from Drupal and adding to state...");
-      // set the auth headers
-      let requestInit = {};
-      if (process.env.CLIENT_ID && process.env.CLIENT_SECRET) {
-        requestInit = {
-          headers: {
-            Authorization: await store.getAuthHeader(),
-          },
-        };
-      }
+	// Get the store for the preview language.
+	const store = getCurrentLocaleStore(previewLang, globalDrupalStateAuthStores);
+	try {
+		if (context.previewData) {
+			process.env.DEBUG_MODE &&
+				console.log('Fetching preview data from Drupal and adding to state...');
+			// set the auth headers
+			let requestInit = {};
+			if (process.env.CLIENT_ID && process.env.CLIENT_SECRET) {
+				requestInit = {
+					headers: {
+						Authorization: await store.getAuthHeader(),
+					},
+				};
+			}
 
-      // if a revision, pass resourceVersion parameter.
-      if (context?.previewData?.resourceVersionId) {
-        process.env.DEBUG_MODE &&
-          console.log(
-            `Adding resource version ID param ${context?.previewData?.resourceVersionId}...`
-          );
-        if (params === undefined) {
-          params = "";
-        }
-        const leadingChar = params ? "&" : "";
-        params += `${leadingChar}resourceVersion=id:${context.previewData.resourceVersionId}`;
-      }
+			// if a revision, pass resourceVersion parameter.
+			if (context?.previewData?.resourceVersionId) {
+				process.env.DEBUG_MODE &&
+					console.log(
+						`Adding resource version ID param ${context?.previewData?.resourceVersionId}...`,
+					);
+				if (params === undefined) {
+					params = '';
+				}
+				const leadingChar = params ? '&' : '';
+				params += `${leadingChar}resourceVersion=id:${context.previewData.resourceVersionId}`;
+			}
 
-      // Only fetch preview data if it is not a revision
-      else {
-        const fetchedPreviewData = await fetchJsonapiEndpoint(
-          `${store.apiRoot}decoupled-preview/${context.previewData.key}${
-            params ? `?${params}` : ""
-          }`,
-          requestInit
-        );
+			// Only fetch preview data if it is not a revision
+			else {
+				const fetchedPreviewData = await fetchJsonapiEndpoint(
+					`${store.apiRoot}decoupled-preview/${context.previewData.key}${
+						params ? `?${params}` : ''
+					}`,
+					requestInit,
+				);
 
-        if (fetchedPreviewData.errors) {
-          throw fetchedPreviewData?.errors.forEach(({ detail }) => detail);
-        }
-        const resourceKey = params
-          ? `${fetchedPreviewData.data.id}-${params}`
-          : fetchedPreviewData.data.id;
+				if (fetchedPreviewData.errors) {
+					throw fetchedPreviewData?.errors.forEach(({ detail }) => detail);
+				}
+				const resourceKey = params
+					? `${fetchedPreviewData.data.id}-${params}`
+					: fetchedPreviewData.data.id;
 
-        // set the preview data in the store
-        store.setState({
-          [`${node}Resources`]: { [resourceKey]: fetchedPreviewData },
-        });
-      }
-    }
-    return params;
-  } catch (error) {
-    throw error;
-  }
+				// set the preview data in the store
+				store.setState({
+					[`${node}Resources`]: { [resourceKey]: fetchedPreviewData },
+				});
+			}
+		}
+		return params;
+	} catch (error) {
+		throw error;
+	}
 }

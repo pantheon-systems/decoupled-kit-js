@@ -4,7 +4,8 @@
 
 ### Minor Changes
 
-- 547ee6e: Added Paginator component, added TSDoc comments to exported types and interfaces
+- 547ee6e: Added Paginator component, added TSDoc comments to exported types and
+  interfaces
 
 ## 1.0.1-canary.0
 

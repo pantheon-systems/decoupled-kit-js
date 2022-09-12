@@ -7,24 +7,24 @@ import Header from '../../components/header';
  */
 
 const navItems = [
-  {
-    linkText: 'Home',
-    href: '/',
-  },
-  {
-    linkText: 'Posts',
-    href: '/posts',
-  },
-  {
-    linkText: 'Pages',
-    href: '/pages',
-  },
+	{
+		linkText: 'Home',
+		href: '/',
+	},
+	{
+		linkText: 'Posts',
+		href: '/posts',
+	},
+	{
+		linkText: 'Pages',
+		href: '/pages',
+	},
 ];
 
 describe('<Header />', () => {
-  it("should render 'header'", () => {
-    const { asFragment } = render(<Header navItems={navItems} />);
+	it("should render 'header'", () => {
+		const { asFragment } = render(<Header navItems={navItems} />);
 
-    expect(asFragment()).toMatchSnapshot();
-  });
+		expect(asFragment()).toMatchSnapshot();
+	});
 });
