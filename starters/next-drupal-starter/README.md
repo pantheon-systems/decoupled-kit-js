@@ -26,8 +26,8 @@ git clone git@github.com:pantheon-systems/next-drupal-starter.git
 cd next-drupal-starter && npm install
 ```
 
-For either option, create a `.env.development.local` file and update it with the following:
-(See .env.example for an example)
+For either option, create a `.env.development.local` file and update it with the
+following: (See .env.example for an example)
 
 ```
 BACKEND_URL=
@@ -54,41 +54,54 @@ CLIENT_SECRET=
 
 ## Pantheon @pantheon-systems/drupal-kit
 
-The Pantheon @pantheon-systems/drupal-kit is included as a dependency in this project. This allows developers to make use
-of utility functions to simplify the process of building and maintaining a decoupled site on Pantheon,
-including:
+The Pantheon @pantheon-systems/drupal-kit is included as a dependency in this
+project. This allows developers to make use of utility functions to simplify the
+process of building and maintaining a decoupled site on Pantheon, including:
 
 - addSurrogateKeyHeader()
 - updateMaxAge()
 
-Full documentation can be found at: https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packages/drupal-kit
+Full documentation can be found at:
+https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packages/drupal-kit
 
 ## Example Pages
 
-- examples/auth-api - a simple example that sources data from an endpoint that requires authorization.
-- examples/pagination - an example that sources paged data from JSON:API and paginates it client side.
+- examples/auth-api - a simple example that sources data from an endpoint that
+  requires authorization.
+- examples/pagination - an example that sources paged data from JSON:API and
+  paginates it client side.
 
 ## Customizing the Starter
 
-The `pages/recipes` directory can be safely removed if you are using a Drupal instance that does not
-source the Umami demo data
+The `pages/recipes` directory can be safely removed if you are using a Drupal
+instance that does not source the Umami demo data
 
-For a guide on creating your first Next Drupal customization, see [Your First Drupal Customization](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next.js/Next.js%20%2B%20Drupal/your-first-customization.md)
+For a guide on creating your first Next Drupal customization, see
+[Your First Drupal Customization](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next.js/Next.js%20%2B%20Drupal/your-first-customization.md)
 
 ## Tests
 
-Tests are written with [`vitest`](https://vitest.dev/). All new functionality should have unit tests or snapshot tests where applicable.
-Snapshot tests are using [`@testing-library/react`](https://testing-library.com/docs/react-testing-library/intro/).
+Tests are written with [`vitest`](https://vitest.dev/). All new functionality
+should have unit tests or snapshot tests where applicable. Snapshot tests are
+using
+[`@testing-library/react`](https://testing-library.com/docs/react-testing-library/intro/).
 
-Any fetch calls should be mocked with [`msw`](https://mswjs.io/docs/basics/request-matching) in [setupFile.js](./__tests__/setupFile.js).
+Any fetch calls should be mocked with
+[`msw`](https://mswjs.io/docs/basics/request-matching) in
+[setupFile.js](./__tests__/setupFile.js).
 
-There are two data profiles to test against: the [Umami profile](https://www.drupal.org/project/pantheon_decoupled_umami_demo) and the [Default profile](https://www.drupal.org/project/pantheon_decoupled).
-These profiles are available as Drupal modules and contain data to render the frontend with.
-See our [Backend Starters](https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Backend%20Starters/Decoupled%20Drupal) for more information on setting up a Drupal instance.
+There are two data profiles to test against: the
+[Umami profile](https://www.drupal.org/project/pantheon_decoupled_umami_demo)
+and the [Default profile](https://www.drupal.org/project/pantheon_decoupled).
+These profiles are available as Drupal modules and contain data to render the
+frontend with. See our
+[Backend Starters](https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Backend%20Starters/Decoupled%20Drupal)
+for more information on setting up a Drupal instance.
 
 ### Commands
 
-This section assumes the package manager in use is `npm`. If you are not using `npm`, replace `npm` with the name of your package manager.
+This section assumes the package manager in use is `npm`. If you are not using
+`npm`, replace `npm` with the name of your package manager.
 
 To run all tests for both profiles sequentially:
 
@@ -107,9 +120,10 @@ npm run test:default
 
 ### Updating Snapshots
 
-Snapshots should be updated when presentational changes are made.
-If a new page route is added, create a new snapshot test for it, and include any data needed to run that test successfully.
-Please commit the updated snapshots along with your changes.
+Snapshots should be updated when presentational changes are made. If a new page
+route is added, create a new snapshot test for it, and include any data needed
+to run that test successfully. Please commit the updated snapshots along with
+your changes.
 
 To update a snapshot:
 
@@ -119,6 +133,6 @@ Run the following helper command:
 npm run update-snapshots
 ```
 
-Or, run the test for a single profile in watch mode (see above), then in the terminal press the **u** key.
-This will update the snapshot for the running profile
-Be sure to update the snapshot for both profiles.
+Or, run the test for a single profile in watch mode (see above), then in the
+terminal press the **u** key. This will update the snapshot for the running
+profile Be sure to update the snapshot for both profiles.

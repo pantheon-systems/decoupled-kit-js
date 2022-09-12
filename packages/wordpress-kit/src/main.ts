@@ -5,7 +5,7 @@ import './style.css';
 // Additional examples for local development purposes can be added here.
 
 const client = new GraphqlClientFactory(
-  'https://dev-wp-canary.pantheonsite.io/wp/graphql/'
+	'https://dev-wp-canary.pantheonsite.io/wp/graphql/',
 ).create();
 
 console.log('Client instance: ', client);

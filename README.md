@@ -10,7 +10,8 @@
 
 ## Prerequisites - START HERE!
 
-To configure the monorepo for development, the following should be installed locally:
+To configure the monorepo for development, the following should be installed
+locally:
 
 - Nodejs version 16 LTS. We recommend using [nvm](https://github.com/nvm-sh/nvm)
 - [npm](https://docs.npmjs.com/cli/v8/commands/npm) version 8.x.x
@@ -21,19 +22,24 @@ To configure the monorepo for development, the following should be installed loc
   ```bash
   npm install -g pnpm@7.4.0
   ```
+
 ---
 
 ## Setup the Monorepo
 
-To contribute to this project, follow the directions below. Also see [CONTRIBUTING.md](./CONTRIBUTING.md) for more information.
+To contribute to this project, follow the directions below. Also see
+[CONTRIBUTING.md](./CONTRIBUTING.md) for more information.
 
 1. [Fork this repo](https://github.com/pantheon-systems/decoupled-kit-js/fork)
 1. Clone your fork to your local machine.
-1. Install dependencies for all packages and starters using the following command. A postinstall script will build the packages:
+1. Install dependencies for all packages and starters using the following
+   command. A postinstall script will build the packages:
    ```bash
    pnpm install
    ```
-1. Install the [husky pre-commit hooks](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/.husky/pre-commit). Run the following command:
+1. Install the
+   [husky pre-commit hooks](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/.husky/pre-commit).
+   Run the following command:
    ```bash
    pnpm husky install
    ```
@@ -64,7 +70,8 @@ There are several scripts you can use in the monorepo.
   pnpm build:docs && pnpm start:docs
   ```
 
-- Run commands in a targeted project, folder, or workspace, using the [`pnpm` filter flag](https://pnpm.io/filtering).
+- Run commands in a targeted project, folder, or workspace, using the
+  [`pnpm` filter flag](https://pnpm.io/filtering).
 
   For example, to start the Gatsby starter (filter by namespace):
 
@@ -78,7 +85,10 @@ There are several scripts you can use in the monorepo.
   pnpm --filter './starters/**' lint
   ```
 
-If you need to run a command in a specific project, use the alias in the root `package.json` scripts (`pnpm run` to see the full list in your terminal), or use a filter. Please do not `cd` into the project directory and use `npm` or `yarn`.
+If you need to run a command in a specific project, use the alias in the root
+`package.json` scripts (`pnpm run` to see the full list in your terminal), or
+use a filter. Please do not `cd` into the project directory and use `npm` or
+`yarn`.
 
 ---
 
@@ -86,7 +96,9 @@ If you need to run a command in a specific project, use the alias in the root `p
 
 ### Generating a Changeset
 
-To generate a new changeset, run `pnpm changeset` in the root of the repository. The generated Markdown files in the `.changeset` directory should be committed to the repository.
+To generate a new changeset, run `pnpm changeset` in the root of the repository.
+The generated Markdown files in the `.changeset` directory should be committed
+to the repository.
 
 ### Creating and Publishing New Versions
 
@@ -95,17 +107,23 @@ not be created manually.
 
 #### Canary Releases
 
-Each push to the `canary` (default) branch triggers the `canary-release.yml` GitHub Action workflow which will open a PR back to the repo, and on merge it will release any package with a changeset to the `canary` tag on GitHub and npm.
+Each push to the `canary` (default) branch triggers the `canary-release.yml`
+GitHub Action workflow which will open a PR back to the repo, and on merge it
+will release any package with a changeset to the `canary` tag on GitHub and npm.
 
 ---
 
 ## Bug Reports and Feature Requests
 
-- Is the code in this repository not working as expected? [Open a bug report here](https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml)
+- Is the code in this repository not working as expected?
+  [Open a bug report here](https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml)
 
-- Is there something you would like to see added to this project? [Open a feature request here](https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=feature-request-template.yml)
+- Is there something you would like to see added to this project?
+  [Open a feature request here](https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=feature-request-template.yml)
 
 ---
+
 ## Further Reading
 
-For more information on contributing to this project, see [CONTRIBUTING.md](./CONTRIBUTING.md)
+For more information on contributing to this project, see
+[CONTRIBUTING.md](./CONTRIBUTING.md)

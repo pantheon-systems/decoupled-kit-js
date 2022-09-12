@@ -1,7 +1,7 @@
 ---
-id: "src_lib_tailwindcssPlugin_components_Quote"
-title: "Module: src/lib/tailwindcssPlugin/components/Quote"
-sidebar_label: "src/lib/tailwindcssPlugin/components/Quote"
+id: 'src_lib_tailwindcssPlugin_components_Quote'
+title: 'Module: src/lib/tailwindcssPlugin/components/Quote'
+sidebar_label: 'src/lib/tailwindcssPlugin/components/Quote'
 sidebar_position: 0
 custom_edit_url: null
 ---

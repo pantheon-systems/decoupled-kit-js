@@ -22,18 +22,7 @@
       "require": "./dist/drupal-kit.umd.js"
     }
   },
-  "prettier": {
-    "singleQuote": true,
-    "arrowParens": "avoid",
-    "proseWrap": "always"
-  },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{md,mdx}": "prettier --write"
-  },
+  "prettier": "@pantheon-systems/configs/prettier",
   "scripts": {
     "dev": "vite",
     "build": "tsc && rollup -c",
@@ -43,14 +32,16 @@
     "test": "jest",
     "test:ci": "JEST_JUNIT_OUTPUT_DIR='./test-results/jest' jest --ci --reporters=default --reporters=jest-junit",
     "eslint": "eslint --ext .js,.ts src --ignore-path .gitignore",
-    "eslint:fix": "eslint --ext .js,.ts src --fix --ignore-path .gitignore",
-    "prettier": "prettier \"**/*.{js,ts,md}\" --check --ignore-path .gitignore",
-    "prettier:fix": "prettier \"**/*.{js,ts,md}\" --write --ignore-path .gitignore",
+    "eslint:fix": "eslint --ext .js,.ts src --ignore-path .gitignore --fix",
+    "prettier": "prettier \"**/*.{js,ts,md}\" --check --ignore-path ../../.prettierignore",
+    "prettier:fix": "prettier \"**/*.{js,ts,md}\" --write --ignore-path ../../.prettierignore",
     "lint-staged": "lint-staged",
     "rollup": "rollup -c"
   },
   "devDependencies": {
     "@apollo/client": "^3.5.10",
+    "@pantheon-systems/eslint-config": "*",
+    "@pantheon-systems/configs": "*",
     "@types/humps": "^2.0.1",
     "@types/isomorphic-fetch": "^0.0.35",
     "graphql": "^0.11.3 || ^0.12.3 || ^0.13.0 || ^14.0.0 || ^15.0.0",

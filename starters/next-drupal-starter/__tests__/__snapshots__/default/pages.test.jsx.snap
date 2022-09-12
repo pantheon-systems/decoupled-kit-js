@@ -3,7 +3,7 @@
 exports[`default <PageListTemplate /> > should render with default profile pages 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
   >
     <div
       class="my-0 pt-10 px-5 text-xl"
@@ -152,7 +152,7 @@ exports[`default <PageListTemplate /> > should render with default profile pages
 exports[`default <PageTemplate /> > should render with default profile page 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
   >
     <div
       class="my-0 pt-10 px-5 text-xl"
