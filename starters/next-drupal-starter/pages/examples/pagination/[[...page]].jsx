@@ -6,7 +6,7 @@ import {
 } from '../../../lib/stores';
 import { BUILD_MODE } from '../../../lib/constants';
 
-import { Paginator } from '@pantheon-systems/nextjs-kit';
+import Paginator from '../../../components/paginator';
 import Head from 'next/head';
 import Layout from '../../../components/layout';
 
@@ -106,7 +106,7 @@ export async function getStaticProps(context) {
 	// drupal json api params
 	const data = await exampleStore.getObject({
 		objectName: 'node--ds_example',
-		params: 'fields[node--ds_example]=title,body,id',
+		params: 'fields[node--ds_example]=title,body,id,',
 		all: true,
 		refresh: !BUILD_MODE,
 	});

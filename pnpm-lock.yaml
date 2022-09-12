@@ -102,6 +102,8 @@ importers:
     specifiers:
       '@apollo/client': ^3.5.10
       '@gdwc/drupal-state': 4.0.1
+      '@pantheon-systems/configs': workspace:*
+      '@pantheon-systems/eslint-config': workspace:*
       '@types/humps': ^2.0.1
       '@types/isomorphic-fetch': ^0.0.35
       graphql: ^0.11.3 || ^0.12.3 || ^0.13.0 || ^14.0.0 || ^15.0.0
@@ -582,13 +584,6 @@ packages:
       tslib: 2.4.0
       zen-observable-ts: 1.2.5
     dev: true
-
-  /@ardatan/aggregate-error/0.0.6:
-    resolution: {integrity: sha512-vyrkEHG1jrukmzTPtyWB4NLPauUw5bQeg4uhn8f+1SSynmrOcyvlb1GKQjjgoBzElLdfXCRYX8UnBlhklOHYRQ==}
-    engines: {node: '>=8'}
-    dependencies:
-      tslib: 2.0.3
-    dev: false
 
   /@ardatan/relay-compiler/12.0.0_graphql@15.8.0:
     resolution: {integrity: sha512-9anThAaj1dQr6IGmzBMcfzOQKTa5artjuPmw8NYK/fiGEMjADbSguBY2FMDykt+QhilR3wc9VA/3yVju7JHg7Q==}
@@ -5826,7 +5821,7 @@ packages:
       '@parcel/diagnostic': 2.6.2
       '@parcel/fs': 2.6.2_@parcel+core@2.6.2
       '@parcel/logger': 2.6.2
-      '@parcel/types': 2.6.2
+      '@parcel/types': 2.6.2_@parcel+core@2.6.2
       '@parcel/utils': 2.6.2
       '@parcel/workers': 2.6.2_@parcel+core@2.6.2
       semver: 5.7.1
@@ -5984,18 +5979,6 @@ packages:
       react-refresh: 0.9.0
     transitivePeerDependencies:
       - '@parcel/core'
-    dev: false
-
-  /@parcel/types/2.6.2:
-    resolution: {integrity: sha512-MV8BFpCIs2jMUvK2RHqzkoiuOQ//JIbrD1zocA2YRW3zuPL/iABvbAABJoXpoPCKikVWOoCWASgBfWQo26VvJQ==}
-    dependencies:
-      '@parcel/cache': 2.6.2_@parcel+core@2.6.2
-      '@parcel/diagnostic': 2.6.2
-      '@parcel/fs': 2.6.2_@parcel+core@2.6.2
-      '@parcel/package-manager': 2.6.2_@parcel+core@2.6.2
-      '@parcel/source-map': 2.1.0
-      '@parcel/workers': 2.6.2_@parcel+core@2.6.2
-      utility-types: 3.10.0
     dev: false
 
   /@parcel/types/2.6.2_@parcel+core@2.6.2:
@@ -13377,8 +13360,8 @@ packages:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
     dev: true
 
-  /graphql-compose/9.0.8_graphql@15.8.0:
-    resolution: {integrity: sha512-I3zvygpVz5hOWk2cYL6yhbgfKbNWbiZFNXlWkv/55U+lX6Y3tL+SyY3zunw7QWrN/qtwG2DqZb13SHTv2MgdEQ==}
+  /graphql-compose/9.0.9_graphql@15.8.0:
+    resolution: {integrity: sha512-kEXdwuBk7GKaThWY7eKDP+GLF9pGrGuMpYLu3O5w+lwDsgsfdiUCEC8jTsuPjm1qz9AxsspZHqc3jA4vKwyiNg==}
     peerDependencies:
       graphql: ^14.2.0 || ^15.0.0 || ^16.0.0
     dependencies:
@@ -16059,7 +16042,7 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 12.2.3_gdjom6r726p3grwsawiv52ijca
+      next: 12.2.5_oj5jbg2ldmqbgxwq3dy6abnm5a
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     dev: false
