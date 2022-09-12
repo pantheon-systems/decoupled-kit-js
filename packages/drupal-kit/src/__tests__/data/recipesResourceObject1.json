@@ -1,67 +1,120 @@
 {
-  "type": "recipes",
-  "id": "a542e833-edfe-44a3-a6f1-7358b115af4b",
-  "internalId": 1,
-  "isPublished": true,
-  "title": "Frankfurter salad with mustard dressing",
-  "createdAt": "2017-12-31T12:57:13+0100",
-  "updatedAt": "2017-12-31T12:57:13+0100",
-  "isPromoted": true,
+  "type": "node--recipe",
+  "id": "33386d32-a87c-44b9-b66b-3dd0bfc38dca",
+  "drupal_internal__nid": 1,
+  "drupal_internal__vid": 2,
+  "langcode": "en",
+  "revision_timestamp": "2022-02-16T22:40:41+00:00",
+  "revision_log": null,
+  "status": true,
+  "title": "Deep mediterranean quiche",
+  "created": "2022-02-16T22:40:41+00:00",
+  "changed": "2022-02-16T22:40:41+00:00",
+  "promote": true,
+  "sticky": false,
+  "default_langcode": true,
+  "revision_translation_affected": null,
+  "moderation_state": "published",
   "path": {
-    "alias": null,
-    "pid": null,
+    "alias": "/recipes/deep-mediterranean-quiche",
+    "pid": 67,
     "langcode": "en"
   },
-  "difficulty": "easy",
-  "ingredients": [
-    "675 g (1.5 lb) small new salad potatoes such as Pink Fir Apple",
-    "3 eggs (not too fresh for hard-boiled eggs)",
-    "350 g (12 oz) frankfurters - Siamese cats love Frankfurters!",
-    "1 lettuce",
-    " chopped.  Any type will do",
-    " a Chinese cabbage worked well the last time I made this.",
-    "1 packet of young spinach leaves or rocket leaves",
-    " about 225 g (8 oz)",
-    "A handful of chives",
-    " chopped (if in season)",
-    "Dressing",
-    "3 tablespoons (30 ml) olive oil",
-    "1 tablespoon (15 ml) white wine vinegar",
-    "Pinch of sugar",
-    "Pinch of salt",
-    "Dash of lemon juice",
-    "2 teaspoons (10 ml) American squeezy mustard",
-    "1 teaspoon (5 ml) caraway seeds",
-    " crushed in a pestle and mortar"
+  "content_translation_source": "und",
+  "content_translation_outdated": false,
+  "field_cooking_time": 30,
+  "field_difficulty": "medium",
+  "field_ingredients": [
+    "For the pastry:",
+    "280g plain flour",
+    "140g butter",
+    "Cold water",
+    "For the filling:",
+    "1 onion",
+    "2 garlic cloves",
+    "Half a courgette",
+    "450ml soya milk",
+    "500g grated parmesan",
+    "2 eggs",
+    "200g sun dried tomatoes",
+    "100g feta"
   ],
-  "numberOfServices": null,
-  "preparationTime": 5,
-  "instructions": "Bring the potatoes to boil and simmer for 15 minutes in lightly salted water,Drain, cover and keep warm,Hard-boil the eggs for 12 minutes, refresh in cold water, peel and cut into quarters,With a very sharp knife, make a corkscrew shaped score around frankfurters from one end to the other,Bring to the boil and simmer for 5 minutes, drain and keep warm,Add the dressing ingredients to a bowl and whisk well until combined.  Alternatively use a salad shaker or a screw-topped jar,Mix half of the dressing with the spinach and lettuce leaves and the other half with the potatoes and the frankfurters,Divide the salad amongst 4 large plates and dress with the hard-boiled eggs,Season to taste and serve immediately",
-  "totalTime": 25,
+  "field_number_of_servings": 8,
+  "field_preparation_time": 40,
+  "field_recipe_instruction": {
+    "value": "<ol>\n  <li>Preheat the oven to 400°F/200°C. Starting with the pastry; rub the flour and butter together in a bowl until crumbling like breadcrumbs. Add water, a little at a time, until it forms a dough.</li>\n  <li>Roll out the pastry on a floured board and gently spread over your tin. Place in the fridge for 20 minutes before blind baking for a further 10.</li>\n  <li>Whilst the pastry is cooling, chop and gently cook the onions, garlic and courgette.</li>\n  <li>In a large bowl, add the soya milk, half the parmesan, and the eggs. Gently mix.</li>\n  <li>Once the pastry is cooked, spread the onions, garlic and sun dried tomatoes over the base and pour the eggs mix over. Sprinkle the remaining parmesan and careful lay the feta over the top. Bake for 30 minutes or until golden brown.</li>\n</ol>\n",
+    "format": "basic_html",
+    "processed": "<ol>\n<li>Preheat the oven to 400°F/200°C. Starting with the pastry; rub the flour and butter together in a bowl until crumbling like breadcrumbs. Add water, a little at a time, until it forms a dough.</li>\n<li>Roll out the pastry on a floured board and gently spread over your tin. Place in the fridge for 20 minutes before blind baking for a further 10.</li>\n<li>Whilst the pastry is cooling, chop and gently cook the onions, garlic and courgette.</li>\n<li>In a large bowl, add the soya milk, half the parmesan, and the eggs. Gently mix.</li>\n<li>Once the pastry is cooked, spread the onions, garlic and sun dried tomatoes over the base and pour the eggs mix over. Sprinkle the remaining parmesan and careful lay the feta over the top. Bake for 30 minutes or until golden brown.</li>\n</ol>\n"
+  },
+  "field_summary": {
+    "value": "An Italian inspired quiche with sun dried tomatoes and courgette. A perfect light meal for a summer's day.",
+    "format": "basic_html",
+    "processed": "<p>An Italian inspired quiche with sun dried tomatoes and courgette. A perfect light meal for a summer's day.</p>\n"
+  },
   "links": {
-    "self": "https://live-contentacms.pantheonsite.io/api/recipes/a542e833-edfe-44a3-a6f1-7358b115af4b"
+    "self": {
+      "href": "https://dev-ds-demo.pantheonsite.io/en/jsonapi/node/recipe/33386d32-a87c-44b9-b66b-3dd0bfc38dca?resourceVersion=id%3A2"
+    }
   },
-  "contentType": {
-    "type": "contentTypes",
-    "id": "ff85086b-db11-4ba6-8eaf-5197d6ad026c"
+  "node_type": {
+    "type": "node_type--node_type",
+    "id": "1c42f343-4d30-4fa3-a5c6-919daa61b952",
+    "resourceIdObjMeta": {
+      "drupal_internal__target_id": "recipe"
+    }
   },
-  "owner": {
-    "type": "users",
-    "id": "e12c370f-a118-420b-b096-f5d7a08b5640"
+  "revision_uid": {
+    "type": "user--user",
+    "id": "a7d16dca-adbb-4e56-a32d-ebc72cf95226",
+    "resourceIdObjMeta": {
+      "drupal_internal__target_id": 5
+    }
   },
-  "category": {
-    "type": "categories",
-    "id": "529406be-17fa-4080-b98d-19d23eaabb7b"
+  "uid": {
+    "type": "user--user",
+    "id": "a7d16dca-adbb-4e56-a32d-ebc72cf95226",
+    "resourceIdObjMeta": {
+      "drupal_internal__target_id": 5
+    }
   },
-  "image": {
-    "type": "images",
-    "id": "872aa7b3-1b1d-45d2-8bf9-5dd7cb07238f"
+  "field_media_image": {
+    "type": "media--image",
+    "id": "0d272ac0-cd03-42bf-aba9-9d403fc6680b",
+    "resourceIdObjMeta": {
+      "drupal_internal__target_id": 1
+    }
   },
-  "tags": [
+  "field_recipe_category": [
     {
-      "type": "tags",
-      "id": "df453b94-175f-422d-a090-bd5eb2f004f3"
+      "type": "taxonomy_term--recipe_category",
+      "id": "92972052-3377-47fc-a038-b61e56f3a8cb",
+      "resourceIdObjMeta": {
+        "drupal_internal__target_id": 31
+      }
     }
   ],
-  "relationshipNames": ["contentType", "owner", "category", "image", "tags"]
+  "field_tags": [
+    {
+      "type": "taxonomy_term--tags",
+      "id": "ee3f8fd1-873f-46fa-bb15-3e1e6647e693",
+      "resourceIdObjMeta": {
+        "drupal_internal__target_id": 22
+      }
+    },
+    {
+      "type": "taxonomy_term--tags",
+      "id": "4dbb782c-86c2-4ac1-b896-55b10be37fff",
+      "resourceIdObjMeta": {
+        "drupal_internal__target_id": 13
+      }
+    }
+  ],
+  "relationshipNames": [
+    "node_type",
+    "revision_uid",
+    "uid",
+    "field_media_image",
+    "field_recipe_category",
+    "field_tags"
+  ]
 }
