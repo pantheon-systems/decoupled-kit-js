@@ -12,7 +12,6 @@ coverage
 dist
 public
 
-*.test.*
 .*rc
 *.d.ts
 *.config.js
