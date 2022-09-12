@@ -12,6 +12,4 @@ coverage
 dist
 public
 
-.*rc
 *.d.ts
-*.config.js
