@@ -73,7 +73,7 @@ export async function getStaticPaths() {
   const data = await store.getObject({
     objectName: "node--ds_example",
     all: true,
-    params: "fields[node--ds_example]=title,body",
+    params: "fields[node--ds_example]=title,body,id",
   });
   const itemsPerPage = 10;
   const totalPages = Math.ceil(data.length / itemsPerPage);
@@ -106,7 +106,7 @@ export async function getStaticProps(context) {
   // drupal json api params
   const data = await exampleStore.getObject({
     objectName: "node--ds_example",
-    params: "fields[node--ds_example]=title,body",
+    params: "fields[node--ds_example]=title,body,id",
     all: true,
     refresh: !BUILD_MODE,
   });
@@ -115,7 +115,6 @@ export async function getStaticProps(context) {
   const footerMenu = await store.getObject({
     objectName: "menu_items--main",
   });
-  console.log(data);
   return {
     props: {
       data,
