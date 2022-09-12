@@ -1,7 +1,7 @@
 ---
-id: "src_types_types.authInit"
-title: "Interface: authInit"
-sidebar_label: "authInit"
+id: 'src_types_types.authInit'
+title: 'Interface: authInit'
+sidebar_label: 'authInit'
 custom_edit_url: null
 ---
 
