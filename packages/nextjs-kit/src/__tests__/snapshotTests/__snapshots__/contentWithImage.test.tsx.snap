@@ -17,7 +17,7 @@ exports[`<ContentWithImage /> > should render 'contentWithImage' 1`] = `
       class="font-normal"
       href="/"
     >
-      Home →
+      Back →
     </a>
     <div
       class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
@@ -30,12 +30,12 @@ exports[`<ContentWithImage /> > should render 'contentWithImage' 1`] = `
           style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
         >
           <img
-            alt="https://dev-decoupled-wordpress-qa.pantheonsite.io/wp-content/uploads/2022/08/pizza.jpeg"
+            alt="Featured Image"
             data-nimg="fill"
             decoding="async"
             sizes="100vw"
-            src="/_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=3840&q=75"
-            srcset="/_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=3840&q=75 3840w"
+            src="/_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io&w=3840&q=75"
+            srcset="/_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.iohttps%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.io&w=3840&q=75 3840w"
             style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
           />
         </span>

@@ -33,9 +33,16 @@ describe('<ContentWithImage />', () => {
 			<ContentWithImage
 				title={post.title}
 				content={post.content}
-				imgUrl={'https://dev-decoupled-wordpress-qa.pantheonsite.io'}
-				featuredImage={post.featuredImage}
+				imageProps={{
+					priority: true,
+					src:
+						'https://dev-decoupled-wordpress-qa.pantheonsite.io' + post.imgUrl,
+					layout: 'fill',
+					objectFit: 'cover',
+					alt: 'Featured Image',
+				}}
 				date={'2022-06-17T15:12:39+00:00'}
+				previousPagePath={'/'}
 			/>,
 		);
 
