@@ -102,11 +102,10 @@ export async function getStaticProps(context) {
 		debug: process.env.DEBUG_MODE || false,
 	});
 
-	// using a query here results in a payload of 641kb, down from 2.09mb without a query!
 	// drupal json api params
 	const data = await exampleStore.getObject({
 		objectName: 'node--ds_example',
-		params: 'fields[node--ds_example]=title,body,id,',
+		params: 'fields[node--ds_example]=title,body,id',
 		all: true,
 		refresh: !BUILD_MODE,
 	});
