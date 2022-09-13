@@ -7,6 +7,7 @@ const generateTypeDocOptions = require("./generateTypedocOptions.js");
 
 const drupalKitTypedocOptions = generateTypeDocOptions("drupal-kit", 0);
 const wordpressKitTypedocOptions = generateTypeDocOptions("wordpress-kit", 1);
+const nextjskitTypedocOptions = generateTypeDocOptions("nextjs-kit", 2);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -37,6 +38,13 @@ const config = {
         ...wordpressKitTypedocOptions,
       },
     ],
+    [
+      "docusaurus-plugin-typedoc",
+      {
+        id: "api-3",
+        ...nextjskitTypedocOptions,
+      },
+    ],
   ],
 
   presets: [
@@ -57,7 +65,6 @@ const config = {
         theme: {
           customCss: [
             require.resolve("./src/css/custom.css"),
-            require.resolve("@codesandbox/sandpack-react/dist/index.css"),
           ],
         },
       }),

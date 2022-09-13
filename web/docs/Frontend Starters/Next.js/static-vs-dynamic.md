@@ -70,11 +70,11 @@ pages are generated at request time.
 
 For a walk-through of fetching data with `getStaticProps` and
 `getServerSideProps`, see
-[Your First Next.js & Drupal Customization](./Next%20Drupal/your-first-customization.md)
+[Your First Next.js & Drupal Customization](./Next.js%20%2B%20Drupal/your-first-customization.md)
 or
-[Your First Next.js & WordPress Customization](./Next%20WordPress/your-first-customization.md),
-or look through
-[our `next-drupal-starter`](https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/starters/next-drupal-starter/)
+[Your First Next.js & WordPress Customization](./Next.js%20%2B%20WordPress/your-first-customization.md),
+or look through the
+[`next-drupal-starter`](https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/starters/next-drupal-starter/)
 or
-[`next-wordpress-starter](https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/starters/next-wordpress-starter)
+[`next-wordpress-starter`](https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/starters/next-wordpress-starter)
 for a starting point or inspiration

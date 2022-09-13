@@ -1,7 +1,7 @@
 name: Fix or Update Docs Content
 description: Report an issue in the documentation
-title: "[docs]: "
-labels: 
+title: '[docs]: '
+labels:
   - documentation
 body:
   - type: markdown

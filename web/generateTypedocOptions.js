@@ -8,12 +8,20 @@
  */
 const generateTypedocOptions = (packageName, position) => {
 	const options = {
-		entryPoints: [`../packages/${packageName}`],
+		compilerOptions: {
+			noEmit: true,
+		},
+		entryPoints: [`../packages/${packageName}/src`],
 		tsconfig: `../packages/${packageName}/tsconfig.json`,
 		readme: `../packages/${packageName}/README.md`,
 		out: `Packages/${packageName}`,
 		entryPointStrategy: 'expand',
-		exclude: ['main.ts', '**/node_modules/**'],
+		exclude: [
+			'./main.ts',
+			'**/node_modules/**',
+			'**/__tests__/**',
+			'**/vite-env.d.ts',
+		],
 		sidebar: {
 			categoryLabel: `${packageName}`,
 			position: position,

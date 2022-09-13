@@ -1,11 +1,11 @@
-name: "Starter Split and Changesets"
+name: 'Starter Split and Changesets'
 
 on:
   push:
     branches:
       - main
     tags:
-      - "*"
+      - '*'
 
 jobs:
   release:
@@ -27,7 +27,9 @@ jobs:
       - name: install pnpm
         run: npm i pnpm@7.4.0 -g
       - name: Setup npmrc
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+        run:
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >
+          .npmrc
       - name: setup pnpm config
         run: pnpm config set store-dir $PNPM_CACHE_FOLDER
       - name: install dependencies
@@ -38,8 +40,8 @@ jobs:
         uses: changesets/action@v1
         with:
           version: .github/scripts/main-release.sh
-          commit: "Update versions"
-          title: "Update versions"
+          commit: 'Update versions'
+          title: 'Update versions'
           publish: pnpm ci:publish
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
@@ -56,41 +58,41 @@ jobs:
       matrix:
         # define package to repository map
         include:
-          - local_path: "starters/gatsby-wordpress-starter"
-            split_repository: "gatsby-wordpress-starter"
-          - local_path: "starters/next-drupal-starter"
-            split_repository: "next-drupal-starter"
-          - local_path: "starters/next-wordpress-starter"
-            split_repository: "next-wordpress-starter"
+          - local_path: 'starters/gatsby-wordpress-starter'
+            split_repository: 'gatsby-wordpress-starter'
+          - local_path: 'starters/next-drupal-starter'
+            split_repository: 'next-drupal-starter'
+          - local_path: 'starters/next-wordpress-starter'
+            split_repository: 'next-wordpress-starter'
     steps:
       - uses: actions/checkout@v2
 
       # no tag
       - if: "!startsWith(github.ref, 'refs/tags/')"
-        uses: "symplify/monorepo-split-github-action@2.1"
+        uses: 'symplify/monorepo-split-github-action@2.1'
         with:
           # ↓ split <local_path> directory
-          package_directory: "${{ matrix.local_path }}"
+          package_directory: '${{ matrix.local_path }}'
 
           # ↓ into https://github.com/org/split_repository repository
-          repository_organization: "pantheon-systems"
-          repository_name: "${{ matrix.split_repository }}"
+          repository_organization: 'pantheon-systems'
+          repository_name: '${{ matrix.split_repository }}'
 
           # ↓ the user signed under the split commit
-          user_name: "brian-ci"
-          user_email: "brian.perry@pantheon.io"
+          user_name: 'brian-ci'
+          user_email: 'brian.perry@pantheon.io'
 
       # with tag
       - if: "startsWith(github.ref, 'refs/tags/')"
-        uses: "symplify/monorepo-split-github-action@2.1"
+        uses: 'symplify/monorepo-split-github-action@2.1'
         with:
           tag: ${GITHUB_REF#refs/tags/}
 
-          package_directory: "${{ matrix.local_path }}"
+          package_directory: '${{ matrix.local_path }}'
 
-          repository_organization: "pantheon-systems"
-          repository_name: "${{ matrix.split_repository }}"
+          repository_organization: 'pantheon-systems'
+          repository_name: '${{ matrix.split_repository }}'
 
           # ↓ the user signed under the split commit
-          user_name: "brian-ci"
-          user_email: "brian.perry@pantheon.io"
+          user_name: 'brian-ci'
+          user_email: 'brian.perry@pantheon.io'

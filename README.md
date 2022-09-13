@@ -126,4 +126,4 @@ will release any package with a changeset to the `canary` tag on GitHub and npm.
 ## Further Reading
 
 For more information on contributing to this project, see
-[CONTRIBUTING.md](./CONTRIBUTING.md)
+[CONTRIBUTING.md](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/CONTRIBUTING.md)

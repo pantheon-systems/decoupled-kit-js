@@ -149,7 +149,9 @@ The CSR pattern here is the same as it is with vanilla React.
 
 :::note You will need to configure your Drupal instance to allow your frontend
 site through CORS to achieve CSR. Also, be aware that the store is not shared
-between the client and server contexts. :::
+between the client and server contexts.
+
+:::
 
 ```jsx title=pages/articles-csr/index.js
 import { DrupalState } from '@pantheon-systems/drupal-kit';

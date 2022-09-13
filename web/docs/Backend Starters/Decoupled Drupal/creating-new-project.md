@@ -136,7 +136,7 @@ following additional flag to your `terminus build:project:create` command:
 Other possible values are `circleci`, `gitlab-pipelines` and
 `bitbucket-pipelines`.
 
-Note: if using GitHub Actions, your token should have the "workflow" scope.
+Note: if using Github Actions, your token should have the "workflow" scope.
 
 For more information, consult the
 [available services section of the build tools documentation](https://github.com/pantheon-systems/terminus-build-tools-plugin#available-services).
