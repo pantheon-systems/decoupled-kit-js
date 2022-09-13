@@ -2,7 +2,11 @@
 
 ## Gatsby Project setup
 
-1. Clone this repo:
+[See the getting started guide](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Gatsby/Gatsby%20%2B%20WordPress/intro.md)
+for a more options to create a new Gatsby + WordPress project from this
+template.
+
+1. Clone the template repo:
 
 ```bash
 git clone git@github.com:pantheon-systems/gatsby-wordpress-starter.git
@@ -11,10 +15,10 @@ git clone git@github.com:pantheon-systems/gatsby-wordpress-starter.git
 2. Install node modules
 
 ```bash
-cd decoupled-wp-gatsby-frontend-demo && npm install
+cd gatsby-wordpress-starter && npm install
 ```
 
-3. Save `.env.example` as `.env.development.local` add/update following lines:
+3. Save `.env.example` as `.env.development.local` update following lines:
 
 ```
 WPGRAPHQL_URL=

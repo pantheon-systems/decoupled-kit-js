@@ -43,10 +43,7 @@ IMAGE_DOMAIN=
 
 The Pantheon @pantheon-systems/wordpress-kit is included as a dependency in this
 project. This allows developers to make use of utility functions to simplify the
-process of building and maintaining a decoupled site on Pantheon, including:
-
-- GraphqlClientFactory()
-- tailwindcssPlugin
+process of building and maintaining a decoupled site on Pantheon.
 
 The `tailwindcssPlugin` is included in this project and is used to map WordPress
 Block Editor styles to Tailwind styles.
