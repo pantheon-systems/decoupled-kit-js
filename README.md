@@ -10,7 +10,8 @@
 
 ## Prerequisites
 
-To configure the monorepo for development, the following should be installed locally:
+To configure the monorepo for development, the following should be installed
+locally:
 
 - Nodejs version 16 LTS. We recomemnd using [nvm](https://github.com/nvm-sh/nvm)
 - [npm](https://docs.npmjs.com/cli/v8/commands/npm) version 8.x.x
@@ -26,11 +27,14 @@ To configure the monorepo for development, the following should be installed loc
 
 1. Fork [this](https://github.com/pantheon-systems/decoupled-kit-js/fork) repo.
 1. Clone your fork to your local machine.
-1. Install dependencies for all packages and starters using the following command:
+1. Install dependencies for all packages and starters using the following
+   command:
    ```
    pnpm install
    ```
-1. Install the [husky pre-commit hooks](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/.husky/pre-commit). Run the following command:
+1. Install the
+   [husky pre-commit hooks](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/.husky/pre-commit).
+   Run the following command:
    ```
    pnpm husky install
    ```
@@ -57,9 +61,11 @@ There are several scripts you can use on your monorepo.
   pnpm build:all
   ```
 
-- Run commands in a targeted project, folder, or workspace, using the `pnpm` [filter flag](https://pnpm.io/filtering).
+- Run commands in a targeted project, folder, or workspace, using the `pnpm`
+  [filter flag](https://pnpm.io/filtering).
 
-  For example, to start the Gatsby starter from the root of the monorepo (filter by namespace):
+  For example, to start the Gatsby starter from the root of the monorepo (filter
+  by namespace):
 
   ```bash
   pnpm --filter './starters/gatsby-wordpress-starter' develop
@@ -83,7 +89,9 @@ There are several scripts you can use on your monorepo.
 
 ### Generating a Changeset
 
-To generate a new changeset, run `pnpm changeset` in the root of the repository. The generated Markdown files in the `.changeset` directory should be committed to the repository.
+To generate a new changeset, run `pnpm changeset` in the root of the repository.
+The generated Markdown files in the `.changeset` directory should be committed
+to the repository.
 
 ### Creating and Publishing New Versions
 
@@ -92,14 +100,20 @@ not be created manually.
 
 #### Canary Releases
 
-Each push to the `canary` (default) branch triggers the `canary-release.yml` GitHub Action workflow which will open a PR back to the repo, and on merge it will release any package with a changeset to the `canary` tag on GitHub and npm.
+Each push to the `canary` (default) branch triggers the `canary-release.yml`
+GitHub Action workflow which will open a PR back to the repo, and on merge it
+will release any package with a changeset to the `canary` tag on GitHub and npm.
 
 ## Bug Reports and Feature Requests
 
-- Is the code in this repository not working as expected? Open a bug report [here](https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml)
+- Is the code in this repository not working as expected? Open a bug report
+  [here](https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml)
 
-- Is there something you would like to see added to this project? Open a feature request [here](https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=feature-request-template.yml)
+- Is there something you would like to see added to this project? Open a feature
+  request
+  [here](https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=feature-request-template.yml)
 
 ## Further Reading
 
-For more information on contributing to this project, see [CONTRIBUTING.md](./CONTRIBUTING.md)
+For more information on contributing to this project, see
+[CONTRIBUTING.md](./CONTRIBUTING.md)

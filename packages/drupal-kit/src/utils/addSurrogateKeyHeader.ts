@@ -7,23 +7,23 @@ import { ServerResponse } from 'http';
  * @returns The current known unique set of surrogate keys.
  */
 const addSurrogateKeyHeader = (
-  keys: string | null,
-  res: ServerResponse
+	keys: string | null,
+	res: ServerResponse,
 ): string => {
-  const surrogateKeyHeader = res.getHeader('Surrogate-Key-Raw');
-  const surrogateKeys =
-    typeof surrogateKeyHeader === 'undefined'
-      ? []
-      : (<string>surrogateKeyHeader).split(' ');
-  const newSurrogateKeys = keys?.split(' ') as string[];
-  // Destructure into a new array in order to de-dupe the array
-  const uniqueSurrogateKeys = [
-    ...new Set([...surrogateKeys, ...newSurrogateKeys]),
-  ];
+	const surrogateKeyHeader = res.getHeader('Surrogate-Key-Raw');
+	const surrogateKeys =
+		typeof surrogateKeyHeader === 'undefined'
+			? []
+			: (<string>surrogateKeyHeader).split(' ');
+	const newSurrogateKeys = keys?.split(' ') as string[];
+	// Destructure into a new array in order to de-dupe the array
+	const uniqueSurrogateKeys = [
+		...new Set([...surrogateKeys, ...newSurrogateKeys]),
+	];
 
-  res.setHeader('Surrogate-Key-Raw', uniqueSurrogateKeys.join(' '));
+	res.setHeader('Surrogate-Key-Raw', uniqueSurrogateKeys.join(' '));
 
-  return uniqueSurrogateKeys.join(' ');
+	return uniqueSurrogateKeys.join(' ');
 };
 
 export default addSurrogateKeyHeader;

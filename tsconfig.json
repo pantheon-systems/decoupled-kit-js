@@ -1,25 +1,25 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "lib": ["ESNext", "DOM"],
-    "moduleResolution": "Node",
-    "strict": true,
-    "sourceMap": false,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "noEmit": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "baseUrl": "./packages",
-    "paths": {
-      "@pantheon-systems/drupal-kit/*": ["./drupal-kit/*"],
-      "@pantheon-systems/wordpress-kit/*": ["./wordpress-kit/*"],
-      "@pantheon-systems/nextjs-kit/*": ["./nextjs-kit/*"]
-    }
-  },
-  "typeDocOptions": {
-    "includes": ["src"]
-  }
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"lib": ["ESNext", "DOM"],
+		"moduleResolution": "Node",
+		"strict": true,
+		"sourceMap": false,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"noEmit": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"baseUrl": "./packages",
+		"paths": {
+			"@pantheon-systems/drupal-kit/*": ["./drupal-kit/*"],
+			"@pantheon-systems/wordpress-kit/*": ["./wordpress-kit/*"],
+			"@pantheon-systems/nextjs-kit/*": ["./nextjs-kit/*"]
+		}
+	},
+	"typeDocOptions": {
+		"includes": ["src"]
+	}
 }

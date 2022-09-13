@@ -1,7 +1,7 @@
 ---
-id: "src_lib_GraphqlClientFactory.default"
-title: "Class: default"
-sidebar_label: "default"
+id: 'src_lib_GraphqlClientFactory.default'
+title: 'Class: default'
+sidebar_label: 'default'
 custom_edit_url: null
 ---
 

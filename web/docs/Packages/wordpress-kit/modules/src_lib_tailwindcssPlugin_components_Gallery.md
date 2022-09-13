@@ -1,7 +1,7 @@
 ---
-id: "src_lib_tailwindcssPlugin_components_Gallery"
-title: "Module: src/lib/tailwindcssPlugin/components/Gallery"
-sidebar_label: "src/lib/tailwindcssPlugin/components/Gallery"
+id: 'src_lib_tailwindcssPlugin_components_Gallery'
+title: 'Module: src/lib/tailwindcssPlugin/components/Gallery'
+sidebar_label: 'src/lib/tailwindcssPlugin/components/Gallery'
 sidebar_position: 0
 custom_edit_url: null
 ---

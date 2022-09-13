@@ -4,8 +4,12 @@ CHANGELOG.md
 LICENSE.md
 CODE_OF_CONDUCT.md
 
+.cache
+.docusaurus
+.next
+build
+coverage
 dist
-*.test.*
-.*rc
+public
+
 *.d.ts
-*.config.js
