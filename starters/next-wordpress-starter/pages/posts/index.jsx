@@ -1,4 +1,5 @@
 import { NextSeo } from 'next-seo';
+import { setEdgeHeader } from '@pantheon-systems/wordpress-kit';
 
 import PageHeader from '../../components/page-header';
 import Layout from '../../components/layout';
@@ -24,9 +25,10 @@ export default function PostsListTemplate({ menuItems, SSRPosts }) {
 	);
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ res }) {
 	const menuItems = await getFooterMenu();
 	const SSRPosts = await getLatestPosts();
+	setEdgeHeader({ res });
 
 	return {
 		props: {

@@ -1,4 +1,6 @@
 import { NextSeo } from 'next-seo';
+import { setEdgeHeader } from '@pantheon-systems/wordpress-kit';
+
 import { PageGridItem, withGrid } from '../../components/grid';
 import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
@@ -23,9 +25,10 @@ export default function PageListTemplate({ menuItems, pages }) {
 	);
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ res }) {
 	const menuItems = await getFooterMenu();
 	const pages = await getLatestPages();
+	setEdgeHeader({ res });
 
 	return {
 		props: {
