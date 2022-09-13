@@ -1,6 +1,11 @@
 ---
-"@pantheon-systems/drupal-kit": patch
-"@pantheon-systems/next-drupal-starter": patch
+'@pantheon-systems/drupal-kit': major
 ---
 
-DB-3775: Removed query option and added param filters to getObject calls that would benefit from filtered responses. 
+## Breaking Changes
+
+Removed the `query` option from `DrupalState`. This reflects the same upstream
+change in `@gdwc/drupal-state`.
+
+If you are still using a query after updating, you will receive a warning in the
+console and the full payload for the requested object.
