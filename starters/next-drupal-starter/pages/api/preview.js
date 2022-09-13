@@ -1,4 +1,7 @@
-import { globalDrupalStateAuthStores, getCurrentLocaleStore } from './stores';
+import {
+	globalDrupalStateAuthStores,
+	getCurrentLocaleStore,
+} from '../../lib/stores';
 import { fetchJsonapiEndpoint } from '@pantheon-systems/drupal-kit';
 /**
  *

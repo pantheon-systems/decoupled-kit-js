@@ -4,6 +4,7 @@ import { TableComponent } from './Table';
 import { Quote } from './Quote';
 import { GalleryComponent } from './Gallery';
 import { AudioComponent } from './Audio';
+import { CoverComponent } from './Cover';
 
 export {
 	ImageComponent,
@@ -12,4 +13,5 @@ export {
 	Quote,
 	GalleryComponent,
 	AudioComponent,
+	CoverComponent,
 };
