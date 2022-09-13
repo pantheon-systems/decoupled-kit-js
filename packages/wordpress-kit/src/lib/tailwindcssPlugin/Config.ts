@@ -40,5 +40,6 @@ export const mergeToConfig: Config = {
 		'.wp-block-image',
 		'.wp-block-gallery',
 		'.wp-block-audio',
+		'.wp-block-cover',
 	],
 };
