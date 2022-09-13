@@ -146,7 +146,7 @@ export class ColorUtilities {
 			(acc, color) => ({
 				...acc,
 				[`.has-${color.name}-background-color`]: {
-					backgroundColor: this.getColor(color),
+					backgroundColor: `${this.getColor(color)} !important`,
 				},
 			}),
 			{
