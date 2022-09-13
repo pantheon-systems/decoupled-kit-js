@@ -12,6 +12,9 @@ export default defineConfig(({ mode }) => {
 		},
 		plugins: [react()],
 		define: {
+			'process.env.backendUrl': JSON.stringify(
+				'https://my-wordpress-site.pantheon.io/wp/graphql',
+			),
 			'process.env.WP_APPLICATION_USERNAME': JSON.stringify(`decoupled_user`),
 			'process.env.WP_APPLICATION_PASSWORD': JSON.stringify(
 				'abcd efgh ijkl mnop',
