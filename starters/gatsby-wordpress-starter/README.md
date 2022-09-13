@@ -1,6 +1,6 @@
 # Pantheon Decoupled Kit Gatsby WordPress Starter
 
-## Gatsby Project setup
+## Getting Started
 
 [See the getting started guide](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Gatsby/Gatsby%20%2B%20WordPress/intro.md)
 for a more options to create a new Gatsby + WordPress project from this
@@ -51,6 +51,18 @@ Other commands:
 - `lando node` - runs the Gatsby development server (which should also run on
   `lando start`).
 - `lando gatsby <command>` - run Gatsby cli commands.
+
+## Pantheon @pantheon-systems/wordpress-kit
+
+The Pantheon @pantheon-systems/wordpress-kit is included as a dependency in this
+project. This allows developers to make use of utility functions to simplify the
+process of building and maintaining a Front-End site on Pantheon.
+
+The `tailwindcssPlugin` is included in this project and is used to map WordPress
+Block Editor styles to Tailwind styles.
+
+Full documentation can be found at:
+https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packages/wordpress-kit
 
 ## Customizing the Starter
 

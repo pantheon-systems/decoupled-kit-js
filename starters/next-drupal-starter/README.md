@@ -52,14 +52,15 @@ CLIENT_SECRET=
 
 5. Open a browser and navigate to `http://drupalnext.lndo.site/`.
 
-## Pantheon @pantheon-systems/drupal-kit
+## Pantheon npm Packages
 
-The Pantheon @pantheon-systems/drupal-kit is included as a dependency in this
-project. This allows developers to make use of utility functions to simplify the
-process of building and maintaining a decoupled site on Pantheon.
+The `@pantheon-systems/drupal-kit` and `@pantheon-systems/nextjs-kit` are
+included as dependencies in this project. This allows developers to make use of
+utility functions and components to simplify the process of building and
+maintaining a Front-End site on Pantheon.
 
 Full documentation can be found at:
-https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packages/drupal-kit
+https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packages
 
 ## Example Pages
 

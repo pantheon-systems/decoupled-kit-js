@@ -1,5 +1,7 @@
 # Pantheon Decoupled Kit Next WordPress Starter
 
+## Getting Started
+
 There are two ways to get started with the Next WordPress Starter:
 
 **Option 1**: Use `create-next-app`
@@ -43,7 +45,7 @@ IMAGE_DOMAIN=
 
 The Pantheon @pantheon-systems/wordpress-kit is included as a dependency in this
 project. This allows developers to make use of utility functions to simplify the
-process of building and maintaining a decoupled site on Pantheon.
+process of building and maintaining a Front-End site on Pantheon.
 
 The `tailwindcssPlugin` is included in this project and is used to map WordPress
 Block Editor styles to Tailwind styles.
