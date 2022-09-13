@@ -66,6 +66,7 @@ export async function getServerSideProps(context) {
 			objectName: 'node--article',
 			refresh: !BUILD_MODE,
 			res: context.res,
+			params: 'fields[node--article]=length',
 		});
 		const footerMenu = await authStore.getObject({
 			objectName: 'menu_items--main',

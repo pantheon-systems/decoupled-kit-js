@@ -12,14 +12,21 @@
     "@pantheon-systems/eslint-config": "0.0.0"
   },
   "changesets": [
+    "breezy-rings-wait",
     "brown-taxis-pretend",
     "cool-suits-marry",
+    "dig-gentle-rabbits",
     "fifty-months-matter",
     "four-pans-protect",
     "fuzzy-numbers-wink",
+    "gentle-pumas-compare",
+    "gold-avocados-end",
+    "lucky-pandas-cover",
     "many-buses-do",
     "mean-crabs-sin",
     "seven-suns-shave",
-    "sharp-jokes-begin"
+    "sharp-jokes-begin",
+    "stale-weeks-juggle",
+    "tough-coats-guess"
   ]
 }
