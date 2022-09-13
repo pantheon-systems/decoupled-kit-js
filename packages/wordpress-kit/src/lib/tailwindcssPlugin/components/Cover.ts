@@ -31,6 +31,13 @@ const innerContainer = {
 		color: '#fff',
 		p: {
 			position: 'relative',
+			'>img': {
+				height: 'auto',
+				'max-width': '100%',
+				margin: '0',
+				display: 'inline',
+				'vertical-align': 'unset',
+			},
 		},
 	},
 };
@@ -83,8 +90,6 @@ export const CoverComponent = ({
 }) => ({
 	'.wp-block-cover': {
 		'max-width': '650px',
-		'margin-left': 'auto',
-		'margin-right': 'auto',
 		position: 'relative',
 		'background-size': 'cover',
 		'background-position': '50%',
@@ -93,8 +98,9 @@ export const CoverComponent = ({
 		width: '100%',
 		'place-items': 'center',
 		padding: '1rem',
+		margin: '1rem auto',
 		'box-sizing': 'border-box',
-		img: {
+		'>img': {
 			position: 'absolute',
 			top: '0',
 			left: '0',
