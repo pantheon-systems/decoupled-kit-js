@@ -1,5 +1,25 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.7.0
+
+### Minor Changes
+
+- dad84cd: Change next-wordpress-starter to use SSR for all routes and added ISR
+  example.
+- f9d5697: Create setEdgeHeader lib in wordpress-kit and use this in
+  next-wordpress-starter to set cache control headers.
+
+### Patch Changes
+
+- 8943464: Derive IMAGE_DOMAIN from the backend url when it is https or http
+- 66aeea3: Upgraded next to latest version, changed starter kits to build and
+  start using standalone output mode.
+- ee835e8: Update prettierrc and reformat spaces -> tabs for accessibility
+- Updated dependencies [e9901e5]
+- Updated dependencies [f9d5697]
+- Updated dependencies [ee835e8]
+  - @pantheon-systems/wordpress-kit@2.5.0
+
 ## 0.7.0-canary.2
 
 ### Minor Changes

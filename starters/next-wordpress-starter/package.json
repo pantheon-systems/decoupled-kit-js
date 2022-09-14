@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/next-wordpress-starter",
-	"version": "0.7.0-canary.2",
+	"version": "0.7.0",
 	"private": true,
 	"description": "Pantheon Decoupled Kit's Next WordPress Starter",
 	"license": "GPL-3.0-or-later",
@@ -22,7 +22,7 @@
 		"prettier:fix": "prettier \"**/*.{js,jsx,,md}\" --write --ignore-path .prettierignore"
 	},
 	"dependencies": {
-		"@pantheon-systems/wordpress-kit": "2.5.0-canary.0",
+		"@pantheon-systems/wordpress-kit": "2.5.0",
 		"@tailwindcss/typography": "^0.5.2",
 		"dotenv": "^16.0.0",
 		"next": "^12.2.5",
