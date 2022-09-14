@@ -11,5 +11,7 @@
     "@pantheon-systems/next-wordpress-starter": "0.7.0",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "sour-beers-shake"
+  ]
 }

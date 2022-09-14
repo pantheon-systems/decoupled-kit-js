@@ -1,5 +1,11 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.1.1-canary.0
+
+### Patch Changes
+
+- e64608e: Fix accidental revert of preview.js file
+
 ## 3.1.0
 
 ### Minor Changes
