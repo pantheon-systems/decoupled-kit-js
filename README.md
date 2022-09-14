@@ -10,6 +10,29 @@
 
 ## Prerequisites - START HERE!
 
+Welcome to the Pantheon Systems Decoupled Kit Monorepo
+
+This repo is a collection of multiple projects, organized by `pnpm` workspaces.
+
+### Workspaces
+
+There are two main workspaces in the monorepo, `starters`, and `packages`, along
+with a `configs` workspace and `web` which houses the documentation.
+
+#### Starters
+
+Each directory in this workspace represents a starter kit that is mirrored to a
+standalone repo at release time. Please use the monorepo to develop against the
+starters.
+
+#### Packages
+
+The starters have a dependency on one or more of our npm packages, which live in
+this workspace. Each directory in this workspace represents a library to be
+published on `npm`, and to be consumed by the public, and our starter kits.
+
+### Setup the Monorepo
+
 To configure the monorepo for development, the following should be installed
 locally:
 
