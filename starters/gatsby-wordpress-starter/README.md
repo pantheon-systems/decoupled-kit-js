@@ -67,4 +67,4 @@ https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packag
 ## Customizing the Starter
 
 For a guide on creating your first Gatsby WordPress customization, see
-[Your First WordPress Customization](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Gatsby%20WordPress/your-first-customization.md)
+[Your First Gatsby + WordPress Customization](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Gatsby/Gatsby%20%2B%20WordPress/your-first-customization.md)
