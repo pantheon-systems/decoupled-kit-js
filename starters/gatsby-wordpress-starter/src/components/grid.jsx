@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
-import { Link } from 'gatsby'
+import { Link, withPrefix } from 'gatsby'
 
 export const withGrid = Component => {
 	const GridedComponent = ({ data, ...props }) => {
@@ -33,7 +33,7 @@ export const PostGridItem = ({ content: post }) => {
 	const altText = post?.featuredImage?.node.altText || post.title
 
 	return (
-		<Link to={`/posts${post.uri}`}>
+		<Link to={withPrefix(`/posts${post.uri}`)}>
 			<div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500">
 				<div className="flex-shrink-0 relative h-40">
 					{imageData !== '' ? (
@@ -66,7 +66,7 @@ export const PageGridItem = ({ content: { page } }) => {
 	const altText = page?.featuredImage?.node.altText || page.title
 
 	return (
-		<Link to={`/pages${page.uri}`}>
+		<Link to={withPrefix(`/pages${page.uri}`)}>
 			<div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500">
 				<div className="flex-shrink-0 relative h-40">
 					{imageData !== '' ? (

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, withPrefix } from 'gatsby'
 import Footer from './footer'
 const Layout = ({ isHomePage, children }) => {
 	return (
@@ -16,7 +16,10 @@ const Layout = ({ isHomePage, children }) => {
 								className={`${href === '/' ? 'mr-auto' : 'mx-4'}`}
 								key={`key-${i}`}
 							>
-								<Link className="font-sans hover:underline" to={href}>
+								<Link
+									className="font-sans hover:underline"
+									to={withPrefix(href)}
+								>
 									{title}
 								</Link>
 							</li>
