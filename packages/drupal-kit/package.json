@@ -1,67 +1,58 @@
 {
-  "name": "@pantheon-systems/drupal-kit",
-  "version": "2.2.0",
-  "description": "Pantheon Decoupled Kit's Drupal Kit",
-  "license": "GPL-3.0-or-later",
-  "homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
-  "bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pantheon-systems/decoupled-kit-js"
-  },
-  "author": "@pantheon-systems",
-  "files": [
-    "dist",
-    "src/sdk.{js,ts}"
-  ],
-  "main": "./dist/drupal-kit.umd.js",
-  "module": "./dist/drupal-kit.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/drupal-kit.es.js",
-      "require": "./dist/drupal-kit.umd.js"
-    }
-  },
-  "prettier": {
-    "singleQuote": true,
-    "arrowParens": "avoid",
-    "proseWrap": "always"
-  },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{md,mdx}": "prettier --write"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && rollup -c",
-    "watch": "tsc && rollup -c -w",
-    "serve": "vite preview",
-    "typedoc": "typedoc",
-    "test": "jest",
-    "test:ci": "JEST_JUNIT_OUTPUT_DIR='./test-results/jest' jest --ci --reporters=default --reporters=jest-junit",
-    "eslint": "eslint --ext .js,.ts src --ignore-path .gitignore",
-    "eslint:fix": "eslint --ext .js,.ts src --fix --ignore-path .gitignore",
-    "prettier": "prettier \"**/*.{js,ts,md}\" --check --ignore-path .gitignore",
-    "prettier:fix": "prettier \"**/*.{js,ts,md}\" --write --ignore-path .gitignore",
-    "lint-staged": "lint-staged",
-    "rollup": "rollup -c"
-  },
-  "devDependencies": {
-    "@apollo/client": "^3.5.10",
-    "@types/humps": "^2.0.1",
-    "@types/isomorphic-fetch": "^0.0.35",
-    "graphql": "^0.11.3 || ^0.12.3 || ^0.13.0 || ^14.0.0 || ^15.0.0",
-    "humps": "^2.0.1",
-    "isomorphic-fetch": "^3.0.0",
-    "jsona": "^1.9.7",
-    "react": ">=16.8.0 <17.0.0",
-    "react-dom": "^16.8.0",
-    "typescript": ">=3.8 <5.0"
-  },
-  "dependencies": {
-    "@gdwc/drupal-state": "3.1.0"
-  }
+	"name": "@pantheon-systems/drupal-kit",
+	"version": "3.0.0-canary.0",
+	"description": "Pantheon Decoupled Kit's Drupal Kit",
+	"license": "GPL-3.0-or-later",
+	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
+	"bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pantheon-systems/decoupled-kit-js"
+	},
+	"author": "@pantheon-systems",
+	"files": [
+		"dist",
+		"src/sdk.{js,ts}"
+	],
+	"main": "./dist/drupal-kit.umd.js",
+	"module": "./dist/drupal-kit.es.js",
+	"exports": {
+		".": {
+			"import": "./dist/drupal-kit.es.js",
+			"require": "./dist/drupal-kit.umd.js"
+		}
+	},
+	"prettier": "@pantheon-systems/configs/prettier",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && rollup -c",
+		"watch": "tsc && rollup -c -w",
+		"serve": "vite preview",
+		"typedoc": "typedoc",
+		"test": "jest",
+		"test:ci": "JEST_JUNIT_OUTPUT_DIR='./test-results/jest' jest --ci --reporters=default --reporters=jest-junit",
+		"eslint": "eslint --ext .js,.ts src --ignore-path .gitignore",
+		"eslint:fix": "eslint --ext .js,.ts src --ignore-path .gitignore --fix",
+		"prettier": "prettier \"**/*.{js,ts,md}\" --check --ignore-path ../../.prettierignore",
+		"prettier:fix": "prettier \"**/*.{js,ts,md}\" --write --ignore-path ../../.prettierignore",
+		"lint-staged": "lint-staged",
+		"rollup": "rollup -c"
+	},
+	"devDependencies": {
+		"@apollo/client": "^3.5.10",
+		"@pantheon-systems/eslint-config": "*",
+		"@pantheon-systems/configs": "*",
+		"@types/humps": "^2.0.1",
+		"@types/isomorphic-fetch": "^0.0.35",
+		"graphql": "^0.11.3 || ^0.12.3 || ^0.13.0 || ^14.0.0 || ^15.0.0",
+		"humps": "^2.0.1",
+		"isomorphic-fetch": "^3.0.0",
+		"jsona": "^1.9.7",
+		"react": ">=16.8.0 <17.0.0",
+		"react-dom": "^16.8.0",
+		"typescript": ">=3.8 <5.0"
+	},
+	"dependencies": {
+		"@gdwc/drupal-state": "4.0.1"
+	}
 }

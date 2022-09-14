@@ -3,7 +3,7 @@ import { DrupalState } from '../index';
 import './style.css';
 
 const store = new DrupalState({
-  apiBase: 'https://dev-ds-demo.pantheonsite.io',
+	apiBase: 'https://dev-ds-demo.pantheonsite.io',
 });
 
 // Uncomment to enable auth example for local testing
