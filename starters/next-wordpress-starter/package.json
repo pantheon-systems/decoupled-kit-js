@@ -23,7 +23,7 @@
 		"test": "vitest run",
 		"test:watch": "vitest",
 		"update-snapshots": "vitest run --update --silent",
-		"coverage": "vitest run--coverage"
+		"coverage": "vitest run --coverage"
 	},
 	"dependencies": {
 		"@pantheon-systems/wordpress-kit": "2.5.0-canary.0",
