@@ -1,5 +1,20 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.7.0-canary.2
+
+### Minor Changes
+
+- f9d5697: Create setEdgeHeader lib in wordpress-kit and use this in
+  next-wordpress-starter to set cache control headers.
+
+### Patch Changes
+
+- ee835e8: Update prettierrc and reformat spaces -> tabs for accessibility
+- Updated dependencies [e9901e5]
+- Updated dependencies [f9d5697]
+- Updated dependencies [ee835e8]
+  - @pantheon-systems/wordpress-kit@2.5.0-canary.0
+
 ## 0.7.0-canary.1
 
 ### Minor Changes

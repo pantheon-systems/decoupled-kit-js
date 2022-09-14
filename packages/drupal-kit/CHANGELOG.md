@@ -1,16 +1,36 @@
 # @pantheon-systems/drupal-kit
 
+## 3.0.0-canary.0
+
+### Major Changes
+
+- 3ffcbbe: ## Breaking Changes
+
+  Removed the `query` option from `DrupalState`. This reflects the same upstream
+  change in `@gdwc/drupal-state`.
+
+  If you are still using a query after updating, you will receive a warning in
+  the console and the full payload for the requested object.
+
+### Patch Changes
+
+- ee835e8: Update prettierrc and reformat spaces -> tabs for accessibility
+
 ## 2.2.0
 
 ### Minor Changes
 
-- 52e470a: drupal-kit's defaultFetch was updated to set a cache control header of `cache-control: public, s-maxage=10, stale-while-revalidate=600` if a response object is passed.
+- 52e470a: drupal-kit's defaultFetch was updated to set a cache control header
+  of `cache-control: public, s-maxage=10, stale-while-revalidate=600` if a
+  response object is passed.
 
 ## 2.2.0-canary.0
 
 ### Minor Changes
 
-- 52e470a: drupal-kit's defaultFetch was updated to set a cache control header of `cache-control: public, s-maxage=10, stale-while-revalidate=600` if a response object is passed.
+- 52e470a: drupal-kit's defaultFetch was updated to set a cache control header
+  of `cache-control: public, s-maxage=10, stale-while-revalidate=600` if a
+  response object is passed.
 
 ## 2.1.0
 
@@ -30,8 +50,9 @@
 
   ### Breaking
 
-  `PantheonDrupalState` no longer stores DrupalJsonapiParams in its state.
-  See https://git.drupalcode.org/project/drupal_state#request-parameters for more information.
+  `PantheonDrupalState` no longer stores DrupalJsonapiParams in its state. See
+  https://git.drupalcode.org/project/drupal_state#request-parameters for more
+  information.
 
 ## 1.1.5
 

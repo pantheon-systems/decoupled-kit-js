@@ -1,5 +1,11 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.1.0-canary.2
+
+### Patch Changes
+
+- ee835e8: Update prettierrc and reformat spaces -> tabs for accessibility
+
 ## 1.1.0-canary.1
 
 ### Minor Changes

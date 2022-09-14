@@ -1,10 +1,26 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.1.0-canary.2
+
+### Patch Changes
+
+- 76572c8: Removed query option and added param filters to getObject calls that
+  would benefit from filtered responses.
+- e018604: Fix import in preview api route
+- ee835e8: Update prettierrc and reformat spaces -> tabs for accessibility
+- 2e734f4: DB-3611: Added Paginator component from the nextjs-kit to the
+  pagination example in the next-drupal-starter.
+- Updated dependencies [3ffcbbe]
+- Updated dependencies [ee835e8]
+  - @pantheon-systems/drupal-kit@3.0.0-canary.0
+  - @pantheon-systems/nextjs-kit@1.1.0-canary.2
+
 ## 3.1.0-canary.1
 
 ### Minor Changes
 
-- e5de512: Added ribbon in preview mode, and refactor clear to go back to the article/page
+- e5de512: Added ribbon in preview mode, and refactor clear to go back to the
+  article/page
 - 960244e: Added timestamp as query parameter to break cache
 
 ### Patch Changes
