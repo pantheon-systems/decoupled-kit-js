@@ -1,14 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import type { ImageProps } from 'next/image';
+import { useRouter } from 'next/router';
 
 interface ContentProps {
 	title: string;
 	imageProps?: ImageProps;
 	content: string;
 	date?: string;
-	previousPagePath?: string;
 }
 
 /**
@@ -31,20 +30,16 @@ const ContentWithImage: React.FC<ContentProps> = ({
 	imageProps,
 	content,
 	date,
-	previousPagePath,
-}: ContentProps) => {
+}: ContentProps): JSX.Element => {
+	const router = useRouter();
 	return (
 		<article className="prose lg:prose-xl mt-10 mx-auto">
 			<h1>{title}</h1>
-			{date ? (
-				<p className="text-sm text-gray-600">{new Date(date).toDateString()}</p>
-			) : null}
+			{date ? <p className="text-sm text-gray-600">{date}</p> : null}
 
-			{previousPagePath ? (
-				<Link passHref href={previousPagePath}>
-					<a className="font-normal">Back &rarr;</a>
-				</Link>
-			) : null}
+			<a onClick={() => router.back()} className="font-normal">
+				Back &rarr;
+			</a>
 
 			<div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
 				{imageProps ? (

@@ -1,48 +1,39 @@
 import { render } from '@testing-library/react';
-
 import ContentWithImage from '../../components/contentWithImage';
+import examplePostData from '../data/examplePostData.json';
+import { vi } from 'vitest';
+
+vi.mock('next/image', () => ({
+	__esModule: true,
+	default: (props: any) => {
+		return <img {...props} />;
+	},
+}));
+
+vi.mock('next/router', () => ({
+	useRouter: () => ({
+		locale: 'en',
+	}),
+}));
 
 /**
  * @vitest-environment jsdom
  */
 
-const post = {
-	title: 'Example Post with Image',
-	date: '2022-08-04T18:12:19',
-	featuredImage:
-		'https://dev-decoupled-wordpress-qa.pantheonsite.io/wp-content/uploads/2022/08/pizza.jpeg',
-	content:
-		'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n' +
-		'\n' +
-		'\n' +
-		'<blockquote class="wp-block-quote"><p>a Quote</p><cite>from QA</cite></blockquote>\n' +
-		'\n' +
-		'\n' +
-		'\n' +
-		'<figure class="wp-block-pullquote" style="border-color:#0073a8"><blockquote class="has-text-color has-dark-gray-color"><p>a pull quoteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p><cite>from qa</cite></blockquote></figure>\n' +
-		'\n' +
-		'\n' +
-		'\n' +
-		'<p>An<strong>other block</strong></p>\n',
-	imgUrl: 'https://dev-decoupled-wordpress-qa.pantheonsite.io',
-};
-
 describe('<ContentWithImage />', () => {
 	it("should render 'contentWithImage'", () => {
 		const { asFragment } = render(
 			<ContentWithImage
-				title={post.title}
-				content={post.content}
+				title={examplePostData[0].title}
+				content={examplePostData[0].content}
 				imageProps={{
 					priority: true,
-					src:
-						'https://dev-decoupled-wordpress-qa.pantheonsite.io' + post.imgUrl,
+					src: examplePostData[0].featuredImage,
 					layout: 'fill',
 					objectFit: 'cover',
 					alt: 'Featured Image',
 				}}
-				date={'2022-06-17T15:12:39+00:00'}
-				previousPagePath={'/'}
+				date={examplePostData[0].date}
 			/>,
 		);
 
