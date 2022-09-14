@@ -1,5 +1,19 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.1.0
+
+### Minor Changes
+
+- a52944b: Removed html-react-parser and rendered the content of the posts and
+  pages by insert html
+
+### Patch Changes
+
+- dc9e31a: Upgraded Gatsby to 4.22.0 and upgraded all Gatsby related packages.
+- 5e43ec3: Upgrade Gatsby and general dependencies to resolve error running in
+  develop mode.
+- ee835e8: Update prettierrc and reformat spaces -> tabs for accessibility
+
 ## 2.1.0-canary.1
 
 ### Patch Changes
