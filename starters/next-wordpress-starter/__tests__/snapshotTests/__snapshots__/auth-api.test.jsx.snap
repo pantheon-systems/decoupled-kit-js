@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`<PageListTemplate /> > should render with pages 1`] = `
+exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthenticated 1`] = `
 <DocumentFragment>
   <div
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
@@ -58,42 +58,42 @@ exports[`<PageListTemplate /> > should render with pages 1`] = `
     <main
       class="mb-auto"
     >
-      <header
-        class="prose text-2xl mx-auto mt-20"
+      <div
+        class="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen"
       >
-        <h1
-          class="text-center mx-auto"
-        >
-          Pages
+        <h1>
+          API Authorization Example
         </h1>
-      </header>
-      <section>
-        <div
-          class="mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+        <span
+          class="w-full underline cursor-pointer"
+          href="/"
         >
-          <a
-            href="/pagessample-page"
-          >
-            <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+          Home →
+        </span>
+        <div
+          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+        >
+          <p>
+            Next.js was unable to make an authorized request to the WordPress API. Please check your .env.development.local file to ensure that your 
+            <code>
+              WP_APPLICATION_USERNAME
+            </code>
+             and
+            <code>
+              WP_APPLICATION_PASSWORD
+            </code>
+             are set correctly.
+          </p>
+          <p>
+            For more information on how to set these values, please see 
+            <a
+              href="https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next.js/Next.js%20%2B%20WordPress/setting-environment-variables.md"
             >
-              <div
-                class="flex-shrink-0 relative h-40"
-              >
-                <img
-                  alt="Pantheon Logo"
-                  src="/pantheon.png"
-                />
-              </div>
-              <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
-              >
-                 →
-              </h2>
-            </div>
-          </a>
+              Setting Environment Variables
+            </a>
+          </p>
         </div>
-      </section>
+      </div>
     </main>
     <footer
       class="w-full text-white bg-black p-4 mt-12"
@@ -130,7 +130,7 @@ exports[`<PageListTemplate /> > should render with pages 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<PageTemplate /> > should render a page 1`] = `
+exports[`<AuthApiExampleTemplate /> > should render a success message if authenticated 1`] = `
 <DocumentFragment>
   <div
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
@@ -188,86 +188,26 @@ exports[`<PageTemplate /> > should render a page 1`] = `
     <main
       class="mb-auto"
     >
-      <article
-        class="prose lg:prose-xl mt-10 mx-auto"
+      <div
+        class="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen"
       >
         <h1>
-          Sample Page
+          API Authorization Example
         </h1>
-        <p
-          class="text-sm text-gray-600"
+        <span
+          class="w-full underline cursor-pointer"
+          href="/"
         >
-          Tue Sep 13 2022
-        </p>
-        <a
-          class="font-normal"
-          href="/pages"
-        >
-          Pages →
-        </a>
-        <div
-          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
-        />
+          Home →
+        </span>
         <div
           class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
         >
-          <div>
-            
-
-            <p>
-              This is an example page. It’s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:
-            </p>
-            
-
-
-
-
-            <blockquote
-              class="wp-block-quote"
-            >
-              <p>
-                Hi there! I’m a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like piña coladas. (And gettin’ caught in the rain.)
-              </p>
-            </blockquote>
-            
-
-
-
-
-            <p>
-              …or something like this:
-            </p>
-            
-
-
-
-
-            <blockquote
-              class="wp-block-quote"
-            >
-              <p>
-                The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.
-              </p>
-            </blockquote>
-            
-
-
-
-
-            <p>
-              As a new WordPress user, you should go to 
-              <a
-                href="https://dev-cobs-decoupled-wp.pantheonsite.io/wp/wp-admin/"
-              >
-                your dashboard
-              </a>
-               to delete this page and create new pages for your content. Have fun!
-            </p>
-            
-
-          </div>
+          <p>
+            🎉 Next.js was able to successfully make an authenticated request to WordPress! 🎉
+          </p>
         </div>
-      </article>
+      </div>
     </main>
     <footer
       class="w-full text-white bg-black p-4 mt-12"

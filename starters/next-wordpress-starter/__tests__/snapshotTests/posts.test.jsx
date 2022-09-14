@@ -17,16 +17,16 @@ vi.mock('next/router', () => ({
  * @vitest-environment jsdom
  */
 
-describe(`<PostListTemplate />`, () => {
-	it(`should render with posts`, () => {
+describe('<PostListTemplate />', () => {
+	it('should render with posts', () => {
 		const { asFragment } = render(
 			<PostsListTemplate posts={posts} footerMenu={footerMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
-describe(`<PostTemplate />`, () => {
-	it(`should render a post`, () => {
+describe('<PostTemplate />', () => {
+	it('should render a post', () => {
 		const { asFragment } = render(
 			<PostTemplate post={post} footerMenu={footerMenu} />,
 		);

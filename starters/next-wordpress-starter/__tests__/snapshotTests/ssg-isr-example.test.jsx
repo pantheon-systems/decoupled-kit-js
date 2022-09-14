@@ -1,20 +1,24 @@
 import { render } from '@testing-library/react';
-import HomepageTemplate from '../../pages/index';
+import SSGISRExampleTemplate from '../../pages/examples/ssg-isr';
 
 import posts from '../data/postsData.json';
 import footerMenu from '../data/footerMenuData.json';
 
 vi.mock('next/image');
+vi.mock('next/router', () => ({
+	useRouter: () => ({
+		locale: 'en',
+	}),
+}));
 
 /**
  * @vitest-environment jsdom
  */
 
-
-describe('<HomepageTemplate />', () => {
+describe('<SSGISRExampleTemplate />', () => {
 	it('should render with posts', () => {
 		const { asFragment } = render(
-			<HomepageTemplate posts={posts} menuItems={footerMenu} />,
+			<SSGISRExampleTemplate posts={posts} footerMenu={footerMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});

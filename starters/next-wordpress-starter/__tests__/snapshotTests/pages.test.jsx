@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
-import PostsListTemplate from '../../pages/posts/index';
-import PostTemplate from '../../pages/posts/[slug]';
+import PageListTemplate from '../../pages/pages/index';
+import PageTemplate from '../../pages/pages/[uri]';
 
-import posts from '../data/postsData.json';
-import post from '../data/postData.json';
+import pages from '../data/pagesData.json';
+import page from '../data/pageData.json';
 import footerMenu from '../data/footerMenuData.json';
 
 vi.mock('next/image');
@@ -17,18 +17,18 @@ vi.mock('next/router', () => ({
  * @vitest-environment jsdom
  */
 
-describe(`<PostListTemplate />`, () => {
-	it(`should render with posts`, () => {
+describe('<PageListTemplate />', () => {
+	it('should render with pages', () => {
 		const { asFragment } = render(
-			<PostsListTemplate posts={posts} footerMenu={footerMenu} />,
+			<PageListTemplate pages={pages} footerMenu={footerMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
-describe(`<PostTemplate />`, () => {
-	it(`should render a post`, () => {
+describe('<PageTemplate />', () => {
+	it('should render a page', () => {
 		const { asFragment } = render(
-			<PostTemplate post={post} footerMenu={footerMenu} />,
+			<PageTemplate page={page} footerMenu={footerMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
