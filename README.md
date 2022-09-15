@@ -8,7 +8,7 @@
 - [Reporting](#bug-reports-and-feature-requests)
 - [Further Reading](#further-reading)
 
-## Prerequisites - START HERE!
+## Prerequisites
 
 Welcome to the Pantheon Systems Decoupled Kit Monorepo
 
