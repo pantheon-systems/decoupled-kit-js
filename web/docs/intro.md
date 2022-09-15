@@ -1,5 +1,6 @@
 ---
 slug: /intro
+sidebar_position: 0
 ---
 
 # Pantheon Systems Decoupled Kits

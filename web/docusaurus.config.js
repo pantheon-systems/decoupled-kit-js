@@ -107,7 +107,7 @@ const config = {
 						title: 'Community',
 						items: [
 							{
-								label: 'Pantheon Community Fourm',
+								label: 'Pantheon Community Forum',
 								href: 'https://discuss.pantheon.io/',
 							},
 							{

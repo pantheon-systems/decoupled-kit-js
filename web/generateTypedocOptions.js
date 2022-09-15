@@ -17,10 +17,11 @@ const generateTypedocOptions = (packageName, position) => {
 		out: `Packages/${packageName}`,
 		entryPointStrategy: 'expand',
 		exclude: [
-			'./main.ts',
+			'**/main.ts,
 			'**/node_modules/**',
 			'**/__tests__/**',
-			'**/vite-env.d.ts',
+			'**/__mocks__/**',
+			'**/vite-env.*',
 		],
 		sidebar: {
 			categoryLabel: `${packageName}`,

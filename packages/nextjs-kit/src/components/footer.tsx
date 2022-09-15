@@ -17,11 +17,11 @@ interface FooterMenuProps {
  * const footerMenuItems = [
  *  {
  *   href: '/',
- *   title: 'Home',
+ *   linkText: 'Home',
  *  },
  * {
  *  href: '/articles',
- *  title: 'Articles',
+ *  linkText: 'Articles',
  *  parent: 'home',
  * },
  * ...
