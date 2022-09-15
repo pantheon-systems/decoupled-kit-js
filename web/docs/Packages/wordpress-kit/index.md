@@ -1,7 +1,7 @@
 ---
-id: "index"
-title: "@pantheon-systems/wordpress-kit"
-sidebar_label: "Readme"
+id: 'index'
+title: '@pantheon-systems/wordpress-kit'
+sidebar_label: 'Readme'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -39,7 +39,7 @@ package.
 
 1.  Import the plugin to your `tailwind.config.js` file
     ```js
-    const { tailwindcssPlugin } = require("@pantheon-systems/wordpress-kit");
+    const { tailwindcssPlugin } = require('@pantheon-systems/wordpress-kit');
     ```
 1.  Add the plugin to your `plugins` array:
     ```js

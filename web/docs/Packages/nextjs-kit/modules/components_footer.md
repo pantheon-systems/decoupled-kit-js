@@ -1,7 +1,7 @@
 ---
-id: "components_footer"
-title: "Module: components/footer"
-sidebar_label: "components/footer"
+id: 'components_footer'
+title: 'Module: components/footer'
+sidebar_label: 'components/footer'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ### default
 
-▸ **default**(`props`, `context?`): ``null`` \| `ReactElement`<`any`, `any`\>
+▸ **default**(`props`, `context?`): `null` \| `ReactElement`<`any`, `any`\>
 
 This is a Footer component.
 
@@ -33,14 +33,14 @@ const footerMenuItems = [
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `props` | `PropsWithChildren`<`FooterMenuProps`\> | The props needed for the footer component |
-| `context?` | `any` | - |
+| Name       | Type                                    | Description                               |
+| :--------- | :-------------------------------------- | :---------------------------------------- |
+| `props`    | `PropsWithChildren`<`FooterMenuProps`\> | The props needed for the footer component |
+| `context?` | `any`                                   | -                                         |
 
 #### Returns
 
-``null`` \| `ReactElement`<`any`, `any`\>
+`null` \| `ReactElement`<`any`, `any`\>
 
 A footer component with a nav menu
 

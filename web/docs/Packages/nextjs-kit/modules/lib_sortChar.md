@@ -1,7 +1,7 @@
 ---
-id: "lib_sortChar"
-title: "Module: lib/sortChar"
-sidebar_label: "lib/sortChar"
+id: 'lib_sortChar'
+title: 'Module: lib/sortChar'
+sidebar_label: 'lib/sortChar'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -16,8 +16,8 @@ Sorts any character object on a specific key in a direction of the users choice.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type                                                |
+| :-------- | :-------------------------------------------------- |
 | `sortObj` | [`SortOptions`](../interfaces/types.SortOptions.md) |
 
 #### Returns

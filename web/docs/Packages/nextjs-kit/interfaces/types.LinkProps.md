@@ -1,7 +1,7 @@
 ---
-id: "types.LinkProps"
-title: "Interface: LinkProps"
-sidebar_label: "LinkProps"
+id: 'types.LinkProps'
+title: 'Interface: LinkProps'
+sidebar_label: 'LinkProps'
 custom_edit_url: null
 ---
 
@@ -21,7 +21,7 @@ The href to apply to the link.
 
 [packages/nextjs-kit/src/types/index.ts:30](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/types/index.ts#L30)
 
-___
+---
 
 ### linkText
 

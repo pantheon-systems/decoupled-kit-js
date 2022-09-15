@@ -1,7 +1,7 @@
 ---
-id: "types_TailwindcssPlugin"
-title: "Module: types/TailwindcssPlugin"
-sidebar_label: "types/TailwindcssPlugin"
+id: 'types_TailwindcssPlugin'
+title: 'Module: types/TailwindcssPlugin'
+sidebar_label: 'types/TailwindcssPlugin'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -14,18 +14,18 @@ custom_edit_url: null
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `hexDefault` | `string` |
-| `name` | `string` |
+| Name              | Type     |
+| :---------------- | :------- |
+| `hexDefault`      | `string` |
+| `name`            | `string` |
 | `tailwindDefault` | `string` |
-| `themeName` | `string` |
+| `themeName`       | `string` |
 
 #### Defined in
 
 [packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts:220](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts#L220)
 
-___
+---
 
 ### ColorConfig
 
@@ -33,32 +33,32 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `cyanBluishGray?` | `string` |
-| `darkGray?` | `string` |
-| `foreground?` | `string` |
-| `lightGray?` | `string` |
-| `lightGreenCyan?` | `string` |
-| `luminousVividAmber?` | `string` |
+| Name                   | Type     |
+| :--------------------- | :------- |
+| `cyanBluishGray?`      | `string` |
+| `darkGray?`            | `string` |
+| `foreground?`          | `string` |
+| `lightGray?`           | `string` |
+| `lightGreenCyan?`      | `string` |
+| `luminousVividAmber?`  | `string` |
 | `luminousVividOrange?` | `string` |
-| `paleCyanBlue?` | `string` |
-| `palePink?` | `string` |
-| `primary?` | `string` |
-| `secondary?` | `string` |
-| `stripes?` | `string` |
-| `tertiary?` | `string` |
-| `vividCyanBlue?` | `string` |
-| `vividGreenCyan?` | `string` |
-| `vividPurple?` | `string` |
-| `vividRed?` | `string` |
-| `white?` | `string` |
+| `paleCyanBlue?`        | `string` |
+| `palePink?`            | `string` |
+| `primary?`             | `string` |
+| `secondary?`           | `string` |
+| `stripes?`             | `string` |
+| `tertiary?`            | `string` |
+| `vividCyanBlue?`       | `string` |
+| `vividGreenCyan?`      | `string` |
+| `vividPurple?`         | `string` |
+| `vividRed?`            | `string` |
+| `white?`               | `string` |
 
 #### Defined in
 
 [packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts:4](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts#L4)
 
-___
+---
 
 ### FontSize
 
@@ -66,17 +66,17 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `default` | `string` |
-| `name` | `string` |
+| Name       | Type     |
+| :--------- | :------- |
+| `default`  | `string` |
+| `name`     | `string` |
 | `tailwind` | `string` |
 
 #### Defined in
 
 [packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts:227](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts#L227)
 
-___
+---
 
 ### FontSizeConfig
 
@@ -84,18 +84,18 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type     |
+| :----- | :------- |
 | `4xl?` | `string` |
 | `7xl?` | `string` |
-| `sm?` | `string` |
-| `xl?` | `string` |
+| `sm?`  | `string` |
+| `xl?`  | `string` |
 
 #### Defined in
 
 [packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts:30](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts#L30)
 
-___
+---
 
 ### GradientColors
 
@@ -103,16 +103,16 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `color` | `string` |
+| Name       | Type     |
+| :--------- | :------- |
+| `color`    | `string` |
 | `position` | `string` |
 
 #### Defined in
 
 [packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts:233](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts#L233)
 
-___
+---
 
 ### PaddingConfig
 
@@ -120,8 +120,8 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name           | Type     |
+| :------------- | :------- |
 | `backgroundX?` | `string` |
 | `backgroundY?` | `string` |
 
@@ -129,27 +129,29 @@ ___
 
 [packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts:25](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts#L25)
 
-___
+---
 
 ### PartialThemeConfig
 
-Ƭ **PartialThemeConfig**: `Partial`<`ThemeConfig` & { `extend`: `Partial`<`ThemeConfig`\>  }\>
+Ƭ **PartialThemeConfig**: `Partial`<`ThemeConfig` & { `extend`:
+`Partial`<`ThemeConfig`\> }\>
 
 #### Defined in
 
 [packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts:240](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts#L240)
 
-___
+---
 
 ### TailwindcssConfig
 
-Ƭ **TailwindcssConfig**: `Config` & [`WordPressMapConfig`](types_TailwindcssPlugin.md#wordpressmapconfig)
+Ƭ **TailwindcssConfig**: `Config` &
+[`WordPressMapConfig`](types_TailwindcssPlugin.md#wordpressmapconfig)
 
 #### Defined in
 
 [packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts:238](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts#L238)
 
-___
+---
 
 ### ThemeType
 
@@ -161,16 +163,16 @@ ___
 
 ##### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | [`PartialThemeConfig`](types_TailwindcssPlugin.md#partialthemeconfig) \| `undefined` |
+| Name | Type                                                                                 |
+| :--- | :----------------------------------------------------------------------------------- |
+| `T`  | [`PartialThemeConfig`](types_TailwindcssPlugin.md#partialthemeconfig) \| `undefined` |
 
 ##### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `path?` | `string` |
-| `defaultValue?` | `T` |
+| Name            | Type     |
+| :-------------- | :------- |
+| `path?`         | `string` |
+| `defaultValue?` | `T`      |
 
 ##### Returns
 
@@ -180,7 +182,7 @@ ___
 
 [packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts:246](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/types/TailwindcssPlugin.d.ts#L246)
 
-___
+---
 
 ### WordPressMapConfig
 
@@ -188,16 +190,16 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `theme?` | { `colors?`: [`ColorConfig`](types_TailwindcssPlugin.md#colorconfig) ; `extend?`: { `colors?`: [`ColorConfig`](types_TailwindcssPlugin.md#colorconfig) ; `fontSize?`: [`FontSizeConfig`](types_TailwindcssPlugin.md#fontsizeconfig) ; `padding?`: [`PaddingConfig`](types_TailwindcssPlugin.md#paddingconfig)  } ; `fontSize?`: [`FontSizeConfig`](types_TailwindcssPlugin.md#fontsizeconfig) ; `padding?`: [`PaddingConfig`](types_TailwindcssPlugin.md#paddingconfig)  } |
-| `theme.colors?` | [`ColorConfig`](types_TailwindcssPlugin.md#colorconfig) |
-| `theme.extend?` | { `colors?`: [`ColorConfig`](types_TailwindcssPlugin.md#colorconfig) ; `fontSize?`: [`FontSizeConfig`](types_TailwindcssPlugin.md#fontsizeconfig) ; `padding?`: [`PaddingConfig`](types_TailwindcssPlugin.md#paddingconfig)  } |
-| `theme.extend.colors?` | [`ColorConfig`](types_TailwindcssPlugin.md#colorconfig) |
-| `theme.extend.fontSize?` | [`FontSizeConfig`](types_TailwindcssPlugin.md#fontsizeconfig) |
-| `theme.extend.padding?` | [`PaddingConfig`](types_TailwindcssPlugin.md#paddingconfig) |
-| `theme.fontSize?` | [`FontSizeConfig`](types_TailwindcssPlugin.md#fontsizeconfig) |
-| `theme.padding?` | [`PaddingConfig`](types_TailwindcssPlugin.md#paddingconfig) |
+| Name                     | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| :----------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `theme?`                 | { `colors?`: [`ColorConfig`](types_TailwindcssPlugin.md#colorconfig) ; `extend?`: { `colors?`: [`ColorConfig`](types_TailwindcssPlugin.md#colorconfig) ; `fontSize?`: [`FontSizeConfig`](types_TailwindcssPlugin.md#fontsizeconfig) ; `padding?`: [`PaddingConfig`](types_TailwindcssPlugin.md#paddingconfig) } ; `fontSize?`: [`FontSizeConfig`](types_TailwindcssPlugin.md#fontsizeconfig) ; `padding?`: [`PaddingConfig`](types_TailwindcssPlugin.md#paddingconfig) } |
+| `theme.colors?`          | [`ColorConfig`](types_TailwindcssPlugin.md#colorconfig)                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `theme.extend?`          | { `colors?`: [`ColorConfig`](types_TailwindcssPlugin.md#colorconfig) ; `fontSize?`: [`FontSizeConfig`](types_TailwindcssPlugin.md#fontsizeconfig) ; `padding?`: [`PaddingConfig`](types_TailwindcssPlugin.md#paddingconfig) }                                                                                                                                                                                                                                            |
+| `theme.extend.colors?`   | [`ColorConfig`](types_TailwindcssPlugin.md#colorconfig)                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `theme.extend.fontSize?` | [`FontSizeConfig`](types_TailwindcssPlugin.md#fontsizeconfig)                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `theme.extend.padding?`  | [`PaddingConfig`](types_TailwindcssPlugin.md#paddingconfig)                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `theme.fontSize?`        | [`FontSizeConfig`](types_TailwindcssPlugin.md#fontsizeconfig)                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `theme.padding?`         | [`PaddingConfig`](types_TailwindcssPlugin.md#paddingconfig)                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 #### Defined in
 

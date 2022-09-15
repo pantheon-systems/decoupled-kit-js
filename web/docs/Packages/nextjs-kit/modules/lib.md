@@ -1,7 +1,7 @@
 ---
-id: "lib"
-title: "Module: lib"
-sidebar_label: "lib"
+id: 'lib'
+title: 'Module: lib'
+sidebar_label: 'lib'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -12,7 +12,7 @@ custom_edit_url: null
 
 Re-exports [sortChar](lib_sortChar.md#sortchar)
 
-___
+---
 
 ### sortDate
 

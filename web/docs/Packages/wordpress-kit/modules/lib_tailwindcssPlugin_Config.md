@@ -1,7 +1,7 @@
 ---
-id: "lib_tailwindcssPlugin_Config"
-title: "Module: lib/tailwindcssPlugin/Config"
-sidebar_label: "lib/tailwindcssPlugin/Config"
+id: 'lib_tailwindcssPlugin_Config'
+title: 'Module: lib/tailwindcssPlugin/Config'
+sidebar_label: 'lib/tailwindcssPlugin/Config'
 sidebar_position: 0
 custom_edit_url: null
 ---

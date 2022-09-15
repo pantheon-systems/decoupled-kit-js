@@ -1,7 +1,7 @@
 ---
-id: "components_paginator.PaginationProps"
-title: "Interface: PaginationProps<Type>"
-sidebar_label: "PaginationProps"
+id: 'components_paginator.PaginationProps'
+title: 'Interface: PaginationProps<Type>'
+sidebar_label: 'PaginationProps'
 custom_edit_url: null
 ---
 
@@ -9,8 +9,8 @@ custom_edit_url: null
 
 ## Type parameters
 
-| Name |
-| :------ |
+| Name   |
+| :----- |
 | `Type` |
 
 ## Properties
@@ -23,7 +23,7 @@ custom_edit_url: null
 
 [packages/nextjs-kit/src/components/paginator.tsx:14](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/components/paginator.tsx#L14)
 
-___
+---
 
 ### breakpoints
 
@@ -31,17 +31,17 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `add` | `number` |
-| `end` | `number` |
+| Name    | Type     |
+| :------ | :------- |
+| `add`   | `number` |
+| `end`   | `number` |
 | `start` | `number` |
 
 #### Defined in
 
 [packages/nextjs-kit/src/components/paginator.tsx:8](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/components/paginator.tsx#L8)
 
-___
+---
 
 ### data
 
@@ -51,7 +51,7 @@ ___
 
 [packages/nextjs-kit/src/components/paginator.tsx:6](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/components/paginator.tsx#L6)
 
-___
+---
 
 ### itemsPerPage
 
@@ -61,7 +61,7 @@ ___
 
 [packages/nextjs-kit/src/components/paginator.tsx:7](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/components/paginator.tsx#L7)
 
-___
+---
 
 ### routing
 

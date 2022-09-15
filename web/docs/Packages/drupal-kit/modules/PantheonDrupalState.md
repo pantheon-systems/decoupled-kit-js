@@ -1,7 +1,7 @@
 ---
-id: "PantheonDrupalState"
-title: "Module: PantheonDrupalState"
-sidebar_label: "PantheonDrupalState"
+id: 'PantheonDrupalState'
+title: 'Module: PantheonDrupalState'
+sidebar_label: 'PantheonDrupalState'
 sidebar_position: 0
 custom_edit_url: null
 ---

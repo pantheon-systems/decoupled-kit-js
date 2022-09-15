@@ -1,7 +1,7 @@
 ---
-id: "lib_tailwindcssPlugin_utilities"
-title: "Module: lib/tailwindcssPlugin/utilities"
-sidebar_label: "lib/tailwindcssPlugin/utilities"
+id: 'lib_tailwindcssPlugin_utilities'
+title: 'Module: lib/tailwindcssPlugin/utilities'
+sidebar_label: 'lib/tailwindcssPlugin/utilities'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -10,10 +10,12 @@ custom_edit_url: null
 
 ### ColorUtilities
 
-Re-exports [ColorUtilities](../classes/lib_tailwindcssPlugin_utilities_Colors.ColorUtilities.md)
+Re-exports
+[ColorUtilities](../classes/lib_tailwindcssPlugin_utilities_Colors.ColorUtilities.md)
 
-___
+---
 
 ### FontsUtilities
 
-Re-exports [FontsUtilities](../classes/lib_tailwindcssPlugin_utilities_Fonts.FontsUtilities.md)
+Re-exports
+[FontsUtilities](../classes/lib_tailwindcssPlugin_utilities_Fonts.FontsUtilities.md)

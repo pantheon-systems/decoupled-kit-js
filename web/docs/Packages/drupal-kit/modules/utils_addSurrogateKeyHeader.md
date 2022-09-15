@@ -1,7 +1,7 @@
 ---
-id: "utils_addSurrogateKeyHeader"
-title: "Module: utils/addSurrogateKeyHeader"
-sidebar_label: "utils/addSurrogateKeyHeader"
+id: 'utils_addSurrogateKeyHeader'
+title: 'Module: utils/addSurrogateKeyHeader'
+sidebar_label: 'utils/addSurrogateKeyHeader'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -16,10 +16,10 @@ Adds an aggregated list of surrogate keys in the working response.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `keys` | ``null`` \| `string` | Value for surrogate-key header in API response. |
-| `res` | `ServerResponse` | The active http.ServerResponse object. |
+| Name   | Type               | Description                                     |
+| :----- | :----------------- | :---------------------------------------------- |
+| `keys` | `null` \| `string` | Value for surrogate-key header in API response. |
+| `res`  | `ServerResponse`   | The active http.ServerResponse object.          |
 
 #### Returns
 

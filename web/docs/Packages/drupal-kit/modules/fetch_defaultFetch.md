@@ -1,7 +1,7 @@
 ---
-id: "fetch_defaultFetch"
-title: "Module: fetch/defaultFetch"
-sidebar_label: "fetch/defaultFetch"
+id: 'fetch_defaultFetch'
+title: 'Module: fetch/defaultFetch'
+sidebar_label: 'fetch/defaultFetch'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -10,18 +10,19 @@ custom_edit_url: null
 
 ### default
 
-▸ **default**(`apiUrl`, `requestInit?`, `res?`, `cacheControl?`): `Promise`<`Response`\>
+▸ **default**(`apiUrl`, `requestInit?`, `res?`, `cacheControl?`):
+`Promise`<`Response`\>
 
 fetch data from a JSON:API endpoint, bubbling up surrogate keys if possible
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `apiUrl` | `RequestInfo` | `undefined` | the api url for the JSON:API endpoint |
-| `requestInit` | `RequestInit` | `{}` | fetch initialization object |
-| `res?` | `boolean` \| `ServerResponse` | `undefined` | response object |
-| `cacheControl` | `string` | `defaultCacheControlValue` | optional value to override cache control header, defaults to 'public, s-maxage=10, stale-while-revalidate=600' |
+| Name           | Type                          | Default value              | Description                                                                                                    |
+| :------------- | :---------------------------- | :------------------------- | :------------------------------------------------------------------------------------------------------------- |
+| `apiUrl`       | `RequestInfo`                 | `undefined`                | the api url for the JSON:API endpoint                                                                          |
+| `requestInit`  | `RequestInit`                 | `{}`                       | fetch initialization object                                                                                    |
+| `res?`         | `boolean` \| `ServerResponse` | `undefined`                | response object                                                                                                |
+| `cacheControl` | `string`                      | `defaultCacheControlValue` | optional value to override cache control header, defaults to 'public, s-maxage=10, stale-while-revalidate=600' |
 
 #### Returns
 

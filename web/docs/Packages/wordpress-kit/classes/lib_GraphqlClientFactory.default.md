@@ -1,7 +1,7 @@
 ---
-id: "lib_GraphqlClientFactory.default"
-title: "Class: default"
-sidebar_label: "default"
+id: 'lib_GraphqlClientFactory.default'
+title: 'Class: default'
+sidebar_label: 'default'
 custom_edit_url: null
 ---
 
@@ -15,10 +15,10 @@ custom_edit_url: null
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `endpoint` | `string` |
-| `options` | `PatchedRequestInit` |
+| Name       | Type                 |
+| :--------- | :------------------- |
+| `endpoint` | `string`             |
+| `options`  | `PatchedRequestInit` |
 
 #### Defined in
 
@@ -34,7 +34,7 @@ custom_edit_url: null
 
 [packages/wordpress-kit/src/lib/GraphqlClientFactory.ts:5](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/lib/GraphqlClientFactory.ts#L5)
 
-___
+---
 
 ### options
 

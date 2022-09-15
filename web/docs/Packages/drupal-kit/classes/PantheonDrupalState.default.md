@@ -1,7 +1,7 @@
 ---
-id: "PantheonDrupalState.default"
-title: "Class: default"
-sidebar_label: "default"
+id: 'PantheonDrupalState.default'
+title: 'Class: default'
+sidebar_label: 'default'
 custom_edit_url: null
 ---
 
@@ -21,8 +21,8 @@ custom_edit_url: null
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name                | Type                |
+| :------------------ | :------------------ |
 | `__namedParameters` | `DrupalStateConfig` |
 
 #### Overrides
@@ -37,18 +37,20 @@ DrupalState.constructor
 
 ### conditionalFetch
 
-▸ **conditionalFetch**(`endpoint`, `query?`, `objectName?`, `res?`): `Promise`<`TJsonApiBody`\>
+▸ **conditionalFetch**(`endpoint`, `query?`, `objectName?`, `res?`):
+`Promise`<`TJsonApiBody`\>
 
-If a query is provided, fetches data using apollo-link-json-api, otherwise uses out fetch method.
+If a query is provided, fetches data using apollo-link-json-api, otherwise uses
+out fetch method.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `endpoint` | `string` | `undefined` | the assembled JSON:API endpoint |
-| `query` | `string` \| `boolean` | `false` | the specified GraphQL query |
-| `objectName` | `string` \| `boolean` | `false` | Name of object to retrieve. Ex: node--article |
-| `res` | `boolean` \| `ServerResponse` | `false` | response object |
+| Name         | Type                          | Default value | Description                                   |
+| :----------- | :---------------------------- | :------------ | :-------------------------------------------- |
+| `endpoint`   | `string`                      | `undefined`   | the assembled JSON:API endpoint               |
+| `query`      | `string` \| `boolean`         | `false`       | the specified GraphQL query                   |
+| `objectName` | `string` \| `boolean`         | `false`       | Name of object to retrieve. Ex: node--article |
+| `res`        | `boolean` \| `ServerResponse` | `false`       | response object                               |
 
 #### Returns
 

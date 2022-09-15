@@ -1,7 +1,7 @@
 ---
-id: "types_types"
-title: "Module: types/types"
-sidebar_label: "types/types"
+id: 'types_types'
+title: 'Module: types/types'
+sidebar_label: 'types/types'
 sidebar_position: 0
 custom_edit_url: null
 ---

@@ -1,7 +1,7 @@
 ---
-id: "types_types.authInit"
-title: "Interface: authInit"
-sidebar_label: "authInit"
+id: 'types_types.authInit'
+title: 'Interface: authInit'
+sidebar_label: 'authInit'
 custom_edit_url: null
 ---
 
@@ -17,8 +17,8 @@ Object representing a fetch initialization object with an Authorization header
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name             | Type     |
+| :--------------- | :------- |
 | `Authorization?` | `string` |
 
 #### Defined in
