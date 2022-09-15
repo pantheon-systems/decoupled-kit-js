@@ -19,6 +19,7 @@
 		"build:nextjs-kit": "pnpm --filter './packages/nextjs-kit' build",
 		"build:next-drupal": "pnpm --filter './starters/next-drupal-starter' build:mono",
 		"build:next-wp": "pnpm --filter './starters/next-wordpress-starter' build:mono",
+		"build:wp-kit": "pnpm --filter wordpress-kit build",
 		"build:pkgs": "pnpm --filter './packages/**' build",
 		"build:starters": "pnpm --filter './starters/**' build",
 		"ci:publish": "changeset publish",
