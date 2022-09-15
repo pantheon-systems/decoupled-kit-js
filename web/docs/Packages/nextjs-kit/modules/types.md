@@ -26,7 +26,7 @@ This should account for Drupal and WordPress menus
 
 #### Defined in
 
-[packages/nextjs-kit/src/types/index.ts:39](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/types/index.ts#L39)
+[packages/nextjs-kit/src/types/index.ts:39](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/types/index.ts#L39)
 
 ## Functions
 
@@ -50,7 +50,7 @@ true if `parentId` or `parent` properties are found on the `FooterMenuItem`
 
 #### Defined in
 
-[packages/nextjs-kit/src/types/index.ts:48](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/types/index.ts#L48)
+[packages/nextjs-kit/src/types/index.ts:48](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/types/index.ts#L48)
 
 ---
 
@@ -74,7 +74,7 @@ true if the element is an HTMLElement
 
 #### Defined in
 
-[packages/nextjs-kit/src/types/index.ts:64](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/types/index.ts#L64)
+[packages/nextjs-kit/src/types/index.ts:64](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/types/index.ts#L64)
 
 ---
 
@@ -98,4 +98,4 @@ true if the item is a number
 
 #### Defined in
 
-[packages/nextjs-kit/src/types/index.ts:56](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/types/index.ts#L56)
+[packages/nextjs-kit/src/types/index.ts:56](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/types/index.ts#L56)

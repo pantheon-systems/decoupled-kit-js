@@ -10,6 +10,5 @@ custom_edit_url: null
 
 - [PantheonDrupalState](modules/PantheonDrupalState.md)
 - [fetch/defaultFetch](modules/fetch_defaultFetch.md)
-- [main](modules/main.md)
 - [types/types](modules/types_types.md)
 - [utils/addSurrogateKeyHeader](modules/utils_addSurrogateKeyHeader.md)

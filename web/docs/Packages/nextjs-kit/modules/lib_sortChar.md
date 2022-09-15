@@ -28,4 +28,4 @@ An array of data sorted by the given key and direction
 
 #### Defined in
 
-[packages/nextjs-kit/src/lib/sortChar.ts:12](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/lib/sortChar.ts#L12)
+[packages/nextjs-kit/src/lib/sortChar.ts:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/lib/sortChar.ts#L12)

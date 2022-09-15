@@ -35,7 +35,7 @@ fonts.getFontSizeUtilities() // returns the font size utilities
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:19](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L19)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:19](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L19)
 
 ## Properties
 
@@ -59,7 +59,7 @@ fonts.getFontSizeUtilities() // returns the font size utilities
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:61](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L61)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:61](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L61)
 
 ---
 
@@ -80,7 +80,7 @@ fonts.getFontSizeUtilities() // returns the font size utilities
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:49](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L49)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:49](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L49)
 
 ---
 
@@ -91,7 +91,7 @@ fonts.getFontSizeUtilities() // returns the font size utilities
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:17](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L17)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L17)
 
 ## Methods
 
@@ -119,4 +119,4 @@ tailwind's default font size values and sensible defaults.
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:35](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L35)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:35](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L35)

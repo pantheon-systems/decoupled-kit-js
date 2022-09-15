@@ -65,4 +65,4 @@ Component with data rendered by the passed in Component and page buttons
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:48](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/components/paginator.tsx#L48)
+[packages/nextjs-kit/src/components/paginator.tsx:48](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/components/paginator.tsx#L48)

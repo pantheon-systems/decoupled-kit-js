@@ -22,7 +22,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/GraphqlClientFactory.ts:8](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/lib/GraphqlClientFactory.ts#L8)
+[packages/wordpress-kit/src/lib/GraphqlClientFactory.ts:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/GraphqlClientFactory.ts#L8)
 
 ## Properties
 
@@ -32,7 +32,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/GraphqlClientFactory.ts:5](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/lib/GraphqlClientFactory.ts#L5)
+[packages/wordpress-kit/src/lib/GraphqlClientFactory.ts:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/GraphqlClientFactory.ts#L5)
 
 ---
 
@@ -42,7 +42,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/GraphqlClientFactory.ts:6](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/lib/GraphqlClientFactory.ts#L6)
+[packages/wordpress-kit/src/lib/GraphqlClientFactory.ts:6](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/GraphqlClientFactory.ts#L6)
 
 ## Methods
 
@@ -56,4 +56,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/GraphqlClientFactory.ts:13](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/lib/GraphqlClientFactory.ts#L13)
+[packages/wordpress-kit/src/lib/GraphqlClientFactory.ts:13](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/GraphqlClientFactory.ts#L13)

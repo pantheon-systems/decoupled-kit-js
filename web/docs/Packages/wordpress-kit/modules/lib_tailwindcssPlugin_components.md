@@ -15,6 +15,13 @@ Re-exports
 
 ---
 
+### CoverComponent
+
+Re-exports
+[CoverComponent](lib_tailwindcssPlugin_components_Cover.md#covercomponent)
+
+---
+
 ### GalleryComponent
 
 Re-exports

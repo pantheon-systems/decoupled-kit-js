@@ -17,7 +17,7 @@ const generateTypedocOptions = (packageName, position) => {
 		out: `Packages/${packageName}`,
 		entryPointStrategy: 'expand',
 		exclude: [
-			'**/main.ts,
+			'**/main.*',
 			'**/node_modules/**',
 			'**/__tests__/**',
 			'**/__mocks__/**',

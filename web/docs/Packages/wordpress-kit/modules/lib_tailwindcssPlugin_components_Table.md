@@ -107,4 +107,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/components/Table.ts:9](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/wordpress-kit/src/lib/tailwindcssPlugin/components/Table.ts#L9)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/components/Table.ts:9](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/components/Table.ts#L9)

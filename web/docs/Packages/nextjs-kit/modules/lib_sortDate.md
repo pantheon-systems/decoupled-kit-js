@@ -29,4 +29,4 @@ An array of data sorted by the given key and direction
 
 #### Defined in
 
-[packages/nextjs-kit/src/lib/sortDate.ts:11](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/lib/sortDate.ts#L11)
+[packages/nextjs-kit/src/lib/sortDate.ts:11](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/lib/sortDate.ts#L11)

@@ -21,7 +21,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:14](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/components/paginator.tsx#L14)
+[packages/nextjs-kit/src/components/paginator.tsx:14](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/components/paginator.tsx#L14)
 
 ---
 
@@ -39,7 +39,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:8](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/components/paginator.tsx#L8)
+[packages/nextjs-kit/src/components/paginator.tsx:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/components/paginator.tsx#L8)
 
 ---
 
@@ -49,7 +49,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:6](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/components/paginator.tsx#L6)
+[packages/nextjs-kit/src/components/paginator.tsx:6](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/components/paginator.tsx#L6)
 
 ---
 
@@ -59,7 +59,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:7](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/components/paginator.tsx#L7)
+[packages/nextjs-kit/src/components/paginator.tsx:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/components/paginator.tsx#L7)
 
 ---
 
@@ -69,4 +69,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:13](https://github.com/CobyPear/decoupled-kit-js/blob/1d4dd35e/packages/nextjs-kit/src/components/paginator.tsx#L13)
+[packages/nextjs-kit/src/components/paginator.tsx:13](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/components/paginator.tsx#L13)
