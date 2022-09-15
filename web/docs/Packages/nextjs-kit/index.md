@@ -9,11 +9,11 @@ custom_edit_url: null
 # Pantheon Systems Next.js Kit
 
 The `@pantheon-systems/nextjs-kit` is a collection of utilities and Next.js
-components for use in a Pantheon Decoupled Site built with Next.js.
+components for use in a Pantheon Front-End Site built with Next.js.
 
 ## Installation
 
-To install this package to use in your application:
+To install this package for use in your application:
 
 `npm install @pantheon-systems/nextjs-kit`
 

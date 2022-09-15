@@ -36,7 +36,7 @@ published on `npm`, and to be consumed by the public, and our starter kits.
 To configure the monorepo for development, the following should be installed
 locally:
 
-- Nodejs version 16 LTS. We recommend using [nvm](https://github.com/nvm-sh/nvm)
+- Node.js version 16 LTS. We recommend using [nvm](https://github.com/nvm-sh/nvm)
 - [npm](https://docs.npmjs.com/cli/v8/commands/npm) version 8.x.x
 - [pnpm](https://pnpm.io/installation) version 7.4.0
 
@@ -48,7 +48,7 @@ locally:
 
 ---
 
-## Setup the Monorepo
+## Configure the Monorepo
 
 To contribute to this project, follow the directions below. Also see
 [CONTRIBUTING.md](./CONTRIBUTING.md) for more information.
@@ -108,7 +108,7 @@ There are several scripts you can use in the monorepo.
   pnpm --filter './starters/**' lint
   ```
 
-If you need to run a command in a specific project, use the alias in the root
+If you need to run a command in a specific project, use the alias in the ROOT
 `package.json` scripts (`pnpm run` to see the full list in your terminal), or
 use a filter. Please do not `cd` into the project directory and use `npm` or
 `yarn`.
