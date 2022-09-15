@@ -2,13 +2,13 @@
 
 Thank you for your interest in contributing to Pantheon's Decoupled Kit ⚡️!
 
-## Getting started and Prerequisites
+## Getting Started and Prerequisites
 
 Check the
 [prerequisites](https://github.com/pantheon-systems/decoupled-kit-js/#prerequisites-start-here!)
 and
 [getting started](https://github.com/pantheon-systems/decoupled-kit-js/#setup-the-monorepo)
-to get setup for development.
+to get set up for development.
 
 If you find a bug or have a feature request, please open an issue or a start a
 discussion.

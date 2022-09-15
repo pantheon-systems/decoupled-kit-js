@@ -54,14 +54,14 @@ Other commands:
 
 ## Pantheon @pantheon-systems/wordpress-kit
 
-The Pantheon @pantheon-systems/wordpress-kit is included as a dependency in this
+The Pantheon `@pantheon-systems/wordpress-kit` is included as a dependency in this
 project. This allows developers to make use of utility functions to simplify the
 process of building and maintaining a Front-End site on Pantheon.
 
 The `tailwindcssPlugin` is included in this project and is used to map WordPress
 Block Editor styles to Tailwind styles.
 
-Full documentation can be found at:
+For more information, see
 https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packages/wordpress-kit
 
 ## Customizing the Starter
