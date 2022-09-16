@@ -3,7 +3,7 @@ import { client } from './WordPressClient';
 
 export async function getAllPagesUri() {
 	const query = gql`
-		query AllPages {
+		query AllPagesURI {
 			pages {
 				edges {
 					node {
@@ -52,7 +52,7 @@ export async function getLatestPages() {
 
 export async function getPageByUri(uri) {
 	const query = gql`
-		query PageByUriuery($uri: ID!) {
+		query PageByURIquery($uri: ID!) {
 			page(id: $uri, idType: URI) {
 				title
 				date

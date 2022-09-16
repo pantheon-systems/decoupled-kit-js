@@ -1,0 +1,286 @@
+// Vitest Snapshot v1
+
+exports[`<PostListTemplate /> > should render with posts 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+  >
+    <div
+      class="my-0 pt-10 px-5 text-xl"
+    >
+      <nav>
+        <ul
+          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+        >
+          <li
+            class="mr-auto"
+          >
+            <a
+              class="hover:underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/posts"
+            >
+              📰 Posts
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <header
+        class="prose text-2xl mx-auto mt-20"
+      >
+        <h1
+          class="text-center mx-auto"
+        >
+          Posts
+        </h1>
+      </header>
+      <section>
+        <div
+          class="mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+        >
+          <a
+            href="/posts/example-post-with-image"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Example Post with Image"
+                  src="undefined/app/uploads/2022/09/pizza.jpeg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Example Post with Image →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/posts/hello-world"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Pantheon Logo"
+                  src="/pantheon.png"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Hello world! →
+              </h2>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="w-full text-white bg-black p-4 mt-12"
+    >
+      <nav
+        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+      >
+        <ul />
+      </nav>
+      <div
+        class="flex my-4 p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2022 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://wordpress.com/"
+          >
+            WordPress
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<PostTemplate /> > should render a post 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+  >
+    <div
+      class="my-0 pt-10 px-5 text-xl"
+    >
+      <nav>
+        <ul
+          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+        >
+          <li
+            class="mr-auto"
+          >
+            <a
+              class="hover:underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/posts"
+            >
+              📰 Posts
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <article
+        class="prose lg:prose-xl mt-10 mx-auto max-w-screen-lg p-4"
+      >
+        <h1>
+          Example Post with Image
+        </h1>
+        <p
+          class="text-sm text-gray-600"
+        >
+          Tue Sep 13 2022
+        </p>
+        <a
+          class="font-normal"
+          href="/"
+        >
+          Home →
+        </a>
+        <div
+          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+        >
+          <div
+            class="relative w-full rounded-lg shadow-lg overflow-hidden mb-10"
+            style="height: 50vh;"
+          >
+            <img
+              alt="Featured Image"
+              src="undefined/app/uploads/2022/09/pizza.jpeg"
+            />
+          </div>
+        </div>
+        <div
+          class="break-words mt-12"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          
+
+        </div>
+      </article>
+    </main>
+    <footer
+      class="w-full text-white bg-black p-4 mt-12"
+    >
+      <nav
+        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+      >
+        <ul />
+      </nav>
+      <div
+        class="flex my-4 p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2022 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://wordpress.com/"
+          >
+            WordPress
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
