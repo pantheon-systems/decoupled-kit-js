@@ -8,7 +8,7 @@ import { withGrid, PostGridItem } from '../../components/grid';
 import { getFooterMenu } from '../../lib/Menus';
 import { getLatestPosts } from '../../lib/Posts';
 
-export default function PostsListTemplate({ menuItems, SSRPosts }) {
+export default function PostsListTemplate({ menuItems, posts }) {
 	const PostGrid = withGrid(PostGridItem);
 
 	return (
@@ -19,7 +19,7 @@ export default function PostsListTemplate({ menuItems, SSRPosts }) {
 			/>
 			<PageHeader title="Posts" />
 			<section>
-				<PostGrid contentType="posts" data={SSRPosts} />
+				<PostGrid contentType="posts" data={posts} />
 			</section>
 		</Layout>
 	);
@@ -27,13 +27,13 @@ export default function PostsListTemplate({ menuItems, SSRPosts }) {
 
 export async function getServerSideProps({ res }) {
 	const menuItems = await getFooterMenu();
-	const SSRPosts = await getLatestPosts();
+	const posts = await getLatestPosts();
 	setEdgeHeader({ res });
 
 	return {
 		props: {
 			menuItems,
-			SSRPosts,
+			posts,
 		},
 	};
 }

@@ -1,5 +1,17 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.5.0
+
+### Minor Changes
+
+- e9901e5: Add support for cover component from WordPress
+- f9d5697: Create setEdgeHeader lib in wordpress-kit and use this in
+  next-wordpress-starter to set cache control headers.
+
+### Patch Changes
+
+- ee835e8: Update prettierrc and reformat spaces -> tabs for accessibility
+
 ## 2.5.0-canary.0
 
 ### Minor Changes

@@ -1,5 +1,4 @@
 import plugin from 'tailwindcss/plugin';
-
 import {
 	Quote,
 	ImageComponent,
@@ -8,10 +7,13 @@ import {
 	GalleryComponent,
 	AudioComponent,
 	CoverComponent,
-} from './tailwindcssPlugin/components';
-import { mergeToConfig } from './tailwindcssPlugin/Config';
-import { ColorUtilities, FontsUtilities } from './tailwindcssPlugin/utilities';
+} from './components';
+import { mergeToConfig } from './Config';
+import { ColorUtilities, FontsUtilities } from './utilities';
 
+/**
+ * Tailwindcss plugin that maps WordPress block editor styles to tailwindcss classes.
+ */
 export default plugin(function ({ addUtilities, theme, addComponents }) {
 	const color = new ColorUtilities(theme);
 	const font = new FontsUtilities(theme);

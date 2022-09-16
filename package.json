@@ -19,6 +19,7 @@
 		"build:nextjs-kit": "pnpm --filter './packages/nextjs-kit' build",
 		"build:next-drupal": "pnpm --filter './starters/next-drupal-starter' build:mono",
 		"build:next-wp": "pnpm --filter './starters/next-wordpress-starter' build:mono",
+		"build:wp-kit": "pnpm --filter wordpress-kit build",
 		"build:pkgs": "pnpm --filter './packages/**' build",
 		"build:starters": "pnpm --filter './starters/**' build",
 		"ci:publish": "changeset publish",
@@ -34,7 +35,8 @@
 		"start:next-wp": "pnpm -filter './starters/next-wordpress-starter' start:mono",
 		"test": "pnpm recursive test",
 		"update-snapshots:nextjs-kit": "pnpm --filter './packages/nextjs-kit' update-snapshots",
-		"watch:nextjs-kit": "pnpm --filter './packages/nextjs-kit' watch"
+		"watch:nextjs-kit": "pnpm --filter nextjs-kit watch",
+		"watch:wp-kit": "pnpm --filter wordpress-kit watch"
 	},
 	"keywords": [
 		"pantheon",
