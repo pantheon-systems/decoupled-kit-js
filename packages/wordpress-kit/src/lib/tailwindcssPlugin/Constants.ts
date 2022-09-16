@@ -1,4 +1,4 @@
-import { Color, FontSize } from '../../types/TailwindcssPlugin';
+import { Color, FontSize } from '../../types';
 
 export const colorList: Color[] = [
 	{
