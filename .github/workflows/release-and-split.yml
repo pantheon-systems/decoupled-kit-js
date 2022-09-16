@@ -34,15 +34,13 @@ jobs:
         run: pnpm config set store-dir $PNPM_CACHE_FOLDER
       - name: install dependencies
         run: pnpm install
-      - name: make script runnable
-        run: chmod +x ".github/scripts/main-release.sh"
       - name: create and publish versions
         uses: changesets/action@v1
         with:
           version: .github/scripts/main-release.sh
           commit: 'Update versions'
           title: 'Update versions'
-          publish: pnpm ci:publish
+          publish: .github/scripts/main-publish.sh
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
