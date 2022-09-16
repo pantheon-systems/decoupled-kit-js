@@ -2,4 +2,4 @@
 '@pantheon-systems/next-drupal-starter': patch
 ---
 
-Fix import in preview api route
+Fix accidental revert of preview.js file

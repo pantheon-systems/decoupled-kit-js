@@ -1,5 +1,21 @@
 # @pantheon-systems/drupal-kit
 
+## 3.0.0
+
+### Major Changes
+
+- 3ffcbbe: ## Breaking Changes
+
+  Removed the `query` option from `DrupalState`. This reflects the same upstream
+  change in `@gdwc/drupal-state`.
+
+  If you are still using a query after updating, you will receive a warning in
+  the console and the full payload for the requested object.
+
+### Patch Changes
+
+- ee835e8: Update prettierrc and reformat spaces -> tabs for accessibility
+
 ## 3.0.0-canary.0
 
 ### Major Changes
