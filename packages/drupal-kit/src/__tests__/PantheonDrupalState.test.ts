@@ -3,7 +3,7 @@ const fetchMock = require('isomorphic-fetch');
 fetchMock.config.overwriteRoutes = true;
 global.Headers = fetchMock.Headers;
 
-import DrupalState from '../PantheonDrupalState';
+import DrupalState from '../lib/PantheonDrupalState';
 
 import indexResponse from './data/apiIndex.json';
 import recipes from './data/collection.json';

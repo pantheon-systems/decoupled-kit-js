@@ -1,7 +1,7 @@
 import { ServerResponse } from 'http';
 import fetch from 'isomorphic-fetch';
 
-import addSurrogateKeyHeader from '../utils/addSurrogateKeyHeader';
+import addSurrogateKeyHeader from './utils/addSurrogateKeyHeader';
 
 const defaultCacheControlValue =
 	'public, s-maxage=10, stale-while-revalidate=600';
