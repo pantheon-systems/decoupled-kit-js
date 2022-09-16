@@ -19,7 +19,11 @@
 		"start:mono": "next start",
 		"lint": "next lint",
 		"prettier": "prettier \"**/*.{js,jsx,md}\" --check --ignore-path .prettierignore",
-		"prettier:fix": "prettier \"**/*.{js,jsx,,md}\" --write --ignore-path .prettierignore"
+		"prettier:fix": "prettier \"**/*.{js,jsx,,md}\" --write --ignore-path .prettierignore",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"update-snapshots": "vitest run --update --silent",
+		"coverage": "vitest run --coverage"
 	},
 	"dependencies": {
 		"@pantheon-systems/wordpress-kit": "2.5.0",
@@ -32,11 +36,16 @@
 		"sharp": "^0.30.4"
 	},
 	"devDependencies": {
+		"@testing-library/react": "12.1.5",
+		"@vitejs/plugin-react": "^2.0.0",
 		"autoprefixer": "^10.4.4",
+		"c8": "^7.12.0",
 		"eslint": "8.17.0",
-		"eslint-config-next": "12.1.6",
+		"eslint-config-next": "^12.2.5",
+		"msw": "^0.44.2",
 		"postcss": "^8.4.12",
 		"prettier": "2.5.1",
-		"tailwindcss": "^3.0.24"
+		"tailwindcss": "^3.0.24",
+		"vitest": "^0.18.1"
 	}
 }
