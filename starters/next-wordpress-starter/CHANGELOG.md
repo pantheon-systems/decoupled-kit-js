@@ -1,5 +1,16 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.8.0-canary.0
+
+### Minor Changes
+
+- 915c3ac: Added unit and snapshot tests, some minor refactoring
+
+### Patch Changes
+
+- Updated dependencies [6656b11]
+  - @pantheon-systems/wordpress-kit@2.5.1-canary.0
+
 ## 0.7.0
 
 ### Minor Changes

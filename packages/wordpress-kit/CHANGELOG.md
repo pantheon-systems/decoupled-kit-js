@@ -1,5 +1,12 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.5.1-canary.0
+
+### Patch Changes
+
+- 6656b11: Added some missing TSDoc comments and updated dist bundle to include
+  generated d.ts files
+
 ## 2.5.0
 
 ### Minor Changes

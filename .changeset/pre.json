@@ -12,6 +12,8 @@
     "web": "1.0.0"
   },
   "changesets": [
+    "blue-glasses-fetch",
+    "rotten-pianos-pay",
     "sour-beers-shake"
   ]
 }
