@@ -1,4 +1,4 @@
-name: "Canary Release"
+name: 'Canary Release'
 
 on:
   push:
@@ -26,7 +26,9 @@ jobs:
       - name: install pnpm
         run: npm i pnpm@7.4.0 -g
       - name: Setup npmrc
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+        run:
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >
+          .npmrc
       - name: setup pnpm config
         run: pnpm config set store-dir $PNPM_CACHE_FOLDER
       - name: install dependencies
@@ -36,7 +38,7 @@ jobs:
         with:
           version: pnpm ci:version
           publish: pnpm ci:publish
-          commit: "canary-release"
-          title: "Canary Release"
+          commit: 'canary-release'
+          title: 'Canary Release'
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}

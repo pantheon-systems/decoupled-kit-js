@@ -1,6 +1,7 @@
 ---
 id: 'next-drupal-env-vars'
 title: 'Setting Environment Variables'
+sidebar_position: 1
 slug:
   '/Frontend Starters/Next.js/Next.js + Drupal/Setting Environment Variables'
 ---

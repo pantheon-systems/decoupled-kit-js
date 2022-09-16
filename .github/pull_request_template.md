@@ -13,4 +13,6 @@
 
 <!--- Add any other context about the feature or fix here. --->
 
-Don't forget to [add a changeset](https://github.com/pantheon-systems/decoupled-kit-js#generating-a-changeset) if needed!
+Don't forget to
+[add a changeset](https://github.com/pantheon-systems/decoupled-kit-js#generating-a-changeset)
+if needed!

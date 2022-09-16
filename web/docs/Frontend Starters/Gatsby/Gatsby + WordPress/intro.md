@@ -1,6 +1,7 @@
 ---
 id: 'gatsby-wordpress-intro'
 title: 'Introduction'
+sidebar_position: 0
 slug: '/Frontend Starters/Gatsby WordPress/Introduction'
 ---
 
