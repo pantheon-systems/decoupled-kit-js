@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import type { ImageProps } from 'next/image';
 import { useRouter } from 'next/router';
-import { isNumber } from '../types/index';
 
 interface ContentProps {
 	title: string;
@@ -32,10 +31,9 @@ const ContentWithImage: React.FC<ContentProps> = ({
 	const router = useRouter();
 
 	return (
-		<div>
-			<article className="prose lg:prose-xl mt-10 mx-auto">
-				<h1>{title}</h1>
-				{date ? <p className="text-sm text-gray-600">{date}</p> : null}
+		<article className="prose lg:prose-xl mt-10 mx-auto">
+			<h1>{title}</h1>
+			{date ? <p className="text-sm text-gray-600">{date}</p> : null}
 
 			<a onClick={() => router.back()} className="font-normal cursor-pointer">
 				Back &rarr;

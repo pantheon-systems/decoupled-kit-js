@@ -64,13 +64,7 @@ exports[`<ContentWithImage /> > should render 'contentWithImage' 1`] = `
       </blockquote>
       
 
-      </div>
-    </article>
-    <div>
-      <h1>
-        Hello
-      </h1>
     </div>
-  </div>
+  </article>
 </DocumentFragment>
 `;
