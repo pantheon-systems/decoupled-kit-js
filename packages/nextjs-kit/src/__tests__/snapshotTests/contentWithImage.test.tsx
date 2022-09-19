@@ -3,12 +3,7 @@ import ContentWithImage from '../../components/contentWithImage';
 import examplePostData from '../data/examplePostData.json';
 import { vi } from 'vitest';
 
-vi.mock('next/image', () => ({
-	__esModule: true,
-	default: (props: any) => {
-		return <img {...props} />;
-	},
-}));
+vi.mock('../../__mocks__/next/image');
 
 vi.mock('next/router', () => ({
 	useRouter: () => ({
