@@ -53,12 +53,8 @@ export const hasParent = (item: FooterMenuItem): item is FooterMenuItem =>
  * @param {number | null | undefined} item an item
  * @returns true if the item is a number
  */
-export const isNumber = (
-	item: number | null | undefined | string,
-): item is number => typeof item === 'number';
-
-export const isString = (item: number | string | undefined): item is string =>
-	typeof item === 'string';
+export const isNumber = (item: number | null | undefined): item is number =>
+	typeof item === 'number';
 
 /**
  * Type predicate to determine if an item is a number
