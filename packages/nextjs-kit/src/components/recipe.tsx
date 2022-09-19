@@ -23,7 +23,7 @@ interface RecipeProps {
  * @returns A recipe component with content and an optional image passed by the user
  * @remarks
  * imageProps is an optional prop to be used if there is an image to be associated with the content.
- * If imageProps is used it is required that the user passes in values for src, width, and height
+ * If imageProps is used it is required that the user passes in value for the images src
  */
 const Recipe: React.FC<RecipeProps> = ({
 	title,
