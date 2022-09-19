@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 interface ContentProps {
 	title: string;
-	imageProps?: ImageProps;
+	imageProps?: ImageProps['src'];
 	content: string;
 	date?: string;
 }
@@ -40,8 +40,17 @@ const ContentWithImage: React.FC<ContentProps> = ({
 			</a>
 			<div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
 				{imageProps ? (
-					<div className="rounded-lg shadow-lg overflow-hidden mx-auto">
-						<Image {...imageProps} />
+					<div
+						className="relative w-full rounded-lg shadow-lg overflow-hidden mb-10"
+						style={{ height: '50vh' }}
+					>
+						<Image
+							priority
+							src={imageProps}
+							layout="fill"
+							objectFit="cover"
+							alt={'Featured Image'}
+						/>
 					</div>
 				) : null}
 			</div>

@@ -22,7 +22,8 @@ exports[`<ContentWithImage /> > should render 'contentWithImage' 1`] = `
       class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
     >
       <div
-        class="rounded-lg shadow-lg overflow-hidden mx-auto"
+        class="relative w-full rounded-lg shadow-lg overflow-hidden mb-10"
+        style="height: 50vh;"
       >
         <span
           style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"

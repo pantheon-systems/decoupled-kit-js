@@ -1,4 +1,9 @@
-export default function image(props: any) {
-	// eslint-disable-next-line react/react-in-jsx-scope
+import React from 'react';
+export default function image(
+	props: React.DetailedHTMLProps<
+		React.ImgHTMLAttributes<HTMLImageElement>,
+		HTMLImageElement
+	>,
+) {
 	return <img {...props} />;
 }
