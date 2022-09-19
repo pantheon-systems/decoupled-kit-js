@@ -22,6 +22,7 @@ const gradientClasses = gradientList.map(
 export const mergeToConfig: Config = {
 	content: [],
 	safelist: [
+		'.has-text-color',
 		...colorClasses,
 		...gradientClasses,
 		...borderColorClasses,
