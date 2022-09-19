@@ -17,16 +17,13 @@ interface RecipeProps {
  * @param props - The props needed for the Recipe component
  * @param props.title - The title of the recipe
  * @param props.category - The identifying category of your recipe
- * @param props.imageProps - All props the user wishes to pass to the next/image component
+ * @param props.imageProps - All props the user wishes to pass to the next/image component @see {@link https://nextjs.org/docs/api-reference/next/image} for all next/image documentation
+ * @param props.ingredients - An array of strings holding ingredients to be displayed
+ * @param props.instructions - Instructions from a CMS, usually a string of raw HTML. This string will be set as `dangerouslySetInnerHTML`
+ * @returns A recipe component with content and an optional image passed by the user
  * @remarks
  * imageProps is an optional prop to be used if there is an image to be associated with the content.
  * If imageProps is used it is required that the user passes in values for src, width, and height
- * See the documentation link below for more information on optional and required props
- * @see {@link https://nextjs.org/docs/api-reference/next/image} for all next/image documentation
- * @param props.ingredients - An array of strings holding ingredients to be displayed
- * @param props.instructions - Instructions from a CMS, usually a string of raw HTML. This string will be set as `dangerouslySetInnerHTML`
- * @param props.previousPagePath - The path of the previous page to navigate back to
- * @returns A recipe component with content and an optional image passed by the user
  */
 const Recipe: React.FC<RecipeProps> = ({
 	title,
