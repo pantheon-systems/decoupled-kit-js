@@ -1,7 +1,7 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import type { ImageProps } from 'next/image';
+import { useRouter } from 'next/router';
 
 interface RecipeProps {
 	title: string;
@@ -9,7 +9,7 @@ interface RecipeProps {
 	imageProps?: ImageProps;
 	ingredients: string[];
 	instructions: string;
-	previousPagePath: string;
+	children?: JSX.Element;
 }
 
 /**
@@ -24,7 +24,7 @@ interface RecipeProps {
  * See the documentation link below for more information on optional and required props
  * @see {@link https://nextjs.org/docs/api-reference/next/image} for all next/image documentation
  * @param props.ingredients - An array of strings holding ingredients to be displayed
- * @param props.instructions - A string of elements to make up the content on the post
+ * @param props.instructions - Instructions from a CMS, usually a string of raw HTML. This string will be set as `dangerouslySetInnerHTML`
  * @param props.previousPagePath - The path of the previous page to navigate back to
  * @returns A recipe component with content and an optional image passed by the user
  */
@@ -34,16 +34,20 @@ const Recipe: React.FC<RecipeProps> = ({
 	imageProps,
 	ingredients,
 	instructions,
-	previousPagePath,
+	children,
 }: RecipeProps) => {
+	const router = useRouter();
 	return (
 		<article className="prose lg:prose-xl mt-10 mx-auto h-fit p-4 sm:p-0">
 			<header>
 				<h1>{title}</h1>
 				<div className="flex flex-row justify-between">
-					<Link passHref href={previousPagePath}>
-						<a className="font-normal">Back &rarr;</a>
-					</Link>
+					<a
+						onClick={() => router.back()}
+						className="font-normal cursor-pointer"
+					>
+						Back &rarr;
+					</a>
 					<span className="text pb-2 pr-3 text-sm text-slate-400">
 						{category}
 					</span>
@@ -81,6 +85,7 @@ const Recipe: React.FC<RecipeProps> = ({
 					/>
 				</section>
 			</div>
+			{children}
 		</article>
 	);
 };

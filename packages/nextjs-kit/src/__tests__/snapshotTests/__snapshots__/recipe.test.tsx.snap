@@ -13,8 +13,7 @@ exports[`<Recipe /> > should render 'recipe' 1`] = `
         class="flex flex-row justify-between"
       >
         <a
-          class="font-normal"
-          href="/recipes"
+          class="font-normal cursor-pointer"
         >
           Back →
         </a>
