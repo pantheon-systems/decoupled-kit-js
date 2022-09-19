@@ -31,47 +31,28 @@ const ContentWithImage: React.FC<ContentProps> = ({
 }: ContentProps) => {
 	const router = useRouter();
 
-	// if (isString(imageProps?.height) && isString(imageProps?.width)) {
-	// 	style = `h-${imageProps?.height} py-0.5 px-3 rounded text-white font-semibold text-xl border-2`};
-	// };
-
 	return (
 		<div>
 			<article className="prose lg:prose-xl mt-10 mx-auto">
 				<h1>{title}</h1>
 				{date ? <p className="text-sm text-gray-600">{date}</p> : null}
 
-				<a onClick={() => router.back()} className="font-normal">
-					Back &rarr;
-				</a>
-				{/* mx-auto */}
-				<div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
-					{imageProps ? (
-						<div>
-							{isNumber(imageProps.height) && isNumber(imageProps.width) ? (
-								<div
-									className={`h-[${imageProps.height}px] w-[${imageProps.width}px] rounded-lg shadow-lg overflow-hidden mx-auto`}
-								>
-									<Image {...imageProps} />
-								</div>
-							) : (
-								<div className="rounded-lg shadow-lg overflow-hidden mx-auto">
-									<Image {...imageProps} />
-								</div>
-							)}
-						</div>
-					) : null}
-				</div>
-
-				<div
-					className="break-words mt-12"
-					dangerouslySetInnerHTML={{ __html: content }}
-				/>
-			</article>
-			<div>
-				<h1>Hello</h1>
+			<a onClick={() => router.back()} className="font-normal cursor-pointer">
+				Back &rarr;
+			</a>
+			<div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
+				{imageProps ? (
+					<div className="rounded-lg shadow-lg overflow-hidden mx-auto">
+						<Image {...imageProps} />
+					</div>
+				) : null}
 			</div>
-		</div>
+
+			<div
+				className="break-words mt-12"
+				dangerouslySetInnerHTML={{ __html: content }}
+			/>
+		</article>
 	);
 };
 
