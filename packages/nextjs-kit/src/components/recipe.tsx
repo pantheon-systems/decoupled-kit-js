@@ -18,7 +18,7 @@ interface RecipeProps {
  * @param props.title - The title of the recipe
  * @param props.category - The identifying category of your recipe
  * @param props.imageProps - All props the user wishes to pass to the next/image component @see {@link https://nextjs.org/docs/api-reference/next/image} for all next/image documentation
- * @param props.ingredients - An array of strings holding ingredients to be displayed
+ * @param props.ingredients - An array of strings with ingredients to be displayed
  * @param props.instructions - Instructions from a CMS, usually a string of raw HTML. This string will be set as `dangerouslySetInnerHTML`
  * @returns A recipe component with content and an optional image passed by the user
  * @remarks
