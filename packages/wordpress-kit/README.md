@@ -1,7 +1,7 @@
-# WordPress Kit
+# Pantheon Systems WordPress Kit
 
-Utilities to help simplify the process of sourcing data from a WordPress back
-end for a decoupled front end hosted on Pantheon.
+Utilities to help simplify the process of sourcing data from a WordPress backend
+for a Front-End Site hosted on Pantheon.
 
 ## Installation
 
@@ -17,24 +17,24 @@ package.
 ### GraphqlClientFactory
 
 1. Import the module in your JavaScript application:
-   ```
+   ```js
    import { GraphqlClientFactory } from '@pantheon-systems/wordpress-kit';
    ```
 2. Create an instance of the client and specify your API:
-   ```
+   ```js
    const client = new GraphqlClientFactory(
-     'http://localhost:4000/graphql'
+   	'my.wordpressbackend.com/wp/graphql',
    ).create();
    ```
 
 ### TailwindcssPlugin
 
 1.  Import the plugin to your `tailwind.config.js` file
-    ```
-    const { tailwindcssPlugin } = require("@pantheon-systems/wordpress-kit");
+    ```js
+    const { tailwindcssPlugin } = require('@pantheon-systems/wordpress-kit');
     ```
 1.  Add the plugin to your `plugins` array:
-    ```
+    ```js
     /** @type {import('@pantheon-systems/wordpress-kit').TailwindcssConfig} */
     module.exports = {
       content: [ ... ],

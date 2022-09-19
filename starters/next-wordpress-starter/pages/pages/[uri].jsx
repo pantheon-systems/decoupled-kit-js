@@ -1,11 +1,13 @@
 import { NextSeo } from 'next-seo';
+import { setEdgeHeader } from '@pantheon-systems/wordpress-kit';
+
 import Layout from '../../components/layout';
 import Page from '../../components/page';
 
 import { getFooterMenu } from '../../lib/Menus';
 import { getAllPagesUri, getPageByUri } from '../../lib/Pages';
 
-export default function PageListTemplate({ menuItems, page }) {
+export default function PageTemplate({ menuItems, page }) {
 	return (
 		<Layout footerMenu={menuItems}>
 			<NextSeo
@@ -17,9 +19,10 @@ export default function PageListTemplate({ menuItems, page }) {
 	);
 }
 
-export async function getServerSideProps({ params: { uri } }) {
+export async function getServerSideProps({ params: { uri }, res }) {
 	const menuItems = await getFooterMenu();
 	const page = await getPageByUri(uri);
+	setEdgeHeader({ res });
 
 	return {
 		props: {

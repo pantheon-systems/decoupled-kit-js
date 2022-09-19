@@ -1,4 +1,4 @@
-import { ThemeType } from '../../../types/TailwindcssPlugin';
+import { ThemeType } from '../../../types';
 import { fontSizeList } from '../Constants';
 
 /**

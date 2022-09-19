@@ -1,15 +1,18 @@
 /**
+ * Helper function that returns the path from a URL,
  *
- * @param {string} url - The full url of an image
- * @returns The src of the Image URL, or null if no matches were found
+ * @remarks mostly used to extract the path of an image
+ * from a featuredImage URL from WordPress
+ *
+ * @param {string | URL} url - A full URL
+ * @returns {string | null} The pathname of the URL, or null if url is undefined
  */
 export const getUrlPath = (url) => {
-	const rxPath = new RegExp(
-		'http[s]?:\\/\\/?[^\\/]+\\/(?<imageSrc>.*[/]{1}.*/.+.+$)',
-	);
-	const matches = url?.match(rxPath);
-	if (matches?.groups.imageSrc) {
-		return `/${matches?.groups.imageSrc}`;
+	if (typeof url === 'string') {
+		return new URL(url).pathname;
+	}
+	if (url instanceof URL) {
+		return url.pathname;
 	}
 	return null;
 };

@@ -1,8 +1,4 @@
-import type {
-	GradientColors,
-	ThemeType,
-	Color,
-} from '../../../types/TailwindcssPlugin';
+import type { GradientColors, ThemeType, Color } from '../../../types';
 import { colorList, gradientList } from '../Constants';
 
 /**

@@ -1,6 +1,7 @@
 ---
 id: 'next-wordpress-intro'
 title: 'Introduction'
+sidebar_position: 0
 slug: '/Frontend Starters/Next.js/Next.js + WordPress/Introduction'
 ---
 
@@ -23,7 +24,7 @@ backend.
 ## Creating A New Project With The Template
 
 There are two methods to creating a new project based on the
-`next-wordpress-starter`:`
+`next-wordpress-starter`:
 
 1. Clone the starter repo directly
 2. Use `create-next-app`
@@ -43,5 +44,5 @@ npx create-next-app -e https://github.com/pantheon-systems/next-wordpress-starte
 
 ## Next Steps
 
-See the rest of the `next-wordpress-starter` documentation for more information
-on setting environment variables and customizing your new project!
+See the rest of the Next.js + WordPress documentation for more information on
+setting environment variables and customizing your new project!

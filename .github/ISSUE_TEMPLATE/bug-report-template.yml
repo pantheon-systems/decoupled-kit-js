@@ -1,7 +1,8 @@
-name: "Bug report"
+name: 'Bug report'
 description: Report a bug
-title: "[bug]: "
-labels: bug
+title: '[bug]: '
+labels:
+  - bug
 body:
   - type: markdown
     attributes:
@@ -18,7 +19,14 @@ body:
     id: reproduction
     attributes:
       label: Reproduction
-      description: A link to a repository, or a fork of https://github.com/pantheon-systems/decoupled-kit-js, that reproduces the issue. Reproductions must be [short, self-contained and correct](http://sscce.org/) and must not contain files or code that aren't relevant to the issue — please do NOT just paste a link to your project. Explaining how to reproduce is generally not enough. If no reproduction is provided, the issue may be closed.
+      description:
+        A link to a repository, or a fork of
+        https://github.com/pantheon-systems/decoupled-kit-js, that reproduces
+        the issue. Reproductions must be [short, self-contained and
+        correct](http://sscce.org/) and must not contain files or code that
+        aren't relevant to the issue — please do NOT just paste a link to your
+        project. Explaining how to reproduce is generally not enough. If no
+        reproduction is provided, the issue may be closed.
       placeholder: Reproduction
     validations:
       required: true
@@ -26,18 +34,22 @@ body:
     id: logs
     attributes:
       label: Logs
-      description: "Please include browser console and server logs around the time this bug occurred. Please try not to insert an image but copy paste the log text."
-      render: shell
+      description:
+        'Please include browser console and server logs around the time this bug
+        occurred. Please try not to insert an image but copy paste the log text.'
+      render: Shell
   - type: checkboxes
     id: where-is-the-bug
     attributes:
       label: Which packages/starters are effected?
       description: Check all that apply
       options:
-        - label: next-drupal
-        - label: gatsby-wordpress
+        - label: next-drupal-starter
+        - label: next-wordpress-starter
+        - label: gatsby-wordpress-starter
         - label: drupal-kit
         - label: wordpress-kit
+        - label: nextjs-kit
         - label: documentation
         - label: monorepo
   - type: dropdown

@@ -1,5 +1,7 @@
 # Pantheon Decoupled Kit Next WordPress Starter
 
+## Getting Started
+
 There are two ways to get started with the Next WordPress Starter:
 
 **Option 1**: Use `create-next-app`
@@ -43,13 +45,53 @@ IMAGE_DOMAIN=
 
 The Pantheon @pantheon-systems/wordpress-kit is included as a dependency in this
 project. This allows developers to make use of utility functions to simplify the
-process of building and maintaining a decoupled site on Pantheon, including:
-
-- GraphqlClientFactory()
-- tailwindcssPlugin
+process of building and maintaining a Front-End site on Pantheon.
 
 The `tailwindcssPlugin` is included in this project and is used to map WordPress
 Block Editor styles to Tailwind styles.
 
 Full documentation can be found at:
 https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packages/wordpress-kit
+
+## Tests
+
+Tests are written with [`vitest`](https://vitest.dev/). All new functionality
+should have unit tests or snapshot tests where applicable. Snapshot tests are
+using
+[`@testing-library/react`](https://testing-library.com/docs/react-testing-library/intro/).
+
+### Commands
+
+This section assumes the package manager in use is `npm`. If you are not using
+`npm`, replace `npm` with the name of your package manager.
+
+To run the tests:
+
+```bash
+npm test
+```
+
+To run the tests in watch mode:
+
+```bash
+npm run test:watch
+```
+
+### Updating Snapshots
+
+Snapshots should be updated when presentational changes are made. If a new page
+route is added, create a new snapshot test for it, and include any data needed
+to run that test successfully. Please commit the updated snapshots along with
+your changes.
+
+To update a snapshot:
+
+Run the following helper command:
+
+```bash
+npm run update-snapshots
+```
+
+Or, run the test for a single profile in watch mode (see above), then in the
+terminal press the **u** key. This will update the snapshot for the running
+profile Be sure to update the snapshot for both profiles.

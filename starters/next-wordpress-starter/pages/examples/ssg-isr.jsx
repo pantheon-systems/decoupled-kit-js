@@ -7,7 +7,7 @@ import { withGrid, PostGridItem } from '../../components/grid';
 import { getFooterMenu } from '../../lib/Menus';
 import { getLatestPosts } from '../../lib/Posts';
 
-export default function PostsListTemplate({ menuItems, SSRPosts }) {
+export default function SSGISRExampleTemplate({ menuItems, posts }) {
 	const PostGrid = withGrid(PostGridItem);
 
 	return (
@@ -28,7 +28,7 @@ export default function PostsListTemplate({ menuItems, SSRPosts }) {
 				</p>
 			</div>
 			<section>
-				<PostGrid contentType="posts" data={SSRPosts} />
+				<PostGrid contentType="posts" data={posts} />
 			</section>
 		</Layout>
 	);
@@ -36,12 +36,12 @@ export default function PostsListTemplate({ menuItems, SSRPosts }) {
 
 export async function getStaticProps() {
 	const menuItems = await getFooterMenu();
-	const SSRPosts = await getLatestPosts();
+	const posts = await getLatestPosts();
 
 	return {
 		props: {
 			menuItems,
-			SSRPosts,
+			posts,
 		},
 		revalidate: 60,
 	};
