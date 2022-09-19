@@ -7,7 +7,7 @@ import Layout from '../../components/layout';
 
 import { getFooterMenu } from '../../lib/Menus';
 
-export default function PostsListTemplate({ menuItems }) {
+export default function ExamplesPageTemplate({ menuItems }) {
 	return (
 		<Layout footerMenu={menuItems}>
 			<NextSeo

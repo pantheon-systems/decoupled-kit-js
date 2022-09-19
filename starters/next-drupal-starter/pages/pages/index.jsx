@@ -72,6 +72,7 @@ export async function getServerSideProps(context) {
 			objectName: 'node--page',
 			refresh: true,
 			res: context.res,
+			params: 'fields[node--page]=id,title,body,path',
 		});
 
 		const footerMenu = await store.getObject({

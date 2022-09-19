@@ -2,24 +2,18 @@
   "mode": "pre",
   "tag": "canary",
   "initialVersions": {
-    "@pantheon-systems/drupal-kit": "2.2.0",
-    "@pantheon-systems/nextjs-kit": "1.0.0",
-    "@pantheon-systems/wordpress-kit": "2.4.0",
-    "@pantheon-systems/gatsby-wordpress-starter": "2.0.0",
-    "@pantheon-systems/next-drupal-starter": "3.0.1",
-    "@pantheon-systems/next-wordpress-starter": "0.6.0",
-    "web": "1.0.0",
-    "@pantheon-systems/eslint-config": "0.0.0"
+    "@pantheon-systems/eslint-config": "0.0.0",
+    "@pantheon-systems/drupal-kit": "3.0.0",
+    "@pantheon-systems/nextjs-kit": "1.1.0",
+    "@pantheon-systems/wordpress-kit": "2.5.0",
+    "@pantheon-systems/gatsby-wordpress-starter": "2.1.0",
+    "@pantheon-systems/next-drupal-starter": "3.1.0",
+    "@pantheon-systems/next-wordpress-starter": "0.7.0",
+    "web": "1.0.0"
   },
   "changesets": [
-    "brown-taxis-pretend",
-    "cool-suits-marry",
-    "fifty-months-matter",
-    "four-pans-protect",
-    "fuzzy-numbers-wink",
-    "many-buses-do",
-    "mean-crabs-sin",
-    "seven-suns-shave",
-    "sharp-jokes-begin"
+    "blue-glasses-fetch",
+    "rotten-pianos-pay",
+    "sour-beers-shake"
   ]
 }

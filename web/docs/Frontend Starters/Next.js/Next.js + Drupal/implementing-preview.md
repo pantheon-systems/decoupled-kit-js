@@ -1,6 +1,7 @@
 ---
 id: 'next-drupal-preview'
 title: 'Implementing Decoupled Preview'
+sidebar_position: 2
 slug: '/Frontend Starters/Next.js/Next.js + Drupal/Implementing Preview'
 ---
 
