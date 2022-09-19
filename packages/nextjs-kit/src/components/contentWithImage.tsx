@@ -5,8 +5,11 @@ import { useRouter } from 'next/router';
 
 interface ContentProps {
 	title: string;
-	imageProps?: ImageProps['src'];
 	content: string;
+	imageProps?: {
+		src: ImageProps['src'];
+		alt?: ImageProps['alt'];
+	};
 	date?: string;
 }
 
@@ -14,13 +17,13 @@ interface ContentProps {
  *
  * @param props - The props needed for the ContentWithImage component
  * @param props.title - The title of your content
- * @param props.imageProps - All props the user wishes to pass to the next/image component. @see {@link https://nextjs.org/docs/api-reference/next/image} for all next/image documentation
+ * @param props.imageProps - Accepts a src and alt for the next/image component. @see {@link https://nextjs.org/docs/api-reference/next/image} for all next/image documentation
  * @param props.content - Content from a CMS, usually a string of raw HTML. This string will be set as `dangerouslySetInnerHTML`
  * @param props.date - An optional date to be displayed on the post
  * @returns A component with a featured image and content passed by the user
  * @remarks
  * imageProps is an optional prop to be used if there is an image to be associated with the content.
- * If imageProps is used it is required that the user passes in values for src, width, and height.
+ * If imageProps is used it is required that the user passes in a value for the src of the image. The use of an alt for the image is optional and defaults to the title of the content if left undefined
  */
 const ContentWithImage: React.FC<ContentProps> = ({
 	title,
@@ -46,10 +49,10 @@ const ContentWithImage: React.FC<ContentProps> = ({
 					>
 						<Image
 							priority
-							src={imageProps}
+							src={imageProps.src}
 							layout="fill"
 							objectFit="cover"
-							alt={'Featured Image'}
+							alt={imageProps.alt ? imageProps.alt : title}
 						/>
 					</div>
 				) : null}

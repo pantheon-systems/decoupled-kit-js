@@ -21,7 +21,10 @@ describe('<ContentWithImage />', () => {
 			<ContentWithImage
 				title={examplePostData[0].title}
 				content={examplePostData[0].content}
-				imageProps={examplePostData[0].featuredImage}
+				imageProps={{
+					src: examplePostData[0].featuredImage,
+					alt: examplePostData[0].alt,
+				}}
 				date={examplePostData[0].date}
 			/>,
 		);
