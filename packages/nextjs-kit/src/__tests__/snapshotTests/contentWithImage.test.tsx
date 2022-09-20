@@ -28,7 +28,7 @@ describe('<ContentWithImage />', () => {
 			<ContentWithImage
 				title={title}
 				content={content}
-				date={new Date(date).toLocaleDateString('en-US')}
+				date={new Date(date).toLocaleDateString('en-US', { timeZone: 'UTC' })}
 				imageProps={{
 					src: sourceUrl,
 					alt: altText,

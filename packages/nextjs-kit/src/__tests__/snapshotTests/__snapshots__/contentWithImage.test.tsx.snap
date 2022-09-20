@@ -11,7 +11,7 @@ exports[`<ContentWithImage /> > should render 'contentWithImage' 1`] = `
     <p
       class="text-sm text-gray-600"
     >
-      8/3/2022
+      8/4/2022
     </p>
     <a
       class="font-normal cursor-pointer"
