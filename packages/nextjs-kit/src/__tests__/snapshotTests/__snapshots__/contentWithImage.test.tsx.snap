@@ -3,7 +3,7 @@
 exports[`<ContentWithImage /> > should render 'contentWithImage' 1`] = `
 <DocumentFragment>
   <article
-    class="prose lg:prose-xl mt-10 mx-auto"
+    class="prose xs:prose-xs md:prose-md lg:prose-lg mt-10 mx-auto max-w-screen lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm p-4"
   >
     <h1>
       Example Post with Image
@@ -11,7 +11,7 @@ exports[`<ContentWithImage /> > should render 'contentWithImage' 1`] = `
     <p
       class="text-sm text-gray-600"
     >
-      2022-08-04
+      8/3/2022
     </p>
     <a
       class="font-normal cursor-pointer"
@@ -19,11 +19,10 @@ exports[`<ContentWithImage /> > should render 'contentWithImage' 1`] = `
       Back →
     </a>
     <div
-      class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+      class="mt-12 max-w-screen mx-auto lg:max-w-screen-lg shadow-lg [&*>img]:rounded-lg"
     >
       <div
-        class="relative w-full rounded-lg shadow-lg overflow-hidden mb-10"
-        style="height: 50vh;"
+        class="relative mb-10 min-h-[50vh]"
       >
         <span
           style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"

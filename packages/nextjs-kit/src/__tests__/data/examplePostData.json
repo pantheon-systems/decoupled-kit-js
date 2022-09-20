@@ -2,8 +2,12 @@
 	{
 		"title": "Example Post with Image",
 		"date": "2022-08-04",
-		"featuredImage": "https://dev-decoupled-wordpress-qa.pantheonsite.i/wp-content/uploads/2022/08/pizza.jpeg",
-		"alt": "Pizza Image",
+		"featuredImage": {
+			"node": {
+				"sourceUrl": "https://dev-decoupled-wordpress-qa.pantheonsite.i/wp-content/uploads/2022/08/pizza.jpeg",
+				"altText": "Pizza Image"
+			}
+		},
 		"content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n \n \n \n \n \n <blockquote class=\"wp-block-quote\"><p>Test quote</p><cite>quote</cite></blockquote>\n"
 	}
 ]

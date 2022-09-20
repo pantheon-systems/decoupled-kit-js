@@ -3,8 +3,6 @@ import ContentWithImage from '../../components/contentWithImage';
 import examplePostData from '../data/examplePostData.json';
 import { vi } from 'vitest';
 
-vi.mock('../../__mocks__/next/image');
-
 vi.mock('next/router', () => ({
 	useRouter: () => ({
 		locale: 'en',
@@ -17,15 +15,24 @@ vi.mock('next/router', () => ({
 
 describe('<ContentWithImage />', () => {
 	it("should render 'contentWithImage'", () => {
+		const {
+			title,
+			content,
+			date,
+			featuredImage: {
+				node: { sourceUrl, altText },
+			},
+		} = examplePostData[0];
+
 		const { asFragment } = render(
 			<ContentWithImage
-				title={examplePostData[0].title}
-				content={examplePostData[0].content}
+				title={title}
+				content={content}
+				date={new Date(date).toLocaleDateString()}
 				imageProps={{
-					src: examplePostData[0].featuredImage,
-					alt: examplePostData[0].alt,
+					src: sourceUrl as string,
+					alt: altText as string,
 				}}
-				date={examplePostData[0].date}
 			/>,
 		);
 
