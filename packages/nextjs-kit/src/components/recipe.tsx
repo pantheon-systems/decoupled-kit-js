@@ -6,9 +6,12 @@ import { useRouter } from 'next/router';
 interface RecipeProps {
 	title: string;
 	category: string;
-	imageProps?: ImageProps;
 	ingredients: string[];
 	instructions: string;
+	imageProps?: {
+		src: ImageProps['src'];
+		alt?: ImageProps['alt'];
+	};
 	children?: JSX.Element;
 }
 
@@ -17,13 +20,16 @@ interface RecipeProps {
  * @param props - The props needed for the Recipe component
  * @param props.title - The title of the recipe
  * @param props.category - The identifying category of your recipe
- * @param props.imageProps - All props the user wishes to pass to the next/image component @see {@link https://nextjs.org/docs/api-reference/next/image} for all next/image documentation
  * @param props.ingredients - An array of strings with ingredients to be displayed
  * @param props.instructions - Instructions from a CMS, usually a string of raw HTML. This string will be set as `dangerouslySetInnerHTML`
- * @returns A recipe component with content and an optional image passed by the user
+  * @param props.imageProps - Accepts a src and optional alt text for the next/image component. @see {@link https://nextjs.org/docs/api-reference/next/image} for more information.
  * @remarks
- * imageProps is an optional prop to be used if there is an image to be associated with the content.
- * If imageProps is used it is required that the user passes in value for the images src
+ * `imageProps` is an optional prop to be used if there is an image associated with the content.
+ * If `imageProps.src` is a supplied as a prop. Alt text is not required; however,
+ * it is strongly recommended to add alt text to all images for accessibility and SEO.
+ * If alt text is not supplied, the title of the content will be used.
+ * @returns A recipe component with content and an optional image passed by the user
+
  */
 const Recipe: React.FC<RecipeProps> = ({
 	title,
@@ -52,7 +58,13 @@ const Recipe: React.FC<RecipeProps> = ({
 			</header>
 			{imageProps ? (
 				<div className="relative max-w-lg mx-auto min-w-full h-[50vh] rounded-lg shadow-lg overflow-hidden mt-12 mb-10">
-					<Image {...imageProps} />
+					<Image
+						priority
+						src={imageProps.src}
+						layout="fill"
+						objectFit="cover"
+						alt={imageProps.alt ? imageProps.alt : title}
+					/>
 				</div>
 			) : null}
 

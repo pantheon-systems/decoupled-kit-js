@@ -3,8 +3,6 @@ import Recipe from '../../components/recipe';
 import exampleRecipeData from '../data/exampleRecipeData.json';
 import { vi } from 'vitest';
 
-vi.mock('../../__mocks__/next/image');
-
 vi.mock('next/router', () => ({
 	useRouter: () => ({
 		locale: 'en',
@@ -20,15 +18,13 @@ describe('<Recipe />', () => {
 		const { asFragment } = render(
 			<Recipe
 				title={exampleRecipeData[0].title}
-				category={exampleRecipeData[0].category}
+				category={exampleRecipeData[0].field_recipe_category[0].name}
 				imageProps={{
-					priority: true,
-					src: exampleRecipeData[0].imgSrc,
-					layout: 'fill',
-					objectFit: 'cover',
+					src: exampleRecipeData[0].field_media_image?.uri.url,
+					alt: 'Guacamole!',
 				}}
-				ingredients={exampleRecipeData[0].ingredients}
-				instructions={exampleRecipeData[0].instructions}
+				ingredients={exampleRecipeData[0].field_ingredients}
+				instructions={exampleRecipeData[0].field_recipe_instruction.value}
 			/>,
 		);
 
