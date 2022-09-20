@@ -30,8 +30,8 @@ describe('<ContentWithImage />', () => {
 				content={content}
 				date={new Date(date).toLocaleDateString()}
 				imageProps={{
-					src: sourceUrl as string,
-					alt: altText as string,
+					src: sourceUrl,
+					alt: altText,
 				}}
 			/>,
 		);
