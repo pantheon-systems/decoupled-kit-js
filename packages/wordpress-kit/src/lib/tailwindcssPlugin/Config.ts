@@ -1,5 +1,10 @@
 import { Config } from 'tailwindcss';
-import { colorList, fontSizeList, gradientList } from './Constants';
+import {
+	colorList,
+	fontSizeList,
+	gradientList,
+	proseOverride,
+} from './Constants';
 
 const colorClasses = colorList.map((color) => `.has-${color.name}-color`);
 
@@ -44,4 +49,5 @@ export const mergeToConfig: Config = {
 		'.wp-block-cover',
 		'.wp-block-media-text',
 	],
+	...proseOverride,
 };
