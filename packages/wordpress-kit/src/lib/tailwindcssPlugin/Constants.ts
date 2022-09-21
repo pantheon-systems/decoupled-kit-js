@@ -451,3 +451,19 @@ export const gradientList = [
 		],
 	},
 ];
+
+export const proseOverride = {
+	theme: {
+		extend: {
+			typography: () => ({
+				DEFAULT: {
+					css: {
+						'ul > li::marker': {
+							color: 'inherit',
+						},
+					},
+				},
+			}),
+		},
+	},
+};
