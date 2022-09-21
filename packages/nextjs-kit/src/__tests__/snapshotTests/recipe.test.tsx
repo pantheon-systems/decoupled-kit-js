@@ -21,7 +21,7 @@ describe('<Recipe />', () => {
 				category={exampleRecipeData[0].field_recipe_category[0].name}
 				imageProps={{
 					src: exampleRecipeData[0].field_media_image?.uri.url,
-					alt: 'Guacamole!',
+					alt: exampleRecipeData[0].thumbnail.resourceIdObjMeta.alt,
 				}}
 				ingredients={exampleRecipeData[0].field_ingredients}
 				instructions={exampleRecipeData[0].field_recipe_instruction.value}

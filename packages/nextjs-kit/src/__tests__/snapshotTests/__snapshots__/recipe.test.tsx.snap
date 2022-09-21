@@ -31,7 +31,7 @@ exports[`<Recipe /> > should render 'recipe' 1`] = `
         style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
       >
         <img
-          alt="Guacamole!"
+          alt="A bowl of guacamole"
           data-nimg="fill"
           decoding="async"
           sizes="100vw"

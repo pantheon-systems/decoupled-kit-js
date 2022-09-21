@@ -15,6 +15,11 @@
 				"url": "https://dev-decoupled-drupal-qa.pantheonsite.io/sites/default/files/2022-07/guacamole.jpeg"
 			}
 		},
+		"thumbnail": {
+			"resourceIdObjMeta": {
+				"alt": "A bowl of guacamole"
+			}
+		},
 		"field_recipe_category": [
 			{
 				"name": "Snacks"
