@@ -17,9 +17,8 @@ if (
 }
 
 const injectedOptions = {}
-if (process.env.PANTHEON_DEPLOY_PATH) {
-	injectedOptions['pathPrefix'] = process.env.PANTHEON_DEPLOY_PATH
-	// set the PREFIX_PATHS env var to true for Gatsby's build process
+if (process.env.PANTHEON_UPLOAD_PATH) {
+	injectedOptions['pathPrefix'] = process.env.PANTHEON_UPLOAD_PATH
 }
 
 // Use URL from .env if it exists, otherwise fall back on the

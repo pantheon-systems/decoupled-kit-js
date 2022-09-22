@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { Link, withPrefix } from 'gatsby'
 
 export const withGrid = Component => {
@@ -33,7 +33,7 @@ export const PostGridItem = ({ content: post }) => {
 	const altText = post?.featuredImage?.node.altText || post.title
 
 	return (
-		<Link to={withPrefix(`/posts${post.uri}`)}>
+		<Link to={`/posts${post.uri}`}>
 			<div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500">
 				<div className="flex-shrink-0 relative h-40">
 					{imageData !== '' ? (
@@ -44,11 +44,10 @@ export const PostGridItem = ({ content: post }) => {
 							alt={altText}
 						/>
 					) : (
-						<StaticImage
+						<img
+							className="bg-black w-full h-full"
+							src={withPrefix('pantheon.png')}
 							alt="Pantheon Logo"
-							src="../../static/pantheon.png"
-							className="bg-black h-full w-full"
-							objectFit="fill"
 						/>
 					)}
 				</div>
@@ -66,7 +65,7 @@ export const PageGridItem = ({ content: { page } }) => {
 	const altText = page?.featuredImage?.node.altText || page.title
 
 	return (
-		<Link to={withPrefix(`/pages${page.uri}`)}>
+		<Link to={`/pages${page.uri}`}>
 			<div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500">
 				<div className="flex-shrink-0 relative h-40">
 					{imageData !== '' ? (
@@ -77,11 +76,10 @@ export const PageGridItem = ({ content: { page } }) => {
 							alt={altText}
 						/>
 					) : (
-						<StaticImage
+						<img
+							className="bg-black w-full h-full"
+							src={withPrefix('pantheon.png')}
 							alt="Pantheon Logo"
-							src="../../static/pantheon.png"
-							className="bg-black h-full w-full"
-							objectFit="fill"
 						/>
 					)}
 				</div>
