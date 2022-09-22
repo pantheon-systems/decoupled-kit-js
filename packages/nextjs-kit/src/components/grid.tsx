@@ -5,7 +5,6 @@ import React from 'react';
  * @param cols - The number of columns to build the grid with
  * @param children - The JSX elements used as the content of the grid
  * @returns A style and positioning helper grid component meant to be used with the withGrid component
- * @remarks
  */
 
 export const Grid = ({
@@ -13,7 +12,7 @@ export const Grid = ({
 	children,
 }: {
 	cols?: string;
-	children?: JSX.Element | JSX.Element[];
+	children?: JSX.Element[];
 }) => {
 	return (
 		<div
@@ -28,19 +27,19 @@ export const Grid = ({
 
 /**
  *
- * @param props - props to spread on
- * @param children - The JSX elements used as the content of the grid
- * @returns A style and positioning helper grid component meant to be used with the withGrid component
- * @remarks
+ * @param props - props to spread onto the passed component
+ * @param Component - Element to be passed to the Grid component
+ * @param data - The data that will be displayed in the grid
+ * @param props.contentType - An optional prop to display the desired content type in the case that no content was found
+ * @returns A Higher Order Component to use Grid
  */
-// a Higher Order Component to use Grid
 export const withGrid = (Component: React.ElementType) => {
 	const GridedComponent = ({
 		data,
 		...props
 	}: {
 		data: Record<string, string | number>[];
-		contentType: string;
+		contentType?: string;
 	}): JSX.Element => {
 		return (
 			<>
