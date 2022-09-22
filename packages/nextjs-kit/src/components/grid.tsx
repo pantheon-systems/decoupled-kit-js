@@ -2,9 +2,9 @@ import React from 'react';
 
 /**
  *
- * @param cols - The number of columns to build the grid with
+ * @param cols - The number of columns in the grid
  * @param children - The JSX elements used as the content of the grid
- * @returns A style and positioning helper grid component meant to be used with the withGrid component
+ * @returns A style and positioning helper grid component that can be used with the withGrid HOC component
  */
 
 export const Grid = ({
