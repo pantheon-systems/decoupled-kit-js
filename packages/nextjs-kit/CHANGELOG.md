@@ -1,5 +1,18 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.1.0
+
+### Minor Changes
+
+- 547ee6e: Added Paginator component, added TSDoc comments to exported types and
+  interfaces
+
+### Patch Changes
+
+- 66aeea3: Upgraded next to latest version, changed starter kits to build and
+  start using standalone output mode.
+- ee835e8: Update prettierrc and reformat spaces -> tabs for accessibility
+
 ## 1.1.0-canary.2
 
 ### Patch Changes

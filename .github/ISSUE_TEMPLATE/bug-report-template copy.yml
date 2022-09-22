@@ -1,0 +1,25 @@
+name: Fix or Update Docs Content
+description: Report an issue in the documentation
+title: '[docs]: '
+labels:
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this issue!
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Describe the issue
+      placeholder: Issue description
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-change
+    attributes:
+      label: Proposed Change
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information

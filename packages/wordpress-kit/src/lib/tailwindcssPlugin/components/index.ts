@@ -5,6 +5,7 @@ import { Quote } from './Quote';
 import { GalleryComponent } from './Gallery';
 import { AudioComponent } from './Audio';
 import { CoverComponent } from './Cover';
+import { mediaAndText } from './MediaAndText';
 
 export {
 	ImageComponent,
@@ -14,4 +15,5 @@ export {
 	GalleryComponent,
 	AudioComponent,
 	CoverComponent,
+	mediaAndText,
 };

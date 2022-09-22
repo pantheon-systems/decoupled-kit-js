@@ -1,6 +1,7 @@
 ---
 id: 'gatsby-wordpress-env-vars'
 title: 'Setting Environment Variables'
+sidebar_position: 1
 slug: '/Frontend Starters/Gatsby WordPress/Setting Environment Variables'
 ---
 

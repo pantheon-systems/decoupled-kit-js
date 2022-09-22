@@ -1,4 +1,4 @@
-import { Color, FontSize } from '../../types/TailwindcssPlugin';
+import { Color, FontSize } from '../../types';
 
 export const colorList: Color[] = [
 	{
@@ -451,3 +451,19 @@ export const gradientList = [
 		],
 	},
 ];
+
+export const proseOverride = {
+	theme: {
+		extend: {
+			typography: () => ({
+				DEFAULT: {
+					css: {
+						'ul > li::marker': {
+							color: 'inherit',
+						},
+					},
+				},
+			}),
+		},
+	},
+};
