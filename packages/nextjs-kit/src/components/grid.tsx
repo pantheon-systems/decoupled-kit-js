@@ -31,7 +31,7 @@ export const Grid = ({
  * @param Component - Element to be passed to the Grid component
  * @param data - The data that will be displayed in the grid
  * @param props.contentType - An optional prop to display the desired content type in the case that no content was found
- * @returns A Higher Order Component to use Grid
+ * @returns A Higher Order Component that utilizes a basic Grid
  */
 export const withGrid = (Component: React.ElementType) => {
 	const GridedComponent = ({
