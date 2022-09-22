@@ -111,7 +111,7 @@ exports[`<SSGISRExampleTemplate /> > should render with posts 1`] = `
                 class="flex-shrink-0 relative h-40"
               >
                 <div
-                  class="w-full h-full bg-gradient-to-b from-blue-400 to-blue-500"
+                  class="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500"
                 />
               </div>
               <h2

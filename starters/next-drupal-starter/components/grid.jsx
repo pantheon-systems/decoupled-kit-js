@@ -16,7 +16,7 @@ export const Grid = ({ cols = '3', children }) => {
 };
 
 const GradientPlaceholder = () => (
-	<div className="w-full h-full bg-gradient-to-b from-blue-400 to-blue-500" />
+	<div className="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500" />
 );
 
 // a Higher Order Component to use Grid

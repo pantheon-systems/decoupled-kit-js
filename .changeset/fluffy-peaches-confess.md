@@ -4,5 +4,5 @@
 '@pantheon-systems/next-wordpress-starter': minor
 ---
 
-Remove pantheon logo for cards that doesn't have featured image and use a
-generic gradient instead
+Remove pantheon logo for cards that don't have featured image, and use a generic
+gradient instead

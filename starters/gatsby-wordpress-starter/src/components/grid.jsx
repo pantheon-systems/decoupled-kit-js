@@ -4,7 +4,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 
 const GradientPlaceholder = () => (
-	<div className="w-full h-full bg-gradient-to-b from-blue-400 to-blue-500" />
+	<div className="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500" />
 )
 
 export const withGrid = Component => {
