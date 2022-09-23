@@ -42,16 +42,16 @@ const Footer: React.FC<FooterMenuProps> = ({
 				if (footerMenuItems[i + 1] && hasParent(footerMenuItems[i + 1])) {
 					menuArr.push(
 						<ul key={i}>
-							<li className="list-disc text-blue-300">
+							<li className="ps-list-disc ps-text-blue-300">
 								<Link href={footerMenuItems[i].href}>
-									<a className="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300">
+									<a className="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300">
 										{footerMenuItems[i].linkText}
 									</a>
 								</Link>
 							</li>
-							<li className="list-disc text-blue-300 ml-3">
+							<li className="ps-list-disc ps-text-blue-300 ps-ml-3">
 								<Link href={footerMenuItems[i + 1].href}>
-									<a className="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300">
+									<a className="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300">
 										{footerMenuItems[i + 1].linkText}
 									</a>
 								</Link>
@@ -62,9 +62,9 @@ const Footer: React.FC<FooterMenuProps> = ({
 					i++;
 				} else {
 					menuArr.push(
-						<li key={i} className="list-disc text-blue-300">
+						<li key={i} className="ps-list-disc ps-text-blue-300">
 							<Link href={footerMenuItems[i].href}>
-								<a className="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300">
+								<a className="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300">
 									{footerMenuItems[i].linkText}
 								</a>
 							</Link>
@@ -74,15 +74,15 @@ const Footer: React.FC<FooterMenuProps> = ({
 			}
 		}
 		return (
-			<nav className="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg">
+			<nav className="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg">
 				<ul>{menuArr?.map((menu) => menu)}</ul>
 			</nav>
 		);
 	};
 	return (
-		<footer className="w-full text-white bg-black p-4 mt-12">
+		<footer className="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12">
 			<FooterMenu />
-			<div className="flex my-4 p-2">{children}</div>
+			<div className="ps-flex ps-my-4 ps-p-2">{children}</div>
 		</footer>
 	);
 };
