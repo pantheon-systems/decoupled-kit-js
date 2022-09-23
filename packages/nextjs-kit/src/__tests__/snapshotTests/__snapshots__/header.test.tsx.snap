@@ -3,37 +3,37 @@
 exports[`<Header /> > should render 'header' 1`] = `
 <DocumentFragment>
   <div
-    class="my-0 pt-10 px-5 text-xl"
+    class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
   >
     <nav>
       <ul
-        class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+        class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
       >
         <li
-          class="mr-auto"
+          class="ps-mr-auto"
         >
           <a
-            class="hover:underline"
+            class="hover:ps-underline"
             href="/"
           >
             Home
           </a>
         </li>
         <li
-          class="mx-4"
+          class="ps-mx-4"
         >
           <a
-            class="hover:underline"
+            class="hover:ps-underline"
             href="/posts"
           >
             Posts
           </a>
         </li>
         <li
-          class="mx-4"
+          class="ps-mx-4"
         >
           <a
-            class="hover:underline"
+            class="hover:ps-underline"
             href="/pages"
           >
             Pages
