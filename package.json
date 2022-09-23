@@ -99,8 +99,7 @@
 			"jpeg-js@<0.4.4": ">=0.4.4",
 			"got@<11.8.5": ">=11.8.5",
 			"parse-path@<5.0.0": ">=5.0.0",
-			"parse-url@<8.1.0": ">=8.1.0",
-			"file-type@>=13.0.0 <16.5.4": ">=16.5.4"
+			"parse-url@<8.1.0": ">=8.1.0"
 		},
 		"peerDependencyRules": {
 			"ignoreMissing": [
