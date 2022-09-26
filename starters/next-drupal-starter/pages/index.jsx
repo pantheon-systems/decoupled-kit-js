@@ -3,7 +3,8 @@ import { sortDate } from '@pantheon-systems/nextjs-kit';
 import { isMultiLanguage } from '../lib/isMultiLanguage';
 import { getCurrentLocaleStore, globalDrupalStateStores } from '../lib/stores';
 
-import { ArticleGridItem, withGrid } from '../components/grid';
+import { ArticleGridItem } from '../components/grid';
+import { withGrid } from '@pantheon-systems/nextjs-kit';
 import Image from 'next/image';
 import Layout from '../components/layout';
 
@@ -40,6 +41,13 @@ export default function HomepageTemplate({
 	);
 
 	const ArticleGrid = withGrid(ArticleGridItem);
+	const Fallback = () => {
+		return (
+			<>
+				<h1>No Data</h1>
+			</>
+		);
+	};
 
 	return (
 		<Layout footerMenu={footerMenu}>
@@ -53,7 +61,7 @@ export default function HomepageTemplate({
 				<section>
 					<ArticleGrid
 						data={sortedArticles}
-						contentType="articles"
+						cols={'4'}
 						multiLanguage={multiLanguage}
 					/>
 				</section>

@@ -2,44 +2,123 @@
 
 exports[`<Grid /> > should render 'Grid' 1`] = `
 <DocumentFragment>
-  <div>
-    <div
-      class="mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
-    >
-      <div>
-        <h1>
-          Item 1
-        </h1>
-        <p>
-          First item in the grid
-        </p>
-      </div>
-      <div>
-        <h1>
-          Item 2
-        </h1>
-        <p>
-          Second item in the grid
-        </p>
-      </div>
-      <div>
-        <h1>
-          Item 3
-        </h1>
-        <p>
-          Third item in the grid
-        </p>
-      </div>
-      <div>
-        <h1>
-          Item 4
-        </h1>
-        <p>
-          Fourth item in the grid
-        </p>
-      </div>
+  <div
+    class="mt-12 grid gap-5 max-w-content mx-auto lg:max-w-screen-lg lg:grid-cols-3"
+  >
+    <div>
+      <h1>
+        Item 1
+      </h1>
+      <p>
+        First item in the grid
+      </p>
     </div>
-    ,
+    <div>
+      <h1>
+        Item 2
+      </h1>
+      <p>
+        Second item in the grid
+      </p>
+    </div>
+    <div>
+      <h1>
+        Item 3
+      </h1>
+      <p>
+        Third item in the grid
+      </p>
+    </div>
+    <div>
+      <h1>
+        Item 4
+      </h1>
+      <p>
+        Fourth item in the grid
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Grid /> > should render FallbackComponent instead of 'Grid' 1`] = `
+<DocumentFragment>
+  <div
+    class="mt-12 grid gap-5 max-w-content mx-auto lg:max-w-screen-lg lg:grid-cols-3"
+  >
+    <div>
+      <h1>
+        Item 1
+      </h1>
+      <p>
+        First item in the grid
+      </p>
+    </div>
+    <div>
+      <h1>
+        Item 2
+      </h1>
+      <p>
+        Second item in the grid
+      </p>
+    </div>
+    <div>
+      <h1>
+        Item 3
+      </h1>
+      <p>
+        Third item in the grid
+      </p>
+    </div>
+    <div>
+      <h1>
+        Item 4
+      </h1>
+      <p>
+        Fourth item in the grid
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Grid /> > should render a 'Grid' with 4 columns 1`] = `
+<DocumentFragment>
+  <div
+    class="mt-12 grid gap-5 max-w-content mx-auto lg:max-w-screen-lg lg:grid-cols-4"
+  >
+    <div>
+      <h1>
+        Item 1
+      </h1>
+      <p>
+        First item in the grid
+      </p>
+    </div>
+    <div>
+      <h1>
+        Item 2
+      </h1>
+      <p>
+        Second item in the grid
+      </p>
+    </div>
+    <div>
+      <h1>
+        Item 3
+      </h1>
+      <p>
+        Third item in the grid
+      </p>
+    </div>
+    <div>
+      <h1>
+        Item 4
+      </h1>
+      <p>
+        Fourth item in the grid
+      </p>
+    </div>
   </div>
 </DocumentFragment>
 `;

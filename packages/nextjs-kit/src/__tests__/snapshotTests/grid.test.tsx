@@ -26,12 +26,30 @@ const Gridify: React.FC<GridifyProps> = ({
 };
 const GridifyGrid = withGrid(Gridify);
 
+const Fallback: React.FC = (): JSX.Element => {
+	return (
+		<>
+			<h1>No Data</h1>
+		</>
+	);
+};
+
 describe('<Grid />', () => {
 	it("should render 'Grid'", () => {
+		const { asFragment } = render(<GridifyGrid data={exampleGridData} />);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+	it("should render a 'Grid' with 4 columns", () => {
 		const { asFragment } = render(
-			<div>
-				<GridifyGrid data={exampleGridData} contentType="grid data" />,
-			</div>,
+			<GridifyGrid data={exampleGridData} cols={4} />,
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+	it("should render FallbackComponent instead of 'Grid'", () => {
+		const { asFragment } = render(
+			<GridifyGrid data={exampleGridData} FallbackComponent={Fallback} />,
 		);
 
 		expect(asFragment()).toMatchSnapshot();

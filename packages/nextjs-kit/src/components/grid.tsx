@@ -2,23 +2,23 @@ import React from 'react';
 
 /**
  *
- * @param cols - The number of columns in the grid
- * @param children - The JSX elements used as the content of the grid
+ * @param props.cols - The number of columns in the grid, this is an optional prop which will default to 3 if not provided
+ * @param props.children - The JSX elements used as the content of the grid
  * @returns A style and positioning helper grid component that can be used with the withGrid HOC component
  */
 
 export const Grid = ({
-	cols = '3',
+	cols = 3,
 	children,
 }: {
-	cols?: string;
+	cols?: number;
 	children?: JSX.Element[];
 }) => {
 	return (
 		<div
-			className={`mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-${String(
+			className={`mt-12 grid gap-5 max-w-content mx-auto lg:max-w-screen-lg lg:grid-cols-${String(
 				cols,
-			)} lg:max-w-screen-lg`}
+			)}`}
 		>
 			{children}
 		</div>
@@ -30,28 +30,32 @@ export const Grid = ({
  * @param props - props to spread onto the passed component
  * @param Component - Element to be passed to the Grid component
  * @param data - The data that will be displayed in the grid
- * @param props.contentType - An optional prop to display the desired content type in the case that no content was found
- * @returns A Higher Order Component that utilizes a basic Grid
+ * @param props.FallbackComponent -  Component to be rendered if
+ * @param props.cols - The number of columns to build a grid with. This is an optional prop which will default to 3 if not provided
+ * @returns A Higher Order Component that returns the data mapped to the Component in a grid
  */
 export const withGrid = (Component: React.ElementType) => {
 	const GridedComponent = ({
 		data,
+		FallbackComponent,
+		cols,
 		...props
 	}: {
 		data: Record<string, string | number>[];
-		contentType?: string;
+		FallbackComponent?: React.ElementType;
+		cols?: number;
 	}): JSX.Element => {
 		return (
 			<>
 				{data ? (
-					<Grid>
+					<Grid cols={cols}>
 						{data.map((content, i) => {
 							return <Component key={i} content={content} {...props} />;
 						})}
 					</Grid>
-				) : props.contentType ? (
+				) : FallbackComponent ? (
 					<h2 className="text-xl text-center mt-14">
-						No {props.contentType} found 🏜
+						<FallbackComponent />
 					</h2>
 				) : null}
 			</>
