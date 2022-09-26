@@ -1,0 +1,268 @@
+// Vitest Snapshot v1
+
+exports[`<PaginationExampleTemplate /> > should render a success message if authenticated 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+  >
+    <div
+      class="my-0 pt-10 px-5 text-xl"
+    >
+      <nav>
+        <ul
+          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+        >
+          <li
+            class="mr-auto"
+          >
+            <a
+              class="hover:underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/posts"
+            >
+              📰 Posts
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <div
+        class="prose container min-w-full min-h-screen max-w-screen mx-auto"
+      >
+        <main
+          class="flex mx-auto flex-col"
+        >
+          <h1
+            class="my-10 mx-auto"
+          >
+            Pagination example
+          </h1>
+          <section
+            class="mx-auto"
+          >
+            <div
+              class="max-w-screen-md"
+            >
+              <h3
+                class="mb-8 prose-sm"
+              >
+                Page 1/10
+              </h3>
+              <section>
+                <article
+                  class="flex flex-col p-3 w-fit mx-auto mb-10"
+                >
+                  <h2
+                    class="justify-start my-auto text-2xl mb-2"
+                  >
+                    Cumque corporis vel et velit harum
+                  </h2>
+                  <p
+                    class="max-w-prose my-2"
+                  >
+                    This post was modified on Sun Sep 25 2022
+                  </p>
+                </article>
+                <article
+                  class="flex flex-col p-3 w-fit mx-auto mb-10"
+                >
+                  <h2
+                    class="justify-start my-auto text-2xl mb-2"
+                  >
+                    Et dolorem accusantium aut non magnam ipsam
+                  </h2>
+                  <p
+                    class="max-w-prose my-2"
+                  >
+                    This post was modified on Sun Sep 25 2022
+                  </p>
+                </article>
+                <article
+                  class="flex flex-col p-3 w-fit mx-auto mb-10"
+                >
+                  <h2
+                    class="justify-start my-auto text-2xl mb-2"
+                  >
+                    Maxime molestias tempora ut
+                  </h2>
+                  <p
+                    class="max-w-prose my-2"
+                  >
+                    This post was modified on Sun Sep 25 2022
+                  </p>
+                </article>
+                <article
+                  class="flex flex-col p-3 w-fit mx-auto mb-10"
+                >
+                  <h2
+                    class="justify-start my-auto text-2xl mb-2"
+                  >
+                    Voluptas odio quod expedita incidunt ipsa iusto
+                  </h2>
+                  <p
+                    class="max-w-prose my-2"
+                  >
+                    This post was modified on Sun Sep 25 2022
+                  </p>
+                </article>
+                <article
+                  class="flex flex-col p-3 w-fit mx-auto mb-10"
+                >
+                  <h2
+                    class="justify-start my-auto text-2xl mb-2"
+                  >
+                    Est expedita ipsum impedit ut
+                  </h2>
+                  <p
+                    class="max-w-prose my-2"
+                  >
+                    This post was modified on Sun Sep 25 2022
+                  </p>
+                </article>
+              </section>
+              <div
+                class="sticky lg:bottom-12 bottom-4"
+              >
+                <div
+                  class="flex flex-row justify-center mx-auto mt-auto mb-4"
+                >
+                  <button
+                    class="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white"
+                    disabled=""
+                    id="back-btn"
+                  >
+                    &lt;
+                  </button>
+                  <button
+                    class="
+          block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-blue-700 border-2
+          "
+                  >
+                    1
+                  </button>
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 
+          "
+                  >
+                    2
+                  </button>
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 
+          "
+                  >
+                    3
+                  </button>
+                  <button
+                    class="hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300\\"
+            }"
+                  >
+                    ...
+                  </button>
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 
+          "
+                  >
+                    8
+                  </button>
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 
+          "
+                  >
+                    9
+                  </button>
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 
+          "
+                  >
+                    10
+                  </button>
+                  <button
+                    class="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white"
+                    id="next-btn"
+                  >
+                    &gt;
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </main>
+    <footer
+      class="w-full text-white bg-black p-4 mt-12"
+    >
+      <nav
+        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+      >
+        <ul />
+      </nav>
+      <div
+        class="flex my-4 p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2022 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://wordpress.com/"
+          >
+            WordPress
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

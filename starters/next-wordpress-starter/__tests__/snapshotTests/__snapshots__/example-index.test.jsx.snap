@@ -93,6 +93,14 @@ exports[`<ExamplesPageTemplate /> > should render the examples list page 1`] = `
               </a>
                - by default, this starter kit is optimized for SSR and Edge Caching on Pantheon. This example is provided for cases where Next.js static generation options would be beneficial.
             </li>
+            <li>
+              <a
+                href="/examples/pagination"
+              >
+                Pagination
+              </a>
+               - a paginated list with a large dataset.
+            </li>
           </ul>
         </div>
       </section>
