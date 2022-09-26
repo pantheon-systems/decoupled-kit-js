@@ -103,7 +103,13 @@ export class ColorUtilities {
 					color: this.getColor(color),
 				},
 			}),
-			{},
+			{
+				'.has-text-color': {
+					strong: {
+						color: 'inherit !important',
+					},
+				},
+			},
 		);
 
 	/**
