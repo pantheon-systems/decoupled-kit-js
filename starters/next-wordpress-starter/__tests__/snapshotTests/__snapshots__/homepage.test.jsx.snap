@@ -121,9 +121,8 @@ exports[`<HomepageTemplate /> > should render with posts 1`] = `
               <div
                 class="flex-shrink-0 relative h-40"
               >
-                <img
-                  alt="Pantheon Logo"
-                  src="/pantheon.png"
+                <div
+                  class="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500"
                 />
               </div>
               <h2
