@@ -38,12 +38,13 @@
 		"lint-staged": "lint-staged"
 	},
 	"devDependencies": {
-		"@pantheon-systems/eslint-config": "*",
 		"@pantheon-systems/configs": "*",
+		"@pantheon-systems/eslint-config": "*",
 		"@testing-library/react": "12.1.5",
 		"@vitejs/plugin-react": "^2.0.0",
 		"autoprefixer": "^10.4.4",
 		"c8": "^7.12.0",
+		"eslint-plugin-prettier": "^4.2.1",
 		"next": "^12.2.5",
 		"postcss": "^8.4.12",
 		"react": "17.0.2",

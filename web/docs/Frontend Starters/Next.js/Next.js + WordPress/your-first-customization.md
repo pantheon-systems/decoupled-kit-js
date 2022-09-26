@@ -1,7 +1,7 @@
 ---
 id: 'next-wordpress-customization'
 title: 'Your First Next.js & WordPress Customization'
-sidebar_position: 3
+sidebar_position: 2
 slug:
   '/Frontend Starters/Next.js/Next.js + WordPress/Your First Next.js & WordPress
   Customization'

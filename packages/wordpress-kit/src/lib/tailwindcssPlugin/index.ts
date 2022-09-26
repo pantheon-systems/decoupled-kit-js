@@ -7,6 +7,7 @@ import {
 	GalleryComponent,
 	AudioComponent,
 	CoverComponent,
+	mediaAndText,
 } from './components';
 import { mergeToConfig } from './Config';
 import { ColorUtilities, FontsUtilities } from './utilities';
@@ -58,5 +59,5 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 		quoteUtilities,
 	]);
 
-	addComponents([table, image, pullQuote, gallery, audio, cover]);
+	addComponents([table, image, pullQuote, gallery, audio, cover, mediaAndText]);
 }, mergeToConfig);
