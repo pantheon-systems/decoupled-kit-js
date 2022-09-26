@@ -1,11 +1,16 @@
 import { ServerResponse } from 'http';
 import { DrupalState } from '@gdwc/drupal-state';
 
-import defaultFetch from './fetch/defaultFetch';
+import defaultFetch from './defaultFetch';
 
-import { TJsonApiBody } from 'jsona/lib/JsonaTypes';
-import { DrupalStateConfig } from '@gdwc/drupal-state/dist/declarations/src/types/types';
+import type { TJsonApiBody } from 'jsona/lib/JsonaTypes';
+import type { DrupalStateConfig } from '@gdwc/drupal-state/src/types/types';
 
+/**
+ * Configures DrupalState to integrate
+ * with a Decoupled Drupal CMS on Pantheon
+ * @see {@link DrupalStateConfig} for the full list parameters
+ */
 class PantheonDrupalState extends DrupalState {
 	constructor({
 		apiBase,
