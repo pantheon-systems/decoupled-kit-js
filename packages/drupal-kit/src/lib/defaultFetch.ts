@@ -1,4 +1,4 @@
-import { ServerResponse } from 'http';
+import type { ServerResponse } from 'http';
 import fetch from 'isomorphic-fetch';
 
 import addSurrogateKeyHeader from './utils/addSurrogateKeyHeader';
