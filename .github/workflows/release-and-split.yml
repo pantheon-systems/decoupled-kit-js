@@ -66,6 +66,7 @@ jobs:
             split_repository: 'next-drupal-starter'
           - local_path: 'starters/next-wordpress-starter'
             split_repository: 'next-wordpress-starter'
+            # docs site
           - local_path: 'web'
             split_repository: 'decoupled-kit-js-docs'
     steps:
