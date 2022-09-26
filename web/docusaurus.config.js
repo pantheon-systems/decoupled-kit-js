@@ -23,28 +23,33 @@ const config = {
 	projectName: 'decoupled-kit-js', // Usually your repo name.
 
 	plugins: [
-		[
-			'docusaurus-plugin-typedoc',
-			{
-				id: 'api-1',
-				...drupalKitTypedocOptions,
-				cleanOutputDir: true,
-			},
-		],
-		[
-			'docusaurus-plugin-typedoc',
-			{
-				id: 'api-2',
-				...wordpressKitTypedocOptions,
-			},
-		],
-		[
-			'docusaurus-plugin-typedoc',
-			{
-				id: 'api-3',
-				...nextjskitTypedocOptions,
-			},
-		],
+		// Prevent trying to generate api reference when building on the platform
+		...(process.env.PANTHEON_DEPLOYMENT_URL
+			? []
+			: [
+					[
+						'docusaurus-plugin-typedoc',
+						{
+							id: 'api-1',
+							...drupalKitTypedocOptions,
+							cleanOutputDir: true,
+						},
+					],
+					[
+						'docusaurus-plugin-typedoc',
+						{
+							id: 'api-2',
+							...wordpressKitTypedocOptions,
+						},
+					],
+					[
+						'docusaurus-plugin-typedoc',
+						{
+							id: 'api-3',
+							...nextjskitTypedocOptions,
+						},
+					],
+			  ]),
 	],
 
 	presets: [
