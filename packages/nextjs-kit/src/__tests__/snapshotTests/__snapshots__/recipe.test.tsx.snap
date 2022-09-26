@@ -3,29 +3,29 @@
 exports[`<Recipe /> > should render 'recipe' 1`] = `
 <DocumentFragment>
   <article
-    class="prose lg:prose-xl mt-10 mx-auto h-fit p-4 sm:p-0"
+    class="ps-prose lg:ps-prose-xl ps-mt-10 ps-mx-auto h-fit ps-p-4 sm:ps-p-0"
   >
     <header>
       <h1>
         Guacamole
       </h1>
       <div
-        class="flex flex-row justify-between"
+        class="ps-flex ps-flex-row ps-justify-between"
       >
         <a
-          class="font-normal cursor-pointer"
+          class="ps-font-normal ps-cursor-pointer"
         >
           Back →
         </a>
         <span
-          class="text pb-2 pr-3 text-sm text-slate-400"
+          class="text ps-pb-2 ps-pr-3 ps-text-sm text-slate-400"
         >
           Snacks
         </span>
       </div>
     </header>
     <div
-      class="relative max-w-lg mx-auto min-w-full h-[50vh] rounded-lg shadow-lg overflow-hidden mt-12 mb-10"
+      class="ps-relative ps-max-w-lg ps-mx-auto ps-min-w-full h-[50vh] ps-rounded-lg ps-shadow-lg ps-overflow-hidden ps-mt-12 ps-mb-10"
     >
       <span
         style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
@@ -42,10 +42,10 @@ exports[`<Recipe /> > should render 'recipe' 1`] = `
       </span>
     </div>
     <div
-      class="flex flex-col sm:flex-row"
+      class="ps-flex ps-flex-col sm:ps-flex-row"
     >
       <section
-        class="flex flex-col min-w-fit sm:border-r-2 pr-4"
+        class="ps-flex ps-flex-col min-w-fit sm:ps-border-r-2 ps-pr-4"
       >
         <h2>
           Ingredients
@@ -75,10 +75,10 @@ exports[`<Recipe /> > should render 'recipe' 1`] = `
         </ul>
       </section>
       <section
-        class="flex flex-col pl-4"
+        class="ps-flex ps-flex-col ps-pl-4"
       >
         <h2
-          class="ml-4"
+          class="ps-ml-4"
         >
           Directions
         </h2>

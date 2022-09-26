@@ -10,5 +10,6 @@ module.exports = {
 	theme: {
 		extend: {},
 	},
+	prefix: 'ps-',
 	plugins: [require('@tailwindcss/typography')],
 };
