@@ -30,7 +30,7 @@ export const Grid = ({
  * @param props - props to spread onto the passed component
  * @param Component - Element to be passed to the Grid component
  * @param data - The data that will be displayed in the grid
- * @param props.FallbackComponent -  Component to be rendered if
+ * @param props.FallbackComponent -  Component to be rendered if data is undefined
  * @param props.cols - The number of columns to build a grid with. This is an optional prop which will default to 3 if not provided
  * @returns A Higher Order Component that returns the data mapped to the Component in a grid
  */
