@@ -33,6 +33,8 @@ jobs:
         run: pnpm config set store-dir $PNPM_CACHE_FOLDER
       - name: install dependencies
         run: pnpm install
+        # generate the api reference here so the changes
+        # will be added to the commit in the next step.
       - name: generate api reference
         uses: './generate-docs.yml'
       - name: create and publish versions
