@@ -59,19 +59,17 @@ exports[`<PaginationExampleTemplate /> > should render a success message if auth
       class="mb-auto"
     >
       <div
-        class="prose container min-w-full min-h-screen max-w-screen mx-auto"
+        class="prose container min-w-full max-w-screen mx-auto"
       >
-        <main
-          class="flex mx-auto flex-col"
-        >
-          <h1
-            class="my-10 mx-auto"
-          >
-            Pagination example
-          </h1>
+        <main>
           <section
-            class="mx-auto"
+            class="mx-auto flex-col max-w-xl"
           >
+            <h1
+              class="my-10"
+            >
+              Pagination example
+            </h1>
             <div
               class="ps-max-w-screen-md"
             >
@@ -87,13 +85,17 @@ exports[`<PaginationExampleTemplate /> > should render a success message if auth
                   <h2
                     class="justify-start my-auto text-2xl mb-2"
                   >
-                    Cumque corporis vel et velit harum
+                    Ut culpa iste voluptas consequatur
                   </h2>
                   <p
                     class="max-w-prose my-2"
-                  >
-                    This post was modified on Sun Sep 25 2022
+                  />
+                  <p>
+                    Consequuntur omnis assumenda voluptate aut quam. Dolorem aut aspernatur voluptas delectus. Commodi quia veniam voluptatem vitae rem Assumenda qui non in et facere tempora Corrupti Ut inventore id voluptates sed Mollitia magnam nihil numquam nostrum Nostrum et praesentium ullam ut accusamus Velit eos perferendis error fuga in necessitatibus Nostrum laboriosam iste Sint itaque est facilis […]
                   </p>
+                  
+
+                  <p />
                 </article>
                 <article
                   class="flex flex-col p-3 w-fit mx-auto mb-10"
@@ -101,13 +103,27 @@ exports[`<PaginationExampleTemplate /> > should render a success message if auth
                   <h2
                     class="justify-start my-auto text-2xl mb-2"
                   >
-                    Et dolorem accusantium aut non magnam ipsam
+                    Totam aliquam recusandae autem ipsa
                   </h2>
                   <p
                     class="max-w-prose my-2"
-                  >
-                    This post was modified on Sun Sep 25 2022
+                  />
+                  <p>
+                    Ipsam molestias est omnis.
                   </p>
+                  
+
+                  <p>
+                    Rerum quo quibusdam.
+                  </p>
+                  
+
+                  <p>
+                    Dolor ea eum.
+                  </p>
+                  
+
+                  <p />
                 </article>
                 <article
                   class="flex flex-col p-3 w-fit mx-auto mb-10"
@@ -115,13 +131,22 @@ exports[`<PaginationExampleTemplate /> > should render a success message if auth
                   <h2
                     class="justify-start my-auto text-2xl mb-2"
                   >
-                    Maxime molestias tempora ut
+                    Et ipsa accusantium voluptatem nostrum maiores
                   </h2>
                   <p
                     class="max-w-prose my-2"
-                  >
-                    This post was modified on Sun Sep 25 2022
+                  />
+                  <p>
+                    Perspiciatis ut modi et.
                   </p>
+                  
+
+                  <p>
+                    Consequatur recusandae veniam at repellat.
+                  </p>
+                  
+
+                  <p />
                 </article>
                 <article
                   class="flex flex-col p-3 w-fit mx-auto mb-10"
@@ -129,13 +154,17 @@ exports[`<PaginationExampleTemplate /> > should render a success message if auth
                   <h2
                     class="justify-start my-auto text-2xl mb-2"
                   >
-                    Voluptas odio quod expedita incidunt ipsa iusto
+                    Odio vel voluptas pariatur quas pariatur dicta
                   </h2>
                   <p
                     class="max-w-prose my-2"
-                  >
-                    This post was modified on Sun Sep 25 2022
+                  />
+                  <p>
+                    Vel qui.
                   </p>
+                  
+
+                  <p />
                 </article>
                 <article
                   class="flex flex-col p-3 w-fit mx-auto mb-10"
@@ -143,13 +172,17 @@ exports[`<PaginationExampleTemplate /> > should render a success message if auth
                   <h2
                     class="justify-start my-auto text-2xl mb-2"
                   >
-                    Est expedita ipsum impedit ut
+                    Quia quos eum assumenda alias quisquam a
                   </h2>
                   <p
                     class="max-w-prose my-2"
-                  >
-                    This post was modified on Sun Sep 25 2022
+                  />
+                  <p>
+                    Molestias ab voluptate voluptas alias nesciunt commodi. Qui beatae et vel dolore in blanditiis Voluptatem est rerum odit Rerum esse magnam sapiente Ut sunt tempore et expedita nihil et ut Tempore nihil et tenetur Asperiores Deserunt quidem omnis minus commodi molestiae et quam Nulla ab quia voluptatem et officiis ullam quo. Aliquam eum enim aliquam […]
                   </p>
+                  
+
+                  <p />
                 </article>
               </section>
               <div

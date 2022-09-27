@@ -9,7 +9,7 @@ export async function paginationPostsQuery() {
 					node {
 						id
 						title
-						date
+						excerpt
 					}
 				}
 			}

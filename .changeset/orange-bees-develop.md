@@ -1,5 +1,5 @@
 ---
-"@pantheon-systems/next-wordpress-starter": patch
+'@pantheon-systems/next-wordpress-starter': minor
 ---
 
 Added a Paginated Data Example

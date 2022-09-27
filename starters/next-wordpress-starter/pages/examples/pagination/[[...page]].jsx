@@ -16,9 +16,10 @@ export default function PaginationExampleTemplate({ menuItems, posts }) {
 					className="flex flex-col p-3 w-fit mx-auto mb-10"
 				>
 					<h2 className="justify-start my-auto text-2xl mb-2">{item.title}</h2>
-					<p className="max-w-prose my-2">
-						This post was modified on {new Date(item?.date).toDateString()}
-					</p>
+					<p
+						className="max-w-prose my-2"
+						dangerouslySetInnerHTML={{ __html: item.excerpt }}
+					/>
 				</article>
 			);
 		});
@@ -30,10 +31,11 @@ export default function PaginationExampleTemplate({ menuItems, posts }) {
 				<meta name="description" content="Powered by Pantheon Decoupled Kit" />
 				<link rel="icon" href="/favicon.ico" />
 			</NextSeo>
-			<div className="prose container min-w-full min-h-screen max-w-screen mx-auto">
-				<main className="flex mx-auto flex-col">
-					<h1 className="my-10 mx-auto">Pagination example</h1>
-					<section className="mx-auto">
+			<div className="prose container min-w-full max-w-screen mx-auto">
+				<main>
+					<section className="mx-auto flex-col max-w-xl">
+						<h1 className="my-10">Pagination example</h1>
+
 						<Paginator
 							data={posts}
 							itemsPerPage={5}
