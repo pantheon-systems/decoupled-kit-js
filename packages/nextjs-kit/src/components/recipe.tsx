@@ -41,23 +41,23 @@ const Recipe: React.FC<RecipeProps> = ({
 }: RecipeProps) => {
 	const router = useRouter();
 	return (
-		<article className="prose lg:prose-xl mt-10 mx-auto h-fit p-4 sm:p-0">
+		<article className="ps-prose lg:ps-prose-xl ps-mt-10 ps-mx-auto h-fit ps-p-4 sm:ps-p-0">
 			<header>
 				<h1>{title}</h1>
-				<div className="flex flex-row justify-between">
+				<div className="ps-flex ps-flex-row ps-justify-between">
 					<a
 						onClick={() => router.back()}
-						className="font-normal cursor-pointer"
+						className="ps-font-normal ps-cursor-pointer"
 					>
 						Back &rarr;
 					</a>
-					<span className="text pb-2 pr-3 text-sm text-slate-400">
+					<span className="text ps-pb-2 ps-pr-3 ps-text-sm text-slate-400">
 						{category}
 					</span>
 				</div>
 			</header>
 			{imageProps ? (
-				<div className="relative max-w-lg mx-auto min-w-full h-[50vh] rounded-lg shadow-lg overflow-hidden mt-12 mb-10">
+				<div className="ps-relative ps-max-w-lg ps-mx-auto ps-min-w-full h-[50vh] ps-rounded-lg ps-shadow-lg ps-overflow-hidden ps-mt-12 ps-mb-10">
 					<Image
 						priority
 						src={imageProps.src}
@@ -68,14 +68,14 @@ const Recipe: React.FC<RecipeProps> = ({
 				</div>
 			) : null}
 
-			<div className="flex flex-col sm:flex-row">
-				<section className="flex flex-col min-w-fit sm:border-r-2 pr-4">
+			<div className="ps-flex ps-flex-col sm:ps-flex-row">
+				<section className="ps-flex ps-flex-col min-w-fit sm:ps-border-r-2 ps-pr-4">
 					<h2>Ingredients</h2>
 					<ul>
 						{ingredients?.map((ingredient, i) => {
 							if (ingredient.startsWith('For')) {
 								return (
-									<li className="list-none" key={i}>
+									<li className="ps-list-none" key={i}>
 										<strong>{ingredient}</strong>
 									</li>
 								);
@@ -85,8 +85,8 @@ const Recipe: React.FC<RecipeProps> = ({
 						})}
 					</ul>
 				</section>
-				<section className="flex flex-col pl-4">
-					<h2 className="ml-4">Directions</h2>
+				<section className="ps-flex ps-flex-col ps-pl-4">
+					<h2 className="ps-ml-4">Directions</h2>
 					<div
 						dangerouslySetInnerHTML={{
 							__html: instructions,
