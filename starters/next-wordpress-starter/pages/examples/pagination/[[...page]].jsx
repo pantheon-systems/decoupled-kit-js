@@ -16,7 +16,7 @@ export default function PaginationExampleTemplate({ menuItems, posts }) {
 					className="flex flex-col p-3 w-fit mx-auto mb-10"
 				>
 					<h2 className="justify-start my-auto text-2xl mb-2">{item.title}</h2>
-					<p
+					<div
 						className="max-w-prose my-2"
 						dangerouslySetInnerHTML={{ __html: item.excerpt }}
 					/>
@@ -31,20 +31,17 @@ export default function PaginationExampleTemplate({ menuItems, posts }) {
 				<meta name="description" content="Powered by Pantheon Decoupled Kit" />
 				<link rel="icon" href="/favicon.ico" />
 			</NextSeo>
-			<div className="prose container min-w-full max-w-screen mx-auto">
-				<main>
-					<section className="mx-auto flex-col max-w-xl">
-						<h1 className="my-10">Pagination example</h1>
-
-						<Paginator
-							data={posts}
-							itemsPerPage={5}
-							breakpoints={{ start: 4, end: 8, add: 4 }}
-							routing
-							Component={RenderCurrentItems}
-						/>
-					</section>
-				</main>
+			<div className="prose max-w-screen mx-auto">
+				<section className="flex flex-col">
+					<h1 className="my-10">Pagination example</h1>
+					<Paginator
+						data={posts}
+						itemsPerPage={5}
+						breakpoints={{ start: 4, end: 8, add: 4 }}
+						routing
+						Component={RenderCurrentItems}
+					/>
+				</section>
 			</div>
 		</Layout>
 	);
