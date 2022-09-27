@@ -28,6 +28,8 @@ export const Grid = ({
 /**
  *
  * @param Component - A component that takes in content that is to be displayed on the grid
+ * @remarks
+ * The Component used must accept the data to be displayed as 'content' to function properly
  * @example
  * ```
  * const ArticleCard= ({ content }) => {
