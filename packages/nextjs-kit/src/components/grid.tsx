@@ -16,9 +16,10 @@ export const Grid = ({
 }) => {
 	return (
 		<div
-			className={`mt-12 grid gap-5 max-w-content mx-auto lg:max-w-screen-lg lg:grid-cols-${String(
-				cols,
-			)}`}
+			className={`ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg `}
+			style={{
+				gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
+			}}
 		>
 			{children}
 		</div>
@@ -35,13 +36,13 @@ export const Grid = ({
  * @returns A Higher Order Component that returns the data mapped to the Component in a grid
  */
 export const withGrid = (Component: React.ElementType) => {
-	const GridedComponent = ({
+	const GridedComponent = <Type extends object>({
 		data,
 		FallbackComponent,
 		cols,
 		...props
 	}: {
-		data: Record<string, string | number>[];
+		data: Type[];
 		FallbackComponent?: React.ElementType;
 		cols?: number;
 	}): JSX.Element => {
@@ -54,9 +55,7 @@ export const withGrid = (Component: React.ElementType) => {
 						})}
 					</Grid>
 				) : FallbackComponent ? (
-					<h2 className="text-xl text-center mt-14">
-						<FallbackComponent />
-					</h2>
+					<FallbackComponent />
 				) : null}
 			</>
 		);
