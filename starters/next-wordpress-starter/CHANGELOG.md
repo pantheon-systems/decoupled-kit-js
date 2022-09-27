@@ -1,5 +1,18 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.8.0-canary.1
+
+### Minor Changes
+
+- 2bfe07a: Remove pantheon logo for cards that don't have featured image, and
+  use a generic gradient instead
+
+### Patch Changes
+
+- Updated dependencies [7b14e2d]
+- Updated dependencies [09fb74f]
+  - @pantheon-systems/wordpress-kit@2.6.0-canary.1
+
 ## 0.8.0-canary.0
 
 ### Minor Changes

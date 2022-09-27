@@ -1,5 +1,21 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.2.0-canary.1
+
+### Minor Changes
+
+- 2bfe07a: Remove pantheon logo for cards that don't have featured image, and
+  use a generic gradient instead
+
+### Patch Changes
+
+- Updated dependencies [8b9cb28]
+- Updated dependencies [c36d501]
+- Updated dependencies [6671402]
+- Updated dependencies [9dbbc6b]
+  - @pantheon-systems/nextjs-kit@1.2.0-canary.0
+  - @pantheon-systems/drupal-kit@3.0.1-canary.0
+
 ## 3.1.1-canary.0
 
 ### Patch Changes
