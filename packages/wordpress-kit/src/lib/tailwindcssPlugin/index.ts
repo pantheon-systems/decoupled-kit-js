@@ -8,6 +8,7 @@ import {
 	AudioComponent,
 	CoverComponent,
 	mediaAndText,
+	ButtonsComponent,
 } from './components';
 import { mergeToConfig } from './Config';
 import { ColorUtilities, FontsUtilities } from './utilities';
@@ -48,6 +49,10 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 		alignFull: { minWidth: theme('screen.xl', '1280px') },
 	});
 
+	const buttons = ButtonsComponent({
+		defaultColor: color.getColorByName('primary'),
+	});
+
 	addUtilities([
 		color.getBackgroundUtilities(),
 		color.getBorderColorUtilities(),
@@ -59,5 +64,14 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 		quoteUtilities,
 	]);
 
-	addComponents([table, image, pullQuote, gallery, audio, cover, mediaAndText]);
+	addComponents([
+		table,
+		image,
+		pullQuote,
+		gallery,
+		audio,
+		cover,
+		mediaAndText,
+		buttons,
+	]);
 }, mergeToConfig);

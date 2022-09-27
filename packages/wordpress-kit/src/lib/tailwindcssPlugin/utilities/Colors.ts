@@ -100,7 +100,7 @@ export class ColorUtilities {
 			(acc, color) => ({
 				...acc,
 				[`.has-${color.name}-color`]: {
-					color: this.getColor(color),
+					color: `${this.getColor(color)} !important`,
 				},
 			}),
 			{
@@ -223,4 +223,8 @@ export class ColorUtilities {
 			}),
 			{},
 		);
+	getColorByName = (colorName: string) => {
+		const color = this.findColor(colorName);
+		return this.getColor(color);
+	};
 }
