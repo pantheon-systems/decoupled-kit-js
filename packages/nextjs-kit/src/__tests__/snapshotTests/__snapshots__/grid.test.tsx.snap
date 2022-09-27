@@ -3,7 +3,7 @@
 exports[`<Grid /> > should render 'Grid' 1`] = `
 <DocumentFragment>
   <div
-    class="mt-12 grid gap-5 max-w-content mx-auto lg:max-w-screen-lg lg:grid-cols-3"
+    class="ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg lg:ps-grid-cols-3"
   >
     <div>
       <h1>
@@ -44,7 +44,7 @@ exports[`<Grid /> > should render 'Grid' 1`] = `
 exports[`<Grid /> > should render FallbackComponent instead of 'Grid' 1`] = `
 <DocumentFragment>
   <div
-    class="mt-12 grid gap-5 max-w-content mx-auto lg:max-w-screen-lg lg:grid-cols-3"
+    class="ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg lg:ps-grid-cols-3"
   >
     <div>
       <h1>
@@ -85,7 +85,7 @@ exports[`<Grid /> > should render FallbackComponent instead of 'Grid' 1`] = `
 exports[`<Grid /> > should render a 'Grid' with 4 columns 1`] = `
 <DocumentFragment>
   <div
-    class="mt-12 grid gap-5 max-w-content mx-auto lg:max-w-screen-lg lg:grid-cols-4"
+    class="ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg lg:ps-grid-cols-4"
   >
     <div>
       <h1>

@@ -16,10 +16,9 @@ export const Grid = ({
 }) => {
 	return (
 		<div
-			className={`ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg `}
-			style={{
-				gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
-			}}
+			className={`ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg lg:ps-grid-cols-${String(
+				cols,
+			)}`}
 		>
 			{children}
 		</div>
