@@ -1,5 +1,19 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.2.0-canary.0
+
+### Minor Changes
+
+- 6671402: Added the prefix option in the tailwindcss config so the styles
+  generated from nextjs-kit will not override default tailwindcss classes in a
+  project
+
+### Patch Changes
+
+- 8b9cb28: Added ContentWithImage component to be used for a WP Post or Drupal
+  Article
+- c36d501: Add Recipe Component into nextjs-kit
+
 ## 1.1.0
 
 ### Minor Changes
