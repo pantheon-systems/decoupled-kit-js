@@ -27,23 +27,52 @@ export const Grid = ({
 
 /**
  *
- * @param props - props to spread onto the passed component
- * @param Component - Element to be passed to the Grid component
- * @param data - The data that will be displayed in the grid
- * @param props.FallbackComponent -  Component to be rendered if data is undefined
- * @param props.cols - The number of columns to build a grid with. This is an optional prop which will default to 3 if not provided
+ * @param Component - A component that takes in content that is to be displayed on the grid
+ * @example
+ * ```
+ * const ArticleCard= ({ content }) => {
+ * 	return (
+ * 		<div>
+ * 			<h2>{content.title}</h2>
+ * 			<div>{content.excerpt}</div>
+ * 		</div>
+ * 	)
+ * }
+ * ```
  * @returns A Higher Order Component that returns the data mapped to the Component in a grid
+ * @example
+ * ```
+ * const MyPage = ({ myArticles }) => {
+ * const ArticleGrid = withGrid(ArticleCard)
+ * 	return (
+ * 		<>
+ * 			<ArticleGrid
+ * 				data={myArticles}
+ * 				cols={4}
+ * 				FallbackComponent={<span>No Data Found</span>}
+ * 			/>
+ * 		</>
+ * 	)
+ * }
+ * ```
  */
 export const withGrid = (Component: React.ElementType) => {
-	const GridedComponent = <Type extends object>({
+	/**
+	 * @param props.data - The to be passed to the Component as the content prop
+	 * @param props.cols - The number of columns to build a grid with. This is an optional prop which will default to 3 if not provided
+	 * @default 3
+	 * @param props.FallbackComponent -  Component to be rendered if data is undefined
+	 * @returns The component passed to withGrid in a grid with the given number of columns
+	 */
+	const GridedComponents = <Type extends object>({
 		data,
-		FallbackComponent,
 		cols,
+		FallbackComponent,
 		...props
 	}: {
 		data?: Type[];
-		FallbackComponent?: React.ElementType;
 		cols?: number;
+		FallbackComponent?: React.ElementType;
 	}): JSX.Element => {
 		return (
 			<>
@@ -60,5 +89,5 @@ export const withGrid = (Component: React.ElementType) => {
 		);
 	};
 
-	return GridedComponent;
+	return GridedComponents;
 };
