@@ -1,5 +1,5 @@
 ---
-'@pantheon-systems/nextjs-kit': patch
+'@pantheon-systems/nextjs-kit': minor
 ---
 
 Added a Grid and withGrid Higher Order Component

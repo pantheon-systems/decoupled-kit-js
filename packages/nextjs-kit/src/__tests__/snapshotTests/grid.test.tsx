@@ -48,9 +48,7 @@ describe('<Grid />', () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 	it("should render FallbackComponent instead of 'Grid'", () => {
-		const { asFragment } = render(
-			<GridifyGrid data={exampleGridData} FallbackComponent={Fallback} />,
-		);
+		const { asFragment } = render(<GridifyGrid FallbackComponent={Fallback} />);
 
 		expect(asFragment()).toMatchSnapshot();
 	});

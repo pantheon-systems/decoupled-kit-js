@@ -41,7 +41,7 @@ export const withGrid = (Component: React.ElementType) => {
 		cols,
 		...props
 	}: {
-		data: Type[];
+		data?: Type[];
 		FallbackComponent?: React.ElementType;
 		cols?: number;
 	}): JSX.Element => {
