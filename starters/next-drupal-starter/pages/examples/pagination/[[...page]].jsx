@@ -45,19 +45,17 @@ export default function PaginationExampleTemplate({ data, footerMenu }) {
 				<meta name="description" content="Powered by Pantheon Decoupled Kit" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<div className="prose container min-w-full min-h-screen max-w-screen mx-auto">
-				<main className="flex mx-auto flex-col">
-					<section className="mx-auto">
-						<h1 className="my-10">Pagination example</h1>
-						<Paginator
-							data={data}
-							itemsPerPage={itemsPerPage}
-							breakpoints={{ start: 6, end: 12, add: 6 }}
-							routing
-							Component={RenderCurrentItems}
-						/>
-					</section>
-				</main>
+			<div className="prose max-w-screen mx-auto">
+				<section className="flex flex-col">
+					<h1 className="my-10">Pagination example</h1>
+					<Paginator
+						data={data}
+						itemsPerPage={itemsPerPage}
+						breakpoints={{ start: 6, end: 12, add: 6 }}
+						routing
+						Component={RenderCurrentItems}
+					/>
+				</section>
 			</div>
 		</Layout>
 	);
