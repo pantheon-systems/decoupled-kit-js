@@ -40,13 +40,13 @@
 	},
 	"dependencies": {
 		"graphql": "^14.0.0 || ^15.0.0 || ^16.0.0",
-		"graphql-request": "^4.3.0"
+		"graphql-request": "^5.0.0"
 	},
 	"devDependencies": {
 		"@pantheon-systems/configs": "*",
 		"@pantheon-systems/eslint-config": "*",
-		"tailwindcss": "^3.1.6",
-		"vite-plugin-dts": "^1.4.1"
+		"tailwindcss": "^3.1.8",
+		"vite-plugin-dts": "^1.6.1"
 	},
 	"peerDependencies": {
 		"tailwindcss": "^3.1.6"
