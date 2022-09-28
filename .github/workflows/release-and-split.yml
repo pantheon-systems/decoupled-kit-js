@@ -37,10 +37,10 @@ jobs:
       - name: create and publish versions
         uses: changesets/action@v1
         with:
-          version: .github/scripts/main-release.sh
+          version: pnpm ci:version
           commit: 'Update versions'
           title: 'Update versions'
-          publish: .github/scripts/main-publish.sh
+          publish: pnpm ci:publish
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
