@@ -1,5 +1,16 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.8.0-canary.2
+
+### Minor Changes
+
+- 196c1b9: Added a Paginated Data Example
+
+### Patch Changes
+
+- Updated dependencies [c6e0a77]
+  - @pantheon-systems/nextjs-kit@1.2.0-canary.1
+
 ## 0.8.0-canary.1
 
 ### Minor Changes
