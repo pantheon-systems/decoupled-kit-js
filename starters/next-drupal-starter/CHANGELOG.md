@@ -1,5 +1,13 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.2.0-canary.2
+
+### Patch Changes
+
+- 5c113bb: Fix markup on Pagination Example page
+- Updated dependencies [c6e0a77]
+  - @pantheon-systems/nextjs-kit@1.2.0-canary.1
+
 ## 3.2.0-canary.1
 
 ### Minor Changes
