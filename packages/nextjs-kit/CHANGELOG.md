@@ -1,5 +1,11 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.2.0-canary.1
+
+### Minor Changes
+
+- c6e0a77: Added a Grid and withGrid Higher Order Component
+
 ## 1.2.0-canary.0
 
 ### Minor Changes
