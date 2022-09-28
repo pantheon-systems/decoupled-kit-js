@@ -1,0 +1,91 @@
+// Vitest Snapshot v1
+
+exports[`<Grid /> > should render 'Grid' 1`] = `
+<DocumentFragment>
+  <div
+    class="ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg lg:ps-grid-cols-3"
+  >
+    <div>
+      <h1>
+        Item 1
+      </h1>
+      <p>
+        First item in the grid
+      </p>
+    </div>
+    <div>
+      <h1>
+        Item 2
+      </h1>
+      <p>
+        Second item in the grid
+      </p>
+    </div>
+    <div>
+      <h1>
+        Item 3
+      </h1>
+      <p>
+        Third item in the grid
+      </p>
+    </div>
+    <div>
+      <h1>
+        Item 4
+      </h1>
+      <p>
+        Fourth item in the grid
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Grid /> > should render FallbackComponent instead of 'Grid' 1`] = `
+<DocumentFragment>
+  <h1>
+    No Data
+  </h1>
+</DocumentFragment>
+`;
+
+exports[`<Grid /> > should render a 'Grid' with 4 columns 1`] = `
+<DocumentFragment>
+  <div
+    class="ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg lg:ps-grid-cols-4"
+  >
+    <div>
+      <h1>
+        Item 1
+      </h1>
+      <p>
+        First item in the grid
+      </p>
+    </div>
+    <div>
+      <h1>
+        Item 2
+      </h1>
+      <p>
+        Second item in the grid
+      </p>
+    </div>
+    <div>
+      <h1>
+        Item 3
+      </h1>
+      <p>
+        Third item in the grid
+      </p>
+    </div>
+    <div>
+      <h1>
+        Item 4
+      </h1>
+      <p>
+        Fourth item in the grid
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
