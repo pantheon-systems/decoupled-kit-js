@@ -1,8 +1,12 @@
 # Pantheon Decoupled Kit Gatsby WordPress Starter
 
-## Gatsby Project setup
+## Getting Started
 
-1. Clone this repo:
+[See the getting started guide](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Gatsby/Gatsby%20%2B%20WordPress/intro.md)
+for a more options to create a new Gatsby + WordPress project from this
+template.
+
+1. Clone the template repo:
 
 ```bash
 git clone git@github.com:pantheon-systems/gatsby-wordpress-starter.git
@@ -11,10 +15,10 @@ git clone git@github.com:pantheon-systems/gatsby-wordpress-starter.git
 2. Install node modules
 
 ```bash
-cd decoupled-wp-gatsby-frontend-demo && npm install
+cd gatsby-wordpress-starter && npm install
 ```
 
-3. Save `.env.example` as `.env.development.local` add/update following lines:
+3. Save `.env.example` as `.env.development.local` update following lines:
 
 ```
 WPGRAPHQL_URL=
@@ -48,7 +52,19 @@ Other commands:
   `lando start`).
 - `lando gatsby <command>` - run Gatsby cli commands.
 
+## Pantheon @pantheon-systems/wordpress-kit
+
+The Pantheon `@pantheon-systems/wordpress-kit` is included as a dependency in this
+project. This allows developers to make use of utility functions to simplify the
+process of building and maintaining a Front-End site on Pantheon.
+
+The `tailwindcssPlugin` is included in this project and is used to map WordPress
+Block Editor styles to Tailwind styles.
+
+For more information, see
+https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packages/wordpress-kit
+
 ## Customizing the Starter
 
 For a guide on creating your first Gatsby WordPress customization, see
-[Your First WordPress Customization](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Gatsby%20WordPress/your-first-customization.md)
+[Your First Gatsby + WordPress Customization](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Gatsby/Gatsby%20%2B%20WordPress/your-first-customization.md)

@@ -1,4 +1,4 @@
-import { DrupalState } from '../index';
+import { DrupalState } from './index';
 
 import './style.css';
 

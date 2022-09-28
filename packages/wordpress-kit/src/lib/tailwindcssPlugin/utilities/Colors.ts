@@ -1,8 +1,4 @@
-import type {
-	GradientColors,
-	ThemeType,
-	Color,
-} from '../../../types/TailwindcssPlugin';
+import type { GradientColors, ThemeType, Color } from '../../../types';
 import { colorList, gradientList } from '../Constants';
 
 /**
@@ -104,10 +100,16 @@ export class ColorUtilities {
 			(acc, color) => ({
 				...acc,
 				[`.has-${color.name}-color`]: {
-					color: this.getColor(color),
+					color: `${this.getColor(color)} !important`,
 				},
 			}),
-			{},
+			{
+				'.has-text-color': {
+					strong: {
+						color: 'inherit !important',
+					},
+				},
+			},
 		);
 
 	/**
@@ -221,4 +223,8 @@ export class ColorUtilities {
 			}),
 			{},
 		);
+	getColorByName = (colorName: string) => {
+		const color = this.findColor(colorName);
+		return this.getColor(color);
+	};
 }

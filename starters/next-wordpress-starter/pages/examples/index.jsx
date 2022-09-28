@@ -7,7 +7,7 @@ import Layout from '../../components/layout';
 
 import { getFooterMenu } from '../../lib/Menus';
 
-export default function PostsListTemplate({ menuItems }) {
+export default function ExamplesPageTemplate({ menuItems }) {
 	return (
 		<Layout footerMenu={menuItems}>
 			<NextSeo
@@ -34,6 +34,10 @@ export default function PostsListTemplate({ menuItems }) {
 							this starter kit is optimized for SSR and Edge Caching on
 							Pantheon. This example is provided for cases where Next.js static
 							generation options would be beneficial.
+						</li>
+						<li>
+							<Link href="/examples/pagination">Pagination</Link> - a paginated
+							list with a large dataset.
 						</li>
 					</ul>
 				</div>

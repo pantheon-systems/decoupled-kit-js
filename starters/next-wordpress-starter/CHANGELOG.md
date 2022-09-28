@@ -1,5 +1,40 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.8.0-canary.2
+
+### Minor Changes
+
+- 196c1b9: Added a Paginated Data Example
+
+### Patch Changes
+
+- Updated dependencies [c6e0a77]
+  - @pantheon-systems/nextjs-kit@1.2.0-canary.1
+
+## 0.8.0-canary.1
+
+### Minor Changes
+
+- 2bfe07a: Remove pantheon logo for cards that don't have featured image, and
+  use a generic gradient instead
+
+### Patch Changes
+
+- Updated dependencies [7b14e2d]
+- Updated dependencies [09fb74f]
+  - @pantheon-systems/wordpress-kit@2.6.0-canary.1
+
+## 0.8.0-canary.0
+
+### Minor Changes
+
+- 915c3ac: Added unit and snapshot tests, some minor refactoring
+
+### Patch Changes
+
+- Updated dependencies [6656b11]
+  - @pantheon-systems/wordpress-kit@2.5.1-canary.0
+
 ## 0.7.0
 
 ### Minor Changes
