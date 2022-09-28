@@ -19,7 +19,7 @@ vi.mock('next/router', () => ({
  */
 
 describe(`<PaginationExampleTemplate />`, () => {
-	it('should render a success message if authenticated', () => {
+	it('should render the Pagination Example page', () => {
 		const { asFragment } = render(
 			<PaginationExampleTemplate
 				footerMenu={defaultFooterMenu}

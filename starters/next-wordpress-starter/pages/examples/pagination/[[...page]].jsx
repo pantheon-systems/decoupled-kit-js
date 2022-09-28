@@ -11,13 +11,12 @@ export default function PaginationExampleTemplate({ menuItems, posts }) {
 	const RenderCurrentItems = ({ currentItems }) => {
 		return currentItems.map((item) => {
 			return (
-				<article
-					key={item.title}
-					className="flex flex-col p-3 w-fit mx-auto mb-10"
-				>
-					<h2 className="justify-start my-auto text-2xl mb-2">{item.title}</h2>
+				<article key={item.title} className="flex flex-col p-3 mb-10">
+					<h2 className="justify-start my-auto text-2xl mb-2">
+						{item.title}
+					</h2>
 					<div
-						className="max-w-prose my-2"
+						className="max-w-prose my-2 [&>p]:my-0"
 						dangerouslySetInnerHTML={{ __html: item.excerpt }}
 					/>
 				</article>

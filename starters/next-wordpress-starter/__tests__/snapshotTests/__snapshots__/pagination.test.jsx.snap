@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`<PaginationExampleTemplate /> > should render a success message if authenticated 1`] = `
+exports[`<PaginationExampleTemplate /> > should render the Pagination Example page 1`] = `
 <DocumentFragment>
   <div
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
@@ -79,7 +79,7 @@ exports[`<PaginationExampleTemplate /> > should render a success message if auth
             </h3>
             <section>
               <article
-                class="flex flex-col p-3 w-fit mx-auto mb-10"
+                class="flex flex-col p-3 mb-10"
               >
                 <h2
                   class="justify-start my-auto text-2xl mb-2"
@@ -87,7 +87,7 @@ exports[`<PaginationExampleTemplate /> > should render a success message if auth
                   Ut culpa iste voluptas consequatur
                 </h2>
                 <div
-                  class="max-w-prose my-2"
+                  class="max-w-prose my-2 [&>p]:my-0"
                 >
                   <p>
                     Consequuntur omnis assumenda voluptate aut quam. Dolorem aut aspernatur voluptas delectus. Commodi quia veniam voluptatem vitae rem Assumenda qui non in et facere tempora Corrupti Ut inventore id voluptates sed Mollitia magnam nihil numquam nostrum Nostrum et praesentium ullam ut accusamus Velit eos perferendis error fuga in necessitatibus Nostrum laboriosam iste Sint itaque est facilis […]
@@ -97,7 +97,7 @@ exports[`<PaginationExampleTemplate /> > should render a success message if auth
                 </div>
               </article>
               <article
-                class="flex flex-col p-3 w-fit mx-auto mb-10"
+                class="flex flex-col p-3 mb-10"
               >
                 <h2
                   class="justify-start my-auto text-2xl mb-2"
@@ -105,7 +105,7 @@ exports[`<PaginationExampleTemplate /> > should render a success message if auth
                   Totam aliquam recusandae autem ipsa
                 </h2>
                 <div
-                  class="max-w-prose my-2"
+                  class="max-w-prose my-2 [&>p]:my-0"
                 >
                   <p>
                     Ipsam molestias est omnis.
@@ -125,7 +125,7 @@ exports[`<PaginationExampleTemplate /> > should render a success message if auth
                 </div>
               </article>
               <article
-                class="flex flex-col p-3 w-fit mx-auto mb-10"
+                class="flex flex-col p-3 mb-10"
               >
                 <h2
                   class="justify-start my-auto text-2xl mb-2"
@@ -133,7 +133,7 @@ exports[`<PaginationExampleTemplate /> > should render a success message if auth
                   Et ipsa accusantium voluptatem nostrum maiores
                 </h2>
                 <div
-                  class="max-w-prose my-2"
+                  class="max-w-prose my-2 [&>p]:my-0"
                 >
                   <p>
                     Perspiciatis ut modi et.
@@ -148,7 +148,7 @@ exports[`<PaginationExampleTemplate /> > should render a success message if auth
                 </div>
               </article>
               <article
-                class="flex flex-col p-3 w-fit mx-auto mb-10"
+                class="flex flex-col p-3 mb-10"
               >
                 <h2
                   class="justify-start my-auto text-2xl mb-2"
@@ -156,7 +156,7 @@ exports[`<PaginationExampleTemplate /> > should render a success message if auth
                   Odio vel voluptas pariatur quas pariatur dicta
                 </h2>
                 <div
-                  class="max-w-prose my-2"
+                  class="max-w-prose my-2 [&>p]:my-0"
                 >
                   <p>
                     Vel qui.
@@ -166,7 +166,7 @@ exports[`<PaginationExampleTemplate /> > should render a success message if auth
                 </div>
               </article>
               <article
-                class="flex flex-col p-3 w-fit mx-auto mb-10"
+                class="flex flex-col p-3 mb-10"
               >
                 <h2
                   class="justify-start my-auto text-2xl mb-2"
@@ -174,7 +174,7 @@ exports[`<PaginationExampleTemplate /> > should render a success message if auth
                   Quia quos eum assumenda alias quisquam a
                 </h2>
                 <div
-                  class="max-w-prose my-2"
+                  class="max-w-prose my-2 [&>p]:my-0"
                 >
                   <p>
                     Molestias ab voluptate voluptas alias nesciunt commodi. Qui beatae et vel dolore in blanditiis Voluptatem est rerum odit Rerum esse magnam sapiente Ut sunt tempore et expedita nihil et ut Tempore nihil et tenetur Asperiores Deserunt quidem omnis minus commodi molestiae et quam Nulla ab quia voluptatem et officiis ullam quo. Aliquam eum enim aliquam […]
