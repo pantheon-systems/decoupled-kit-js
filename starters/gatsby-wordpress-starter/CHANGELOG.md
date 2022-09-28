@@ -1,5 +1,16 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.2.0
+
+### Minor Changes
+
+- 2bfe07a: Remove pantheon logo for cards that don't have featured image, and
+  use a generic gradient instead
+
+### Patch Changes
+
+- c634786: Add .nvmrc file
+
 ## 2.2.0-canary.0
 
 ### Minor Changes
