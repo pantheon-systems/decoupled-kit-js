@@ -3,6 +3,10 @@ import Image from 'next/image';
 import { IMAGE_URL } from '../lib/constants';
 import { getUrlPath } from '../lib/getUrlPath';
 
+const GradientPlaceholder = () => (
+	<div className="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500" />
+);
+
 export const withGrid = (Component) => {
 	const GridedComponent = ({ data, ...props }) => {
 		if (!data || !data.length) {
@@ -44,12 +48,7 @@ export const PostGridItem = ({ content: post }) => {
 								alt={altText}
 							/>
 						) : (
-							<Image
-								src="/pantheon.png"
-								alt="Pantheon Logo"
-								layout="fill"
-								className="bg-black"
-							/>
+							<GradientPlaceholder />
 						)}
 					</div>
 					<h2 className="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900">
@@ -78,12 +77,7 @@ export const PageGridItem = ({ content: page }) => {
 								alt={altText}
 							/>
 						) : (
-							<Image
-								src="/pantheon.png"
-								alt="Pantheon Logo"
-								layout="fill"
-								className="bg-black"
-							/>
+							<GradientPlaceholder />
 						)}
 					</div>
 					<h2 className="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900">

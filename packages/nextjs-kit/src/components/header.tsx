@@ -7,7 +7,7 @@ interface HeaderProps {
 }
 
 /**
- * This is a Footer component.
+ * This is a Header component.
  *
  * @param {HeaderProps} props - The props needed for the header component
  * @param {LinkProps[]} props.navItems - An array of header menu items
@@ -33,17 +33,17 @@ const Header: React.FC<HeaderProps> = ({
 	navItems,
 }: HeaderProps): JSX.Element => {
 	return (
-		<div className="my-0 pt-10 px-5 text-xl">
+		<div className="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl">
 			<nav>
-				<ul className="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto">
+				<ul className="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto">
 					{navItems.map((item) => {
 						return (
 							<li
-								className={`${item.href === '/' ? 'mr-auto' : 'mx-4'}`}
+								className={`${item.href === '/' ? 'ps-mr-auto' : 'ps-mx-4'}`}
 								key={item.href}
 							>
-								<Link className="font-sans" href={item.href}>
-									<a className="hover:underline">{item.linkText}</a>
+								<Link className="ps-font-sans" href={item.href}>
+									<a className="hover:ps-underline">{item.linkText}</a>
 								</Link>
 							</li>
 						);

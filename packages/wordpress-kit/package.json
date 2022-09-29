@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/wordpress-kit",
-	"version": "2.5.1-canary.0",
+	"version": "2.6.0",
 	"description": "Pantheon Decoupled Kit's WordPress Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -35,8 +35,7 @@
 		"eslint:fix": "eslint --ext .ts src --fix --ignore-path .gitignore",
 		"prettier": "prettier \"**/*.{ts,md}\" --check --ignore-path ../../.prettierignore",
 		"prettier:fix": "prettier \"**/*.{ts,md}\" --write --ignore-path ../../.prettierignore",
-		"lint-staged": "lint-staged",
-		"rollup": "rollup -c"
+		"lint-staged": "lint-staged"
 	},
 	"dependencies": {
 		"graphql": "^14.0.0 || ^15.0.0 || ^16.0.0",

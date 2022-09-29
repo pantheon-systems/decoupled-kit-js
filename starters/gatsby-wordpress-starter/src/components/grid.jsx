@@ -1,7 +1,11 @@
 import React from 'react'
 
-import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
+
+const GradientPlaceholder = () => (
+	<div className="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500" />
+)
 
 export const withGrid = Component => {
 	const GridedComponent = ({ data, ...props }) => {
@@ -44,12 +48,7 @@ export const PostGridItem = ({ content: post }) => {
 							alt={altText}
 						/>
 					) : (
-						<StaticImage
-							alt="Pantheon Logo"
-							src="../../static/pantheon.png"
-							className="bg-black h-full w-full"
-							objectFit="fill"
-						/>
+						<GradientPlaceholder />
 					)}
 				</div>
 				<h2 className="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900">
@@ -77,12 +76,7 @@ export const PageGridItem = ({ content: { page } }) => {
 							alt={altText}
 						/>
 					) : (
-						<StaticImage
-							alt="Pantheon Logo"
-							src="../../static/pantheon.png"
-							className="bg-black h-full w-full"
-							objectFit="fill"
-						/>
+						<GradientPlaceholder />
 					)}
 				</div>
 				<h2 className="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900">

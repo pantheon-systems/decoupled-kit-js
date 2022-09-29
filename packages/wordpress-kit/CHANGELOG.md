@@ -1,5 +1,26 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.6.0
+
+### Minor Changes
+
+- 7b14e2d: Add support to Media Text block, and fixed color with strong text
+- 09fb74f: Added buttons component, and a function to get color by name in the
+  Color utility class
+
+### Patch Changes
+
+- 6656b11: Added some missing TSDoc comments and updated dist bundle to include
+  generated d.ts files
+
+## 2.6.0-canary.1
+
+### Minor Changes
+
+- 7b14e2d: Add support to Media Text block, and fixed color with strong text
+- 09fb74f: Added buttons component, and a function to get color by name in the
+  Color utility class
+
 ## 2.5.1-canary.0
 
 ### Patch Changes
