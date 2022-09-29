@@ -1,5 +1,17 @@
 # @pantheon-systems/drupal-kit
 
+## 3.0.1
+
+### Patch Changes
+
+- 9dbbc6b: Updated dist bundle to include generated d.ts files
+
+## 3.0.1-canary.0
+
+### Patch Changes
+
+- 9dbbc6b: Updated dist bundle to include generated d.ts files
+
 ## 3.0.0
 
 ### Major Changes

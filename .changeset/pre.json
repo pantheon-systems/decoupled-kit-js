@@ -3,17 +3,13 @@
   "tag": "canary",
   "initialVersions": {
     "@pantheon-systems/eslint-config": "0.0.0",
-    "@pantheon-systems/drupal-kit": "3.0.0",
-    "@pantheon-systems/nextjs-kit": "1.1.0",
-    "@pantheon-systems/wordpress-kit": "2.5.0",
-    "@pantheon-systems/gatsby-wordpress-starter": "2.1.0",
-    "@pantheon-systems/next-drupal-starter": "3.1.0",
-    "@pantheon-systems/next-wordpress-starter": "0.7.0",
+    "@pantheon-systems/drupal-kit": "3.0.1",
+    "@pantheon-systems/nextjs-kit": "1.2.0",
+    "@pantheon-systems/wordpress-kit": "2.6.0",
+    "@pantheon-systems/gatsby-wordpress-starter": "2.2.0",
+    "@pantheon-systems/next-drupal-starter": "3.2.0",
+    "@pantheon-systems/next-wordpress-starter": "0.8.0",
     "web": "1.0.0"
   },
-  "changesets": [
-    "blue-glasses-fetch",
-    "rotten-pianos-pay",
-    "sour-beers-shake"
-  ]
+  "changesets": []
 }

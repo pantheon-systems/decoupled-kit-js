@@ -7,7 +7,7 @@ interface HeaderProps {
 }
 
 /**
- * This is a Footer component.
+ * This is a Header component.
  *
  * @param {HeaderProps} props - The props needed for the header component
  * @param {LinkProps[]} props.navItems - An array of header menu items
