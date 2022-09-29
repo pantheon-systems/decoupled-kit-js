@@ -47,7 +47,7 @@
 	"devDependencies": {
 		"@pantheon-systems/configs": "workspace:*",
 		"@pantheon-systems/eslint-config": "workspace:*",
-		"@types/react": "18.0.21",
+		"@types/react": "17.0.40",
 		"docusaurus-plugin-typedoc": "^0.17.5",
 		"typedoc": "^0.23.15",
 		"typedoc-plugin-markdown": "3.13.6"

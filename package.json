@@ -49,7 +49,7 @@
 		"headless-cms-sdk"
 	],
 	"devDependencies": {
-		"@changesets/cli": "^2.22.0",
+		"@changesets/cli": "^2.24.4",
 		"@types/eslint": "^8.4.6",
 		"@types/jest": "^29.0.3",
 		"@types/node": "^16.11.62",
