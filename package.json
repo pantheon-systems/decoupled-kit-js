@@ -49,12 +49,10 @@
 		"headless-cms-sdk"
 	],
 	"devDependencies": {
-		"@algolia/client-search": "^4.9.1",
 		"@changesets/cli": "^2.22.0",
-		"@rollup/plugin-typescript": "^8.3.1",
-		"@types/eslint": "^8.4.1",
+		"@types/eslint": "^8.4.6",
 		"@types/jest": "^29.0.3",
-		"@types/node": "^16.11.x",
+		"@types/node": "^16.11.62",
 		"@types/react": "17.0.40",
 		"@typescript-eslint/eslint-plugin": "^5.38.1",
 		"@typescript-eslint/parser": "^5.38.1",
@@ -67,7 +65,6 @@
 		"lint-staged": "^13.0.3",
 		"prettier": "^2.7.1",
 		"react": "17.0.2",
-		"rollup": "^2.69.1",
 		"ts-jest": "^29.0.2",
 		"tslib": "^2.3.1",
 		"typedoc": "^0.23.15",
