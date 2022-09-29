@@ -11,9 +11,9 @@
 	},
 	"author": "@pantheon-systems",
 	"files": [
-		"dist",
-		"src/sdk.{js,ts}"
+		"dist/*"
 	],
+	"types": "dist/index.d.ts",
 	"main": "./dist/wordpress-kit.umd.js",
 	"module": "./dist/wordpress-kit.es.js",
 	"exports": {
