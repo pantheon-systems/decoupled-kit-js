@@ -9,6 +9,7 @@ import {
 	CoverComponent,
 	mediaAndText,
 	ButtonsComponent,
+	FileMediaComponent,
 } from './components';
 import { mergeToConfig } from './Config';
 import { ColorUtilities, FontsUtilities } from './utilities';
@@ -53,6 +54,10 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 		defaultColor: color.getColorByName('primary'),
 	});
 
+	const fileMedia = FileMediaComponent({
+		defaultColor: color.getColorByName('primary'),
+	});
+
 	addUtilities([
 		color.getBackgroundUtilities(),
 		color.getBorderColorUtilities(),
@@ -73,5 +78,6 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 		cover,
 		mediaAndText,
 		buttons,
+		fileMedia,
 	]);
 }, mergeToConfig);
