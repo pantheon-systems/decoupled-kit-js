@@ -12,7 +12,7 @@ export const ImageComponent = ({
 			wordBreak: 'break-word',
 		},
 		img: {
-			maxWidth: '650px',
+			width: '100%',
 			borderRadius: 'inherit',
 		},
 		'&.alignleft': {
@@ -28,9 +28,7 @@ export const ImageComponent = ({
 			width: 'fit-content',
 		},
 		'&.alignwide': {
-			img: {
-				maxWidth: '850px',
-			},
+			maxWidth: '1000px',
 		},
 		'&.alignfull': {
 			[`@media (min-width:${minWidth})` as mediaType]: {
@@ -39,21 +37,20 @@ export const ImageComponent = ({
 				marginLeft: 'calc(-1 * max(1rem, 10vw))',
 				marginRight: 'calc(-1 * max(1rem, 10vw))',
 			},
-			width: 'unset',
 			img: {
-				width: '100%',
 				height: 'auto',
 				maxWidth: 'none',
 			},
 			padding: '0',
+			maxWidth: 'none',
 		},
 		'&.is-style-rounded': {
 			img: {
 				borderRadius: '9999px',
 			},
 		},
-		display: 'inline-grid',
-		width: '100%',
-		placeItems: 'center',
+		marginLeft: 'auto',
+		marginRight: 'auto',
+		maxWidth: '650px',
 	},
 });

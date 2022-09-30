@@ -1,41 +1,27 @@
 export const Quote = {
-	'.is-style-plain': {
-		cite: {
-			fontStyle: 'normal',
-			fontSize: '0.8rem',
-		},
-		quotes: 'none',
-		border: 'none',
-		fontStyle: 'normal',
-	},
-	'.is-style-large': {
-		cite: {
-			fontStyle: 'italic',
-			fontSize: '1.2rem',
-		},
-		margin: '0',
-		fontSize: '2.5rem',
-		quotes: 'none',
-		border: 'none',
-		fontStyle: 'normal',
-	},
-
 	'.wp-block-quote': {
-		'p:empty': {
-			quotes: 'none',
-		},
+		quotes: 'none',
+		borderLeft: '1px solid',
+		paddingLeft: '1em',
+		'padding-top': '0',
+		'padding-bottom': '0',
+		maxWidth: '650px',
+		'margin-left': 'auto',
+		'margin-right': 'auto',
 		'&.has-text-align-center': {
 			border: 'none',
 		},
 		'&.has-text-align-right': {
 			borderLeft: 'none',
-			paddingRight: '1.06em',
-			borderRightWidth: '0.25rem',
-			borderRightColor: '#e5e7eb',
+			paddingRight: '1em',
+			borderRight: '1px solid',
+		},
+		'&.is-style-plain': {
+			border: 'none',
 		},
 		cite: {
 			fontStyle: 'normal',
-			fontSize: '0.8rem',
+			fontSize: '0.8em',
 		},
 	},
 };

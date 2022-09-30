@@ -19,7 +19,7 @@ export const FileMediaComponent = ({
 		margin: '0 auto',
 		maxWidth: '650px',
 		'&.alignwide': {
-			maxWidth: '850px',
+			maxWidth: '1000px',
 		},
 		'&.alignfull': {
 			'@media (min-width:1200px)': {

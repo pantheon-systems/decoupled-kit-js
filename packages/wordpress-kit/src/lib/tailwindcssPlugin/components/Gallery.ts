@@ -76,7 +76,7 @@ export const GalleryComponent = ({
 			alignItems: 'normal',
 			maxWidth: '650px',
 			'&.alignwide': {
-				maxWidth: '850px',
+				maxWidth: '1000px',
 			},
 			'&.alignfull': {
 				[`@media (min-width:${minWidth})`]: {
