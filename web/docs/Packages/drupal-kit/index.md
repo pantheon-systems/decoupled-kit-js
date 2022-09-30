@@ -1,7 +1,7 @@
 ---
-id: 'index'
-title: '@pantheon-systems/drupal-kit'
-sidebar_label: 'Readme'
+id: "index"
+title: "@pantheon-systems/drupal-kit"
+sidebar_label: "Readme"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -20,7 +20,7 @@ To install this package to use in your application:
 ## Usage
 
 Modules can be imported from the ` @pantheon-systems/drupal-kit` package. For
-example, to use DrupalState to source data from your CMS backend:
+example, to use Drupal State to source data from your CMS backend:
 
 ### DrupalState
 

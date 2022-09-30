@@ -12,7 +12,6 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noImplicitReturns": true,
-		"forceConsistentCasingInFileNames": false,
 		"baseUrl": "./packages",
 		"paths": {
 			"@pantheon-systems/drupal-kit/*": ["./drupal-kit/*"],

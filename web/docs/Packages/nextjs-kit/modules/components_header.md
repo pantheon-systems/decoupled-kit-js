@@ -1,7 +1,7 @@
 ---
-id: 'components_header'
-title: 'Module: components/header'
-sidebar_label: 'components/header'
+id: "components_header"
+title: "Module: components/header"
+sidebar_label: "components/header"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -10,9 +10,9 @@ custom_edit_url: null
 
 ### default
 
-▸ **default**(`props`, `context?`): `null` \| `ReactElement`<`any`, `any`\>
+▸ **default**(`props`, `context?`): ``null`` \| `ReactElement`<`any`, `any`\>
 
-This is a Footer component.
+This is a Header component.
 
 **`Example`**
 
@@ -32,14 +32,14 @@ const navItems = [
 
 #### Parameters
 
-| Name       | Type                                | Description                               |
-| :--------- | :---------------------------------- | :---------------------------------------- |
-| `props`    | `PropsWithChildren`<`HeaderProps`\> | The props needed for the header component |
-| `context?` | `any`                               | -                                         |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `props` | `PropsWithChildren`<`HeaderProps`\> | The props needed for the header component |
+| `context?` | `any` | - |
 
 #### Returns
 
-`null` \| `ReactElement`<`any`, `any`\>
+``null`` \| `ReactElement`<`any`, `any`\>
 
 A header component with a nav menu
 
