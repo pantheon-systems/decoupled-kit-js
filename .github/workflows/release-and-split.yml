@@ -37,7 +37,7 @@ jobs:
         # generate the api reference here so the changes
         # will be added to the commit in the next step.
       - name: generate api reference
-        uses: './generate-docs.yml'
+        run: pnpm generate-docs
       - name: create and publish versions
         uses: changesets/action@v1
         with:
@@ -68,7 +68,7 @@ jobs:
             split_repository: 'next-wordpress-starter'
             # docs site
           - local_path: 'web'
-            split_repository: 'decoupled-kit-js-docs'
+            split_repository: 'decoupled-kit-docs'
     steps:
       - uses: actions/checkout@v2
 

@@ -36,7 +36,7 @@ jobs:
         # generate the api reference here so the changes
         # will be added to the commit in the next step.
       - name: generate api reference
-        uses: './generate-docs.yml'
+        run: pnpm generate-docs
       - name: create and publish versions
         uses: changesets/action@v1
         with:
