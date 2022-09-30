@@ -10,7 +10,7 @@ slug: '/Frontend Starters/Next.js/Next.js + Drupal/Introduction'
 The Pantheon `next-drupal-starter` uses Next.js and has been tested using
 [nodejs v16 with npm v8](https://nodejs.org/en/download/).
 
-## Why Use The Next.js drupal Starter?
+## Why Use The Next.js Drupal Starter?
 
 The `next-drupal-starter` is designed as a starting point to for a Next.js site
 that consumes data from a Drupal backend - specifically a Drupal backend

@@ -3,14 +3,14 @@ id: 'next-wordpress-cache-control-headers'
 title: 'Setting Cache-Control Headers'
 sidebar_position: 3
 slug:
-  '/Frontend Starters/Next.js/Next.js + WordPress/Setting Environment Variables'
+  '/Frontend Starters/Next.js/Next.js + WordPress/Setting Cache-Control Headers'
 ---
 
 ## Before You Begin
 
 This guide explains the how to set Cache-Control headers using
-`@pantheon-systems/wordpress-kit` in the `next-wordpress-starter`, or any Next.js
-application using the `wordpress-kit`.
+`@pantheon-systems/wordpress-kit` in the `next-wordpress-starter`, or any
+Next.js application using the `wordpress-kit`.
 
 ## Setting Cache-Control Headers with WordPress Kit
 

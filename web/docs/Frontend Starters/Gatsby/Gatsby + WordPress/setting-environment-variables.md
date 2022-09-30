@@ -12,8 +12,8 @@ endpoint at build time. For local development, the starter kit uses
 [dotenv](https://www.npmjs.com/package/dotenv).
 
 After creating a new project with the gatsby-wordpress-starter, create a
-`.env.local` file at the root of the project directory. In this file, add a
-WPGRAPHQL_URL key with your WordPress GraphQL Endpoint as the value.
+`.env.development.local` file at the root of the project directory. In this
+file, add a WPGRAPHQL_URL key with your WordPress GraphQL Endpoint as the value.
 
 For example:
 
