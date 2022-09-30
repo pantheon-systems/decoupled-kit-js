@@ -1,7 +1,7 @@
 ---
-id: 'lib_tailwindcssPlugin_utilities_Fonts.FontsUtilities'
-title: 'Class: FontsUtilities'
-sidebar_label: 'FontsUtilities'
+id: "lib_tailwindcssPlugin_utilities_Fonts.FontsUtilities"
+title: "Class: FontsUtilities"
+sidebar_label: "FontsUtilities"
 custom_edit_url: null
 ---
 
@@ -29,13 +29,13 @@ fonts.getFontSizeUtilities() // returns the font size utilities
 
 #### Parameters
 
-| Name    | Type                                                           |
-| :------ | :------------------------------------------------------------- |
-| `theme` | [`ThemeType`](../modules/types_TailwindcssPlugin.md#themetype) |
+| Name | Type |
+| :------ | :------ |
+| `theme` | [`ThemeType`](../modules/types.md#themetype) |
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:19](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L19)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:19](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L19)
 
 ## Properties
 
@@ -45,23 +45,23 @@ fonts.getFontSizeUtilities() // returns the font size utilities
 
 #### Type declaration
 
-| Name                                         | Type                                                                                                                                                                                                                                                                       |
-| :------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `.has-drop-cap`                              | { `&:first-letter`: { `float`: `string` = 'left'; `fontSize`: `string` = '3.25em'; `fontStyle`: `string` = 'normal'; `fontWeight`: `string` = 'bolder'; `lineHeight`: `string` = '0.68'; `margin`: `string` = '1rem 1rem 0 0'; `textTransform`: `string` = 'uppercase' } } |
-| `.has-drop-cap.&:first-letter`               | { `float`: `string` = 'left'; `fontSize`: `string` = '3.25em'; `fontStyle`: `string` = 'normal'; `fontWeight`: `string` = 'bolder'; `lineHeight`: `string` = '0.68'; `margin`: `string` = '1rem 1rem 0 0'; `textTransform`: `string` = 'uppercase' }                       |
-| `.has-drop-cap.&:first-letter.float`         | `string`                                                                                                                                                                                                                                                                   |
-| `.has-drop-cap.&:first-letter.fontSize`      | `string`                                                                                                                                                                                                                                                                   |
-| `.has-drop-cap.&:first-letter.fontStyle`     | `string`                                                                                                                                                                                                                                                                   |
-| `.has-drop-cap.&:first-letter.fontWeight`    | `string`                                                                                                                                                                                                                                                                   |
-| `.has-drop-cap.&:first-letter.lineHeight`    | `string`                                                                                                                                                                                                                                                                   |
-| `.has-drop-cap.&:first-letter.margin`        | `string`                                                                                                                                                                                                                                                                   |
-| `.has-drop-cap.&:first-letter.textTransform` | `string`                                                                                                                                                                                                                                                                   |
+| Name | Type |
+| :------ | :------ |
+| `.has-drop-cap` | { `&:first-letter`: { `float`: `string` = 'left'; `fontSize`: `string` = '3.25em'; `fontStyle`: `string` = 'normal'; `fontWeight`: `string` = 'bolder'; `lineHeight`: `string` = '0.68'; `margin`: `string` = '1rem 1rem 0 0'; `textTransform`: `string` = 'uppercase' }  } |
+| `.has-drop-cap.&:first-letter` | { `float`: `string` = 'left'; `fontSize`: `string` = '3.25em'; `fontStyle`: `string` = 'normal'; `fontWeight`: `string` = 'bolder'; `lineHeight`: `string` = '0.68'; `margin`: `string` = '1rem 1rem 0 0'; `textTransform`: `string` = 'uppercase' } |
+| `.has-drop-cap.&:first-letter.float` | `string` |
+| `.has-drop-cap.&:first-letter.fontSize` | `string` |
+| `.has-drop-cap.&:first-letter.fontStyle` | `string` |
+| `.has-drop-cap.&:first-letter.fontWeight` | `string` |
+| `.has-drop-cap.&:first-letter.lineHeight` | `string` |
+| `.has-drop-cap.&:first-letter.margin` | `string` |
+| `.has-drop-cap.&:first-letter.textTransform` | `string` |
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:61](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L61)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:61](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L61)
 
----
+___
 
 ### textAlignUtilities
 
@@ -69,29 +69,28 @@ fonts.getFontSizeUtilities() // returns the font size utilities
 
 #### Type declaration
 
-| Name                               | Type                                 |
-| :--------------------------------- | :----------------------------------- |
-| `.has-text-align-center`           | { `textAlign`: `string` = 'center' } |
-| `.has-text-align-center.textAlign` | `string`                             |
-| `.has-text-align-left`             | { `textAlign`: `string` = 'left' }   |
-| `.has-text-align-left.textAlign`   | `string`                             |
-| `.has-text-align-right`            | { `textAlign`: `string` = 'right' }  |
-| `.has-text-align-right.textAlign`  | `string`                             |
+| Name | Type |
+| :------ | :------ |
+| `.has-text-align-center` | { `textAlign`: `string` = 'center' } |
+| `.has-text-align-center.textAlign` | `string` |
+| `.has-text-align-left` | { `textAlign`: `string` = 'left' } |
+| `.has-text-align-left.textAlign` | `string` |
+| `.has-text-align-right` | { `textAlign`: `string` = 'right' } |
+| `.has-text-align-right.textAlign` | `string` |
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:49](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L49)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:49](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L49)
 
----
+___
 
 ### theme
 
-• `Private` **theme**:
-[`ThemeType`](../modules/types_TailwindcssPlugin.md#themetype)
+• `Private` **theme**: [`ThemeType`](../modules/types.md#themetype)
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L17)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L17)
 
 ## Methods
 
@@ -99,8 +98,8 @@ fonts.getFontSizeUtilities() // returns the font size utilities
 
 ▸ **getFontSizeUtilities**(): `Object`
 
-Generates the font size utilities based on the font size list that includes
-tailwind's default font size values and sensible defaults.
+Generates the font size utilities based on the
+font size list that includes tailwind's default font size values and sensible defaults.
 
 **`Example`**
 
@@ -119,4 +118,4 @@ tailwind's default font size values and sensible defaults.
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:35](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L35)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts:35](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Fonts.ts#L35)

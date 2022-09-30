@@ -1,7 +1,7 @@
 ---
-id: 'components_paginator'
-title: 'Module: components/paginator'
-sidebar_label: 'components/paginator'
+id: "components_paginator"
+title: "Module: components/paginator"
+sidebar_label: "components/paginator"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -24,14 +24,12 @@ end: where to end the breakpoint
 
 add: how many buttons to add when the breakpoint is clicked
 
-(`add` \* x) + `start` = `end` where x is a number of clicks it takes to fill in
-all of the buttons For example: If there are 25 buttons and the start = 5 and
-end = 25, then add should be 5 or 10.
+(`add` * x) + `start` = `end` where x is a number of clicks it takes to fill in all of the buttons
+For example: If there are 25 buttons and the start = 5 and end = 25, then add should be 5 or 10.
 
 **`See`**
 
-[https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/starters/next-drupal-starter/pages/examples/pagination/[[...page]].js](https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/starters/next-drupal-starter/pages/examples/pagination/[[...page]].js)
-for an example implementation
+[https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/starters/next-drupal-starter/pages/examples/pagination/[[...page]].js](https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/starters/next-drupal-starter/pages/examples/pagination/[[...page]].js) for an example implementation
 
 **`Example`**
 
@@ -47,14 +45,14 @@ for an example implementation
 
 #### Type parameters
 
-| Name   | Type             |
-| :----- | :--------------- |
+| Name | Type |
+| :------ | :------ |
 | `Type` | extends `object` |
 
 #### Parameters
 
-| Name    | Type                                                                                | Description                                  |
-| :------ | :---------------------------------------------------------------------------------- | :------------------------------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `props` | [`PaginationProps`](../interfaces/components_paginator.PaginationProps.md)<`Type`\> | The props needed for the paginator component |
 
 #### Returns
@@ -65,4 +63,4 @@ Component with data rendered by the passed in Component and page buttons
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:48](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/components/paginator.tsx#L48)
+[packages/nextjs-kit/src/components/paginator.tsx:48](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/nextjs-kit/src/components/paginator.tsx#L48)

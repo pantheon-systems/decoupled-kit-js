@@ -1,7 +1,7 @@
 ---
-id: 'lib_tailwindcssPlugin_utilities_Colors.ColorUtilities'
-title: 'Class: ColorUtilities'
-sidebar_label: 'ColorUtilities'
+id: "lib_tailwindcssPlugin_utilities_Colors.ColorUtilities"
+title: "Class: ColorUtilities"
+sidebar_label: "ColorUtilities"
 custom_edit_url: null
 ---
 
@@ -30,31 +30,29 @@ color.getBorderColorUtilities() // returns the border color utilities
 
 #### Parameters
 
-| Name    | Type                                                           |
-| :------ | :------------------------------------------------------------- |
-| `theme` | [`ThemeType`](../modules/types_TailwindcssPlugin.md#themetype) |
+| Name | Type |
+| :------ | :------ |
+| `theme` | [`ThemeType`](../modules/types.md#themetype) |
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:25](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L25)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:21](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L21)
 
 ## Properties
 
 ### theme
 
-• `Private` **theme**:
-[`ThemeType`](../modules/types_TailwindcssPlugin.md#themetype)
+• `Private` **theme**: [`ThemeType`](../modules/types.md#themetype)
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:23](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L23)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:19](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L19)
 
 ## Methods
 
 ### findColor
 
-▸ `Private` **findColor**(`colorName`):
-[`Color`](../modules/types_TailwindcssPlugin.md#color)
+▸ `Private` **findColor**(`colorName`): [`Color`](../modules/types.md#color)
 
 Finds a color by themeName
 
@@ -64,21 +62,21 @@ Error(`Color ${colorName} not found`)
 
 #### Parameters
 
-| Name        | Type     |
-| :---------- | :------- |
+| Name | Type |
+| :------ | :------ |
 | `colorName` | `string` |
 
 #### Returns
 
-[`Color`](../modules/types_TailwindcssPlugin.md#color)
+[`Color`](../modules/types.md#color)
 
 Color
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:49](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L49)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:45](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L45)
 
----
+___
 
 ### formatGradientColors
 
@@ -92,9 +90,9 @@ to be used in the linear-gradient css function.
 
 #### Parameters
 
-| Name     | Type                                                                       | Description                                                                |
-| :------- | :------------------------------------------------------------------------- | :------------------------------------------------------------------------- |
-| `colors` | [`GradientColors`](../modules/types_TailwindcssPlugin.md#gradientcolors)[] | Array of gradient colors i.e `[{ color: 'primary', position: '0%' }, ...]` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `colors` | [`GradientColors`](../modules/types.md#gradientcolors)[] | Array of gradient colors i.e  ``` [{ color: 'primary', position: '0%' }, ...] ``` |
 
 #### Returns
 
@@ -104,21 +102,20 @@ A string to be used as a css gradient. Example: '#000000 50%, #ffffff 100%'
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:71](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L71)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:67](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L67)
 
----
+___
 
 ### getBackgroundUtilities
 
 ▸ **getBackgroundUtilities**(): `Object`
 
-Takes the colors from the colorList constant to build an object with the
-background colors and a padding.
+Takes the colors from the colorList constant to
+build an object with the background colors and a padding.
 
 **`Example`**
 
 const backgroundUtilities = getBackgroundUtilities();
-
 ```
 {
  '.has-primary-background-color': {
@@ -142,28 +139,27 @@ const backgroundUtilities = getBackgroundUtilities();
 }
 ```
 
-| Name                      | Type                                        |
-| :------------------------ | :------------------------------------------ |
-| `.has-background`         | { `padding`: `string` = backgroundPadding } |
-| `.has-background.padding` | `string`                                    |
+| Name | Type |
+| :------ | :------ |
+| `.has-background` | { `padding`: `string` = backgroundPadding } |
+| `.has-background.padding` | `string` |
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:139](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L139)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:141](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L141)
 
----
+___
 
 ### getBorderColorUtilities
 
 ▸ **getBorderColorUtilities**(): `Object`
 
-Takes the colors from the colorList constant to build the borderColor utilities
-object
+Takes the colors from the colorList constant to
+build the borderColor utilities object
 
 **`Example`**
 
 const backgroundUtilities = getBackgroundUtilities();
-
 ```
 {
  '.has-primary-background-color': {
@@ -186,22 +182,22 @@ const backgroundUtilities = getBackgroundUtilities();
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:183](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L183)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:185](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L185)
 
----
+___
 
 ### getColor
 
 ▸ `Private` **getColor**(`color`): `string`
 
-Checks if the color is in the theme colors list is a tailwind default color. If
-not, returns a hex color.
+Checks if the color is in the theme colors list
+is a tailwind default color. If not, returns a hex color.
 
 #### Parameters
 
-| Name    | Type                                                   | Description    |
-| :------ | :----------------------------------------------------- | :------------- |
-| `color` | [`Color`](../modules/types_TailwindcssPlugin.md#color) | A color object |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `color` | [`Color`](../modules/types.md#color) | A color object |
 
 #### Returns
 
@@ -211,21 +207,40 @@ string - A string with the color value
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:36](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L36)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:32](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L32)
 
----
+___
+
+### getColorByName
+
+▸ **getColorByName**(`colorName`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `colorName` | `string` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:226](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L226)
+
+___
 
 ### getColorUtilities
 
 ▸ **getColorUtilities**(): `Object`
 
-Takes the colors from the colorList constant and build an object with the
-following structure:
+Takes the colors from the colorList constant and
+build an object with the following structure:
 
 **`Example`**
 
 const colorUtilities = getColorUtilities();
-
 ```
 {
  '.has-primary-color': {
@@ -239,26 +254,30 @@ const colorUtilities = getColorUtilities();
 
 `Object`
 
-`` {[`.has-${colorName}-color`]: { color: 'colorValue' }, ... } `` - color
-utilities.
+```{[`.has-${colorName}-color`]: { color: 'colorValue' }, ... }``` - color utilities.
+
+| Name | Type |
+| :------ | :------ |
+| `.has-text-color` | { `strong`: { `color`: `string` = 'inherit !important' }  } |
+| `.has-text-color.strong` | { `color`: `string` = 'inherit !important' } |
+| `.has-text-color.strong.color` | `string` |
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:102](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L102)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:98](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L98)
 
----
+___
 
 ### getGradientUtilities
 
 ▸ **getGradientUtilities**(): `Object`
 
-Takes the gradients from the gradientList constant to build the gradient
-utilities object.
+Takes the gradients from the gradientList constant to
+build the gradient utilities object.
 
 **`Example`**
 
 const backgroundUtilities = getBackgroundUtilities();
-
 ```
 {
  '.has-diagonal-primary-to-foreground-gradient': {
@@ -272,9 +291,8 @@ const backgroundUtilities = getBackgroundUtilities();
 
 `Object`
 
-`` {[`.has-${gradientName}-gradient`]: { background: linear-gradient(direction , color colorPosition, color colorPosition) }, ... } `` -
-gradient utilities.
+```{[`.has-${gradientName}-gradient`]: { background: linear-gradient(direction , color colorPosition, color colorPosition) }, ... }``` - gradient utilities.
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:212](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L212)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts:214](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/tailwindcssPlugin/utilities/Colors.ts#L214)

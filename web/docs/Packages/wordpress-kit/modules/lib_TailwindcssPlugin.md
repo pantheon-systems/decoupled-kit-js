@@ -1,7 +1,7 @@
 ---
-id: 'lib_TailwindcssPlugin'
-title: 'Module: lib/TailwindcssPlugin'
-sidebar_label: 'lib/TailwindcssPlugin'
+id: "lib_tailwindcssPlugin"
+title: "Module: lib/tailwindcssPlugin"
+sidebar_label: "lib/tailwindcssPlugin"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -12,6 +12,8 @@ custom_edit_url: null
 
 • **default**: `Object`
 
+Tailwindcss plugin that maps WordPress block editor styles to tailwindcss classes.
+
 #### Defined in
 
-[packages/wordpress-kit/src/lib/TailwindcssPlugin.ts:15](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/TailwindcssPlugin.ts#L15)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/index.ts:20](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/tailwindcssPlugin/index.ts#L20)
