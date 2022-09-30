@@ -11,11 +11,11 @@
 	},
 	"author": "@pantheon-systems",
 	"files": [
-		"dist"
+		"dist/*"
 	],
+	"types": "dist/index.d.ts",
 	"main": "./dist/nextjs-kit.umd.js",
 	"module": "./dist/nextjs-kit.es.js",
-	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
 			"require": "./dist/nextjs-kit.umd.js",

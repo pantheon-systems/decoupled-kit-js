@@ -11,9 +11,9 @@
 	},
 	"author": "@pantheon-systems",
 	"files": [
-		"dist",
-		"src/sdk.{js,ts}"
+		"dist/*"
 	],
+	"types": "dist/index.d.ts",
 	"main": "./dist/drupal-kit.umd.js",
 	"module": "./dist/drupal-kit.es.js",
 	"exports": {
