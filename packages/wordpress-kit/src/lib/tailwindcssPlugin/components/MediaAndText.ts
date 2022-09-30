@@ -97,7 +97,7 @@ export const mediaAndText = {
 			},
 		},
 		'&.alignwide': {
-			maxWidth: '850px',
+			maxWidth: '1000px',
 		},
 		'&.alignfull': {
 			'@media (min-width:720px)': {

@@ -45,7 +45,7 @@ export const ButtonsComponent = ({
 		...justifications,
 		'max-width': '650px',
 		'&.alignwide': {
-			maxWidth: '850px',
+			maxWidth: '1000px',
 		},
 		'&.alignfull': {
 			'@media (min-width:720px)': {

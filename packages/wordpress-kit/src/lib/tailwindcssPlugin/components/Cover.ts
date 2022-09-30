@@ -126,7 +126,7 @@ export const CoverComponent = ({
 			'background-size': 'auto',
 		},
 		'&.alignwide': {
-			maxWidth: '850px',
+			maxWidth: '1000px',
 		},
 		'&.alignleft': {
 			maxWidth: '420px',

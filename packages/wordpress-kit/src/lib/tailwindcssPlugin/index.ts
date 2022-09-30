@@ -23,9 +23,7 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 
 	const quoteUtilities = Quote;
 
-	const pullQuote = PullQuoteComponent({
-		quoteSize: theme('fontSize.4xl', '2.5rem'),
-	});
+	const pullQuote = PullQuoteComponent;
 
 	const table = TableComponent({
 		alignFull: {
