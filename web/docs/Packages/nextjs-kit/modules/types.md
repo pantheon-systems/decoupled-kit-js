@@ -1,7 +1,7 @@
 ---
-id: 'types'
-title: 'Module: types'
-sidebar_label: 'types'
+id: "types"
+title: "Module: types"
+sidebar_label: "types"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -15,8 +15,7 @@ custom_edit_url: null
 
 ### FooterMenuItem
 
-Ƭ **FooterMenuItem**: [`LinkProps`](../interfaces/types.LinkProps.md) & { [key
-in Parent]?: string \| null }
+Ƭ **FooterMenuItem**: [`LinkProps`](../interfaces/types.LinkProps.md) & { [key in Parent]?: string \| null }
 
 An item in a footer menu.
 
@@ -26,7 +25,7 @@ This should account for Drupal and WordPress menus
 
 #### Defined in
 
-[packages/nextjs-kit/src/types/index.ts:39](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/types/index.ts#L39)
+[packages/nextjs-kit/src/types/index.ts:39](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/nextjs-kit/src/types/index.ts#L39)
 
 ## Functions
 
@@ -38,8 +37,8 @@ Type predicate to determine if a FooterMenuItem has a parent or parentId
 
 #### Parameters
 
-| Name   | Type                                        | Description        |
-| :----- | :------------------------------------------ | :----------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `item` | [`FooterMenuItem`](types.md#footermenuitem) | a `FooterMenuItem` |
 
 #### Returns
@@ -50,9 +49,9 @@ true if `parentId` or `parent` properties are found on the `FooterMenuItem`
 
 #### Defined in
 
-[packages/nextjs-kit/src/types/index.ts:48](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/types/index.ts#L48)
+[packages/nextjs-kit/src/types/index.ts:48](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/nextjs-kit/src/types/index.ts#L48)
 
----
+___
 
 ### isHTMLElement
 
@@ -62,8 +61,8 @@ Type predicate to determine if an item is a number
 
 #### Parameters
 
-| Name      | Type      | Description              |
-| :-------- | :-------- | :----------------------- |
+| Name | Type | Description |
+| :------ | :------ | :------ |
 | `element` | `unknown` | some type of HTMLElement |
 
 #### Returns
@@ -74,9 +73,9 @@ true if the element is an HTMLElement
 
 #### Defined in
 
-[packages/nextjs-kit/src/types/index.ts:64](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/types/index.ts#L64)
+[packages/nextjs-kit/src/types/index.ts:64](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/nextjs-kit/src/types/index.ts#L64)
 
----
+___
 
 ### isNumber
 
@@ -86,9 +85,9 @@ Type predicate to determine if an item is a number
 
 #### Parameters
 
-| Name   | Type                              | Description |
-| :----- | :-------------------------------- | :---------- |
-| `item` | `undefined` \| `null` \| `number` | an item     |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `item` | `undefined` \| ``null`` \| `number` | an item |
 
 #### Returns
 
@@ -98,4 +97,4 @@ true if the item is a number
 
 #### Defined in
 
-[packages/nextjs-kit/src/types/index.ts:56](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/types/index.ts#L56)
+[packages/nextjs-kit/src/types/index.ts:56](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/nextjs-kit/src/types/index.ts#L56)
