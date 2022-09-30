@@ -1,0 +1,10 @@
+name: Generate Documentation
+
+on: workflow_call
+
+jobs:
+  generate-api-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: generate docs
+        run: pnpm generate-docs
