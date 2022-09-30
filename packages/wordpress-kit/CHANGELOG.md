@@ -1,5 +1,19 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.7.0-canary.0
+
+### Minor Changes
+
+- c91515b: Refactor block styles to follow WordPress 6
+- 74ce69e: Upgraded `graphql-request` to v5.0.0. This is not a breaking change
+  for `wordpress-kit`
+- dc33f30: Added support for MediaFile block and extracted general styles for
+  buttons
+
+### Patch Changes
+
+- aea42f5: Fix types field in package.json
+
 ## 2.6.0
 
 ### Minor Changes
