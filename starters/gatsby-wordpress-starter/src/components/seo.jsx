@@ -7,7 +7,6 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
 const Seo = ({ description, lang, meta, title }) => {
@@ -32,48 +31,24 @@ const Seo = ({ description, lang, meta, title }) => {
 	const metaDescription = description || wp.generalSettings?.description
 	const defaultTitle = wp.generalSettings?.title
 
+	const titleTemplate = defaultTitle ? `${title} | ${defaultTitle}` : null
+
 	return (
-		<Helmet
+		<>
+			{/* TODO- Find a way to pass it to the gatsby-ssr.js
 			htmlAttributes={{
 				lang,
-			}}
-			title={title}
-			titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
-			meta={[
-				{
-					name: `description`,
-					content: metaDescription,
-				},
-				{
-					property: `og:title`,
-					content: title,
-				},
-				{
-					property: `og:description`,
-					content: metaDescription,
-				},
-				{
-					property: `og:type`,
-					content: `website`,
-				},
-				{
-					name: `twitter:card`,
-					content: `summary`,
-				},
-				{
-					name: `twitter:creator`,
-					content: wpUser?.twitter || ``,
-				},
-				{
-					name: `twitter:title`,
-					content: title,
-				},
-				{
-					name: `twitter:description`,
-					content: metaDescription,
-				},
-			].concat(meta)}
-		/>
+			}} */}
+			<title>{titleTemplate}</title>
+			<meta name="description" content={metaDescription} />
+			<meta property="og:title" content={title} />
+			<meta property="og:description" content={metaDescription} />
+			<meta property="og:type" content="website" />
+			<meta name="twitter:card" content="summary" />
+			<meta name="twitter:creator" content={wpUser?.twitter || ''} />
+			<meta name="twitter:title" content={title} />
+			<meta name="twitter:description" content={metaDescription} />
+		</>
 	)
 }
 
