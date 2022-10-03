@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
-import PostsListTemplate from '../../pages/posts/index';
-import PostTemplate from '../../pages/posts/[slug]';
+import PostHandler from '../../pages/posts/[[...page]]';
 
 import posts from '../data/postsData.json';
 import post from '../data/postData.json';
@@ -10,6 +9,11 @@ vi.mock('next/image');
 vi.mock('next/router', () => ({
 	useRouter: () => ({
 		locale: 'en',
+		pathname: 'test/path',
+		push: vi.fn(),
+		query: {
+			page: '/posts/[[...page]]',
+		},
 	}),
 }));
 
@@ -20,7 +24,7 @@ vi.mock('next/router', () => ({
 describe('<PostListTemplate />', () => {
 	it('should render with posts', () => {
 		const { asFragment } = render(
-			<PostsListTemplate posts={posts} footerMenu={footerMenu} />,
+			<PostHandler posts={posts} menuItems={footerMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -28,7 +32,7 @@ describe('<PostListTemplate />', () => {
 describe('<PostTemplate />', () => {
 	it('should render a post', () => {
 		const { asFragment } = render(
-			<PostTemplate post={post} footerMenu={footerMenu} />,
+			<PostHandler posts={post} menuItems={footerMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});

@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
-import PageListTemplate from '../../pages/pages/index';
-import PageTemplate from '../../pages/pages/[uri]';
+import PageHandler from '../../pages/pages/[[...uri]]';
 
 import pages from '../data/pagesData.json';
 import page from '../data/pageData.json';
@@ -10,6 +9,11 @@ vi.mock('next/image');
 vi.mock('next/router', () => ({
 	useRouter: () => ({
 		locale: 'en',
+		pathname: 'test/path',
+		push: vi.fn(),
+		query: {
+			uri: '/pages/[[...uri]]',
+		},
 	}),
 }));
 
@@ -20,7 +24,7 @@ vi.mock('next/router', () => ({
 describe('<PageListTemplate />', () => {
 	it('should render with pages', () => {
 		const { asFragment } = render(
-			<PageListTemplate pages={pages} footerMenu={footerMenu} />,
+			<PageHandler pages={pages} menuItems={footerMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -28,7 +32,7 @@ describe('<PageListTemplate />', () => {
 describe('<PageTemplate />', () => {
 	it('should render a page', () => {
 		const { asFragment } = render(
-			<PageTemplate page={page} footerMenu={footerMenu} />,
+			<PageHandler pages={page} menuItems={footerMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});

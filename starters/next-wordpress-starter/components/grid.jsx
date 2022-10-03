@@ -31,12 +31,12 @@ export const withGrid = (Component) => {
 	return GridedComponent;
 };
 
-export const PostGridItem = ({ content: post }) => {
+export const PostGridItem = ({ content: post, pageNum }) => {
 	const imgSrc = getUrlPath(post?.featuredImage?.node?.sourceUrl);
 	const altText = post?.featuredImage?.node.altText || post.title;
 
 	return (
-		<Link passHref href={`/posts${post.uri}`}>
+		<Link passHref href={`/posts${pageNum ? '/' + pageNum : ''}${post.uri}`}>
 			<a>
 				<div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500">
 					<div className="flex-shrink-0 relative h-40">
@@ -60,12 +60,12 @@ export const PostGridItem = ({ content: post }) => {
 	);
 };
 
-export const PageGridItem = ({ content: page }) => {
+export const PageGridItem = ({ content: page, pageNum }) => {
 	const imgSrc = getUrlPath(page?.featuredImage?.node?.sourceUrl);
 	const altText = page?.featuredImage?.node.altText || page.title;
 
 	return (
-		<Link passHref href={`/pages${page.uri}`}>
+		<Link passHref href={`/pages/${pageNum}${page.uri}`}>
 			<a>
 				<div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500">
 					<div className="flex-shrink-0 relative h-40">

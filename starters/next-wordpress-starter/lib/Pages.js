@@ -25,7 +25,7 @@ export async function getAllPagesUri() {
 export async function getLatestPages() {
 	const query = gql`
 		query LatestPagesQuery {
-			pages(first: 10) {
+			pages(first: 12) {
 				edges {
 					node {
 						id

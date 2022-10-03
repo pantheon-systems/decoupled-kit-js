@@ -58,62 +58,82 @@ exports[`<PostListTemplate /> > should render with posts 1`] = `
     <main
       class="mb-auto"
     >
-      <header
-        class="prose text-2xl mx-auto mt-20"
+      <div
+        class="prose max-w-max mx-auto"
       >
-        <h1
-          class="text-center mx-auto"
+        <section
+          class="flex flex-col"
         >
-          Posts
-        </h1>
-      </header>
-      <section>
-        <div
-          class="mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
-        >
-          <a
-            href="/posts/example-post-with-image"
+          <header
+            class="prose text-2xl mx-auto mt-20"
           >
-            <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            <h1
+              class="text-center mx-auto"
             >
-              <div
-                class="flex-shrink-0 relative h-40"
-              >
-                <img
-                  alt="Example Post with Image"
-                  src="undefined/app/uploads/2022/09/pizza.jpeg"
-                />
-              </div>
-              <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
-              >
-                Example Post with Image →
-              </h2>
-            </div>
-          </a>
-          <a
-            href="/posts/hello-world"
+              Posts
+            </h1>
+          </header>
+          <div
+            class="ps-max-w-screen-md"
           >
-            <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            <h3
+              class="ps-mb-8 ps-prose-sm"
             >
+              Page 1/1
+            </h3>
+            <section>
               <div
-                class="flex-shrink-0 relative h-40"
+                class="mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
               >
-                <div
-                  class="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500"
-                />
+                <a
+                  href="/posts/example-post-with-image"
+                >
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+                  >
+                    <div
+                      class="flex-shrink-0 relative h-40"
+                    >
+                      <img
+                        alt="Example Post with Image"
+                        src="undefined/app/uploads/2022/09/pizza.jpeg"
+                      />
+                    </div>
+                    <h2
+                      class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                    >
+                      Example Post with Image →
+                    </h2>
+                  </div>
+                </a>
+                <a
+                  href="/posts/hello-world"
+                >
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+                  >
+                    <div
+                      class="flex-shrink-0 relative h-40"
+                    >
+                      <div
+                        class="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500"
+                      />
+                    </div>
+                    <h2
+                      class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                    >
+                      Hello world! →
+                    </h2>
+                  </div>
+                </a>
               </div>
-              <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
-              >
-                Hello world! →
-              </h2>
-            </div>
-          </a>
-        </div>
-      </section>
+            </section>
+            <div
+              class="ps-sticky lg:ps-bottom-12 ps-bottom-4"
+            />
+          </div>
+        </section>
+      </div>
     </main>
     <footer
       class="w-full text-white bg-black p-4 mt-12"
@@ -121,7 +141,18 @@ exports[`<PostListTemplate /> > should render with posts 1`] = `
       <nav
         class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
       >
-        <ul />
+        <ul>
+          <li
+            class="list-disc text-blue-300 hover:text-blue-100 ml-3"
+          >
+            <a
+              class="hover:underline focus:text-purple-600  active:text-purple-300"
+              href="/posts/example-post-with-image"
+            >
+              Example Post with Image
+            </a>
+          </li>
+        </ul>
       </nav>
       <div
         class="flex my-4 p-2"
@@ -255,7 +286,18 @@ exports[`<PostTemplate /> > should render a post 1`] = `
       <nav
         class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
       >
-        <ul />
+        <ul>
+          <li
+            class="list-disc text-blue-300 hover:text-blue-100 ml-3"
+          >
+            <a
+              class="hover:underline focus:text-purple-600  active:text-purple-300"
+              href="/posts/example-post-with-image"
+            >
+              Example Post with Image
+            </a>
+          </li>
+        </ul>
       </nav>
       <div
         class="flex my-4 p-2"
