@@ -21,15 +21,15 @@ vi.mock('next/router', () => ({
  * @vitest-environment jsdom
  */
 
-describe('<PostListTemplate />', () => {
-	it('should render with posts', () => {
+describe('<PostHandler />', () => {
+	it('should render with multiple posts in grid', () => {
 		const { asFragment } = render(
 			<PostHandler posts={posts} menuItems={footerMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
-describe('<PostTemplate />', () => {
+describe('<PostHandler />', () => {
 	it('should render a post', () => {
 		const { asFragment } = render(
 			<PostHandler posts={post} menuItems={footerMenu} />,

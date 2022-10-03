@@ -21,15 +21,15 @@ vi.mock('next/router', () => ({
  * @vitest-environment jsdom
  */
 
-describe('<PageListTemplate />', () => {
-	it('should render with pages', () => {
+describe('<PageHandler />', () => {
+	it('should render with multiple pages in grid', () => {
 		const { asFragment } = render(
 			<PageHandler pages={pages} menuItems={footerMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
-describe('<PageTemplate />', () => {
+describe('<PageHandler />', () => {
 	it('should render a page', () => {
 		const { asFragment } = render(
 			<PageHandler pages={page} menuItems={footerMenu} />,
