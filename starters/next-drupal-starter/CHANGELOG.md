@@ -1,5 +1,19 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.3.0-canary.0
+
+### Minor Changes
+
+- 74ce69e: Upgraded `next` to v12.3.1
+
+### Patch Changes
+
+- Updated dependencies [74ce69e]
+- Updated dependencies [74ce69e]
+- Updated dependencies [aea42f5]
+  - @pantheon-systems/nextjs-kit@1.3.0-canary.0
+  - @pantheon-systems/drupal-kit@3.1.0-canary.0
+
 ## 3.2.0
 
 ### Minor Changes

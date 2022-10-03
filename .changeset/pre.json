@@ -11,5 +11,13 @@
     "@pantheon-systems/next-wordpress-starter": "0.8.0",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "big-avocados-clap",
+    "dry-berries-fly",
+    "gold-carrots-boil",
+    "long-keys-brake",
+    "lovely-coins-fly",
+    "smooth-ligers-add",
+    "swift-years-wait"
+  ]
 }
