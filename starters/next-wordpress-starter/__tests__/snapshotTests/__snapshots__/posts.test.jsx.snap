@@ -217,7 +217,7 @@ exports[`<PostTemplate /> > should render a post 1`] = `
         <p
           class="ps-text-sm ps-text-gray-600"
         >
-          9/14/2022
+          9/13/2022
         </p>
         <a
           class="ps-font-normal ps-cursor-pointer"
