@@ -1,5 +1,21 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.9.0-canary.0
+
+### Minor Changes
+
+- 74ce69e: Upgraded `next` to v12.3.1
+
+### Patch Changes
+
+- Updated dependencies [c91515b]
+- Updated dependencies [74ce69e]
+- Updated dependencies [aea42f5]
+- Updated dependencies [74ce69e]
+- Updated dependencies [dc33f30]
+  - @pantheon-systems/wordpress-kit@2.7.0-canary.0
+  - @pantheon-systems/nextjs-kit@1.3.0-canary.0
+
 ## 0.8.0
 
 ### Minor Changes

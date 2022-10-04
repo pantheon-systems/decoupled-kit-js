@@ -320,8 +320,6 @@ importers:
       '@docusaurus/core': 2.1.0
       '@docusaurus/preset-classic': 2.1.0
       '@mdx-js/react': ^1.x
-      '@pantheon-systems/configs': workspace:*
-      '@pantheon-systems/eslint-config': workspace:*
       '@types/react': 17.0.40
       clsx: ^1.2.1
       docusaurus-plugin-typedoc: ^0.17.5
@@ -340,8 +338,6 @@ importers:
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     devDependencies:
-      '@pantheon-systems/configs': link:../configs
-      '@pantheon-systems/eslint-config': link:../configs/eslint
       '@types/react': 17.0.40
       docusaurus-plugin-typedoc: 0.17.5_7zab47scz53et6rw2zwvyhhfd4
       typedoc: 0.23.15

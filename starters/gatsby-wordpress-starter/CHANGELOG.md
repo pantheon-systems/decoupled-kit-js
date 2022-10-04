@@ -1,5 +1,11 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.3.0-canary.0
+
+### Minor Changes
+
+- 74ce69e: Upgraded `gatsby` to v4.24.0 and bumped gatsby related plugins
+
 ## 2.2.0
 
 ### Minor Changes
