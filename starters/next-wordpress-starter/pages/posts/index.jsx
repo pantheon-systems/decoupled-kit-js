@@ -3,7 +3,8 @@ import { setEdgeHeader } from '@pantheon-systems/wordpress-kit';
 
 import PageHeader from '../../components/page-header';
 import Layout from '../../components/layout';
-import { withGrid, PostGridItem } from '../../components/grid';
+import { PostGridItem } from '../../components/grid';
+import { withGrid } from '@pantheon-systems/nextjs-kit';
 
 import { getFooterMenu } from '../../lib/Menus';
 import { getLatestPosts } from '../../lib/Posts';
