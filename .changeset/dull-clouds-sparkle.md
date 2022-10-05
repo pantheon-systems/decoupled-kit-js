@@ -1,5 +1,5 @@
 ---
-'@pantheon-systems/gatsby-wordpress-starter': major
+'@pantheon-systems/gatsby-wordpress-starter': minor
 ---
 
-Refactored to remove react-helmet and use the gatsby Head function
+Refactored to remove react-helmet and use the gatsby Head

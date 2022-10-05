@@ -1,5 +1,15 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.3.0-canary.0
+
+### Minor Changes
+
+- 74ce69e: Upgraded `next` to v12.3.1
+
+### Patch Changes
+
+- aea42f5: Fix types field in package.json
+
 ## 1.2.0
 
 ### Minor Changes
