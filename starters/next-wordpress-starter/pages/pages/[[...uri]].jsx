@@ -18,7 +18,11 @@ export default function PageHandler({ menuItems, pages }) {
 	// render page list if multiple pages were passed
 	if (pages.length !== undefined) {
 		return (
-			<PageListTemplate menuItems={menuItems} pages={pages} pageNum={uri[0]} />
+			<PageListTemplate
+				menuItems={menuItems}
+				pages={pages}
+				pageNum={!isNaN(uri[0]) ? uri[0] : undefined}
+			/>
 		);
 	} else {
 		return <PageTemplate menuItems={menuItems} page={pages} />;

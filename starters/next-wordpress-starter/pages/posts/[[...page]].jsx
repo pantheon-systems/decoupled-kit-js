@@ -21,7 +21,7 @@ export default function PostHandler({ menuItems, posts }) {
 			<PostsListTemplate
 				menuItems={menuItems}
 				posts={posts}
-				pageNum={page[0]}
+				pageNum={!isNaN(page[0]) ? page[0] : undefined}
 			/>
 		);
 	} else {
