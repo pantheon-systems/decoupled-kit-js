@@ -27,7 +27,7 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
           >
             <a
               class="hover:underline"
-              href="/posts"
+              href="/posts/1"
             >
               📰 Posts
             </a>
@@ -37,7 +37,7 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
           >
             <a
               class="hover:underline"
-              href="/pages"
+              href="/pages/1"
             >
               📑 Pages
             </a>
@@ -157,7 +157,7 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
           >
             <a
               class="hover:underline"
-              href="/posts"
+              href="/posts/1"
             >
               📰 Posts
             </a>
@@ -167,7 +167,7 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
           >
             <a
               class="hover:underline"
-              href="/pages"
+              href="/pages/1"
             >
               📑 Pages
             </a>

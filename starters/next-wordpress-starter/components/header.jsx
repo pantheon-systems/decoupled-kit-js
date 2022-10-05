@@ -7,8 +7,8 @@ export default function Header() {
 				<ul className="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto">
 					{[
 						['🏠 Home', '/'],
-						['📰 Posts', '/posts'],
-						['📑 Pages', '/pages'],
+						['📰 Posts', '/posts/1'],
+						['📑 Pages', '/pages/1'],
 						['⚛️ Examples', '/examples'],
 					].map(([title, href]) => (
 						<li className={`${href === '/' ? 'mr-auto' : 'mx-4'}`} key={href}>

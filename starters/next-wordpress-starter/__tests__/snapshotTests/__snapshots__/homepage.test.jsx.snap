@@ -27,7 +27,7 @@ exports[`<HomepageTemplate /> > should render with posts 1`] = `
           >
             <a
               class="hover:underline"
-              href="/posts"
+              href="/posts/1"
             >
               📰 Posts
             </a>
@@ -37,7 +37,7 @@ exports[`<HomepageTemplate /> > should render with posts 1`] = `
           >
             <a
               class="hover:underline"
-              href="/pages"
+              href="/pages/1"
             >
               📑 Pages
             </a>
