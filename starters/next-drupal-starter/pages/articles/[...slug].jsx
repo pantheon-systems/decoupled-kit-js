@@ -33,7 +33,7 @@ export default function ArticleTemplate({
 					imgSrc
 						? {
 								src: imgSrc,
-								alt: thumbnail ? thumbnail?.resourceIdObjMeta.alt : title,
+								alt: thumbnail?.resourceIdObjMeta?.alt,
 						  }
 						: undefined
 				}

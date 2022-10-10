@@ -56,7 +56,7 @@ export default function CatchAllRoute({
 						imgSrc
 							? {
 									src: imgSrc,
-									alt: thumbnail ? thumbnail.resourceIdObjMeta.alt : title,
+									alt: thumbnail?.resourceIdObjMeta?.alt,
 							  }
 							: undefined
 					}
@@ -83,7 +83,7 @@ export default function CatchAllRoute({
 						imgSrc
 							? {
 									src: imgSrc,
-									alt: thumbnail ? thumbnail.resourceIdObjMeta.alt : title,
+									alt: thumbnail?.resourceIdObjMeta?.alt,
 							  }
 							: undefined
 					}

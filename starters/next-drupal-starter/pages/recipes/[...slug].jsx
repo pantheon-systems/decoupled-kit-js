@@ -41,7 +41,7 @@ export default function RecipeTemplate({
 					imgSrc
 						? {
 								src: imgSrc,
-								alt: thumbnail?.resourceIdObjMeta.alt,
+								alt: thumbnail?.resourceIdObjMeta?.alt,
 						  }
 						: undefined
 				}
