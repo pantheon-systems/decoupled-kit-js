@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo';
 import { setEdgeHeader } from '@pantheon-systems/wordpress-kit';
 import { ContentWithImage } from '@pantheon-systems/nextjs-kit';
+import { IMAGE_URL } from '../../lib/constants';
 
 import Layout from '../../components/layout';
 
@@ -37,6 +38,12 @@ export async function getServerSideProps({ params: { uri }, res }) {
 	const menuItems = await getFooterMenu();
 	const page = await getPageByUri(uri);
 	setEdgeHeader({ res });
+
+	if (!page) {
+		return {
+			notFound: true,
+		};
+	}
 
 	return {
 		props: {
