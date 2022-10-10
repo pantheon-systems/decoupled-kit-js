@@ -6,47 +6,47 @@ exports[`<PageListTemplate /> > should render with pages 1`] = `
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
   >
     <div
-      class="my-0 pt-10 px-5 text-xl"
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
     >
       <nav>
         <ul
-          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
         >
           <li
-            class="mr-auto"
+            class="ps-mr-auto"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/"
             >
               🏠 Home
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/posts"
             >
               📰 Posts
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/pages"
             >
               📑 Pages
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -69,7 +69,7 @@ exports[`<PageListTemplate /> > should render with pages 1`] = `
       </header>
       <section>
         <div
-          class="mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+          class="ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg lg:ps-grid-cols-3"
         >
           <a
             href="/pagessample-page"
@@ -95,15 +95,15 @@ exports[`<PageListTemplate /> > should render with pages 1`] = `
       </section>
     </main>
     <footer
-      class="w-full text-white bg-black p-4 mt-12"
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
     >
       <nav
-        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
       >
         <ul />
       </nav>
       <div
-        class="flex my-4 p-2"
+        class="ps-flex ps-my-4 ps-p-2"
       >
         <span
           class="mx-auto"
@@ -135,47 +135,47 @@ exports[`<PageTemplate /> > should render a page 1`] = `
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
   >
     <div
-      class="my-0 pt-10 px-5 text-xl"
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
     >
       <nav>
         <ul
-          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
         >
           <li
-            class="mr-auto"
+            class="ps-mr-auto"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/"
             >
               🏠 Home
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/posts"
             >
               📰 Posts
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/pages"
             >
               📑 Pages
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -188,96 +188,93 @@ exports[`<PageTemplate /> > should render a page 1`] = `
       class="mb-auto"
     >
       <article
-        class="prose lg:prose-xl mt-10 mx-auto"
+        class="ps-prose xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-p-4"
       >
         <h1>
           Sample Page
         </h1>
         <p
-          class="text-sm text-gray-600"
+          class="ps-text-sm ps-text-gray-600"
         >
-          Tue Sep 13 2022
+          9/13/2022
         </p>
         <a
-          class="font-normal"
-          href="/pages"
+          class="ps-font-normal ps-cursor-pointer"
         >
-          Pages →
+          Back →
         </a>
         <div
-          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+          class="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg ps-shadow-lg [&*>img]:ps-rounded-lg"
         />
         <div
-          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+          class="ps-break-words ps-mt-12"
         >
-          <div>
-            
+          
 
+          <p>
+            This is an example page. It’s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:
+          </p>
+          
+
+
+
+
+          <blockquote
+            class="wp-block-quote"
+          >
             <p>
-              This is an example page. It’s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:
+              Hi there! I’m a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like piña coladas. (And gettin’ caught in the rain.)
             </p>
-            
+          </blockquote>
+          
 
 
 
 
-            <blockquote
-              class="wp-block-quote"
+          <p>
+            …or something like this:
+          </p>
+          
+
+
+
+
+          <blockquote
+            class="wp-block-quote"
+          >
+            <p>
+              The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.
+            </p>
+          </blockquote>
+          
+
+
+
+
+          <p>
+            As a new WordPress user, you should go to 
+            <a
+              href="https://dev-cobs-decoupled-wp.pantheonsite.io/wp/wp-admin/"
             >
-              <p>
-                Hi there! I’m a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like piña coladas. (And gettin’ caught in the rain.)
-              </p>
-            </blockquote>
-            
+              your dashboard
+            </a>
+             to delete this page and create new pages for your content. Have fun!
+          </p>
+          
 
-
-
-
-            <p>
-              …or something like this:
-            </p>
-            
-
-
-
-
-            <blockquote
-              class="wp-block-quote"
-            >
-              <p>
-                The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.
-              </p>
-            </blockquote>
-            
-
-
-
-
-            <p>
-              As a new WordPress user, you should go to 
-              <a
-                href="https://dev-cobs-decoupled-wp.pantheonsite.io/wp/wp-admin/"
-              >
-                your dashboard
-              </a>
-               to delete this page and create new pages for your content. Have fun!
-            </p>
-            
-
-          </div>
         </div>
       </article>
     </main>
     <footer
-      class="w-full text-white bg-black p-4 mt-12"
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
     >
       <nav
-        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
       >
         <ul />
       </nav>
       <div
-        class="flex my-4 p-2"
+        class="ps-flex ps-my-4 ps-p-2"
       >
         <span
           class="mx-auto"

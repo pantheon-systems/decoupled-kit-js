@@ -1,7 +1,8 @@
 import { NextSeo } from 'next-seo';
 import { setEdgeHeader } from '@pantheon-systems/wordpress-kit';
 
-import { PageGridItem, withGrid } from '../../components/grid';
+import { PageGridItem } from '../../components/grid';
+import { withGrid } from '@pantheon-systems/nextjs-kit';
 import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
 

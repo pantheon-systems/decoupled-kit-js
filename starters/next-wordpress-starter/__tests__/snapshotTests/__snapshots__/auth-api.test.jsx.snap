@@ -6,47 +6,47 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
   >
     <div
-      class="my-0 pt-10 px-5 text-xl"
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
     >
       <nav>
         <ul
-          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
         >
           <li
-            class="mr-auto"
+            class="ps-mr-auto"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/"
             >
               🏠 Home
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/posts"
             >
               📰 Posts
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/pages"
             >
               📑 Pages
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -96,15 +96,15 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
       </div>
     </main>
     <footer
-      class="w-full text-white bg-black p-4 mt-12"
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
     >
       <nav
-        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
       >
         <ul />
       </nav>
       <div
-        class="flex my-4 p-2"
+        class="ps-flex ps-my-4 ps-p-2"
       >
         <span
           class="mx-auto"
@@ -136,47 +136,47 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
   >
     <div
-      class="my-0 pt-10 px-5 text-xl"
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
     >
       <nav>
         <ul
-          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
         >
           <li
-            class="mr-auto"
+            class="ps-mr-auto"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/"
             >
               🏠 Home
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/posts"
             >
               📰 Posts
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/pages"
             >
               📑 Pages
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -210,15 +210,15 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
       </div>
     </main>
     <footer
-      class="w-full text-white bg-black p-4 mt-12"
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
     >
       <nav
-        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
       >
         <ul />
       </nav>
       <div
-        class="flex my-4 p-2"
+        class="ps-flex ps-my-4 ps-p-2"
       >
         <span
           class="mx-auto"

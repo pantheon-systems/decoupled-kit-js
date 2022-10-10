@@ -7,30 +7,6 @@ const GradientPlaceholder = () => (
 	<div className="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500" />
 );
 
-export const withGrid = (Component) => {
-	const GridedComponent = ({ data, ...props }) => {
-		if (!data || !data.length) {
-			return props.contentType ? (
-				<h2 className="text-xl text-center mt-14">
-					No {props.contentType} found 🏜
-				</h2>
-			) : null;
-		}
-
-		return (
-			<div
-				className={`mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-3 lg:max-w-screen-lg`}
-			>
-				{data.map((content, i) => {
-					return <Component key={i} content={content} {...props} />;
-				})}
-			</div>
-		);
-	};
-
-	return GridedComponent;
-};
-
 export const PostGridItem = ({ content: post }) => {
 	const imgSrc = getUrlPath(post?.featuredImage?.node?.sourceUrl);
 	const altText = post?.featuredImage?.node.altText || post.title;
