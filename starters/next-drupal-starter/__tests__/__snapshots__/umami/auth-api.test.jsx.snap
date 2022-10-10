@@ -6,47 +6,47 @@ exports[`umami <AuthApiExampleTemplate /> > should render a failure message if u
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
   >
     <div
-      class="my-0 pt-10 px-5 text-xl"
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
     >
       <nav>
         <ul
-          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
         >
           <li
-            class="mr-auto"
+            class="ps-mr-auto"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/"
             >
               🏠 Home
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/articles"
             >
               📰 Articles
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/pages"
             >
               📑 Pages
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -96,37 +96,37 @@ exports[`umami <AuthApiExampleTemplate /> > should render a failure message if u
       </div>
     </main>
     <footer
-      class="w-full text-white bg-black p-4 mt-12"
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
     >
       <nav
-        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
       >
         <ul>
           <li
-            class="list-disc text-blue-300 ml-3"
+            class="ps-list-disc ps-text-blue-300"
           >
             <a
-              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
               href="/en"
             >
               Home
             </a>
           </li>
           <li
-            class="list-disc text-blue-300 ml-3"
+            class="ps-list-disc ps-text-blue-300"
           >
             <a
-              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
               href="/en/articles"
             >
               Articles
             </a>
           </li>
           <li
-            class="list-disc text-blue-300 ml-3"
+            class="ps-list-disc ps-text-blue-300"
           >
             <a
-              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
               href="/en/recipes"
             >
               Recipes
@@ -135,7 +135,7 @@ exports[`umami <AuthApiExampleTemplate /> > should render a failure message if u
         </ul>
       </nav>
       <div
-        class="flex my-4 p-2"
+        class="ps-flex ps-my-4 ps-p-2"
       >
         <span
           class="mx-auto"
@@ -167,47 +167,47 @@ exports[`umami <AuthApiExampleTemplate /> > should render a success message if a
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
   >
     <div
-      class="my-0 pt-10 px-5 text-xl"
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
     >
       <nav>
         <ul
-          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
         >
           <li
-            class="mr-auto"
+            class="ps-mr-auto"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/"
             >
               🏠 Home
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/articles"
             >
               📰 Articles
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/pages"
             >
               📑 Pages
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -241,37 +241,37 @@ exports[`umami <AuthApiExampleTemplate /> > should render a success message if a
       </div>
     </main>
     <footer
-      class="w-full text-white bg-black p-4 mt-12"
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
     >
       <nav
-        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
       >
         <ul>
           <li
-            class="list-disc text-blue-300 ml-3"
+            class="ps-list-disc ps-text-blue-300"
           >
             <a
-              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
               href="/en"
             >
               Home
             </a>
           </li>
           <li
-            class="list-disc text-blue-300 ml-3"
+            class="ps-list-disc ps-text-blue-300"
           >
             <a
-              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
               href="/en/articles"
             >
               Articles
             </a>
           </li>
           <li
-            class="list-disc text-blue-300 ml-3"
+            class="ps-list-disc ps-text-blue-300"
           >
             <a
-              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
               href="/en/recipes"
             >
               Recipes
@@ -280,7 +280,7 @@ exports[`umami <AuthApiExampleTemplate /> > should render a success message if a
         </ul>
       </nav>
       <div
-        class="flex my-4 p-2"
+        class="ps-flex ps-my-4 ps-p-2"
       >
         <span
           class="mx-auto"
