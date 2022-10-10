@@ -39,6 +39,12 @@ export async function getServerSideProps({ params: { uri }, res }) {
 	const page = await getPageByUri(uri);
 	setEdgeHeader({ res });
 
+	if (!page) {
+		return {
+			notFound: true,
+		};
+	}
+
 	return {
 		props: {
 			menuItems,
