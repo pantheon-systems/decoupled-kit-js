@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
-import PageHandler from '../../pages/pages/[[...uri]]';
+import PageListTemplate from '../../pages/pages/index';
+import PageTemplate from '../../pages/pages/[uri]';
 
 import pages from '../data/pagesData.json';
 import page from '../data/pageData.json';
@@ -12,7 +13,7 @@ vi.mock('next/router', () => ({
 		pathname: 'test/path',
 		push: vi.fn(),
 		query: {
-			uri: '/pages/[[...uri]]',
+			uri: '/posts/[uri]]',
 		},
 	}),
 }));
@@ -21,18 +22,18 @@ vi.mock('next/router', () => ({
  * @vitest-environment jsdom
  */
 
-describe('<PageHandler />', () => {
-	it('should render with multiple pages in grid', () => {
+describe('<PageListTemplate />', () => {
+	it('should render with pages', () => {
 		const { asFragment } = render(
-			<PageHandler pages={pages} menuItems={footerMenu} />,
+			<PageListTemplate pages={pages} footerMenu={footerMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
-describe('<PageHandler />', () => {
+describe('<PageTemplate />', () => {
 	it('should render a page', () => {
 		const { asFragment } = render(
-			<PageHandler pages={page} menuItems={footerMenu} />,
+			<PageTemplate page={page} footerMenu={footerMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});

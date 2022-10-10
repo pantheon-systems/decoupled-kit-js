@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
-import PostHandler from '../../pages/posts/[[...page]]';
+import PostsListTemplate from '../../pages/posts/index';
+import PostTemplate from '../../pages/posts/[slug]';
 
 import posts from '../data/postsData.json';
 import post from '../data/postData.json';
@@ -12,7 +13,7 @@ vi.mock('next/router', () => ({
 		pathname: 'test/path',
 		push: vi.fn(),
 		query: {
-			page: '/posts/[[...page]]',
+			slug: '/posts/[slug]',
 		},
 	}),
 }));
@@ -21,18 +22,18 @@ vi.mock('next/router', () => ({
  * @vitest-environment jsdom
  */
 
-describe('<PostHandler />', () => {
-	it('should render with multiple posts in grid', () => {
+describe('<PostListTemplate />', () => {
+	it('should render with posts', () => {
 		const { asFragment } = render(
-			<PostHandler posts={posts} menuItems={footerMenu} />,
+			<PostsListTemplate posts={posts} footerMenu={footerMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
-describe('<PostHandler />', () => {
+describe('<PostTemplate />', () => {
 	it('should render a post', () => {
 		const { asFragment } = render(
-			<PostHandler posts={post} menuItems={footerMenu} />,
+			<PostTemplate post={post} footerMenu={footerMenu} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});

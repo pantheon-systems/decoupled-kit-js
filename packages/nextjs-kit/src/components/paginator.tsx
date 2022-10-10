@@ -267,10 +267,10 @@ const Paginator = <Type extends object>({
 			<section>
 				{/* Component passed in that will render the data */}
 				<Component currentItems={currentItems} />
-				<div className="ps-sticky lg:ps-bottom-12 ps-bottom-4">
-					<RenderButtons />
-				</div>
 			</section>
+			<div className="ps-sticky lg:ps-bottom-12 ps-bottom-4 ps-mt-10">
+				<RenderButtons />
+			</div>
 		</div>
 	);
 };
