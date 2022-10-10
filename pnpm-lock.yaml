@@ -71,7 +71,7 @@ importers:
       lint-staged: 13.0.3
       prettier: 2.7.1
       react: 17.0.2
-      ts-jest: 29.0.3_jufvdtndqxutuniyhglngh7btq
+      ts-jest: 29.0.3_v3pk32hgvovbtvitirqp2xjtje
       tslib: 2.4.0
       typedoc: 0.23.15_typescript@4.8.4
       typescript: 4.8.4
@@ -102,7 +102,7 @@ importers:
       typescript: ^4.8.4
       vite-plugin-dts: ^1.6.1
     dependencies:
-      '@gdwc/drupal-state': 4.0.1_qcef5mtkqifnealbzizx64k6m4
+      '@gdwc/drupal-state': 4.0.1_zvdcumho7mqj3lfknr2wnpofbm
     devDependencies:
       '@pantheon-systems/configs': link:../../configs
       '@pantheon-systems/eslint-config': link:../../configs/eslint
@@ -112,7 +112,7 @@ importers:
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       typescript: 4.8.4
-      vite-plugin-dts: 1.6.1_vite@3.1.4
+      vite-plugin-dts: 1.6.1
 
   packages/nextjs-kit:
     specifiers:
@@ -134,16 +134,16 @@ importers:
       '@pantheon-systems/configs': link:../../configs
       '@pantheon-systems/eslint-config': link:../../configs/eslint
       '@testing-library/react': 12.1.5_sfoxds7t5ydpegc3knd667wn6m
-      '@vitejs/plugin-react': 2.1.0_vite@3.1.4
+      '@vitejs/plugin-react': 2.1.0
       autoprefixer: 10.4.12_postcss@8.4.16
       c8: 7.12.0
-      eslint-plugin-prettier: 4.2.1_prettier@2.7.1
-      next: 12.3.1_7zkbjz6d46tpcbbta4lk5n6n6i
+      eslint-plugin-prettier: 4.2.1
+      next: 12.3.1_sfoxds7t5ydpegc3knd667wn6m
       postcss: 8.4.16
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       tailwindcss: 3.1.8
-      vite-plugin-dts: 1.6.1_vite@3.1.4
+      vite-plugin-dts: 1.6.1
       vitest: 0.23.4
 
   packages/wordpress-kit:
@@ -161,7 +161,7 @@ importers:
       '@pantheon-systems/configs': link:../../configs
       '@pantheon-systems/eslint-config': link:../../configs/eslint
       tailwindcss: 3.1.8
-      vite-plugin-dts: 1.6.1_vite@3.1.4
+      vite-plugin-dts: 1.6.1
 
   starters/gatsby-wordpress-starter:
     specifiers:
@@ -176,7 +176,6 @@ importers:
       gatsby-plugin-offline: ^5.24.0
       gatsby-plugin-pnpm: ^1.2.10
       gatsby-plugin-postcss: ^5.24.0
-      gatsby-plugin-react-helmet: ^5.24.0
       gatsby-plugin-sharp: ^4.24.0
       gatsby-source-filesystem: ^4.24.0
       gatsby-source-wordpress: ^6.24.0
@@ -188,7 +187,6 @@ importers:
       prettier: ^2.7.1
       react: 17.0.2
       react-dom: 17.0.2
-      react-helmet: ^6.1.0
       tailwindcss: ^3.1.8
       typeface-merriweather: 1.1.13
       typeface-montserrat: 1.1.13
@@ -201,7 +199,6 @@ importers:
       gatsby-plugin-offline: 5.24.0_s7rq2wvv252dn4p7gxjqkz6nd4
       gatsby-plugin-pnpm: 1.2.10_gatsby@4.24.0
       gatsby-plugin-postcss: 5.24.0_a7y4mlxrmg6xgrlguxsus74wnq
-      gatsby-plugin-react-helmet: 5.24.0_laudetne5f7oxbfs33353xojpa
       gatsby-plugin-sharp: 4.24.0_knwq56jgir26pciw4ncivzt2am
       gatsby-source-filesystem: 4.24.0_gatsby@4.24.0
       gatsby-source-wordpress: 6.24.0_4zixnuuaiqua4qou2t6fjdk7eu
@@ -212,7 +209,6 @@ importers:
       postcss: 8.4.16
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      react-helmet: 6.1.0_react@17.0.2
       typeface-merriweather: 1.1.13
       typeface-montserrat: 1.1.13
     devDependencies:
@@ -251,14 +247,14 @@ importers:
       '@pantheon-systems/nextjs-kit': link:../../packages/nextjs-kit
       '@tailwindcss/typography': 0.5.7_tailwindcss@3.1.8
       dotenv: 16.0.2
-      next: 12.3.1_7zkbjz6d46tpcbbta4lk5n6n6i
+      next: 12.3.1_sfoxds7t5ydpegc3knd667wn6m
       next-seo: 5.5.0_dty4et2pnba4zo7o4cegg6bk2e
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       sharp: 0.31.1
     devDependencies:
       '@testing-library/react': 12.1.5_sfoxds7t5ydpegc3knd667wn6m
-      '@vitejs/plugin-react': 2.1.0_vite@3.1.4
+      '@vitejs/plugin-react': 2.1.0
       autoprefixer: 10.4.12_postcss@8.4.16
       c8: 7.12.0
       encoding: 0.1.13
@@ -296,14 +292,14 @@ importers:
       '@pantheon-systems/wordpress-kit': link:../../packages/wordpress-kit
       '@tailwindcss/typography': 0.5.7_tailwindcss@3.1.8
       dotenv: 16.0.2
-      next: 12.3.1_7zkbjz6d46tpcbbta4lk5n6n6i
+      next: 12.3.1_sfoxds7t5ydpegc3knd667wn6m
       next-seo: 5.5.0_dty4et2pnba4zo7o4cegg6bk2e
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       sharp: 0.31.1
     devDependencies:
       '@testing-library/react': 12.1.5_sfoxds7t5ydpegc3knd667wn6m
-      '@vitejs/plugin-react': 2.1.0_vite@3.1.4
+      '@vitejs/plugin-react': 2.1.0
       autoprefixer: 10.4.12_postcss@8.4.16
       c8: 7.12.0
       eslint: 8.24.0
@@ -323,6 +319,7 @@ importers:
       '@types/react': 17.0.40
       clsx: ^1.2.1
       docusaurus-plugin-typedoc: ^0.17.5
+      dotenv: ^16.0.2
       prism-react-renderer: ^1.3.5
       react: 17.0.2
       react-dom: 17.0.2
@@ -340,6 +337,7 @@ importers:
     devDependencies:
       '@types/react': 17.0.40
       docusaurus-plugin-typedoc: 0.17.5_7zab47scz53et6rw2zwvyhhfd4
+      dotenv: 16.0.2
       typedoc: 0.23.15
       typedoc-plugin-markdown: 3.13.6_typedoc@0.23.15
 
@@ -4409,7 +4407,7 @@ packages:
       strip-ansi: 6.0.1
     dev: false
 
-  /@gdwc/drupal-state/4.0.1_qcef5mtkqifnealbzizx64k6m4:
+  /@gdwc/drupal-state/4.0.1_zvdcumho7mqj3lfknr2wnpofbm:
     resolution: {integrity: sha512-Y0wfehQlVGcvWogAbaQFiz47hwzihOzVzSq4J59JSOv6vkYghjHfdIm+FLSF5+TMYC1hdZkd8WaPSbA5ePCVSg==}
     requiresBuild: true
     dependencies:
@@ -4424,7 +4422,7 @@ packages:
       jsona: 1.9.7
       patch-package: 6.4.7
       qs: 6.11.0
-      ts-jest: 27.1.5_zgo3ukr7wfsrfu7w73hol4lxpy
+      ts-jest: 27.1.5_h2mjkler2cwtrz56xjx3qgassu
       zustand: 3.7.2_react@16.14.0
     transitivePeerDependencies:
       - '@babel/core'
@@ -5808,7 +5806,7 @@ packages:
       '@parcel/diagnostic': 2.6.2
       '@parcel/fs': 2.6.2_@parcel+core@2.6.2
       '@parcel/logger': 2.6.2
-      '@parcel/types': 2.6.2
+      '@parcel/types': 2.6.2_@parcel+core@2.6.2
       '@parcel/utils': 2.6.2
       '@parcel/workers': 2.6.2_@parcel+core@2.6.2
       semver: 5.7.1
@@ -5903,18 +5901,6 @@ packages:
       nullthrows: 1.1.1
       regenerator-runtime: 0.13.9
       semver: 5.7.1
-    dev: false
-
-  /@parcel/types/2.6.2:
-    resolution: {integrity: sha512-MV8BFpCIs2jMUvK2RHqzkoiuOQ//JIbrD1zocA2YRW3zuPL/iABvbAABJoXpoPCKikVWOoCWASgBfWQo26VvJQ==}
-    dependencies:
-      '@parcel/cache': 2.6.2_@parcel+core@2.6.2
-      '@parcel/diagnostic': 2.6.2
-      '@parcel/fs': 2.6.2_@parcel+core@2.6.2
-      '@parcel/package-manager': 2.6.2_@parcel+core@2.6.2
-      '@parcel/source-map': 2.1.0
-      '@parcel/workers': 2.6.2_@parcel+core@2.6.2
-      utility-types: 3.10.0
     dev: false
 
   /@parcel/types/2.6.2_@parcel+core@2.6.2:
@@ -7169,7 +7155,7 @@ packages:
       resolve: 1.22.1
     dev: false
 
-  /@vitejs/plugin-react/2.1.0_vite@3.1.4:
+  /@vitejs/plugin-react/2.1.0:
     resolution: {integrity: sha512-am6rPyyU3LzUYne3Gd9oj9c4Rzbq5hQnuGXSMT6Gujq45Il/+bunwq3lrB7wghLkiF45ygMwft37vgJ/NE8IAA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -7182,7 +7168,6 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.18.6_@babel+core@7.19.3
       magic-string: 0.26.2
       react-refresh: 0.14.0
-      vite: 3.1.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7735,7 +7720,7 @@ packages:
   /axios/0.21.4_debug@3.2.7:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
-      follow-redirects: 1.15.1
+      follow-redirects: 1.15.1_debug@3.2.7
     transitivePeerDependencies:
       - debug
     dev: false
@@ -9870,7 +9855,6 @@ packages:
   /dotenv/16.0.2:
     resolution: {integrity: sha512-JvpYKUmzQhYoIFgK2MOnF3bciIZoItIIoryihy0rIA+H4Jy0FmgyKYAHCTN98P5ybGSJcIFbh6QKeJdtZd1qhA==}
     engines: {node: '>=12'}
-    dev: false
 
   /dotenv/7.0.0:
     resolution: {integrity: sha512-M3NhsLbV1i6HuGzBUH8vXrtxOk+tWmzWKDMbAVSUp3Zsjm7ywFeuwrUXhmhQyRK1q5B5GGy7hcXPbj3bnfZg2g==}
@@ -10661,7 +10645,7 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_prettier@2.7.1:
+  /eslint-plugin-prettier/4.2.1:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -10674,7 +10658,6 @@ packages:
       eslint-config-prettier:
         optional: true
     dependencies:
-      prettier: 2.7.1
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -11500,6 +11483,18 @@ packages:
         optional: true
     dev: false
 
+  /follow-redirects/1.15.1_debug@3.2.7:
+    resolution: {integrity: sha512-yLAMQs+k0b2m7cVxpS1VKJVvoz7SS9Td1zss3XRwXj+ZDH00RJgnuLx7E44wx02kQLrdM3aOOy+FpzS7+8OizA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: 3.2.7
+    dev: false
+
   /for-each/0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
     dependencies:
@@ -11953,18 +11948,6 @@ packages:
       postcss-loader: 4.3.0_qjv4cptcpse3y5hrjkrbb7drda
     transitivePeerDependencies:
       - webpack
-    dev: false
-
-  /gatsby-plugin-react-helmet/5.24.0_laudetne5f7oxbfs33353xojpa:
-    resolution: {integrity: sha512-SU/SrWsbEFLQhuzDXucYlQ4O5pTdpOdxw07xIRwyFfxFzGml/9f62h2dTtUJOIXP1mYfl31bw7eCbGlc8QzF5w==}
-    engines: {node: '>=14.15.0'}
-    peerDependencies:
-      gatsby: ^4.0.0-next
-      react-helmet: ^5.1.3 || ^6.0.0
-    dependencies:
-      '@babel/runtime': 7.19.0
-      gatsby: 4.24.0_sfoxds7t5ydpegc3knd667wn6m
-      react-helmet: 6.1.0_react@17.0.2
     dev: false
 
   /gatsby-plugin-sharp/4.24.0_knwq56jgir26pciw4ncivzt2am:
@@ -15713,7 +15696,7 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 12.3.1_7zkbjz6d46tpcbbta4lk5n6n6i
+      next: 12.3.1_sfoxds7t5ydpegc3knd667wn6m
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     dev: false
@@ -15722,7 +15705,7 @@ packages:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
     dev: false
 
-  /next/12.3.1_7zkbjz6d46tpcbbta4lk5n6n6i:
+  /next/12.3.1_sfoxds7t5ydpegc3knd667wn6m:
     resolution: {integrity: sha512-l7bvmSeIwX5lp07WtIiP9u2ytZMv7jIeB8iacR28PuUEFG5j0HGAPnMqyG5kbZNBG2H7tRsrQ4HCjuMOPnANZw==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -15746,7 +15729,7 @@ packages:
       postcss: 8.4.14
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      styled-jsx: 5.0.7_ph7rcd4v2li52df2b6sabhe4ga
+      styled-jsx: 5.0.7_react@17.0.2
       use-sync-external-store: 1.2.0_react@17.0.2
     optionalDependencies:
       '@next/swc-android-arm-eabi': 12.3.1
@@ -17418,18 +17401,6 @@ packages:
       shallowequal: 1.1.0
     dev: false
 
-  /react-helmet/6.1.0_react@17.0.2:
-    resolution: {integrity: sha512-4uMzEY9nlDlgxr61NL3XbKRy1hEkXmKNXhjbAIOVw5vcFrsdYbH2FEwcNyWvWinl103nXgzYNlns9ca+8kFiWw==}
-    peerDependencies:
-      react: '>=16.3.0'
-    dependencies:
-      object-assign: 4.1.1
-      prop-types: 15.8.1
-      react: 17.0.2
-      react-fast-compare: 3.2.0
-      react-side-effect: 2.1.2_react@17.0.2
-    dev: false
-
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -17533,14 +17504,6 @@ packages:
       neo-async: 2.6.2
       react: 17.0.2
       webpack: 5.74.0
-    dev: false
-
-  /react-side-effect/2.1.2_react@17.0.2:
-    resolution: {integrity: sha512-PVjOcvVOyIILrYoyGEpDN3vmYNLdy1CajSFNt4TDsVQC5KpTijDvWVoR+/7Rz2xT978D8/ZtFceXxzsPwZEDvw==}
-    peerDependencies:
-      react: ^16.3.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      react: 17.0.2
     dev: false
 
   /react-textarea-autosize/8.3.4_adlholpkqbiq5amp2fy4vkqcli:
@@ -18926,7 +18889,7 @@ packages:
       inline-style-parser: 0.1.1
     dev: false
 
-  /styled-jsx/5.0.7_ph7rcd4v2li52df2b6sabhe4ga:
+  /styled-jsx/5.0.7_react@17.0.2:
     resolution: {integrity: sha512-b3sUzamS086YLRuvnaDigdAewz1/EFYlHpYBP5mZovKEdQQOIIYq8lApylub3HHZ6xFjV051kkGU7cudJmrXEA==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
@@ -18939,7 +18902,6 @@ packages:
       babel-plugin-macros:
         optional: true
     dependencies:
-      '@babel/core': 7.19.3
       react: 17.0.2
 
   /stylehacks/5.1.0_postcss@8.4.16:
@@ -19335,7 +19297,7 @@ packages:
     resolution: {integrity: sha512-0z3j8R7MCjy10kc/g+qg7Ln3alJTodw9aDuVWZa3uiWqfuBMKeAeP2ocWcxoyM3D73yz3Jt/Pu4qPr4wHSdB/Q==}
     dev: false
 
-  /ts-jest/27.1.5_zgo3ukr7wfsrfu7w73hol4lxpy:
+  /ts-jest/27.1.5_h2mjkler2cwtrz56xjx3qgassu:
     resolution: {integrity: sha512-Xv6jBQPoBEvBq/5i2TeSG9tt/nqkbpcurrEG1b+2yfBrcJelOZF9Ml6dmyMh7bcW9JyFbRYpR5rxROSlBLTZHA==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     hasBin: true
@@ -19358,7 +19320,6 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@babel/core': 7.19.3
       '@types/jest': 27.5.2
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
@@ -19372,7 +19333,7 @@ packages:
       yargs-parser: 20.2.9
     dev: false
 
-  /ts-jest/29.0.3_jufvdtndqxutuniyhglngh7btq:
+  /ts-jest/29.0.3_v3pk32hgvovbtvitirqp2xjtje:
     resolution: {integrity: sha512-Ibygvmuyq1qp/z3yTh9QTwVVAbFdDy/+4BtIQR2sp6baF2SJU/8CKK/hhnGIDY2L90Az2jIqTwZPnN2p+BweiQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
@@ -19395,7 +19356,6 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@babel/core': 7.19.3
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
       jest: 29.1.1_@types+node@16.11.62
@@ -19996,7 +19956,7 @@ packages:
       vfile-message: 2.0.4
     dev: false
 
-  /vite-plugin-dts/1.6.1_vite@3.1.4:
+  /vite-plugin-dts/1.6.1:
     resolution: {integrity: sha512-hqawU0FivS7yIJCsvT0YIHHgkraVZQP5UjNh4U4jOJOCz/YE/JAZX0iHhSE0CwOhe0yOQVA/RVMYGYfdt8LwZQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -20009,7 +19969,6 @@ packages:
       fast-glob: 3.2.12
       fs-extra: 10.1.0
       ts-morph: 16.0.0
-      vite: 3.1.4
     transitivePeerDependencies:
       - supports-color
     dev: true
