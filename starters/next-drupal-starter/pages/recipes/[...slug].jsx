@@ -6,6 +6,7 @@ import {
 	globalDrupalStateAuthStores,
 	globalDrupalStateStores,
 } from '../../lib/stores';
+import { IMAGE_URL } from '../../lib/constants';
 
 import Layout from '../../components/layout';
 import { Recipe } from '@pantheon-systems/nextjs-kit';
@@ -40,7 +41,7 @@ export default function RecipeTemplate({
 				imageProps={
 					imgSrc
 						? {
-								src: imgSrc,
+								src: IMAGE_URL + imgSrc,
 								alt: thumbnail?.resourceIdObjMeta?.alt,
 						  }
 						: undefined

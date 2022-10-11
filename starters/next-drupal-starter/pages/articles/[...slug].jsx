@@ -6,6 +6,7 @@ import {
 	globalDrupalStateAuthStores,
 	globalDrupalStateStores,
 } from '../../lib/stores';
+import { IMAGE_URL } from '../../lib/constants';
 
 import { ContentWithImage } from '@pantheon-systems/nextjs-kit';
 import Layout from '../../components/layout';
@@ -32,7 +33,7 @@ export default function ArticleTemplate({
 				imageProps={
 					imgSrc
 						? {
-								src: imgSrc,
+								src: IMAGE_URL + imgSrc,
 								alt: thumbnail?.resourceIdObjMeta?.alt,
 						  }
 						: undefined

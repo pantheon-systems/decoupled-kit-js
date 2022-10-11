@@ -6,6 +6,7 @@ import {
 import { getPreview } from '../lib/getPreview';
 import { translatePath } from '@pantheon-systems/drupal-kit';
 import { NextSeo } from 'next-seo';
+import { IMAGE_URL } from '../lib/constants';
 
 import Link from 'next/link';
 import Layout from '../components/layout';
@@ -55,7 +56,7 @@ export default function CatchAllRoute({
 					imageProps={
 						imgSrc
 							? {
-									src: imgSrc,
+									src: IMAGE_URL + imgSrc,
 									alt: thumbnail?.resourceIdObjMeta?.alt,
 							  }
 							: undefined
@@ -82,7 +83,7 @@ export default function CatchAllRoute({
 					imageProps={
 						imgSrc
 							? {
-									src: imgSrc,
+									src: IMAGE_URL + imgSrc,
 									alt: thumbnail?.resourceIdObjMeta?.alt,
 							  }
 							: undefined
