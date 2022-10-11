@@ -41,7 +41,7 @@ export const PageGridItem = ({ content: page }) => {
 	const altText = page?.featuredImage?.node.altText || page.title;
 
 	return (
-		<Link passHref href={`/pages${page.uri}`}>
+		<Link passHref href={`/pages/${page.uri}`}>
 			<a>
 				<div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500">
 					<div className="flex-shrink-0 relative h-40">

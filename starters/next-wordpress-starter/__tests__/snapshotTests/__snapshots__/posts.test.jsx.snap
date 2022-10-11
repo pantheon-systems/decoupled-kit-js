@@ -67,53 +67,66 @@ exports[`<PostListTemplate /> > should render with posts 1`] = `
           Posts
         </h1>
       </header>
-      <section>
-        <div
-          class="ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg lg:ps-grid-cols-3"
-        >
-          <a
-            href="/posts/example-post-with-image"
+      <div
+        class="max-w-screen-lg mx-auto"
+      >
+        <section>
+          <div
+            class="ps-max-w-full"
           >
-            <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
-            >
+            <section>
               <div
-                class="flex-shrink-0 relative h-40"
+                class="ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg lg:ps-grid-cols-3"
               >
-                <img
-                  alt="Example Post with Image"
-                  src="undefined/app/uploads/2022/09/pizza.jpeg"
-                />
+                <a
+                  href="/posts/example-post-with-image"
+                >
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+                  >
+                    <div
+                      class="flex-shrink-0 relative h-40"
+                    >
+                      <img
+                        alt="Example Post with Image"
+                        src="undefined/app/uploads/2022/09/pizza.jpeg"
+                      />
+                    </div>
+                    <h2
+                      class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                    >
+                      Example Post with Image →
+                    </h2>
+                  </div>
+                </a>
+                <a
+                  href="/posts/hello-world"
+                >
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+                  >
+                    <div
+                      class="flex-shrink-0 relative h-40"
+                    >
+                      <div
+                        class="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500"
+                      />
+                    </div>
+                    <h2
+                      class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                    >
+                      Hello world! →
+                    </h2>
+                  </div>
+                </a>
               </div>
-              <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
-              >
-                Example Post with Image →
-              </h2>
-            </div>
-          </a>
-          <a
-            href="/posts/hello-world"
-          >
+            </section>
             <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
-            >
-              <div
-                class="flex-shrink-0 relative h-40"
-              >
-                <div
-                  class="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500"
-                />
-              </div>
-              <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
-              >
-                Hello world! →
-              </h2>
-            </div>
-          </a>
-        </div>
-      </section>
+              class="ps-sticky lg:ps-bottom-12 ps-bottom-4 ps-mt-10"
+            />
+          </div>
+        </section>
+      </div>
     </main>
     <footer
       class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"

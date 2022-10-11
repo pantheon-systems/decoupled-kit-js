@@ -70,10 +70,10 @@ exports[`<PaginationExampleTemplate /> > should render the Pagination Example pa
             Pagination example
           </h1>
           <div
-            class="ps-max-w-screen-md"
+            class="ps-max-w-full"
           >
             <h3
-              class="ps-mb-8 ps-prose-sm"
+              class="ps-mb-8 ps-prose-sm ps-font-bold"
             >
               Page 1/10
             </h3>
@@ -185,7 +185,7 @@ exports[`<PaginationExampleTemplate /> > should render the Pagination Example pa
               </article>
             </section>
             <div
-              class="ps-sticky lg:ps-bottom-12 ps-bottom-4"
+              class="ps-sticky lg:ps-bottom-12 ps-bottom-4 ps-mt-10"
             >
               <nav
                 aria-label="Pagination Navigation"

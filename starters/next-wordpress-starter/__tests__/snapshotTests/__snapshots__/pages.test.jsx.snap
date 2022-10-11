@@ -58,41 +58,54 @@ exports[`<PageListTemplate /> > should render with pages 1`] = `
     <main
       class="mb-auto"
     >
-      <header
-        class="prose text-2xl mx-auto mt-20"
+      <div
+        class="max-w-screen-lg mx-auto"
       >
-        <h1
-          class="text-center mx-auto"
-        >
-          Pages
-        </h1>
-      </header>
-      <section>
-        <div
-          class="ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg lg:ps-grid-cols-3"
-        >
-          <a
-            href="/pagessample-page"
+        <section>
+          <header
+            class="prose text-2xl mx-auto mt-20"
           >
-            <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            <h1
+              class="text-center mx-auto"
             >
+              Pages
+            </h1>
+          </header>
+          <div
+            class="ps-max-w-full"
+          >
+            <section>
               <div
-                class="flex-shrink-0 relative h-40"
+                class="ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg lg:ps-grid-cols-3"
               >
-                <div
-                  class="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500"
-                />
+                <a
+                  href="/pages/sample-page"
+                >
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+                  >
+                    <div
+                      class="flex-shrink-0 relative h-40"
+                    >
+                      <div
+                        class="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500"
+                      />
+                    </div>
+                    <h2
+                      class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                    >
+                       →
+                    </h2>
+                  </div>
+                </a>
               </div>
-              <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
-              >
-                 →
-              </h2>
-            </div>
-          </a>
-        </div>
-      </section>
+            </section>
+            <div
+              class="ps-sticky lg:ps-bottom-12 ps-bottom-4 ps-mt-10"
+            />
+          </div>
+        </section>
+      </div>
     </main>
     <footer
       class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
