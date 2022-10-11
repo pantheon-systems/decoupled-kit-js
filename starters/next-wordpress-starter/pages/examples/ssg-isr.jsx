@@ -36,7 +36,7 @@ export default function SSGISRExampleTemplate({ menuItems, posts }) {
 
 export async function getStaticProps() {
 	const menuItems = await getFooterMenu();
-	const posts = await getLatestPosts();
+	const posts = await getLatestPosts(100);
 
 	return {
 		props: {

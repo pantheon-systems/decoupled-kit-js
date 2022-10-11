@@ -10,6 +10,7 @@ import { getFooterMenu } from '../../lib/Menus';
 import { getLatestPosts } from '../../lib/Posts';
 
 export default function PostsListTemplate({ menuItems, posts }) {
+	console.log(posts);
 	const PostGrid = withGrid(PostGridItem);
 	const RenderCurrentItems = ({ currentItems }) => {
 		return <PostGrid contentType="posts" data={currentItems} />;
@@ -26,7 +27,7 @@ export default function PostsListTemplate({ menuItems, posts }) {
 				<section>
 					<Paginator
 						data={posts}
-						itemsPerPage={10}
+						itemsPerPage={12}
 						Component={RenderCurrentItems}
 					/>
 				</section>
@@ -37,7 +38,7 @@ export default function PostsListTemplate({ menuItems, posts }) {
 
 export async function getServerSideProps({ res }) {
 	const menuItems = await getFooterMenu();
-	const posts = await getLatestPosts();
+	const posts = await getLatestPosts(100);
 	setEdgeHeader({ res });
 
 	return {
