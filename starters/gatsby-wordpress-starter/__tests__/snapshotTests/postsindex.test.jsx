@@ -1,12 +1,12 @@
 import * as Gatsby from 'gatsby'
 import { render } from '@testing-library/react'
 
-import Index from '../../src/templates/index'
+import PostIndexTemplate from '../../src/templates/postsIndex'
 import data from '../data/allWpPost.json'
 
 const StaticQuery = vi.spyOn(Gatsby, 'StaticQuery')
 
-describe('<Index />', () => {
+describe('<PostIndexTemplate />', () => {
 	beforeEach(() => {
 		StaticQuery.mockImplementation(() => {
 			return {
@@ -14,13 +14,10 @@ describe('<Index />', () => {
 			}
 		})
 	})
-	afterEach(() => {
-		vi.restoreAllMocks()
-	})
 
 	it('should render with posts', () => {
 		const { asFragment } = render(
-			<Index
+			<PostIndexTemplate
 				data={data}
 				pageContext={{ nextPagePath: null, previousPagePath: null }}
 			/>,
