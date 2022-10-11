@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo';
 import { setEdgeHeader } from '@pantheon-systems/wordpress-kit';
 import { ContentWithImage } from '@pantheon-systems/nextjs-kit';
+import { IMAGE_URL } from '../../lib/constants';
 
 import Layout from '../../components/layout';
 

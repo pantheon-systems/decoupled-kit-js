@@ -27,7 +27,7 @@ export default function ExamplesPageTemplate({ menuItems }) {
 						<li>
 							<Link href="/examples/auth-api">API Authorization</Link> -
 							confirms that Next.js is able to make authenticated requests to
-							Drupal&apos;s API.
+							WordPress&apos; API.
 						</li>
 						<li>
 							<Link href="/examples/ssg-isr">SSG and ISR</Link> - by default,

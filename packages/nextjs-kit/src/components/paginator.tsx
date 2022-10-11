@@ -258,15 +258,17 @@ const Paginator = <Type extends object>({
 		);
 	};
 	return (
-		<div className="ps-max-w-screen-md">
-			<h3 className="ps-mb-8 ps-prose-sm">
-				Page {currentPageQuery}/{totalPages}
-			</h3>
+		<div className="ps-max-w-full">
+			{totalPages > 1 ? (
+				<h3 className="ps-mb-8 ps-prose-sm ps-font-bold">
+					Page {currentPageQuery}/{totalPages}
+				</h3>
+			) : null}
 			<section>
 				{/* Component passed in that will render the data */}
 				<Component currentItems={currentItems} />
 			</section>
-			<div className="ps-sticky lg:ps-bottom-12 ps-bottom-4">
+			<div className="ps-sticky lg:ps-bottom-12 ps-bottom-4 ps-mt-10">
 				<RenderButtons />
 			</div>
 		</div>
