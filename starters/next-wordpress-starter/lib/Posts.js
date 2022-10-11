@@ -4,7 +4,7 @@ import { client } from './WordPressClient';
 export async function getLatestPosts() {
 	const query = gql`
 		query LatestPostsQuery {
-			posts(first: 10) {
+			posts(first: 12) {
 				edges {
 					node {
 						id

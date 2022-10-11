@@ -3,10 +3,10 @@
 exports[`<Paginator /> > check back button works 1`] = `
 <DocumentFragment>
   <div
-    class="ps-max-w-screen-md"
+    class="ps-max-w-full"
   >
     <h3
-      class="ps-mb-8 ps-prose-sm"
+      class="ps-mb-8 ps-prose-sm ps-font-bold"
     >
       Page 1/18
     </h3>
@@ -155,7 +155,7 @@ Erat et...
       </article>
     </section>
     <div
-      class="ps-sticky lg:ps-bottom-12 ps-bottom-4"
+      class="ps-sticky lg:ps-bottom-12 ps-bottom-4 ps-mt-10"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -346,10 +346,10 @@ Erat et...
 exports[`<Paginator /> > check next button works 1`] = `
 <DocumentFragment>
   <div
-    class="ps-max-w-screen-md"
+    class="ps-max-w-full"
   >
     <h3
-      class="ps-mb-8 ps-prose-sm"
+      class="ps-mb-8 ps-prose-sm ps-font-bold"
     >
       Page 2/18
     </h3>
@@ -496,7 +496,7 @@ exports[`<Paginator /> > check next button works 1`] = `
       </article>
     </section>
     <div
-      class="ps-sticky lg:ps-bottom-12 ps-bottom-4"
+      class="ps-sticky lg:ps-bottom-12 ps-bottom-4 ps-mt-10"
     >
       <nav
         aria-label="Pagination Navigation"
@@ -686,10 +686,10 @@ exports[`<Paginator /> > check next button works 1`] = `
 exports[`<Paginator /> > should render the paginated data 1`] = `
 <DocumentFragment>
   <div
-    class="ps-max-w-screen-md"
+    class="ps-max-w-full"
   >
     <h3
-      class="ps-mb-8 ps-prose-sm"
+      class="ps-mb-8 ps-prose-sm ps-font-bold"
     >
       Page 1/18
     </h3>
@@ -838,7 +838,7 @@ Erat et...
       </article>
     </section>
     <div
-      class="ps-sticky lg:ps-bottom-12 ps-bottom-4"
+      class="ps-sticky lg:ps-bottom-12 ps-bottom-4 ps-mt-10"
     >
       <nav
         aria-label="Pagination Navigation"
