@@ -1,29 +1,22 @@
 import * as Gatsby from 'gatsby'
 import { render } from '@testing-library/react'
 
-import Index from '../../src/templates/index'
+import PostTemplate from '../../src/templates/post'
 import data from '../data/allWpPost.json'
 
 const StaticQuery = vi.spyOn(Gatsby, 'StaticQuery')
+const post = data.allWpPost.nodes[0]
+const next = data.allWpPost.nodes[1]
+const previous = null
 
-describe('<Index />', () => {
+describe('<PostTemplate />', () => {
 	beforeEach(() => {
-		StaticQuery.mockImplementation(({ render }) => {
-			render({
-				data,
-			})
-		})
-	})
-	afterEach(() => {
-		vi.restoreAllMocks()
+		StaticQuery.mockImplementation(() => ({ data: { post, next, previous } }))
 	})
 
 	it('should render with posts', () => {
 		const { asFragment } = render(
-			<Index
-				data={data}
-				pageContext={{ nextPagePath: null, previousPagePath: null }}
-			/>,
+			<PostTemplate data={{ next, previous, post }} />,
 		)
 
 		expect(asFragment()).toMatchSnapshot()
