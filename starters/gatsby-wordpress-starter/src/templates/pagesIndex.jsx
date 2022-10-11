@@ -6,7 +6,6 @@ import { PageGridItem, withGrid } from '../components/grid'
 
 const PageIndexTemplate = ({ pageContext: { pages } }) => {
 	const PageGrid = withGrid(PageGridItem)
-
 	return (
 		<Layout isHomePage>
 			<header className="prose text-2xl mx-auto mt-20">

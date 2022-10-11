@@ -5,7 +5,7 @@ import { vi } from 'vitest'
 import { wpMenu } from './data/wpMenu.json'
 
 vi.mock(`gatsby`, async () => {
-	const gatsby = await vi.importActual<typeof import('gatsby')>(`gatsby`)
+	const gatsby = await vi.importActual(`gatsby`)
 
 	return {
 		...gatsby,
