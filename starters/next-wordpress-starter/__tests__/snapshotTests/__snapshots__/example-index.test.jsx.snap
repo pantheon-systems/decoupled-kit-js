@@ -83,7 +83,7 @@ exports[`<ExamplesPageTemplate /> > should render the examples list page 1`] = `
               >
                 API Authorization
               </a>
-               - confirms that Next.js is able to make authenticated requests to Drupal's API.
+               - confirms that Next.js is able to make authenticated requests to WordPress' API.
             </li>
             <li>
               <a
