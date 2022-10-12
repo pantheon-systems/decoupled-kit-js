@@ -27,7 +27,7 @@ export default function PageListTemplate({ menuItems, pages }) {
 					<PageHeader title="Pages" />
 					<Paginator
 						data={pages}
-						itemsPerPage={10}
+						itemsPerPage={12}
 						Component={RenderCurrentItems}
 					/>
 				</section>
@@ -38,7 +38,7 @@ export default function PageListTemplate({ menuItems, pages }) {
 
 export async function getServerSideProps({ res }) {
 	const menuItems = await getFooterMenu();
-	const pages = await getLatestPages();
+	const pages = await getLatestPages(100);
 	setEdgeHeader({ res });
 
 	return {
