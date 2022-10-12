@@ -1,5 +1,13 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.3.0-canary.1
+
+### Patch Changes
+
+- 4c2761b: Add pagination for posts and pages in next-wordpress-starter
+- Updated dependencies [4c2761b]
+  - @pantheon-systems/nextjs-kit@1.3.0-canary.1
+
 ## 3.3.0-canary.0
 
 ### Minor Changes
