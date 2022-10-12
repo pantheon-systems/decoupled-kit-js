@@ -1,5 +1,11 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.3.0-canary.1
+
+### Minor Changes
+
+- f99244a: Refactored to remove react-helmet and use the gatsby Head
+
 ## 2.3.0-canary.0
 
 ### Minor Changes
