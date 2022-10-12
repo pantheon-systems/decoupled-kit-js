@@ -1,5 +1,53 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.3.0-canary.1
+
+### Minor Changes
+
+- 4c2761b: Add pagination for posts and pages in next-wordpress-starter
+
+## 1.3.0-canary.0
+
+### Minor Changes
+
+- 74ce69e: Upgraded `next` to v12.3.1
+
+### Patch Changes
+
+- aea42f5: Fix types field in package.json
+
+## 1.2.0
+
+### Minor Changes
+
+- 8b9cb28: Added ContentWithImage component to be used for a WP Post or Drupal
+  Article
+- c36d501: Add Recipe Component into nextjs-kit
+- 6671402: Added the prefix option in the tailwindcss config so the styles
+  generated from nextjs-kit will not override default tailwindcss classes in a
+  project
+- c6e0a77: Added a Grid and withGrid Higher Order Component
+
+## 1.2.0-canary.1
+
+### Minor Changes
+
+- c6e0a77: Added a Grid and withGrid Higher Order Component
+
+## 1.2.0-canary.0
+
+### Minor Changes
+
+- 6671402: Added the prefix option in the tailwindcss config so the styles
+  generated from nextjs-kit will not override default tailwindcss classes in a
+  project
+
+### Patch Changes
+
+- 8b9cb28: Added ContentWithImage component to be used for a WP Post or Drupal
+  Article
+- c36d501: Add Recipe Component into nextjs-kit
+
 ## 1.1.0
 
 ### Minor Changes

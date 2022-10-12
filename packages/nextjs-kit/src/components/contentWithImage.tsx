@@ -36,16 +36,19 @@ const ContentWithImage: React.FC<ContentProps> = ({
 	const router = useRouter();
 
 	return (
-		<article className="prose xs:prose-xs md:prose-md lg:prose-lg mt-10 mx-auto max-w-screen lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm p-4">
+		<article className="ps-prose xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-p-4">
 			<h1>{title}</h1>
-			{date ? <p className="text-sm text-gray-600">{date}</p> : null}
+			{date ? <p className="ps-text-sm ps-text-gray-600">{date}</p> : null}
 
-			<a onClick={() => router.back()} className="font-normal cursor-pointer">
+			<a
+				onClick={() => router.back()}
+				className="ps-font-normal ps-cursor-pointer"
+			>
 				Back &rarr;
 			</a>
-			<div className="mt-12 max-w-screen mx-auto lg:max-w-screen-lg shadow-lg [&*>img]:rounded-lg">
+			<div className="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg ps-shadow-lg [&*>img]:ps-rounded-lg">
 				{imageProps ? (
-					<div className="relative mb-10 min-h-[50vh]">
+					<div className="ps-relative ps-mb-10 ps-min-h-[50vh]">
 						<Image
 							priority
 							src={imageProps.src}
@@ -58,7 +61,7 @@ const ContentWithImage: React.FC<ContentProps> = ({
 			</div>
 
 			<div
-				className="break-words mt-12"
+				className="ps-break-words ps-mt-12"
 				dangerouslySetInnerHTML={{ __html: content }}
 			/>
 		</article>

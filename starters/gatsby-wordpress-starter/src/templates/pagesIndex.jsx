@@ -9,7 +9,6 @@ const PageIndexTemplate = ({ pageContext: { pages } }) => {
 
 	return (
 		<Layout isHomePage>
-			<Seo title="All pages" />
 			<header className="prose text-2xl mx-auto mt-20">
 				<h1 className="text-center mx-auto">Pages</h1>
 			</header>
@@ -21,3 +20,7 @@ const PageIndexTemplate = ({ pageContext: { pages } }) => {
 }
 
 export default PageIndexTemplate
+
+export function Head() {
+	return <Seo title="All pages" />
+}

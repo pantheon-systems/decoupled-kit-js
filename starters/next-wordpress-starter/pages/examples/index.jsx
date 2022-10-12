@@ -27,13 +27,17 @@ export default function ExamplesPageTemplate({ menuItems }) {
 						<li>
 							<Link href="/examples/auth-api">API Authorization</Link> -
 							confirms that Next.js is able to make authenticated requests to
-							Drupal&apos;s API.
+							WordPress&apos; API.
 						</li>
 						<li>
 							<Link href="/examples/ssg-isr">SSG and ISR</Link> - by default,
 							this starter kit is optimized for SSR and Edge Caching on
 							Pantheon. This example is provided for cases where Next.js static
 							generation options would be beneficial.
+						</li>
+						<li>
+							<Link href="/examples/pagination">Pagination</Link> - a paginated
+							list with a large dataset.
 						</li>
 					</ul>
 				</div>

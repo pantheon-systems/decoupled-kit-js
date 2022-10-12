@@ -82,7 +82,7 @@ export const TableComponent = ({
 		'&.alignwide': {
 			padding: '0 1.5rem',
 			table: {
-				maxWidth: '850px',
+				maxWidth: '1000px',
 			},
 		},
 		'&.alignfull': {
@@ -97,6 +97,16 @@ export const TableComponent = ({
 				maxWidth: 'none',
 			},
 			padding: '0',
+		},
+		'&.alignleft': {
+			float: 'left',
+			marginInlineStart: '0',
+			marginInlineEnd: '2em',
+		},
+		'&.alignright': {
+			float: 'right',
+			marginInlineStart: '2em',
+			marginInlineEnd: '0',
 		},
 		overflowX: 'auto',
 		padding: '0 2.5rem',

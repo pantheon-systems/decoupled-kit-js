@@ -1,5 +1,88 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.9.0-canary.2
+
+### Minor Changes
+
+- 4c2761b: Add pagination for posts and pages in next-wordpress-starter
+
+### Patch Changes
+
+- Updated dependencies [4c2761b]
+  - @pantheon-systems/nextjs-kit@1.3.0-canary.1
+
+## 0.9.0-canary.1
+
+### Minor Changes
+
+- eb8973d: Add Pagination To Page and Post List
+
+### Patch Changes
+
+- 6d7b23a: Implement `nextjs-kit` components
+- 19031a0: Update query parameters
+
+## 0.9.0-canary.0
+
+### Minor Changes
+
+- 74ce69e: Upgraded `next` to v12.3.1
+
+### Patch Changes
+
+- Updated dependencies [c91515b]
+- Updated dependencies [74ce69e]
+- Updated dependencies [aea42f5]
+- Updated dependencies [74ce69e]
+- Updated dependencies [dc33f30]
+  - @pantheon-systems/wordpress-kit@2.7.0-canary.0
+  - @pantheon-systems/nextjs-kit@1.3.0-canary.0
+
+## 0.8.0
+
+### Minor Changes
+
+- 2bfe07a: Remove pantheon logo for cards that don't have featured image, and
+  use a generic gradient instead
+- 196c1b9: Added a Paginated Data Example
+- 915c3ac: Added unit and snapshot tests, some minor refactoring
+
+### Patch Changes
+
+- Updated dependencies [6656b11]
+- Updated dependencies [8b9cb28]
+- Updated dependencies [7b14e2d]
+- Updated dependencies [09fb74f]
+- Updated dependencies [c36d501]
+- Updated dependencies [6671402]
+- Updated dependencies [c6e0a77]
+  - @pantheon-systems/wordpress-kit@2.6.0
+  - @pantheon-systems/nextjs-kit@1.2.0
+
+## 0.8.0-canary.2
+
+### Minor Changes
+
+- 196c1b9: Added a Paginated Data Example
+
+### Patch Changes
+
+- Updated dependencies [c6e0a77]
+  - @pantheon-systems/nextjs-kit@1.2.0-canary.1
+
+## 0.8.0-canary.1
+
+### Minor Changes
+
+- 2bfe07a: Remove pantheon logo for cards that don't have featured image, and
+  use a generic gradient instead
+
+### Patch Changes
+
+- Updated dependencies [7b14e2d]
+- Updated dependencies [09fb74f]
+  - @pantheon-systems/wordpress-kit@2.6.0-canary.1
+
 ## 0.8.0-canary.0
 
 ### Minor Changes

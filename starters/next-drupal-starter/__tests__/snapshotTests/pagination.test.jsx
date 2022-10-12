@@ -22,7 +22,7 @@ vi.mock('next/router', () => ({
 describe(`${PROFILE} <PaginationExampleTemplate />`, () => {
 	const footerMenu =
 		PROFILE === 'umami' ? umamiFooterMenu : defaultProfileFooterMenu;
-	it('should render a success message if authenticated', () => {
+	it('should render the Pagination Example page', () => {
 		const { asFragment } = render(
 			<PaginationExampleTemplate
 				footerMenu={footerMenu}

@@ -1,5 +1,70 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.3.0-canary.1
+
+### Patch Changes
+
+- 4c2761b: Add pagination for posts and pages in next-wordpress-starter
+- Updated dependencies [4c2761b]
+  - @pantheon-systems/nextjs-kit@1.3.0-canary.1
+
+## 3.3.0-canary.0
+
+### Minor Changes
+
+- 74ce69e: Upgraded `next` to v12.3.1
+
+### Patch Changes
+
+- Updated dependencies [74ce69e]
+- Updated dependencies [74ce69e]
+- Updated dependencies [aea42f5]
+  - @pantheon-systems/nextjs-kit@1.3.0-canary.0
+  - @pantheon-systems/drupal-kit@3.1.0-canary.0
+
+## 3.2.0
+
+### Minor Changes
+
+- 2bfe07a: Remove pantheon logo for cards that don't have featured image, and
+  use a generic gradient instead
+
+### Patch Changes
+
+- 5c113bb: Fix markup on Pagination Example page
+- e64608e: Fix accidental revert of preview.js file
+- Updated dependencies [8b9cb28]
+- Updated dependencies [c36d501]
+- Updated dependencies [6671402]
+- Updated dependencies [c6e0a77]
+- Updated dependencies [9dbbc6b]
+  - @pantheon-systems/nextjs-kit@1.2.0
+  - @pantheon-systems/drupal-kit@3.0.1
+
+## 3.2.0-canary.2
+
+### Patch Changes
+
+- 5c113bb: Fix markup on Pagination Example page
+- Updated dependencies [c6e0a77]
+  - @pantheon-systems/nextjs-kit@1.2.0-canary.1
+
+## 3.2.0-canary.1
+
+### Minor Changes
+
+- 2bfe07a: Remove pantheon logo for cards that don't have featured image, and
+  use a generic gradient instead
+
+### Patch Changes
+
+- Updated dependencies [8b9cb28]
+- Updated dependencies [c36d501]
+- Updated dependencies [6671402]
+- Updated dependencies [9dbbc6b]
+  - @pantheon-systems/nextjs-kit@1.2.0-canary.0
+  - @pantheon-systems/drupal-kit@3.0.1-canary.0
+
 ## 3.1.1-canary.0
 
 ### Patch Changes

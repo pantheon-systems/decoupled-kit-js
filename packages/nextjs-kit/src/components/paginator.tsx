@@ -108,10 +108,15 @@ const Paginator = <Type extends object>({
 	// track window width to appropriately hide and show buttons on small viewports
 	const [windowWidth, setWindowWidth] = useState<number>();
 	useEffect(() => {
-		setWindowWidth(window.innerWidth);
-		window.addEventListener('resize', () => {
+		const eventListener = () => {
 			setWindowWidth(window.innerWidth);
-		});
+		};
+		setWindowWidth(window.innerWidth);
+		window.addEventListener('resize', () => eventListener);
+
+		return () => {
+			window.removeEventListener('resize', eventListener);
+		};
 	}, []);
 
 	const handlePageClick: React.MouseEventHandler<HTMLButtonElement> = (
@@ -152,13 +157,25 @@ const Paginator = <Type extends object>({
 			const defaultButton = (
 				<button
 					className={`
-          ${currentPageQuery === pageNumber ? 'block' : 'hidden md:block'}
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 ${
-						currentPageQuery === pageNumber ? 'border-blue-700 border-2' : ''
+          ${
+						currentPageQuery === pageNumber
+							? 'ps-block'
+							: 'ps-hidden md:ps-block'
+					}
+          ps-h-16 ps-w-12 ps-border-t-2 ps-border-b-2 ps-border-black ps-bg-white hover:ps-bg-blue-300 focus:ps-bg-blue-200 focus:ps-border-blue-300 ${
+						currentPageQuery === pageNumber
+							? 'ps-border-blue-700 ps-border-2'
+							: ''
 					}
           `}
 					onClick={handlePageClick}
 					key={pageNumber}
+					aria-label={
+						currentPageQuery === pageNumber
+							? `Current Page, Page ${pageNumber}`
+							: `Go to Page ${pageNumber}`
+					}
+					aria-current={currentPageQuery === pageNumber ? true : false}
 				>
 					{pageNumber}
 				</button>
@@ -174,7 +191,7 @@ const Paginator = <Type extends object>({
 				}
 				buttons.push(
 					<button
-						className={`hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300"
+						className={`ps-hidden md:ps-block ps-h-16 ps-w-12 ps-border-2 ps-border-black ps-bg-slate-200 hover:ps-bg-blue-300 focus:ps-bg-blue-200 focus:ps-border-blue-300"
             }`}
 						onClick={() => {
 							if (isNumber(breakAdd)) {
@@ -182,6 +199,7 @@ const Paginator = <Type extends object>({
 							}
 						}}
 						key={'...'}
+						aria-label="Expand Hidden Buttons"
 					>
 						...
 					</button>,
@@ -200,42 +218,57 @@ const Paginator = <Type extends object>({
 			}
 			buttons.push(defaultButton);
 		}
+		const sharedNextAndBackBtnStyles =
+			'ps-h-16 ps-w-12 disabled:ps-bg-gray-500 hover:ps-bg-blue-300 focus:ps-bg-blue-200 focus:ps-border-blue-300 ps-border-y-2 ps-border-black ps-bg-white';
 		// returns the row of buttons
 		return (
-			<div className="flex flex-row justify-center mx-auto mt-auto mb-4">
+			<nav role="navigation" aria-label="Pagination Navigation">
 				{/* back button */}
-				<button
-					className="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white"
-					id="back-btn"
-					disabled={offset === 0}
-					onClick={handlePageClick}
-				>
-					{'<'}
-				</button>
-				{/* map buttons[] */}
-				{buttons.map((btn) => btn)}
-				{/* next button */}
-				<button
-					className="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white"
-					id="next-btn"
-					disabled={offset >= totalItems - itemsPerPage}
-					onClick={handlePageClick}
-				>
-					{'>'}
-				</button>
-			</div>
+				<ul className="ps-list-none ps-flex ps-flex-row ps-justify-center ps-mx-auto ps-mt-auto ps-mb-4 [&>li]:ps-p-0">
+					<li key="back">
+						{/* TODO: For improved accessibility, these buttons should be refactored to anchor tags. */}
+						<button
+							className={`${sharedNextAndBackBtnStyles} ps-border-l-2`}
+							id="back-btn"
+							disabled={offset === 0}
+							onClick={handlePageClick}
+							aria-label="Go to Previous Page"
+						>
+							{'<'}
+						</button>
+					</li>
+					{/* map buttons[] */}
+					{buttons.map((btn, i) => (
+						<li key={i}>{btn}</li>
+					))}
+					{/* next button */}
+					<li key="next">
+						<button
+							className={`${sharedNextAndBackBtnStyles} ps-border-r-2`}
+							id="next-btn"
+							disabled={offset >= totalItems - itemsPerPage}
+							onClick={handlePageClick}
+							aria-label="Go to Next Page"
+						>
+							{'>'}
+						</button>
+					</li>
+				</ul>
+			</nav>
 		);
 	};
 	return (
-		<div className="max-w-screen-md">
-			<h3 className="mb-8 prose-sm">
-				Page {currentPageQuery}/{totalPages}
-			</h3>
+		<div className="ps-max-w-full">
+			{totalPages > 1 ? (
+				<h3 className="ps-mb-8 ps-prose-sm ps-font-bold">
+					Page {currentPageQuery}/{totalPages}
+				</h3>
+			) : null}
 			<section>
 				{/* Component passed in that will render the data */}
 				<Component currentItems={currentItems} />
 			</section>
-			<div className="sticky lg:bottom-12 bottom-4">
+			<div className="ps-sticky lg:ps-bottom-12 ps-bottom-4 ps-mt-10">
 				<RenderButtons />
 			</div>
 		</div>

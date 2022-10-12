@@ -1,7 +1,7 @@
 ---
-id: 'lib_sortDate'
-title: 'Module: lib/sortDate'
-sidebar_label: 'lib/sortDate'
+id: "lib_sortDate"
+title: "Module: lib/sortDate"
+sidebar_label: "lib/sortDate"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -12,13 +12,12 @@ custom_edit_url: null
 
 ▸ **sortDate**(`sortObj`): `Record`<`string`, `string` \| `number`\>[]
 
-Sorts any date field of an object on a specific key in a direction of the users
-choice.
+Sorts any date field of an object on a specific key in a direction of the users choice.
 
 #### Parameters
 
-| Name      | Type                                                |
-| :-------- | :-------------------------------------------------- |
+| Name | Type |
+| :------ | :------ |
 | `sortObj` | [`SortOptions`](../interfaces/types.SortOptions.md) |
 
 #### Returns
@@ -29,4 +28,4 @@ An array of data sorted by the given key and direction
 
 #### Defined in
 
-[packages/nextjs-kit/src/lib/sortDate.ts:11](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/lib/sortDate.ts#L11)
+[packages/nextjs-kit/src/lib/sortDate.ts:11](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/nextjs-kit/src/lib/sortDate.ts#L11)

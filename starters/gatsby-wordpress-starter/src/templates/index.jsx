@@ -38,7 +38,6 @@ const Index = ({ data, pageContext: { nextPagePath, previousPagePath } }) => {
 
 	return (
 		<Layout isHomePage>
-			<Seo title="All posts" />
 			<PageHeader />
 
 			<section>
@@ -63,6 +62,10 @@ const Index = ({ data, pageContext: { nextPagePath, previousPagePath } }) => {
 }
 
 export default Index
+
+export function Head() {
+	return <Seo title="All posts" />
+}
 
 export const pageQuery = graphql`
 	query WordPressPostArchive($offset: Int!, $postsPerPage: Int!) {

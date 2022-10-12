@@ -13,8 +13,6 @@ const PageTemplate = ({ data: { page }, pageContext: { next, previous } }) => {
 
 	return (
 		<Layout>
-			{/* Todo - add truncated content as description */}
-			<Seo title={page.title} />
 			<Page page={page} next={next} previous={previous} />
 		</Layout>
 	)
@@ -49,3 +47,7 @@ export const pageQuery = graphql`
 		}
 	}
 `
+export function Head({ data: { page } }) {
+	// Todo - add truncated content as description
+	return <Seo title={page.title} />
+}
