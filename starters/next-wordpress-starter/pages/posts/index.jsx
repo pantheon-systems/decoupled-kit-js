@@ -10,7 +10,6 @@ import { getFooterMenu } from '../../lib/Menus';
 import { getLatestPosts } from '../../lib/Posts';
 
 export default function PostsListTemplate({ menuItems, posts }) {
-	console.log(posts);
 	const PostGrid = withGrid(PostGridItem);
 	const RenderCurrentItems = ({ currentItems }) => {
 		return <PostGrid contentType="posts" data={currentItems} />;

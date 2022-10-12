@@ -38,7 +38,7 @@ export default function PageListTemplate({ menuItems, pages }) {
 
 export async function getServerSideProps({ res }) {
 	const menuItems = await getFooterMenu();
-	const pages = await getLatestPages(12);
+	const pages = await getLatestPages(100);
 	setEdgeHeader({ res });
 
 	return {
