@@ -1,5 +1,16 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.9.0-canary.1
+
+### Minor Changes
+
+- eb8973d: Add Pagination To Page and Post List
+
+### Patch Changes
+
+- 6d7b23a: Implement `nextjs-kit` components
+- 19031a0: Update query parameters
+
 ## 0.9.0-canary.0
 
 ### Minor Changes
