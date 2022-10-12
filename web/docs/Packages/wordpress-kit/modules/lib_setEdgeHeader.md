@@ -1,7 +1,7 @@
 ---
-id: 'lib_setEdgeHeader'
-title: 'Module: lib/setEdgeHeader'
-sidebar_label: 'lib/setEdgeHeader'
+id: "lib_setEdgeHeader"
+title: "Module: lib/setEdgeHeader"
+sidebar_label: "lib/setEdgeHeader"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -16,11 +16,11 @@ Sets response headers for edge caching.
 
 #### Parameters
 
-| Name                              | Type             |
-| :-------------------------------- | :--------------- |
-| `__namedParameters`               | `Object`         |
-| `__namedParameters.cacheControl?` | `string`         |
-| `__namedParameters.res`           | `ServerResponse` |
+| Name | Type |
+| :------ | :------ |
+| `__namedParameters` | `Object` |
+| `__namedParameters.cacheControl?` | `string` |
+| `__namedParameters.res` | `ServerResponse` |
 
 #### Returns
 
@@ -28,4 +28,4 @@ Sets response headers for edge caching.
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/setEdgeHeader.ts:11](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/wordpress-kit/src/lib/setEdgeHeader.ts#L11)
+[packages/wordpress-kit/src/lib/setEdgeHeader.ts:11](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/wordpress-kit/src/lib/setEdgeHeader.ts#L11)

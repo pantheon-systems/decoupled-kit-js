@@ -2,14 +2,14 @@ import { NextSeo } from 'next-seo';
 
 import PageHeader from '../../components/page-header';
 import Layout from '../../components/layout';
-import { withGrid, PostGridItem } from '../../components/grid';
+import { PostGridItem } from '../../components/grid';
+import { withGrid } from '@pantheon-systems/nextjs-kit';
 
 import { getFooterMenu } from '../../lib/Menus';
 import { getLatestPosts } from '../../lib/Posts';
 
 export default function SSGISRExampleTemplate({ menuItems, posts }) {
 	const PostGrid = withGrid(PostGridItem);
-
 	return (
 		<Layout footerMenu={menuItems}>
 			<NextSeo
@@ -36,7 +36,7 @@ export default function SSGISRExampleTemplate({ menuItems, posts }) {
 
 export async function getStaticProps() {
 	const menuItems = await getFooterMenu();
-	const posts = await getLatestPosts();
+	const posts = await getLatestPosts(100);
 
 	return {
 		props: {

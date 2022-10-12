@@ -17,7 +17,7 @@
 	],
 	"main": "./index.js",
 	"dependencies": {
-		"@typescript-eslint/parser": "^5.13.0"
+		"@typescript-eslint/parser": "^5.38.1"
 	},
 	"devDependencies": {
 		"@pantheon-systems/configs": "*"
@@ -27,8 +27,8 @@
 		"@typescript-eslint/eslint-plugin": "^5.13.0",
 		"eslint": ">=8",
 		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-prettier": "^4.2.1",
 		"eslint-plugin-jsx-a11y": "^6.6.1",
+		"eslint-plugin-prettier": "^4.2.1",
 		"eslint-plugin-react": "^7.31.1",
 		"eslint-plugin-react-hooks": "^4.6.0"
 	}

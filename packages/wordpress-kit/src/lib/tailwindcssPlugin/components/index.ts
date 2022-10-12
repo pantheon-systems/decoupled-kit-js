@@ -7,6 +7,7 @@ import { AudioComponent } from './Audio';
 import { CoverComponent } from './Cover';
 import { mediaAndText } from './MediaAndText';
 import { ButtonsComponent } from './Buttons';
+import { FileMediaComponent } from './FileMedia';
 
 export {
 	ImageComponent,
@@ -18,4 +19,5 @@ export {
 	CoverComponent,
 	mediaAndText,
 	ButtonsComponent,
+	FileMediaComponent,
 };

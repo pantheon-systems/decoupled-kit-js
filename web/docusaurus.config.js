@@ -1,6 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-
+require('dotenv').config();
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const generateTypeDocOptions = require('./generateTypedocOptions.js');
@@ -14,7 +14,7 @@ const config = {
 	title: 'Pantheon Decoupled Kit',
 	tagline:
 		'Utilities for building a decoupled front end that sources data from a CMS back end.',
-	url: 'https://your-docusaurus-test-site.com',
+	url: process.env.PANTHEON_DEPLOYMENT_URL ?? 'http://localhost:3000',
 	baseUrl: '/',
 	onBrokenLinks: 'warn',
 	onBrokenMarkdownLinks: 'warn',
@@ -23,28 +23,33 @@ const config = {
 	projectName: 'decoupled-kit-js', // Usually your repo name.
 
 	plugins: [
-		[
-			'docusaurus-plugin-typedoc',
-			{
-				id: 'api-1',
-				...drupalKitTypedocOptions,
-				cleanOutputDir: true,
-			},
-		],
-		[
-			'docusaurus-plugin-typedoc',
-			{
-				id: 'api-2',
-				...wordpressKitTypedocOptions,
-			},
-		],
-		[
-			'docusaurus-plugin-typedoc',
-			{
-				id: 'api-3',
-				...nextjskitTypedocOptions,
-			},
-		],
+		// Prevent trying to generate api reference when building on the platform
+		...(process.env.PANTHEON_DEPLOYMENT_URL
+			? []
+			: [
+					[
+						'docusaurus-plugin-typedoc',
+						{
+							id: 'api-1',
+							...drupalKitTypedocOptions,
+							cleanOutputDir: true,
+						},
+					],
+					[
+						'docusaurus-plugin-typedoc',
+						{
+							id: 'api-2',
+							...wordpressKitTypedocOptions,
+						},
+					],
+					[
+						'docusaurus-plugin-typedoc',
+						{
+							id: 'api-3',
+							...nextjskitTypedocOptions,
+						},
+					],
+			  ]),
 	],
 
 	presets: [
@@ -95,11 +100,49 @@ const config = {
 			footer: {
 				links: [
 					{
-						title: 'Docs',
+						title: 'Backend Starters',
 						items: [
 							{
-								label: 'Tutorial',
-								to: '/docs/intro',
+								label: 'Create a Decoupled Drupal Backend',
+								to: '/docs/Backend%20Starters/Decoupled%20Drupal/Creating%20a%20New%20Project',
+							},
+							{
+								label: 'Create a Decoupled WordPress Backend',
+								to: '/docs/Backend%20Starters/Decoupled%20WordPress/Creating%20a%20New%20Project',
+							},
+						],
+					},
+					{
+						title: 'Frontend Starters',
+						items: [
+							{
+								label: 'Gatsby + WordPress',
+								to: '/docs/Frontend%20Starters/Gatsby%20WordPress/Introduction',
+							},
+							{
+								label: 'Next.js + WordPress',
+								to: '/docs/Frontend%20Starters/Next.js/Next.js%20+%20WordPress/Introduction',
+							},
+							{
+								label: 'Next.js + Drupal',
+								to: '/docs/Frontend%20Starters/Next.js/Next.js%20+%20Drupal/Introduction',
+							},
+						],
+					},
+					{
+						title: 'npm Packages',
+						items: [
+							{
+								label: 'wordpress-kit',
+								to: '/docs/Packages/wordpress-kit',
+							},
+							{
+								label: 'drupal-kit',
+								to: '/docs/Packages/drupal-kit',
+							},
+							{
+								label: 'nextjs-kit',
+								to: '/docs/Packages/nextjs-kit',
 							},
 						],
 					},
@@ -121,6 +164,11 @@ const config = {
 						],
 					},
 				],
+				logo: {
+					src: 'img/B_Fist-Tagline.png',
+					srcDark: 'img/W_Fist-Tagline.png',
+					alt: 'Pantheon Systems Logo',
+				},
 				copyright: `Copyright © ${new Date().getFullYear()} Pantheon. Built with Docusaurus.`,
 			},
 			prism: {

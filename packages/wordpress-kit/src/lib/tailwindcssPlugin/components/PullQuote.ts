@@ -1,4 +1,4 @@
-export const PullQuoteComponent = ({ quoteSize }: { quoteSize: string }) => ({
+export const PullQuoteComponent = {
 	'.wp-block-pullquote': {
 		'&.alignleft': {
 			float: 'left',
@@ -11,14 +11,22 @@ export const PullQuoteComponent = ({ quoteSize }: { quoteSize: string }) => ({
 			minWidth: '20rem',
 		},
 		'&.alignwide': {
-			maxWidth: '850px',
+			maxWidth: '1000px',
 		},
 		'&.alignfull': {
-			maxWidth: 'none',
+			'@media (min-width:720px)': {
+				// sets a negative margin to allow full width elements to span past the
+				// width its parent container
+				marginLeft: 'calc(-1 * max(1rem, 10vw))',
+				marginRight: 'calc(-1 * max(1rem, 10vw))',
+				maxWidth: 'unset',
+			},
 		},
 		blockquote: {
 			p: {
-				fontSize: quoteSize,
+				fontSize: '1.75em',
+				lineHeight: '1.6',
+				fontWeight: '300',
 			},
 			cite: {
 				textTransform: 'uppercase',
@@ -29,13 +37,15 @@ export const PullQuoteComponent = ({ quoteSize }: { quoteSize: string }) => ({
 			border: 'none',
 			color: 'inherit',
 			quotes: 'none',
+			fontStyle: 'normal',
 		},
 		margin: 'auto',
 		maxWidth: '650px',
 		borderColor: 'currentColor',
-		borderWidth: '3px 0',
+		borderWidth: '1px 0',
 		marginBottom: '0',
 		marginTop: '0',
 		padding: '2em 0',
+		textAlign: 'center',
 	},
-});
+};

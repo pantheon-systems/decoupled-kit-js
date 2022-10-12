@@ -8,13 +8,16 @@ import Post from '../components/post'
 const PostTemplate = ({ data: { previous, next, post } }) => {
 	return (
 		<Layout>
-			<Seo title={post.title} description={post.excerpt} />
 			<Post post={post} next={next} previous={previous} />
 		</Layout>
 	)
 }
 
 export default PostTemplate
+
+export function Head({ data: { post } }) {
+	return <Seo title={post.title} description={post.excerpt} />
+}
 
 export const pageQuery = graphql`
 	query PostById(

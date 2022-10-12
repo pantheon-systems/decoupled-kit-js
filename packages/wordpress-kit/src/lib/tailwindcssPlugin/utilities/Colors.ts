@@ -108,6 +108,9 @@ export class ColorUtilities {
 					strong: {
 						color: 'inherit !important',
 					},
+					code: {
+						color: 'inherit !important',
+					},
 				},
 			},
 		);

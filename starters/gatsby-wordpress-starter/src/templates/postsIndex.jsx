@@ -15,7 +15,6 @@ const PostIndexTemplate = ({
 
 	return (
 		<Layout>
-			<Seo title="All posts" />
 			<header className="prose text-2xl mx-auto mt-20">
 				<h1 className="text-center mx-auto">Posts</h1>
 			</header>
@@ -41,6 +40,10 @@ const PostIndexTemplate = ({
 }
 
 export default PostIndexTemplate
+
+export function Head() {
+	return <Seo title="All posts" />
+}
 
 export const pageQuery = graphql`
 	query PostList($offset: Int!, $postsPerPage: Int!) {

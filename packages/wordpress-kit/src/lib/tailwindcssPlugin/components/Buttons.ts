@@ -1,3 +1,5 @@
+import { generalButtonStyle } from './shared';
+
 const justifications = {
 	'&.is-content-justification-left': {
 		justifyContent: 'flex-start',
@@ -43,7 +45,7 @@ export const ButtonsComponent = ({
 		...justifications,
 		'max-width': '650px',
 		'&.alignwide': {
-			maxWidth: '850px',
+			maxWidth: '1000px',
 		},
 		'&.alignfull': {
 			'@media (min-width:720px)': {
@@ -78,18 +80,7 @@ export const ButtonsComponent = ({
 			},
 			'>.wp-block-button__link': {
 				width: '100%',
-				display: 'inline-block',
-				padding: 'calc(0.667em + 2px) calc(1.333em + 2px)',
-				textDecoration: 'none',
-				textAlign: 'center',
-				'font-weight': 'unset',
-				color: '#fff',
-				cursor: 'pointer',
-				'box-sizing': 'border-box',
-				backgroundColor: defaultColor,
-				'&:hover': {
-					opacity: '0.9',
-				},
+				...generalButtonStyle({ defaultColor }),
 			},
 		},
 	},

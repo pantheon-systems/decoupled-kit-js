@@ -18,7 +18,7 @@ export const AudioComponent = ({
 				minWidth: '300px',
 			},
 			'&.alignwide': {
-				maxWidth: '850px',
+				maxWidth: '1000px',
 			},
 			'&.alignleft': {
 				float: 'left',

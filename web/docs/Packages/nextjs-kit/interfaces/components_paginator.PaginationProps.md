@@ -1,7 +1,7 @@
 ---
-id: 'components_paginator.PaginationProps'
-title: 'Interface: PaginationProps<Type>'
-sidebar_label: 'PaginationProps'
+id: "components_paginator.PaginationProps"
+title: "Interface: PaginationProps<Type>"
+sidebar_label: "PaginationProps"
 custom_edit_url: null
 ---
 
@@ -9,8 +9,8 @@ custom_edit_url: null
 
 ## Type parameters
 
-| Name   |
-| :----- |
+| Name |
+| :------ |
 | `Type` |
 
 ## Properties
@@ -21,9 +21,9 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:14](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/components/paginator.tsx#L14)
+[packages/nextjs-kit/src/components/paginator.tsx:14](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/nextjs-kit/src/components/paginator.tsx#L14)
 
----
+___
 
 ### breakpoints
 
@@ -31,17 +31,17 @@ custom_edit_url: null
 
 #### Type declaration
 
-| Name    | Type     |
-| :------ | :------- |
-| `add`   | `number` |
-| `end`   | `number` |
+| Name | Type |
+| :------ | :------ |
+| `add` | `number` |
+| `end` | `number` |
 | `start` | `number` |
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/components/paginator.tsx#L8)
+[packages/nextjs-kit/src/components/paginator.tsx:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/nextjs-kit/src/components/paginator.tsx#L8)
 
----
+___
 
 ### data
 
@@ -49,9 +49,9 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:6](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/components/paginator.tsx#L6)
+[packages/nextjs-kit/src/components/paginator.tsx:6](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/nextjs-kit/src/components/paginator.tsx#L6)
 
----
+___
 
 ### itemsPerPage
 
@@ -59,9 +59,9 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/components/paginator.tsx#L7)
+[packages/nextjs-kit/src/components/paginator.tsx:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/nextjs-kit/src/components/paginator.tsx#L7)
 
----
+___
 
 ### routing
 
@@ -69,4 +69,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:13](https://github.com/pantheon-systems/decoupled-kit-js/blob/4f3ee4f/packages/nextjs-kit/src/components/paginator.tsx#L13)
+[packages/nextjs-kit/src/components/paginator.tsx:13](https://github.com/pantheon-systems/decoupled-kit-js/blob/e10f27e/packages/nextjs-kit/src/components/paginator.tsx#L13)

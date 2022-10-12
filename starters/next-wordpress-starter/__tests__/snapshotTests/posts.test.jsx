@@ -10,6 +10,11 @@ vi.mock('next/image');
 vi.mock('next/router', () => ({
 	useRouter: () => ({
 		locale: 'en',
+		pathname: 'test/path',
+		push: vi.fn(),
+		query: {
+			slug: '/posts/[slug]',
+		},
 	}),
 }));
 

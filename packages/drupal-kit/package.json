@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/drupal-kit",
-	"version": "3.0.1",
+	"version": "3.1.0-canary.0",
 	"description": "Pantheon Decoupled Kit's Drupal Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -11,9 +11,9 @@
 	},
 	"author": "@pantheon-systems",
 	"files": [
-		"dist",
-		"src/sdk.{js,ts}"
+		"dist/*"
 	],
+	"types": "dist/index.d.ts",
 	"main": "./dist/drupal-kit.umd.js",
 	"module": "./dist/drupal-kit.es.js",
 	"exports": {
@@ -40,17 +40,15 @@
 	"devDependencies": {
 		"@pantheon-systems/configs": "*",
 		"@pantheon-systems/eslint-config": "*",
-		"@types/isomorphic-fetch": "^0.0.35",
-		"eslint-plugin-prettier": "^4.2.1",
-		"graphql": "^0.11.3 || ^0.12.3 || ^0.13.0 || ^14.0.0 || ^15.0.0",
+		"@types/isomorphic-fetch": "^0.0.36",
 		"isomorphic-fetch": "^3.0.0",
 		"jsona": "^1.9.7",
-		"react": ">=16.8.0 <17.0.0",
+		"react": "^16.8.0",
 		"react-dom": "^16.8.0",
-		"typescript": ">=3.8 <5.0",
-		"vite-plugin-dts": "^1.4.1"
+		"typescript": "^4.8.4",
+		"vite-plugin-dts": "^1.6.1"
 	},
 	"dependencies": {
-		"@gdwc/drupal-state": "4.0.1"
+		"@gdwc/drupal-state": "^4.0.1"
 	}
 }
