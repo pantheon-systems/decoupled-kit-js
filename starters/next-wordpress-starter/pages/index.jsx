@@ -54,7 +54,7 @@ export default function Home({ menuItems, posts }) {
 
 export async function getServerSideProps({ res }) {
 	const menuItems = await getFooterMenu();
-	const posts = await getLatestPosts();
+	const posts = await getLatestPosts(12);
 	setEdgeHeader({ res });
 
 	return {

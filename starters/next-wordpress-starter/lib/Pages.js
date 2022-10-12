@@ -1,31 +1,10 @@
 import { gql } from '@pantheon-systems/wordpress-kit';
 import { client } from './WordPressClient';
 
-export async function getAllPagesUri() {
+export async function getLatestPages(totalPages) {
 	const query = gql`
-		query AllPagesURI {
-			pages {
-				edges {
-					node {
-						id
-						uri
-					}
-				}
-			}
-		}
-	`;
-
-	const {
-		pages: { edges },
-	} = await client.request(query);
-
-	return edges.map(({ node }) => node.uri.replaceAll('/', ''));
-}
-
-export async function getLatestPages() {
-	const query = gql`
-		query LatestPagesQuery {
-			pages(first: 12) {
+		query LatestPagesQuery($totalPages: Int!) {
+			pages(first: $totalPages) {
 				edges {
 					node {
 						id
@@ -45,7 +24,7 @@ export async function getLatestPages() {
 
 	const {
 		pages: { edges },
-	} = await client.request(query);
+	} = await client.request(query, { totalPages });
 
 	return edges.map(({ node }) => node);
 }

@@ -1,10 +1,10 @@
 import { gql } from '@pantheon-systems/wordpress-kit';
 import { client } from './WordPressClient';
 
-export async function getLatestPosts() {
+export async function getLatestPosts(totalPosts) {
 	const query = gql`
-		query LatestPostsQuery {
-			posts(first: 12) {
+		query LatestPostsQuery($totalPosts: Int!) {
+			posts(first: $totalPosts) {
 				edges {
 					node {
 						id
@@ -24,7 +24,7 @@ export async function getLatestPosts() {
 
 	const {
 		posts: { edges },
-	} = await client.request(query);
+	} = await client.request(query, { totalPosts });
 
 	return edges.map(({ node }) => node);
 }
