@@ -1,5 +1,26 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.9.0
+
+### Minor Changes
+
+- eb8973d: Add Pagination To Page and Post List
+- 74ce69e: Upgraded `next` to v12.3.1
+- 4c2761b: Add pagination for posts and pages in next-wordpress-starter
+
+### Patch Changes
+
+- 6d7b23a: Implement `nextjs-kit` components
+- 19031a0: Update query parameters
+- Updated dependencies [c91515b]
+- Updated dependencies [74ce69e]
+- Updated dependencies [4c2761b]
+- Updated dependencies [aea42f5]
+- Updated dependencies [74ce69e]
+- Updated dependencies [dc33f30]
+  - @pantheon-systems/wordpress-kit@2.7.0
+  - @pantheon-systems/nextjs-kit@1.3.0
+
 ## 0.9.0-canary.2
 
 ### Minor Changes
