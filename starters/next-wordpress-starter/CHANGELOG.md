@@ -1,5 +1,16 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.9.0-canary.2
+
+### Minor Changes
+
+- 4c2761b: Add pagination for posts and pages in next-wordpress-starter
+
+### Patch Changes
+
+- Updated dependencies [4c2761b]
+  - @pantheon-systems/nextjs-kit@1.3.0-canary.1
+
 ## 0.9.0-canary.1
 
 ### Minor Changes
