@@ -1,5 +1,15 @@
 # @pantheon-systems/drupal-kit
 
+## 3.1.0
+
+### Minor Changes
+
+- 74ce69e: Remove unused dependencies and clean up versions in package.json
+
+### Patch Changes
+
+- aea42f5: Fix types field in package.json
+
 ## 3.1.0-canary.0
 
 ### Minor Changes

@@ -1,5 +1,22 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.3.0
+
+### Minor Changes
+
+- 74ce69e: Upgraded `next` to v12.3.1
+- 4c2761b: Add pagination for posts and pages in next-wordpress-starter
+
+### Patch Changes
+
+- aea42f5: Fix types field in package.json
+
+## 1.3.0-canary.1
+
+### Minor Changes
+
+- 4c2761b: Add pagination for posts and pages in next-wordpress-starter
+
 ## 1.3.0-canary.0
 
 ### Minor Changes
