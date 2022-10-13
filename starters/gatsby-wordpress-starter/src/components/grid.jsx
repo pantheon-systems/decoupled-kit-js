@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { Link, withPrefix } from 'gatsby'
+import { Link } from 'gatsby'
 
 const GradientPlaceholder = () => (
 	<div className="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500" />
