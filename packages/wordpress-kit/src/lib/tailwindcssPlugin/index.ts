@@ -10,6 +10,7 @@ import {
 	mediaAndText,
 	ButtonsComponent,
 	FileMediaComponent,
+	VideoComponent,
 } from './components';
 import { mergeToConfig } from './Config';
 import { ColorUtilities, FontsUtilities } from './utilities';
@@ -56,6 +57,10 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 		defaultColor: color.getColorByName('primary'),
 	});
 
+	const video = VideoComponent({
+		alignFull: { minWidth: theme('screen.xl', '1280px') },
+	});
+
 	addUtilities([
 		color.getBackgroundUtilities(),
 		color.getBorderColorUtilities(),
@@ -77,5 +82,6 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 		mediaAndText,
 		buttons,
 		fileMedia,
+		video,
 	]);
 }, mergeToConfig);

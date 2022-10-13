@@ -16,6 +16,11 @@ if (
 	throw new Error(message)
 }
 
+const injectedOptions = {}
+if (process.env.PANTHEON_UPLOAD_PATH) {
+	injectedOptions['pathPrefix'] = process.env.PANTHEON_UPLOAD_PATH
+}
+
 // Use URL from .env if it exists, otherwise fall back on the
 // Pantheon CMS endpoint
 const url =
@@ -23,6 +28,7 @@ const url =
 	`https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`
 
 module.exports = {
+	...(injectedOptions && injectedOptions),
 	/**
 	 * Adding plugins to this array adds them to your Gatsby site.
 	 *
