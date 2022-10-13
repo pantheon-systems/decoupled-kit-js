@@ -19,7 +19,10 @@ describe('<PostIndexTemplate />', () => {
 		const { asFragment } = render(
 			<PostIndexTemplate
 				data={data}
-				pageContext={{ nextPagePath: null, previousPagePath: null }}
+				pageContext={{
+					nextPagePath: data.allWpPost.nodes[1].uri,
+					previousPagePath: null,
+				}}
 			/>,
 		)
 

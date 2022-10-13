@@ -148,7 +148,14 @@ exports[`<PostIndexTemplate /> > should render with posts 1`] = `
       </section>
       <nav
         class="flex max-w-5xl mx-auto mt-8 px-6"
-      />
+      >
+        <a
+          class="underline font-medium ml-auto"
+          href="/hello-world/"
+        >
+          Next page →
+        </a>
+      </nav>
     </main>
     <footer
       class="w-full text-white bg-black p-4 mt-12"
