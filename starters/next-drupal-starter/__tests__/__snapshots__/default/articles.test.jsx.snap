@@ -83,8 +83,8 @@ exports[`default <ArticleTemplate /> > should render with default profile articl
                 data-nimg="fill"
                 decoding="async"
                 sizes="100vw"
-                src="/_next/image?url=%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=3840&q=75"
-                srcset="/_next/image?url=%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=640&q=75 640w, /_next/image?url=%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=750&q=75 750w, /_next/image?url=%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=828&q=75 828w, /_next/image?url=%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=1080&q=75 1080w, /_next/image?url=%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=1200&q=75 1200w, /_next/image?url=%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=1920&q=75 1920w, /_next/image?url=%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=2048&q=75 2048w, /_next/image?url=%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=3840&q=75 3840w"
+                src="/_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=1200&q=75"
+                srcset="/_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=320&q=75 320w, /_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=420&q=75 420w, /_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=768&q=75 768w, /_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=1024&q=75 1024w, /_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=1200&q=75 1200w"
                 style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
               />
             </span>
