@@ -7,8 +7,7 @@ module.exports = {
 		'./components/**/*.{js,ts,jsx,tsx}',
 	],
 	theme: {
-		// colors: { extend: 'red' }
-		extend: { colors: { extend: 'yellow' } },
+		extend: {},
 	},
 	plugins: [require('@tailwindcss/typography'), tailwindcssPlugin],
 };
