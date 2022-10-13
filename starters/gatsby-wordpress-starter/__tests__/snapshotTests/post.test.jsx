@@ -14,9 +14,9 @@ describe('<PostTemplate />', () => {
 		StaticQuery.mockImplementation(() => ({ data: { post, next, previous } }))
 	})
 
-	it('should render with posts', () => {
+	it('should render with a post', () => {
 		const { asFragment } = render(
-			<PostTemplate data={{ next, previous, post }} />,
+			<PostTemplate data={{ post, next, previous }} />,
 		)
 
 		expect(asFragment()).toMatchSnapshot()
