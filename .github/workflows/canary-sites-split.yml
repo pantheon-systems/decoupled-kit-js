@@ -34,6 +34,10 @@ jobs:
             split_repository: 'decoupled-kit-docs-canary'
     steps:
       - uses: actions/checkout@v2
+      # Add Github workflow before split
+      - run: mkdir ${{ matrix.local_path }}/.github/workflows
+      - run: |
+          cp .github/templates/trigger-e2e.yml.template ${{ matrix.local_path }}/.github/workflows/trigger-e2e.yml
       - uses: 'symplify/monorepo-split-github-action@2.1'
         with:
           # ↓ split <local_path> directory
