@@ -36,7 +36,7 @@ jobs:
       - uses: actions/checkout@v2
       # Add Github workflow before split
       - run: |
-          mkdir ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows
+          mkdir -p ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows
       - run: |
           cp ${{ github.workspace }}/.github/templates/trigger-e2e.yml.template ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows/trigger-e2e.yml
       - uses: 'symplify/monorepo-split-github-action@2.1'
