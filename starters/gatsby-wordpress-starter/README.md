@@ -54,9 +54,9 @@ Other commands:
 
 ## Pantheon @pantheon-systems/wordpress-kit
 
-The Pantheon `@pantheon-systems/wordpress-kit` is included as a dependency in this
-project. This allows developers to make use of utility functions to simplify the
-process of building and maintaining a Front-End site on Pantheon.
+The Pantheon `@pantheon-systems/wordpress-kit` is included as a dependency in
+this project. This allows developers to make use of utility functions to
+simplify the process of building and maintaining a Front-End site on Pantheon.
 
 The `tailwindcssPlugin` is included in this project and is used to map WordPress
 Block Editor styles to Tailwind styles.
@@ -68,3 +68,48 @@ https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packag
 
 For a guide on creating your first Gatsby WordPress customization, see
 [Your First Gatsby + WordPress Customization](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Gatsby/Gatsby%20%2B%20WordPress/your-first-customization.md)
+
+## Tests
+
+Tests are written with [`vitest`](https://vitest.dev/). Snapshot tests are using
+[`@testing-library/react`](https://testing-library.com/docs/react-testing-library/intro/).
+
+### Commands
+
+This section assumes the package manager in use is `npm`. If you are not using
+`npm`, replace `npm` with the name of your package manager.
+
+To run the tests:
+
+```bash
+npm test
+```
+
+To run the tests in watch mode:
+
+```bash
+npm run test:watch
+```
+
+To see the test coverage:
+
+```bash
+npm run coverage
+```
+
+### Updating Snapshots
+
+Snapshots should be updated when presentational changes are made. If a new page
+route is added, create a new snapshot test for it, and include any data needed
+to run that test successfully. Please commit the updated snapshots along with
+your changes.
+
+To update a snapshot:
+
+```bash
+npm run update-snapshots
+```
+
+Or, run the test for a single profile in watch mode (see above), then in the
+terminal press the **u** key. This will update the snapshot for the running
+profile Be sure to update the snapshot for both profiles.
