@@ -11,5 +11,8 @@
     "@pantheon-systems/next-wordpress-starter": "0.9.0",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "kind-tables-count",
+    "late-donuts-love"
+  ]
 }
