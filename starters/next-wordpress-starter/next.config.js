@@ -38,8 +38,14 @@ if (process.env.WPGRAPHQL_URL === undefined) {
 // remove trailing slash if it exists
 imageDomain = imageDomain.replace(/\/$/, '');
 
+const injectedOptions = {};
+if (process.env.PANTHEON_UPLOAD_PATH) {
+	injectedOptions['basePath'] = process.env.PANTHEON_UPLOAD_PATH;
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	...(injectedOptions && injectedOptions),
 	reactStrictMode: true,
 	env: {
 		backendUrl: backendUrl,
