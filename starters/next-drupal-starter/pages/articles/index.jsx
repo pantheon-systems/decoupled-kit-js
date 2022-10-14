@@ -7,7 +7,8 @@ import {
 	globalDrupalStateStores,
 } from '../../lib/stores';
 
-import { withGrid, ArticleGridItem } from '../../components/grid';
+import { ArticleGridItem } from '../../components/grid';
+import { withGrid } from '@pantheon-systems/nextjs-kit';
 import PageHeader from '../../components/page-header';
 import Layout from '../../components/layout';
 

@@ -6,7 +6,8 @@ import {
 } from '../../lib/stores';
 import { BUILD_MODE } from '../../lib/constants';
 
-import { ArticleGridItem, withGrid } from '../../components/grid';
+import { ArticleGridItem } from '../../components/grid';
+import { withGrid } from '@pantheon-systems/nextjs-kit';
 import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
 

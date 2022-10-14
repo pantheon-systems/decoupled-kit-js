@@ -6,11 +6,12 @@ import {
 import { getPreview } from '../lib/getPreview';
 import { translatePath } from '@pantheon-systems/drupal-kit';
 import { NextSeo } from 'next-seo';
+import { IMAGE_URL } from '../lib/constants';
 
 import Link from 'next/link';
 import Layout from '../components/layout';
-import Recipe from '../components/recipe';
-import Article from '../components/article';
+import { Recipe } from '@pantheon-systems/nextjs-kit';
+import { ContentWithImage } from '@pantheon-systems/nextjs-kit';
 
 export default function CatchAllRoute({
 	pageData,
@@ -44,12 +45,22 @@ export default function CatchAllRoute({
 				title,
 				body: { value },
 				field_media_image,
+				thumbnail,
 			} = pageData;
+			const imgSrc = field_media_image?.field_media_image?.uri.url;
+
 			return (
-				<Article
+				<ContentWithImage
 					title={title}
-					body={value}
-					imgSrc={field_media_image?.field_media_image?.uri.url}
+					content={value}
+					imageProps={
+						imgSrc
+							? {
+									src: IMAGE_URL + imgSrc,
+									alt: thumbnail?.resourceIdObjMeta?.alt,
+							  }
+							: undefined
+					}
 				/>
 			);
 		}
@@ -61,14 +72,22 @@ export default function CatchAllRoute({
 				field_media_image,
 				field_ingredients,
 				field_recipe_instruction,
+				thumbnail,
 			} = pageData;
 
-			const imgSrc = field_media_image?.field_media_image?.uri.url || '';
+			const imgSrc = field_media_image?.field_media_image?.uri.url;
 			return (
 				<Recipe
 					title={title}
 					category={field_recipe_category[0].name}
-					imgSrc={imgSrc}
+					imageProps={
+						imgSrc
+							? {
+									src: IMAGE_URL + imgSrc,
+									alt: thumbnail?.resourceIdObjMeta?.alt,
+							  }
+							: undefined
+					}
 					ingredients={field_ingredients}
 					instructions={field_recipe_instruction.value}
 				/>

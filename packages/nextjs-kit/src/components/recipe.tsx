@@ -57,7 +57,7 @@ const Recipe: React.FC<RecipeProps> = ({
 				</div>
 			</header>
 			{imageProps ? (
-				<div className="ps-relative ps-max-w-lg ps-mx-auto ps-min-w-full h-[50vh] ps-rounded-lg ps-shadow-lg ps-overflow-hidden ps-mt-12 ps-mb-10">
+				<div className="ps-relative ps-max-w-lg ps-mx-auto ps-min-w-full ps-h-[50vh] ps-rounded-lg ps-shadow-lg ps-overflow-hidden ps-mt-12 ps-mb-10">
 					<Image
 						priority
 						src={imageProps.src}
