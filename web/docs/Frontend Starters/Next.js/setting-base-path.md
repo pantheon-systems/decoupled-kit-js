@@ -1,18 +1,18 @@
 ---
-id: 'next-drupal-base-path'
+id: 'next-base-path'
 title: 'Setting Path Prefix For Testing Locally'
-sidebar_position: 5
-slug: '/Frontend Starters/Next.js/Next.js + Drupal/Setting Base Path'
+sidebar_position: 1
+slug: '/Frontend Starters/Next.js/Setting Base Path'
 ---
 
 ## Before You Begin
 
-This guide assumes you are testing a Next.js + Drupal site locally which is to be hosted at a subpath of the root, for example `/docs`, by using the [Next.js `basePath` feature](https://nextjs.org/docs/api-reference/next.config.js/basepath).
+This guide assumes you are testing a Next.js site locally which is to be hosted at a subpath of the root, for example `/docs`, by using the [Next.js `basePath` feature](https://nextjs.org/docs/api-reference/next.config.js/basepath).
 
 ## Setting The Path Prefix
 See the Next.js guide on [Adding a Base Path](https://nextjs.org/docs/api-reference/next.config.js/basepath) for information on setting the `basePrefix` if you are not using the starter kit.
 
-If you are using the `@pantheon-systems/next-drupal-starter`, the enviromnet variable `process.env.PANTHEON_UPLOAD_PATH` will be automatically set as the `basePath` in the `next.config.js`. To test this locally, set the `PANTHEON_UPLOAD_PATH` in your `.env.development.local` to the path you would like to test.
+If you are using the `@pantheon-systems/next-drupal-starter` or the `@pantheon-systems/next-wordpress-starter`, the environment variable `process.env.PANTHEON_UPLOAD_PATH` will be automatically set as the `basePath` in the `next.config.js`. To test this locally, set the `PANTHEON_UPLOAD_PATH` in your `.env.development.local` to the path you would like to test.
 
 
 ## Verify Links And Assets
