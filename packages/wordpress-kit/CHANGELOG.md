@@ -1,5 +1,11 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.8.0-canary.0
+
+### Minor Changes
+
+- 0a3df6e: Block Editor Video Styles
+
 ## 2.7.0
 
 ### Minor Changes

@@ -1,5 +1,12 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.4.0-canary.0
+
+### Minor Changes
+
+- c7985f8: Automatically injects PANTHEON_UPLOAD_PATH as the pathPrefix when
+  using the starter on Pantheon
+
 ## 2.3.0
 
 ### Minor Changes
