@@ -27,6 +27,7 @@ const Post = ({
 				{imageData.gatsbyImage && (
 					<div className="relative w-full rounded-lg shadow-lg overflow-hidden mb-10">
 						<GatsbyImage
+							priority="true"
 							image={imageData.gatsbyImage}
 							layout="fill"
 							objectFit="cover"

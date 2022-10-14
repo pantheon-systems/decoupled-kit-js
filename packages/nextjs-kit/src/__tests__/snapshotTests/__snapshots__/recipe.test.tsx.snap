@@ -25,7 +25,7 @@ exports[`<Recipe /> > should render 'recipe' 1`] = `
       </div>
     </header>
     <div
-      class="ps-relative ps-max-w-lg ps-mx-auto ps-min-w-full h-[50vh] ps-rounded-lg ps-shadow-lg ps-overflow-hidden ps-mt-12 ps-mb-10"
+      class="ps-relative ps-max-w-lg ps-mx-auto ps-min-w-full ps-h-[50vh] ps-rounded-lg ps-shadow-lg ps-overflow-hidden ps-mt-12 ps-mb-10"
     >
       <span
         style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"

@@ -1,0 +1,107 @@
+// Vitest Snapshot v1
+
+exports[`<PageIndexTemplate /> > should render with pages 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+  >
+    <div
+      class="my-0 pt-10 px-5 text-xl"
+      data-is-root-path="true"
+    >
+      <nav>
+        <ul
+          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+        >
+          <li
+            class="mr-auto"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/posts"
+            >
+              📰 Posts
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <header
+        class="prose text-2xl mx-auto mt-20"
+      >
+        <h1
+          class="text-center mx-auto"
+        >
+          Pages
+        </h1>
+      </header>
+      <section />
+    </main>
+    <footer
+      class="w-full text-white bg-black p-4 mt-12"
+    >
+      <nav
+        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ml-3 list-disc text-blue-300 hover:text-blue-100"
+          >
+            <a
+              class="text-blue-300 hover:text-blue-100 focus:text-purple-600 active:text-purple-300 "
+              href="/posts/example-post-with-image/"
+            >
+              Example Post with Image
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="flex my-4 p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2022 Built with 
+          <a
+            class="text-purple-300 underline hover:text-blue-100"
+            href="https://www.gatsbyjs.com"
+          >
+            Gatsby
+          </a>
+           and 
+          <a
+            class="text-blue-200 underline hover:text-blue-100"
+            href="https://wordpress.org/"
+          >
+            WordPress
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
