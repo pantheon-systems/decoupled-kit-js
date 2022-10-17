@@ -12,7 +12,12 @@
     "web": "1.0.0"
   },
   "changesets": [
+    "friendly-rocks-speak",
+    "gorgeous-tomatoes-fetch",
     "kind-tables-count",
-    "late-donuts-love"
+    "late-donuts-love",
+    "new-sloths-attend",
+    "small-llamas-smile",
+    "three-days-judge"
   ]
 }
