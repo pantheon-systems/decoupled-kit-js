@@ -30,4 +30,4 @@ PREFIX_PATHS=true gatsby build
 ```
 
 ## Verify Links And Assets
-If you are adding the pathPrefix to an app that previously did not previously use it, you may need to refactor some in app links. Verify all assets and links are still working. See [Gatsby's guide on in-app linking](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/#in-app-linking) for more information. The starter kit should work with or without a pathPrefix out of the box.
+If you are adding the pathPrefix to an app that did not previously use it, you may need to refactor some in app links. Verify all assets and links are still working. See [Gatsby's guide on in-app linking](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/#in-app-linking) for more information. The starter kit should work with or without a pathPrefix out of the box.
