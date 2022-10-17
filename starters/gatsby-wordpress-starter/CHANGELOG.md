@@ -1,5 +1,11 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.4.0-canary.1
+
+### Minor Changes
+
+- 46575f5: Added snapshot tests with vitest and @testing-library/react
+
 ## 2.4.0-canary.0
 
 ### Minor Changes

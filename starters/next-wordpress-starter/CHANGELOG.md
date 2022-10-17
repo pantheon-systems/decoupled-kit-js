@@ -1,5 +1,16 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.10.0-canary.1
+
+### Minor Changes
+
+- ab45639: Automatically use the `PANTHEON_UPLOAD_PATH` as `basePath`
+
+### Patch Changes
+
+- Updated dependencies [b3fd47c]
+  - @pantheon-systems/nextjs-kit@1.3.1-canary.0
+
 ## 0.9.1-canary.0
 
 ### Patch Changes
