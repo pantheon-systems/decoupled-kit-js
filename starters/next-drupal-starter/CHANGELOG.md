@@ -1,5 +1,17 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.4.0-canary.0
+
+### Minor Changes
+
+- 733e6f1: Automatically use the `PANTHEON_UPLOAD_PATH` as `basePath`
+- 138cc6a: Implement `@pantheon-systems/nextjs-kit` components into the starter
+
+### Patch Changes
+
+- Updated dependencies [b3fd47c]
+  - @pantheon-systems/nextjs-kit@1.3.1-canary.0
+
 ## 3.3.0
 
 ### Minor Changes

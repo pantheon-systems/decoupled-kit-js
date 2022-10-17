@@ -1,5 +1,11 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.3.1-canary.0
+
+### Patch Changes
+
+- b3fd47c: Update Recipe component to use tailwindcss prefix
+
 ## 1.3.0
 
 ### Minor Changes
