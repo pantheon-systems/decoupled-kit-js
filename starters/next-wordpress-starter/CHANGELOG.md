@@ -1,5 +1,12 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.10.0-canary.2
+
+### Minor Changes
+
+- 9263e27: Removed btoa function on API authorization example, in favor of use
+  Buffer encoding
+
 ## 0.10.0-canary.1
 
 ### Minor Changes
