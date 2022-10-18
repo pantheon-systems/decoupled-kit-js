@@ -1,13 +1,13 @@
 ---
 id: 'next-drupal-troubleshooting'
-title: 'Troubleshooting Local Development'
+title: 'Troubleshooting' 
 sidebar_position: 5
 slug: '/Frontend Starters/Next.js/Next.js + Drupal/Troubleshooting Local Development'
 ---
 
 ## Before You Begin
 
-This document is meant to aid when troubleshooting common issues that arise when using the `@pantheon-systems/next-drupal-starter` in local development. For troubleshooting guidance on Pantheon, see [Pantheon Front-End Sites Frequently Asked Questions](https://pantheon.io/docs/guides/decoupled-sites/faq/).
+This document is meant to aid when troubleshooting common issues that arise when using the `@pantheon-systems/next-drupal-starter`. For additional troubleshooting information related to the Pantheon platform, see [Pantheon Front-End Sites Frequently Asked Questions](https://pantheon.io/docs/guides/decoupled-sites/faq/).
 
 
 ## Images Are Not Working
