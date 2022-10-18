@@ -1,8 +1,8 @@
 ---
 id: 'next-drupal-troubleshooting'
-title: 'Troubleshooting' 
+title: 'Troubleshooting'
 sidebar_position: 5
-slug: '/Frontend Starters/Next.js/Next.js + Drupal/Troubleshooting Local Development'
+slug: '/Frontend Starters/Next.js/Next.js + Drupal/Troubleshooting'
 ---
 
 ## Before You Begin
