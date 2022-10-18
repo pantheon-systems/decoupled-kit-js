@@ -90,7 +90,7 @@ There are several scripts you can use in the monorepo.
 - Build and run the documentation:
 
   ```bash
-  pnpm build:docs && pnpm start:docs
+  pnpm generate-docs && pnpm start:docs
   ```
 
 - Run commands in a targeted project, folder, or workspace, using the
