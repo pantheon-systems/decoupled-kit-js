@@ -8,11 +8,11 @@ import React from 'react'
  * @vitest-environment jsdom
  */
 
-// const StaticQuery = vi.spyOn(Gatsby, 'StaticQuery')
+const StaticQuery = vi.spyOn(Gatsby, 'StaticQuery')
 
 describe(`<PaginationTemplate />`, () => {
-	const StaticQuery = vi.spyOn(Gatsby, 'StaticQuery')
 	beforeEach(() => {
+		window.location = new URL('http://localhost:8000/examples/pagination/1')
 		StaticQuery.mockImplementationOnce(() => {
 			return {
 				data,
@@ -20,7 +20,6 @@ describe(`<PaginationTemplate />`, () => {
 		})
 	})
 	it('should render the paginated data', () => {
-		window.location = new URL('http://localhost:8000/examples/pagination/1')
 		const { asFragment } = render(
 			<PaginationTemplate
 				pageContext={{

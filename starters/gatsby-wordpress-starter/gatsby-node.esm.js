@@ -133,7 +133,6 @@ async function createPostIndex({ posts, gatsbyUtilities }) {
 				component: path.resolve(`./src/templates/postsIndex.jsx`),
 
 				context: {
-					posts,
 					offset: index * postsPerPage,
 					postsPerPage,
 					nextPagePath: getPagePath(pageNumber + 1),

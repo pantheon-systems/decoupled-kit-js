@@ -94,13 +94,11 @@ const Paginator = ({
 			// set the current page
 			currentPageQuery < totalPages &&
 				setCurrentPageQuery(Number(currentPageQuery + 1))
-			// navigate(`/pagination/${currentPageQuery + 1}`)
 		} else if (id === 'back-btn') {
 			// set new offset
 			offset >= 0 && setOffset(offset - itemsPerPage)
 			// set the current page
 			currentPageQuery > 1 && setCurrentPageQuery(Number(currentPageQuery - 1))
-			// navigate(`/pagination/${currentPageQuery - 1}`)
 		} else {
 			// the number of the page button clicked
 			const clickedPage = Number(event.target.innerHTML)
