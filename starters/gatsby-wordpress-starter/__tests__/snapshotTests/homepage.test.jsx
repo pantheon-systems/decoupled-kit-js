@@ -14,9 +14,6 @@ describe('<Index />', () => {
 			}
 		})
 	})
-	afterEach(() => {
-		vi.restoreAllMocks()
-	})
 
 	it('should render with posts', () => {
 		const { asFragment } = render(

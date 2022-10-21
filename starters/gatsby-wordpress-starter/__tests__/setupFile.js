@@ -29,7 +29,3 @@ beforeEach(() => {
 		}
 	})
 })
-
-afterEach(() => {
-	vi.restoreAllMocks()
-})

@@ -1,0 +1,1371 @@
+// Vitest Snapshot v1
+
+exports[`<PaginationTemplate /> > check back button works 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+  >
+    <div
+      class="my-0 pt-10 px-5 text-xl"
+      data-is-root-path="true"
+    >
+      <nav>
+        <ul
+          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+        >
+          <li
+            class="mr-auto"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/posts"
+            >
+              📰 Posts
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <div
+        class="prose max-w-screen mx-auto"
+      >
+        <section
+          class="flex flex-col"
+        >
+          <h1
+            class="my-10"
+          >
+            Pagination example
+          </h1>
+          <div
+            class="max-w-full"
+          >
+            <h3
+              class="mb-8 prose-sm font-bold"
+            >
+              Page 1/18
+            </h3>
+            <section>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Usitas
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Comis Ex
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Caecus Enim Macto Persto
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  In
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Appellatio Eros Letalis
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Dolus Iaceo Tum Verto
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Defui Exputo Gilvus Suscipit
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Eros Iriure Venio Vulpes
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Eligo Praemitto
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Abluo Aliquam Inhibeo Luptatum
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+            </section>
+            <div
+              class="sticky lg:bottom-12 bottom-4 mt-10"
+            >
+              <div
+                class="flex flex-row justify-center mx-auto mt-auto mb-4"
+              >
+                <a
+                  href="/examples/paginationNaN"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white"
+                    disabled=""
+                    id="back-btn"
+                  >
+                    &lt;
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/1"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-blue-700 border-2
+          "
+                  >
+                    1
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/2"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    2
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/3"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    3
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/4"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    4
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/5"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    5
+                  </button>
+                </a>
+                <button
+                  class="hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300\\"
+            }"
+                >
+                  ...
+                </button>
+                <a
+                  href="/examples/pagination/12"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    12
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/13"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    13
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/14"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    14
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/15"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    15
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/16"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    16
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/17"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    17
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/18"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    18
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/11"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white"
+                    id="next-btn"
+                  >
+                    &gt;
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer
+      class="w-full text-white bg-black p-4 mt-12"
+    >
+      <nav
+        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ml-3 list-disc text-blue-300 hover:text-blue-100"
+          >
+            <a
+              class="text-blue-300 hover:text-blue-100 focus:text-purple-600 active:text-purple-300 "
+              href="/posts/example-post-with-image/"
+            >
+              Example Post with Image
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="flex my-4 p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2022 Built with 
+          <a
+            class="text-purple-300 underline hover:text-blue-100"
+            href="https://www.gatsbyjs.com"
+          >
+            Gatsby
+          </a>
+           and 
+          <a
+            class="text-blue-200 underline hover:text-blue-100"
+            href="https://wordpress.org/"
+          >
+            WordPress
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<PaginationTemplate /> > check next button works 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+  >
+    <div
+      class="my-0 pt-10 px-5 text-xl"
+      data-is-root-path="true"
+    >
+      <nav>
+        <ul
+          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+        >
+          <li
+            class="mr-auto"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/posts"
+            >
+              📰 Posts
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <div
+        class="prose max-w-screen mx-auto"
+      >
+        <section
+          class="flex flex-col"
+        >
+          <h1
+            class="my-10"
+          >
+            Pagination example
+          </h1>
+          <div
+            class="max-w-full"
+          >
+            <h3
+              class="mb-8 prose-sm font-bold"
+            >
+              Page 2/18
+            </h3>
+            <section>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Esca
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Damnum Dignissim
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Dolus Iaceo Metuo
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Abigo Eros Persto Sed
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Elit Huic Saluto
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Dolor Elit Probo
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Facilisis Tego Torqueo
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Veniam
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Bene Nunc Refero
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Populus
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+            </section>
+            <div
+              class="sticky lg:bottom-12 bottom-4 mt-10"
+            >
+              <div
+                class="flex flex-row justify-center mx-auto mt-auto mb-4"
+              >
+                <a
+                  href="/examples/paginationNaN"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white"
+                    id="back-btn"
+                  >
+                    &lt;
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/1"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    1
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/2"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-blue-700 border-2
+          "
+                  >
+                    2
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/3"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    3
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/4"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    4
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/5"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    5
+                  </button>
+                </a>
+                <button
+                  class="hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300\\"
+            }"
+                >
+                  ...
+                </button>
+                <a
+                  href="/examples/pagination/12"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    12
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/13"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    13
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/14"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    14
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/15"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    15
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/16"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    16
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/17"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    17
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/18"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    18
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/21"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white"
+                    id="next-btn"
+                  >
+                    &gt;
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer
+      class="w-full text-white bg-black p-4 mt-12"
+    >
+      <nav
+        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ml-3 list-disc text-blue-300 hover:text-blue-100"
+          >
+            <a
+              class="text-blue-300 hover:text-blue-100 focus:text-purple-600 active:text-purple-300 "
+              href="/posts/example-post-with-image/"
+            >
+              Example Post with Image
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="flex my-4 p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2022 Built with 
+          <a
+            class="text-purple-300 underline hover:text-blue-100"
+            href="https://www.gatsbyjs.com"
+          >
+            Gatsby
+          </a>
+           and 
+          <a
+            class="text-blue-200 underline hover:text-blue-100"
+            href="https://wordpress.org/"
+          >
+            WordPress
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<PaginationTemplate /> > should render the paginated data 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+  >
+    <div
+      class="my-0 pt-10 px-5 text-xl"
+      data-is-root-path="true"
+    >
+      <nav>
+        <ul
+          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+        >
+          <li
+            class="mr-auto"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/posts"
+            >
+              📰 Posts
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <div
+        class="prose max-w-screen mx-auto"
+      >
+        <section
+          class="flex flex-col"
+        >
+          <h1
+            class="my-10"
+          >
+            Pagination example
+          </h1>
+          <div
+            class="max-w-full"
+          >
+            <h3
+              class="mb-8 prose-sm font-bold"
+            >
+              Page 1/18
+            </h3>
+            <section>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Usitas
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Comis Ex
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Caecus Enim Macto Persto
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  In
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Appellatio Eros Letalis
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Dolus Iaceo Tum Verto
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Defui Exputo Gilvus Suscipit
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Eros Iriure Venio Vulpes
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Eligo Praemitto
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Abluo Aliquam Inhibeo Luptatum
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                />
+              </article>
+            </section>
+            <div
+              class="sticky lg:bottom-12 bottom-4 mt-10"
+            >
+              <div
+                class="flex flex-row justify-center mx-auto mt-auto mb-4"
+              >
+                <a
+                  href="/examples/paginationNaN"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white"
+                    disabled=""
+                    id="back-btn"
+                  >
+                    &lt;
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/1"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-blue-700 border-2
+          "
+                  >
+                    1
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/2"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    2
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/3"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    3
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/4"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    4
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/5"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    5
+                  </button>
+                </a>
+                <button
+                  class="hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300\\"
+            }"
+                >
+                  ...
+                </button>
+                <a
+                  href="/examples/pagination/12"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    12
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/13"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    13
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/14"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    14
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/15"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    15
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/16"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    16
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/17"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    17
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/18"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="
+          hidden md:block
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                  >
+                    18
+                  </button>
+                </a>
+                <a
+                  href="/examples/pagination/11"
+                  state="[object Object]"
+                  style="text-decoration: none;"
+                >
+                  <button
+                    class="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white"
+                    id="next-btn"
+                  >
+                    &gt;
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer
+      class="w-full text-white bg-black p-4 mt-12"
+    >
+      <nav
+        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ml-3 list-disc text-blue-300 hover:text-blue-100"
+          >
+            <a
+              class="text-blue-300 hover:text-blue-100 focus:text-purple-600 active:text-purple-300 "
+              href="/posts/example-post-with-image/"
+            >
+              Example Post with Image
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="flex my-4 p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2022 Built with 
+          <a
+            class="text-purple-300 underline hover:text-blue-100"
+            href="https://www.gatsbyjs.com"
+          >
+            Gatsby
+          </a>
+           and 
+          <a
+            class="text-blue-200 underline hover:text-blue-100"
+            href="https://wordpress.org/"
+          >
+            WordPress
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

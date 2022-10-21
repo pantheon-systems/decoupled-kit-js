@@ -29,6 +29,7 @@
 		"@testing-library/react": "12.1.5",
 		"@vitejs/plugin-react": "^2.1.0",
 		"autoprefixer": "^10.4.12",
+		"esm": "^3.2.25",
 		"gatsby": "^4.24.0",
 		"gatsby-plugin-image": "^2.24.0",
 		"gatsby-plugin-manifest": "^4.24.0",
