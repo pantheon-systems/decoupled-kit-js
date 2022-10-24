@@ -36,7 +36,7 @@ const ContentWithImage: React.FC<ContentProps> = ({
 	const router = useRouter();
 
 	return (
-		<article className="ps-prose xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-p-4">
+		<article className="ps-prose ps-max-w-none xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-py-4 ps-px-12">
 			<h1>{title}</h1>
 			{date ? <p className="ps-text-sm ps-text-gray-600">{date}</p> : null}
 
@@ -61,7 +61,7 @@ const ContentWithImage: React.FC<ContentProps> = ({
 			</div>
 
 			<div
-				className="ps-break-words ps-mt-12"
+				className="ps-break-words ps-mt-12 ps-wp-content"
 				dangerouslySetInnerHTML={{ __html: content }}
 			/>
 		</article>
