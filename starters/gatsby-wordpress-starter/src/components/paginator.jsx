@@ -45,10 +45,8 @@ const Paginator = ({
 	// how many buttons to add when the separator is clicked
 	const breakAdd = breakpoints?.add || null
 
-	const urlParams = window.location.pathname.split('/')
-
 	const [currentPageQuery, setCurrentPageQuery] = useState(
-		routing ? Number(urlParams[urlParams.length - 1]) : 1,
+		routing ? Number(location.pathname.match(/\d+$/)[0]) : 1,
 	)
 
 	const [offset, setOffset] = useState((currentPageQuery - 1) * itemsPerPage)
@@ -122,22 +120,17 @@ const Paginator = ({
 				<Link
 					to={`${navRoute}${routing ? '/' + pageNumber : ''}`}
 					state={{ breakOpen: breakpointsOpen }}
-					style={{ textDecoration: 'none' }}
 					key={pageNumber}
 					onClick={function (event) {
 						handlePageClick(event)
 					}}
-				>
-					<button
-						className={`
-          ${currentPageQuery === pageNumber ? 'block' : 'hidden md:block'}
+					className={`flex flex-col justify-center text-center no-underline
           h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 ${
 						currentPageQuery === pageNumber && 'border-blue-700 border-2'
 					}
           `}
-					>
-						{pageNumber}
-					</button>
+				>
+					{pageNumber}
 				</Link>
 			)
 
@@ -162,9 +155,9 @@ const Paginator = ({
 				)
 			}
 			// if we have a breakStart, don't render the middle buttons
-			if (!isNaN(breakStart) && !isNaN(breakEnd)) {
+			if (typeof breakStart === 'number' && typeof breakEnd === 'number') {
 				if (pageNumber >= breakStart && pageNumber < breakEnd) {
-					if (!isNaN(windowWidth)) {
+					if (typeof windowWidth === 'number') {
 						if (windowWidth < 768) {
 							buttons.push(defaultButton)
 						}
@@ -174,40 +167,49 @@ const Paginator = ({
 			}
 			buttons.push(defaultButton)
 		}
+		const backActive = offset === 0 ? false : true
+		const nextActive = offset >= totalItems - itemsPerPage ? false : true
 		// returns the row of buttons
 		return (
-			<div className="flex flex-row justify-center mx-auto mt-auto mb-4">
+			<div
+				className="flex flex-row justify-center mx-auto mt-auto mb-4"
+				// id to be used for testing button activity
+				id={`button-wrapper ${nextActive} ${backActive}`}
+			>
 				{/* back button */}
 				<Link
-					to={`${navRoute}${routing ? '/' + currentPageQuery - 1 : ''}`}
+					to={
+						backActive
+							? `${navRoute}${routing ? '/' + (currentPageQuery - 1) : ''}`
+							: `${location.pathname}`
+					}
 					state={{ breakOpen: breakpointsOpen }}
-					style={{ textDecoration: 'none' }}
+					className={`flex flex-col justify-center text-center h-16 w-12 no-underline ${
+						backActive ? '' : 'bg-gray-500'
+					} hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white`}
+					id="back-btn"
+					onClick={handlePageClick}
 				>
-					<button
-						className="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white"
-						id="back-btn"
-						disabled={offset === 0}
-						onClick={handlePageClick}
-					>
-						{'<'}
-					</button>
+					{'<'}
 				</Link>
 				{/* map buttons[] */}
 				{buttons.map(btn => btn)}
 				{/* next button */}
 				<Link
-					to={`${navRoute}${routing ? '/' + currentPageQuery + 1 : ''}`}
+					to={
+						nextActive
+							? `${navRoute}${routing ? '/' + (currentPageQuery + 1) : ''}`
+							: `${location.pathname}`
+					}
 					state={{ breakOpen: breakpointsOpen }}
-					style={{ textDecoration: 'none' }}
+					className={`flex flex-col justify-center text-center h-16 w-12 no-underline ${
+						nextActive ? '' : 'bg-gray-500'
+					} hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white`}
+					id="next-btn"
+					onClick={handlePageClick}
+					disabled={nextActive}
 				>
-					<button
-						className="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white"
-						id="next-btn"
-						disabled={offset >= totalItems - itemsPerPage}
-						onClick={handlePageClick}
-					>
-						{'>'}
-					</button>
+					{'>'}
 				</Link>
 			</div>
 		)

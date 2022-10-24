@@ -4,7 +4,7 @@ import Paginator from '../components/paginator'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 
-const PaginationTemplate = ({
+const PaginationPostsExample = ({
 	pageContext: { pagPosts, postsPerPage, routing, breakpoints },
 	location,
 }) => {
@@ -42,7 +42,7 @@ const PaginationTemplate = ({
 	)
 }
 
-export default PaginationTemplate
+export default PaginationPostsExample
 
 export function Head() {
 	return <Seo title="All posts" />

@@ -1,7 +1,10 @@
-import { gql } from '@pantheon-systems/wordpress-kit'
-import { paginationClient } from './PaginationClient'
+const { gql, GraphqlClientFactory } = require('@pantheon-systems/wordpress-kit')
 
-export async function paginationPostsQuery() {
+const paginationClient = new GraphqlClientFactory(
+	'https://dev-decoupled-wp-mock-data.pantheonsite.io/wp/graphql',
+).create()
+
+async function paginationPostsQuery() {
 	const query = gql`
 		query paginationPostsQuery {
 			posts(first: 50) {
@@ -22,3 +25,5 @@ export async function paginationPostsQuery() {
 
 	return edges.map(({ node }) => node)
 }
+
+module.exports.paginationPostsQuery = paginationPostsQuery

@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`<PaginationTemplate /> > check back button works 1`] = `
+exports[`<PaginationPostsExample /> > check back button works 1`] = `
 <DocumentFragment>
   <div
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
@@ -205,89 +205,60 @@ exports[`<PaginationTemplate /> > check back button works 1`] = `
             >
               <div
                 class="flex flex-row justify-center mx-auto mt-auto mb-4"
+                id="button-wrapper true false"
               >
                 <a
-                  href="/examples/paginationNaN"
+                  class="flex flex-col justify-center text-center h-16 w-12 no-underline bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white"
+                  href="/examples/pagination/1"
+                  id="back-btn"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white"
-                    disabled=""
-                    id="back-btn"
-                  >
-                    &lt;
-                  </button>
+                  &lt;
                 </a>
                 <a
-                  href="/examples/pagination/1"
-                  state="[object Object]"
-                  style="text-decoration: none;"
-                >
-                  <button
-                    class="
-          block
+                  class="flex flex-col justify-center text-center no-underline
           h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-blue-700 border-2
           "
-                  >
-                    1
-                  </button>
+                  href="/examples/pagination/1"
+                  state="[object Object]"
+                >
+                  1
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/2"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    2
-                  </button>
+                  2
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/3"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    3
-                  </button>
+                  3
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/4"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    4
-                  </button>
+                  4
                 </a>
                 <a
-                  href="/examples/pagination/5"
-                  state="[object Object]"
-                  style="text-decoration: none;"
-                >
-                  <button
-                    class="
-          hidden md:block
+                  class="flex flex-col justify-center text-center no-underline
           h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
           "
-                  >
-                    5
-                  </button>
+                  href="/examples/pagination/5"
+                  state="[object Object]"
+                >
+                  5
                 </a>
                 <button
                   class="hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300\\"
@@ -296,114 +267,76 @@ exports[`<PaginationTemplate /> > check back button works 1`] = `
                   ...
                 </button>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/12"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    12
-                  </button>
+                  12
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/13"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    13
-                  </button>
+                  13
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/14"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    14
-                  </button>
+                  14
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/15"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    15
-                  </button>
+                  15
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/16"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    16
-                  </button>
+                  16
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/17"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    17
-                  </button>
+                  17
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/18"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    18
-                  </button>
+                  18
                 </a>
                 <a
-                  href="/examples/pagination/11"
+                  class="flex flex-col justify-center text-center h-16 w-12 no-underline  hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white"
+                  disabled=""
+                  href="/examples/pagination/2"
+                  id="next-btn"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white"
-                    id="next-btn"
-                  >
-                    &gt;
-                  </button>
+                  &gt;
                 </a>
               </div>
             </div>
@@ -457,7 +390,7 @@ exports[`<PaginationTemplate /> > check back button works 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<PaginationTemplate /> > check next button works 1`] = `
+exports[`<PaginationPostsExample /> > check next button works 1`] = `
 <DocumentFragment>
   <div
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
@@ -662,88 +595,60 @@ exports[`<PaginationTemplate /> > check next button works 1`] = `
             >
               <div
                 class="flex flex-row justify-center mx-auto mt-auto mb-4"
+                id="button-wrapper true true"
               >
                 <a
-                  href="/examples/paginationNaN"
+                  class="flex flex-col justify-center text-center h-16 w-12 no-underline  hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white"
+                  href="/examples/pagination/1"
+                  id="back-btn"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white"
-                    id="back-btn"
-                  >
-                    &lt;
-                  </button>
+                  &lt;
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/1"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    1
-                  </button>
+                  1
                 </a>
                 <a
-                  href="/examples/pagination/2"
-                  state="[object Object]"
-                  style="text-decoration: none;"
-                >
-                  <button
-                    class="
-          block
+                  class="flex flex-col justify-center text-center no-underline
           h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-blue-700 border-2
           "
-                  >
-                    2
-                  </button>
+                  href="/examples/pagination/2"
+                  state="[object Object]"
+                >
+                  2
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/3"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    3
-                  </button>
+                  3
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/4"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    4
-                  </button>
+                  4
                 </a>
                 <a
-                  href="/examples/pagination/5"
-                  state="[object Object]"
-                  style="text-decoration: none;"
-                >
-                  <button
-                    class="
-          hidden md:block
+                  class="flex flex-col justify-center text-center no-underline
           h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
           "
-                  >
-                    5
-                  </button>
+                  href="/examples/pagination/5"
+                  state="[object Object]"
+                >
+                  5
                 </a>
                 <button
                   class="hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300\\"
@@ -752,114 +657,76 @@ exports[`<PaginationTemplate /> > check next button works 1`] = `
                   ...
                 </button>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/12"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    12
-                  </button>
+                  12
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/13"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    13
-                  </button>
+                  13
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/14"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    14
-                  </button>
+                  14
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/15"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    15
-                  </button>
+                  15
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/16"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    16
-                  </button>
+                  16
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/17"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    17
-                  </button>
+                  17
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/18"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    18
-                  </button>
+                  18
                 </a>
                 <a
-                  href="/examples/pagination/21"
+                  class="flex flex-col justify-center text-center h-16 w-12 no-underline  hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white"
+                  disabled=""
+                  href="/examples/pagination/3"
+                  id="next-btn"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white"
-                    id="next-btn"
-                  >
-                    &gt;
-                  </button>
+                  &gt;
                 </a>
               </div>
             </div>
@@ -913,7 +780,7 @@ exports[`<PaginationTemplate /> > check next button works 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<PaginationTemplate /> > should render the paginated data 1`] = `
+exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
 <DocumentFragment>
   <div
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
@@ -1118,89 +985,60 @@ exports[`<PaginationTemplate /> > should render the paginated data 1`] = `
             >
               <div
                 class="flex flex-row justify-center mx-auto mt-auto mb-4"
+                id="button-wrapper true false"
               >
                 <a
-                  href="/examples/paginationNaN"
+                  class="flex flex-col justify-center text-center h-16 w-12 no-underline bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white"
+                  href="/examples/pagination/1"
+                  id="back-btn"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white"
-                    disabled=""
-                    id="back-btn"
-                  >
-                    &lt;
-                  </button>
+                  &lt;
                 </a>
                 <a
-                  href="/examples/pagination/1"
-                  state="[object Object]"
-                  style="text-decoration: none;"
-                >
-                  <button
-                    class="
-          block
+                  class="flex flex-col justify-center text-center no-underline
           h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-blue-700 border-2
           "
-                  >
-                    1
-                  </button>
+                  href="/examples/pagination/1"
+                  state="[object Object]"
+                >
+                  1
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/2"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    2
-                  </button>
+                  2
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/3"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    3
-                  </button>
+                  3
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/4"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    4
-                  </button>
+                  4
                 </a>
                 <a
-                  href="/examples/pagination/5"
-                  state="[object Object]"
-                  style="text-decoration: none;"
-                >
-                  <button
-                    class="
-          hidden md:block
+                  class="flex flex-col justify-center text-center no-underline
           h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
           "
-                  >
-                    5
-                  </button>
+                  href="/examples/pagination/5"
+                  state="[object Object]"
+                >
+                  5
                 </a>
                 <button
                   class="hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300\\"
@@ -1209,114 +1047,76 @@ exports[`<PaginationTemplate /> > should render the paginated data 1`] = `
                   ...
                 </button>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/12"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    12
-                  </button>
+                  12
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/13"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    13
-                  </button>
+                  13
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/14"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    14
-                  </button>
+                  14
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/15"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    15
-                  </button>
+                  15
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/16"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    16
-                  </button>
+                  16
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/17"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    17
-                  </button>
+                  17
                 </a>
                 <a
+                  class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
                   href="/examples/pagination/18"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="
-          hidden md:block
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
-          "
-                  >
-                    18
-                  </button>
+                  18
                 </a>
                 <a
-                  href="/examples/pagination/11"
+                  class="flex flex-col justify-center text-center h-16 w-12 no-underline  hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white"
+                  disabled=""
+                  href="/examples/pagination/2"
+                  id="next-btn"
                   state="[object Object]"
-                  style="text-decoration: none;"
                 >
-                  <button
-                    class="h-16 w-12 disabled:bg-gray-500 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white"
-                    id="next-btn"
-                  >
-                    &gt;
-                  </button>
+                  &gt;
                 </a>
               </div>
             </div>

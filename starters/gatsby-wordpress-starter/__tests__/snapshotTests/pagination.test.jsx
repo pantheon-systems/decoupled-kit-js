@@ -1,7 +1,7 @@
 import * as Gatsby from 'gatsby'
 import { screen, render, fireEvent } from '@testing-library/react'
 import data from '../data/examplePaginationData.json'
-import PaginationTemplate from '../../src/templates/pagination'
+import PaginationPostsExample from '../../src/templates/pagination'
 import React from 'react'
 
 /**
@@ -10,7 +10,7 @@ import React from 'react'
 
 const StaticQuery = vi.spyOn(Gatsby, 'StaticQuery')
 
-describe(`<PaginationTemplate />`, () => {
+describe(`<PaginationPostsExample />`, () => {
 	beforeEach(() => {
 		window.location = new URL('http://localhost:8000/examples/pagination/1')
 		StaticQuery.mockImplementationOnce(() => {
@@ -21,7 +21,7 @@ describe(`<PaginationTemplate />`, () => {
 	})
 	it('should render the paginated data', () => {
 		const { asFragment } = render(
-			<PaginationTemplate
+			<PaginationPostsExample
 				pageContext={{
 					postsPerPage: 10,
 					routing: true,
@@ -35,7 +35,7 @@ describe(`<PaginationTemplate />`, () => {
 	})
 	it('back button is disabled on first page', () => {
 		render(
-			<PaginationTemplate
+			<PaginationPostsExample
 				pageContext={{
 					postsPerPage: 10,
 					routing: true,
@@ -45,12 +45,12 @@ describe(`<PaginationTemplate />`, () => {
 				location={window.location}
 			/>,
 		)
-		expect(document.getElementById('back-btn').disabled).toBe(true)
+		expect(document.getElementById('button-wrapper true false')).not.toBe(null)
 	})
 
 	it('next button is disabled on last page', () => {
 		render(
-			<PaginationTemplate
+			<PaginationPostsExample
 				pageContext={{
 					postsPerPage: 60,
 					routing: true,
@@ -62,12 +62,12 @@ describe(`<PaginationTemplate />`, () => {
 		)
 		fireEvent.click(screen.getByText('>'))
 		fireEvent.click(screen.getByText('>'))
-		expect(document.getElementById('next-btn').disabled).toBe(true)
+		expect(document.getElementById('button-wrapper false true')).not.toBe(null)
 	})
 
 	it('check breakpoints', () => {
 		render(
-			<PaginationTemplate
+			<PaginationPostsExample
 				pageContext={{
 					postsPerPage: 10,
 					routing: true,
@@ -83,7 +83,7 @@ describe(`<PaginationTemplate />`, () => {
 	})
 	it('check next button works', () => {
 		const { asFragment } = render(
-			<PaginationTemplate
+			<PaginationPostsExample
 				pageContext={{
 					postsPerPage: 10,
 					routing: true,
@@ -98,7 +98,7 @@ describe(`<PaginationTemplate />`, () => {
 	})
 	it('check back button works', () => {
 		const { asFragment } = render(
-			<PaginationTemplate
+			<PaginationPostsExample
 				pageContext={{
 					postsPerPage: 10,
 					routing: true,
