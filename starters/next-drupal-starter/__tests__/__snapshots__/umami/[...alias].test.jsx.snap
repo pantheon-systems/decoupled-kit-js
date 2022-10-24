@@ -485,7 +485,7 @@ exports[`umami <CatchAllRoute /> > should render an article 1`] = `
           </div>
         </div>
         <div
-          class="ps-break-words ps-mt-12 ps-wp-content"
+          class="ps-break-words ps-mt-12"
         >
           <h2>
             Nonummy Tristique Pulvinar Justo Primis Mi

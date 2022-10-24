@@ -23,8 +23,6 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 	const font = new FontsUtilities(theme);
 	const base = new BaseUtilities();
 
-	console.log(base.baseUtilities);
-
 	const quoteUtilities = Quote;
 
 	const pullQuote = PullQuoteComponent;

@@ -91,7 +91,7 @@ exports[`default <ArticleTemplate /> > should render with default profile articl
           </div>
         </div>
         <div
-          class="ps-break-words ps-mt-12 ps-wp-content"
+          class="ps-break-words ps-mt-12"
         >
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper dignissim cras tincidunt lobortis feugiat. Augue lacus viverra vitae congue eu consequat ac felis. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Pulvinar elementum integer enim neque. At tempor commodo ullamcorper a lacus vestibulum. Nec tincidunt praesent semper feugiat nibh. Nisl nisi scelerisque eu ultrices vitae auctor eu augue ut. Bibendum neque egestas congue quisque egestas diam. Pellentesque elit ullamcorper dignissim cras.

@@ -91,7 +91,7 @@ exports[`umami <ArticleTemplate /> > should render with umami profile articles 1
           </div>
         </div>
         <div
-          class="ps-break-words ps-mt-12 ps-wp-content"
+          class="ps-break-words ps-mt-12"
         >
           <p>
             There's nothing like having your own supply of fresh herbs, readily available and close at hand to use while cooking. Whether you have a large garden or a small kitchen window sill, there's always enough room for something home grown.

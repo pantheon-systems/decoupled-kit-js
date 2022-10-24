@@ -40,7 +40,7 @@ exports[`<ContentWithImage /> > should render 'contentWithImage' 1`] = `
       </div>
     </div>
     <div
-      class="ps-break-words ps-mt-12 ps-wp-content"
+      class="ps-break-words ps-mt-12"
     >
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
