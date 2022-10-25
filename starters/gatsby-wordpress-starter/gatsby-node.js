@@ -1,9 +1,12 @@
 const path = require(`path`)
 const chunk = require(`lodash/chunk`)
+const { paginationPostsQuery } = require('./lib/postsPagination')
 
 exports.createPages = async gatsbyUtilities => {
+	const pagPosts = await paginationPostsQuery()
 	const pages = await getPages(gatsbyUtilities)
 	const posts = await getPosts(gatsbyUtilities)
+	const routing = true
 
 	if (pages.length) {
 		await createIndividualPages({ pages, gatsbyUtilities })
@@ -14,7 +17,9 @@ exports.createPages = async gatsbyUtilities => {
 		await createPostArchive({ posts, gatsbyUtilities })
 		await createIndividualPostPages({ posts, gatsbyUtilities })
 		await createPostIndex({ posts, gatsbyUtilities })
+		await createPagination({ pagPosts, gatsbyUtilities, routing })
 	}
+	await createExamplesPage({ gatsbyUtilities, routing })
 }
 
 const createIndividualPages = async ({ pages, gatsbyUtilities }) =>
@@ -147,6 +152,46 @@ async function createPageIndex({ pages, gatsbyUtilities }) {
 		},
 	})
 }
+
+async function createExamplesPage({ gatsbyUtilities, routing }) {
+	await gatsbyUtilities.actions.createPage({
+		path: '/examples',
+		component: path.resolve('./src/templates/examples.jsx'),
+		context: {
+			routing,
+		},
+	})
+}
+
+async function createPagination({ pagPosts, gatsbyUtilities, routing }) {
+	const postsPerPage = 5
+
+	const postsChunkedIntoArchivePages = chunk(pagPosts, postsPerPage)
+
+	return Promise.all(
+		postsChunkedIntoArchivePages.map(async (_pagPosts, index) => {
+			const pageNumber = index + 1
+
+			const getPagePath = page => {
+				return `/examples/pagination/${page}`
+			}
+
+			await gatsbyUtilities.actions.createPage({
+				path: routing ? getPagePath(pageNumber) : '/examples/pagination',
+
+				component: path.resolve(`./src/templates/pagination.jsx`),
+
+				context: {
+					pagPosts,
+					postsPerPage,
+					routing,
+					breakpoints: { start: 4, end: 8, add: 4 },
+				},
+			})
+		}),
+	)
+}
+
 /**
  * This function queries Gatsby's GraphQL server and asks for
  * All WordPress posts. If there are any GraphQL error it throws an error

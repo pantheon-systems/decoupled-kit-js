@@ -1,0 +1,1411 @@
+// Vitest Snapshot v1
+
+exports[`<PaginationPostsExample /> > check back button works 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+  >
+    <div
+      class="my-0 pt-10 px-5 text-xl"
+      data-is-root-path="true"
+    >
+      <nav>
+        <ul
+          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+        >
+          <li
+            class="mr-auto"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/posts"
+            >
+              📰 Posts
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <div
+        class="prose max-w-screen mx-auto"
+      >
+        <section
+          class="flex flex-col"
+        >
+          <h1
+            class="my-10"
+          >
+            Pagination example
+          </h1>
+          <div
+            class="max-w-full"
+          >
+            <h3
+              class="mb-8 prose-sm font-bold"
+            >
+              Page 1/10
+            </h3>
+            <section>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Ut culpa iste voluptas consequatur
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Consequuntur omnis assumenda voluptate aut quam. Dolorem aut aspernatur voluptas delectus. Commodi quia veniam voluptatem vitae rem Assumenda qui non in et facere tempora Corrupti Ut inventore id voluptates sed Mollitia magnam nihil numquam nostrum Nostrum et praesentium ullam ut accusamus Velit eos perferendis error fuga in necessitatibus Nostrum laboriosam iste Sint itaque est facilis […]
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Totam aliquam recusandae autem ipsa
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Ipsam molestias est omnis.
+                  </p>
+                  
+
+                  <p>
+                    Rerum quo quibusdam.
+                  </p>
+                  
+
+                  <p>
+                    Dolor ea eum.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Et ipsa accusantium voluptatem nostrum maiores
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Perspiciatis ut modi et.
+                  </p>
+                  
+
+                  <p>
+                    Consequatur recusandae veniam at repellat.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Odio vel voluptas pariatur quas pariatur dicta
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Vel qui.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Quia quos eum assumenda alias quisquam a
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Molestias ab voluptate voluptas alias nesciunt commodi. Qui beatae et vel dolore in blanditiis Voluptatem est rerum odit Rerum esse magnam sapiente Ut sunt tempore et expedita nihil et ut Tempore nihil et tenetur Asperiores Deserunt quidem omnis minus commodi molestiae et quam Nulla ab quia voluptatem et officiis ullam quo. Aliquam eum enim aliquam […]
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Rerum et consectetur accusamus quod
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Aut quod commodi velit.
+                  </p>
+                  
+
+                  <p>
+                    Unde quaerat at.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Neque doloremque dolor et nesciunt
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Commodi omnis voluptatem expedita.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Voluptatum pariatur qui aut magni et sequi
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Et laborum consequatur Dolores fugiat et voluptatem nesciunt consequatur pariatur. incidunt voluptate officiis nisi. Laboriosam alias nesciunt eius odit. Corrupti in est. Amet sed qui omnis enim facere accusantium officia. Laudantium quo quo alias. Quasi quasi dolorum est. Architecto accusamus eius ipsa. Aliquid iure et repellendus quibusdam. veritatis totam animi quis. aperiam doloremque architecto et. […]
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Iusto voluptatem sed voluptas pariatur sequi
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Tenetur blanditiis est perferendis.
+                  </p>
+                  
+
+                  <p>
+                    Sint quos vel.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Aut iusto dolores suscipit
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Ipsa occaecati eligendi.
+                  </p>
+                  
+
+                  <p>
+                    Nobis minus rerum voluptates molestiae.
+                  </p>
+                  
+
+                </div>
+              </article>
+            </section>
+            <div
+              class="sticky lg:bottom-12 bottom-4 mt-10"
+            >
+              <nav
+                aria-label="Pagination Navigation"
+                role="navigation"
+              >
+                <ul
+                  class="list-none flex flex-row justify-center mx-auto mt-auto mb-4 [&>li]:p-0"
+                  data-testid="link-wrapper true false"
+                >
+                  <li>
+                    <a
+                      aria-label="Go to Previous Page"
+                      class="flex flex-col justify-center text-center h-16 w-12 no-underline hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-t-2 border-b-2 border-black bg-white bg-gray-500  border-l-2"
+                      href="/examples/pagination/1"
+                      id="back-btn"
+                      state="[object Object]"
+                    >
+                      &lt;
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="true"
+                      aria-label="Current Page, Page 1"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-blue-700 border-2
+          "
+                      href="/examples/pagination/1"
+                      state="[object Object]"
+                    >
+                      1
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 2"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/2"
+                      state="[object Object]"
+                    >
+                      2
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 3"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/3"
+                      state="[object Object]"
+                    >
+                      3
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 4"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/4"
+                      state="[object Object]"
+                    >
+                      4
+                    </a>
+                  </li>
+                  <li>
+                    <button
+                      aria-label="Expand Hidden Buttons"
+                      class="hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300"
+                    >
+                      ...
+                    </button>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 8"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/8"
+                      state="[object Object]"
+                    >
+                      8
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 9"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/9"
+                      state="[object Object]"
+                    >
+                      9
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 10"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/10"
+                      state="[object Object]"
+                    >
+                      10
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-label="Go to Next Page"
+                      class="flex flex-col justify-center text-center h-16 w-12 no-underline hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-t-2 border-b-2 border-black bg-white  border-r-2"
+                      href="/examples/pagination/2"
+                      id="next-btn"
+                      state="[object Object]"
+                    >
+                      &gt;
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer
+      class="w-full text-white bg-black p-4 mt-12"
+    >
+      <nav
+        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ml-3 list-disc text-blue-300 hover:text-blue-100"
+          >
+            <a
+              class="text-blue-300 hover:text-blue-100 focus:text-purple-600 active:text-purple-300 "
+              href="/posts/example-post-with-image/"
+            >
+              Example Post with Image
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="flex my-4 p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2022 Built with 
+          <a
+            class="text-purple-300 underline hover:text-blue-100"
+            href="https://www.gatsbyjs.com"
+          >
+            Gatsby
+          </a>
+           and 
+          <a
+            class="text-blue-200 underline hover:text-blue-100"
+            href="https://wordpress.org/"
+          >
+            WordPress
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<PaginationPostsExample /> > check next button works 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+  >
+    <div
+      class="my-0 pt-10 px-5 text-xl"
+      data-is-root-path="true"
+    >
+      <nav>
+        <ul
+          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+        >
+          <li
+            class="mr-auto"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/posts"
+            >
+              📰 Posts
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <div
+        class="prose max-w-screen mx-auto"
+      >
+        <section
+          class="flex flex-col"
+        >
+          <h1
+            class="my-10"
+          >
+            Pagination example
+          </h1>
+          <div
+            class="max-w-full"
+          >
+            <h3
+              class="mb-8 prose-sm font-bold"
+            >
+              Page 2/10
+            </h3>
+            <section>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  At voluptatum est numquam qui nulla
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Sint laboriosam quibusdam veniam deserunt explicabo modi consequatur. Ducimus ut hic et et. Ullam ipsa numquam nesciunt sunt cupiditate Harum beatae laboriosam quas Corrupti sit temporibus modi Aut sed molestiae velit qui quae animi Distinctio et Repudiandae eum consectetur expedita nam aut quis. Et excepturi architecto corporis repudiandae ut. Veniam dignissimos velit et aut. Omnis […]
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Consequatur ut omnis omnis officiis eos
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Aperiam non rerum et at.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Dolorum illo dolor quaerat illo molestias reprehenderit
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Voluptates et distinctio ut veritatis blanditiis quasi quibusdam Voluptas recusandae et Atque illo eos inventore architecto Sapiente omnis quia qui Voluptatem minus Exercitationem vero Laborum Rerum iusto Non omnis temporibus et
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Sequi unde consequatur omnis sunt nihil
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Beatae ea dolore.
+                  </p>
+                  
+
+                  <p>
+                    Vitae sint ut commodi.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Dolorum consequuntur voluptatem id mollitia fugit
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Aut qui ipsam sunt voluptas voluptas. Maxime similique sit animi blanditiis nesciunt a Quisquam sint numquam hic deleniti. Dolorem inventore qui natus aut. Qui nostrum dicta quo. Aut eveniet quod magnam quidem sapiente ut quia Et minus ipsam beatae laborum provident sed Et eum laboriosam ullam consequatur Voluptatem quam Quia molestiae similique est reiciendis sapiente […]
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Rerum earum repellendus dolorem
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Quia nisi nobis molestias corporis deleniti omnis id optio. Maiores mollitia quia ratione et expedita error Ut sed fugit corporis dicta aut. Saepe reiciendis non magnam architecto aliquam. quae saepe facilis explicabo optio. Qui eum voluptas dolores voluptatem eligendi. Commodi officia iste. quia earum quo esse Vel soluta sequi sed ratione ullam. Facilis dolor atque […]
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Culpa quia perferendis beatae
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Qui atque dolores quo suscipit dolores. Nisi adipisci omnis quia. Minima dolores qui et magni itaque Dicta molestiae error harum qui Officia veniam Natus voluptates inventore dicta sit Quia fugiat consequatur nobis. ex placeat dolor ipsum impedit. Voluptatem enim tempora culpa. Minima esse quisquam commodi voluptatem id. qui tempora ut sed cupiditate qui. Laudantium iure […]
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Fuga occaecati provident sint quia est
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    In inventore perspiciatis aut.
+                  </p>
+                  
+
+                  <p>
+                    Est velit consequatur.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Quibusdam veniam alias quo
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Doloribus exercitationem ut.
+                  </p>
+                  
+
+                  <p>
+                    Aut ipsa ea eveniet nihil.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Eligendi possimus quia quas dolore suscipit
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Nisi illo voluptates est voluptatibus eligendi Quia ea blanditiis ullam deserunt labore sit Ut culpa dolorem est qui rerum Omnis Aut quia qui Quod deleniti Sapiente sit fuga quo numquam voluptatibus Quas ducimus ipsum aperiam aut. Voluptatem dolor error ut aut praesentium fugiat. Dolorum rerum eveniet corrupti molestiae dolorem Esse eum qui illum provident Modi […]
+                  </p>
+                  
+
+                </div>
+              </article>
+            </section>
+            <div
+              class="sticky lg:bottom-12 bottom-4 mt-10"
+            >
+              <nav
+                aria-label="Pagination Navigation"
+                role="navigation"
+              >
+                <ul
+                  class="list-none flex flex-row justify-center mx-auto mt-auto mb-4 [&>li]:p-0"
+                  data-testid="link-wrapper true true"
+                >
+                  <li>
+                    <a
+                      aria-label="Go to Previous Page"
+                      class="flex flex-col justify-center text-center h-16 w-12 no-underline hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-t-2 border-b-2 border-black bg-white   border-l-2"
+                      href="/examples/pagination/1"
+                      id="back-btn"
+                      state="[object Object]"
+                    >
+                      &lt;
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 1"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/1"
+                      state="[object Object]"
+                    >
+                      1
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="true"
+                      aria-label="Current Page, Page 2"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-blue-700 border-2
+          "
+                      href="/examples/pagination/2"
+                      state="[object Object]"
+                    >
+                      2
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 3"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/3"
+                      state="[object Object]"
+                    >
+                      3
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 4"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/4"
+                      state="[object Object]"
+                    >
+                      4
+                    </a>
+                  </li>
+                  <li>
+                    <button
+                      aria-label="Expand Hidden Buttons"
+                      class="hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300"
+                    >
+                      ...
+                    </button>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 8"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/8"
+                      state="[object Object]"
+                    >
+                      8
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 9"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/9"
+                      state="[object Object]"
+                    >
+                      9
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 10"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/10"
+                      state="[object Object]"
+                    >
+                      10
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-label="Go to Next Page"
+                      class="flex flex-col justify-center text-center h-16 w-12 no-underline hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-t-2 border-b-2 border-black bg-white  border-r-2"
+                      href="/examples/pagination/3"
+                      id="next-btn"
+                      state="[object Object]"
+                    >
+                      &gt;
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer
+      class="w-full text-white bg-black p-4 mt-12"
+    >
+      <nav
+        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ml-3 list-disc text-blue-300 hover:text-blue-100"
+          >
+            <a
+              class="text-blue-300 hover:text-blue-100 focus:text-purple-600 active:text-purple-300 "
+              href="/posts/example-post-with-image/"
+            >
+              Example Post with Image
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="flex my-4 p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2022 Built with 
+          <a
+            class="text-purple-300 underline hover:text-blue-100"
+            href="https://www.gatsbyjs.com"
+          >
+            Gatsby
+          </a>
+           and 
+          <a
+            class="text-blue-200 underline hover:text-blue-100"
+            href="https://wordpress.org/"
+          >
+            WordPress
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+  >
+    <div
+      class="my-0 pt-10 px-5 text-xl"
+      data-is-root-path="true"
+    >
+      <nav>
+        <ul
+          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+        >
+          <li
+            class="mr-auto"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/posts"
+            >
+              📰 Posts
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <div
+        class="prose max-w-screen mx-auto"
+      >
+        <section
+          class="flex flex-col"
+        >
+          <h1
+            class="my-10"
+          >
+            Pagination example
+          </h1>
+          <div
+            class="max-w-full"
+          >
+            <h3
+              class="mb-8 prose-sm font-bold"
+            >
+              Page 1/10
+            </h3>
+            <section>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Ut culpa iste voluptas consequatur
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Consequuntur omnis assumenda voluptate aut quam. Dolorem aut aspernatur voluptas delectus. Commodi quia veniam voluptatem vitae rem Assumenda qui non in et facere tempora Corrupti Ut inventore id voluptates sed Mollitia magnam nihil numquam nostrum Nostrum et praesentium ullam ut accusamus Velit eos perferendis error fuga in necessitatibus Nostrum laboriosam iste Sint itaque est facilis […]
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Totam aliquam recusandae autem ipsa
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Ipsam molestias est omnis.
+                  </p>
+                  
+
+                  <p>
+                    Rerum quo quibusdam.
+                  </p>
+                  
+
+                  <p>
+                    Dolor ea eum.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Et ipsa accusantium voluptatem nostrum maiores
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Perspiciatis ut modi et.
+                  </p>
+                  
+
+                  <p>
+                    Consequatur recusandae veniam at repellat.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Odio vel voluptas pariatur quas pariatur dicta
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Vel qui.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Quia quos eum assumenda alias quisquam a
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Molestias ab voluptate voluptas alias nesciunt commodi. Qui beatae et vel dolore in blanditiis Voluptatem est rerum odit Rerum esse magnam sapiente Ut sunt tempore et expedita nihil et ut Tempore nihil et tenetur Asperiores Deserunt quidem omnis minus commodi molestiae et quam Nulla ab quia voluptatem et officiis ullam quo. Aliquam eum enim aliquam […]
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Rerum et consectetur accusamus quod
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Aut quod commodi velit.
+                  </p>
+                  
+
+                  <p>
+                    Unde quaerat at.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Neque doloremque dolor et nesciunt
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Commodi omnis voluptatem expedita.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Voluptatum pariatur qui aut magni et sequi
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Et laborum consequatur Dolores fugiat et voluptatem nesciunt consequatur pariatur. incidunt voluptate officiis nisi. Laboriosam alias nesciunt eius odit. Corrupti in est. Amet sed qui omnis enim facere accusantium officia. Laudantium quo quo alias. Quasi quasi dolorum est. Architecto accusamus eius ipsa. Aliquid iure et repellendus quibusdam. veritatis totam animi quis. aperiam doloremque architecto et. […]
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Iusto voluptatem sed voluptas pariatur sequi
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Tenetur blanditiis est perferendis.
+                  </p>
+                  
+
+                  <p>
+                    Sint quos vel.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Aut iusto dolores suscipit
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Ipsa occaecati eligendi.
+                  </p>
+                  
+
+                  <p>
+                    Nobis minus rerum voluptates molestiae.
+                  </p>
+                  
+
+                </div>
+              </article>
+            </section>
+            <div
+              class="sticky lg:bottom-12 bottom-4 mt-10"
+            >
+              <nav
+                aria-label="Pagination Navigation"
+                role="navigation"
+              >
+                <ul
+                  class="list-none flex flex-row justify-center mx-auto mt-auto mb-4 [&>li]:p-0"
+                  data-testid="link-wrapper true false"
+                >
+                  <li>
+                    <a
+                      aria-label="Go to Previous Page"
+                      class="flex flex-col justify-center text-center h-16 w-12 no-underline hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-t-2 border-b-2 border-black bg-white bg-gray-500  border-l-2"
+                      href="/examples/pagination/1"
+                      id="back-btn"
+                      state="[object Object]"
+                    >
+                      &lt;
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="true"
+                      aria-label="Current Page, Page 1"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-blue-700 border-2
+          "
+                      href="/examples/pagination/1"
+                      state="[object Object]"
+                    >
+                      1
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 2"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/2"
+                      state="[object Object]"
+                    >
+                      2
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 3"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/3"
+                      state="[object Object]"
+                    >
+                      3
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 4"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/4"
+                      state="[object Object]"
+                    >
+                      4
+                    </a>
+                  </li>
+                  <li>
+                    <button
+                      aria-label="Expand Hidden Buttons"
+                      class="hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300"
+                    >
+                      ...
+                    </button>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 8"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/8"
+                      state="[object Object]"
+                    >
+                      8
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 9"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/9"
+                      state="[object Object]"
+                    >
+                      9
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-current="false"
+                      aria-label="Go to Page 10"
+                      class="flex flex-col justify-center text-center no-underline
+          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 false
+          "
+                      href="/examples/pagination/10"
+                      state="[object Object]"
+                    >
+                      10
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      aria-label="Go to Next Page"
+                      class="flex flex-col justify-center text-center h-16 w-12 no-underline hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-t-2 border-b-2 border-black bg-white  border-r-2"
+                      href="/examples/pagination/2"
+                      id="next-btn"
+                      state="[object Object]"
+                    >
+                      &gt;
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer
+      class="w-full text-white bg-black p-4 mt-12"
+    >
+      <nav
+        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ml-3 list-disc text-blue-300 hover:text-blue-100"
+          >
+            <a
+              class="text-blue-300 hover:text-blue-100 focus:text-purple-600 active:text-purple-300 "
+              href="/posts/example-post-with-image/"
+            >
+              Example Post with Image
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="flex my-4 p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2022 Built with 
+          <a
+            class="text-purple-300 underline hover:text-blue-100"
+            href="https://www.gatsbyjs.com"
+          >
+            Gatsby
+          </a>
+           and 
+          <a
+            class="text-blue-200 underline hover:text-blue-100"
+            href="https://wordpress.org/"
+          >
+            WordPress
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
