@@ -1,3 +1,5 @@
+import { alignment } from './shared';
+
 type Opacities = { [key: string]: { opacity: string } };
 
 const generateOpacity: () => Opacities = () => {
@@ -83,13 +85,8 @@ const contentPosition = {
 	},
 };
 
-export const CoverComponent = ({
-	alignFull: { minWidth },
-}: {
-	alignFull: { minWidth: string };
-}) => ({
+export const CoverComponent = () => ({
 	'.wp-block-cover': {
-		'max-width': '650px',
 		position: 'relative',
 		'background-size': 'cover',
 		'background-position': '50%',
@@ -125,24 +122,19 @@ export const CoverComponent = ({
 			'background-repeat': 'repeat',
 			'background-size': 'auto',
 		},
-		'&.alignwide': {
-			maxWidth: '1000px',
-		},
+		...alignment,
 		'&.alignleft': {
 			maxWidth: '420px',
-			float: 'left',
+			...alignment['&.alignleft'],
 		},
 		'&.alignright': {
 			maxWidth: '420px',
-			float: 'right',
+			...alignment['&.alignright'],
 		},
 		'&.alignfull': {
-			[`@media (min-width:${minWidth})`]: {
-				marginLeft: 'calc(-1 * max(1rem, 10vw))',
-				marginRight: 'calc(-1 * max(1rem, 10vw))',
-				maxWidth: 'unset',
-				width: 'unset',
-			},
+			...alignment['&.alignfull'],
+			marginRight: 'unset',
+			marginLeft: 'unset,',
 		},
 		...background,
 		...innerContainer,

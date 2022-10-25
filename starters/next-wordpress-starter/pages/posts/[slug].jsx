@@ -29,6 +29,7 @@ export default function PostTemplate({ menuItems, post }) {
 						  }
 						: undefined
 				}
+				contentClassName="ps-wp-content"
 			/>
 		</Layout>
 	);
