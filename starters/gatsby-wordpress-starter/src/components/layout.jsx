@@ -11,6 +11,7 @@ const Layout = ({ isHomePage, children }) => {
 							['🏠 Home', '/'],
 							['📰 Posts', '/posts'],
 							['📑 Pages', '/pages'],
+							['⚛️ Examples', '/examples'],
 						].map(([title, href], i) => (
 							<li
 								className={`${href === '/' ? 'mr-auto' : 'mx-4'}`}

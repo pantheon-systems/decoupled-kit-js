@@ -43,6 +43,16 @@ exports[`<PageIndexTemplate /> > should render with pages 1`] = `
               📑 Pages
             </a>
           </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
