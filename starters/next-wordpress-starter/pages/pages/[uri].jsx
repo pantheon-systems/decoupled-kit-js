@@ -29,6 +29,7 @@ export default function PageTemplate({ menuItems, page }) {
 						  }
 						: undefined
 				}
+				contentClassName="ps-wp-content"
 			/>
 		</Layout>
 	);
