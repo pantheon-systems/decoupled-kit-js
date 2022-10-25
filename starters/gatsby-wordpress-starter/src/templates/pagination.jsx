@@ -33,7 +33,6 @@ const PaginationPostsExample = ({
 						location={location}
 						breakpoints={breakpoints}
 						routing={routing}
-						navRoute={'/examples/pagination'}
 						Component={RenderCurrentItems}
 					/>
 				</section>

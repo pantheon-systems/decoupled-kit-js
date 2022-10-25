@@ -12,7 +12,7 @@ const StaticQuery = vi.spyOn(Gatsby, 'StaticQuery')
 
 describe(`<PaginationPostsExample />`, () => {
 	beforeEach(() => {
-		window.location = new URL('http://localhost:8000/examples/pagination/1')
+		location = { pathname: '/examples/pagination/1' }
 		StaticQuery.mockImplementationOnce(() => {
 			return {
 				data,
@@ -28,7 +28,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 6, end: 12, add: 6 },
 				}}
-				location={window.location}
+				location={location}
 			/>,
 		)
 		expect(asFragment()).toMatchSnapshot()
@@ -45,7 +45,7 @@ describe(`<PaginationPostsExample />`, () => {
 				location={window.location}
 			/>,
 		)
-		expect(document.getElementById('button-wrapper true false')).not.toBe(null)
+		expect(screen.getByTestId('link-wrapper true false')).not.toBe(null)
 	})
 
 	it('next button is disabled on last page', () => {
@@ -62,7 +62,7 @@ describe(`<PaginationPostsExample />`, () => {
 		)
 		fireEvent.click(screen.getByText('>'))
 		fireEvent.click(screen.getByText('>'))
-		expect(document.getElementById('button-wrapper false true')).not.toBe(null)
+		expect(screen.getByTestId('link-wrapper false true')).not.toBe(null)
 	})
 
 	it('check breakpoints', () => {

@@ -9,17 +9,17 @@ import { Link } from 'gatsby'
  * @param props.breakpoints Breakpoints has 3 properties: start, end, and add. Set to {} for no breakpoint.
  * start: where to start the breakpoint
  * end: where to end the breakpoint
- * add: how manu buttons to add when the breakpoint is clicked
+ * add: how many links to add when the breakpoint is clicked
  * ***
- * note: (`add` * x) + `start` = `end` where x is a number of clicks it takes to fill in all of the buttons
- * For example: If there are 25 buttons and the start = 5 and end = 25, then add should be 5 or 10.
+ * note: (`add` * x) + `start` = `end` where x is a number of clicks it takes to fill in all of the links
+ * For example: If there are 25 links and the start = 5 and end = 25, then add should be 5 or 10.
  * ***
  * @param props.routing If true, shallow routing will be enabled. Check the examples/pagination route to see it in action
  * @param props.Component React Component that takes in currentItems as props and maps over them.
  * currentItems is a subset of data, so any component that works for data will work here.
  * @param location holds flag variable to track breakpoint state
  * @param navRoute route of the page using the paginator
- * @returns Component with data rendered by the passed in Component and page buttons
+ * @returns Component with data rendered by the passed in Component and page links
  */
 const Paginator = ({
 	data,
@@ -28,9 +28,8 @@ const Paginator = ({
 	Component,
 	routing,
 	location,
-	navRoute,
 }) => {
-	// Track if breakpoint buttons have been opened
+	// Track if breakpoint links have been opened
 	const openStart = location.state?.breakOpen
 		? breakpoints?.start + breakpoints?.add
 		: undefined
@@ -40,14 +39,16 @@ const Paginator = ({
 	const [breakpointsOpen, setBreakpointsOpen] = useState(
 		location.state?.breakOpen || false,
 	)
-	// This value will be the button to start with after separator
+	// This value will be the link to start with after separator
 	const breakEnd = breakpoints?.end || null
-	// how many buttons to add when the separator is clicked
+	// how many links to add when the separator is clicked
 	const breakAdd = breakpoints?.add || null
-
 	const [currentPageQuery, setCurrentPageQuery] = useState(
 		routing ? Number(location.pathname.match(/\d+$/)[0]) : 1,
 	)
+	const navRoute = routing
+		? location.pathname.replace(/\/\d+$/, '')
+		: location.pathname
 
 	const [offset, setOffset] = useState((currentPageQuery - 1) * itemsPerPage)
 	const [currentItems, setCurrentItems] = useState([])
@@ -71,7 +72,7 @@ const Paginator = ({
 		setOffset(Number(newOffset))
 	}, [data, offset, itemsPerPage, breakStart, currentPageQuery, totalItems])
 
-	// track window width to appropriately hide and show buttons on small viewports
+	// track window width to appropriately hide and show links on small viewports
 	const [windowWidth, setWindowWidth] = useState()
 	useEffect(() => {
 		setWindowWidth(window.innerWidth)
@@ -98,25 +99,25 @@ const Paginator = ({
 			// set the current page
 			currentPageQuery > 1 && setCurrentPageQuery(Number(currentPageQuery - 1))
 		} else {
-			// the number of the page button clicked
+			// the number of the page link clicked
 			const clickedPage = Number(event.target.innerHTML)
 			setCurrentPageQuery(clickedPage)
 		}
 	}
 
-	const RenderButtons = () => {
+	const RenderLinks = () => {
 		if (totalPages <= 1) {
 			// if there is only one page
-			// don't render any buttons
+			// don't render any links
 			return null
 		}
-		const buttons = []
+		const links = []
 
-		// Create buttons given the number of
+		// Create link given the number of
 		// total pages
 		for (let i = 0; i < totalPages; i++) {
 			const pageNumber = Number(i + 1)
-			const defaultButton = (
+			const defaultLink = (
 				<Link
 					to={`${navRoute}${routing ? '/' + pageNumber : ''}`}
 					state={{ breakOpen: breakpointsOpen }}
@@ -129,89 +130,106 @@ const Paginator = ({
 						currentPageQuery === pageNumber && 'border-blue-700 border-2'
 					}
           `}
+					aria-label={
+						currentPageQuery === pageNumber
+							? `Current Page, Page ${pageNumber}`
+							: `Go to Page ${pageNumber}`
+					}
+					aria-current={currentPageQuery === pageNumber ? true : false}
 				>
 					{pageNumber}
 				</Link>
 			)
 
-			// separator button
+			// separator link
 			if (i === breakStart) {
 				if (breakStart + breakAdd >= totalPages) {
-					buttons.push(defaultButton)
+					links.push(defaultLink)
 					continue
 				}
-				buttons.push(
+				links.push(
 					<button
 						className={`hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300"
-            }`}
+				}`}
 						onClick={function () {
 							setBreakStart(breakStart + breakAdd)
 							setBreakpointsOpen(true)
 						}}
 						key={'...'}
+						aria-label="Expand Hidden Buttons"
 					>
 						...
 					</button>,
 				)
 			}
-			// if we have a breakStart, don't render the middle buttons
+			// if we have a breakStart, don't render the middle links
 			if (typeof breakStart === 'number' && typeof breakEnd === 'number') {
 				if (pageNumber >= breakStart && pageNumber < breakEnd) {
 					if (typeof windowWidth === 'number') {
 						if (windowWidth < 768) {
-							buttons.push(defaultButton)
+							links.push(defaultLink)
 						}
 						continue
 					}
 				}
 			}
-			buttons.push(defaultButton)
+			links.push(defaultLink)
 		}
 		const backActive = offset === 0 ? false : true
 		const nextActive = offset >= totalItems - itemsPerPage ? false : true
-		// returns the row of buttons
+		const sharedNextAndBackBtnStyles =
+			'flex flex-col justify-center text-center h-16 w-12 no-underline hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-t-2 border-b-2 border-black bg-white'
+		// returns the row of links
 		return (
-			<div
-				className="flex flex-row justify-center mx-auto mt-auto mb-4"
-				// id to be used for testing button activity
-				id={`button-wrapper ${nextActive} ${backActive}`}
-			>
-				{/* back button */}
-				<Link
-					to={
-						backActive
-							? `${navRoute}${routing ? '/' + (currentPageQuery - 1) : ''}`
-							: `${location.pathname}`
-					}
-					state={{ breakOpen: breakpointsOpen }}
-					className={`flex flex-col justify-center text-center h-16 w-12 no-underline ${
-						backActive ? '' : 'bg-gray-500'
-					} hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-l-2 border-t-2 border-b-2 border-black bg-white`}
-					id="back-btn"
-					onClick={handlePageClick}
+			<nav role="navigation" aria-label="Pagination Navigation">
+				<ul
+					className="list-none flex flex-row justify-center mx-auto mt-auto mb-4 [&>li]:p-0"
+					data-testid={`link-wrapper ${nextActive} ${backActive}`}
 				>
-					{'<'}
-				</Link>
-				{/* map buttons[] */}
-				{buttons.map(btn => btn)}
-				{/* next button */}
-				<Link
-					to={
-						nextActive
-							? `${navRoute}${routing ? '/' + (currentPageQuery + 1) : ''}`
-							: `${location.pathname}`
-					}
-					state={{ breakOpen: breakpointsOpen }}
-					className={`flex flex-col justify-center text-center h-16 w-12 no-underline ${
-						nextActive ? '' : 'bg-gray-500'
-					} hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300  border-r-2 border-t-2 border-b-2 border-black bg-white`}
-					id="next-btn"
-					onClick={handlePageClick}
-					disabled={nextActive}
-				>
-					{'>'}
-				</Link>
-			</div>
+					<li key="back">
+						{/* back link */}
+						<Link
+							to={
+								backActive
+									? `${navRoute}${routing ? '/' + (currentPageQuery - 1) : ''}`
+									: `${location.pathname}`
+							}
+							state={{ breakOpen: breakpointsOpen }}
+							className={`${sharedNextAndBackBtnStyles} ${
+								backActive ? '' : 'bg-gray-500'
+							}  border-l-2`}
+							id="back-btn"
+							onClick={handlePageClick}
+							aria-label="Go to Previous Page"
+						>
+							{'<'}
+						</Link>
+					</li>
+					{/* map links[] */}
+					{links.map((lnk, i) => (
+						<li key={i}>{lnk}</li>
+					))}
+					{/* next link */}
+					<li key="next">
+						<Link
+							to={
+								nextActive
+									? `${navRoute}${routing ? '/' + (currentPageQuery + 1) : ''}`
+									: `${location.pathname}`
+							}
+							state={{ breakOpen: breakpointsOpen }}
+							className={`${sharedNextAndBackBtnStyles} ${
+								nextActive ? '' : 'bg-gray-500'
+							} border-r-2`}
+							id="next-btn"
+							onClick={handlePageClick}
+							aria-label="Go to Next Page"
+						>
+							{'>'}
+						</Link>
+					</li>
+				</ul>
+			</nav>
 		)
 	}
 	return (
@@ -225,7 +243,7 @@ const Paginator = ({
 				<Component currentItems={currentItems} />
 			</section>
 			<div className="sticky lg:bottom-12 bottom-4 mt-10">
-				<RenderButtons />
+				<RenderLinks />
 			</div>
 		</div>
 	)
