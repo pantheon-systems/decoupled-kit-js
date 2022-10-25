@@ -12,7 +12,10 @@ const StaticQuery = vi.spyOn(Gatsby, 'StaticQuery')
 
 describe(`<PaginationPostsExample />`, () => {
 	beforeEach(() => {
-		location = { pathname: '/examples/pagination/1' }
+		location = {
+			pathname: '/examples/pagination/1',
+			state: { breakOpen: false },
+		}
 		StaticQuery.mockImplementationOnce(() => {
 			return {
 				data,
@@ -26,7 +29,7 @@ describe(`<PaginationPostsExample />`, () => {
 					postsPerPage: 10,
 					routing: true,
 					pagPosts: data,
-					breakpoints: { start: 6, end: 12, add: 6 },
+					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
 				location={location}
 			/>,
@@ -40,9 +43,9 @@ describe(`<PaginationPostsExample />`, () => {
 					postsPerPage: 10,
 					routing: true,
 					pagPosts: data,
-					breakpoints: { start: 6, end: 12, add: 6 },
+					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={window.location}
+				location={location}
 			/>,
 		)
 		expect(screen.getByTestId('link-wrapper true false')).not.toBe(null)
@@ -55,9 +58,9 @@ describe(`<PaginationPostsExample />`, () => {
 					postsPerPage: 60,
 					routing: true,
 					pagPosts: data,
-					breakpoints: { start: 6, end: 12, add: 6 },
+					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={window.location}
+				location={location}
 			/>,
 		)
 		fireEvent.click(screen.getByText('>'))
@@ -72,9 +75,9 @@ describe(`<PaginationPostsExample />`, () => {
 					postsPerPage: 10,
 					routing: true,
 					pagPosts: data,
-					breakpoints: { start: 6, end: 12, add: 6 },
+					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={window.location}
+				location={location}
 			/>,
 		)
 		expect(screen.queryAllByText('6')).toHaveLength(0)
@@ -88,9 +91,9 @@ describe(`<PaginationPostsExample />`, () => {
 					postsPerPage: 10,
 					routing: true,
 					pagPosts: data,
-					breakpoints: { start: 6, end: 12, add: 6 },
+					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={window.location}
+				location={location}
 			/>,
 		)
 		fireEvent.click(screen.getByText('>'))
@@ -103,9 +106,9 @@ describe(`<PaginationPostsExample />`, () => {
 					postsPerPage: 10,
 					routing: true,
 					pagPosts: data,
-					breakpoints: { start: 6, end: 12, add: 6 },
+					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={window.location}
+				location={location}
 			/>,
 		)
 		fireEvent.click(screen.getByText('>'))

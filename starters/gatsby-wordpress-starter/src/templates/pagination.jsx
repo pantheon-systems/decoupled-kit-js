@@ -44,5 +44,5 @@ const PaginationPostsExample = ({
 export default PaginationPostsExample
 
 export function Head() {
-	return <Seo title="All posts" />
+	return <Seo title="Paginated Posts Example" />
 }

@@ -191,8 +191,7 @@ const Paginator = <Type extends object>({
 				}
 				buttons.push(
 					<button
-						className={`ps-hidden md:ps-block ps-h-16 ps-w-12 ps-border-2 ps-border-black ps-bg-slate-200 hover:ps-bg-blue-300 focus:ps-bg-blue-200 focus:ps-border-blue-300"
-            }`}
+						className={`ps-hidden md:ps-block ps-h-16 ps-w-12 ps-border-2 ps-border-black ps-bg-slate-200 hover:ps-bg-blue-300 focus:ps-bg-blue-200 focus:ps-border-blue-300`}
 						onClick={() => {
 							if (isNumber(breakAdd)) {
 								setBreakStart(breakStart + breakAdd);

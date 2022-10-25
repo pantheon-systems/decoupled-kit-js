@@ -149,8 +149,7 @@ const Paginator = ({
 				}
 				links.push(
 					<button
-						className={`hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300"
-				}`}
+						className={`hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300`}
 						onClick={function () {
 							setBreakStart(breakStart + breakAdd)
 							setBreakpointsOpen(true)
