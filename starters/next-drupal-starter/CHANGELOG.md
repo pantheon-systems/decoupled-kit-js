@@ -1,5 +1,15 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.4.0-canary.1
+
+### Patch Changes
+
+- b448700: Updated snapshot for updated paginator component
+- Updated dependencies [86ec3f2]
+- Updated dependencies [936b1b5]
+- Updated dependencies [19259ac]
+  - @pantheon-systems/nextjs-kit@1.4.0-canary.1
+
 ## 3.4.0-canary.0
 
 ### Minor Changes

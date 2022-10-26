@@ -1,5 +1,16 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.10.0-canary.3
+
+### Patch Changes
+
+- b448700: Updated snapshot for updated paginator component
+- Updated dependencies [86ec3f2]
+- Updated dependencies [936b1b5]
+- Updated dependencies [19259ac]
+  - @pantheon-systems/nextjs-kit@1.4.0-canary.1
+  - @pantheon-systems/wordpress-kit@2.8.0-canary.1
+
 ## 0.10.0-canary.2
 
 ### Minor Changes

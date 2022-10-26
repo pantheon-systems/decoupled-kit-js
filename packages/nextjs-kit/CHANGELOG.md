@@ -1,5 +1,19 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.4.0-canary.1
+
+### Minor Changes
+
+- 86ec3f2: Modified the contentWithImage component on Next-Kit to remove the
+  paddings and it now accepts a class as prop for the content wrapper
+- 19259ac: Modified every component on the Wordpress-Kit tailwind plugin to
+  respect the full width options. Added base utilities on tailwind plugin to
+  modify headings and paragraphs width.
+
+### Patch Changes
+
+- 936b1b5: Fixed a className in the paginator component
+
 ## 1.3.1-canary.0
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.4.0-canary.2
+
+### Minor Changes
+
+- 936b1b5: Added a pagination component and an example route with paginated data
+
 ## 2.4.0-canary.1
 
 ### Minor Changes
