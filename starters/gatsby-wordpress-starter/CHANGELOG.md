@@ -1,5 +1,14 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.4.0
+
+### Minor Changes
+
+- c7985f8: Automatically injects PANTHEON_UPLOAD_PATH as the pathPrefix when
+  using the starter on Pantheon
+- 46575f5: Added snapshot tests with vitest and @testing-library/react
+- 936b1b5: Added a pagination component and an example route with paginated data
+
 ## 2.4.0-canary.2
 
 ### Minor Changes
