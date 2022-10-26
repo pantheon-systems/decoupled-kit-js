@@ -1,5 +1,11 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.8.0-canary.2
+
+### Patch Changes
+
+- 178d9c9: Revert block editor alignment options.
+
 ## 2.8.0-canary.1
 
 ### Minor Changes
