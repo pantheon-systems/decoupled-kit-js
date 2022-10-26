@@ -1,5 +1,13 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.8.0-canary.1
+
+### Minor Changes
+
+- 19259ac: Modified every component on the Wordpress-Kit tailwind plugin to
+  respect the full width options. Added base utilities on tailwind plugin to
+  modify headings and paragraphs width.
+
 ## 2.8.0-canary.0
 
 ### Minor Changes
