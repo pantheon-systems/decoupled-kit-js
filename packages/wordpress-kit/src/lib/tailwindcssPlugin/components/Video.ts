@@ -1,10 +1,6 @@
-type mediaType = '@media (min-width: 768px)';
+import { alignment } from './shared';
 
-export const VideoComponent = ({
-	alignFull: { minWidth },
-}: {
-	alignFull: { minWidth: string };
-}) => ({
+export const VideoComponent = () => ({
 	'.wp-block-embed': {
 		figure: {
 			display: 'block',
@@ -45,32 +41,20 @@ export const VideoComponent = ({
 				width: '100%',
 			},
 		},
-		'&.alignfull': {
-			[`@media (min-width:${minWidth})` as mediaType]: {
-				// sets a negative margin to allow full width images to span past the
-				// width its parent container
-				marginLeft: 'calc(-1 * max(1rem, 10vw))',
-				marginRight: 'calc(-1 * max(1rem, 10vw))',
-				maxWidth: 'none',
-				width: 'unset',
-			},
-		},
+		...alignment,
 		'&.alignleft': {
-			float: 'left',
+			...alignment['&.alignleft'],
 			marginInlineStart: '0',
 			marginInlineEnd: '2em',
 			maxWidth: '360px',
 			width: '100%',
 		},
 		'&.alignright': {
-			float: 'right',
+			...alignment['&.alignright'],
 			marginInlineStart: '2em',
 			marginInlineEnd: '0',
 			maxWidth: '360px',
 			width: '100%',
-		},
-		'&.alignwide': {
-			maxWidth: '1000px',
 		},
 		marginLeft: 'auto',
 		marginRight: 'auto',
@@ -86,28 +70,21 @@ export const VideoComponent = ({
 			height: 'auto',
 			width: '100%',
 		},
+		...alignment,
 		'&.alignleft': {
-			float: 'left',
+			...alignment['&.alignleft'],
 			marginRight: '1.5rem',
 			marginTop: '0',
 			width: 'fit-content',
 		},
 		'&.alignright': {
-			float: 'right',
+			...alignment['&.alignright'],
 			marginLeft: '1.5rem',
 			marginTop: '0',
 			width: 'fit-content',
 		},
-		'&.alignwide': {
-			maxWidth: '1000px',
-		},
 		'&.alignfull': {
-			[`@media (min-width:${minWidth})` as mediaType]: {
-				// sets a negative margin to allow full width images to span past the
-				// width its parent container
-				marginLeft: 'calc(-1 * max(1rem, 10vw))',
-				marginRight: 'calc(-1 * max(1rem, 10vw))',
-			},
+			...alignment['&.alignfull'],
 			video: {
 				height: 'auto',
 				maxWidth: 'none',
@@ -117,6 +94,5 @@ export const VideoComponent = ({
 		},
 		marginLeft: 'auto',
 		marginRight: 'auto',
-		maxWidth: '650px',
 	},
 });
