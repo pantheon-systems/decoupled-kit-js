@@ -59,7 +59,7 @@ export const PostGridItem = ({ content: post }) => {
 	)
 }
 
-export const PageGridItem = ({ content: { page } }) => {
+export const PageGridItem = ({ content: page }) => {
 	const imageData =
 		page?.featuredImage?.node.localFile.childImageSharp.gatsbyImageData || ''
 	const altText = page?.featuredImage?.node.altText || page.title

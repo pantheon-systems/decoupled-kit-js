@@ -9,6 +9,10 @@ const StaticQuery = vi.spyOn(Gatsby, 'StaticQuery')
 describe('<PostIndexTemplate />', () => {
 	beforeEach(() => {
 		StaticQuery.mockImplementation(() => {
+			location = {
+				pathname: '/posts/1',
+				state: { breakOpen: false },
+			}
 			return {
 				data,
 			}
@@ -19,10 +23,8 @@ describe('<PostIndexTemplate />', () => {
 		const { asFragment } = render(
 			<PostIndexTemplate
 				data={data}
-				pageContext={{
-					nextPagePath: data.allWpPost.nodes[1].uri,
-					previousPagePath: null,
-				}}
+				location={location}
+				pageContext={{ itemsPerPage: 2, routing: true }}
 			/>,
 		)
 
