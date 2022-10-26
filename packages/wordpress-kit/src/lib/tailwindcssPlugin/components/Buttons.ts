@@ -1,4 +1,4 @@
-import { alignment, generalButtonStyle } from './shared';
+import { generalButtonStyle } from './shared';
 
 const justifications = {
 	'&.is-content-justification-left': {
@@ -43,7 +43,19 @@ export const ButtonsComponent = ({
 		alignItems: 'center',
 		'justify-content': 'flex-start',
 		...justifications,
-		...alignment,
+		'max-width': '650px',
+		'&.alignwide': {
+			maxWidth: '1000px',
+		},
+		'&.alignfull': {
+			'@media (min-width:720px)': {
+				// sets a negative margin to allow full width elements to span past the
+				// width its parent container
+				marginLeft: 'calc(-1 * max(1rem, 10vw))',
+				marginRight: 'calc(-1 * max(1rem, 10vw))',
+				maxWidth: 'unset',
+			},
+		},
 		'&.is-vertical': {
 			flexDirection: 'column',
 			'align-items': 'flex-start',

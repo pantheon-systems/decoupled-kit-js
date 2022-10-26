@@ -1,5 +1,3 @@
-import { alignment } from './shared';
-
 export const Quote = {
 	'.wp-block-quote': {
 		quotes: 'none',
@@ -7,6 +5,7 @@ export const Quote = {
 		paddingLeft: '1em',
 		'padding-top': '0',
 		'padding-bottom': '0',
+		maxWidth: '650px',
 		'margin-left': 'auto',
 		'margin-right': 'auto',
 		'&.has-text-align-center': {
@@ -24,6 +23,5 @@ export const Quote = {
 			fontStyle: 'normal',
 			fontSize: '0.8em',
 		},
-		...alignment,
 	},
 };

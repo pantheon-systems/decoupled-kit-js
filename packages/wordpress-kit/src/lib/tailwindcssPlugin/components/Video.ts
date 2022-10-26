@@ -1,6 +1,10 @@
-import { alignment } from './shared';
+type mediaType = '@media (min-width: 768px)';
 
-export const VideoComponent = () => ({
+export const VideoComponent = ({
+	alignFull: { minWidth },
+}: {
+	alignFull: { minWidth: string };
+}) => ({
 	'.wp-block-embed': {
 		figure: {
 			display: 'block',
@@ -41,20 +45,32 @@ export const VideoComponent = () => ({
 				width: '100%',
 			},
 		},
-		...alignment,
+		'&.alignfull': {
+			[`@media (min-width:${minWidth})` as mediaType]: {
+				// sets a negative margin to allow full width images to span past the
+				// width its parent container
+				marginLeft: 'calc(-1 * max(1rem, 10vw))',
+				marginRight: 'calc(-1 * max(1rem, 10vw))',
+				maxWidth: 'none',
+				width: 'unset',
+			},
+		},
 		'&.alignleft': {
-			...alignment['&.alignleft'],
+			float: 'left',
 			marginInlineStart: '0',
 			marginInlineEnd: '2em',
 			maxWidth: '360px',
 			width: '100%',
 		},
 		'&.alignright': {
-			...alignment['&.alignright'],
+			float: 'right',
 			marginInlineStart: '2em',
 			marginInlineEnd: '0',
 			maxWidth: '360px',
 			width: '100%',
+		},
+		'&.alignwide': {
+			maxWidth: '1000px',
 		},
 		marginLeft: 'auto',
 		marginRight: 'auto',
@@ -70,21 +86,28 @@ export const VideoComponent = () => ({
 			height: 'auto',
 			width: '100%',
 		},
-		...alignment,
 		'&.alignleft': {
-			...alignment['&.alignleft'],
+			float: 'left',
 			marginRight: '1.5rem',
 			marginTop: '0',
 			width: 'fit-content',
 		},
 		'&.alignright': {
-			...alignment['&.alignright'],
+			float: 'right',
 			marginLeft: '1.5rem',
 			marginTop: '0',
 			width: 'fit-content',
 		},
+		'&.alignwide': {
+			maxWidth: '1000px',
+		},
 		'&.alignfull': {
-			...alignment['&.alignfull'],
+			[`@media (min-width:${minWidth})` as mediaType]: {
+				// sets a negative margin to allow full width images to span past the
+				// width its parent container
+				marginLeft: 'calc(-1 * max(1rem, 10vw))',
+				marginRight: 'calc(-1 * max(1rem, 10vw))',
+			},
 			video: {
 				height: 'auto',
 				maxWidth: 'none',
@@ -94,5 +117,6 @@ export const VideoComponent = () => ({
 		},
 		marginLeft: 'auto',
 		marginRight: 'auto',
+		maxWidth: '650px',
 	},
 });

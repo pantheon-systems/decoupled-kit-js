@@ -201,7 +201,7 @@ exports[`<PageTemplate /> > should render a page 1`] = `
       class="mb-auto"
     >
       <article
-        class="ps-prose ps-max-w-none xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-py-4 ps-px-12"
+        class="ps-prose xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-p-4"
       >
         <h1>
           Sample Page
@@ -220,7 +220,7 @@ exports[`<PageTemplate /> > should render a page 1`] = `
           class="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg ps-shadow-lg [&*>img]:ps-rounded-lg"
         />
         <div
-          class="ps-break-words ps-mt-12 ps-wp-content"
+          class="ps-break-words ps-mt-12"
         >
           
 
