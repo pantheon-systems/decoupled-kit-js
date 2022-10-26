@@ -47,7 +47,7 @@ export function Head() {
 
 export const pageQuery = graphql`
 	query PostList {
-		allWpPost(limit: 101) {
+		allWpPost(limit: 100) {
 			nodes {
 				excerpt
 				uri
