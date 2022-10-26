@@ -1,5 +1,3 @@
-import { alignment } from './shared';
-
 const stackedOnMobile = {
 	'&.is-stacked-on-mobile': {
 		'@media (max-width: 600px)': {
@@ -36,7 +34,7 @@ const cropImageToFill = {
 	},
 };
 
-const flexAlignment = {
+const alignment = {
 	'&.is-vertically-aligned-top': {
 		'.wp-block-media-text__content': {
 			alignSelf: 'start',
@@ -80,6 +78,7 @@ const contentText = {
 
 export const mediaAndText = {
 	'.wp-block-media-text': {
+		maxWidth: '650px',
 		margin: '1rem auto',
 		display: 'grid',
 		gridTemplateColumns: '50% 1fr',
@@ -97,11 +96,22 @@ export const mediaAndText = {
 				gridColumn: '1',
 			},
 		},
-		...alignment,
+		'&.alignwide': {
+			maxWidth: '1000px',
+		},
+		'&.alignfull': {
+			'@media (min-width:720px)': {
+				// sets a negative margin to allow full width tables to span past the
+				// width its parent container
+				marginLeft: 'calc(-1 * max(1rem, 10vw))',
+				marginRight: 'calc(-1 * max(1rem, 10vw))',
+				maxWidth: 'unset',
+			},
+		},
 
 		...stackedOnMobile,
 		...cropImageToFill,
-		...flexAlignment,
+		...alignment,
 
 		...contentMedia,
 		...contentText,

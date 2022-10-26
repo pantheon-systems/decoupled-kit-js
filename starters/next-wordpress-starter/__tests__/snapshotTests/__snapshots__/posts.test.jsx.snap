@@ -222,7 +222,7 @@ exports[`<PostTemplate /> > should render a post 1`] = `
       class="mb-auto"
     >
       <article
-        class="ps-prose ps-max-w-none xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-py-4 ps-px-12"
+        class="ps-prose xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-p-4"
       >
         <h1>
           Example Post with Image
@@ -259,7 +259,7 @@ exports[`<PostTemplate /> > should render a post 1`] = `
           </div>
         </div>
         <div
-          class="ps-break-words ps-mt-12 ps-wp-content"
+          class="ps-break-words ps-mt-12"
         >
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

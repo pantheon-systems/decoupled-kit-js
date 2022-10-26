@@ -1,17 +1,26 @@
-import { alignment } from './shared';
-
 export const PullQuoteComponent = {
 	'.wp-block-pullquote': {
-		...alignment,
 		'&.alignleft': {
-			...alignment['&.alignleft'],
+			float: 'left',
 			maxWidth: '30rem',
 			minWidth: '20rem',
 		},
 		'&.alignright': {
-			...alignment['&.alignright'],
+			float: 'right',
 			maxWidth: '30rem',
 			minWidth: '20rem',
+		},
+		'&.alignwide': {
+			maxWidth: '1000px',
+		},
+		'&.alignfull': {
+			'@media (min-width:720px)': {
+				// sets a negative margin to allow full width elements to span past the
+				// width its parent container
+				marginLeft: 'calc(-1 * max(1rem, 10vw))',
+				marginRight: 'calc(-1 * max(1rem, 10vw))',
+				maxWidth: 'unset',
+			},
 		},
 		blockquote: {
 			p: {
