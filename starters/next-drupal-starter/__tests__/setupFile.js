@@ -112,6 +112,17 @@ export const restHandlers = [
 	});
 });
 
+process.env = {
+	...process.env,
+	__NEXT_IMAGE_OPTS: {
+		deviceSizes: [320, 420, 768, 1024, 1200],
+		imageSizes: [],
+		domains: [PROFILE],
+		path: '/_next/image',
+		loader: 'default',
+	},
+};
+
 const server = setupServer(...restHandlers);
 
 // Start server before all tests

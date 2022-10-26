@@ -3,7 +3,8 @@ import { sortDate } from '@pantheon-systems/nextjs-kit';
 import { isMultiLanguage } from '../lib/isMultiLanguage';
 import { getCurrentLocaleStore, globalDrupalStateStores } from '../lib/stores';
 
-import { ArticleGridItem, withGrid } from '../components/grid';
+import { ArticleGridItem } from '../components/grid';
+import { withGrid } from '@pantheon-systems/nextjs-kit';
 import Image from 'next/image';
 import Layout from '../components/layout';
 

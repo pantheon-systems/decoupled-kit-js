@@ -1,5 +1,25 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.8.0-canary.2
+
+### Patch Changes
+
+- 178d9c9: Revert block editor alignment options.
+
+## 2.8.0-canary.1
+
+### Minor Changes
+
+- 19259ac: Modified every component on the Wordpress-Kit tailwind plugin to
+  respect the full width options. Added base utilities on tailwind plugin to
+  modify headings and paragraphs width.
+
+## 2.8.0-canary.0
+
+### Minor Changes
+
+- 0a3df6e: Block Editor Video Styles
+
 ## 2.7.0
 
 ### Minor Changes

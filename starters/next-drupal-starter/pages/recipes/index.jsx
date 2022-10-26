@@ -7,7 +7,8 @@ import {
 	globalDrupalStateStores,
 } from '../../lib/stores';
 
-import { RecipeGridItem, withGrid } from '../../components/grid';
+import { RecipeGridItem } from '../../components/grid';
+import { withGrid } from '@pantheon-systems/nextjs-kit';
 import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
 

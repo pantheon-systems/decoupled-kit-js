@@ -6,47 +6,47 @@ exports[`default <CatchAllRoute /> > should render a page 1`] = `
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
   >
     <div
-      class="my-0 pt-10 px-5 text-xl"
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
     >
       <nav>
         <ul
-          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
         >
           <li
-            class="mr-auto"
+            class="ps-mr-auto"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/"
             >
               🏠 Home
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/articles"
             >
               📰 Articles
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/pages"
             >
               📑 Pages
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -88,17 +88,17 @@ exports[`default <CatchAllRoute /> > should render a page 1`] = `
       </article>
     </main>
     <footer
-      class="w-full text-white bg-black p-4 mt-12"
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
     >
       <nav
-        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
       >
         <ul>
           <li
-            class="list-disc text-blue-300 ml-3"
+            class="ps-list-disc ps-text-blue-300"
           >
             <a
-              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
               href="/"
             >
               Home
@@ -107,7 +107,7 @@ exports[`default <CatchAllRoute /> > should render a page 1`] = `
         </ul>
       </nav>
       <div
-        class="flex my-4 p-2"
+        class="ps-flex ps-my-4 ps-p-2"
       >
         <span
           class="mx-auto"
@@ -139,47 +139,47 @@ exports[`default <CatchAllRoute /> > should render an article 1`] = `
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
   >
     <div
-      class="my-0 pt-10 px-5 text-xl"
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
     >
       <nav>
         <ul
-          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
         >
           <li
-            class="mr-auto"
+            class="ps-mr-auto"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/"
             >
               🏠 Home
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/articles"
             >
               📰 Articles
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/pages"
             >
               📑 Pages
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -192,93 +192,102 @@ exports[`default <CatchAllRoute /> > should render an article 1`] = `
       class="mb-auto"
     >
       <article
-        class="prose lg:prose-xl mt-10 mx-auto"
+        class="ps-prose xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-p-4"
       >
         <h1>
           Example Top Level Article
         </h1>
         <a
-          class="font-normal"
-          href="/"
+          class="ps-font-normal ps-cursor-pointer"
         >
-          Home →
+          Back →
         </a>
         <div
-          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+          class="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg ps-shadow-lg [&*>img]:ps-rounded-lg"
         >
           <div
-            class="relative w-full rounded-lg shadow-lg overflow-hidden mb-10"
-            style="height: 50vh;"
+            class="ps-relative ps-mb-10 ps-min-h-[50vh]"
           >
-            <img
-              alt="Example Top Level Article"
-              src="https://default/sites/default/files/2022-07/kitties.jpg"
-            />
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+            >
+              <img
+                alt="Example Top Level Article"
+                data-nimg="fill"
+                decoding="async"
+                sizes="100vw"
+                src="/_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fkitties.jpg&w=1200&q=75"
+                srcset="/_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fkitties.jpg&w=320&q=75 320w, /_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fkitties.jpg&w=420&q=75 420w, /_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fkitties.jpg&w=768&q=75 768w, /_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fkitties.jpg&w=1024&q=75 1024w, /_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fkitties.jpg&w=1200&q=75 1200w"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+              />
+            </span>
           </div>
-          <div>
-            <h2>
-              Nonummy Tristique Pulvinar Justo Primis Mi
-            </h2>
-            
+        </div>
+        <div
+          class="ps-break-words ps-mt-12"
+        >
+          <h2>
+            Nonummy Tristique Pulvinar Justo Primis Mi
+          </h2>
+          
 
 
-            <h3>
-              Ultricies Velit Dapibus Cursus Proin Magnis
-            </h3>
-            
+          <h3>
+            Ultricies Velit Dapibus Cursus Proin Magnis
+          </h3>
+          
 
 
-            <p>
-              Est varius. Conubia semper facilisis primis urna nec dis placerat dictum interdum dapibus dictumst phasellus phasellus neque dui posuere habitant nunc. Lorem mollis varius Sagittis Habitasse ultricies euismod euismod. Posuere cubilia platea pede. Viverra habitant praesent ac phasellus quisque vel diam fusce nisl maecenas vestibulum netus torquent Molestie volutpat metus donec cubilia. Ipsum, nec morbi lacinia sem. Nascetur sed. Justo ultrices velit hymenaeos aliquam hymenaeos potenti id.
-            </p>
-            
+          <p>
+            Est varius. Conubia semper facilisis primis urna nec dis placerat dictum interdum dapibus dictumst phasellus phasellus neque dui posuere habitant nunc. Lorem mollis varius Sagittis Habitasse ultricies euismod euismod. Posuere cubilia platea pede. Viverra habitant praesent ac phasellus quisque vel diam fusce nisl maecenas vestibulum netus torquent Molestie volutpat metus donec cubilia. Ipsum, nec morbi lacinia sem. Nascetur sed. Justo ultrices velit hymenaeos aliquam hymenaeos potenti id.
+          </p>
+          
 
 
-            <h3>
-              Quis Metus Orci Nibh Dapibus
-            </h3>
-            
+          <h3>
+            Quis Metus Orci Nibh Dapibus
+          </h3>
+          
 
 
-            <p>
-              Mus porta parturient leo class. Sapien orci tincidunt mattis torquent. Pretium etiam sapien mauris commodo vestibulum potenti ipsum a, cubilia accumsan adipiscing rutrum. Egestas. Ornare aliquam nibh. Pede placerat praesent nonummy est facilisi sapien porttitor rhoncus molestie torquent. Lorem magnis non et natoque. Ipsum justo leo pharetra hymenaeos praesent pharetra hymenaeos fermentum, semper. Ultrices dolor gravida sit enim, mus. Est nam class, condimentum dis dictumst, ut ut cum magna pulvinar primis vitae imperdiet aliquet vitae id amet, justo curae; et, vitae tempor ultricies maecenas lectus ut faucibus.
-            </p>
-            
+          <p>
+            Mus porta parturient leo class. Sapien orci tincidunt mattis torquent. Pretium etiam sapien mauris commodo vestibulum potenti ipsum a, cubilia accumsan adipiscing rutrum. Egestas. Ornare aliquam nibh. Pede placerat praesent nonummy est facilisi sapien porttitor rhoncus molestie torquent. Lorem magnis non et natoque. Ipsum justo leo pharetra hymenaeos praesent pharetra hymenaeos fermentum, semper. Ultrices dolor gravida sit enim, mus. Est nam class, condimentum dis dictumst, ut ut cum magna pulvinar primis vitae imperdiet aliquet vitae id amet, justo curae; et, vitae tempor ultricies maecenas lectus ut faucibus.
+          </p>
+          
 
 
-            <p>
-              Vehicula. Semper convallis tempus habitant accumsan justo porta auctor Nonummy vestibulum rhoncus nam odio sociosqu blandit ut. Nostra luctus malesuada ac risus torquent massa habitant cubilia Porttitor ad lorem, tempus ridiculus vulputate iaculis. Gravida placerat suscipit. Pulvinar facilisi. Leo. Vivamus lorem diam est. Suscipit rhoncus ullamcorper leo fames viverra. Mattis posuere aliquet congue hymenaeos. Per montes. Litora. Tellus.
-            </p>
-            
+          <p>
+            Vehicula. Semper convallis tempus habitant accumsan justo porta auctor Nonummy vestibulum rhoncus nam odio sociosqu blandit ut. Nostra luctus malesuada ac risus torquent massa habitant cubilia Porttitor ad lorem, tempus ridiculus vulputate iaculis. Gravida placerat suscipit. Pulvinar facilisi. Leo. Vivamus lorem diam est. Suscipit rhoncus ullamcorper leo fames viverra. Mattis posuere aliquet congue hymenaeos. Per montes. Litora. Tellus.
+          </p>
+          
 
 
-            <h3>
-              Convallis Porta Morbi Accumsan
-            </h3>
-            
+          <h3>
+            Convallis Porta Morbi Accumsan
+          </h3>
+          
 
 
-            <p>
-              In. Viverra habitasse commodo urna pharetra. Eleifend euismod. Justo volutpat, cras eu. Porta sociosqu tortor scelerisque. Orci tincidunt dictum viverra imperdiet phasellus Fames quam diam metus etiam nascetur litora, hac bibendum dictum sociis. Odio fringilla blandit elementum risus hendrerit justo suscipit, in quisque platea mollis vulputate, montes vivamus. Ipsum magnis mus erat cum phasellus at. Aliquet Ad netus vitae interdum fermentum fermentum conubia habitant. Sed penatibus hendrerit enim dictum magna, faucibus sit integer elementum tincidunt laoreet varius odio mollis. Amet vivamus morbi penatibus aptent. Montes, eget litora dictumst.
-            </p>
-            
+          <p>
+            In. Viverra habitasse commodo urna pharetra. Eleifend euismod. Justo volutpat, cras eu. Porta sociosqu tortor scelerisque. Orci tincidunt dictum viverra imperdiet phasellus Fames quam diam metus etiam nascetur litora, hac bibendum dictum sociis. Odio fringilla blandit elementum risus hendrerit justo suscipit, in quisque platea mollis vulputate, montes vivamus. Ipsum magnis mus erat cum phasellus at. Aliquet Ad netus vitae interdum fermentum fermentum conubia habitant. Sed penatibus hendrerit enim dictum magna, faucibus sit integer elementum tincidunt laoreet varius odio mollis. Amet vivamus morbi penatibus aptent. Montes, eget litora dictumst.
+          </p>
+          
 
-          </div>
         </div>
       </article>
     </main>
     <footer
-      class="w-full text-white bg-black p-4 mt-12"
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
     >
       <nav
-        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
       >
         <ul>
           <li
-            class="list-disc text-blue-300 ml-3"
+            class="ps-list-disc ps-text-blue-300"
           >
             <a
-              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
               href="/"
             >
               Home
@@ -287,7 +296,7 @@ exports[`default <CatchAllRoute /> > should render an article 1`] = `
         </ul>
       </nav>
       <div
-        class="flex my-4 p-2"
+        class="ps-flex ps-my-4 ps-p-2"
       >
         <span
           class="mx-auto"

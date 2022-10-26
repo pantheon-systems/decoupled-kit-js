@@ -1,5 +1,50 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.10.0-canary.4
+
+### Patch Changes
+
+- 178d9c9: Revert block editor alignment options.
+- Updated dependencies [178d9c9]
+  - @pantheon-systems/nextjs-kit@1.4.0-canary.2
+  - @pantheon-systems/wordpress-kit@2.8.0-canary.2
+
+## 0.10.0-canary.3
+
+### Patch Changes
+
+- b448700: Updated snapshot for updated paginator component
+- Updated dependencies [86ec3f2]
+- Updated dependencies [936b1b5]
+- Updated dependencies [19259ac]
+  - @pantheon-systems/nextjs-kit@1.4.0-canary.1
+  - @pantheon-systems/wordpress-kit@2.8.0-canary.1
+
+## 0.10.0-canary.2
+
+### Minor Changes
+
+- 9263e27: Removed btoa function on API authorization example, in favor of use
+  Buffer encoding
+
+## 0.10.0-canary.1
+
+### Minor Changes
+
+- ab45639: Automatically use the `PANTHEON_UPLOAD_PATH` as `basePath`
+
+### Patch Changes
+
+- Updated dependencies [b3fd47c]
+  - @pantheon-systems/nextjs-kit@1.3.1-canary.0
+
+## 0.9.1-canary.0
+
+### Patch Changes
+
+- Updated dependencies [0a3df6e]
+  - @pantheon-systems/wordpress-kit@2.8.0-canary.0
+
 ## 0.9.0
 
 ### Minor Changes

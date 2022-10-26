@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { Link, graphql, withPrefix } from 'gatsby'
 
 import Layout from '../components/layout'
 import Seo from '../components/seo'
@@ -20,7 +20,12 @@ const PageHeader = () => (
 		<div className="text-2xl">
 			<div className="not-prose bg-black text-white rounded flex items-center justify-center p-4">
 				Decoupled WordPress on{' '}
-				<img src="/pantheon.png" alt="Pantheon Logo" width={191} height={60} />
+				<img
+					src={withPrefix('pantheon.png')}
+					alt="Pantheon Logo"
+					width={191}
+					height={60}
+				/>
 			</div>
 		</div>
 	</div>

@@ -6,47 +6,47 @@ exports[`Umami <RecipeListTemplate /> > should render with umami profile recipes
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
   >
     <div
-      class="my-0 pt-10 px-5 text-xl"
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
     >
       <nav>
         <ul
-          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
         >
           <li
-            class="mr-auto"
+            class="ps-mr-auto"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/"
             >
               🏠 Home
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/articles"
             >
               📰 Articles
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/pages"
             >
               📑 Pages
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -69,7 +69,7 @@ exports[`Umami <RecipeListTemplate /> > should render with umami profile recipes
       </header>
       <section>
         <div
-          class="mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+          class="ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg lg:ps-grid-cols-3"
         >
           <a
             href="/recipes/vegan-chocolate-and-nut-brownies"
@@ -335,37 +335,37 @@ exports[`Umami <RecipeListTemplate /> > should render with umami profile recipes
       </section>
     </main>
     <footer
-      class="w-full text-white bg-black p-4 mt-12"
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
     >
       <nav
-        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
       >
         <ul>
           <li
-            class="list-disc text-blue-300 ml-3"
+            class="ps-list-disc ps-text-blue-300"
           >
             <a
-              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
               href="/en"
             >
               Home
             </a>
           </li>
           <li
-            class="list-disc text-blue-300 ml-3"
+            class="ps-list-disc ps-text-blue-300"
           >
             <a
-              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
               href="/en/articles"
             >
               Articles
             </a>
           </li>
           <li
-            class="list-disc text-blue-300 ml-3"
+            class="ps-list-disc ps-text-blue-300"
           >
             <a
-              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
               href="/en/recipes"
             >
               Recipes
@@ -374,7 +374,7 @@ exports[`Umami <RecipeListTemplate /> > should render with umami profile recipes
         </ul>
       </nav>
       <div
-        class="flex my-4 p-2"
+        class="ps-flex ps-my-4 ps-p-2"
       >
         <span
           class="mx-auto"
@@ -406,47 +406,47 @@ exports[`Umami <RecipeTemplate /> > should render with a umami profile recipe 1`
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
   >
     <div
-      class="my-0 pt-10 px-5 text-xl"
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
     >
       <nav>
         <ul
-          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
         >
           <li
-            class="mr-auto"
+            class="ps-mr-auto"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/"
             >
               🏠 Home
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/articles"
             >
               📰 Articles
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/pages"
             >
               📑 Pages
             </a>
           </li>
           <li
-            class="mx-4"
+            class="ps-mx-4"
           >
             <a
-              class="hover:underline"
+              class="hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -459,41 +459,49 @@ exports[`Umami <RecipeTemplate /> > should render with a umami profile recipe 1`
       class="mb-auto"
     >
       <article
-        class="prose lg:prose-xl mt-10 mx-auto h-fit p-4 sm:p-0"
+        class="ps-prose lg:ps-prose-xl ps-mt-10 ps-mx-auto h-fit ps-p-4 sm:ps-p-0"
       >
         <header>
           <h1>
             Vegan chocolate and nut brownies
           </h1>
           <div
-            class="flex flex-row justify-between"
+            class="ps-flex ps-flex-row ps-justify-between"
           >
             <a
-              class="font-normal"
-              href="/recipes"
+              class="ps-font-normal ps-cursor-pointer"
             >
-              Recipes →
+              Back →
             </a>
             <span
-              class="text pb-2 pr-3 text-sm text-slate-400"
+              class="text ps-pb-2 ps-pr-3 ps-text-sm text-slate-400"
             >
               Snacks
             </span>
           </div>
         </header>
         <div
-          class="relative max-w-lg mx-auto min-w-full h-[50vh] rounded-lg shadow-lg overflow-hidden mt-12 mb-10"
+          class="ps-relative ps-max-w-lg ps-mx-auto ps-min-w-full ps-h-[50vh] ps-rounded-lg ps-shadow-lg ps-overflow-hidden ps-mt-12 ps-mb-10"
         >
-          <img
-            alt="Vegan chocolate and nut brownies"
-            src="https://umami/sites/default/files/vegan-chocolate-nut-brownies.jpg"
-          />
+          <span
+            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+          >
+            <img
+              alt="Vegan chocolate and nut brownies"
+              data-nimg="fill"
+              decoding="async"
+              sizes="100vw"
+              src="/_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fvegan-chocolate-nut-brownies.jpg&w=1200&q=75"
+              srcset="/_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fvegan-chocolate-nut-brownies.jpg&w=320&q=75 320w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fvegan-chocolate-nut-brownies.jpg&w=420&q=75 420w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fvegan-chocolate-nut-brownies.jpg&w=768&q=75 768w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fvegan-chocolate-nut-brownies.jpg&w=1024&q=75 1024w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fvegan-chocolate-nut-brownies.jpg&w=1200&q=75 1200w"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+            />
+          </span>
         </div>
         <div
-          class="flex flex-col sm:flex-row"
+          class="ps-flex ps-flex-col sm:ps-flex-row"
         >
           <section
-            class="flex flex-col min-w-fit sm:border-r-2 pr-4"
+            class="ps-flex ps-flex-col min-w-fit sm:ps-border-r-2 ps-pr-4"
           >
             <h2>
               Ingredients
@@ -541,10 +549,10 @@ exports[`Umami <RecipeTemplate /> > should render with a umami profile recipe 1`
             </ul>
           </section>
           <section
-            class="flex flex-col pl-4"
+            class="ps-flex ps-flex-col ps-pl-4"
           >
             <h2
-              class="ml-4"
+              class="ps-ml-4"
             >
               Directions
             </h2>
@@ -621,37 +629,37 @@ exports[`Umami <RecipeTemplate /> > should render with a umami profile recipe 1`
       </article>
     </main>
     <footer
-      class="w-full text-white bg-black p-4 mt-12"
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
     >
       <nav
-        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
       >
         <ul>
           <li
-            class="list-disc text-blue-300 ml-3"
+            class="ps-list-disc ps-text-blue-300"
           >
             <a
-              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
               href="/en"
             >
               Home
             </a>
           </li>
           <li
-            class="list-disc text-blue-300 ml-3"
+            class="ps-list-disc ps-text-blue-300"
           >
             <a
-              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
               href="/en/articles"
             >
               Articles
             </a>
           </li>
           <li
-            class="list-disc text-blue-300 ml-3"
+            class="ps-list-disc ps-text-blue-300"
           >
             <a
-              class="text-blue-300 hover:underline hover:text-blue-100 focus:text-purple-600 active:text-purple-300"
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
               href="/en/recipes"
             >
               Recipes
@@ -660,7 +668,7 @@ exports[`Umami <RecipeTemplate /> > should render with a umami profile recipe 1`
         </ul>
       </nav>
       <div
-        class="flex my-4 p-2"
+        class="ps-flex ps-my-4 ps-p-2"
       >
         <span
           class="mx-auto"

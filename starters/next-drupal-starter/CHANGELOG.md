@@ -1,5 +1,35 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.4.0-canary.2
+
+### Patch Changes
+
+- 178d9c9: Revert block editor alignment options.
+- Updated dependencies [178d9c9]
+  - @pantheon-systems/nextjs-kit@1.4.0-canary.2
+
+## 3.4.0-canary.1
+
+### Patch Changes
+
+- b448700: Updated snapshot for updated paginator component
+- Updated dependencies [86ec3f2]
+- Updated dependencies [936b1b5]
+- Updated dependencies [19259ac]
+  - @pantheon-systems/nextjs-kit@1.4.0-canary.1
+
+## 3.4.0-canary.0
+
+### Minor Changes
+
+- 733e6f1: Automatically use the `PANTHEON_UPLOAD_PATH` as `basePath`
+- 138cc6a: Implement `@pantheon-systems/nextjs-kit` components into the starter
+
+### Patch Changes
+
+- Updated dependencies [b3fd47c]
+  - @pantheon-systems/nextjs-kit@1.3.1-canary.0
+
 ## 3.3.0
 
 ### Minor Changes

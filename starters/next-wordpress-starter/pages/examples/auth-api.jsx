@@ -51,13 +51,11 @@ export default function AuthApiExampleTemplate({ menuItems, privatePosts }) {
 }
 
 export async function getServerSideProps({ res }) {
-	client.setHeader(
-		'Authorization',
-		'Basic ' +
-			btoa(
-				`${process.env.WP_APPLICATION_USERNAME}:${process.env.WP_APPLICATION_PASSWORD}`,
-			),
+	const credentials = `${process.env.WP_APPLICATION_USERNAME}:${process.env.WP_APPLICATION_PASSWORD}`;
+	const encodedCredentials = Buffer.from(credentials, 'binary').toString(
+		'base64',
 	);
+	client.setHeader('Authorization', `Basic ${encodedCredentials}`);
 	const query = gql`
 		query LatestPostsQuery {
 			posts(where: { status: PRIVATE }) {

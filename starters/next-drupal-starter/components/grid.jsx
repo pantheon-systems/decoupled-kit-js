@@ -2,45 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { IMAGE_URL } from '../lib/constants';
 
-// a basic grid component
-export const Grid = ({ cols = '3', children }) => {
-	return (
-		<div
-			className={`mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-${String(
-				cols,
-			)} lg:max-w-screen-lg`}
-		>
-			{children}
-		</div>
-	);
-};
-
 const GradientPlaceholder = () => (
 	<div className="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500" />
 );
-
-// a Higher Order Component to use Grid
-export const withGrid = (Component) => {
-	const GridedComponent = ({ data, ...props }) => {
-		return (
-			<>
-				{data ? (
-					<Grid>
-						{data.map((content, i) => {
-							return <Component key={i} content={content} {...props} />;
-						})}
-					</Grid>
-				) : props.contentType ? (
-					<h2 className="text-xl text-center mt-14">
-						No {props.contentType} found 🏜
-					</h2>
-				) : null}
-			</>
-		);
-	};
-
-	return GridedComponent;
-};
 
 // For use with withGrid
 export const ArticleGridItem = ({

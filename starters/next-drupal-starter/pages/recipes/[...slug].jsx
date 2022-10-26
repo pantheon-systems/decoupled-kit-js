@@ -6,9 +6,10 @@ import {
 	globalDrupalStateAuthStores,
 	globalDrupalStateStores,
 } from '../../lib/stores';
+import { IMAGE_URL } from '../../lib/constants';
 
 import Layout from '../../components/layout';
-import Recipe from '../../components/recipe';
+import { Recipe } from '@pantheon-systems/nextjs-kit';
 // This file can safely be removed if the Drupal
 // instance is not sourcing Umami data
 export default function RecipeTemplate({
@@ -23,6 +24,7 @@ export default function RecipeTemplate({
 		field_recipe_category,
 		field_ingredients,
 		field_recipe_instruction,
+		thumbnail,
 	} = recipe;
 	const imgSrc = field_media_image?.field_media_image?.uri?.url;
 
@@ -36,7 +38,14 @@ export default function RecipeTemplate({
 			<Recipe
 				title={title}
 				category={field_recipe_category[0].name}
-				imgSrc={imgSrc}
+				imageProps={
+					imgSrc
+						? {
+								src: IMAGE_URL + imgSrc,
+								alt: thumbnail?.resourceIdObjMeta?.alt,
+						  }
+						: undefined
+				}
 				ingredients={field_ingredients}
 				instructions={field_recipe_instruction.value}
 			/>

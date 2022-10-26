@@ -42,9 +42,15 @@ process.env.NEXT_PUBLIC_FRONTEND_URL = process.env.FRONTEND_URL
 	? process.env.FRONTEND_URL?.replace(/\/$/, '')
 	: '';
 
+const injectedOptions = {};
+if (process.env.PANTHEON_UPLOAD_PATH) {
+	injectedOptions['basePath'] = process.env.PANTHEON_UPLOAD_PATH;
+}
+
 module.exports = async () => {
 	const locales = await getLocales();
 	const nextConfig = {
+		...(injectedOptions && injectedOptions),
 		env: {
 			backendUrl: backendUrl,
 			// set imageUrl if IMAGE_DOMAIN is set in env vars to override default

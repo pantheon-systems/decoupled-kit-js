@@ -8,6 +8,7 @@ import { CoverComponent } from './Cover';
 import { mediaAndText } from './MediaAndText';
 import { ButtonsComponent } from './Buttons';
 import { FileMediaComponent } from './FileMedia';
+import { VideoComponent } from './Video';
 
 export {
 	ImageComponent,
@@ -20,4 +21,5 @@ export {
 	mediaAndText,
 	ButtonsComponent,
 	FileMediaComponent,
+	VideoComponent,
 };
