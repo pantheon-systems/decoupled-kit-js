@@ -1,5 +1,24 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.10.0
+
+### Minor Changes
+
+- 9263e27: Removed btoa function on API authorization example, in favor of use
+  Buffer encoding
+- ab45639: Automatically use the `PANTHEON_UPLOAD_PATH` as `basePath`
+
+### Patch Changes
+
+- b448700: Updated snapshot for updated paginator component
+- 178d9c9: Revert block editor alignment options.
+- Updated dependencies [0a3df6e]
+- Updated dependencies [178d9c9]
+- Updated dependencies [936b1b5]
+- Updated dependencies [b3fd47c]
+  - @pantheon-systems/wordpress-kit@2.8.0
+  - @pantheon-systems/nextjs-kit@1.4.0
+
 ## 0.10.0-canary.4
 
 ### Patch Changes

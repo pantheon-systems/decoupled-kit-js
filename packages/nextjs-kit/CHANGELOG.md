@@ -1,5 +1,13 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.4.0
+
+### Patch Changes
+
+- 178d9c9: Revert block editor alignment options.
+- 936b1b5: Fixed a className in the paginator component
+- b3fd47c: Update Recipe component to use tailwindcss prefix
+
 ## 1.4.0-canary.2
 
 ### Patch Changes
