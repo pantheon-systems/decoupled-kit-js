@@ -1,5 +1,11 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.4.0-canary.2
+
+### Patch Changes
+
+- 178d9c9: Revert block editor alignment options.
+
 ## 1.4.0-canary.1
 
 ### Minor Changes

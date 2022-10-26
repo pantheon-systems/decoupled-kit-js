@@ -1,5 +1,14 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.10.0-canary.4
+
+### Patch Changes
+
+- 178d9c9: Revert block editor alignment options.
+- Updated dependencies [178d9c9]
+  - @pantheon-systems/nextjs-kit@1.4.0-canary.2
+  - @pantheon-systems/wordpress-kit@2.8.0-canary.2
+
 ## 0.10.0-canary.3
 
 ### Patch Changes

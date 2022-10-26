@@ -1,5 +1,13 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.4.0-canary.2
+
+### Patch Changes
+
+- 178d9c9: Revert block editor alignment options.
+- Updated dependencies [178d9c9]
+  - @pantheon-systems/nextjs-kit@1.4.0-canary.2
+
 ## 3.4.0-canary.1
 
 ### Patch Changes
