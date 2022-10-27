@@ -7,19 +7,14 @@ import data from '../data/allWpPost.json'
 const StaticQuery = vi.spyOn(Gatsby, 'StaticQuery')
 
 describe('<Index />', () => {
-	beforeEach(() => {
-		StaticQuery.mockImplementation(() => {
-			return {
-				data,
-			}
-		})
-	})
-
 	it('should render with posts', () => {
 		const { asFragment } = render(
 			<Index
-				data={data}
-				pageContext={{ nextPagePath: null, previousPagePath: null }}
+				pageContext={{
+					nextPagePath: null,
+					previousPagePath: null,
+					posts: data,
+				}}
 			/>,
 		)
 

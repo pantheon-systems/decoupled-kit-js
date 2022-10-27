@@ -31,7 +31,7 @@ export const withGrid = Component => {
 	return GridedComponent
 }
 
-export const PostGridItem = ({ content: post }) => {
+export const PostGridItem = ({ content: { post } }) => {
 	const imageData =
 		post?.featuredImage?.node.localFile.childImageSharp.gatsbyImageData || ''
 	const altText = post?.featuredImage?.node.altText || post.title
@@ -59,7 +59,7 @@ export const PostGridItem = ({ content: post }) => {
 	)
 }
 
-export const PageGridItem = ({ content: page }) => {
+export const PageGridItem = ({ content: { page } }) => {
 	const imageData =
 		page?.featuredImage?.node.localFile.childImageSharp.gatsbyImageData || ''
 	const altText = page?.featuredImage?.node.altText || page.title

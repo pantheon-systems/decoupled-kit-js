@@ -1,5 +1,4 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import Seo from '../components/seo'
@@ -7,12 +6,9 @@ import { withGrid, PostGridItem } from '../components/grid'
 import Paginator from '../components/paginator'
 
 const PostIndexTemplate = ({
-	data,
-	pageContext: { routing, itemsPerPage },
+	pageContext: { posts, routing, itemsPerPage },
 	location,
 }) => {
-	const posts = data.allWpPost.nodes
-
 	const PostGrid = withGrid(PostGridItem)
 
 	const RenderCurrentItems = ({ currentItems }) => {
@@ -44,28 +40,3 @@ export default PostIndexTemplate
 export function Head() {
 	return <Seo title="All posts" />
 }
-
-export const pageQuery = graphql`
-	query PostList {
-		allWpPost(limit: 100) {
-			nodes {
-				excerpt
-				uri
-				featuredImage {
-					node {
-						sourceUrl
-						altText
-						localFile {
-							childImageSharp {
-								gatsbyImageData(quality: 100, layout: CONSTRAINED)
-							}
-						}
-					}
-				}
-				date(formatString: "MMMM DD, YYYY")
-				title
-				excerpt
-			}
-		}
-	}
-`

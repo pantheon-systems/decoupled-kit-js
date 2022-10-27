@@ -2,28 +2,20 @@ import * as Gatsby from 'gatsby'
 import { render } from '@testing-library/react'
 
 import PageIndexTemplate from '../../src/templates/pagesIndex'
-import data from '../data/pages.json'
-
-const StaticQuery = vi.spyOn(Gatsby, 'StaticQuery')
+import pages from '../data/pages.json'
 
 describe('<PageIndexTemplate />', () => {
 	beforeEach(() => {
-		StaticQuery.mockImplementationOnce(() => {
-			location = {
-				pathname: '/pages/1',
-				state: { breakOpen: false },
-			}
-			return {
-				data,
-			}
-		})
+		location = {
+			pathname: '/examples/pagination/1',
+			state: { breakOpen: false },
+		}
 	})
 	it('should render with pages', () => {
 		const { asFragment } = render(
 			<PageIndexTemplate
-				data={data}
+				pageContext={{ itemsPerPage: 2, routing: true, pages }}
 				location={location}
-				pageContext={{ itemsPerPage: 2, routing: true }}
 			/>,
 		)
 

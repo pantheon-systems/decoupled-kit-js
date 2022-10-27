@@ -8,7 +8,7 @@ const StaticQuery = vi.spyOn(Gatsby, 'StaticQuery')
 const page = data[0]
 const next = data[1]
 const previous = null
-describe('<PostTemplate />', () => {
+describe('<PageTemplate />', () => {
 	beforeEach(() => {
 		StaticQuery.mockImplementation(() => ({ data: { page } }))
 	})

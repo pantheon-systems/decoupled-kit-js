@@ -239,9 +239,9 @@ const Paginator = ({
 	}
 	return (
 		<div className="max-w-full">
-			<h3 className="mb-8 prose-sm font-bold">
+			<span className="mb-8 prose-sm font-bold">
 				Page {currentPageQuery}/{totalPages}
-			</h3>
+			</span>
 
 			<section>
 				{/* Component passed in that will render the data */}
