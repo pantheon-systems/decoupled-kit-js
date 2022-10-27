@@ -6,7 +6,7 @@ exports.createPages = async gatsbyUtilities => {
 	const pagPosts = await paginationPostsQuery()
 	const pages = await getPages(gatsbyUtilities)
 	const posts = await getPosts(gatsbyUtilities)
-	const routing = false
+	const routing = true
 
 	if (pages.length) {
 		await createIndividualPages({ pages, gatsbyUtilities })
