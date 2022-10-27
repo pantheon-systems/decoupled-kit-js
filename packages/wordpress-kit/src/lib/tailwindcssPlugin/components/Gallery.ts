@@ -1,3 +1,5 @@
+import { alignment } from './shared';
+
 const getFigureStyles = (mobileScreen: string) => {
 	let styles = {
 		'&.columns-default': {
@@ -62,11 +64,7 @@ const isCropped = {
 	},
 };
 
-export const GalleryComponent = ({
-	alignFull: { minWidth },
-}: {
-	alignFull: { minWidth: string };
-}) => {
+export const GalleryComponent = () => {
 	const figureStyles = getFigureStyles('600px');
 
 	const gallery = {
@@ -74,28 +72,16 @@ export const GalleryComponent = ({
 			display: 'flex',
 			flexWrap: 'wrap',
 			alignItems: 'normal',
-			maxWidth: '650px',
-			'&.alignwide': {
-				maxWidth: '1000px',
-			},
-			'&.alignfull': {
-				[`@media (min-width:${minWidth})`]: {
-					// sets a negative margin to allow full width tables to span past the
-					// width its parent container
-					marginLeft: 'calc(-1 * max(1rem, 10vw))',
-					marginRight: 'calc(-1 * max(1rem, 10vw))',
-					maxWidth: 'unset',
-				},
-			},
+			...alignment,
 			'&.alignleft': {
-				float: 'left',
 				marginRight: '1.5rem',
 				maxWidth: '480px',
+				...alignment['&.alignleft'],
 			},
 			'&.alignright': {
-				float: 'right',
 				marginLeft: '1.5rem',
 				maxWidth: '480px',
+				...alignment['&.alignright'],
 			},
 			marginLeft: 'auto',
 			marginRight: 'auto',
