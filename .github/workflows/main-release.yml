@@ -1,15 +1,15 @@
-name: 'Canary Release'
+name: 'Main Release'
 
 on:
   push:
     branches:
-      - canary
+      - main
 
 # Releases a canary tagged version of the packages
 jobs:
-  canary-release:
+  main-release:
     uses: ./.github/workflows/release-job.yml
     with:
-      commit-msg: 'Canary release'
-      pr-title: 'Canary Release'
+      commit-msg: 'Main release'
+      pr-title: 'Update Versions'
     secrets: inherit
