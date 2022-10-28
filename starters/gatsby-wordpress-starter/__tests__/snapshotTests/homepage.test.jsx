@@ -10,7 +10,10 @@ describe('<Index />', () => {
 				pageContext={{
 					nextPagePath: null,
 					previousPagePath: null,
-					posts: [{ post: data.allWpPost.nodes[0] }],
+					posts: [
+						{ post: data.allWpPost.nodes[0] },
+						{ post: data.allWpPost.nodes[1] },
+					],
 				}}
 			/>,
 		)
