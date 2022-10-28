@@ -5,8 +5,8 @@ import PostTemplate from '../../src/templates/post'
 import data from '../data/allWpPost.json'
 
 const StaticQuery = vi.spyOn(Gatsby, 'StaticQuery')
-const post = data[0]
-const next = data[1]
+const post = data.allWpPost.nodes[0]
+const next = data.allWpPost.nodes[1]
 const previous = null
 
 describe('<PostTemplate />', () => {

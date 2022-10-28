@@ -110,18 +110,18 @@ async function createPostArchive({ posts, gatsbyUtilities }) {
 	)
 }
 
+function getPaginationPaths(page, route) {
+	return page === 0 ? `/${route}` : `/${route}/${page}`
+}
+
 async function createPostIndex({ posts, gatsbyUtilities, routing }) {
 	const itemsPerPage = 12
 
 	const totalPages = Math.ceil(posts.length / itemsPerPage)
 
-	const getPagePath = page => {
-		return page === 0 ? '/posts' : `/posts/${page}`
-	}
-
 	Array.from({ length: totalPages + 1 }).forEach(async (_, i) => {
 		await gatsbyUtilities.actions.createPage({
-			path: routing ? getPagePath(i) : '/posts',
+			path: routing ? getPaginationPaths(i, 'posts') : '/posts',
 
 			component: path.resolve(`./src/templates/postsIndex.jsx`),
 
@@ -139,13 +139,9 @@ async function createPageIndex({ pages, gatsbyUtilities, routing }) {
 
 	const totalPages = Math.ceil(pages.length / itemsPerPage)
 
-	const getPagePath = page => {
-		return page === 0 ? '/pages' : `/pages/${page}`
-	}
-
 	Array.from({ length: totalPages + 1 }).forEach(async (_, i) => {
 		await gatsbyUtilities.actions.createPage({
-			path: routing ? getPagePath(i) : '/pages',
+			path: routing ? getPaginationPaths(i, 'pages') : '/pages',
 
 			component: path.resolve(`./src/templates/pagesIndex.jsx`),
 

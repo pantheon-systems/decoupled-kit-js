@@ -10,7 +10,7 @@ const next = pages[1]
 const previous = null
 describe('<PageTemplate />', () => {
 	beforeEach(() => {
-		StaticQuery.mockImplementation(() => ({ pages: { page } }))
+		StaticQuery.mockImplementation(() => ({ data: { page } }))
 	})
 
 	it('should render with a page', () => {

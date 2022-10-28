@@ -146,26 +146,6 @@ exports[`<PostIndexTemplate /> > should render with posts 1`] = `
                     </h2>
                   </div>
                 </a>
-                <a
-                  href="/posts/hello-world/"
-                >
-                  <div
-                    class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
-                  >
-                    <div
-                      class="flex-shrink-0 relative h-40"
-                    >
-                      <div
-                        class="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500"
-                      />
-                    </div>
-                    <h2
-                      class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
-                    >
-                      Hello world! →
-                    </h2>
-                  </div>
-                </a>
               </div>
             </section>
             <div

@@ -1,10 +1,7 @@
-import * as Gatsby from 'gatsby'
 import { render } from '@testing-library/react'
 
 import Index from '../../src/templates/index'
 import data from '../data/allWpPost.json'
-
-const StaticQuery = vi.spyOn(Gatsby, 'StaticQuery')
 
 describe('<Index />', () => {
 	it('should render with posts', () => {
@@ -13,7 +10,7 @@ describe('<Index />', () => {
 				pageContext={{
 					nextPagePath: null,
 					previousPagePath: null,
-					posts: data,
+					posts: [{ post: data.allWpPost.nodes[0] }],
 				}}
 			/>,
 		)

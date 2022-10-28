@@ -1,10 +1,9 @@
-import * as Gatsby from 'gatsby'
 import { render } from '@testing-library/react'
 
 import PostIndexTemplate from '../../src/templates/postsIndex'
 import data from '../data/allWpPost.json'
 
-const StaticQuery = vi.spyOn(Gatsby, 'StaticQuery')
+const posts = data.allWpPost.nodes[0]
 
 describe('<PostIndexTemplate />', () => {
 	beforeEach(() => {
@@ -18,7 +17,11 @@ describe('<PostIndexTemplate />', () => {
 		const { asFragment } = render(
 			<PostIndexTemplate
 				location={location}
-				pageContext={{ itemsPerPage: 2, routing: true, posts: data }}
+				pageContext={{
+					itemsPerPage: 2,
+					routing: true,
+					posts: [{ post: posts }],
+				}}
 			/>,
 		)
 
