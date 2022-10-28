@@ -8,13 +8,14 @@ const generateTypeDocOptions = require('./generateTypedocOptions.js');
 const drupalKitTypedocOptions = generateTypeDocOptions('drupal-kit', 0);
 const wordpressKitTypedocOptions = generateTypeDocOptions('wordpress-kit', 1);
 const nextjskitTypedocOptions = generateTypeDocOptions('nextjs-kit', 2);
+const environmentUrl = process.env.PANTHEON_ENVIRONMENT_URL;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
 	title: 'Pantheon Decoupled Kit',
 	tagline:
 		'Utilities for building a decoupled front end that sources data from a CMS back end.',
-	url: process.env.PANTHEON_DEPLOYMENT_URL ?? 'http://localhost:3000',
+	url: environmentUrl ? `https://${environmentUrl}` : 'http://localhost:3000',
 	baseUrl: '/',
 	onBrokenLinks: 'warn',
 	onBrokenMarkdownLinks: 'warn',
@@ -24,7 +25,7 @@ const config = {
 
 	plugins: [
 		// Prevent trying to generate api reference when building on the platform
-		...(process.env.PANTHEON_DEPLOYMENT_URL
+		...(environmentUrl
 			? []
 			: [
 					[

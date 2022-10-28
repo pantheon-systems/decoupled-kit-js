@@ -1,5 +1,4 @@
 ---
-'@pantheon-systems/nextjs-kit': minor
 '@pantheon-systems/wordpress-kit': minor
 ---
 
