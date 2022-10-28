@@ -18,7 +18,7 @@ describe('<PostIndexTemplate />', () => {
 				pageContext={{
 					itemsPerPage: 2,
 					routing: true,
-					posts: [{ post: data.allWpPost.nodes[0] }],
+					posts: data,
 				}}
 			/>,
 		)
