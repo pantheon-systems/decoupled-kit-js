@@ -3,8 +3,6 @@ import { render } from '@testing-library/react'
 import PostIndexTemplate from '../../src/templates/postsIndex'
 import data from '../data/allWpPost.json'
 
-const posts = data.allWpPost.nodes[0]
-
 describe('<PostIndexTemplate />', () => {
 	beforeEach(() => {
 		location = {
@@ -20,7 +18,7 @@ describe('<PostIndexTemplate />', () => {
 				pageContext={{
 					itemsPerPage: 2,
 					routing: true,
-					posts: [{ post: posts }],
+					posts: [{ post: data.allWpPost.nodes[0] }],
 				}}
 			/>,
 		)

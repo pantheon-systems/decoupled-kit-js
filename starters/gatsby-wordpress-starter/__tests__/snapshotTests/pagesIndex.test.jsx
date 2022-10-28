@@ -6,7 +6,7 @@ import pages from '../data/pages.json'
 describe('<PageIndexTemplate />', () => {
 	beforeEach(() => {
 		location = {
-			pathname: '/examples/pagination/1',
+			pathname: '/pages/1',
 			state: { breakOpen: false },
 		}
 	})
