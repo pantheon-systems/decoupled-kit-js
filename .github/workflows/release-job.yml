@@ -44,7 +44,7 @@ jobs:
       - name: generate documentation
         run: pnpm generate-docs
       - name: commit changes
-        uses: ./.github/shared/with-commit.yml
+        uses: ./.github/workflows/with-commit.yml
         with:
           commit-msg: 'Generate API reference docs'
       - name: changeset version and publish

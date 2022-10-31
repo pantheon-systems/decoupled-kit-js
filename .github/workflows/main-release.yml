@@ -10,7 +10,7 @@ on:
 # Releases the latest version of the packages
 jobs:
   main-release:
-    uses: ./.github/shared/release-job.yml
+    uses: ./.github/workflows/release-job.yml
     with:
       changeset-commit-msg: 'Main release'
       changeset-pr-title: 'Update Versions'
