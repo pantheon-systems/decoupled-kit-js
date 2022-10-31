@@ -11,7 +11,7 @@ on:
 jobs:
   commit:
     - name: commit current changes
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       run: |
         git config --local user.name "GitHub Action"
         git config --local user.email "action@github.com"
