@@ -5,7 +5,7 @@ on:
     branches:
       - main
 
-# Releases a canary tagged version of the packages
+# Releases the latest version of the packages
 jobs:
   main-release:
     uses: ./.github/shared/release-job.yml
