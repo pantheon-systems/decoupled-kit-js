@@ -33,6 +33,7 @@ const Paginator = ({
 	const openStart = location.state?.breakOpen
 		? breakpoints?.start + breakpoints?.add
 		: undefined
+
 	const [breakStart, setBreakStart] = useState(
 		openStart || breakpoints?.start || null,
 	)
@@ -44,11 +45,16 @@ const Paginator = ({
 	// how many links to add when the separator is clicked
 	const breakAdd = breakpoints?.add || null
 	const [currentPageQuery, setCurrentPageQuery] = useState(
-		routing ? Number(location.pathname.match(/\d+$/)[0]) : 1,
+		routing && location.pathname.match(/\d+$/) !== null
+			? Number(location.pathname.match(/\d+$/)[0])
+			: 1,
 	)
-	const navRoute = routing
-		? location.pathname.replace(/\/\d+$/, '')
+
+	// account for extra forward slash added to url on hard refresh
+	const currentPath = location.pathname.endsWith('/')
+		? location.pathname.replace(/.$/, '')
 		: location.pathname
+	const navRoute = routing ? currentPath.replace(/\/\d+$/, '') : currentPath
 
 	const [offset, setOffset] = useState((currentPageQuery - 1) * itemsPerPage)
 	const [currentItems, setCurrentItems] = useState([])
@@ -233,9 +239,9 @@ const Paginator = ({
 	}
 	return (
 		<div className="max-w-full">
-			<h3 className="mb-8 prose-sm font-bold">
+			<span className="mb-8 prose-sm font-bold">
 				Page {currentPageQuery}/{totalPages}
-			</h3>
+			</span>
 
 			<section>
 				{/* Component passed in that will render the data */}

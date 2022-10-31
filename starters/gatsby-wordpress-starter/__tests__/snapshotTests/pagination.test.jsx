@@ -1,4 +1,3 @@
-import * as Gatsby from 'gatsby'
 import { screen, render, fireEvent } from '@testing-library/react'
 import data from '../data/examplePaginationData.json'
 import PaginationPostsExample from '../../src/templates/pagination'
@@ -8,19 +7,12 @@ import React from 'react'
  * @vitest-environment jsdom
  */
 
-const StaticQuery = vi.spyOn(Gatsby, 'StaticQuery')
-
 describe(`<PaginationPostsExample />`, () => {
 	beforeEach(() => {
 		location = {
 			pathname: '/examples/pagination/1',
 			state: { breakOpen: false },
 		}
-		StaticQuery.mockImplementationOnce(() => {
-			return {
-				data,
-			}
-		})
 	})
 	it('should render the paginated data', () => {
 		const { asFragment } = render(
