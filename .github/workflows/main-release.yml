@@ -8,7 +8,7 @@ on:
 # Releases a canary tagged version of the packages
 jobs:
   main-release:
-    uses: ./.github/workflows/release-job.yml
+    uses: ./.github/shared/release-job.yml
     with:
       commit-msg: 'Main release'
       pr-title: 'Update Versions'
