@@ -6,7 +6,7 @@ on:
     types:
       - completed
 jobs:
-  # this job should only run if canary_release was successful
+  # this job should only run if Main Release was successful
   on-success:
     runs-on: ubuntu-latest
     env:
