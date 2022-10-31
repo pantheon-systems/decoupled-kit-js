@@ -10,6 +10,6 @@ jobs:
   canary-release:
     uses: ./.github/shared/release-job.yml
     with:
-      commit-msg: 'Canary release'
-      pr-title: 'Canary Release'
+      changeset-commit-msg: 'Canary release'
+      changeset-pr-title: 'Canary Release'
     secrets: inherit

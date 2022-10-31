@@ -10,6 +10,6 @@ jobs:
   main-release:
     uses: ./.github/shared/release-job.yml
     with:
-      commit-msg: 'Main release'
-      pr-title: 'Update Versions'
+      changeset-commit-msg: 'Main release'
+      changeset-pr-title: 'Update Versions'
     secrets: inherit

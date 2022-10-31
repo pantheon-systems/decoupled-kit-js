@@ -3,10 +3,10 @@ name: 'Generate Docs and Release'
 on:
   workflow_call:
     inputs:
-      commit-msg:
+      changeset-commit-msg:
         required: true
         type: string
-      pr-title:
+      changeset-pr-title:
         required: true
         type: string
     secrets:
@@ -42,19 +42,17 @@ jobs:
       - name: install dependencies
         run: pnpm install
       - name: generate documentation
-        uses: actions/checkout@v2
-        run: |
-          pnpm generate-docs
-          git config --local user.name "GitHub Action"
-          git config --local user.email "action@github.com"
-          git commit -am "[skip ci] Generate Documentation on $(date +"%D at %T %Z")"
-          git push
+        run: pnpm generate-docs
+      - name: commit changes
+        uses: ./.github/shared/with-commit.yml
+        with:
+          commit-msg: "Generate API reference docs"
       - name: changeset version and publish
         uses: changesets/action@v1
         with:
           version: pnpm ci:version
           publish: pnpm ci:publish
-          commit: ${{ inputs.commit-msg }}
-          title: ${{ inputs.pr-title }}
+          commit: ${{ inputs.changeset-commit-msg }}
+          title: ${{ inputs.changeset-pr-title }}
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
