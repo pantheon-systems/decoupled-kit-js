@@ -53,6 +53,7 @@ export const mergeToConfig: Config = {
 		'.wp-block-file',
 		'.wp-block-embed',
 		'.wp-block-video',
+		'.wp-block-spacer',
 	],
 	...proseOverride,
 };
