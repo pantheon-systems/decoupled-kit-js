@@ -25,7 +25,10 @@ IMAGE_DOMAIN=my-image-cdn.site
 ```
 
 If your site is translated and you would like the hreflang metadata set
-correctly, you may set `FRONTEND_URL` to the URL of your frontend site:
+correctly, you may set `FRONTEND_URL` to the URL of your frontend site.
+
+If unset, `FRONTEND_URL` will default to the value of `PANTHEON_ENVIRONMENT_URL`
+if it is defined.
 
 ```
 FRONTEND_URL=https://my-frontend-site.pantheon.site

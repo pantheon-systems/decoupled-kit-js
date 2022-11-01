@@ -20,6 +20,14 @@ if (
 	throw new Error(message);
 }
 
+console.log('HERE');
+console.log(process.env.PANTHEON_ENVIRONMENT_URL);
+if (process.env.FRONTEND_URL === undefined) {
+	process.env.FRONTEND_URL = process.env.PANTHEON_ENVIRONMENT_URL
+		? process.env.PANTHEON_ENVIRONMENT_URL
+		: undefined;
+}
+
 let backendUrl, imageDomain;
 if (process.env.BACKEND_URL === undefined) {
 	backendUrl = `https://${process.env.PANTHEON_CMS_ENDPOINT}`;

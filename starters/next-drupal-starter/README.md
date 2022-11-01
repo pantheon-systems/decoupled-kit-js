@@ -40,6 +40,8 @@ DEBUG_MODE=
 # this value can also bet set in the command line
 # before running commands for example
 # FRONTEND_URL=example.com npm run build
+# If not set, FRONTEND_URL is set to equal
+# PANTHEON_ENVIRONMENT_URL if it is defined
 FRONTEND_URL=
 
 # These variables are needed to enable Preview
