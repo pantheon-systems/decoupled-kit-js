@@ -34,25 +34,23 @@ const ContentWithImage: React.FC<ContentProps> = ({
 	content,
 	date,
 	imageProps,
-	contentClassName,
+	contentClassName = 'ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto ps-px-4',
 }: ContentProps) => {
 	const router = useRouter();
 
-	const classNames = (...classes: (string | undefined)[]) => {
-		return classes.filter(Boolean).join(' ');
-	};
-
 	return (
 		<article className="ps-prose ps-max-w-none xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-py-4 ps-px-12">
-			<h1>{title}</h1>
-			{date ? <p className="ps-text-sm ps-text-gray-600">{date}</p> : null}
+			<section className="ps-prose xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto ps-px-4">
+				<h1>{title}</h1>
+				{date ? <p className="ps-text-sm ps-text-gray-600">{date}</p> : null}
 
-			<a
-				onClick={() => router.back()}
-				className="ps-font-normal ps-cursor-pointer"
-			>
-				Back &rarr;
-			</a>
+				<a
+					onClick={() => router.back()}
+					className="ps-font-normal ps-cursor-pointer"
+				>
+					Back &rarr;
+				</a>
+			</section>
 			<div className="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg ps-shadow-lg [&*>img]:ps-rounded-lg">
 				{imageProps ? (
 					<div className="ps-relative ps-mb-10 ps-min-h-[50vh]">
@@ -68,7 +66,7 @@ const ContentWithImage: React.FC<ContentProps> = ({
 			</div>
 
 			<div
-				className={classNames('ps-break-words ps-mt-12', contentClassName)}
+				className={`ps-break-words ps-mt-12 ${contentClassName}`}
 				dangerouslySetInnerHTML={{ __html: content }}
 			/>
 		</article>
