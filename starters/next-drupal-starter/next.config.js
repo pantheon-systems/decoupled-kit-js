@@ -20,10 +20,12 @@ if (
 	throw new Error(message);
 }
 
-if (process.env.FRONTEND_URL === undefined) {
-	process.env.FRONTEND_URL = process.env.PANTHEON_ENVIRONMENT_URL
-		? process.env.PANTHEON_ENVIRONMENT_URL
-		: undefined;
+// if the FRONTEND_URL is not set, fallback to the PANTHEON_ENVIRONMENT_URL
+if (
+	process.env.FRONTEND_URL === undefined &&
+	process.env.PANTHEON_ENVIRONMENT_URL
+) {
+	process.env.FRONTEND_URL = process.env.PANTHEON_ENVIRONMENT_URL;
 }
 
 let backendUrl, imageDomain;
