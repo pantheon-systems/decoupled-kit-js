@@ -34,13 +34,13 @@ const ContentWithImage: React.FC<ContentProps> = ({
 	content,
 	date,
 	imageProps,
-	contentClassName = 'ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto ps-px-4',
+	contentClassName = 'ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto',
 }: ContentProps) => {
 	const router = useRouter();
 
 	return (
 		<article className="ps-prose ps-max-w-none xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-py-4 ps-px-12">
-			<section className="ps-prose xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto ps-px-4">
+			<section className="ps-prose xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto">
 				<h1>{title}</h1>
 				{date ? <p className="ps-text-sm ps-text-gray-600">{date}</p> : null}
 

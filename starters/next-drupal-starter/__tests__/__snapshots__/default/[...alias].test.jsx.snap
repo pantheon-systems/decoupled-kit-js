@@ -195,7 +195,7 @@ exports[`default <CatchAllRoute /> > should render an article 1`] = `
         class="ps-prose ps-max-w-none xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-py-4 ps-px-12"
       >
         <section
-          class="ps-prose xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto ps-px-4"
+          class="ps-prose xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto"
         >
           <h1>
             Example Top Level Article
@@ -228,7 +228,7 @@ exports[`default <CatchAllRoute /> > should render an article 1`] = `
           </div>
         </div>
         <div
-          class="ps-break-words ps-mt-12 ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto ps-px-4"
+          class="ps-break-words ps-mt-12 ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto"
         >
           <h2>
             Nonummy Tristique Pulvinar Justo Primis Mi
