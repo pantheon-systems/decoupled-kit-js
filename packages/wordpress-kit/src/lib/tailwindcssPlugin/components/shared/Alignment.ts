@@ -1,13 +1,5 @@
 export const alignment = {
-	'@media (min-width: 640px)': {
-		maxWidth: '640px',
-	},
-	'@media (min-width: 768px)': {
-		maxWidth: '768px',
-	},
-	'@media (min-width: 1024px)': {
-		maxWidth: '1024px',
-	},
+	maxWidth: '720px',
 	'&.alignwide': {
 		maxWidth: '1240px',
 	},
