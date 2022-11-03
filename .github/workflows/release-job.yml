@@ -1,0 +1,58 @@
+name: 'Generate Docs and Release'
+
+on:
+  workflow_call:
+    inputs:
+      changeset-commit-msg:
+        required: true
+        type: string
+      changeset-pr-title:
+        required: true
+        type: string
+    secrets:
+      NPM_TOKEN:
+        required: true
+      ACCESS_TOKEN:
+        required: true
+
+jobs:
+  generate-docs-and-release:
+    env:
+      CI: true
+      PNPM_CACHE_FOLDER: .pnpm-store
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: setup node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+      - name: install pnpm
+        run: npm i pnpm@7.4.0 -g
+      - name: Setup npmrc
+        run:
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >
+          .npmrc
+      - name: setup pnpm config
+        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
+      - name: install dependencies
+        run: pnpm install
+      - name: generate documentation
+        run: pnpm generate-docs
+      - name: commit changes
+        env:
+          COMMIT_MSG: 'Generate API reference docs'
+        run: ./.github/scripts/with-commit.sh
+      - name: changeset version and publish
+        uses: changesets/action@v1
+        with:
+          version: pnpm ci:version
+          publish: pnpm ci:publish
+          commit: ${{ inputs.changeset-commit-msg }}
+          title: ${{ inputs.changeset-pr-title }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
