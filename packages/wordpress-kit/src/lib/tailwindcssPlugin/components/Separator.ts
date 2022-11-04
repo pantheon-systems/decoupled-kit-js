@@ -29,6 +29,18 @@ export const SeparatorComponent = () => {
 				paddingLeft: '2em',
 				fontFamily: 'serif',
 			},
+			'&.has-background': {
+				padding: '0',
+			},
+			'&.has-background:not(.is-style-dots)': {
+				borderBottom: 'none',
+				height: '1px',
+				padding: '0',
+			},
+			'&.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots)':
+				{
+					height: '2px',
+				},
 		},
 	};
 };
