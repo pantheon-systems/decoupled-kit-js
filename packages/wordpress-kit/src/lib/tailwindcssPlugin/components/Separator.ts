@@ -10,7 +10,7 @@ export const SeparatorComponent = () => {
 				width: '100px',
 			},
 			'&.is-style-wide': {
-				maxWidth: '650px',
+				maxWidth: '720px',
 				marginLeft: 'auto !important',
 				marginRight: 'auto !important',
 			},
