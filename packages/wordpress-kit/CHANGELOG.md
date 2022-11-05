@@ -1,5 +1,17 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.9.0-canary.0
+
+### Minor Changes
+
+- 906e3c5: Adds media queries to every component and base styles to follow
+  actual layout implementation
+- 01a06e6: Add block separator styles
+- 29ad4c7: Block spacer styles
+- 824a01b: Modified every component on the Wordpress-Kit tailwind plugin to
+  respect the full width options. Added base utilities on tailwind plugin to
+  modify headings and paragraphs width.
+
 ## 2.8.0
 
 ### Minor Changes

@@ -1,5 +1,15 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.5.0-canary.0
+
+### Minor Changes
+
+- 23217bc: Add Pagination to Page and Post Routes
+
+### Patch Changes
+
+- 9e68967: 404 page styles
+
 ## 2.4.0
 
 ### Minor Changes

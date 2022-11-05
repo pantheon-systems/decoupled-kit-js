@@ -11,5 +11,16 @@
     "@pantheon-systems/next-wordpress-starter": "0.10.0",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "afraid-dingos-dream",
+    "brown-eels-tap",
+    "four-wolves-chew",
+    "happy-eggs-breathe",
+    "hungry-roses-destroy",
+    "new-teachers-drum",
+    "ninety-roses-jog",
+    "olive-jeans-begin",
+    "sweet-pants-eat",
+    "tender-students-occur"
+  ]
 }
