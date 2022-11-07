@@ -1,12 +1,11 @@
 import { NextSeo } from 'next-seo';
 import { setEdgeHeader } from '@pantheon-systems/wordpress-kit';
 import { ContentWithImage } from '@pantheon-systems/nextjs-kit';
-import { IMAGE_URL } from '../../lib/constants';
 
 import Layout from '../../components/layout';
 
 import { getFooterMenu } from '../../lib/Menus';
-import { getPostBySlug } from '../../lib/Posts';
+import { getPostByUri } from '../../lib/Posts';
 
 export default function PostTemplate({ menuItems, post }) {
 	return (
@@ -38,7 +37,7 @@ export default function PostTemplate({ menuItems, post }) {
 export async function getServerSideProps({ params, res }) {
 	const menuItems = await getFooterMenu();
 	const { slug } = params;
-	const post = await getPostBySlug(slug);
+	const post = await getPostByUri(slug);
 	setEdgeHeader({ res });
 
 	if (!post) {
