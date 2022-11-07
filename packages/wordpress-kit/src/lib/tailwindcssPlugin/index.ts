@@ -12,6 +12,7 @@ import {
 	FileMediaComponent,
 	VideoComponent,
 	SpacerComponent,
+	SeparatorComponent,
 } from './components';
 import { mergeToConfig } from './Config';
 import { BaseUtilities, ColorUtilities, FontsUtilities } from './utilities';
@@ -50,6 +51,7 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 
 	const video = VideoComponent();
 	const spacer = SpacerComponent();
+	const separator = SeparatorComponent();
 
 	addUtilities([
 		color.getBackgroundUtilities(),
@@ -75,5 +77,6 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 		fileMedia,
 		video,
 		spacer,
+		separator,
 	]);
 }, mergeToConfig);

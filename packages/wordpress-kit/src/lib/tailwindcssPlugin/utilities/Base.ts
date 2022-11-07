@@ -6,7 +6,7 @@ export class BaseUtilities {
 					maxWidth: '720px',
 					margin: '0 auto',
 					'&.alignwide': {
-						maxWidth: '1240px',
+						maxWidth: '1024px',
 					},
 					'&.alignfull': {
 						maxWidth: 'unset',
@@ -22,9 +22,9 @@ export class BaseUtilities {
 		'.ps-wp-content': {
 			...BaseUtilities.getHeadingsAlignmentUtilities(),
 			p: {
-				maxWidth: '720px',
 				marginRight: 'auto',
 				marginLeft: 'auto',
+				maxWidth: '720px',
 			},
 		},
 	};

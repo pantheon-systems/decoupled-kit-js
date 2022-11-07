@@ -455,14 +455,18 @@ exports[`umami <CatchAllRoute /> > should render an article 1`] = `
       <article
         class="ps-prose ps-max-w-none xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-py-4 ps-px-12"
       >
-        <h1>
-          Example Top Level Article
-        </h1>
-        <a
-          class="ps-font-normal ps-cursor-pointer"
+        <section
+          class="ps-prose xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto"
         >
-          Back →
-        </a>
+          <h1>
+            Example Top Level Article
+          </h1>
+          <a
+            class="ps-font-normal ps-cursor-pointer"
+          >
+            Back →
+          </a>
+        </section>
         <div
           class="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg ps-shadow-lg [&*>img]:ps-rounded-lg"
         >
@@ -485,7 +489,7 @@ exports[`umami <CatchAllRoute /> > should render an article 1`] = `
           </div>
         </div>
         <div
-          class="ps-break-words ps-mt-12"
+          class="ps-break-words ps-mt-12 ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto"
         >
           <h2>
             Nonummy Tristique Pulvinar Justo Primis Mi
