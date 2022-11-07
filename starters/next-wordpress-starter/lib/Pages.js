@@ -30,9 +30,10 @@ export async function getLatestPages(totalPages) {
 }
 
 export async function getPageByUri(uri) {
+	const uriString = `${uri.join('/')}`;
 	const query = gql`
-		query PageByURIquery($uri: ID!) {
-			page(id: $uri, idType: URI) {
+		query PageByURIquery($uriString: ID!) {
+			page(id: $uriString, idType: URI) {
 				title
 				date
 				featuredImage {
@@ -46,7 +47,7 @@ export async function getPageByUri(uri) {
 		}
 	`;
 
-	const { page } = await client.request(query, { uri });
+	const { page } = await client.request(query, { uriString });
 
 	return page;
 }

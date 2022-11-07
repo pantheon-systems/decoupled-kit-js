@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import PageListTemplate from '../../pages/pages/index';
-import PageTemplate from '../../pages/pages/[uri]';
+import PageTemplate from '../../pages/pages/[...uri]';
 
 import pages from '../data/pagesData.json';
 import page from '../data/pageData.json';
