@@ -7,6 +7,7 @@ export const ColumnsComponent = () => ({
 		margin: '1rem auto',
 		'align-items': 'normal',
 		'flex-wrap': 'wrap',
+		gap: '1.5rem',
 		'@media (min-width: 720px)': {
 			'&:not(.is-not-stacked-on-mobile)': {
 				'>.wp-block-column': {
