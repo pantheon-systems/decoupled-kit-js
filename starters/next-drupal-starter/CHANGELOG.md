@@ -1,5 +1,18 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.5.0-canary.0
+
+### Minor Changes
+
+- c3e7af3: Automatically set `FRONTEND_URL`
+
+### Patch Changes
+
+- 633399d: Add .nvmrc file
+- Updated dependencies [824a01b]
+- Updated dependencies [b4eb5ea]
+  - @pantheon-systems/nextjs-kit@1.5.0-canary.0
+
 ## 3.4.0
 
 ### Minor Changes

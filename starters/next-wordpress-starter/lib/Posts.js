@@ -29,10 +29,11 @@ export async function getLatestPosts(totalPosts) {
 	return edges.map(({ node }) => node);
 }
 
-export async function getPostBySlug(slug) {
+export async function getPostByUri(uri) {
+	const uriString = `${uri.join('/')}`;
 	const query = gql`
-		query PostBySlugQuery($slug: ID!) {
-			post(id: $slug, idType: SLUG) {
+		query PostBySlugQuery($uriString: ID!) {
+			post(id: $uriString, idType: URI) {
 				title
 				date
 				featuredImage {
@@ -46,7 +47,7 @@ export async function getPostBySlug(slug) {
 		}
 	`;
 
-	const { post } = await client.request(query, { slug });
+	const { post } = await client.request(query, { uriString });
 
 	return post;
 }
