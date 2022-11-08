@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import PostsListTemplate from '../../pages/posts/index';
-import PostTemplate from '../../pages/posts/[slug]';
+import PostTemplate from '../../pages/posts/[...slug]';
 
 import posts from '../data/postsData.json';
 import post from '../data/postData.json';

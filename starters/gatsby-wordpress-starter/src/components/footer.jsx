@@ -2,11 +2,7 @@ import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
 const Footer = () => {
-	const {
-		wpMenu: {
-			menuItems: { nodes },
-		},
-	} = useStaticQuery(graphql`
+	const menuQuery = useStaticQuery(graphql`
 		query MenuQuery {
 			wpMenu(name: { eq: "Example Menu" }) {
 				id
@@ -20,6 +16,9 @@ const Footer = () => {
 			}
 		}
 	`)
+	const nodes = menuQuery?.wpMenu?.menuItems?.nodes
+		? menuQuery.wpMenu.menuItems.nodes
+		: []
 
 	const FooterMenu = () => (
 		<nav className="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg">
