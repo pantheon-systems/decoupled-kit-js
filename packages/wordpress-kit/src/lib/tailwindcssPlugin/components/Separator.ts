@@ -6,7 +6,7 @@ export const SeparatorComponent = () => {
 			marginLeft: 'auto',
 			marginRight: 'auto',
 			borderColor: 'black !important',
-			'&.is-style-default': {
+			'&.wp-block-separator:not(.is-style-wide):not(.is-style-dots)': {
 				width: '100px',
 			},
 			'&.is-style-wide': {
@@ -14,8 +14,14 @@ export const SeparatorComponent = () => {
 				marginLeft: 'auto !important',
 				marginRight: 'auto !important',
 			},
+			'&.alignwide.is-style-wide': {
+				maxWidth: '1000px',
+			},
+			'&.alignfull.is-style-wide': {
+				maxWidth: 'revert',
+			},
 			'&.is-style-dots': {
-				background: 'none!important',
+				background: 'none !important',
 				border: 'none',
 				textAlign: 'center',
 				lineHeight: '1',
