@@ -6,7 +6,7 @@ export const SeparatorComponent = () => {
 			marginLeft: 'auto',
 			marginRight: 'auto',
 			borderColor: 'black !important',
-			'&.is-style-default': {
+			'&.wp-block-separator:not(.is-style-wide):not(.is-style-dots)': {
 				width: '100px',
 			},
 			'&.is-style-wide': {
