@@ -13,6 +13,7 @@ import {
 	VideoComponent,
 	SpacerComponent,
 	SeparatorComponent,
+	ColumnsComponent,
 } from './components';
 import { mergeToConfig } from './Config';
 import { BaseUtilities, ColorUtilities, FontsUtilities } from './utilities';
@@ -53,6 +54,8 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 	const spacer = SpacerComponent();
 	const separator = SeparatorComponent();
 
+	const columns = ColumnsComponent();
+
 	addUtilities([
 		color.getBackgroundUtilities(),
 		color.getBorderColorUtilities(),
@@ -78,5 +81,6 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 		video,
 		spacer,
 		separator,
+		columns,
 	]);
 }, mergeToConfig);
