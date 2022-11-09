@@ -1,5 +1,16 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.10.1-canary.1
+
+### Patch Changes
+
+- 046e58d: Updated next-wordpress-starter to fail gracefully if used with a
+  WordPress site that does not have menu data and to allow for pages and posts
+  with multiple URL arguments.
+- Updated dependencies [a65c9d9]
+- Updated dependencies [4f8659f]
+  - @pantheon-systems/wordpress-kit@2.9.0-canary.1
+
 ## 0.10.1-canary.0
 
 ### Patch Changes

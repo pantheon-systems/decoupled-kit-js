@@ -1,5 +1,12 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.9.0-canary.1
+
+### Minor Changes
+
+- a65c9d9: Block separator style adjustment
+- 4f8659f: Adds Columns layout component to tailwind plugin
+
 ## 2.9.0-canary.0
 
 ### Minor Changes
