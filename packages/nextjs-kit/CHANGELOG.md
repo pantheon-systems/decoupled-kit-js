@@ -1,5 +1,13 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.5.0
+
+### Minor Changes
+
+- 824a01b: Modified the contentWithImage component on Next-Kit to remove the
+  paddings and it now accepts a class as prop for the content wrapper
+- b4eb5ea: Refactor content with image component
+
 ## 1.5.0-canary.0
 
 ### Minor Changes
