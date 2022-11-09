@@ -1,5 +1,6 @@
-name: 'Canary Split Repos'
+name: 'Split Canary Sites'
 
+# run this job on after canary_release has completed
 on:
   workflow_run:
     workflows: [Canary Release]
