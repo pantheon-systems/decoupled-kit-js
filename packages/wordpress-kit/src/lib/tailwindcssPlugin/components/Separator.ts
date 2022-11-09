@@ -14,8 +14,14 @@ export const SeparatorComponent = () => {
 				marginLeft: 'auto !important',
 				marginRight: 'auto !important',
 			},
+			'&.alignwide.is-style-wide': {
+				maxWidth: '1000px',
+			},
+			'&.alignfull.is-style-wide': {
+				maxWidth: 'revert',
+			},
 			'&.is-style-dots': {
-				background: 'none!important',
+				background: 'none !important',
 				border: 'none',
 				textAlign: 'center',
 				lineHeight: '1',
