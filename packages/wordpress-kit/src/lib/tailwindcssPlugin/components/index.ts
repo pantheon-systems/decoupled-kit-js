@@ -9,6 +9,9 @@ import { mediaAndText } from './MediaAndText';
 import { ButtonsComponent } from './Buttons';
 import { FileMediaComponent } from './FileMedia';
 import { VideoComponent } from './Video';
+import { SpacerComponent } from './Spacer';
+import { SeparatorComponent } from './Separator';
+import { ColumnsComponent } from './Columns';
 
 export {
 	ImageComponent,
@@ -22,4 +25,7 @@ export {
 	ButtonsComponent,
 	FileMediaComponent,
 	VideoComponent,
+	SpacerComponent,
+	SeparatorComponent,
+	ColumnsComponent,
 };

@@ -178,9 +178,6 @@ exports[`<Index /> > should render with posts 1`] = `
           </a>
         </div>
       </section>
-      <nav
-        class="flex max-w-5xl mx-auto mt-8 px-6"
-      />
     </main>
     <footer
       class="w-full text-white bg-black p-4 mt-12"

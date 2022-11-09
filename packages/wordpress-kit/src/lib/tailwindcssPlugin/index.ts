@@ -11,9 +11,12 @@ import {
 	ButtonsComponent,
 	FileMediaComponent,
 	VideoComponent,
+	SpacerComponent,
+	SeparatorComponent,
+	ColumnsComponent,
 } from './components';
 import { mergeToConfig } from './Config';
-import { ColorUtilities, FontsUtilities } from './utilities';
+import { BaseUtilities, ColorUtilities, FontsUtilities } from './utilities';
 
 /**
  * Tailwindcss plugin that maps WordPress block editor styles to tailwindcss classes.
@@ -21,33 +24,23 @@ import { ColorUtilities, FontsUtilities } from './utilities';
 export default plugin(function ({ addUtilities, theme, addComponents }) {
 	const color = new ColorUtilities(theme);
 	const font = new FontsUtilities(theme);
+	const base = new BaseUtilities();
 
 	const quoteUtilities = Quote;
 
 	const pullQuote = PullQuoteComponent;
 
 	const table = TableComponent({
-		alignFull: {
-			minWidth: theme('screen.xl', '1280px'),
-		},
 		stripeColor: theme('colors.stripes', '#f2f2f2'),
 	});
 
-	const image = ImageComponent({
-		alignFull: { minWidth: theme('screen.xl', '1280px') },
-	});
+	const image = ImageComponent();
 
-	const gallery = GalleryComponent({
-		alignFull: { minWidth: theme('screen.xl', '1280px') },
-	});
+	const gallery = GalleryComponent();
 
-	const audio = AudioComponent({
-		alignFull: { minWidth: theme('screen.xl', '1280px') },
-	});
+	const audio = AudioComponent();
 
-	const cover = CoverComponent({
-		alignFull: { minWidth: theme('screen.xl', '1280px') },
-	});
+	const cover = CoverComponent();
 
 	const buttons = ButtonsComponent({
 		defaultColor: color.getColorByName('primary'),
@@ -57,9 +50,11 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 		defaultColor: color.getColorByName('primary'),
 	});
 
-	const video = VideoComponent({
-		alignFull: { minWidth: theme('screen.xl', '1280px') },
-	});
+	const video = VideoComponent();
+	const spacer = SpacerComponent();
+	const separator = SeparatorComponent();
+
+	const columns = ColumnsComponent();
 
 	addUtilities([
 		color.getBackgroundUtilities(),
@@ -69,6 +64,7 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 		font.getFontSizeUtilities(),
 		font.dropCapUtilities,
 		font.textAlignUtilities,
+		base.baseUtilities,
 		quoteUtilities,
 	]);
 
@@ -83,5 +79,8 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 		buttons,
 		fileMedia,
 		video,
+		spacer,
+		separator,
+		columns,
 	]);
 }, mergeToConfig);

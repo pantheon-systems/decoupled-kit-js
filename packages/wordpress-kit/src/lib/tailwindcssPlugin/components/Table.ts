@@ -1,20 +1,10 @@
-type mediaType = '@media (min-width: 1208px)';
-
 const borderInheritance = {
 	borderColor: 'inherit',
 	borderStyle: 'inherit',
 	borderWidth: 'inherit',
 };
 
-export const TableComponent = ({
-	stripeColor,
-	alignFull: { minWidth },
-}: {
-	stripeColor: string;
-	alignFull: {
-		minWidth: string;
-	};
-}) => ({
+export const TableComponent = ({ stripeColor }: { stripeColor: string }) => ({
 	'.wp-block-table': {
 		td: {
 			padding: '0.5em',
@@ -61,7 +51,7 @@ export const TableComponent = ({
 				width: 'unset',
 				tableLayout: 'fixed',
 			},
-			maxWidth: '650px',
+			maxWidth: '720px',
 			margin: 'auto',
 			...borderInheritance,
 		},
@@ -82,21 +72,17 @@ export const TableComponent = ({
 		'&.alignwide': {
 			padding: '0 1.5rem',
 			table: {
-				maxWidth: '1000px',
+				maxWidth: '1370px',
 			},
 		},
 		'&.alignfull': {
-			[`@media (min-width:${minWidth})` as mediaType]: {
-				// sets a negative margin to allow full width tables to span past the
-				// width its parent container
-				marginLeft: 'calc(-1 * max(1rem, 10vw))',
-				marginRight: 'calc(-1 * max(1rem, 10vw))',
-			},
 			width: 'unset',
 			table: {
 				maxWidth: 'none',
 			},
 			padding: '0',
+			marginRight: '-3rem',
+			marginLeft: '-3rem',
 		},
 		'&.alignleft': {
 			float: 'left',

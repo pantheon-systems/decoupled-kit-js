@@ -10,13 +10,13 @@ exports.createPages = async gatsbyUtilities => {
 
 	if (pages.length) {
 		await createIndividualPages({ pages, gatsbyUtilities })
-		await createPageIndex({ pages, gatsbyUtilities })
+		await createPageIndex({ pages, gatsbyUtilities, routing })
 	}
 
 	if (posts.length) {
 		await createPostArchive({ posts, gatsbyUtilities })
 		await createIndividualPostPages({ posts, gatsbyUtilities })
-		await createPostIndex({ posts, gatsbyUtilities })
+		await createPostIndex({ posts, gatsbyUtilities, routing })
 		await createPagination({ pagPosts, gatsbyUtilities, routing })
 	}
 	await createExamplesPage({ gatsbyUtilities, routing })
@@ -99,6 +99,7 @@ async function createPostArchive({ posts, gatsbyUtilities }) {
 				component: path.resolve(`./src/templates/index.jsx`),
 
 				context: {
+					posts,
 					offset: index * postsPerPage,
 					postsPerPage,
 					nextPagePath: getPagePath(pageNumber + 1),
@@ -109,47 +110,47 @@ async function createPostArchive({ posts, gatsbyUtilities }) {
 	)
 }
 
-async function createPostIndex({ posts, gatsbyUtilities }) {
-	const postsPerPage = await getPostPerPage({ gatsbyUtilities })
-
-	const postsChunkedIntoArchivePages = chunk(posts, postsPerPage)
-	const totalPages = postsChunkedIntoArchivePages.length
-
-	return Promise.all(
-		postsChunkedIntoArchivePages.map(async (_posts, index) => {
-			const pageNumber = index + 1
-
-			const getPagePath = page => {
-				if (page > 0 && page <= totalPages) {
-					return page === 1 ? `/posts` : `/posts/page/${page}`
-				}
-
-				return null
-			}
-
-			await gatsbyUtilities.actions.createPage({
-				path: getPagePath(pageNumber),
-
-				component: path.resolve(`./src/templates/postsIndex.jsx`),
-
-				context: {
-					offset: index * postsPerPage,
-					postsPerPage,
-					nextPagePath: getPagePath(pageNumber + 1),
-					previousPagePath: getPagePath(pageNumber - 1),
-				},
-			})
-		}),
-	)
+function getPaginationPaths(page, route) {
+	return page === 0 ? `/${route}` : `/${route}/${page}`
 }
 
-async function createPageIndex({ pages, gatsbyUtilities }) {
-	await gatsbyUtilities.actions.createPage({
-		component: path.resolve('./src/templates/pagesIndex.jsx'),
-		path: '/pages',
-		context: {
-			pages,
-		},
+async function createPostIndex({ posts, gatsbyUtilities, routing }) {
+	const itemsPerPage = 12
+
+	const totalPages = Math.ceil(posts.length / itemsPerPage)
+
+	Array.from({ length: totalPages + 1 }).forEach(async (_, i) => {
+		await gatsbyUtilities.actions.createPage({
+			path: routing ? getPaginationPaths(i, 'posts') : '/posts',
+
+			component: path.resolve(`./src/templates/postsIndex.jsx`),
+
+			context: {
+				posts,
+				itemsPerPage,
+				routing,
+			},
+		})
+	})
+}
+
+async function createPageIndex({ pages, gatsbyUtilities, routing }) {
+	const itemsPerPage = 12
+
+	const totalPages = Math.ceil(pages.length / itemsPerPage)
+
+	Array.from({ length: totalPages + 1 }).forEach(async (_, i) => {
+		await gatsbyUtilities.actions.createPage({
+			path: routing ? getPaginationPaths(i, 'pages') : '/pages',
+
+			component: path.resolve(`./src/templates/pagesIndex.jsx`),
+
+			context: {
+				pages,
+				itemsPerPage,
+				routing,
+			},
+		})
 	})
 }
 
@@ -215,6 +216,16 @@ async function getPosts({ graphql, reporter }) {
 					post: node {
 						id
 						uri
+						title
+						featuredImage {
+							node {
+								localFile {
+									childImageSharp {
+										gatsbyImageData
+									}
+								}
+							}
+						}
 					}
 
 					next {

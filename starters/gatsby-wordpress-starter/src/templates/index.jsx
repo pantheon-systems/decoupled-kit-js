@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql, withPrefix } from 'gatsby'
+import { withPrefix } from 'gatsby'
 
 import Layout from '../components/layout'
 import Seo from '../components/seo'
@@ -31,9 +31,7 @@ const PageHeader = () => (
 	</div>
 )
 
-const Index = ({ data, pageContext: { nextPagePath, previousPagePath } }) => {
-	const posts = data.allWpPost.nodes
-
+const Index = ({ pageContext: { posts } }) => {
 	const PostGrid = withGrid(PostGridItem)
 
 	return (
@@ -41,22 +39,8 @@ const Index = ({ data, pageContext: { nextPagePath, previousPagePath } }) => {
 			<PageHeader />
 
 			<section>
-				<PostGrid data={posts} />
+				<PostGrid data={posts.slice(0, 12)} />
 			</section>
-
-			<nav className="flex max-w-5xl mx-auto mt-8 px-6">
-				{previousPagePath && (
-					<Link className="underline font-medium" to={previousPagePath}>
-						{' '}
-						← Previous page
-					</Link>
-				)}
-				{nextPagePath && (
-					<Link className="underline font-medium ml-auto" to={nextPagePath}>
-						Next page →
-					</Link>
-				)}
-			</nav>
 		</Layout>
 	)
 }
@@ -66,32 +50,3 @@ export default Index
 export function Head() {
 	return <Seo title="All posts" />
 }
-
-export const pageQuery = graphql`
-	query WordPressPostArchive($offset: Int!, $postsPerPage: Int!) {
-		allWpPost(
-			sort: { fields: [date], order: DESC }
-			limit: $postsPerPage
-			skip: $offset
-		) {
-			nodes {
-				excerpt
-				uri
-				featuredImage {
-					node {
-						sourceUrl
-						altText
-						localFile {
-							childImageSharp {
-								gatsbyImageData(quality: 100, layout: CONSTRAINED)
-							}
-						}
-					}
-				}
-				date(formatString: "MMMM DD, YYYY")
-				title
-				excerpt
-			}
-		}
-	}
-`

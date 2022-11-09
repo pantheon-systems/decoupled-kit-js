@@ -1,11 +1,8 @@
-type mediaType = '@media (min-width: 768px)';
+import { alignment } from './shared';
 
-export const ImageComponent = ({
-	alignFull: { minWidth },
-}: {
-	alignFull: { minWidth: string };
-}) => ({
+export const ImageComponent = () => ({
 	'.wp-block-image': {
+		...alignment,
 		figcaption: {
 			fontSize: '.9rem',
 			textAlign: 'center',
@@ -16,33 +13,16 @@ export const ImageComponent = ({
 			borderRadius: 'inherit',
 		},
 		'&.alignleft': {
-			float: 'left',
 			marginRight: '1.5rem',
 			marginTop: '0',
 			width: 'fit-content',
+			...alignment['&.alignleft'],
 		},
 		'&.alignright': {
-			float: 'right',
 			marginLeft: '1.5rem',
 			marginTop: '0',
 			width: 'fit-content',
-		},
-		'&.alignwide': {
-			maxWidth: '1000px',
-		},
-		'&.alignfull': {
-			[`@media (min-width:${minWidth})` as mediaType]: {
-				// sets a negative margin to allow full width images to span past the
-				// width its parent container
-				marginLeft: 'calc(-1 * max(1rem, 10vw))',
-				marginRight: 'calc(-1 * max(1rem, 10vw))',
-			},
-			img: {
-				height: 'auto',
-				maxWidth: 'none',
-			},
-			padding: '0',
-			maxWidth: 'none',
+			...alignment['&.alignright'],
 		},
 		'&.is-style-rounded': {
 			img: {
@@ -51,6 +31,5 @@ export const ImageComponent = ({
 		},
 		marginLeft: 'auto',
 		marginRight: 'auto',
-		maxWidth: '650px',
 	},
 });

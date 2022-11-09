@@ -68,7 +68,70 @@ exports[`<PageIndexTemplate /> > should render with pages 1`] = `
           Pages
         </h1>
       </header>
-      <section />
+      <div
+        class="max-w-screen-lg mx-auto"
+      >
+        <section>
+          <div
+            class="max-w-full"
+          >
+            <span
+              class="mb-8 prose-sm font-bold"
+            >
+              Page 1/1
+            </span>
+            <section>
+              <div
+                class="mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+              >
+                <a
+                  href="/pages/test-page/"
+                >
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+                  >
+                    <div
+                      class="flex-shrink-0 relative h-40"
+                    >
+                      <div
+                        class="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500"
+                      />
+                    </div>
+                    <h2
+                      class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                    >
+                      Test Page →
+                    </h2>
+                  </div>
+                </a>
+                <a
+                  href="/pages/sample-page/"
+                >
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+                  >
+                    <div
+                      class="flex-shrink-0 relative h-40"
+                    >
+                      <div
+                        class="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500"
+                      />
+                    </div>
+                    <h2
+                      class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                    >
+                      Sample Page →
+                    </h2>
+                  </div>
+                </a>
+              </div>
+            </section>
+            <div
+              class="sticky lg:bottom-12 bottom-4 mt-10"
+            />
+          </div>
+        </section>
+      </div>
     </main>
     <footer
       class="w-full text-white bg-black p-4 mt-12"

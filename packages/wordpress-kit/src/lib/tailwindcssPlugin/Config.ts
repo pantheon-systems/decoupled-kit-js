@@ -34,6 +34,7 @@ export const mergeToConfig: Config = {
 		'.has-background',
 		...backgroundColorClasses,
 		...fontSizeClasses,
+		'.ps-wp-content',
 		'.wp-block-table',
 		'.has-drop-cap',
 		'.has-text-align-center',
@@ -52,6 +53,9 @@ export const mergeToConfig: Config = {
 		'.wp-block-file',
 		'.wp-block-embed',
 		'.wp-block-video',
+		'.wp-block-spacer',
+		'.wp-block-separator',
+		'.wp-block-columns',
 	],
 	...proseOverride,
 };
