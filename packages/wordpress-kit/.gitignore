@@ -10,8 +10,7 @@ process.yml
 # TypeDocs
 docs
 
-# Jest
-junit.xml
+coverage
 
 # VS Code
 .vscode/settings.json

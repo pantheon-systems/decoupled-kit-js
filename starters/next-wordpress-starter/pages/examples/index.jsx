@@ -1,6 +1,9 @@
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
-import { setEdgeHeader } from '@pantheon-systems/wordpress-kit';
+import {
+	addSurrogateKeyHeader,
+	setEdgeHeader,
+} from '@pantheon-systems/wordpress-kit';
 
 import PageHeader from '../../components/page-header';
 import Layout from '../../components/layout';
@@ -47,7 +50,8 @@ export default function ExamplesPageTemplate({ menuItems }) {
 }
 
 export async function getServerSideProps({ res }) {
-	const menuItems = await getFooterMenu();
+	const { menuItems, menuItemHeaders } = await getFooterMenu();
+	addSurrogateKeyHeader(menuItemHeaders.get('surrogate-key-raw'), res);
 	setEdgeHeader({ res });
 
 	return {

@@ -4,8 +4,13 @@ import dts from 'vite-plugin-dts';
 const globals = {
 	'isomorphic-fetch': 'isomorphicFetch',
 	'@gdwc/drupal-state': 'DrupalState',
+	'@pantheon-systems/cms-kit': 'cmsKit',
 };
-const external = ['isomorphic-fetch', '@gdwc/drupal-state'];
+const external = [
+	'isomorphic-fetch',
+	'@gdwc/drupal-state',
+	'@pantheon-systems/cms-kit',
+];
 
 /** @type {import('vite').defineConfig} */
 export default defineConfig(() => {

@@ -1,17 +1,26 @@
 import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
+import typescript from '@rollup/plugin-typescript';
+import nodePolyfills from 'rollup-plugin-polyfill-node';
 
 const globals = {
 	'graphql-request': 'graphqlRequest',
 	'tailwindcss/plugin': 'tailwindcssPlugin',
+	'@pantheon-systems/cms-kit': 'cmsKit',
+	http: 'http',
 };
 
-const external = ['graphql-request', 'tailwindcss/plugin'];
+const external = [
+	'graphql',
+	'graphql-request',
+	'tailwindcss/plugin',
+	'@pantheon-systems/cms-kit',
+	'http',
+];
 
 /** @type {import('vite').defineConfig} */
 export default defineConfig(() => {
 	return {
-		plugins: [dts({ insertTypesEntry: true })],
+		plugins: [typescript(), nodePolyfills()],
 		build: {
 			lib: {
 				entry: './index.ts',
@@ -24,6 +33,13 @@ export default defineConfig(() => {
 				output: {
 					globals,
 				},
+			},
+		},
+		test: {
+			globals: true,
+			setupFiles: ['./__tests__/setupFile.ts'],
+			coverage: {
+				reportsDirectory: `./coverage`,
 			},
 		},
 	};

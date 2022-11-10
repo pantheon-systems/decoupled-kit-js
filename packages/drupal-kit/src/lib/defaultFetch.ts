@@ -1,7 +1,7 @@
 import type { ServerResponse } from 'http';
 import fetch from 'isomorphic-fetch';
 
-import addSurrogateKeyHeader from './utils/addSurrogateKeyHeader';
+import { addSurrogateKeyHeader } from '@pantheon-systems/cms-kit';
 
 const defaultCacheControlValue =
 	'public, s-maxage=10, stale-while-revalidate=600';

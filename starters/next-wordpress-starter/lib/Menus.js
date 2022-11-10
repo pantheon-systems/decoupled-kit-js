@@ -19,13 +19,18 @@ export async function getFooterMenu() {
 	`;
 
 	try {
-		const { menu } = await client.request(query);
+		const {
+			data: { menu },
+			headers,
+		} = await client.rawRequest(query);
+
 		if (!menu) {
 			throw new Error(
 				'No footer menu data available. Try customizing your query.',
 			);
 		}
-		return menu?.menuItems?.edges?.map(({ node }) => node);
+		const menuItems = menu?.menuItems?.edges?.map(({ node }) => node);
+		return { menuItems, menuItemHeaders: headers };
 	} catch (error) {
 		console.error(error.message);
 		return [];

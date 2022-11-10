@@ -1,15 +1,10 @@
-import addSurrogateKeyHeader from '../addSurrogateKeyHeader';
-
+import addSurrogateKeyHeader from '../src/utils/addSurrogateKeyHeader';
+import { vi } from 'vitest';
 // Mock the response object
-const mockResponse: any = ({ surrogateKeyRaw }: any) => {
-	const res = {
-		getHeader: () => {},
-		setHeader: () => {},
-	};
-	res.getHeader = jest.fn().mockReturnValue(surrogateKeyRaw);
-	res.setHeader = jest.fn();
-	return res;
-};
+const mockResponse = vi.fn().mockImplementation(({ surrogateKeyRaw }) => ({
+	getHeader: () => surrogateKeyRaw,
+	setHeader: () => vi.fn(),
+}));
 
 const collectionKeys =
 	'config:filter.format.basic_html config:user.role.anonymous file:19 file:21 file:23 file:25 file:27 file:29 file:31 file:33 http_response media:10 media:11 media:12 media:13 media:14 media:15 media:16 media:17 node:10 node:11 node:12 node:13 node:14 node:15 node:16 node:17 node_list';
@@ -21,7 +16,10 @@ const uniqueKeys =
 test('add headers for a single API request', () => {
 	// If the surrogate-key header is not set, you get back what you put in.
 	const res = mockResponse({ surrogateKeyRaw: undefined });
+	const setHeaderSpy = vi.spyOn(res, 'setHeader');
+
 	expect(addSurrogateKeyHeader(collectionKeys, res)).toBe(collectionKeys);
+	expect(setHeaderSpy).toHaveBeenCalledTimes(1);
 });
 
 test('add headers for a second API request', () => {
