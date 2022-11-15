@@ -9,7 +9,7 @@ export const makeLocaleStores = ({ locales, debug = false }) =>
 					new DrupalState({
 						apiBase: DRUPAL_URL,
 						defaultLocale: locale,
-						debug: true,
+						debug: debug,
 						clientId: process.env.CLIENT_ID,
 						clientSecret: process.env.CLIENT_SECRET,
 					}),
@@ -17,7 +17,7 @@ export const makeLocaleStores = ({ locales, debug = false }) =>
 		: [
 				new DrupalState({
 					apiBase: DRUPAL_URL,
-					debug: true,
+					debug: debug,
 					clientId: process.env.CLIENT_ID,
 					clientSecret: process.env.CLIENT_SECRET,
 				}),

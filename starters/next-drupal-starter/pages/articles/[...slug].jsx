@@ -66,14 +66,14 @@ export async function getServerSideProps(context) {
 		params: context.preview ? previewParams : params,
 		refresh: true,
 		res: context.res,
-		// anon: context.preview ? false : true,
-		anon: true,
+		anon: context.preview ? false : true,
 	});
 
 	const footerMenu = await store.getObject({
 		objectName: 'menu_items--main',
 		refresh: true,
 		res: context.res,
+		anon: true,
 	});
 
 	const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
@@ -86,8 +86,7 @@ export async function getServerSideProps(context) {
 			params: context.preview ? previewParams : params,
 			refresh: true,
 			res: context.res,
-			// anon: context.preview ? false : true,
-			anon: true,
+			anon: context.preview ? false : true,
 		});
 		return path;
 	});

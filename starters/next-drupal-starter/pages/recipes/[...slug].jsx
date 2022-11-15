@@ -75,8 +75,7 @@ export async function getServerSideProps(context) {
 			refresh: true,
 			res: context.res,
 			params: context.preview ? previewParams : params,
-			// anon: context.preview ? false : true,
-			anon: true,
+			anon: context.preview ? false : true,
 		});
 
 		const footerMenu = await store.getObject({
@@ -103,8 +102,7 @@ export async function getServerSideProps(context) {
 				params: context.preview ? previewParams : params,
 				refresh: true,
 				res: context.res,
-				// anon: context.preview ? false : true,
-				anon: true,
+				anon: context.preview ? false : true,
 			});
 			return path;
 		});

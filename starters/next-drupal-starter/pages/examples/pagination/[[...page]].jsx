@@ -72,6 +72,7 @@ export async function getStaticPaths() {
 		objectName: 'node--ds_example',
 		all: true,
 		params: 'fields[node--ds_example]=title,body,id',
+		anon: true,
 	});
 	const itemsPerPage = 10;
 	const totalPages = Math.ceil(data.length / itemsPerPage);
@@ -106,6 +107,7 @@ export async function getStaticProps(context) {
 		params: 'fields[node--ds_example]=title,body,id',
 		all: true,
 		refresh: !BUILD_MODE,
+		anon: true,
 	});
 
 	const store = getCurrentLocaleStore(context.locale, globalDrupalStateStores);

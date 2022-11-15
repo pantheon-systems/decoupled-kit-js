@@ -43,14 +43,12 @@ class PantheonDrupalState extends DrupalState {
 	async fetchData(
 		endpoint: string,
 		res: ServerResponse | boolean = false,
-	): Promise<TJsonApiBody> {
+		anon = false,
+	): Promise<TJsonApiBody | void> {
 		let requestInit = {};
 		let authHeader = '';
-		if (this.auth) {
-			// TODO - remove eslint disable. Not sure why eslint can't pick up on
-			// this.getAuthHeader() from the parent class
+		if (this.auth && !anon) {
 			const headers = new Headers();
-			// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 			authHeader = await this.getAuthHeader();
 			headers.append('Authorization', authHeader);
 			requestInit = {
@@ -65,29 +63,6 @@ class PantheonDrupalState extends DrupalState {
 			res,
 		)) as TJsonApiBody;
 	}
-	// async fetchData(
-	// 	endpoint: string,
-	// 	res: ServerResponse | boolean = false,
-	// 	anon = true,
-	// ): Promise<TJsonApiBody | void> {
-	// 	let requestInit = {};
-	// 	let authHeader = '';
-	// 	if (!anon) {
-	// 		const headers = new Headers();
-	// 		authHeader = await this.getAuthHeader();
-	// 		headers.append('Authorization', authHeader);
-	// 		requestInit = {
-	// 			headers: headers,
-	// 		};
-	// 	}
-
-	// 	return (await this.fetchJsonapiEndpoint(
-	// 		endpoint,
-	// 		requestInit,
-	// 		this.onError,
-	// 		res,
-	// 	)) as TJsonApiBody;
-	// }
 }
 
 export default PantheonDrupalState;

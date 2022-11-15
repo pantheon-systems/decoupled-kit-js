@@ -55,8 +55,7 @@ export async function getServerSideProps(context) {
 			params: context.preview && previewParams,
 			refresh: true,
 			res: context.res,
-			// anon: context.preview ? false : true,
-			anon: true,
+			anon: context.preview ? false : true,
 		});
 	} catch (error) {
 		// retry the fetch with `/pages` prefix
@@ -67,8 +66,7 @@ export async function getServerSideProps(context) {
 			params: context.preview && previewParams,
 			refresh: true,
 			res: context.res,
-			// anon: context.preview ? false : true,
-			anon: true,
+			anon: context.preview ? false : true,
 		});
 	}
 
@@ -92,8 +90,7 @@ export async function getServerSideProps(context) {
 			params: context.preview && previewParams,
 			refresh: true,
 			res: context.res,
-			// anon: context.preview ? false : true,
-			anon: true,
+			anon: context.preview ? false : true,
 		});
 		return path;
 	});

@@ -154,8 +154,7 @@ export async function getServerSideProps(context) {
 			params: context.preview ? previewParams : params,
 			refresh: true,
 			res: context.res,
-			// anon: context.preview ? false : true,
-			anon: true,
+			anon: context.preview ? false : true,
 		});
 
 		const footerMenu = await store.getObject({
