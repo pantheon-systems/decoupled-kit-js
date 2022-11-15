@@ -87,6 +87,7 @@ export async function getServerSideProps(context) {
 			params: 'include=field_media_image.field_media_image',
 			refresh: true,
 			res: context.res,
+			anon: true,
 		});
 
 		if (!articles) {
@@ -105,6 +106,7 @@ export async function getServerSideProps(context) {
 			objectName: 'menu_items--main',
 			refresh: true,
 			res: context.res,
+			anon: true,
 		});
 
 		return {

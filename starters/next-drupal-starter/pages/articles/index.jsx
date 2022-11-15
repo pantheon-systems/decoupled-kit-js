@@ -61,12 +61,14 @@ export async function getServerSideProps(context) {
 			res: context.res,
 			refresh: true,
 			params: 'include=field_media_image.field_media_image',
+			anon: true,
 		});
 
 		const footerMenu = await store.getObject({
 			objectName: 'menu_items--main',
 			res: context.res,
 			refresh: true,
+			anon: true,
 		});
 
 		if (!articles) {

@@ -111,6 +111,7 @@ export async function getStaticProps(context) {
 	const store = getCurrentLocaleStore(context.locale, globalDrupalStateStores);
 	const footerMenu = await store.getObject({
 		objectName: 'menu_items--main',
+		anon: true,
 	});
 	return {
 		props: {

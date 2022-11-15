@@ -65,6 +65,29 @@ class PantheonDrupalState extends DrupalState {
 			res,
 		)) as TJsonApiBody;
 	}
+	// async fetchData(
+	// 	endpoint: string,
+	// 	res: ServerResponse | boolean = false,
+	// 	anon = true,
+	// ): Promise<TJsonApiBody | void> {
+	// 	let requestInit = {};
+	// 	let authHeader = '';
+	// 	if (!anon) {
+	// 		const headers = new Headers();
+	// 		authHeader = await this.getAuthHeader();
+	// 		headers.append('Authorization', authHeader);
+	// 		requestInit = {
+	// 			headers: headers,
+	// 		};
+	// 	}
+
+	// 	return (await this.fetchJsonapiEndpoint(
+	// 		endpoint,
+	// 		requestInit,
+	// 		this.onError,
+	// 		res,
+	// 	)) as TJsonApiBody;
+	// }
 }
 
 export default PantheonDrupalState;

@@ -1,5 +1,5 @@
 import { getPreview } from '../lib/getPreview';
-import { globalDrupalStateAuthStores } from '../lib/stores';
+import { globalDrupalStateStores } from '../lib/stores';
 
 import umamiPreview from './data/umamiPreview.json';
 import defaultProfilePreview from './data/defaultProfilePreview.json';
@@ -56,13 +56,13 @@ describe('getPreview()', () => {
 		await getPreview(mockContext, 'node--article', '');
 		if (PROFILE === 'umami') {
 			const dataFromState =
-				globalDrupalStateAuthStores[0].getState()['node--articleResources'][
+				globalDrupalStateStores[0].getState()['node--articleResources'][
 					'00517b73-f66c-43eb-93b1-444a68ab97d8'
 				].data;
 			expect(dataFromState).toEqual(umamiPreview.data);
 		} else if (PROFILE === 'default') {
 			const dataFromState =
-				globalDrupalStateAuthStores[0].getState()['node--articleResources'][
+				globalDrupalStateStores[0].getState()['node--articleResources'][
 					'd4b52b83-e92a-4a4f-b2de-647ecb9fb6d0'
 				].data;
 			expect(dataFromState).toEqual(defaultProfilePreview.data);

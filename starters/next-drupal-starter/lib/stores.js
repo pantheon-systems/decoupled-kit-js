@@ -2,28 +2,24 @@ import { DRUPAL_URL } from './constants';
 import { DrupalState } from '@pantheon-systems/drupal-kit';
 
 // For each locale, make an instance of DrupalState (LocaleStore)
-export const makeLocaleStores = ({ locales, auth = false, debug = false }) =>
+export const makeLocaleStores = ({ locales, debug = false }) =>
 	locales.length > 1
 		? locales.map(
 				(locale) =>
 					new DrupalState({
 						apiBase: DRUPAL_URL,
 						defaultLocale: locale,
-						debug: debug,
-						...(auth && {
-							clientId: process.env.CLIENT_ID,
-							clientSecret: process.env.CLIENT_SECRET,
-						}),
+						debug: true,
+						clientId: process.env.CLIENT_ID,
+						clientSecret: process.env.CLIENT_SECRET,
 					}),
 		  )
 		: [
 				new DrupalState({
 					apiBase: DRUPAL_URL,
-					debug: debug,
-					...(auth && {
-						clientId: process.env.CLIENT_ID,
-						clientSecret: process.env.CLIENT_SECRET,
-					}),
+					debug: true,
+					clientId: process.env.CLIENT_ID,
+					clientSecret: process.env.CLIENT_SECRET,
 				}),
 		  ];
 
@@ -35,15 +31,6 @@ export const makeLocaleStores = ({ locales, auth = false, debug = false }) =>
  */
 export const globalDrupalStateStores = makeLocaleStores({
 	locales: process.env.locales,
-	debug: process.env.DEBUG_MODE || false,
-});
-/**
- * @type {DrupalState[]}
- * @remarks These stores can make authorized calls if CLIENT_ID and CLIENT_SECRET env variables are present
- */
-export const globalDrupalStateAuthStores = makeLocaleStores({
-	locales: process.env.locales,
-	auth: true,
 	debug: process.env.DEBUG_MODE || false,
 });
 

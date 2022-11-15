@@ -49,6 +49,6 @@
 		"vite-plugin-dts": "^1.6.1"
 	},
 	"dependencies": {
-		"@gdwc/drupal-state": "^4.0.1"
+		"@gdwc/drupal-state": "^4.2.0"
 	}
 }

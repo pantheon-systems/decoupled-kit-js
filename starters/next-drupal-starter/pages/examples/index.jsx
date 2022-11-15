@@ -61,6 +61,7 @@ export async function getStaticProps(context) {
 		const footerMenu = await store.getObject({
 			objectName: 'menu_items--main',
 			refresh: !BUILD_MODE,
+			anon: true,
 		});
 
 		return {

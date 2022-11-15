@@ -1,4 +1,4 @@
-import { globalDrupalStateAuthStores } from '../../lib/stores';
+import { globalDrupalStateStores } from '../../lib/stores';
 
 const preview = async (req, res) => {
 	// Check the secret and next parameters
@@ -9,7 +9,7 @@ const preview = async (req, res) => {
 
 	// returns the store that matches the locale found in the requested url
 	// or the only store if using a monolingual backend
-	const [store] = globalDrupalStateAuthStores.filter(({ defaultLocale }) => {
+	const [store] = globalDrupalStateStores.filter(({ defaultLocale }) => {
 		const regex = new RegExp(`/${defaultLocale}/`);
 		return defaultLocale ? regex.test(req.url) : true;
 	});
