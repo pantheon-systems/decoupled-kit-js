@@ -6,7 +6,8 @@ import { IMAGE_URL } from '../../lib/constants';
 import Layout from '../../components/layout';
 
 import { getFooterMenu } from '../../lib/Menus';
-import { getPageByUri } from '../../lib/Pages';
+import { getPageByUri, getPagePreview } from '../../lib/Pages';
+import { getAuthCredentials } from '../../lib/WordPressClient';
 
 export default function PageTemplate({ menuItems, page }) {
 	return (
@@ -35,10 +36,20 @@ export default function PageTemplate({ menuItems, page }) {
 	);
 }
 
-export async function getServerSideProps({ params: { uri }, res }) {
+export async function getServerSideProps({
+	params: { uri },
+	res,
+	preview,
+	previewData,
+}) {
 	const menuItems = await getFooterMenu();
-	const page = await getPageByUri(uri);
+	const credentials = getAuthCredentials();
+	const page = preview
+		? await getPagePreview(previewData.key, credentials)
+		: await getPageByUri(uri);
 	setEdgeHeader({ res });
+
+	console.log(page);
 
 	if (!page) {
 		return {

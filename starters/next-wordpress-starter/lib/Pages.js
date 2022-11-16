@@ -51,3 +51,27 @@ export async function getPageByUri(uri) {
 
 	return page;
 }
+
+export async function getPagePreview(id, credentials) {
+	client.setHeaders({ Authorization: `Basic ${credentials}` });
+
+	const query = gql`
+		query PagePreviewQuery($id: ID!) {
+			page(id: $id, idType: DATABASE_ID, asPreview: true) {
+				title
+				date
+				featuredImage {
+					node {
+						altText
+						sourceUrl
+					}
+				}
+				content
+			}
+		}
+	`;
+
+	const { page } = await client.request(query, { id });
+
+	return page;
+}
