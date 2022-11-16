@@ -3,7 +3,6 @@ import { isMultiLanguage } from '../../lib/isMultiLanguage';
 import { getPreview } from '../../lib/getPreview';
 import {
 	getCurrentLocaleStore,
-	globalDrupalStateAuthStores,
 	globalDrupalStateStores,
 } from '../../lib/stores';
 import { IMAGE_URL } from '../../lib/constants';
@@ -57,10 +56,7 @@ export async function getServerSideProps(context) {
 	const { locales, locale } = context;
 	const multiLanguage = isMultiLanguage(locales);
 	const lang = context.preview ? context.previewData.previewLang : locale;
-	const store = getCurrentLocaleStore(
-		lang,
-		context.preview ? globalDrupalStateAuthStores : globalDrupalStateStores,
-	);
+	const store = getCurrentLocaleStore(lang, globalDrupalStateStores);
 
 	// handle nested slugs like /recipes/featured
 	const slug = `/recipes${context.params.slug
@@ -79,12 +75,14 @@ export async function getServerSideProps(context) {
 			refresh: true,
 			res: context.res,
 			params: context.preview ? previewParams : params,
+			anon: context.preview ? false : true,
 		});
 
 		const footerMenu = await store.getObject({
 			objectName: 'menu_items--main',
 			refresh: true,
 			res: context.res,
+			anon: true,
 		});
 
 		if (!recipe) {
@@ -96,7 +94,7 @@ export async function getServerSideProps(context) {
 		const paths = locales.map(async (locale) => {
 			const storeByLocales = getCurrentLocaleStore(
 				locale,
-				context.preview ? globalDrupalStateAuthStores : globalDrupalStateStores,
+				globalDrupalStateStores,
 			);
 			const { path } = await storeByLocales.getObject({
 				objectName: 'node--recipe',
@@ -104,6 +102,7 @@ export async function getServerSideProps(context) {
 				params: context.preview ? previewParams : params,
 				refresh: true,
 				res: context.res,
+				anon: context.preview ? false : true,
 			});
 			return path;
 		});

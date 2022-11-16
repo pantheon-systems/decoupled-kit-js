@@ -73,12 +73,14 @@ export async function getServerSideProps(context) {
 			refresh: true,
 			res: context.res,
 			params: 'fields[node--page]=id,title,body,path',
+			anon: true,
 		});
 
 		const footerMenu = await store.getObject({
 			objectName: 'menu_items--main',
 			refresh: true,
 			res: context.res,
+			anon: true,
 		});
 
 		if (!pages) {
