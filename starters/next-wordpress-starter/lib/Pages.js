@@ -1,5 +1,5 @@
 import { gql } from '@pantheon-systems/wordpress-kit';
-import { client } from './WordPressClient';
+import { client, getAuthCredentials } from './WordPressClient';
 
 export async function getLatestPages(totalPages) {
 	const query = gql`
@@ -52,7 +52,8 @@ export async function getPageByUri(uri) {
 	return page;
 }
 
-export async function getPagePreview(id, credentials) {
+export async function getPagePreview(id) {
+	const credentials = getAuthCredentials();
 	client.setHeaders({ Authorization: `Basic ${credentials}` });
 
 	const query = gql`

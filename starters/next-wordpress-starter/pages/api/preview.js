@@ -1,6 +1,5 @@
 import { getPostPreview } from '../../lib/Posts';
 import { getPagePreview } from '../../lib/Pages';
-import { getAuthCredentials } from '../../lib/WordPressClient';
 
 const preview = async (req, res) => {
 	const { secret, uri, id, content_type } = req.query;
@@ -9,7 +8,7 @@ const preview = async (req, res) => {
 		return res.redirect('/500');
 	}
 
-	if (secret !== process.env.PREVIEW_SECRET || !uri) {
+	if (secret !== process.env.PREVIEW_SECRET) {
 		return res.redirect('/500');
 	}
 
@@ -17,9 +16,8 @@ const preview = async (req, res) => {
 		return res.redirect('/500');
 	}
 
-	const credentials = getAuthCredentials();
 	if (content_type === 'posts') {
-		const post = await getPostPreview(id, credentials);
+		const post = await getPostPreview(id);
 		if (!post) {
 			return res.redirect('/500');
 		}
@@ -29,7 +27,7 @@ const preview = async (req, res) => {
 		});
 	}
 	if (content_type === 'pages') {
-		const page = await getPagePreview(id, credentials);
+		const page = await getPagePreview(id);
 		if (!page) {
 			return res.redirect('/500');
 		}

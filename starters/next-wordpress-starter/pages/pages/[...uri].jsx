@@ -7,7 +7,6 @@ import Layout from '../../components/layout';
 
 import { getFooterMenu } from '../../lib/Menus';
 import { getPageByUri, getPagePreview } from '../../lib/Pages';
-import { getAuthCredentials } from '../../lib/WordPressClient';
 
 export default function PageTemplate({ menuItems, page }) {
 	return (
@@ -43,13 +42,10 @@ export async function getServerSideProps({
 	previewData,
 }) {
 	const menuItems = await getFooterMenu();
-	const credentials = getAuthCredentials();
 	const page = preview
-		? await getPagePreview(previewData.key, credentials)
+		? await getPagePreview(previewData.key)
 		: await getPageByUri(uri);
 	setEdgeHeader({ res });
-
-	console.log(page);
 
 	if (!page) {
 		return {

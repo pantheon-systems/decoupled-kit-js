@@ -6,7 +6,6 @@ import Layout from '../../components/layout';
 
 import { getFooterMenu } from '../../lib/Menus';
 import { getPostByUri, getPostPreview } from '../../lib/Posts';
-import { getAuthCredentials } from '../../lib/WordPressClient';
 
 export default function PostTemplate({ menuItems, post }) {
 	return (
@@ -43,10 +42,9 @@ export async function getServerSideProps({
 }) {
 	const menuItems = await getFooterMenu();
 	const { slug } = params;
-	const credentials = getAuthCredentials();
 
 	const post = preview
-		? await getPostPreview(previewData.key, credentials)
+		? await getPostPreview(previewData.key)
 		: await getPostByUri(slug);
 
 	setEdgeHeader({ res });
