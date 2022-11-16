@@ -26,6 +26,7 @@ export const getPaths = async (
 			// fetch the node from Drupal
 			const data = await store.getObject({
 				objectName: node,
+				anon: true,
 			});
 			// filter out data that does not have the urlAliasPrefix in the path alias
 			// so the catch all route works.

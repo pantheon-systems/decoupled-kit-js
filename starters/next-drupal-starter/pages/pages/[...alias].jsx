@@ -3,7 +3,6 @@ import { isMultiLanguage } from '../../lib/isMultiLanguage';
 import { getPreview } from '../../lib/getPreview';
 import {
 	getCurrentLocaleStore,
-	globalDrupalStateAuthStores,
 	globalDrupalStateStores,
 } from '../../lib/stores';
 
@@ -37,10 +36,7 @@ export async function getServerSideProps(context) {
 	const { locales, locale } = context;
 	const multiLanguage = isMultiLanguage(context.locales);
 	const lang = context.preview ? context.previewData.previewLang : locale;
-	const store = getCurrentLocaleStore(
-		lang,
-		context.preview ? globalDrupalStateAuthStores : globalDrupalStateStores,
-	);
+	const store = getCurrentLocaleStore(lang, globalDrupalStateStores);
 
 	// handle nested alias like /pages/featured
 	const alias = `${context.params.alias
@@ -59,6 +55,7 @@ export async function getServerSideProps(context) {
 			params: context.preview && previewParams,
 			refresh: true,
 			res: context.res,
+			anon: context.preview ? false : true,
 		});
 	} catch (error) {
 		// retry the fetch with `/pages` prefix
@@ -69,6 +66,7 @@ export async function getServerSideProps(context) {
 			params: context.preview && previewParams,
 			refresh: true,
 			res: context.res,
+			anon: context.preview ? false : true,
 		});
 	}
 
@@ -76,6 +74,7 @@ export async function getServerSideProps(context) {
 		objectName: 'menu_items--main',
 		refresh: true,
 		res: context.res,
+		anon: true,
 	});
 
 	const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
@@ -83,7 +82,7 @@ export async function getServerSideProps(context) {
 	const paths = locales.map(async (locale) => {
 		const storeByLocales = getCurrentLocaleStore(
 			locale,
-			context.preview ? globalDrupalStateAuthStores : globalDrupalStateStores,
+			globalDrupalStateStores,
 		);
 		const { path } = await storeByLocales.getObject({
 			objectName: 'node--page',
@@ -91,6 +90,7 @@ export async function getServerSideProps(context) {
 			params: context.preview && previewParams,
 			refresh: true,
 			res: context.res,
+			anon: context.preview ? false : true,
 		});
 		return path;
 	});

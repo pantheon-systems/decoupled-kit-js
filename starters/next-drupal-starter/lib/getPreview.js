@@ -1,4 +1,4 @@
-import { globalDrupalStateAuthStores, getCurrentLocaleStore } from './stores';
+import { globalDrupalStateStores, getCurrentLocaleStore } from './stores';
 import { fetchJsonapiEndpoint } from '@pantheon-systems/drupal-kit';
 /**
  *
@@ -15,7 +15,7 @@ export async function getPreview(context, node, params) {
 	const { previewLang } = context.previewData;
 
 	// Get the store for the preview language.
-	const store = getCurrentLocaleStore(previewLang, globalDrupalStateAuthStores);
+	const store = getCurrentLocaleStore(previewLang, globalDrupalStateStores);
 	try {
 		if (context.previewData) {
 			process.env.DEBUG_MODE &&

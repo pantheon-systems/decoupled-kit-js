@@ -43,7 +43,7 @@ import { getPreview } from '../../lib/get-preview';
 import { isMultiLanguage } from '../../lib/isMultiLanguage';
 import {
 	getCurrentLocaleStore,
-	globalDrupalStateAuthStores,
+	globalDrupalStateStores,
 } from '../../lib/stores';
 
 // your React component here
@@ -57,7 +57,7 @@ export async function getStaticProps(context) {
 		? context.previewData.previewLang
 		: context.locale;
 	// set the store based on the language
-	const store = getCurrentLocaleStore(lang, globalDrupalStateAuthStores);
+	const store = getCurrentLocaleStore(lang, globalDrupalStateStores);
 	// gets preview data from the Drupal instance, or in the case of a revision,
 	// sets the proper jsonapi param to fetch the revision from Drupal.
 	context.preview && getPreview(context, 'node--article');

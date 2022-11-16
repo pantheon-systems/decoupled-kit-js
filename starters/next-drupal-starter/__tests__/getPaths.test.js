@@ -48,7 +48,7 @@ describe('getPaths()', () => {
 			);
 		} catch (error) {
 			expect(error.message).toEqual(
-				`Invalid objectName.\nCheck that node--x is a valid node in your Drupal instance or local store`,
+				`Invalid objectName.\nCheck that node--x is a valid node in your Drupal instance`,
 			);
 		}
 	});

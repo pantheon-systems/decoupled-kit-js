@@ -73,6 +73,7 @@ export async function getStaticProps(context) {
 			objectName: 'node--article',
 			params: 'include=field_media_image.field_media_image',
 			refresh: !BUILD_MODE,
+			anon: true,
 		});
 
 		if (!articles) {
@@ -84,6 +85,7 @@ export async function getStaticProps(context) {
 		const footerMenu = await store.getObject({
 			objectName: 'menu_items--main',
 			refresh: !BUILD_MODE,
+			anon: true,
 		});
 
 		return {

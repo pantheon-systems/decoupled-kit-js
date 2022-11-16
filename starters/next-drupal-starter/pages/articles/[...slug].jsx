@@ -3,7 +3,6 @@ import { isMultiLanguage } from '../../lib/isMultiLanguage';
 import { getPreview } from '../../lib/getPreview';
 import {
 	getCurrentLocaleStore,
-	globalDrupalStateAuthStores,
 	globalDrupalStateStores,
 } from '../../lib/stores';
 import { IMAGE_URL } from '../../lib/constants';
@@ -48,10 +47,7 @@ export async function getServerSideProps(context) {
 	const multiLanguage = isMultiLanguage(locales);
 	const lang = context.preview ? context.previewData.previewLang : locale;
 
-	const store = getCurrentLocaleStore(
-		lang,
-		context.preview ? globalDrupalStateAuthStores : globalDrupalStateStores,
-	);
+	const store = getCurrentLocaleStore(lang, globalDrupalStateStores);
 
 	// handle nested slugs like /article/featured
 	const slug = `/articles${context.params.slug
@@ -70,27 +66,27 @@ export async function getServerSideProps(context) {
 		params: context.preview ? previewParams : params,
 		refresh: true,
 		res: context.res,
+		anon: context.preview ? false : true,
 	});
 
 	const footerMenu = await store.getObject({
 		objectName: 'menu_items--main',
 		refresh: true,
 		res: context.res,
+		anon: true,
 	});
 
 	const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
 	// Load all the paths for the current article.
 	const paths = locales.map(async (locale) => {
-		const localeStore = getCurrentLocaleStore(
-			locale,
-			context.preview ? globalDrupalStateAuthStores : globalDrupalStateStores,
-		);
+		const localeStore = getCurrentLocaleStore(locale, globalDrupalStateStores);
 		const { path } = await localeStore.getObject({
 			objectName: 'node--article',
 			id: article.id,
 			params: context.preview ? previewParams : params,
 			refresh: true,
 			res: context.res,
+			anon: context.preview ? false : true,
 		});
 		return path;
 	});
