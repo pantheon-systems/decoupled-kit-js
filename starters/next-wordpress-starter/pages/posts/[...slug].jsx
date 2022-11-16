@@ -5,7 +5,7 @@ import { ContentWithImage } from '@pantheon-systems/nextjs-kit';
 import Layout from '../../components/layout';
 
 import { getFooterMenu } from '../../lib/Menus';
-import { getPostByUri } from '../../lib/Posts';
+import { getPostByUri, getPostPreview } from '../../lib/Posts';
 
 export default function PostTemplate({ menuItems, post }) {
 	return (
@@ -34,10 +34,19 @@ export default function PostTemplate({ menuItems, post }) {
 	);
 }
 
-export async function getServerSideProps({ params, res }) {
+export async function getServerSideProps({
+	params,
+	res,
+	preview,
+	previewData,
+}) {
 	const menuItems = await getFooterMenu();
 	const { slug } = params;
-	const post = await getPostByUri(slug);
+
+	const post = preview
+		? await getPostPreview(previewData.key)
+		: await getPostByUri(slug);
+
 	setEdgeHeader({ res });
 
 	if (!post) {

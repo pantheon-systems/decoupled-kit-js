@@ -6,7 +6,7 @@ import { IMAGE_URL } from '../../lib/constants';
 import Layout from '../../components/layout';
 
 import { getFooterMenu } from '../../lib/Menus';
-import { getPageByUri } from '../../lib/Pages';
+import { getPageByUri, getPagePreview } from '../../lib/Pages';
 
 export default function PageTemplate({ menuItems, page }) {
 	return (
@@ -35,9 +35,16 @@ export default function PageTemplate({ menuItems, page }) {
 	);
 }
 
-export async function getServerSideProps({ params: { uri }, res }) {
+export async function getServerSideProps({
+	params: { uri },
+	res,
+	preview,
+	previewData,
+}) {
 	const menuItems = await getFooterMenu();
-	const page = await getPageByUri(uri);
+	const page = preview
+		? await getPagePreview(previewData.key)
+		: await getPageByUri(uri);
 	setEdgeHeader({ res });
 
 	if (!page) {
