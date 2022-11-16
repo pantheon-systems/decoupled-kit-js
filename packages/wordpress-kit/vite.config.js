@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import typescript from '@rollup/plugin-typescript';
-import nodePolyfills from 'rollup-plugin-polyfill-node';
 
 const globals = {
 	'graphql-request': 'graphqlRequest',
@@ -20,7 +19,7 @@ const external = [
 /** @type {import('vite').defineConfig} */
 export default defineConfig(() => {
 	return {
-		plugins: [typescript(), nodePolyfills()],
+		plugins: [typescript()],
 		build: {
 			lib: {
 				entry: './index.ts',
