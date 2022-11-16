@@ -1,5 +1,5 @@
 import { gql } from '@pantheon-systems/wordpress-kit';
-import { client } from './WordPressClient';
+import { client, getAuthCredentials } from './WordPressClient';
 
 export async function getLatestPosts(totalPosts) {
 	const query = gql`
@@ -56,4 +56,29 @@ export async function getPostByUri(uri) {
 	} = await client.rawRequest(query, { uriString });
 
 	return { post, headers };
+}
+
+export async function getPostPreview(id) {
+	const credentials = getAuthCredentials();
+	client.setHeaders({ Authorization: `Basic ${credentials}` });
+
+	const query = gql`
+		query PostPreviewQuery($id: ID!) {
+			post(id: $id, idType: DATABASE_ID, asPreview: true) {
+				title
+				date
+				featuredImage {
+					node {
+						altText
+						sourceUrl
+					}
+				}
+				content
+			}
+		}
+	`;
+
+	const { post } = await client.request(query, { id });
+
+	return { post };
 }

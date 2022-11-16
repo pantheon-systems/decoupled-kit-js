@@ -9,5 +9,5 @@ export const getSurrogateKeys = ({ headers }) => {
 		.join(' ')
 		.split(' ');
 	const uniqueKeys = [...new Set(keys)].join(' ');
-	return [...new Set(keys)].join(' ');
+	return uniqueKeys;
 };

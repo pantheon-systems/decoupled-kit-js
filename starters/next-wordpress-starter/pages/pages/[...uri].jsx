@@ -9,7 +9,7 @@ import { IMAGE_URL } from '../../lib/constants';
 import Layout from '../../components/layout';
 
 import { getFooterMenu } from '../../lib/Menus';
-import { getPageByUri } from '../../lib/Pages';
+import { getPageByUri, getPagePreview } from '../../lib/Pages';
 import { getSurrogateKeys } from '../../lib/getSurrogateKeys';
 
 export default function PageTemplate({ menuItems, page }) {
@@ -39,19 +39,26 @@ export default function PageTemplate({ menuItems, page }) {
 	);
 }
 
-export async function getServerSideProps({ params: { uri }, res }) {
+export async function getServerSideProps({
+	params: { uri },
+	res,
+	preview,
+	previewData,
+}) {
 	const { menuItems, menuItemHeaders } = await getFooterMenu();
-	const { page, headers } = await getPageByUri(uri);
-
-	const keys = getSurrogateKeys({ headers: [menuItemHeaders, headers] });
-	addSurrogateKeyHeader(keys, res);
-	setEdgeHeader({ res });
+	const { page, headers = false } = preview
+		? await getPagePreview(previewData.key)
+		: await getPageByUri(uri);
 
 	if (!page) {
 		return {
 			notFound: true,
 		};
 	}
+	const keys =
+		headers && getSurrogateKeys({ headers: [menuItemHeaders, headers] });
+	!preview && addSurrogateKeyHeader(keys, res);
+	setEdgeHeader({ res });
 
 	return {
 		props: {

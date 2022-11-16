@@ -8,7 +8,7 @@ import { ContentWithImage } from '@pantheon-systems/nextjs-kit';
 import Layout from '../../components/layout';
 
 import { getFooterMenu } from '../../lib/Menus';
-import { getPostByUri } from '../../lib/Posts';
+import { getPostByUri, getPostPreview } from '../../lib/Posts';
 import { getSurrogateKeys } from '../../lib/getSurrogateKeys';
 
 export default function PostTemplate({ menuItems, post }) {
@@ -38,20 +38,27 @@ export default function PostTemplate({ menuItems, post }) {
 	);
 }
 
-export async function getServerSideProps({ params, res }) {
+export async function getServerSideProps({
+	params: { slug },
+	res,
+	preview,
+	previewData,
+}) {
 	const { menuItems, menuItemHeaders } = await getFooterMenu();
-	const { slug } = params;
-	const { post, headers } = await getPostByUri(slug);
-
-	const keys = getSurrogateKeys({ headers: [menuItemHeaders, headers] });
-	addSurrogateKeyHeader(keys, res);
-	setEdgeHeader({ res });
+	const { post, headers = false } = preview
+		? await getPostPreview(previewData.key)
+		: await getPostByUri(slug);
 
 	if (!post) {
 		return {
 			notFound: true,
 		};
 	}
+
+	const keys =
+		headers && getSurrogateKeys({ headers: [menuItemHeaders, headers] });
+	!preview && addSurrogateKeyHeader(keys, res);
+	setEdgeHeader({ res });
 
 	return {
 		props: {
