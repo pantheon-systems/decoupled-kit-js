@@ -6,7 +6,6 @@ describe('getAuthCredentials', () => {
 		process.env.WP_APPLICATION_PASSWORD = 'test-password';
 
 		const result = getAuthCredentials();
-		console.log(result);
 
 		expect(result).toEqual(
 			'dGVzdC1kZWNvdXBsZWQtd3AtbW9jay1kYXRhOnRlc3QtcGFzc3dvcmQ=',
