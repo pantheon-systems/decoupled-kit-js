@@ -34,10 +34,15 @@ export default function PostTemplate({ menuItems, post }) {
 	);
 }
 
-export async function getServerSideProps({ params, res }) {
+export async function getServerSideProps({
+	params,
+	res,
+	preview,
+	previewData,
+}) {
 	const menuItems = await getFooterMenu();
 	const { slug } = params;
-	const post = await getPostByUri(slug);
+	const post = preview ? previewData : await getPostByUri(slug);
 	setEdgeHeader({ res });
 
 	if (!post) {

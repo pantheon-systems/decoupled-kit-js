@@ -51,3 +51,27 @@ export async function getPostByUri(uri) {
 
 	return post;
 }
+
+export async function getPostPreview(id, credentials) {
+	client.setHeaders({ Authorization: `Basic ${credentials}` });
+
+	const query = gql`
+		query PostPreviewQuery($id: ID!) {
+			post(id: $id, idType: DATABASE_ID, asPreview: true) {
+				title
+				date
+				featuredImage {
+					node {
+						altText
+						sourceUrl
+					}
+				}
+				content
+			}
+		}
+	`;
+
+	const { post } = await client.request(query, { id });
+
+	return post;
+}
