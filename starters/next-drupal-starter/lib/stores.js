@@ -27,7 +27,9 @@ export const makeLocaleStores = ({ locales, debug = false }) =>
 // getStaticProps and getServerSideProps
 /**
  * @type {DrupalState[]}
- * @remarks These stores do not have auth enabled, even if the proper env vars are set.
+ * @remarks These stores have auth enabled. Authenticated and anonymous request control takes place on the level of the request.
+ * @see {@link https://project.pages.drupalcode.org/drupal_state/en/getting-objects/} for more information.
+ *
  */
 export const globalDrupalStateStores = makeLocaleStores({
 	locales: process.env.locales,
