@@ -3,10 +3,19 @@ import { globalDrupalStateStores } from '../../lib/stores';
 const preview = async (req, res) => {
 	// Check the secret and next parameters
 	// This secret should only be known to this API route and the CMS
-	if (req.query.secret !== process.env.PREVIEW_SECRET || !req.query.slug) {
+	if (req.query.secret !== process.env.PREVIEW_SECRET) {
 		return res.redirect(
-			'/preview-error/?error=' +
-				encodeURIComponent('Unable to authorize for preview'),
+			`/preview-error/?error=${encodeURIComponent(
+				`Preview secret does not match`,
+			)}`,
+		);
+	}
+
+	if (!req.query.slug) {
+		return res.redirect(
+			`/preview-error/?error=${encodeURIComponent(
+				`Path for the requested content was not received`,
+			)}`,
 		);
 	}
 
@@ -28,16 +37,18 @@ const preview = async (req, res) => {
 		process.env.DEBUG_MODE &&
 			console.error('Error verifying preview content: ', error);
 		return res.redirect(
-			'/preview-error/?error=' +
-				encodeURIComponent('The requested preview path does not match'),
+			`/preview-error/?error=${encodeURIComponent(
+				`Requested preview path does not match`,
+			)}`,
 		);
 	}
 
 	// If the content doesn't exist prevent preview mode from being enabled
 	if (!content) {
 		return res.redirect(
-			'/preview-error/?error=' +
-				encodeURIComponent('The requested preview path does not exist'),
+			`/preview-error/?error=${encodeURIComponent(
+				`Requested preview path does not exist`,
+			)}`,
 		);
 	}
 
