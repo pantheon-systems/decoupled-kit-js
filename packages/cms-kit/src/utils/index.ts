@@ -1,1 +1,1 @@
-export { default as addSurrogateKeyHeader } from './addSurrogateKeyHeader';
+export { default as setSurrogateKeyHeader } from './setSurrogateKeyHeader';

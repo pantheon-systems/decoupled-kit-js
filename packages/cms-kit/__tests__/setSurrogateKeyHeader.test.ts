@@ -1,4 +1,4 @@
-import addSurrogateKeyHeader from '../src/utils/addSurrogateKeyHeader';
+import setSurrogateKeyHeader from '../src/utils/setSurrogateKeyHeader';
 import { vi } from 'vitest';
 // Mock the response object
 const mockResponse = vi.fn().mockImplementation(({ surrogateKeyRaw }) => ({
@@ -18,7 +18,7 @@ test('add headers for a single API request', () => {
 	const res = mockResponse({ surrogateKeyRaw: undefined });
 	const setHeaderSpy = vi.spyOn(res, 'setHeader');
 
-	expect(addSurrogateKeyHeader(collectionKeys, res)).toBe(collectionKeys);
+	expect(setSurrogateKeyHeader(collectionKeys, res)).toBe(collectionKeys);
 	expect(setHeaderSpy).toHaveBeenCalledTimes(1);
 });
 
@@ -27,7 +27,7 @@ test('add headers for a second API request', () => {
 	const res = mockResponse({
 		surrogateKeyRaw: collectionKeys,
 	});
-	expect(addSurrogateKeyHeader('node:100', res)).toBe(
+	expect(setSurrogateKeyHeader('node:100', res)).toBe(
 		`${collectionKeys} node:100`,
 	);
 });
@@ -37,5 +37,5 @@ test('ensure keys are unique', () => {
 	const res = mockResponse({
 		surrogateKeyRaw: collectionKeys,
 	});
-	expect(addSurrogateKeyHeader(resourceKeys, res)).toBe(uniqueKeys);
+	expect(setSurrogateKeyHeader(resourceKeys, res)).toBe(uniqueKeys);
 });

@@ -1,8 +1,6 @@
 import { NextSeo } from 'next-seo';
-import {
-	setEdgeHeader,
-	addSurrogateKeyHeader,
-} from '@pantheon-systems/wordpress-kit';
+import { setOutgoingHeaders } from '../lib/setOutgoingHeaders';
+
 import Image from 'next/image';
 import Layout from '../components/layout';
 
@@ -11,7 +9,6 @@ import { withGrid } from '@pantheon-systems/nextjs-kit';
 
 import { getFooterMenu } from '../lib/Menus';
 import { getLatestPosts } from '../lib/Posts';
-import { getSurrogateKeys } from '../lib/getSurrogateKeys';
 
 export default function Home({ menuItems, posts }) {
 	const HomepageHeader = () => (
@@ -60,9 +57,9 @@ export async function getServerSideProps({ res }) {
 	const { menuItems, menuItemHeaders } = await getFooterMenu();
 	const { posts, headers: postHeaders } = await getLatestPosts(12);
 
-	const keys = getSurrogateKeys({ headers: [menuItemHeaders, postHeaders] });
-	addSurrogateKeyHeader(keys, res);
-	setEdgeHeader({ res });
+	const headers = [menuItemHeaders, postHeaders];
+	setOutgoingHeaders({ headers, res });
+
 	return {
 		props: {
 			menuItems,

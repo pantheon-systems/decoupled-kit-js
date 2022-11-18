@@ -1,16 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import {
-	gql,
-	setEdgeHeader,
-	addSurrogateKeyHeader,
-} from '@pantheon-systems/wordpress-kit';
+import { gql } from '@pantheon-systems/wordpress-kit';
+import { setOutgoingHeaders } from '../../lib/setOutgoingHeaders';
 
 import Layout from '../../components/layout';
 
 import { client } from '../../lib/WordPressClient';
 import { getFooterMenu } from '../../lib/Menus';
-import { getSurrogateKeys } from '../../lib/getSurrogateKeys';
 
 export default function AuthApiExampleTemplate({ menuItems, privatePosts }) {
 	return (
@@ -77,15 +73,15 @@ export async function getServerSideProps({ res }) {
 		data: {
 			posts: { edges },
 		},
-		headers,
+		headers: postHeaders,
 	} = await client.rawRequest(query);
 
 	const { menuItems, menuItemHeaders } = await getFooterMenu();
 	const privatePosts = edges.map(({ node }) => node);
 
-	const keys = getSurrogateKeys({ headers: [menuItemHeaders, headers] });
-	addSurrogateKeyHeader(keys, res);
-	setEdgeHeader({ res });
+	const headers = postHeaders && [menuItemHeaders, postHeaders];
+	setOutgoingHeaders({ headers, res });
+
 	return {
 		props: {
 			menuItems,

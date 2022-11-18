@@ -1,6 +1,6 @@
 import { gql } from 'graphql-request';
-import { addSurrogateKeyHeader } from '@pantheon-systems/cms-kit';
+import { setSurrogateKeyHeader } from '@pantheon-systems/cms-kit';
 
-export { gql, addSurrogateKeyHeader };
+export { gql, setSurrogateKeyHeader };
 export * from './src/lib';
 export * from './src/types';

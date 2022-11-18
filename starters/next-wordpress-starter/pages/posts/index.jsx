@@ -1,9 +1,5 @@
 import { NextSeo } from 'next-seo';
-import {
-	setEdgeHeader,
-	addSurrogateKeyHeader,
-} from '@pantheon-systems/wordpress-kit';
-import { getSurrogateKeys } from '../../lib/getSurrogateKeys';
+import { setOutgoingHeaders } from '../../lib/setOutgoingHeaders';
 
 import PageHeader from '../../components/page-header';
 import Layout from '../../components/layout';
@@ -41,11 +37,10 @@ export default function PostsListTemplate({ menuItems, posts }) {
 
 export async function getServerSideProps({ res }) {
 	const { menuItems, menuItemHeaders } = await getFooterMenu();
-	const { posts, headers } = await getLatestPosts(100);
+	const { posts, headers: postHeaders } = await getLatestPosts(100);
 
-	const keys = getSurrogateKeys({ headers: [menuItemHeaders, headers] });
-	addSurrogateKeyHeader(keys, res);
-	setEdgeHeader({ res });
+	const headers = [menuItemHeaders, postHeaders];
+	setOutgoingHeaders({ headers, res });
 
 	return {
 		props: {

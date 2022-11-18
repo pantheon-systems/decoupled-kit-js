@@ -1,10 +1,7 @@
 import { server } from '../__mocks__/server';
-//import fetch from 'node-fetch';
 
-//global.fetch = fetch;
 // Start server before all tests
 beforeAll(() => {
-	// console.log('hello');
 	server.listen({ onUnhandledRequest: 'error' });
 });
 
