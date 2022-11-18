@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-export default function PreviewError({ error }) {
+export default function PreviewError() {
 	const { query } = useRouter();
 	return (
 		<div className="flex flex-col mx-auto prose-xl mt-20 w-fit">
