@@ -4,7 +4,10 @@ const preview = async (req, res) => {
 	// Check the secret and next parameters
 	// This secret should only be known to this API route and the CMS
 	if (req.query.secret !== process.env.PREVIEW_SECRET || !req.query.slug) {
-		return res.redirect('/500');
+		return res.redirect(
+			'/preview-error/?error=' +
+				encodeURIComponent('Unable to authorize for preview'),
+		);
 	}
 
 	// returns the store that matches the locale found in the requested url
@@ -24,12 +27,18 @@ const preview = async (req, res) => {
 	} catch (error) {
 		process.env.DEBUG_MODE &&
 			console.error('Error verifying preview content: ', error);
-		return res.redirect('/500');
+		return res.redirect(
+			'/preview-error/?error=' +
+				encodeURIComponent('The requested preview path does not match'),
+		);
 	}
 
 	// If the content doesn't exist prevent preview mode from being enabled
 	if (!content) {
-		return res.redirect('/500');
+		return res.redirect(
+			'/preview-error/?error=' +
+				encodeURIComponent('The requested preview path does not exist'),
+		);
 	}
 
 	// Enable Preview Mode by setting a cookie
