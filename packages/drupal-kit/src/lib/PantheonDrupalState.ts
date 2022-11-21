@@ -1,6 +1,5 @@
 import { ServerResponse } from 'http';
 import { DrupalState } from '@gdwc/drupal-state';
-
 import defaultFetch from './defaultFetch';
 
 import type { TJsonApiBody } from 'jsona/lib/JsonaTypes';

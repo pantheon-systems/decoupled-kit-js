@@ -23,10 +23,14 @@ export async function getLatestPages(totalPages) {
 	`;
 
 	const {
-		pages: { edges },
-	} = await client.request(query, { totalPages });
+		data: {
+			pages: { edges },
+		},
+		headers,
+	} = await client.rawRequest(query, { totalPages });
 
-	return edges.map(({ node }) => node);
+	const pages = edges.map(({ node }) => node);
+	return { pages, headers };
 }
 
 export async function getPageByUri(uri) {
@@ -47,9 +51,12 @@ export async function getPageByUri(uri) {
 		}
 	`;
 
-	const { page } = await client.request(query, { uriString });
+	const {
+		data: { page },
+		headers,
+	} = await client.rawRequest(query, { uriString });
 
-	return page;
+	return { page, headers };
 }
 
 export async function getPagePreview(id) {
@@ -74,5 +81,5 @@ export async function getPagePreview(id) {
 
 	const { page } = await client.request(query, { id });
 
-	return page;
+	return { page };
 }

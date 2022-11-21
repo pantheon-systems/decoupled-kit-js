@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
-import { setEdgeHeader } from '@pantheon-systems/wordpress-kit';
 import { ContentWithImage } from '@pantheon-systems/nextjs-kit';
+import { setOutgoingHeaders } from '../../lib/setOutgoingHeaders';
 
 import Layout from '../../components/layout';
 
@@ -35,25 +35,24 @@ export default function PostTemplate({ menuItems, post }) {
 }
 
 export async function getServerSideProps({
-	params,
+	params: { slug },
 	res,
 	preview,
 	previewData,
 }) {
-	const menuItems = await getFooterMenu();
-	const { slug } = params;
-
-	const post = preview
+	const { menuItems, menuItemHeaders } = await getFooterMenu();
+	const { post, headers: postHeaders = false } = preview
 		? await getPostPreview(previewData.key)
 		: await getPostByUri(slug);
-
-	setEdgeHeader({ res });
 
 	if (!post) {
 		return {
 			notFound: true,
 		};
 	}
+
+	const headers = postHeaders && [menuItemHeaders, postHeaders];
+	headers.length > 0 && setOutgoingHeaders({ headers, res });
 
 	return {
 		props: {

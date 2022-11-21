@@ -24,9 +24,10 @@
 	},
 	"prettier": "@pantheon-systems/configs/prettier",
 	"scripts": {
+		"clean": "pnpm dlx rimraf ./dist",
 		"dev": "vite",
-		"build": "tsc && vite build",
-		"watch": "tsc && vite build --watch",
+		"build": "pnpm clean && tsc && vite build",
+		"watch": "pnpm clean && tsc && vite build --watch",
 		"serve": "vite preview",
 		"typedoc": "typedoc",
 		"test": "jest",
@@ -49,6 +50,7 @@
 		"vite-plugin-dts": "^1.6.1"
 	},
 	"dependencies": {
-		"@gdwc/drupal-state": "^4.2.0"
+		"@gdwc/drupal-state": "^4.2.0",
+		"@pantheon-systems/cms-kit": "workspace:^0.0.0"
 	}
 }

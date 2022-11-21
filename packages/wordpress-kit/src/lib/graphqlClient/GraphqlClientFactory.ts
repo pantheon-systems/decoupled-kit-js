@@ -1,6 +1,5 @@
 import { GraphQLClient } from 'graphql-request';
 import type { PatchedRequestInit } from 'graphql-request/dist/types';
-
 /**
  * Creates instances of `graphql-request` GraphQLClient with the given options
  * @params endpoint - A WordPress GraphQL endpoint
@@ -18,7 +17,12 @@ class GraphQLClientFactory {
 
 	constructor(endpoint: string, options: PatchedRequestInit = {}) {
 		this.endpoint = endpoint;
-		this.options = options;
+		this.options = {
+			...options,
+			headers: {
+				'pantheon-debug': '1',
+			},
+		};
 	}
 
 	/**

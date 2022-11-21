@@ -4,5 +4,5 @@
 		"declaration": true,
 		"declarationDir": "./dist"
 	},
-	"exclude": ["__tests__/**/*", "__mocks__/**/*", "src/main.ts"]
+	"exclude": ["__tests__"]
 }

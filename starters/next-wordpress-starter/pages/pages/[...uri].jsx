@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
-import { setEdgeHeader } from '@pantheon-systems/wordpress-kit';
 import { ContentWithImage } from '@pantheon-systems/nextjs-kit';
+import { setOutgoingHeaders } from '../../lib/setOutgoingHeaders';
 import { IMAGE_URL } from '../../lib/constants';
 
 import Layout from '../../components/layout';
@@ -41,17 +41,19 @@ export async function getServerSideProps({
 	preview,
 	previewData,
 }) {
-	const menuItems = await getFooterMenu();
-	const page = preview
+	const { menuItems, menuItemHeaders } = await getFooterMenu();
+	const { page, headers: pageHeaders = false } = preview
 		? await getPagePreview(previewData.key)
 		: await getPageByUri(uri);
-	setEdgeHeader({ res });
 
 	if (!page) {
 		return {
 			notFound: true,
 		};
 	}
+
+	const headers = pageHeaders && [menuItemHeaders, pageHeaders];
+	headers.length > 0 && setOutgoingHeaders({ headers, res });
 
 	return {
 		props: {
