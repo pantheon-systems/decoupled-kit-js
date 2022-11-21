@@ -10,7 +10,7 @@ slug:
 
 This guide assumes the reader has a little to no experience with Tailwind CSS. If you are new to Tailwind CSS, we recommend reading the [Tailwind CSS documentation](https://tailwindcss.com/docs) before proceeding.
 
-To use this plugin you also must have the `wordpress-kit` installed, to install the kit just run the following command:
+To use this plugin you also must have the `wordpress-kit` installed. To install, run the following command:
 
 ```bash
 npm install @pantheon-systems/wordpress-kit
