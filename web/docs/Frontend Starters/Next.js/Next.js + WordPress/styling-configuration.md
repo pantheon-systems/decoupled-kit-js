@@ -10,9 +10,22 @@ slug:
 
 This guide assumes the reader has a little to no experience with Tailwind CSS. If you are new to Tailwind CSS, we recommend reading the [Tailwind CSS documentation](https://tailwindcss.com/docs) before proceeding.
 
+To use this plugin you also must have the `wordpress-kit` installed, to install the kit just run the following command:
+
+```bash
+npm install @pantheon-systems/wordpress-kit
+```
+
+Or
+
+```bash
+yarn add @pantheon-systems/wordpress-kit
+```
+
+
 ## Block Editor
 
-The block editor plugin for Tailwind enables to render the content from your WordPress site to the Next.js frontend, with parallel styling and some opinionated changes. To use this plugin you must have the WordPress-Kit installed and configure the `tailwind.config.js` file.
+The block editor plugin for Tailwind enables to render the content from your WordPress site to the Next.js frontend, with parallel styling and some opinionated changes.
 
 To configure the plugin, add the following to the `tailwind.config.js` file:
 
@@ -30,20 +43,6 @@ module.exports = {
 ```
 
 For more information about plugins, check the [Tailwind CSS documentation](https://tailwindcss.com/docs/plugins).
-
-and use the `ps-wp-content` class in the ContentWithImage component.
-
-```jsx
-import { ContentWithImage } from '@pantheon-systems/nextjs-kit';
-
-<ContentWithImage
-    title={post.title}
-    content={post.content}
-    date={...}
-    imageProps={...}
-    contentClassName="ps-wp-content"
-/>
-```
 
 ## Customizing Tailwind
 
