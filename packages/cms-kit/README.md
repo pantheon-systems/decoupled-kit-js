@@ -15,7 +15,7 @@ Modules can be imported from the `@pantheon-systems/cms-kit` package. For
 example, to use the `addSurrogateKey` utility:
 
 ```js
-import { addSurrogateKeyHeader } from '@pantheon-systems/cms-kit';
+import { setSurrogateKeyHeader } from '@pantheon-systems/cms-kit';
 ```
 
 ## API Reference

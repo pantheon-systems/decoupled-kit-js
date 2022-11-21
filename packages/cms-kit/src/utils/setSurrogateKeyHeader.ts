@@ -14,7 +14,7 @@ const hasHeaders = (res: any): res is ServerResponse =>
  * @param res The active http.ServerResponse object.
  * @returns The current known unique set of surrogate keys.
  */
-const addSurrogateKeyHeader = (
+const setSurrogateKeyHeader = (
 	keys: string | null,
 	res: ServerResponse,
 ): string | void => {
@@ -39,4 +39,4 @@ const addSurrogateKeyHeader = (
 	}
 };
 
-export default addSurrogateKeyHeader;
+export default setSurrogateKeyHeader;

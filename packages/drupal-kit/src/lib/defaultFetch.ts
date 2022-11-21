@@ -1,7 +1,7 @@
 import type { ServerResponse } from 'http';
 import fetch from 'isomorphic-fetch';
 
-import { addSurrogateKeyHeader } from '@pantheon-systems/cms-kit';
+import { setSurrogateKeyHeader } from '@pantheon-systems/cms-kit';
 
 const defaultCacheControlValue =
 	'public, s-maxage=10, stale-while-revalidate=600';
@@ -45,7 +45,7 @@ const defaultFetch = (
 	fetchPromise
 		.then((response) => {
 			if (res && response.headers.has('Surrogate-Key-Raw')) {
-				addSurrogateKeyHeader(
+				setSurrogateKeyHeader(
 					response.headers.get('Surrogate-Key-Raw'),
 					res as ServerResponse,
 				);

@@ -1,15 +1,10 @@
 import { NextSeo } from 'next-seo';
-import {
-	setEdgeHeader,
-	addSurrogateKeyHeader,
-} from '@pantheon-systems/wordpress-kit';
-
 import Layout from '../../../components/layout';
 import { Paginator } from '@pantheon-systems/nextjs-kit';
 
 import { getFooterMenu } from '../../../lib/Menus';
 import { paginationPostsQuery } from '../../../lib/PostsPagination';
-import { getSurrogateKeys } from '../../../lib/getSurrogateKeys';
+import { setOutgoingHeaders } from '../../../lib/setOutgoingHeaders';
 
 export default function PaginationExampleTemplate({ menuItems, posts }) {
 	const RenderCurrentItems = ({ currentItems }) => {
@@ -50,11 +45,11 @@ export default function PaginationExampleTemplate({ menuItems, posts }) {
 
 export async function getServerSideProps({ res }) {
 	const { menuItems, menuItemHeaders } = await getFooterMenu();
-	const { posts, headers } = await paginationPostsQuery();
+	const { posts, headers: postHeaders } = await paginationPostsQuery();
 
-	const keys = getSurrogateKeys({ headers: [menuItemHeaders, headers] });
-	addSurrogateKeyHeader(keys, res);
-	setEdgeHeader({ res });
+	const headers = [menuItemHeaders, postHeaders];
+	setOutgoingHeaders({ headers, res });
+
 	return {
 		props: {
 			menuItems,

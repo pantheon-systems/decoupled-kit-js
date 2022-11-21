@@ -1,5 +1,6 @@
 ---
-'@pantheon-systems/drupal-kit': minor
+'@pantheon-systems/drupal-kit': major
 ---
 
-Moved addSurrogateKeyHeader to a new package and imported it from there.
+Breaking: Moved addSurrogateKeyHeader to a new package and renamed it setSurrogateKeyHeader.
+setSurrogateKeyHeader is exported from drupal-kit
