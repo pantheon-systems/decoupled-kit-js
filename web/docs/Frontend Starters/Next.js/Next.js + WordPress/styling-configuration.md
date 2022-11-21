@@ -1,0 +1,83 @@
+---
+id: 'styling-configuration'
+title: 'Styling Configuration'
+sidebar_position: 1
+slug:
+  '/Frontend Starters/Next.js/Next.js + WordPress/Styling configuration'
+---
+
+## Before You Begin
+
+This guide assumes the reader has a little to no experience with Tailwind CSS. If you are new to Tailwind CSS, we recommend reading the [Tailwind CSS documentation](https://tailwindcss.com/docs) before proceeding.
+
+## Block Editor
+
+The block editor plugin for Tailwind enables to render the content from your WordPress site to the Next.js frontend, with parallel styling and some opinionated changes. To use this plugin you must have the WordPress-Kit installed and configure the `tailwind.config.js` file.
+
+To configure the plugin, add the following to the `tailwind.config.js` file:
+
+```js
+module.exports = {
+ content: [
+  './pages/**/*.{js,ts,jsx,tsx}',
+  './components/**/*.{js,ts,jsx,tsx}',
+ ],
+ theme: {
+  extend: {},
+ },
+ plugins: [tailwindcssPlugin],
+};
+```
+
+For more information about plugins, check the [Tailwind CSS documentation](https://tailwindcss.com/docs/plugins).
+
+and use the `ps-wp-content` class in the ContentWithImage component.
+
+```jsx
+import { ContentWithImage } from '@pantheon-systems/nextjs-kit';
+
+<ContentWithImage
+    title={post.title}
+    content={post.content}
+    date={...}
+    imageProps={...}
+    contentClassName="ps-wp-content"
+/>
+```
+
+## Customizing Tailwind
+
+Tailwind allows you to customize the default configuration to suit your needs. To do this, you must have the `tailwind.config.js` file in the root of your project. You can find more information about customizing Tailwind in the [Tailwind documentation](https://tailwindcss.com/docs/configuration).
+
+To costumize the default configuration for the block editor, you only need to override the tokens that you want to change. For example, if you want to change the primary color, you can add the following to your `tailwind.config.js` file:
+
+```js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#ff0000',
+      },
+    },
+  },
+};
+```
+
+And then every block that uses the primary color will be rendered with the new color. You can get more information and autocomplete for the block editor tokens if you add the type definitions to the `tailwind.config.js` file:
+
+```js
+const { tailwindcssPlugin } = require('@pantheon-systems/wordpress-kit');
+
+/** @type {import('@pantheon-systems/wordpress-kit').TailwindcssConfig} */
+module.exports = {
+ content: [
+  './pages/**/*.{js,ts,jsx,tsx}',
+  './components/**/*.{js,ts,jsx,tsx}',
+ ],
+ theme: {
+  extend: {},
+ },
+ plugins: [require('@tailwindcss/typography'), tailwindcssPlugin],
+};
+
+```
