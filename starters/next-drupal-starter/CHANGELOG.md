@@ -1,5 +1,17 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.6.0-canary.0
+
+### Minor Changes
+
+- 896d70a: Refactor stores to use DS auth/anon request flow feature
+
+### Patch Changes
+
+- Updated dependencies [a5c4275]
+- Updated dependencies [cd286c6]
+  - @pantheon-systems/drupal-kit@4.0.0-canary.0
+
 ## 3.5.0
 
 ### Minor Changes
