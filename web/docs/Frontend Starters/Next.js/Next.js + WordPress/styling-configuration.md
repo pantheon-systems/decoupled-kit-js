@@ -1,7 +1,7 @@
 ---
 id: 'styling-configuration'
 title: 'Styling Configuration'
-sidebar_position: 1
+sidebar_position: 6
 slug:
   '/Frontend Starters/Next.js/Next.js + WordPress/Styling configuration'
 ---
