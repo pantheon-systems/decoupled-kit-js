@@ -1,0 +1,273 @@
+// Vitest Snapshot v1
+
+exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthenticated 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+  >
+    <div
+      class="my-0 pt-10 px-5 text-xl"
+    >
+      <nav>
+        <ul
+          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+        >
+          <li
+            class="mr-auto"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/posts"
+            >
+              📰 Posts
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <div
+        class="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen"
+      >
+        <h1>
+          API Authorization Example
+        </h1>
+        <a
+          href="/"
+        >
+          <span
+            class="w-full underline cursor-pointer"
+          >
+            Home →
+          </span>
+        </a>
+        <div
+          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+        >
+          <p>
+            Gatsby was unable to make an authorized request to the WordPress API. Please check your .env.development.local file to ensure that your 
+            <code>
+              WP_APPLICATION_USERNAME
+            </code>
+             and
+            <code>
+              WP_APPLICATION_PASSWORD
+            </code>
+             are set correctly.
+          </p>
+          <p>
+            For more information on how to set these values, please see 
+            <a
+              href="https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Gatsby/Gatsby%20%2B%20WordPress/setting-environment-variables.md"
+            >
+              Setting Environment Variables
+            </a>
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="w-full text-white bg-black p-4 mt-12"
+    >
+      <nav
+        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ml-3 list-disc text-blue-300 hover:text-blue-100"
+          >
+            <a
+              class="text-blue-300 hover:text-blue-100 focus:text-purple-600 active:text-purple-300 "
+              href="/posts/example-post-with-image/"
+            >
+              Example Post with Image
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="flex my-4 p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2022 Built with 
+          <a
+            class="text-purple-300 underline hover:text-blue-100"
+            href="https://www.gatsbyjs.com"
+          >
+            Gatsby
+          </a>
+           and 
+          <a
+            class="text-blue-200 underline hover:text-blue-100"
+            href="https://wordpress.org/"
+          >
+            WordPress
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<AuthApiExampleTemplate /> > should render a success message if authenticated 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+  >
+    <div
+      class="my-0 pt-10 px-5 text-xl"
+    >
+      <nav>
+        <ul
+          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
+        >
+          <li
+            class="mr-auto"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/posts"
+            >
+              📰 Posts
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="mx-4"
+          >
+            <a
+              class="font-sans hover:underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <div
+        class="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen"
+      >
+        <h1>
+          API Authorization Example
+        </h1>
+        <a
+          href="/"
+        >
+          <span
+            class="w-full underline cursor-pointer"
+          >
+            Home →
+          </span>
+        </a>
+        <div
+          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+        >
+          <p>
+            🎉 Gatsby was able to successfully make an authenticated request to WordPress! 🎉
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="w-full text-white bg-black p-4 mt-12"
+    >
+      <nav
+        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ml-3 list-disc text-blue-300 hover:text-blue-100"
+          >
+            <a
+              class="text-blue-300 hover:text-blue-100 focus:text-purple-600 active:text-purple-300 "
+              href="/posts/example-post-with-image/"
+            >
+              Example Post with Image
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="flex my-4 p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2022 Built with 
+          <a
+            class="text-purple-300 underline hover:text-blue-100"
+            href="https://www.gatsbyjs.com"
+          >
+            Gatsby
+          </a>
+           and 
+          <a
+            class="text-blue-200 underline hover:text-blue-100"
+            href="https://wordpress.org/"
+          >
+            WordPress
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
