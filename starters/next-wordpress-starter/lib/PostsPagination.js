@@ -17,8 +17,11 @@ export async function paginationPostsQuery() {
 	`;
 
 	const {
-		posts: { edges },
-	} = await paginationClient.request(query);
-
-	return edges.map(({ node }) => node);
+		data: {
+			posts: { edges },
+		},
+		headers,
+	} = await paginationClient.rawRequest(query);
+	const posts = edges.map(({ node }) => node);
+	return { posts, headers };
 }

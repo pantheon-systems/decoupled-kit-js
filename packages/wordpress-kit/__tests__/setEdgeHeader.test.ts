@@ -1,11 +1,12 @@
-import setEdgeHeader from '../setEdgeHeader';
+import setEdgeHeader from '../src/lib/setEdgeHeader';
 
+import { vi } from 'vitest';
 // Mock the response object
 const mockResponse: any = () => {
 	const res = {
 		setHeader: () => {},
 	};
-	res.setHeader = jest.fn();
+	res.setHeader = vi.fn();
 	return res;
 };
 

@@ -15,6 +15,8 @@ module.exports = {
 	ignorePatterns: [
 		'main.ts',
 		'*.test.*',
+		'setupFile.ts',
+		'__mocks__/**/*',
 		'rollup.config.js',
 		'vite.config.js',
 		'jest.config.js',
