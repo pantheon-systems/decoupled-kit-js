@@ -2,12 +2,9 @@ import React from 'react'
 import Layout from '../components/layout'
 import { Link } from 'gatsby'
 
-const AuthApiExampleTemplate = ({
-	footerMenu,
-	pageContext: { privatePosts },
-}) => {
+const AuthApiExampleTemplate = ({ pageContext: { privatePosts } }) => {
 	return (
-		<Layout footerMenu={footerMenu}>
+		<Layout>
 			<div className="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen">
 				<h1>API Authorization Example</h1>
 
