@@ -1,11 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { gql } from '@pantheon-systems/wordpress-kit';
-import { setEdgeHeader } from '@pantheon-systems/wordpress-kit';
+import { setOutgoingHeaders } from '../../lib/setOutgoingHeaders';
+
+import Layout from '../../components/layout';
 
 import { client } from '../../lib/WordPressClient';
 import { getFooterMenu } from '../../lib/Menus';
-import Layout from '../../components/layout';
 
 export default function AuthApiExampleTemplate({ menuItems, privatePosts }) {
 	return (
@@ -69,12 +70,17 @@ export async function getServerSideProps({ res }) {
 	`;
 
 	const {
-		posts: { edges },
-	} = await client.request(query);
+		data: {
+			posts: { edges },
+		},
+		headers: postHeaders,
+	} = await client.rawRequest(query);
 
-	const menuItems = await getFooterMenu();
+	const { menuItems, menuItemHeaders } = await getFooterMenu();
 	const privatePosts = edges.map(({ node }) => node);
-	setEdgeHeader({ res });
+
+	const headers = postHeaders && [menuItemHeaders, postHeaders];
+	setOutgoingHeaders({ headers, res });
 
 	return {
 		props: {

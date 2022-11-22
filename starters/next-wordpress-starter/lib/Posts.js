@@ -23,10 +23,13 @@ export async function getLatestPosts(totalPosts) {
 	`;
 
 	const {
-		posts: { edges },
-	} = await client.request(query, { totalPosts });
-
-	return edges.map(({ node }) => node);
+		data: {
+			posts: { edges },
+		},
+		headers,
+	} = await client.rawRequest(query, { totalPosts });
+	const posts = edges.map(({ node }) => node);
+	return { posts, headers };
 }
 
 export async function getPostByUri(uri) {
@@ -47,9 +50,12 @@ export async function getPostByUri(uri) {
 		}
 	`;
 
-	const { post } = await client.request(query, { uriString });
+	const {
+		data: { post },
+		headers,
+	} = await client.rawRequest(query, { uriString });
 
-	return post;
+	return { post, headers };
 }
 
 export async function getPostPreview(id) {
@@ -74,5 +80,5 @@ export async function getPostPreview(id) {
 
 	const { post } = await client.request(query, { id });
 
-	return post;
+	return { post };
 }

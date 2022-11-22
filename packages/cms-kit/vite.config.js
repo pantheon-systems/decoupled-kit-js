@@ -1,20 +1,10 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import typescript from '@rollup/plugin-typescript';
 
 const globals = {
-	'graphql-request': 'graphqlRequest',
-	'tailwindcss/plugin': 'tailwindcssPlugin',
-	'@pantheon-systems/cms-kit': 'cmsKit',
 	http: 'http',
 };
-
-const external = [
-	'graphql',
-	'graphql-request',
-	'tailwindcss/plugin',
-	'@pantheon-systems/cms-kit',
-	'http',
-];
+const external = ['http'];
 
 /** @type {import('vite').defineConfig} */
 export default defineConfig(() => {
@@ -23,9 +13,9 @@ export default defineConfig(() => {
 		build: {
 			lib: {
 				entry: './index.ts',
-				name: 'wordpress-kit',
+				name: 'cms-kit',
 				formats: ['umd', 'es'],
-				fileName: (format) => `wordpress-kit.${format}.js`,
+				fileName: (format) => `cms-kit.${format}.js`,
 			},
 			rollupOptions: {
 				external,
@@ -36,7 +26,6 @@ export default defineConfig(() => {
 		},
 		test: {
 			globals: true,
-			setupFiles: ['./__tests__/setupFile.ts'],
 			coverage: {
 				reportsDirectory: `./coverage`,
 			},
