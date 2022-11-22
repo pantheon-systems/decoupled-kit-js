@@ -26,7 +26,7 @@ This starter implements:
 
 #### [Next.js Drupal Starter](#next-drupal-starter)
 
-The [`next-drupal-starter`](https://github.com/pantheon-systems/next-drupal-starter) is a [Next.js](https://nextjs.org/docs) app which consumes data from Drupal with the [JSON:API](https://www.drupal.org/project/jsonapi) module, as well as some Pantheon managed modules \<Insert link to the modules docs below here when they're written \>, and uses Next's Server Side Rendering.
+The [`next-drupal-starter`](https://github.com/pantheon-systems/next-drupal-starter) is a [Next.js](https://nextjs.org/docs) app which consumes data from Drupal with the [JSON:API](https://www.drupal.org/project/jsonapi) module, as well as some Drupal modules managed by Pantheon (see [Drupal](#drupal) below for more information) and uses Next's Server Side Rendering.
 
 This starter implements:
 - [`nextjs-kit`](#nextjs-kit)
@@ -93,7 +93,7 @@ The [WordPress Pantheon Decoupled](https://github.com/pantheon-systems/wp-panthe
 #### WordPress Pantheon Decoupled Preview
 [WordPress Pantheon Decoupled Preview](https://github.com/pantheon-systems/wp-decoupled-preview) enables preview of content on the frontend site with minimal configuration when used with our [Next.js WordPress Starter](#next-wordpress-starter).
 
-### Drupal
+### [Drupal](#drupal)
 #### Drupal Composer Managed
 [Drupal Composer Managed](https://github.com/pantheon-systems/drupal-composer-managed) is a Drupal project meant to work with Pantheon's Integrated Composer build process.
 
