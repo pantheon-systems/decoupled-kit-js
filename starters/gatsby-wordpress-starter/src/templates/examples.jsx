@@ -26,6 +26,11 @@ const ExamplesPageTemplate = ({ footerMenu, pageContext: { routing } }) => {
 							</Link>{' '}
 							- a paginated list with a large dataset.
 						</li>
+						<li>
+							<Link to={`/examples/auth-api`}>API Authorization</Link> -
+							confirms that Gatsby is able to make authenticated requests to
+							WordPress&apos; API.
+						</li>
 					</ul>
 				</div>
 			</div>
