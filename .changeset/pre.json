@@ -9,7 +9,16 @@
     "@pantheon-systems/gatsby-wordpress-starter": "2.5.0",
     "@pantheon-systems/next-drupal-starter": "3.5.0",
     "@pantheon-systems/next-wordpress-starter": "0.10.1",
-    "web": "1.0.0"
+    "web": "1.0.0",
+    "@pantheon-systems/cms-kit": "0.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "dry-apes-help",
+    "happy-dancers-trade",
+    "healthy-seas-hide",
+    "hot-snails-move",
+    "nice-chicken-clap",
+    "silver-tables-swim",
+    "smooth-apes-rescue"
+  ]
 }
