@@ -45,7 +45,7 @@ jobs:
           template: basic_fail_1
       - slack/notify:
           event: pass
-          template: SLACK_SUCCESS_TEMPLATE
+          template: basic_success_1
 
   audit:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
