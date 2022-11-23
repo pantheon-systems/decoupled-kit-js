@@ -1,7 +1,13 @@
 ---
-slug: /decoupled-kit-repo-walk-through
-sidebar_position: 1
+slug: /decoupled-kit-overview
+title: Decoupled Kit Overview
+sidebar_position: 0
 ---
+
+Decoupled Kit is a collection of utilities for building a decoupled front-end that sources data from a CMS back-end. Conceptually, a ‘“Kit” is a combination of a compatible CMS back end and JavaScript front end. For example, we have kits with WordPress + Gatsby, WordPress + Next.js, and Drupal +Next.js. 
+
+At a slightly lower level, Decoupled Kit is a series of CMS starter projects, front-end starter kits, and developer documentation. Let’s take a closer look at each of these focus areas.
+
 ## Frontend
 ### `decoupled-kit-js` Monorepo
 The `decoupled-kit-js` monorepo is home to all of the open source starter kits and [npm packages](https://www.npmjs.com/search?q=@pantheon-systems/*-kit) which provide a starting point for developers who want an out-of-the-box experience for headless WordPress and Drupal powered by modern JavaScript/TypeScript tools.
@@ -42,7 +48,7 @@ This starter implements:
 
 ### npm Packages
 
-To help fetch data, set headers, or style markup from the CMS, we have developed a set of tools that are published to npm. These tools are used in the starter kits, and can be imported into your projects if you'd rather start from your own template, but you still want to utilize some of the headless CMS helpers we have developed.
+To help fetch data, set headers, or style markup from the CMS, we have developed a set of open source tools that are published to npm. These tools are used in the starter kits, and can be imported into any project. 
 
 Packages can be installed with your node package manager of choice. The following example uses `npm` to install `drupal-kit` and `nextjs-kit` as production dependencies in a node project:
 
@@ -83,14 +89,11 @@ Read on for a brief overview of each project. Please see the `README.md` in each
 [Decoupled WordPress Composer Managed](https://github.com/pantheon-upstreams/decoupled-wordpress-composer-managed) is a WordPress template designed to get you started with a headless WordPress instance. It includes a number of both community and Decoupled Kit maintained plugins including  [WPGraphQL](https://wordpress.org/plugins/wp-graphql/), [WPGatsby](https://wordpress.org/plugins/wp-gatsby/), and [Pantheon Decoupled](#wordpress-pantheon-decoupled).
 
 #### [WordPress Pantheon Decoupled](#wordpress-pantheon-decoupled)
-The [WordPress Pantheon Decoupled](https://github.com/pantheon-systems/wp-pantheon-decoupled) helps to enable headless WordPress without any extra configuration needed by the user. The required plugins are installed and some sample content is included, like a post with an image and an example menu.
+The [WordPress Pantheon Decoupled](https://github.com/pantheon-systems/wp-pantheon-decoupled) plugin helps to enable headless WordPress without any extra configuration needed by the user. The required plugins are installed and some sample content is included, like a post with an image and an example menu.
 
-#### WordPress Pantheon Decoupled Gatsby
 
-[WordPress Pantheon Decoupled Gatsby](https://github.com/pantheon-systems/wp-pantheon-decoupled-gatsby) includes necessary configuration for using WordPress with Gatsby on Pantheon.
-
-#### WordPress Pantheon Decoupled Preview
-[WordPress Pantheon Decoupled Preview](https://github.com/pantheon-systems/wp-decoupled-preview) enables preview of content on the frontend site with minimal configuration when used with our [Next.js WordPress Starter](#next-wordpress-starter).
+#### (Pre-Release) WordPress Pantheon Decoupled Preview
+[WordPress Pantheon Decoupled Preview](https://github.com/pantheon-systems/wp-decoupled-preview) enables preview of content on the frontend site with minimal configuration when used with our [Next.js WordPress Starter](#next-wordpress-starter). This plugin is in active development.
 
 ### [Drupal](#drupal)
 #### Drupal Composer Managed
@@ -100,8 +103,6 @@ The [WordPress Pantheon Decoupled](https://github.com/pantheon-systems/wp-panthe
 #### Drupal Decoupled Preview
 [Drupal Decoupled Preview](https://github.com/pantheon-systems/decoupled_preview) enables preview of content on the frontend site with minimal configuration when used with our [Next.js Drupal Starter](#next-drupal-starter).
 
-#### Decoupled Drupal Tool
-
-
+#### Decoupled Drupal Tools
 [Decoupled Drupal Tools](https://github.com/pantheon-systems/decoupled-drupal-tools) include the `pantheon_decoupled` module and the `pantheon_decoupled` and `pantheon_decoupled_umami_demo` install profiles.
 
