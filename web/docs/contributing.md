@@ -1,7 +1,6 @@
 ---
-slug: /decoupled-kit-js-getting-started
-title: Decoupled Kit JS Getting Started
-sidebar_position: 0 
+slug: /contributing
+title: Contributing 
 ---
 
 # Pantheon Systems Decoupled Kits

@@ -87,7 +87,7 @@ const config = {
 				items: [
 					{
 						type: 'doc',
-						docId: 'intro',
+						docId: 'decoupled-kit-overview',
 						position: 'left',
 						label: 'Docs',
 					},
