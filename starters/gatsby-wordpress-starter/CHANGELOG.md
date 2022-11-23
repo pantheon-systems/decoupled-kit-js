@@ -1,5 +1,11 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.6.0-canary.0
+
+### Minor Changes
+
+- 9347e03: Add page for gatsby auth API demo
+
 ## 2.5.0
 
 ### Minor Changes
