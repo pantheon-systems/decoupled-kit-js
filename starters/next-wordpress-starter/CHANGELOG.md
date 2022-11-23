@@ -1,5 +1,17 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.11.0-canary.0
+
+### Minor Changes
+
+- 5493b01: Add Preview API Route
+
+### Patch Changes
+
+- Updated dependencies [a5c4275]
+- Updated dependencies [a5c4275]
+  - @pantheon-systems/wordpress-kit@2.10.0-canary.0
+
 ## 0.10.1
 
 ### Patch Changes

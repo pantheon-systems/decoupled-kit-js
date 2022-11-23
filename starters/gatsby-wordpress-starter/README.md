@@ -22,6 +22,8 @@ cd gatsby-wordpress-starter && npm install
 
 ```
 WPGRAPHQL_URL=
+WP_APPLICATION_USERNAME=
+WP_APPLICATION_PASSWORD=
 ```
 
 4. Run `npm run develop`

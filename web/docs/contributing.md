@@ -1,6 +1,6 @@
 ---
-slug: /intro
-sidebar_position: 0
+slug: /contributing
+title: Contributing 
 ---
 
 # Pantheon Systems Decoupled Kits
