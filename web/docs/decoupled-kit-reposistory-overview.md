@@ -80,10 +80,9 @@ Read on for a brief overview of each project. Please see the `README.md` in each
 ### WordPress
 #### Decoupled WordPress Composer Managed
 
-[Decoupled WordPress Composer Managed](https://github.com/pantheon-upstreams/decoupled-wordpress-composer-managed) is a WordPress template designed to get you started with a headless WordPress instance. It includes a number of both community and Decoupled Kit maintained plugins including  [WPGraphQL](https://wordpress.org/plugins/wp-graphql/), [WPGatsby](https://wordpress.org/plugins/wp-gatsby/), and [Pantheon Decoupled](#WordPress Pantheon Decoupled).
+[Decoupled WordPress Composer Managed](https://github.com/pantheon-upstreams/decoupled-wordpress-composer-managed) is a WordPress template designed to get you started with a headless WordPress instance. It includes a number of both community and Decoupled Kit maintained plugins including  [WPGraphQL](https://wordpress.org/plugins/wp-graphql/), [WPGatsby](https://wordpress.org/plugins/wp-gatsby/), and [Pantheon Decoupled](#wordpress-pantheon-decoupled).
 
-#### WordPress Pantheon Decoupled
-
+#### [WordPress Pantheon Decoupled](#wordpress-pantheon-decoupled)
 The [WordPress Pantheon Decoupled](https://github.com/pantheon-systems/wp-pantheon-decoupled) helps to enable headless WordPress without any extra configuration needed by the user. The required plugins are installed and some sample content is included, like a post with an image and an example menu.
 
 #### WordPress Pantheon Decoupled Gatsby
