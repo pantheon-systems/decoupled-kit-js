@@ -8,13 +8,16 @@ import {
 } from '../../lib/stores';
 
 export default function PreviewError({ footerMenu, preview }) {
-	const { query } = useRouter();
+	const {
+		query: { error, message },
+	} = useRouter();
 	return (
 		<Layout footerMenu={footerMenu} preview={true}>
 			<div className="flex flex-col mx-auto prose-xl mt-20 w-1/2">
 				<h2 className="text-center">
-					🛑 {query.error ? query.error : 'There was an error on the server'} 🛑
+					🛑 {error ? error : 'There was an error on the server'} 🛑
 				</h2>
+				<p className="text-center">{message}</p>
 				<Link href="/">
 					<a className="underline">Go Home</a>
 				</Link>

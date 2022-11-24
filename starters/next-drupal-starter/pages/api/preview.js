@@ -6,7 +6,9 @@ const preview = async (req, res) => {
 	if (req.query.secret !== process.env.PREVIEW_SECRET) {
 		return res.redirect(
 			`/preview-error/?error=${encodeURIComponent(
-				`Preview secret does not match. Check that your PREVIEW_SECRET environment variable matches the preview secret generated when creating the preview site in Drupal.`,
+				`Preview secret does not match`,
+			)}&message=${encodeURIComponent(
+				`Check that your PREVIEW_SECRET environment variable matches the preview secret generated when creating the preview site in Drupal.`,
 			)}`,
 		);
 	}
@@ -38,8 +40,8 @@ const preview = async (req, res) => {
 			console.error('Error verifying preview content: ', error);
 		return res.redirect(
 			`/preview-error/?error=${encodeURIComponent(
-				`Requested preview path does not match. Ensure the content URL is valid`,
-			)}`,
+				`Requested preview path does not match`,
+			)}&message=${encodeURIComponent(`Ensure the content URL is valid`)}`,
 		);
 	}
 
@@ -47,7 +49,9 @@ const preview = async (req, res) => {
 	if (!content) {
 		return res.redirect(
 			`/preview-error/?error=${encodeURIComponent(
-				`Requested preview path does not exist. Check that the desired content to be previewed is published`,
+				`Requested preview path does not exist`,
+			)}&message=${encodeURIComponent(
+				`Check that the desired content to be previewed is published`,
 			)}`,
 		);
 	}
