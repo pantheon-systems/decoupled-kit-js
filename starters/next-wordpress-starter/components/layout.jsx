@@ -27,7 +27,7 @@ export default function Layout({ children, footerMenu, preview }) {
 	}));
 
 	return (
-		<div className="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col">
+		<div className="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden">
 			{preview && <PreviewRibbon />}
 			<Header navItems={navItems} />
 			<main className="mb-auto">{children}</main>

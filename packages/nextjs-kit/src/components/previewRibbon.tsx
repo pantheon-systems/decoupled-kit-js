@@ -26,7 +26,7 @@ const PreviewRibbon: React.FC<PreviewRibbonProps> = ({
 							Preview Mode Enabled
 						</span>
 						<Link href={clearPreviewRoute}>
-							<a className="ps-justify-self-end ps-border ps-text-black ps-border-black ps-w-fit ps-max-w- ps-px-4 ps-py-2 ps-mr-12 ps-bg-yellow-300">
+							<a className="ps-justify-self-end ps-border ps-text-black ps-border-black ps-w-fit ps-px-4 ps-py-2 ps-mr-12 ps-bg-yellow-300">
 								Exit Preview Mode
 							</a>
 						</Link>
@@ -51,15 +51,6 @@ const PreviewRibbon: React.FC<PreviewRibbonProps> = ({
 						d="M11.29,12l3.54-3.54a1,1,0,0,0,0-1.41,1,1,0,0,0-1.42,0L9.17,11.29a1,1,0,0,0,0,1.42L13.41,17a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41Z"
 					/>
 				</svg>
-				{/* 
-				Remove this if we want to keep the SVG
-				*/}
-				{/* <Image
-					className={`ps-transition-all ${show ? 'ps-rotate-180' : ''}`}
-					height={32}
-					width={32}
-					alt=""
-				/> */}
 			</button>
 		</div>
 	);
