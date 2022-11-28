@@ -1,5 +1,16 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.6.0
+
+### Minor Changes
+
+- 9347e03: Add page for gatsby auth API demo
+
+### Patch Changes
+
+- 6f07cbc: Fallback to PANTHEON_CMS_ENDPOINT if WPGRAPHQL_URL is not set when
+  creating the graphql client to fetch private posts
+
 ## 2.6.0-canary.1
 
 ### Patch Changes
