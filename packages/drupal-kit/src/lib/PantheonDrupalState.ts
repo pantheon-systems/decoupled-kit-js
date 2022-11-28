@@ -1,6 +1,5 @@
 import { ServerResponse } from 'http';
 import { DrupalState } from '@gdwc/drupal-state';
-
 import defaultFetch from './defaultFetch';
 
 import type { TJsonApiBody } from 'jsona/lib/JsonaTypes';
@@ -43,14 +42,12 @@ class PantheonDrupalState extends DrupalState {
 	async fetchData(
 		endpoint: string,
 		res: ServerResponse | boolean = false,
-	): Promise<TJsonApiBody> {
+		anon = false,
+	): Promise<TJsonApiBody | void> {
 		let requestInit = {};
 		let authHeader = '';
-		if (this.auth) {
-			// TODO - remove eslint disable. Not sure why eslint can't pick up on
-			// this.getAuthHeader() from the parent class
+		if (this.auth && !anon) {
 			const headers = new Headers();
-			// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 			authHeader = await this.getAuthHeader();
 			headers.append('Authorization', authHeader);
 			requestInit = {

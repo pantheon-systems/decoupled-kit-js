@@ -1,12 +1,12 @@
 import { NextSeo } from 'next-seo';
-import { setEdgeHeader } from '@pantheon-systems/wordpress-kit';
 import { ContentWithImage } from '@pantheon-systems/nextjs-kit';
+import { setOutgoingHeaders } from '../../lib/setOutgoingHeaders';
 import { IMAGE_URL } from '../../lib/constants';
 
 import Layout from '../../components/layout';
 
 import { getFooterMenu } from '../../lib/Menus';
-import { getPageByUri } from '../../lib/Pages';
+import { getPageByUri, getPagePreview } from '../../lib/Pages';
 
 export default function PageTemplate({ menuItems, page }) {
 	return (
@@ -35,16 +35,25 @@ export default function PageTemplate({ menuItems, page }) {
 	);
 }
 
-export async function getServerSideProps({ params: { uri }, res }) {
-	const menuItems = await getFooterMenu();
-	const page = await getPageByUri(uri);
-	setEdgeHeader({ res });
+export async function getServerSideProps({
+	params: { uri },
+	res,
+	preview,
+	previewData,
+}) {
+	const { menuItems, menuItemHeaders } = await getFooterMenu();
+	const { page, headers: pageHeaders = false } = preview
+		? await getPagePreview(previewData.key)
+		: await getPageByUri(uri);
 
 	if (!page) {
 		return {
 			notFound: true,
 		};
 	}
+
+	const headers = pageHeaders && [menuItemHeaders, pageHeaders];
+	headers.length > 0 && setOutgoingHeaders({ headers, res });
 
 	return {
 		props: {

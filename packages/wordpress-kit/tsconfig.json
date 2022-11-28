@@ -1,3 +1,8 @@
 {
-	"extends": "../../tsconfig.json"
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"declaration": true,
+		"declarationDir": "./dist"
+	},
+	"exclude": ["__tests__/**/*", "__mocks__/**/*", "src/main.ts"]
 }

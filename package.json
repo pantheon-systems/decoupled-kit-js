@@ -15,6 +15,7 @@
 	"prettier": "./configs/prettier.config.js",
 	"scripts": {
 		"build:all": "pnpm build:pkgs && pnpm build:starters",
+		"build:cms-kit": "pnpm --filter cms-kit build",
 		"build:drupal-kit": "pnpm --filter drupal-kit build",
 		"build:gatsby-wp": "pnpm --filter './starters/gatsby-wordpress-starter' build",
 		"build:nextjs-kit": "pnpm --filter './packages/nextjs-kit' build",
@@ -77,6 +78,7 @@
 			"@pantheon-systems/wordpress-kit": "workspace:*",
 			"@pantheon-systems/drupal-kit": "workspace:*",
 			"@pantheon-systems/nextjs-kit": "workspace:*",
+			"@pantheon-systems/cms-kit": "workspace:*",
 			"@types/react": "17.0.40",
 			"node-fetch@<2.6.7": ">=2.6.7",
 			"ansi-regex@>2.1.1 <5.0.1": ">=5.0.1",

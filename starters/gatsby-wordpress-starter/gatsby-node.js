@@ -1,9 +1,11 @@
 const path = require(`path`)
 const chunk = require(`lodash/chunk`)
 const { paginationPostsQuery } = require('./lib/postsPagination')
+const { privatePostsQuery } = require('./lib/privatePosts')
 
 exports.createPages = async gatsbyUtilities => {
 	const pagPosts = await paginationPostsQuery()
+	const privatePosts = await privatePostsQuery()
 	const pages = await getPages(gatsbyUtilities)
 	const posts = await getPosts(gatsbyUtilities)
 	const routing = true
@@ -20,6 +22,7 @@ exports.createPages = async gatsbyUtilities => {
 		await createPagination({ pagPosts, gatsbyUtilities, routing })
 	}
 	await createExamplesPage({ gatsbyUtilities, routing })
+	await createAuthApiPage({ gatsbyUtilities, privatePosts })
 }
 
 const createIndividualPages = async ({ pages, gatsbyUtilities }) =>
@@ -191,6 +194,16 @@ async function createPagination({ pagPosts, gatsbyUtilities, routing }) {
 			})
 		}),
 	)
+}
+
+async function createAuthApiPage({ gatsbyUtilities, privatePosts }) {
+	await gatsbyUtilities.actions.createPage({
+		path: '/examples/auth-api',
+		component: path.resolve('./src/templates/authApi.jsx'),
+		context: {
+			privatePosts,
+		},
+	})
 }
 
 /**

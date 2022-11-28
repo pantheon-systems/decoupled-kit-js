@@ -1,5 +1,5 @@
 import { gql } from '@pantheon-systems/wordpress-kit';
-import { client } from './WordPressClient';
+import { client, getAuthCredentials } from './WordPressClient';
 
 export async function getLatestPages(totalPages) {
 	const query = gql`
@@ -23,10 +23,14 @@ export async function getLatestPages(totalPages) {
 	`;
 
 	const {
-		pages: { edges },
-	} = await client.request(query, { totalPages });
+		data: {
+			pages: { edges },
+		},
+		headers,
+	} = await client.rawRequest(query, { totalPages });
 
-	return edges.map(({ node }) => node);
+	const pages = edges.map(({ node }) => node);
+	return { pages, headers };
 }
 
 export async function getPageByUri(uri) {
@@ -47,7 +51,35 @@ export async function getPageByUri(uri) {
 		}
 	`;
 
-	const { page } = await client.request(query, { uriString });
+	const {
+		data: { page },
+		headers,
+	} = await client.rawRequest(query, { uriString });
 
-	return page;
+	return { page, headers };
+}
+
+export async function getPagePreview(id) {
+	const credentials = getAuthCredentials();
+	client.setHeaders({ Authorization: `Basic ${credentials}` });
+
+	const query = gql`
+		query PagePreviewQuery($id: ID!) {
+			page(id: $id, idType: DATABASE_ID, asPreview: true) {
+				title
+				date
+				featuredImage {
+					node {
+						altText
+						sourceUrl
+					}
+				}
+				content
+			}
+		}
+	`;
+
+	const { page } = await client.request(query, { id });
+
+	return { page };
 }

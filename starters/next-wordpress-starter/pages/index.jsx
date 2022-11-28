@@ -1,8 +1,9 @@
 import { NextSeo } from 'next-seo';
-import { setEdgeHeader } from '@pantheon-systems/wordpress-kit';
+import { setOutgoingHeaders } from '../lib/setOutgoingHeaders';
 
 import Image from 'next/image';
 import Layout from '../components/layout';
+
 import { PostGridItem } from '../components/grid';
 import { withGrid } from '@pantheon-systems/nextjs-kit';
 
@@ -53,9 +54,11 @@ export default function Home({ menuItems, posts }) {
 }
 
 export async function getServerSideProps({ res }) {
-	const menuItems = await getFooterMenu();
-	const posts = await getLatestPosts(12);
-	setEdgeHeader({ res });
+	const { menuItems, menuItemHeaders } = await getFooterMenu();
+	const { posts, headers: postHeaders } = await getLatestPosts(12);
+
+	const headers = [menuItemHeaders, postHeaders];
+	setOutgoingHeaders({ headers, res });
 
 	return {
 		props: {

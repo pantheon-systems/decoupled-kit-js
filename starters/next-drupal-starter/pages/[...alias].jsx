@@ -1,8 +1,4 @@
-import {
-	getCurrentLocaleStore,
-	globalDrupalStateStores,
-	globalDrupalStateAuthStores,
-} from '../lib/stores';
+import { getCurrentLocaleStore, globalDrupalStateStores } from '../lib/stores';
 import { getPreview } from '../lib/getPreview';
 import { translatePath } from '@pantheon-systems/drupal-kit';
 import { NextSeo } from 'next-seo';
@@ -127,10 +123,7 @@ export async function getServerSideProps(context) {
 		});
 		const lang = context.preview ? context.previewData.previewLang : locale;
 
-		const store = getCurrentLocaleStore(
-			lang,
-			context.preview ? globalDrupalStateAuthStores : globalDrupalStateStores,
-		);
+		const store = getCurrentLocaleStore(lang, globalDrupalStateStores);
 
 		// get the path from the params
 		const path = Array.isArray(alias) ? alias.join('/') : alias;
@@ -161,12 +154,14 @@ export async function getServerSideProps(context) {
 			params: context.preview ? previewParams : params,
 			refresh: true,
 			res: context.res,
+			anon: context.preview ? false : true,
 		});
 
 		const footerMenu = await store.getObject({
 			objectName: 'menu_items--main',
 			refresh: true,
 			res: context.res,
+			anon: true,
 		});
 		return {
 			props: {

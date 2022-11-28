@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
-import { setEdgeHeader } from '@pantheon-systems/wordpress-kit';
+import { setOutgoingHeaders } from '../../lib/setOutgoingHeaders';
 
 import PageHeader from '../../components/page-header';
 import Layout from '../../components/layout';
@@ -47,8 +47,9 @@ export default function ExamplesPageTemplate({ menuItems }) {
 }
 
 export async function getServerSideProps({ res }) {
-	const menuItems = await getFooterMenu();
-	setEdgeHeader({ res });
+	const { menuItems, menuItemHeaders } = await getFooterMenu();
+
+	setOutgoingHeaders({ headers: [menuItemHeaders], res });
 
 	return {
 		props: {

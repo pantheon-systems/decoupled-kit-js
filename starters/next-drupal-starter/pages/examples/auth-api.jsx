@@ -1,6 +1,6 @@
 import {
 	getCurrentLocaleStore,
-	globalDrupalStateAuthStores,
+	globalDrupalStateStores,
 } from '../../lib/stores';
 import { BUILD_MODE } from '../../lib/constants';
 
@@ -54,7 +54,7 @@ export default function AuthApiExampleTemplate({ articles, footerMenu }) {
 export async function getServerSideProps(context) {
 	const authStore = getCurrentLocaleStore(
 		context.locale,
-		globalDrupalStateAuthStores,
+		globalDrupalStateStores,
 	);
 
 	if (!authStore.auth) {
@@ -67,11 +67,13 @@ export async function getServerSideProps(context) {
 			refresh: !BUILD_MODE,
 			res: context.res,
 			params: 'fields[node--article]=length',
+			anon: false,
 		});
 		const footerMenu = await authStore.getObject({
 			objectName: 'menu_items--main',
 			refresh: !BUILD_MODE,
 			res: context.res,
+			anon: true,
 		});
 		return {
 			props: {
