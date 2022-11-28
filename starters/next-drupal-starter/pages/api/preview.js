@@ -6,9 +6,9 @@ const preview = async (req, res) => {
 	if (req.query.secret !== process.env.PREVIEW_SECRET) {
 		return res.redirect(
 			`/preview-error/?error=${encodeURIComponent(
-				`Preview secret does not match`,
+				'Preview secret does not match',
 			)}&message=${encodeURIComponent(
-				`Check that your PREVIEW_SECRET environment variable matches the preview secret generated when creating the preview site in Drupal.`,
+				'Check that your PREVIEW_SECRET environment variable matches the preview secret generated when creating the preview site in Drupal.',
 			)}`,
 		);
 	}
@@ -16,8 +16,8 @@ const preview = async (req, res) => {
 	if (!req.query.slug) {
 		return res.redirect(
 			`/preview-error/?error=${encodeURIComponent(
-				`No path to the content preview was received`,
-			)}`,
+				'Requested preview path does not exist',
+			)}&message=${encodeURIComponent('Make sure the content is published')}`,
 		);
 	}
 
@@ -40,8 +40,8 @@ const preview = async (req, res) => {
 			console.error('Error verifying preview content: ', error);
 		return res.redirect(
 			`/preview-error/?error=${encodeURIComponent(
-				`Requested preview path does not match`,
-			)}&message=${encodeURIComponent(`Ensure the content URL is valid`)}`,
+				'Could not verify preview content',
+			)}&message=${encodeURIComponent(error.message)}`,
 		);
 	}
 
@@ -49,10 +49,8 @@ const preview = async (req, res) => {
 	if (!content) {
 		return res.redirect(
 			`/preview-error/?error=${encodeURIComponent(
-				`Requested preview path does not exist`,
-			)}&message=${encodeURIComponent(
-				`Check that the desired content to be previewed is published`,
-			)}`,
+				'Requested preview content does not exist',
+			)}&message=${encodeURIComponent('Make sure the content is published')}`,
 		);
 	}
 
