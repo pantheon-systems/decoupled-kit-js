@@ -21,11 +21,16 @@ if (process.env.PANTHEON_UPLOAD_PATH) {
 	injectedOptions['pathPrefix'] = process.env.PANTHEON_UPLOAD_PATH
 }
 
+// Need the ternary here because the config will run multiple times per plugin
+process.env.PANTHEON_CMS_ENDPOINT =
+	process.env.PANTHEON_CMS_ENDPOINT &&
+	process.env.PANTHEON_CMS_ENDPOINT.startsWith('https://')
+		? process.env.PANTHEON_CMS_ENDPOINT
+		: `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`
+
 // Use URL from .env if it exists, otherwise fall back on the
 // Pantheon CMS endpoint
-const url =
-	process.env.WPGRAPHQL_URL ||
-	`https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`
+const url = process.env.WPGRAPHQL_URL || process.env.PANTHEON_CMS_ENDPOINT
 
 module.exports = {
 	...(injectedOptions && injectedOptions),
