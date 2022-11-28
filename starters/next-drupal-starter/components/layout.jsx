@@ -1,7 +1,4 @@
-import { Footer } from '@pantheon-systems/nextjs-kit';
-import { Header } from '@pantheon-systems/nextjs-kit';
-import PreviewRibbon from './preview-ribbon';
-
+import { Footer, Header, PreviewRibbon } from '@pantheon-systems/nextjs-kit';
 export default function Layout({ children, footerMenu, preview = false }) {
 	const navItems = [
 		{ linkText: '🏠 Home', href: '/' },

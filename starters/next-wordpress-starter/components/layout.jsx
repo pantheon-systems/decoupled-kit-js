@@ -1,6 +1,6 @@
-import { Header, Footer } from '@pantheon-systems/nextjs-kit';
+import { Header, Footer, PreviewRibbon } from '@pantheon-systems/nextjs-kit';
 
-export default function Layout({ children, footerMenu }) {
+export default function Layout({ children, footerMenu, preview }) {
 	const navItems = [
 		{
 			linkText: '🏠 Home',
@@ -28,6 +28,7 @@ export default function Layout({ children, footerMenu }) {
 
 	return (
 		<div className="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col">
+			{preview && <PreviewRibbon />}
 			<Header navItems={navItems} />
 			<main className="mb-auto">{children}</main>
 			<Footer footerMenuItems={footerMenuItems}>
