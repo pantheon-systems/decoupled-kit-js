@@ -13,6 +13,7 @@
     "@pantheon-systems/cms-kit": "0.0.0"
   },
   "changesets": [
+    "breezy-mangos-smell",
     "dry-apes-help",
     "happy-dancers-trade",
     "healthy-seas-hide",
