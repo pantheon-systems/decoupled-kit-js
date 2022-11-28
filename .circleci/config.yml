@@ -2,7 +2,7 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 orbs:
-   slack: circleci/slack@4.10.1
+  slack: circleci/slack@4.10.1
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -56,7 +56,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "8f:b9:b7:35:66:b6:50:af:9e:da:de:9b:16:1b:21:6a"
+            - '8f:b9:b7:35:66:b6:50:af:9e:da:de:9b:16:1b:21:6a'
       - checkout
       - restore_cache:
           # See the configuration reference documentation for more details on using restore_cache and save_cache steps
@@ -91,19 +91,34 @@ jobs:
       # commit package.json and pnpm-lock if there's a diff
       - run:
           name: commit overrides
-          command: git config user.name "$GITHUB_USER" &&
-            git config user.email "$GITHUB_EMAIL" &&
-            git switch -c nightly-audit-$(date +"%D") &&
-            git add package.json pnpm-lock.yaml &&
-            git commit -m "Nightly audit run at $(date +"%T")" &&
+          command: |
+            git config user.name "$GITHUB_USER"
+            git config user.email "$GITHUB_EMAIL"
+            git switch -c nightly-audit-$(date +"%D")
+            git add package.json pnpm-lock.yaml
+            git commit -m "Nightly audit run at $(date +"%T")"
             git push origin nightly-audit-$(date +"%D")
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
+      - slack/notify:
+          event: pass
+          template: basic_success_1
+
       # create a PR
       - run:
           name: open PR
           command: >
-            curl -X POST -H "Authorization: token $CIRCLECI_AUDIT_PR_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/pantheon-systems/decoupled-kit-js/pulls -d '{"head":"nightly-audit-'"$(date +"%D")"'","base":"canary", "title": "Nightly Audit on '"$(date +"%D")"'", "body": "Beep Boop 🤖 - Please merge me to dispose of npm gremlins! If this workflow failed, please check the artifacts in Circle CI for more information"}'
+            curl -X POST -H "Authorization: token $CIRCLECI_AUDIT_PR_TOKEN" -H
+            "Accept: application/vnd.github.v3+json"
+            https://api.github.com/repos/pantheon-systems/decoupled-kit-js/pulls
+            -d '{"head":"nightly-audit-'"$(date +"%D")"'","base":"canary",
+            "title": "Nightly Audit on '"$(date +"%D")"'", "body": "Beep Boop 🤖
+            - Please merge me to dispose of npm gremlins! If this workflow
+            failed, please check the artifacts in Circle CI for more
+            information"}'
       - run: # should only fail if there are vulns to be addressed manually.
-          name: audit dependendies
+          name: audit dependencies
           command: pnpm audit --json > .pnpm_audit.json
       - store_artifacts:
           path: .pnpm_audit.json
@@ -115,12 +130,14 @@ workflows:
     when:
       and:
         - equal: [scheduled_pipeline, << pipeline.trigger_source >>]
-        - equal: ["nightly audit", << pipeline.schedule.name >>]
+        - equal: ['nightly audit', << pipeline.schedule.name >>]
     jobs:
-      - audit
+      - audit:
+          context: decoupled-slack-secrets
   orb-free-workflow:
     when:
       not: # Run test job when trigger is not the scheduled pipeline
         equal: [scheduled_pipeline, << pipeline.trigger_source >>]
     jobs:
-      - test
+      - test:
+          context: decoupled-slack-secrets
