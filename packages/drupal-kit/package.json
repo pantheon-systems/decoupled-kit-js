@@ -51,6 +51,6 @@
 	},
 	"dependencies": {
 		"@gdwc/drupal-state": "^4.2.0",
-		"@pantheon-systems/cms-kit": "workspace:^0.1.0-canary.0"
+		"@pantheon-systems/cms-kit": "^0.1.0-canary.0"
 	}
 }

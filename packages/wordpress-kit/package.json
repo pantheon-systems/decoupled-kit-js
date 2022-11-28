@@ -39,7 +39,7 @@
 		"lint-staged": "lint-staged"
 	},
 	"dependencies": {
-		"@pantheon-systems/cms-kit": "workspace:*",
+		"@pantheon-systems/cms-kit": "^0.1.0-canary.0",
 		"graphql": "^14.0.0 || ^15.0.0 || ^16.0.0",
 		"graphql-request": "^5.0.0"
 	},
