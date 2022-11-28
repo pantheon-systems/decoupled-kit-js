@@ -3,8 +3,22 @@ import { globalDrupalStateStores } from '../../lib/stores';
 const preview = async (req, res) => {
 	// Check the secret and next parameters
 	// This secret should only be known to this API route and the CMS
-	if (req.query.secret !== process.env.PREVIEW_SECRET || !req.query.slug) {
-		return res.redirect('/500');
+	if (req.query.secret !== process.env.PREVIEW_SECRET) {
+		return res.redirect(
+			`/preview-error/?error=${encodeURIComponent(
+				'Preview secret does not match',
+			)}&message=${encodeURIComponent(
+				'Check that your PREVIEW_SECRET environment variable matches the preview secret generated when creating the preview site in Drupal.',
+			)}`,
+		);
+	}
+
+	if (!req.query.slug) {
+		return res.redirect(
+			`/preview-error/?error=${encodeURIComponent(
+				'Requested preview path does not exist',
+			)}&message=${encodeURIComponent('Make sure the content is published')}`,
+		);
 	}
 
 	// returns the store that matches the locale found in the requested url
@@ -24,12 +38,20 @@ const preview = async (req, res) => {
 	} catch (error) {
 		process.env.DEBUG_MODE &&
 			console.error('Error verifying preview content: ', error);
-		return res.redirect('/500');
+		return res.redirect(
+			`/preview-error/?error=${encodeURIComponent(
+				'Could not verify preview content',
+			)}&message=${encodeURIComponent(error.message)}`,
+		);
 	}
 
 	// If the content doesn't exist prevent preview mode from being enabled
 	if (!content) {
-		return res.redirect('/500');
+		return res.redirect(
+			`/preview-error/?error=${encodeURIComponent(
+				'Requested preview content does not exist',
+			)}&message=${encodeURIComponent('Make sure the content is published')}`,
+		);
 	}
 
 	// Enable Preview Mode by setting a cookie
