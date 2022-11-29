@@ -1,5 +1,16 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.12.0-canary.0
+
+### Minor Changes
+
+- b5fae1d: Added clear-preview api route, use the preview ribbon from next-kit
+
+### Patch Changes
+
+- Updated dependencies [b5fae1d]
+  - @pantheon-systems/nextjs-kit@1.6.0-canary.0
+
 ## 0.11.0
 
 ### Minor Changes
