@@ -12,5 +12,10 @@
     "@pantheon-systems/next-wordpress-starter": "0.11.0",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "clean-fireants-beam",
+    "spotty-weeks-fail",
+    "swift-chairs-repair",
+    "unlucky-zoos-jam"
+  ]
 }
