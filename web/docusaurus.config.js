@@ -78,6 +78,11 @@ const config = {
 	themeConfig:
 		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 		({
+			metadata: [
+				{
+					name: 'keywords', content: 'headless, jamstack, decoupled, wordpress, drupal, webops'
+				}
+				],
 			navbar: {
 				title: 'Decoupled Kit',
 				logo: {
