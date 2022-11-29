@@ -19,7 +19,6 @@ For example, the following command uses the `next-wordpress-starter` as a templa
 
  ```bash
 npx create-next-app -e https://github.com/pantheon-systems/next-wordpress-starter
-
 ```
 Read on for a brief overview of each starter. Check each starter's `README.md` for more detailed information.
 
