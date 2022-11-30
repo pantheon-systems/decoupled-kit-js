@@ -1,10 +1,8 @@
 ---
 id: 'next-drupal-customization'
 title: 'Your First Next.js & Drupal Customization'
+slug: '/frontend-starters/nextjs/nextjs-drupal/your-first-nextjs-drupal-customization'
 sidebar_position: 3
-slug:
-  '/Frontend Starters/Next.js/Next.js + Drupal/Your First Next.js & Drupal
-  Customization'
 ---
 
 ## Before You Begin

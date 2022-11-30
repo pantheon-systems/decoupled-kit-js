@@ -1,9 +1,8 @@
 ---
 id: 'next-drupal-env-vars'
 title: 'Setting Environment Variables'
+slug: '/frontend-starters/nextjs/nextjs-drupal/setting-environment-variables'
 sidebar_position: 1
-slug:
-  '/Frontend Starters/Next.js/Next.js + Drupal/Setting Environment Variables'
 ---
 
 ## Local Development
@@ -27,7 +26,8 @@ IMAGE_DOMAIN=my-image-cdn.site
 If your site is translated and you would like the hreflang metadata set
 correctly, you may set `FRONTEND_URL` to the URL of your frontend site.
 
-If the`FRONTEND_URL` is not set, it will default to the value of `PANTHEON_ENVIRONMENT_URL`
+If the`FRONTEND_URL` is not set, it will default to the value of
+`PANTHEON_ENVIRONMENT_URL`
 
 ```
 FRONTEND_URL=https://my-frontend-site.pantheon.site
