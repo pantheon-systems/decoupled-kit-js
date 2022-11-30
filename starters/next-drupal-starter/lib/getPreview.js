@@ -67,6 +67,36 @@ export async function getPreview(context, node, params) {
 		}
 		return params;
 	} catch (error) {
-		throw error;
+		process.env.DEBUG_MODE &&
+			console.error('Error verifying preview content: ', error);
+
+		const [statusCode] = error.message.match(/([0-5]{3})$/gm) || [null];
+
+		if (statusCode === '403') {
+			return {
+				error: true,
+				redirect: `/preview-error?error=${encodeURIComponent(
+					'Could not verify preview content',
+				)}&message=${encodeURIComponent(
+					'You are not authorized to view this content, check your credentials.',
+				)}`,
+			};
+		}
+
+		if (statusCode === '404') {
+			return {
+				error: true,
+				redirect: `/preview-error?error=${encodeURIComponent(
+					'Could not verify preview content',
+				)}&message=${encodeURIComponent('Check your preview URL')}`,
+			};
+		}
+
+		return {
+			error: true,
+			redirect: `/preview-error?error=${encodeURIComponent(
+				'Could not verify preview content',
+			)}&message=${encodeURIComponent('Unexpected error')}`,
+		};
 	}
 }

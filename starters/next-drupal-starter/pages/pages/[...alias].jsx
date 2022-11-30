@@ -46,6 +46,15 @@ export async function getServerSideProps(context) {
 	const previewParams =
 		context.preview && (await getPreview(context, 'node--page'));
 
+	if (previewParams?.error) {
+		return {
+			redirect: {
+				destination: previewParams.redirect,
+				permanent: false,
+			},
+		};
+	}
+
 	let page;
 	try {
 		page = await store.getObjectByPath({
