@@ -49,7 +49,7 @@ package.
 ## API Reference
 
 To see the API reference,
-[visit our monorepo](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Packages/wordpress-kit/modules.md)
+[visit our docs site](https://decoupledkit.pantheon.io/docs/Packages/wordpress-kit)
 
 ## Contributing
 
