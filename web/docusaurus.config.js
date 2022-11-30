@@ -73,7 +73,7 @@ const config = {
 				docs: {
 					sidebarPath: require.resolve('./sidebars.js'),
 					editUrl:
-						'https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=doc-update-template.md&labels=documentation&title=Update+docs',
+						'https://github.com/pantheon-systems/decoupled-kit-js/edit/canary/web/',
 				},
 				// blog: {
 				//   showReadingTime: true,
