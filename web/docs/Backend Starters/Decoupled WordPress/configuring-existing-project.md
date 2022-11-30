@@ -1,8 +1,8 @@
 ---
 id: 'configuring-existing-project'
 title: 'Configuring an Existing WordPress Project'
-slug: '/Backend Starters/Decoupled WordPress/Creating Existing Project'
-sidebar_position: 4
+slug: '/backend-starters/decoupled-wordpress/configuring-an-existing-project'
+sidebar_position: 2
 ---
 
 While we offer a back-end starter project for use with our front-end starter kits,
