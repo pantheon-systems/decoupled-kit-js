@@ -8,7 +8,7 @@ const generateTypeDocOptions = require('./generateTypedocOptions.js');
 const drupalKitTypedocOptions = generateTypeDocOptions('drupal-kit', 0);
 const wordpressKitTypedocOptions = generateTypeDocOptions('wordpress-kit', 1);
 const cmskitTypedocOptions = generateTypeDocOptions('cms-kit', 2);
-const nextjskitTypedocOptions = generateTypeDocOptions('cms-kit', 3);
+const nextjskitTypedocOptions = generateTypeDocOptions('nextjs-kit', 3);
 const environmentUrl = process.env.PANTHEON_ENVIRONMENT_URL;
 
 /** @type {import('@docusaurus/types').Config} */
