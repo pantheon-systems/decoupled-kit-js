@@ -1,7 +1,7 @@
 ---
 id: 'gatsby-wordpress-path-prefix'
 title: 'Setting Path Prefix For Testing Locally'
-slug: '/frontend-starters/gatsby-wordpress/setting-path-prefix'
+slug: '/frontend-starters/gatsby/gatsby-wordpress/setting-path-prefix'
 sidebar_position: 3
 ---
 ## Before You Begin

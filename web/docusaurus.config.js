@@ -123,11 +123,11 @@ const config = {
 						items: [
 							{
 								label: 'Create a Decoupled Drupal Backend',
-								to: '/docs/Backend%20Starters/Decoupled%20Drupal/Creating%20a%20New%20Project',
+								to: '/docs/backend-starters/decoupled-drupal/creating-a-new-project',
 							},
 							{
 								label: 'Create a Decoupled WordPress Backend',
-								to: '/docs/Backend%20Starters/Decoupled%20WordPress/Creating%20a%20New%20Project',
+								to: '/docs/backend-starters/decoupled-drupal/creating-a-new-project',
 							},
 						],
 					},
@@ -136,15 +136,15 @@ const config = {
 						items: [
 							{
 								label: 'Gatsby + WordPress',
-								to: '/docs/Frontend%20Starters/Gatsby%20WordPress/Introduction',
+								to: '/docs/frontend-starters/gatsby/gatsby-wordpress/introduction',
 							},
 							{
 								label: 'Next.js + WordPress',
-								to: '/docs/Frontend%20Starters/Next.js/Next.js%20+%20WordPress/Introduction',
+								to: '/docs/frontend-starters/nextjs/nextjs-wordpress/introduction',
 							},
 							{
 								label: 'Next.js + Drupal',
-								to: '/docs/Frontend%20Starters/Next.js/Next.js%20+%20Drupal/Introduction',
+								to: 'docs/frontend-starters/nextjs/nextjs-drupal/introduction',
 							},
 						],
 					},
@@ -169,12 +169,16 @@ const config = {
 						title: 'Community',
 						items: [
 							{
-								label: 'Pantheon Community Forum',
-								href: 'https://discuss.pantheon.io/',
-							},
-							{
 								label: 'Slack',
 								href: 'https://slackin.pantheon.io/',
+							},
+							{
+								label: 'Pantheon decoupled-kit-js GitHub Discussions',
+								href: 'https://github.com/pantheon-systems/decoupled-kit-js/discussions',
+							},
+							{
+								label: 'Pantheon Community Forum',
+								href: 'https://discuss.pantheon.io/',
 							},
 							{
 								label: 'Twitter',
