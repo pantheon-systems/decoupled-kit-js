@@ -12,7 +12,7 @@
 	},
 	"author": "@pantheon-systems",
 	"main": "index.js",
-	"prettier": "@pantheon-systems/configs/prettier.config.js",
+	"prettier": "@pantheon-systems/configs/prettier",
 	"scripts": {
 		"build:all": "pnpm build:pkgs && pnpm build:starters",
 		"build:cms-kit": "pnpm --filter cms-kit build",
