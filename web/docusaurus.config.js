@@ -22,6 +22,10 @@ const config = {
 	favicon: 'img/favicon.ico',
 	organizationName: 'pantheon-systems', // Usually your GitHub org/user name.
 	projectName: 'decoupled-kit-js', // Usually your repo name.
+	markdown: {
+		mermaid: true,
+	},
+	themes: ['@docusaurus/theme-mermaid'],
 
 	plugins: [
 		// Prevent trying to generate api reference when building on the platform
@@ -80,9 +84,10 @@ const config = {
 		({
 			metadata: [
 				{
-					name: 'keywords', content: 'headless, jamstack, decoupled, wordpress, drupal, webops'
-				}
-				],
+					name: 'keywords',
+					content: 'headless, jamstack, decoupled, wordpress, drupal, webops',
+				},
+			],
 			navbar: {
 				title: 'Decoupled Kit',
 				logo: {
@@ -180,6 +185,9 @@ const config = {
 			prism: {
 				theme: lightCodeTheme,
 				darkTheme: darkCodeTheme,
+			},
+			mermaid: {
+				theme: { light: 'neutral', dark: 'dark' },
 			},
 		}),
 };
