@@ -23,6 +23,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16
+          cache: 'pnpm'
       - name: install pnpm
         run: npm i pnpm@7.17.1 -g
       - name: Setup npmrc
