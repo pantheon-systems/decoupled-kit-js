@@ -16,7 +16,7 @@ const config = {
 	title: 'Pantheon Decoupled Kit',
 	tagline:
 		'Utilities for building a decoupled front end that sources data from a CMS back end.',
-	url: environmentUrl ? `https://${environmentUrl}` : 'http://localhost:3000',
+	url: environmentUrl ? `https://decoupledkit.pantheon.io` : 'http://localhost:3000',
 	baseUrl: '/',
 	onBrokenLinks: 'warn',
 	onBrokenMarkdownLinks: 'warn',
@@ -96,6 +96,7 @@ const config = {
 					content: 'headless, jamstack, decoupled, wordpress, drupal, webops',
 				},
 			],
+			image: 'img/decoupled.png',
 			navbar: {
 				title: 'Decoupled Kit',
 				logo: {
