@@ -23,6 +23,7 @@
 		"prettier:fix": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --write --ignore-path ../.prettierignore"
 	},
 	"dependencies": {
+		"@algolia/client-search": "^4.14.2",
 		"@codesandbox/sandpack-react": "^1.8.6",
 		"@docusaurus/core": "2.2.0",
 		"@docusaurus/preset-classic": "2.2.0",
