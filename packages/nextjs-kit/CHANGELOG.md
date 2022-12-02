@@ -1,5 +1,12 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.6.0-canary.1
+
+### Patch Changes
+
+- a529abf: Replaced `vite-plugin-dts` with `@rollup/plugin-typescript` for type
+  bundling
+
 ## 1.6.0-canary.0
 
 ### Minor Changes

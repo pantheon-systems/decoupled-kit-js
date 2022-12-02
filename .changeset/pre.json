@@ -13,9 +13,14 @@
     "web": "1.0.0"
   },
   "changesets": [
+    "big-zebras-speak",
     "clean-fireants-beam",
+    "eighty-news-itch",
+    "fluffy-carrots-tell",
+    "slow-apples-hunt",
     "spotty-weeks-fail",
     "swift-chairs-repair",
-    "unlucky-zoos-jam"
+    "unlucky-zoos-jam",
+    "warm-fireants-push"
   ]
 }

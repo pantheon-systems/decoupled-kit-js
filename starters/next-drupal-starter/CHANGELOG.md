@@ -1,5 +1,16 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.7.0-canary.1
+
+### Minor Changes
+
+- 56898ad: Return error from getPreview catch, and redirect on that error
+
+### Patch Changes
+
+- Updated dependencies [a529abf]
+  - @pantheon-systems/nextjs-kit@1.6.0-canary.1
+
 ## 3.7.0-canary.0
 
 ### Minor Changes
