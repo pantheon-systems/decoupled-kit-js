@@ -27,7 +27,8 @@ IMAGE_DOMAIN=my-image-cdn.site
 If your site is translated and you would like the hreflang metadata set
 correctly, you may set `FRONTEND_URL` to the URL of your frontend site.
 
-If the`FRONTEND_URL` is not set, it will default to the value of `PANTHEON_ENVIRONMENT_URL`
+If the`FRONTEND_URL` is not set, it will default to the value of
+`PANTHEON_ENVIRONMENT_URL`
 
 ```
 FRONTEND_URL=https://my-frontend-site.pantheon.site
@@ -56,3 +57,46 @@ CLIENT_SECRET
 
 See [Implementing Preview](./implementing-preview.md) for more information on
 how to implement Decoupled Preview with Next.js and Drupal.
+
+## Connecting to Multidev Cloud Environments
+
+To connect to a Multidev environment, the following helper environment variable
+must be used inside of `next.config.js`.
+
+- `PANTHEON_ENVIRONMENT_PREFIX` - Automatically configured the value of the
+  beginning prefix (live, pr-number (pr-12), branch-name (multi-integration)) of
+  `PANTHEON_ENVIRONMENT_URL`. This is to act as a variable to key off of and
+  source data from a specific BE environment
+
+Either the `PANTHEON_CMS_ENDPOINT` or `WPGRAPHQL_URL` will need to be set.
+
+Taking a look at how the `next.config.js` works, there is this logic which sets
+the `backendUrl`
+
+```
+let backendUrl, imageDomain;
+if (process.env.WPGRAPHQL_URL === undefined) {
+	backendUrl = `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`;
+	imageDomain = process.env.IMAGE_DOMAIN || process.env.PANTHEON_CMS_ENDPOINT;
+
+	// populate WPGRAPHQL_URL as a fallback and for build scripts
+	process.env.WPGRAPHQL_URL = `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`;
+} else {
+	backendUrl = process.env.WPGRAPHQL_URL;
+	imageDomain =
+		process.env.IMAGE_DOMAIN ||
+		process.env.WPGRAPHQL_URL.replace(/\/wp\/graphql$/, '').replace(
+			/^https?:\/\//,
+			'',
+		);
+}
+```
+
+To use `PANTHEON_ENVIRONMENT_PREFIX` and connect to a Multidev backend, this
+line could be added under the above logic and after
+`PANTHEON_ENVIRONMENT_PREFIX` has been defined
+
+```
+backendUrl = `https://${PANTHEON_ENVIRONMENT_PREFIX}-${process.env.WPGRAPHQL_URL.replace(/^https?:\/\//,'',)}`
+
+```
