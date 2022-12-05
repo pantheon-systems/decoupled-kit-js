@@ -2,38 +2,54 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { isNumber, isHTMLElement } from '../types';
 
+/**
+ * Options type for {@link Paginator}
+ * @typeParam Type - type to use for the data passed in to be paginated
+ */
 export interface PaginationProps<Type> {
+	/**
+	 * The type of data to paginate
+	 */
 	data: Type[];
+	/**
+	 * Number of items per page
+	 */
 	itemsPerPage: number;
+	/**
+	 * * start: where to start the breakpoint
+	 *
+	 * end: where to end the breakpoint
+	 *
+	 * add: how many buttons to add when the breakpoint is clicked
+	 *
+	 * (`add` * x) + `start` = `end` where x is a number of clicks it takes to fill in all of the buttons
+	 * For example: If there are 25 buttons and the start = 5 and end = 25, then add should be 5 or 10.
+	 */
 	breakpoints: {
 		start: number;
 		end: number;
 		add: number;
 	};
+	/**
+	 * If true, uses Next.js shallow routing {@link https://nextjs.org/docs/routing/shallow-routing}
+	 */
 	routing: boolean;
+	/**
+	 * The React component to render for each datum
+	 */
 	Component: React.ElementType;
 }
 
 /**
- *
- * @param props - The props needed for the paginator component
+ * @param {PaginationProps} props - The props needed for the paginator component
  * @param props.data - An array of paginator objects
  * @param props.itemsPerPage - How many items to display per page
- * @param props.breakpoints - Breakpoints has 3 properties: start, end, and add. Set to {} for no breakpoint.
- * @remarks
- * start: where to start the breakpoint
- *
- * end: where to end the breakpoint
- *
- * add: how many buttons to add when the breakpoint is clicked
- *
- * (`add` * x) + `start` = `end` where x is a number of clicks it takes to fill in all of the buttons
- * For example: If there are 25 buttons and the start = 5 and end = 25, then add should be 5 or 10.
+ * @param props.breakpoints - Breakpoints has 3 properties: start, end, and add. Set to an empty object for no breakpoint.
  * @param props.routing If true, shallow routing will be enabled. Check the examples/pagination route to see it in action
- * @see {@link https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/starters/next-drupal-starter/pages/examples/pagination/[[...page]].js} for an example implementation
  * @param props.Component React Component that takes in currentItems as props and maps over them.
  * currentItems is a subset of `props.data`, so any component that works for data will work here.
- * @returns Component with data rendered by the passed in Component and page buttons
+ *
+ * @see {@link https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/starters/next-drupal-starter/pages/examples/pagination/[[...page]].js} for a full example implementation
  * @example
  * ```
  * <Paginator
@@ -44,11 +60,13 @@ export interface PaginationProps<Type> {
  *   Component={MyComponent}
  * />
  * ```
+ *
+ * @returns Component with data rendered by the passed in Component and page buttons
  */
-const Paginator = <Type extends object>({
+export const Paginator = <Type extends object>({
 	data,
-	breakpoints,
 	itemsPerPage,
+	breakpoints,
 	routing,
 	Component,
 }: PaginationProps<Type>) => {
@@ -273,5 +291,3 @@ const Paginator = <Type extends object>({
 		</div>
 	);
 };
-
-export default Paginator;

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import type { ImageProps } from 'next/image';
 import { useRouter } from 'next/router';
 
-interface RecipeProps {
+export interface RecipeProps {
 	title: string;
 	category: string;
 	ingredients: string[];
@@ -31,7 +31,7 @@ interface RecipeProps {
  * @returns A recipe component with content and an optional image passed by the user
 
  */
-const Recipe: React.FC<RecipeProps> = ({
+export const Recipe: React.FC<RecipeProps> = ({
 	title,
 	category,
 	imageProps,

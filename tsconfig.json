@@ -20,7 +20,4 @@
 			"@pantheon-systems/cms-kit/*": ["./cms-kit/*"]
 		}
 	},
-	"typeDocOptions": {
-		"includes": ["src"]
-	}
 }
