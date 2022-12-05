@@ -1,5 +1,11 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.6.1-canary.0
+
+### Patch Changes
+
+- 247d075: Add eslint@^7.5.0 as a dev dependency to satisfy a monorepo error
+
 ## 2.6.0
 
 ### Minor Changes
