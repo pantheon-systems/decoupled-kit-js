@@ -67,8 +67,8 @@ must be used inside of `next.config.js`.
   beginning prefix (live, pr-number (pr-12), branch-name (multi-integration)) of
   `PANTHEON_ENVIRONMENT_URL`. This is to act as a variable to key off of and
   source data from a specific BE environment
-- `IS_LIVE` - Automatically set to true if `PANTHEON_ENVIRONMENT_URL` is live
-  and false otherwise
+- `IS_LIVE_ENVIRONMENT` - Automatically set to true if
+  `PANTHEON_ENVIRONMENT_URL` is live and false otherwise
 
 Either the `PANTHEON_CMS_ENDPOINT` or `WPGRAPHQL_URL` will need to be set.
 
