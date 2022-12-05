@@ -63,8 +63,8 @@ how to implement Decoupled Preview with Next.js and Drupal.
 To connect to a Multidev environment, the following helper environment variable
 must be used inside of `next.config.js`.
 
-- `PANTHEON_ENVIRONMENT_PREFIX` - Automatically configured the value of the
-  beginning prefix (live, pr-number (pr-12), branch-name (multi-integration)) of
+- `PANTHEON_ENVIRONMENT` - Automatically configured the value of the beginning
+  prefix (live, pr-number (pr-12), branch-name (multi-integration)) of
   `PANTHEON_ENVIRONMENT_URL`. This is to act as a variable to key off of and
   source data from a specific BE environment
 - `IS_LIVE_ENVIRONMENT` - Automatically set to true if
@@ -94,11 +94,11 @@ if (process.env.WPGRAPHQL_URL === undefined) {
 }
 ```
 
-To use `PANTHEON_ENVIRONMENT_PREFIX` and connect to a Multidev backend, this
-line could be added under the above logic and after
-`PANTHEON_ENVIRONMENT_PREFIX` has been defined
+To use `PANTHEON_ENVIRONMENT` and connect to a Multidev backend, this line could
+be added under the above logic and after `PANTHEON_ENVIRONMENT_PREFIX` has been
+defined
 
 ```
-backendUrl = `https://${PANTHEON_ENVIRONMENT_PREFIX}-${process.env.WPGRAPHQL_URL.replace(/^https?:\/\//,'',)}`
+backendUrl = `https://${PANTHEON_ENVIRONMENT}-${process.env.WPGRAPHQL_URL.replace(/^https?:\/\//,'',)}`
 
 ```
