@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/cms-kit",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Pantheon Decoupled Kit's CMS Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -43,6 +43,7 @@
 		"@rollup/plugin-typescript": "^9.0.2",
 		"c8": "^7.12.0",
 		"eslint-plugin-prettier": "^4.2.1",
+		"prettier": "^2.8.0",
 		"vitest": "^0.23.4"
 	}
 }

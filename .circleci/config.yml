@@ -25,7 +25,7 @@ jobs:
           name: install pnpm
           command: |
             sudo corepack enable
-            sudo corepack prepare pnpm@7.4.0 --activate
+            sudo corepack prepare pnpm@7.17.1 --activate
             pnpm config set store-dir ~/.pnpm-store
       - run:
           name: install packages
@@ -67,7 +67,7 @@ jobs:
           name: install pnpm
           command: |
             sudo corepack enable
-            sudo corepack prepare pnpm@7.4.0 --activate
+            sudo corepack prepare pnpm@7.17.1 --activate
             pnpm config set store-dir ~/.pnpm-store
       - run:
           name: install packages
@@ -79,9 +79,13 @@ jobs:
       - run:
           name: remove node_modules and pnpm-lock.yml
           command: rm -rf node_modules pnpm-lock.yml
+      # build and test packages so that we don't commit a breaking change
       - run:
-          name: install overrides
-          command: pnpm install --frozen-lockfile=false --ignore-scripts
+          name: install overrides and build
+          command: pnpm install --frozen-lockfile=false
+      - run:
+          name: test packages
+          command: pnpm --filter './packages/*' test
       - run:
           name: exit if no fixes
           command: |
@@ -108,15 +112,12 @@ jobs:
       # create a PR
       - run:
           name: open PR
-          command: >
-            curl -X POST -H "Authorization: token $CIRCLECI_AUDIT_PR_TOKEN" -H
-            "Accept: application/vnd.github.v3+json"
-            https://api.github.com/repos/pantheon-systems/decoupled-kit-js/pulls
-            -d '{"head":"nightly-audit-'"$(date +"%D")"'","base":"canary",
-            "title": "Nightly Audit on '"$(date +"%D")"'", "body": "Beep Boop 🤖
-            - Please merge me to dispose of npm gremlins! If this workflow
-            failed, please check the artifacts in Circle CI for more
-            information"}'
+          command: |
+            curl -X POST \
+            -H "Authorization: token $CIRCLECI_AUDIT_PR_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/pantheon-systems/decoupled-kit-js/pulls \
+            -d '{"head":"nightly-audit-'"$(date +"%D")"'","base":"canary", "title": "Nightly Audit on '"$(date +"%D")"'", "body": "Beep Boop 🤖 - Please merge me to dispose of npm gremlins! If this workflow failed, please check the artifacts in Circle CI for more information"}'
       - run: # should only fail if there are vulns to be addressed manually.
           name: audit dependencies
           command: pnpm audit --json > .pnpm_audit.json

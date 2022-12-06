@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/wordpress-kit",
-	"version": "2.9.0",
+	"version": "2.11.0-canary.0",
 	"description": "Pantheon Decoupled Kit's WordPress Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -39,7 +39,7 @@
 		"lint-staged": "lint-staged"
 	},
 	"dependencies": {
-		"@pantheon-systems/cms-kit": "workspace:*",
+		"@pantheon-systems/cms-kit": "^0.1.0",
 		"graphql": "^14.0.0 || ^15.0.0 || ^16.0.0",
 		"graphql-request": "^5.0.0"
 	},
@@ -49,6 +49,7 @@
 		"@rollup/plugin-typescript": "^9.0.2",
 		"c8": "^7.12.0",
 		"msw": "^0.47.4",
+		"postcss": "^8.4.16",
 		"tailwindcss": "^3.1.8",
 		"vitest": "^0.25.2"
 	},

@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/nextjs-kit",
-	"version": "1.5.0",
+	"version": "1.6.0-canary.1",
 	"description": "Pantheon Decoupled Kit's Next.js Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -25,8 +25,9 @@
 	},
 	"prettier": "@pantheon-systems/configs/prettier",
 	"scripts": {
-		"build": "tsc && vite build",
-		"watch": "tsc && vite build --watch",
+		"build": "pnpm clean && vite build",
+		"clean": "pnpm dlx rimraf ./dist",
+		"watch": "vite build --watch",
 		"typedoc": "typedoc",
 		"test": "vitest run",
 		"test:watch": "vitest",
@@ -40,6 +41,7 @@
 	"devDependencies": {
 		"@pantheon-systems/configs": "*",
 		"@pantheon-systems/eslint-config": "*",
+		"@rollup/plugin-typescript": "^9.0.2",
 		"@testing-library/react": "12.1.5",
 		"@vitejs/plugin-react": "^2.1.0",
 		"autoprefixer": "^10.4.12",
@@ -47,10 +49,11 @@
 		"eslint-plugin-prettier": "^4.2.1",
 		"next": "^12.3.1",
 		"postcss": "^8.4.16",
+		"prettier": "^2.8.0",
 		"react": "17.0.2",
 		"react-dom": "17.0.2",
 		"tailwindcss": "^3.1.8",
-		"vite-plugin-dts": "^1.6.1",
+		"vite": "^3.1.4",
 		"vitest": "^0.23.4"
 	},
 	"peerDependencies": {

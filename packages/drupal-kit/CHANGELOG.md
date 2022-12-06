@@ -1,5 +1,31 @@
 # @pantheon-systems/drupal-kit
 
+## 4.0.0
+
+### Major Changes
+
+- a5c4275: Breaking: Moved addSurrogateKeyHeader to a new package and renamed it
+  setSurrogateKeyHeader. setSurrogateKeyHeader is exported from drupal-kit
+
+### Patch Changes
+
+- cd286c6: Update to latest version of DrupalState, v4.2.0
+- Updated dependencies [a5c4275]
+  - @pantheon-systems/cms-kit@0.1.0
+
+## 4.0.0-canary.0
+
+### Major Changes
+
+- a5c4275: Breaking: Moved addSurrogateKeyHeader to a new package and renamed it
+  setSurrogateKeyHeader. setSurrogateKeyHeader is exported from drupal-kit
+
+### Patch Changes
+
+- cd286c6: Update to latest version of DrupalState, v4.2.0
+- Updated dependencies [a5c4275]
+  - @pantheon-systems/cms-kit@0.1.0-canary.0
+
 ## 3.1.0
 
 ### Minor Changes

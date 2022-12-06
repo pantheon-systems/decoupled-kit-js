@@ -1,12 +1,12 @@
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
-import dts from 'vite-plugin-dts';
+import typescript from '@rollup/plugin-typescript';
 
 const globals = {
 	react: 'react',
 	'react-dom': 'reactDom',
-	'react/jsx-runtime': 'reactJsxRuntime',
 	next: 'next',
+	'react/jsx-runtime': 'jsx',
 	'next/link': 'Link',
 	'next/router': 'Router',
 };
@@ -22,7 +22,7 @@ const external = [
 /** @type {import('vite').defineConfig} */
 export default defineConfig(() => {
 	return {
-		plugins: [react(), dts({ insertTypesEntry: true })],
+		plugins: [react(), typescript()],
 		build: {
 			lib: {
 				entry: './index.ts',

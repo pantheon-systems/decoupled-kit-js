@@ -59,6 +59,15 @@ export async function getServerSideProps(context) {
 	const previewParams =
 		context.preview && (await getPreview(context, 'node--article', params));
 
+	if (previewParams?.error) {
+		return {
+			redirect: {
+				destination: previewParams.redirect,
+				permanent: false,
+			},
+		};
+	}
+
 	const article = await store.getObjectByPath({
 		objectName: 'node--article',
 		// Prefix the slug with the current locale

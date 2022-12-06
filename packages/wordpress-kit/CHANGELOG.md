@@ -1,5 +1,35 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.11.0-canary.0
+
+### Minor Changes
+
+- 6e00a98: Use max-width to images
+
+## 2.10.0
+
+### Minor Changes
+
+- a5c4275: Bubble up surrogate-key-raw headers on outgoing responses
+- a5c4275: Add pantheon-debug header to outgoing requests
+
+### Patch Changes
+
+- Updated dependencies [a5c4275]
+  - @pantheon-systems/cms-kit@0.1.0
+
+## 2.10.0-canary.0
+
+### Minor Changes
+
+- a5c4275: Bubble up surrogate-key-raw headers on outgoing responses
+- a5c4275: Add pantheon-debug header to outgoing requests
+
+### Patch Changes
+
+- Updated dependencies [a5c4275]
+  - @pantheon-systems/cms-kit@0.1.0-canary.0
+
 ## 2.9.0
 
 ### Minor Changes
