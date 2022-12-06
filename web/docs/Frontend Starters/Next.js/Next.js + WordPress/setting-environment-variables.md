@@ -34,12 +34,18 @@ production or Multidev environments.
 PREVIEW_SECRET
 WP_APPLICATION_USERNAME
 WP_APPLICATION_PASSWORD
+PANTHEON_UPLOAD_PATH
+
 ```
 
 - `PREVIEW_SECRET` - The secret used on creation of a new preview site in the WP
   dashboard
-- `WP_APPLICATION_USERNAME` - To be set as the username used for login to your
-  backend site. The user must have appropriate permissions to access preview
-  sites
-- `WP_APPLICATION_PASSWORD` - To be set as the password used for login to your
-  backend site
+- `WP_APPLICATION_USERNAME` - To be set as the username found and set in the
+  `Users` tab of the WP dashboard
+- `WP_APPLICATION_PASSWORD` - To be set as the password created for the WP
+  application user. Passwords can be set through selecting a user inside the
+  `Users` tab of the WP dashboard
+- `PANTHEON_UPLOAD_PATH` - Used to deploy a your application under a sub-path of
+  a domain. This will be automatically set as the `basePath` in the
+  `next.config.js`. To test this locally, set the `PANTHEON_UPLOAD_PATH` in your
+  `.env.development.local` to the path you would like to test.
