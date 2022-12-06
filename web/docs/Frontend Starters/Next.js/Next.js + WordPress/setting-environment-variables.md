@@ -41,10 +41,22 @@ PANTHEON_UPLOAD_PATH
 - `PREVIEW_SECRET` - The secret used on creation of a new preview site in the WP
   dashboard
 - `WP_APPLICATION_USERNAME` - To be set as the username found and set in the
-  `Users` tab of the WP dashboard
+  **Users** tab of the WP dashboard
 - `WP_APPLICATION_PASSWORD` - To be set as the password created for the WP
   application user. Passwords can be set through selecting a user inside the
-  `Users` tab of the WP dashboard
+  **Users** tab of the WP dashboard
+
+## Setting The Path Prefix
+
+See the Next.js guide on
+[Adding a Base Path](https://nextjs.org/docs/api-reference/next.config.js/basepath)
+for information on setting the `basePrefix` if you are not using the starter
+kit.
+
+```
+PANTHEON_UPLOAD_PATH
+```
+
 - `PANTHEON_UPLOAD_PATH` - Used to deploy a your application under a sub-path of
   a domain. This will be automatically set as the `basePath` in the
   `next.config.js`. To test this locally, set the `PANTHEON_UPLOAD_PATH` in your
