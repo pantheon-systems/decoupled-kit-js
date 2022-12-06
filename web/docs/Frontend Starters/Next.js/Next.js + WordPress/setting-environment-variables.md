@@ -34,7 +34,6 @@ production or Multidev environments.
 PREVIEW_SECRET
 WP_APPLICATION_USERNAME
 WP_APPLICATION_PASSWORD
-
 ```
 
 - `PREVIEW_SECRET` - The secret used on creation of a new preview site in the WP
