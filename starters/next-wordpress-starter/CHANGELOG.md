@@ -1,5 +1,15 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.12.0-canary.1
+
+### Patch Changes
+
+- 9bf361a: Update preview route due singular values for content types.
+- Updated dependencies [6e00a98]
+- Updated dependencies [a529abf]
+  - @pantheon-systems/wordpress-kit@2.11.0-canary.0
+  - @pantheon-systems/nextjs-kit@1.6.0-canary.1
+
 ## 0.12.0-canary.0
 
 ### Minor Changes
