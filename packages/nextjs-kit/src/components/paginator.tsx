@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { isNumber, isHTMLElement } from '../types';
 
 /**
  * Options type for {@link Paginator}
@@ -39,6 +38,23 @@ export interface PaginationProps<Type> {
 	 */
 	Component: React.ElementType;
 }
+
+/**
+ * Type predicate to determine if an item is a number
+ * @param {number | null | undefined} item an item
+ * @returns true if the item is a number
+ */
+const isNumber = (item: number | null | undefined): item is number =>
+	typeof item === 'number';
+
+/**
+ * Type predicate to determine if an item is a number
+ * @param {unknown} element some type of HTMLElement
+ * @returns true if the element is an HTMLElement
+ */
+const isHTMLElement = (element: unknown): element is HTMLElement => {
+	return element instanceof HTMLElement;
+};
 
 /**
  * @param {PaginationProps} props - The props needed for the paginator component
