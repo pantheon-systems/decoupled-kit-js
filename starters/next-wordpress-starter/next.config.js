@@ -38,14 +38,10 @@ if (process.env.WPGRAPHQL_URL === undefined) {
 // remove trailing slash if it exists
 imageDomain = imageDomain.replace(/\/$/, '');
 
-let PANTHEON_ENVIRONMENT, IS_LIVE_ENVIRONMENT;
 if (process.env.PANTHEON_ENVIRONMENT_URL) {
 	const envPrefix = process.env.PANTHEON_ENVIRONMENT_URL.match(/^([^-]*)/)[0];
-	PANTHEON_ENVIRONMENT =
-		process.env.PANTHEON_ENVIRONMENT_URL.match(/^([^-]*-)[^-]*/)[0];
 	if (envPrefix === 'live') {
-		PANTHEON_ENVIRONMENT = 'live';
-		IS_LIVE_ENVIRONMENT = 'live';
+		process.env.IS_LIVE_ENVIRONMENT = 'live';
 	}
 }
 
