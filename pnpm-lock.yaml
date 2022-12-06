@@ -231,7 +231,7 @@ importers:
       gatsby-plugin-postcss: ^5.24.0
       gatsby-plugin-sharp: ^4.24.0
       gatsby-source-filesystem: ^4.24.0
-      gatsby-source-wordpress: ^6.24.0
+      gatsby-source-wordpress: ^6.24.2
       gatsby-transformer-sharp: ^4.24.0
       graphql: ^15.0.0
       lodash: ^4.17.21
@@ -255,7 +255,7 @@ importers:
       gatsby-plugin-postcss: 5.24.0_ruydbsopkhasrplhtpo4ztkn4a
       gatsby-plugin-sharp: 4.24.0_veoy6eu37d3zgrms3x37tdgtzy
       gatsby-source-filesystem: 4.24.0_gatsby@4.24.8
-      gatsby-source-wordpress: 6.24.1_4redgsjrkg4fc2oqfxt7itaiwy
+      gatsby-source-wordpress: 6.24.2_4redgsjrkg4fc2oqfxt7itaiwy
       gatsby-transformer-sharp: 4.24.0_orbkgckhiv3hznqledbb2okvhe
       graphql: 15.8.0
       lodash: 4.17.21
@@ -11662,8 +11662,8 @@ packages:
       xstate: 4.32.1
     dev: false
 
-  /gatsby-source-wordpress/6.24.1_4redgsjrkg4fc2oqfxt7itaiwy:
-    resolution: {integrity: sha512-PvBFfPwzpN5cZlTipu9gU3AFQaWKlt/Fq0Jq3jFP4UKCwj40vYdcBb5FVjLP/W5zMcToFVWfF5qZRSuUz3nRRQ==}
+  /gatsby-source-wordpress/6.24.2_4redgsjrkg4fc2oqfxt7itaiwy:
+    resolution: {integrity: sha512-l7cpM3Mlhf5E31PH7PPE8iMT1lr72pesVFQxb0HKcV/GSBJ3x5d6Ksnt8JQz2ejSbl6MaI2Yb/NfsjXXNxRnnw==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
       gatsby: ^4.0.0-zz-next.1
@@ -12778,7 +12778,7 @@ packages:
     engines: {node: '>=12.0.0'}
     dependencies:
       ansi-escapes: 4.3.2
-      chalk: 4.1.1
+      chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-width: 3.0.0
       external-editor: 3.1.0
