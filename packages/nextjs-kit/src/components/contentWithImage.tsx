@@ -3,7 +3,7 @@ import Image from 'next/image';
 import type { ImageProps } from 'next/image';
 import { useRouter } from 'next/router';
 
-interface ContentProps {
+export interface ContentProps {
 	title: string;
 	content: string;
 	date?: string;
@@ -29,7 +29,7 @@ interface ContentProps {
  * If alt text is not supplied, the title of the content will be used.
  * @returns A component with a featured image and content passed by the user
  */
-const ContentWithImage: React.FC<ContentProps> = ({
+export const ContentWithImage: React.FC<ContentProps> = ({
 	title,
 	content,
 	date,
@@ -72,5 +72,3 @@ const ContentWithImage: React.FC<ContentProps> = ({
 		</article>
 	);
 };
-
-export default ContentWithImage;

@@ -1,5 +1,5 @@
 import { screen, render, fireEvent } from '@testing-library/react';
-import Paginator from '../../components/paginator';
+import { Paginator } from '../../components/paginator';
 import examplePaginationData from '../data/examplePaginationData.json';
 import React from 'react';
 import { vi } from 'vitest';

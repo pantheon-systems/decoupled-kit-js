@@ -1,8 +1,8 @@
 ---
 id: 'next-wordpress-intro'
 title: 'Introduction'
+slug: '/frontend-starters/nextjs/nextjs-wordpress/introduction'
 sidebar_position: 0
-slug: '/Frontend Starters/Next.js/Next.js + WordPress/Introduction'
 ---
 
 ## Before You Begin

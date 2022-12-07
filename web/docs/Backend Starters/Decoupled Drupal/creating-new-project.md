@@ -1,8 +1,8 @@
 ---
 id: 'creating-new-drupal-project'
 title: 'Creating a New Drupal Project'
-slug: '/Backend Starters/Decoupled Drupal/Creating a New Project'
-sidebar_position: 2
+slug: '/backend-starters/decoupled-drupal/creating-a-new-project'
+sidebar_position: 0
 ---
 
 ## Choosing an Approach

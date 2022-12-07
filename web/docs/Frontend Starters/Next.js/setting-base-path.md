@@ -2,7 +2,7 @@
 id: 'next-base-path'
 title: 'Setting Path Prefix For Testing Locally'
 sidebar_position: 1
-slug: '/Frontend Starters/Next.js/Setting Base Path'
+slug: '/frontend-starters/nextjs/setting-base-path'
 ---
 
 ## Before You Begin

@@ -11,32 +11,27 @@ jobs:
     name: canary version and publish
     env:
       CI: true
-      PNPM_CACHE_FOLDER: .pnpm-store
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
-      - name: checkout code repository
-        uses: actions/checkout@v2
+    # Checkout the repo and setup pnpm
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: setup node.js
-        uses: actions/setup-node@v2
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.17.1
+      - name: Setup nodejs
+        uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: install pnpm
-        run: npm i pnpm@7.4.0 -g
+          cache: 'pnpm'
       - name: Setup npmrc
         run:
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >
           .npmrc
-      - name: setup pnpm config
-        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
       - name: install dependencies
         run: pnpm install
-        # generate the api reference here so the changes
-        # will be added to the commit in the next step.
-      - name: generate api reference
-        run: pnpm generate-docs
       - name: create and publish versions
         uses: changesets/action@v1
         with:

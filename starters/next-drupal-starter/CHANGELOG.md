@@ -1,5 +1,35 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.7.0-canary.2
+
+### Patch Changes
+
+- Updated dependencies [276c9d2]
+  - @pantheon-systems/nextjs-kit@1.6.0-canary.2
+
+## 3.7.0-canary.1
+
+### Minor Changes
+
+- 56898ad: Return error from getPreview catch, and redirect on that error
+
+### Patch Changes
+
+- Updated dependencies [a529abf]
+  - @pantheon-systems/nextjs-kit@1.6.0-canary.1
+
+## 3.7.0-canary.0
+
+### Minor Changes
+
+- c32b6cb: Create Preview Error Route
+- b5fae1d: Removed preview-ribbon component and use the one from next-kit
+
+### Patch Changes
+
+- Updated dependencies [b5fae1d]
+  - @pantheon-systems/nextjs-kit@1.6.0-canary.0
+
 ## 3.6.0
 
 ### Minor Changes

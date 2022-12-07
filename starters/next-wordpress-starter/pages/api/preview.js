@@ -12,11 +12,11 @@ const preview = async (req, res) => {
 		return res.redirect('/500');
 	}
 
-	if (content_type !== 'posts' && content_type !== 'pages') {
+	if (content_type !== 'post' && content_type !== 'page') {
 		return res.redirect('/500');
 	}
 
-	if (content_type === 'posts') {
+	if (content_type === 'post') {
 		const post = await getPostPreview(id);
 		if (!post) {
 			return res.redirect('/500');
@@ -26,7 +26,7 @@ const preview = async (req, res) => {
 			key: id,
 		});
 	}
-	if (content_type === 'pages') {
+	if (content_type === 'page') {
 		const page = await getPagePreview(id);
 		if (!page) {
 			return res.redirect('/500');
@@ -37,7 +37,7 @@ const preview = async (req, res) => {
 		});
 	}
 
-	res.redirect(`/${content_type}/${uri}?timestamp=${Date.now()}`);
+	res.redirect(`/${content_type}s/${uri}?timestamp=${Date.now()}`);
 };
 
 export default preview;

@@ -23,6 +23,9 @@
 		}
 	},
 	"prettier": "@pantheon-systems/configs/prettier",
+	"typedoc": {
+		"entryPoint": "./index.ts"
+	},
 	"scripts": {
 		"clean": "pnpm dlx rimraf ./dist",
 		"dev": "vite",
@@ -47,6 +50,7 @@
 		"react": "^16.8.0",
 		"react-dom": "^16.8.0",
 		"typescript": "^4.8.4",
+		"vite": "^3.1.4",
 		"vite-plugin-dts": "^1.6.1"
 	},
 	"dependencies": {
