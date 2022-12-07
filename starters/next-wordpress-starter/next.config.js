@@ -39,8 +39,8 @@ if (process.env.WPGRAPHQL_URL === undefined) {
 imageDomain = imageDomain.replace(/\/$/, '');
 
 if (process.env.PANTHEON_ENVIRONMENT_URL) {
-	if (process.env.PANTHEON_ENVIRONMENT_URL.startsWith('live') === true) {
-		process.env.IS_LIVE_ENVIRONMENT = 'live';
+	if (process.env.PANTHEON_ENVIRONMENT_URL.startsWith('live')) {
+		process.env.IS_LIVE_ENVIRONMENT = true;
 	}
 }
 

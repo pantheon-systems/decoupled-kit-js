@@ -24,25 +24,24 @@ WPGRAPHQL_URL=https://my-wordpress-site.pantheon.site/wp/graphql
 IMAGE_DOMAIN=my-image-cdn.site
 ```
 
-## Connecting to Multidev Cloud Environments
+## Connecting to Multidev Environments
 
 To connect to a Multidev environment, the following helper environment variable
 can be used inside of `next.config.js`.
 
-- `IS_LIVE_ENVIRONMENT` - Automatically set to true if
-  `PANTHEON_ENVIRONMENT_URL` is live and false otherwise
+- `IS_LIVE_ENVIRONMENT` - True if `PANTHEON_ENVIRONMENT_URL` is live.
 
 Either the `PANTHEON_CMS_ENDPOINT` or `WPGRAPHQL_URL` will need to be set.
 
 The `PANTHEON_CMS_ENDPOINT` can be mocked for local development by defining it
-in the `.env.development.local`
+in the `.env.development.local`.
 
 ```
-PANTHEON_CMS_ENDPOINT=
+PANTHEON_CMS_ENDPOINT=dev-my-wordpress-site.pantheonsite.io
 ```
 
 Taking a look at how the `next.config.js` works, there is this logic which sets
-the `backendUrl`
+the `backendUrl`.
 
 ```
 let backendUrl, imageDomain;
