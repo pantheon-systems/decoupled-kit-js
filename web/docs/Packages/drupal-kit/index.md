@@ -1,6 +1,6 @@
 ---
 id: "index"
-title: "@pantheon-systems/drupal-kit"
+title: "decoupled-kit-js"
 sidebar_label: "Readme"
 sidebar_position: 0
 custom_edit_url: null
@@ -52,7 +52,7 @@ For more information, consult the full
 ## API Reference
 
 To see the API reference for `@pantheon-systems/drupal-kit`,
-[visit our monorepo](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Packages/drupal-kit/modules.md)
+[visit our docs site](https://decoupledkit.pantheon.io/docs/Packages/drupal-kit)
 
 ## Contributing
 

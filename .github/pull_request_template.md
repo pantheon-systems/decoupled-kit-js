@@ -15,3 +15,5 @@
 
 <!-- prettier-ignore -->
 Don't forget to [add a changeset](https://github.com/pantheon-systems/decoupled-kit-js#generating-a-changeset) if needed!
+<!-- Only changes to packages or starters require a changeset -->
+<!-- If changes are across starters/packages, please use separate changesets -->

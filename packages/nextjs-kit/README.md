@@ -41,7 +41,7 @@ import { utility } from '@pantheon-systems/nextjs-kit';
 ## API Reference
 
 To see the API reference for `@pantheon-systems/nextjs-kit`,
-[visit our monorepo](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Packages/nextjs-kit/modules.md)
+[visit our docs site](https://decoupledkit.pantheon.io/docs/Packages/nextjs-kit)
 
 ## Contributing
 

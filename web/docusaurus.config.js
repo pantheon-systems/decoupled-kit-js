@@ -7,7 +7,8 @@ const generateTypeDocOptions = require('./generateTypedocOptions.js');
 
 const drupalKitTypedocOptions = generateTypeDocOptions('drupal-kit', 0);
 const wordpressKitTypedocOptions = generateTypeDocOptions('wordpress-kit', 1);
-const nextjskitTypedocOptions = generateTypeDocOptions('nextjs-kit', 2);
+const cmskitTypedocOptions = generateTypeDocOptions('cms-kit', 2);
+const nextjskitTypedocOptions = generateTypeDocOptions('nextjs-kit', 3);
 const environmentUrl = process.env.PANTHEON_ENVIRONMENT_URL;
 
 /** @type {import('@docusaurus/types').Config} */
@@ -15,7 +16,7 @@ const config = {
 	title: 'Pantheon Decoupled Kit',
 	tagline:
 		'Utilities for building a decoupled front end that sources data from a CMS back end.',
-	url: environmentUrl ? `https://${environmentUrl}` : 'http://localhost:3000',
+	url: environmentUrl ? `https://decoupledkit.pantheon.io` : 'http://localhost:3000',
 	baseUrl: '/',
 	onBrokenLinks: 'warn',
 	onBrokenMarkdownLinks: 'warn',
@@ -51,6 +52,13 @@ const config = {
 						'docusaurus-plugin-typedoc',
 						{
 							id: 'api-3',
+							...cmskitTypedocOptions,
+						},
+					],
+					[
+						'docusaurus-plugin-typedoc',
+						{
+							id: 'api-4',
 							...nextjskitTypedocOptions,
 						},
 					],
@@ -65,7 +73,7 @@ const config = {
 				docs: {
 					sidebarPath: require.resolve('./sidebars.js'),
 					editUrl:
-						'https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=doc-update-template.md&labels=documentation&title=Update+docs',
+						'https://github.com/pantheon-systems/decoupled-kit-js/edit/canary/web/',
 				},
 				// blog: {
 				//   showReadingTime: true,
@@ -88,6 +96,7 @@ const config = {
 					content: 'headless, jamstack, decoupled, wordpress, drupal, webops',
 				},
 			],
+			image: 'img/decoupled.png',
 			navbar: {
 				title: 'Decoupled Kit',
 				logo: {
@@ -115,11 +124,11 @@ const config = {
 						items: [
 							{
 								label: 'Create a Decoupled Drupal Backend',
-								to: '/docs/Backend%20Starters/Decoupled%20Drupal/Creating%20a%20New%20Project',
+								to: '/docs/backend-starters/decoupled-drupal/creating-a-new-project',
 							},
 							{
 								label: 'Create a Decoupled WordPress Backend',
-								to: '/docs/Backend%20Starters/Decoupled%20WordPress/Creating%20a%20New%20Project',
+								to: '/docs/backend-starters/decoupled-drupal/creating-a-new-project',
 							},
 						],
 					},
@@ -128,15 +137,15 @@ const config = {
 						items: [
 							{
 								label: 'Gatsby + WordPress',
-								to: '/docs/Frontend%20Starters/Gatsby%20WordPress/Introduction',
+								to: '/docs/frontend-starters/gatsby/gatsby-wordpress/introduction',
 							},
 							{
 								label: 'Next.js + WordPress',
-								to: '/docs/Frontend%20Starters/Next.js/Next.js%20+%20WordPress/Introduction',
+								to: '/docs/frontend-starters/nextjs/nextjs-wordpress/introduction',
 							},
 							{
 								label: 'Next.js + Drupal',
-								to: '/docs/Frontend%20Starters/Next.js/Next.js%20+%20Drupal/Introduction',
+								to: 'docs/frontend-starters/nextjs/nextjs-drupal/introduction',
 							},
 						],
 					},
@@ -161,12 +170,16 @@ const config = {
 						title: 'Community',
 						items: [
 							{
-								label: 'Pantheon Community Forum',
-								href: 'https://discuss.pantheon.io/',
-							},
-							{
 								label: 'Slack',
 								href: 'https://slackin.pantheon.io/',
+							},
+							{
+								label: 'Pantheon decoupled-kit-js GitHub Discussions',
+								href: 'https://github.com/pantheon-systems/decoupled-kit-js/discussions',
+							},
+							{
+								label: 'Pantheon Community Forum',
+								href: 'https://discuss.pantheon.io/',
 							},
 							{
 								label: 'Twitter',

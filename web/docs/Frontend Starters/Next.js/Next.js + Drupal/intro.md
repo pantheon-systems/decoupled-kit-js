@@ -1,8 +1,8 @@
 ---
 id: 'next-drupal-intro'
 title: 'Introduction'
+slug: '/frontend-starters/nextjs/nextjs-drupal/introduction'
 sidebar_position: 0
-slug: '/Frontend Starters/Next.js/Next.js + Drupal/Introduction'
 ---
 
 ## Before You Begin

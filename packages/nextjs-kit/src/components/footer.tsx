@@ -1,11 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
-import { FooterMenuItem, hasParent } from '../types';
+import type { FooterMenuItem } from '../types';
 
-interface FooterMenuProps {
+export interface FooterMenuProps {
 	footerMenuItems: FooterMenuItem[];
 	children: JSX.Element;
 }
+
+/**
+ * Type predicate to determine if a FooterMenuItem has a parent or parentId
+ * @param {FooterMenuItem} item a `FooterMenuItem`
+ * @returns true if `parentId` or `parent` properties are found on the `FooterMenuItem`
+ */
+const hasParent = (item: FooterMenuItem): item is FooterMenuItem =>
+	item.parentId ? true : item.parent ? true : false;
 
 /**
  * This is a Footer component.
@@ -30,7 +38,7 @@ interface FooterMenuProps {
  * @param {React.ReactChild} props.children - an instance of React.ReactChild
  * @returns {JSX.Element} A footer component with a nav menu
  */
-const Footer: React.FC<FooterMenuProps> = ({
+export const Footer: React.FC<FooterMenuProps> = ({
 	footerMenuItems,
 	children,
 }: FooterMenuProps) => {
@@ -86,5 +94,3 @@ const Footer: React.FC<FooterMenuProps> = ({
 		</footer>
 	);
 };
-
-export default Footer;

@@ -29,7 +29,7 @@
 		"dev:gatsby-wp": "pnpm --filter './starters/gatsby-wordpress-starter' develop",
 		"dev:next-drupal": "pnpm --filter './starters/next-drupal-starter' dev",
 		"dev:next-wp": "pnpm --filter './starters/next-wordpress-starter' dev",
-		"generate-docs": "pnpm --filter './web' clear && pnpm --filter './web' build",
+		"generate-docs": "pnpm --filter './web' clear && pnpm --filter './web' generate-typedoc",
 		"postinstall": "pnpm ./scripts/post-install",
 		"serve:gatsby-wp": "pnpm --filter './starters/gatsby-wordpress-starter' serve",
 		"start:docs": "pnpm --filter './web' start",

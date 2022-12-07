@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import Header from '../../components/header';
+import { Header } from '../../components/header';
 
 /**
  * @vitest-environment jsdom
