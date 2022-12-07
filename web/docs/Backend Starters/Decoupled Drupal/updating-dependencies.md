@@ -1,4 +1,9 @@
-# Updating Drupal Dependencies
+---
+id: 'drupal-updating-dependencies'
+title: 'Updating Dependencies'
+slug: '/backend-starters/decoupled-drupal/updating-dependencies'
+sidebar_position: 2
+---
 
 Dependencies can be updated following two ways:
 

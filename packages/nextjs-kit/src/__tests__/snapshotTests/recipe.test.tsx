@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Recipe from '../../components/recipe';
+import { Recipe } from '../../components/recipe';
 import exampleRecipeData from '../data/exampleRecipeData.json';
 import { vi } from 'vitest';
 

@@ -1,8 +1,8 @@
 ---
 id: 'creating-new-wordpress-project'
 title: 'Creating a New WordPress Project'
-slug: '/Backend Starters/Decoupled WordPress/Creating a New Project'
-sidebar_position: 2
+slug: '/backend-starters/decoupled-wordpress/creating-a-new-project'
+sidebar_position: 0
 ---
 
 ### Installing using Upstream

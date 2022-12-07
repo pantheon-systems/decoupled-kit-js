@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import ContentWithImage from '../../components/contentWithImage';
+import { ContentWithImage } from '../../components/contentWithImage';
 import examplePostData from '../data/examplePostData.json';
 import { vi } from 'vitest';
 

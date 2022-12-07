@@ -23,6 +23,9 @@
 		}
 	},
 	"prettier": "@pantheon-systems/configs/prettier",
+	"typedoc": {
+		"entryPoint": "./index.ts"
+	},
 	"scripts": {
 		"clean": "pnpm dlx rimraf ./dist",
 		"dev": "vite",

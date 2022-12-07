@@ -1,10 +1,8 @@
 ---
 id: 'next-wordpress-customization'
 title: 'Your First Next.js & WordPress Customization'
+slug: '/frontend-starters/nextjs/nextjs-wordpress/your-first-nextjs-wordpress-customization'
 sidebar_position: 2
-slug:
-  '/Frontend Starters/Next.js/Next.js + WordPress/Your First Next.js & WordPress
-  Customization'
 ---
 
 ## Before You Begin
