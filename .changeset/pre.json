@@ -1,0 +1,16 @@
+{
+  "mode": "pre",
+  "tag": "canary",
+  "initialVersions": {
+    "@pantheon-systems/eslint-config": "0.0.0",
+    "@pantheon-systems/cms-kit": "0.1.0",
+    "@pantheon-systems/drupal-kit": "4.0.0",
+    "@pantheon-systems/nextjs-kit": "1.6.0",
+    "@pantheon-systems/wordpress-kit": "2.11.0",
+    "@pantheon-systems/gatsby-wordpress-starter": "2.6.1",
+    "@pantheon-systems/next-drupal-starter": "3.7.0",
+    "@pantheon-systems/next-wordpress-starter": "0.12.0",
+    "web": "1.0.0"
+  },
+  "changesets": []
+}
