@@ -1,8 +1,8 @@
 ---
 id: 'next-wordpress-troubleshooting'
 title: 'Troubleshooting'
+slug: '/frontend-starters/nextjs/nextjs-wordpress/troubleshooting'
 sidebar_position: 4
-slug: '/Frontend Starters/Next.js/Next.js + WordPress/Troubleshooting'
 ---
 
 ## Before You Begin

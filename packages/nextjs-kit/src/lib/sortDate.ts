@@ -1,4 +1,4 @@
-import { SortOptions } from '../types';
+import type { SortOptions } from '../types';
 
 /**
  * Sorts any date field of an object on a specific key in a direction of the users choice.

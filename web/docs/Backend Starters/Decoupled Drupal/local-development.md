@@ -1,4 +1,9 @@
-# Local Development
+---
+id: 'drupal-local-development'
+title: 'Local Development'
+slug: '/backend-starters/decoupled-drupal/local-development'
+sidebar_position: 1
+---
 
 ## Before You Begin
 

@@ -2,7 +2,7 @@
 id: 'next-static-vs-dynamic'
 title: 'Differences Between SSG, ISR, and SSR'
 sidebar_position: 0
-slug: '/Frontend Starters/Next.js/Next.js SSG, ISR, and SSR'
+slug: '/frontend-starters/nextjs/nextjs-ssr-isr-and-ssr'
 ---
 
 ## Before You Begin

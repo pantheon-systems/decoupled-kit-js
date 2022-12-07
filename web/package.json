@@ -14,6 +14,7 @@
 		"docusaurus": "docusaurus",
 		"start": "docusaurus start",
 		"build": "docusaurus build",
+		"generate-typedoc": "docusaurus generate-typedoc",
 		"swizzle": "docusaurus swizzle",
 		"deploy": "docusaurus deploy",
 		"clear": "docusaurus clear",
@@ -48,7 +49,7 @@
 	},
 	"devDependencies": {
 		"@types/react": "17.0.40",
-		"docusaurus-plugin-typedoc": "^0.17.5",
+		"docusaurus-plugin-typedoc": "^0.18.0",
 		"dotenv": "^16.0.2",
 		"typedoc": "^0.23.15",
 		"typedoc-plugin-markdown": "3.13.6"

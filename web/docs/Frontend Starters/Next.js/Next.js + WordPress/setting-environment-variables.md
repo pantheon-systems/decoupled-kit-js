@@ -2,8 +2,7 @@
 id: 'next-wordpress-env-vars'
 title: 'Setting Environment Variables'
 sidebar_position: 1
-slug:
-  '/Frontend Starters/Next.js/Next.js + WordPress/Setting Environment Variables'
+slug: '/frontend-starters/nextjs/nextjs-wordpress/setting-environment-variables'
 ---
 
 ## Local Development
