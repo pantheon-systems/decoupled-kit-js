@@ -1,5 +1,12 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.6.1-canary.1
+
+### Patch Changes
+
+- 7de1da8: Ensure `gatsby-source-wordpress` is on the latest version so that new
+  installs of WPGraphQL work with the starter
+
 ## 2.6.1-canary.0
 
 ### Patch Changes
