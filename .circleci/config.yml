@@ -103,11 +103,14 @@ jobs:
             git commit -m "Nightly audit run at $(date +"%T")"
             git push origin nightly-audit-$(date +"%D")
       - slack/notify:
+          branch_pattern: main, canary
           event: fail
           template: basic_fail_1
       - slack/notify:
+          branch_pattern: main, canary
           event: pass
           template: basic_success_1
+
 
       # create a PR
       - run:
