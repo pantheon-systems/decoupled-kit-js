@@ -64,8 +64,8 @@ if (process.env.WPGRAPHQL_URL === undefined) {
 ```
 
 In order to connect to a Multidev backend, this backendUrl will need to be
-updated. `PANTHEON_ENVIRONMENT_URL` has the data needed to source your backend
-and will need to be parsed according to your needs.
+updated. `PANTHEON_ENVIRONMENT_URL` includes the PR number or integration branch
+name and you can parse it to your needs.
 
 This code could be added under the above logic to connect to a Multidev that is
 prefixed with the branch name of my site.
