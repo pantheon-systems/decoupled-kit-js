@@ -41,9 +41,11 @@ jobs:
           name: Run Tests
           command: pnpm test
       - slack/notify:
+          branch_pattern: main, canary
           event: fail
           template: basic_fail_1
       - slack/notify:
+          branch_pattern: main, canary
           event: pass
           template: basic_success_1
 
