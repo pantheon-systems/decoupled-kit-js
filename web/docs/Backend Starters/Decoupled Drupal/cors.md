@@ -1,4 +1,9 @@
-# CORS Configuration
+---
+id: 'drupal-cors-configuration'
+title: 'CORS Configuration'
+slug: '/backend-starters/decoupled-drupal/cors-configuration'
+sidebar_position: 3
+---
 
 Your decoupled site may require configuration to allow
 [cross-origin resource sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).

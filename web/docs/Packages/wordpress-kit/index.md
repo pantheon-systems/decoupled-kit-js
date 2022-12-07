@@ -1,6 +1,6 @@
 ---
 id: "index"
-title: "@pantheon-systems/wordpress-kit"
+title: "decoupled-kit-js"
 sidebar_label: "Readme"
 sidebar_position: 0
 custom_edit_url: null
@@ -57,7 +57,7 @@ package.
 ## API Reference
 
 To see the API reference,
-[visit our monorepo](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Packages/wordpress-kit/modules.md)
+[visit our docs site](https://decoupledkit.pantheon.io/docs/Packages/wordpress-kit)
 
 ## Contributing
 

@@ -8,14 +8,12 @@
  */
 const generateTypedocOptions = (packageName, position) => {
 	const options = {
-		compilerOptions: {
-			noEmit: true,
-		},
-		entryPoints: [`../packages/${packageName}/src`],
+		// compilerOptions: { noEmit: true, },
+		entryPoints: [`../packages/${packageName}/`],
 		tsconfig: `../packages/${packageName}/tsconfig.json`,
 		readme: `../packages/${packageName}/README.md`,
 		out: `Packages/${packageName}`,
-		entryPointStrategy: 'expand',
+		entryPointStrategy: 'packages',
 		exclude: [
 			'**/main.*',
 			'**/node_modules/**',

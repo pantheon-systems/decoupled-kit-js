@@ -1,9 +1,8 @@
 ---
 id: 'next-drupal-cache-control-headers'
 title: 'Setting Cache-Control Headers'
+slug: '/frontend-starters/nextjs/nextjs-drupal/setting-cache-control-headers'
 sidebar_position: 4
-slug:
-  '/Frontend Starters/Next.js/Next.js + Drupal/Setting Cache-Control Headers'
 ---
 
 ## Before You Begin

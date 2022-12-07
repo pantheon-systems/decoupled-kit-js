@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { LinkProps } from '../types';
 
-interface HeaderProps {
+export interface HeaderProps {
 	navItems: LinkProps[];
 }
 
@@ -29,7 +29,7 @@ interface HeaderProps {
  * @returns {JSX.Element} A header component with a nav menu
  */
 
-const Header: React.FC<HeaderProps> = ({
+export const Header: React.FC<HeaderProps> = ({
 	navItems,
 }: HeaderProps): JSX.Element => {
 	return (
@@ -53,5 +53,3 @@ const Header: React.FC<HeaderProps> = ({
 		</div>
 	);
 };
-
-export default Header;

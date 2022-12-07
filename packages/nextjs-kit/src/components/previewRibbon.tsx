@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 // import Image from 'next/image';
 
-interface PreviewRibbonProps {
+export interface PreviewRibbonProps {
 	clearPreviewRoute?: string;
 }
 
-const PreviewRibbon: React.FC<PreviewRibbonProps> = ({
+export const PreviewRibbon: React.FC<PreviewRibbonProps> = ({
 	clearPreviewRoute = '/api/clear-preview',
 }) => {
 	const [show, setShow] = useState(true);
@@ -55,5 +55,3 @@ const PreviewRibbon: React.FC<PreviewRibbonProps> = ({
 		</div>
 	);
 };
-
-export default PreviewRibbon;

@@ -1,2 +1,2 @@
-export { sortChar } from './sortChar';
-export { sortDate } from './sortDate';
+export * from './sortChar';
+export * from './sortDate';

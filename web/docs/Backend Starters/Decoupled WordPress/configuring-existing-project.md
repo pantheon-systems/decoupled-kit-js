@@ -1,8 +1,8 @@
 ---
 id: 'configuring-existing-project'
 title: 'Configuring an Existing WordPress Project'
-slug: '/Backend Starters/Decoupled WordPress/Creating Existing Project'
-sidebar_position: 4
+slug: '/backend-starters/decoupled-wordpress/configuring-an-existing-project'
+sidebar_position: 2
 ---
 
 While we offer a back-end starter project for use with our front-end starter kits,
@@ -39,5 +39,5 @@ At this point, your WordPress site should be configured to work with one of our
 front-end starter kits. Within your front-end project you will also need to set
 the necessary environment variables to source data from your WordPress back-end.
 
-* [Instructions for the Next.js and WordPress starter kit](/docs/Frontend%20Starters/Next.js/Next.js%20+%20WordPress/Setting%20Environment%20Variables)
-* [Instructions for the Gatsby WordPress starter kit](docs/Frontend%20Starters/Gatsby%20WordPress/Setting%20Environment%20Variables)
+* [Instructions for the Next.js and WordPress starter kit](../../Frontend%20Starters/Next.js/Next.js%20%2B%20WordPress/setting-environment-variables.md)
+* [Instructions for the Gatsby WordPress starter kit](../../Frontend%20Starters/Gatsby/Gatsby%20%2B%20WordPress/setting-environment-variables.md)
