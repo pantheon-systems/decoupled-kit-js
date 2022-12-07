@@ -1,5 +1,12 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.7.0-canary.2
+
+### Patch Changes
+
+- Updated dependencies [276c9d2]
+  - @pantheon-systems/nextjs-kit@1.6.0-canary.2
+
 ## 3.7.0-canary.1
 
 ### Minor Changes
