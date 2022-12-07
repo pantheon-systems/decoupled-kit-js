@@ -1,5 +1,13 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.6.1
+
+### Patch Changes
+
+- 7de1da8: Ensure `gatsby-source-wordpress` is on the latest version so that new
+  installs of WPGraphQL work with the starter
+- 247d075: Add eslint@^7.5.0 as a dev dependency to satisfy a monorepo error
+
 ## 2.6.1-canary.1
 
 ### Patch Changes
