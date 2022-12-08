@@ -77,7 +77,7 @@ to my Multidev backend.
 const PREFIX = process.env.PANTHEON_ENVIRONMENT_URL.match(/^([^-]*-)[^-]*/)[0];
 if (!process.env.IS_LIVE_ENVIRONMENT) {
 	backendUrl = `https://${PREFIX}-${process.env.WPGRAPHQL_URL.replace(
-		/^https?:\/\/dev-/,
+		/^https?:\/\/[^-]*-/,
 		'',
 	)}`;
 }

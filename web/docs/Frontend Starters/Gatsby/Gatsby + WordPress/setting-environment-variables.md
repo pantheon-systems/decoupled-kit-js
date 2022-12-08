@@ -59,6 +59,6 @@ to my Multidev backend.
 **/
 const PREFIX = process.env.PANTHEON_ENVIRONMENT_URL.match(/^([^-]*-)[^-]*/)[0];
 if (!process.env.IS_LIVE_ENVIRONMENT) {
-	url = `https://${PREFIX}-${url.replace(/^https?:\/\/dev-/, '')}`;
+	url = `https://${PREFIX}-${url.replace(/^https?:\/\/[^-]*-/, '')}`;
 }
 ```
