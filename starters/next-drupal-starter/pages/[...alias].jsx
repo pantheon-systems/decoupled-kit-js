@@ -19,7 +19,7 @@ export default function CatchAllRoute({
 		if (pageData?.type === 'node--page') {
 			const {
 				title,
-				body: { value },
+				body: { processed },
 			} = pageData;
 			return (
 				<>
@@ -29,7 +29,7 @@ export default function CatchAllRoute({
 							<a className="font-normal">Pages &rarr;</a>
 						</Link>
 						<div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
-							<div dangerouslySetInnerHTML={{ __html: value }} />
+							<div dangerouslySetInnerHTML={{ __html: processed }} />
 						</div>
 					</article>
 				</>
@@ -39,7 +39,7 @@ export default function CatchAllRoute({
 		if (pageData?.type === 'node--article') {
 			const {
 				title,
-				body: { value },
+				body: { processed },
 				field_media_image,
 				thumbnail,
 			} = pageData;
@@ -48,7 +48,7 @@ export default function CatchAllRoute({
 			return (
 				<ContentWithImage
 					title={title}
-					content={value}
+					content={processed}
 					imageProps={
 						imgSrc
 							? {
