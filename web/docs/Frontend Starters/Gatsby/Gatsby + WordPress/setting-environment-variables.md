@@ -18,7 +18,7 @@ file, add a WPGRAPHQL_URL key with your WordPress GraphQL Endpoint as the value.
 For example:
 
 ```
-WPGRAPHQL_URL=https://my-wordpress-site.pantheon.site/wp/graphql
+WPGRAPHQL_URL=https://dev-my-wordpress-site.pantheon.site/wp/graphql
 ```
 
 ## Connecting to Multidev Environments
@@ -34,7 +34,7 @@ The `PANTHEON_CMS_ENDPOINT` can be mocked for local development by defining it
 in the `.env.development.local`.
 
 ```
-PANTHEON_CMS_ENDPOINT=dev-my-gatsby-site.pantheonsite.io
+PANTHEON_CMS_ENDPOINT=dev-my-wordpress-site.pantheonsite.io
 ```
 
 Taking a look at how the `gatsby-config.js` works, there is this logic which
@@ -54,14 +54,11 @@ prefixed with the branch name of my site.
 ```js
 /**
 * My branch is named `multi-demo`. I will parse the environment url for that substring
-* and use that, along with the `WPGRAPHQL_URL`, to create a `url` which points
+* and use that, along with the `url`, to create a variable which points
 to my Multidev backend.
 **/
 const PREFIX = process.env.PANTHEON_ENVIRONMENT_URL.match(/^([^-]*-)[^-]*/)[0];
 if (!process.env.IS_LIVE_ENVIRONMENT) {
-	url = `https://${PREFIX}-${process.env.WPGRAPHQL_URL.replace(
-		/^https?:\/\//,
-		'',
-	)}`;
+	url = `https://${PREFIX}-${url.replace(/^https?:\/\/dev-/, '')}`;
 }
 ```
