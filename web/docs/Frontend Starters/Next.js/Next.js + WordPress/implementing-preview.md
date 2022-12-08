@@ -7,7 +7,7 @@ sidebar_position: 2
 
 ## Before You Begin
 
-Make sure a `PREVIEW_SECRET` and proper credentials are properly configured on
+Make sure a `PREVIEW_SECRET` and valid credentials are properly configured on
 your WordPress instance. To do so, follow these instructions:
 
 1. Log in to your WordPress instance.
