@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/nextjs-kit",
-	"version": "1.6.0-canary.1",
+	"version": "1.6.0",
 	"description": "Pantheon Decoupled Kit's Next.js Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",

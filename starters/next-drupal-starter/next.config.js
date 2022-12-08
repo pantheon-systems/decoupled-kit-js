@@ -44,6 +44,12 @@ if (process.env.BACKEND_URL === undefined) {
 // remove trailing slash if it exists
 imageDomain = imageDomain.replace(/\/$/, '');
 
+if (process.env.PANTHEON_ENVIRONMENT_URL) {
+	if (process.env.PANTHEON_ENVIRONMENT_URL.startsWith('live')) {
+		process.env.IS_LIVE_ENVIRONMENT = true;
+	}
+}
+
 // expose FRONTEND_URL to properly set hrefLang
 // and remove trailing slash
 process.env.NEXT_PUBLIC_FRONTEND_URL = process.env.FRONTEND_URL

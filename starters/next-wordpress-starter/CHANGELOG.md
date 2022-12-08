@@ -1,5 +1,35 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 0.12.0
+
+### Minor Changes
+
+- b5fae1d: Added clear-preview api route, use the preview ribbon from next-kit
+- 33db558: Set Pantheon Environment Env Variables
+
+### Patch Changes
+
+- 9bf361a: Update preview route due singular values for content types.
+- 814ffa5: Document Additional Envars in `.env.example`
+- Updated dependencies [6e00a98]
+- Updated dependencies [276c9d2]
+- Updated dependencies [b5fae1d]
+- Updated dependencies [a529abf]
+  - @pantheon-systems/wordpress-kit@2.11.0
+  - @pantheon-systems/nextjs-kit@1.6.0
+
+## 0.12.0-canary.2
+
+### Minor Changes
+
+- 33db558: Set Pantheon Environment Env Variables
+
+### Patch Changes
+
+- 814ffa5: Document Additional Envars in `.env.example`
+- Updated dependencies [276c9d2]
+  - @pantheon-systems/nextjs-kit@1.6.0-canary.2
+
 ## 0.12.0-canary.1
 
 ### Patch Changes
