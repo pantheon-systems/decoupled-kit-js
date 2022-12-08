@@ -228,11 +228,12 @@ exports[`default <PageTemplate /> > should render with default profile page 1`] 
                 alt="Drupal on NPM"
                 data-entity-type="file"
                 data-entity-uuid="85adb65f-7111-42ae-aaa2-1d82e92d5785"
+                height="968"
+                loading="lazy"
                 src="/sites/default/files/inline-images/%40drupal-npm.png"
+                width="3138"
               />
             </p>
-            
-
           </div>
         </div>
       </article>
