@@ -1,5 +1,11 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.11.0
+
+### Minor Changes
+
+- 6e00a98: Use max-width to images
+
 ## 2.11.0-canary.0
 
 ### Minor Changes

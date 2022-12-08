@@ -2,4 +2,4 @@
 "@pantheon-systems/next-drupal-starter": minor
 ---
 
-Create Preview Error Route
+Set IS_LIVE_ENVIRONMENT Environment Variable
