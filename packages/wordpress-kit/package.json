@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/wordpress-kit",
-	"version": "2.11.0-canary.0",
+	"version": "2.11.0",
 	"description": "Pantheon Decoupled Kit's WordPress Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",

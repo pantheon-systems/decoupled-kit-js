@@ -1,5 +1,25 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.6.0
+
+### Minor Changes
+
+- 276c9d2: Removed type predicates from exports. Added some types that were
+  missing to exports. Update some TSDoc comments.
+- b5fae1d: Added Preview Ribbon component to be shared inside Next starters
+
+### Patch Changes
+
+- a529abf: Replaced `vite-plugin-dts` with `@rollup/plugin-typescript` for type
+  bundling
+
+## 1.6.0-canary.2
+
+### Minor Changes
+
+- 276c9d2: Removed type predicates from exports. Added some types that were
+  missing to exports. Update some TSDoc comments.
+
 ## 1.6.0-canary.1
 
 ### Patch Changes
