@@ -260,6 +260,8 @@ exports[`umami <PageTemplate /> > should render with umami profile page 1`] = `
             <p>
               Umami is a fictional food magazine that has been created to demonstrate how you might build a Drupal site using functionality provided 'out of the box'.
             </p>
+            
+
             <p>
               For more information visit 
               <a
@@ -269,6 +271,8 @@ exports[`umami <PageTemplate /> > should render with umami profile page 1`] = `
               </a>
               .
             </p>
+            
+
           </div>
         </div>
       </article>

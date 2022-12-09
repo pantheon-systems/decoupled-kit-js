@@ -30,7 +30,13 @@ process.env.PANTHEON_CMS_ENDPOINT =
 
 // Use URL from .env if it exists, otherwise fall back on the
 // Pantheon CMS endpoint
-const url = process.env.WPGRAPHQL_URL || process.env.PANTHEON_CMS_ENDPOINT
+let url = process.env.WPGRAPHQL_URL || process.env.PANTHEON_CMS_ENDPOINT
+
+if (process.env.PANTHEON_ENVIRONMENT_URL) {
+	if (process.env.PANTHEON_ENVIRONMENT_URL.startsWith('live')) {
+		process.env.IS_LIVE_ENVIRONMENT = true
+	}
+}
 
 module.exports = {
 	...(injectedOptions && injectedOptions),
