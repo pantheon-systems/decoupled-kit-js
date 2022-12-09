@@ -1,6 +1,8 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
+orbs:
+  slack: circleci/slack@4.10.1
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -38,6 +40,15 @@ jobs:
       - run:
           name: Run Tests
           command: pnpm test
+      - slack/notify:
+          branch_pattern: main, canary
+          event: fail
+          template: basic_fail_1
+      - slack/notify:
+          branch_pattern: main, canary
+          event: pass
+          template: basic_success_1
+
   audit:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
@@ -93,6 +104,16 @@ jobs:
             git add package.json pnpm-lock.yaml
             git commit -m "Nightly audit run at $(date +"%T")"
             git push origin nightly-audit-$(date +"%D")
+      - slack/notify:
+          branch_pattern: main, canary
+          event: fail
+          template: basic_fail_1
+      - slack/notify:
+          branch_pattern: main, canary
+          event: pass
+          template: basic_success_1
+
+
       # create a PR
       - run:
           name: open PR
@@ -103,7 +124,7 @@ jobs:
             https://api.github.com/repos/pantheon-systems/decoupled-kit-js/pulls \
             -d '{"head":"nightly-audit-'"$(date +"%D")"'","base":"canary", "title": "Nightly Audit on '"$(date +"%D")"'", "body": "Beep Boop 🤖 - Please merge me to dispose of npm gremlins! If this workflow failed, please check the artifacts in Circle CI for more information"}'
       - run: # should only fail if there are vulns to be addressed manually.
-          name: audit dependendies
+          name: audit dependencies
           command: pnpm audit --json > .pnpm_audit.json
       - store_artifacts:
           path: .pnpm_audit.json
@@ -117,10 +138,12 @@ workflows:
         - equal: [scheduled_pipeline, << pipeline.trigger_source >>]
         - equal: ['nightly audit', << pipeline.schedule.name >>]
     jobs:
-      - audit
+      - audit:
+          context: decoupled-slack-secrets
   orb-free-workflow:
     when:
       not: # Run test job when trigger is not the scheduled pipeline
         equal: [scheduled_pipeline, << pipeline.trigger_source >>]
     jobs:
-      - test
+      - test:
+          context: decoupled-slack-secrets
