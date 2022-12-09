@@ -1,9 +1,10 @@
 import { globalDrupalStateStores } from '../../lib/stores';
 
 const preview = async (req, res) => {
+	const { secret, slug, objectName } = req.query
 	// Check the secret and next parameters
 	// This secret should only be known to this API route and the CMS
-	if (req.query.secret !== process.env.PREVIEW_SECRET) {
+	if (secret !== process.env.PREVIEW_SECRET) {
 		return res.redirect(
 			`/preview-error/?error=${encodeURIComponent(
 				'Preview secret does not match',
@@ -13,7 +14,7 @@ const preview = async (req, res) => {
 		);
 	}
 
-	if (!req.query.slug) {
+	if (!slug) {
 		return res.redirect(
 			`/preview-error/?error=${encodeURIComponent(
 				'Requested preview path does not exist',
@@ -27,13 +28,12 @@ const preview = async (req, res) => {
 		const regex = new RegExp(`/${defaultLocale}/`);
 		return defaultLocale ? regex.test(req.url) : true;
 	});
-	const objectName = req.query.objectName;
 	// verify the content exists
 	let content;
 	try {
 		content = await store.getObjectByPath({
-			objectName: objectName,
-			path: req.query.slug,
+			objectName,
+			path: slug,
 		});
 	} catch (error) {
 		process.env.DEBUG_MODE &&
@@ -71,7 +71,7 @@ const preview = async (req, res) => {
 	}
 
 	// Redirect to the path from the fetched content
-	res.redirect(`${content.path.alias}?timestamp=${Date.now()}`);
+	res.redirect(`${content.path.alias || slug}?timestamp=${Date.now()}`);
 };
 
 export default preview;
