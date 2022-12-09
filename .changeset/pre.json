@@ -12,5 +12,10 @@
     "@pantheon-systems/next-wordpress-starter": "0.12.0",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "brown-oranges-reflect",
+    "forty-dragons-tell",
+    "light-colts-bake",
+    "odd-eels-grow"
+  ]
 }

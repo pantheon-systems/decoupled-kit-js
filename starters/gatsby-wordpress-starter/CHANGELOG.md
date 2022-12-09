@@ -1,5 +1,11 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 2.7.0-canary.0
+
+### Minor Changes
+
+- edee048: Set IS_LIVE_ENVIRONMENT Environment Variable
+
 ## 2.6.1
 
 ### Patch Changes
