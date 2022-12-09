@@ -2,7 +2,7 @@
 title: Surrogate Key Based Cache Purging
 id: next-wordpress-surrogate-key-caching
 slug: '/frontend-starters/nextjs/nextjs-wordpress/next-wordpress-surrogate-key-caching'
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 ## Before You Begin
