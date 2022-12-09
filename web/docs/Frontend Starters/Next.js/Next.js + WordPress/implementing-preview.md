@@ -12,8 +12,14 @@ your WordPress instance. To do so, follow these instructions:
 
 1. Log in to your WordPress instance.
 1. Navigate to **Users**
-1. Create a new user or use an existing one. This username is, your
+1. Create a new user or use an existing one. This username is your
    `WP_APPLICATION_USERNAME`
+
+   :::info This user must have at least the `Editor` role.
+
+   This is necessary in order for this user to be able to access revisions and
+   private posts.
+
 1. Hover over the username and click **Edit** to bring up the user's profile
    page.
 1. Scroll down to the Application Passwords section and name your application
