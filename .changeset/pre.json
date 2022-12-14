@@ -13,9 +13,13 @@
     "web": "1.0.0"
   },
   "changesets": [
+    "angry-rules-knock",
     "brown-oranges-reflect",
+    "eight-waves-behave",
     "forty-dragons-tell",
+    "large-donuts-mix",
     "light-colts-bake",
-    "odd-eels-grow"
+    "odd-eels-grow",
+    "poor-ducks-decide"
   ]
 }
