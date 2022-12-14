@@ -29,11 +29,11 @@ const setSurrogateKeyHeader = (
 				...new Set([...surrogateKeys, ...newSurrogateKeys]),
 			];
 			const uniqueSurrogateKeys = uniqueKeysArr.join(' ');
-			res.setHeader('Surrogate-Key-Raw', uniqueSurrogateKeys);
+			res.setHeader('Surrogate-Key', uniqueSurrogateKeys);
 			return uniqueSurrogateKeys;
 		} else if (typeof keys === 'string') {
 			// if the header is not present already and we have keys, set the header
-			res.setHeader('Surrogate-Key-Raw', keys);
+			res.setHeader('Surrogate-Key', keys);
 			return keys;
 		}
 	}

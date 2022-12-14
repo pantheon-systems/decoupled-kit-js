@@ -25,15 +25,15 @@ sequenceDiagram
     participant B as Next.js + drupal-kit
     participant C as Drupal
     A->>B: Request a page that fetches from Drupal
-    B->>C: Add Pantheon-Debug header to request
+    B->>C: Add Pantheon-SKey header to request
     C->>B: Surrogate-Key-Raw header included on response
-    B->>A: Set Surrogate-Key-Raw header on outgoing response to browser
+    B->>A: Set Surrogate-Key header on outgoing response to browser
 ```
 
 The `PantheonDrupalState` class from our `@pantheon-systems/drupal-kit` npm
-package includes an adapted fetch method which adds the `Pantheon-Debug` header
+package includes an adapted fetch method which adds the `Pantheon-SKey` header
 to each request to Drupal. Responses from Drupal will contain the
-`Surrogate-Key-Raw` header. With these keys, your frontend can be instructed to
+`Surrogate-Key` header. With these keys, your frontend can be instructed to
 purge content from a cache when the content in Drupal changes.
 
 ## How To Ensure Headers Are Set On Custom Routes
@@ -45,7 +45,7 @@ purge content from a cache when the content in Drupal changes.
   `@pantheon-systems/drupal-kit` in your application.
 - Use the fetch methods available (see
   [`drupal-kit`](../../../Packages/drupal-kit/) for more information). The
-  Surrogate-Key-Raw header should be set automatically if Drupal is configured
+  Surrogate-Key header should be set automatically if Drupal is configured
   correctly.
 - Pass the
   [`context.res`](https://nextjs.org/docs/api-reference/data-fetching/get-server-side-props#context-parameter)
