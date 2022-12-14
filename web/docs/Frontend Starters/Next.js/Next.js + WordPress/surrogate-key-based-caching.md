@@ -26,14 +26,14 @@ sequenceDiagram
     participant B as Next.js + wordpress-kit
     participant C as WordPress
     A->>B: Request a page that fetches from WordPress
-    B->>C: Add Pantheon-Debug header to request
+    B->>C: Add Pantheon-SKey header to request
     C->>B: Surrogate-Key-Raw header included on response
-    B->>A: Set Surrogate-Key-Raw header on outgoing response to browser
+    B->>A: Set Surrogate-Key header on outgoing response to browser
 ```
 
 The `GraphqlClientFactory` class from our `@pantheon-systems/wordpress-kit` npm
 package adds the `Pantheon-Debug` header to each request. Responses from
-WordPress will contain the `Surrogate-Key-Raw` header. With these keys, your
+WordPress will contain the `Surrogate-Key` header. With these keys, your
 frontend can be instructed to purge content from a cache when the content in
 WordPress changes.
 
@@ -46,7 +46,7 @@ WordPress changes.
   [Pantheon Advanced Page Cache plugin](https://wordpress.org/plugins/pantheon-advanced-page-cache/)
   installed and configured
 - The route fetches data using the `@pantheon-systems/wordpress-kit` Graphql
-  client or requests to WordPress include the `Pantheon-Debug: 1` header
+  client or requests to WordPress include the `Pantheon-SKey: 1` header
   - in order to see the headers, you must use the `client.rawRequest()` method.
 - The headers must be added to the outgoing response from Next.js in
   `getServerSideProps` (see

@@ -20,7 +20,7 @@ class GraphQLClientFactory {
 		this.options = {
 			...options,
 			headers: {
-				'pantheon-debug': '1',
+				'Pantheon-SKey': '1',
 			},
 		};
 	}
