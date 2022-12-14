@@ -53,7 +53,7 @@ export async function getPreview(context, node, params) {
 				);
 				if (!fetchedPreviewData?.data?.id) {
 					throw new Error(
-						'Unable to fetch preview data. Drafts that have been saved are not preview-able and must be published again before preview is possible.',
+						'Unable to fetch preview data. Previewing drafts is currently not supported. As an alternative, either preview while editing, or preview a saved revision.',
 					);
 				}
 
