@@ -1,7 +1,7 @@
 import { globalDrupalStateStores } from '../../lib/stores';
 
 const preview = async (req, res) => {
-	const { secret, slug, objectName } = req.query
+	const { secret, slug, objectName } = req.query;
 	// Check the secret and next parameters
 	// This secret should only be known to this API route and the CMS
 	if (secret !== process.env.PREVIEW_SECRET) {
@@ -37,7 +37,10 @@ const preview = async (req, res) => {
 		});
 	} catch (error) {
 		process.env.DEBUG_MODE &&
-			console.error('Error verifying preview content: ', error);
+			console.error(
+				'Error verifying preview content in pages/api/preview: ',
+				error,
+			);
 		return res.redirect(
 			`/preview-error/?error=${encodeURIComponent(
 				'Could not verify preview content',
