@@ -1,5 +1,14 @@
 # @pantheon-systems/next-drupal-starter
 
+## 3.8.0-canary.1
+
+### Patch Changes
+
+- d85500a: Add an error message to `getPreview` in case `fetchedPreviewData` is
+  a draft and has no `id`
+- Updated dependencies [4188395]
+  - @pantheon-systems/drupal-kit@4.1.0-canary.0
+
 ## 3.8.0-canary.0
 
 ### Minor Changes
