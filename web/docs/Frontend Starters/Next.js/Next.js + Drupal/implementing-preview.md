@@ -89,3 +89,8 @@ If you'd like to view another revision or edit, you may need to clear the
 current previewData cookie. This can be done by going to
 {YOUR_SITE_URL}/api/clear-preview. On successful clear, you will be redirected
 to the homepage.
+
+## Limitations
+
+Content that is saved as a draft can not be previewed. Currently, preview
+content must be published or a published revision.
