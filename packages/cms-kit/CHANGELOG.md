@@ -1,5 +1,12 @@
 # @pantheon-systems/cms-kit
 
+## 0.2.0
+
+### Minor Changes
+
+- 6dfcb56: `setSurrogateKeyHeader` now sets the `Surrogate-Key` header instead
+  of `Surrogate-Key-Raw`
+
 ## 0.2.0-canary.0
 
 ### Minor Changes
