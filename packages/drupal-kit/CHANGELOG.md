@@ -1,5 +1,17 @@
 # @pantheon-systems/drupal-kit
 
+## 4.1.0
+
+### Minor Changes
+
+- 4188395: `defaultFetch` now sets the `Pantheon-SKey` header instead of
+  `Pantheon-Debug`
+
+### Patch Changes
+
+- Updated dependencies [6dfcb56]
+  - @pantheon-systems/cms-kit@0.2.0
+
 ## 4.1.0-canary.0
 
 ### Minor Changes
