@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/cms-kit",
-	"version": "0.2.0-canary.0",
+	"version": "0.2.0",
 	"description": "Pantheon Decoupled Kit's CMS Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
