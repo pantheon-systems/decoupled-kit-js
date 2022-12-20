@@ -2,7 +2,7 @@
 id: 'styling-configuration'
 title: 'Styling Configuration'
 slug: '/frontend-starters/nextjs/nextjs-wordpress/styling-configuration'
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 ## Before You Begin

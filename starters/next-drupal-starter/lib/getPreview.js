@@ -34,7 +34,7 @@ export async function getPreview(context, node, params) {
 			if (context?.previewData?.resourceVersionId) {
 				process.env.DEBUG_MODE &&
 					console.log(
-						`Adding resource version ID param ${context?.previewData?.resourceVersionId}...`,
+						`Adding resource version ID param ${context.previewData.resourceVersionId}...`,
 					);
 				if (params === undefined) {
 					params = '';
@@ -51,10 +51,18 @@ export async function getPreview(context, node, params) {
 					}`,
 					requestInit,
 				);
+				if (!fetchedPreviewData?.data?.id) {
+					throw new Error(
+						'Unable to fetch preview data. Previewing drafts is currently not supported. As an alternative, either preview while editing, or preview a saved revision.',
+					);
+				}
 
 				if (fetchedPreviewData.errors) {
-					throw fetchedPreviewData?.errors.forEach(({ detail }) => detail);
+					throw new Error(
+						fetchedPreviewData?.errors.map(({ detail }) => detail).join('\n'),
+					);
 				}
+
 				const resourceKey = params
 					? `${fetchedPreviewData.data.id}-${params}`
 					: fetchedPreviewData.data.id;
@@ -68,7 +76,7 @@ export async function getPreview(context, node, params) {
 		return params;
 	} catch (error) {
 		process.env.DEBUG_MODE &&
-			console.error('Error verifying preview content: ', error);
+			console.error('Error verifying preview content in getPreview: ', error);
 
 		const [statusCode] = error.message.match(/([0-5]{3})$/gm) || [null];
 
@@ -96,7 +104,7 @@ export async function getPreview(context, node, params) {
 			error: true,
 			redirect: `/preview-error?error=${encodeURIComponent(
 				'Could not verify preview content',
-			)}&message=${encodeURIComponent('Unexpected error')}`,
+			)}&message=${encodeURIComponent(error.message || 'Unexpected error')}`,
 		};
 	}
 }

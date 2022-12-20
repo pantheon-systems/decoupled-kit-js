@@ -2,7 +2,7 @@
 id: 'next-wordpress-cache-control-headers'
 title: 'Setting Cache-Control Headers'
 slug: '/frontend-starters/nextjs/nextjs-wordpress/setting-cache-control-headers'
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 ## Before You Begin

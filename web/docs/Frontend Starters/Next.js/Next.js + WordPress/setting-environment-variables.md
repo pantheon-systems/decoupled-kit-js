@@ -42,7 +42,7 @@ PANTHEON_CMS_ENDPOINT=dev-my-wordpress-site.pantheonsite.io
 Taking a look at how the `next.config.js` works, there is this logic which sets
 the `backendUrl`.
 
-```
+```js
 let backendUrl, imageDomain;
 if (process.env.WPGRAPHQL_URL === undefined) {
 	backendUrl = `https://${process.env.PANTHEON_CMS_ENDPOINT}/wp/graphql`;
@@ -68,7 +68,7 @@ name and you can parse it to your needs.
 This code could be added under the above logic to connect to a Multidev that is
 prefixed with the branch name of my site.
 
-```
+```js
 /**
 * My branch is named `multi-demo`. I will parse the environment url for that substring
 * and use that, along with the `WPGRAPHQL_URL`, to create a `backendUrl` which points
@@ -76,7 +76,10 @@ to my Multidev backend.
 **/
 const PREFIX = process.env.PANTHEON_ENVIRONMENT_URL.match(/^([^-]*-)[^-]*/)[0];
 if (!process.env.IS_LIVE_ENVIRONMENT) {
-	backendUrl = `https://${PREFIX}-${process.env.WPGRAPHQL_URL.replace(/^https?:\/\//,'',)}`
+	backendUrl = `https://${PREFIX}-${process.env.WPGRAPHQL_URL.replace(
+		/^https?:\/\/[^-]*-/,
+		'',
+	)}`;
 }
 ```
 

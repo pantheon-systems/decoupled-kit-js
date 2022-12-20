@@ -1,5 +1,17 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.12.0-canary.0
+
+### Minor Changes
+
+- fa97a58: clients created with `GraphqlClientFactory` now set the
+  `Pantheon-SKey` header instead of `Pantheon-Debug`
+
+### Patch Changes
+
+- Updated dependencies [6dfcb56]
+  - @pantheon-systems/cms-kit@0.2.0-canary.0
+
 ## 2.11.0
 
 ### Minor Changes
