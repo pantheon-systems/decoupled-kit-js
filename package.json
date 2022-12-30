@@ -113,7 +113,8 @@
 			"loader-utils@>=1.0.0 <1.4.2": ">=1.4.2",
 			"engine.io@>=4.0.0 <6.2.1": ">=6.2.1",
 			"decode-uri-component@<0.2.1": ">=0.2.1",
-			"graphql-compose": "<=9.0.9"
+			"graphql-compose": "<=9.0.9",
+			"json5@<2.2.2": ">=2.2.2"
 		},
 		"peerDependencyRules": {
 			"ignoreMissing": [
