@@ -140,7 +140,7 @@ exports[`default <ArticleTemplate /> > should render with default profile articl
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
@@ -281,7 +281,7 @@ exports[`default <SSRArticlesListTemplate /> > should render with default profil
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"

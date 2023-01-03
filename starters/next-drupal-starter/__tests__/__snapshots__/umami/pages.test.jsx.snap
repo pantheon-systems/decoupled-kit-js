@@ -162,7 +162,7 @@ exports[`umami <PageListTemplate /> > should render with umami profile pages 1`]
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
@@ -322,7 +322,7 @@ exports[`umami <PageTemplate /> > should render with umami profile page 1`] = `
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
