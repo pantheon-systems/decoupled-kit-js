@@ -120,7 +120,7 @@ exports[`default <AuthApiExampleTemplate /> > should render a failure message if
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
@@ -245,7 +245,7 @@ exports[`default <AuthApiExampleTemplate /> > should render a success message if
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"

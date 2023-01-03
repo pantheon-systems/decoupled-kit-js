@@ -142,7 +142,7 @@ exports[`<PostListTemplate /> > should render with posts 1`] = `
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
@@ -287,7 +287,7 @@ exports[`<PostTemplate /> > should render a post 1`] = `
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"

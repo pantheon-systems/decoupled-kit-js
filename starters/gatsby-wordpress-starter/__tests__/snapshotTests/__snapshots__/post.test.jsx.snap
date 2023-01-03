@@ -174,7 +174,7 @@ exports[`<PostTemplate /> > should render with a post 1`] = `
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-purple-300 underline hover:text-blue-100"
             href="https://www.gatsbyjs.com"

@@ -80,7 +80,7 @@ exports[`Default <RecipeListTemplate /> > should render a 404 1`] = `
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
@@ -181,7 +181,7 @@ exports[`Default <RecipeTemplate /> > should render a 404 1`] = `
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"

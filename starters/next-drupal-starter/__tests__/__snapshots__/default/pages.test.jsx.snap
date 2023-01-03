@@ -128,7 +128,7 @@ exports[`default <PageListTemplate /> > should render with default profile pages
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
@@ -263,7 +263,7 @@ exports[`default <PageTemplate /> > should render with default profile page 1`] 
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
