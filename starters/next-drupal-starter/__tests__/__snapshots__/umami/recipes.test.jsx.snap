@@ -379,7 +379,7 @@ exports[`Umami <RecipeListTemplate /> > should render with umami profile recipes
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
@@ -673,7 +673,7 @@ exports[`Umami <RecipeTemplate /> > should render with a umami profile recipe 1`
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
