@@ -18,8 +18,8 @@ export default function PreviewError({ footerMenu, preview }) {
 					🛑 {error ? error : 'There was an error on the server'} 🛑
 				</h2>
 				<p className="text-center">{message}</p>
-				<Link href="/">
-					<a className="underline">Go Home</a>
+				<Link href="/" className="underline">
+					Go Home
 				</Link>
 			</div>
 		</Layout>

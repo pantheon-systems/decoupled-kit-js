@@ -11,6 +11,11 @@ import defaultProfileFooterMenu from '../data/defaultProfileMenuItemsMainData.js
 import umamiFooterMenu from '../data/umamiMenuItemsMainData.json';
 
 vi.mock('next/image');
+vi.mock('next/router', () => ({
+	useRouter: () => ({
+		locale: 'en',
+	}),
+}));
 
 /**
  * @vitest-environment jsdom

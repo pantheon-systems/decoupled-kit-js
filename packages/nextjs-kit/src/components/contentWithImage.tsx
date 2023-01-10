@@ -57,8 +57,10 @@ export const ContentWithImage: React.FC<ContentProps> = ({
 						<Image
 							priority
 							src={imageProps.src}
-							layout="fill"
-							objectFit="cover"
+							style={{
+								objectFit: 'cover',
+							}}
+							fill
 							alt={imageProps.alt ? imageProps.alt : title}
 						/>
 					</div>

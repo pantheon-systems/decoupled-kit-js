@@ -6,13 +6,18 @@ import React from 'react'
 /**
  * @vitest-environment jsdom
  */
+HTMLAnchorElement.prototype.click = vi.fn()
 
 describe(`<PaginationPostsExample />`, () => {
+	const oldLocation = window.location
 	beforeEach(() => {
 		location = {
 			pathname: '/examples/pagination/1',
 			state: { breakOpen: false },
 		}
+	})
+	afterEach(() => {
+		location = oldLocation
 	})
 	it('should render the paginated data', () => {
 		const { asFragment } = render(

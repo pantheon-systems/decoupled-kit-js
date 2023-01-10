@@ -16,7 +16,7 @@ exports[`<SSGISRExampleTemplate /> > should render with posts 1`] = `
             class="ps-mr-auto"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/"
             >
               🏠 Home
@@ -26,7 +26,7 @@ exports[`<SSGISRExampleTemplate /> > should render with posts 1`] = `
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/posts"
             >
               📰 Posts
@@ -36,7 +36,7 @@ exports[`<SSGISRExampleTemplate /> > should render with posts 1`] = `
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/pages"
             >
               📑 Pages
@@ -46,7 +46,7 @@ exports[`<SSGISRExampleTemplate /> > should render with posts 1`] = `
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples

@@ -16,7 +16,7 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
             class="ps-mr-auto"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/"
             >
               🏠 Home
@@ -26,7 +26,7 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/posts"
             >
               📰 Posts
@@ -36,7 +36,7 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/pages"
             >
               📑 Pages
@@ -46,7 +46,7 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -64,12 +64,15 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
         <h1>
           API Authorization Example
         </h1>
-        <span
-          class="w-full underline cursor-pointer"
+        <a
           href="/"
         >
-          Home →
-        </span>
+          <span
+            class="w-full underline cursor-pointer"
+          >
+            Home →
+          </span>
+        </a>
         <div
           class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
         >
@@ -146,7 +149,7 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
             class="ps-mr-auto"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/"
             >
               🏠 Home
@@ -156,7 +159,7 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/posts"
             >
               📰 Posts
@@ -166,7 +169,7 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/pages"
             >
               📑 Pages
@@ -176,7 +179,7 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -194,12 +197,15 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
         <h1>
           API Authorization Example
         </h1>
-        <span
-          class="w-full underline cursor-pointer"
+        <a
           href="/"
         >
-          Home →
-        </span>
+          <span
+            class="w-full underline cursor-pointer"
+          >
+            Home →
+          </span>
+        </a>
         <div
           class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
         >
