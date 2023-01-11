@@ -51,17 +51,19 @@ export const Footer: React.FC<FooterMenuProps> = ({
 					menuArr.push(
 						<ul key={i}>
 							<li className="ps-list-disc ps-text-blue-300">
-								<Link href={footerMenuItems[i].href}>
-									<a className="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300">
-										{footerMenuItems[i].linkText}
-									</a>
+								<Link
+									href={footerMenuItems[i].href}
+									className="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+								>
+									{footerMenuItems[i].linkText}
 								</Link>
 							</li>
 							<li className="ps-list-disc ps-text-blue-300 ps-ml-3">
-								<Link href={footerMenuItems[i + 1].href}>
-									<a className="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300">
-										{footerMenuItems[i + 1].linkText}
-									</a>
+								<Link
+									href={footerMenuItems[i + 1].href}
+									className="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+								>
+									{footerMenuItems[i + 1].linkText}
 								</Link>
 							</li>
 						</ul>,
@@ -71,10 +73,11 @@ export const Footer: React.FC<FooterMenuProps> = ({
 				} else {
 					menuArr.push(
 						<li key={i} className="ps-list-disc ps-text-blue-300">
-							<Link href={footerMenuItems[i].href}>
-								<a className="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300">
-									{footerMenuItems[i].linkText}
-								</a>
+							<Link
+								href={footerMenuItems[i].href}
+								className="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+							>
+								{footerMenuItems[i].linkText}
 							</Link>
 						</li>,
 					);

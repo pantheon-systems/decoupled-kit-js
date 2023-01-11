@@ -25,10 +25,11 @@ export const PreviewRibbon: React.FC<PreviewRibbonProps> = ({
 						<span className="ps-mr-auto ps-self-center">
 							Preview Mode Enabled
 						</span>
-						<Link href={clearPreviewRoute}>
-							<a className="ps-justify-self-end ps-border ps-text-black ps-border-black ps-w-fit ps-px-4 ps-py-2 ps-mr-12 ps-bg-yellow-300">
-								Exit Preview Mode
-							</a>
+						<Link
+							href={clearPreviewRoute}
+							className="ps-justify-self-end ps-border ps-text-black ps-border-black ps-w-fit ps-px-4 ps-py-2 ps-mr-12 ps-bg-yellow-300"
+						>
+							Exit Preview Mode
 						</Link>
 					</>
 				)}
