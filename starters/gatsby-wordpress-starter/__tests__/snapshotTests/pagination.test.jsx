@@ -10,8 +10,8 @@ import React from 'react'
 describe(`<PaginationPostsExample />`, () => {
 	// const realLocation = location
 	beforeEach(() => {
-		delete global.window.location
-		global.window.location = {
+		delete window.location
+		window.location = {
 			pathname: '/examples/pagination/1',
 			state: { breakOpen: false },
 		}
@@ -42,7 +42,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={global.location}
+				location={window.location}
 			/>,
 		)
 		expect(asFragment()).toMatchSnapshot()
@@ -56,7 +56,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={global.location}
+				location={window.location}
 			/>,
 		)
 		expect(screen.getByTestId('link-wrapper true false')).not.toBe(null)
@@ -71,7 +71,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={global.location}
+				location={window.location}
 			/>,
 		)
 		fireEvent.click(screen.getByText('>'))
@@ -88,7 +88,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={global.location}
+				location={window.location}
 			/>,
 		)
 		expect(screen.queryAllByText('6')).toHaveLength(0)
@@ -104,7 +104,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={global.location}
+				location={window.location}
 			/>,
 		)
 		fireEvent.click(screen.getByText('>'))
@@ -119,7 +119,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={global.location}
+				location={window.location}
 			/>,
 		)
 		fireEvent.click(screen.getByText('>'))
