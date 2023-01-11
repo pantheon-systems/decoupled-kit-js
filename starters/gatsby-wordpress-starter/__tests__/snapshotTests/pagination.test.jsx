@@ -24,7 +24,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={window.location}
+				location={location}
 			/>,
 		)
 		expect(asFragment()).toMatchSnapshot()
@@ -38,7 +38,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={window.location}
+				location={location}
 			/>,
 		)
 		expect(screen.getByTestId('link-wrapper true false')).not.toBe(null)
@@ -53,7 +53,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={window.location}
+				location={location}
 			/>,
 		)
 		fireEvent.click(screen.getByText('>'))
@@ -70,7 +70,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={window.location}
+				location={location}
 			/>,
 		)
 		expect(screen.queryAllByText('6')).toHaveLength(0)
@@ -86,7 +86,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={window.location}
+				location={location}
 			/>,
 		)
 		fireEvent.click(screen.getByText('>'))
@@ -101,7 +101,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={window.location}
+				location={location}
 			/>,
 		)
 		fireEvent.click(screen.getByText('>'))
