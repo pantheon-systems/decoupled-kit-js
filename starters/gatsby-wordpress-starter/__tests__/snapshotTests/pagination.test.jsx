@@ -8,12 +8,31 @@ import React from 'react'
  */
 
 describe(`<PaginationPostsExample />`, () => {
+	// const realLocation = location
 	beforeEach(() => {
-		location = {
+		delete global.window.location
+		global.window.location = {
 			pathname: '/examples/pagination/1',
 			state: { breakOpen: false },
 		}
 	})
+
+	// beforeEach(() => {
+	// 	delete global.location
+
+	// 	global.location = {
+	// 		assign: vi.fn(),
+	// 		pathname: '/examples/pagination/1',
+	// 		state: { breakOpen: false },
+	// 		push: vi.fn(),
+	// 	}
+	// 	// location = {
+	// 	// 	pathname: '/examples/pagination/1',
+	// 	// 	state: { breakOpen: false },
+	// 	// }
+	// 	// 	const assignSpy = vi.fn()
+	// })
+
 	it('should render the paginated data', () => {
 		const { asFragment } = render(
 			<PaginationPostsExample
@@ -23,7 +42,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={location}
+				location={global.location}
 			/>,
 		)
 		expect(asFragment()).toMatchSnapshot()
@@ -37,7 +56,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={location}
+				location={global.location}
 			/>,
 		)
 		expect(screen.getByTestId('link-wrapper true false')).not.toBe(null)
@@ -52,7 +71,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={location}
+				location={global.location}
 			/>,
 		)
 		fireEvent.click(screen.getByText('>'))
@@ -69,7 +88,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={location}
+				location={global.location}
 			/>,
 		)
 		expect(screen.queryAllByText('6')).toHaveLength(0)
@@ -85,7 +104,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={location}
+				location={global.location}
 			/>,
 		)
 		fireEvent.click(screen.getByText('>'))
@@ -100,7 +119,7 @@ describe(`<PaginationPostsExample />`, () => {
 					pagPosts: data,
 					breakpoints: { start: 5, end: 8, add: 3 },
 				}}
-				location={location}
+				location={global.location}
 			/>,
 		)
 		fireEvent.click(screen.getByText('>'))

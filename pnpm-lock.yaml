@@ -219,7 +219,7 @@ importers:
       '@babel/core': ^7.19.3
       '@pantheon-systems/wordpress-kit': workspace:*
       '@tailwindcss/typography': ^0.5.7
-      '@testing-library/react': 12.1.5
+      '@testing-library/react': 13.4.0
       '@vitejs/plugin-react': ^2.1.0
       '@vitest/coverage-c8': ^0.24.1
       autoprefixer: ^10.4.12
@@ -240,8 +240,8 @@ importers:
       mitt: ^3.0.0
       postcss: ^8.4.16
       prettier: ^2.7.1
-      react: 17.0.2
-      react-dom: 17.0.2
+      react: 18.2.0
+      react-dom: 18.2.0
       tailwindcss: ^3.1.8
       typeface-merriweather: 1.1.13
       typeface-montserrat: 1.1.13
@@ -249,10 +249,10 @@ importers:
       vitest: ^0.23.4
       webpack: ^5.74.0
     dependencies:
-      gatsby: 4.24.8_sfoxds7t5ydpegc3knd667wn6m
-      gatsby-plugin-image: 2.24.0_hp3tf7jzlr4nhpmcghtnegjaau
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
+      gatsby-plugin-image: 2.24.0_qn3rtzkfhq26eyxjlbrwyvonqu
       gatsby-plugin-manifest: 4.24.0_veoy6eu37d3zgrms3x37tdgtzy
-      gatsby-plugin-offline: 5.24.0_7xvwnmfsrzv33leu54btuohidy
+      gatsby-plugin-offline: 5.24.0_gqtqbalxbuarcpxtzp4oqnq4rq
       gatsby-plugin-pnpm: 1.2.10_gatsby@4.24.8
       gatsby-plugin-postcss: 5.24.0_ruydbsopkhasrplhtpo4ztkn4a
       gatsby-plugin-sharp: 4.24.0_veoy6eu37d3zgrms3x37tdgtzy
@@ -262,15 +262,15 @@ importers:
       graphql: 15.8.0
       lodash: 4.17.21
       mitt: 3.0.0
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
       typeface-merriweather: 1.1.13
       typeface-montserrat: 1.1.13
     devDependencies:
       '@babel/core': 7.20.5
       '@pantheon-systems/wordpress-kit': link:../../packages/wordpress-kit
       '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
-      '@testing-library/react': 12.1.5_sfoxds7t5ydpegc3knd667wn6m
+      '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       '@vitejs/plugin-react': 2.2.0_vite@3.2.4
       '@vitest/coverage-c8': 0.24.5
       autoprefixer: 10.4.13_postcss@8.4.19
@@ -1919,6 +1919,13 @@ packages:
     dependencies:
       regenerator-runtime: 0.13.11
 
+  /@babel/runtime/7.20.7:
+    resolution: {integrity: sha512-UF0tvkUtxwAgZ5W/KrkHf0Rn0fdnLDU9ScxBrEVNUprE/MzirjK4MJUX1/BVDv00Sv8cljtukVK1aky++X1SjQ==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.13.11
+    dev: true
+
   /@babel/template/7.18.10:
     resolution: {integrity: sha512-TI+rCtooWHr3QJ27kJxfjutghu44DLnasDMwpDqCXVTal9RLp3RSYNh4NdBrRP2cQAoG9A8juOQl6P6oZG4JxA==}
     engines: {node: '>=6.9.0'}
@@ -3431,7 +3438,7 @@ packages:
       jimp-compact: 0.16.1-2
     dev: false
 
-  /@gatsbyjs/reach-router/1.3.9_sfoxds7t5ydpegc3knd667wn6m:
+  /@gatsbyjs/reach-router/1.3.9_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-/354IaUSM54xb7K/TxpLBJB94iEAJ3P82JD38T8bLnIDWF+uw8+W/82DKnQ7y24FJcKxtVmG43aiDLG88KSuYQ==}
     peerDependencies:
       react: 15.x || 16.x || 17.x || 18.x
@@ -3439,8 +3446,8 @@ packages:
     dependencies:
       invariant: 2.2.4
       prop-types: 15.8.1
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
       react-lifecycles-compat: 3.0.4
     dev: false
 
@@ -5417,6 +5424,20 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
+  /@testing-library/dom/8.19.1:
+    resolution: {integrity: sha512-P6iIPyYQ+qH8CvGauAqanhVnjrnRe0IZFSYCeGkSRW9q3u8bdVn2NPI+lasFyVsEQn1J/IFmp5Aax41+dAP9wg==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@babel/code-frame': 7.18.6
+      '@babel/runtime': 7.20.7
+      '@types/aria-query': 5.0.1
+      aria-query: 5.1.3
+      chalk: 4.1.2
+      dom-accessibility-api: 0.5.15
+      lz-string: 1.4.4
+      pretty-format: 27.5.1
+    dev: true
+
   /@testing-library/react/12.1.5_sfoxds7t5ydpegc3knd667wn6m:
     resolution: {integrity: sha512-OfTXCJUFgjd/digLUuPxa0+/3ZxsQmE7ub9kcbW/wi96Bh3o/p5vrETcBGfP17NWPGqeYYl5LTRpwyGoMC4ysg==}
     engines: {node: '>=12'}
@@ -5429,6 +5450,20 @@ packages:
       '@types/react-dom': 17.0.18
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
+    dev: true
+
+  /@testing-library/react/13.4.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-sXOGON+WNTh3MLE9rve97ftaZukN3oNf2KjDy7YTx6hcTO2uuLHuCGynMDhFwGw/jYf4OJ2Qk0i4i79qMNNkyw==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      '@babel/runtime': 7.20.7
+      '@testing-library/dom': 8.19.1
+      '@types/react-dom': 18.0.10
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: true
 
   /@tokenizer/token/0.1.1:
@@ -5477,6 +5512,10 @@ packages:
 
   /@types/aria-query/4.2.2:
     resolution: {integrity: sha512-HnYpAE1Y6kRyKM/XkEuiRQhTHvkzMBurTHnpFLYLBGPIylZNPs9jJcuOOYWxPLJCSEtmZT0Y8rHDokKN7rRTig==}
+    dev: true
+
+  /@types/aria-query/5.0.1:
+    resolution: {integrity: sha512-XTIieEY+gvJ39ChLcB4If5zHtPxt3Syj5rgZR+e1ctpmK8NjPf0zFqsz4JpLJT0xla9GFDKjy8Cpu331nrmE1Q==}
     dev: true
 
   /@types/babel__core/7.1.20:
@@ -5813,6 +5852,12 @@ packages:
 
   /@types/react-dom/17.0.18:
     resolution: {integrity: sha512-rLVtIfbwyur2iFKykP2w0pl/1unw26b5td16d5xMgp7/yjTHomkyxPYChFoCr/FtEX1lN9wY6lFj1qvKdS5kDw==}
+    dependencies:
+      '@types/react': 17.0.40
+    dev: true
+
+  /@types/react-dom/18.0.10:
+    resolution: {integrity: sha512-E42GW/JA4Qv15wQdqJq8DL4JhNpB3prJgjgapN3qJT9K2zO5IIAQh4VXvCEDupoqAwnz0cY4RlXeC/ajX5SFHg==}
     dependencies:
       '@types/react': 17.0.40
     dev: true
@@ -6684,7 +6729,7 @@ packages:
   /aria-query/5.1.3:
     resolution: {integrity: sha512-R5iJ5lkuHybztUfuOAznmboyjWq8O6sqNqtK7CLOqdydi54VNbORp49mb14KbWgG1QD3JFO9hJdZ+y4KutfdOQ==}
     dependencies:
-      deep-equal: 2.1.0
+      deep-equal: 2.2.0
     dev: true
 
   /array-flatten/1.1.1:
@@ -6845,7 +6890,7 @@ packages:
   /axios/0.21.4_debug@3.2.7:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
-      follow-redirects: 1.15.2
+      follow-redirects: 1.15.2_debug@3.2.7
     transitivePeerDependencies:
       - debug
     dev: false
@@ -7047,7 +7092,7 @@ packages:
       '@babel/core': 7.20.5
       '@babel/runtime': 7.20.6
       '@babel/types': 7.20.5
-      gatsby: 4.24.8_sfoxds7t5ydpegc3knd667wn6m
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
       gatsby-core-utils: 3.24.0
     dev: false
 
@@ -9074,15 +9119,17 @@ packages:
       type-detect: 4.0.8
     dev: true
 
-  /deep-equal/2.1.0:
-    resolution: {integrity: sha512-2pxgvWu3Alv1PoWEyVg7HS8YhGlUFUV7N5oOvfL6d+7xAmLSemMwv/c8Zv/i9KFzxV5Kt5CAvQc70fLwVuf4UA==}
+  /deep-equal/2.2.0:
+    resolution: {integrity: sha512-RdpzE0Hv4lhowpIUKKMJfeH6C1pXdtT1/it80ubgWqwI3qpuxUBpC1S4hnHg+zjnuOoDkzUtUCEEkG+XG5l3Mw==}
     dependencies:
       call-bind: 1.0.2
       es-get-iterator: 1.1.2
       get-intrinsic: 1.1.3
       is-arguments: 1.1.1
+      is-array-buffer: 3.0.1
       is-date-object: 1.0.5
       is-regex: 1.1.4
+      is-shared-array-buffer: 1.0.2
       isarray: 2.0.5
       object-is: 1.1.5
       object-keys: 1.1.1
@@ -9336,6 +9383,10 @@ packages:
 
   /dom-accessibility-api/0.5.14:
     resolution: {integrity: sha512-NMt+m9zFMPZe0JcY9gN224Qvk6qLIdqex29clBvc/y75ZBX9YA9wNK3frsYvu2DI1xcCIwxwnX+TlsJ2DSOADg==}
+    dev: true
+
+  /dom-accessibility-api/0.5.15:
+    resolution: {integrity: sha512-8o+oVqLQZoruQPYy3uAAQtc6YbtSiRq5aPJBhJ82YTJRHvI6ofhYAkC81WmjFTnfUbqg6T3aCglIpU9p/5e7Cw==}
     dev: true
 
   /dom-converter/0.2.0:
@@ -11074,6 +11125,18 @@ packages:
         optional: true
     dev: false
 
+  /follow-redirects/1.15.2_debug@3.2.7:
+    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: 3.2.7
+    dev: false
+
   /for-each/0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
     dependencies:
@@ -11346,7 +11409,7 @@ packages:
       core-js-compat: 3.9.0
     dev: false
 
-  /gatsby-link/4.24.1_mnjsnnczdof67o4nu636xxg6cm:
+  /gatsby-link/4.24.1_jrmehtgkntpgvrzvp7eiismjfa:
     resolution: {integrity: sha512-j8IcxlCzBX5J8srDn4wtxSKm8V+HM8GXfhVSMuRREiuaOxNNjhFOhfwyydrS+gYnEL8gVDOs9QTPEc2n+cn1fg==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
@@ -11354,12 +11417,12 @@ packages:
       react: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
       react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
     dependencies:
-      '@gatsbyjs/reach-router': 1.3.9_sfoxds7t5ydpegc3knd667wn6m
+      '@gatsbyjs/reach-router': 1.3.9_biqbaboplfbrettd7655fr4n2y
       '@types/reach__router': 1.3.11
       gatsby-page-utils: 2.24.1
       prop-types: 15.8.1
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /gatsby-page-utils/2.24.1:
@@ -11405,10 +11468,10 @@ packages:
     dependencies:
       '@babel/runtime': 7.20.6
       escape-string-regexp: 1.0.5
-      gatsby: 4.24.8_sfoxds7t5ydpegc3knd667wn6m
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
     dev: false
 
-  /gatsby-plugin-image/2.24.0_hp3tf7jzlr4nhpmcghtnegjaau:
+  /gatsby-plugin-image/2.24.0_qn3rtzkfhq26eyxjlbrwyvonqu:
     resolution: {integrity: sha512-btsUxoVX/tQM09LD36XM9kYNbzZzkfBb3qCiaA+w1dEoArKraUYtmcmoMXW4rep7z8Uo7CmutSRD2GHNF0abFg==}
     peerDependencies:
       '@babel/core': ^7.12.3
@@ -11429,15 +11492,15 @@ packages:
       chokidar: 3.5.3
       common-tags: 1.8.2
       fs-extra: 10.1.0
-      gatsby: 4.24.8_sfoxds7t5ydpegc3knd667wn6m
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
       gatsby-core-utils: 3.24.0
       gatsby-plugin-sharp: 4.24.0_veoy6eu37d3zgrms3x37tdgtzy
       gatsby-plugin-utils: 3.18.0_veoy6eu37d3zgrms3x37tdgtzy
       gatsby-source-filesystem: 4.24.0_gatsby@4.24.8
       objectFitPolyfill: 2.3.5
       prop-types: 15.8.1
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     transitivePeerDependencies:
       - graphql
       - supports-color
@@ -11450,7 +11513,7 @@ packages:
       gatsby: ^4.0.0-next
     dependencies:
       '@babel/runtime': 7.20.6
-      gatsby: 4.24.8_sfoxds7t5ydpegc3knd667wn6m
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
       gatsby-core-utils: 3.24.0
       gatsby-plugin-utils: 3.18.0_veoy6eu37d3zgrms3x37tdgtzy
       semver: 7.3.8
@@ -11459,7 +11522,7 @@ packages:
       - graphql
     dev: false
 
-  /gatsby-plugin-offline/5.24.0_7xvwnmfsrzv33leu54btuohidy:
+  /gatsby-plugin-offline/5.24.0_gqtqbalxbuarcpxtzp4oqnq4rq:
     resolution: {integrity: sha512-NiTLxlFOQSpBz7ZXYEtQB1GQOGoO9Xzg/COUkGXoCKlVW84EzXLRiyc01lZcdBk125maE3L8ZAqsql2k8smxLA==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
@@ -11469,13 +11532,13 @@ packages:
     dependencies:
       '@babel/runtime': 7.20.6
       cheerio: 1.0.0-rc.12
-      gatsby: 4.24.8_sfoxds7t5ydpegc3knd667wn6m
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
       gatsby-core-utils: 3.24.0
       glob: 7.2.3
       idb-keyval: 3.2.0
       lodash: 4.17.21
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
       workbox-build: 4.3.1
     dev: false
 
@@ -11491,7 +11554,7 @@ packages:
       chokidar: 3.5.3
       fs-exists-cached: 1.0.0
       fs-extra: 10.1.0
-      gatsby: 4.24.8_sfoxds7t5ydpegc3knd667wn6m
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
       gatsby-core-utils: 3.24.0
       gatsby-page-utils: 2.24.1
       gatsby-plugin-utils: 3.18.0_veoy6eu37d3zgrms3x37tdgtzy
@@ -11509,7 +11572,7 @@ packages:
     peerDependencies:
       gatsby: ~2.x.x || ~3.x.x || ~4.x.x
     dependencies:
-      gatsby: 4.24.8_sfoxds7t5ydpegc3knd667wn6m
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
       lodash.get: 4.4.2
       lodash.uniq: 4.5.0
     dev: false
@@ -11522,7 +11585,7 @@ packages:
       postcss: ^8.0.5
     dependencies:
       '@babel/runtime': 7.20.6
-      gatsby: 4.24.8_sfoxds7t5ydpegc3knd667wn6m
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
       postcss: 8.4.19
       postcss-loader: 4.3.0_upg3rk2kpasnbk27hkqapxaxfq
     transitivePeerDependencies:
@@ -11542,7 +11605,7 @@ packages:
       debug: 4.3.4
       filenamify: 4.3.0
       fs-extra: 10.1.0
-      gatsby: 4.24.8_sfoxds7t5ydpegc3knd667wn6m
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
       gatsby-core-utils: 3.24.0
       gatsby-plugin-utils: 3.18.0_veoy6eu37d3zgrms3x37tdgtzy
       lodash: 4.17.21
@@ -11569,7 +11632,7 @@ packages:
       '@babel/preset-typescript': 7.18.6_@babel+core@7.20.5
       '@babel/runtime': 7.20.6
       babel-plugin-remove-graphql-queries: 4.24.0_o7opgze2s2qnpp7jiuddpy555m
-      gatsby: 4.24.8_sfoxds7t5ydpegc3knd667wn6m
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -11585,7 +11648,7 @@ packages:
       '@gatsbyjs/potrace': 2.3.0
       fastq: 1.13.0
       fs-extra: 10.1.0
-      gatsby: 4.24.8_sfoxds7t5ydpegc3knd667wn6m
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
       gatsby-core-utils: 3.24.0
       gatsby-sharp: 0.18.0
       graphql: 15.8.0
@@ -11597,7 +11660,7 @@ packages:
       svgo: 2.8.0
     dev: false
 
-  /gatsby-react-router-scroll/5.24.0_mnjsnnczdof67o4nu636xxg6cm:
+  /gatsby-react-router-scroll/5.24.0_jrmehtgkntpgvrzvp7eiismjfa:
     resolution: {integrity: sha512-2wQnwyszef06fGxQOsz70ReykF9w9FgIUjPpThn3OBgJarRibNsHljbNdLOETczYSY8LEebKFB3ewQ+erd7DCw==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
@@ -11606,13 +11669,13 @@ packages:
       react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
     dependencies:
       '@babel/runtime': 7.20.6
-      '@gatsbyjs/reach-router': 1.3.9_sfoxds7t5ydpegc3knd667wn6m
+      '@gatsbyjs/reach-router': 1.3.9_biqbaboplfbrettd7655fr4n2y
       prop-types: 15.8.1
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /gatsby-script/1.9.0_mnjsnnczdof67o4nu636xxg6cm:
+  /gatsby-script/1.9.0_jrmehtgkntpgvrzvp7eiismjfa:
     resolution: {integrity: sha512-xGhaTVNdDokZDkiZ6sGtAwyEzbpml+RFFX0kFEkS0Ii3MwdZT44H558B4Y8l7X9wB0OEENcSczc/DULVhRoXBA==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
@@ -11620,9 +11683,9 @@ packages:
       react: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
       react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
     dependencies:
-      '@gatsbyjs/reach-router': 1.3.9_sfoxds7t5ydpegc3knd667wn6m
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      '@gatsbyjs/reach-router': 1.3.9_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /gatsby-sharp/0.18.0:
@@ -11643,7 +11706,7 @@ packages:
       chokidar: 3.5.3
       file-type: 16.5.4
       fs-extra: 10.1.0
-      gatsby: 4.24.8_sfoxds7t5ydpegc3knd667wn6m
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
       gatsby-core-utils: 3.24.0
       md5-file: 5.0.0
       mime: 2.6.0
@@ -11681,10 +11744,10 @@ packages:
       file-type: 15.0.1
       filesize: 6.4.0
       fs-extra: 10.1.0
-      gatsby: 4.24.8_sfoxds7t5ydpegc3knd667wn6m
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
       gatsby-core-utils: 3.24.0
       gatsby-plugin-catch-links: 4.24.0_gatsby@4.24.8
-      gatsby-plugin-image: 2.24.0_hp3tf7jzlr4nhpmcghtnegjaau
+      gatsby-plugin-image: 2.24.0_qn3rtzkfhq26eyxjlbrwyvonqu
       gatsby-plugin-sharp: 4.24.0_veoy6eu37d3zgrms3x37tdgtzy
       gatsby-plugin-utils: 3.18.0_veoy6eu37d3zgrms3x37tdgtzy
       gatsby-source-filesystem: 4.24.0_gatsby@4.24.8
@@ -11739,7 +11802,7 @@ packages:
       bluebird: 3.7.2
       common-tags: 1.8.2
       fs-extra: 10.1.0
-      gatsby: 4.24.8_sfoxds7t5ydpegc3knd667wn6m
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
       gatsby-plugin-sharp: 4.24.0_veoy6eu37d3zgrms3x37tdgtzy
       gatsby-plugin-utils: 3.18.0_veoy6eu37d3zgrms3x37tdgtzy
       probe-image-size: 7.2.3
@@ -11760,7 +11823,7 @@ packages:
       - supports-color
     dev: false
 
-  /gatsby/4.24.8_sfoxds7t5ydpegc3knd667wn6m:
+  /gatsby/4.24.8_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-dbpAXMpWPv0P3H+xYhK2+XZ+W0xsgvZUvQTYhYEro7jVh9gBJr68tlT4YYH7J+9FThrIcg6MPLN7KLVJp8yyGw==}
     engines: {node: '>=14.15.0'}
     hasBin: true
@@ -11778,7 +11841,7 @@ packages:
       '@babel/traverse': 7.20.5
       '@babel/types': 7.20.5
       '@builder.io/partytown': 0.5.4
-      '@gatsbyjs/reach-router': 1.3.9_sfoxds7t5ydpegc3knd667wn6m
+      '@gatsbyjs/reach-router': 1.3.9_biqbaboplfbrettd7655fr4n2y
       '@gatsbyjs/webpack-hot-middleware': 2.25.3
       '@graphql-codegen/add': 3.2.1_graphql@15.8.0
       '@graphql-codegen/core': 2.6.6_graphql@15.8.0
@@ -11853,14 +11916,14 @@ packages:
       gatsby-core-utils: 3.24.0
       gatsby-graphiql-explorer: 2.24.0
       gatsby-legacy-polyfills: 2.24.0
-      gatsby-link: 4.24.1_mnjsnnczdof67o4nu636xxg6cm
+      gatsby-link: 4.24.1_jrmehtgkntpgvrzvp7eiismjfa
       gatsby-page-utils: 2.24.1
       gatsby-parcel-config: 0.15.1_@parcel+core@2.6.2
       gatsby-plugin-page-creator: 4.24.1_veoy6eu37d3zgrms3x37tdgtzy
       gatsby-plugin-typescript: 4.24.0_gatsby@4.24.8
       gatsby-plugin-utils: 3.18.0_veoy6eu37d3zgrms3x37tdgtzy
-      gatsby-react-router-scroll: 5.24.0_mnjsnnczdof67o4nu636xxg6cm
-      gatsby-script: 1.9.0_mnjsnnczdof67o4nu636xxg6cm
+      gatsby-react-router-scroll: 5.24.0_jrmehtgkntpgvrzvp7eiismjfa
+      gatsby-script: 1.9.0_jrmehtgkntpgvrzvp7eiismjfa
       gatsby-telemetry: 3.24.0
       gatsby-worker: 1.24.0
       glob: 7.2.3
@@ -11904,11 +11967,11 @@ packages:
       prop-types: 15.8.1
       query-string: 6.14.1
       raw-loader: 4.0.2_webpack@5.75.0
-      react: 17.0.2
+      react: 18.2.0
       react-dev-utils: 12.0.1_u2ubl3shblmc7225ne6wflnyua
-      react-dom: 17.0.2_react@17.0.2
+      react-dom: 18.2.0_react@18.2.0
       react-refresh: 0.14.0
-      react-server-dom-webpack: 0.0.0-experimental-c8b778b7f-20220825_eti6oydn5uovxsufwey3dtrfqq
+      react-server-dom-webpack: 0.0.0-experimental-c8b778b7f-20220825_wxnjqhvau3kr4edcdlkxrbquiq
       redux: 4.1.2
       redux-thunk: 2.4.2_redux@4.1.2
       resolve-from: 5.0.0
@@ -12852,6 +12915,14 @@ packages:
     dependencies:
       call-bind: 1.0.2
       has-tostringtag: 1.0.0
+    dev: true
+
+  /is-array-buffer/3.0.1:
+    resolution: {integrity: sha512-ASfLknmY8Xa2XtB4wmbz13Wu202baeA18cJBCeCy0wXUHZF0IPyVEXqKEcd+t2fNSLLL1vC6k7lxZEojNbISXQ==}
+    dependencies:
+      call-bind: 1.0.2
+      get-intrinsic: 1.1.3
+      is-typed-array: 1.1.10
     dev: true
 
   /is-arrayish/0.2.1:
@@ -17048,6 +17119,15 @@ packages:
       react: 17.0.2
       scheduler: 0.20.2
 
+  /react-dom/18.2.0_react@18.2.0:
+    resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
+    peerDependencies:
+      react: ^18.2.0
+    dependencies:
+      loose-envify: 1.4.0
+      react: 18.2.0
+      scheduler: 0.23.0
+
   /react-error-overlay/6.0.11:
     resolution: {integrity: sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==}
     dev: false
@@ -17161,7 +17241,7 @@ packages:
       tiny-warning: 1.0.3
     dev: false
 
-  /react-server-dom-webpack/0.0.0-experimental-c8b778b7f-20220825_eti6oydn5uovxsufwey3dtrfqq:
+  /react-server-dom-webpack/0.0.0-experimental-c8b778b7f-20220825_wxnjqhvau3kr4edcdlkxrbquiq:
     resolution: {integrity: sha512-JyCjbp6ZvkH/T0EuVPdceYlC8u5WqWDSJr2KxDvc81H2eJ+7zYUN++IcEycnR2F+HmER8QVgxfotnIx352zi+w==}
     engines: {node: '>=0.10.0'}
     peerDependencies:
@@ -17171,7 +17251,7 @@ packages:
       acorn: 6.4.2
       loose-envify: 1.4.0
       neo-async: 2.6.2
-      react: 17.0.2
+      react: 18.2.0
       webpack: 5.75.0
     dev: false
 
@@ -17203,6 +17283,12 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
+
+  /react/18.2.0:
+    resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      loose-envify: 1.4.0
 
   /read-cache/1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
@@ -17725,6 +17811,11 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
+
+  /scheduler/0.23.0:
+    resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
+    dependencies:
+      loose-envify: 1.4.0
 
   /schema-utils/2.7.0:
     resolution: {integrity: sha512-0ilKFI6QQF5nxDZLFn2dMjvc4hjg/Wkg7rHd3jK6/A4a1Hl9VFdQWvgB1UMGoU94pad1P/8N7fMcEnLnSiju8A==}
