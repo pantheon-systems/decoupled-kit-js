@@ -115,7 +115,8 @@
 			"decode-uri-component@<0.2.1": ">=0.2.1",
 			"graphql-compose": "<=9.0.9",
 			"json5@<2.2.2": ">=2.2.2",
-			"json5@>=2.0.0 <2.2.2": ">=2.2.2"
+			"json5@>=2.0.0 <2.2.2": ">=2.2.2",
+			"debug@<3.1.0": ">=3.1.0"
 		},
 		"peerDependencyRules": {
 			"ignoreMissing": [
