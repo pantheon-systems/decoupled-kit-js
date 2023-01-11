@@ -8,30 +8,12 @@ import React from 'react'
  */
 
 describe(`<PaginationPostsExample />`, () => {
-	// const realLocation = location
 	beforeEach(() => {
-		delete window.location
-		window.location = {
+		location = {
 			pathname: '/examples/pagination/1',
 			state: { breakOpen: false },
 		}
 	})
-
-	// beforeEach(() => {
-	// 	delete global.location
-
-	// 	global.location = {
-	// 		assign: vi.fn(),
-	// 		pathname: '/examples/pagination/1',
-	// 		state: { breakOpen: false },
-	// 		push: vi.fn(),
-	// 	}
-	// 	// location = {
-	// 	// 	pathname: '/examples/pagination/1',
-	// 	// 	state: { breakOpen: false },
-	// 	// }
-	// 	// 	const assignSpy = vi.fn()
-	// })
 
 	it('should render the paginated data', () => {
 		const { asFragment } = render(
