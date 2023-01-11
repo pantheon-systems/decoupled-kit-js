@@ -1,5 +1,11 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.7.0-canary.0
+
+### Minor Changes
+
+- 41221dc: React 18 and Next 13 updates
+
 ## 1.6.0
 
 ### Minor Changes
