@@ -25,8 +25,8 @@ export default function CatchAllRoute({
 				<>
 					<article className="prose lg:prose-xl mt-10 mx-auto">
 						<h1>{title}</h1>
-						<Link passHref href="/pages">
-							<a className="font-normal">Pages &rarr;</a>
+						<Link passHref href="/pages" className="font-normal">
+							Pages &rarr;
 						</Link>
 						<div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
 							<div dangerouslySetInnerHTML={{ __html: processed }} />

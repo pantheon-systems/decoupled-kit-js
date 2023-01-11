@@ -42,8 +42,11 @@ export const Header: React.FC<HeaderProps> = ({
 								className={`${item.href === '/' ? 'ps-mr-auto' : 'ps-mx-4'}`}
 								key={item.href}
 							>
-								<Link className="ps-font-sans" href={item.href}>
-									<a className="hover:ps-underline">{item.linkText}</a>
+								<Link
+									className="ps-font-sans hover:ps-underline"
+									href={item.href}
+								>
+									{item.linkText}
 								</Link>
 							</li>
 						);

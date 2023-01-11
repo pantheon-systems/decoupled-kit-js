@@ -12,5 +12,9 @@
     "@pantheon-systems/next-wordpress-starter": "0.12.1",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "great-bulldogs-bathe",
+    "little-fans-call",
+    "spotty-seahorses-hang"
+  ]
 }
