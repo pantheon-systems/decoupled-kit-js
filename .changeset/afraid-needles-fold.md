@@ -1,5 +1,5 @@
 ---
-"@pantheon-systems/gatsby-wordpress-starter": patch
+'@pantheon-systems/gatsby-wordpress-starter': major
 ---
 
 Update to React v18
