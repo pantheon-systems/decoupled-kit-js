@@ -1,0 +1,50 @@
+{
+	"name": "create-pantheon-decoupled-kit",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Pantheon Decoupled Kit CLI",
+	"license": "GPL-3.0-or-later",
+	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
+	"bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pantheon-systems/decoupled-kit-js"
+	},
+	"author": "@pantheon-systems",
+	"keywords": [
+		"create-app",
+		"create-pantheon-app",
+		"create-pantheon",
+		"npm init"
+	],
+	"bin": "/dist/bin.js",
+	"files": [
+		"dist"
+	],
+	"type": "module",
+	"prettier": "@pantheon-systems/configs/prettier",
+	"typedoc": {
+		"entryPoint": "./index.ts"
+	},
+	"scripts": {
+		"build": "pnpm clean && pnpm tsc && pnpm copy-templates",
+		"copy-templates": "cp -Rf ./src/templates -t ./dist",
+		"clean": "pnpm dlx rimraf ./dist",
+		"watch": "",
+		"eslint": "eslint --ext .ts src --ignore-path .gitignore --ignore-path src/templates",
+		"eslint:fix": "eslint --ext .ts --fix --ignore-path .gitignore",
+		"prettier": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --check --ignore-path ../../.prettierignore",
+		"prettier:fix": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --write --ignore-path ../../.prettierignore",
+		"lint-staged": "lint-staged"
+	},
+	"devDependencies": {
+		"@pantheon-systems/configs": "*",
+		"@pantheon-systems/eslint-config": "*",
+		"@types/minimist": "^1.2.2",
+		"prettier": "^2.8.0",
+		"vitest": "^0.23.4"
+	},
+	"dependencies": {
+		"minimist": "^1.2.7"
+	}
+}
