@@ -1,28 +1,74 @@
 #!/usr/bin/env node
 import minimist from 'minimist';
+import inquirer from 'inquirer';
+import nodePlop from 'node-plop';
+import path from 'path';
 import type { ParsedArgs, Opts as MinimistOptions } from 'minimist';
+import type { Answers, QuestionCollection } from 'inquirer';
 
-export const parseArgs = (): ParsedArgs => {
+// esm 'polyfill' for __dirname
+import * as url from 'url';
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+const plopfile = path.resolve(__dirname, './generators/plopfile.js');
+
+export const parseArgs = (cliArgs: string[]) => {
 	// parse any command line arguments passed into the create command
 	// to pass to the generator prompts and skip them.
 	// useful for CI and testing purposes
 	const options: MinimistOptions = {
-		boolean: ['force', 'noInstall', 'silent'],
-		string: ['appName', 'destination', 'templates'],
+		// these options tell minimist which --args are
+		// booleans and which are strings.
+		// we will probably want these soon
+		//boolean: ['force', 'noInstall'],
+		// might want these too
+		//string: ['appName', 'directory'],
 	};
-	const cliArgs: string[] = process.argv.slice(2);
 	const args: ParsedArgs = minimist(cliArgs, options);
 
 	return args;
 };
+export const main = async (args: ParsedArgs): Promise<void> => {
+	console.log('parsedArgs: ', args);
 
-export const main = (args: ParsedArgs): void => {
-	console.log(args);
-	console.log('Helloooo World');
-	// dynamicaly import generator?
-	// run that generator with the given prompts
-	// ???
-	// profit
+	// create an instance of the NodePlopAPI
+	const plop = await nodePlop(plopfile);
+	// get a list of generators to map against positinal arguments from the cli
+	const generators = plop.getGeneratorList();
+	console.log('generators:', generators);
+	// take positional params from minimist args and
+	// parse them for matching generator names
+	const foundGenerators = args._.map((arg) => {
+		if (generators.find(({ name }) => arg === name)) {
+			return arg;
+		}
+		console.log(
+			`No generator found with name ${arg}. Running default generator:`,
+		);
+		// we should have a default entrypoint that
+		// guides user through the "wizard" with as
+		// many options as possible(?)
+		return '';
+	});
+	const namedArgs: Partial<ParsedArgs> = args;
+	// remove the positional parameters
+	delete namedArgs._;
+	console.log('namedArgs', namedArgs);
+	for (const generator of foundGenerators) {
+		if (generator === '') return;
+		// use instance of plop and get the current generator
+		const plopGenerator = plop.getGenerator(generator);
+		// use inquirer directly for prompts because node-plop does not
+		// play nicely with ParsedArgs and inquirer does <3
+		const answers: Answers = await inquirer.prompt(
+			plopGenerator.prompts as QuestionCollection,
+			namedArgs,
+		);
+		console.log('answers:', answers);
+		// use the harvested answers (if any) to run the plop actions
+		// aka the meat of the generators
+		const result = await plopGenerator.runActions(answers);
+		console.log(result);
+	}
 };
 
-main(parseArgs());
+await main(parseArgs(process.argv.slice(2)));

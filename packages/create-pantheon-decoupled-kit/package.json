@@ -17,18 +17,18 @@
 		"create-pantheon",
 		"npm init"
 	],
-	"bin": "/dist/bin.js",
+	"bin": "./dist/bin.js",
 	"files": [
 		"dist"
 	],
 	"type": "module",
 	"prettier": "@pantheon-systems/configs/prettier",
 	"typedoc": {
-		"entryPoint": "./index.ts"
+		"entryPoint": "./src/bin.ts"
 	},
 	"scripts": {
 		"build": "pnpm clean && pnpm tsc && pnpm copy-templates",
-		"copy-templates": "cp -Rf ./src/templates -t ./dist",
+		"copy-templates": "cp -Rf ./src/templates -t ./dist/",
 		"clean": "pnpm dlx rimraf ./dist",
 		"watch": "",
 		"eslint": "eslint --ext .ts src --ignore-path .gitignore --ignore-path src/templates",
@@ -40,11 +40,14 @@
 	"devDependencies": {
 		"@pantheon-systems/configs": "*",
 		"@pantheon-systems/eslint-config": "*",
+		"@types/inquirer": "^9.0.3",
 		"@types/minimist": "^1.2.2",
 		"prettier": "^2.8.0",
 		"vitest": "^0.23.4"
 	},
 	"dependencies": {
-		"minimist": "^1.2.7"
+		"inquirer": "^9.1.4",
+		"minimist": "^1.2.7",
+		"node-plop": "^0.31.0"
 	}
 }

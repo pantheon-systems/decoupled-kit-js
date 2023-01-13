@@ -2,8 +2,10 @@
 
 Pantheon's command line interface for creating and adding on to new projects.
 
-Heavily inspired by various `create-` apps including `create-sitecore-jss`,
-`create-astro`, and `create-create-app`.
+A `node-plop` based cli, heavily inspired by various `create-` apps including
+[`create-sitecore-jss`](https://github.com/Sitecore/jss/tree/dev/packages/create-sitecore-jss),
+[`create-astro`](https://github.com/withastro/astro/tree/main/packages/create-astro),
+and [`create-create-app`](https://github.com/uetchy/create-create-app).
 
 ## Installation
 
@@ -17,8 +19,8 @@ prompts in your terminal
 ```bash
   pnpm create pantheon-decoupled-kit
 ```
-g
-Or, pass in arguments up front to skip those prompts
+
+g Or, pass in arguments up front to skip those prompts
 
 ```bash
   pnpm create pantheon-decoupled-kit --appName my-app --dir ./my-app-dir --framework nextjs
