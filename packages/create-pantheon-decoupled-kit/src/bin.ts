@@ -34,26 +34,40 @@ export const main = async (args: ParsedArgs): Promise<void> => {
 	const plop = await nodePlop(plopfile);
 	// get a list of generators to map against positinal arguments from the cli
 	const generators = plop.getGeneratorList();
+	const generatorNames = generators.map(({ name }) => name);
 	console.log('generators:', generators);
 	// take positional params from minimist args and
 	// parse them for matching generator names
-	const foundGenerators = args._.map((arg) => {
+	const foundGenerators = args._.filter((arg) => {
 		if (generators.find(({ name }) => arg === name)) {
 			return arg;
 		}
-		console.log(
-			`No generator found with name ${arg}. Running default generator:`,
-		);
-		// we should have a default entrypoint that
-		// guides user through the "wizard" with as
+		console.log(`No generator found with name ${arg}.`);
+		// we should have a default entrypoint, if no generators are supplied,
+		// that guides user through the "wizard" with as
 		// many options as possible(?)
-		return '';
+		return;
 	});
 	const namedArgs: Partial<ParsedArgs> = args;
 	// remove the positional parameters
 	delete namedArgs._;
 	console.log('namedArgs', namedArgs);
-	for (const generator of foundGenerators) {
+	const generatorsToRun = [];
+	console.log('foundGenerators', foundGenerators);
+	if (!foundGenerators.length) {
+		const answers: Answers = await inquirer.prompt({
+			name: 'generators',
+			type: 'checkbox',
+			message: 'Which generator(s) would you like to run?',
+			choices: () => generatorNames,
+		});
+		generatorsToRun.push(...(answers.generators as string[]));
+	} else {
+		generatorsToRun.push(...foundGenerators);
+	}
+	console.log('generatorsToRun:', generatorsToRun);
+
+	for (const generator of generatorsToRun) {
 		if (generator === '') return;
 		// use instance of plop and get the current generator
 		const plopGenerator = plop.getGenerator(generator);
