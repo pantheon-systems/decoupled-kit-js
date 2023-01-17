@@ -15,21 +15,29 @@
 		"create-app",
 		"create-pantheon-app",
 		"create-pantheon",
+		"create-pantheon-decoupled-kit",
 		"npm init"
 	],
-	"bin": "./dist/bin.js",
+	"type": "module",
+	"main": "/dist/bin.js",
+	"bin": {
+		"create-pantheon-decoupled-kit": "./dist/bin.js"
+	},
 	"files": [
 		"dist"
 	],
-	"type": "module",
 	"prettier": "@pantheon-systems/configs/prettier",
 	"typedoc": {
-		"entryPoint": "./src/bin.ts"
+		"entryPoint": "./src/index.ts"
 	},
 	"scripts": {
-		"build": "pnpm clean && pnpm tsc && pnpm copy-templates",
-		"copy-templates": "cp -Rf ./src/templates -t ./dist/",
-		"clean": "pnpm dlx rimraf ./dist",
+		"tsc": "tsc",
+		"build": "pnpm clean && node ./esbuild.js && pnpm copy-templates",
+		"clean": "pnpm dlx rimraf ./dist/*",
+		"tsc-build": "pnpm tsc && pnpm ts-copy-templates",
+		"copy-templates": "pnpm vite-node ./scripts/copyTemplates.ts",
+		"test": "vitest run --coverage",
+		"test:watch": "vitest",
 		"watch": "",
 		"eslint": "eslint --ext .ts src --ignore-path .gitignore --ignore-path src/templates",
 		"eslint:fix": "eslint --ext .ts --fix --ignore-path .gitignore",
@@ -40,9 +48,13 @@
 	"devDependencies": {
 		"@pantheon-systems/configs": "*",
 		"@pantheon-systems/eslint-config": "*",
+		"@types/fs-extra": "^11.0.1",
 		"@types/inquirer": "^9.0.3",
 		"@types/minimist": "^1.2.2",
+		"esbuild": "0.17.0",
+		"fs-extra": "^11.1.0",
 		"prettier": "^2.8.0",
+		"vite-node": "^0.27.2",
 		"vitest": "^0.23.4"
 	},
 	"dependencies": {

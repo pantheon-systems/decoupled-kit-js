@@ -1,9 +1,9 @@
 {
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
-		"noEmit": false,
+		"target": "ESNext",
+		"moduleResolution": "NodeNext",
 		"outDir": "./dist",
-		"skipLibCheck": true,
 	},
-	"include": ["./src/bin.ts", "./src/generators/*.ts"]
+	"include": ["./src/bin.ts",]
 }

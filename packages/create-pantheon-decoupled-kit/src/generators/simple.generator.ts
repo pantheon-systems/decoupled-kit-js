@@ -1,6 +1,7 @@
-import type { PlopGeneratorConfig } from 'node-plop';
-export const simple: Partial<PlopGeneratorConfig> = {
-	description: 'simple/sample generator',
+import type { DecoupledKitGenerator } from '../types';
+export const simple: DecoupledKitGenerator = {
+	name: 'simple',
+	description: 'a simple generator',
 	prompts: [
 		{
 			name: 'message',
@@ -16,7 +17,7 @@ export const simple: Partial<PlopGeneratorConfig> = {
 	actions: [
 		{
 			type: 'append',
-			templateFile: '../templates/simple/test-template.js.hbs',
+			templateFile: './templates/simple/test-template.js.hbs',
 			path: '{{outDir}}.js',
 		},
 	],

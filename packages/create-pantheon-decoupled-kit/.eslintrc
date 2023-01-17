@@ -1,6 +1,7 @@
 {
-  "extends": "@pantheon-systems/eslint-config",
-    "parserOptions": {
-      "project": ["./tsconfig.json"]
-  }
+	"extends": "@pantheon-systems/eslint-config",
+	"parserOptions": {
+		"project": ["./tsconfig.lint.json"]
+	},
+	"ignorePatterns": ["esbuild.js", "copyTemplates.ts"]
 }

@@ -1,7 +1,8 @@
-import type { PlopGeneratorConfig } from 'node-plop';
+import type { DecoupledKitGenerator } from '../types';
 import type { Answers } from 'inquirer';
-export const test: Partial<PlopGeneratorConfig> = {
-	description: 'test/sample generator',
+export const test: DecoupledKitGenerator = {
+	name: 'test',
+	description: 'a test generator',
 	prompts: [
 		{
 			name: 'input',
@@ -33,7 +34,7 @@ export const test: Partial<PlopGeneratorConfig> = {
 	actions: [
 		{
 			type: 'add',
-			templateFile: '../templates/test/test-template.js.hbs',
+			templateFile: './templates/test/test-template.js.hbs',
 			path: '{{outDir}}.js',
 			force: true,
 		},
