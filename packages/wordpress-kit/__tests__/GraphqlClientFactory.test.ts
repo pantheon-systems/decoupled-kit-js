@@ -32,7 +32,7 @@ test('request and response middleware add appropriate headers', async () => {
 test('client is configured for GET requests', async () => {
 	const getClient = new GraphqlClientFactory('http://my-wp.test/graphql', {
 		method: 'GET',
-	}).create();
+	});
 
 	expect(getClient.options.method).toEqual('GET');
 });
