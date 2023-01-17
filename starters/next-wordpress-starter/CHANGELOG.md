@@ -1,5 +1,12 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 1.0.0-canary.1
+
+### Patch Changes
+
+- Updated dependencies [28519b2]
+  - @pantheon-systems/wordpress-kit@2.13.0-canary.0
+
 ## 1.0.0-canary.0
 
 ### Major Changes

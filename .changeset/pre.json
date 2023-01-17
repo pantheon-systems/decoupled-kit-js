@@ -13,6 +13,8 @@
     "web": "1.0.0"
   },
   "changesets": [
+    "afraid-needles-fold",
+    "eighty-timers-fold",
     "great-bulldogs-bathe",
     "little-fans-call",
     "spotty-seahorses-hang"
