@@ -28,3 +28,11 @@ test('request and response middleware add appropriate headers', async () => {
 	expect(res.data).toEqual(basicPostsQuery);
 	expect(res.headers.has('surrogate-key-raw')).toBeTruthy();
 });
+
+test('client is configured for GET requests', async () => {
+	const getClient = new GraphqlClientFactory('http://my-wp.test/graphql', {
+		method: 'GET',
+	});
+
+	expect(getClient.options.method).toEqual('GET');
+});

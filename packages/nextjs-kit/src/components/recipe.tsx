@@ -61,8 +61,8 @@ export const Recipe: React.FC<RecipeProps> = ({
 					<Image
 						priority
 						src={imageProps.src}
-						layout="fill"
-						objectFit="cover"
+						style={{ objectFit: 'cover', padding: '0', margin: 'auto' }}
+						fill
 						alt={imageProps.alt ? imageProps.alt : title}
 					/>
 				</div>

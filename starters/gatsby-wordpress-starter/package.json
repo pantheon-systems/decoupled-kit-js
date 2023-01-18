@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/gatsby-wordpress-starter",
-	"version": "2.7.0",
+	"version": "3.0.0-canary.0",
 	"private": true,
 	"description": "Pantheon Decoupled Kit's Gatsby WordPress Starter",
 	"license": "GPL-3.0-or-later",
@@ -39,16 +39,16 @@
 		"graphql": "^15.0.0",
 		"lodash": "^4.17.21",
 		"mitt": "^3.0.0",
-		"react": "17.0.2",
-		"react-dom": "17.0.2",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
 		"typeface-merriweather": "1.1.13",
 		"typeface-montserrat": "1.1.13"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.19.3",
-		"@pantheon-systems/wordpress-kit": "^2.12.0",
+		"@pantheon-systems/wordpress-kit": "^2.13.0-canary.0",
 		"@tailwindcss/typography": "^0.5.7",
-		"@testing-library/react": "12.1.5",
+		"@testing-library/react": "13.4.0",
 		"@vitejs/plugin-react": "^2.1.0",
 		"@vitest/coverage-c8": "^0.24.1",
 		"autoprefixer": "^10.4.12",

@@ -13,7 +13,7 @@ exports[`<Header /> > should render 'header' 1`] = `
           class="ps-mr-auto"
         >
           <a
-            class="hover:ps-underline"
+            class="ps-font-sans hover:ps-underline"
             href="/"
           >
             Home
@@ -23,7 +23,7 @@ exports[`<Header /> > should render 'header' 1`] = `
           class="ps-mx-4"
         >
           <a
-            class="hover:ps-underline"
+            class="ps-font-sans hover:ps-underline"
             href="/posts"
           >
             Posts
@@ -33,7 +33,7 @@ exports[`<Header /> > should render 'header' 1`] = `
           class="ps-mx-4"
         >
           <a
-            class="hover:ps-underline"
+            class="ps-font-sans hover:ps-underline"
             href="/pages"
           >
             Pages

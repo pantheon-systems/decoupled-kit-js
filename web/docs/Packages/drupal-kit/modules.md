@@ -39,7 +39,7 @@ a promise containing the data for the JSON:API response
 
 #### Defined in
 
-[drupal-kit/src/lib/defaultFetch.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/3cc8708/packages/drupal-kit/src/lib/defaultFetch.ts#L17)
+[drupal-kit/src/lib/defaultFetch.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/drupal-kit/src/lib/defaultFetch.ts#L17)
 
 ___
 

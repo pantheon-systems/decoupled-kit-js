@@ -16,7 +16,7 @@ exports[`umami <ArticleTemplate /> > should render with umami profile articles 1
             class="ps-mr-auto"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/"
             >
               🏠 Home
@@ -26,7 +26,7 @@ exports[`umami <ArticleTemplate /> > should render with umami profile articles 1
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/articles"
             >
               📰 Articles
@@ -36,7 +36,7 @@ exports[`umami <ArticleTemplate /> > should render with umami profile articles 1
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/pages"
             >
               📑 Pages
@@ -46,7 +46,7 @@ exports[`umami <ArticleTemplate /> > should render with umami profile articles 1
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -79,19 +79,15 @@ exports[`umami <ArticleTemplate /> > should render with umami profile articles 1
           <div
             class="ps-relative ps-mb-10 ps-min-h-[50vh]"
           >
-            <span
-              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
-            >
-              <img
-                alt="Give it a go and grow your own herbs"
-                data-nimg="fill"
-                decoding="async"
-                sizes="100vw"
-                src="/_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=1200&q=75"
-                srcset="/_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=320&q=75 320w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=420&q=75 420w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=768&q=75 768w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=1024&q=75 1024w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=1200&q=75 1200w"
-                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
-              />
-            </span>
+            <img
+              alt="Give it a go and grow your own herbs"
+              data-nimg="fill"
+              decoding="async"
+              sizes="100vw"
+              src="/_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=1200&q=75"
+              srcset="/_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=320&q=75 320w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=420&q=75 420w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=768&q=75 768w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=1024&q=75 1024w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=1200&q=75 1200w"
+              style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
+            />
           </div>
         </div>
         <div
@@ -220,7 +216,7 @@ exports[`umami <ArticleTemplate /> > should render with umami profile articles 1
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
@@ -257,7 +253,7 @@ exports[`umami <SSRArticlesListTemplate /> > should render with umami profile ar
             class="ps-mr-auto"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/"
             >
               🏠 Home
@@ -267,7 +263,7 @@ exports[`umami <SSRArticlesListTemplate /> > should render with umami profile ar
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/articles"
             >
               📰 Articles
@@ -277,7 +273,7 @@ exports[`umami <SSRArticlesListTemplate /> > should render with umami profile ar
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/pages"
             >
               📑 Pages
@@ -287,7 +283,7 @@ exports[`umami <SSRArticlesListTemplate /> > should render with umami profile ar
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -528,7 +524,7 @@ exports[`umami <SSRArticlesListTemplate /> > should render with umami profile ar
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"

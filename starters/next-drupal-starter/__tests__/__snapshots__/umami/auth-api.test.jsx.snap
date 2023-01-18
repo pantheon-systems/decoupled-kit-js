@@ -16,7 +16,7 @@ exports[`umami <AuthApiExampleTemplate /> > should render a failure message if u
             class="ps-mr-auto"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/"
             >
               🏠 Home
@@ -26,7 +26,7 @@ exports[`umami <AuthApiExampleTemplate /> > should render a failure message if u
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/articles"
             >
               📰 Articles
@@ -36,7 +36,7 @@ exports[`umami <AuthApiExampleTemplate /> > should render a failure message if u
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/pages"
             >
               📑 Pages
@@ -46,7 +46,7 @@ exports[`umami <AuthApiExampleTemplate /> > should render a failure message if u
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -64,12 +64,15 @@ exports[`umami <AuthApiExampleTemplate /> > should render a failure message if u
         <h1>
           API Authorization Example
         </h1>
-        <span
-          class="w-full underline cursor-pointer"
+        <a
           href="/"
         >
-          Home →
-        </span>
+          <span
+            class="w-full underline cursor-pointer"
+          >
+            Home →
+          </span>
+        </a>
         <div
           class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
         >
@@ -140,7 +143,7 @@ exports[`umami <AuthApiExampleTemplate /> > should render a failure message if u
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
@@ -177,7 +180,7 @@ exports[`umami <AuthApiExampleTemplate /> > should render a success message if a
             class="ps-mr-auto"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/"
             >
               🏠 Home
@@ -187,7 +190,7 @@ exports[`umami <AuthApiExampleTemplate /> > should render a success message if a
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/articles"
             >
               📰 Articles
@@ -197,7 +200,7 @@ exports[`umami <AuthApiExampleTemplate /> > should render a success message if a
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/pages"
             >
               📑 Pages
@@ -207,7 +210,7 @@ exports[`umami <AuthApiExampleTemplate /> > should render a success message if a
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -225,12 +228,15 @@ exports[`umami <AuthApiExampleTemplate /> > should render a success message if a
         <h1>
           API Authorization Example
         </h1>
-        <span
-          class="w-full underline cursor-pointer"
+        <a
           href="/"
         >
-          Home →
-        </span>
+          <span
+            class="w-full underline cursor-pointer"
+          >
+            Home →
+          </span>
+        </a>
         <div
           class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
         >
@@ -285,7 +291,7 @@ exports[`umami <AuthApiExampleTemplate /> > should render a success message if a
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"

@@ -22,9 +22,12 @@ class GraphQLClientFactory {
 			headers: {
 				'Pantheon-SKey': '1',
 			},
+			jsonSerializer:
+				options.method === 'GET'
+					? { parse: JSON.parse, stringify: JSON.stringify }
+					: undefined,
 		};
 	}
-
 	/**
 	 * Creates an instance of `graphql-request` GraphQLClient based on the endpoint and options
 	 */

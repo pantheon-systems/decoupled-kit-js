@@ -29,6 +29,9 @@ export default function Home({ menuItems, posts }) {
 					<Image
 						src="/pantheon.png"
 						alt="Pantheon Logo"
+						style={{
+							margin: 0,
+						}}
 						width={191}
 						height={60}
 					/>

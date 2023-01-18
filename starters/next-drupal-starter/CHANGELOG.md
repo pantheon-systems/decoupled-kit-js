@@ -1,5 +1,16 @@
 # @pantheon-systems/next-drupal-starter
 
+## 4.0.0-canary.0
+
+### Major Changes
+
+- 0af5b4f: React 18 and Next 13 updates
+
+### Patch Changes
+
+- Updated dependencies [41221dc]
+  - @pantheon-systems/nextjs-kit@1.7.0-canary.0
+
 ## 3.8.0
 
 ### Minor Changes

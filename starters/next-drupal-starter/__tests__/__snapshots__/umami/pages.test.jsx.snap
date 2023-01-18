@@ -16,7 +16,7 @@ exports[`umami <PageListTemplate /> > should render with umami profile pages 1`]
             class="ps-mr-auto"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/"
             >
               🏠 Home
@@ -26,7 +26,7 @@ exports[`umami <PageListTemplate /> > should render with umami profile pages 1`]
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/articles"
             >
               📰 Articles
@@ -36,7 +36,7 @@ exports[`umami <PageListTemplate /> > should render with umami profile pages 1`]
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/pages"
             >
               📑 Pages
@@ -46,7 +46,7 @@ exports[`umami <PageListTemplate /> > should render with umami profile pages 1`]
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -162,7 +162,7 @@ exports[`umami <PageListTemplate /> > should render with umami profile pages 1`]
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
@@ -199,7 +199,7 @@ exports[`umami <PageTemplate /> > should render with umami profile page 1`] = `
             class="ps-mr-auto"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/"
             >
               🏠 Home
@@ -209,7 +209,7 @@ exports[`umami <PageTemplate /> > should render with umami profile page 1`] = `
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/articles"
             >
               📰 Articles
@@ -219,7 +219,7 @@ exports[`umami <PageTemplate /> > should render with umami profile page 1`] = `
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/pages"
             >
               📑 Pages
@@ -229,7 +229,7 @@ exports[`umami <PageTemplate /> > should render with umami profile page 1`] = `
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -322,7 +322,7 @@ exports[`umami <PageTemplate /> > should render with umami profile page 1`] = `
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"

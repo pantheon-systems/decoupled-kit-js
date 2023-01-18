@@ -16,7 +16,7 @@ exports[`default <PageListTemplate /> > should render with default profile pages
             class="ps-mr-auto"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/"
             >
               🏠 Home
@@ -26,7 +26,7 @@ exports[`default <PageListTemplate /> > should render with default profile pages
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/articles"
             >
               📰 Articles
@@ -36,7 +36,7 @@ exports[`default <PageListTemplate /> > should render with default profile pages
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/pages"
             >
               📑 Pages
@@ -46,7 +46,7 @@ exports[`default <PageListTemplate /> > should render with default profile pages
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -128,7 +128,7 @@ exports[`default <PageListTemplate /> > should render with default profile pages
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
@@ -165,7 +165,7 @@ exports[`default <PageTemplate /> > should render with default profile page 1`] 
             class="ps-mr-auto"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/"
             >
               🏠 Home
@@ -175,7 +175,7 @@ exports[`default <PageTemplate /> > should render with default profile page 1`] 
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/articles"
             >
               📰 Articles
@@ -185,7 +185,7 @@ exports[`default <PageTemplate /> > should render with default profile page 1`] 
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/pages"
             >
               📑 Pages
@@ -195,7 +195,7 @@ exports[`default <PageTemplate /> > should render with default profile page 1`] 
             class="ps-mx-4"
           >
             <a
-              class="hover:ps-underline"
+              class="ps-font-sans hover:ps-underline"
               href="/examples"
             >
               ⚛️ Examples
@@ -263,7 +263,7 @@ exports[`default <PageTemplate /> > should render with default profile page 1`] 
         <span
           class="mx-auto"
         >
-          © 2022 Built with 
+          © 2023 Built with 
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"

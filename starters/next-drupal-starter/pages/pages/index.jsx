@@ -38,8 +38,9 @@ export default function PageListTemplate({
 									href={`${
 										multiLanguage ? `/${path?.langcode || locale}` : ''
 									}${path.alias}`}
+									className="font-normal underline"
 								>
-									<a className="font-normal underline">Read more →</a>
+									Read more →
 								</Link>
 							</li>
 						))
