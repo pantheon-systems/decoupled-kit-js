@@ -1,5 +1,11 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 3.0.0-canary.0
+
+### Major Changes
+
+- da48137: Update to React v18
+
 ## 2.7.0
 
 ### Minor Changes
