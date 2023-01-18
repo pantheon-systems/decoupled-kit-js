@@ -1,5 +1,11 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.13.0
+
+### Minor Changes
+
+- 28519b2: Support GraphQL over HTTP GET
+
 ## 2.13.0-canary.0
 
 ### Minor Changes

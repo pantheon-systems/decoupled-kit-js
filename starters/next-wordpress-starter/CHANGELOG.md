@@ -1,5 +1,18 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 1.0.0
+
+### Major Changes
+
+- 195f6cf: React 18 and Next 13 updates
+
+### Patch Changes
+
+- Updated dependencies [28519b2]
+- Updated dependencies [41221dc]
+  - @pantheon-systems/wordpress-kit@2.13.0
+  - @pantheon-systems/nextjs-kit@1.7.0
+
 ## 1.0.0-canary.1
 
 ### Patch Changes
