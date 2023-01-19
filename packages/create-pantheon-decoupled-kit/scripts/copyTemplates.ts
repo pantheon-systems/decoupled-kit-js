@@ -1,4 +1,10 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env vite-node
 import fs from 'fs-extra';
+import chalk from 'chalk';
 
-fs.copySync('./src/templates', './dist/templates');
+try {
+	fs.copySync('./src/templates', './dist/templates');
+	console.log(chalk.green('Templates copied!'));
+} catch (error) {
+	console.error(chalk.red('Templates were not copied:\n'), error);
+}

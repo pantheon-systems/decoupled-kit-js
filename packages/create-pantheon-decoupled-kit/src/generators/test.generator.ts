@@ -1,7 +1,9 @@
-import type { DecoupledKitGenerator } from '../types';
+import type { PlopGenerator } from 'node-plop';
 import type { Answers } from 'inquirer';
-export const test: DecoupledKitGenerator = {
-	name: 'test',
+import type { DecoupledKitGenerator } from '../types';
+
+export const testAdd: DecoupledKitGenerator = {
+	name: 'test-add',
 	description: 'a test generator',
 	prompts: [
 		{
@@ -12,7 +14,7 @@ export const test: DecoupledKitGenerator = {
 		{
 			name: 'outDir',
 			message: 'Where should the output go?',
-			default: '/temp/test.js',
+			default: `${process.cwd()}/test`,
 		},
 		{
 			name: 'choice',
@@ -31,12 +33,15 @@ export const test: DecoupledKitGenerator = {
 				answers.choice === 'one' ? ['three', 'four'] : ['five', 'six'],
 		},
 	],
-	actions: [
-		{
-			type: 'add',
-			templateFile: './templates/test/test-template.js.hbs',
-			path: '{{outDir}}.js',
-			force: true,
-		},
-	],
+	actions: (data) => {
+		const actions: PlopGenerator['actions'] = [
+			{
+				type: 'add',
+				templateFile: './templates/test/test-template.js.hbs',
+				path: '{{outDir}}/test.js',
+				force: data?.force ? Boolean(data.force) : false,
+			},
+		];
+		return actions;
+	},
 };

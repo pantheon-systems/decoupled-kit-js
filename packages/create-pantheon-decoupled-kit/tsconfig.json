@@ -1,9 +1,6 @@
 {
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
-		"target": "ESNext",
-		"moduleResolution": "NodeNext",
-		"outDir": "./dist",
-	},
-	"include": ["./src/bin.ts",]
+		"types": ["vitest/globals"]
+	}
 }
