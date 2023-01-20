@@ -23,10 +23,8 @@ WPGRAPHQL_URL=https://dev-my-wordpress-site.pantheon.site/wp/graphql
 
 ## Connecting to Multidev Environments
 
-To connect to a Multidev environment, the following helper environment variable
-can be used inside of `gatsby-config.js`.
-
-- `IS_LIVE_ENVIRONMENT` - True if `PANTHEON_ENVIRONMENT_URL` is live.
+To connect to a Multidev environment, the `PANTHEON_ENVIRONMENT` environment
+variable can be used inside of `gatsby-config.js`.
 
 Either the `PANTHEON_CMS_ENDPOINT` or `WPGRAPHQL_URL` will need to be set.
 
@@ -45,20 +43,16 @@ let url = process.env.WPGRAPHQL_URL || process.env.PANTHEON_CMS_ENDPOINT;
 ```
 
 In order to connect to a Multidev backend, this url will need to be updated.
-`PANTHEON_ENVIRONMENT_URL` includes the PR number or integration branch name and
-you can parse it to your needs.
+`PANTHEON_ENVIRONMENT` includes a PR number or integration branch name.
 
 This code could be added under the above logic to connect to a Multidev that is
 prefixed with the branch name of my site.
 
 ```js
 /**
-* My branch is named `multi-demo`. I will parse the environment url for that substring
-* and use that, along with the `url`, to create a variable which points
-to my Multidev backend.
-**/
-const PREFIX = process.env.PANTHEON_ENVIRONMENT_URL.match(/^([^-]*-)[^-]*/)[0];
-if (!process.env.IS_LIVE_ENVIRONMENT) {
-	url = `https://${PREFIX}-${url.replace(/^https?:\/\/[^-]*-/, '')}`;
+ * PANTHEON_ENVIRONMENT is equal to `multi-demo` since that is the name of my branch.
+ **/
+if (PANTHEON_ENVIRONMENT !== 'live') {
+	url = `https://${PANTHEON_ENVIRONMENT}-${url.replace(/^https?:\/\//, '')}`;
 }
 ```

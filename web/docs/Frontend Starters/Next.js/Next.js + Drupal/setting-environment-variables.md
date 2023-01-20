@@ -59,10 +59,8 @@ how to implement Decoupled Preview with Next.js and Drupal.
 
 ## Connecting to Multidev Environments
 
-To connect to a Multidev environment, the following helper environment variable
-can be used inside of `next.config.js`.
-
-- `IS_LIVE_ENVIRONMENT` - True if `PANTHEON_ENVIRONMENT_URL` is live.
+To connect to a Multidev environment, the `PANTHEON_ENVIRONMENT` environment
+variable can be used inside of `next.config.js`.
 
 Either the `PANTHEON_CMS_ENDPOINT` or `BACKEND_URL` will need to be set.
 
@@ -93,23 +91,19 @@ if (process.env.BACKEND_URL === undefined) {
 ```
 
 In order to connect to a Multidev backend, this backendUrl will need to be
-updated. `PANTHEON_ENVIRONMENT_URL` includes the PR number or integration branch
-name and you can parse it to your needs.
+updated. `PANTHEON_ENVIRONMENT` includes a PR number or integration branch name.
 
 This code could be added under the above logic to connect to a Multidev that is
 prefixed with the branch name of my site.
 
 ```js
 /**
-* My branch is named `multi-demo`. I will parse the environment url for that substring
-* and use that, along with the `BACKEND_URL`, to create a `backendUrl` which points
-to my Multidev backend.
-**/
-const PREFIX = process.env.PANTHEON_ENVIRONMENT_URL.match(/^([^-]*-)[^-]*/)[0];
-if (!process.env.IS_LIVE_ENVIRONMENT) {
-	backendUrl = `https://${PREFIX}-${process.env.BACKEND_URL.replace(
-		/^https?:\/\/[^-]*-/,
-		'',
-	)}`;
+ * PANTHEON_ENVIRONMENT is equal to `multi-demo` since that is the name of my branch. I will use this variable to create a `backendUrl` which points
+ * to my Multidev backend.
+ **/
+if (process.env.PANTHEON_ENVIRONMENT !== 'live') {
+	backendUrl = `https://${
+		process.env.PANTHEON_ENVIRONMENT
+	}-${process.env.WPGRAPHQL_URL.replace(/^https?:\/\//, '')}`;
 }
 ```
