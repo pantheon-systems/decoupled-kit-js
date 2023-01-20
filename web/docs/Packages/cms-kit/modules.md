@@ -29,4 +29,4 @@ The current known unique set of surrogate keys.
 
 #### Defined in
 
-[src/utils/setSurrogateKeyHeader.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/3cc8708/packages/cms-kit/src/utils/setSurrogateKeyHeader.ts#L17)
+[src/utils/setSurrogateKeyHeader.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/cms-kit/src/utils/setSurrogateKeyHeader.ts#L17)
