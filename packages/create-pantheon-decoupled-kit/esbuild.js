@@ -12,8 +12,8 @@ const buildOptions = {
 	target: 'node16',
 };
 try {
-	const result = await build(buildOptions);
+	await build(buildOptions);
 	console.log(chalk.green('Build successful!'));
 } catch (error) {
-	console.error(chalk.red('Something went wrong:\n'), error);
+	console.error(chalk.red('Build failed:\n'), error);
 }

@@ -9,7 +9,18 @@ and [`create-create-app`](https://github.com/uetchy/create-create-app).
 
 ## Installation
 
-<!-- TODO -->
+To install this package locally, run the following commands from the root of the
+monorepo.
+
+<!-- TODO: this is mostly verified but need to confirm check. npm definitely works. -->
+
+Note: We are using `npm` here because `pnpm` does not support locally installed
+`create-` packages
+
+```bash
+  npm install --global ./packages/create-pantheon-decoupled-kit
+  npx create-pantheon-decoupled-kit
+```
 
 ## Usage
 
@@ -20,15 +31,27 @@ prompts in your terminal
   pnpm create pantheon-decoupled-kit
 ```
 
-g Or, pass in arguments up front to skip those prompts
+Or, pass in arguments up front to skip those prompts
 
 ```bash
   pnpm create pantheon-decoupled-kit --appName my-app --dir ./my-app-dir --framework nextjs
 ```
 
-<!-- Link to the doc on decoupledkit.pantheon.io for the create-app usage -->
+### `watch` script
+
+To run the `watch` script, ensure there is a `watch.{ts,js}` file at the root of
+this package. The watch file should export a named `watchOptions` object of type
+`minimist.ParsedArgs`. Positional arguments in the `_` array will correspond to
+Generators to run. Named arguments correspond to answers to the Generator
+prompts. Generators will be run in the order they are given. Any number of
+generators may be run at a given time. See `watch.example.ts` for an example of
+`watchOptions`.
+
+<!-- TODO: Link to the doc on decoupledkit.pantheon.io for the create-app usage -->
 
 ## API Reference
+
+<!-- TODO: link to API reference -->
 
 ## Contributing
 

@@ -1,17 +1,21 @@
-import minimist from 'minimist';
-import inquirer from 'inquirer';
 import chalk from 'chalk';
+import inquirer from 'inquirer';
 import nodePlop, { NodePlopAPI } from 'node-plop';
-import * as generators from './generators/index';
-import type { ParsedArgs, Opts as MinimistOptions } from 'minimist';
+import minimist from 'minimist';
 import type { Answers, QuestionCollection } from 'inquirer';
-export const __filename = new URL('.', import.meta.url).pathname;
+import type { ParsedArgs, Opts as MinimistOptions } from 'minimist';
+import type { DecoupledKitGenerator } from '@cli/src/types';
+
+const __filename = new URL('.', import.meta.url).pathname;
 
 /**
  * Set generator based on exports from src/generators
+ * @param generators An array of plop Generators with an added name field. @see {@link DecoupledKitGenerator}.
  * @returns {Promise<NodePlopAPI>} plop
  */
-const setGenerators = async (): Promise<NodePlopAPI> => {
+export const setGenerators = async (
+	generators: DecoupledKitGenerator[],
+): Promise<NodePlopAPI> => {
 	const plop = await nodePlop();
 	for (const generator of Object.values(generators)) {
 		plop.setGenerator(generator.name, generator);
@@ -48,12 +52,16 @@ export const parseArgs = (
 /**
  * Initializes the CLI prompts based on parsed arguments
  * @param args - {@link typeof ParsedArgs}
+ * @param DecoupledKitGenerators - An array of plop Generators with an added name field. @see {@link DecoupledKitGenerator}.
  * @remarks positional args are assumed to be generator names. Multiple generators can be queued up this way. Any number of prompts may be skipped by passing in the prompt name via flag.
  * @returns Promise<void>
  */
-export const main = async (args: ParsedArgs): Promise<void> => {
+export const main = async (
+	args: ParsedArgs,
+	DecoupledKitGenerators: DecoupledKitGenerator[],
+): Promise<void> => {
 	// get the node-plop instance
-	const plop = await setGenerators();
+	const plop = await setGenerators(DecoupledKitGenerators);
 	// without setting the plopfile path, the templates can't be found
 	// when trying to run the actions
 	plop.setPlopfilePath(__filename);
@@ -69,7 +77,7 @@ export const main = async (args: ParsedArgs): Promise<void> => {
 		) {
 			return arg;
 		}
-		args.silent ??
+		args.silent ||
 			console.log(chalk.yellow(`No generator found with name ${arg}.`));
 		return;
 	});
@@ -79,16 +87,26 @@ export const main = async (args: ParsedArgs): Promise<void> => {
 	// ask which generators should be run
 	if (!foundGenerators.length) {
 		const generatorNames = generators.map(({ name }) => name);
-		const answers: Answers = await inquirer.prompt({
+		const whichGenerators: QuestionCollection<{ generators: string[] }> = {
 			name: 'generators',
 			type: 'checkbox',
 			message: 'Which generator(s) would you like to run?',
 			choices: () => generatorNames,
-		});
-		typeof answers.generators === 'string' &&
-			generatorsToRun.push(answers.generators);
+		};
+		const answers = await inquirer.prompt(whichGenerators);
+		Array.isArray(answers?.generators) &&
+			generatorsToRun.push(...answers.generators);
 	} else {
 		generatorsToRun.push(...foundGenerators);
+	}
+
+	if (!generatorsToRun.length) {
+		args.silent ||
+			console.error(
+				chalk.red(
+					'No generators were selected. Use positional arguments or choose from the prompt.',
+				),
+			);
 	}
 
 	for (const generator of generatorsToRun) {
@@ -104,9 +122,14 @@ export const main = async (args: ParsedArgs): Promise<void> => {
 		// aka the meat of the generators
 		const { changes, failures } = await plopGenerator.runActions(answers);
 		if (failures.length) {
-			args.silent ?? console.error('The following errors occurred: ', failures);
-		} else if (changes.length) {
-			args.silent ?? console.log('The following changes took place: ', changes);
+			args.silent ||
+				failures.forEach(({ error }) => console.error(chalk.red(error)));
+		}
+		if (changes.length) {
+			args.silent ||
+				changes.forEach(({ type, path }) =>
+					console.log(chalk.green(type), chalk.cyan(path)),
+				);
 		}
 	}
 };
