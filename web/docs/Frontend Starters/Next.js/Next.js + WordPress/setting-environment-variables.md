@@ -73,7 +73,7 @@ prefixed with the branch name of my site.
 if (process.env.PANTHEON_ENVIRONMENT !== 'live') {
 	backendUrl = `https://${
 		process.env.PANTHEON_ENVIRONMENT
-	}-${process.env.WPGRAPHQL_URL.replace(/^https?:\/\//, '')}`;
+	}-${process.env.WPGRAPHQL_URL.replace(/^https?:\/\/[^-]*-/, '')}`;
 }
 ```
 
