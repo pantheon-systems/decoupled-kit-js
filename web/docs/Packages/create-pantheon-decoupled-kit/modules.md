@@ -26,18 +26,18 @@ positional args are assumed to be generator names. Multiple generators can be qu
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `args` | `ParsedArgs` | typeof ParsedArgs |
+| `args` | `ParsedArgs` | minimist.ParsedArgs |
 | `DecoupledKitGenerators` | `DecoupledKitGenerator`[] | An array of plop Generators with an added name field. |
 
 #### Returns
 
 `Promise`<`void`\>
 
-Promise<void>
+Runs the actions for the generators given as positional params or if none are found, prompts user to select valid generator from list of DecoupledKitGenerators
 
 #### Defined in
 
-[index.ts:59](https://github.com/CobyPear/decoupled-kit-js/blob/3f82da72/packages/create-pantheon-decoupled-kit/src/index.ts#L59)
+[index.ts:58](https://github.com/CobyPear/decoupled-kit-js/blob/0c623b70/packages/create-pantheon-decoupled-kit/src/index.ts#L58)
 
 ___
 
@@ -65,11 +65,9 @@ Parses CLI arguments using `minimist`
 
 `ParsedArgs`
 
-minimist parsed args
-
 #### Defined in
 
-[index.ts:33](https://github.com/CobyPear/decoupled-kit-js/blob/3f82da72/packages/create-pantheon-decoupled-kit/src/index.ts#L33)
+[index.ts:32](https://github.com/CobyPear/decoupled-kit-js/blob/0c623b70/packages/create-pantheon-decoupled-kit/src/index.ts#L32)
 
 ___
 
@@ -81,7 +79,8 @@ Set generator based on exports from src/generators
 
 **`See`**
 
-DecoupledKitGenerator.
+ - DecoupledKitGenerator.
+ - NodePlopAPI
 
 #### Parameters
 
@@ -93,8 +92,8 @@ DecoupledKitGenerator.
 
 `Promise`<`NodePlopAPI`\>
 
-plop
+An instance of plop
 
 #### Defined in
 
-[index.ts:16](https://github.com/CobyPear/decoupled-kit-js/blob/3f82da72/packages/create-pantheon-decoupled-kit/src/index.ts#L16)
+[index.ts:16](https://github.com/CobyPear/decoupled-kit-js/blob/0c623b70/packages/create-pantheon-decoupled-kit/src/index.ts#L16)

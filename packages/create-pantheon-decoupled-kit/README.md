@@ -12,10 +12,17 @@ and [`create-create-app`](https://github.com/uetchy/create-create-app).
 To install this package locally, run the following commands from the root of the
 monorepo.
 
+```bash
+  # build the package
+  pnpm build:cli
+  # run the bin script
+  node ./packages/create-pantheon-decoupled-kit/dist/bin.js
+```
+
 <!-- TODO: this is mostly verified but need to confirm check. npm definitely works. -->
 
-Note: We are using `npm` here because `pnpm` does not support locally installed
-`create-` packages
+Or, install the local package globally with `npm` Note: We are using `npm` here
+because `pnpm` does not support locally installed `create-` packages
 
 ```bash
   npm install --global ./packages/create-pantheon-decoupled-kit
@@ -59,9 +66,4 @@ Please see the
 [Contributing guide in our monorepo](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/CONTRIBUTING.md)
 to contribute to the project.
 
-- Components should be created in the `src/components`.
-- Utilities for use in a Next.js app should be created in the `src/lib`
-  directory.
-- Utilities for use in this Library that are not exposed as part of the API
-  should be created in the `utils` directory
-- Follow the established export pattern to maintain proper module resolution.
+<!-- TODO: Write details for contributing to this package -->

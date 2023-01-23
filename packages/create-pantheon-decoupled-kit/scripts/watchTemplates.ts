@@ -3,7 +3,7 @@ import chokidar from 'chokidar';
 import chalk from 'chalk';
 import path from 'path';
 import { main } from '../src/index';
-import { watchOptions } from '../watch.example';
+import { watchOptions } from '../watch';
 import { decoupledKitGenerators } from '../src/generators/index';
 
 const templatesPath = path.resolve(process.cwd(), './src/templates');

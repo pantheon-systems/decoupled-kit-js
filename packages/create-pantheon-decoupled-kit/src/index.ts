@@ -11,7 +11,7 @@ const __filename = new URL('.', import.meta.url).pathname;
 /**
  * Set generator based on exports from src/generators
  * @param generators An array of plop Generators with an added name field. @see {@link DecoupledKitGenerator}.
- * @returns {Promise<NodePlopAPI>} plop
+ * @returns An instance of plop @see {@link NodePlopAPI}
  */
 export const setGenerators = async (
 	generators: DecoupledKitGenerator[],
@@ -28,7 +28,6 @@ export const setGenerators = async (
  * @see {@link https://www.npmjs.com/package/minimist#var-argv--parseargsargs-opts}
  * @param cliArgs - an array of strings.
  * @defaultValue `process.argv.slice(2)`
- * @returns minimist parsed args
  */
 export const parseArgs = (
 	cliArgs: string[] = process.argv.slice(2),
@@ -51,10 +50,10 @@ export const parseArgs = (
 
 /**
  * Initializes the CLI prompts based on parsed arguments
- * @param args - {@link typeof ParsedArgs}
+ * @param args - {@link minimist.ParsedArgs}
  * @param DecoupledKitGenerators - An array of plop Generators with an added name field. @see {@link DecoupledKitGenerator}.
  * @remarks positional args are assumed to be generator names. Multiple generators can be queued up this way. Any number of prompts may be skipped by passing in the prompt name via flag.
- * @returns Promise<void>
+ * @returns Runs the actions for the generators given as positional params or if none are found, prompts user to select valid generator from list of DecoupledKitGenerators
  */
 export const main = async (
 	args: ParsedArgs,
