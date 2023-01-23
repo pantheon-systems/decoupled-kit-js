@@ -52,8 +52,8 @@ prefixed with the branch name of my site.
 /**
  * PANTHEON_ENVIRONMENT is equal to `multi-demo` since that is the name of my branch.
  **/
-if (PANTHEON_ENVIRONMENT !== 'live') {
-	url = `https://${PANTHEON_ENVIRONMENT}-${url.replace(
+if (process.env.PANTHEON_ENVIRONMENT !== 'live') {
+	url = `https://${process.env.PANTHEON_ENVIRONMENT}-${url.replace(
 		/^https?:\/\/[^-]*-/,
 		'',
 	)}`;
