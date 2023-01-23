@@ -9,6 +9,11 @@ const drupalKitTypedocOptions = generateTypeDocOptions('drupal-kit', 0);
 const wordpressKitTypedocOptions = generateTypeDocOptions('wordpress-kit', 1);
 const cmskitTypedocOptions = generateTypeDocOptions('cms-kit', 2);
 const nextjskitTypedocOptions = generateTypeDocOptions('nextjs-kit', 3);
+const cliTypeDocOptions = generateTypeDocOptions(
+	'create-pantheon-decoupled-kit',
+	4,
+	{ compilerOptions: { skipLibCheck: true } },
+);
 const environmentUrl = process.env.PANTHEON_ENVIRONMENT_URL;
 
 /** @type {import('@docusaurus/types').Config} */
@@ -16,7 +21,9 @@ const config = {
 	title: 'Pantheon Decoupled Kit',
 	tagline:
 		'Utilities for building a decoupled front end that sources data from a CMS back end.',
-	url: environmentUrl ? `https://decoupledkit.pantheon.io` : 'http://localhost:3000',
+	url: environmentUrl
+		? `https://decoupledkit.pantheon.io`
+		: 'http://localhost:3000',
 	baseUrl: '/',
 	onBrokenLinks: 'warn',
 	onBrokenMarkdownLinks: 'warn',
@@ -60,6 +67,13 @@ const config = {
 						{
 							id: 'api-4',
 							...nextjskitTypedocOptions,
+						},
+					],
+					[
+						'docusaurus-plugin-typedoc',
+						{
+							id: 'api-5',
+							...cliTypeDocOptions,
 						},
 					],
 			  ]),
