@@ -1,0 +1,65 @@
+{
+	"name": "create-pantheon-decoupled-kit",
+	"version": "0.0.0",
+	"description": "Pantheon Decoupled Kit CLI",
+	"license": "GPL-3.0-or-later",
+	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
+	"bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pantheon-systems/decoupled-kit-js"
+	},
+	"author": "@pantheon-systems",
+	"keywords": [
+		"create-app",
+		"create-pantheon-app",
+		"create-pantheon",
+		"create-pantheon-decoupled-kit",
+		"npm init"
+	],
+	"type": "module",
+	"main": "/dist/bin.js",
+	"bin": {
+		"create-pantheon-decoupled-kit": "./dist/bin.js"
+	},
+	"files": [
+		"dist"
+	],
+	"prettier": "@pantheon-systems/configs/prettier",
+	"typedoc": {
+		"entryPoint": "./src/index.ts"
+	},
+	"scripts": {
+		"build": "pnpm clean && node ./esbuild.js && pnpm copy-templates",
+		"clean": "pnpm rimraf ./dist",
+		"copy-templates": "pnpm vite-node ./scripts/copyTemplates.ts",
+		"test": "vitest run --coverage",
+		"test:watch": "vitest",
+		"watch": "pnpm vite-node ./scripts/watchTemplates.ts",
+		"eslint": "eslint --ext .ts --ignore-path .gitignore",
+		"eslint:fix": "eslint --ext .ts --fix --ignore-path .gitignore",
+		"prettier": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --check --ignore-path ../../.prettierignore",
+		"prettier:fix": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --write --ignore-path ../../.prettierignore",
+		"lint-staged": "lint-staged"
+	},
+	"devDependencies": {
+		"@pantheon-systems/configs": "*",
+		"@pantheon-systems/eslint-config": "*",
+		"@types/fs-extra": "^11.0.1",
+		"@types/inquirer": "^9.0.3",
+		"@types/minimist": "^1.2.2",
+		"chalk": "^5.2.0",
+		"chokidar": "^3.5.3",
+		"esbuild": "0.17.0",
+		"fs-extra": "^11.1.0",
+		"prettier": "^2.8.0",
+		"rimraf": "^4.1.1",
+		"vite-node": "^0.27.2",
+		"vitest": "^0.23.4"
+	},
+	"dependencies": {
+		"inquirer": "^9.1.4",
+		"minimist": "^1.2.7",
+		"node-plop": "^0.31.0"
+	}
+}

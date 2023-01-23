@@ -13,3 +13,6 @@ dist
 public
 
 *.d.ts
+
+# handlebars templates
+*.hbs
