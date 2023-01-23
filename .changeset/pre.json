@@ -10,7 +10,15 @@
     "@pantheon-systems/gatsby-wordpress-starter": "3.0.0",
     "@pantheon-systems/next-drupal-starter": "4.0.0",
     "@pantheon-systems/next-wordpress-starter": "1.0.0",
-    "web": "1.0.0"
+    "web": "1.0.0",
+    "create-pantheon-decoupled-kit": "0.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "grumpy-jokes-clean",
+    "hip-ladybugs-care",
+    "kind-chairs-camp",
+    "kind-crabs-behave",
+    "thin-fans-approve",
+    "tidy-ligers-crash"
+  ]
 }
