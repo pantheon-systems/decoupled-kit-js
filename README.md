@@ -36,7 +36,8 @@ published on `npm`, and to be consumed by the public, and our starter kits.
 To configure the monorepo for development, the following should be installed
 locally:
 
-- Node.js version 16 LTS. We recommend using [nvm](https://github.com/nvm-sh/nvm)
+- Node.js version 18 LTS. We recommend using
+  [nvm](https://github.com/nvm-sh/nvm)
 - [npm](https://docs.npmjs.com/cli/v8/commands/npm) version 8.x.x
 - [pnpm](https://pnpm.io/installation) version 7.17.1
 

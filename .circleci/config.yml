@@ -11,7 +11,7 @@ jobs:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      - image: cimg/node:16.14.0
+      - image: cimg/node:18.13.0
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -53,7 +53,7 @@ jobs:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      - image: cimg/node:16.14.0
+      - image: cimg/node:18.13.0
     # run pnpm audit --fix nightly and opens a PR if there are vulns
     steps:
       - add_ssh_keys:
@@ -112,7 +112,6 @@ jobs:
           branch_pattern: main, canary
           event: pass
           template: basic_success_1
-
 
       # create a PR
       - run:
