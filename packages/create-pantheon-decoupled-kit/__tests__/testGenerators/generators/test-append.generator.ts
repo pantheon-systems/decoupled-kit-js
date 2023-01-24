@@ -20,7 +20,7 @@ export const testAppend: DecoupledKitGenerator = {
 		const actions: PlopGenerator['actions'] = [
 			{
 				type: 'append',
-				templateFile: './templates/simple/test-template.js.hbs',
+				templateFile: './templates/test/testAppend/test-template.js.hbs',
 				path: '{{outDir}}/test.js',
 				force: data?.force ? Boolean(data.force) : false,
 			},

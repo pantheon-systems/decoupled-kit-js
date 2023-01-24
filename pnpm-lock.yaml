@@ -126,14 +126,18 @@ importers:
     specifiers:
       '@pantheon-systems/configs': workspace:*
       '@pantheon-systems/eslint-config': workspace:*
+      '@types/diff': ^5.0.2
       '@types/fs-extra': ^11.0.1
       '@types/inquirer': ^9.0.3
+      '@types/klaw': ^3.0.3
       '@types/minimist': ^1.2.2
       chalk: ^5.2.0
       chokidar: ^3.5.3
+      diff: ^5.1.0
       esbuild: 0.17.0
       fs-extra: ^11.1.0
       inquirer: ^9.1.4
+      klaw: ^4.1.0
       minimist: ^1.2.7
       node-plop: ^0.31.0
       prettier: ^2.8.0
@@ -141,14 +145,18 @@ importers:
       vite-node: ^0.27.2
       vitest: ^0.23.4
     dependencies:
+      diff: 5.1.0
       inquirer: 9.1.4
+      klaw: 4.1.0
       minimist: 1.2.7
       node-plop: 0.31.0
     devDependencies:
       '@pantheon-systems/configs': link:../../configs
       '@pantheon-systems/eslint-config': link:../../configs/eslint
+      '@types/diff': 5.0.2
       '@types/fs-extra': 11.0.1
       '@types/inquirer': 9.0.3
+      '@types/klaw': 3.0.3
       '@types/minimist': 1.2.2
       chalk: 5.2.0
       chokidar: 3.5.3
@@ -5826,6 +5834,10 @@ packages:
       '@types/ms': 0.7.31
     dev: true
 
+  /@types/diff/5.0.2:
+    resolution: {integrity: sha512-uw8eYMIReOwstQ0QKF0sICefSy8cNO/v7gOTiIy9SbwuHyEecJUm7qlgueOO5S1udZ5I/irVydHVwMchgzbKTg==}
+    dev: true
+
   /@types/eslint-scope/3.7.4:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
@@ -5990,6 +6002,12 @@ packages:
     dependencies:
       '@types/node': 18.11.10
     dev: false
+
+  /@types/klaw/3.0.3:
+    resolution: {integrity: sha512-mXlRDFbTLpVysvxahXUQav0hFctgu3Fqr2xmSrpf/ptO/FwOp7SFEGsJkEihwshMbof3/BIiVJ/o42cuOOuv6g==}
+    dependencies:
+      '@types/node': 18.11.10
+    dev: true
 
   /@types/lodash/4.14.191:
     resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
@@ -14869,6 +14887,11 @@ packages:
     resolution: {integrity: sha512-nIeuVSzdCCs6TDPTqI8w1Yre34sSq7AkZ4B3sfOBbI2CgVSB4Du4aLQijFU2+lhAFCwt9+42Hel6lQNIv6AntQ==}
     dependencies:
       graceful-fs: 4.2.10
+    dev: false
+
+  /klaw/4.1.0:
+    resolution: {integrity: sha512-1zGZ9MF9H22UnkpVeuaGKOjfA2t6WrfdrJmGjy16ykcjnKQDmHVX+KI477rpbGevz/5FD4MC3xf1oxylBgcaQw==}
+    engines: {node: '>=14.14.0'}
     dev: false
 
   /kleur/3.0.3:

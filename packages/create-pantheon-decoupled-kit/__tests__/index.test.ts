@@ -53,7 +53,8 @@ describe('setGenerators()', () => {
 		const plop = await bin.setGenerators(decoupledKitTestGenerators);
 
 		expect(setGeneratorSpy).toHaveBeenCalledOnce();
-		expect(plop.setGenerator).toHaveBeenCalledTimes(2);
+		expect(plop.setGenerator).toHaveBeenCalledTimes(3);
+		expect(plop.setActionType).toHaveBeenCalledOnce();
 		expect(plop).toHaveProperty('setPlopfilePath');
 		expect(plop).toHaveProperty('getGenerator');
 		expect(plop.getGeneratorList()).toEqual([
@@ -136,6 +137,7 @@ describe('main()', () => {
 					failures: [],
 				}),
 			})),
+			setActionType: vi.fn(),
 			setGenerator: vi.fn(),
 			getGeneratorList: vi
 				.fn()
@@ -168,7 +170,7 @@ describe('main()', () => {
 					],
 				}),
 			})),
-
+			setActionType: vi.fn(),
 			setGenerator: vi.fn(),
 			getGeneratorList: vi
 				.fn()

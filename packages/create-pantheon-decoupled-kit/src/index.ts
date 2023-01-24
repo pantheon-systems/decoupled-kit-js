@@ -5,6 +5,7 @@ import minimist from 'minimist';
 import type { Answers, QuestionCollection } from 'inquirer';
 import type { ParsedArgs, Opts as MinimistOptions } from 'minimist';
 import type { DecoupledKitGenerator } from '@cli/src/types';
+import { addWithDiff } from './utils/addWithDiff';
 
 const __filename = new URL('.', import.meta.url).pathname;
 
@@ -20,6 +21,7 @@ export const setGenerators = async (
 	for (const generator of Object.values(generators)) {
 		plop.setGenerator(generator.name, generator);
 	}
+	plop.setActionType('addWithDiff', addWithDiff);
 	return plop;
 };
 
