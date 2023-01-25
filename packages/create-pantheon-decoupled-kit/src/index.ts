@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import inquirer from 'inquirer';
-import nodePlop, { NodePlopAPI } from 'node-plop';
+import nodePlop, { CustomActionFunction, NodePlopAPI } from 'node-plop';
 import minimist from 'minimist';
 import type { Answers, QuestionCollection } from 'inquirer';
 import type { ParsedArgs, Opts as MinimistOptions } from 'minimist';
@@ -21,7 +21,10 @@ export const setGenerators = async (
 	for (const generator of Object.values(generators)) {
 		plop.setGenerator(generator.name, generator);
 	}
-	plop.setActionType('addWithDiff', addWithDiff);
+	// Living with the type coercion here since we're close enough and it doesn't break.
+	// We could go around plop when running actions
+	// but this way we are still able to run valid plop generators
+	plop.setActionType('addWithDiff', addWithDiff as CustomActionFunction);
 	return plop;
 };
 

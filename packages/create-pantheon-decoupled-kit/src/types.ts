@@ -4,6 +4,13 @@ import type {
 	NodePlopAPI,
 } from 'node-plop';
 import type { Answers } from 'inquirer';
+import { SpyInstance } from 'vitest';
+
+declare module 'vitest' {
+	export interface TestContext {
+		[key: string]: SpyInstance;
+	}
+}
 
 export interface DecoupledKitGenerator extends Partial<PlopGeneratorConfig> {
 	name: string;

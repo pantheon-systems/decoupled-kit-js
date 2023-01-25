@@ -7,11 +7,7 @@ import chalk from 'chalk';
 import * as nodePlop from 'node-plop';
 
 vi.mock('node-plop');
-vi.mock('inquirer', () => ({
-	default: {
-		prompt: vi.fn(),
-	},
-}));
+vi.mock('inquirer');
 
 afterEach(() => {
 	vi.restoreAllMocks();
@@ -60,6 +56,7 @@ describe('setGenerators()', () => {
 		expect(plop.getGeneratorList()).toEqual([
 			{ name: 'test-add' },
 			{ name: 'test-append' },
+			{ name: 'test-diff' },
 		]);
 	});
 });
@@ -144,6 +141,7 @@ describe('main()', () => {
 				.mockImplementation(() => [
 					{ name: 'test-add' },
 					{ name: 'test-append' },
+					{ name: 'test-diff' },
 				]),
 		});
 
@@ -177,6 +175,7 @@ describe('main()', () => {
 				.mockImplementation(() => [
 					{ name: 'test-add' },
 					{ name: 'test-append' },
+					{ name: 'test-diff' },
 				]),
 		});
 		await main(parseArgs(), decoupledKitTestGenerators);

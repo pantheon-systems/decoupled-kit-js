@@ -30,11 +30,11 @@ export const addWithDiff: AddWithDiffAction = async (
 		plop.getPlopfilePath(),
 		config.templates,
 	);
+	const destinationDir = plop.renderString(config.path, answers);
 
 	for await (const file of klaw(templateDir)) {
 		if (file.stats.isDirectory()) continue;
 		const fileName = path.basename(file.path);
-		const destinationDir = plop.renderString(config.path, answers);
 		let target = path.resolve(process.cwd(), destinationDir, fileName);
 		// sourceContents will be a rendered template if the source file is a handlebars template
 		// otherwise we will use the contents of that file with no rendering
@@ -49,10 +49,11 @@ export const addWithDiff: AddWithDiffAction = async (
 		} else {
 			sourceContents = fs.readFileSync(file.path, 'utf8');
 		}
-		if (!answers.force || !config.force) {
+		if (!answers.force ?? !config.force) {
+			const fileDidExist = fs.existsSync(target);
 			// ensure the file exists or readFileSync errors.
 			// We could swallow the error with a try/catch, but this feels a bit cleaner to me.
-			fs.ensureFileSync(target);
+			!fileDidExist && fs.createFileSync(target);
 			// get the contents of file at 'target' if there is any
 			const targetContents = fs.readFileSync(target, 'utf-8');
 			// if the target and source are the same, skip diffing or writing the file
@@ -96,6 +97,9 @@ export const addWithDiff: AddWithDiffAction = async (
 					outcomes.written.push(target);
 					break;
 				case 'skip':
+					// if we created the file, delete it
+					// so we don't leave behind empty files
+					!fileDidExist && fs.unlinkSync(target);
 					outcomes.skipped.push(target);
 					break;
 				case 'yes to all':
@@ -104,7 +108,7 @@ export const addWithDiff: AddWithDiffAction = async (
 					fs.writeFileSync(target, sourceContents);
 					break;
 				case 'abort':
-					console.log(chalk.red('Aborting!'));
+					answers.silent || console.log(chalk.red('Aborting!'));
 					return process.exit();
 				default:
 					break;

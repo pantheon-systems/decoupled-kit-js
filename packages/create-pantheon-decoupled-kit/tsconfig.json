@@ -1,7 +1,6 @@
 {
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
-		"types": ["vitest/globals"],
-		"skipLibCheck": false
+		"types": ["vitest/globals"]
 	}
 }

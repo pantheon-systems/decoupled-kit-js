@@ -54,8 +54,9 @@
 		"chokidar": "^3.5.3",
 		"esbuild": "0.17.0",
 		"fs-extra": "^11.1.0",
+		"handlebars": "^4.7.7",
 		"prettier": "^2.8.0",
-		"rimraf": "^4.1.1",
+		"rimraf": "^4.1.2",
 		"vite-node": "^0.27.2",
 		"vitest": "^0.23.4"
 	},
