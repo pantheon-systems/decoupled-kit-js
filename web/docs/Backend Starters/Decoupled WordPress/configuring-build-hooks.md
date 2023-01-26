@@ -25,10 +25,10 @@ click **Add Build Hook**. Name your hook and select a branch to target using the
 **Branch to Build** dropdown. Copy the generated build hook URL.
 
 Next, navigate to your WordPress development site and open the WP Webhooks
-plugin dashboard, click on the **Send Data** tab. From here, select the **Post
-Created** Webhook trigger. Click **Add Webhook URL**, name the hook and paste
-the build hook URL that you generated earlier, submit this form. Repeat this
-process for the **Post Updated** trigger.
+plugin dashboard, click on the **Send Data** tab. Select the **Post Created**
+Webhook trigger. Click **Add Webhook URL**, name the hook and paste the build
+hook URL that you generated earlier, submit this form. Repeat this process for
+the **Post Updated** trigger.
 
 To test the functionality of this new build hook, create a new Post or update a
 previously existing one. Once either of these actions are completed, navigate to
