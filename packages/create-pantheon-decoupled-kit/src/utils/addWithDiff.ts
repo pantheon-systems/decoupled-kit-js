@@ -33,9 +33,13 @@ export const addWithDiff: AddWithDiffAction = async (
 	const destinationDir = plop.renderString(config.path, answers);
 
 	for await (const file of klaw(templateDir)) {
-		if (file.stats.isDirectory()) continue;
+		const targetPath = file.path.replace(templateDir, '').replace(/^\//, '');
+		let target = path.resolve(process.cwd(), destinationDir, targetPath);
+		if (file.stats.isDirectory()) {
+			fs.ensureDirSync(path.resolve(target));
+			continue;
+		}
 		const fileName = path.basename(file.path);
-		let target = path.resolve(process.cwd(), destinationDir, fileName);
 		// sourceContents will be a rendered template if the source file is a handlebars template
 		// otherwise we will use the contents of that file with no rendering
 		let sourceContents: string;

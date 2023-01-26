@@ -8,6 +8,11 @@ export default async () => ({
 		const t = Handlebars.compile(template);
 		return t(data);
 	}),
+	setPartial: vi
+		.fn()
+		.mockImplementation((name, partial) =>
+			Handlebars.registerPartial(name, partial),
+		),
 	getGenerator: vi.fn().mockImplementation(() => ({
 		runActions: vi.fn().mockReturnValue({ changes: [], failures: [] }),
 	})),

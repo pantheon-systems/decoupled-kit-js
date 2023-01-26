@@ -4,8 +4,9 @@ import nodePlop, { CustomActionFunction, NodePlopAPI } from 'node-plop';
 import minimist from 'minimist';
 import type { Answers, QuestionCollection } from 'inquirer';
 import type { ParsedArgs, Opts as MinimistOptions } from 'minimist';
-import type { DecoupledKitGenerator } from '@cli/src/types';
+import type { DecoupledKitGenerator } from './types';
 import { addWithDiff } from './utils/addWithDiff';
+import { getPartials } from './utils/getPartials';
 
 const __filename = new URL('.', import.meta.url).pathname;
 
@@ -25,6 +26,10 @@ export const setGenerators = async (
 	// We could go around plop when running actions
 	// but this way we are still able to run valid plop generators
 	plop.setActionType('addWithDiff', addWithDiff as CustomActionFunction);
+	// register handlebars partials to the plop instance
+	const hbsPartials = await getPartials(__filename);
+	hbsPartials.forEach(({ name, partial }) => plop.setPartial(name, partial));
+
 	return plop;
 };
 
@@ -43,10 +48,8 @@ export const parseArgs = (
 	const options: MinimistOptions = {
 		// these options tell minimist which --args are
 		// booleans and which are strings.
-		// we will probably want these soon
 		boolean: ['force', 'silent' /**noInstall */],
-		// might want these too
-		//string: ['appName', 'directory'],
+		string: ['appName', 'outDir'],
 	};
 	const args: ParsedArgs = minimist(cliArgs, options);
 

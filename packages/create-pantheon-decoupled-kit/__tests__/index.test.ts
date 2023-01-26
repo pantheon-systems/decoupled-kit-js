@@ -128,6 +128,8 @@ describe('main()', () => {
 		vi.mocked(nodePlop.default).mockReturnValueOnce({
 			//@ts-ignore
 			setPlopfilePath: vi.fn(),
+			getPlopfilePath: vi.fn(),
+			setPartial: vi.fn(),
 			getGenerator: vi.fn().mockImplementation(() => ({
 				runActions: vi.fn().mockReturnValue({
 					changes: [{ type: 'add', path: '/test' }],
@@ -158,6 +160,8 @@ describe('main()', () => {
 		vi.mocked(nodePlop.default).mockReturnValueOnce({
 			//@ts-ignore
 			setPlopfilePath: vi.fn(),
+			getPlopfilePath: vi.fn(),
+			setPartial: vi.fn(),
 			getGenerator: vi.fn().mockImplementation(() => ({
 				runActions: vi.fn().mockReturnValue({
 					changes: [],
