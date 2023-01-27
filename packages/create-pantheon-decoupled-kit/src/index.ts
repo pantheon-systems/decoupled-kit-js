@@ -11,7 +11,6 @@ import type { ParsedArgs, Opts as MinimistOptions } from 'minimist';
 import type { DecoupledKitGenerator } from './types';
 
 const __filename = new URL('.', import.meta.url).pathname;
-
 /**
  * Set generator based on exports from src/generators
  * @param generators An array of plop Generators with an added name field. @see {@link DecoupledKitGenerator}.
@@ -56,7 +55,7 @@ export const parseArgs = (
 	const options: MinimistOptions = {
 		// these options tell minimist which --args are
 		// booleans and which are strings.
-		boolean: ['force', 'silent' /**noInstall */],
+		boolean: ['force', 'silent'],
 		string: ['appName', 'outDir'],
 	};
 	const args: ParsedArgs = minimist(cliArgs, options);

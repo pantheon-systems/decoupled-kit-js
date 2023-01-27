@@ -11,7 +11,7 @@ export const runESLint = (
 	_plop: NodePlopAPI,
 ) => {
 	if (typeof answers.outDir !== 'string') return;
-	console.log(chalk.green('Linting...'));
+	answers.silent || console.log(chalk.green('Linting...'));
 	execSync(
 		`npx eslint --ext .js,.jsx,.ts,.tsx --fix --env node --parser @typescript-eslint/parser --plugin ${config.plugins} --ignore-pattern ${config.ignorePattern} .`,
 		{ cwd: answers.outDir, stdio: 'inherit' },

@@ -1,21 +1,34 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import chalk from 'chalk';
+import whichPmRuns from 'which-pm-runs';
 import { execSync } from 'child_process';
-import type { CustomActionFn, RunInstallActionConfig } from '../types';
+import type { CustomActionFn } from '../types';
+import { CustomActionConfig } from 'node-plop';
 
-export const runInstall: CustomActionFn<RunInstallActionConfig> = (
+export const runInstall: CustomActionFn<CustomActionConfig<'runInstall'>> = (
 	answers,
-	config: RunInstallActionConfig,
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	_config: CustomActionConfig<'runInstall'>,
 	_plop,
 ) => {
-	if (typeof answers.outDir !== 'string') return;
+	if (typeof answers.outDir !== 'string') return 'fail: outDir required';
+
+	const getPkgManager = whichPmRuns();
+	let pkgManager: string;
+
+	if (!getPkgManager) {
+		// fallback to npm
+		pkgManager = 'npm';
+	} else {
+		pkgManager = getPkgManager.name;
+	}
+
 	answers.silent ||
 		console.log(
 			chalk.green('Installing dependencies with'),
-			chalk.bold.white(config.pkgManager),
+			chalk.bold.white(pkgManager),
 			chalk.green('...'),
 		);
-	execSync(`${config.pkgManager} install ${answers.outDir}`, {
+	execSync(`${pkgManager} install`, {
 		cwd: answers.outDir,
 		encoding: 'utf8',
 		stdio: 'inherit',

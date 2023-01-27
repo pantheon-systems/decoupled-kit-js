@@ -1,7 +1,7 @@
+import type { ActionType, CustomActionConfig } from 'node-plop';
 import type {
 	DecoupledKitGenerator,
 	AddWithDiffActionConfig,
-	RunInstallActionConfig,
 	RunESLintActionConfig,
 } from '../types';
 
@@ -20,13 +20,6 @@ export const nextWp: DecoupledKitGenerator = {
 			default: ({ appName }: { [key: string]: string }) =>
 				`${process.cwd()}/${appName.replaceAll(' ', '-').toLowerCase()}`,
 		},
-		{
-			name: 'pkgManager',
-			message: 'Choose a package manager',
-			type: 'list',
-			choices: ['npm', 'yarn'],
-			default: 'npm',
-		},
 	],
 	actions: (data) => {
 		const addWithDiff: AddWithDiffActionConfig = {
@@ -35,18 +28,23 @@ export const nextWp: DecoupledKitGenerator = {
 			path: '{{outDir}}',
 			force: data?.force ? Boolean(data.force) : false,
 		};
-		// Omitting pnpm here for now, need to make sure it works on the platform
-		const pkgManager = data?.pkgManager === 'yarn' ? 'yarn' : 'npm';
-		const runInstall: RunInstallActionConfig = {
-			type: 'runInstall',
-			pkgManager,
-		};
 		const runESLint: RunESLintActionConfig = {
 			type: 'runLint',
 			plugins: 'react',
 			ignorePattern: '__mocks__/*',
 		};
-		const actions = [addWithDiff, runInstall, runESLint];
+
+		const actions: ActionType[] = [addWithDiff];
+
+		console.log('data', !data?.noInstall);
+		if (!data?.noInstall) {
+			const runInstall: CustomActionConfig<'runInstall'> = {
+				type: 'runInstall',
+			};
+			actions.push(runInstall, runESLint);
+		} else {
+			actions.push(runESLint);
+		}
 		return actions;
 	},
 };

@@ -132,6 +132,7 @@ importers:
       '@types/inquirer': ^9.0.3
       '@types/klaw': ^3.0.3
       '@types/minimist': ^1.2.2
+      '@types/which-pm-runs': ^1.0.0
       chalk: ^5.2.0
       chokidar: ^3.5.3
       diff: ^5.1.0
@@ -146,12 +147,14 @@ importers:
       rimraf: ^4.1.2
       vite-node: ^0.27.2
       vitest: ^0.23.4
+      which-pm-runs: ^1.1.0
     dependencies:
       diff: 5.1.0
       inquirer: 9.1.4
       klaw: 4.1.0
       minimist: 1.2.7
       node-plop: 0.31.0
+      which-pm-runs: 1.1.0
     devDependencies:
       '@pantheon-systems/configs': link:../../configs
       '@pantheon-systems/eslint-config': link:../../configs/eslint
@@ -160,6 +163,7 @@ importers:
       '@types/inquirer': 9.0.3
       '@types/klaw': 3.0.3
       '@types/minimist': 1.2.2
+      '@types/which-pm-runs': 1.0.0
       chalk: 5.2.0
       chokidar: 3.5.3
       esbuild: 0.17.0
@@ -6222,6 +6226,10 @@ packages:
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: false
+
+  /@types/which-pm-runs/1.0.0:
+    resolution: {integrity: sha512-BXfdlYLWvRhngJbih4N57DjO+63Z7AxiFiip8yq3rD46U7V4I2W538gngPvBsZiMehhD8sfGf4xLI6k7TgXvNw==}
+    dev: true
 
   /@types/ws/8.5.3:
     resolution: {integrity: sha512-6YOoWjruKj1uLf3INHH7D3qTXwFfEsg1kf3c0uDdSBJwfa/llkwIjrAGV7j7mVgGNbzTQ3HiHKKDXl6bJPD97w==}
@@ -20791,6 +20799,11 @@ packages:
 
   /which-module/2.0.0:
     resolution: {integrity: sha512-B+enWhmw6cjfVC7kS8Pj9pCrKSc5txArRyaYGe088shv/FGWH+0Rjx/xPgtsWfsUtS27FkP697E4DDhgrgoc0Q==}
+
+  /which-pm-runs/1.1.0:
+    resolution: {integrity: sha512-n1brCuqClxfFfq/Rb0ICg9giSZqCS+pLtccdag6C2HyufBrh3fBOiy9nb6ggRMvWOVH5GrdJskj5iGTZNxd7SA==}
+    engines: {node: '>=4'}
+    dev: false
 
   /which-pm/2.0.0:
     resolution: {integrity: sha512-Lhs9Pmyph0p5n5Z3mVnN0yWcbQYUAD7rbQUiMsQxOJ3T57k7RFe35SUwWMf7dsbDZks1uOmw4AecB/JMDj3v/w==}
