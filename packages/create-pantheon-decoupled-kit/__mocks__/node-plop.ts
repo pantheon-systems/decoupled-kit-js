@@ -20,9 +20,5 @@ export default async () => ({
 	setGenerator: vi.fn(),
 	getGeneratorList: vi
 		.fn()
-		.mockImplementation(() => [
-			{ name: 'test-add' },
-			{ name: 'test-append' },
-			{ name: 'test-diff' },
-		]),
+		.mockImplementation(() => [{ name: 'test-add' }, { name: 'test-append' }]),
 });

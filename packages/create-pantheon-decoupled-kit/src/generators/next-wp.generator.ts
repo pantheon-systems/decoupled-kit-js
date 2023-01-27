@@ -4,7 +4,6 @@ import type {
 	RunInstallActionConfig,
 	RunESLintActionConfig,
 } from '../types';
-import { pkgJsonPrompts } from '../utils/pkgJsonPrompts';
 
 export const nextWp: DecoupledKitGenerator = {
 	name: 'next-wp',
@@ -21,7 +20,6 @@ export const nextWp: DecoupledKitGenerator = {
 			default: ({ appName }: { [key: string]: string }) =>
 				`${process.cwd()}/${appName.replaceAll(' ', '-').toLowerCase()}`,
 		},
-		...pkgJsonPrompts,
 		{
 			name: 'pkgManager',
 			message: 'Choose a package manager',

@@ -49,14 +49,13 @@ describe('setGenerators()', () => {
 		const plop = await bin.setGenerators(decoupledKitTestGenerators);
 
 		expect(setGeneratorSpy).toHaveBeenCalledOnce();
-		expect(plop.setGenerator).toHaveBeenCalledTimes(3);
+		expect(plop.setGenerator).toHaveBeenCalledTimes(2);
 		expect(plop.setActionType).toHaveBeenCalledTimes(3);
 		expect(plop).toHaveProperty('setPlopfilePath');
 		expect(plop).toHaveProperty('getGenerator');
 		expect(plop.getGeneratorList()).toEqual([
 			{ name: 'test-add' },
 			{ name: 'test-append' },
-			{ name: 'test-diff' },
 		]);
 	});
 });
@@ -143,7 +142,6 @@ describe('main()', () => {
 				.mockImplementation(() => [
 					{ name: 'test-add' },
 					{ name: 'test-append' },
-					{ name: 'test-diff' },
 				]),
 		});
 
@@ -179,7 +177,6 @@ describe('main()', () => {
 				.mockImplementation(() => [
 					{ name: 'test-add' },
 					{ name: 'test-append' },
-					{ name: 'test-diff' },
 				]),
 		});
 		await main(parseArgs(), decoupledKitTestGenerators);
