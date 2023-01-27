@@ -21,6 +21,8 @@ export const addWithDiff: CustomActionFn<AddWithDiffActionConfig> = async (
 	 * 6. skip or write the file based on input. If yes to all, set force to true.
 	 */
 
+	const filesToCopyRegex =
+		/(gif|jpg|jpeg|tiff|png|svg|ashx|ico|pdf|jar|eot|woff|ttf|woff2)$/;
 	const outcomes: { [key: string]: string[] } = {
 		written: [],
 		skipped: [],
@@ -47,11 +49,11 @@ export const addWithDiff: CustomActionFn<AddWithDiffActionConfig> = async (
 			target = target.replace(/\.hbs$/, '');
 			// get the contents of the template
 			sourceContents = plop.renderString(
-				fs.readFileSync(file.path, 'utf8'),
+				fs.readFileSync(file.path, 'utf-8'),
 				answers,
 			);
 		} else {
-			sourceContents = fs.readFileSync(file.path, 'utf8');
+			sourceContents = fs.readFileSync(file.path, 'utf-8');
 		}
 		if (!answers.force ?? !config.force) {
 			const fileDidExist = fs.existsSync(target);
@@ -68,6 +70,8 @@ export const addWithDiff: CustomActionFn<AddWithDiffActionConfig> = async (
 			// do the diff
 			const changes = target.endsWith('.json')
 				? diffJson(targetContents, sourceContents)
+				: filesToCopyRegex.test(target)
+				? []
 				: diffLines(targetContents, sourceContents);
 			console.log(chalk.bold(`Listing changes for ${chalk.magenta(target)}:`));
 			changes.forEach((change) => {
@@ -97,7 +101,9 @@ export const addWithDiff: CustomActionFn<AddWithDiffActionConfig> = async (
 
 			switch (answer.writeFile) {
 				case 'yes':
-					fs.writeFileSync(target, sourceContents);
+					filesToCopyRegex.test(target)
+						? fs.copyFileSync(file.path, target)
+						: fs.writeFileSync(target, sourceContents);
 					outcomes.written.push(target);
 					break;
 				case 'skip':
@@ -109,7 +115,9 @@ export const addWithDiff: CustomActionFn<AddWithDiffActionConfig> = async (
 				case 'yes to all':
 					answers.force = true;
 					outcomes.written.push(target);
-					fs.writeFileSync(target, sourceContents);
+					filesToCopyRegex.test(target)
+						? fs.copyFileSync(file.path, target)
+						: fs.writeFileSync(target, sourceContents, 'utf-8');
 					break;
 				case 'abort':
 					answers.silent || console.log(chalk.red('Aborting!'));
@@ -119,7 +127,9 @@ export const addWithDiff: CustomActionFn<AddWithDiffActionConfig> = async (
 			}
 		} else {
 			// if force is true, write the file no questions asked.
-			fs.writeFileSync(target, sourceContents);
+			filesToCopyRegex.test(target)
+				? fs.copyFileSync(file.path, target)
+				: fs.writeFileSync(target, sourceContents, 'utf-8');
 			outcomes.written.push(target);
 		}
 	}
