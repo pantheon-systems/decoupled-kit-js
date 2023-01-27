@@ -34,7 +34,7 @@ jobs:
             split_repository: 'decoupled-kit-docs-canary'
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       # Add Github workflow before split
       - run: |
           mkdir -p ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows

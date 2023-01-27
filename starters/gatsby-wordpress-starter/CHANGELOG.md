@@ -1,5 +1,12 @@
 # @pantheon-systems/gatsby-wordpress-starter
 
+## 3.0.1-canary.0
+
+### Patch Changes
+
+- c53b1ac: Pantheon Environment Docs
+- 89d8d4b: Update `.nvmrc` file
+
 ## 3.0.0
 
 ### Major Changes

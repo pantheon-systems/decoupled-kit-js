@@ -41,6 +41,7 @@ overrides:
   graphql-compose: <=9.0.9
   json5@<2.2.2: '>=2.2.2'
   json5@>=2.0.0 <2.2.2: '>=2.2.2'
+  ua-parser-js@<0.7.33: '>=0.7.33'
 
 importers:
 

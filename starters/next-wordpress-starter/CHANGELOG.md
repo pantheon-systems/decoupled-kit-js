@@ -1,5 +1,12 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 1.0.1-canary.0
+
+### Patch Changes
+
+- 06bb3b7: Update `.nvmrc` file
+- d93cdb5: Pantheon Environment Docs
+
 ## 1.0.0
 
 ### Major Changes
