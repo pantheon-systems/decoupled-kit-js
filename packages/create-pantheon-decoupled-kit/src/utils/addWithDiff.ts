@@ -1,13 +1,13 @@
 import chalk from 'chalk';
 import { diffLines, diffJson } from 'diff';
 import fs from 'fs-extra';
+import inquirer from 'inquirer';
 import klaw from 'klaw';
 import path from 'path';
-import inquirer from 'inquirer';
 import type { QuestionCollection } from 'inquirer';
-import type { AddWithDiffAction, AddWithDiffActionConfig } from '../types';
+import type { CustomActionFn, AddWithDiffActionConfig } from '../types';
 
-export const addWithDiff: AddWithDiffAction = async (
+export const addWithDiff: CustomActionFn<AddWithDiffActionConfig> = async (
 	answers,
 	config: AddWithDiffActionConfig,
 	plop,

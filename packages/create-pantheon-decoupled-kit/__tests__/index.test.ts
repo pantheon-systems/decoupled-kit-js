@@ -50,7 +50,7 @@ describe('setGenerators()', () => {
 
 		expect(setGeneratorSpy).toHaveBeenCalledOnce();
 		expect(plop.setGenerator).toHaveBeenCalledTimes(3);
-		expect(plop.setActionType).toHaveBeenCalledOnce();
+		expect(plop.setActionType).toHaveBeenCalledTimes(3);
 		expect(plop).toHaveProperty('setPlopfilePath');
 		expect(plop).toHaveProperty('getGenerator');
 		expect(plop.getGeneratorList()).toEqual([

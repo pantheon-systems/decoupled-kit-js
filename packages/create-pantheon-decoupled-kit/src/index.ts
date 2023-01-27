@@ -1,12 +1,14 @@
 import chalk from 'chalk';
 import inquirer from 'inquirer';
-import nodePlop, { CustomActionFunction, NodePlopAPI } from 'node-plop';
 import minimist from 'minimist';
+import nodePlop, { CustomActionFunction, NodePlopAPI } from 'node-plop';
+import { getPartials } from './utils/getPartials';
+import { addWithDiff } from './utils/addWithDiff';
+import { runInstall } from './utils/runInstall';
+import { runESLint } from './utils/runEslint';
 import type { Answers, QuestionCollection } from 'inquirer';
 import type { ParsedArgs, Opts as MinimistOptions } from 'minimist';
 import type { DecoupledKitGenerator } from './types';
-import { addWithDiff } from './utils/addWithDiff';
-import { getPartials } from './utils/getPartials';
 
 const __filename = new URL('.', import.meta.url).pathname;
 
@@ -25,7 +27,13 @@ export const setGenerators = async (
 	// Living with the type coercion here since we're close enough and it doesn't break.
 	// We could go around plop when running actions
 	// but this way we are still able to run valid plop generators
-	plop.setActionType('addWithDiff', addWithDiff as CustomActionFunction);
+	[
+		{ name: 'addWithDiff', action: addWithDiff },
+		{ name: 'runInstall', action: runInstall },
+		{ name: 'runLint', action: runESLint },
+	].forEach(({ name, action }) => {
+		plop.setActionType(name, action as CustomActionFunction);
+	});
 	// register handlebars partials to the plop instance
 	const hbsPartials = await getPartials(__filename);
 	hbsPartials.forEach(({ name, partial }) => plop.setPartial(name, partial));

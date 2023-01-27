@@ -1,4 +1,9 @@
-import type { DecoupledKitGenerator, AddWithDiffActionConfig } from '../types';
+import type {
+	DecoupledKitGenerator,
+	AddWithDiffActionConfig,
+	RunInstallActionConfig,
+	RunESLintActionConfig,
+} from '../types';
 import { pkgJsonPrompts } from '../utils/pkgJsonPrompts';
 
 export const nextWp: DecoupledKitGenerator = {
@@ -17,6 +22,13 @@ export const nextWp: DecoupledKitGenerator = {
 				`${process.cwd()}/${appName.replaceAll(' ', '-').toLowerCase()}`,
 		},
 		...pkgJsonPrompts,
+		{
+			name: 'pkgManager',
+			message: 'Choose a package manager',
+			type: 'list',
+			choices: ['npm', 'yarn'],
+			default: 'npm',
+		},
 	],
 	actions: (data) => {
 		const addWithDiff: AddWithDiffActionConfig = {
@@ -25,7 +37,18 @@ export const nextWp: DecoupledKitGenerator = {
 			path: '{{outDir}}',
 			force: data?.force ? Boolean(data.force) : false,
 		};
-		const actions = [addWithDiff];
+		// Omitting pnpm here for now, need to make sure it works on the platform
+		const pkgManager = data?.pkgManager === 'yarn' ? 'yarn' : 'npm';
+		const runInstall: RunInstallActionConfig = {
+			type: 'runInstall',
+			pkgManager,
+		};
+		const runESLint: RunESLintActionConfig = {
+			type: 'runLint',
+			plugins: 'react',
+			ignorePattern: '__mocks__/*',
+		};
+		const actions = [addWithDiff, runInstall, runESLint];
 		return actions;
 	},
 };

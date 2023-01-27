@@ -24,11 +24,25 @@ export interface AddWithDiffActionConfig
 	templates: string;
 }
 
+export interface RunInstallActionConfig
+	extends CustomActionConfig<'runInstall'> {
+	pkgManager: 'yarn' | 'pnpm' | 'npm';
+}
+
+export interface RunESLintActionConfig extends CustomActionConfig<'runLint'> {
+	ignorePattern: string;
+	plugins: string;
+}
+
 /**
  * overriding the CustomAction
  */
-export type AddWithDiffAction = (
+export type CustomActionFn<Config> = (
 	Answers: Answers,
-	config: AddWithDiffActionConfig,
+	// need a better solution for the types here and for the configs...
+	// look into adding a patch for node-plop types
+	config: Config extends RunInstallActionConfig
+		? RunInstallActionConfig
+		: AddWithDiffActionConfig,
 	plop: NodePlopAPI,
-) => Promise<string | void>;
+) => Promise<string | void> | string | undefined;
