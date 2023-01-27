@@ -19,6 +19,7 @@ const outDir = `${process.cwd()}/__tests__/fixtures/runInstall`;
 
 describe('runInstall()', () => {
 	beforeEach(async (context) => {
+		vi.restoreAllMocks();
 		// dynamically creating the package.json, otherwise
 		// pnpm install adds this test package to the workspace
 		// and with the workspace filter, it won't
@@ -211,5 +212,20 @@ describe('runInstall()', () => {
 		expect(runInstallSpy).toHaveBeenLastCalledWith(answers, config, plop);
 		expect(plopSpy).toHaveBeenCalledOnce();
 		expect(result).toEqual('fail: outDir required');
+	});
+
+	it('should return if noInstall is true', async ({
+		runInstallSpy,
+		plopSpy,
+	}) => {
+		const answers: ParsedArgs = { _: [], noInstall: true };
+		const plop = await nodePlop.default();
+
+		const result = actions.runInstall(answers, config, plop);
+
+		expect(runInstallSpy).toHaveBeenCalledOnce();
+		expect(runInstallSpy).toHaveBeenLastCalledWith(answers, config, plop);
+		expect(plopSpy).toHaveBeenCalledOnce();
+		expect(result).toEqual('skipping install');
 	});
 });

@@ -5,7 +5,7 @@ import nodePlop, { CustomActionFunction, NodePlopAPI } from 'node-plop';
 import { getPartials } from './utils/getPartials';
 import { addWithDiff } from './utils/addWithDiff';
 import { runInstall } from './utils/runInstall';
-import { runESLint } from './utils/runEslint';
+import { runESLint } from './utils/runESLint';
 import type { Answers, QuestionCollection } from 'inquirer';
 import type { ParsedArgs, Opts as MinimistOptions } from 'minimist';
 import type { DecoupledKitGenerator } from './types';

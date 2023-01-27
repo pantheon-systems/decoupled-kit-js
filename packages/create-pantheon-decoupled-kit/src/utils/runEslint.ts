@@ -13,7 +13,9 @@ export const runESLint = (
 	if (typeof answers.outDir !== 'string') return;
 	answers.silent || console.log(chalk.green('Linting...'));
 	execSync(
-		`npx eslint --ext .js,.jsx,.ts,.tsx --fix --env node --parser @typescript-eslint/parser --plugin ${config.plugins} --ignore-pattern ${config.ignorePattern} .`,
+		`npx eslint --ext .js,.jsx,.ts,.tsx --fix --env node --parser @typescript-eslint/parser --plugin ${
+			config.plugins ? `--plugin ${config.plugins}` : ''
+		} --ignore-pattern ${config.ignorePattern} *`,
 		{ cwd: answers.outDir, stdio: 'inherit' },
 	);
 	return 'success';

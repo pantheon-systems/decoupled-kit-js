@@ -10,6 +10,7 @@ export const runInstall: CustomActionFn<CustomActionConfig<'runInstall'>> = (
 	_config: CustomActionConfig<'runInstall'>,
 	_plop,
 ) => {
+	if (answers.noInstall) return 'skipping install';
 	if (typeof answers.outDir !== 'string') return 'fail: outDir required';
 
 	const getPkgManager = whichPmRuns();

@@ -1,4 +1,4 @@
-import type { ActionType, CustomActionConfig } from 'node-plop';
+import type { CustomActionConfig } from 'node-plop';
 import type {
 	DecoupledKitGenerator,
 	AddWithDiffActionConfig,
@@ -33,18 +33,12 @@ export const nextWp: DecoupledKitGenerator = {
 			plugins: 'react',
 			ignorePattern: '__mocks__/*',
 		};
+		const runInstall: CustomActionConfig<'runInstall'> = {
+			type: 'runInstall',
+		};
 
-		const actions: ActionType[] = [addWithDiff];
+		const actions = [addWithDiff, runInstall, runESLint];
 
-		console.log('data', !data?.noInstall);
-		if (!data?.noInstall) {
-			const runInstall: CustomActionConfig<'runInstall'> = {
-				type: 'runInstall',
-			};
-			actions.push(runInstall, runESLint);
-		} else {
-			actions.push(runESLint);
-		}
 		return actions;
 	},
 };
