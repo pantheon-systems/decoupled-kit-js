@@ -17,7 +17,7 @@
 	],
 	"main": "./index.js",
 	"dependencies": {
-		"@typescript-eslint/parser": "^5.38.1"
+		"@typescript-eslint/parser": "^5.49.0"
 	},
 	"devDependencies": {
 		"@pantheon-systems/configs": "*"
