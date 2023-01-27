@@ -3,18 +3,14 @@ import * as nodePlop from 'node-plop';
 import chalk from 'chalk';
 import fs from 'fs-extra';
 import whichPMRuns from 'which-pm-runs';
-import { execSync } from 'child_process';
+import * as child_process from 'child_process';
 import type { ParsedArgs } from 'minimist';
 import type { CustomActionConfig } from 'node-plop';
 
 vi.mock('node-plop');
 vi.mock('inquirer');
 vi.mock('which-pm-runs');
-vi.mock('child_process', () => ({
-	// mocking execSync so we don't have to actually `npm/pnpm/yarn install`
-	// which will probably not work in CI without some extra effort
-	execSync: vi.fn(),
-}));
+vi.mock('child_process');
 
 const config: CustomActionConfig<'runInstall'> = {
 	type: 'runInstall',
@@ -54,6 +50,7 @@ describe('runInstall()', () => {
 		context.logSpy = vi.spyOn(console, 'log');
 		context.runInstallSpy = vi.spyOn(actions, 'runInstall');
 		context.plopSpy = vi.spyOn(nodePlop, 'default');
+		context.execSyncSpy = vi.spyOn(child_process, 'execSync');
 	});
 
 	afterEach(() => {
@@ -75,6 +72,7 @@ describe('runInstall()', () => {
 		runInstallSpy,
 		logSpy,
 		plopSpy,
+		execSyncSpy,
 	}) => {
 		const answers: ParsedArgs = { _: [], outDir };
 		const plop = await nodePlop.default();
@@ -82,7 +80,7 @@ describe('runInstall()', () => {
 			name: 'npm',
 			version: 'x',
 		}));
-		vi.mocked(execSync).mockImplementationOnce((_command, _options) => {
+		execSyncSpy.mockImplementationOnce((_command, _options) => {
 			fs.writeFileSync(`${outDir}/package-lock.json`, 'success');
 			fs.mkdirSync(`${outDir}/node_modules`);
 			return 'success';
@@ -107,6 +105,7 @@ describe('runInstall()', () => {
 		runInstallSpy,
 		logSpy,
 		plopSpy,
+		execSyncSpy,
 	}) => {
 		const answers: ParsedArgs = { _: [], outDir };
 		const plop = await nodePlop.default();
@@ -114,7 +113,7 @@ describe('runInstall()', () => {
 			name: 'yarn',
 			version: 'x',
 		}));
-		vi.mocked(execSync).mockImplementationOnce((_command, _options) => {
+		execSyncSpy.mockImplementationOnce((_command, _options) => {
 			fs.writeFileSync(`${outDir}/yarn.lock`, 'success');
 			fs.mkdirSync(`${outDir}/node_modules`);
 			return 'success';
@@ -139,6 +138,7 @@ describe('runInstall()', () => {
 		runInstallSpy,
 		logSpy,
 		plopSpy,
+		execSyncSpy,
 	}) => {
 		const answers: ParsedArgs = { _: [], outDir };
 		const plop = await nodePlop.default();
@@ -146,7 +146,7 @@ describe('runInstall()', () => {
 			name: 'pnpm',
 			version: 'x',
 		}));
-		vi.mocked(execSync).mockImplementationOnce((_command, _options) => {
+		execSyncSpy.mockImplementationOnce((_command, _options) => {
 			fs.writeFileSync(`${outDir}/pnpm-lock.yaml`, 'success');
 			fs.mkdirSync(`${outDir}/node_modules`);
 			return 'success';
@@ -171,11 +171,12 @@ describe('runInstall()', () => {
 		runInstallSpy,
 		logSpy,
 		plopSpy,
+		execSyncSpy,
 	}) => {
 		const answers: ParsedArgs = { _: [], outDir };
 		const plop = await nodePlop.default();
 		vi.mocked(whichPMRuns).mockImplementationOnce(() => undefined);
-		vi.mocked(execSync).mockImplementationOnce((_command, _options) => {
+		execSyncSpy.mockImplementationOnce((_command, _options) => {
 			fs.writeFileSync(`${outDir}/package-lock.json`, 'success');
 			fs.mkdirSync(`${outDir}/node_modules`);
 			return 'success';
