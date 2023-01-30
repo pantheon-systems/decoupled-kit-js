@@ -2,13 +2,13 @@
 import chalk from 'chalk';
 import whichPmRuns from 'which-pm-runs';
 import { execSync } from 'child_process';
-import type { CustomActionFn } from '../types';
-import { CustomActionConfig } from 'node-plop';
+import type { Answers } from 'inquirer';
+import type { CustomActionConfig, NodePlopAPI } from 'node-plop';
 
-export const runInstall: CustomActionFn<CustomActionConfig<'runInstall'>> = (
-	answers,
+export const runInstall = (
+	answers: Answers,
 	_config: CustomActionConfig<'runInstall'>,
-	_plop,
+	_plop: NodePlopAPI,
 ) => {
 	if (answers.noInstall) return 'skipping install';
 	if (typeof answers.outDir !== 'string') return 'fail: outDir required';

@@ -4,13 +4,16 @@ import fs from 'fs-extra';
 import inquirer from 'inquirer';
 import klaw from 'klaw';
 import path from 'path';
-import type { QuestionCollection } from 'inquirer';
-import type { CustomActionFn, AddWithDiffActionConfig } from '../types';
+import type { Answers, QuestionCollection } from 'inquirer';
+import type { CustomActionConfig, NodePlopAPI } from 'node-plop';
 
-export const addWithDiff: CustomActionFn<AddWithDiffActionConfig> = async (
-	answers,
-	config: AddWithDiffActionConfig,
-	plop,
+export const addWithDiff = async (
+	answers: Answers,
+	config: CustomActionConfig<'addWithDiff'> & {
+		templates: string;
+		path: string;
+	},
+	plop: NodePlopAPI,
 ) => {
 	/**
 	 * 1. get path to the templates

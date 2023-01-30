@@ -1,14 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import chalk from 'chalk';
 import whichPmRuns from 'which-pm-runs';
 import { execSync } from 'child_process';
 import { Answers } from 'inquirer';
-import { NodePlopAPI } from 'node-plop';
-import { RunESLintActionConfig } from '../types';
+import type { NodePlopAPI, CustomActionConfig } from 'node-plop';
 
 export const runESLint = (
 	answers: Answers,
-	config: RunESLintActionConfig,
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	_config: CustomActionConfig<'runLint'>,
 	_plop: NodePlopAPI,
 ) => {
 	if (typeof answers.outDir !== 'string') return;
@@ -16,7 +15,6 @@ export const runESLint = (
 
 	const getPkgManager = whichPmRuns();
 	let command: string;
-
 	if (!getPkgManager) {
 		// fallback to npm
 		command = 'npm run';
@@ -28,7 +26,7 @@ export const runESLint = (
 		return 'success';
 	} catch (error) {
 		if (error instanceof Error) {
-			throw error.message;
+			throw error;
 		}
 		throw 'fail';
 	}

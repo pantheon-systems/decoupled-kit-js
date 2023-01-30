@@ -1,9 +1,5 @@
 import type { CustomActionConfig } from 'node-plop';
-import type {
-	DecoupledKitGenerator,
-	AddWithDiffActionConfig,
-	RunESLintActionConfig,
-} from '../types';
+import type { DecoupledKitGenerator } from '../types';
 
 export const nextWp: DecoupledKitGenerator = {
 	name: 'next-wp',
@@ -22,16 +18,14 @@ export const nextWp: DecoupledKitGenerator = {
 		},
 	],
 	actions: (data) => {
-		const addWithDiff: AddWithDiffActionConfig = {
+		const addWithDiff: CustomActionConfig<'addWithDiff'> = {
 			type: 'addWithDiff',
 			templates: './templates/next-wp',
 			path: '{{outDir}}',
 			force: data?.force ? Boolean(data.force) : false,
 		};
-		const runESLint: RunESLintActionConfig = {
+		const runESLint: CustomActionConfig<'runLint'> = {
 			type: 'runLint',
-			plugins: 'react',
-			ignorePattern: '__mocks__/*',
 		};
 		const runInstall: CustomActionConfig<'runInstall'> = {
 			type: 'runInstall',
