@@ -19,7 +19,7 @@ frontend; such as content updates to post, or publishing a new page.
 
 ### Creating a Build Hook That Triggers When a Post Is Created Or Updated
 
-1. After generating a build hook in the Pantheon Dashboard, navigate to your
+1. After generating a build hook on your build platform, navigate to your
    WordPress admin dashboard and open the WP Webhooks plugin interface
 1. Click on the **Send Data** tab
 1. Select the **Post Created** Webhook trigger
@@ -33,7 +33,7 @@ frontend; such as content updates to post, or publishing a new page.
 1. Open your WordPress admin dashboard
 1. Create a new Post or update a previously existing one
 1. Observe that a new build has been triggered in the **Site Overview** page of
-   your Pantheon Dashboard
+   your build platform
 
 ### Creating Build Hooks For Multiple Frontend Environments
 
@@ -44,7 +44,7 @@ based off of content updates in one WordPress instance.
 :::note
 
 Before continuing, generate separate build hooks for each of your sites frontend
-environments in the Pantheon Dashboard
+environments on your build platform
 
 :::
 
