@@ -21,7 +21,7 @@ frontend; such as content updates to post, or publishing a new page.
 
 1. Navigate to the Pantheon Dashboard
 1. Open the site's settings
-1. Under the **Builds** tab, Click **Add Build Hook**
+1. Click **Builds** >> **Add Build Hook**
 1. Name your hook and select a branch to target using the **Branch to Build**
    dropdown. Copy this URL
 1. Navigate to your WordPress development site and open the WP Webhooks plugin
@@ -47,7 +47,7 @@ based off of content updates in one WordPress instance.
 
 1. Navigate to the Pantheon Dashboard
 1. Open the site's settings
-1. Under the **Builds** tab click **Add Build Hook**
+1. Click **Builds** >> **Add Build Hook**
 1. Name your hook and use the **Branch to Build** dropdown to select the feature
    branch you would like this hook to target
 
