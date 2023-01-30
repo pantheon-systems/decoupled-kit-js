@@ -1,4 +1,5 @@
 import chalk from 'chalk';
+import whichPmRuns from 'which-pm-runs';
 import { execSync } from 'child_process';
 import { Answers } from 'inquirer';
 import { NodePlopAPI } from 'node-plop';
@@ -12,11 +13,23 @@ export const runESLint = (
 ) => {
 	if (typeof answers.outDir !== 'string') return;
 	answers.silent || console.log(chalk.green('Linting...'));
-	execSync(
-		`npx eslint --ext .js,.jsx,.ts,.tsx --fix --env node --parser @typescript-eslint/parser ${
-			config.plugins ? `--plugin ${config.plugins}` : ''
-		} --ignore-pattern ${config.ignorePattern} *`,
-		{ cwd: answers.outDir, stdio: 'inherit' },
-	);
-	return 'success';
+
+	const getPkgManager = whichPmRuns();
+	let command: string;
+
+	if (!getPkgManager) {
+		// fallback to npm
+		command = 'npm run';
+	} else {
+		command = getPkgManager.name;
+	}
+	try {
+		execSync(`${command} lint`, { cwd: answers.outDir, stdio: 'inherit' });
+		return 'success';
+	} catch (error) {
+		if (error instanceof Error) {
+			throw error.message;
+		}
+		throw 'fail';
+	}
 };
