@@ -37,7 +37,7 @@ export const testAdd: DecoupledKitGenerator = {
 		const actions: PlopGenerator['actions'] = [
 			{
 				type: 'add',
-				templateFile: './templates/test/test-template.js.hbs',
+				templateFile: './templates/test/testAdd/test-template.js.hbs',
 				path: '{{outDir}}/test.js',
 				force: data?.force ? Boolean(data.force) : false,
 			},

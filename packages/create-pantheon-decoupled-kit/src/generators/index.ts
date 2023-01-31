@@ -1,3 +1,2 @@
-import { testAdd } from './test.generator';
-import { testAppend } from './test-append.generator';
-export const decoupledKitGenerators = [testAdd, testAppend];
+import { nextWp } from './next-wp.generator';
+export const decoupledKitGenerators = [nextWp];

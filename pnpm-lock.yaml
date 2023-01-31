@@ -101,34 +101,48 @@ importers:
     specifiers:
       '@pantheon-systems/configs': workspace:*
       '@pantheon-systems/eslint-config': workspace:*
+      '@types/diff': ^5.0.2
       '@types/fs-extra': ^11.0.1
       '@types/inquirer': ^9.0.3
+      '@types/klaw': ^3.0.3
       '@types/minimist': ^1.2.2
+      '@types/which-pm-runs': ^1.0.0
       chalk: ^5.2.0
       chokidar: ^3.5.3
+      diff: ^5.1.0
       esbuild: 0.17.4
       fs-extra: ^11.1.0
+      handlebars: ^4.7.7
       inquirer: ^9.1.4
+      klaw: ^4.1.0
       minimist: ^1.2.7
       node-plop: ^0.31.0
       prettier: ^2.8.3
       rimraf: ^4.1.2
       vite-node: ^0.28.3
       vitest: ^0.28.3
+      which-pm-runs: ^1.1.0
     dependencies:
+      diff: 5.1.0
       inquirer: 9.1.4
+      klaw: 4.1.0
       minimist: 1.2.7
       node-plop: 0.31.0
+      which-pm-runs: 1.1.0
     devDependencies:
       '@pantheon-systems/configs': link:../../configs
       '@pantheon-systems/eslint-config': link:../../configs/eslint
+      '@types/diff': 5.0.2
       '@types/fs-extra': 11.0.1
       '@types/inquirer': 9.0.3
+      '@types/klaw': 3.0.3
       '@types/minimist': 1.2.2
+      '@types/which-pm-runs': 1.0.0
       chalk: 5.2.0
       chokidar: 3.5.3
       esbuild: 0.17.4
       fs-extra: 11.1.0
+      handlebars: 4.7.7
       prettier: 2.8.3
       rimraf: 4.1.2
       vite-node: 0.28.3
@@ -6013,6 +6027,10 @@ packages:
       '@types/ms': 0.7.31
     dev: true
 
+  /@types/diff/5.0.2:
+    resolution: {integrity: sha512-uw8eYMIReOwstQ0QKF0sICefSy8cNO/v7gOTiIy9SbwuHyEecJUm7qlgueOO5S1udZ5I/irVydHVwMchgzbKTg==}
+    dev: true
+
   /@types/eslint-scope/3.7.4:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
@@ -6184,6 +6202,12 @@ packages:
     dependencies:
       '@types/node': 18.11.18
     dev: false
+
+  /@types/klaw/3.0.3:
+    resolution: {integrity: sha512-mXlRDFbTLpVysvxahXUQav0hFctgu3Fqr2xmSrpf/ptO/FwOp7SFEGsJkEihwshMbof3/BIiVJ/o42cuOOuv6g==}
+    dependencies:
+      '@types/node': 18.11.10
+    dev: true
 
   /@types/lodash/4.14.191:
     resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
@@ -6399,6 +6423,10 @@ packages:
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: false
+
+  /@types/which-pm-runs/1.0.0:
+    resolution: {integrity: sha512-BXfdlYLWvRhngJbih4N57DjO+63Z7AxiFiip8yq3rD46U7V4I2W538gngPvBsZiMehhD8sfGf4xLI6k7TgXvNw==}
+    dev: true
 
   /@types/ws/8.5.3:
     resolution: {integrity: sha512-6YOoWjruKj1uLf3INHH7D3qTXwFfEsg1kf3c0uDdSBJwfa/llkwIjrAGV7j7mVgGNbzTQ3HiHKKDXl6bJPD97w==}
@@ -15073,6 +15101,11 @@ packages:
       graceful-fs: 4.2.10
     dev: false
 
+  /klaw/4.1.0:
+    resolution: {integrity: sha512-1zGZ9MF9H22UnkpVeuaGKOjfA2t6WrfdrJmGjy16ykcjnKQDmHVX+KI477rpbGevz/5FD4MC3xf1oxylBgcaQw==}
+    engines: {node: '>=14.14.0'}
+    dev: false
+
   /kleur/3.0.3:
     resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
     engines: {node: '>=6'}
@@ -20931,6 +20964,11 @@ packages:
 
   /which-module/2.0.0:
     resolution: {integrity: sha512-B+enWhmw6cjfVC7kS8Pj9pCrKSc5txArRyaYGe088shv/FGWH+0Rjx/xPgtsWfsUtS27FkP697E4DDhgrgoc0Q==}
+
+  /which-pm-runs/1.1.0:
+    resolution: {integrity: sha512-n1brCuqClxfFfq/Rb0ICg9giSZqCS+pLtccdag6C2HyufBrh3fBOiy9nb6ggRMvWOVH5GrdJskj5iGTZNxd7SA==}
+    engines: {node: '>=4'}
+    dev: false
 
   /which-pm/2.0.0:
     resolution: {integrity: sha512-Lhs9Pmyph0p5n5Z3mVnN0yWcbQYUAD7rbQUiMsQxOJ3T57k7RFe35SUwWMf7dsbDZks1uOmw4AecB/JMDj3v/w==}

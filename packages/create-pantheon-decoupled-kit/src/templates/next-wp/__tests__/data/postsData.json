@@ -1,0 +1,19 @@
+[
+	{
+		"id": "cG9zdDo3",
+		"uri": "/example-post-with-image/",
+		"title": "Example Post with Image",
+		"featuredImage": {
+			"node": {
+				"altText": "",
+				"sourceUrl": "https://dev-cobs-decoupled-wp.pantheonsite.io/app/uploads/2022/09/pizza.jpeg"
+			}
+		}
+	},
+	{
+		"id": "cG9zdDox",
+		"uri": "/hello-world/",
+		"title": "Hello world!",
+		"featuredImage": null
+	}
+]
