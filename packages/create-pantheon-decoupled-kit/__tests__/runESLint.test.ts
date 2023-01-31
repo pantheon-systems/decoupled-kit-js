@@ -17,14 +17,34 @@ const answers: ParsedArgs = { _: [], outDir };
 const plop = await nodePlop.default();
 
 describe('runEsLint()', () => {
-	it('should lint and format the outDir using the detected package manager', async () => {
+	afterEach(() => {
+		vi.resetAllMocks();
+	});
+	it('should lint and format the outDir using the detected package manager: pnpm', async () => {
 		vi.mocked(whichPMRuns).mockImplementationOnce(() => ({
 			name: 'pnpm',
 			version: 'x',
 		}));
 
 		actions.runESLint(answers, config, plop);
-		expect(vi.mocked(execSync)).toHaveBeenCalled();
+		expect(vi.mocked(execSync)).toHaveBeenCalledWith('pnpm lint', {
+			stdio: 'inherit',
+			cwd: outDir,
+		});
+		expect(whichPMRuns).toHaveBeenCalledOnce();
+	});
+
+	it('should lint and format the outDir using the detected package manager: npm', async () => {
+		vi.mocked(whichPMRuns).mockImplementationOnce(() => ({
+			name: 'npm',
+			version: 'x',
+		}));
+
+		actions.runESLint(answers, config, plop);
+		expect(vi.mocked(execSync)).toHaveBeenCalledWith('npm run lint', {
+			stdio: 'inherit',
+			cwd: outDir,
+		});
 		expect(whichPMRuns).toHaveBeenCalledOnce();
 	});
 

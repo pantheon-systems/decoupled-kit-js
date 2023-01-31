@@ -15,7 +15,7 @@ export const runESLint = (
 
 	const getPkgManager = whichPmRuns();
 	let command: string;
-	if (!getPkgManager) {
+	if (!getPkgManager || getPkgManager.name === 'npm') {
 		// fallback to npm
 		command = 'npm run';
 	} else {
