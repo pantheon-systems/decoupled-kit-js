@@ -14,11 +14,13 @@
     "create-pantheon-decoupled-kit": "0.0.0"
   },
   "changesets": [
+    "cool-wasps-burn",
     "grumpy-jokes-clean",
     "hip-ladybugs-care",
     "kind-chairs-camp",
     "kind-crabs-behave",
     "thin-fans-approve",
-    "tidy-ligers-crash"
+    "tidy-ligers-crash",
+    "tough-guests-call"
   ]
 }
