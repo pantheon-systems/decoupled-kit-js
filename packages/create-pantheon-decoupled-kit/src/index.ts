@@ -1,13 +1,16 @@
 import chalk from 'chalk';
 import inquirer from 'inquirer';
-import nodePlop, { NodePlopAPI } from 'node-plop';
 import minimist from 'minimist';
+import nodePlop, { CustomActionFunction, NodePlopAPI } from 'node-plop';
+import { getPartials } from './utils/getPartials';
+import { addWithDiff } from './utils/addWithDiff';
+import { runInstall } from './utils/runInstall';
+import { runESLint } from './utils/runESLint';
 import type { Answers, QuestionCollection } from 'inquirer';
 import type { ParsedArgs, Opts as MinimistOptions } from 'minimist';
-import type { DecoupledKitGenerator } from '@cli/src/types';
+import type { DecoupledKitGenerator } from './types';
 
 const __filename = new URL('.', import.meta.url).pathname;
-
 /**
  * Set generator based on exports from src/generators
  * @param generators An array of plop Generators with an added name field. @see {@link DecoupledKitGenerator}.
@@ -20,6 +23,20 @@ export const setGenerators = async (
 	for (const generator of Object.values(generators)) {
 		plop.setGenerator(generator.name, generator);
 	}
+	// Living with the type coercion here since we're close enough and it doesn't break.
+	// We could go around plop when running actions
+	// but this way we are still able to run valid plop generators
+	[
+		{ name: 'addWithDiff', action: addWithDiff },
+		{ name: 'runInstall', action: runInstall },
+		{ name: 'runLint', action: runESLint },
+	].forEach(({ name, action }) => {
+		plop.setActionType(name, action as CustomActionFunction);
+	});
+	// register handlebars partials to the plop instance
+	const hbsPartials = await getPartials(__filename);
+	hbsPartials.forEach(({ name, partial }) => plop.setPartial(name, partial));
+
 	return plop;
 };
 
@@ -38,10 +55,8 @@ export const parseArgs = (
 	const options: MinimistOptions = {
 		// these options tell minimist which --args are
 		// booleans and which are strings.
-		// we will probably want these soon
-		boolean: ['force', 'silent' /**noInstall */],
-		// might want these too
-		//string: ['appName', 'directory'],
+		boolean: ['force', 'silent'],
+		string: ['appName', 'outDir'],
 	};
 	const args: ParsedArgs = minimist(cliArgs, options);
 

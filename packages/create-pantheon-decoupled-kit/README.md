@@ -16,17 +16,7 @@ monorepo.
   # build the package
   pnpm build:cli
   # run the bin script
-  node ./packages/create-pantheon-decoupled-kit/dist/bin.js
-```
-
-<!-- TODO: this is mostly verified but need to confirm check. npm definitely works. -->
-
-Or, install the local package globally with `npm` Note: We are using `npm` here
-because `pnpm` does not support locally installed `create-` packages
-
-```bash
-  npm install --global ./packages/create-pantheon-decoupled-kit
-  npx create-pantheon-decoupled-kit
+  pnpm create-pantheon-decoupled-kit
 ```
 
 ## Usage
@@ -41,7 +31,7 @@ prompts in your terminal
 Or, pass in arguments up front to skip those prompts
 
 ```bash
-  pnpm create pantheon-decoupled-kit --appName my-app --dir ./my-app-dir --framework nextjs
+  pnpm create pantheon-decoupled-kit next-wp --appName my-app --outDir ./my-app-dir --force
 ```
 
 ### `watch` script

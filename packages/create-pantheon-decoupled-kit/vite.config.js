@@ -8,6 +8,7 @@ export default defineConfig(() => {
 			coverage: {
 				reportsDirectory: `./coverage`,
 			},
+			include: ['./__tests__**/*.test.*'],
 		},
 	};
 });

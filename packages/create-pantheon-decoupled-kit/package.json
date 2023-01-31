@@ -45,21 +45,28 @@
 	"devDependencies": {
 		"@pantheon-systems/configs": "*",
 		"@pantheon-systems/eslint-config": "*",
+		"@types/diff": "^5.0.2",
 		"@types/fs-extra": "^11.0.1",
 		"@types/inquirer": "^9.0.3",
+		"@types/klaw": "^3.0.3",
 		"@types/minimist": "^1.2.2",
+		"@types/which-pm-runs": "^1.0.0",
 		"chalk": "^5.2.0",
 		"chokidar": "^3.5.3",
 		"esbuild": "0.17.4",
 		"fs-extra": "^11.1.0",
+		"handlebars": "^4.7.7",
 		"prettier": "^2.8.3",
 		"rimraf": "^4.1.2",
 		"vite-node": "^0.28.3",
 		"vitest": "^0.28.3"
 	},
 	"dependencies": {
+		"diff": "^5.1.0",
 		"inquirer": "^9.1.4",
+		"klaw": "^4.1.0",
 		"minimist": "^1.2.7",
-		"node-plop": "^0.31.0"
+		"node-plop": "^0.31.0",
+		"which-pm-runs": "^1.1.0"
 	}
 }

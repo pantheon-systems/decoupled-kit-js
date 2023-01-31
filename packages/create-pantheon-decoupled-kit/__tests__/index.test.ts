@@ -7,11 +7,7 @@ import chalk from 'chalk';
 import * as nodePlop from 'node-plop';
 
 vi.mock('node-plop');
-vi.mock('inquirer', () => ({
-	default: {
-		prompt: vi.fn(),
-	},
-}));
+vi.mock('inquirer');
 
 afterEach(() => {
 	vi.restoreAllMocks();
@@ -54,6 +50,7 @@ describe('setGenerators()', () => {
 
 		expect(setGeneratorSpy).toHaveBeenCalledOnce();
 		expect(plop.setGenerator).toHaveBeenCalledTimes(2);
+		expect(plop.setActionType).toHaveBeenCalledTimes(3);
 		expect(plop).toHaveProperty('setPlopfilePath');
 		expect(plop).toHaveProperty('getGenerator');
 		expect(plop.getGeneratorList()).toEqual([
@@ -64,13 +61,19 @@ describe('setGenerators()', () => {
 });
 
 describe('main()', () => {
-	const parseSpy = vi.spyOn(bin, 'parseArgs');
-	const mainSpy = vi.spyOn(bin, 'main');
-	const promptSpy = vi.spyOn(inquirer, 'prompt');
-	const logSpy = vi.spyOn(console, 'log');
-	const errorSpy = vi.spyOn(console, 'error');
-	const plopSpy = vi.spyOn(nodePlop, 'default');
-	it('should accept any number of positional arguments as generators to run', async () => {
+	beforeEach((context) => {
+		context.parseSpy = vi.spyOn(bin, 'parseArgs');
+		context.mainSpy = vi.spyOn(bin, 'main');
+		context.promptSpy = vi.spyOn(inquirer, 'prompt');
+		context.logSpy = vi.spyOn(console, 'log');
+		context.errorSpy = vi.spyOn(console, 'error');
+		context.plopSpy = vi.spyOn(nodePlop, 'default');
+	});
+	it('should accept any number of positional arguments as generators to run', async ({
+		parseSpy,
+		mainSpy,
+		promptSpy,
+	}) => {
 		process.argv = ['node', 'bin.js', 'test-add', 'test-append'];
 
 		await bin.main(
@@ -91,7 +94,10 @@ describe('main()', () => {
 		expect(promptSpy).toHaveBeenCalledTimes(2);
 	});
 
-	it('should ask for user input if there is no valid generator to run', async () => {
+	it('should ask for user input if there is no valid generator to run', async ({
+		logSpy,
+		promptSpy,
+	}) => {
 		process.argv = ['node', 'bin.js', 'not-valid-generator-name'];
 
 		// inquirer is mocked so we know the type is wrong.
@@ -109,7 +115,11 @@ describe('main()', () => {
 		// the second runs the generator prompts
 		expect(promptSpy).toHaveBeenCalledTimes(2);
 	});
-	it('should exit with a message if no valid generators are selected', async () => {
+	it('should exit with a message if no valid generators are selected', async ({
+		logSpy,
+		errorSpy,
+		promptSpy,
+	}) => {
 		process.argv = ['node', 'bin.js', 'not-valid-generator-name'];
 
 		await main(parseArgs(), decoupledKitTestGenerators);
@@ -125,17 +135,20 @@ describe('main()', () => {
 		expect(promptSpy).toHaveBeenCalledTimes(1);
 	});
 
-	it('should log changes', async () => {
+	it('should log changes', async ({ logSpy, plopSpy }) => {
 		process.argv = ['node', 'bin.js', 'test-add'];
 		vi.mocked(nodePlop.default).mockReturnValueOnce({
 			//@ts-ignore
 			setPlopfilePath: vi.fn(),
+			getPlopfilePath: vi.fn(),
+			setPartial: vi.fn(),
 			getGenerator: vi.fn().mockImplementation(() => ({
 				runActions: vi.fn().mockReturnValue({
 					changes: [{ type: 'add', path: '/test' }],
 					failures: [],
 				}),
 			})),
+			setActionType: vi.fn(),
 			setGenerator: vi.fn(),
 			getGeneratorList: vi
 				.fn()
@@ -154,10 +167,12 @@ describe('main()', () => {
 		expect(plopSpy).toHaveBeenCalledTimes(1);
 	});
 
-	it('should log failures', async () => {
+	it('should log failures', async ({ errorSpy }) => {
 		vi.mocked(nodePlop.default).mockReturnValueOnce({
 			//@ts-ignore
 			setPlopfilePath: vi.fn(),
+			getPlopfilePath: vi.fn(),
+			setPartial: vi.fn(),
 			getGenerator: vi.fn().mockImplementation(() => ({
 				runActions: vi.fn().mockReturnValue({
 					changes: [],
@@ -168,7 +183,7 @@ describe('main()', () => {
 					],
 				}),
 			})),
-
+			setActionType: vi.fn(),
 			setGenerator: vi.fn(),
 			getGeneratorList: vi
 				.fn()
@@ -183,7 +198,7 @@ describe('main()', () => {
 		);
 	});
 
-	it('should not console.log if "silent" arg is true', async () => {
+	it('should not console.log if "silent" arg is true', async ({ logSpy }) => {
 		process.argv = ['node', 'bin.js', 'test-add', '--silent'];
 
 		await main(parseArgs(), decoupledKitTestGenerators);

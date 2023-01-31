@@ -18,7 +18,7 @@
 			"@pantheon-systems/wordpress-kit/*": ["./wordpress-kit/*"],
 			"@pantheon-systems/nextjs-kit/*": ["./nextjs-kit/*"],
 			"@pantheon-systems/cms-kit/*": ["./cms-kit/*"],
-			"@cli/*": ["./create-pantheon-decoupled-kit/*"]
+			"@cli/src/*": ["./create-pantheon-decoupled-kit/src/*"]
 		}
-	},
+	}
 }
