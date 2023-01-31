@@ -1,2 +1,3 @@
 import { nextWp } from './next-wp.generator';
-export const decoupledKitGenerators = [nextWp];
+import { nextDrupal } from './next-drupal.generator';
+export const decoupledKitGenerators = [nextWp, nextDrupal];
