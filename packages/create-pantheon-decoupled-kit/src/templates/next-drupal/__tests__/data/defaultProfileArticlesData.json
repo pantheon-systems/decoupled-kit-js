@@ -1,0 +1,194 @@
+[
+	{
+		"type": "node--article",
+		"id": "d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0",
+		"drupal_internal__nid": 1,
+		"drupal_internal__vid": 9,
+		"langcode": "en",
+		"revision_timestamp": "2022-06-02T09:56:53+00:00",
+		"revision_log": null,
+		"status": true,
+		"title": "This is an Example Article",
+		"created": "2022-03-23T06:38:03+00:00",
+		"changed": "2022-06-02T09:56:53+00:00",
+		"promote": true,
+		"sticky": false,
+		"default_langcode": true,
+		"revision_translation_affected": true,
+		"path": {
+			"alias": "/articles/example-article",
+			"pid": 1,
+			"langcode": "en"
+		},
+		"body": {
+			"value": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper dignissim cras tincidunt lobortis feugiat. Augue lacus viverra vitae congue eu consequat ac felis. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Pulvinar elementum integer enim neque. At tempor commodo ullamcorper a lacus vestibulum. Nec tincidunt praesent semper feugiat nibh. Nisl nisi scelerisque eu ultrices vitae auctor eu augue ut. Bibendum neque egestas congue quisque egestas diam. Pellentesque elit ullamcorper dignissim cras.</p>\r\n\r\n<p>Quis lectus nulla at volutpat diam ut venenatis tellus in. Tempus urna et pharetra pharetra. Eu consequat ac felis donec. Donec ultrices tincidunt arcu non sodales neque sodales ut. Suscipit tellus mauris a diam maecenas sed enim ut. Semper eget duis at tellus at urna condimentum mattis. Dictum fusce ut placerat orci nulla pellentesque dignissim enim. Porta lorem mollis aliquam ut porttitor leo. Eu sem integer vitae justo eget magna fermentum iaculis eu. Amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus. Laoreet sit amet cursus sit amet dictum sit amet justo. Ac placerat vestibulum lectus mauris ultrices eros. Fermentum iaculis eu non diam phasellus vestibulum lorem sed. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis. Odio ut sem nulla pharetra. Urna molestie at elementum eu facilisis sed odio.</p>\r\n\r\n<p>Non enim praesent elementum facilisis leo vel fringilla. Risus commodo viverra maecenas accumsan lacus vel. Eget egestas purus viverra accumsan in. Nunc congue nisi vitae suscipit tellus mauris a diam maecenas. Ipsum nunc aliquet bibendum enim. Turpis nunc eget lorem dolor sed viverra. Quis risus sed vulputate odio ut enim blandit volutpat. Etiam sit amet nisl purus in mollis nunc sed. At lectus urna duis convallis convallis tellus. Feugiat in ante metus dictum at tempor commodo ullamcorper a. Volutpat commodo sed egestas egestas. Eget egestas purus viverra accumsan in nisl nisi scelerisque eu. Aliquet nibh praesent tristique magna sit amet purus. Dignissim diam quis enim lobortis scelerisque. Posuere sollicitudin aliquam ultrices sagittis. Tristique sollicitudin nibh sit amet commodo nulla facilisi. Scelerisque viverra mauris in aliquam. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.</p>\r\n",
+			"format": "basic_html",
+			"processed": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper dignissim cras tincidunt lobortis feugiat. Augue lacus viverra vitae congue eu consequat ac felis. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Pulvinar elementum integer enim neque. At tempor commodo ullamcorper a lacus vestibulum. Nec tincidunt praesent semper feugiat nibh. Nisl nisi scelerisque eu ultrices vitae auctor eu augue ut. Bibendum neque egestas congue quisque egestas diam. Pellentesque elit ullamcorper dignissim cras.</p>\n\n<p>Quis lectus nulla at volutpat diam ut venenatis tellus in. Tempus urna et pharetra pharetra. Eu consequat ac felis donec. Donec ultrices tincidunt arcu non sodales neque sodales ut. Suscipit tellus mauris a diam maecenas sed enim ut. Semper eget duis at tellus at urna condimentum mattis. Dictum fusce ut placerat orci nulla pellentesque dignissim enim. Porta lorem mollis aliquam ut porttitor leo. Eu sem integer vitae justo eget magna fermentum iaculis eu. Amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus. Laoreet sit amet cursus sit amet dictum sit amet justo. Ac placerat vestibulum lectus mauris ultrices eros. Fermentum iaculis eu non diam phasellus vestibulum lorem sed. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis. Odio ut sem nulla pharetra. Urna molestie at elementum eu facilisis sed odio.</p>\n\n<p>Non enim praesent elementum facilisis leo vel fringilla. Risus commodo viverra maecenas accumsan lacus vel. Eget egestas purus viverra accumsan in. Nunc congue nisi vitae suscipit tellus mauris a diam maecenas. Ipsum nunc aliquet bibendum enim. Turpis nunc eget lorem dolor sed viverra. Quis risus sed vulputate odio ut enim blandit volutpat. Etiam sit amet nisl purus in mollis nunc sed. At lectus urna duis convallis convallis tellus. Feugiat in ante metus dictum at tempor commodo ullamcorper a. Volutpat commodo sed egestas egestas. Eget egestas purus viverra accumsan in nisl nisi scelerisque eu. Aliquet nibh praesent tristique magna sit amet purus. Dignissim diam quis enim lobortis scelerisque. Posuere sollicitudin aliquam ultrices sagittis. Tristique sollicitudin nibh sit amet commodo nulla facilisi. Scelerisque viverra mauris in aliquam. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.</p>",
+			"summary": ""
+		},
+		"comment": {
+			"status": 2,
+			"cid": 0,
+			"last_comment_timestamp": 1650338653,
+			"last_comment_name": null,
+			"last_comment_uid": 1,
+			"comment_count": 0
+		},
+		"links": {
+			"self": {
+				"href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0?resourceVersion=id%3A9"
+			}
+		},
+		"node_type": {
+			"type": "node_type--node_type",
+			"id": "ed74fdfc-e82c-4c3e-852b-982c9fbfcf79",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": "article"
+			}
+		},
+		"revision_uid": {
+			"type": "user--user",
+			"id": "d25af05b-0546-4475-9d86-a60be242ca8e",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 1
+			}
+		},
+		"uid": {
+			"type": "user--user",
+			"id": "d25af05b-0546-4475-9d86-a60be242ca8e",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 1
+			}
+		},
+		"field_media_image": {
+			"type": "media--image",
+			"id": "7e01b208-097d-40e9-b1a6-efd103be1cd3",
+			"drupal_internal__mid": 1,
+			"drupal_internal__vid": 1,
+			"langcode": "en",
+			"revision_created": "2022-04-19T03:24:13+00:00",
+			"revision_log_message": null,
+			"status": true,
+			"name": "pizza.jpg",
+			"created": "2022-03-31T11:14:03+00:00",
+			"changed": "2022-04-19T03:24:13+00:00",
+			"default_langcode": true,
+			"revision_translation_affected": true,
+			"path": {
+				"alias": null,
+				"pid": null,
+				"langcode": "en"
+			},
+			"links": {
+				"self": {
+					"href": "https://default/jsonapi/media/image/7e01b208-097d-40e9-b1a6-efd103be1cd3?resourceVersion=id%3A1"
+				}
+			},
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 1
+			},
+			"bundle": {
+				"type": "media_type--media_type",
+				"id": "cbd6ac10-9d02-4aa4-8125-094a849da979",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": "image"
+				}
+			},
+			"revision_user": null,
+			"uid": {
+				"type": "user--user",
+				"id": "d25af05b-0546-4475-9d86-a60be242ca8e",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 1
+				}
+			},
+			"thumbnail": {
+				"type": "file--file",
+				"id": "c573af74-34bb-4a16-8928-ea5e823fde72",
+				"drupal_internal__fid": 1,
+				"langcode": "en",
+				"filename": "pizza.jpg",
+				"uri": {
+					"value": "public://pizza.jpg",
+					"url": "/sites/default/files/pizza.jpg"
+				},
+				"filemime": "image/jpg",
+				"filesize": 52657,
+				"status": true,
+				"created": "2021-11-03T12:52:14+00:00",
+				"changed": "2022-04-19T03:24:13+00:00",
+				"links": {
+					"self": {
+						"href": "https://default/jsonapi/file/file/c573af74-34bb-4a16-8928-ea5e823fde72"
+					}
+				},
+				"resourceIdObjMeta": {
+					"alt": "Pizza",
+					"title": null,
+					"width": 640,
+					"height": 360,
+					"drupal_internal__target_id": 1
+				},
+				"uid": {
+					"type": "user--user",
+					"id": "d25af05b-0546-4475-9d86-a60be242ca8e",
+					"resourceIdObjMeta": {
+						"drupal_internal__target_id": 1
+					}
+				},
+				"relationshipNames": ["uid"]
+			},
+			"field_media_image": {
+				"type": "file--file",
+				"id": "c573af74-34bb-4a16-8928-ea5e823fde72",
+				"drupal_internal__fid": 1,
+				"langcode": "en",
+				"filename": "pizza.jpg",
+				"uri": {
+					"value": "public://pizza.jpg",
+					"url": "/sites/default/files/pizza.jpg"
+				},
+				"filemime": "image/jpg",
+				"filesize": 52657,
+				"status": true,
+				"created": "2021-11-03T12:52:14+00:00",
+				"changed": "2022-04-19T03:24:13+00:00",
+				"links": {
+					"self": {
+						"href": "https://default/jsonapi/file/file/c573af74-34bb-4a16-8928-ea5e823fde72"
+					}
+				},
+				"resourceIdObjMeta": {
+					"alt": "Pizza",
+					"title": "",
+					"width": 640,
+					"height": 360,
+					"drupal_internal__target_id": 1
+				},
+				"uid": {
+					"type": "user--user",
+					"id": "d25af05b-0546-4475-9d86-a60be242ca8e",
+					"resourceIdObjMeta": {
+						"drupal_internal__target_id": 1
+					}
+				},
+				"relationshipNames": ["uid"]
+			},
+			"relationshipNames": [
+				"bundle",
+				"revision_user",
+				"uid",
+				"thumbnail",
+				"field_media_image"
+			]
+		},
+		"field_tags": [],
+		"relationshipNames": [
+			"node_type",
+			"revision_uid",
+			"uid",
+			"field_media_image",
+			"field_tags"
+		]
+	}
+]

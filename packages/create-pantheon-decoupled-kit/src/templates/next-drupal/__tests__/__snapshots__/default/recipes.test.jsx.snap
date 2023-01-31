@@ -1,0 +1,203 @@
+// Vitest Snapshot v1
+
+exports[`Default <RecipeListTemplate /> > should render a 404 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+  >
+    <div
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
+    >
+      <nav>
+        <ul
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
+        >
+          <li
+            class="ps-mr-auto"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/articles"
+            >
+              📰 Articles
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <div
+        class="flex flex-col mx-auto text-xl prose text-center mt-12"
+      >
+        <h2>
+          404: Could not find the requested page
+        </h2>
+      </div>
+    </main>
+    <footer
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
+    >
+      <nav
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
+      >
+        <ul />
+      </nav>
+      <div
+        class="ps-flex ps-my-4 ps-p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2023 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://www.drupal.org/"
+          >
+            Drupal
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Default <RecipeTemplate /> > should render a 404 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+  >
+    <div
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
+    >
+      <nav>
+        <ul
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
+        >
+          <li
+            class="ps-mr-auto"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/articles"
+            >
+              📰 Articles
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <div
+        class="flex flex-col mx-auto text-xl prose text-center mt-12"
+      >
+        <h2>
+          404: Could not find the requested page
+        </h2>
+      </div>
+    </main>
+    <footer
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
+    >
+      <nav
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
+      >
+        <ul />
+      </nav>
+      <div
+        class="ps-flex ps-my-4 ps-p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2023 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://www.drupal.org/"
+          >
+            Drupal
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
