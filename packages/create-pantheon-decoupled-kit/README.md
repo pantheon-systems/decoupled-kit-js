@@ -31,7 +31,7 @@ prompts in your terminal
 Or, pass in arguments up front to skip those prompts
 
 ```bash
-  pnpm create pantheon-decoupled-kit next-wp --appName my-app --outDir ./my-app-dir
+  pnpm create pantheon-decoupled-kit next-wp --appName my-app --outDir ./my-app-dir --force
 ```
 
 ### `watch` script
