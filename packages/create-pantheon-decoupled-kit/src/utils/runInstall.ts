@@ -10,8 +10,8 @@ export const runInstall = (
 	_config: CustomActionConfig<'runInstall'>,
 	_plop: NodePlopAPI,
 ) => {
-	if (answers.noInstall) return 'skipping install';
-	if (typeof answers.outDir !== 'string') return 'fail: outDir required';
+	if (answers?.noInstall) return 'skipping install';
+	if (typeof answers?.outDir !== 'string') throw 'fail: outDir required';
 
 	const getPkgManager = whichPmRuns();
 	let pkgManager: string;
