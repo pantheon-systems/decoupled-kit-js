@@ -1,5 +1,5 @@
 ---
-"@pantheon-systems/next-wordpress-starter": minor
+'@pantheon-systems/next-wordpress-starter': major
 ---
 
-Support GraphQL Over HTTP `GET`
+Use `GET` for GraphQL requests by default
