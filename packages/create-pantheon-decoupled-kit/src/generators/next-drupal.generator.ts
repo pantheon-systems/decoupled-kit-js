@@ -3,7 +3,7 @@ import type { DecoupledKitGenerator } from '../types';
 
 export const nextDrupal: DecoupledKitGenerator = {
 	name: 'next-drupal',
-	description: 'Next.js + WordPress starter kit',
+	description: 'Next.js + Drupal starter kit',
 	prompts: [
 		{
 			name: 'appName',
