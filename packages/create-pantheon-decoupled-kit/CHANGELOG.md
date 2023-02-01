@@ -1,5 +1,19 @@
 # create-pantheon-decoupled-kit
 
+## 0.1.0
+
+### Minor Changes
+
+- b92a30b: - Added addWithDiff, runInstall, and runESLint custom actions
+  - Add pkgJson partial
+  - Add partial helper
+  - Add next-wordpress generator
+
+### Patch Changes
+
+- 56a2539: Fix missing dependency
+- 3f82da7: Initialize `create-pantheon-decoupled-kit`
+
 ## 0.1.0-canary.2
 
 ### Patch Changes
