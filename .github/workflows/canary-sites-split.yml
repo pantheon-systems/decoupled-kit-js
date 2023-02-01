@@ -40,7 +40,7 @@ jobs:
           mkdir -p ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows
       - run: |
           cp ${{ github.workspace }}/.github/templates/trigger-e2e.yml.template ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows/trigger-e2e.yml
-      - uses: 'symplify/monorepo-split-github-action@2.3'
+      - uses: 'symplify/monorepo-split-github-action@2.3.0'
         with:
           # ↓ split <local_path> directory
           package_directory: '${{ matrix.local_path }}'
@@ -50,7 +50,7 @@ jobs:
           repository_name: '${{ matrix.split_repository }}'
 
           # ↓ the user signed under the split commit
-          user_name: 'decoupled-service-user'
+          user_name: 'pantheon-decoupled-service-user'
           user_email: 'decoupled-service-user@pantheon.io'
       - name: Send custom JSON data to Slack workflow
         id: slack
