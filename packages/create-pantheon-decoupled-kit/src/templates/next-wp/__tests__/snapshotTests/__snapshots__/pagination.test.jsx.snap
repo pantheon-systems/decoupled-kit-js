@@ -1,0 +1,336 @@
+// Vitest Snapshot v1
+
+exports[`<PaginationExampleTemplate /> > should render the Pagination Example page 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+  >
+    <div
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
+    >
+      <nav>
+        <ul
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
+        >
+          <li
+            class="ps-mr-auto"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/posts"
+            >
+              📰 Posts
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <div
+        class="prose max-w-screen mx-auto"
+      >
+        <section
+          class="flex flex-col"
+        >
+          <h1
+            class="my-10"
+          >
+            Pagination example
+          </h1>
+          <div
+            class="ps-max-w-full"
+          >
+            <h3
+              class="ps-mb-8 ps-prose-sm ps-font-bold"
+            >
+              Page 1/10
+            </h3>
+            <section>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Ut culpa iste voluptas consequatur
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Consequuntur omnis assumenda voluptate aut quam. Dolorem aut aspernatur voluptas delectus. Commodi quia veniam voluptatem vitae rem Assumenda qui non in et facere tempora Corrupti Ut inventore id voluptates sed Mollitia magnam nihil numquam nostrum Nostrum et praesentium ullam ut accusamus Velit eos perferendis error fuga in necessitatibus Nostrum laboriosam iste Sint itaque est facilis […]
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Totam aliquam recusandae autem ipsa
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Ipsam molestias est omnis.
+                  </p>
+                  
+
+                  <p>
+                    Rerum quo quibusdam.
+                  </p>
+                  
+
+                  <p>
+                    Dolor ea eum.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Et ipsa accusantium voluptatem nostrum maiores
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Perspiciatis ut modi et.
+                  </p>
+                  
+
+                  <p>
+                    Consequatur recusandae veniam at repellat.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Odio vel voluptas pariatur quas pariatur dicta
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Vel qui.
+                  </p>
+                  
+
+                </div>
+              </article>
+              <article
+                class="flex flex-col p-3 mb-10"
+              >
+                <h2
+                  class="justify-start my-auto text-2xl mb-2"
+                >
+                  Quia quos eum assumenda alias quisquam a
+                </h2>
+                <div
+                  class="max-w-prose my-2 [&>p]:my-0"
+                >
+                  <p>
+                    Molestias ab voluptate voluptas alias nesciunt commodi. Qui beatae et vel dolore in blanditiis Voluptatem est rerum odit Rerum esse magnam sapiente Ut sunt tempore et expedita nihil et ut Tempore nihil et tenetur Asperiores Deserunt quidem omnis minus commodi molestiae et quam Nulla ab quia voluptatem et officiis ullam quo. Aliquam eum enim aliquam […]
+                  </p>
+                  
+
+                </div>
+              </article>
+            </section>
+            <div
+              class="ps-sticky lg:ps-bottom-12 ps-bottom-4 ps-mt-10"
+            >
+              <nav
+                aria-label="Pagination Navigation"
+                role="navigation"
+              >
+                <ul
+                  class="ps-list-none ps-flex ps-flex-row ps-justify-center ps-mx-auto ps-mt-auto ps-mb-4 [&>li]:ps-p-0"
+                >
+                  <li>
+                    <button
+                      aria-label="Go to Previous Page"
+                      class="ps-h-16 ps-w-12 disabled:ps-bg-gray-500 hover:ps-bg-blue-300 focus:ps-bg-blue-200 focus:ps-border-blue-300 ps-border-y-2 ps-border-black ps-bg-white ps-border-l-2"
+                      disabled=""
+                      id="back-btn"
+                    >
+                      &lt;
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      aria-current="true"
+                      aria-label="Current Page, Page 1"
+                      class="
+          ps-block
+          ps-h-16 ps-w-12 ps-border-t-2 ps-border-b-2 ps-border-black ps-bg-white hover:ps-bg-blue-300 focus:ps-bg-blue-200 focus:ps-border-blue-300 ps-border-blue-700 ps-border-2
+          "
+                    >
+                      1
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      aria-current="false"
+                      aria-label="Go to Page 2"
+                      class="
+          ps-hidden md:ps-block
+          ps-h-16 ps-w-12 ps-border-t-2 ps-border-b-2 ps-border-black ps-bg-white hover:ps-bg-blue-300 focus:ps-bg-blue-200 focus:ps-border-blue-300 
+          "
+                    >
+                      2
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      aria-current="false"
+                      aria-label="Go to Page 3"
+                      class="
+          ps-hidden md:ps-block
+          ps-h-16 ps-w-12 ps-border-t-2 ps-border-b-2 ps-border-black ps-bg-white hover:ps-bg-blue-300 focus:ps-bg-blue-200 focus:ps-border-blue-300 
+          "
+                    >
+                      3
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      aria-label="Expand Hidden Buttons"
+                      class="ps-hidden md:ps-block ps-h-16 ps-w-12 ps-border-2 ps-border-black ps-bg-slate-200 hover:ps-bg-blue-300 focus:ps-bg-blue-200 focus:ps-border-blue-300"
+                    >
+                      ...
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      aria-current="false"
+                      aria-label="Go to Page 8"
+                      class="
+          ps-hidden md:ps-block
+          ps-h-16 ps-w-12 ps-border-t-2 ps-border-b-2 ps-border-black ps-bg-white hover:ps-bg-blue-300 focus:ps-bg-blue-200 focus:ps-border-blue-300 
+          "
+                    >
+                      8
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      aria-current="false"
+                      aria-label="Go to Page 9"
+                      class="
+          ps-hidden md:ps-block
+          ps-h-16 ps-w-12 ps-border-t-2 ps-border-b-2 ps-border-black ps-bg-white hover:ps-bg-blue-300 focus:ps-bg-blue-200 focus:ps-border-blue-300 
+          "
+                    >
+                      9
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      aria-current="false"
+                      aria-label="Go to Page 10"
+                      class="
+          ps-hidden md:ps-block
+          ps-h-16 ps-w-12 ps-border-t-2 ps-border-b-2 ps-border-black ps-bg-white hover:ps-bg-blue-300 focus:ps-bg-blue-200 focus:ps-border-blue-300 
+          "
+                    >
+                      10
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      aria-label="Go to Next Page"
+                      class="ps-h-16 ps-w-12 disabled:ps-bg-gray-500 hover:ps-bg-blue-300 focus:ps-bg-blue-200 focus:ps-border-blue-300 ps-border-y-2 ps-border-black ps-bg-white ps-border-r-2"
+                      id="next-btn"
+                    >
+                      &gt;
+                    </button>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
+    >
+      <nav
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
+      >
+        <ul />
+      </nav>
+      <div
+        class="ps-flex ps-my-4 ps-p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2023 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://wordpress.com/"
+          >
+            WordPress
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

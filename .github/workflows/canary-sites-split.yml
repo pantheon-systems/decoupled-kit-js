@@ -34,13 +34,13 @@ jobs:
             split_repository: 'decoupled-kit-docs-canary'
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       # Add Github workflow before split
       - run: |
           mkdir -p ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows
       - run: |
           cp ${{ github.workspace }}/.github/templates/trigger-e2e.yml.template ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows/trigger-e2e.yml
-      - uses: 'symplify/monorepo-split-github-action@2.1'
+      - uses: 'danharrin/monorepo-split-github-action@v2.3.0'
         with:
           # ↓ split <local_path> directory
           package_directory: '${{ matrix.local_path }}'
@@ -50,8 +50,8 @@ jobs:
           repository_name: '${{ matrix.split_repository }}'
 
           # ↓ the user signed under the split commit
-          user_name: 'brian-ci'
-          user_email: 'brian.perry@pantheon.io'
+          user_name: 'pantheon-decoupled-service-user'
+          user_email: 'decoupled-service-user@pantheon.io'
       - name: Send custom JSON data to Slack workflow
         id: slack
         uses: slackapi/slack-github-action@v1.23.0

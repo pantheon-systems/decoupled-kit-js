@@ -15,11 +15,14 @@ module.exports = {
 	ignorePatterns: [
 		'main.ts',
 		'*.test.*',
+		'__tests__/fixtures/**/*',
 		'setupFile.ts',
 		'__mocks__/**/*',
 		'rollup.config.js',
-		'vite.config.js',
-		'jest.config.js',
-		'lint-staged.config.js',
+		'vite.config.*',
+		'jest.config.*',
+		'lint-staged.config.*',
+		'/dist',
+		'/node_modules'
 	],
 };

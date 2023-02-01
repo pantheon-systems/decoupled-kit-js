@@ -17,7 +17,9 @@ instance.
 1. Click **Edit** on the consumer you are using and add a new secret. Note this
    value down as well.
 1. We now have a client that can use our preview site. To configure the preview
-   site, navigate to **Structure** > **Preview Sites**
+   site, navigate to **Structure** > **Preview Sites**. Consult
+   [Configuring a Preview Site](../../../Backend%20Starters/Decoupled%20Drupal/configuring-preview-site.md)
+   for more information.
 1. Set the URL to point to http(s)://{YOUR_SITE_URL}/api/preview replacing
    `{YOUR_SITE_URL}` with the URL of your frontend site, or `localhost:3000` for
    testing preview locally.

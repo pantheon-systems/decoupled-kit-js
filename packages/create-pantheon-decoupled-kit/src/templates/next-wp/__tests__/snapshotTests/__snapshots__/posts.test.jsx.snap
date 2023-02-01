@@ -1,0 +1,305 @@
+// Vitest Snapshot v1
+
+exports[`<PostListTemplate /> > should render with posts 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+  >
+    <div
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
+    >
+      <nav>
+        <ul
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
+        >
+          <li
+            class="ps-mr-auto"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/posts"
+            >
+              📰 Posts
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <header
+        class="prose text-2xl mx-auto mt-20"
+      >
+        <h1
+          class="text-center mx-auto"
+        >
+          Posts
+        </h1>
+      </header>
+      <div
+        class="max-w-screen-lg mx-auto"
+      >
+        <section>
+          <div
+            class="ps-max-w-full"
+          >
+            <section>
+              <div
+                class="ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg lg:ps-grid-cols-3"
+              >
+                <a
+                  href="/posts/example-post-with-image"
+                >
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+                  >
+                    <div
+                      class="flex-shrink-0 relative h-40"
+                    >
+                      <img
+                        alt="Example Post with Image"
+                        src="undefined/app/uploads/2022/09/pizza.jpeg"
+                      />
+                    </div>
+                    <h2
+                      class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                    >
+                      Example Post with Image →
+                    </h2>
+                  </div>
+                </a>
+                <a
+                  href="/posts/hello-world"
+                >
+                  <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+                  >
+                    <div
+                      class="flex-shrink-0 relative h-40"
+                    >
+                      <div
+                        class="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500"
+                      />
+                    </div>
+                    <h2
+                      class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                    >
+                      Hello world! →
+                    </h2>
+                  </div>
+                </a>
+              </div>
+            </section>
+            <div
+              class="ps-sticky lg:ps-bottom-12 ps-bottom-4 ps-mt-10"
+            />
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
+    >
+      <nav
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
+      >
+        <ul />
+      </nav>
+      <div
+        class="ps-flex ps-my-4 ps-p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2023 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://wordpress.com/"
+          >
+            WordPress
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<PostTemplate /> > should render a post 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+  >
+    <div
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
+    >
+      <nav>
+        <ul
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
+        >
+          <li
+            class="ps-mr-auto"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/posts"
+            >
+              📰 Posts
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <article
+        class="ps-prose ps-max-w-none xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-py-4 ps-px-12"
+      >
+        <section
+          class="ps-prose xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto"
+        >
+          <h1>
+            Example Post with Image
+          </h1>
+          <p
+            class="ps-text-sm ps-text-gray-600"
+          >
+            9/13/2022
+          </p>
+          <a
+            class="ps-font-normal ps-cursor-pointer"
+          >
+            Back →
+          </a>
+        </section>
+        <div
+          class="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg ps-shadow-lg [&*>img]:ps-rounded-lg"
+        >
+          <div
+            class="ps-relative ps-mb-10 ps-min-h-[50vh]"
+          >
+            <img
+              alt="Example Post with Image"
+              data-nimg="fill"
+              decoding="async"
+              sizes="100vw"
+              src="/_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=3840&q=75"
+              srcset="/_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=3840&q=75 3840w"
+              style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
+            />
+          </div>
+        </div>
+        <div
+          class="ps-break-words ps-mt-12 ps-wp-content"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          
+
+        </div>
+      </article>
+    </main>
+    <footer
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
+    >
+      <nav
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
+      >
+        <ul />
+      </nav>
+      <div
+        class="ps-flex ps-my-4 ps-p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2023 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://wordpress.com/"
+          >
+            WordPress
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

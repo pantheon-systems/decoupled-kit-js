@@ -1,5 +1,17 @@
 # @pantheon-systems/next-drupal-starter
 
+## 4.0.1-canary.1
+
+### Patch Changes
+
+- a7c1855: Update depencencies
+
+## 4.0.1-canary.0
+
+### Patch Changes
+
+- 0b9db20: Pantheon Environment Docs
+
 ## 4.0.0
 
 ### Major Changes

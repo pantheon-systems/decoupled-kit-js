@@ -13,3 +13,8 @@ dist
 public
 
 *.d.ts
+
+# handlebars templates
+*.hbs
+**/templates/**
+**/__tests__/fixtures/**
