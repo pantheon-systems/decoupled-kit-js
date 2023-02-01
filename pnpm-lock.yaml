@@ -14,6 +14,7 @@ overrides:
   ua-parser-js@<0.7.33: '>=0.7.33'
   json5@>=2.0.0 <2.2.2: '>=2.2.2'
   got@<11.8.5: '>=11.8.5'
+  eta@<2.0.0: '>=2.0.0'
 
 importers:
 
@@ -2457,7 +2458,7 @@ packages:
       del: 6.1.1
       detect-port: 1.5.1
       escape-html: 1.0.3
-      eta: 1.12.3
+      eta: 2.0.0
       file-loader: 6.2.0_webpack@5.75.0
       fs-extra: 10.1.0
       html-minifier-terser: 6.1.0
@@ -2557,7 +2558,7 @@ packages:
       del: 6.1.1
       detect-port: 1.5.1
       escape-html: 1.0.3
-      eta: 1.12.3
+      eta: 2.0.0
       file-loader: 6.2.0_webpack@5.75.0
       fs-extra: 10.1.0
       html-minifier-terser: 6.1.0
@@ -3176,7 +3177,7 @@ packages:
       algoliasearch: 4.14.2
       algoliasearch-helper: 3.11.1_algoliasearch@4.14.2
       clsx: 1.2.1
-      eta: 1.12.3
+      eta: 2.0.0
       fs-extra: 10.1.0
       lodash: 4.17.21
       react: 17.0.2
@@ -11115,8 +11116,8 @@ packages:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
 
-  /eta/1.12.3:
-    resolution: {integrity: sha512-qHixwbDLtekO/d51Yr4glcaUJCIjGVJyTzuqV4GPlgZo1YpgOKG+avQynErZIYrfM6JIJdtiG2Kox8tbb+DoGg==}
+  /eta/2.0.0:
+    resolution: {integrity: sha512-NqE7S2VmVwgMS8yBxsH4VgNQjNjLq1gfGU0u9I6Cjh468nPRMoDfGdK9n1p/3Dvsw3ebklDkZsFAnKJ9sefjBA==}
     engines: {node: '>=6.0.0'}
     dev: false
 
