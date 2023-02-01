@@ -90,7 +90,7 @@ jobs:
 
       # no tag
       - if: "!startsWith(github.ref, 'refs/tags/')"
-        uses: 'symplify/monorepo-split-github-action@2.1'
+        uses: 'symplify/monorepo-split-github-action@2.3'
         with:
           # ↓ split <local_path> directory
           package_directory: '${{ matrix.local_path }}'
@@ -100,12 +100,12 @@ jobs:
           repository_name: '${{ matrix.split_repository }}'
 
           # ↓ the user signed under the split commit
-          user_name: 'brian-ci'
-          user_email: 'brian.perry@pantheon.io'
+          user_name: 'decoupled-service-user'
+          user_email: 'decoupled-service-user@pantheon.io'
 
       # with tag
       - if: "startsWith(github.ref, 'refs/tags/')"
-        uses: 'symplify/monorepo-split-github-action@2.1'
+        uses: 'symplify/monorepo-split-github-action@2.3'
         with:
           tag: ${GITHUB_REF#refs/tags/}
 
@@ -115,5 +115,5 @@ jobs:
           repository_name: '${{ matrix.split_repository }}'
 
           # ↓ the user signed under the split commit
-          user_name: 'brian-ci'
-          user_email: 'brian.perry@pantheon.io'
+          user_name: 'decoupled-service-user'
+          user_email: 'decoupled-service-user@pantheon.io'
