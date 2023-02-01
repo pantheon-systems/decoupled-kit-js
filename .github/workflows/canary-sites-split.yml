@@ -40,7 +40,7 @@ jobs:
           mkdir -p ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows
       - run: |
           cp ${{ github.workspace }}/.github/templates/trigger-e2e.yml.template ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows/trigger-e2e.yml
-      - uses: 'symplify/monorepo-split-github-action@2.1'
+      - uses: 'symplify/monorepo-split-github-action@2.3'
         with:
           # ↓ split <local_path> directory
           package_directory: '${{ matrix.local_path }}'

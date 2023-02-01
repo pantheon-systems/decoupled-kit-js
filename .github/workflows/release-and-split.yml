@@ -90,7 +90,7 @@ jobs:
 
       # no tag
       - if: "!startsWith(github.ref, 'refs/tags/')"
-        uses: 'symplify/monorepo-split-github-action@2.1'
+        uses: 'symplify/monorepo-split-github-action@2.3'
         with:
           # ↓ split <local_path> directory
           package_directory: '${{ matrix.local_path }}'
@@ -105,7 +105,7 @@ jobs:
 
       # with tag
       - if: "startsWith(github.ref, 'refs/tags/')"
-        uses: 'symplify/monorepo-split-github-action@2.1'
+        uses: 'symplify/monorepo-split-github-action@2.3'
         with:
           tag: ${GITHUB_REF#refs/tags/}
 
