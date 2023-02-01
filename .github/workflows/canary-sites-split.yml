@@ -50,8 +50,8 @@ jobs:
           repository_name: '${{ matrix.split_repository }}'
 
           # ↓ the user signed under the split commit
-          user_name: 'brian-ci'
-          user_email: 'brian.perry@pantheon.io'
+          user_name: 'decoupled-service-user'
+          user_email: 'decoupled-service-user@pantheon.io'
       - name: Send custom JSON data to Slack workflow
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
