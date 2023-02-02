@@ -13,5 +13,8 @@
     "@pantheon-systems/next-wordpress-starter": "1.0.1",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "modern-queens-complain",
+    "sharp-donuts-judge"
+  ]
 }
