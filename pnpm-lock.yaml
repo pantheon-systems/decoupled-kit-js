@@ -267,7 +267,7 @@ importers:
       gatsby-plugin-postcss: ^5.24.0
       gatsby-plugin-sharp: ^4.24.0
       gatsby-source-filesystem: ^4.24.0
-      gatsby-source-wordpress: ^6.24.2
+      gatsby-source-wordpress: 6.25.3
       gatsby-transformer-sharp: ^4.24.0
       graphql: ^15.0.0
       lodash: ^4.17.21
@@ -291,7 +291,7 @@ importers:
       gatsby-plugin-postcss: 5.24.0_5xvc4mmba4ol4vergifogystc4
       gatsby-plugin-sharp: 4.24.0_veoy6eu37d3zgrms3x37tdgtzy
       gatsby-source-filesystem: 4.24.0_gatsby@4.24.8
-      gatsby-source-wordpress: 6.24.2_4redgsjrkg4fc2oqfxt7itaiwy
+      gatsby-source-wordpress: 6.25.3_4redgsjrkg4fc2oqfxt7itaiwy
       gatsby-transformer-sharp: 4.24.0_orbkgckhiv3hznqledbb2okvhe
       graphql: 15.8.0
       lodash: 4.17.21
@@ -1980,7 +1980,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.11
-    dev: true
 
   /@babel/runtime/7.20.6:
     resolution: {integrity: sha512-Q+8MqP7TiHMWzSfwiJwXCjyf4GYA4Dgw3emg/7xmwsdLJOZUp+nMqcOwOzzYheuM1rhDu8FSj2l0aoMygEuXuA==}
@@ -5509,7 +5508,7 @@ packages:
   /@rematch/core/1.4.0:
     resolution: {integrity: sha512-1zy9cTYxbvDHP0PwIL1QqkwagCEnqA0uWMmPf8v2BYvLi2OsxIfX1xiV+vCP3sdJAjjZ0b9+IbSmj0DL2MEgLQ==}
     dependencies:
-      redux: 4.2.0
+      redux: 4.2.1
     dev: false
 
   /@rematch/immer/1.2.0_@rematch+core@1.4.0:
@@ -5518,7 +5517,7 @@ packages:
       '@rematch/core': '>=1.0.0-alpha.0'
     dependencies:
       '@rematch/core': 1.4.0
-      immer: 9.0.16
+      immer: 9.0.19
     dev: false
 
   /@rollup/plugin-typescript/11.0.0:
@@ -7420,7 +7419,7 @@ packages:
   /axios/0.21.4_debug@3.2.7:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
-      follow-redirects: 1.15.2
+      follow-redirects: 1.15.2_debug@3.2.7
     transitivePeerDependencies:
       - debug
     dev: false
@@ -11640,6 +11639,18 @@ packages:
         optional: true
     dev: false
 
+  /follow-redirects/1.15.2_debug@3.2.7:
+    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: 3.2.7
+    dev: false
+
   /for-each/0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
     dependencies:
@@ -11907,6 +11918,27 @@ packages:
       xdg-basedir: 4.0.0
     dev: false
 
+  /gatsby-core-utils/3.25.0:
+    resolution: {integrity: sha512-lmMDwbnKpqAi+8WWd7MvCTCx3E0u7j8sbVgydERNCYVxKVpzD/aLCH4WPb4EE9m1H1rSm76w0Z+MaentyB/c/Q==}
+    engines: {node: '>=14.15.0'}
+    dependencies:
+      '@babel/runtime': 7.20.13
+      ci-info: 2.0.0
+      configstore: 5.0.1
+      fastq: 1.15.0
+      file-type: 16.5.4
+      fs-extra: 10.1.0
+      got: 11.8.6
+      import-from: 4.0.0
+      lmdb: 2.5.3
+      lock: 1.1.0
+      node-object-hash: 2.3.10
+      proper-lockfile: 4.1.2
+      resolve-from: 5.0.0
+      tmp: 0.2.1
+      xdg-basedir: 4.0.0
+    dev: false
+
   /gatsby-graphiql-explorer/2.24.0:
     resolution: {integrity: sha512-CzBEpgpT7wvEzOZWA0iRrXrGkug33ph/siADAMsgQMDf9VLAH4mEKqbQKgIIuy+yIodq74ty75txCaxFarclMQ==}
     engines: {node: '>=14.15.0'}
@@ -11972,13 +12004,13 @@ packages:
       '@parcel/transformer-json': 2.6.2_@parcel+core@2.6.2
     dev: false
 
-  /gatsby-plugin-catch-links/4.24.0_gatsby@4.24.8:
-    resolution: {integrity: sha512-jUs+r8MEr6RdHuYe3EnMVeHe1Oddkjzv/2KBqnWQhv6UOGshDyJUe965tfXMGJImr716fwm2zAc9tgcUF7Ya5A==}
+  /gatsby-plugin-catch-links/4.25.0_gatsby@4.24.8:
+    resolution: {integrity: sha512-pfXr2Ad2J2m7B0cq+2itDjmcOLmQ/S+0oOlrRj0AgHbSoqDa04s6DhVx5yIuYA+sfkk8gXXtgl/jJLyxi85gYw==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
       gatsby: ^4.0.0-next
     dependencies:
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.20.13
       escape-string-regexp: 1.0.5
       gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
     dev: false
@@ -12172,6 +12204,26 @@ packages:
       svgo: 2.8.0
     dev: false
 
+  /gatsby-plugin-utils/3.19.0_veoy6eu37d3zgrms3x37tdgtzy:
+    resolution: {integrity: sha512-EZtvgHSU5NPbEn6a4cfSpEGCQ09SfwbhoybHTJKj1clop86HSwOCV2iH8RbCc+X6jbdgHaSZsfsl7zG1h7DBUw==}
+    engines: {node: '>=14.15.0'}
+    peerDependencies:
+      gatsby: ^4.0.0-next
+      graphql: ^15.0.0
+    dependencies:
+      '@babel/runtime': 7.20.13
+      fastq: 1.15.0
+      fs-extra: 10.1.0
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
+      gatsby-core-utils: 3.25.0
+      gatsby-sharp: 0.19.0
+      graphql: 15.8.0
+      graphql-compose: 9.0.10_graphql@15.8.0
+      import-from: 4.0.0
+      joi: 17.7.0
+      mime: 3.0.0
+    dev: false
+
   /gatsby-react-router-scroll/5.24.0_jrmehtgkntpgvrzvp7eiismjfa:
     resolution: {integrity: sha512-2wQnwyszef06fGxQOsz70ReykF9w9FgIUjPpThn3OBgJarRibNsHljbNdLOETczYSY8LEebKFB3ewQ+erd7DCw==}
     engines: {node: '>=14.15.0'}
@@ -12208,6 +12260,14 @@ packages:
       sharp: 0.30.7
     dev: false
 
+  /gatsby-sharp/0.19.0:
+    resolution: {integrity: sha512-EbI3RNBu2+aaxuMUP/INmoj8vcNAG6BgpFvi1tLeU7/gVTNVQ+7pC/ZYtlVCzSw+faaw7r1ZBMi6F66mNIIz5A==}
+    engines: {node: '>=14.15.0'}
+    dependencies:
+      '@types/sharp': 0.30.5
+      sharp: 0.30.7
+    dev: false
+
   /gatsby-source-filesystem/4.24.0_gatsby@4.24.8:
     resolution: {integrity: sha512-oTjjVmAcU83pR9SUW6x6u4PjHAcs1Szg/WfBYGBBxrH7mjm3UA34mb3KtYQSrYsC3maCxfTKn6CJ11F+2/4NRg==}
     engines: {node: '>=14.15.0'}
@@ -12227,8 +12287,27 @@ packages:
       xstate: 4.32.1
     dev: false
 
-  /gatsby-source-wordpress/6.24.2_4redgsjrkg4fc2oqfxt7itaiwy:
-    resolution: {integrity: sha512-l7cpM3Mlhf5E31PH7PPE8iMT1lr72pesVFQxb0HKcV/GSBJ3x5d6Ksnt8JQz2ejSbl6MaI2Yb/NfsjXXNxRnnw==}
+  /gatsby-source-filesystem/4.25.0_gatsby@4.24.8:
+    resolution: {integrity: sha512-gja4++bPkYpnum4/TxFicr3zRHBArnM2HjT77EE4EuDhdl6qlJYr/heD09LIPN2jdR5gmPwMDjIZnuYZ/6j/aQ==}
+    engines: {node: '>=14.15.0'}
+    peerDependencies:
+      gatsby: ^4.0.0-next
+    dependencies:
+      '@babel/runtime': 7.20.13
+      chokidar: 3.5.3
+      file-type: 16.5.4
+      fs-extra: 10.1.0
+      gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
+      gatsby-core-utils: 3.25.0
+      md5-file: 5.0.0
+      mime: 2.6.0
+      pretty-bytes: 5.6.0
+      valid-url: 1.0.9
+      xstate: 4.32.1
+    dev: false
+
+  /gatsby-source-wordpress/6.25.3_4redgsjrkg4fc2oqfxt7itaiwy:
+    resolution: {integrity: sha512-tidtxeMvHBh3nqLs1m6E/C5ZY7fWWi/k/+f5tvwXVU0JRWsGaJk+EAAdqMB5XdjQZq1KnNa/8QXCGqRGS8vCYw==}
     engines: {node: '>=14.15.0'}
     peerDependencies:
       gatsby: ^4.0.0-zz-next.1
@@ -12236,7 +12315,7 @@ packages:
       gatsby-plugin-sharp: ^4.0.0-zz-next.1
       gatsby-transformer-sharp: ^4.0.0-zz-next.1
     dependencies:
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.20.13
       '@rematch/core': 1.4.0
       '@rematch/immer': 1.2.0_@rematch+core@1.4.0
       async-retry: 1.3.3
@@ -12257,17 +12336,17 @@ packages:
       filesize: 6.4.0
       fs-extra: 10.1.0
       gatsby: 4.24.8_biqbaboplfbrettd7655fr4n2y
-      gatsby-core-utils: 3.24.0
-      gatsby-plugin-catch-links: 4.24.0_gatsby@4.24.8
+      gatsby-core-utils: 3.25.0
+      gatsby-plugin-catch-links: 4.25.0_gatsby@4.24.8
       gatsby-plugin-image: 2.24.0_7w62d3mlbdednvkw6zrc72s34q
       gatsby-plugin-sharp: 4.24.0_veoy6eu37d3zgrms3x37tdgtzy
-      gatsby-plugin-utils: 3.18.0_veoy6eu37d3zgrms3x37tdgtzy
-      gatsby-source-filesystem: 4.24.0_gatsby@4.24.8
+      gatsby-plugin-utils: 3.19.0_veoy6eu37d3zgrms3x37tdgtzy
+      gatsby-source-filesystem: 4.25.0_gatsby@4.24.8
       gatsby-transformer-sharp: 4.24.0_orbkgckhiv3hznqledbb2okvhe
       glob: 7.2.3
-      got: 11.8.5
+      got: 11.8.6
       lodash: 4.17.21
-      node-fetch: 2.6.7
+      node-fetch: 2.6.9
       p-queue: 6.6.2
       prettier: 2.8.3
       read-chunk: 3.2.0
@@ -12760,6 +12839,23 @@ packages:
       responselike: 2.0.1
     dev: false
 
+  /got/11.8.6:
+    resolution: {integrity: sha512-6tfZ91bOr7bOXnK7PRDCGBLa1H4U080YHNaAQ2KsMGlLEzRbk44nsZF2E1IeRc3vtJHPVbKCYgdFbaGO2ljd8g==}
+    engines: {node: '>=10.19.0'}
+    dependencies:
+      '@sindresorhus/is': 4.6.0
+      '@szmarczak/http-timer': 4.0.6
+      '@types/cacheable-request': 6.0.3
+      '@types/responselike': 1.0.0
+      cacheable-lookup: 5.0.4
+      cacheable-request: 7.0.2
+      decompress-response: 6.0.0
+      http2-wrapper: 1.0.3
+      lowercase-keys: 2.0.0
+      p-cancelable: 2.1.1
+      responselike: 2.0.1
+    dev: false
+
   /graceful-fs/4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
 
@@ -12771,6 +12867,14 @@ packages:
     resolution: {integrity: sha512-jcLLfkpoVGmH7/InMC/1hIvOPSUh38oJtGhvrOFGzioE1DZ+0YW16RgmOJhHiuWTvGiJQ9Z1Ik43JvkRPRvE+A==}
     dependencies:
       lodash: 4.17.21
+    dev: false
+
+  /graphql-compose/9.0.10_graphql@15.8.0:
+    resolution: {integrity: sha512-UsVoxfi2+c8WbHl2pEB+teoRRZoY4mbWBoijeLDGpAZBSPChnqtSRjp+T9UcouLCwGr5ooNyOQLoI3OVzU1bPQ==}
+    dependencies:
+      graphql-type-json: 0.3.2_graphql@15.8.0
+    transitivePeerDependencies:
+      - graphql
     dev: false
 
   /graphql-compose/9.0.9_graphql@15.8.0:
@@ -13287,6 +13391,10 @@ packages:
 
   /immer/9.0.16:
     resolution: {integrity: sha512-qenGE7CstVm1NrHQbMh8YaSzTZTFNP3zPqr3YU0S0UY441j4bJTg4A2Hh5KAhwgaiU6ZZ1Ar6y/2f4TblnMReQ==}
+    dev: false
+
+  /immer/9.0.19:
+    resolution: {integrity: sha512-eY+Y0qcsB4TZKwgQzLaE/lqYMlKhv5J9dyd2RhhtGhNo2njPXDqU9XPfcNfa3MIDsdtZt5KlkIsirlo4dHsWdQ==}
     dev: false
 
   /immutable/3.7.6:
@@ -16180,6 +16288,18 @@ packages:
       whatwg-url: 5.0.0
     dev: true
 
+  /node-fetch/2.6.9:
+    resolution: {integrity: sha512-DJm/CJkZkRjKKj4Zi4BsKVZh3ValV5IR5s7LVZnW+6YMh0W1BfNA8XSs6DLMGYlId5F3KnA70uu2qepcR08Qqg==}
+    engines: {node: 4.x || >=6.0.0}
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
+    dependencies:
+      whatwg-url: 5.0.0
+    dev: false
+
   /node-forge/1.3.1:
     resolution: {integrity: sha512-dPEtOeMvF9VMcYV/1Wb8CPoVAXtp6MKMlcbAt4ddqmGqUJ6fQZFXkNZNkNlfevtNkGtaSoXf/vNNNSvgrdXwtA==}
     engines: {node: '>= 6.13.0'}
@@ -18095,10 +18215,10 @@ packages:
       '@babel/runtime': 7.20.6
     dev: false
 
-  /redux/4.2.0:
-    resolution: {integrity: sha512-oSBmcKKIuIR4ME29/AeNUnl5L+hvBq7OaJWzaptTQJAntaPvxIJqfnjbaEiCzzaIz+XmVILfqAM3Ob0aXLPfjA==}
+  /redux/4.2.1:
+    resolution: {integrity: sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w==}
     dependencies:
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.20.13
     dev: false
 
   /regenerate-unicode-properties/10.1.0:
