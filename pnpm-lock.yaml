@@ -14,6 +14,8 @@ overrides:
   ua-parser-js@<0.7.33: '>=0.7.33'
   json5@>=2.0.0 <2.2.2: '>=2.2.2'
   got@<11.8.5: '>=11.8.5'
+  eta@<2.0.0: '>=2.0.0'
+  http-cache-semantics@<4.1.1: '>=4.1.1'
 
 importers:
 
@@ -124,6 +126,7 @@ importers:
       which-pm-runs: ^1.1.0
     dependencies:
       diff: 5.1.0
+      fs-extra: 11.1.0
       inquirer: 9.1.4
       klaw: 4.1.0
       minimist: 1.2.7
@@ -141,7 +144,6 @@ importers:
       chalk: 5.2.0
       chokidar: 3.5.3
       esbuild: 0.17.4
-      fs-extra: 11.1.0
       handlebars: 4.7.7
       prettier: 2.8.3
       rimraf: 4.1.2
@@ -2457,7 +2459,7 @@ packages:
       del: 6.1.1
       detect-port: 1.5.1
       escape-html: 1.0.3
-      eta: 1.12.3
+      eta: 2.0.0
       file-loader: 6.2.0_webpack@5.75.0
       fs-extra: 10.1.0
       html-minifier-terser: 6.1.0
@@ -2557,7 +2559,7 @@ packages:
       del: 6.1.1
       detect-port: 1.5.1
       escape-html: 1.0.3
-      eta: 1.12.3
+      eta: 2.0.0
       file-loader: 6.2.0_webpack@5.75.0
       fs-extra: 10.1.0
       html-minifier-terser: 6.1.0
@@ -3176,7 +3178,7 @@ packages:
       algoliasearch: 4.14.2
       algoliasearch-helper: 3.11.1_algoliasearch@4.14.2
       clsx: 1.2.1
-      eta: 1.12.3
+      eta: 2.0.0
       fs-extra: 10.1.0
       lodash: 4.17.21
       react: 17.0.2
@@ -8079,7 +8081,7 @@ packages:
     dependencies:
       clone-response: 1.0.3
       get-stream: 5.2.0
-      http-cache-semantics: 4.1.0
+      http-cache-semantics: 4.1.1
       keyv: 4.5.2
       lowercase-keys: 2.0.0
       normalize-url: 6.1.0
@@ -11115,8 +11117,8 @@ packages:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
 
-  /eta/1.12.3:
-    resolution: {integrity: sha512-qHixwbDLtekO/d51Yr4glcaUJCIjGVJyTzuqV4GPlgZo1YpgOKG+avQynErZIYrfM6JIJdtiG2Kox8tbb+DoGg==}
+  /eta/2.0.0:
+    resolution: {integrity: sha512-NqE7S2VmVwgMS8yBxsH4VgNQjNjLq1gfGU0u9I6Cjh468nPRMoDfGdK9n1p/3Dvsw3ebklDkZsFAnKJ9sefjBA==}
     engines: {node: '>=6.0.0'}
     dev: false
 
@@ -11761,7 +11763,7 @@ packages:
       graceful-fs: 4.2.10
       jsonfile: 6.1.0
       universalify: 2.0.0
-    dev: true
+    dev: false
 
   /fs-extra/4.0.3:
     resolution: {integrity: sha512-q6rbdDd1o2mAnQreO7YADIxf/Whx4AHBiRf6d+/cVT8h44ss+lHgxf1FemcqDnQt9X3ct4McHr+JMGlYSsK7Cg==}
@@ -13111,8 +13113,8 @@ packages:
       entities: 4.4.0
     dev: false
 
-  /http-cache-semantics/4.1.0:
-    resolution: {integrity: sha512-carPklcUh7ROWRK7Cv27RPtdhYhUsela/ue5/jKzjegVvXDqM2ILE9Q2BGn9JZJh1g87cp56su/FgQSzcWS8cQ==}
+  /http-cache-semantics/4.1.1:
+    resolution: {integrity: sha512-er295DKPVsV82j5kw1Gjt+ADA/XYHsajl82cGNQG2eyoPkvgUhX+nDIyelzhIWbbsXP39EHcI6l5tYs2FYqYXQ==}
     dev: false
 
   /http-deceiver/1.2.7:
