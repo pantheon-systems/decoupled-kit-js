@@ -1,5 +1,6 @@
 import type { CustomActionConfig } from 'node-plop';
 import type { DecoupledKitGenerator } from '../types';
+import whichPmRuns from 'which-pm-runs';
 
 export const gatsbyWp: DecoupledKitGenerator = {
 	name: 'gatsby-wp',
@@ -18,6 +19,14 @@ export const gatsbyWp: DecoupledKitGenerator = {
 		},
 	],
 	actions: (data) => {
+		let pnpm = false;
+		const getPkgManager = whichPmRuns();
+		if (getPkgManager && getPkgManager.name === 'pnpm') {
+			pnpm = true;
+		}
+		if (data) {
+			data.gatsbyPnpmPlugin = pnpm;
+		}
 		const addWithDiff: CustomActionConfig<'addWithDiff'> = {
 			type: 'addWithDiff',
 			templates: './templates/gatsby-wp',

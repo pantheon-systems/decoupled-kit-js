@@ -25,9 +25,14 @@ export const runESLint = (
 		execSync(`${command} lint`, { cwd: answers.outDir, stdio: 'inherit' });
 		return 'success';
 	} catch (error) {
-		if (error instanceof Error) {
-			throw error;
+		try {
+			execSync('npx eslint', { cwd: answers.outDir, stdio: 'inherit' });
+			return 'success eslint';
+		} catch (error) {
+			if (error instanceof Error) {
+				throw error;
+			}
+			throw 'fail';
 		}
-		throw 'fail';
 	}
 };
