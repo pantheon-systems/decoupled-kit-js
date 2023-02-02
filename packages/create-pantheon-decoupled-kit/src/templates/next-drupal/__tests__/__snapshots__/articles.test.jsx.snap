@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`default <ArticleTemplate /> > should render with default profile articles 1`] = `
+exports[`<ArticleTemplate /> > should render articles 1`] = `
 <DocumentFragment>
   <div
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
@@ -157,7 +157,7 @@ exports[`default <ArticleTemplate /> > should render with default profile articl
 </DocumentFragment>
 `;
 
-exports[`default <SSRArticlesListTemplate /> > should render with default profile articles 1`] = `
+exports[`<SSRArticlesListTemplate /> > should render articles 1`] = `
 <DocumentFragment>
   <div
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"

@@ -2,7 +2,6 @@ import { render } from '@testing-library/react';
 import PaginationExampleTemplate from '../../pages/examples/pagination/[[...page]]';
 
 import examplePaginationData from '../data/examplePaginationData.json';
-import umamiFooterMenu from '../data/umamiMenuItemsMainData.json';
 import defaultProfileFooterMenu from '../data/defaultProfileMenuItemsMainData.json';
 
 vi.mock('next/router', () => ({
@@ -19,9 +18,8 @@ vi.mock('next/router', () => ({
  * @vitest-environment jsdom
  */
 
-describe(`${PROFILE} <PaginationExampleTemplate />`, () => {
-	const footerMenu =
-		PROFILE === 'umami' ? umamiFooterMenu : defaultProfileFooterMenu;
+describe('<PaginationExampleTemplate />', () => {
+	const footerMenu = defaultProfileFooterMenu;
 	it('should render the Pagination Example page', () => {
 		const { asFragment } = render(
 			<PaginationExampleTemplate

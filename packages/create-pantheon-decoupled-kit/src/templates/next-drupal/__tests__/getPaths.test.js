@@ -1,7 +1,6 @@
 import { getPaths } from '../lib/getPaths';
 import { globalDrupalStateStores } from '../lib/stores';
 
-import umamiPaths from './data/umamiPaths.json';
 import defaultProfilePaths from './data/defaultProfilePaths.json';
 
 describe('getPaths()', () => {
@@ -17,12 +16,8 @@ describe('getPaths()', () => {
 			'articles',
 			false,
 		);
-
-		if (PROFILE === 'umami') {
-			expect(paths).toEqual(umamiPaths);
-		} else if (PROFILE === 'default') {
-			expect(paths).toEqual(defaultProfilePaths);
-		}
+		
+		expect(paths).toEqual(defaultProfilePaths);
 	});
 	it('should return an empty array if failGracefully is true', async () => {
 		const paths = await getPaths(

@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`Default <RecipeListTemplate /> > should render a 404 1`] = `
+exports[`<PageListTemplate /> > should render pages 1`] = `
 <DocumentFragment>
   <div
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
@@ -58,12 +58,49 @@ exports[`Default <RecipeListTemplate /> > should render a 404 1`] = `
     <main
       class="mb-auto"
     >
-      <div
-        class="flex flex-col mx-auto text-xl prose text-center mt-12"
+       
+      <header
+        class="prose text-2xl mx-auto mt-20"
       >
-        <h2>
-          404: Could not find the requested page
-        </h2>
+        <h1
+          class="text-center mx-auto"
+        >
+          Pages
+        </h1>
+      </header>
+      <div
+        class="mt-12 mx-auto max-w-[50vw]"
+      >
+        <ul>
+          <li
+            class="prose justify-items-start mt-8"
+          >
+            <h2>
+              Test Page With Embedded Image-test page-local
+            </h2>
+            <div />
+            <a
+              class="font-normal underline"
+              href="/pages/test-page-embedded-image-test-page-local"
+            >
+              Read more →
+            </a>
+          </li>
+          <li
+            class="prose justify-items-start mt-8"
+          >
+            <h2>
+              My Page-preview test
+            </h2>
+            <div />
+            <a
+              class="font-normal underline"
+              href="/pages/my-page-preview-test"
+            >
+              Read more →
+            </a>
+          </li>
+        </ul>
       </div>
     </main>
     <footer
@@ -72,7 +109,18 @@ exports[`Default <RecipeListTemplate /> > should render a 404 1`] = `
       <nav
         class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
       >
-        <ul />
+        <ul>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+        </ul>
       </nav>
       <div
         class="ps-flex ps-my-4 ps-p-2"
@@ -101,7 +149,7 @@ exports[`Default <RecipeListTemplate /> > should render a 404 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Default <RecipeTemplate /> > should render a 404 1`] = `
+exports[`<PageTemplate /> > should render a page 1`] = `
 <DocumentFragment>
   <div
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
@@ -159,13 +207,36 @@ exports[`Default <RecipeTemplate /> > should render a 404 1`] = `
     <main
       class="mb-auto"
     >
-      <div
-        class="flex flex-col mx-auto text-xl prose text-center mt-12"
+      <article
+        class="prose lg:prose-xl mt-10 mx-auto"
       >
-        <h2>
-          404: Could not find the requested page
-        </h2>
-      </div>
+        <h1>
+          Test Page With Embedded Image-test page-local
+        </h1>
+        <a
+          class="font-normal"
+          href="/pages"
+        >
+          Pages →
+        </a>
+        <div
+          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+        >
+          <div>
+            <p>
+              <img
+                alt="Drupal on NPM"
+                data-entity-type="file"
+                data-entity-uuid="85adb65f-7111-42ae-aaa2-1d82e92d5785"
+                height="968"
+                loading="lazy"
+                src="/sites/default/files/inline-images/%40drupal-npm.png"
+                width="3138"
+              />
+            </p>
+          </div>
+        </div>
+      </article>
     </main>
     <footer
       class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
@@ -173,7 +244,18 @@ exports[`Default <RecipeTemplate /> > should render a 404 1`] = `
       <nav
         class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
       >
-        <ul />
+        <ul>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+        </ul>
       </nav>
       <div
         class="ps-flex ps-my-4 ps-p-2"

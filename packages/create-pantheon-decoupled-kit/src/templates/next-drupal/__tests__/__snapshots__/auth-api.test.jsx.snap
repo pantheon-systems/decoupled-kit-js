@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`umami <PageListTemplate /> > should render with umami profile pages 1`] = `
+exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthenticated 1`] = `
 <DocumentFragment>
   <div
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
@@ -58,63 +58,44 @@ exports[`umami <PageListTemplate /> > should render with umami profile pages 1`]
     <main
       class="mb-auto"
     >
-       
-      <header
-        class="prose text-2xl mx-auto mt-20"
-      >
-        <h1
-          class="text-center mx-auto"
-        >
-          Pages
-        </h1>
-      </header>
       <div
-        class="mt-12 mx-auto max-w-[50vw]"
+        class="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen"
       >
-        <ul>
-          <li
-            class="prose justify-items-start mt-8"
+        <h1>
+          API Authorization Example
+        </h1>
+        <a
+          href="/"
+        >
+          <span
+            class="w-full underline cursor-pointer"
           >
-            <h2>
-              About Umami
-            </h2>
-            <div />
+            Home →
+          </span>
+        </a>
+        <div
+          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+        >
+          <p>
+            Next.js was unable to make an authorized request to the Drupal API. Please check your .env.development.local file to ensure that your 
+            <code>
+              CLIENT_ID
+            </code>
+             and 
+            <code>
+              CLIENT_SECRET
+            </code>
+             are set correctly.
+          </p>
+          <p>
+            For more information on how to set these values, please see 
             <a
-              class="font-normal underline"
-              href="/about-umami"
+              href="https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next.js/Next.js%20%2B%20Drupal/setting-environment-variables.md"
             >
-              Read more →
+              Setting Environment Variables
             </a>
-          </li>
-          <li
-            class="prose justify-items-start mt-8"
-          >
-            <h2>
-              Top Level Page
-            </h2>
-            <div />
-            <a
-              class="font-normal underline"
-              href="/about"
-            >
-              Read more →
-            </a>
-          </li>
-          <li
-            class="prose justify-items-start mt-8"
-          >
-            <h2>
-              Nested Top Level Page
-            </h2>
-            <div />
-            <a
-              class="font-normal underline"
-              href="/nested/page"
-            >
-              Read more →
-            </a>
-          </li>
-        </ul>
+          </p>
+        </div>
       </div>
     </main>
     <footer
@@ -129,29 +110,9 @@ exports[`umami <PageListTemplate /> > should render with umami profile pages 1`]
           >
             <a
               class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
-              href="/en"
+              href="/"
             >
               Home
-            </a>
-          </li>
-          <li
-            class="ps-list-disc ps-text-blue-300"
-          >
-            <a
-              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
-              href="/en/articles"
-            >
-              Articles
-            </a>
-          </li>
-          <li
-            class="ps-list-disc ps-text-blue-300"
-          >
-            <a
-              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
-              href="/en/recipes"
-            >
-              Recipes
             </a>
           </li>
         </ul>
@@ -183,7 +144,7 @@ exports[`umami <PageListTemplate /> > should render with umami profile pages 1`]
 </DocumentFragment>
 `;
 
-exports[`umami <PageTemplate /> > should render with umami profile page 1`] = `
+exports[`<AuthApiExampleTemplate /> > should render a success message if authenticated 1`] = `
 <DocumentFragment>
   <div
     class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
@@ -241,41 +202,29 @@ exports[`umami <PageTemplate /> > should render with umami profile page 1`] = `
     <main
       class="mb-auto"
     >
-      <article
-        class="prose lg:prose-xl mt-10 mx-auto"
+      <div
+        class="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen"
       >
         <h1>
-          About Umami
+          API Authorization Example
         </h1>
         <a
-          class="font-normal"
-          href="/pages"
+          href="/"
         >
-          Pages →
+          <span
+            class="w-full underline cursor-pointer"
+          >
+            Home →
+          </span>
         </a>
         <div
           class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
         >
-          <div>
-            <p>
-              Umami is a fictional food magazine that has been created to demonstrate how you might build a Drupal site using functionality provided 'out of the box'.
-            </p>
-            
-
-            <p>
-              For more information visit 
-              <a
-                href="https://www.drupal.org/docs/umami-drupal-demonstration-installation-profile"
-              >
-                https://www.drupal.org/docs/umami-drupal-demonstration-installation-profile
-              </a>
-              .
-            </p>
-            
-
-          </div>
+          <p>
+            🎉 Next.js was able to successfully make an authenticated request to Drupal! 🎉
+          </p>
         </div>
-      </article>
+      </div>
     </main>
     <footer
       class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
@@ -289,29 +238,9 @@ exports[`umami <PageTemplate /> > should render with umami profile page 1`] = `
           >
             <a
               class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
-              href="/en"
+              href="/"
             >
               Home
-            </a>
-          </li>
-          <li
-            class="ps-list-disc ps-text-blue-300"
-          >
-            <a
-              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
-              href="/en/articles"
-            >
-              Articles
-            </a>
-          </li>
-          <li
-            class="ps-list-disc ps-text-blue-300"
-          >
-            <a
-              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
-              href="/en/recipes"
-            >
-              Recipes
             </a>
           </li>
         </ul>

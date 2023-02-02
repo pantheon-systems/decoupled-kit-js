@@ -3,8 +3,6 @@ import SSGISRExampleTemplate from '../../pages/examples/ssg-isr';
 
 import defaultProfileArticlesData from '../data/defaultProfileArticlesData.json';
 import defaultProfileFooterMenu from '../data/defaultProfileMenuItemsMainData.json';
-import umamiEnArticlesData from '../data/umamiEnArticlesData.json';
-import umamiFooterMenu from '../data/umamiMenuItemsMainData.json';
 
 vi.mock('next/image');
 vi.mock('next/router', () => ({
@@ -17,12 +15,9 @@ vi.mock('next/router', () => ({
  * @vitest-environment jsdom
  */
 
-describe(`${PROFILE} <SSGISRExampleTemplate />`, () => {
-	it(`should render with ${PROFILE} profile articles`, () => {
-		const data =
-			PROFILE === 'umami'
-				? { articles: umamiEnArticlesData, footerMenu: umamiFooterMenu }
-				: {
+describe('<SSGISRExampleTemplate />', () => {
+	it(`should render articles`, () => {
+		const data = {
 						articles: defaultProfileArticlesData,
 						footerMenu: defaultProfileFooterMenu,
 				  };
