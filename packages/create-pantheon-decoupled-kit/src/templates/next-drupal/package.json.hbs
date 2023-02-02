@@ -1,5 +1,5 @@
 {
-	"name": "{{appName}}",
+	"name": "{{kebabCase appName}}",
 	"version": "0.1.0",
 	"private": true,
 	"description": "",
@@ -15,11 +15,9 @@
 		"build:mono": "next build",
 		"start:mono": "next start",
 		"lint": "next lint",
-		"test": "vitest run --mode umami && vitest run --mode default",
-		"test:umami": "vitest --mode umami",
-		"test:default": "vitest --mode default",
-		"update-snapshots": "vitest run --mode umami --update --silent && vitest run --mode default --update --silent",
-		"coverage": "vitest run --mode umami --coverage && vitest run --mode default --coverage"
+		"test": "vitest run",
+		"update-snapshots": "vitest run--update --silent",
+		"coverage": "vitest run --coverage"
 	},
 	"dependencies": {
 		"@pantheon-systems/drupal-kit": "4.1.0",
