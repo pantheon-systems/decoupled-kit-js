@@ -91,7 +91,8 @@
 			"ua-parser-js@<0.7.33": ">=0.7.33",
 			"json5@>=2.0.0 <2.2.2": ">=2.2.2",
 			"got@<11.8.5": ">=11.8.5",
-			"eta@<2.0.0": ">=2.0.0"
+			"eta@<2.0.0": ">=2.0.0",
+			"http-cache-semantics@<4.1.1": ">=4.1.1"
 		},
 		"peerDependencyRules": {
 			"ignoreMissing": [
