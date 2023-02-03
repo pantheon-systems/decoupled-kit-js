@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.1.1-canary.0
+
+### Patch Changes
+
+- a936759: Use `GET` for GraphQL requests by default
+
 ## 0.1.0
 
 ### Minor Changes
