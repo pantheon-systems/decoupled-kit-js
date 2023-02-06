@@ -19,11 +19,7 @@ export const gatsbyWp: DecoupledKitGenerator = {
 		},
 	],
 	actions: (data) => {
-		let pnpm = false;
-		const getPkgManager = whichPmRuns();
-		if (getPkgManager && getPkgManager.name === 'pnpm') {
-			pnpm = true;
-		}
+		const pnpm = whichPmRuns()?.name === 'pnpm' ? true : false;
 		if (data) {
 			data.gatsbyPnpmPlugin = pnpm;
 		}
