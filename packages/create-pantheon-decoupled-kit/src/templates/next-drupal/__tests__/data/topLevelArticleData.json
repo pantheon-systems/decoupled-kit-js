@@ -1,0 +1,189 @@
+{
+	"type": "node--article",
+	"id": "e5c9e948-a7ca-4845-850a-7bd46d2059d5",
+	"title": "Example Top Level Article",
+	"body": {
+		"value": "<h2>Nonummy Tristique Pulvinar Justo Primis Mi</h2>\r\n\r\n<h3>Ultricies Velit Dapibus Cursus Proin Magnis</h3>\r\n\r\n<p>Est varius. Conubia semper facilisis primis urna nec dis placerat dictum interdum dapibus dictumst phasellus phasellus neque dui posuere habitant nunc. Lorem mollis varius Sagittis Habitasse ultricies euismod euismod. Posuere cubilia platea pede. Viverra habitant praesent ac phasellus quisque vel diam fusce nisl maecenas vestibulum netus torquent Molestie volutpat metus donec cubilia. Ipsum, nec morbi lacinia sem. Nascetur sed. Justo ultrices velit hymenaeos aliquam hymenaeos potenti id.</p>\r\n\r\n<h3>Quis Metus Orci Nibh Dapibus</h3>\r\n\r\n<p>Mus porta parturient leo class. Sapien orci tincidunt mattis torquent. Pretium etiam sapien mauris commodo vestibulum potenti ipsum a, cubilia accumsan adipiscing rutrum. Egestas. Ornare aliquam nibh. Pede placerat praesent nonummy est facilisi sapien porttitor rhoncus molestie torquent. Lorem magnis non et natoque. Ipsum justo leo pharetra hymenaeos praesent pharetra hymenaeos fermentum, semper. Ultrices dolor gravida sit enim, mus. Est nam class, condimentum dis dictumst, ut ut cum magna pulvinar primis vitae imperdiet aliquet vitae id amet, justo curae; et, vitae tempor ultricies maecenas lectus ut faucibus.</p>\r\n\r\n<p>Vehicula. Semper convallis tempus habitant accumsan justo porta auctor Nonummy vestibulum rhoncus nam odio sociosqu blandit ut. Nostra luctus malesuada ac risus torquent massa habitant cubilia Porttitor ad lorem, tempus ridiculus vulputate iaculis. Gravida placerat suscipit. Pulvinar facilisi. Leo. Vivamus lorem diam est. Suscipit rhoncus ullamcorper leo fames viverra. Mattis posuere aliquet congue hymenaeos. Per montes. Litora. Tellus.</p>\r\n\r\n<h3>Convallis Porta Morbi Accumsan</h3>\r\n\r\n<p>In. Viverra habitasse commodo urna pharetra. Eleifend euismod. Justo volutpat, cras eu. Porta sociosqu tortor scelerisque. Orci tincidunt dictum viverra imperdiet phasellus Fames quam diam metus etiam nascetur litora, hac bibendum dictum sociis. Odio fringilla blandit elementum risus hendrerit justo suscipit, in quisque platea mollis vulputate, montes vivamus. Ipsum magnis mus erat cum phasellus at. Aliquet Ad netus vitae interdum fermentum fermentum conubia habitant. Sed penatibus hendrerit enim dictum magna, faucibus sit integer elementum tincidunt laoreet varius odio mollis. Amet vivamus morbi penatibus aptent. Montes, eget litora dictumst.</p>\r\n",
+		"format": "basic_html",
+		"processed": "<h2>Nonummy Tristique Pulvinar Justo Primis Mi</h2>\n<h3>Ultricies Velit Dapibus Cursus Proin Magnis</h3>\n<p>Est varius. Conubia semper facilisis primis urna nec dis placerat dictum interdum dapibus dictumst phasellus phasellus neque dui posuere habitant nunc. Lorem mollis varius Sagittis Habitasse ultricies euismod euismod. Posuere cubilia platea pede. Viverra habitant praesent ac phasellus quisque vel diam fusce nisl maecenas vestibulum netus torquent Molestie volutpat metus donec cubilia. Ipsum, nec morbi lacinia sem. Nascetur sed. Justo ultrices velit hymenaeos aliquam hymenaeos potenti id.</p>\n<h3>Quis Metus Orci Nibh Dapibus</h3>\n<p>Mus porta parturient leo class. Sapien orci tincidunt mattis torquent. Pretium etiam sapien mauris commodo vestibulum potenti ipsum a, cubilia accumsan adipiscing rutrum. Egestas. Ornare aliquam nibh. Pede placerat praesent nonummy est facilisi sapien porttitor rhoncus molestie torquent. Lorem magnis non et natoque. Ipsum justo leo pharetra hymenaeos praesent pharetra hymenaeos fermentum, semper. Ultrices dolor gravida sit enim, mus. Est nam class, condimentum dis dictumst, ut ut cum magna pulvinar primis vitae imperdiet aliquet vitae id amet, justo curae; et, vitae tempor ultricies maecenas lectus ut faucibus.</p>\n<p>Vehicula. Semper convallis tempus habitant accumsan justo porta auctor Nonummy vestibulum rhoncus nam odio sociosqu blandit ut. Nostra luctus malesuada ac risus torquent massa habitant cubilia Porttitor ad lorem, tempus ridiculus vulputate iaculis. Gravida placerat suscipit. Pulvinar facilisi. Leo. Vivamus lorem diam est. Suscipit rhoncus ullamcorper leo fames viverra. Mattis posuere aliquet congue hymenaeos. Per montes. Litora. Tellus.</p>\n<h3>Convallis Porta Morbi Accumsan</h3>\n<p>In. Viverra habitasse commodo urna pharetra. Eleifend euismod. Justo volutpat, cras eu. Porta sociosqu tortor scelerisque. Orci tincidunt dictum viverra imperdiet phasellus Fames quam diam metus etiam nascetur litora, hac bibendum dictum sociis. Odio fringilla blandit elementum risus hendrerit justo suscipit, in quisque platea mollis vulputate, montes vivamus. Ipsum magnis mus erat cum phasellus at. Aliquet Ad netus vitae interdum fermentum fermentum conubia habitant. Sed penatibus hendrerit enim dictum magna, faucibus sit integer elementum tincidunt laoreet varius odio mollis. Amet vivamus morbi penatibus aptent. Montes, eget litora dictumst.</p>\n",
+		"summary": ""
+	},
+	"path": {
+		"alias": "/top-level-article",
+		"pid": 111,
+		"langcode": "en"
+	},
+	"drupal_internal__nid": 25,
+	"drupal_internal__vid": 86,
+	"langcode": "en",
+	"revision_timestamp": "2022-07-28T15:56:56+00:00",
+	"revision_log": null,
+	"status": true,
+	"created": "2022-07-28T15:31:59+00:00",
+	"changed": "2022-07-28T15:56:56+00:00",
+	"promote": true,
+	"sticky": false,
+	"default_langcode": true,
+	"revision_translation_affected": true,
+	"moderation_state": "published",
+	"content_translation_source": "und",
+	"content_translation_outdated": false,
+	"links": {
+		"self": {
+			"href": "https://shared/en/jsonapi/node/article/e5c9e948-a7ca-4845-850a-7bd46d2059d5?resourceVersion=id%3A86"
+		}
+	},
+	"field_media_image": {
+		"type": "media--image",
+		"id": "03650945-6d88-4846-91a5-70a1d32b07cf",
+		"drupal_internal__mid": 22,
+		"drupal_internal__vid": 22,
+		"langcode": "en",
+		"revision_created": "2022-07-08T00:42:26+00:00",
+		"revision_log_message": null,
+		"status": true,
+		"name": "kitties.jpg",
+		"created": "2022-07-08T00:41:43+00:00",
+		"changed": "2022-07-08T00:41:43+00:00",
+		"default_langcode": true,
+		"revision_translation_affected": true,
+		"path": {
+			"alias": "/baby-kitties",
+			"pid": 108,
+			"langcode": "en"
+		},
+		"content_translation_source": "und",
+		"content_translation_outdated": false,
+		"links": {
+			"self": {
+				"href": "https://shared/en/jsonapi/media/image/03650945-6d88-4846-91a5-70a1d32b07cf?resourceVersion=id%3A22"
+			}
+		},
+		"resourceIdObjMeta": {
+			"drupal_internal__target_id": 22
+		},
+		"bundle": {
+			"type": "media_type--media_type",
+			"id": "655a87f8-efe8-4741-ad1f-c37802cc01c4",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": "image"
+			}
+		},
+		"revision_user": null,
+		"uid": {
+			"type": "user--user",
+			"id": "5114d90e-0520-432d-b720-61f767d820db",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 1
+			}
+		},
+		"thumbnail": {
+			"type": "file--file",
+			"id": "b423240a-9275-4750-abd1-763e7f237958",
+			"drupal_internal__fid": 43,
+			"langcode": "en",
+			"filename": "kitties.jpg",
+			"uri": {
+				"value": "public://2022-07/kitties.jpg",
+				"url": "/sites/default/files/2022-07/kitties.jpg"
+			},
+			"filemime": "image/jpeg",
+			"filesize": 168656,
+			"status": true,
+			"created": "2022-07-08T00:41:43+00:00",
+			"changed": "2022-07-08T00:42:26+00:00",
+			"links": {
+				"self": {
+					"href": "https://shared/en/jsonapi/file/file/b423240a-9275-4750-abd1-763e7f237958"
+				}
+			},
+			"resourceIdObjMeta": {
+				"alt": "Two baby cats sleeping in a pile.",
+				"title": null,
+				"width": 1079,
+				"height": 752,
+				"drupal_internal__target_id": 43
+			},
+			"uid": {
+				"type": "user--user",
+				"id": "5114d90e-0520-432d-b720-61f767d820db",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 1
+				}
+			},
+			"relationshipNames": ["uid"]
+		},
+		"field_media_image": {
+			"type": "file--file",
+			"id": "b423240a-9275-4750-abd1-763e7f237958",
+			"drupal_internal__fid": 43,
+			"langcode": "en",
+			"filename": "kitties.jpg",
+			"uri": {
+				"value": "public://2022-07/kitties.jpg",
+				"url": "/sites/default/files/2022-07/kitties.jpg"
+			},
+			"filemime": "image/jpeg",
+			"filesize": 168656,
+			"status": true,
+			"created": "2022-07-08T00:41:43+00:00",
+			"changed": "2022-07-08T00:42:26+00:00",
+			"links": {
+				"self": {
+					"href": "https://shared/en/jsonapi/file/file/b423240a-9275-4750-abd1-763e7f237958"
+				}
+			},
+			"resourceIdObjMeta": {
+				"alt": "Two baby cats sleeping in a pile.",
+				"title": "",
+				"width": 1079,
+				"height": 752,
+				"drupal_internal__target_id": 43
+			},
+			"uid": {
+				"type": "user--user",
+				"id": "5114d90e-0520-432d-b720-61f767d820db",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 1
+				}
+			},
+			"relationshipNames": ["uid"]
+		},
+		"relationshipNames": [
+			"bundle",
+			"revision_user",
+			"uid",
+			"thumbnail",
+			"field_media_image"
+		]
+	},
+	"node_type": {
+		"type": "node_type--node_type",
+		"id": "5953cddf-1da5-429b-aaf0-6cb4b4627f13",
+		"resourceIdObjMeta": {
+			"drupal_internal__target_id": "article"
+		}
+	},
+	"revision_uid": {
+		"type": "user--user",
+		"id": "5114d90e-0520-432d-b720-61f767d820db",
+		"resourceIdObjMeta": {
+			"drupal_internal__target_id": 1
+		}
+	},
+	"uid": {
+		"type": "user--user",
+		"id": "5114d90e-0520-432d-b720-61f767d820db",
+		"resourceIdObjMeta": {
+			"drupal_internal__target_id": 1
+		}
+	},
+	"field_tags": [],
+	"relationshipNames": [
+		"field_media_image",
+		"node_type",
+		"revision_uid",
+		"uid",
+		"field_tags"
+	]
+}

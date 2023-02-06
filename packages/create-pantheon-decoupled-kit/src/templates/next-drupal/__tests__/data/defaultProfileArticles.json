@@ -1,0 +1,143 @@
+{
+	"jsonapi": {
+		"version": "1.0",
+		"meta": {
+			"links": {
+				"self": {
+					"href": "http://jsonapi.org/format/1.0/"
+				}
+			}
+		}
+	},
+	"data": [
+		{
+			"type": "node--article",
+			"id": "d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0",
+			"links": {
+				"self": {
+					"href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0?resourceVersion=id%3A9"
+				}
+			},
+			"attributes": {
+				"drupal_internal__nid": 1,
+				"drupal_internal__vid": 9,
+				"langcode": "en",
+				"revision_timestamp": "2022-06-02T09:56:53+00:00",
+				"revision_log": null,
+				"status": true,
+				"title": "This is an Example Article",
+				"created": "2022-03-23T06:38:03+00:00",
+				"changed": "2022-06-02T09:56:53+00:00",
+				"promote": true,
+				"sticky": false,
+				"default_langcode": true,
+				"revision_translation_affected": true,
+				"path": {
+					"alias": "/articles/example-article",
+					"pid": 1,
+					"langcode": "en"
+				},
+				"body": {
+					"value": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper dignissim cras tincidunt lobortis feugiat. Augue lacus viverra vitae congue eu consequat ac felis. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Pulvinar elementum integer enim neque. At tempor commodo ullamcorper a lacus vestibulum. Nec tincidunt praesent semper feugiat nibh. Nisl nisi scelerisque eu ultrices vitae auctor eu augue ut. Bibendum neque egestas congue quisque egestas diam. Pellentesque elit ullamcorper dignissim cras.</p>\r\n\r\n<p>Quis lectus nulla at volutpat diam ut venenatis tellus in. Tempus urna et pharetra pharetra. Eu consequat ac felis donec. Donec ultrices tincidunt arcu non sodales neque sodales ut. Suscipit tellus mauris a diam maecenas sed enim ut. Semper eget duis at tellus at urna condimentum mattis. Dictum fusce ut placerat orci nulla pellentesque dignissim enim. Porta lorem mollis aliquam ut porttitor leo. Eu sem integer vitae justo eget magna fermentum iaculis eu. Amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus. Laoreet sit amet cursus sit amet dictum sit amet justo. Ac placerat vestibulum lectus mauris ultrices eros. Fermentum iaculis eu non diam phasellus vestibulum lorem sed. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis. Odio ut sem nulla pharetra. Urna molestie at elementum eu facilisis sed odio.</p>\r\n\r\n<p>Non enim praesent elementum facilisis leo vel fringilla. Risus commodo viverra maecenas accumsan lacus vel. Eget egestas purus viverra accumsan in. Nunc congue nisi vitae suscipit tellus mauris a diam maecenas. Ipsum nunc aliquet bibendum enim. Turpis nunc eget lorem dolor sed viverra. Quis risus sed vulputate odio ut enim blandit volutpat. Etiam sit amet nisl purus in mollis nunc sed. At lectus urna duis convallis convallis tellus. Feugiat in ante metus dictum at tempor commodo ullamcorper a. Volutpat commodo sed egestas egestas. Eget egestas purus viverra accumsan in nisl nisi scelerisque eu. Aliquet nibh praesent tristique magna sit amet purus. Dignissim diam quis enim lobortis scelerisque. Posuere sollicitudin aliquam ultrices sagittis. Tristique sollicitudin nibh sit amet commodo nulla facilisi. Scelerisque viverra mauris in aliquam. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.</p>\r\n",
+					"format": "basic_html",
+					"processed": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper dignissim cras tincidunt lobortis feugiat. Augue lacus viverra vitae congue eu consequat ac felis. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Pulvinar elementum integer enim neque. At tempor commodo ullamcorper a lacus vestibulum. Nec tincidunt praesent semper feugiat nibh. Nisl nisi scelerisque eu ultrices vitae auctor eu augue ut. Bibendum neque egestas congue quisque egestas diam. Pellentesque elit ullamcorper dignissim cras.</p>\n\n<p>Quis lectus nulla at volutpat diam ut venenatis tellus in. Tempus urna et pharetra pharetra. Eu consequat ac felis donec. Donec ultrices tincidunt arcu non sodales neque sodales ut. Suscipit tellus mauris a diam maecenas sed enim ut. Semper eget duis at tellus at urna condimentum mattis. Dictum fusce ut placerat orci nulla pellentesque dignissim enim. Porta lorem mollis aliquam ut porttitor leo. Eu sem integer vitae justo eget magna fermentum iaculis eu. Amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus. Laoreet sit amet cursus sit amet dictum sit amet justo. Ac placerat vestibulum lectus mauris ultrices eros. Fermentum iaculis eu non diam phasellus vestibulum lorem sed. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis. Odio ut sem nulla pharetra. Urna molestie at elementum eu facilisis sed odio.</p>\n\n<p>Non enim praesent elementum facilisis leo vel fringilla. Risus commodo viverra maecenas accumsan lacus vel. Eget egestas purus viverra accumsan in. Nunc congue nisi vitae suscipit tellus mauris a diam maecenas. Ipsum nunc aliquet bibendum enim. Turpis nunc eget lorem dolor sed viverra. Quis risus sed vulputate odio ut enim blandit volutpat. Etiam sit amet nisl purus in mollis nunc sed. At lectus urna duis convallis convallis tellus. Feugiat in ante metus dictum at tempor commodo ullamcorper a. Volutpat commodo sed egestas egestas. Eget egestas purus viverra accumsan in nisl nisi scelerisque eu. Aliquet nibh praesent tristique magna sit amet purus. Dignissim diam quis enim lobortis scelerisque. Posuere sollicitudin aliquam ultrices sagittis. Tristique sollicitudin nibh sit amet commodo nulla facilisi. Scelerisque viverra mauris in aliquam. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat.</p>",
+					"summary": ""
+				},
+				"comment": {
+					"status": 2,
+					"cid": 0,
+					"last_comment_timestamp": 1650338653,
+					"last_comment_name": null,
+					"last_comment_uid": 1,
+					"comment_count": 0
+				}
+			},
+			"relationships": {
+				"node_type": {
+					"data": {
+						"type": "node_type--node_type",
+						"id": "ed74fdfc-e82c-4c3e-852b-982c9fbfcf79",
+						"meta": {
+							"drupal_internal__target_id": "article"
+						}
+					},
+					"links": {
+						"related": {
+							"href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/node_type?resourceVersion=id%3A9"
+						},
+						"self": {
+							"href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/relationships/node_type?resourceVersion=id%3A9"
+						}
+					}
+				},
+				"revision_uid": {
+					"data": {
+						"type": "user--user",
+						"id": "d25af05b-0546-4475-9d86-a60be242ca8e",
+						"meta": {
+							"drupal_internal__target_id": 1
+						}
+					},
+					"links": {
+						"related": {
+							"href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/revision_uid?resourceVersion=id%3A9"
+						},
+						"self": {
+							"href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/relationships/revision_uid?resourceVersion=id%3A9"
+						}
+					}
+				},
+				"uid": {
+					"data": {
+						"type": "user--user",
+						"id": "d25af05b-0546-4475-9d86-a60be242ca8e",
+						"meta": {
+							"drupal_internal__target_id": 1
+						}
+					},
+					"links": {
+						"related": {
+							"href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/uid?resourceVersion=id%3A9"
+						},
+						"self": {
+							"href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/relationships/uid?resourceVersion=id%3A9"
+						}
+					}
+				},
+				"field_media_image": {
+					"data": {
+						"type": "media--image",
+						"id": "7e01b208-097d-40e9-b1a6-efd103be1cd3",
+						"meta": {
+							"drupal_internal__target_id": 1
+						}
+					},
+					"links": {
+						"related": {
+							"href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/field_media_image?resourceVersion=id%3A9"
+						},
+						"self": {
+							"href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/relationships/field_media_image?resourceVersion=id%3A9"
+						}
+					}
+				},
+				"field_tags": {
+					"data": [],
+					"links": {
+						"related": {
+							"href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/field_tags?resourceVersion=id%3A9"
+						},
+						"self": {
+							"href": "https://default/jsonapi/node/article/d4b52b83-e92a-4a4f-b2de-647ecb9fb6d0/relationships/field_tags?resourceVersion=id%3A9"
+						}
+					}
+				}
+			}
+		}
+	],
+	"links": {
+		"self": {
+			"href": "https://default/jsonapi/node/article"
+		}
+	}
+}

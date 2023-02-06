@@ -1,0 +1,21 @@
+[
+	{
+		"type": "menu_link_content--menu_link_content",
+		"id": "standard.front_page",
+		"description": "",
+		"enabled": true,
+		"expanded": false,
+		"menu_name": "main",
+		"meta": [],
+		"options": [],
+		"parent": "",
+		"provider": "standard",
+		"route": {
+			"name": "<front>",
+			"parameters": []
+		},
+		"title": "Home",
+		"url": "/",
+		"weight": "0"
+	}
+]

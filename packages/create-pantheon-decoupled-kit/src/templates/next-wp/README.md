@@ -95,3 +95,17 @@ npm run update-snapshots
 Or, run the test for a single profile in watch mode (see above), then in the
 terminal press the **u** key. This will update the snapshot for the running
 profile Be sure to update the snapshot for both profiles.
+
+### Use `POST` for GraphQL requests
+
+This starter uses `GET` for GraphQL requests by default. Editing this
+configuration to use `POST` requests can be done in `/lib/WordPressClient.js`.
+
+To achieve this, set each `GraphqlClientFactory` constructors `method` parameter
+to equal `POST`.
+
+```js
+export const client = new GraphqlClientFactory(process.env.backendUrl, {
+	method: 'POST',
+}).create();
+```

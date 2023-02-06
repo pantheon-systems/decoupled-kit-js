@@ -10,12 +10,12 @@ export const runESLint = (
 	_config: CustomActionConfig<'runLint'>,
 	_plop: NodePlopAPI,
 ) => {
-	if (typeof answers.outDir !== 'string') return;
+	if (typeof answers?.outDir !== 'string') throw 'fail: outDir required';
 	answers.silent || console.log(chalk.green('Linting...'));
 
 	const getPkgManager = whichPmRuns();
 	let command: string;
-	if (!getPkgManager) {
+	if (!getPkgManager || getPkgManager.name === 'npm') {
 		// fallback to npm
 		command = 'npm run';
 	} else {
@@ -23,7 +23,6 @@ export const runESLint = (
 	}
 	try {
 		execSync(`${command} lint`, { cwd: answers.outDir, stdio: 'inherit' });
-		return 'success';
 	} catch (error) {
 		try {
 			execSync('npx eslint', { cwd: answers.outDir, stdio: 'inherit' });
@@ -35,4 +34,5 @@ export const runESLint = (
 			throw 'fail';
 		}
 	}
+	return 'success';
 };
