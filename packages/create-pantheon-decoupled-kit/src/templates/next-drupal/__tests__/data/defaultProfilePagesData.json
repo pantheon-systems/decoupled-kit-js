@@ -1,0 +1,112 @@
+[
+	{
+		"type": "node--page",
+		"id": "79f8ba83-b15b-4acc-9672-f6557e71bac0",
+		"drupal_internal__nid": 4,
+		"drupal_internal__vid": 12,
+		"langcode": "en",
+		"revision_timestamp": "2022-06-03T12:59:42+00:00",
+		"revision_log": null,
+		"status": true,
+		"title": "Test Page With Embedded Image-test page-local",
+		"created": "2022-05-19T15:12:03+00:00",
+		"changed": "2022-06-03T12:59:42+00:00",
+		"promote": false,
+		"sticky": false,
+		"default_langcode": true,
+		"revision_translation_affected": true,
+		"path": {
+			"alias": "/pages/test-page-embedded-image-test-page-local",
+			"pid": 4,
+			"langcode": "en"
+		},
+		"body": {
+			"value": "<p><img alt=\"Drupal on NPM\" data-entity-type=\"file\" data-entity-uuid=\"85adb65f-7111-42ae-aaa2-1d82e92d5785\" src=\"/sites/default/files/inline-images/%40drupal-npm.png\" /></p>\r\n",
+			"format": "basic_html",
+			"processed": "<p><img alt=\"Drupal on NPM\" data-entity-type=\"file\" data-entity-uuid=\"85adb65f-7111-42ae-aaa2-1d82e92d5785\" src=\"/sites/default/files/inline-images/%40drupal-npm.png\" width=\"3138\" height=\"968\" loading=\"lazy\" /></p>",
+			"summary": ""
+		},
+		"links": {
+			"self": {
+				"href": "https://default/jsonapi/node/page/79f8ba83-b15b-4acc-9672-f6557e71bac0?resourceVersion=id%3A12"
+			}
+		},
+		"node_type": {
+			"type": "node_type--node_type",
+			"id": "84d13d9d-a749-4ecc-b4c5-5459cebc1524",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": "page"
+			}
+		},
+		"revision_uid": {
+			"type": "user--user",
+			"id": "d25af05b-0546-4475-9d86-a60be242ca8e",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 1
+			}
+		},
+		"uid": {
+			"type": "user--user",
+			"id": "d25af05b-0546-4475-9d86-a60be242ca8e",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 1
+			}
+		},
+		"relationshipNames": ["node_type", "revision_uid", "uid"]
+	},
+	{
+		"type": "node--page",
+		"id": "1a9678c6-fc77-4e9f-8319-5d0afeead9b7",
+		"title": "My Page-preview test",
+		"path": {
+			"alias": "/pages/my-page-preview-test",
+			"pid": 3,
+			"langcode": "en"
+		},
+		"body": {
+			"value": "<p>My Page - body 2</p>\r\n",
+			"format": "basic_html",
+			"processed": "<p>My Page - body 2</p>",
+			"summary": ""
+		},
+		"drupal_internal__nid": 3,
+		"drupal_internal__vid": 13,
+		"langcode": "en",
+		"revision_timestamp": "2022-06-09T08:25:34+00:00",
+		"revision_log": null,
+		"status": true,
+		"created": "2022-04-25T05:44:12+00:00",
+		"changed": "2022-06-09T08:25:34+00:00",
+		"promote": false,
+		"sticky": false,
+		"default_langcode": true,
+		"revision_translation_affected": true,
+		"links": {
+			"self": {
+				"href": "https://default/jsonapi/node/page/1a9678c6-fc77-4e9f-8319-5d0afeead9b7?resourceVersion=id%3A13"
+			}
+		},
+		"node_type": {
+			"type": "node_type--node_type",
+			"id": "84d13d9d-a749-4ecc-b4c5-5459cebc1524",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": "page"
+			}
+		},
+		"revision_uid": {
+			"type": "user--user",
+			"id": "d25af05b-0546-4475-9d86-a60be242ca8e",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 1
+			}
+		},
+		"uid": {
+			"type": "user--user",
+			"id": "d25af05b-0546-4475-9d86-a60be242ca8e",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 1
+			}
+		},
+		"relationshipNames": ["node_type", "revision_uid", "uid"]
+	}
+]

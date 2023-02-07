@@ -12,7 +12,9 @@ const nextjskitTypedocOptions = generateTypeDocOptions('nextjs-kit', 3);
 const cliTypeDocOptions = generateTypeDocOptions(
 	'create-pantheon-decoupled-kit',
 	4,
-	{ compilerOptions: { skipLibCheck: true } },
+	{
+		compilerOptions: { skipLibCheck: true },
+	},
 );
 const environmentUrl = process.env.PANTHEON_ENVIRONMENT_URL;
 
