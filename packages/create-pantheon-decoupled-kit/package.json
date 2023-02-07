@@ -27,7 +27,7 @@
 	],
 	"prettier": "@pantheon-systems/configs/prettier",
 	"typedoc": {
-		"entryPoint": "./src/index.ts"
+		"entryPoint": "./index.ts"
 	},
 	"scripts": {
 		"build": "pnpm clean && node ./esbuild.js && pnpm copy-templates",
