@@ -4,7 +4,8 @@ import whichPMRuns from 'which-pm-runs';
 import { execSync } from 'child_process';
 import type { ParsedArgs } from 'minimist';
 import type { CustomActionConfig } from 'node-plop';
-import * as fs from 'fs';
+import fs from 'fs-extra';
+import path from 'path';
 
 vi.mock('node-plop');
 vi.mock('child_process');
@@ -18,7 +19,9 @@ const outDir = (dir: 'withLint' | 'withoutLint') =>
 const plop = await nodePlop.default();
 
 describe('runEsLint()', () => {
-	beforeEach(() => {
+	beforeEach(async () => {
+		await fs.ensureDir(path.resolve(outDir('withLint')));
+		await fs.ensureDir(path.resolve(outDir('withoutLint')));
 		fs.writeFileSync(
 			`${outDir('withLint')}/package.json`,
 			JSON.stringify({
@@ -34,8 +37,10 @@ describe('runEsLint()', () => {
 			}),
 		);
 	});
-	afterEach(() => {
+	afterEach(async () => {
 		vi.resetAllMocks();
+		await fs.ensureDir(path.resolve(outDir('withLint')));
+		await fs.ensureDir(path.resolve(outDir('withoutLint')));
 
 		['package.json', 'node_modules'].forEach((path) => {
 			fs.rmSync(`${outDir('withLint')}/${path}`, {
