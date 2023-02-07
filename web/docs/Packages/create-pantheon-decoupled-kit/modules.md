@@ -6,7 +6,67 @@ sidebar_position: 0.5
 custom_edit_url: null
 ---
 
+## Interfaces
+
+- [DecoupledKitGenerator](interfaces/DecoupledKitGenerator.md)
+
 ## Functions
+
+### addWithDiff
+
+▸ **addWithDiff**(`answers`, `config`, `plop`): `Promise`<`string`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `answers` | `Answers` |
+| `config` | `CustomActionConfig`<``"addWithDiff"``\> & { `path`: `string` ; `templates`: `string`  } |
+| `plop` | `NodePlopAPI` |
+
+#### Returns
+
+`Promise`<`string`\>
+
+#### Defined in
+
+[src/utils/addWithDiff.ts:10](https://github.com/pantheon-systems/decoupled-kit-js/blob/622f2895a/packages/create-pantheon-decoupled-kit/src/utils/addWithDiff.ts#L10)
+
+___
+
+### getPartials
+
+▸ **getPartials**(`rootDir`): `Promise`<{ `name`: `string` ; `partial`: `string`  }[]\>
+
+Gets all handlebars templates in `${rootDir}/templates/partials`
+
+**`Remarks`**
+
+a single partial:
+```
+{
+	name: 'myPartial',
+	partial: '...(a handlebars template here)'
+}
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `rootDir` | `string` | dir to look for the partials dir from |
+
+#### Returns
+
+`Promise`<{ `name`: `string` ; `partial`: `string`  }[]\>
+
+an array of partials
+
+#### Defined in
+
+[src/utils/getPartials.ts:18](https://github.com/pantheon-systems/decoupled-kit-js/blob/622f2895a/packages/create-pantheon-decoupled-kit/src/utils/getPartials.ts#L18)
+
+___
 
 ### main
 
@@ -16,7 +76,7 @@ Initializes the CLI prompts based on parsed arguments
 
 **`See`**
 
-DecoupledKitGenerator.
+[DecoupledKitGenerator](interfaces/DecoupledKitGenerator.md).
 
 **`Remarks`**
 
@@ -27,7 +87,7 @@ positional args are assumed to be generator names. Multiple generators can be qu
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `args` | `ParsedArgs` | minimist.ParsedArgs |
-| `DecoupledKitGenerators` | `DecoupledKitGenerator`[] | An array of plop Generators with an added name field. |
+| `DecoupledKitGenerators` | [`DecoupledKitGenerator`](interfaces/DecoupledKitGenerator.md)[] | An array of plop Generators with an added name field. |
 
 #### Returns
 
@@ -37,7 +97,7 @@ Runs the actions for the generators given as positional params or if none are fo
 
 #### Defined in
 
-[index.ts:58](https://github.com/CobyPear/decoupled-kit-js/blob/0c623b70/packages/create-pantheon-decoupled-kit/src/index.ts#L58)
+[src/index.ts:73](https://github.com/pantheon-systems/decoupled-kit-js/blob/622f2895a/packages/create-pantheon-decoupled-kit/src/index.ts#L73)
 
 ___
 
@@ -67,7 +127,51 @@ Parses CLI arguments using `minimist`
 
 #### Defined in
 
-[index.ts:32](https://github.com/CobyPear/decoupled-kit-js/blob/0c623b70/packages/create-pantheon-decoupled-kit/src/index.ts#L32)
+[src/index.ts:49](https://github.com/pantheon-systems/decoupled-kit-js/blob/622f2895a/packages/create-pantheon-decoupled-kit/src/index.ts#L49)
+
+___
+
+### runESLint
+
+▸ **runESLint**(`answers`, `_config`, `_plop`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `answers` | `Answers` |
+| `_config` | `CustomActionConfig`<``"runLint"``\> |
+| `_plop` | `NodePlopAPI` |
+
+#### Returns
+
+`string`
+
+#### Defined in
+
+[src/utils/runESLint.ts:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/622f2895a/packages/create-pantheon-decoupled-kit/src/utils/runESLint.ts#L8)
+
+___
+
+### runInstall
+
+▸ **runInstall**(`answers`, `_config`, `_plop`): ``"success"`` \| ``"skipping install"``
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `answers` | `Answers` |
+| `_config` | `CustomActionConfig`<``"runInstall"``\> |
+| `_plop` | `NodePlopAPI` |
+
+#### Returns
+
+``"success"`` \| ``"skipping install"``
+
+#### Defined in
+
+[src/utils/runInstall.ts:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/622f2895a/packages/create-pantheon-decoupled-kit/src/utils/runInstall.ts#L8)
 
 ___
 
@@ -79,14 +183,14 @@ Set generator based on exports from src/generators
 
 **`See`**
 
- - DecoupledKitGenerator.
+ - [DecoupledKitGenerator](interfaces/DecoupledKitGenerator.md).
  - NodePlopAPI
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `generators` | `DecoupledKitGenerator`[] | An array of plop Generators with an added name field. |
+| `generators` | [`DecoupledKitGenerator`](interfaces/DecoupledKitGenerator.md)[] | An array of plop Generators with an added name field. |
 
 #### Returns
 
@@ -96,4 +200,4 @@ An instance of plop
 
 #### Defined in
 
-[index.ts:16](https://github.com/CobyPear/decoupled-kit-js/blob/0c623b70/packages/create-pantheon-decoupled-kit/src/index.ts#L16)
+[src/index.ts:19](https://github.com/pantheon-systems/decoupled-kit-js/blob/622f2895a/packages/create-pantheon-decoupled-kit/src/index.ts#L19)
