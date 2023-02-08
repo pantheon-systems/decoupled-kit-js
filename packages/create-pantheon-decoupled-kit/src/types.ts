@@ -10,11 +10,3 @@ declare module 'vitest' {
 export interface DecoupledKitGenerator extends Partial<PlopGeneratorConfig> {
 	name: string;
 }
-
-export type Json =
-	| boolean
-	| number
-	| string
-	| null
-	| { [key: string]: Json }
-	| Array<Json>;

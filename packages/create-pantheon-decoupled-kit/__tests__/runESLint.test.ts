@@ -27,13 +27,12 @@ describe('runEsLint()', () => {
 	});
 	it('should lint and format the outDir using the detected package manager: pnpm', async () => {
 		const answers: ParsedArgs = { _: [], outDir: outDir('withLint') };
-
 		vi.mocked(whichPMRuns).mockImplementationOnce(() => ({
 			name: 'pnpm',
 			version: 'x',
 		}));
 
-		actions.runESLint(answers, config, plop);
+		await actions.runESLint(answers, config, plop);
 		expect(vi.mocked(execSync)).toHaveBeenCalledWith('pnpm lint .', {
 			stdio: 'inherit',
 			cwd: outDir('withLint'),
@@ -49,7 +48,7 @@ describe('runEsLint()', () => {
 			version: 'x',
 		}));
 
-		actions.runESLint(answers, config, plop);
+		await actions.runESLint(answers, config, plop);
 		expect(vi.mocked(execSync)).toHaveBeenCalledWith('npm run lint .', {
 			stdio: 'inherit',
 			cwd: outDir('withLint'),
@@ -64,7 +63,7 @@ describe('runEsLint()', () => {
 			version: 'x',
 		}));
 
-		actions.runESLint(answers, config, plop);
+		await actions.runESLint(answers, config, plop);
 		expect(vi.mocked(execSync)).toHaveBeenCalledWith('npx eslint  ', {
 			stdio: 'inherit',
 			cwd: outDir('withoutLint'),
@@ -72,7 +71,16 @@ describe('runEsLint()', () => {
 		expect(whichPMRuns).toHaveBeenCalledOnce();
 	});
 
-	it.fails('should throw if there is an error', () => {
+	it.fails('should throw if outDir is not defined', async () => {
+		const answers: ParsedArgs = { _: [] };
+
+		const runESLintSpy = vi.spyOn(actions, 'runESLint');
+
+		await actions.runESLint(answers, config, plop);
+		expect(runESLintSpy).toThrow('fail: outDir required');
+	});
+
+	it.fails('should throw if there is an error', async () => {
 		const answers: ParsedArgs = { _: [], outDir: outDir('withLint') };
 
 		const runESLintSpy = vi.spyOn(actions, 'runESLint');
@@ -80,17 +88,8 @@ describe('runEsLint()', () => {
 			throw new Error('Some error happened');
 		});
 
-		actions.runESLint(answers, config, plop);
+		await actions.runESLint(answers, config, plop);
 		expect(runESLintSpy).toThrowError();
-	});
-
-	it.fails('should throw if there is an error', () => {
-		const answers: ParsedArgs = { _: [], outDir: outDir('withLint') };
-
-		const runESLintSpy = vi.spyOn(actions, 'runESLint');
-		delete answers.outDir;
-
-		actions.runESLint(answers, config, plop);
-		expect(runESLintSpy).toThrow('fail: outDir required');
+		expect(runESLintSpy).toThrow('fail: there was a problem linting');
 	});
 });

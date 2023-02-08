@@ -5,15 +5,8 @@ import { execSync } from 'child_process';
 import path from 'path';
 import { Answers } from 'inquirer';
 import type { NodePlopAPI, CustomActionConfig } from 'node-plop';
-import { openPackageJson } from './helpers';
 
-type Script = {
-	scripts: {
-		lint: string;
-	};
-};
-
-export const runESLint = (
+export const runESLint = async (
 	answers: Answers,
 	config: CustomActionConfig<'runLint'> & {
 		ignorePattern: string;
@@ -21,7 +14,8 @@ export const runESLint = (
 	},
 	_plop: NodePlopAPI,
 ) => {
-	if (typeof answers?.outDir !== 'string') throw 'fail: outDir required';
+	if (!answers.outDir || typeof answers?.outDir !== 'string')
+		throw 'fail: outDir required';
 	answers.silent || console.log(chalk.green('Linting...'));
 
 	const getPkgManager = whichPmRuns();
@@ -33,23 +27,26 @@ export const runESLint = (
 		command = getPkgManager.name;
 	}
 
-	const pkgPath = path.resolve(`${answers.outDir}/package.json`);
-	const pkg = openPackageJson(pkgPath) as Script;
-	if (pkg.scripts.lint) {
-		try {
+	try {
+		const pkgPath = path.resolve(`${answers.outDir}/package.json`);
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+		const { default: pkg } = await import(pkgPath, {
+			assert: { type: 'json' },
+		});
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+		if (pkg?.scripts?.lint) {
 			execSync(`${command} lint .`, { cwd: answers.outDir, stdio: 'inherit' });
-		} catch (error) {
-			if (error instanceof Error) {
-				throw error;
-			}
+		} else {
+			execSync(
+				`npx eslint ${
+					config.ignorePattern ? `--ignore-pattern ${config.ignorePattern}` : ''
+				} ${config.plugins ? `--plugin ${config.plugins}` : ''}`,
+				{ cwd: answers.outDir, stdio: 'inherit' },
+			);
 		}
-	} else {
-		execSync(
-			`npx eslint ${
-				config.ignorePattern ? `--ignore-pattern ${config.ignorePattern}` : ''
-			} ${config.plugins ? `--plugin ${config.plugins}` : ''}`,
-			{ cwd: answers.outDir, stdio: 'inherit' },
-		);
+	} catch (error) {
+		console.error(error);
+		throw 'fail: there was a problem linting';
 	}
 	return 'success';
 };
