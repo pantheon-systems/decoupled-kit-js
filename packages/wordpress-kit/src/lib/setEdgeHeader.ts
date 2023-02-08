@@ -1,12 +1,11 @@
 import { ServerResponse } from 'http';
 
-const defaultCacheControlValue =
-	'public, s-maxage=10, stale-while-revalidate=600';
+const defaultCacheControlValue = 'public, s-maxage=600';
 
 /**
  * Sets response headers for edge caching.
  * @param options.res response object
- * @param options.cacheControl optional value to override cache control header, defaults to 'public, s-maxage=10, stale-while-revalidate=600'
+ * @param options.cacheControl optional value to override cache control header, defaults to 'public, s-maxage=600'
  */
 const setEdgeHeader = ({
 	res,

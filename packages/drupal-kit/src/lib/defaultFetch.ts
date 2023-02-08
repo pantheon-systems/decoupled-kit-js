@@ -3,15 +3,14 @@ import fetch from 'isomorphic-fetch';
 
 import { setSurrogateKeyHeader } from '@pantheon-systems/cms-kit';
 
-const defaultCacheControlValue =
-	'public, s-maxage=10, stale-while-revalidate=600';
+const defaultCacheControlValue = 'public, s-maxage=600';
 
 /**
  * fetch data from a JSON:API endpoint, bubbling up surrogate keys if possible
  * @param apiUrl the api url for the JSON:API endpoint
  * @param requestInit fetch initialization object
  * @param res response object
- * @param cacheControl optional value to override cache control header, defaults to 'public, s-maxage=10, stale-while-revalidate=600'
+ * @param cacheControl optional value to override cache control header, defaults to 'public, s-maxage=600'
  * @returns a promise containing the data for the JSON:API response
  */
 const defaultFetch = (
