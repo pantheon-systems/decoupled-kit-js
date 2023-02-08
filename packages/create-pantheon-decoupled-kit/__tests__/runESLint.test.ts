@@ -22,7 +22,7 @@ const outDir = (dir: 'withLint' | 'withoutLint') =>
 const plop = await nodePlop.default();
 
 describe('runEsLint()', () => {
-	afterEach(async () => {
+	afterEach(() => {
 		vi.resetAllMocks();
 	});
 	it('should lint and format the outDir using the detected package manager: pnpm', async () => {
