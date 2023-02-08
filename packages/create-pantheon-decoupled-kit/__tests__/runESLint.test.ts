@@ -4,54 +4,26 @@ import whichPMRuns from 'which-pm-runs';
 import { execSync } from 'child_process';
 import type { ParsedArgs } from 'minimist';
 import type { CustomActionConfig } from 'node-plop';
-import fs from 'fs-extra';
-import path from 'path';
 
 vi.mock('node-plop');
 vi.mock('child_process');
 vi.mock('which-pm-runs');
 
-const config: CustomActionConfig<'runLint'> = {
+const config: CustomActionConfig<'runLint'> & {
+	ignorePattern: string;
+	plugins: string;
+} = {
 	type: 'runLint',
+	ignorePattern: '',
+	plugins: '',
 };
 const outDir = (dir: 'withLint' | 'withoutLint') =>
 	`${process.cwd()}/__tests__/fixtures/runESLint/${dir}`;
 const plop = await nodePlop.default();
 
 describe('runEsLint()', () => {
-	beforeEach(async () => {
-		await fs.ensureDir(path.resolve(outDir('withLint')));
-		await fs.ensureDir(path.resolve(outDir('withoutLint')));
-		fs.writeFileSync(
-			`${outDir('withLint')}/package.json`,
-			JSON.stringify({
-				scripts: {
-					lint: 'next lint',
-				},
-			}),
-		);
-		fs.writeFileSync(
-			`${outDir('withoutLint')}/package.json`,
-			JSON.stringify({
-				scripts: {},
-			}),
-		);
-	});
 	afterEach(async () => {
 		vi.resetAllMocks();
-		await fs.ensureDir(path.resolve(outDir('withLint')));
-		await fs.ensureDir(path.resolve(outDir('withoutLint')));
-
-		['package.json', 'node_modules'].forEach((path) => {
-			fs.rmSync(`${outDir('withLint')}/${path}`, {
-				force: true,
-				recursive: true,
-			});
-			fs.rmSync(`${outDir('withoutLint')}/${path}`, {
-				force: true,
-				recursive: true,
-			});
-		});
 	});
 	it('should lint and format the outDir using the detected package manager: pnpm', async () => {
 		const answers: ParsedArgs = { _: [], outDir: outDir('withLint') };
@@ -62,7 +34,7 @@ describe('runEsLint()', () => {
 		}));
 
 		actions.runESLint(answers, config, plop);
-		expect(vi.mocked(execSync)).toHaveBeenCalledWith('pnpm lint', {
+		expect(vi.mocked(execSync)).toHaveBeenCalledWith('pnpm lint .', {
 			stdio: 'inherit',
 			cwd: outDir('withLint'),
 		});
@@ -78,7 +50,7 @@ describe('runEsLint()', () => {
 		}));
 
 		actions.runESLint(answers, config, plop);
-		expect(vi.mocked(execSync)).toHaveBeenCalledWith('npm run lint', {
+		expect(vi.mocked(execSync)).toHaveBeenCalledWith('npm run lint .', {
 			stdio: 'inherit',
 			cwd: outDir('withLint'),
 		});

@@ -2,10 +2,10 @@
 import chalk from 'chalk';
 import whichPmRuns from 'which-pm-runs';
 import { execSync } from 'child_process';
-import * as fs from 'fs';
-import * as path from 'path';
+import path from 'path';
 import { Answers } from 'inquirer';
 import type { NodePlopAPI, CustomActionConfig } from 'node-plop';
+import { openPackageJson } from './helpers';
 
 type Script = {
 	scripts: {
@@ -15,10 +15,11 @@ type Script = {
 
 export const runESLint = (
 	answers: Answers,
-	_config: CustomActionConfig<'runLint'>,
+	config: CustomActionConfig<'runLint'> & {
+		ignorePattern: string;
+		plugins: string;
+	},
 	_plop: NodePlopAPI,
-	ignorePattern?: string,
-	ignorePath?: string,
 ) => {
 	if (typeof answers?.outDir !== 'string') throw 'fail: outDir required';
 	answers.silent || console.log(chalk.green('Linting...'));
@@ -32,11 +33,11 @@ export const runESLint = (
 		command = getPkgManager.name;
 	}
 
-	const filePath = path.resolve(`${answers.outDir}/package.json`);
-	const script = JSON.parse(fs.readFileSync(filePath, 'utf8')) as Script;
-	if (script.scripts.lint) {
+	const pkgPath = path.resolve(`${answers.outDir}/package.json`);
+	const pkg = openPackageJson(pkgPath) as Script;
+	if (pkg.scripts.lint) {
 		try {
-			execSync(`${command} lint`, { cwd: answers.outDir, stdio: 'inherit' });
+			execSync(`${command} lint .`, { cwd: answers.outDir, stdio: 'inherit' });
 		} catch (error) {
 			if (error instanceof Error) {
 				throw error;
@@ -44,9 +45,9 @@ export const runESLint = (
 		}
 	} else {
 		execSync(
-			`npx eslint ${ignorePattern ? `--ignore-pattern ${ignorePattern}` : ''} ${
-				ignorePath ? `--ignore-pattern ${ignorePath}` : ''
-			}`,
+			`npx eslint ${
+				config.ignorePattern ? `--ignore-pattern ${config.ignorePattern}` : ''
+			} ${config.plugins ? `--plugin ${config.plugins}` : ''}`,
 			{ cwd: answers.outDir, stdio: 'inherit' },
 		);
 	}

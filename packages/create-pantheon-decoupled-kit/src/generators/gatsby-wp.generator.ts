@@ -31,6 +31,10 @@ export const gatsbyWp: DecoupledKitGenerator = {
 		};
 		const runESLint: CustomActionConfig<'runLint'> = {
 			type: 'runLint',
+			ignorePattern: data?.ignorePattern
+				? String(data.ignorePattern)
+				: undefined,
+			plugins: data?.plugins ? String(data.plugins) : undefined,
 		};
 		const runInstall: CustomActionConfig<'runInstall'> = {
 			type: 'runInstall',
