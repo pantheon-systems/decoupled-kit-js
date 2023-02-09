@@ -1,13 +1,5 @@
 {
-	"name": "{{kebabCase appName}}",
-	"version": "0.1.0",
-	"private": true,
-	"description": "",
-	"license": "GPL-3.0-or-later",
-	"homepage": "",
-	"bugs": "",
-	"repository": "",
-	"author": "",
+	{{> sharedPkgJsonFields}}
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build && cp -r .next/static .next/standalone/.next && cp -r public .next/standalone",

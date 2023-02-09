@@ -1,4 +1,4 @@
-import * as actions from '../src/utils/runESLint';
+import * as actions from '../src/actions/runESLint';
 import * as nodePlop from 'node-plop';
 import whichPMRuns from 'which-pm-runs';
 import { execSync } from 'child_process';
@@ -33,7 +33,7 @@ describe('runEsLint()', () => {
 		}));
 
 		await actions.runESLint(answers, config, plop);
-		expect(vi.mocked(execSync)).toHaveBeenCalledWith('pnpm lint .', {
+		expect(vi.mocked(execSync)).toHaveBeenCalledWith('pnpm lint', {
 			stdio: 'inherit',
 			cwd: outDir('withLint'),
 		});
@@ -49,7 +49,7 @@ describe('runEsLint()', () => {
 		}));
 
 		await actions.runESLint(answers, config, plop);
-		expect(vi.mocked(execSync)).toHaveBeenCalledWith('npm run lint .', {
+		expect(vi.mocked(execSync)).toHaveBeenCalledWith('npm run lint', {
 			stdio: 'inherit',
 			cwd: outDir('withLint'),
 		});
