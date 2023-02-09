@@ -5,45 +5,78 @@ slug: '/backend-starters/decoupled-drupal/configuring-build-hooks'
 sidebar_position: 5
 ---
 
-## Setting Up Your First Build Hook
+## What Are Build Hooks?
 
-### What Are Build Hooks?
+The [Build Hooks](https://www.drupal.org/project/build_hooks) module has the
+capability to trigger builds in one or more frontend sites when any content
+changes occur, such as creating, updating, or deleting.
 
-The Build Hooks module, available at https://www.drupal.org/project/build_hooks,
-allows CMS events like creating, updating, or deleting content to trigger builds
-in a decoupled frontend site.
+For example, setting up the
+[Decoupled Drupal Composer Managed](https://github.com/pantheon-systems/drupal-composer-managed)
+to use as the backend CMS with a Gatsby as the frontend site. When content
+changes are made in the backend, those changes need to be pushed to the frontend
+sites. In this case, the Build Hook module is used to trigger a deployment,
+either manually, automatically, or depending on a cron job.
 
-### Installing the Build Hooks Module
+The Build Hook module also supports triggering workflows for GitHub, Circle CI,
+and Bitbucket. For further information, please refer to the module's
+[README.txt](https://git.drupalcode.org/project/build_hooks).
 
-To add Build Hooks as a composer dependency, run the following command:
+:::note
+
+By default the module will only log changes for content entity. If you'd like to
+trigger build hooks based on other entity updates, go to **Administration** >>
+**Configuration** >> **Build hooks** >> **Build Hooks Settings**.
+
+:::
+
+## Installing the Build Hooks Module
+
+Using the
+[Decoupled Drupal Composer Managed](https://github.com/pantheon-systems/drupal-composer-managed)
+starter template, add the
+[Build Hooks](https://www.drupal.org/project/build_hooks) module as a composer
+dependency. To do so, run the following command:
 
 ```
 composer require 'drupal/build_hooks:^3.3'
+
 ```
 
-### Creating a Build Hook for Content Creation/Modification
+Once it is a composer dependency, it must be installed. This can be done either
+through the Drupal admin dashboard or using
+[drush pm-enable](https://drushcommands.com/drush-8x/pm/pm-enable/).
 
-1. After generating a build hook on your build platform, go to Configuration >>
-   Frontend environment >> Add Frontend environment >> Add new environment.
-1. Fill out the form with the Label, URL, Deployment strategy, Weight, and Build
-   hook URL.
-1. Save the form.
+## Setting Up a Build Hook
 
-### Choose a Deployment Strategies
+### Trigger a Deployment Automatically When Content Changes
 
-1. **_Manually only_**: Deployment will only occur when manually triggered.
-1. **_On cron_**: Deployment is dependent on Drupal's cron job.
-1. **_When content is updated_**: Deployment occurs automatically upon content
-   creation, modification, or deletion.
+1. After generating a build hook on your build platform, go to
+   **Configuration** >> **Build hooks** >> **Frontend environment**.
+2. Click on the **Add Frontend environment** button.
+3. Fill out the form with the required information including Label, URL,
+   Deployment strategy (for this use-case, select **When content is updated**),
+   Weight, and Build hook URL.
+4. Save the form.
 
-### Testing the Build Hook
+This will automatically trigger a build hook when content changes.
 
-1. Access your Drupal admin dashboard.
-1. Create a new piece of content, such as an article.
-1. Depending on your selected Deployment strategy, a deployment will occur.
+### Trigger a Deployment Manually
 
-### Setting Up Build Hooks for Multiple Frontend Environments
+Following the same steps as "Trigger a Deployment Automatically" to create a
+Build Hook Frontend Environment but select **Deployment strategy** as **Manually
+only**.
 
-Build Hooks supports multiple build hooks, allowing you to trigger builds in
-different environments such as dev, test, and prod. Before proceeding, generate
-separate build hooks for each frontend environment in your build platform.
+![Drupal Build Hook Trigger Deployment Manually](../../../static/img/drupal-trigger-deployment-manually.gif)
+
+1. After a content is created/updated, go to
+   `admin/build_hooks/deployments/<BUILD_HOOK_MACHINE_NAME>`.
+2. Click on **Start a new deployment to the <BUILD_HOOK_NAME> environment**.
+   Which will trigger the Build Hook on the frontend site.
+
+:::note
+
+The deployment strategy can also be set to Cron Job, which will trigger the
+build hook automatically at a specified interval.
+
+:::
