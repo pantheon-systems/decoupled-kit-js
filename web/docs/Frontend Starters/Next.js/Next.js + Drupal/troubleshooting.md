@@ -64,7 +64,7 @@ field, you will need to make the following adjustments to the starter kit:
    `field_media_image` field.
 
 In the `getServerSideProps` function in `pages/index.jsx` change the parameters
-used to source your articles. Change
+used to source your articles. Change:
 
 ```jsx
 const articles = await store.getObject({
@@ -76,7 +76,7 @@ const articles = await store.getObject({
 });
 ```
 
-to
+to:
 
 ```jsx
 const articles = await store.getObject({
@@ -117,7 +117,7 @@ export const ArticleGridItem = ({
 2. Update article detail pages to use the `field_image` field instead of the
    `field_media_image` field.
 
-_If you are aliasing your articles within the `/articles/` path:_
+_If you are aliasing your articles within the `/articles/*` path:_
 
 Within the `articleTemplate` function in `pages/articles/[...slug].jsx`, change
 the `imgSrc` constant from:

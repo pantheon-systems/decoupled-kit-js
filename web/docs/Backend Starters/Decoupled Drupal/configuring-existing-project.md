@@ -5,10 +5,12 @@ slug: '/backend-starters/decoupled-drupal/configuring-an-existing-project'
 sidebar_position: 3
 ---
 
-While we offer a back-end starter project to simplify the process of configuring
-a Drupal site for use with our front-end starter kits, you may instead prefer to
-use an existing Drupal project. Follow the steps below to configure an existing
-Drupal project to work with one of our front-end starter kits.
+While we offer a
+[back-end starter project](backend-starters/decoupled-drupal/creating-a-new-project)
+to simplify the process of configuring a Drupal site for use with our front-end
+starter kits, you may instead prefer to use an existing Drupal project. Follow
+the steps below to configure an existing Drupal project to work with one of our
+front-end starter kits.
 
 ## Before You Begin
 
@@ -29,7 +31,7 @@ steps below.
 - Run the following Composer commands:
 
 ```bash
-composer config minimum-stability beta
+composer config minimum-stability alpha
 composer require drupal/jsonapi_menu_items drupal/jsonapi_hypermedia drupal/decoupled_router
 ```
 
@@ -48,7 +50,7 @@ one of two possible adjustments:
   name `field_media_image`.
 - Update your starter kit to use the default image field instead of the Media
   field. Consult the
-  [adapting for use with existing Drupal sites](../../frontend-starters/nextjs/nextjs-drupal/troubleshooting#adapting-for-use-with-existing-drupal-sites)
+  ['adapting for use with existing Drupal sites'](../../frontend-starters/nextjs/nextjs-drupal/troubleshooting#adapting-for-use-with-existing-drupal-sites)
   entry within the Next.js + Drupal documentation for further instructions.
 
 ### Ensure That Your Content Uses URL Aliases
@@ -105,7 +107,7 @@ composer require cweagans/composer-patches
 #### Enable Edge Caching
 
 For sites running on Pantheon, a small amount of configuration can be updated in
-order to edge caching and purging across the entire decoupled stack.
+order to enable edge caching and purging across the entire decoupled stack.
 
 - Run the following Composer command:
 
@@ -120,6 +122,9 @@ composer require drupal/pantheon_advanced_page_cache
   cache maximum age' to a value greater than zero.
 
 ## 2. Configuring Authenticated API Requests
+
+If you need to source data that requires authorization, follow the additional
+steps below.
 
 ### Add and Enable Dependencies
 
@@ -148,5 +153,39 @@ composer require drupal/simple_oauth
 
 For authenticated data sourcing you will need to set the `CLIENT_ID` and
 `CLIENT_SECRET` variables.
+
+- [Instructions for the Next.js and Drupal starter kit](../../frontend-starters/nextjs/nextjs-drupal/setting-environment-variables)
+
+## 3. Configuring Preview
+
+If you would like to preview content managed in Drupal on your front-end site,
+follow the additional steps below.
+
+### Add and Enable Dependencies
+
+- Run the following Composer command:
+
+```
+composer require drupal/decoupled_preview
+```
+
+- Enable the decoupled_preview module.
+
+### Grant Permissions
+
+Ensure that the user you previously associated with the Simple OAuth consumer
+also has the following permissions:
+
+- Decoupled Preview: Administer preview site
+- Node: View all revisions
+
+### Create a Preview Site
+
+See the instructions for
+[creating a new preview site configuration](../../backend-starters/decoupled-drupal/configuring-preview-site#creating-a-new-preview-site-configuration).
+
+### Set the Necessary Front-End Environment Variables
+
+For preview you will need to set the `PREVIEW_SECRET` variable.
 
 - [Instructions for the Next.js and Drupal starter kit](../../frontend-starters/nextjs/nextjs-drupal/setting-environment-variables)
