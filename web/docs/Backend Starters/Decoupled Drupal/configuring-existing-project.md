@@ -28,7 +28,7 @@ steps below.
 
 - Run the following Composer commands:
 
-```
+```bash
 composer config minimum-stability beta
 composer require drupal/jsonapi_menu_items drupal/jsonapi_hypermedia drupal/decoupled_router
 ```
@@ -73,5 +73,80 @@ anonymously by the front-end starter kit. Within your front-end project you will
 also need to set the necessary environment variables to source data from your
 Drupal back-end. For anonymous data sourcing you will need to set at least the
 `BACKEND_URL` and `IMAGE_DOMAIN` variables.
+
+- [Instructions for the Next.js and Drupal starter kit](../../frontend-starters/nextjs/nextjs-drupal/setting-environment-variables)
+
+### Optional Configuration
+
+#### Apply Patches For Multi-Language Support
+
+If your Drupal content is translated into multiple languages, you'll need to
+apply a patch to the decoupled router module for full multi-language support.
+
+- Open the `composer.json` file in the root of your Drupal project and add the
+  following to the `extra` section:
+
+```json
+"extra": {
+  "patches": {
+    "drupal/decoupled_router": {
+      "3111456#59: Unable to resolve path on node in other language than default": "https://www.drupal.org/files/issues/2022-12-01/decouple_router-3111456-resolve-language-issue-58--get-translation.patch"
+    }
+  }
+}
+```
+
+- Run the following Composer command to add the composer-patches plugin:
+
+```bash
+composer require cweagans/composer-patches
+```
+
+#### Enable Edge Caching
+
+For sites running on Pantheon, a small amount of configuration can be updated in
+order to edge caching and purging across the entire decoupled stack.
+
+- Run the following Composer command:
+
+```bash
+composer require drupal/pantheon_advanced_page_cache
+```
+
+- Enable the Pantheon Advanced Page Cache module.
+
+- In the Drupal Admim, navigate to the Performance settings page
+  (Configuration > Development > Performance) and set the 'Browser and proxy
+  cache maximum age' to a value greater than zero.
+
+## 2. Configuring Authenticated API Requests
+
+### Add and Enable Dependencies
+
+- Run the following Composer command:
+
+```
+composer require drupal/simple_oauth
+```
+
+- Enable the simple_oauth module, which will also enable a number of
+  dependencies.
+
+### Configure Simple OAuth
+
+- Under the Simple OAuth settings (Configuration > People > Simple OAuth),
+  generate public and private keys to be used with the module. For the
+  directory, specify `sites/default/files/private` or the path of your choice.
+- Under the Consumer entities settings (Configuration > Web services >
+  Consumers), create a consumer for use with your front-end site.
+  - Provide a label for the consumer.
+  - Specify a Client ID and note this for later use.
+  - Associate a user with the consumer.
+  - Specify a Secret and note this for later use.
+
+### Set the Necessary Front-End Environment Variables
+
+For authenticated data sourcing you will need to set the `CLIENT_ID` and
+`CLIENT_SECRET` variables.
 
 - [Instructions for the Next.js and Drupal starter kit](../../frontend-starters/nextjs/nextjs-drupal/setting-environment-variables)
