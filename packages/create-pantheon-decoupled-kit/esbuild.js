@@ -10,6 +10,9 @@ const buildOptions = {
 	format: 'esm',
 	minify: true,
 	target: 'node16',
+	supported: {
+		'import-assertions': true,
+	},
 };
 try {
 	await build(buildOptions);

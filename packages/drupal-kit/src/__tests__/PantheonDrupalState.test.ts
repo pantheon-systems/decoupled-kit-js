@@ -194,9 +194,7 @@ describe('drupalState', () => {
 		).toEqual(recipesResourceObject1);
 		expect(fetchMock).toBeCalledTimes(1);
 		expect(res.setHeader.mock.calls[0][0]).toBe('Cache-Control');
-		expect(res.setHeader.mock.calls[0][1]).toBe(
-			'public, s-maxage=10, stale-while-revalidate=600',
-		);
+		expect(res.setHeader.mock.calls[0][1]).toBe('public, s-maxage=600');
 	});
 
 	test('Fetch object with params', async () => {
