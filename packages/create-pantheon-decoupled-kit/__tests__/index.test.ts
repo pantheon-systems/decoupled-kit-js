@@ -5,6 +5,8 @@ import { decoupledKitTestGenerators } from './testGenerators/generators/index';
 import inquirer from 'inquirer';
 import chalk from 'chalk';
 import * as nodePlop from 'node-plop';
+import { helpMenu } from '../src/utils/helpMenu';
+import pkg from '../package.json' assert { type: 'json' };
 
 vi.mock('node-plop');
 vi.mock('inquirer');
@@ -88,6 +90,10 @@ describe('main()', () => {
 				_: ['test-add', 'test-append'],
 				force: false,
 				silent: false,
+				help: false,
+				h: false,
+				version: false,
+				v: false,
 			},
 			decoupledKitTestGenerators,
 		);
@@ -156,6 +162,7 @@ describe('main()', () => {
 					{ name: 'test-add' },
 					{ name: 'test-append' },
 				]),
+			setHelper: vi.fn(),
 		});
 
 		await main(parseArgs(), decoupledKitTestGenerators);
@@ -191,6 +198,7 @@ describe('main()', () => {
 					{ name: 'test-add' },
 					{ name: 'test-append' },
 				]),
+			setHelper: vi.fn(),
 		});
 		await main(parseArgs(), decoupledKitTestGenerators);
 		expect(errorSpy).toHaveBeenLastCalledWith(
@@ -204,5 +212,41 @@ describe('main()', () => {
 		await main(parseArgs(), decoupledKitTestGenerators);
 
 		expect(logSpy).toHaveBeenCalledTimes(0);
+	});
+
+	it('should show the help menu if --help or -h is in the args', async ({
+		logSpy,
+	}) => {
+		// --help
+		process.argv = ['node', 'bin.js', '--help'];
+
+		await main(parseArgs(), decoupledKitTestGenerators);
+
+		expect(logSpy).toHaveBeenLastCalledWith(helpMenu);
+
+		// -h
+		process.argv = ['node', 'bin.js', '-h'];
+
+		await main(parseArgs(), decoupledKitTestGenerators);
+
+		expect(logSpy).toHaveBeenLastCalledWith(helpMenu);
+	});
+
+	it('should show the version if --version or -v is in the args', async ({
+		logSpy,
+	}) => {
+		// --version
+		process.argv = ['node', 'bin.js', '--version'];
+
+		await main(parseArgs(), decoupledKitTestGenerators);
+
+		expect(logSpy).toHaveBeenLastCalledWith(`v${pkg.version}`);
+
+		// -v
+		process.argv = ['node', 'bin.js', '-v'];
+
+		await main(parseArgs(), decoupledKitTestGenerators);
+
+		expect(logSpy).toHaveBeenLastCalledWith(`v${pkg.version}`);
 	});
 });

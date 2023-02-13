@@ -1,4 +1,4 @@
-import * as actions from '../src/utils/addWithDiff';
+import * as actions from '../src/actions/addWithDiff';
 import chalk from 'chalk';
 import fs from 'fs-extra';
 import inquirer from 'inquirer';

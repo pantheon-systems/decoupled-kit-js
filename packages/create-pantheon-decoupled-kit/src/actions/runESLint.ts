@@ -14,6 +14,7 @@ export const runESLint = async (
 	},
 	_plop: NodePlopAPI,
 ) => {
+	if (answers?.noInstall || answers?.noLint) return 'skipping linting';
 	if (!answers.outDir || typeof answers?.outDir !== 'string')
 		throw 'fail: outDir required';
 	answers.silent || console.log(chalk.green('Linting...'));
@@ -35,7 +36,7 @@ export const runESLint = async (
 		});
 		// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
 		if (pkg?.scripts?.lint) {
-			execSync(`${command} lint .`, { cwd: answers.outDir, stdio: 'inherit' });
+			execSync(`${command} lint`, { cwd: answers.outDir, stdio: 'inherit' });
 		} else {
 			execSync(
 				`npx eslint ${

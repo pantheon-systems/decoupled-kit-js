@@ -1,4 +1,4 @@
-import * as actions from '../src/utils/runInstall';
+import * as actions from '../src/actions/runInstall';
 import * as nodePlop from 'node-plop';
 import chalk from 'chalk';
 import fs from 'fs-extra';
