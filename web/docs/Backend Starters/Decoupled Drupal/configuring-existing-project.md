@@ -6,7 +6,7 @@ sidebar_position: 3
 ---
 
 While we offer a
-[back-end starter project](backend-starters/decoupled-drupal/creating-a-new-project)
+[back-end starter project](./creating-a-new-project)
 to simplify the process of configuring a Drupal site for use with our front-end
 starter kits, you may instead prefer to use an existing Drupal project. Follow
 the steps below to configure an existing Drupal project to work with one of our
