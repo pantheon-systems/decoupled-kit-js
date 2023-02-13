@@ -1,0 +1,65 @@
+[
+	{
+		"type": "menu_link_content--menu_link_content",
+		"id": "standard.front_page",
+		"description": "",
+		"enabled": true,
+		"expanded": false,
+		"menu_name": "main",
+		"meta": [],
+		"options": [],
+		"parent": "",
+		"provider": "demo_umami",
+		"route": {
+			"name": "<front>",
+			"parameters": []
+		},
+		"title": "Home",
+		"url": "/en",
+		"weight": "0"
+	},
+	{
+		"type": "menu_link_content--menu_link_content",
+		"id": "views_view:views.featured_articles.page_1",
+		"description": "",
+		"enabled": true,
+		"expanded": false,
+		"menu_name": "main",
+		"meta": {
+			"view_id": "featured_articles",
+			"display_id": "page_1"
+		},
+		"options": [],
+		"parent": "",
+		"provider": "views",
+		"route": {
+			"name": "view.featured_articles.page_1",
+			"parameters": []
+		},
+		"title": "Articles",
+		"url": "/en/articles",
+		"weight": "20"
+	},
+	{
+		"type": "menu_link_content--menu_link_content",
+		"id": "views_view:views.recipes.page_1",
+		"description": "",
+		"enabled": true,
+		"expanded": false,
+		"menu_name": "main",
+		"meta": {
+			"view_id": "recipes",
+			"display_id": "page_1"
+		},
+		"options": [],
+		"parent": "",
+		"provider": "views",
+		"route": {
+			"name": "view.recipes.page_1",
+			"parameters": []
+		},
+		"title": "Recipes",
+		"url": "/en/recipes",
+		"weight": "30"
+	}
+]

@@ -1,0 +1,71 @@
+[
+	{
+		"params": { "slug": ["give-it-a-go-and-grow-your-own-herbs"] },
+		"locale": "en"
+	},
+	{
+		"params": { "slug": ["the-real-deal-for-supermarket-savvy-shopping"] },
+		"locale": "en"
+	},
+	{
+		"params": { "slug": ["baking-mishaps-our-troubleshooting-tips"] },
+		"locale": "en"
+	},
+	{
+		"params": { "slug": ["skip-the-spirits-with-delicious-mocktails"] },
+		"locale": "en"
+	},
+	{
+		"params": { "slug": ["give-your-oatmeal-the-ultimate-makeover"] },
+		"locale": "en"
+	},
+	{
+		"params": { "slug": ["the-umami-guide-to-our-favourite-mushrooms"] },
+		"locale": "en"
+	},
+	{ "params": { "slug": ["lets-hear-it-for-carrots"] }, "locale": "en" },
+	{
+		"params": { "slug": ["dairy-free-and-delicious-milk-chocolate"] },
+		"locale": "en"
+	},
+	{
+		"params": { "slug": ["prueba-y-cultiva-tus-propias-hierbas"] },
+		"locale": "es"
+	},
+	{
+		"params": {
+			"slug": ["el-verdadeo-negocio-para-comprar-en-el-supermercado"]
+		},
+		"locale": "es"
+	},
+	{
+		"params": {
+			"slug": [
+				"percances-al-hornear-nuestros-consejos-para-solucionar-problemas"
+			]
+		},
+		"locale": "es"
+	},
+	{
+		"params": {
+			"slug": ["salta-los-espiritus-con-deliciosos-cocteles-sin-alcohol"]
+		},
+		"locale": "es"
+	},
+	{
+		"params": { "slug": ["dale-a-tu-avena-el-cambio-de-imagen-definitivo"] },
+		"locale": "es"
+	},
+	{
+		"params": { "slug": ["guia-umami-de-nuestras-setas-preferidas"] },
+		"locale": "es"
+	},
+	{
+		"params": { "slug": ["un-aplauso-para-las-zanahorias"] },
+		"locale": "es"
+	},
+	{
+		"params": { "slug": ["delicioso-chocolate-sin-lactosa"] },
+		"locale": "es"
+	}
+]
