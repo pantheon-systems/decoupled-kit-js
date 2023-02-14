@@ -3,11 +3,13 @@ import type { DecoupledKitGenerator } from '../types';
 
 export const umami: DecoupledKitGenerator = {
 	name: 'umami-demo',
-	description: 'Umami profile data and components',
+	description:
+		"Drupal's Umami profile data and components add-on for the next-drupal starter",
 	prompts: [
 		{
 			name: 'outDir',
 			message: 'Where should the output go?',
+			default: `${process.cwd()}/umami-demo`,
 		},
 	],
 	actions: (data) => {

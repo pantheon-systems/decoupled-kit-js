@@ -7,13 +7,11 @@ import {
 	globalDrupalStateStores,
 } from '../../lib/stores';
 
-import { RecipeGridItem } from '../../components/grid';
+import { RecipeGridItem } from '../../components/recipeGridItem';
 import { withGrid } from '@pantheon-systems/nextjs-kit';
 import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
 
-// This file can safely be removed if the Drupal
-// instance is not sourcing Umami data
 export default function RecipeListTemplate({
 	sortedRecipes,
 	footerMenu,

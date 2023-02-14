@@ -45,18 +45,3 @@ describe(`Umami <RecipeTemplate />`, () => {
 	});
 });
 
-
-
-// describe(`Default <RecipeListTemplate />`, () => {
-// 	it(`should render a 404`, () => {
-// 		const { asFragment } = render(<Custom404 />);
-// 		expect(asFragment()).toMatchSnapshot();
-// 	});
-// });
-// describe(`Default <RecipeTemplate />`, () => {
-// 	it(`should render a 404`, () => {
-// 		const { asFragment } = render(<Custom404 />);
-// 		expect(asFragment()).toMatchSnapshot();
-// 	});
-// });
-

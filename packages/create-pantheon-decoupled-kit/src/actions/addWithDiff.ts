@@ -17,7 +17,7 @@ export const addWithDiff = async (
 ) => {
 	/**
 	 * 1. get path to the templates
-	 * 2. claw through templates (outputs each path in the directory given)
+	 * 2. klaw through templates (outputs each path in the directory given)
 	 * 3. check if the destination path exists or create it. (path to destination + template name minus .hbs) example: ./test/myTest.js
 	 * 4. check the diff against the new file and the rendered template or file to copy if source is not a handlebars template
 	 * 5. if the --force option is not defined, ask the user if we should overwrite this file (yes to all, yes, skip, abort) if force is true we write everything.

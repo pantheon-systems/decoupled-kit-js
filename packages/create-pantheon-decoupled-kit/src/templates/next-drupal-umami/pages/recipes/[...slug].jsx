@@ -9,8 +9,7 @@ import { IMAGE_URL } from '../../lib/constants';
 
 import Layout from '../../components/layout';
 import { Recipe } from '@pantheon-systems/nextjs-kit';
-// This file can safely be removed if the Drupal
-// instance is not sourcing Umami data
+
 export default function RecipeTemplate({
 	recipe,
 	footerMenu,
