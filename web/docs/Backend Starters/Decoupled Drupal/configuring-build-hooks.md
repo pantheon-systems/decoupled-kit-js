@@ -8,24 +8,44 @@ sidebar_position: 5
 ## What Are Build Hooks?
 
 The [Build Hooks](https://www.drupal.org/project/build_hooks) module has the
-capability to trigger builds in one or more front-end sites when any content
+capability to trigger builds in one or more frontend sites when any content
 changes occur, such as creating, updating, or deleting.
+
+For example, setting up the
+[Decoupled Drupal Composer Managed](https://github.com/pantheon-systems/drupal-composer-managed)
+to use as the backend CMS with a Gatsby as the frontend site. When content
+changes are made in the backend, those changes need to be pushed to the frontend
+sites. In this case, the Build Hook module is used to trigger a deployment,
+either manually, automatically, or depending on a cron job.
+
+The Build Hook module also supports triggering workflows for GitHub, Circle CI,
+and Bitbucket. For further information, please refer to the module's
+[README.txt](https://git.drupalcode.org/project/build_hooks).
+
+:::note
+
+By default the module will only log changes for content entity. If you'd like to
+trigger build hooks based on other entity updates, go to **Administration** >>
+**Configuration** >> **Build hooks** >> **Build Hooks Settings**.
+
+:::
 
 ## Installing the Build Hooks Module
 
-If you are using the
+Using the
 [Decoupled Drupal Composer Managed](https://github.com/pantheon-systems/drupal-composer-managed)
-starter template, the Build Hooks module will already be included as a composer
-dependency. For other projects, run the following command to add the module as a
-dependency:
+starter template, add the
+[Build Hooks](https://www.drupal.org/project/build_hooks) module as a composer
+dependency. To do so, run the following command:
 
 ```
 composer require 'drupal/build_hooks:^3.3'
+
 ```
 
-After adding the dependency it must be installed. This can be done either
+Once it is a composer dependency, it must be installed. This can be done either
 through the Drupal admin dashboard or using
-[drush pm-enable](https://drushcommands.com/drush-9x/pm/pm:enable/).
+[drush pm-enable](https://drushcommands.com/drush-8x/pm/pm-enable/).
 
 ## Setting Up a Build Hook
 
@@ -39,25 +59,12 @@ through the Drupal admin dashboard or using
    Weight, and Build hook URL.
 4. Save the form.
 
-This will automatically trigger your build hook when content changes.
-
-:::note
-
-By default the module will only log changes for content entities. If you would
-like to trigger build hooks based on other entity updates, go to
-**Administration** >> **Configuration** >> **Build hooks** >> **Build Hooks
-Settings** to configure other entities.
-
-:::
+This will automatically trigger a build hook when content changes.
 
 ### Trigger a Deployment Manually
 
-It is also possible to create a build hook that can only be triggered manually.
-This can be useful if you would like more control over the time of deployment or
-if you would prefer to batch multiple content changes into a single deployment.
-
-Follow the same steps as "Trigger a Deployment Automatically" to create a Build
-Hook Frontend Environment but select **Deployment strategy** as **Manually
+Following the same steps as "Trigger a Deployment Automatically" to create a
+Build Hook Frontend Environment but select **Deployment strategy** as **Manually
 only**.
 
 ![Drupal Build Hook Trigger Deployment Manually](../../../static/img/drupal-trigger-deployment-manually.gif)
@@ -70,7 +77,6 @@ only**.
 :::note
 
 The deployment strategy can also be set to Cron Job, which will trigger the
-build hook automatically at a specified interval if Cron is configured on your
-site.
+build hook automatically at a specified interval.
 
 :::

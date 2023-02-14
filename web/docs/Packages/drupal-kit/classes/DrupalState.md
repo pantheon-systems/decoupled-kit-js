@@ -23,13 +23,13 @@ DrupalStateConfig for the full list parameters
 
 ### constructor
 
-• **new DrupalState**(`«destructured»`)
+• **new DrupalState**(`__namedParameters`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `«destructured»` | `DrupalStateConfig` |
+| `__namedParameters` | `DrupalStateConfig` |
 
 #### Overrides
 
@@ -37,7 +37,7 @@ DrupalState.constructor
 
 #### Defined in
 
-[drupal-kit/src/lib/PantheonDrupalState.ts:14](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L14)
+[drupal-kit/src/lib/PantheonDrupalState.ts:14](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L14)
 
 ## Methods
 
@@ -67,4 +67,4 @@ DrupalState.fetchData
 
 #### Defined in
 
-[drupal-kit/src/lib/PantheonDrupalState.ts:42](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L42)
+[drupal-kit/src/lib/PantheonDrupalState.ts:42](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L42)

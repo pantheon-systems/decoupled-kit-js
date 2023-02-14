@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/footer.tsx:7](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/nextjs-kit/src/components/footer.tsx#L7)
+[packages/nextjs-kit/src/components/footer.tsx:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/nextjs-kit/src/components/footer.tsx#L7)
 
 ___
 
@@ -24,4 +24,4 @@ ___
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/footer.tsx:6](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/nextjs-kit/src/components/footer.tsx#L6)
+[packages/nextjs-kit/src/components/footer.tsx:6](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/nextjs-kit/src/components/footer.tsx#L6)
