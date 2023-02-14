@@ -21,7 +21,7 @@ that is passed into the DrupalState helper.
 The default Cache-Control header value is as follows:
 
 ```http
-Cache-Control: public, s-maxage=10, stale-while-revalidate=600
+Cache-Control: public, s-maxage=600
 ```
 
 In the next section, we will explain how to override this default value.

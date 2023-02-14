@@ -15,9 +15,7 @@ test('set using default cache-control header', () => {
 	const res = mockResponse();
 	setEdgeHeader({ res });
 	expect(res.setHeader.mock.calls[0][0]).toBe('Cache-Control');
-	expect(res.setHeader.mock.calls[0][1]).toBe(
-		'public, s-maxage=10, stale-while-revalidate=600',
-	);
+	expect(res.setHeader.mock.calls[0][1]).toBe('public, s-maxage=600');
 });
 
 test('set a custom cache control header', () => {

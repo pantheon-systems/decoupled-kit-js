@@ -27,7 +27,7 @@
 	],
 	"prettier": "@pantheon-systems/configs/prettier",
 	"typedoc": {
-		"entryPoint": "./src/index.ts"
+		"entryPoint": "./index.ts"
 	},
 	"scripts": {
 		"build": "pnpm clean && node ./esbuild.js && pnpm copy-templates",
@@ -36,6 +36,7 @@
 		"test": "vitest run --coverage",
 		"test:watch": "vitest",
 		"watch": "pnpm vite-node ./scripts/watchTemplates.ts",
+		"start": "node ./dist/bin.js",
 		"eslint": "eslint --ext .ts --ignore-path .gitignore",
 		"eslint:fix": "eslint --ext .ts --fix --ignore-path .gitignore",
 		"prettier": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --check --ignore-path ../../.prettierignore",

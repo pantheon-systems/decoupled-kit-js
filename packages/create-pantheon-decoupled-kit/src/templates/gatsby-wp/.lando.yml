@@ -1,0 +1,25 @@
+name: wp-gatsby-frontend
+
+services:
+  node:
+    type: node:14
+    port: 8000
+    build:
+      - npm install
+    globals:
+      gatsby-cli: latest
+    command: npm run develop
+
+proxy:
+  node:
+    - wp-gatsby-frontend.lndo.site:8000
+
+tooling:
+  yarn:
+    service: node
+  gatsby:
+    service: node
+  node:
+    service: node
+  npm:
+    service: node
