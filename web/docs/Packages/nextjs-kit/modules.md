@@ -31,7 +31,7 @@ This should account for Drupal and WordPress menus
 
 #### Defined in
 
-[packages/nextjs-kit/src/types/index.ts:39](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/nextjs-kit/src/types/index.ts#L39)
+[packages/nextjs-kit/src/types/index.ts:39](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/nextjs-kit/src/types/index.ts#L39)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-[packages/nextjs-kit/src/types/index.ts:33](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/nextjs-kit/src/types/index.ts#L33)
+[packages/nextjs-kit/src/types/index.ts:33](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/nextjs-kit/src/types/index.ts#L33)
 
 ## Functions
 
@@ -64,7 +64,7 @@ If alt text is not supplied, the title of the content will be used.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `props` | `PropsWithChildren`<[`ContentProps`](interfaces/ContentProps.md)\> | The props needed for the ContentWithImage component |
+| `props` | [`ContentProps`](interfaces/ContentProps.md) | The props needed for the ContentWithImage component |
 | `context?` | `any` | - |
 
 #### Returns
@@ -75,7 +75,7 @@ A component with a featured image and content passed by the user
 
 #### Defined in
 
-node_modules/.pnpm/@types+react@17.0.40/node_modules/@types/react/index.d.ts:550
+node_modules/.pnpm/@types+react@18.0.27/node_modules/@types/react/index.d.ts:521
 
 ___
 
@@ -106,7 +106,7 @@ const footerMenuItems = [
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `props` | `PropsWithChildren`<[`FooterMenuProps`](interfaces/FooterMenuProps.md)\> | The props needed for the footer component |
+| `props` | [`FooterMenuProps`](interfaces/FooterMenuProps.md) | The props needed for the footer component |
 | `context?` | `any` | - |
 
 #### Returns
@@ -117,21 +117,21 @@ A footer component with a nav menu
 
 #### Defined in
 
-node_modules/.pnpm/@types+react@17.0.40/node_modules/@types/react/index.d.ts:550
+node_modules/.pnpm/@types+react@18.0.27/node_modules/@types/react/index.d.ts:521
 
 ___
 
 ### Grid
 
-▸ **Grid**(`__namedParameters`): `Element`
+▸ **Grid**(`«destructured»`): `Element`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `__namedParameters` | `Object` |
-| `__namedParameters.children?` | `Element`[] |
-| `__namedParameters.cols?` | `number` |
+| `«destructured»` | `Object` |
+| › `children?` | `Element`[] |
+| › `cols?` | `number` |
 
 #### Returns
 
@@ -141,7 +141,7 @@ A style and positioning helper grid component that can be used with the withGrid
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/grid.tsx:10](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/nextjs-kit/src/components/grid.tsx#L10)
+[packages/nextjs-kit/src/components/grid.tsx:10](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/nextjs-kit/src/components/grid.tsx#L10)
 
 ___
 
@@ -171,7 +171,7 @@ const navItems = [
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `props` | `PropsWithChildren`<[`HeaderProps`](interfaces/HeaderProps.md)\> | The props needed for the header component |
+| `props` | [`HeaderProps`](interfaces/HeaderProps.md) | The props needed for the header component |
 | `context?` | `any` | - |
 
 #### Returns
@@ -182,7 +182,7 @@ A header component with a nav menu
 
 #### Defined in
 
-node_modules/.pnpm/@types+react@17.0.40/node_modules/@types/react/index.d.ts:550
+node_modules/.pnpm/@types+react@18.0.27/node_modules/@types/react/index.d.ts:521
 
 ___
 
@@ -226,7 +226,7 @@ Component with data rendered by the passed in Component and page buttons
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:82](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/nextjs-kit/src/components/paginator.tsx#L82)
+[packages/nextjs-kit/src/components/paginator.tsx:82](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/nextjs-kit/src/components/paginator.tsx#L82)
 
 ___
 
@@ -238,7 +238,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `props` | `PropsWithChildren`<[`PreviewRibbonProps`](interfaces/PreviewRibbonProps.md)\> |
+| `props` | [`PreviewRibbonProps`](interfaces/PreviewRibbonProps.md) |
 | `context?` | `any` |
 
 #### Returns
@@ -247,7 +247,7 @@ ___
 
 #### Defined in
 
-node_modules/.pnpm/@types+react@17.0.40/node_modules/@types/react/index.d.ts:550
+node_modules/.pnpm/@types+react@18.0.27/node_modules/@types/react/index.d.ts:521
 
 ___
 
@@ -270,7 +270,7 @@ If alt text is not supplied, the title of the content will be used.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `props` | `PropsWithChildren`<[`RecipeProps`](interfaces/RecipeProps.md)\> | The props needed for the Recipe component |
+| `props` | [`RecipeProps`](interfaces/RecipeProps.md) | The props needed for the Recipe component |
 | `context?` | `any` | - |
 
 #### Returns
@@ -281,7 +281,7 @@ A recipe component with content and an optional image passed by the user
 
 #### Defined in
 
-node_modules/.pnpm/@types+react@17.0.40/node_modules/@types/react/index.d.ts:550
+node_modules/.pnpm/@types+react@18.0.27/node_modules/@types/react/index.d.ts:521
 
 ___
 
@@ -305,7 +305,7 @@ An array of data sorted by the given key and direction
 
 #### Defined in
 
-[packages/nextjs-kit/src/lib/sortChar.ts:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/nextjs-kit/src/lib/sortChar.ts#L12)
+[packages/nextjs-kit/src/lib/sortChar.ts:12](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/nextjs-kit/src/lib/sortChar.ts#L12)
 
 ___
 
@@ -329,7 +329,7 @@ An array of data sorted by the given key and direction
 
 #### Defined in
 
-[packages/nextjs-kit/src/lib/sortDate.ts:11](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/nextjs-kit/src/lib/sortDate.ts#L11)
+[packages/nextjs-kit/src/lib/sortDate.ts:11](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/nextjs-kit/src/lib/sortDate.ts#L11)
 
 ___
 
@@ -383,7 +383,7 @@ const MyPage = ({ myArticles }) => {
 
 A Higher Order Component that returns the data mapped to the Component in a grid
 
-▸ <`Type`\>(`__namedParameters`): `Element`
+▸ <`Type`\>(`«destructured»`): `Element`
 
 **`Default`**
 
@@ -399,10 +399,10 @@ A Higher Order Component that returns the data mapped to the Component in a grid
 
 | Name | Type |
 | :------ | :------ |
-| `__namedParameters` | `Object` |
-| `__namedParameters.FallbackComponent?` | `ElementType`<`any`\> |
-| `__namedParameters.cols?` | `number` |
-| `__namedParameters.data?` | `Type`[] |
+| `«destructured»` | `Object` |
+| › `FallbackComponent?` | `ElementType`<`any`\> |
+| › `cols?` | `number` |
+| › `data?` | `Type`[] |
 
 ##### Returns
 
@@ -412,4 +412,4 @@ The component passed to withGrid in a grid with the given number of columns
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/grid.tsx:61](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/nextjs-kit/src/components/grid.tsx#L61)
+[packages/nextjs-kit/src/components/grid.tsx:61](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/nextjs-kit/src/components/grid.tsx#L61)

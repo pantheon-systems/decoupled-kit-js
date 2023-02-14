@@ -37,7 +37,7 @@ Runs the actions for the generators given as positional params or if none are fo
 
 #### Defined in
 
-[index.ts:58](https://github.com/CobyPear/decoupled-kit-js/blob/0c623b70/packages/create-pantheon-decoupled-kit/src/index.ts#L58)
+[index.ts:73](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/create-pantheon-decoupled-kit/src/index.ts#L73)
 
 ___
 
@@ -67,7 +67,7 @@ Parses CLI arguments using `minimist`
 
 #### Defined in
 
-[index.ts:32](https://github.com/CobyPear/decoupled-kit-js/blob/0c623b70/packages/create-pantheon-decoupled-kit/src/index.ts#L32)
+[index.ts:49](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/create-pantheon-decoupled-kit/src/index.ts#L49)
 
 ___
 
@@ -96,4 +96,4 @@ An instance of plop
 
 #### Defined in
 
-[index.ts:16](https://github.com/CobyPear/decoupled-kit-js/blob/0c623b70/packages/create-pantheon-decoupled-kit/src/index.ts#L16)
+[index.ts:19](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/create-pantheon-decoupled-kit/src/index.ts#L19)

@@ -27,7 +27,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:220](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L220)
+[packages/wordpress-kit/src/types/index.ts:220](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/wordpress-kit/src/types/index.ts#L220)
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:4](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L4)
+[packages/wordpress-kit/src/types/index.ts:4](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/wordpress-kit/src/types/index.ts#L4)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:227](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L227)
+[packages/wordpress-kit/src/types/index.ts:227](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/wordpress-kit/src/types/index.ts#L227)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:30](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L30)
+[packages/wordpress-kit/src/types/index.ts:30](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/wordpress-kit/src/types/index.ts#L30)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:233](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L233)
+[packages/wordpress-kit/src/types/index.ts:233](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/wordpress-kit/src/types/index.ts#L233)
 
 ___
 
@@ -131,7 +131,7 @@ ___
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:25](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L25)
+[packages/wordpress-kit/src/types/index.ts:25](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/wordpress-kit/src/types/index.ts#L25)
 
 ___
 
@@ -141,7 +141,7 @@ ___
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:238](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L238)
+[packages/wordpress-kit/src/types/index.ts:238](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/wordpress-kit/src/types/index.ts#L238)
 
 ___
 
@@ -172,7 +172,7 @@ ___
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:246](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L246)
+[packages/wordpress-kit/src/types/index.ts:246](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/wordpress-kit/src/types/index.ts#L246)
 
 ___
 
@@ -195,7 +195,7 @@ ___
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:37](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L37)
+[packages/wordpress-kit/src/types/index.ts:37](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/wordpress-kit/src/types/index.ts#L37)
 
 ## Variables
 
@@ -207,13 +207,13 @@ Tailwindcss plugin that maps WordPress block editor styles to tailwindcss classe
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/index.ts:24](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/lib/tailwindcssPlugin/index.ts#L24)
+[packages/wordpress-kit/src/lib/tailwindcssPlugin/index.ts:24](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/wordpress-kit/src/lib/tailwindcssPlugin/index.ts#L24)
 
 ## Functions
 
 ### setEdgeHeader
 
-▸ **setEdgeHeader**(`__namedParameters`): `void`
+▸ **setEdgeHeader**(`«destructured»`): `void`
 
 Sets response headers for edge caching.
 
@@ -221,9 +221,9 @@ Sets response headers for edge caching.
 
 | Name | Type |
 | :------ | :------ |
-| `__namedParameters` | `Object` |
-| `__namedParameters.cacheControl?` | `string` |
-| `__namedParameters.res` | `ServerResponse`<`IncomingMessage`\> |
+| `«destructured»` | `Object` |
+| › `cacheControl?` | `string` |
+| › `res` | `ServerResponse`<`IncomingMessage`\> |
 
 #### Returns
 
@@ -231,7 +231,7 @@ Sets response headers for edge caching.
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/setEdgeHeader.ts:11](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/lib/setEdgeHeader.ts#L11)
+[packages/wordpress-kit/src/lib/setEdgeHeader.ts:11](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/wordpress-kit/src/lib/setEdgeHeader.ts#L11)
 
 ___
 
@@ -256,4 +256,4 @@ The current known unique set of surrogate keys.
 
 #### Defined in
 
-packages/cms-kit/dist/src/utils/setSurrogateKeyHeader.d.ts:8
+[packages/cms-kit/src/utils/setSurrogateKeyHeader.ts:17](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/cms-kit/src/utils/setSurrogateKeyHeader.ts#L17)

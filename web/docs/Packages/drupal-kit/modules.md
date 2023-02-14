@@ -39,7 +39,7 @@ a promise containing the data for the JSON:API response
 
 #### Defined in
 
-[drupal-kit/src/lib/defaultFetch.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/drupal-kit/src/lib/defaultFetch.ts#L17)
+[drupal-kit/src/lib/defaultFetch.ts:17](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/drupal-kit/src/lib/defaultFetch.ts#L17)
 
 ___
 
@@ -64,4 +64,4 @@ The current known unique set of surrogate keys.
 
 #### Defined in
 
-cms-kit/dist/src/utils/setSurrogateKeyHeader.d.ts:8
+[cms-kit/src/utils/setSurrogateKeyHeader.ts:17](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/cms-kit/src/utils/setSurrogateKeyHeader.ts#L17)

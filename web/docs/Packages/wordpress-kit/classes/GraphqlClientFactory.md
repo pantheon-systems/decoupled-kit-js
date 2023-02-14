@@ -31,7 +31,7 @@ options - A RequestInit object. PatchedRequestInit
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts:18](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts#L18)
+[packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts:18](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts#L18)
 
 ## Properties
 
@@ -43,7 +43,7 @@ A WordPress GraphQL endpoint
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts#L12)
+[packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts:12](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts#L12)
 
 ___
 
@@ -55,7 +55,7 @@ PatchedRequestInit
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts#L16)
+[packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts:16](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts#L16)
 
 ## Methods
 
@@ -71,4 +71,4 @@ Creates an instance of `graphql-request` GraphQLClient based on the endpoint and
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts:34](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts#L34)
+[packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts:34](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts#L34)

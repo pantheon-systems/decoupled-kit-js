@@ -22,4 +22,4 @@ Object representing a fetch initialization object with an Authorization header
 
 #### Defined in
 
-[drupal-kit/src/types/index.ts:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/drupal-kit/src/types/index.ts#L5)
+[drupal-kit/src/types/index.ts:5](https://github.com/backlineint/decoupled-kit-js/blob/fa402d782/packages/drupal-kit/src/types/index.ts#L5)
