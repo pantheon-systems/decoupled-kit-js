@@ -127,6 +127,7 @@ export const main = async (
 		const answers = await inquirer.prompt(whichGenerators);
 		Array.isArray(answers?.generators) &&
 			generatorsToRun.push(...answers.generators);
+		Array.isArray(answers?.generators) && args._.push(...answers.generators);
 	} else {
 		generatorsToRun.push(...foundGenerators);
 	}
@@ -149,6 +150,8 @@ export const main = async (
 			plopGenerator.prompts as QuestionCollection,
 			args,
 		);
+
+		Object.assign(args, answers);
 		// use the harvested answers (if any) to run the plop actions
 		// aka the meat of the generators
 		const { changes, failures } = await plopGenerator.runActions(answers);

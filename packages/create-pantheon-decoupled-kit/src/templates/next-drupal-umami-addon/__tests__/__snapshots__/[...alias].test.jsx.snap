@@ -1,0 +1,593 @@
+// Vitest Snapshot v1
+
+exports[`<CatchAllRoute /> > should render a page 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+  >
+    <div
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
+    >
+      <nav>
+        <ul
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
+        >
+          <li
+            class="ps-mr-auto"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/articles"
+            >
+              📰 Articles
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <article
+        class="prose lg:prose-xl mt-10 mx-auto"
+      >
+        <h1>
+          Top Level Page
+        </h1>
+        <a
+          class="font-normal"
+          href="/pages"
+        >
+          Pages →
+        </a>
+        <div
+          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+        >
+          <div>
+            <p>
+              This is an about page. It should be available as a top level route like 
+              <code>
+                /about
+              </code>
+              .
+            </p>
+            
+
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
+    >
+      <nav
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/articles"
+            >
+              Articles
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/recipes"
+            >
+              Recipes
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="ps-flex ps-my-4 ps-p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2023 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://www.drupal.org/"
+          >
+            Drupal
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<CatchAllRoute /> > should render a recipe 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+  >
+    <div
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
+    >
+      <nav>
+        <ul
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
+        >
+          <li
+            class="ps-mr-auto"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/articles"
+            >
+              📰 Articles
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <article
+        class="ps-prose lg:ps-prose-xl ps-mt-10 ps-mx-auto h-fit ps-p-4 sm:ps-p-0"
+      >
+        <header>
+          <h1>
+            Guacamole
+          </h1>
+          <div
+            class="ps-flex ps-flex-row ps-justify-between"
+          >
+            <a
+              class="ps-font-normal ps-cursor-pointer"
+            >
+              Back →
+            </a>
+            <span
+              class="text ps-pb-2 ps-pr-3 ps-text-sm text-slate-400"
+            >
+              Snacks
+            </span>
+          </div>
+        </header>
+        <div
+          class="ps-relative ps-max-w-lg ps-mx-auto ps-min-w-full ps-h-[50vh] ps-rounded-lg ps-shadow-lg ps-overflow-hidden ps-mt-12 ps-mb-10"
+        >
+          <img
+            alt="Guacamole"
+            data-nimg="fill"
+            decoding="async"
+            sizes="100vw"
+            src="/_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fguacamole.jpeg&w=1200&q=75"
+            srcset="/_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fguacamole.jpeg&w=320&q=75 320w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fguacamole.jpeg&w=420&q=75 420w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fguacamole.jpeg&w=768&q=75 768w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fguacamole.jpeg&w=1024&q=75 1024w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fguacamole.jpeg&w=1200&q=75 1200w"
+            style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent; padding: 0px; margin: auto;"
+          />
+        </div>
+        <div
+          class="ps-flex ps-flex-col sm:ps-flex-row"
+        >
+          <section
+            class="ps-flex ps-flex-col min-w-fit sm:ps-border-r-2 ps-pr-4"
+          >
+            <h2>
+              Ingredients
+            </h2>
+            <ul>
+              <li>
+                1 Avocado
+              </li>
+              <li>
+                1/2 tomato
+              </li>
+              <li>
+                1/2 onion
+              </li>
+              <li>
+                salt
+              </li>
+              <li>
+                lime
+              </li>
+              <li>
+                black pepper
+              </li>
+              <li>
+                cilantro
+              </li>
+            </ul>
+          </section>
+          <section
+            class="ps-flex ps-flex-col ps-pl-4"
+          >
+            <h2
+              class="ps-ml-4"
+            >
+              Directions
+            </h2>
+            <div>
+              <ol>
+                
+	
+                <li>
+                  Dice the onion and tomato
+                </li>
+                
+	
+                <li>
+                  Scoop the avocado insides into a bowl
+                </li>
+                
+	
+                <li>
+                  Add the tomato, onion, cilantro, lime juice, salt, and pepper
+                </li>
+                
+	
+                <li>
+                  Mix together
+                </li>
+                
+	
+                <li>
+                  Serve
+                </li>
+                
+
+              </ol>
+              
+
+            </div>
+          </section>
+        </div>
+      </article>
+    </main>
+    <footer
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
+    >
+      <nav
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/articles"
+            >
+              Articles
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/recipes"
+            >
+              Recipes
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="ps-flex ps-my-4 ps-p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2023 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://www.drupal.org/"
+          >
+            Drupal
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<CatchAllRoute /> > should render an article 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+  >
+    <div
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
+    >
+      <nav>
+        <ul
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
+        >
+          <li
+            class="ps-mr-auto"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/articles"
+            >
+              📰 Articles
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <article
+        class="ps-prose ps-max-w-none xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-py-4 ps-px-12"
+      >
+        <section
+          class="ps-prose xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto"
+        >
+          <h1>
+            Example Top Level Article
+          </h1>
+          <a
+            class="ps-font-normal ps-cursor-pointer"
+          >
+            Back →
+          </a>
+        </section>
+        <div
+          class="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg ps-shadow-lg [&*>img]:ps-rounded-lg"
+        >
+          <div
+            class="ps-relative ps-mb-10 ps-min-h-[50vh]"
+          >
+            <img
+              alt="Example Top Level Article"
+              data-nimg="fill"
+              decoding="async"
+              sizes="100vw"
+              src="/_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fkitties.jpg&w=1200&q=75"
+              srcset="/_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fkitties.jpg&w=320&q=75 320w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fkitties.jpg&w=420&q=75 420w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fkitties.jpg&w=768&q=75 768w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fkitties.jpg&w=1024&q=75 1024w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2F2022-07%2Fkitties.jpg&w=1200&q=75 1200w"
+              style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
+            />
+          </div>
+        </div>
+        <div
+          class="ps-break-words ps-mt-12 ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto"
+        >
+          <h2>
+            Nonummy Tristique Pulvinar Justo Primis Mi
+          </h2>
+          
+
+          <h3>
+            Ultricies Velit Dapibus Cursus Proin Magnis
+          </h3>
+          
+
+          <p>
+            Est varius. Conubia semper facilisis primis urna nec dis placerat dictum interdum dapibus dictumst phasellus phasellus neque dui posuere habitant nunc. Lorem mollis varius Sagittis Habitasse ultricies euismod euismod. Posuere cubilia platea pede. Viverra habitant praesent ac phasellus quisque vel diam fusce nisl maecenas vestibulum netus torquent Molestie volutpat metus donec cubilia. Ipsum, nec morbi lacinia sem. Nascetur sed. Justo ultrices velit hymenaeos aliquam hymenaeos potenti id.
+          </p>
+          
+
+          <h3>
+            Quis Metus Orci Nibh Dapibus
+          </h3>
+          
+
+          <p>
+            Mus porta parturient leo class. Sapien orci tincidunt mattis torquent. Pretium etiam sapien mauris commodo vestibulum potenti ipsum a, cubilia accumsan adipiscing rutrum. Egestas. Ornare aliquam nibh. Pede placerat praesent nonummy est facilisi sapien porttitor rhoncus molestie torquent. Lorem magnis non et natoque. Ipsum justo leo pharetra hymenaeos praesent pharetra hymenaeos fermentum, semper. Ultrices dolor gravida sit enim, mus. Est nam class, condimentum dis dictumst, ut ut cum magna pulvinar primis vitae imperdiet aliquet vitae id amet, justo curae; et, vitae tempor ultricies maecenas lectus ut faucibus.
+          </p>
+          
+
+          <p>
+            Vehicula. Semper convallis tempus habitant accumsan justo porta auctor Nonummy vestibulum rhoncus nam odio sociosqu blandit ut. Nostra luctus malesuada ac risus torquent massa habitant cubilia Porttitor ad lorem, tempus ridiculus vulputate iaculis. Gravida placerat suscipit. Pulvinar facilisi. Leo. Vivamus lorem diam est. Suscipit rhoncus ullamcorper leo fames viverra. Mattis posuere aliquet congue hymenaeos. Per montes. Litora. Tellus.
+          </p>
+          
+
+          <h3>
+            Convallis Porta Morbi Accumsan
+          </h3>
+          
+
+          <p>
+            In. Viverra habitasse commodo urna pharetra. Eleifend euismod. Justo volutpat, cras eu. Porta sociosqu tortor scelerisque. Orci tincidunt dictum viverra imperdiet phasellus Fames quam diam metus etiam nascetur litora, hac bibendum dictum sociis. Odio fringilla blandit elementum risus hendrerit justo suscipit, in quisque platea mollis vulputate, montes vivamus. Ipsum magnis mus erat cum phasellus at. Aliquet Ad netus vitae interdum fermentum fermentum conubia habitant. Sed penatibus hendrerit enim dictum magna, faucibus sit integer elementum tincidunt laoreet varius odio mollis. Amet vivamus morbi penatibus aptent. Montes, eget litora dictumst.
+          </p>
+          
+
+        </div>
+      </article>
+    </main>
+    <footer
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
+    >
+      <nav
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/articles"
+            >
+              Articles
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/recipes"
+            >
+              Recipes
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="ps-flex ps-my-4 ps-p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2023 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://www.drupal.org/"
+          >
+            Drupal
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

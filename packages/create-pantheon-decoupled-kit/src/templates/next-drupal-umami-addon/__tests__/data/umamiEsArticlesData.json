@@ -1,0 +1,1442 @@
+[
+	{
+		"type": "node--article",
+		"id": "63ed240d-a923-427f-9855-38918bb30b2d",
+		"drupal_internal__nid": 11,
+		"drupal_internal__vid": 22,
+		"langcode": "es",
+		"revision_timestamp": "2022-06-17T15:12:39+00:00",
+		"revision_log": null,
+		"status": true,
+		"title": "Prueba y cultiva tus propias hierbas",
+		"created": "2022-06-17T15:12:39+00:00",
+		"changed": "2022-06-17T15:12:39+00:00",
+		"promote": true,
+		"sticky": false,
+		"default_langcode": false,
+		"revision_translation_affected": true,
+		"moderation_state": "published",
+		"path": {
+			"alias": "/articles/prueba-y-cultiva-tus-propias-hierbas",
+			"pid": 88,
+			"langcode": "es"
+		},
+		"content_translation_source": "und",
+		"content_translation_outdated": false,
+		"body": {
+			"value": "<p>No hay nada como tener tu propio suministro de hierbas frescas a mano y listas para ser usadas mientras cocinas. Tanto si tienes un gran jardín como un pequeño alféizar en la cocina, siempre hay espacio suficiente para un cultivo casero.</p>\n<h2>Exteriores</h2>\n<h3>Menta</h3>\n<p>La menta es una gran planta para cultivo casero ya que es resistente y prácticamente crece en cualquier tipo de tierra. La menta es un cultivo que puede descontrolarse, así que mantenla cercada en una maceta o podría extenderse por todo tu jardín.</p>\n<h3>Salvia</h3>\n<p>Al igual que la menta, la salvia es otra planta que crece de forma descontrolada y puede hacerse con tu jardín si la dejas. Altamente aromática, la planta de la salvia se puede plantar en una maceta o en un lecho de flores con tierra seca. La mejor forma de almacenar las hierbas es secarlas al sol y guardarlas dentro de un recipiente cerrado en un armario fresco y oscuro.</p>\n<h3>Romero</h3>\n<p>La planta del romero crece en forma de hermosos arbustos. Se puede cultivar fácilmente a partir de esquejes. No aguanta las temperaturas muy frías así que hay que plantarla cerca de la casa para protegerlas del frío. Crece bien en maceta ya que le gusta el suelo seco, pero puede sobrevivir también sin problema en el suelo. Si vas a podar el romero para mejorar su forma, guarda las ramas y cuélgalas boca abajo para preservar su sabor y usarlas en tus platos.</p>\n<h2>Interiores</h2>\n<h3>Albahaca</h3>\n<p>Perfecta para un lugar al sol en el alféizar de la ventana de la cocina. La albahaca es una planta anual, así que morirá en otoño por lo que es una buena idea recogerla en verano y secarla. Una vez cortada, la albahaca se mantiene fresca más tiempo si se pone en agua (como se hace con las flores frescas). Otra buena manera de almacenar la albahaca es hacer pesto con ella.</p>\n<h3>Cebollino</h3>\n<p>El cebollino es una hierba versátil, que crece sin problema en interiores. Asegurate de que la planta se riega bien y recibe mucha luz. Recuerda recortar regularmente la planta para prevenir que salgan flores y la planta crezca más.</p>\n<h3>Cilantro</h3>\n<p>El cilantro puede crecer en interiores, pero a diferencia de otras hierbas, no soporta la luz directa del sol. Si tienes una ventana en la cocina orientada al sur no es un buen lugar para colocarla. Aunque no necesita tanta agua como la albahaca, al cilantro no le gusta la tierra seca así que acuérdate de regarla. El cilantro cortado se almacena mejor en el frigorífico.</p>\n",
+			"format": "basic_html",
+			"processed": "<p>No hay nada como tener tu propio suministro de hierbas frescas a mano y listas para ser usadas mientras cocinas. Tanto si tienes un gran jardín como un pequeño alféizar en la cocina, siempre hay espacio suficiente para un cultivo casero.</p>\n<h2>Exteriores</h2>\n<h3>Menta</h3>\n<p>La menta es una gran planta para cultivo casero ya que es resistente y prácticamente crece en cualquier tipo de tierra. La menta es un cultivo que puede descontrolarse, así que mantenla cercada en una maceta o podría extenderse por todo tu jardín.</p>\n<h3>Salvia</h3>\n<p>Al igual que la menta, la salvia es otra planta que crece de forma descontrolada y puede hacerse con tu jardín si la dejas. Altamente aromática, la planta de la salvia se puede plantar en una maceta o en un lecho de flores con tierra seca. La mejor forma de almacenar las hierbas es secarlas al sol y guardarlas dentro de un recipiente cerrado en un armario fresco y oscuro.</p>\n<h3>Romero</h3>\n<p>La planta del romero crece en forma de hermosos arbustos. Se puede cultivar fácilmente a partir de esquejes. No aguanta las temperaturas muy frías así que hay que plantarla cerca de la casa para protegerlas del frío. Crece bien en maceta ya que le gusta el suelo seco, pero puede sobrevivir también sin problema en el suelo. Si vas a podar el romero para mejorar su forma, guarda las ramas y cuélgalas boca abajo para preservar su sabor y usarlas en tus platos.</p>\n<h2>Interiores</h2>\n<h3>Albahaca</h3>\n<p>Perfecta para un lugar al sol en el alféizar de la ventana de la cocina. La albahaca es una planta anual, así que morirá en otoño por lo que es una buena idea recogerla en verano y secarla. Una vez cortada, la albahaca se mantiene fresca más tiempo si se pone en agua (como se hace con las flores frescas). Otra buena manera de almacenar la albahaca es hacer pesto con ella.</p>\n<h3>Cebollino</h3>\n<p>El cebollino es una hierba versátil, que crece sin problema en interiores. Asegurate de que la planta se riega bien y recibe mucha luz. Recuerda recortar regularmente la planta para prevenir que salgan flores y la planta crezca más.</p>\n<h3>Cilantro</h3>\n<p>El cilantro puede crecer en interiores, pero a diferencia de otras hierbas, no soporta la luz directa del sol. Si tienes una ventana en la cocina orientada al sur no es un buen lugar para colocarla. Aunque no necesita tanta agua como la albahaca, al cilantro no le gusta la tierra seca así que acuérdate de regarla. El cilantro cortado se almacena mejor en el frigorífico.</p>\n",
+			"summary": null
+		},
+		"links": {
+			"self": {
+				"href": "https://umami/es/jsonapi/node/article/63ed240d-a923-427f-9855-38918bb30b2d?resourceVersion=id%3A22"
+			}
+		},
+		"node_type": {
+			"type": "node_type--node_type",
+			"id": "5953cddf-1da5-429b-aaf0-6cb4b4627f13",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": "article"
+			}
+		},
+		"revision_uid": {
+			"type": "user--user",
+			"id": "ea8644bd-ae9b-40c0-bac4-d97026ffe2d6",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 6
+			}
+		},
+		"uid": {
+			"type": "user--user",
+			"id": "ea8644bd-ae9b-40c0-bac4-d97026ffe2d6",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 6
+			}
+		},
+		"field_media_image": {
+			"type": "media--image",
+			"id": "1757fe59-89fc-4804-8441-265fd0089608",
+			"drupal_internal__mid": 10,
+			"drupal_internal__vid": 10,
+			"langcode": "es",
+			"revision_created": "2022-06-17T15:12:39+00:00",
+			"revision_log_message": null,
+			"status": true,
+			"name": "Prueba y cultiva tus propias hierbas",
+			"created": "2022-06-17T15:12:39+00:00",
+			"changed": "2022-06-17T15:12:39+00:00",
+			"default_langcode": false,
+			"revision_translation_affected": true,
+			"path": {
+				"alias": null,
+				"pid": null,
+				"langcode": "es"
+			},
+			"content_translation_source": "und",
+			"content_translation_outdated": false,
+			"links": {
+				"self": {
+					"href": "https://umami/es/jsonapi/media/image/1757fe59-89fc-4804-8441-265fd0089608?resourceVersion=id%3A10"
+				}
+			},
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 10
+			},
+			"bundle": {
+				"type": "media_type--media_type",
+				"id": "655a87f8-efe8-4741-ad1f-c37802cc01c4",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": "image"
+				}
+			},
+			"revision_user": null,
+			"uid": {
+				"type": "user--user",
+				"id": "49ba9683-e6a0-4ddc-b2d6-45474f82d166",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 0
+				}
+			},
+			"thumbnail": {
+				"type": "file--file",
+				"id": "12626ff2-5127-4a9c-8829-dc13b1101c2b",
+				"resourceIdObjMeta": {
+					"alt": "Hierbas frescas cortadas incluyendo menta, perejil, tomillo y eneldo.",
+					"title": null,
+					"width": 768,
+					"height": 512,
+					"drupal_internal__target_id": 19
+				}
+			},
+			"field_media_image": {
+				"type": "file--file",
+				"id": "673f25a2-23ad-4b18-8178-17ec3c571d7d",
+				"drupal_internal__fid": 20,
+				"langcode": "en",
+				"filename": "home-grown-herbs.jpg",
+				"uri": {
+					"value": "public://home-grown-herbs.jpg",
+					"url": "/sites/default/files/home-grown-herbs.jpg"
+				},
+				"filemime": "image/jpeg",
+				"filesize": 114984,
+				"status": true,
+				"created": "2022-06-17T15:12:39+00:00",
+				"changed": "2022-06-17T15:12:39+00:00",
+				"links": {
+					"self": {
+						"href": "https://umami/es/jsonapi/file/file/673f25a2-23ad-4b18-8178-17ec3c571d7d"
+					}
+				},
+				"resourceIdObjMeta": {
+					"alt": "Hierbas frescas cortadas incluyendo menta, perejil, tomillo y eneldo.",
+					"title": null,
+					"width": 768,
+					"height": 512,
+					"drupal_internal__target_id": 20
+				},
+				"uid": null,
+				"relationshipNames": ["uid"]
+			},
+			"relationshipNames": [
+				"bundle",
+				"revision_user",
+				"uid",
+				"thumbnail",
+				"field_media_image"
+			]
+		},
+		"field_tags": [
+			{
+				"type": "taxonomy_term--tags",
+				"id": "42c6f1d5-b93a-4fee-a5c1-3b0f389374f0",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 14
+				}
+			},
+			{
+				"type": "taxonomy_term--tags",
+				"id": "78bd0d5b-bc59-4576-b9d8-b135977d1788",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 23
+				}
+			},
+			{
+				"type": "taxonomy_term--tags",
+				"id": "b1bbdfd7-9e07-4e6a-bbb4-3b55a27f6257",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 16
+				}
+			}
+		],
+		"relationshipNames": [
+			"node_type",
+			"revision_uid",
+			"uid",
+			"field_media_image",
+			"field_tags"
+		]
+	},
+	{
+		"type": "node--article",
+		"id": "316f0fa5-06cc-433b-b4d1-4522d7a430de",
+		"drupal_internal__nid": 13,
+		"drupal_internal__vid": 26,
+		"langcode": "es",
+		"revision_timestamp": "2022-06-17T15:12:39+00:00",
+		"revision_log": null,
+		"status": true,
+		"title": "El verdadero negocio para comprar en el supermercado",
+		"created": "2022-06-17T15:12:39+00:00",
+		"changed": "2022-06-17T15:12:39+00:00",
+		"promote": true,
+		"sticky": false,
+		"default_langcode": false,
+		"revision_translation_affected": true,
+		"moderation_state": "published",
+		"path": {
+			"alias": "/articles/el-verdadeo-negocio-para-comprar-en-el-supermercado",
+			"pid": 92,
+			"langcode": "es"
+		},
+		"content_translation_source": "und",
+		"content_translation_outdated": false,
+		"body": {
+			"value": "<p>Puede que esto no le sorprenda, pero su supermercado es un hervidero de marketing caótico diseñado para mejorar sus ganancias y para alentar al consumidor a gastar más de lo que pretendía. Los trucos que emplean todos los supermercados son a veces tácticas sensatas que cualquier minorista debería hacer para mejorar las ventas, pero algunas de ellas  pueden ser más sutiles y menos obvias de lo que cree.</p>\n<p>Debido a los artículos y los documentales de sensibilización, los consumidores retoman este tema con frecuencia y es probable que a los minoristas les resulte más difícil salirse con la suya usando solamente los trucos más obvios. Nos estamos convirtiendo en unos consumidores cada vez más inteligentes y probablemente no hay muchas cosas que nos sorprendan. Pero aquí hay algunos trucos para la venta al por menor que debe tener en cuenta cuando se apresura a realizar la compra semanal en el supermercado.</p>\n<h2>Productos esenciales escondidos</h2>\n<p>La distribución de su supermercado puede tener mucho sentido para usted cuando lleva comprando ahí un tiempo, pero para los nuevos clientes que están intentando encontrar los productos esenciales puede que no tenga ningún sentido. Algunos supermercados han notado como la gente que viene a su tienda a comprar leche, pan o huevos y que, ocultando esos productos esenciales en esquinas recónditas de la tienda, los animan a deambular por ella mientras añaden a la cesta otros productos antes de irse.</p>\n<p>Por supuesto, esto puede ser genial para recordar productos esenciales que de otra forma olvidaría, pero no lo es si lo que quiere es ahorrar unas monedas y solo comprar las cosas a por las que vino, y eso lo los supermercados lo saben.</p>\n<blockquote>\nNuestro consejo: Realice la lista de la compra antes de salir de casa, revisando que necesita y marcándolo en la lista. Le sorprenderá lo que ahorra con el tiempo.\n</blockquote>\n<h2>Descuentos por número</h2>\n<p>Compre uno y llévese otro gratis; dos por 2&pound; y ofertas en comida. Todo esto descuentos parecen una buena oportunidad, pero en algunos casos son productos vendidos a pérdidas con el único objetivo de atraerle y que compre más cosas mientras está allí. En otros casos, las ofertas para múltiples productos o packs de tamaño específico pueden parecer una ganga hasta que se comparan los precios con marcas similares u otros tamaños de la misma marca. Estos descuentos pueden hacerle pensar que paga menos pero es menos por algo que no necesita e incluso puede terminar pagando más por el artículo. Recuerde, los supermercados saben que a menudo tiene prisa y no tiene tiempo suficiente de considerar la imagen completa del producto.</p>\n<blockquote>\n<p>Nuestro consejo: No se apresure y tómese el tiempo necesario para leer la letra pequeña. La letra grande le atraerá pero en la letra pequeña encontrará el precio por cada 100g de producto o el precio por litro y se sorprenderá de la de veces que no existe tal oferta o incluso que es más caro que el paquete pequeño.</p>\n</blockquote>\n<h2>Entendiendo nuestros hábitos de compra</h2>\n<p>Los productos más baratos del supermercado casi siempre se colocan en la parte baja de las estanterías, donde tendrá que agacharse para tomarlos. También es posible que no pueda leer fácilmente el precio en el ticket. La mayoría de la gente selecciona los productos de la parte media de las estanterías dado que es más fácil y rápido. Esos productos son los que tienen mayores beneficios y son los que el supermercado quiere que compre.</p>\n<p>La distribución de música, colores y tipos de productos está decidido en base a unos principios establecidos por expertos en personas: psicólogos y expertos en comportamiento que saben cómo pensamos. Y así, el comprador inteligente sin duda podrá aprovechar las grandes ofertas en su tienda semanal, pero se necesita un poco de tiempo y esfuerzo para ser más conscientes de lo que se nos incita a escoger en los pasillos.</p>\n",
+			"format": "basic_html",
+			"processed": "<p>Puede que esto no le sorprenda, pero su supermercado es un hervidero de marketing caótico diseñado para mejorar sus ganancias y para alentar al consumidor a gastar más de lo que pretendía. Los trucos que emplean todos los supermercados son a veces tácticas sensatas que cualquier minorista debería hacer para mejorar las ventas, pero algunas de ellas  pueden ser más sutiles y menos obvias de lo que cree.</p>\n<p>Debido a los artículos y los documentales de sensibilización, los consumidores retoman este tema con frecuencia y es probable que a los minoristas les resulte más difícil salirse con la suya usando solamente los trucos más obvios. Nos estamos convirtiendo en unos consumidores cada vez más inteligentes y probablemente no hay muchas cosas que nos sorprendan. Pero aquí hay algunos trucos para la venta al por menor que debe tener en cuenta cuando se apresura a realizar la compra semanal en el supermercado.</p>\n<h2>Productos esenciales escondidos</h2>\n<p>La distribución de su supermercado puede tener mucho sentido para usted cuando lleva comprando ahí un tiempo, pero para los nuevos clientes que están intentando encontrar los productos esenciales puede que no tenga ningún sentido. Algunos supermercados han notado como la gente que viene a su tienda a comprar leche, pan o huevos y que, ocultando esos productos esenciales en esquinas recónditas de la tienda, los animan a deambular por ella mientras añaden a la cesta otros productos antes de irse.</p>\n<p>Por supuesto, esto puede ser genial para recordar productos esenciales que de otra forma olvidaría, pero no lo es si lo que quiere es ahorrar unas monedas y solo comprar las cosas a por las que vino, y eso lo los supermercados lo saben.</p>\n<blockquote><p>\nNuestro consejo: Realice la lista de la compra antes de salir de casa, revisando que necesita y marcándolo en la lista. Le sorprenderá lo que ahorra con el tiempo.\n</p></blockquote>\n<h2>Descuentos por número</h2>\n<p>Compre uno y llévese otro gratis; dos por 2£ y ofertas en comida. Todo esto descuentos parecen una buena oportunidad, pero en algunos casos son productos vendidos a pérdidas con el único objetivo de atraerle y que compre más cosas mientras está allí. En otros casos, las ofertas para múltiples productos o packs de tamaño específico pueden parecer una ganga hasta que se comparan los precios con marcas similares u otros tamaños de la misma marca. Estos descuentos pueden hacerle pensar que paga menos pero es menos por algo que no necesita e incluso puede terminar pagando más por el artículo. Recuerde, los supermercados saben que a menudo tiene prisa y no tiene tiempo suficiente de considerar la imagen completa del producto.</p>\n<blockquote><p>Nuestro consejo: No se apresure y tómese el tiempo necesario para leer la letra pequeña. La letra grande le atraerá pero en la letra pequeña encontrará el precio por cada 100g de producto o el precio por litro y se sorprenderá de la de veces que no existe tal oferta o incluso que es más caro que el paquete pequeño.</p>\n</blockquote>\n<h2>Entendiendo nuestros hábitos de compra</h2>\n<p>Los productos más baratos del supermercado casi siempre se colocan en la parte baja de las estanterías, donde tendrá que agacharse para tomarlos. También es posible que no pueda leer fácilmente el precio en el ticket. La mayoría de la gente selecciona los productos de la parte media de las estanterías dado que es más fácil y rápido. Esos productos son los que tienen mayores beneficios y son los que el supermercado quiere que compre.</p>\n<p>La distribución de música, colores y tipos de productos está decidido en base a unos principios establecidos por expertos en personas: psicólogos y expertos en comportamiento que saben cómo pensamos. Y así, el comprador inteligente sin duda podrá aprovechar las grandes ofertas en su tienda semanal, pero se necesita un poco de tiempo y esfuerzo para ser más conscientes de lo que se nos incita a escoger en los pasillos.</p>\n",
+			"summary": null
+		},
+		"links": {
+			"self": {
+				"href": "https://umami/es/jsonapi/node/article/316f0fa5-06cc-433b-b4d1-4522d7a430de?resourceVersion=id%3A26"
+			}
+		},
+		"node_type": {
+			"type": "node_type--node_type",
+			"id": "5953cddf-1da5-429b-aaf0-6cb4b4627f13",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": "article"
+			}
+		},
+		"revision_uid": {
+			"type": "user--user",
+			"id": "83f638cf-3023-4463-8275-25976f2cbded",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 7
+			}
+		},
+		"uid": {
+			"type": "user--user",
+			"id": "83f638cf-3023-4463-8275-25976f2cbded",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 7
+			}
+		},
+		"field_media_image": {
+			"type": "media--image",
+			"id": "2efb5d00-02cd-49d0-9e9f-37c592bb8346",
+			"drupal_internal__mid": 12,
+			"drupal_internal__vid": 12,
+			"langcode": "es",
+			"revision_created": "2022-06-17T15:12:39+00:00",
+			"revision_log_message": null,
+			"status": true,
+			"name": "El verdadero negocio para comprar en el supermercado",
+			"created": "2022-06-17T15:12:39+00:00",
+			"changed": "2022-06-17T15:12:39+00:00",
+			"default_langcode": false,
+			"revision_translation_affected": true,
+			"path": {
+				"alias": null,
+				"pid": null,
+				"langcode": "es"
+			},
+			"content_translation_source": "und",
+			"content_translation_outdated": false,
+			"links": {
+				"self": {
+					"href": "https://umami/es/jsonapi/media/image/2efb5d00-02cd-49d0-9e9f-37c592bb8346?resourceVersion=id%3A12"
+				}
+			},
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 12
+			},
+			"bundle": {
+				"type": "media_type--media_type",
+				"id": "655a87f8-efe8-4741-ad1f-c37802cc01c4",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": "image"
+				}
+			},
+			"revision_user": null,
+			"uid": {
+				"type": "user--user",
+				"id": "49ba9683-e6a0-4ddc-b2d6-45474f82d166",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 0
+				}
+			},
+			"thumbnail": {
+				"type": "file--file",
+				"id": "fe5ff959-9798-4145-9d70-431b4e2eef25",
+				"resourceIdObjMeta": {
+					"alt": "Verduras de hoja verde presentadas en la estantería del supermercado.",
+					"title": null,
+					"width": 768,
+					"height": 512,
+					"drupal_internal__target_id": 23
+				}
+			},
+			"field_media_image": {
+				"type": "file--file",
+				"id": "0c7a3f50-39cb-4f33-adbd-3c88412a143f",
+				"drupal_internal__fid": 24,
+				"langcode": "en",
+				"filename": "supermarket-savvy-umami.jpg",
+				"uri": {
+					"value": "public://supermarket-savvy-umami.jpg",
+					"url": "/sites/default/files/supermarket-savvy-umami.jpg"
+				},
+				"filemime": "image/jpeg",
+				"filesize": 100645,
+				"status": true,
+				"created": "2022-06-17T15:12:39+00:00",
+				"changed": "2022-06-17T15:12:39+00:00",
+				"links": {
+					"self": {
+						"href": "https://umami/es/jsonapi/file/file/0c7a3f50-39cb-4f33-adbd-3c88412a143f"
+					}
+				},
+				"resourceIdObjMeta": {
+					"alt": "Verduras de hoja verde presentadas en la estantería del supermercado.",
+					"title": null,
+					"width": 768,
+					"height": 512,
+					"drupal_internal__target_id": 24
+				},
+				"uid": null,
+				"relationshipNames": ["uid"]
+			},
+			"relationshipNames": [
+				"bundle",
+				"revision_user",
+				"uid",
+				"thumbnail",
+				"field_media_image"
+			]
+		},
+		"field_tags": [
+			{
+				"type": "taxonomy_term--tags",
+				"id": "f894dde9-d3a6-401f-b477-02d22652e808",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 26
+				}
+			},
+			{
+				"type": "taxonomy_term--tags",
+				"id": "f9405db2-360e-4e87-8248-675944bc039f",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 24
+				}
+			}
+		],
+		"relationshipNames": [
+			"node_type",
+			"revision_uid",
+			"uid",
+			"field_media_image",
+			"field_tags"
+		]
+	},
+	{
+		"type": "node--article",
+		"id": "f3496ed2-13a2-4f5c-a360-d05d873ddb1a",
+		"drupal_internal__nid": 16,
+		"drupal_internal__vid": 32,
+		"langcode": "es",
+		"revision_timestamp": "2022-06-17T15:12:39+00:00",
+		"revision_log": null,
+		"status": true,
+		"title": "Percances al hornear - nuestros consejos para solucionar los problemas",
+		"created": "2022-06-17T15:12:39+00:00",
+		"changed": "2022-06-17T15:12:39+00:00",
+		"promote": true,
+		"sticky": false,
+		"default_langcode": false,
+		"revision_translation_affected": true,
+		"moderation_state": "published",
+		"path": {
+			"alias": "/articles/percances-al-hornear-nuestros-consejos-para-solucionar-problemas",
+			"pid": 98,
+			"langcode": "es"
+		},
+		"content_translation_source": "und",
+		"content_translation_outdated": false,
+		"body": {
+			"value": "<p>Sigues la receta, pesas todos tus ingredientes, usas la temperatura correcta del horno y te tomas tu tiempo y aún así, tu horneado sale con un fondo empapado, no se eleva o simplemente tiene un sabor horrible. Hemos creado una lista de los problemas de horneado más frustrantes y las técnicas que puedes utilizar para tratar de evitarlos.</p>\n<h2>Tu pastel no subió</h2>\n<p>Bajo ninguna circunstancia abras la puerta del horno en medio del tiempo de cocción. El calor saldrá, destruyendo la reacción química que tiene lugar dentro de tu pastel. Tu agente elevador necesita el calor para activarse y podrías matarlo.</p>\n<h2>Tu pastel es chicloso y correoso</h2>\n<p>Si tu esponja ligero tiene la consistencia de un neumático de repuesto, es posible que hayas mezclado demasiado la masa. Mantén la ligereza dentro de la mezcla del bizcocho añadiendo cuidadosa y suavemente los ingredientes y sólo hasta el punto en que se mezclen. Si se bate demasiado, el gluten de la harina comenzará a salir y estarás haciendo pan en lugar de pastel.</p>\n<h2>Tus galletas se quemaron</h2>\n<p>Un gran truco es usar utensilios para hornear de colores claros, en lugar de negros. Es menos probable que absorba el calor y lo transfiera a la parte inferior de tus galletas. Usar papel para hornear también ayudará con esto. Además, usar demasiada azúcar puede provocar que tus galletas se oscurezcan demasiado y les dé un aspecto caramelizado</p>\n<h2>Parte superior de tu pastel o pan partida</h2>\n<p>Es muy probable que tu horno esté demasiado caliente. Si sospechas que tu horno no mantiene la temperatura correcta, invierte en un termómetro y revísalo regularmente durante la cocción. Con el pan, mezclar la masa demasiado puede resultar en una parte superior agrietada o partida.</p>\n<h2>El temido fondo empapado</h2>\n<p>Como se mencionó anteriormente, el color de tu sartén es importante. En este caso, una sartén oscura aumentará el calor en la parte inferior y le dará a esa parte inferior el crujiente que deseas. Si estás usando hojaldre, realmente necesitas pre-hornearlo. Poner tu pastel hacia la parte inferior del horno aumentará el calor que llega a esa parte.</p>\n<h2>Tu pastel se ha encogido</h2>\n<p>Simplemente intentaste hacer que se estirara demasiado. Al laminar, no intentes hacerla demasiado delgada o demasiado grande y al colocarla sobre la sartén, permite que se asiente por sí sola sin estirarla para que encaje. O simplemente añade más masa - ¡a todo el mundo le encantan los pasteles de todos modos!</p>\n",
+			"format": "basic_html",
+			"processed": "<p>Sigues la receta, pesas todos tus ingredientes, usas la temperatura correcta del horno y te tomas tu tiempo y aún así, tu horneado sale con un fondo empapado, no se eleva o simplemente tiene un sabor horrible. Hemos creado una lista de los problemas de horneado más frustrantes y las técnicas que puedes utilizar para tratar de evitarlos.</p>\n<h2>Tu pastel no subió</h2>\n<p>Bajo ninguna circunstancia abras la puerta del horno en medio del tiempo de cocción. El calor saldrá, destruyendo la reacción química que tiene lugar dentro de tu pastel. Tu agente elevador necesita el calor para activarse y podrías matarlo.</p>\n<h2>Tu pastel es chicloso y correoso</h2>\n<p>Si tu esponja ligero tiene la consistencia de un neumático de repuesto, es posible que hayas mezclado demasiado la masa. Mantén la ligereza dentro de la mezcla del bizcocho añadiendo cuidadosa y suavemente los ingredientes y sólo hasta el punto en que se mezclen. Si se bate demasiado, el gluten de la harina comenzará a salir y estarás haciendo pan en lugar de pastel.</p>\n<h2>Tus galletas se quemaron</h2>\n<p>Un gran truco es usar utensilios para hornear de colores claros, en lugar de negros. Es menos probable que absorba el calor y lo transfiera a la parte inferior de tus galletas. Usar papel para hornear también ayudará con esto. Además, usar demasiada azúcar puede provocar que tus galletas se oscurezcan demasiado y les dé un aspecto caramelizado</p>\n<h2>Parte superior de tu pastel o pan partida</h2>\n<p>Es muy probable que tu horno esté demasiado caliente. Si sospechas que tu horno no mantiene la temperatura correcta, invierte en un termómetro y revísalo regularmente durante la cocción. Con el pan, mezclar la masa demasiado puede resultar en una parte superior agrietada o partida.</p>\n<h2>El temido fondo empapado</h2>\n<p>Como se mencionó anteriormente, el color de tu sartén es importante. En este caso, una sartén oscura aumentará el calor en la parte inferior y le dará a esa parte inferior el crujiente que deseas. Si estás usando hojaldre, realmente necesitas pre-hornearlo. Poner tu pastel hacia la parte inferior del horno aumentará el calor que llega a esa parte.</p>\n<h2>Tu pastel se ha encogido</h2>\n<p>Simplemente intentaste hacer que se estirara demasiado. Al laminar, no intentes hacerla demasiado delgada o demasiado grande y al colocarla sobre la sartén, permite que se asiente por sí sola sin estirarla para que encaje. O simplemente añade más masa - ¡a todo el mundo le encantan los pasteles de todos modos!</p>\n",
+			"summary": null
+		},
+		"links": {
+			"self": {
+				"href": "https://umami/es/jsonapi/node/article/f3496ed2-13a2-4f5c-a360-d05d873ddb1a?resourceVersion=id%3A32"
+			}
+		},
+		"node_type": {
+			"type": "node_type--node_type",
+			"id": "5953cddf-1da5-429b-aaf0-6cb4b4627f13",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": "article"
+			}
+		},
+		"revision_uid": {
+			"type": "user--user",
+			"id": "49bcfd7c-91ce-4c58-a259-30f8e178b385",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 5
+			}
+		},
+		"uid": {
+			"type": "user--user",
+			"id": "49bcfd7c-91ce-4c58-a259-30f8e178b385",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 5
+			}
+		},
+		"field_media_image": {
+			"type": "media--image",
+			"id": "b70975fd-18dc-4046-a8af-d2ebab325355",
+			"drupal_internal__mid": 15,
+			"drupal_internal__vid": 15,
+			"langcode": "es",
+			"revision_created": "2022-06-17T15:12:39+00:00",
+			"revision_log_message": null,
+			"status": true,
+			"name": "Percances al hornear - nuestros consejos para solucionar los problemas",
+			"created": "2022-06-17T15:12:39+00:00",
+			"changed": "2022-06-17T15:12:39+00:00",
+			"default_langcode": false,
+			"revision_translation_affected": true,
+			"path": {
+				"alias": null,
+				"pid": null,
+				"langcode": "es"
+			},
+			"content_translation_source": "und",
+			"content_translation_outdated": false,
+			"links": {
+				"self": {
+					"href": "https://umami/es/jsonapi/media/image/b70975fd-18dc-4046-a8af-d2ebab325355?resourceVersion=id%3A15"
+				}
+			},
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 15
+			},
+			"bundle": {
+				"type": "media_type--media_type",
+				"id": "655a87f8-efe8-4741-ad1f-c37802cc01c4",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": "image"
+				}
+			},
+			"revision_user": null,
+			"uid": {
+				"type": "user--user",
+				"id": "49ba9683-e6a0-4ddc-b2d6-45474f82d166",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 0
+				}
+			},
+			"thumbnail": {
+				"type": "file--file",
+				"id": "4b6b1cc8-ca89-4e12-aed9-eb80146e1adc",
+				"resourceIdObjMeta": {
+					"alt": "Un delicioso brownie de chocolate",
+					"title": null,
+					"width": 768,
+					"height": 511,
+					"drupal_internal__target_id": 29
+				}
+			},
+			"field_media_image": {
+				"type": "file--file",
+				"id": "e8f86cdb-6f3a-4519-83ca-4b88630a16bc",
+				"drupal_internal__fid": 30,
+				"langcode": "en",
+				"filename": "chocolate-brownie-umami.jpg",
+				"uri": {
+					"value": "public://chocolate-brownie-umami.jpg",
+					"url": "/sites/default/files/chocolate-brownie-umami.jpg"
+				},
+				"filemime": "image/jpeg",
+				"filesize": 30431,
+				"status": true,
+				"created": "2022-06-17T15:12:39+00:00",
+				"changed": "2022-06-17T15:12:39+00:00",
+				"links": {
+					"self": {
+						"href": "https://umami/es/jsonapi/file/file/e8f86cdb-6f3a-4519-83ca-4b88630a16bc"
+					}
+				},
+				"resourceIdObjMeta": {
+					"alt": "Un delicioso brownie de chocolate",
+					"title": null,
+					"width": 768,
+					"height": 511,
+					"drupal_internal__target_id": 30
+				},
+				"uid": null,
+				"relationshipNames": ["uid"]
+			},
+			"relationshipNames": [
+				"bundle",
+				"revision_user",
+				"uid",
+				"thumbnail",
+				"field_media_image"
+			]
+		},
+		"field_tags": [
+			{
+				"type": "taxonomy_term--tags",
+				"id": "72fbfdd5-91ca-45fe-98ed-d4aff2a4a572",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 3
+				}
+			},
+			{
+				"type": "taxonomy_term--tags",
+				"id": "4aa7046b-d06e-43ed-9884-6a4c75494f0b",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 17
+				}
+			}
+		],
+		"relationshipNames": [
+			"node_type",
+			"revision_uid",
+			"uid",
+			"field_media_image",
+			"field_tags"
+		]
+	},
+	{
+		"type": "node--article",
+		"id": "1c8b8531-e6f3-4f6c-aa34-4360c51c2844",
+		"drupal_internal__nid": 17,
+		"drupal_internal__vid": 34,
+		"langcode": "es",
+		"revision_timestamp": "2022-06-17T15:12:39+00:00",
+		"revision_log": null,
+		"status": true,
+		"title": "Salta los espíritus con deliciosos cócteles sin alcohol",
+		"created": "2022-06-17T15:12:39+00:00",
+		"changed": "2022-06-17T15:12:39+00:00",
+		"promote": true,
+		"sticky": false,
+		"default_langcode": false,
+		"revision_translation_affected": true,
+		"moderation_state": "published",
+		"path": {
+			"alias": "/articles/salta-los-espiritus-con-deliciosos-cocteles-sin-alcohol",
+			"pid": 100,
+			"langcode": "es"
+		},
+		"content_translation_source": "und",
+		"content_translation_outdated": false,
+		"body": {
+			"value": "<p>¿Tener un cóctel? Entonces, ¿por qué no ofrecer algo tan especial para aquellos que no beben alcohol pero quieren unirse a la diversión? Después de todo, ¿qué cóctel está completo sin esos increíbles vasos de frutas mixtas, colores brillantes y, por supuesto, las pequeñas sombrillas? Haga su esfuerzo por el medio ambiente tirando las pajitas de plástico y adquiera algunas alternativas de gran apariencia, hechas de vidrio, metal o incluso bambú. No se olvide de las clásicas copas de cóctel y los modernos vasos para dar vida a estas recetas.</p>\n<p>Entonces, tome la batidora, sáltese los espíritus y mezcle estos cócteles sin alcohol deliciosamente refrescantes que no le dejarán a usted ni a sus invitados, carentes de sabor o estilo.</p>\n<h2>Mango-licious</h2>\n<p>Esta deliciosa bebida tiene un sabor sofisticado que es ideal para adultos y su color es perfecto para una barbacoa al final del verano.</p>\n<h3>Instrucciones:</h3>\n<p>Dale unas rodajas de pepino y un poco de miel en una coctelera. Agregue una medida de espíritu de puré de mango y el jugo de una lima. Añadir un poco de hielo y agitar para todo lo que vales. Usando un colador, vierta en un vaso de lujo y cubra con cerveza de jengibre. Unas pocas rodajas de limón y ya está listo para ir.</p>\n<h2>Mocky Mojito</h2>\n<p>No hay nada como un Mojito en un día caluroso y esta versión es ideal para un relajante momento de felicidad en el jardín.</p>\n<h3>Instrucciones:</h3>\n<p>Mezcle azúcar, un poco de limón y hojas de menta en un vaso alto, luego agregue unos trozos de hielo, cubra con el jugo de una naranja sanguínea (para el efecto de la puesta del sol) y agregue un chorrito de agua de soda. Agrega unas cuantas ramitas de menta para un look auténtico.</p>\n<h2>Fresa Sin Pecado Martini</h2>\n<p>Las fresas agregan un hermoso y rico rojo a esta cola de burla, mientras que el jengibre le da una pequeña patada. Servir en un vaso de martini adecuado, pero tal vez evitar las aceitunas.</p>\n<h3>Instrucciones:</h3>\n<p>Mezcle una fresa con un guión, una cerveza de jengibre y un poco de jarabe de azúcar en una coctelera. Añadir una tapa llena de flor de saúco y unas cuantas hojas de menta. Poner una rodaja de naranja y limón y agitar con hielo. Cuela en tu copa y disfruta del dulce sabor a fresa.</p>\n<h2>Reina del Coco</h2>\n<p>Loca por los cocos? Entonces te encantará el sabor refrescante de este cóctel a base de coco. Los sabores dan un toque tropical, mientras que el aspecto es la sofisticación del adulto.</p>\n<h3>Instrucciones:</h3>\n<p>Agregue pepinos en rodajas, el jugo de una lima o dos, y algunas hojas de menta a una jarra de agua de coco y deje enfriar e infundir durante unas horas en la nevera. También puedes agregar un poco de azúcar si te apetece este dulce. Para servir vierte en vasos llenos de hielo con rodajas de pepino y hojas de menta. Sencilla y hermosa.</p>\n",
+			"format": "basic_html",
+			"processed": "<p>¿Tener un cóctel? Entonces, ¿por qué no ofrecer algo tan especial para aquellos que no beben alcohol pero quieren unirse a la diversión? Después de todo, ¿qué cóctel está completo sin esos increíbles vasos de frutas mixtas, colores brillantes y, por supuesto, las pequeñas sombrillas? Haga su esfuerzo por el medio ambiente tirando las pajitas de plástico y adquiera algunas alternativas de gran apariencia, hechas de vidrio, metal o incluso bambú. No se olvide de las clásicas copas de cóctel y los modernos vasos para dar vida a estas recetas.</p>\n<p>Entonces, tome la batidora, sáltese los espíritus y mezcle estos cócteles sin alcohol deliciosamente refrescantes que no le dejarán a usted ni a sus invitados, carentes de sabor o estilo.</p>\n<h2>Mango-licious</h2>\n<p>Esta deliciosa bebida tiene un sabor sofisticado que es ideal para adultos y su color es perfecto para una barbacoa al final del verano.</p>\n<h3>Instrucciones:</h3>\n<p>Dale unas rodajas de pepino y un poco de miel en una coctelera. Agregue una medida de espíritu de puré de mango y el jugo de una lima. Añadir un poco de hielo y agitar para todo lo que vales. Usando un colador, vierta en un vaso de lujo y cubra con cerveza de jengibre. Unas pocas rodajas de limón y ya está listo para ir.</p>\n<h2>Mocky Mojito</h2>\n<p>No hay nada como un Mojito en un día caluroso y esta versión es ideal para un relajante momento de felicidad en el jardín.</p>\n<h3>Instrucciones:</h3>\n<p>Mezcle azúcar, un poco de limón y hojas de menta en un vaso alto, luego agregue unos trozos de hielo, cubra con el jugo de una naranja sanguínea (para el efecto de la puesta del sol) y agregue un chorrito de agua de soda. Agrega unas cuantas ramitas de menta para un look auténtico.</p>\n<h2>Fresa Sin Pecado Martini</h2>\n<p>Las fresas agregan un hermoso y rico rojo a esta cola de burla, mientras que el jengibre le da una pequeña patada. Servir en un vaso de martini adecuado, pero tal vez evitar las aceitunas.</p>\n<h3>Instrucciones:</h3>\n<p>Mezcle una fresa con un guión, una cerveza de jengibre y un poco de jarabe de azúcar en una coctelera. Añadir una tapa llena de flor de saúco y unas cuantas hojas de menta. Poner una rodaja de naranja y limón y agitar con hielo. Cuela en tu copa y disfruta del dulce sabor a fresa.</p>\n<h2>Reina del Coco</h2>\n<p>Loca por los cocos? Entonces te encantará el sabor refrescante de este cóctel a base de coco. Los sabores dan un toque tropical, mientras que el aspecto es la sofisticación del adulto.</p>\n<h3>Instrucciones:</h3>\n<p>Agregue pepinos en rodajas, el jugo de una lima o dos, y algunas hojas de menta a una jarra de agua de coco y deje enfriar e infundir durante unas horas en la nevera. También puedes agregar un poco de azúcar si te apetece este dulce. Para servir vierte en vasos llenos de hielo con rodajas de pepino y hojas de menta. Sencilla y hermosa.</p>\n",
+			"summary": null
+		},
+		"links": {
+			"self": {
+				"href": "https://umami/es/jsonapi/node/article/1c8b8531-e6f3-4f6c-aa34-4360c51c2844?resourceVersion=id%3A34"
+			}
+		},
+		"node_type": {
+			"type": "node_type--node_type",
+			"id": "5953cddf-1da5-429b-aaf0-6cb4b4627f13",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": "article"
+			}
+		},
+		"revision_uid": {
+			"type": "user--user",
+			"id": "83f638cf-3023-4463-8275-25976f2cbded",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 7
+			}
+		},
+		"uid": {
+			"type": "user--user",
+			"id": "83f638cf-3023-4463-8275-25976f2cbded",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 7
+			}
+		},
+		"field_media_image": {
+			"type": "media--image",
+			"id": "f72e3b35-c685-4cca-8e8e-e5be37e50bbe",
+			"drupal_internal__mid": 16,
+			"drupal_internal__vid": 16,
+			"langcode": "es",
+			"revision_created": "2022-06-17T15:12:39+00:00",
+			"revision_log_message": null,
+			"status": true,
+			"name": "Salta los espíritus con deliciosos cócteles sin alcohol",
+			"created": "2022-06-17T15:12:39+00:00",
+			"changed": "2022-06-17T15:12:39+00:00",
+			"default_langcode": false,
+			"revision_translation_affected": true,
+			"path": {
+				"alias": null,
+				"pid": null,
+				"langcode": "es"
+			},
+			"content_translation_source": "und",
+			"content_translation_outdated": false,
+			"links": {
+				"self": {
+					"href": "https://umami/es/jsonapi/media/image/f72e3b35-c685-4cca-8e8e-e5be37e50bbe?resourceVersion=id%3A16"
+				}
+			},
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 16
+			},
+			"bundle": {
+				"type": "media_type--media_type",
+				"id": "655a87f8-efe8-4741-ad1f-c37802cc01c4",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": "image"
+				}
+			},
+			"revision_user": null,
+			"uid": {
+				"type": "user--user",
+				"id": "49ba9683-e6a0-4ddc-b2d6-45474f82d166",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 0
+				}
+			},
+			"thumbnail": {
+				"type": "file--file",
+				"id": "b671abb9-f5cf-4981-aba0-85a35392d442",
+				"resourceIdObjMeta": {
+					"alt": "Mocktail de mojito fresco con guarnición de hojas de menta, hielo y lima en rodajas",
+					"title": null,
+					"width": 768,
+					"height": 512,
+					"drupal_internal__target_id": 31
+				}
+			},
+			"field_media_image": {
+				"type": "file--file",
+				"id": "0d20e9b4-150f-4f9c-9473-e019935aad54",
+				"drupal_internal__fid": 32,
+				"langcode": "en",
+				"filename": "mojito-mocktail.jpg",
+				"uri": {
+					"value": "public://mojito-mocktail.jpg",
+					"url": "/sites/default/files/mojito-mocktail.jpg"
+				},
+				"filemime": "image/jpeg",
+				"filesize": 49938,
+				"status": true,
+				"created": "2022-06-17T15:12:39+00:00",
+				"changed": "2022-06-17T15:12:39+00:00",
+				"links": {
+					"self": {
+						"href": "https://umami/es/jsonapi/file/file/0d20e9b4-150f-4f9c-9473-e019935aad54"
+					}
+				},
+				"resourceIdObjMeta": {
+					"alt": "Mocktail de mojito fresco con guarnición de hojas de menta, hielo y lima en rodajas",
+					"title": null,
+					"width": 768,
+					"height": 512,
+					"drupal_internal__target_id": 32
+				},
+				"uid": null,
+				"relationshipNames": ["uid"]
+			},
+			"relationshipNames": [
+				"bundle",
+				"revision_user",
+				"uid",
+				"thumbnail",
+				"field_media_image"
+			]
+		},
+		"field_tags": [
+			{
+				"type": "taxonomy_term--tags",
+				"id": "712d3132-17d5-44b1-94e4-a08efbd5ebc6",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 1
+				}
+			},
+			{
+				"type": "taxonomy_term--tags",
+				"id": "b6fe0e0a-78c3-45f3-8958-c649b07765a8",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 12
+				}
+			},
+			{
+				"type": "taxonomy_term--tags",
+				"id": "be834bda-84f4-4f4a-85ad-33b82422c56e",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 20
+				}
+			},
+			{
+				"type": "taxonomy_term--tags",
+				"id": "da7a6b17-bd67-4032-8de2-8e332d59446e",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 8
+				}
+			},
+			{
+				"type": "taxonomy_term--tags",
+				"id": "b5537932-50b3-40f7-8bb4-3e652207fa3a",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 11
+				}
+			}
+		],
+		"relationshipNames": [
+			"node_type",
+			"revision_uid",
+			"uid",
+			"field_media_image",
+			"field_tags"
+		]
+	},
+	{
+		"type": "node--article",
+		"id": "ad6d9ce2-9994-4bad-92d4-5042470082a9",
+		"drupal_internal__nid": 18,
+		"drupal_internal__vid": 36,
+		"langcode": "es",
+		"revision_timestamp": "2022-06-17T15:12:39+00:00",
+		"revision_log": null,
+		"status": true,
+		"title": "Dale a tu avena el cambio de imagen definitivo",
+		"created": "2022-06-17T15:12:39+00:00",
+		"changed": "2022-06-17T15:12:39+00:00",
+		"promote": true,
+		"sticky": false,
+		"default_langcode": false,
+		"revision_translation_affected": true,
+		"moderation_state": "published",
+		"path": {
+			"alias": "/articles/dale-a-tu-avena-el-cambio-de-imagen-definitivo",
+			"pid": 102,
+			"langcode": "es"
+		},
+		"content_translation_source": "und",
+		"content_translation_outdated": false,
+		"body": {
+			"value": "<p>Es vegano, libre de gluten, bajo en grasa, alto en fibra e incluso puede reducir el colesterol, pero la harina de avena es aburrida, ¿verdad? Pero, antes de descartar ese aburrido jarrón de avena, es posible que desee inspirarse en nuestras ideas principales que harán que su avena sea insípida a creativa en sólo unos minutos.</p>\n<p>Llámelo avena, avena, cereal caliente o simplemente avena, es amado en todo el mundo; pero recientemente, la avena humilde está recibiendo un cambio de imagen funky. Atrás quedaron los días de tartas de desayuno pesadas y gruesas, porque la avena se sirve como una deliciosa comida que puede adaptarse a cualquier momento del día. Están surgiendo las modernas barras de avena para construir su propia harina de avena, y brindan la mejor experiencia de avena. Los comensales pueden elegir su avena para hacerla con leche o agua y luego ir a la ciudad con sus ingredientes favoritos: dulce, salado o incluso picante.</p>\n<p>Suena genial, ¿no es así? Así que antes de cerrar la puerta de la alacena en ese frasco de avena de aspecto insípido, creemos que deberías probar algunas de estas deliciosas ideas para inspirar tu propio cambio de imagen.</p>\n<h2>Frutas secas empapadas</h2>\n<p>A veces, las frutas secas simples pueden ser un poco blandas y ásperas cuando se combinan con avena cremosa. Pero si simplemente remoja su fruta seca en jugo de naranja durante la noche, desarrollarán una espiga y se hincharán, haciéndolos más suaves y aún más deliciosos. Además, el toque de color realmente puede alegrar su día.</p>\n<h2>Crème brûlée gachas</h2>\n<p>Tan simple, pero ¿por qué nadie lo ha pensado antes? Ponga su harina de avena cocida en un molde, espolvoree con azúcar y revuelva debajo de la parrilla. El azúcar se endurecerá, lo que te dará el placer de resquebrajarse en la superficie y extraer la deliciosa cremosidad que se encuentra debajo. Si eres realmente profesional, puedes usar un soplete.</p>\n<h2>Súper semillas</h2>\n<p>Para una opción de comida más sabrosa, cocine su avena con agua, un poco de sal y espolvoree con semillas tostadas. Puede elegir cualquiera que disfrute, pero las semillas de calabaza, sésamo, linaza y girasol son especialmente buenas. Algunos supermercados también venden mezclas de semillas para facilitar aún más el trabajo.</p>\n<h2>Torta De Zanahoria Deconstruida</h2>\n<p>Cocina la avena con zanahorias ralladas y un poco de azúcar, luego cubre con una pizca de canela, nueces picadas y una cucharada de queso crema endulzado. Si no te gusta esto, hay algo mal con tus papilas gustativas.</p>\n<h2>El Chocolate Oscuro</h2>\n<p>Esta delicia baja en azúcar cumplirá con todos esos antojos de chocolate y es el postre perfecto. Agregue una cucharada de cacao a su avena mientras se cocina, luego cubra con unos cuadrados de chocolate oscuro. A medida que se derrite, simplemente gíralos en el tazón tan ingeniosamente como puedas. Si eres realmente decadente, un chorrito de crema batida agregará más placeres.</p>\n",
+			"format": "basic_html",
+			"processed": "<p>Es vegano, libre de gluten, bajo en grasa, alto en fibra e incluso puede reducir el colesterol, pero la harina de avena es aburrida, ¿verdad? Pero, antes de descartar ese aburrido jarrón de avena, es posible que desee inspirarse en nuestras ideas principales que harán que su avena sea insípida a creativa en sólo unos minutos.</p>\n<p>Llámelo avena, avena, cereal caliente o simplemente avena, es amado en todo el mundo; pero recientemente, la avena humilde está recibiendo un cambio de imagen funky. Atrás quedaron los días de tartas de desayuno pesadas y gruesas, porque la avena se sirve como una deliciosa comida que puede adaptarse a cualquier momento del día. Están surgiendo las modernas barras de avena para construir su propia harina de avena, y brindan la mejor experiencia de avena. Los comensales pueden elegir su avena para hacerla con leche o agua y luego ir a la ciudad con sus ingredientes favoritos: dulce, salado o incluso picante.</p>\n<p>Suena genial, ¿no es así? Así que antes de cerrar la puerta de la alacena en ese frasco de avena de aspecto insípido, creemos que deberías probar algunas de estas deliciosas ideas para inspirar tu propio cambio de imagen.</p>\n<h2>Frutas secas empapadas</h2>\n<p>A veces, las frutas secas simples pueden ser un poco blandas y ásperas cuando se combinan con avena cremosa. Pero si simplemente remoja su fruta seca en jugo de naranja durante la noche, desarrollarán una espiga y se hincharán, haciéndolos más suaves y aún más deliciosos. Además, el toque de color realmente puede alegrar su día.</p>\n<h2>Crème brûlée gachas</h2>\n<p>Tan simple, pero ¿por qué nadie lo ha pensado antes? Ponga su harina de avena cocida en un molde, espolvoree con azúcar y revuelva debajo de la parrilla. El azúcar se endurecerá, lo que te dará el placer de resquebrajarse en la superficie y extraer la deliciosa cremosidad que se encuentra debajo. Si eres realmente profesional, puedes usar un soplete.</p>\n<h2>Súper semillas</h2>\n<p>Para una opción de comida más sabrosa, cocine su avena con agua, un poco de sal y espolvoree con semillas tostadas. Puede elegir cualquiera que disfrute, pero las semillas de calabaza, sésamo, linaza y girasol son especialmente buenas. Algunos supermercados también venden mezclas de semillas para facilitar aún más el trabajo.</p>\n<h2>Torta De Zanahoria Deconstruida</h2>\n<p>Cocina la avena con zanahorias ralladas y un poco de azúcar, luego cubre con una pizca de canela, nueces picadas y una cucharada de queso crema endulzado. Si no te gusta esto, hay algo mal con tus papilas gustativas.</p>\n<h2>El Chocolate Oscuro</h2>\n<p>Esta delicia baja en azúcar cumplirá con todos esos antojos de chocolate y es el postre perfecto. Agregue una cucharada de cacao a su avena mientras se cocina, luego cubra con unos cuadrados de chocolate oscuro. A medida que se derrite, simplemente gíralos en el tazón tan ingeniosamente como puedas. Si eres realmente decadente, un chorrito de crema batida agregará más placeres.</p>\n",
+			"summary": null
+		},
+		"links": {
+			"self": {
+				"href": "https://umami/es/jsonapi/node/article/ad6d9ce2-9994-4bad-92d4-5042470082a9?resourceVersion=id%3A36"
+			}
+		},
+		"node_type": {
+			"type": "node_type--node_type",
+			"id": "5953cddf-1da5-429b-aaf0-6cb4b4627f13",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": "article"
+			}
+		},
+		"revision_uid": {
+			"type": "user--user",
+			"id": "49bcfd7c-91ce-4c58-a259-30f8e178b385",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 5
+			}
+		},
+		"uid": {
+			"type": "user--user",
+			"id": "49bcfd7c-91ce-4c58-a259-30f8e178b385",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 5
+			}
+		},
+		"field_media_image": {
+			"type": "media--image",
+			"id": "1ba4e677-f381-4de2-b606-45cb2597a69b",
+			"drupal_internal__mid": 17,
+			"drupal_internal__vid": 17,
+			"langcode": "es",
+			"revision_created": "2022-06-17T15:12:39+00:00",
+			"revision_log_message": null,
+			"status": true,
+			"name": "Dale a tu avena el cambio de imagen definitivo",
+			"created": "2022-06-17T15:12:39+00:00",
+			"changed": "2022-06-17T15:12:39+00:00",
+			"default_langcode": false,
+			"revision_translation_affected": true,
+			"path": {
+				"alias": null,
+				"pid": null,
+				"langcode": "es"
+			},
+			"content_translation_source": "und",
+			"content_translation_outdated": false,
+			"links": {
+				"self": {
+					"href": "https://umami/es/jsonapi/media/image/1ba4e677-f381-4de2-b606-45cb2597a69b?resourceVersion=id%3A17"
+				}
+			},
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 17
+			},
+			"bundle": {
+				"type": "media_type--media_type",
+				"id": "655a87f8-efe8-4741-ad1f-c37802cc01c4",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": "image"
+				}
+			},
+			"revision_user": null,
+			"uid": {
+				"type": "user--user",
+				"id": "49ba9683-e6a0-4ddc-b2d6-45474f82d166",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 0
+				}
+			},
+			"thumbnail": {
+				"type": "file--file",
+				"id": "7e0f8ebf-9d3e-4aa5-a365-b74d00c3c6af",
+				"resourceIdObjMeta": {
+					"alt": "Avena con una mezcla vibrante de bayas, nueces y semillas",
+					"title": null,
+					"width": 768,
+					"height": 512,
+					"drupal_internal__target_id": 33
+				}
+			},
+			"field_media_image": {
+				"type": "file--file",
+				"id": "ca76eb42-f194-40c0-8207-cc882cfef6bc",
+				"drupal_internal__fid": 34,
+				"langcode": "en",
+				"filename": "oatmeal-fruit-syrup-topping.jpg",
+				"uri": {
+					"value": "public://oatmeal-fruit-syrup-topping.jpg",
+					"url": "/sites/default/files/oatmeal-fruit-syrup-topping.jpg"
+				},
+				"filemime": "image/jpeg",
+				"filesize": 76171,
+				"status": true,
+				"created": "2022-06-17T15:12:39+00:00",
+				"changed": "2022-06-17T15:12:39+00:00",
+				"links": {
+					"self": {
+						"href": "https://umami/es/jsonapi/file/file/ca76eb42-f194-40c0-8207-cc882cfef6bc"
+					}
+				},
+				"resourceIdObjMeta": {
+					"alt": "Avena con una mezcla vibrante de bayas, nueces y semillas",
+					"title": null,
+					"width": 768,
+					"height": 512,
+					"drupal_internal__target_id": 34
+				},
+				"uid": null,
+				"relationshipNames": ["uid"]
+			},
+			"relationshipNames": [
+				"bundle",
+				"revision_user",
+				"uid",
+				"thumbnail",
+				"field_media_image"
+			]
+		},
+		"field_tags": [
+			{
+				"type": "taxonomy_term--tags",
+				"id": "4be2e484-314d-4d9b-9524-1edb550735e9",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 27
+				}
+			},
+			{
+				"type": "taxonomy_term--tags",
+				"id": "b18469bc-b030-4b7e-9b1a-68eb82efb12b",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 28
+				}
+			},
+			{
+				"type": "taxonomy_term--tags",
+				"id": "1ff96538-b12d-4dac-a4e9-d81c5b4ab18a",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 19
+				}
+			},
+			{
+				"type": "taxonomy_term--tags",
+				"id": "8315c7d1-a59b-485f-9ff2-6db3ec600d06",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 4
+				}
+			},
+			{
+				"type": "taxonomy_term--tags",
+				"id": "4150b2e2-cfb7-4890-8707-dff4057b8cad",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 10
+				}
+			}
+		],
+		"relationshipNames": [
+			"node_type",
+			"revision_uid",
+			"uid",
+			"field_media_image",
+			"field_tags"
+		]
+	},
+	{
+		"type": "node--article",
+		"id": "af7fb8aa-2ad6-4122-b0ad-84f355f79ef0",
+		"drupal_internal__nid": 14,
+		"drupal_internal__vid": 63,
+		"langcode": "es",
+		"revision_timestamp": "2022-07-12T14:37:35+00:00",
+		"revision_log": "Copia de la revisión de <em class=\"placeholder\">Vie, 17/06/2022 - 15:12</em>.",
+		"status": true,
+		"title": "Guía Umami de nuestras setas preferidas",
+		"created": "2022-06-17T15:12:39+00:00",
+		"changed": "2022-07-12T14:37:35+00:00",
+		"promote": true,
+		"sticky": false,
+		"default_langcode": false,
+		"revision_translation_affected": true,
+		"moderation_state": "published",
+		"path": {
+			"alias": "/articles/guia-umami-de-nuestras-setas-preferidas",
+			"pid": 94,
+			"langcode": "es"
+		},
+		"content_translation_source": "und",
+		"content_translation_outdated": false,
+		"body": {
+			"value": "<p>Creemos que las setas son uno de los ingredientes que más se pueden disfrutar en la cocina. Hay muchas variedades comestibles para probar, cada una con su propia forma, tamaño y sabor distintivos. Y con curiosos nombres como rebozuelo, seta gitana, trompeta de los muertos o frigola frondosa ¿quién no querría saber más sobre cocinar con las poderosas setas?</p>\n<p>Una de las mejoras cosas que tienen las setas son su versatilidad. Pueden ser fritas, tostadas, asadas al horno oa la parrilla e incluso cocinadas en un microondas. Y pueden ser servidas como ingrediente principal del plato como parte de un conjunto mayor. Esto hace a las setas una opción ideal para crear simples y deliciosos platos vegetarianos.</p>\n<p>Así que echemos un vistazo a algunos de nuestros tipos preferidos de setas. Es posible que no hayas intentado cocinar con ellas antes, pero no dejes que eso te desanime. Con sus deliciosos y particulares sabores puedes transformar fácilmente sopas, entrantes, salsas y crear increíbles platos de pasta o salteados.</p>\n<p>Prueba el adorable <strong>shiitake</strong>. Usadas en la cocina asiática, pueden comprarse secos y rehidratados para obtener un sabor fuerte y profundo. O comprarlo fresco y añadirlo a sopas y sofritos. No solo es una seta de intenso sabor, sino también de encantadora apariencia. Las formas de color marrón oscuro y suave proporcionarán textura a su comida. En su forma rehidratada son el complemento perfecto para un caldo o un risotto.</p>\n<p>La hermosa <strong>rebozuelo</strong> (o chantarela) con su pulpa amarilla, tiene un sabor afrutado, pero vale la pena mencionar que hay muchas variedades parecidas por ahí y se ha de tener cuidado para asegurarse de que se está comiendo la correcta. Quedan muy bien en una tortilla o una sopa asiática para complementar los tonos amarillos.</p>\n<p>La <strong>morchella</strong> (o morilla) marrón ofrece un sabor carnoso y distintivo y probablemente te encantará lo extraordinaria que se ve en una comida. La morchella es una seta más popular durante la primavera, que es cuando su disponibilidad es más alta.</p>\n<p>Para algo delicado, pruebe la <strong>enoki</strong>, con sus diminutas cabezas blancas que crecen en un montón. Incluso se pueden comer crudas en ensaladas. Por último, puedes elegir la popular seta <strong>ostra</strong>. Se nombran porque no se parecen en nada a una seta y se asemejan a las entrañas de una ostra y su sabor dulce es delicioso.</p>\n",
+			"format": "basic_html",
+			"processed": "<p>Creemos que las setas son uno de los ingredientes que más se pueden disfrutar en la cocina. Hay muchas variedades comestibles para probar, cada una con su propia forma, tamaño y sabor distintivos. Y con curiosos nombres como rebozuelo, seta gitana, trompeta de los muertos o frigola frondosa ¿quién no querría saber más sobre cocinar con las poderosas setas?</p>\n<p>Una de las mejoras cosas que tienen las setas son su versatilidad. Pueden ser fritas, tostadas, asadas al horno oa la parrilla e incluso cocinadas en un microondas. Y pueden ser servidas como ingrediente principal del plato como parte de un conjunto mayor. Esto hace a las setas una opción ideal para crear simples y deliciosos platos vegetarianos.</p>\n<p>Así que echemos un vistazo a algunos de nuestros tipos preferidos de setas. Es posible que no hayas intentado cocinar con ellas antes, pero no dejes que eso te desanime. Con sus deliciosos y particulares sabores puedes transformar fácilmente sopas, entrantes, salsas y crear increíbles platos de pasta o salteados.</p>\n<p>Prueba el adorable <strong>shiitake</strong>. Usadas en la cocina asiática, pueden comprarse secos y rehidratados para obtener un sabor fuerte y profundo. O comprarlo fresco y añadirlo a sopas y sofritos. No solo es una seta de intenso sabor, sino también de encantadora apariencia. Las formas de color marrón oscuro y suave proporcionarán textura a su comida. En su forma rehidratada son el complemento perfecto para un caldo o un risotto.</p>\n<p>La hermosa <strong>rebozuelo</strong> (o chantarela) con su pulpa amarilla, tiene un sabor afrutado, pero vale la pena mencionar que hay muchas variedades parecidas por ahí y se ha de tener cuidado para asegurarse de que se está comiendo la correcta. Quedan muy bien en una tortilla o una sopa asiática para complementar los tonos amarillos.</p>\n<p>La <strong>morchella</strong> (o morilla) marrón ofrece un sabor carnoso y distintivo y probablemente te encantará lo extraordinaria que se ve en una comida. La morchella es una seta más popular durante la primavera, que es cuando su disponibilidad es más alta.</p>\n<p>Para algo delicado, pruebe la <strong>enoki</strong>, con sus diminutas cabezas blancas que crecen en un montón. Incluso se pueden comer crudas en ensaladas. Por último, puedes elegir la popular seta <strong>ostra</strong>. Se nombran porque no se parecen en nada a una seta y se asemejan a las entrañas de una ostra y su sabor dulce es delicioso.</p>\n",
+			"summary": null
+		},
+		"links": {
+			"self": {
+				"href": "https://umami/es/jsonapi/node/article/af7fb8aa-2ad6-4122-b0ad-84f355f79ef0?resourceVersion=id%3A63"
+			}
+		},
+		"node_type": {
+			"type": "node_type--node_type",
+			"id": "5953cddf-1da5-429b-aaf0-6cb4b4627f13",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": "article"
+			}
+		},
+		"revision_uid": {
+			"type": "user--user",
+			"id": "5114d90e-0520-432d-b720-61f767d820db",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 1
+			}
+		},
+		"uid": {
+			"type": "user--user",
+			"id": "49bcfd7c-91ce-4c58-a259-30f8e178b385",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 5
+			}
+		},
+		"field_media_image": {
+			"type": "media--image",
+			"id": "5bcb1c10-1635-42db-b9f4-43cd1a9033ab",
+			"drupal_internal__mid": 13,
+			"drupal_internal__vid": 13,
+			"langcode": "es",
+			"revision_created": "2022-06-17T15:12:39+00:00",
+			"revision_log_message": null,
+			"status": true,
+			"name": "Guía Umami de nuestras setas preferidas",
+			"created": "2022-06-17T15:12:39+00:00",
+			"changed": "2022-06-17T15:12:39+00:00",
+			"default_langcode": false,
+			"revision_translation_affected": true,
+			"path": {
+				"alias": null,
+				"pid": null,
+				"langcode": "es"
+			},
+			"content_translation_source": "und",
+			"content_translation_outdated": false,
+			"links": {
+				"self": {
+					"href": "https://umami/es/jsonapi/media/image/5bcb1c10-1635-42db-b9f4-43cd1a9033ab?resourceVersion=id%3A13"
+				}
+			},
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 13
+			},
+			"bundle": {
+				"type": "media_type--media_type",
+				"id": "655a87f8-efe8-4741-ad1f-c37802cc01c4",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": "image"
+				}
+			},
+			"revision_user": null,
+			"uid": {
+				"type": "user--user",
+				"id": "49ba9683-e6a0-4ddc-b2d6-45474f82d166",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 0
+				}
+			},
+			"thumbnail": {
+				"type": "file--file",
+				"id": "5db99924-8021-484f-839f-c84601d53de0",
+				"resourceIdObjMeta": {
+					"alt": "Una deliciosa selección de variedades de setas distribuidas en un sencillo plato de madera.",
+					"title": null,
+					"width": 768,
+					"height": 512,
+					"drupal_internal__target_id": 25
+				}
+			},
+			"field_media_image": {
+				"type": "file--file",
+				"id": "40c7a370-1e8f-429a-ab61-bd34fb5be611",
+				"drupal_internal__fid": 26,
+				"langcode": "en",
+				"filename": "mushrooms-umami.jpg",
+				"uri": {
+					"value": "public://mushrooms-umami.jpg",
+					"url": "/sites/default/files/mushrooms-umami.jpg"
+				},
+				"filemime": "image/jpeg",
+				"filesize": 92740,
+				"status": true,
+				"created": "2022-06-17T15:12:39+00:00",
+				"changed": "2022-06-17T15:12:39+00:00",
+				"links": {
+					"self": {
+						"href": "https://umami/es/jsonapi/file/file/40c7a370-1e8f-429a-ab61-bd34fb5be611"
+					}
+				},
+				"resourceIdObjMeta": {
+					"alt": "Una deliciosa selección de variedades de setas distribuidas en un sencillo plato de madera.",
+					"title": null,
+					"width": 768,
+					"height": 512,
+					"drupal_internal__target_id": 26
+				},
+				"uid": null,
+				"relationshipNames": ["uid"]
+			},
+			"relationshipNames": [
+				"bundle",
+				"revision_user",
+				"uid",
+				"thumbnail",
+				"field_media_image"
+			]
+		},
+		"field_tags": [
+			{
+				"type": "taxonomy_term--tags",
+				"id": "972ce33d-60b2-40c2-81c2-a18106383131",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 18
+				}
+			},
+			{
+				"type": "taxonomy_term--tags",
+				"id": "b18469bc-b030-4b7e-9b1a-68eb82efb12b",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 28
+				}
+			}
+		],
+		"relationshipNames": [
+			"node_type",
+			"revision_uid",
+			"uid",
+			"field_media_image",
+			"field_tags"
+		]
+	},
+	{
+		"type": "node--article",
+		"id": "00517b73-f66c-43eb-93b1-444a68ab97d8",
+		"drupal_internal__nid": 15,
+		"drupal_internal__vid": 65,
+		"langcode": "es",
+		"revision_timestamp": "2022-07-18T06:00:09+00:00",
+		"revision_log": null,
+		"status": true,
+		"title": "Un aplauso para las zanahorias",
+		"created": "2022-06-17T15:12:39+00:00",
+		"changed": "2022-06-17T15:12:39+00:00",
+		"promote": true,
+		"sticky": false,
+		"default_langcode": false,
+		"revision_translation_affected": null,
+		"moderation_state": "published",
+		"path": {
+			"alias": "/articles/un-aplauso-para-las-zanahorias",
+			"pid": 96,
+			"langcode": "es"
+		},
+		"content_translation_source": "und",
+		"content_translation_outdated": false,
+		"body": {
+			"value": "<p>¡Un aplauso por la humilde zanahoria! Estas verduras «diarias», dulces y saludables tienen todo lo que necesitas. Tienen un gran sabor, un color fantástico y, si eres uno de los que creen en la historia antigua, incluso pueden ayudarte a ver mejor en la oscuridad.</p>\n<p>¿A quién no le gusta cocinar con esta raíz super versátil? Las asamos, las hervimos, las trituramos en sopas y las rallamos en ensaladas. La humilde zanahoria tiene que ser una de nuestras opciones favoritas de verduras y se ha cultivado durante miles de años. Pero en ese entonces era más probable que encontraras una zanahoria morada, roja, amarilla o blanca y no la naranja con la que hoy estamos tan familiarizados.</p>\n<h2>¿Entonces qué pasó? ¿Cuándo el naranja se convirtió en el color preferido?</h2>\n<p>Fueron los holandeses durante el siglo XVII quienes cultivaron e hicieron popular la variedad naranja, probablemente debido a su color brillante y niveles más altos de betacaroteno. También se ha sugerido que fueron cultivadas en homenaje a William de Orange, quien dirigió la lucha durante la batalla holandesa por la independencia.</p>\n<p>Por la razón que sea, la versión naranja se ha convertido en la variedad dominante, pero busque variedades &lsquo;tradicionales&rsquo; en los mercados de agricultores y en las tiendas de abarrotes, su mezcla de púrpura, amarillo, naranja y blanco son especialmente atractivas para cocinar y se ven muy bien como guarnición.</p>\n<h2>Nutrición</h2>\n<p>Zanahorias son ricas en betacaroteno que su cuerpo convierte en vitamina A. A menudo es difícil saber si cocinar verduras aumentará o reducirá su valor nutritivo y, lamentablemente, no hay una regla simple. Pero en el caso de las zanahorias, la nutrición se potencia al consumirlas cocidas. De hecho, solo se necesitan 100 gramos de zanahorias para obtener más que su valor diario de vitamina A.</p>\n<h2>Consígalas en su mejor momento</h2>\n<p>Las zanahorias jóvenes, cosechadas cuando son pequeñas, tienen un sabor especialmente dulce y son absolutamente deliciosas. Para cocinarlos, puede saltearlos y simplemente lavarlos y cocerlos al vapor durante unos minutos. Las zanahorias sabrán mejor cuando están frescas, así que asegúrese de que sean firmes y de colores brillantes cuando las compre.</p>\n<h2>¿Y eso de las zanahorias que te ayudan a ver mejor en la oscuridad?</h2>\n<p>Por supuesto que es un mito. Durante la Segunda Guerra Mundial, el Ministerio de Alimentos del Reino Unido promocionó las zanahorias como un vegetal súper saludable que mejoraría su capacidad para ver durante los apagones y como una explicación para las misiones nocturnas exitosas de los pilotos de caza del Reino Unido. En realidad, la única verdad en la conexión entre las zanahorias y la vista mejorada de los ojos es que la vitamina A sí ayuda a mantener la visión.</p>\n",
+			"format": "basic_html",
+			"processed": "<p>¡Un aplauso por la humilde zanahoria! Estas verduras «diarias», dulces y saludables tienen todo lo que necesitas. Tienen un gran sabor, un color fantástico y, si eres uno de los que creen en la historia antigua, incluso pueden ayudarte a ver mejor en la oscuridad.</p>\n<p>¿A quién no le gusta cocinar con esta raíz super versátil? Las asamos, las hervimos, las trituramos en sopas y las rallamos en ensaladas. La humilde zanahoria tiene que ser una de nuestras opciones favoritas de verduras y se ha cultivado durante miles de años. Pero en ese entonces era más probable que encontraras una zanahoria morada, roja, amarilla o blanca y no la naranja con la que hoy estamos tan familiarizados.</p>\n<h2>¿Entonces qué pasó? ¿Cuándo el naranja se convirtió en el color preferido?</h2>\n<p>Fueron los holandeses durante el siglo XVII quienes cultivaron e hicieron popular la variedad naranja, probablemente debido a su color brillante y niveles más altos de betacaroteno. También se ha sugerido que fueron cultivadas en homenaje a William de Orange, quien dirigió la lucha durante la batalla holandesa por la independencia.</p>\n<p>Por la razón que sea, la versión naranja se ha convertido en la variedad dominante, pero busque variedades ‘tradicionales’ en los mercados de agricultores y en las tiendas de abarrotes, su mezcla de púrpura, amarillo, naranja y blanco son especialmente atractivas para cocinar y se ven muy bien como guarnición.</p>\n<h2>Nutrición</h2>\n<p>Zanahorias son ricas en betacaroteno que su cuerpo convierte en vitamina A. A menudo es difícil saber si cocinar verduras aumentará o reducirá su valor nutritivo y, lamentablemente, no hay una regla simple. Pero en el caso de las zanahorias, la nutrición se potencia al consumirlas cocidas. De hecho, solo se necesitan 100 gramos de zanahorias para obtener más que su valor diario de vitamina A.</p>\n<h2>Consígalas en su mejor momento</h2>\n<p>Las zanahorias jóvenes, cosechadas cuando son pequeñas, tienen un sabor especialmente dulce y son absolutamente deliciosas. Para cocinarlos, puede saltearlos y simplemente lavarlos y cocerlos al vapor durante unos minutos. Las zanahorias sabrán mejor cuando están frescas, así que asegúrese de que sean firmes y de colores brillantes cuando las compre.</p>\n<h2>¿Y eso de las zanahorias que te ayudan a ver mejor en la oscuridad?</h2>\n<p>Por supuesto que es un mito. Durante la Segunda Guerra Mundial, el Ministerio de Alimentos del Reino Unido promocionó las zanahorias como un vegetal súper saludable que mejoraría su capacidad para ver durante los apagones y como una explicación para las misiones nocturnas exitosas de los pilotos de caza del Reino Unido. En realidad, la única verdad en la conexión entre las zanahorias y la vista mejorada de los ojos es que la vitamina A sí ayuda a mantener la visión.</p>\n",
+			"summary": null
+		},
+		"links": {
+			"self": {
+				"href": "https://umami/es/jsonapi/node/article/00517b73-f66c-43eb-93b1-444a68ab97d8?resourceVersion=id%3A65"
+			}
+		},
+		"node_type": {
+			"type": "node_type--node_type",
+			"id": "5953cddf-1da5-429b-aaf0-6cb4b4627f13",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": "article"
+			}
+		},
+		"revision_uid": {
+			"type": "user--user",
+			"id": "5114d90e-0520-432d-b720-61f767d820db",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 1
+			}
+		},
+		"uid": {
+			"type": "user--user",
+			"id": "49bcfd7c-91ce-4c58-a259-30f8e178b385",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 5
+			}
+		},
+		"field_media_image": {
+			"type": "media--image",
+			"id": "f4779802-8ab7-45d6-8659-c317ba7e7437",
+			"drupal_internal__mid": 14,
+			"drupal_internal__vid": 14,
+			"langcode": "es",
+			"revision_created": "2022-06-17T15:12:39+00:00",
+			"revision_log_message": null,
+			"status": true,
+			"name": "Un aplauso para las zanahorias",
+			"created": "2022-06-17T15:12:39+00:00",
+			"changed": "2022-06-17T15:12:39+00:00",
+			"default_langcode": false,
+			"revision_translation_affected": true,
+			"path": {
+				"alias": null,
+				"pid": null,
+				"langcode": "es"
+			},
+			"content_translation_source": "und",
+			"content_translation_outdated": false,
+			"links": {
+				"self": {
+					"href": "https://umami/es/jsonapi/media/image/f4779802-8ab7-45d6-8659-c317ba7e7437?resourceVersion=id%3A14"
+				}
+			},
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 14
+			},
+			"bundle": {
+				"type": "media_type--media_type",
+				"id": "655a87f8-efe8-4741-ad1f-c37802cc01c4",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": "image"
+				}
+			},
+			"revision_user": null,
+			"uid": {
+				"type": "user--user",
+				"id": "49ba9683-e6a0-4ddc-b2d6-45474f82d166",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 0
+				}
+			},
+			"thumbnail": {
+				"type": "file--file",
+				"id": "2d66a52d-aaa7-4cdc-99c3-ef449bd5fc4a",
+				"resourceIdObjMeta": {
+					"alt": "Zanahorias moradas, naranjas, amarillas y blancas.",
+					"title": null,
+					"width": 768,
+					"height": 511,
+					"drupal_internal__target_id": 27
+				}
+			},
+			"field_media_image": {
+				"type": "file--file",
+				"id": "4762eb1d-120c-4063-b5cd-4dc35186b4bb",
+				"drupal_internal__fid": 28,
+				"langcode": "en",
+				"filename": "heritage-carrots.jpg",
+				"uri": {
+					"value": "public://heritage-carrots.jpg",
+					"url": "/sites/default/files/heritage-carrots.jpg"
+				},
+				"filemime": "image/jpeg",
+				"filesize": 36372,
+				"status": true,
+				"created": "2022-06-17T15:12:39+00:00",
+				"changed": "2022-06-17T15:12:39+00:00",
+				"links": {
+					"self": {
+						"href": "https://umami/es/jsonapi/file/file/4762eb1d-120c-4063-b5cd-4dc35186b4bb"
+					}
+				},
+				"resourceIdObjMeta": {
+					"alt": "Zanahorias moradas, naranjas, amarillas y blancas.",
+					"title": null,
+					"width": 768,
+					"height": 511,
+					"drupal_internal__target_id": 28
+				},
+				"uid": null,
+				"relationshipNames": ["uid"]
+			},
+			"relationshipNames": [
+				"bundle",
+				"revision_user",
+				"uid",
+				"thumbnail",
+				"field_media_image"
+			]
+		},
+		"field_tags": [
+			{
+				"type": "taxonomy_term--tags",
+				"id": "26956f3b-e40b-4e9e-9879-1c9302c78c94",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 6
+				}
+			},
+			{
+				"type": "taxonomy_term--tags",
+				"id": "b18469bc-b030-4b7e-9b1a-68eb82efb12b",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 28
+				}
+			},
+			{
+				"type": "taxonomy_term--tags",
+				"id": "cdf73693-ee5c-4915-8d04-a7bb4addf9ea",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 15
+				}
+			}
+		],
+		"relationshipNames": [
+			"node_type",
+			"revision_uid",
+			"uid",
+			"field_media_image",
+			"field_tags"
+		]
+	},
+	{
+		"type": "node--article",
+		"id": "59d714ac-fdba-4159-ad3e-a891e0329223",
+		"drupal_internal__nid": 12,
+		"drupal_internal__vid": 68,
+		"langcode": "es",
+		"revision_timestamp": "2022-07-18T13:18:59+00:00",
+		"revision_log": null,
+		"status": true,
+		"title": "Delicioso chocolate sin lactosa",
+		"created": "2022-06-17T15:12:39+00:00",
+		"changed": "2022-06-17T15:12:39+00:00",
+		"promote": true,
+		"sticky": false,
+		"default_langcode": false,
+		"revision_translation_affected": null,
+		"moderation_state": "published",
+		"path": {
+			"alias": "/articles/delicioso-chocolate-sin-lactosa",
+			"pid": 90,
+			"langcode": "es"
+		},
+		"content_translation_source": "und",
+		"content_translation_outdated": false,
+		"body": {
+			"value": "<p>El calendario está lleno de excusas para complacer a los amantes del chocolate, desde festividades religiosas a cumpleaños - incluso el Día Internacional del chocolate, el 7 de julio. Pero aquellos que son veganos o no toman lácteos no tienen por qué perdérselo porque hay una gran oferta de chocolates veganos sin lactosa.</p>\n<p>El chocolate con leche sin lactosa se fabrica de forma similar al chocolate normal, hasta el momento en el que se añade la leche. Los granos de cacao son tostados durante un par de horas hasta que adquieren su rico sabor. Se elimina la cáscara y se muele el interior del grano hasta conseguir una pasta que pueda mezclarse con la manteca de cacao, produciendo así el porcentaje de cacao deseado. Los saborizantes, el azúcar y la leche son añadidos después en diferentes cantidades dependiendo del tipo de chocolate que se desea realizar. El chocolate es granulado en este punto y se tritura hasta que está suave, ¡esto puede llevar días! Finalmente, se templa mediante un proceso de calentamiento y enfriamiento hasta que está listo para comer.</p>\n<p>Entonces, ¿cómo hacen para que los chocolates veganos adquieran ese sabor y esa textura cremosa propias de la leche?</p>\n<h2>Leche de arroz</h2>\n<p>El sabor de la leche de arroz complementa perfectamente a las semillas de cacao y fue una de las primeras alternativas usadas para crear chocolate con leche vegano. La leche de arroz está hecha de polvo de arroz y algunas veces se combina con leche de avellana para crear la textura y el sabor correctos que son ideales para producir todo tipo de barras de chocolate.</p>\n<h2>Leche de coco</h2>\n<p>La leche de coco es el ingrediente perfecto para agregar cremosidad a una barra de chocolate. Con altos niveles de grasa, un sabor dulce pero no abrumador y con la consistencia correcta, es una excelente opción para el chocolate con leche vegano. El chocolate hecho de esta manera se derretirá estupendamente para luego rociarlo o mojar en él, y la leche de coco agrega un ligero sabor tropical que funciona bien con otros sabores de frutas y nueces.</p>\n<h2>Leche de soja</h2>\n<p>La soja ha sido durante mucho tiempo el pilar de las dietas veganas y vegetarianas ya que es rica en proteínas y está disponible en una amplia variedad de texturas adecuadas para todo tipo de platos. La leche de soja está ampliamente disponible y es una excelente alternativa a la leche para el chocolate. No es tan rica en grasa como algunas leches veganas, pero tiene un sabor neutro que facilita su combinación con casi cualquier otro sabor.</p>\n<h2>Leche de almendras y avellanas</h2>\n<p>Las leches hechas de almendras y avellanas son fáciles de encontrar en los estantes de los supermercados y son perfectas para la producción de chocolate. Al igual que la leche de soja, suelen ser bastante bajas en grasa y, por lo tanto, algo menos cremosas, pero tienen ese sabor a fruto seco que combina muy bien con cualquier tipo de chocolate.</p>\n<p>Muchos fabricantes usan una combinación de las leches anteriores citadas para crear la consistencia perfecta para su producto. Usando una mezcla de estas leches, son capaces de producir todo tipo de chocolates con leche (incluido el chocolate blanco).</p>\n",
+			"format": "basic_html",
+			"processed": "<p>El calendario está lleno de excusas para complacer a los amantes del chocolate, desde festividades religiosas a cumpleaños - incluso el Día Internacional del chocolate, el 7 de julio. Pero aquellos que son veganos o no toman lácteos no tienen por qué perdérselo porque hay una gran oferta de chocolates veganos sin lactosa.</p>\n<p>El chocolate con leche sin lactosa se fabrica de forma similar al chocolate normal, hasta el momento en el que se añade la leche. Los granos de cacao son tostados durante un par de horas hasta que adquieren su rico sabor. Se elimina la cáscara y se muele el interior del grano hasta conseguir una pasta que pueda mezclarse con la manteca de cacao, produciendo así el porcentaje de cacao deseado. Los saborizantes, el azúcar y la leche son añadidos después en diferentes cantidades dependiendo del tipo de chocolate que se desea realizar. El chocolate es granulado en este punto y se tritura hasta que está suave, ¡esto puede llevar días! Finalmente, se templa mediante un proceso de calentamiento y enfriamiento hasta que está listo para comer.</p>\n<p>Entonces, ¿cómo hacen para que los chocolates veganos adquieran ese sabor y esa textura cremosa propias de la leche?</p>\n<h2>Leche de arroz</h2>\n<p>El sabor de la leche de arroz complementa perfectamente a las semillas de cacao y fue una de las primeras alternativas usadas para crear chocolate con leche vegano. La leche de arroz está hecha de polvo de arroz y algunas veces se combina con leche de avellana para crear la textura y el sabor correctos que son ideales para producir todo tipo de barras de chocolate.</p>\n<h2>Leche de coco</h2>\n<p>La leche de coco es el ingrediente perfecto para agregar cremosidad a una barra de chocolate. Con altos niveles de grasa, un sabor dulce pero no abrumador y con la consistencia correcta, es una excelente opción para el chocolate con leche vegano. El chocolate hecho de esta manera se derretirá estupendamente para luego rociarlo o mojar en él, y la leche de coco agrega un ligero sabor tropical que funciona bien con otros sabores de frutas y nueces.</p>\n<h2>Leche de soja</h2>\n<p>La soja ha sido durante mucho tiempo el pilar de las dietas veganas y vegetarianas ya que es rica en proteínas y está disponible en una amplia variedad de texturas adecuadas para todo tipo de platos. La leche de soja está ampliamente disponible y es una excelente alternativa a la leche para el chocolate. No es tan rica en grasa como algunas leches veganas, pero tiene un sabor neutro que facilita su combinación con casi cualquier otro sabor.</p>\n<h2>Leche de almendras y avellanas</h2>\n<p>Las leches hechas de almendras y avellanas son fáciles de encontrar en los estantes de los supermercados y son perfectas para la producción de chocolate. Al igual que la leche de soja, suelen ser bastante bajas en grasa y, por lo tanto, algo menos cremosas, pero tienen ese sabor a fruto seco que combina muy bien con cualquier tipo de chocolate.</p>\n<p>Muchos fabricantes usan una combinación de las leches anteriores citadas para crear la consistencia perfecta para su producto. Usando una mezcla de estas leches, son capaces de producir todo tipo de chocolates con leche (incluido el chocolate blanco).</p>\n",
+			"summary": null
+		},
+		"links": {
+			"self": {
+				"href": "https://umami/es/jsonapi/node/article/59d714ac-fdba-4159-ad3e-a891e0329223?resourceVersion=id%3A68"
+			}
+		},
+		"node_type": {
+			"type": "node_type--node_type",
+			"id": "5953cddf-1da5-429b-aaf0-6cb4b4627f13",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": "article"
+			}
+		},
+		"revision_uid": {
+			"type": "user--user",
+			"id": "5114d90e-0520-432d-b720-61f767d820db",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 1
+			}
+		},
+		"uid": {
+			"type": "user--user",
+			"id": "49bcfd7c-91ce-4c58-a259-30f8e178b385",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 5
+			}
+		},
+		"field_media_image": {
+			"type": "media--image",
+			"id": "6c21c5f9-bed5-454b-96d5-046bb117a87c",
+			"drupal_internal__mid": 11,
+			"drupal_internal__vid": 11,
+			"langcode": "es",
+			"revision_created": "2022-06-17T15:12:39+00:00",
+			"revision_log_message": null,
+			"status": true,
+			"name": "Delicioso chocolate sin lactosa",
+			"created": "2022-06-17T15:12:39+00:00",
+			"changed": "2022-06-17T15:12:39+00:00",
+			"default_langcode": false,
+			"revision_translation_affected": true,
+			"path": {
+				"alias": null,
+				"pid": null,
+				"langcode": "es"
+			},
+			"content_translation_source": "und",
+			"content_translation_outdated": false,
+			"links": {
+				"self": {
+					"href": "https://umami/es/jsonapi/media/image/6c21c5f9-bed5-454b-96d5-046bb117a87c?resourceVersion=id%3A11"
+				}
+			},
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 11
+			},
+			"bundle": {
+				"type": "media_type--media_type",
+				"id": "655a87f8-efe8-4741-ad1f-c37802cc01c4",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": "image"
+				}
+			},
+			"revision_user": null,
+			"uid": {
+				"type": "user--user",
+				"id": "49ba9683-e6a0-4ddc-b2d6-45474f82d166",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 0
+				}
+			},
+			"thumbnail": {
+				"type": "file--file",
+				"id": "89d24210-5153-4d0b-a7f6-840e2fec9c9a",
+				"resourceIdObjMeta": {
+					"alt": "Deliciosa tableta de chocolate con leche sin lactosa partido en onzas.",
+					"title": null,
+					"width": 768,
+					"height": 511,
+					"drupal_internal__target_id": 21
+				}
+			},
+			"field_media_image": {
+				"type": "file--file",
+				"id": "8bde57e4-e55e-4522-a6f0-d7d0764028bd",
+				"drupal_internal__fid": 22,
+				"langcode": "en",
+				"filename": "vegan-chocolate.jpg",
+				"uri": {
+					"value": "public://vegan-chocolate.jpg",
+					"url": "/sites/default/files/vegan-chocolate.jpg"
+				},
+				"filemime": "image/jpeg",
+				"filesize": 65650,
+				"status": true,
+				"created": "2022-06-17T15:12:39+00:00",
+				"changed": "2022-06-17T15:12:39+00:00",
+				"links": {
+					"self": {
+						"href": "https://umami/es/jsonapi/file/file/8bde57e4-e55e-4522-a6f0-d7d0764028bd"
+					}
+				},
+				"resourceIdObjMeta": {
+					"alt": "Deliciosa tableta de chocolate con leche sin lactosa partido en onzas.",
+					"title": null,
+					"width": 768,
+					"height": 511,
+					"drupal_internal__target_id": 22
+				},
+				"uid": null,
+				"relationshipNames": ["uid"]
+			},
+			"relationshipNames": [
+				"bundle",
+				"revision_user",
+				"uid",
+				"thumbnail",
+				"field_media_image"
+			]
+		},
+		"field_tags": [
+			{
+				"type": "taxonomy_term--tags",
+				"id": "4be2e484-314d-4d9b-9524-1edb550735e9",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 27
+				}
+			},
+			{
+				"type": "taxonomy_term--tags",
+				"id": "71e9abf0-f465-4ce4-b62a-285e87d140f4",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 7
+				}
+			}
+		],
+		"relationshipNames": [
+			"node_type",
+			"revision_uid",
+			"uid",
+			"field_media_image",
+			"field_tags"
+		]
+	}
+]

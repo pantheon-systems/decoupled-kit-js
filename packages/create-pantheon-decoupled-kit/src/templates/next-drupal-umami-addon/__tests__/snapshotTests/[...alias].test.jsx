@@ -5,7 +5,6 @@ import topLevelArticleData from '../data/topLevelArticleData.json';
 import topLevelPageData from '../data/topLevelPageData.json';
 import topLevelRecipeData from '../data/topLevelRecipeData.json';
 
-import defaultProfileFooterMenu from '../data/defaultProfileMenuItemsMainData.json';
 import umamiFooterMenu from '../data/umamiMenuItemsMainData.json';
 
 vi.mock('next/image');
@@ -19,9 +18,8 @@ vi.mock('next/router', () => ({
  * @vitest-environment jsdom
  */
 
-describe(`${PROFILE} <CatchAllRoute />`, () => {
-	const footerMenu =
-		PROFILE === 'umami' ? umamiFooterMenu : defaultProfileFooterMenu;
+describe('<CatchAllRoute />', () => {
+	const footerMenu = umamiFooterMenu;
 	it(`should render an article`, () => {
 		const data = { pageData: topLevelArticleData, footerMenu: footerMenu };
 
@@ -39,14 +37,14 @@ describe(`${PROFILE} <CatchAllRoute />`, () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	if (PROFILE === 'umami') {
-		it(`should render a recipe`, () => {
-			const data = { pageData: topLevelRecipeData, footerMenu: footerMenu };
+	
+	it(`should render a recipe`, () => {
+		const data = { pageData: topLevelRecipeData, footerMenu: footerMenu };
 
-			const { asFragment } = render(
-				<CatchAllRoute pageData={data.pageData} footerMenu={data.footerMenu} />,
-			);
-			expect(asFragment()).toMatchSnapshot();
-		});
-	}
+		const { asFragment } = render(
+			<CatchAllRoute pageData={data.pageData} footerMenu={data.footerMenu} />,
+		);
+		expect(asFragment()).toMatchSnapshot();
+	});
+	
 });

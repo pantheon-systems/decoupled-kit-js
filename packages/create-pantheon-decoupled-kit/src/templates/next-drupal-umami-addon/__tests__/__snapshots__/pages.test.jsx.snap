@@ -1,0 +1,344 @@
+// Vitest Snapshot v1
+
+exports[`<PageListTemplate /> > should render pages 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+  >
+    <div
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
+    >
+      <nav>
+        <ul
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
+        >
+          <li
+            class="ps-mr-auto"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/articles"
+            >
+              📰 Articles
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+       
+      <header
+        class="prose text-2xl mx-auto mt-20"
+      >
+        <h1
+          class="text-center mx-auto"
+        >
+          Pages
+        </h1>
+      </header>
+      <div
+        class="mt-12 mx-auto max-w-[50vw]"
+      >
+        <ul>
+          <li
+            class="prose justify-items-start mt-8"
+          >
+            <h2>
+              About Umami
+            </h2>
+            <div />
+            <a
+              class="font-normal underline"
+              href="/about-umami"
+            >
+              Read more →
+            </a>
+          </li>
+          <li
+            class="prose justify-items-start mt-8"
+          >
+            <h2>
+              Top Level Page
+            </h2>
+            <div />
+            <a
+              class="font-normal underline"
+              href="/about"
+            >
+              Read more →
+            </a>
+          </li>
+          <li
+            class="prose justify-items-start mt-8"
+          >
+            <h2>
+              Nested Top Level Page
+            </h2>
+            <div />
+            <a
+              class="font-normal underline"
+              href="/nested/page"
+            >
+              Read more →
+            </a>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <footer
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
+    >
+      <nav
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/articles"
+            >
+              Articles
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/recipes"
+            >
+              Recipes
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="ps-flex ps-my-4 ps-p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2023 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://www.drupal.org/"
+          >
+            Drupal
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<PageTemplate /> > should render page 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+  >
+    <div
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
+    >
+      <nav>
+        <ul
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
+        >
+          <li
+            class="ps-mr-auto"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/articles"
+            >
+              📰 Articles
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <article
+        class="prose lg:prose-xl mt-10 mx-auto"
+      >
+        <h1>
+          About Umami
+        </h1>
+        <a
+          class="font-normal"
+          href="/pages"
+        >
+          Pages →
+        </a>
+        <div
+          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+        >
+          <div>
+            <p>
+              Umami is a fictional food magazine that has been created to demonstrate how you might build a Drupal site using functionality provided 'out of the box'.
+            </p>
+            
+
+            <p>
+              For more information visit 
+              <a
+                href="https://www.drupal.org/docs/umami-drupal-demonstration-installation-profile"
+              >
+                https://www.drupal.org/docs/umami-drupal-demonstration-installation-profile
+              </a>
+              .
+            </p>
+            
+
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
+    >
+      <nav
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/articles"
+            >
+              Articles
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/recipes"
+            >
+              Recipes
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="ps-flex ps-my-4 ps-p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2023 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://www.drupal.org/"
+          >
+            Drupal
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

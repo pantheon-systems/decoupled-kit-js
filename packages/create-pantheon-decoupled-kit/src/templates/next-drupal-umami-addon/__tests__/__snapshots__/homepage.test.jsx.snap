@@ -1,0 +1,329 @@
+// Vitest Snapshot v1
+
+exports[`<HomepageTemplate /> > should render articles 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+  >
+    <div
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
+    >
+      <nav>
+        <ul
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
+        >
+          <li
+            class="ps-mr-auto"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/articles"
+            >
+              📰 Articles
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <div
+        class="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit"
+      >
+        <h1
+          class="prose text-4xl text-center h-full"
+        >
+          Welcome to 
+          <a
+            class="text-blue-600 no-underline hover:underline"
+            href="https://nextjs.org"
+          >
+            Next.js!
+          </a>
+        </h1>
+        <div
+          class="text-2xl"
+        >
+          <div
+            class="bg-black text-white rounded flex items-center justify-center p-4"
+          >
+            Decoupled Drupal on 
+            <img
+              alt="Pantheon Logo"
+              src="/pantheon.png"
+              width="191"
+            />
+          </div>
+        </div>
+      </div>
+      <section>
+        <div
+          class="ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg lg:ps-grid-cols-3"
+        >
+          <a
+            href="/articles/give-it-a-go-and-grow-your-own-herbs"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Give it a go and grow your own herbs"
+                  src="https://umami/sites/default/files/home-grown-herbs.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Give it a go and grow your own herbs →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/the-real-deal-for-supermarket-savvy-shopping"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="The real deal for supermarket savvy shopping"
+                  src="https://umami/sites/default/files/supermarket-savvy-umami.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                The real deal for supermarket savvy shopping →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/baking-mishaps-our-troubleshooting-tips"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Baking mishaps - our troubleshooting tips"
+                  src="https://umami/sites/default/files/chocolate-brownie-umami.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Baking mishaps - our troubleshooting tips →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/skip-the-spirits-with-delicious-mocktails"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Skip the spirits with delicious mocktails"
+                  src="https://umami/sites/default/files/mojito-mocktail.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Skip the spirits with delicious mocktails →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/give-your-oatmeal-the-ultimate-makeover"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Give your oatmeal the ultimate makeover"
+                  src="https://umami/sites/default/files/oatmeal-fruit-syrup-topping.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Give your oatmeal the ultimate makeover →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/the-umami-guide-to-our-favourite-mushrooms"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="The Umami guide to our favorite mushrooms"
+                  src="https://umami/sites/default/files/mushrooms-umami.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                The Umami guide to our favorite mushrooms →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/lets-hear-it-for-carrots"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Let's hear it for carrots "
+                  src="https://umami/sites/default/files/heritage-carrots.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Let's hear it for carrots  →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/dairy-free-and-delicious-milk-chocolate"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Dairy-free and delicious milk chocolate"
+                  src="https://umami/sites/default/files/vegan-chocolate.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Dairy-free and delicious milk chocolate →
+              </h2>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
+    >
+      <nav
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/articles"
+            >
+              Articles
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/recipes"
+            >
+              Recipes
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="ps-flex ps-my-4 ps-p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2023 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://www.drupal.org/"
+          >
+            Drupal
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
