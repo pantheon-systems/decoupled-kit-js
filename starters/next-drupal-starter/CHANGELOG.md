@@ -1,5 +1,12 @@
 # @pantheon-systems/next-drupal-starter
 
+## 4.0.2
+
+### Patch Changes
+
+- Updated dependencies [4efe223]
+  - @pantheon-systems/drupal-kit@4.2.0
+
 ## 4.0.2-canary.0
 
 ### Patch Changes
