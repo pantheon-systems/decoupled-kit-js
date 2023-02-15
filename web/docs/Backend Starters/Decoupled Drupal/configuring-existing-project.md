@@ -5,9 +5,8 @@ slug: '/backend-starters/decoupled-drupal/configuring-an-existing-project'
 sidebar_position: 3
 ---
 
-While we offer a
-[back-end starter project](./creating-a-new-project)
-to simplify the process of configuring a Drupal site for use with our front-end
+While we offer a [back-end starter project](./creating-a-new-project) to
+simplify the process of configuring a Drupal site for use with our front-end
 starter kits, you may instead prefer to use an existing Drupal project. Follow
 the steps below to configure an existing Drupal project to work with one of our
 front-end starter kits.
@@ -47,7 +46,8 @@ one of two possible adjustments:
 
 - Add a new field of type 'Media' to the Article content type. The resulting
   field should have the label 'Media Image' which will result in the machine
-  name `field_media_image`.
+  name `field_media_image`. Be sure to rebuild Drupal's cache after adding this
+  field.
 - Update your starter kit to use the default image field instead of the Media
   field. Consult the
   ['adapting for use with existing Drupal sites'](../../frontend-starters/nextjs/nextjs-drupal/troubleshooting#adapting-for-use-with-existing-drupal-sites)
