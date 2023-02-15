@@ -21,7 +21,7 @@
 		"build:gatsby-wp": "pnpm --filter gatsby-wordpress-starter build",
 		"build:nextjs-kit": "pnpm --filter nextjs-kit build",
 		"build:next-drupal": "pnpm --filter next-drupal-starter build:mono",
-		"build:next-wp": "pnpm --filter 'next-wordpress-starter build:mono",
+		"build:next-wp": "pnpm --filter next-wordpress-starter build:mono",
 		"build:wp-kit": "pnpm --filter wordpress-kit build",
 		"build:pkgs": "pnpm --filter './packages/**' build",
 		"build:starters": "pnpm --filter './starters/**' build",
@@ -36,7 +36,7 @@
 		"start:docs": "pnpm --filter './web' start",
 		"start:gatsby-wp": "pnpm --filter './starters/gatsby-wordpress-starter' start",
 		"start:next-drupal": "pnpm --filter './starters/next-drupal-starter' start:mono",
-		"start:next-wp": "pnpm -filter './starters/next-wordpress-starter' start:mono",
+		"start:next-wp": "pnpm --filter './starters/next-wordpress-starter' start:mono",
 		"test": "pnpm recursive test",
 		"update-snapshots:nextjs-kit": "pnpm --filter './packages/nextjs-kit' update-snapshots",
 		"watch:cli": "pnpm --filter create-pantheon-decoupled-kit watch",
@@ -75,7 +75,7 @@
 		"typescript": "^4.9.4",
 		"vite": "^4.0.4"
 	},
-	"packageManager": "pnpm@7.17.1",
+	"packageManager": "pnpm@7.26.3",
 	"pnpm": {
 		"overrides": {
 			"@pantheon-systems/wordpress-kit": "workspace:*",
@@ -90,7 +90,9 @@
 			"immer@<8.0.1": ">=8.0.1",
 			"ua-parser-js@<0.7.33": ">=0.7.33",
 			"json5@>=2.0.0 <2.2.2": ">=2.2.2",
-			"got@<11.8.5": ">=11.8.5"
+			"got@<11.8.5": ">=11.8.5",
+			"eta@<2.0.0": ">=2.0.0",
+			"http-cache-semantics@<4.1.1": ">=4.1.1"
 		},
 		"peerDependencyRules": {
 			"ignoreMissing": [

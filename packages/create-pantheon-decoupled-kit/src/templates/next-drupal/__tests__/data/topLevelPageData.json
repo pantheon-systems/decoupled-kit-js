@@ -1,0 +1,58 @@
+{
+	"type": "node--page",
+	"id": "be3cedd5-6a3d-482a-adac-e4fe5fc2af20",
+	"drupal_internal__nid": 20,
+	"drupal_internal__vid": 88,
+	"langcode": "en",
+	"revision_timestamp": "2022-07-28T16:25:52+00:00",
+	"revision_log": null,
+	"status": true,
+	"title": "Top Level Page",
+	"created": "2022-07-07T15:17:43+00:00",
+	"changed": "2022-07-28T16:25:52+00:00",
+	"promote": false,
+	"sticky": false,
+	"default_langcode": true,
+	"revision_translation_affected": true,
+	"moderation_state": "published",
+	"path": {
+		"alias": "/top-level-page",
+		"pid": 105,
+		"langcode": "en"
+	},
+	"content_translation_source": "und",
+	"content_translation_outdated": false,
+	"body": {
+		"value": "<p>This is an about page. It should be available as a top level route like <code>/about</code>.</p>\r\n",
+		"format": "full_html",
+		"processed": "<p>This is an about page. It should be available as a top level route like <code>/about</code>.</p>\n",
+		"summary": ""
+	},
+	"links": {
+		"self": {
+			"href": "https://shared/en/jsonapi/node/page/be3cedd5-6a3d-482a-adac-e4fe5fc2af20?resourceVersion=id%3A88"
+		}
+	},
+	"node_type": {
+		"type": "node_type--node_type",
+		"id": "8c74b940-dc5d-497c-823b-1c057bd368fb",
+		"resourceIdObjMeta": {
+			"drupal_internal__target_id": "page"
+		}
+	},
+	"revision_uid": {
+		"type": "user--user",
+		"id": "5114d90e-0520-432d-b720-61f767d820db",
+		"resourceIdObjMeta": {
+			"drupal_internal__target_id": 1
+		}
+	},
+	"uid": {
+		"type": "user--user",
+		"id": "5114d90e-0520-432d-b720-61f767d820db",
+		"resourceIdObjMeta": {
+			"drupal_internal__target_id": 1
+		}
+	},
+	"relationshipNames": ["node_type", "revision_uid", "uid"]
+}

@@ -1,5 +1,4 @@
-import * as actions from '../src/utils/addWithDiff';
-import { AddWithDiffActionConfig } from '../src/types';
+import * as actions from '../src/actions/addWithDiff';
 import chalk from 'chalk';
 import fs from 'fs-extra';
 import inquirer from 'inquirer';
@@ -8,11 +7,15 @@ import { ParsedArgs } from 'minimist';
 import path from 'path';
 import process from 'process';
 import { rimraf } from 'rimraf';
+import type { CustomActionConfig } from 'node-plop';
 
 vi.mock('node-plop');
 vi.mock('inquirer');
 
-const config: AddWithDiffActionConfig = {
+const config: CustomActionConfig<'addWithDiff'> & {
+	templates: string;
+	path: string;
+} = {
 	type: 'addWithDiff',
 	templates: './templates/test/addWithDiff',
 	path: '{{outDir}}',
@@ -161,7 +164,10 @@ test input
 			outDir: outDir('populated'),
 		};
 
-		const config: AddWithDiffActionConfig = {
+		const config: CustomActionConfig<'addWithDiff'> & {
+			templates: string;
+			path: string;
+		} = {
 			type: 'addWithDiff',
 			templates: './templates/test/addWithDiff',
 			path: '{{outDir}}',
@@ -232,7 +238,10 @@ test input
 			outDir: outDir('empty'),
 		};
 
-		const config: AddWithDiffActionConfig = {
+		const config: CustomActionConfig<'addWithDiff'> & {
+			templates: string;
+			path: string;
+		} = {
 			type: 'addWithDiff',
 			templates: './templates/test/addWithDiff',
 			path: '{{outDir}}',
@@ -273,13 +282,6 @@ test input
 			force: true,
 		};
 
-		const config: AddWithDiffActionConfig = {
-			type: 'addWithDiff',
-			templates: './templates/test/addWithDiff',
-			path: '{{outDir}}',
-			force: true,
-		};
-
 		await actions.addWithDiff(answers, config, plop);
 
 		expect(addWithDiffSpy).toHaveBeenCalledOnce();
@@ -311,7 +313,10 @@ test input
 			silent: true,
 		};
 
-		const config: AddWithDiffActionConfig = {
+		const config: CustomActionConfig<'addWithDiff'> & {
+			templates: string;
+			path: string;
+		} = {
 			type: 'addWithDiff',
 			templates: './templates/test/addWithDiff',
 			path: '{{outDir}}',
@@ -349,7 +354,10 @@ test input
 			outDir: outDir('empty'),
 		};
 
-		const config: AddWithDiffActionConfig = {
+		const config: CustomActionConfig<'addWithDiff'> & {
+			templates: string;
+			path: string;
+		} = {
 			type: 'addWithDiff',
 			templates: './templates/test/addWithDiff',
 			path: '{{outDir}}',
@@ -389,7 +397,10 @@ test input
 			outDir: outDir('empty'),
 		};
 
-		const config: AddWithDiffActionConfig = {
+		const config: CustomActionConfig<'addWithDiff'> & {
+			templates: string;
+			path: string;
+		} = {
 			type: 'addWithDiff',
 			templates: './templates/test/addWithDiff',
 			path: '{{outDir}}',

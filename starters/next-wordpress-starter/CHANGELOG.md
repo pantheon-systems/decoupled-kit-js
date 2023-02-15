@@ -1,5 +1,18 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 2.0.0-canary.1
+
+### Patch Changes
+
+- Updated dependencies [4efe223]
+  - @pantheon-systems/wordpress-kit@2.14.0-canary.0
+
+## 2.0.0-canary.0
+
+### Major Changes
+
+- 2b092dd: Use `GET` for GraphQL requests by default
+
 ## 1.0.1
 
 ### Patch Changes

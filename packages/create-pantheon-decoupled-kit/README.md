@@ -57,3 +57,6 @@ Please see the
 to contribute to the project.
 
 <!-- TODO: Write details for contributing to this package -->
+
+See https://decoupledkit.pantheon.io/docs/contributing for details on
+contributing to this module.

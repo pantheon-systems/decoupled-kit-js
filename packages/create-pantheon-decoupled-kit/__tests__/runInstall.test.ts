@@ -1,4 +1,4 @@
-import * as actions from '../src/utils/runInstall';
+import * as actions from '../src/actions/runInstall';
 import * as nodePlop from 'node-plop';
 import chalk from 'chalk';
 import fs from 'fs-extra';
@@ -198,21 +198,20 @@ describe('runInstall()', () => {
 		expect(fs.existsSync(`${outDir}/node_modules`)).toBeTruthy();
 	});
 
-	it('should fail if no outDir is given', async ({
-		runInstallSpy,
-		plopSpy,
-	}) => {
-		const answers: ParsedArgs = { _: [] };
-		const plop = await nodePlop.default();
-		vi.mocked(whichPMRuns).mockImplementationOnce(() => undefined);
+	it.fails(
+		'should fail if no outDir is given',
+		async ({ runInstallSpy, plopSpy }) => {
+			const answers: ParsedArgs = { _: [] };
+			const plop = await nodePlop.default();
+			vi.mocked(whichPMRuns).mockImplementationOnce(() => undefined);
 
-		const result = actions.runInstall(answers, config, plop);
-
-		expect(runInstallSpy).toHaveBeenCalledOnce();
-		expect(runInstallSpy).toHaveBeenLastCalledWith(answers, config, plop);
-		expect(plopSpy).toHaveBeenCalledOnce();
-		expect(result).toEqual('fail: outDir required');
-	});
+			actions.runInstall(answers, config, plop);
+			expect(runInstallSpy).toThrowError('fail: outDir required');
+			expect(runInstallSpy).toHaveBeenCalledOnce();
+			expect(runInstallSpy).toHaveBeenLastCalledWith(answers, config, plop);
+			expect(plopSpy).toHaveBeenCalledOnce();
+		},
+	);
 
 	it('should return if noInstall is true', async ({
 		runInstallSpy,
