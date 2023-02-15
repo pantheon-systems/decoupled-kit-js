@@ -1,5 +1,19 @@
 # @pantheon-systems/drupal-kit
 
+## 4.2.0
+
+### Minor Changes
+
+- 4efe223: Updated default Cache-Control value from
+  `public, s-maxage=10, stale-while-revalidate=600` to `s-public, maxage=600`
+
+## 4.2.0-canary.0
+
+### Minor Changes
+
+- 4efe223: Updated default Cache-Control value from
+  `public, s-maxage=10, stale-while-revalidate=600` to `s-public, maxage=600`
+
 ## 4.1.0
 
 ### Minor Changes
