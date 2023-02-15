@@ -1,5 +1,11 @@
 import { nextWp } from './next-wp.generator';
 import { nextDrupal } from './next-drupal.generator';
 import { gatsbyWp } from './gatsby-wp.generator';
-import { umami } from './umami-demo.generator';
-export const decoupledKitGenerators = [nextWp, nextDrupal, gatsbyWp, umami];
+import { nextDrupalUmamiAddon } from './next-drupal-umami-addon.generator';
+
+export const decoupledKitGenerators = [
+	nextWp,
+	gatsbyWp,
+	nextDrupal,
+	nextDrupalUmamiAddon,
+];
