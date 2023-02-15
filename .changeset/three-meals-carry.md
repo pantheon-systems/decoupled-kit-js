@@ -1,5 +1,5 @@
 ---
-"create-pantheon-decoupled-kit": minor
+'create-pantheon-decoupled-kit': minor
 ---
 
-Umami Generator Template
+Added Drupal Umami demo examples as a generator

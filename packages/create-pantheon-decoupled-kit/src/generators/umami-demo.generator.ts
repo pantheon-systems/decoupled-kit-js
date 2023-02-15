@@ -15,7 +15,7 @@ export const umami: DecoupledKitGenerator = {
 	actions: (data) => {
 		const addWithDiff: CustomActionConfig<'addWithDiff'> = {
 			type: 'addWithDiff',
-			templates: './templates/next-drupal-umami',
+			templates: './templates/umami-demo',
 			path: '{{outDir}}',
 			force: data?.force ? Boolean(data.force) : false,
 		};
