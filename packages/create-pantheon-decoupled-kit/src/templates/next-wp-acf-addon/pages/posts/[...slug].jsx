@@ -38,7 +38,9 @@ export default function PostTemplate({ menuItems, post, preview }) {
 			/>
 			{post.relatedContent?.relatedContent ? (
 				<section>
-					<PageHeader title="Related Content" />
+					<header className="prose text-2xl mx-auto mt-20">
+						<h2 className="text-center mx-auto">Related Content</h2>
+					</header>
 					<PostGrid
 						contentType="posts"
 						data={post.relatedContent.relatedContent}

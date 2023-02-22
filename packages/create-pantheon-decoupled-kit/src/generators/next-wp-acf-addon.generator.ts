@@ -4,7 +4,7 @@ import type { DecoupledKitGenerator } from '../types';
 export const nextWpAcfAddon: DecoupledKitGenerator = {
 	name: 'next-wp-acf-addon',
 	description:
-		"WordPress's advance custom field component add-on for the next-wordpress starter",
+		'Example implementation of the WordPress Advanced Custom Fields plugin for the next-wordpress starter',
 	prompts: [
 		{
 			name: 'outDir',
