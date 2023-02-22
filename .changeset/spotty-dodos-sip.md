@@ -1,4 +1,8 @@
 ---
-"create-pantheon-decoupled-kit": minor
+'create-pantheon-decoupled-kit': minor
 ---
-Related content ACF component addon for gatsby-wp
+
+Added a new addon, `gatsby-wp-acf-addon`. It includes an example implementation
+of data sourced from WordPress with the
+[Advanced Custom Fields plugin](https://www.advancedcustomfields.com/)
+activated.
