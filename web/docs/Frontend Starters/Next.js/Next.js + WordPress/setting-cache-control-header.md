@@ -21,7 +21,7 @@ request is sent along it will be cached at the edge.
 The default cache-control header is the following:
 
 ```http
-Cache-Control: public, s-maxage=10, stale-while-revalidate=600
+Cache-Control: public, s-maxage=600
 ```
 
 To override the default, you may pass in your own cache-control header:

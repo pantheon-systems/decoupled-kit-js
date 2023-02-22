@@ -1,5 +1,3 @@
-//TODO: test catchall route
-
 import { render } from '@testing-library/react';
 import CatchAllRoute from '../../pages/[...alias]';
 

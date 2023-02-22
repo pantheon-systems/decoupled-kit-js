@@ -1,0 +1,26 @@
+[
+	{
+		"previous": null,
+		"page": {
+			"id": "cG9zdDoxMA==",
+			"title": "Test Page",
+			"uri": "/test-page/",
+			"featuredImage": null
+		},
+		"next": { "id": "cG9zdDoy", "title": "Sample Page", "uri": "/sample-page/" }
+	},
+	{
+		"previous": {
+			"id": "cG9zdDoxMA==",
+			"title": "Test Page",
+			"uri": "/test-page/"
+		},
+		"page": {
+			"id": "cG9zdDoy",
+			"title": "Sample Page",
+			"uri": "/sample-page/",
+			"featuredImage": null
+		},
+		"next": null
+	}
+]

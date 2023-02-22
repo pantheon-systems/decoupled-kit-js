@@ -1,0 +1,546 @@
+// Vitest Snapshot v1
+
+exports[`<ArticleTemplate /> > should render articles 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+  >
+    <div
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
+    >
+      <nav>
+        <ul
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
+        >
+          <li
+            class="ps-mr-auto"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/articles"
+            >
+              📰 Articles
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <article
+        class="ps-prose ps-max-w-none xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-py-4 ps-px-12"
+      >
+        <section
+          class="ps-prose xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto"
+        >
+          <h1>
+            Give it a go and grow your own herbs
+          </h1>
+          <a
+            class="ps-font-normal ps-cursor-pointer"
+          >
+            Back →
+          </a>
+        </section>
+        <div
+          class="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg ps-shadow-lg [&*>img]:ps-rounded-lg"
+        >
+          <div
+            class="ps-relative ps-mb-10 ps-min-h-[50vh]"
+          >
+            <img
+              alt="Give it a go and grow your own herbs"
+              data-nimg="fill"
+              decoding="async"
+              sizes="100vw"
+              src="/_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=1200&q=75"
+              srcset="/_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=320&q=75 320w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=420&q=75 420w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=768&q=75 768w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=1024&q=75 1024w, /_next/image?url=https%3A%2F%2Fumami%2Fsites%2Fdefault%2Ffiles%2Fhome-grown-herbs.jpg&w=1200&q=75 1200w"
+              style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
+            />
+          </div>
+        </div>
+        <div
+          class="ps-break-words ps-mt-12 ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto"
+        >
+          <p>
+            There's nothing like having your own supply of fresh herbs, readily available and close at hand to use while cooking. Whether you have a large garden or a small kitchen window sill, there's always enough room for something home grown.
+          </p>
+          
+
+          <h2>
+            Outdoors
+          </h2>
+          
+
+          <h3>
+            Mint
+          </h3>
+          
+
+          <p>
+            Mint is a great plant to grow as it's hardy and can grow in almost any soil. Mint can grow wild, so keep it contained in a pot or it might spread and take over your whole garden.
+          </p>
+          
+
+          <h3>
+            Sage
+          </h3>
+          
+
+          <p>
+            Like mint, sage is another prolific growing plant and will take over your garden if you let it. Highly aromatic, the sage plant can be planted in a pot or flower bed in well drained soil. The best way to store the herb is to sun dry the leaves and store in a cool, dark cupboard in a sealed container.
+          </p>
+          
+
+          <h3>
+            Rosemary
+          </h3>
+          
+
+          <p>
+            Rosemary plants grow into lovely shrubs. Easily grown from cuttings, rosemary plants do not like freezing temperatures so keep pots or planted bushes near the home to shelter them from the cold. It grows well in pots as it likes dry soil, but can survive well in the ground too. If pruning rosemary to encourage it into a better shape, save the branches and hang them upside down to preserve the flavor and use in food.
+          </p>
+          
+
+          <h2>
+            Indoors
+          </h2>
+          
+
+          <h3>
+            Basil
+          </h3>
+          
+
+          <p>
+            Perfect in sunny spot on a kitchen window sill. Basil is an annual plant, so will die off in the autumn, so it's a good idea to harvest it in the summer if you have an abundance and dry it. Picked basil stays fresh longer if it is placed in water (like fresh flowers). A great way to store basil is to make it into pesto!
+          </p>
+          
+
+          <h3>
+            Chives
+          </h3>
+          
+
+          <p>
+            A versatile herb, chives can grow well indoors. Ensure the plant is watered well, and gets plenty of light. Remember to regularly trim the chives. This prevents the flowers from developing and encourages new growth.
+          </p>
+          
+
+          <h3>
+            Coriander (Cilantro)
+          </h3>
+          
+
+          <p>
+            Coriander can grow indoors, but unlike the other herbs, it doesn't like full sun. If you have a south facing kitchen window, this isn't the place for it. Although not as thirsty as basil, coriander doesn't like dry soil so don't forget to water it! Cut coriander is best stored in the fridge.
+          </p>
+          
+
+        </div>
+      </article>
+    </main>
+    <footer
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
+    >
+      <nav
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/articles"
+            >
+              Articles
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/recipes"
+            >
+              Recipes
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="ps-flex ps-my-4 ps-p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2023 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://www.drupal.org/"
+          >
+            Drupal
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<SSRArticlesListTemplate /> > should render articles 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+  >
+    <div
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
+    >
+      <nav>
+        <ul
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
+        >
+          <li
+            class="ps-mr-auto"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/articles"
+            >
+              📰 Articles
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <header
+        class="prose text-2xl mx-auto mt-20"
+      >
+        <h1
+          class="text-center mx-auto"
+        >
+          Articles
+        </h1>
+      </header>
+      <section>
+        <div
+          class="ps-mt-12 ps-grid ps-gap-5 ps-max-w-content ps-mx-auto lg:ps-max-w-screen-lg lg:ps-grid-cols-3"
+        >
+          <a
+            href="/articles/give-it-a-go-and-grow-your-own-herbs"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Give it a go and grow your own herbs"
+                  src="https://umami/sites/default/files/home-grown-herbs.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Give it a go and grow your own herbs →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/the-real-deal-for-supermarket-savvy-shopping"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="The real deal for supermarket savvy shopping"
+                  src="https://umami/sites/default/files/supermarket-savvy-umami.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                The real deal for supermarket savvy shopping →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/baking-mishaps-our-troubleshooting-tips"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Baking mishaps - our troubleshooting tips"
+                  src="https://umami/sites/default/files/chocolate-brownie-umami.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Baking mishaps - our troubleshooting tips →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/skip-the-spirits-with-delicious-mocktails"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Skip the spirits with delicious mocktails"
+                  src="https://umami/sites/default/files/mojito-mocktail.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Skip the spirits with delicious mocktails →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/give-your-oatmeal-the-ultimate-makeover"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Give your oatmeal the ultimate makeover"
+                  src="https://umami/sites/default/files/oatmeal-fruit-syrup-topping.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Give your oatmeal the ultimate makeover →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/the-umami-guide-to-our-favourite-mushrooms"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="The Umami guide to our favorite mushrooms"
+                  src="https://umami/sites/default/files/mushrooms-umami.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                The Umami guide to our favorite mushrooms →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/lets-hear-it-for-carrots"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Let's hear it for carrots "
+                  src="https://umami/sites/default/files/heritage-carrots.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Let's hear it for carrots  →
+              </h2>
+            </div>
+          </a>
+          <a
+            href="/articles/dairy-free-and-delicious-milk-chocolate"
+          >
+            <div
+              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+            >
+              <div
+                class="flex-shrink-0 relative h-40"
+              >
+                <img
+                  alt="Dairy-free and delicious milk chocolate"
+                  src="https://umami/sites/default/files/vegan-chocolate.jpg"
+                />
+              </div>
+              <h2
+                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+              >
+                Dairy-free and delicious milk chocolate →
+              </h2>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
+    >
+      <nav
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/articles"
+            >
+              Articles
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/recipes"
+            >
+              Recipes
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="ps-flex ps-my-4 ps-p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2023 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://www.drupal.org/"
+          >
+            Drupal
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

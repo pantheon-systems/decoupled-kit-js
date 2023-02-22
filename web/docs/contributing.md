@@ -1,6 +1,6 @@
 ---
 slug: /contributing
-title: Contributing 
+title: Contributing
 ---
 
 # Pantheon Systems Decoupled Kits
@@ -25,7 +25,7 @@ locally:
   We recommend using npm. Run the following command to install:
 
   ```bash
-  npm install -g pnpm@7.17.1
+  npm install -g pnpm@7.26.3
   ```
 
 ## Getting Started

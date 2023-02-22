@@ -1,0 +1,278 @@
+{
+	"type": "node--recipe",
+	"id": "3122a19c-3f14-4ba0-a9f9-2b5bbb57f044",
+	"drupal_internal__nid": 26,
+	"drupal_internal__vid": 89,
+	"langcode": "en",
+	"revision_timestamp": "2022-07-28T16:57:34+00:00",
+	"revision_log": null,
+	"status": true,
+	"title": "Guacamole",
+	"created": "2022-07-28T15:40:21+00:00",
+	"changed": "2022-07-28T16:57:34+00:00",
+	"promote": true,
+	"sticky": false,
+	"default_langcode": true,
+	"revision_translation_affected": true,
+	"moderation_state": "published",
+	"path": {
+		"alias": "/top-level-recipe",
+		"pid": 112,
+		"langcode": "en"
+	},
+	"content_translation_source": "und",
+	"content_translation_outdated": false,
+	"field_cooking_time": 0,
+	"field_difficulty": "easy",
+	"field_ingredients": [
+		"1 Avocado",
+		"1/2 tomato",
+		"1/2 onion",
+		"salt",
+		"lime",
+		"black pepper",
+		"cilantro"
+	],
+	"field_number_of_servings": 2,
+	"field_preparation_time": 5,
+	"field_recipe_instruction": {
+		"value": "<ol>\r\n\t<li>Dice the onion and tomato</li>\r\n\t<li>Scoop the avocado insides into a bowl</li>\r\n\t<li>Add the tomato, onion, cilantro, lime juice, salt, and pepper</li>\r\n\t<li>Mix together</li>\r\n\t<li>Serve</li>\r\n</ol>\r\n",
+		"format": "basic_html",
+		"processed": "<ol>\n<li>Dice the onion and tomato</li>\n<li>Scoop the avocado insides into a bowl</li>\n<li>Add the tomato, onion, cilantro, lime juice, salt, and pepper</li>\n<li>Mix together</li>\n<li>Serve</li>\n</ol>\n"
+	},
+	"field_summary": {
+		"value": "<p>It's a nice guacamole!</p>\r\n",
+		"format": "basic_html",
+		"processed": "<p>It's a nice guacamole!</p>\n"
+	},
+	"links": {
+		"self": {
+			"href": "https://shared/en/jsonapi/node/recipe/3122a19c-3f14-4ba0-a9f9-2b5bbb57f044?resourceVersion=id%3A89"
+		}
+	},
+	"node_type": {
+		"type": "node_type--node_type",
+		"id": "66bf7d6f-9816-4f3a-9bc4-0d6bd02d7563",
+		"resourceIdObjMeta": {
+			"drupal_internal__target_id": "recipe"
+		}
+	},
+	"revision_uid": {
+		"type": "user--user",
+		"id": "5114d90e-0520-432d-b720-61f767d820db",
+		"resourceIdObjMeta": {
+			"drupal_internal__target_id": 1
+		}
+	},
+	"uid": {
+		"type": "user--user",
+		"id": "5114d90e-0520-432d-b720-61f767d820db",
+		"resourceIdObjMeta": {
+			"drupal_internal__target_id": 1
+		}
+	},
+	"field_media_image": {
+		"type": "media--image",
+		"id": "4ccae270-d84f-475d-8a73-ddf21e205713",
+		"drupal_internal__mid": 23,
+		"drupal_internal__vid": 23,
+		"langcode": "en",
+		"revision_created": "2022-07-28T15:40:59+00:00",
+		"revision_log_message": null,
+		"status": true,
+		"name": "guacamole.jpeg",
+		"created": "2022-07-28T15:40:48+00:00",
+		"changed": "2022-07-28T15:40:48+00:00",
+		"default_langcode": true,
+		"revision_translation_affected": true,
+		"path": {
+			"alias": null,
+			"pid": null,
+			"langcode": "en"
+		},
+		"content_translation_source": "und",
+		"content_translation_outdated": false,
+		"links": {
+			"self": {
+				"href": "https://shared/en/jsonapi/media/image/4ccae270-d84f-475d-8a73-ddf21e205713?resourceVersion=id%3A23"
+			}
+		},
+		"resourceIdObjMeta": {
+			"drupal_internal__target_id": 23
+		},
+		"bundle": {
+			"type": "media_type--media_type",
+			"id": "655a87f8-efe8-4741-ad1f-c37802cc01c4",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": "image"
+			}
+		},
+		"revision_user": null,
+		"uid": {
+			"type": "user--user",
+			"id": "5114d90e-0520-432d-b720-61f767d820db",
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 1
+			}
+		},
+		"thumbnail": {
+			"type": "file--file",
+			"id": "c1493cb6-6f05-4fd5-a399-5a34104ac103",
+			"drupal_internal__fid": 44,
+			"langcode": "en",
+			"filename": "guacamole.jpeg",
+			"uri": {
+				"value": "public://2022-07/guacamole.jpeg",
+				"url": "/sites/default/files/2022-07/guacamole.jpeg"
+			},
+			"filemime": "image/jpeg",
+			"filesize": 172303,
+			"status": true,
+			"created": "2022-07-28T15:40:48+00:00",
+			"changed": "2022-07-28T15:40:59+00:00",
+			"links": {
+				"self": {
+					"href": "https://shared/en/jsonapi/file/file/c1493cb6-6f05-4fd5-a399-5a34104ac103"
+				}
+			},
+			"resourceIdObjMeta": {
+				"alt": "A bowl of guacamole",
+				"title": null,
+				"width": 1280,
+				"height": 960,
+				"drupal_internal__target_id": 44
+			},
+			"uid": {
+				"type": "user--user",
+				"id": "5114d90e-0520-432d-b720-61f767d820db",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 1
+				}
+			},
+			"relationshipNames": ["uid"]
+		},
+		"field_media_image": {
+			"type": "file--file",
+			"id": "c1493cb6-6f05-4fd5-a399-5a34104ac103",
+			"drupal_internal__fid": 44,
+			"langcode": "en",
+			"filename": "guacamole.jpeg",
+			"uri": {
+				"value": "public://2022-07/guacamole.jpeg",
+				"url": "/sites/default/files/2022-07/guacamole.jpeg"
+			},
+			"filemime": "image/jpeg",
+			"filesize": 172303,
+			"status": true,
+			"created": "2022-07-28T15:40:48+00:00",
+			"changed": "2022-07-28T15:40:59+00:00",
+			"links": {
+				"self": {
+					"href": "https://shared/en/jsonapi/file/file/c1493cb6-6f05-4fd5-a399-5a34104ac103"
+				}
+			},
+			"resourceIdObjMeta": {
+				"alt": "A bowl of guacamole",
+				"title": "",
+				"width": 1280,
+				"height": 960,
+				"drupal_internal__target_id": 44
+			},
+			"uid": {
+				"type": "user--user",
+				"id": "5114d90e-0520-432d-b720-61f767d820db",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 1
+				}
+			},
+			"relationshipNames": ["uid"]
+		},
+		"relationshipNames": [
+			"bundle",
+			"revision_user",
+			"uid",
+			"thumbnail",
+			"field_media_image"
+		]
+	},
+	"field_recipe_category": [
+		{
+			"type": "taxonomy_term--recipe_category",
+			"id": "772dd4da-4825-40fd-87da-9221c653d468",
+			"drupal_internal__tid": 32,
+			"drupal_internal__revision_id": 32,
+			"langcode": "en",
+			"revision_created": "2022-06-17T15:12:39+00:00",
+			"revision_log_message": null,
+			"status": true,
+			"name": "Snacks",
+			"description": null,
+			"weight": 0,
+			"changed": "2022-06-17T15:12:39+00:00",
+			"default_langcode": true,
+			"revision_translation_affected": true,
+			"path": {
+				"alias": "/recipe-category/snacks",
+				"pid": 63,
+				"langcode": "en"
+			},
+			"content_translation_source": "und",
+			"content_translation_outdated": false,
+			"content_translation_created": "2022-06-17T15:12:39+00:00",
+			"links": {
+				"self": {
+					"href": "https://shared/en/jsonapi/taxonomy_term/recipe_category/772dd4da-4825-40fd-87da-9221c653d468?resourceVersion=id%3A32"
+				}
+			},
+			"resourceIdObjMeta": {
+				"drupal_internal__target_id": 32
+			},
+			"vid": {
+				"type": "taxonomy_vocabulary--taxonomy_vocabulary",
+				"id": "6b05ace6-8a04-4b5b-a80a-89ffec33b0d6",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": "recipe_category"
+				}
+			},
+			"revision_user": null,
+			"parent": [
+				{
+					"type": "taxonomy_term--recipe_category",
+					"id": "virtual",
+					"resourceIdObjMeta": {
+						"links": {
+							"help": {
+								"href": "https://www.drupal.org/docs/8/modules/json-api/core-concepts#virtual",
+								"meta": {
+									"about": "Usage and meaning of the 'virtual' resource identifier."
+								}
+							}
+						}
+					}
+				}
+			],
+			"content_translation_uid": {
+				"type": "user--user",
+				"id": "49ba9683-e6a0-4ddc-b2d6-45474f82d166",
+				"resourceIdObjMeta": {
+					"drupal_internal__target_id": 0
+				}
+			},
+			"relationshipNames": [
+				"vid",
+				"revision_user",
+				"parent",
+				"content_translation_uid"
+			]
+		}
+	],
+	"field_tags": [],
+	"relationshipNames": [
+		"node_type",
+		"revision_uid",
+		"uid",
+		"field_media_image",
+		"field_recipe_category",
+		"field_tags"
+	]
+}

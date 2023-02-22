@@ -25,7 +25,8 @@ Local Development:
     ```
 1.  Ensure that you are using the `next/image` component and that you set the
     src by constructing the `IMAGE_DOMAIN` and the image source. For example:
-    ```jsx // in the starter kit, the IMAGE_URL is available // as a constant
+
+    ````jsx // in the starter kit, the IMAGE_URL is available // as a constant
     which is exported from lib/constants.js import { IMAGE_URL } from
     '../../lib/constants';
 
@@ -51,3 +52,149 @@ Local Development:
 
     See
     [The docs on the `next/image` component for more information](https://nextjs.org/docs/api-reference/next/image#src).
+    ````
+
+## Adapting for Use With Existing Drupal Sites
+
+Our starter kits assume that you are using Drupal's core Media module to manage
+images for article content. If you are instead using Drupal's default image
+field, you will need to make the following adjustments to the starter kit:
+
+1. Update grid pages to use the `field_image` field instead of the
+   `field_media_image` field.
+
+In the `getServerSideProps` function in `pages/index.jsx` change the parameters
+used to source your articles. Change:
+
+```jsx
+const articles = await store.getObject({
+	objectName: 'node--article',
+	params: 'include=field_media_image.field_media_image',
+	refresh: true,
+	res: context.res,
+	anon: true,
+});
+```
+
+to:
+
+```jsx
+const articles = await store.getObject({
+	objectName: 'node--article',
+	params: 'include=field_image',
+	refresh: true,
+	res: context.res,
+	anon: true,
+});
+```
+
+Next, make the same change in `pages/articles/index.jsx`.
+
+In `components/grid.jsx` change the `imgSrc` constant in the `ArticleGridItem`
+component from:
+
+```jsx
+// For use with withGrid
+export const ArticleGridItem = ({
+	content: article,
+	multiLanguage,
+	locale,
+}) => {
+	const imgSrc = article?.field_media_image?.field_media_image?.uri?.url || '';
+```
+
+to:
+
+```jsx
+export const ArticleGridItem = ({
+	content: article,
+	multiLanguage,
+	locale,
+}) => {
+	const imgSrc = article?.field_image?.uri?.url || '';
+```
+
+2. Update article detail pages to use the `field_image` field instead of the
+   `field_media_image` field.
+
+_If you are aliasing your articles within the `/articles/*` path:_
+
+Within the `articleTemplate` function in `pages/articles/[...slug].jsx`, change
+the `imgSrc` constant from:
+
+```jsx
+const imgSrc = article.field_media_image?.field_media_image?.uri?.url;
+```
+
+to:
+
+```jsx
+const imgSrc = article.field_image?.uri?.url;
+```
+
+Within the `getServerSideProps` function in `pages/articles/[...slug].jsx`,
+change the `params` constant from:
+
+```jsx
+const params = 'include=field_media_image.field_media_image';
+```
+
+to:
+
+```jsx
+const params = 'include=field_image';
+```
+
+_If you are aliasing your articles using a pattern other than `/articles/*`:_
+
+Within the `renderPage` function in `pages/[...alias].jsx`, find the
+`if (pageData?.type === 'node--article')` conditional and change the following
+constants from:
+
+```jsx
+const {
+	title,
+	body: { processed },
+	field_media_image,
+	thumbnail,
+} = pageData;
+const imgSrc = field_media_image?.field_media_image?.uri.url;
+```
+
+to:
+
+```jsx
+const {
+	title,
+	body: { processed },
+	field_image,
+	thumbnail,
+} = pageData;
+const imgSrc = field_image?.uri.url;
+```
+
+Within the `getServerSideProps` function in `pages/[...alias].jsx`, change the
+value of the `params` constant from:
+
+```jsx
+const params =
+	resourceName === 'node--recipe'
+		? 'include=field_media_image.field_media_image,field_recipe_category'
+		: resourceName === 'node--article'
+		? 'include=field_media_image.field_media_image'
+		: '';
+```
+
+to:
+
+```jsx
+const params =
+	resourceName === 'node--recipe'
+		? 'include=field_media_image.field_media_image,field_recipe_category'
+		: resourceName === 'node--article'
+		? 'include=field_image'
+		: '';
+```
+
+After making these changes, images should now display correctly within your
+articles.

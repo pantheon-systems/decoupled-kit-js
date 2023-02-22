@@ -3,12 +3,15 @@ import inquirer from 'inquirer';
 import minimist from 'minimist';
 import nodePlop, { CustomActionFunction, NodePlopAPI } from 'node-plop';
 import { getPartials } from './utils/getPartials';
-import { addWithDiff } from './utils/addWithDiff';
-import { runInstall } from './utils/runInstall';
-import { runESLint } from './utils/runESLint';
+import { addWithDiff } from './actions/addWithDiff';
+import { runInstall } from './actions/runInstall';
+import { runESLint } from './actions/runESLint';
+import { pkgNameHelper } from './utils/handlebarsHelpers';
+import { helpMenu } from './utils/helpMenu';
 import type { Answers, QuestionCollection } from 'inquirer';
 import type { ParsedArgs, Opts as MinimistOptions } from 'minimist';
 import type { DecoupledKitGenerator } from './types';
+import pkg from '../package.json' assert { type: 'json' };
 
 const __filename = new URL('.', import.meta.url).pathname;
 /**
@@ -37,6 +40,11 @@ export const setGenerators = async (
 	const hbsPartials = await getPartials(__filename);
 	hbsPartials.forEach(({ name, partial }) => plop.setPartial(name, partial));
 
+	// register handlebars helpers to the lop instance
+	[{ name: 'pkgName', helper: pkgNameHelper }].forEach(({ name, helper }) =>
+		plop.setHelper(name, helper),
+	);
+
 	return plop;
 };
 
@@ -55,7 +63,7 @@ export const parseArgs = (
 	const options: MinimistOptions = {
 		// these options tell minimist which --args are
 		// booleans and which are strings.
-		boolean: ['force', 'silent'],
+		boolean: ['force', 'silent', 'help', 'h', 'version', 'v'],
 		string: ['appName', 'outDir'],
 	};
 	const args: ParsedArgs = minimist(cliArgs, options);
@@ -95,6 +103,15 @@ export const main = async (
 			console.log(chalk.yellow(`No generator found with name ${arg}.`));
 		return;
 	});
+
+	if (args['help'] || args['h']) {
+		return console.log(helpMenu);
+	}
+
+	if (args['v'] || args['version']) {
+		return console.log(`v${pkg.version}`);
+	}
+
 	// remove the positional parameters
 	const generatorsToRun = [];
 	// If no generators are found in positional params
@@ -110,6 +127,7 @@ export const main = async (
 		const answers = await inquirer.prompt(whichGenerators);
 		Array.isArray(answers?.generators) &&
 			generatorsToRun.push(...answers.generators);
+		Array.isArray(answers?.generators) && args._.push(...answers.generators);
 	} else {
 		generatorsToRun.push(...foundGenerators);
 	}
@@ -132,6 +150,8 @@ export const main = async (
 			plopGenerator.prompts as QuestionCollection,
 			args,
 		);
+
+		Object.assign(args, answers);
 		// use the harvested answers (if any) to run the plop actions
 		// aka the meat of the generators
 		const { changes, failures } = await plopGenerator.runActions(answers);
