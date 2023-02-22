@@ -3,6 +3,7 @@ import { nextDrupal } from './next-drupal.generator';
 import { gatsbyWp } from './gatsby-wp.generator';
 import { nextDrupalUmamiAddon } from './next-drupal-umami-addon.generator';
 import { nextWpAcfAddon } from './next-wp-acf-addon.generator';
+import { gatsbyWpAcfAddon } from './gatsby-wp-acf-addon.generator';
 
 export const decoupledKitGenerators = [
 	nextWp,
@@ -10,4 +11,5 @@ export const decoupledKitGenerators = [
 	nextDrupal,
 	nextDrupalUmamiAddon,
 	nextWpAcfAddon,
+	gatsbyWpAcfAddon,
 ];
