@@ -49,7 +49,7 @@ In the WordPress Dashboard:
 :::note
 
 We recommend leaving the object cache option disabled when using this plugin on
-Pantheon projects. This will allow the necessary headers for cache purging to
+Pantheon projects. This will allow the necessary headers for cache purging to be
 included in responses.
 
 :::
