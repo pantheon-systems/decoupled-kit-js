@@ -2,7 +2,7 @@
 id: 'configuring-build-hooks'
 title: 'Configuring Build Hooks'
 slug: '/backend-starters/decoupled-drupal/configuring-build-hooks'
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 ## What Are Build Hooks?
