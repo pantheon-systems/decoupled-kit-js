@@ -43,7 +43,7 @@ composer require wp-graphql/wp-graphql-smart-cache
 In the WordPress Dashboard:
 
 - Activate the WPGraphQL Smart Cache plugin.
-- Navigate to the GraphQL settings page (GraphQL > Settings) and set the
+- Navigate to the GraphQL settings page **GraphQL > Settings** and set the
   'Cache-Control max-age' to a value greater than zero.
 
 :::note
