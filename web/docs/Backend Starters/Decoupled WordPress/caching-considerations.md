@@ -63,3 +63,10 @@ composer require wpackagist-plugin/pantheon-advanced-page-cache
 ```
 
 - In the WordPress dashboard, enable the Pantheon Advanced Page Cache plugin.
+
+### Taking Advantage of GraphQL Caching on the Front-end
+
+For details on how to make full use of WPGraphQL Network Caching in your
+front-end application, see the
+[Surrogate Key Based Cache Purging](/docs/frontend-starters/nextjs/nextjs-wordpress/next-wordpress-surrogate-key-caching)
+entry in the Front-end Starters section of the documentation.
