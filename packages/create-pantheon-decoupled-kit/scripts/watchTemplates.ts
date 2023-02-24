@@ -2,7 +2,7 @@
 import chokidar from 'chokidar';
 import chalk from 'chalk';
 import path from 'path';
-import { main } from '../src/index';
+import { main } from '../src/index.old';
 import { watchOptions } from '../watch';
 import { decoupledKitGenerators } from '../src/generators/index';
 
