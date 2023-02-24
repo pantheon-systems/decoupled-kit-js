@@ -25,8 +25,7 @@ configurations were automatically enabled on install. Using this project:
 ## Manual Configuration
 
 For projects that do not use the Decoupled Kit backend starter project, manual
-configuration can be followed in order to enable edge caching and purging across
-the entire decoupled stack.
+configuration can be followed in order to enable edge caching and purging.
 
 Edge caching instructions below focus on sites running on Pantheon, but can be
 adapted for other platforms.
