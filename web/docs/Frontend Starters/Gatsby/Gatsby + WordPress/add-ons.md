@@ -5,7 +5,16 @@ slug: '/frontend-starters/gatsby/gatsby-wordpress/add-ons'
 sidebar_position: 5
 ---
 
-## Before You Begin
+## WordPress Advanced Custom Fields Gatsby Add-on
+
+This add-on uses GraphQL to bring in a custom related content data type that was
+created with Advanced Custom Fields, or ACF. After adding the
+`gatsby-wp-acf-addon`, our starter kit will have a related content section that
+displays at the bottom of post detail pages, if related posts are specified on
+the related WordPress post. Examples of querying and using data from ACF will be
+added to your project.
+
+### Before You Begin
 
 - Install and activate the
   [WP Advanced Custom Fields Plugin](https://wordpress.org/plugins/advanced-custom-fields/).
@@ -22,18 +31,10 @@ sidebar_position: 5
 
   :::
 
-## Advanced Custom Fields WordPress Plugin
 
-This add-on uses GraphQL to bring in a custom related content data type that was
-created with Advanced Custom Fields, or ACF. After adding the
-`gatsby-wp-acf-addon`, our starter kit will have a related content section that
-displays at the bottom of post detail pages, if related posts are specified on
-the related WordPress post. Examples of querying and using data from ACF will be
-added to your project.
+### Usage
 
-## Usage
-
-### Adding the `gatsby-wp-acf-addon` to an Existing Project
+#### Adding the `gatsby-wp-acf-addon` to an Existing Project
 
 1. Use the create command to initiate the cli with the `gatsby-wp-acf-addon`
    generator
@@ -45,7 +46,7 @@ added to your project.
 1. Start your project locally and observe the new related content section that
    displays at the bottom of post detail pages
 
-### Building a New Project with the `gatsby-wp-acf-addon`
+#### Building a New Project with the `gatsby-wp-acf-addon`
 
 1. Use the create command to initiate the cli with both the `gatsby-wp` and
    `gatsby-wp-acf-addon` generators
@@ -57,7 +58,7 @@ added to your project.
    your project locally. Observe the new related content section that displays
    at the bottom of post detail pages
 
-### Fetching Data From a Custom Field
+#### Fetching Data From a Custom Field
 
 Accessing data within your custom fields is a simple process that closely
 resembles a standard GraphQL query.
