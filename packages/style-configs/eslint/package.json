@@ -19,9 +19,9 @@
 		"@typescript-eslint/parser": "^5.49.0"
 	},
 	"devDependencies": {
-		"@pantheon-systems/configs": "*"
+		"@pantheon-systems/style-configs": "*"
 	},
-	"prettier": "@pantheon-systems/configs/prettier",
+	"prettier": "@pantheon-systems/style-configs/prettier",
 	"peerDependencies": {
 		"@typescript-eslint/eslint-plugin": "^5.13.0",
 		"eslint": ">=8",

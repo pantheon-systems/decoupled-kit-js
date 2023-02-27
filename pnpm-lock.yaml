@@ -224,12 +224,12 @@ importers:
 
   packages/style-configs/eslint:
     specifiers:
-      '@pantheon-systems/configs': workspace:*
+      '@pantheon-systems/style-configs': '*'
       '@typescript-eslint/parser': ^5.49.0
     dependencies:
       '@typescript-eslint/parser': 5.49.0
     devDependencies:
-      '@pantheon-systems/configs': link:../../../configs
+      '@pantheon-systems/style-configs': link:..
 
   packages/wordpress-kit:
     specifiers:
