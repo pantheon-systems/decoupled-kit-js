@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.3.0-canary.1
+
+### Minor Changes
+
+- 8aae0b6: Removed `node-plop` as a dependency and refactored generators and
+  actions to use `node-plop` replacements
+
 ## 0.3.0-canary.0
 
 ### Minor Changes
