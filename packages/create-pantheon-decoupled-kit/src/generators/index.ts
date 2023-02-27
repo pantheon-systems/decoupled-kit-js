@@ -12,4 +12,4 @@ export const decoupledKitGenerators = [
 	nextDrupalUmamiAddon,
 	nextWpAcfAddon,
 	gatsbyWpAcfAddon,
-];
+] as const;

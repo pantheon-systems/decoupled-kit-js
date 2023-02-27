@@ -2,7 +2,8 @@
 
 Pantheon's command line interface for creating and adding on to new projects.
 
-A `node-plop` based cli, heavily inspired by various `create-` apps including
+A CLI heavily inspired by various `create-` apps and generator frameworks
+including [`plop`](https://github.com/plopjs/plop)
 [`create-sitecore-jss`](https://github.com/Sitecore/jss/tree/dev/packages/create-sitecore-jss),
 [`create-astro`](https://github.com/withastro/astro/tree/main/packages/create-astro),
 and [`create-create-app`](https://github.com/uetchy/create-create-app).
@@ -15,6 +16,8 @@ monorepo.
 ```bash
   # build the package
   pnpm build:cli
+  # link the local version of the package to global node_modules
+  pnpm link ./packages/create-pantheon-decoupled-kit
   # run the bin script
   pnpm create-pantheon-decoupled-kit
 ```
@@ -25,6 +28,8 @@ Use the create command to initiate the cli with no arguments and follow the
 prompts in your terminal
 
 ```bash
+  # this will use the latest non-canary version from the npm registry
+  # to use the latest canary, use pantheon-decoupled-kit@canary
   pnpm create pantheon-decoupled-kit
 ```
 

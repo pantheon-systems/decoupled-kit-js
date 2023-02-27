@@ -1,8 +1,8 @@
 import { decoupledKitGenerators } from '../generators';
-const generatorsList = Object.values(decoupledKitGenerators).map(
-	({ name }) => name,
-);
-export const helpMenu = `Usage: create-pantheon-decoupled-kit <generator(s) space separated> [options]
+
+export const helpMenu = (generators: typeof decoupledKitGenerators) => {
+	const generatorsList = Object.values(generators).map(({ name }) => name);
+	return `Usage: create-pantheon-decoupled-kit <generator(s) space separated> [options]
 	
 Note: Options may differ depending on the generator. The following options should be available on most generators
 
@@ -18,3 +18,4 @@ Options:
 
         --outDir <path>     The directory where the output is generated.
         --appName <string>  The name of the new app.`;
+};
