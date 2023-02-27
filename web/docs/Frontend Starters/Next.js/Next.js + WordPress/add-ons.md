@@ -14,20 +14,22 @@ sidebar_position: 8
   [Create Pantheon Decoupled Kit CLI](https://www.npmjs.com/package/create-pantheon-decoupled-kit/).
   Any package manager can be used with the CLI **[npm, pnpm, yarn]**.
 
+  :::note
+
+  This guide assumes you have familiarity with WordPress and Advanced Custom
+  Fields. Advanced Custom Fields documentation can be found
+  [here](https://www.advancedcustomfields.com/resources/).
+
+  :::
+
 ## Advanced Custom Fields WordPress Plugin
 
-The Advanced Custom Fields WordPress plugin, or ACF, turns WordPress sites into
-a fully-fledged content management system by giving you all the tools to do more
-with your data.
-
-ACF lets you add, store, and display additional information about a piece of
-content in WordPress. This information can easily be assessed through GraphQL
-with simple adjustments to existing queries.
-
 This add-on uses GraphQL to bring in a custom related content data type that was
-created with ACF. After adding the `next-wp-acf-addon`, our starter kit will
-have a related content section that displays at the bottom of post detail pages,
-if related posts are specified on the related WordPress post.
+created with Advanced Custom Fields, or ACF. After adding the
+`next-wp-acf-addon`, our starter kit will have a related content section that
+displays at the bottom of post detail pages, if related posts are specified on
+the related WordPress post. Examples of querying and using data from ACF will be
+added to your project.
 
 ## Usage
 
@@ -36,10 +38,10 @@ if related posts are specified on the related WordPress post.
 1. Use the create command to initiate the cli with the `next-wp-acf-addon`
    generator
    ```bash
-   npm create pantheon-decoupled-kit next-wp-acf-addon
+   # set the `outDir` to the root directory of your existing Next WordPress Starter
+   npm create pantheon-decoupled-kit next-wp-acf-addon --outDir ./my-app-dir
    ```
-1. When prompted for an output directory, set the output to the root directory
-   of your existing Next Wordpress Starter
+1. Follow the terminal prompts, accept the project diff changes
 1. Start your project locally and observe the new related content section that
    displays at the bottom of post detail pages
 
