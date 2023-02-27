@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.3.0-canary.2
+
+### Patch Changes
+
+- c7488a5: Fix missing dependency - moved Handlebars from dev to prod
+  dependencies.
+
 ## 0.3.0-canary.1
 
 ### Minor Changes
