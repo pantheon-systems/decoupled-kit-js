@@ -1,5 +1,5 @@
 {
-	"name": "@pantheon-systems/eslint-config",
+	"name": "@pantheon-systems/style-eslint-config",
 	"version": "0.0.0",
 	"description": "Eslint configs for the @pantheon-systems decoupled SDK npm packages",
 	"license": "GPL-3.0-or-later",
