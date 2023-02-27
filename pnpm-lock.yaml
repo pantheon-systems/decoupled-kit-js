@@ -91,7 +91,7 @@ importers:
       vitest: ^0.28.3
     devDependencies:
       '@pantheon-systems/configs': link:../../configs
-      '@pantheon-systems/eslint-config': link:../../configs/eslint
+      '@pantheon-systems/eslint-config': link:../style-configs/eslint
       '@rollup/plugin-typescript': 11.0.0
       c8: 7.12.0
       eslint-plugin-prettier: 4.2.1_prettier@2.8.3
@@ -134,7 +134,7 @@ importers:
       which-pm-runs: 1.1.0
     devDependencies:
       '@pantheon-systems/configs': link:../../configs
-      '@pantheon-systems/eslint-config': link:../../configs/eslint
+      '@pantheon-systems/eslint-config': link:../style-configs/eslint
       '@types/diff': 5.0.2
       '@types/fs-extra': 11.0.1
       '@types/inquirer': 9.0.3
@@ -170,7 +170,7 @@ importers:
       '@pantheon-systems/cms-kit': link:../cms-kit
     devDependencies:
       '@pantheon-systems/configs': link:../../configs
-      '@pantheon-systems/eslint-config': link:../../configs/eslint
+      '@pantheon-systems/eslint-config': link:../style-configs/eslint
       '@types/isomorphic-fetch': 0.0.36
       isomorphic-fetch: 3.0.0
       jsona: 1.11.0
@@ -202,7 +202,7 @@ importers:
       vitest: ^0.28.3
     devDependencies:
       '@pantheon-systems/configs': link:../../configs
-      '@pantheon-systems/eslint-config': link:../../configs/eslint
+      '@pantheon-systems/eslint-config': link:../style-configs/eslint
       '@rollup/plugin-typescript': 11.0.0
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       '@vitejs/plugin-react': 3.0.1_vite@4.0.4
@@ -218,6 +218,18 @@ importers:
       tailwindcss: 3.2.4_postcss@8.4.21
       vite: 4.0.4
       vitest: 0.28.3
+
+  packages/style-configs:
+    specifiers: {}
+
+  packages/style-configs/eslint:
+    specifiers:
+      '@pantheon-systems/configs': workspace:*
+      '@typescript-eslint/parser': ^5.49.0
+    dependencies:
+      '@typescript-eslint/parser': 5.49.0
+    devDependencies:
+      '@pantheon-systems/configs': link:../../../configs
 
   packages/wordpress-kit:
     specifiers:
@@ -239,7 +251,7 @@ importers:
       graphql-request: 5.1.0_graphql@16.6.0
     devDependencies:
       '@pantheon-systems/configs': link:../../configs
-      '@pantheon-systems/eslint-config': link:../../configs/eslint
+      '@pantheon-systems/eslint-config': link:../style-configs/eslint
       '@rollup/plugin-typescript': 11.0.0
       c8: 7.12.0
       msw: 1.0.0
@@ -3013,7 +3025,7 @@ packages:
     peerDependencies:
       react: '*'
     dependencies:
-      '@types/react': 18.0.27
+      '@types/react': 17.0.40
       prop-types: 15.8.1
       react: 17.0.2
     dev: false
@@ -6297,6 +6309,14 @@ packages:
     dependencies:
       '@types/history': 4.7.11
       '@types/react': 18.0.27
+    dev: false
+
+  /@types/react/17.0.40:
+    resolution: {integrity: sha512-UrXhD/JyLH+W70nNSufXqMZNuUD2cXHu6UjCllC6pmOQgBX4SGXOH8fjRka0O0Ee0HrFxapDD8Bwn81Kmiz6jQ==}
+    dependencies:
+      '@types/prop-types': 15.7.5
+      '@types/scheduler': 0.16.2
+      csstype: 3.1.1
     dev: false
 
   /@types/react/18.0.27:
