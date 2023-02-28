@@ -1,5 +1,33 @@
 # create-pantheon-decoupled-kit
 
+## 0.3.0-canary.2
+
+### Patch Changes
+
+- c7488a5: Fix missing dependency - moved Handlebars from dev to prod
+  dependencies.
+
+## 0.3.0-canary.1
+
+### Minor Changes
+
+- 8aae0b6: Removed `node-plop` as a dependency and refactored generators and
+  actions to use `node-plop` replacements
+
+## 0.3.0-canary.0
+
+### Minor Changes
+
+- fe6bb4a: Added a new addon, `gatsby-wp-acf-addon`. It includes an example
+  implementation of data sourced from WordPress with the
+  [Advanced Custom Fields plugin](https://www.advancedcustomfields.com/)
+  activated.
+- 259cf03: Added Drupal Umami demo examples as a generator
+- 461a863: Added a new addon, `next-wp-acf-addon`. It includes an example
+  implementation of data sourced from WordPress with the
+  [Advanced Custom Fields plugin](https://www.advancedcustomfields.com/)
+  activated.
+
 ## 0.2.0
 
 ### Minor Changes

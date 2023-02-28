@@ -2,7 +2,7 @@
 id: 'drupal-cors-configuration'
 title: 'CORS Configuration'
 slug: '/backend-starters/decoupled-drupal/cors-configuration'
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 Your decoupled site may require configuration to allow
