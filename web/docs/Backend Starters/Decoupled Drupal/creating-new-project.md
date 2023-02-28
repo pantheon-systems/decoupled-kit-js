@@ -153,40 +153,45 @@ For information on additional options, consult the
 
 ## Updating to Drupal 10
 
-To update a [Decoupled Drupal Composer Managed](https://dashboard.pantheon.io/sites/create?upstream_id=c76c0e51-ad85-41d7-b095-a98a75869760) site to Drupal 10, clone the backend site repo and do the following:
+To update a
+[Decoupled Drupal Composer Managed](https://dashboard.pantheon.io/sites/create?upstream_id=c76c0e51-ad85-41d7-b095-a98a75869760)
+site to Drupal 10, clone the backend site repo and do the following:
 
-
-1. Update to PHP 8.1 or greater if you have not already done so, by editing `pantheon.yml` and adding the following, with your chosen version of PHP:
-    ```yaml
-    php_version: 8.1
-    ```
+1. Update to PHP 8.1 or greater if you have not already done so, by editing
+   `pantheon.yml` and adding the following, with your chosen version of PHP:
+   ```yaml
+   php_version: 8.1
+   ```
 1. Update packages in your `composer.json` to the appropriate new versions:
-    ```bash
-    composer config platform.php 8.1
-    git commit -am "composer config platform.php 8.1"
-    composer config allow-plugins.phpstan/extension-installer true
-    git commit -am "composer config allow-plugins.phpstan/extension-installer true"
-    composer require --no-update --dev drupal/core-dev:^10
-    composer require --no-update drupal/core-composer-scaffold:^10
-    composer require --no-update pantheon-systems/drupal-integrations:^10
-    composer require --no-update drupal/core-recommended:^10
-    composer require --no-update drupal/pantheon_decoupled_profile:^2
-    composer require --no-update drupal/pantheon_decoupled_umami_demo:^2
-    composer update
-    git commit -am "Update to Drupal 10"
-    ```
+   ```bash
+   composer config platform.php 8.1
+   git commit -am "composer config platform.php 8.1"
+   composer config minimum-stability dev
+   git commit -am "composer config minimum-stability dev"
+   composer require --no-update --dev drupal/core-dev:^10
+   composer require --no-update drupal/core-composer-scaffold:^10
+   composer require --no-update pantheon-systems/drupal-integrations:^10
+   composer require --no-update drupal/core-recommended:^10
+   composer require --no-update drupal/pantheon_decoupled_profile:^2
+   composer require --no-update drupal/pantheon_decoupled_umami_demo:^2
+   composer update
+   git commit -am "Update to Drupal 10"
+   ```
 1. Push the changes up to Pantheon
-    ```bash
-    git push origin master
-    ```
-1. If you are updating an existing Drupal install, you will need to run database updates.  This can be done with terminus or via the Drupal web UI.
+   ```bash
+   git push origin master
+   ```
+1. If you are updating an existing Drupal install, you will need to run database
+   updates. This can be done with terminus or via the Drupal web UI.
 
-    With terminus:
-    ```bash
-    terminus drush <BACKEND_SITE>.<ENV> updatedb
-    ```
+   With terminus:
 
-    Via the Drupal web UI: Visit `/update.php` on your Drupal back-end site, e.g.
-    ```
-    https://dev-my-decoupled-backend.pantheonsite.io/update.php
-    ```
+   ```bash
+   terminus drush <BACKEND_SITE>.<ENV> updatedb
+   ```
+
+   Via the Drupal web UI: Visit `/update.php` on your Drupal back-end site, e.g.
+
+   ```
+   https://dev-my-decoupled-backend.pantheonsite.io/update.php
+   ```
