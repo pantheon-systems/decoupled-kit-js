@@ -1,4 +1,4 @@
-# @pantheon-systems/eslint-config
+# @pantheon-systems/configs
 
 ESLint configs for `@pantheon-systems` npm packages.
 

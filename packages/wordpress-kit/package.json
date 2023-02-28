@@ -22,7 +22,7 @@
 			"require": "./dist/wordpress-kit.umd.js"
 		}
 	},
-	"prettier": "@pantheon-systems/configs/prettier",
+	"prettier": "@pantheon-systems/workspace-configs/prettier",
 	"typedoc": {
 		"entryPoint": "./index.ts"
 	},
@@ -47,7 +47,7 @@
 		"graphql-request": "^5.1.0"
 	},
 	"devDependencies": {
-		"@pantheon-systems/configs": "*",
+		"@pantheon-systems/workspace-configs": "*",
 		"@pantheon-systems/eslint-config": "*",
 		"@rollup/plugin-typescript": "^11.0.0",
 		"c8": "^7.12.0",
