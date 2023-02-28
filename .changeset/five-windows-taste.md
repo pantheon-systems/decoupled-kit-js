@@ -1,5 +1,5 @@
 ---
-"@pantheon-systems/style-configs": minor
+"@pantheon-systems/configs": minor
 ---
 
-Publish prettier and configs
+Publish prettier and eslint configs
