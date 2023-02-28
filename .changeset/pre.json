@@ -14,8 +14,10 @@
     "web": "1.0.0"
   },
   "changesets": [
+    "short-starfishes-taste",
     "spotty-dodos-sip",
     "three-meals-carry",
+    "tiny-eyes-drum",
     "wild-mails-work"
   ]
 }

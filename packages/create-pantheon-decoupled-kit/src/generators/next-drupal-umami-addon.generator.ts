@@ -1,7 +1,7 @@
-import type { CustomActionConfig } from 'node-plop';
-import type { DecoupledKitGenerator } from '../types';
+import { addWithDiff, runLint } from '../actions';
+import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 
-export const nextDrupalUmamiAddon: DecoupledKitGenerator = {
+export const nextDrupalUmamiAddon: DecoupledKitGenerator<DefaultAnswers> = {
 	name: 'next-drupal-umami-addon',
 	description:
 		"Drupal's Umami profile data and components add-on for the next-drupal starter",
@@ -12,19 +12,7 @@ export const nextDrupalUmamiAddon: DecoupledKitGenerator = {
 			default: `${process.cwd()}/umami-demo`,
 		},
 	],
-	actions: (data) => {
-		const addWithDiff: CustomActionConfig<'addWithDiff'> = {
-			type: 'addWithDiff',
-			templates: './templates/next-drupal-umami-addon',
-			path: '{{outDir}}',
-			force: data?.force ? Boolean(data.force) : false,
-		};
-		const runESLint: CustomActionConfig<'runLint'> = {
-			type: 'runLint',
-		};
-
-		const actions = [addWithDiff, runESLint];
-
-		return actions;
-	},
+	addon: true,
+	templates: ['next-drupal-umami-addon'],
+	actions: [addWithDiff, runLint],
 };
