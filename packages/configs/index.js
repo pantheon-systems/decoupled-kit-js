@@ -5,12 +5,19 @@ module.exports = {
 		node: true,
 	},
 	plugins: ['@typescript-eslint'],
-	extends: [
-		'prettier',
-		'plugin:prettier/recommended',
-		'eslint:recommended',
-		'plugin:@typescript-eslint/recommended',
-		'plugin:@typescript-eslint/recommended-requiring-type-checking',
+	overrides: [
+		{
+			files: ['*.ts', '*.tsx'],
+			extends: [
+				'plugin:@typescript-eslint/recommended',
+				'plugin:@typescript-eslint/recommended-requiring-type-checking',
+			],
+
+			parserOptions: {
+				project: ['./tsconfig.json'], // Specify it only for TypeScript files
+			},
+		},
 	],
+	extends: ['prettier', 'plugin:prettier/recommended', 'eslint:recommended'],
 	ignorePatterns: ['/node_modules', 'build', 'static', 'public'],
 };

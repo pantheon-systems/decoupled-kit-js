@@ -20,9 +20,6 @@
 		"@typescript-eslint/parser": "^5.49.0"
 	},
 	"prettier": "./prettier.config.js",
-	"exports": {
-		"./prettier": "./prettier.config.js"
-	},
 	"peerDependencies": {
 		"@typescript-eslint/eslint-plugin": "^5.13.0",
 		"eslint": ">=8",
