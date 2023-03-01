@@ -1,7 +1,11 @@
-import type { CustomActionConfig } from 'node-plop';
-import type { DecoupledKitGenerator } from '../types';
+import { addWithDiff, runInstall, runLint } from '../actions';
+import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 
-export const nextWp: DecoupledKitGenerator = {
+interface NextWPAnswers extends DefaultAnswers {
+	appName: string;
+}
+
+export const nextWp: DecoupledKitGenerator<NextWPAnswers> = {
 	name: 'next-wp',
 	description: 'Next.js + WordPress starter kit',
 	prompts: [
@@ -17,22 +21,6 @@ export const nextWp: DecoupledKitGenerator = {
 				`${process.cwd()}/${appName.replaceAll(' ', '-').toLowerCase()}`,
 		},
 	],
-	actions: (data) => {
-		const addWithDiff: CustomActionConfig<'addWithDiff'> = {
-			type: 'addWithDiff',
-			templates: './templates/next-wp',
-			path: '{{outDir}}',
-			force: data?.force ? Boolean(data.force) : false,
-		};
-		const runESLint: CustomActionConfig<'runLint'> = {
-			type: 'runLint',
-		};
-		const runInstall: CustomActionConfig<'runInstall'> = {
-			type: 'runInstall',
-		};
-
-		const actions = [addWithDiff, runInstall, runESLint];
-
-		return actions;
-	},
+	templates: ['next-wp'],
+	actions: [addWithDiff, runInstall, runLint],
 };

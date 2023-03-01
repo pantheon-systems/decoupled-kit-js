@@ -1,29 +1,35 @@
-import * as actions from '../src/actions/addWithDiff';
+import * as actions from '../src/actions/index';
+import * as utils from '../src/utils/index';
 import chalk from 'chalk';
 import fs from 'fs-extra';
 import inquirer from 'inquirer';
-import * as nodePlop from 'node-plop';
-import { ParsedArgs } from 'minimist';
 import path from 'path';
 import process from 'process';
 import { rimraf } from 'rimraf';
-import type { CustomActionConfig } from 'node-plop';
 
-vi.mock('node-plop');
 vi.mock('inquirer');
-
-const config: CustomActionConfig<'addWithDiff'> & {
-	templates: string;
-	path: string;
-} = {
-	type: 'addWithDiff',
-	templates: './templates/test/addWithDiff',
-	path: '{{outDir}}',
-	force: false,
-};
 
 const outDir = (dir: 'empty' | 'populated') =>
 	`${process.cwd()}/__tests__/fixtures/addWithDiff/${dir}`;
+const handlebars = await utils.getHandlebarsInstance(
+	`${process.cwd()}/__tests__/`,
+);
+const templateData = [
+	{
+		addon: false,
+		templateDirs: [`${process.cwd()}/__tests__/templates/addWithDiff`],
+	},
+];
+const globalData = {
+	_: ['test-diff'],
+	anotherInput: 'Testing the diff',
+	diffInput: 'this line will be rendered to the template',
+	// 'workaround' for tests to work
+	templateRootDir: `${process.cwd()}/__tests__/`,
+	outDir: outDir('empty'),
+	force: false,
+	silent: false,
+};
 
 describe('addWithDiff()', () => {
 	beforeEach(async (context) => {
@@ -52,7 +58,7 @@ test input
 		context.logSpy = vi.spyOn(console, 'log');
 		context.addWithDiffSpy = vi.spyOn(actions, 'addWithDiff');
 		context.promptSpy = vi.spyOn(inquirer, 'prompt');
-		context.plopSpy = vi.spyOn(nodePlop, 'default');
+		context.handlebarsSpy = vi.spyOn(handlebars, 'compile');
 		context.processSpy = vi
 			.spyOn(process, 'exit')
 			.mockImplementationOnce(vi.fn());
@@ -66,350 +72,173 @@ test input
 		await fs.ensureDir(outDir('empty'));
 	});
 
+	it.fails(
+		'should throw an error if outDir is not valid',
+		async ({ addWithDiffSpy }) => {
+			const data = Object.assign({}, globalData);
+			data.outDir = '';
+			await actions.addWithDiff({ data, handlebars, templateData });
+			expect(addWithDiffSpy).toThrowError('outDir is not valid');
+		},
+	);
+
+	it.fails(
+		'should throw an error if templateData is not valid',
+		async ({ addWithDiffSpy }) => {
+			await actions.addWithDiff({
+				data: globalData,
+				handlebars,
+				templateData: [],
+			});
+			expect(addWithDiffSpy).toThrowError(
+				'templateData is missing from the call to this action',
+			);
+		},
+	);
+
+	it.fails(
+		'should throw an error if handlebars is not valid',
+		async ({ addWithDiffSpy }) => {
+			await actions.addWithDiff({
+				data: globalData,
+				handlebars: {} as any,
+				templateData,
+			});
+			expect(addWithDiffSpy).toThrowError(
+				'handlebars is missing from the call to this action.',
+			);
+		},
+	);
+
 	it('should show a diff and prompt for each file when the target dir is empty', async ({
-		logSpy,
 		addWithDiffSpy,
-		plopSpy,
 		promptSpy,
+		handlebarsSpy,
 	}) => {
 		vi.mocked(inquirer.prompt).mockImplementation(async () => ({
 			writeFile: 'yes',
 		}));
-		const plop = await nodePlop.default();
-		const [fileOneJs, fileTwoJs, fileThreeJson] = [
-			`${outDir('empty')}/test-anotherFileWithDiff.js`,
-			`${outDir('empty')}/test-withDiff.js`,
-			`${outDir('empty')}/test-toBeCopiedWithDiff.json`,
-		];
-		const answers: ParsedArgs = {
-			_: ['test-diff'],
-			anotherInput: 'Testing the diff',
-			diffInput: 'this line will be rendered to the template',
-			outDir: outDir('empty'),
-		};
+		const data = Object.assign({}, globalData);
+		data.outDir = outDir('empty');
 
-		await actions.addWithDiff(answers, config, plop);
+		await actions.addWithDiff({ data, handlebars, templateData });
 
-		expect(addWithDiffSpy).toHaveBeenLastCalledWith(answers, config, plop);
-		expect(plopSpy).toHaveBeenCalledOnce();
-		expect(promptSpy).toHaveBeenCalledTimes(3);
-
-		// Maybe there is a way to be less verbose here?
-		// it's probably worth testing either way, at least for
-		// the cases where there is a diff involved.
-		expect(logSpy).toHaveBeenNthCalledWith(
-			1,
-			chalk.bold(`Listing changes for ${chalk.magenta(`${fileOneJs}`)}:`),
-		);
-		expect(logSpy).toHaveBeenNthCalledWith(2, chalk.green('+ console.log(`'));
-		expect(logSpy).toHaveBeenNthCalledWith(
-			3,
-			chalk.green('+ This is a multiline input!'),
-		);
-		expect(logSpy).toHaveBeenNthCalledWith(
-			4,
-			chalk.green('+ Testing the diff'),
-		);
-		expect(logSpy).toHaveBeenNthCalledWith(5, chalk.green('+ `)'));
-		expect(logSpy).toHaveBeenNthCalledWith(
-			6,
-			chalk.bold(`Listing changes for ${chalk.magenta(`${fileThreeJson}`)}:`),
-		);
-		expect(logSpy).toHaveBeenNthCalledWith(2, chalk.green('+ console.log(`'));
-		expect(logSpy).toHaveBeenNthCalledWith(7, chalk.green('+ {'));
-		expect(logSpy).toHaveBeenNthCalledWith(
-			8,
-			chalk.green(
-				`+ 	"test": "this template doesn't need to be rendered but should still check if there is a diff!"`,
-			),
-		);
-		expect(logSpy).toHaveBeenNthCalledWith(9, chalk.green('+ }'));
-		expect(logSpy).toHaveBeenNthCalledWith(
-			10,
-			chalk.bold(`Listing changes for ${chalk.magenta(`${fileTwoJs}`)}:`),
-		);
-		expect(logSpy).toHaveBeenNthCalledWith(
-			11,
-			chalk.green`+ console.log('this line will be rendered to the template')`,
-		);
-		expect(logSpy).toHaveBeenLastCalledWith(`
-	Written: 
-		${chalk.green([fileOneJs, fileThreeJson, fileTwoJs].join('\n\t\t') || 'none')}
-	Skipped: 
-		${chalk.yellow([].join('\n\t\t') || 'none')}
-	Skipped (same content): 
-		${chalk.gray([].join('\n\t\t') || 'none')}
-	`);
+		expect(addWithDiffSpy).toHaveBeenLastCalledWith({
+			data,
+			handlebars,
+			templateData,
+		});
+		expect(handlebarsSpy).toHaveBeenCalledTimes(2);
+		expect(promptSpy).toHaveBeenCalledTimes(4);
 	});
 
 	it('should should a diff and prompt for each different file when the target exists', async ({
-		logSpy,
 		addWithDiffSpy,
-		plopSpy,
 		promptSpy,
+		handlebarsSpy,
 	}) => {
 		vi.mocked(inquirer.prompt).mockImplementation(async () => ({
 			writeFile: 'yes',
 		}));
-		const plop = await nodePlop.default();
-		const [fileOneJs, fileTwoJs, fileThreeJson] = [
-			`${outDir('populated')}/test-anotherFileWithDiff.js`,
-			`${outDir('populated')}/test-withDiff.js`,
-			`${outDir('populated')}/test-toBeCopiedWithDiff.json`,
-		];
-		const answers: ParsedArgs = {
-			_: ['test-diff'],
-			anotherInput: 'Testing a different output',
-			diffInput: 'this input is also different',
-			outDir: outDir('populated'),
-		};
+		const data = Object.assign({}, globalData);
+		data.outDir = outDir('populated');
+		data.anotherInput = 'Testing a different output';
+		data.diffInput = 'this input is also different';
+		await actions.addWithDiff({ data, templateData, handlebars });
 
-		const config: CustomActionConfig<'addWithDiff'> & {
-			templates: string;
-			path: string;
-		} = {
-			type: 'addWithDiff',
-			templates: './templates/test/addWithDiff',
-			path: '{{outDir}}',
-			force: false,
-		};
-
-		await actions.addWithDiff(answers, config, plop);
-
-		expect(addWithDiffSpy).toHaveBeenLastCalledWith(answers, config, plop);
+		expect(addWithDiffSpy).toHaveBeenLastCalledWith({
+			data,
+			templateData,
+			handlebars,
+		});
+		expect(handlebarsSpy).toHaveBeenCalledTimes(2);
 		expect(promptSpy).toHaveBeenCalledTimes(2);
-		expect(plopSpy).toHaveBeenCalledOnce();
-
-		expect(logSpy).toHaveBeenNthCalledWith(
-			1,
-			chalk.bold(`Listing changes for ${chalk.magenta(`${fileOneJs}`)}:`),
-		);
-		expect(logSpy).toHaveBeenNthCalledWith(
-			3,
-			chalk.gray('= This is a multiline input!'),
-		);
-		expect(logSpy).toHaveBeenNthCalledWith(4, chalk.red('- test input'));
-		expect(logSpy).toHaveBeenNthCalledWith(
-			5,
-			chalk.green('+ Testing a different output'),
-		);
-		expect(logSpy).toHaveBeenNthCalledWith(6, chalk.gray('= `)'));
-		expect(logSpy).toHaveBeenNthCalledWith(
-			7,
-			chalk.bold(`Listing changes for ${chalk.magenta(`${fileTwoJs}`)}:`),
-		);
-		expect(logSpy).toHaveBeenNthCalledWith(
-			8,
-			chalk.red(`- console.log('Hello World')`),
-		);
-		expect(logSpy).toHaveBeenNthCalledWith(
-			9,
-			chalk.green(`+ console.log('this input is also different')`),
-		);
-		expect(logSpy).toHaveBeenLastCalledWith(`
-	Written: 
-		${chalk.green([fileOneJs, fileTwoJs].join('\n\t\t') || 'none')}
-	Skipped: 
-		${chalk.yellow([].join('\n\t\t') || 'none')}
-	Skipped (same content): 
-		${chalk.gray([fileThreeJson].join('\n\t\t') || 'none')}
-	`);
 	});
 
 	it('should only prompt the user once if answer is "yes to all"', async ({
 		promptSpy,
-		logSpy,
-		plopSpy,
 		addWithDiffSpy,
+		handlebarsSpy,
 	}) => {
 		vi.mocked(inquirer.prompt).mockImplementation(async () => ({
 			writeFile: 'yes to all',
 		}));
-		const plop = await nodePlop.default();
-		const [fileOneJs, fileTwoJs, fileThreeJson] = [
-			`${outDir('empty')}/test-anotherFileWithDiff.js`,
-			`${outDir('empty')}/test-withDiff.js`,
-			`${outDir('empty')}/test-toBeCopiedWithDiff.json`,
-		];
-		const answers: ParsedArgs = {
-			_: ['test-diff'],
-			anotherInput: 'Testing a different output',
-			diffInput: 'this input is also different',
-			outDir: outDir('empty'),
-		};
+		const data = Object.assign({}, globalData);
+		data.anotherInput = 'Testing a different output';
+		data.diffInput = 'this input is also different';
+		data.outDir = outDir('empty');
 
-		const config: CustomActionConfig<'addWithDiff'> & {
-			templates: string;
-			path: string;
-		} = {
-			type: 'addWithDiff',
-			templates: './templates/test/addWithDiff',
-			path: '{{outDir}}',
-		};
-
-		await actions.addWithDiff(answers, config, plop);
+		await actions.addWithDiff({ data, templateData, handlebars });
 		expect(addWithDiffSpy).toHaveBeenCalledOnce();
-		expect(plopSpy).toHaveBeenCalledOnce();
+		expect(handlebarsSpy).toHaveBeenCalledTimes(2);
 		expect(promptSpy).toHaveBeenCalledTimes(1);
-		expect(logSpy).toHaveBeenCalledTimes(6);
-		expect(logSpy).toHaveBeenLastCalledWith(`
-	Written: 
-		${chalk.green([fileOneJs, fileThreeJson, fileTwoJs].join('\n\t\t') || 'none')}
-	Skipped: 
-		${chalk.yellow([].join('\n\t\t') || 'none')}
-	Skipped (same content): 
-		${chalk.gray([].join('\n\t\t') || 'none')}
-	`);
 	});
 
 	it('should write files without prompts if --force is true', async ({
 		promptSpy,
-		logSpy,
-		plopSpy,
 		addWithDiffSpy,
 	}) => {
-		const plop = await nodePlop.default();
-		const [fileOneJs, fileTwoJs, fileThreeJson] = [
-			`${outDir('empty')}/test-anotherFileWithDiff.js`,
-			`${outDir('empty')}/test-withDiff.js`,
-			`${outDir('empty')}/test-toBeCopiedWithDiff.json`,
-		];
-		const answers: ParsedArgs = {
-			_: ['test-diff'],
-			anotherInput: 'Testing a different output',
-			diffInput: 'this input is also different',
-			outDir: outDir('empty'),
-			force: true,
-		};
+		const data = Object.assign({}, globalData);
+		data.anotherInput = 'Testing a different output';
+		data.diffInput = 'this input is also different';
+		data.outDir = outDir('empty');
+		data.force = true;
 
-		await actions.addWithDiff(answers, config, plop);
+		await actions.addWithDiff({ data, templateData, handlebars });
 
 		expect(addWithDiffSpy).toHaveBeenCalledOnce();
-		expect(plopSpy).toHaveBeenCalledOnce();
 		expect(promptSpy).toHaveBeenCalledTimes(0);
-		expect(logSpy).toHaveBeenLastCalledWith(`
-	Written: 
-		${chalk.green([fileOneJs, fileThreeJson, fileTwoJs].join('\n\t\t') || 'none')}
-	Skipped: 
-		${chalk.yellow([].join('\n\t\t') || 'none')}
-	Skipped (same content): 
-		${chalk.gray([].join('\n\t\t') || 'none')}
-	`);
 	});
 
 	it('should not log or prompt if --silent and --force are true', async ({
 		promptSpy,
 		logSpy,
-		plopSpy,
 		addWithDiffSpy,
 	}) => {
-		const plop = await nodePlop.default();
-		const answers: ParsedArgs = {
-			_: ['test-diff'],
-			anotherInput: 'Testing a different output',
-			diffInput: 'this input is also different',
-			outDir: outDir('empty'),
-			force: true,
-			silent: true,
-		};
+		const data = Object.assign({}, globalData);
+		data.anotherInput = 'Testing a different output';
+		data.diffInput = 'this input is also different';
+		data.outDir = outDir('empty');
+		data.force = true;
+		data.silent = true;
 
-		const config: CustomActionConfig<'addWithDiff'> & {
-			templates: string;
-			path: string;
-		} = {
-			type: 'addWithDiff',
-			templates: './templates/test/addWithDiff',
-			path: '{{outDir}}',
-			force: true,
-		};
-
-		await actions.addWithDiff(answers, config, plop);
+		await actions.addWithDiff({ data, templateData, handlebars });
 
 		expect(addWithDiffSpy).toHaveBeenCalledOnce();
-		expect(plopSpy).toHaveBeenCalledOnce();
 		expect(promptSpy).toHaveBeenCalledTimes(0);
 		expect(logSpy).toHaveBeenCalledTimes(0);
 	});
 
 	it('should list changes but skip when answer is skip and remove dangling files', async ({
-		promptSpy,
-		logSpy,
-		plopSpy,
 		addWithDiffSpy,
 	}) => {
 		vi.mocked(inquirer.prompt).mockImplementation(async () => ({
 			writeFile: 'skip',
 		}));
 		const unlinkSyncSpy = vi.spyOn(fs, 'unlinkSync');
-		const plop = await nodePlop.default();
-		const [fileOneJs, fileTwoJs, fileThreeJson] = [
-			`${outDir('empty')}/test-anotherFileWithDiff.js`,
-			`${outDir('empty')}/test-withDiff.js`,
-			`${outDir('empty')}/test-toBeCopiedWithDiff.json`,
-		];
-		const answers: ParsedArgs = {
-			_: ['test-diff'],
-			anotherInput: 'Testing a different output',
-			diffInput: 'this input is also different',
-			outDir: outDir('empty'),
-		};
 
-		const config: CustomActionConfig<'addWithDiff'> & {
-			templates: string;
-			path: string;
-		} = {
-			type: 'addWithDiff',
-			templates: './templates/test/addWithDiff',
-			path: '{{outDir}}',
-		};
+		const data = Object.assign({}, globalData);
+		data.anotherInput = 'Testing a different output';
+		data.diffInput = 'this input is also different';
+		data.outDir = outDir('empty');
 
-		await actions.addWithDiff(answers, config, plop);
+		await actions.addWithDiff({ data, templateData, handlebars });
 
 		expect(addWithDiffSpy).toHaveBeenCalledOnce();
-		expect(plopSpy).toHaveBeenCalledOnce();
-		expect(promptSpy).toHaveBeenCalledTimes(3);
-		expect(unlinkSyncSpy).toHaveBeenCalledTimes(3);
-		expect(logSpy).toHaveBeenCalledTimes(12);
-		expect(logSpy).toHaveBeenLastCalledWith(`
-	Written: 
-		${chalk.green([].join('\n\t\t') || 'none')}
-	Skipped: 
-		${chalk.yellow([fileOneJs, fileThreeJson, fileTwoJs].join('\n\t\t') || 'none')}
-	Skipped (same content): 
-		${chalk.gray([].join('\n\t\t') || 'none')}
-	`);
+		expect(unlinkSyncSpy).toHaveBeenCalledTimes(4);
 	});
 
-	it('should exit on abort', async ({
-		promptSpy,
-		logSpy,
-		plopSpy,
-		addWithDiffSpy,
-	}) => {
+	it('should exit on abort', async ({ promptSpy, logSpy, addWithDiffSpy }) => {
 		vi.mocked(inquirer.prompt).mockImplementation(async () => ({
 			writeFile: 'abort',
 		}));
-		const plop = await nodePlop.default();
-		const answers: ParsedArgs = {
-			_: ['test-diff'],
-			anotherInput: 'Testing a different output',
-			diffInput: 'this input is also different',
-			outDir: outDir('empty'),
-		};
+		const data = Object.assign({}, globalData);
+		data.anotherInput = 'Testing a different output';
+		data.diffInput = 'this input is also different';
+		data.outDir = outDir('empty');
 
-		const config: CustomActionConfig<'addWithDiff'> & {
-			templates: string;
-			path: string;
-		} = {
-			type: 'addWithDiff',
-			templates: './templates/test/addWithDiff',
-			path: '{{outDir}}',
-		};
-
-		await actions.addWithDiff(answers, config, plop);
-
+		await actions.addWithDiff({ data, templateData, handlebars });
 		expect(addWithDiffSpy).toHaveBeenCalledOnce();
-		expect(plopSpy).toHaveBeenCalledOnce();
 		expect(promptSpy).toHaveBeenCalledTimes(1);
 		expect(logSpy).toHaveBeenLastCalledWith(chalk.red('Aborting!'));
 	});

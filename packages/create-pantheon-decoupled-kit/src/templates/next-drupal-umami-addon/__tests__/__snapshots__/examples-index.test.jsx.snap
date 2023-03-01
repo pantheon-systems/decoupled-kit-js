@@ -1,0 +1,175 @@
+// Vitest Snapshot v1
+
+exports[`Umami <ExamplesPageTemplate /> > should render 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+  >
+    <div
+      class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
+    >
+      <nav>
+        <ul
+          class="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-list-none ps-justify-between ps-max-w-screen-sm ps-mx-auto"
+        >
+          <li
+            class="ps-mr-auto"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/"
+            >
+              🏠 Home
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/articles"
+            >
+              📰 Articles
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/pages"
+            >
+              📑 Pages
+            </a>
+          </li>
+          <li
+            class="ps-mx-4"
+          >
+            <a
+              class="ps-font-sans hover:ps-underline"
+              href="/examples"
+            >
+              ⚛️ Examples
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="mb-auto"
+    >
+      <div
+        class="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen"
+      >
+        <h1>
+          Examples
+        </h1>
+        <a
+          href="/"
+        >
+          <span
+            class="w-full underline cursor-pointer"
+          >
+            Home →
+          </span>
+        </a>
+        <div
+          class="max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+        >
+          <p>
+            This page outlines a growing list of common use cases that can be used as a reference when building using this starter kit. If you don't need them for your site, feel free to delete the \`pages/examples\` directory in your codebase.
+          </p>
+          <ul>
+            <li>
+              <a
+                href="/examples/auth-api"
+              >
+                API Authorization
+              </a>
+               - confirms that Next.js is able to make authenticated requests to Drupal's API.
+            </li>
+            <li>
+              <a
+                href="/examples/ssg-isr"
+              >
+                SSG and ISR
+              </a>
+               - by default, this starter kit is optimized for SSR and Edge Caching on Pantheon. This example is provided for cases where Next.js static generation options would be beneficial.
+            </li>
+            <li>
+              <a
+                href="/examples/pagination"
+              >
+                Pagination
+              </a>
+               - a paginated list with a large dataset.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="ps-w-full ps-text-white ps-bg-black ps-p-4 ps-mt-12"
+    >
+      <nav
+        class="ps-flex ps-flex-col ps-max-w-lg ps-mx-auto lg:ps-max-w-screen-lg"
+      >
+        <ul>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/articles"
+            >
+              Articles
+            </a>
+          </li>
+          <li
+            class="ps-list-disc ps-text-blue-300"
+          >
+            <a
+              class="ps-text-blue-300 hover:ps-underline hover:ps-text-blue-100 focus:ps-text-purple-600 active:ps-text-purple-300"
+              href="/en/recipes"
+            >
+              Recipes
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="ps-flex ps-my-4 ps-p-2"
+      >
+        <span
+          class="mx-auto"
+        >
+          © 2023 Built with 
+          <a
+            class="text-white hover:text-blue-100 underline"
+            href="https://nextjs.org/"
+          >
+            Next.js
+          </a>
+           and 
+          <a
+            class="text-blue-500 underline hover:text-blue-100"
+            href="https://www.drupal.org/"
+          >
+            Drupal
+          </a>
+        </span>
+      </div>
+    </footer>
+  </div>
+</DocumentFragment>
+`;
