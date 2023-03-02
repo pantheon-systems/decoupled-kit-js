@@ -21,20 +21,41 @@ jobs:
       matrix:
         # define package to repository map
         include:
-          - local_path: 'starters/next-drupal-starter'
-            split_repository: 'next-drupal-starter-umami-canary'
-          - local_path: 'starters/next-drupal-starter'
-            split_repository: 'next-drupal-starter-default-canary'
-          - local_path: 'starters/gatsby-wordpress-starter'
-            split_repository: 'gatsby-wordpress-starter-default-canary'
-          - local_path: 'starters/next-wordpress-starter'
-            split_repository: 'next-wordpress-starter-default-canary'
+          # next-drupal-starter + umami
+          - local_path: "starters/next-drupal-starter-umami-canary-generated"
+            split_repository: "next-drupal-starter-umami-canary"
+            generator_cmd: "next-drupal next-drupal-umami-addon --appName next-drupal-starter-umami-canary
+              --noInstall --force --silent"
+          # next-drupal-starter default
+          - local_path: "starters/next-drupal-starter-default-canary-generated"
+            split_repository: "next-drupal-starter-default-canary"
+            generator_cmd: "next-drupal --appName
+              test-next-drupal-starter-default --noInstall --force
+              --silent"
+          # gatsby-wordpress-starter
+          - local_path: "starters/gatsby-wordpress-starter-canary-generated"
+            split_repository: "gatsby-wordpress-starter-canary"
+            generator_cmd: "gatsby-wp --appName test-gatsby--wordpress-starter
+              --noInstall --force --silent"
+          # next-wordpress-starter
+          - local_path: "starters/next-wordpress-starter-canary-generated"
+            split_repository: "next-wordpress-starter-canary"
+            generator_cmd: "next-wp --appName test-next-wordpress-starter
+              --noInstall --force --silent"
+
           # canary docs site
           - local_path: 'web'
             split_repository: 'decoupled-kit-docs-canary'
 
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
       - uses: actions/checkout@v3
+      # install canary version of the CLI
+      - run: npm i --global create-pantheon-decoupled-kit@canary
+      # run the command to generate the starter in the matrix.local_path directory
+      - run: create-pantheon-decoupled-kit ${{ matrix.generator_cmd }} --outDir ./${{ matrix.local_path }}
       # Add Github workflow before split
       - run: |
           mkdir -p ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows
@@ -59,13 +80,13 @@ jobs:
           # For posting a rich message using Block Kit
           payload: |
             {
-              "text": "GitHub Action result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+              "text": "GitHub Action result: ${{ job.status }}\n${{ github.ref }}",
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "GitHub Action result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                    "text": "GitHub Action result: ${{ job.status }}\n${{ github.ref }}"
                   }
                 }
               ]
