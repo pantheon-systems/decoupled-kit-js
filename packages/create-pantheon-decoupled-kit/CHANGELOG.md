@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.3.0-canary.3
+
+### Patch Changes
+
+- de15edb: Fix issue where .gitignores in templates were not properly published
+  to npm
+
 ## 0.3.0-canary.2
 
 ### Patch Changes
