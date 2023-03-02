@@ -101,12 +101,19 @@ importers:
 
   packages/configs/eslint:
     specifiers:
-      '@typescript-eslint/parser': ^5.49.0
-    dependencies:
-      '@typescript-eslint/parser': 5.49.0
+      '@pantheon-systems/eslint-config': workspace:*
+      '@pantheon-systems/workspace-configs': workspace:*
+    devDependencies:
+      '@pantheon-systems/eslint-config': link:../../../configs/eslint
+      '@pantheon-systems/workspace-configs': link:../../../configs
 
-  packages/configs/prettier:
-    specifiers: {}
+  packages/configs/other:
+    specifiers:
+      '@pantheon-systems/eslint-config': workspace:*
+      '@pantheon-systems/workspace-configs': workspace:*
+    devDependencies:
+      '@pantheon-systems/eslint-config': link:../../../configs/eslint
+      '@pantheon-systems/workspace-configs': link:../../../configs
 
   packages/create-pantheon-decoupled-kit:
     specifiers:
@@ -3020,7 +3027,7 @@ packages:
     peerDependencies:
       react: '*'
     dependencies:
-      '@types/react': 17.0.40
+      '@types/react': 18.0.27
       prop-types: 15.8.1
       react: 17.0.2
     dev: false
@@ -6298,14 +6305,6 @@ packages:
     dependencies:
       '@types/history': 4.7.11
       '@types/react': 18.0.27
-    dev: false
-
-  /@types/react/17.0.40:
-    resolution: {integrity: sha512-UrXhD/JyLH+W70nNSufXqMZNuUD2cXHu6UjCllC6pmOQgBX4SGXOH8fjRka0O0Ee0HrFxapDD8Bwn81Kmiz6jQ==}
-    dependencies:
-      '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.16.2
-      csstype: 3.1.1
     dev: false
 
   /@types/react/18.0.27:

@@ -1,15 +1,32 @@
-# @pantheon-systems/eslint-config-dk
+# @pantheon-systems/eslint-config-decoupled-kit
 
-ESLint and prettier configs for `@pantheon-systems` npm packages and starter
-kits.
+ESLint configs for Pantheon Decoupled Kit starter kits.
 
 ## Installation
 
 To install this package to use in your application:
 
-`npm install @pantheon-systems/eslint-config-dk`
+```shell
+  npm install @pantheon-systems/eslint-config-decoupled-kit -D
+```
 
 ## Usage
 
-Configurations can be imported or required from the
-`@pantheon-systems/eslint-config-dk` package.
+In your `.eslintrc` file at the root of your project, add
+`@pantheon-systems/decoupled-kit` to your `extends`
+
+### Basic Config
+
+```json
+{
+	"extends": "@pantheon-systems/decoupled-kit"
+}
+```
+
+### React Config
+
+```json
+{
+	"extends": "@pantheon-systems/decoupled-kit/react"
+}
+```

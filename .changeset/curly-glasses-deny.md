@@ -1,5 +1,5 @@
 ---
-"@pantheon-systems/prettier-config": Minor
+"@pantheon-systems/decoupled-kit-config": minor
 ---
 
-Initial release for Pantheons decoupled kit prettier configurations
+Initial release for various Pantheon Decoupled Kit configs

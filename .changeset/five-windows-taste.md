@@ -1,5 +1,5 @@
 ---
-'@pantheon-systems/eslint-config-dk': minor
+'@pantheon-systems/eslint-config-decoupled-kit': minor
 ---
 
-Publish prettier and eslint configs
+Initial release for Pantheon Decoupled Kit ESLint configs
