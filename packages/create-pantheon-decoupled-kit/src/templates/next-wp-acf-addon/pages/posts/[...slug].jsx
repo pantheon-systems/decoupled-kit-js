@@ -23,9 +23,7 @@ export default function PostTemplate({ menuItems, post, preview }) {
 			<ContentWithImage
 				title={post.title}
 				content={post.content}
-				date={new Date(post.date).toLocaleDateString('en-US', {
-					timeZone: 'UTC',
-				})}
+				date={new Date(post.date).toDateString()}
 				imageProps={
 					post.featuredImage
 						? {

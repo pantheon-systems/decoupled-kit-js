@@ -18,9 +18,7 @@ export default function PageTemplate({ menuItems, page, preview }) {
 			<ContentWithImage
 				title={page.title}
 				content={page.content}
-				date={new Date(page.date).toLocaleDateString('en-US', {
-					timeZone: 'UTC',
-				})}
+				date={new Date(page.date).toDateString()}
 				imageProps={
 					page.featuredImage
 						? {
