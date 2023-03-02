@@ -22,7 +22,7 @@
 			"require": "./dist/cms-kit.umd.js"
 		}
 	},
-	"prettier": "@pantheon-systems/configs/prettier",
+	"prettier": "@pantheon-systems/workspace-configs/prettier",
 	"typedoc": {
 		"entryPoint": "./index.ts"
 	},
@@ -41,7 +41,7 @@
 		"lint-staged": "lint-staged"
 	},
 	"devDependencies": {
-		"@pantheon-systems/configs": "*",
+		"@pantheon-systems/workspace-configs": "*",
 		"@pantheon-systems/eslint-config": "*",
 		"@rollup/plugin-typescript": "^11.0.0",
 		"c8": "^7.12.0",

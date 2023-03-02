@@ -1,0 +1,6 @@
+{
+  "extends": "@pantheon-systems/eslint-config",
+  "parserOptions": {
+    "project": ["../../../tsconfig.json"]
+  }
+}

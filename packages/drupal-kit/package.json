@@ -22,7 +22,7 @@
 			"require": "./dist/drupal-kit.umd.js"
 		}
 	},
-	"prettier": "@pantheon-systems/configs/prettier",
+	"prettier": "@pantheon-systems/workspace-configs/prettier",
 	"typedoc": {
 		"entryPoint": "./index.ts"
 	},
@@ -42,7 +42,7 @@
 		"lint-staged": "lint-staged"
 	},
 	"devDependencies": {
-		"@pantheon-systems/configs": "*",
+		"@pantheon-systems/workspace-configs": "*",
 		"@pantheon-systems/eslint-config": "*",
 		"@types/isomorphic-fetch": "^0.0.36",
 		"isomorphic-fetch": "^3.0.0",
