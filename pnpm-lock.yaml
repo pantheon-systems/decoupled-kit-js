@@ -99,11 +99,14 @@ importers:
       rimraf: 4.1.2
       vitest: 0.28.3
 
-  packages/configs:
+  packages/configs/eslint:
     specifiers:
       '@typescript-eslint/parser': ^5.49.0
     dependencies:
       '@typescript-eslint/parser': 5.49.0
+
+  packages/configs/prettier:
+    specifiers: {}
 
   packages/create-pantheon-decoupled-kit:
     specifiers:
@@ -12911,7 +12914,6 @@ packages:
       wordwrap: 1.0.0
     optionalDependencies:
       uglify-js: 3.17.4
-    dev: true
 
   /hard-rejection/2.1.0:
     resolution: {integrity: sha512-VIZB+ibDhx7ObhAe7OVtoEbuP4h/MuOTHJ+J8h/eBXotJYl0fBgR72xDFCKgIh22OJZIOVNxBMWuhAr10r8HdA==}
@@ -20063,7 +20065,6 @@ packages:
     engines: {node: '>=0.8.0'}
     hasBin: true
     requiresBuild: true
-    dev: true
     optional: true
 
   /unbox-primitive/1.0.2:
@@ -21041,7 +21042,6 @@ packages:
 
   /wordwrap/1.0.0:
     resolution: {integrity: sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==}
-    dev: true
 
   /workbox-background-sync/4.3.1:
     resolution: {integrity: sha512-1uFkvU8JXi7L7fCHVBEEnc3asPpiAL33kO495UMcD5+arew9IbKW2rV5lpzhoWcm/qhGB89YfO4PmB/0hQwPRg==}

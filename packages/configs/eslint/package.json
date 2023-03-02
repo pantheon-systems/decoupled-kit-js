@@ -1,5 +1,5 @@
 {
-	"name": "@pantheon-systems/configs",
+	"name": "@pantheon-systems/eslint-config-dk",
 	"version": "0.0.0",
 	"description": "Eslint configs for the @pantheon-systems decoupled SDK npm packages",
 	"license": "GPL-3.0-or-later",
@@ -12,14 +12,13 @@
 	"author": "@pantheon-systems",
 	"files": [
 		"./index.js",
-		"./react.js",
-		"./prettier.config.js"
+		"./react.js"
 	],
 	"main": "./index.js",
 	"dependencies": {
 		"@typescript-eslint/parser": "^5.49.0"
 	},
-	"prettier": "./prettier.config.js",
+	"prettier": "@pantheon-systems/prettier-config/prettier",
 	"peerDependencies": {
 		"@typescript-eslint/eslint-plugin": "^5.13.0",
 		"eslint": ">=8",
