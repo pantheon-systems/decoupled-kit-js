@@ -1,5 +1,13 @@
 # @pantheon-systems/drupal-kit
 
+## 4.2.1-canary.0
+
+### Patch Changes
+
+- b075c12: Update config package route.
+- Updated dependencies [b44ec7a]
+  - @pantheon-systems/cms-kit@0.2.1-canary.0
+
 ## 4.2.0
 
 ### Minor Changes
