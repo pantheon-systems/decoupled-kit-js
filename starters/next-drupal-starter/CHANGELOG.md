@@ -1,5 +1,14 @@
 # @pantheon-systems/next-drupal-starter
 
+## 4.0.3-canary.0
+
+### Patch Changes
+
+- Updated dependencies [b075c12]
+- Updated dependencies [eb8e3f5]
+  - @pantheon-systems/drupal-kit@4.2.1-canary.0
+  - @pantheon-systems/nextjs-kit@1.7.1-canary.0
+
 ## 4.0.2
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.3.1-canary.0
+
+### Patch Changes
+
+- 9ede7c8: Update config package route.
+- 4dd905b: [next-wp] Update post and page date
+
 ## 0.3.0
 
 ### Minor Changes
