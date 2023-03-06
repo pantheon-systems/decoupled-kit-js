@@ -1,7 +1,10 @@
 {
-	"extends": "@pantheon-systems/eslint-config-decoupled-kit",
+	"extends": "@pantheon-systems/decoupled-kit/react",
 	"env": {
 		"browser": true,
 		"node": true
-	}
+	},
+	"rules": {
+        "react/prop-types": "off"
+    }
 }
