@@ -35,7 +35,7 @@ jobs:
           # gatsby-wordpress-starter
           - local_path: "starters/gatsby-wordpress-starter-canary-generated"
             split_repository: "gatsby-wordpress-starter-canary"
-            generator_cmd: "gatsby-wp --appName test-gatsby--wordpress-starter
+            generator_cmd: "gatsby-wp --appName test-gatsby-wordpress-starter
               --noInstall --force --silent"
           # next-wordpress-starter
           - local_path: "starters/next-wordpress-starter-canary-generated"
