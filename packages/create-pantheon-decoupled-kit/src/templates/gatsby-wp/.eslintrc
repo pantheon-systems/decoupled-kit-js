@@ -1,0 +1,7 @@
+{
+	"extends": "@pantheon-systems/eslint-config-decoupled-kit",
+	"env": {
+		"browser": true,
+		"node": true
+	}
+}

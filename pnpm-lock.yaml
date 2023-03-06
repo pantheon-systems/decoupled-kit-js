@@ -118,7 +118,9 @@ importers:
 
   packages/create-pantheon-decoupled-kit:
     specifiers:
+      '@pantheon-systems/decoupled-kit-configs': workspace:0.1.0-canary.0
       '@pantheon-systems/eslint-config': workspace:*
+      '@pantheon-systems/eslint-config-decoupled-kit': workspace:0.1.0-canary.0
       '@pantheon-systems/workspace-configs': workspace:*
       '@types/diff': ^5.0.2
       '@types/fs-extra': ^11.0.1
@@ -149,7 +151,9 @@ importers:
       minimist: 1.2.7
       which-pm-runs: 1.1.0
     devDependencies:
+      '@pantheon-systems/decoupled-kit-configs': link:../configs/other
       '@pantheon-systems/eslint-config': link:../../configs/eslint
+      '@pantheon-systems/eslint-config-decoupled-kit': link:../configs/eslint
       '@pantheon-systems/workspace-configs': link:../../configs
       '@types/diff': 5.0.2
       '@types/fs-extra': 11.0.1
