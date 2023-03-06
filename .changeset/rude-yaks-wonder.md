@@ -1,5 +1,5 @@
 ---
-"create-pantheon-decoupled-kit": minor
+'create-pantheon-decoupled-kit': minor
 ---
 
-Add Published `eslint` Configs to Gatsby Generator
+[gatsby-wp] Add Published `eslint` Configs to Gatsby Generator
