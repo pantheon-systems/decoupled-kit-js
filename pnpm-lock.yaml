@@ -118,9 +118,9 @@ importers:
 
   packages/create-pantheon-decoupled-kit:
     specifiers:
-      '@pantheon-systems/decoupled-kit-configs': workspace:0.1.0-canary.0
+      '@pantheon-systems/decoupled-kit-configs': 0.1.0-canary.0
       '@pantheon-systems/eslint-config': workspace:*
-      '@pantheon-systems/eslint-config-decoupled-kit': workspace:0.1.0-canary.0
+      '@pantheon-systems/eslint-config-decoupled-kit': 0.1.0-canary.0
       '@pantheon-systems/workspace-configs': workspace:*
       '@types/diff': ^5.0.2
       '@types/fs-extra': ^11.0.1
@@ -3032,7 +3032,7 @@ packages:
     peerDependencies:
       react: '*'
     dependencies:
-      '@types/react': 18.0.27
+      '@types/react': 17.0.40
       prop-types: 15.8.1
       react: 17.0.2
     dev: false
@@ -6310,6 +6310,14 @@ packages:
     dependencies:
       '@types/history': 4.7.11
       '@types/react': 18.0.27
+    dev: false
+
+  /@types/react/17.0.40:
+    resolution: {integrity: sha512-UrXhD/JyLH+W70nNSufXqMZNuUD2cXHu6UjCllC6pmOQgBX4SGXOH8fjRka0O0Ee0HrFxapDD8Bwn81Kmiz6jQ==}
+    dependencies:
+      '@types/prop-types': 15.7.5
+      '@types/scheduler': 0.16.2
+      csstype: 3.1.1
     dev: false
 
   /@types/react/18.0.27:
