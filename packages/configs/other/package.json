@@ -1,0 +1,30 @@
+{
+	"name": "@pantheon-systems/decoupled-kit-configs",
+	"version": "0.1.0-canary.0",
+	"description": "Various configs for the Pantheon Decoupled Kit starter kits",
+	"license": "GPL-3.0-or-later",
+	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
+	"bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pantheon-systems/decoupled-kit-js"
+	},
+	"author": "@pantheon-systems",
+	"files": [
+		"./prettier.config.js"
+	],
+	"prettier": "@pantheon-systems/workspace-configs/prettier",
+	"exports": {
+		"./prettier": "./prettier.config.js"
+	},
+	"scripts": {
+		"lint-staged": "lint-staged"
+	},
+	"devDependencies": {
+		"@pantheon-systems/eslint-config": "*",
+		"@pantheon-systems/workspace-configs": "*"
+	},
+	"peerDependencies": {
+		"prettier": ">=2.5.1"
+	}
+}

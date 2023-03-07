@@ -1,5 +1,42 @@
 # create-pantheon-decoupled-kit
 
+## 0.3.1-canary.0
+
+### Patch Changes
+
+- 9ede7c8: Update config package route.
+- 4dd905b: [next-wp] Update post and page date
+
+## 0.3.0
+
+### Minor Changes
+
+- fe6bb4a: Added a new addon, `gatsby-wp-acf-addon`. It includes an example
+  implementation of data sourced from WordPress with the
+  [Advanced Custom Fields plugin](https://www.advancedcustomfields.com/)
+  activated.
+- 259cf03: Added Drupal Umami demo examples as a generator
+- 8aae0b6: Removed `node-plop` as a dependency and refactored generators and
+  actions to use `node-plop` replacements
+- 461a863: Added a new addon, `next-wp-acf-addon`. It includes an example
+  implementation of data sourced from WordPress with the
+  [Advanced Custom Fields plugin](https://www.advancedcustomfields.com/)
+  activated.
+
+### Patch Changes
+
+- c7488a5: Fix missing dependency - moved Handlebars from dev to prod
+  dependencies.
+- de15edb: Fix issue where .gitignores in templates were not properly published
+  to npm
+
+## 0.3.0-canary.3
+
+### Patch Changes
+
+- de15edb: Fix issue where .gitignores in templates were not properly published
+  to npm
+
 ## 0.3.0-canary.2
 
 ### Patch Changes

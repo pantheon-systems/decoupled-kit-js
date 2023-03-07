@@ -5,7 +5,7 @@ overrides:
   '@pantheon-systems/drupal-kit': workspace:*
   '@pantheon-systems/nextjs-kit': workspace:*
   '@pantheon-systems/cms-kit': workspace:*
-  '@pantheon-systems/configs': workspace:*
+  '@pantheon-systems/workspace-configs': workspace:*
   '@pantheon-systems/eslint-config': workspace:*
   immer@<9.0.6: '>=9.0.6'
   engine.io@>=4.0.0 <6.2.1: '>=6.2.1'
@@ -16,13 +16,14 @@ overrides:
   got@<11.8.5: '>=11.8.5'
   eta@<2.0.0: '>=2.0.0'
   http-cache-semantics@<4.1.1: '>=4.1.1'
+  '@sideway/formula@<3.0.1': '>=3.0.1'
 
 importers:
 
   .:
     specifiers:
       '@changesets/cli': ^2.26.0
-      '@pantheon-systems/configs': workspace:*
+      '@pantheon-systems/workspace-configs': workspace:*
       '@types/eslint': ^8.4.6
       '@types/jest': ^29.4.0
       '@types/node': ^18.11.18
@@ -45,7 +46,7 @@ importers:
       vite: ^4.0.4
     devDependencies:
       '@changesets/cli': 2.26.0
-      '@pantheon-systems/configs': link:configs
+      '@pantheon-systems/workspace-configs': link:configs
       '@types/eslint': 8.4.10
       '@types/jest': 29.4.0
       '@types/node': 18.11.18
@@ -72,17 +73,17 @@ importers:
 
   configs/eslint:
     specifiers:
-      '@pantheon-systems/configs': workspace:*
+      '@pantheon-systems/workspace-configs': workspace:*
       '@typescript-eslint/parser': ^5.49.0
     dependencies:
       '@typescript-eslint/parser': 5.49.0
     devDependencies:
-      '@pantheon-systems/configs': link:..
+      '@pantheon-systems/workspace-configs': link:..
 
   packages/cms-kit:
     specifiers:
-      '@pantheon-systems/configs': workspace:*
       '@pantheon-systems/eslint-config': workspace:*
+      '@pantheon-systems/workspace-configs': workspace:*
       '@rollup/plugin-typescript': ^11.0.0
       c8: ^7.12.0
       eslint-plugin-prettier: ^4.2.1
@@ -90,8 +91,8 @@ importers:
       rimraf: ^4.1.2
       vitest: ^0.28.3
     devDependencies:
-      '@pantheon-systems/configs': link:../../configs
       '@pantheon-systems/eslint-config': link:../../configs/eslint
+      '@pantheon-systems/workspace-configs': link:../../configs
       '@rollup/plugin-typescript': 11.0.0
       c8: 7.12.0
       eslint-plugin-prettier: 4.2.1_prettier@2.8.3
@@ -99,10 +100,26 @@ importers:
       rimraf: 4.1.2
       vitest: 0.28.3
 
+  packages/configs/eslint:
+    specifiers:
+      '@pantheon-systems/eslint-config': workspace:*
+      '@pantheon-systems/workspace-configs': workspace:*
+    devDependencies:
+      '@pantheon-systems/eslint-config': link:../../../configs/eslint
+      '@pantheon-systems/workspace-configs': link:../../../configs
+
+  packages/configs/other:
+    specifiers:
+      '@pantheon-systems/eslint-config': workspace:*
+      '@pantheon-systems/workspace-configs': workspace:*
+    devDependencies:
+      '@pantheon-systems/eslint-config': link:../../../configs/eslint
+      '@pantheon-systems/workspace-configs': link:../../../configs
+
   packages/create-pantheon-decoupled-kit:
     specifiers:
-      '@pantheon-systems/configs': workspace:*
       '@pantheon-systems/eslint-config': workspace:*
+      '@pantheon-systems/workspace-configs': workspace:*
       '@types/diff': ^5.0.2
       '@types/fs-extra': ^11.0.1
       '@types/inquirer': ^9.0.3
@@ -132,8 +149,8 @@ importers:
       minimist: 1.2.7
       which-pm-runs: 1.1.0
     devDependencies:
-      '@pantheon-systems/configs': link:../../configs
       '@pantheon-systems/eslint-config': link:../../configs/eslint
+      '@pantheon-systems/workspace-configs': link:../../configs
       '@types/diff': 5.0.2
       '@types/fs-extra': 11.0.1
       '@types/inquirer': 9.0.3
@@ -152,8 +169,8 @@ importers:
     specifiers:
       '@gdwc/drupal-state': ^4.2.0
       '@pantheon-systems/cms-kit': workspace:*
-      '@pantheon-systems/configs': workspace:*
       '@pantheon-systems/eslint-config': workspace:*
+      '@pantheon-systems/workspace-configs': workspace:*
       '@types/isomorphic-fetch': ^0.0.36
       isomorphic-fetch: ^3.0.0
       jsona: ^1.9.7
@@ -167,8 +184,8 @@ importers:
       '@gdwc/drupal-state': 4.2.0_o77wnou4wwnegu5woljtklrzru
       '@pantheon-systems/cms-kit': link:../cms-kit
     devDependencies:
-      '@pantheon-systems/configs': link:../../configs
       '@pantheon-systems/eslint-config': link:../../configs/eslint
+      '@pantheon-systems/workspace-configs': link:../../configs
       '@types/isomorphic-fetch': 0.0.36
       isomorphic-fetch: 3.0.0
       jsona: 1.11.0
@@ -181,8 +198,8 @@ importers:
 
   packages/nextjs-kit:
     specifiers:
-      '@pantheon-systems/configs': workspace:*
       '@pantheon-systems/eslint-config': workspace:*
+      '@pantheon-systems/workspace-configs': workspace:*
       '@rollup/plugin-typescript': ^11.0.0
       '@testing-library/react': 13.4.0
       '@vitejs/plugin-react': ^3.0.1
@@ -199,8 +216,8 @@ importers:
       vite: ^4.0.4
       vitest: ^0.28.3
     devDependencies:
-      '@pantheon-systems/configs': link:../../configs
       '@pantheon-systems/eslint-config': link:../../configs/eslint
+      '@pantheon-systems/workspace-configs': link:../../configs
       '@rollup/plugin-typescript': 11.0.0
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
       '@vitejs/plugin-react': 3.0.1_vite@4.0.4
@@ -220,8 +237,8 @@ importers:
   packages/wordpress-kit:
     specifiers:
       '@pantheon-systems/cms-kit': workspace:*
-      '@pantheon-systems/configs': workspace:*
       '@pantheon-systems/eslint-config': workspace:*
+      '@pantheon-systems/workspace-configs': workspace:*
       '@rollup/plugin-typescript': ^11.0.0
       c8: ^7.12.0
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -236,8 +253,8 @@ importers:
       graphql: 16.6.0
       graphql-request: 5.1.0_graphql@16.6.0
     devDependencies:
-      '@pantheon-systems/configs': link:../../configs
       '@pantheon-systems/eslint-config': link:../../configs/eslint
+      '@pantheon-systems/workspace-configs': link:../../configs
       '@rollup/plugin-typescript': 11.0.0
       c8: 7.12.0
       msw: 1.0.0
@@ -12897,7 +12914,6 @@ packages:
       wordwrap: 1.0.0
     optionalDependencies:
       uglify-js: 3.17.4
-    dev: true
 
   /hard-rejection/2.1.0:
     resolution: {integrity: sha512-VIZB+ibDhx7ObhAe7OVtoEbuP4h/MuOTHJ+J8h/eBXotJYl0fBgR72xDFCKgIh22OJZIOVNxBMWuhAr10r8HdA==}
@@ -20049,7 +20065,6 @@ packages:
     engines: {node: '>=0.8.0'}
     hasBin: true
     requiresBuild: true
-    dev: true
     optional: true
 
   /unbox-primitive/1.0.2:
@@ -21027,7 +21042,6 @@ packages:
 
   /wordwrap/1.0.0:
     resolution: {integrity: sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==}
-    dev: true
 
   /workbox-background-sync/4.3.1:
     resolution: {integrity: sha512-1uFkvU8JXi7L7fCHVBEEnc3asPpiAL33kO495UMcD5+arew9IbKW2rV5lpzhoWcm/qhGB89YfO4PmB/0hQwPRg==}

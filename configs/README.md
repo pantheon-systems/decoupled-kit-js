@@ -1,4 +1,4 @@
-# @pantheon-systems/configs
+# @pantheon-systems/workspace-configs
 
 Configuration files for the `decoupled-kit-js` monorepo. The configs are
 currently unpublished.

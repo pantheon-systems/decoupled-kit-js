@@ -46,7 +46,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.20.12",
-		"@pantheon-systems/wordpress-kit": "^2.14.0-canary.0",
+		"@pantheon-systems/wordpress-kit": "^2.14.1-canary.0",
 		"@tailwindcss/typography": "^0.5.9",
 		"@testing-library/react": "13.4.0",
 		"@vitejs/plugin-react": "^3.0.1",

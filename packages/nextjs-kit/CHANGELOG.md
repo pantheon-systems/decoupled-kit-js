@@ -1,5 +1,11 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.7.1-canary.0
+
+### Patch Changes
+
+- eb8e3f5: Update config package route.
+
 ## 1.7.0
 
 ### Minor Changes

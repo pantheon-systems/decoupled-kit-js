@@ -1,0 +1,37 @@
+{
+	"name": "@pantheon-systems/eslint-config-decoupled-kit",
+	"version": "0.1.0-canary.0",
+	"description": "ESLint configs for the Pantheon Decoupled Kit starter kits",
+	"license": "GPL-3.0-or-later",
+	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
+	"bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pantheon-systems/decoupled-kit-js"
+	},
+	"author": "@pantheon-systems",
+	"files": [
+		"./index.js",
+		"./react.js"
+	],
+	"main": "./index.js",
+	"prettier": "@pantheon-systems/workspace-configs/prettier",
+	"scripts": {
+		"lint-staged": "lint-staged"
+	},
+	"devDependencies": {
+		"@pantheon-systems/workspace-configs": "*",
+		"@pantheon-systems/eslint-config": "*"
+	},
+	"peerDependencies": {
+		"@typescript-eslint/parser": "^5.49.0",
+		"@typescript-eslint/eslint-plugin": "^5.13.0",
+		"eslint": ">=8",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-jsx-a11y": "^6.6.1",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.31.1",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"prettier": ">=2.5.1"
+	}
+}
