@@ -98,19 +98,22 @@ jobs:
             # docs site
           - local_path: 'web'
             split_repository: 'decoupled-kit-docs'
+            generator_cmd: ''
     steps:
-      - uses: actions/setup-node@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Generate starter
+        if: ${{ matrix.generator_cmd != '' }}
+        uses: actions/setup-node@v3
         with:
           node-version: 18
-      - uses: actions/checkout@v3
-        # install CLI
-        if: ${{ matrix.generator_cmd }}
-      - run: npm i --global create-pantheon-decoupled-kit
+        # install canary version of the CLI
         # run the command to generate the starter in the matrix.local_path directory
-        if: ${{ matrix.generator_cmd }}
-      - run:
-          create-pantheon-decoupled-kit ${{ matrix.generator_cmd }} --outDir
-          ./${{ matrix.local_path }}
+      - run: |
+          npm i --global create-pantheon-decoupled-kit
+          create-pantheon-decoupled-kit ${{ matrix.generator_cmd }} --outDir ./${{ matrix.local_path }}
+
       # no tag
       - if: "!startsWith(github.ref, 'refs/tags/')"
         uses: 'danharrin/monorepo-split-github-action@v2.3.0'
