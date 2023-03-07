@@ -9,8 +9,8 @@ sidebar_position: 8
 
 This add-on adds necessary components and routes to your Pantheon Decoupled Kit
 Next.js Starter Kit to display data from Drupal's Umami demo site. This includes
-a route for `recipes`, as well as a link in the footer menu to the `recipes`
-page.
+a routes for all individual recipes, as well as an index page with a grid which
+displays all recipes.
 
 ### Before You Begin
 

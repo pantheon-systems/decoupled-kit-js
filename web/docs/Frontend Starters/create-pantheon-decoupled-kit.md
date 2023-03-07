@@ -61,6 +61,14 @@ results. These `project` generators should be used only in conjunction with
 
 ### Add-ons
 
+Available add-ons per project generator are as follows:
+
+| Project Generator | Available Add-ons       |
+| ------------------| ------------------------|
+| next-druapl       | next-drupal-umami-addon |
+| next-wp           | next-wp-acf-addon       |
+| gatsby-wp         | gastby-wp-acf-addon     |
+
 For more detail on the available add-ons and their functionality, see the
 following docs:
 
