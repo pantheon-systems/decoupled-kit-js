@@ -56,6 +56,12 @@ export const addWithDiff: Action = async ({
 		// sourceContents will be a rendered template if the source file is a handlebars template
 		// otherwise we will use the contents of that file with no rendering
 		let sourceContents: string;
+		// rename gitignore to .gitignore.
+		// to work around npm 'feature' which removes .gitignore
+		// from published tarballs
+		if (templatePath.endsWith('gitignore')) {
+			target = target.replace(/gitignore$/, '.gitignore');
+		}
 		if (templatePath.endsWith('.hbs')) {
 			target = target.replace(/\.hbs$/, '');
 			// get the contents of the template
