@@ -20,7 +20,7 @@ locally:
 
 - Nodejs version 16 LTS. We recomemnd using [nvm](https://github.com/nvm-sh/nvm)
 - [npm](https://docs.npmjs.com/cli/v8/commands/npm) version 8.x.x
-- [pnpm](https://pnpm.io/installation) version 7.17.1
+- [pnpm](https://pnpm.io/installation) version 7.26.3
 
   We recommend using npm. Run the following command to install:
 
