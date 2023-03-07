@@ -1,5 +1,15 @@
 # create-pantheon-decoupled-kit
 
+## 0.4.0-canary.1
+
+### Minor Changes
+
+- 981825d: [gatsby-wp] Add Published `eslint` Configs to Gatsby Generator
+
+### Patch Changes
+
+- c31795b: Rename gitignore template on write to workaround npm
+
 ## 0.3.1-canary.0
 
 ### Patch Changes
