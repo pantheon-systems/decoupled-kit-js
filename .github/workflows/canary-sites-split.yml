@@ -52,25 +52,30 @@ jobs:
           # canary docs site
           - local_path: 'web'
             split_repository: 'decoupled-kit-docs-canary'
+            generator_cmd: ''
 
     steps:
-      - uses: actions/setup-node@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Generate starter
+        if: ${{ matrix.generator_cmd != '' }}
+        uses: actions/setup-node@v3
         with:
           node-version: 18
-      - uses: actions/checkout@v3
-        if: ${{ matrix.generator_cmd }}
         # install canary version of the CLI
-      - run: npm i --global create-pantheon-decoupled-kit@canary
-        if: ${{ matrix.generator_cmd }}
         # run the command to generate the starter in the matrix.local_path directory
       - run: |
+          npm i --global create-pantheon-decoupled-kit@canary
           create-pantheon-decoupled-kit ${{ matrix.generator_cmd }} --outDir ./${{ matrix.local_path }}
-      # Add Github workflow before split
-      - run: |
+
+      - name: Add GitHub workflow before split
+        run: |
           mkdir -p ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows
-      - run: |
           cp ${{ github.workspace }}/.github/templates/trigger-e2e.yml.template ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows/trigger-e2e.yml
-      - uses: 'danharrin/monorepo-split-github-action@v2.3.0'
+
+      - name: Split repos
+        uses: 'danharrin/monorepo-split-github-action@v2.3.0'
         with:
           # ↓ split <local_path> directory
           package_directory: '${{ matrix.local_path }}'
@@ -82,6 +87,7 @@ jobs:
           # ↓ the user signed under the split commit
           user_name: 'pantheon-decoupled-service-user'
           user_email: 'decoupled-service-user@pantheon.io'
+
       - name: Send custom JSON data to Slack workflow
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
