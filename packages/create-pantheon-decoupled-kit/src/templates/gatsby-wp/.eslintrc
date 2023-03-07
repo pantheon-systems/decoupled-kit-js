@@ -1,0 +1,10 @@
+{
+	"extends": "@pantheon-systems/decoupled-kit/react",
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	"rules": {
+        "react/prop-types": "off"
+    }
+}

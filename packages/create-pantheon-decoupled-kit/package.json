@@ -43,8 +43,8 @@
 		"lint-staged": "lint-staged"
 	},
 	"devDependencies": {
-		"@pantheon-systems/workspace-configs": "*",
 		"@pantheon-systems/eslint-config": "*",
+		"@pantheon-systems/workspace-configs": "*",
 		"@types/diff": "^5.0.2",
 		"@types/fs-extra": "^11.0.1",
 		"@types/inquirer": "^9.0.3",
