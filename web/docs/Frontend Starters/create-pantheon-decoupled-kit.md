@@ -9,11 +9,11 @@ slug: '/frontend-starters/using-the-cli'
 [npm init](https://docs.npmjs.com/cli/v8/commands/npm-init). It is an executable
 JavaScript file that can be invoked via `npm init pantheon-decoupled-kit`,
 `npx create-pantheon-decoupled-kit` or similar commands from other package
-manager.
+managers.
 
 ## Before You Begin
 
-To run the `create-pantheon-decoupled-kit`, you will need
+To run `create-pantheon-decoupled-kit`, you will need
 [`Nodejs`](https://nodejs.org/en/download/) installed. We recommend the latest
 LTS version. You can install the CLI globally, or use
 [`npx`](https://docs.npmjs.com/cli/v8/commands/npx),
@@ -36,12 +36,11 @@ arguments and follow the prompts.
 The `--help` flag will show the help menu.
 
 The terminal will show a diff for each file to be written. Skipping the file
-means it will not be written. `Yes to all` will force `yes` to all subsequent diffs,
-so be sure to avoid overwriting non-empty files when using this option. 
+means it will not be written. `Yes to all` will force `yes` to all subsequent
+diffs, so be sure to avoid overwriting non-empty files when using this option.
 
-If you know which generators
-you would like to run ahead of time, you can pass in generator names as
-space-separated positional arguments. For example:
+If you know which generators you would like to run ahead of time, you can pass
+in generator names as space-separated positional arguments. For example:
 
 ```shell
 npm init pantheon-decoupled-kit next-wp next-wp-acf-addon
@@ -65,9 +64,9 @@ results. These `project` generators should be used only in conjunction with
 For more detail on the available add-ons and their functionality, see the
 following docs:
 
-[Gatsby + WordPress Add-ons](/frontend-starters/gatsby/gatsby-wordpress/add-ons)
-[Next + WordPress Add-ons](/frontend-starters/nextjs/nextjs-wordpress/add-ons)
-[Next + Drupal Add-ons](/frontend-starters/nextjs/nextjs-drupal/add-ons)
+- [Gatsby + WordPress Add-ons](./gatsby/gatsby-wordpress/add-ons)
+- [Next + WordPress Add-ons](./nextjs/nextjs-wordpress/add-ons)
+- [Next + Drupal Add-ons](./nextjs/nextjs-drupal/add-ons)
 
 ### Skipping Prompts and Automating Starter Kit Creation
 
