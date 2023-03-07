@@ -58,14 +58,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Generate starter
+      - name: Setup node
         if: ${{ matrix.generator_cmd != '' }}
         uses: actions/setup-node@v3
         with:
           node-version: 18
         # install canary version of the CLI
         # run the command to generate the starter in the matrix.local_path directory
-      - run: |
+      - name: Generate starter
+        if: ${{ matrix.generator_cmd != '' }}
+        run: |
           npm i --global create-pantheon-decoupled-kit@canary
           create-pantheon-decoupled-kit ${{ matrix.generator_cmd }} --outDir ./${{ matrix.local_path }}
 
