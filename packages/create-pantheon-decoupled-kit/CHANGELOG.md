@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.4.0-canary.2
+
+### Patch Changes
+
+- 1218c02: [gatsby-wp] Add conditinal to gatsby-config to avoid loading missing
+  plugins
+
 ## 0.4.0-canary.1
 
 ### Minor Changes
