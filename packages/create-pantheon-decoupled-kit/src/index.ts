@@ -10,7 +10,7 @@ import type {
 } from './types';
 
 import pkg from '../package.json' assert { type: 'json' };
-const rootDir = new URL('.', import.meta.url).pathname;
+export const rootDir = new URL('.', import.meta.url).pathname;
 
 /**
  *  Parses CLI arguments using `minimist`
@@ -135,12 +135,13 @@ To see this list at any time, use the --help command.`);
 	// to any action that needs it
 	const hbs = await getHandlebarsInstance(rootDir);
 	// run the actions
-	await actionRunner({
+	const actionsResult = await actionRunner({
 		actions,
 		templateData,
 		data: args,
 		handlebars: hbs,
 	});
+	args?.silent || console.log(chalk.blueBright(actionsResult));
 	args?.silent ||
 		console.log(
 			chalk.bgGreen.black('Your project was generated with:'),
