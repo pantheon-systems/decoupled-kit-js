@@ -44,7 +44,7 @@ describe('actionRunner()', () => {
 			templateData,
 			handlebars,
 		});
-		expect(result).toEqual('Actions successfully completed.');
+		expect(result).toEqual('All actions successfully completed.');
 		expect(addWithDiff).toHaveBeenCalledOnce();
 		expect(runInstall).toHaveBeenCalledOnce();
 		expect(runLint).toHaveBeenCalledOnce();

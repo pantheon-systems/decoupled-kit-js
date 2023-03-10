@@ -7,7 +7,7 @@ import { dedupeTemplates } from '../utils/dedupeTemplates';
 import { isString } from '../types';
 import type { QuestionCollection } from 'inquirer';
 import type { Action, MergedPaths } from '../types';
-
+import { rootDir } from '..';
 /**
  * 1. dedupe the templates, favoring addons in case 2 paths collide
  * 2. check if the destination path exists or create it. (path to destination + template name minus .hbs) example: ./test/myTest.js
@@ -41,12 +41,16 @@ export const addWithDiff: Action = async ({
 	for await (const template of Object.keys(templatesToRender)) {
 		// the template directory
 		const templatesBaseDir = templatesToRender[template].base;
-		const rootDir = new URL('.', import.meta.url).pathname;
+		// set the root dir
+		let root: string;
+		if (isString(data?.templateRootDir)) {
+			root = data.templateRootDir;
+		} else {
+			root = rootDir;
+		}
 		// the path to the template to be rendered
 		const templatePath = path.join(
-			// this is a workaround for the tests, but could allow
-			// a user to point to a custom template directory
-			(isString(data.templateRootDir) && data.templateRootDir) || rootDir,
+			root,
 			'templates',
 			templatesBaseDir,
 			template,

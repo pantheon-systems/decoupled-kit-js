@@ -31,11 +31,11 @@
 	"scripts": {
 		"build": "pnpm clean && node ./esbuild.js && pnpm copy-templates",
 		"clean": "pnpm rimraf ./dist",
-		"copy-templates": "pnpm vite-node ./scripts/copyTemplates.ts",
+		"copy-templates": "pnpm tsx ./scripts/copyTemplates.ts",
 		"dev": "node ./dist/bin.js",
 		"test": "vitest run --coverage",
 		"test:watch": "vitest",
-		"watch": "pnpm vite-node ./scripts/watchTemplates.ts",
+		"watch": "pnpm tsx watch --clear-screen=false ./scripts/watchTemplates.ts",
 		"eslint": "eslint --ext .ts --ignore-path .gitignore",
 		"eslint:fix": "eslint --ext .ts --fix --ignore-path .gitignore",
 		"prettier": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --check --ignore-path ../../.prettierignore",
@@ -56,7 +56,7 @@
 		"esbuild": "0.17.4",
 		"prettier": "^2.8.3",
 		"rimraf": "^4.1.2",
-		"vite-node": "^0.28.3",
+		"tsx": "^3.12.3",
 		"vitest": "^0.28.3"
 	},
 	"dependencies": {

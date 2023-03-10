@@ -2,8 +2,7 @@ import chalk from 'chalk';
 import path from 'path';
 import klaw from 'klaw';
 import type { TemplateData, MergedPaths } from '../types';
-
-const rootDir = new URL('.', import.meta.url).pathname;
+import { rootDir } from '..';
 
 interface Template {
 	addon: boolean;

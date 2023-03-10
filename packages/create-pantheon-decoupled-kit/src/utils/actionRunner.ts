@@ -13,12 +13,11 @@ export const actionRunner: ActionRunner = async ({
 	for await (const action of actions) {
 		try {
 			const result = await action({ data, templateData, handlebars });
-			console.log(result);
+			data.silent || console.log(result);
 		} catch (error) {
 			console.log(chalk.red('Something went wrong: '));
-			console.error(error);
 			throw error;
 		}
 	}
-	return 'Actions successfully completed.';
+	return 'All actions successfully completed.';
 };
