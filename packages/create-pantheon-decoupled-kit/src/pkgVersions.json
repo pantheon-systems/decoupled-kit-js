@@ -1,0 +1,8 @@
+{
+  "cms-kit": "0.2.1-canary.0",
+  "drupal-kit": "4.2.1-canary.0",
+  "nextjs-kit": "1.7.1-canary.0",
+  "wordpress-kit": "2.14.1-canary.0",
+  "eslint": "0.1.0-canary.0",
+  "other": "0.1.0-canary.0"
+}
