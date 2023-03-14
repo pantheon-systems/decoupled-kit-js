@@ -106,7 +106,7 @@ and consume the starter kits. We would like to support an ever growing matrix of
 frameworks, with or without certain features or add-ons like tailwindcss or
 TypeScript to name a few. In order to support this while reducing friction to
 new frameworks and add-ons, we have taken inspiration from other `create-` apps
-in similar open source spaces, including [`plopjs](https://plopjs.com),
+in similar open source spaces, including [`plopjs`](https://plopjs.com),
 [`create-sitecore-jss`](https://github.com/Sitecore/jss/tree/dev/packages/create-sitecore-jss),
 [`create-astro`](https://github.com/withastro/astro/tree/main/packages/create-astro),
 and [`create-create-app`](https://github.com/uetchy/create-create-app). The cli

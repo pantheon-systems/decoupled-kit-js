@@ -15,7 +15,7 @@ displays all recipes.
 ### Before You Begin
 
 - Create a Drupal site with our
-  [Backend Starter](/backend-starters/decoupled-drupal/creating-a-new-project).
+  [Backend Starter](../../../Backend%20Starters/Decoupled%20Drupal/creating-new-project.md).
   Use the "Installing with Umami Demo Data" section to ensure you have the
   correct dataset
 - Familiarize yourself with the
