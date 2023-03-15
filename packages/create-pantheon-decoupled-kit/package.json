@@ -1,6 +1,6 @@
 {
 	"name": "create-pantheon-decoupled-kit",
-	"version": "0.3.0",
+	"version": "0.4.0-canary.3",
 	"description": "Pantheon Decoupled Kit CLI",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -24,18 +24,19 @@
 	"files": [
 		"dist"
 	],
-	"prettier": "@pantheon-systems/configs/prettier",
+	"prettier": "@pantheon-systems/workspace-configs/prettier",
 	"typedoc": {
 		"entryPoint": "./index.ts"
 	},
 	"scripts": {
-		"build": "pnpm clean && node ./esbuild.js && pnpm copy-templates",
+		"build": "pnpm clean && pnpm get-versions && node ./esbuild.js && pnpm copy-templates",
 		"clean": "pnpm rimraf ./dist",
-		"copy-templates": "pnpm vite-node ./scripts/copyTemplates.ts",
+		"copy-templates": "pnpm tsx ./scripts/copyTemplates.ts",
+		"get-versions": "pnpm tsx ./scripts/getVersions.ts",
 		"dev": "node ./dist/bin.js",
 		"test": "vitest run --coverage",
 		"test:watch": "vitest",
-		"watch": "pnpm vite-node ./scripts/watchTemplates.ts",
+		"watch": "pnpm tsx watch --clear-screen=false ./scripts/watchTemplates.ts",
 		"eslint": "eslint --ext .ts --ignore-path .gitignore",
 		"eslint:fix": "eslint --ext .ts --fix --ignore-path .gitignore",
 		"prettier": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --check --ignore-path ../../.prettierignore",
@@ -43,8 +44,8 @@
 		"lint-staged": "lint-staged"
 	},
 	"devDependencies": {
-		"@pantheon-systems/configs": "*",
 		"@pantheon-systems/eslint-config": "*",
+		"@pantheon-systems/workspace-configs": "*",
 		"@types/diff": "^5.0.2",
 		"@types/fs-extra": "^11.0.1",
 		"@types/inquirer": "^9.0.3",
@@ -56,7 +57,7 @@
 		"esbuild": "0.17.4",
 		"prettier": "^2.8.3",
 		"rimraf": "^4.1.2",
-		"vite-node": "^0.28.3",
+		"tsx": "^3.12.3",
 		"vitest": "^0.28.3"
 	},
 	"dependencies": {

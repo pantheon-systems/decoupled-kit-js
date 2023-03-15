@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/wordpress-kit",
-	"version": "2.14.0",
+	"version": "2.14.1-canary.0",
 	"description": "Pantheon Decoupled Kit's WordPress Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -22,7 +22,7 @@
 			"require": "./dist/wordpress-kit.umd.js"
 		}
 	},
-	"prettier": "@pantheon-systems/configs/prettier",
+	"prettier": "@pantheon-systems/workspace-configs/prettier",
 	"typedoc": {
 		"entryPoint": "./index.ts"
 	},
@@ -42,12 +42,12 @@
 		"lint-staged": "lint-staged"
 	},
 	"dependencies": {
-		"@pantheon-systems/cms-kit": "^0.2.0",
+		"@pantheon-systems/cms-kit": "^0.2.1-canary.0",
 		"graphql": "^14.0.0 || ^15.0.0 || ^16.0.0",
 		"graphql-request": "^5.1.0"
 	},
 	"devDependencies": {
-		"@pantheon-systems/configs": "*",
+		"@pantheon-systems/workspace-configs": "*",
 		"@pantheon-systems/eslint-config": "*",
 		"@rollup/plugin-typescript": "^11.0.0",
 		"c8": "^7.12.0",

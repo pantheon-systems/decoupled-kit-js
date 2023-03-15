@@ -34,9 +34,7 @@ All module code should be written in TypeScript. Use [TSDoc](https://tsdoc.org/)
 comments on all exported code. The TSDoc comments are used for API reference
 generation, so please include an example and remarks when appropriate.
 
-### Running A Local Development Server
-
-####
+### Running a Local Development Server
 
 The can be run for local development. It will watch for changes and launch
 `index.html` at http://localhost:3000. `index.html` loads `src/main.ts` which
@@ -91,103 +89,117 @@ The docs site can be run locally with `pnpm --filter './web' start`.
 
 View the site at `http://localhost:3000`
 
+<!-- 
 TODOS:
-
 - Confirm that this package provides types for all exported functions when used
-  as an NPM package.
+  as an npm package.
 - Allow individual import of modules rather than requiring imports from the main
   bundle.
+-->
 
 To contribute to the starters, you will need a backend to develop against.
 
 ## Working With `create-pantheon-decoupled-kit`
 
-`create-pantheon-decoupled-kit` or "the cli" is meant to be a new way to develop
+`create-pantheon-decoupled-kit` or the "CLI" is meant to be a new way to develop
 and consume the starter kits. We would like to support an ever growing matrix of
 frameworks, with or without certain features or add-ons like tailwindcss or
 TypeScript to name a few. In order to support this while reducing friction to
 new frameworks and add-ons, we have taken inspiration from other `create-` apps
-in similar open source spaces, including
+in similar open source spaces, including [`plopjs`](https://plopjs.com),
 [`create-sitecore-jss`](https://github.com/Sitecore/jss/tree/dev/packages/create-sitecore-jss),
 [`create-astro`](https://github.com/withastro/astro/tree/main/packages/create-astro),
 and [`create-create-app`](https://github.com/uetchy/create-create-app). The cli
-uses
-[`node-plop`](https://github.com/plopjs/plop/tree/master/packages/node-plop)
-under the hood, so if you are comfortable writing
-[plop generators and templates](https://plopjs.com/documentation/#your-first-plopfile),
-this should be very familiar.
+was previously written with
+[`node-plop`](https://github.com/plopjs/plop/tree/master/packages/node-plop) and
+writing generators still somewhat resembles the plop.js generator + templates
+pattern.
 
-### Types Of Generators
+### Types of Generators
 
-There are theoretically two types of generators: base generators and add-ons. A
-base generator bootstraps a project, and add-ons are runnable on top of an
-already generated project. Add-ons should be callable while bootstrapping a new
-project as well.
+There are theoretically two types of generators: project generators and add-ons.
+A project generator bootstraps a project, and add-ons are runnable on top of an
+already generated project, or as additions to a project generator. Add-ons
+should be callable while bootstrapping a new project as well.
 
-## Creating A Generator
+For example, the following will create a `next-drupal` project:
+
+```shell
+pnpm create pantheon-decoupled-kit next-drupal --appName my-next-drupal --outDir ./next-drupal
+```
+
+To create the project with the `next-drupal-umami` demo data, use the
+`next-drupal-umami-addon` when generating the project:
+
+```shell
+pnpm create pantheon-decoupled-kit next-drupal next-drupal-umami-addon --appName my-next-drupal-umami --outDir ./next-drupal-umami
+```
+
+### Creating a Generator
 
 Templates are written in the
-[handlebars templating language](https://handlebarsjs.com/). See
-https://plopjs.com/documentation/#your-first-plopfile for instructions on
-creating generators. There are a few differences between vanilla plop generators
-and Decoupled Kit Generators:
+[handlebars templating language](https://handlebarsjs.com/). A template does not
+need to be dynamic. Static templates should not use the handlebars file
+extension `.hbs`, but instead should be included in the `templateDir` as is.
 
-1. the export must be written in TypeScript.
-1. it must be `typeof DecoupledKitGenerator` which is a `PlopGenerator` with an
-   added `name` field.
-1. it must export an object instead of a function.
-1. it must allow prompts to be skipped by passing in named command line
-   arguments.
-1. it should use the `addWithDiff` action to write new files.
+A custom generator should satisfy the `DecoupledKitGenerator` type.
 
-## Adding Partials
+- The export must be written in TypeScript.
+- The `DecoupledKitGenerator` type takes in a generic which should extend
+  `DefaultAnswers`.
+  - If there are no extra answers to prompt for, use `DefaultAnswers` as the
+    generic.
+- It must allow prompts to be skipped by passing in named command line
+  arguments. This should be handled by `main()` automatically.
+- It should use the `addWithDiff` action to write new files.
+
+### Adding Partials
 
 Partials should be used when possible. Partials must be added to the
 `create-pantheon-decoupled-kit/src/templates/partials` directory in order to be
 automatically registered to plop's handlebars compiler.
 
-## Adding Custom Actions
+### Adding Custom Actions
 
 Actions should be exported from their own file under
-`create-pantheon-decoupled-kit/src/utils`. The actions should use the
-[CustomActionConfig interface from `node-plop`](https://github.com/plopjs/plop/blob/main/packages/node-plop/types/index.d.ts#L175).
-If needed, extend the `config` object inline like so:
+`create-pantheon-decoupled-kit/src/actions`. The actions should use the
+[Action interface from `./src/types`](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/packages/create-pantheon-decoupled-kit/src/types.ts#L51).
+Actions can be be async if necessary.
 
 ```typescript
-import type { Answers } from 'inquirer';
-import type { CustomActionConfig, NodePlopAPI } from 'node-plop';
+import type { Action } from '../types';
 
-export const exampleAction = (
-	answers: Answers,
-	config: CustomActionConfig<'exampleAction'> & {
-		requiredString: string,
-		requiredBoolean: boolean,
-		etc.
-	},
-	plop: NodePlopAPI
-) => { ... }
+export const exampleAction: Action = ({ data }) => { ... }
 ```
 
-Be aware of the existing actions as names must be unique. You will need to add
-your action to the actions array inside the `setGenerators` function in
-`create-pantheon-decoupled-kit/src/index.ts`. Add your action as an object with
-a `name` key, with a value equal to the action name using `camelCase`, and an
-`action` key with a value equal to your action which should be imported into the
-file.
+To use the action in a generator, add it to that generator's `actions` array in
+the order in which the action should be called. In other words, if an action is
+to be called first, put it first.
 
-```typescript
-[{ name: 'exampleAction', action: exampleAction }, ...]
-```
+### Return and Error Values
 
-The new action will be registered and callable from any generator.
+Actions should throw a `new Error()` if there is an error with a message
+explaining what went wrong and if there is any remediation to take to fix it.
 
-## The `watch` Script
+Successful actions should return a string `'success'`. If the action can be
+skipped with a flag, like `--noInstall` or `--noLint`, return `'skipped'`. This
+way, the action runner can log clear output on what actions succeeded, which
+ones were skipped, and which ones threw errors.
 
-The `watch` script enables a generator to run and watch for changes to the
-template files. If a template of the given generator changes, the generator
-reruns and outputs the new changes in the configured directory. Thanks to Hot
-Module Reloading (HMR), which is enabled by most modern frontend frameworks,
-this feature unlocks the following workflow:
+Note: Actions will be pooled together in the `actionRunner` and de-duped to run
+only once. So if multiple generators include the same action in the array, it
+will still only be run once with the data from all prompts. If for some reason
+this is not desireable, please open an issue or discussion topic with your
+use-case for further discussion.
+
+### The `watch` Script
+
+The `watch` script enables a sort of "developer mode" for a generator's
+templates. The script watches for changes to the template files of the given
+generator or generators. If a template of the given generator changes, the
+generator reruns and outputs any new changes to the configured `outDir`
+directory. Thanks to Hot Module Reloading (HMR), which is enabled by most modern
+frontend frameworks, this feature unlocks the following workflow:
 
 1. Generate a project in the `starters` workspace of the monorepo
 1. Start the result in dev mode e.g. `pnpm dev:next-wp` and visit the page in a
@@ -202,5 +214,5 @@ JSON object named `watchOptions` in the shape of
 The `watch` script will pick up this file and execute the generators listed in
 order in the `_` array. See the `watch.example.ts` for an example.
 
-:::note It is not possible to `watch` with multiple project generators in the
-`_` array. Subsequent generators must be add-ons. :::
+Note: It is not possible to `watch` with multiple _project_ generators in the
+`_` array. Subsequent generators must be add-ons.

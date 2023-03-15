@@ -1,3 +1,3 @@
-const lintStagedConfig = require('@pantheon-systems/configs/lint-staged');
+const lintStagedConfig = require('@pantheon-systems/workspace-configs/lint-staged');
 
 module.exports = lintStagedConfig;

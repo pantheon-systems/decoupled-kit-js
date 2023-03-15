@@ -1,0 +1,11 @@
+#!/bin/sh
+# changeset version will bump package.json versions based on the current
+# changesets present in the .changeset directory
+pnpm changeset version
+# after versions are bumped, this script will populate
+# pkgVersions.json in the create-pantheon-decoupled-kit
+# source code which can be used to determine the versions
+# to use for our dependencies in the starter templates. Thus, canary releases
+# will ship with canary tagged versions of packages and regular
+# releases will ship with the latest released versions
+pnpm build:cli

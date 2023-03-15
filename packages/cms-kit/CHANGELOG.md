@@ -1,5 +1,11 @@
 # @pantheon-systems/cms-kit
 
+## 0.2.1-canary.0
+
+### Patch Changes
+
+- b44ec7a: Update config package route.
+
 ## 0.2.0
 
 ### Minor Changes

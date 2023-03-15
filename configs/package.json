@@ -1,5 +1,5 @@
 {
-	"name": "@pantheon-systems/configs",
+	"name": "@pantheon-systems/workspace-configs",
 	"version": "0.0.0",
 	"description": "Pantheon Decoupled Kit's Configs",
 	"license": "GPL-3.0-or-later",
@@ -15,7 +15,7 @@
 		"./prettier.config.js",
 		"./lint-staged.config.js"
 	],
-	"prettier": "./prettier.config.js",
+	"prettier": "@pantheon-systems/workspace-configs/prettier",
 	"exports": {
 		"./prettier": "./prettier.config.js",
 		"./lint-staged": "./lint-staged.config.js"

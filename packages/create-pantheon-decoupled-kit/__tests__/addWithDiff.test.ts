@@ -44,6 +44,8 @@ test input
 }
 `,
 			'test-withDiff.js': `console.log('Hello World')`,
+			'.gitignore':
+				'#this file should be renamed to .gitignore when it is written with the addWithDiff action',
 		};
 		await fs.ensureDir(path.resolve(outDir('populated')));
 		Object.keys(populated).forEach((key) => {
@@ -129,7 +131,7 @@ test input
 			templateData,
 		});
 		expect(handlebarsSpy).toHaveBeenCalledTimes(2);
-		expect(promptSpy).toHaveBeenCalledTimes(4);
+		expect(promptSpy).toHaveBeenCalledTimes(5);
 	});
 
 	it('should should a diff and prompt for each different file when the target exists', async ({
@@ -225,7 +227,7 @@ test input
 		await actions.addWithDiff({ data, templateData, handlebars });
 
 		expect(addWithDiffSpy).toHaveBeenCalledOnce();
-		expect(unlinkSyncSpy).toHaveBeenCalledTimes(4);
+		expect(unlinkSyncSpy).toHaveBeenCalledTimes(5);
 	});
 
 	it('should exit on abort', async ({ promptSpy, logSpy, addWithDiffSpy }) => {
@@ -241,5 +243,21 @@ test input
 		expect(addWithDiffSpy).toHaveBeenCalledOnce();
 		expect(promptSpy).toHaveBeenCalledTimes(1);
 		expect(logSpy).toHaveBeenLastCalledWith(chalk.red('Aborting!'));
+	});
+
+	it('should write gitignore as .gitignore to work around npm publishing removing .gitignore', async ({
+		promptSpy,
+		addWithDiffSpy,
+	}) => {
+		vi.mocked(inquirer.prompt).mockImplementation(async () => ({
+			writeFile: 'yes to all',
+		}));
+		const data = Object.assign({}, globalData);
+		data.outDir = outDir('empty');
+
+		await actions.addWithDiff({ data, templateData, handlebars });
+		expect(addWithDiffSpy).toHaveBeenCalledOnce();
+		expect(promptSpy).toHaveBeenCalledTimes(1);
+		expect(fs.existsSync(`${outDir('empty')}/.gitignore`)).toBeTruthy();
 	});
 });

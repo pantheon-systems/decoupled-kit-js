@@ -17,7 +17,7 @@ added to your project.
 ### Before You Begin
 
 - Install and activate the
-  [WP Advanced Custom Fields Plugin](https://wordpress.org/plugins/advanced-custom-fields/).
+  [Decoupled Kit Advanced Custom Fields Plugin](/docs/backend-starters/decoupled-wordpress/add-ons#decoupled-kit-acf-plugin).
 
 - Familiarize yourself with the
   [Create Pantheon Decoupled Kit CLI](https://www.npmjs.com/package/create-pantheon-decoupled-kit/).

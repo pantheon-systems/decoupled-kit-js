@@ -1,4 +1,5 @@
 import { addWithDiff, runInstall, runLint } from '../actions';
+import versions from '../pkgVersions.json';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 
 interface NextDrupalAnswers extends DefaultAnswers {
@@ -20,6 +21,10 @@ export const nextDrupal: DecoupledKitGenerator<NextDrupalAnswers> = {
 				`${process.cwd()}/${appName.replaceAll(' ', '-').toLowerCase()}`,
 		},
 	],
+	data: {
+		nextjsKitVersion: versions['nextjs-kit'],
+		drupalKitVersion: versions['drupal-kit'],
+	},
 	templates: ['next-drupal'],
 	actions: [addWithDiff, runInstall, runLint],
 };

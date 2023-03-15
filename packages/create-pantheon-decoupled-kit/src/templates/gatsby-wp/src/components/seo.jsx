@@ -8,7 +8,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const Seo = ({ description, lang, meta, title }) => {
+const Seo = ({ description, title }) => {
 	const { wp, wpUser } = useStaticQuery(
 		graphql`
 			query {

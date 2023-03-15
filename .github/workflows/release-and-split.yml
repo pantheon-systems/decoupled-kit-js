@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 0
       - uses: pnpm/action-setup@v2
         with:
-          version: 7.17.1
+          version: 7.26.3
       - name: Setup nodejs
         uses: actions/setup-node@v3
         with:
@@ -49,13 +49,13 @@ jobs:
           # For posting a rich message using Block Kit
           payload: |
             {
-              "text": "GitHub Action result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+              "text": "GitHub Action result: ${{ job.status }}\n${{ github.ref }}",
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "GitHub Action result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                    "text": "GitHub Action result: ${{ job.status }}\n${{ github.ref }}"
                   }
                 }
               ]
@@ -76,17 +76,45 @@ jobs:
       matrix:
         # define package to repository map
         include:
-          - local_path: 'starters/gatsby-wordpress-starter'
-            split_repository: 'gatsby-wordpress-starter'
-          - local_path: 'starters/next-drupal-starter'
+          # next-drupal-starter
+          - local_path: 'starters/next-drupal-starter-generated'
             split_repository: 'next-drupal-starter'
-          - local_path: 'starters/next-wordpress-starter'
+            generator_cmd:
+              'next-drupal next-drupal-umami-addon --appName
+              @pantheon-systems/next-drupal-starter --noInstall --force --silent'
+          # gatsby-wordpress-starter
+          - local_path: 'starters/gatsby-wordpress-starter-generated'
+            split_repository: 'gatsby-wordpress-starter'
+            generator_cmd:
+              'gatsby-wp --appName @pantheon-systems/gatsby-wordpress-starter
+              --noInstall --force --silent'
+          # next-wordpress-starter
+          - local_path: 'starters/next-wordpress-starter-generated'
             split_repository: 'next-wordpress-starter'
+            generator_cmd:
+              'next-wp --appName @pantheon-systems/next-wordpress-starter
+              --noInstall --force --silent'
+
             # docs site
           - local_path: 'web'
             split_repository: 'decoupled-kit-docs'
+            generator_cmd: ''
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        if: ${{ matrix.generator_cmd != '' }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+        # install canary version of the CLI
+        # run the command to generate the starter in the matrix.local_path directory
+      - name: Generate starter
+        if: ${{ matrix.generator_cmd != '' }}
+        run: |
+          npm i --global create-pantheon-decoupled-kit
+          create-pantheon-decoupled-kit ${{ matrix.generator_cmd }} --outDir ./${{ matrix.local_path }}
 
       # no tag
       - if: "!startsWith(github.ref, 'refs/tags/')"
