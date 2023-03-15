@@ -1,5 +1,13 @@
 # create-pantheon-decoupled-kit
 
+## 0.4.0-canary.3
+
+### Patch Changes
+
+- 2cc371a: Updates to watch script
+- b719c1c: Add dynamic versioning for @pantheon-systems dependencies
+- d38e923: Removed .npmignore from project templates
+
 ## 0.4.0-canary.2
 
 ### Patch Changes
