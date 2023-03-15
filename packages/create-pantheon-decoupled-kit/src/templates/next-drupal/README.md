@@ -90,9 +90,6 @@ https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packag
 
 ## Customizing the Starter
 
-The `pages/recipes` directory can be safely removed if you are using a Drupal
-instance that does not source the Umami demo data
-
 For a guide on creating your first Next Drupal customization, see
 [Your First Drupal Customization](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next.js/Next.js%20%2B%20Drupal/your-first-customization.md)
 
@@ -106,14 +103,6 @@ using
 Any fetch calls should be mocked with
 [`msw`](https://mswjs.io/docs/basics/request-matching) in
 [setupFile.js](./__tests__/setupFile.js).
-
-There are two data profiles to test against: the
-[Umami profile](https://www.drupal.org/project/pantheon_decoupled_umami_demo)
-and the [Default profile](https://www.drupal.org/project/pantheon_decoupled).
-These profiles are available as Drupal modules and contain data to render the
-frontend with. See our
-[Backend Starters](https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Backend%20Starters/Decoupled%20Drupal)
-for more information on setting up a Drupal instance.
 
 ### Commands
 
