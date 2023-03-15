@@ -26,35 +26,33 @@ backend.
 ## Creating A New Project With The Template
 
 There are two methods to creating a new project based on the
-`gatsby-wordpress-starter`:`
+`gatsby-wordpress-starter`:
 
-1. Clone the starter repo directly
-2. Use the `gatsby-cli`
+1. **Preferred Method** - Using our `create-pantheon-decoupled-kit`, or the
+   "CLI"
+2. Clone the starter repo directly
 
-To clone the starter directly from GitHub, Visit the repo link
+The full documentation for the `create-pantheon-decoupled-kit` can be found
+[here](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/using-the-cli).
+
+Before you continue, familiarize yourself with our Gatsby WordPress
+[add-ons](http://localhost:3000/docs/frontend-starters/gatsby/gatsby-wordpress/add-ons),
+a suite of optional project expansions that bring new components, features, and
+styling into your starter kit.
+
+To create a new project using `create-pantheon-decoupled-kit`:
+
+1. In your terminal, run the following command:
+
+```bash
+npm init pantheon-decoupled-kit gatsby-wordpress
+```
+
+2. Follow the prompts in your terminal to complete the setup.
+
+If you would like to clone the starter directly from GitHub, Visit the repo link
 https://github.com/pantheon-systems/gatsby-wordpress-starter and click on the
 **Code** button to open the clone dropdown and select your preferred method.
-
-To create a new project using the `gatsby-wordpress-starter` as a template,
-[use the `gatsby new` command](https://www.gatsbyjs.com/docs/reference/gatsby-cli/#creating-a-site-from-a-starter).
-
-```shell
-# if gatsby-cli is installed locally...
-gatsby new my-gatsby-wordpress-starter https://github.com/pantheon-systems/gatsby-wordpress-starter
-# or use npx
-npx gatsby new my-gatsby-wordpress-starter https://github.com/pantheon-systems/gatsby-wordpress-starter
-```
-
-If you have a package manager preference between npm and yarn, you may need to
-set it in the `gatsby-cli` options before initiating your new project.
-
-```shell
-# set your preferred package manager with the following command
-# for npm
-gatsby options set pm npm
-# for yarn
-gatsby options set pm yarn
-```
 
 ## Next Steps
 

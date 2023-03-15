@@ -11,10 +11,11 @@ In order to fetch data from the Drupal instance, Next.js needs to know the
 endpoint at build time. For local development, the starter kit uses
 [dotenv](https://www.npmjs.com/package/dotenv).
 
-When you clone your decoupled frontend repo, create a `.env.development.local`
-file. In this file, update the `BACKEND_URL` and `IMAGE_DOMAIN` with your Drupal
-CMS URL, and the `IMAGE_DOMAIN`. If the `BACKEND_URL` and `IMAGE_DOMAIN` are the
-same, you can omit setting the `IMAGE_DOMAIN`.
+When you generate your decoupled frontend repo, create a
+`.env.development.local` file if one does not already exist. In this file,
+update the `BACKEND_URL` and `IMAGE_DOMAIN` with your Drupal CMS URL, and the
+`IMAGE_DOMAIN`. If the `BACKEND_URL` and `IMAGE_DOMAIN` are the same, you can
+omit setting the `IMAGE_DOMAIN`.
 
 For example:
 

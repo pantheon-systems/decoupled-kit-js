@@ -26,21 +26,31 @@ backend.
 There are two methods to creating a new project based on the
 `next-wordpress-starter`:
 
-1. Clone the starter repo directly
-2. Use `create-next-app`
+1. **Preferred Method** - Using our `create-pantheon-decoupled-kit`, or the
+   "CLI"
+2. Clone the starter repo directly
 
-To clone the starter directly from GitHub, Visit the repo link
-https://github.com/pantheon-systems/next-wordpress-starter and click on the
-**Code** button to open the clone dropdown and select your preferred method.
+The full documentation for the `create-pantheon-decoupled-kit` can be found
+[here](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/using-the-cli).
 
-To create a new project using `create-next-app`:
+Before you continue, familiarize yourself with our Next Wordpress
+[add-ons](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/nextjs/nextjs-wordpress/add-ons),
+a suite of optional project expansions that bring new components, features, and
+styling into your starter kit.
+
+To create a new project using `create-pantheon-decoupled-kit`:
+
+1. In your terminal, run the following command:
 
 ```bash
-npx create-next-app -e https://github.com/pantheon-systems/next-wordpress-starter --use-npm
+npm init pantheon-decoupled-kit next-wp
 ```
 
-`create-next-app` uses the `yarn` package manager by default. Omit the
-`--use-npm` flag to use `yarn`, or keep it to use `npm`.
+2. Follow the prompts in your terminal to complete the setup.
+
+If you would like to clone the starter directly from GitHub, Visit the repo link
+https://github.com/pantheon-systems/next-wordpress-starter and click on the
+**Code** button to open the clone dropdown and select your preferred method.
 
 ## Next Steps
 
