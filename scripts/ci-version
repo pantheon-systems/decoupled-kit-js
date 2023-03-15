@@ -8,4 +8,4 @@ pnpm changeset version
 # to use for our dependencies in the starter templates. Thus, canary releases
 # will ship with canary tagged versions of packages and regular
 # releases will ship with the latest released versions
-pnpm cli:get-versions
+pnpm build:cli
