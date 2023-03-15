@@ -2,21 +2,35 @@
 
 ## Getting Started
 
-There are two ways to get started with the Next WordPress Starter:
+The preferred method of getting started with the Next Wordpress Starter is
+through our `create-pantheon-decoupled-kit`, or the "CLI". Full documentation
+for this npm package based on
+[npm init](https://docs.npmjs.com/cli/v8/commands/npm-init) can be found
+[here](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/using-the-cli)
+on our docs site. It is recommended that you follow
+[these](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/using-the-cli)
+setup instructions for a full outline of all project generation options made
+available to you.
 
-**Option 1**: Use `create-next-app`
+Before you continue, familiarize yourself with our Next WordPress
+[add-ons](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/nextjs/nextjs-wordpress/add-ons),
+a suite of optional project expansions that bring new components, features, and
+styling into your starter kit.
+
+For a quick start, follow the instructions below:
 
 1. In your terminal, run the following command:
 
 ```bash
-npx create-next-app -e https://github.com/pantheon-systems/next-wordpress-starter --use-npm
+npm init pantheon-decoupled-kit next-wp
 ```
 
 2. Follow the prompts in your terminal to complete the setup.
 
-**Option 2**: Clone the repo
+**Secondary Option**: Clone the repo
 
-1. Clone this repo:
+1. Clone [this](https://github.com/pantheon-systems/next-wordpress-starter)
+   repo:
 
 ```bash
 git clone git@github.com:pantheon-systems/next-wordpress-starter.git

@@ -1,20 +1,35 @@
 # Pantheon Decoupled Kit Next Drupal Starter
 
-There are two ways to get started with the Next Drupal Starter:
+## Getting Started
 
-**Option 1**: Use `create-next-app`
+The preferred method of getting started with the Next Drupal Starter is through
+our `create-pantheon-decoupled-kit`, or the "CLI". Full documentation for this
+npm package based on [npm init](https://docs.npmjs.com/cli/v8/commands/npm-init)
+can be found
+[here](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/using-the-cli)
+on our docs site. It is recommended that you follow
+[these](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/using-the-cli)
+setup instructions for a full outline of all project generation options made
+available to you.
+
+Before you continue, familiarize yourself with our Next Drupal
+[add-ons](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/nextjs/nextjs-drupal/add-ons),
+a suite of optional project expansions that bring new components, features, and
+styling into your starter kit.
+
+For a quick start, follow the instructions below:
 
 1. In your terminal, run the following command:
 
 ```bash
-npx create-next-app -e https://github.com/pantheon-systems/next-drupal-starter --use-npm
+npm init pantheon-decoupled-kit next-drupal
 ```
 
 2. Follow the prompts in your terminal to complete the setup.
 
-**Option 2**: Clone the repo
+**Option 2 - Not Preferred**: Clone the repo
 
-1. Clone this repo:
+1. Clone [this](https://github.com/pantheon-systems/next-drupal-starter) repo:
 
 ```bash
 git clone git@github.com:pantheon-systems/next-drupal-starter.git
@@ -26,8 +41,8 @@ git clone git@github.com:pantheon-systems/next-drupal-starter.git
 cd next-drupal-starter && npm install
 ```
 
-For either option, create a `.env.development.local` file and update it with the
-following: (See .env.example for an example)
+3. Create a `.env.development.local` file and update it with the following: (See
+   .env.example for an example)
 
 ```
 BACKEND_URL=

@@ -1,20 +1,35 @@
 # Pantheon Decoupled Kit Next Drupal Starter
 
-There are two ways to get started with the Next Drupal Starter:
+## Getting Started
 
-**Option 1**: Use `create-next-app`
+The preferred method of getting started with the Next Drupal Starter is through
+our `create-pantheon-decoupled-kit`, or the "CLI". Full documentation for this
+npm package based on [npm init](https://docs.npmjs.com/cli/v8/commands/npm-init)
+can be found
+[here](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/using-the-cli)
+on our docs site. It is recommended that you follow
+[these](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/using-the-cli)
+setup instructions for a full outline of all project generation options made
+available to you.
+
+Before you continue, familiarize yourself with our Next Drupal
+[add-ons](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/nextjs/nextjs-drupal/add-ons),
+a suite of optional project expansions that bring new components, features, and
+styling into your starter kit.
+
+For a quick start, follow the instructions below:
 
 1. In your terminal, run the following command:
 
 ```bash
-npx create-next-app -e https://github.com/pantheon-systems/next-drupal-starter --use-npm
+npm init pantheon-decoupled-kit next-drupal
 ```
 
 2. Follow the prompts in your terminal to complete the setup.
 
-**Option 2**: Clone the repo
+**Option 2 - Not Preferred**: Clone the repo
 
-1. Clone this repo:
+1. Clone [this](https://github.com/pantheon-systems/next-drupal-starter) repo:
 
 ```bash
 git clone git@github.com:pantheon-systems/next-drupal-starter.git
@@ -26,8 +41,8 @@ git clone git@github.com:pantheon-systems/next-drupal-starter.git
 cd next-drupal-starter && npm install
 ```
 
-For either option, create a `.env.development.local` file and update it with the
-following: (See .env.example for an example)
+3. Create a `.env.development.local` file and update it with the following: (See
+   .env.example for an example)
 
 ```
 BACKEND_URL=
@@ -75,6 +90,9 @@ https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Packag
 
 ## Customizing the Starter
 
+The `pages/recipes` directory can be safely removed if you are using a Drupal
+instance that does not source the Umami demo data
+
 For a guide on creating your first Next Drupal customization, see
 [Your First Drupal Customization](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next.js/Next.js%20%2B%20Drupal/your-first-customization.md)
 
@@ -88,6 +106,14 @@ using
 Any fetch calls should be mocked with
 [`msw`](https://mswjs.io/docs/basics/request-matching) in
 [setupFile.js](./__tests__/setupFile.js).
+
+There are two data profiles to test against: the
+[Umami profile](https://www.drupal.org/project/pantheon_decoupled_umami_demo)
+and the [Default profile](https://www.drupal.org/project/pantheon_decoupled).
+These profiles are available as Drupal modules and contain data to render the
+frontend with. See our
+[Backend Starters](https://github.com/pantheon-systems/decoupled-kit-js/tree/canary/web/docs/Backend%20Starters/Decoupled%20Drupal)
+for more information on setting up a Drupal instance.
 
 ### Commands
 

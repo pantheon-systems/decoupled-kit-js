@@ -2,11 +2,35 @@
 
 ## Getting Started
 
-[See the getting started guide](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Gatsby/Gatsby%20%2B%20WordPress/intro.md)
-for a more options to create a new Gatsby + WordPress project from this
-template.
+The preferred method of getting started with the Gatsby Wordpress Starter is
+through our `create-pantheon-decoupled-kit`, or the "CLI". Full documentation
+for this npm package based on
+[npm init](https://docs.npmjs.com/cli/v8/commands/npm-init) can be found
+[here](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/using-the-cli)
+on our docs site. It is recommended that you follow
+[these](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/using-the-cli)
+setup instructions for a full outline of all project generation options made
+available to you.
 
-1. Clone the template repo:
+Before you continue, familiarize yourself with our Gatsby Wordpress
+[add-ons](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/gatsby/gatsby-wordpress/add-ons),
+a suite of optional project expansions that bring new components, features, and
+styling into your starter kit.
+
+For a quick start, follow the instructions below:
+
+1. In your terminal, run the following command:
+
+```bash
+npm init pantheon-decoupled-kit gatsby-wp
+```
+
+2. Follow the prompts in your terminal to complete the setup.
+
+**Option 2 - Not Preferred**: Clone the repo
+
+1. Clone [this](https://github.com/pantheon-systems/gatsby-wordpress-starter)
+   template repo:
 
 ```bash
 git clone git@github.com:pantheon-systems/gatsby-wordpress-starter.git
