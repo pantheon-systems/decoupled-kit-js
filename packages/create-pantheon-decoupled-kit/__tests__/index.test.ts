@@ -5,6 +5,7 @@ const { parseArgs, main } = bin;
 import chalk from 'chalk';
 import inquirer from 'inquirer';
 import { decoupledKitGenerators } from '../src/generators';
+import versions from '../src/pkgVersions.json';
 
 import pkg from '../package.json' assert { type: 'json' };
 
@@ -115,10 +116,12 @@ describe('main()', () => {
 			{
 				_: ['next-drupal', 'next-drupal-umami-addon'],
 				appName: 'test',
+				drupalKitVersion: versions['drupal-kit'],
 				outDir: 'test',
 				force: false,
 				silent: false,
 				help: false,
+				nextjsKitVersion: versions['nextjs-kit'],
 				h: false,
 				version: false,
 				v: false,
@@ -192,13 +195,16 @@ To see this list at any time, use the --help command.`);
 		process.argv = ['node', 'bin.js', 'gatsby-wp'];
 		const data = {
 			_: ['gatsby-wp'],
+			eslintConfigVersion: versions['eslint'],
 			force: false,
 			gatsbyPnpmPlugin: true,
 			h: false,
 			help: false,
+			otherConfigsVersion: versions['other'],
 			silent: false,
 			v: false,
 			version: false,
+			wordpressKitVersion: versions['wordpress-kit'],
 		};
 
 		await main(parseArgs(), decoupledKitGenerators);

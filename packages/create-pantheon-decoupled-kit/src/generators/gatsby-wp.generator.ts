@@ -1,6 +1,7 @@
 import { addWithDiff, runInstall, runLint } from '../actions';
-import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 import whichPmRuns from 'which-pm-runs';
+import versions from '../pkgVersions.json';
+import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 
 interface GatsbyWPAnswers extends DefaultAnswers {
 	outDir: string;
@@ -25,6 +26,9 @@ export const gatsbyWp: DecoupledKitGenerator<GatsbyWPAnswers> = {
 	],
 	data: {
 		gatsbyPnpmPlugin: pnpm,
+		wordpressKitVersion: versions['wordpress-kit'],
+		otherConfigsVersion: versions['other'],
+		eslintConfigVersion: versions['eslint'],
 	},
 	templates: ['gatsby-wp'],
 	actions: [addWithDiff, runInstall, runLint],

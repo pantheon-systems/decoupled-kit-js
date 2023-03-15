@@ -29,9 +29,10 @@
 		"entryPoint": "./index.ts"
 	},
 	"scripts": {
-		"build": "pnpm clean && node ./esbuild.js && pnpm copy-templates",
+		"build": "pnpm clean && pnpm get-versions && node ./esbuild.js && pnpm copy-templates",
 		"clean": "pnpm rimraf ./dist",
 		"copy-templates": "pnpm tsx ./scripts/copyTemplates.ts",
+		"get-versions": "pnpm tsx ./scripts/getVersions.ts",
 		"dev": "node ./dist/bin.js",
 		"test": "vitest run --coverage",
 		"test:watch": "vitest",
