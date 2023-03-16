@@ -1,12 +1,11 @@
 import chalk from 'chalk';
 import { execSync } from 'child_process';
 import whichPmRuns from 'which-pm-runs';
-import type { Action } from '../types';
+import { Action, isString } from '../types';
 
 export const runInstall: Action = ({ data }) => {
 	if (data?.noInstall) return 'skipping install';
-	if (typeof data?.outDir !== 'string')
-		throw new Error('valid outDir required');
+	if (!isString(data.outDir)) throw new Error('valid outDir required');
 
 	const getPkgManager = whichPmRuns();
 	let pkgManager: string;
