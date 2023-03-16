@@ -7,15 +7,7 @@ through our `create-pantheon-decoupled-kit`, or the "CLI". Full documentation
 for this npm package based on
 [npm init](https://docs.npmjs.com/cli/v8/commands/npm-init) can be found
 [here](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/using-the-cli)
-on our docs site. It is recommended that you follow
-[these](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/using-the-cli)
-setup instructions for a full outline of all project generation options made
-available to you.
-
-Before you continue, familiarize yourself with our Gatsby Wordpress
-[add-ons](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/gatsby/gatsby-wordpress/add-ons),
-a suite of optional project expansions that bring new components, features, and
-styling into your starter kit.
+on our docs site.
 
 For a quick start, follow the instructions below:
 
@@ -26,33 +18,6 @@ npm init pantheon-decoupled-kit gatsby-wp
 ```
 
 2. Follow the prompts in your terminal to complete the setup.
-
-**Option 2 - Not Preferred**: Clone the repo
-
-1. Clone [this](https://github.com/pantheon-systems/gatsby-wordpress-starter)
-   template repo:
-
-```bash
-git clone git@github.com:pantheon-systems/gatsby-wordpress-starter.git
-```
-
-2. Install node modules
-
-```bash
-cd gatsby-wordpress-starter && npm install
-```
-
-3. Save `.env.example` as `.env.development.local` update following lines:
-
-```
-WPGRAPHQL_URL=
-WP_APPLICATION_USERNAME=
-WP_APPLICATION_PASSWORD=
-```
-
-4. Run `npm run develop`
-
-5. Open a browser and navigate to `http://localhost:8000`.
 
 ## Lando
 

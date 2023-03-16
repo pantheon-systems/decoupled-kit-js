@@ -7,15 +7,7 @@ through our `create-pantheon-decoupled-kit`, or the "CLI". Full documentation
 for this npm package based on
 [npm init](https://docs.npmjs.com/cli/v8/commands/npm-init) can be found
 [here](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/using-the-cli)
-on our docs site. It is recommended that you follow
-[these](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/using-the-cli)
-setup instructions for a full outline of all project generation options made
-available to you.
-
-Before you continue, familiarize yourself with our Next WordPress
-[add-ons](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/nextjs/nextjs-wordpress/add-ons),
-a suite of optional project expansions that bring new components, features, and
-styling into your starter kit.
+on our docs site.
 
 For a quick start, follow the instructions below:
 
@@ -26,34 +18,6 @@ npm init pantheon-decoupled-kit next-wp
 ```
 
 2. Follow the prompts in your terminal to complete the setup.
-
-**Secondary Option**: Clone the repo
-
-1. Clone [this](https://github.com/pantheon-systems/next-wordpress-starter)
-   repo:
-
-```bash
-git clone git@github.com:pantheon-systems/next-wordpress-starter.git
-```
-
-2. Install node modules
-
-```bash
-cd next-wordpress-starter && npm install
-```
-
-For either option, create a `.env.development.local` file and update it with the
-following: (See .env.example for an example)
-
-```
-WPGRAPHQL_URL=
-IMAGE_DOMAIN=
-```
-
-3. Run `npm run dev` to start in dev mode, or `npm run build && npm start` to
-   start in production mode.
-
-4. Open a browser and navigate to `http://localhost:3000`.
 
 ## Pantheon @pantheon-systems/wordpress-kit
 
