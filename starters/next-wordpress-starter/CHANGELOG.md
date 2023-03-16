@@ -1,5 +1,15 @@
 # @pantheon-systems/next-wordpress-starter
 
+## 2.0.1
+
+### Patch Changes
+
+- 4dd905b: [next-wp] Update post and page date
+- Updated dependencies [f434145]
+- Updated dependencies [eb8e3f5]
+  - @pantheon-systems/wordpress-kit@2.14.1
+  - @pantheon-systems/nextjs-kit@1.7.1
+
 ## 2.0.1-canary.0
 
 ### Patch Changes

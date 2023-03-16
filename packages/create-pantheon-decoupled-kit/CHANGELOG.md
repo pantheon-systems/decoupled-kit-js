@@ -1,5 +1,22 @@
 # create-pantheon-decoupled-kit
 
+## 0.4.0
+
+### Minor Changes
+
+- 981825d: [gatsby-wp] Add Published `eslint` Configs to Gatsby Generator
+
+### Patch Changes
+
+- 2cc371a: Updates to watch script
+- 1218c02: [gatsby-wp] Add conditinal to gatsby-config to avoid loading missing
+  plugins
+- b719c1c: Add dynamic versioning for @pantheon-systems dependencies
+- c31795b: Rename gitignore template on write to workaround npm
+- 9ede7c8: Update config package route.
+- 4dd905b: [next-wp] Update post and page date
+- d38e923: Removed .npmignore from project templates
+
 ## 0.4.0-canary.3
 
 ### Patch Changes
