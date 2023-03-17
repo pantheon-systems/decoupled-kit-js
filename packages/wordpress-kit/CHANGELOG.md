@@ -1,5 +1,13 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.14.1
+
+### Patch Changes
+
+- f434145: Update config package route.
+- Updated dependencies [b44ec7a]
+  - @pantheon-systems/cms-kit@0.2.1
+
 ## 2.14.1-canary.0
 
 ### Patch Changes
