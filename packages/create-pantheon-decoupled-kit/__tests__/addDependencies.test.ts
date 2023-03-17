@@ -33,6 +33,7 @@ const emptyPkgJson = {
 
 describe('addWithDiff()', () => {
 	beforeEach((context) => {
+		fs.ensureFileSync(pkgPath);
 		fs.writeFileSync(pkgPath, JSON.stringify(emptyPkgJson));
 
 		context.addDepsSpy = vi.spyOn(actions, 'addDependencies');
