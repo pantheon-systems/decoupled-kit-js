@@ -6,8 +6,8 @@ To get started with the Next Drupal Starter, use our
 `create-pantheon-decoupled-kit`, or the "CLI". Full documentation for this npm
 package based on [npm init](https://docs.npmjs.com/cli/v8/commands/npm-init) can
 be found
-[here](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/using-the-cli)
-on our docs site.
+[here](https://decoupledkit.pantheon.io/docs/frontend-starters/using-the-cli) on
+our docs site.
 
 For a quick start, follow the instructions below:
 
