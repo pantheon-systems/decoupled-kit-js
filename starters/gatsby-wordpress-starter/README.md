@@ -2,9 +2,8 @@
 
 ## Pantheon Decoupled Kit Gatsby WordPress Starter
 
-This repository has been deprecated. To access the latest version of our Gatsby
-WordPress Starter, please use our `create-pantheon-decoupled-kit`. Full
-documentation for this npm package based on
-[npm init](https://docs.npmjs.com/cli/v8/commands/npm-init) can be found
-[here](https://live-decoupled-kit-docs-canary.appa.pantheon.site/docs/frontend-starters/using-the-cli)
-on our docs site.
+The `starters` workspace in the `decoupled-kit-js` monorepo will soon been
+deprecated in favor of our CLI, `create-pantheon-decoupled-kit`. To access the
+latest version of our Next Drupal Starter, please use the CLI. For more
+information, see the documentation
+[on our docs site](https://decoupledkit.pantheon.io/docs/frontend-starters/using-the-cli).

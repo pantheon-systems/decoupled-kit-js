@@ -1,8 +1,6 @@
 ---
-"create-pantheon-decoupled-kit": patch
-"@pantheon-systems/gatsby-wordpress-starter": patch
-"@pantheon-systems/next-drupal-starter": patch
-"@pantheon-systems/next-wordpress-starter": patch
+'create-pantheon-decoupled-kit': patch
 ---
 
-Update README's to use `npm init` as the default way to create a project
+Update project generator READMEs to recommend the
+`create-pantheon-decoupled-kit` CLI as the default way to create a project
