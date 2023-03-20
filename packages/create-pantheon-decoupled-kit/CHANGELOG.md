@@ -1,5 +1,21 @@
 # create-pantheon-decoupled-kit
 
+## 0.5.0-canary.0
+
+### Minor Changes
+
+- 5b33004: Added a new action: `addDependencies`. This action allows a generator
+  to add dependencies to the `package.json` at the specified `outDir`.
+
+  Added a new add-on generator: `tailwindcss-addon`. This generator adds
+  necessary dependencies and configs to use with `@pantheon-systems` dependency
+  that rely on `tailwindcss`.
+
+### Patch Changes
+
+- 9c81c0f: Update project generator READMEs to recommend the
+  `create-pantheon-decoupled-kit` CLI as the default way to create a project
+
 ## 0.4.0
 
 ### Minor Changes
