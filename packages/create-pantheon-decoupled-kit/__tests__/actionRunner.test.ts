@@ -6,6 +6,7 @@ vi.mock('../src/actions', () => ({
 	addWithDiff: vi.fn(),
 	runInstall: vi.fn(),
 	runLint: vi.fn(),
+	addDependencies: vi.fn(),
 }));
 
 const templateData = [

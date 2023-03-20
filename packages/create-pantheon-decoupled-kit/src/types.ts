@@ -42,6 +42,10 @@ export interface DecoupledKitGenerator<Prompts extends Answers> {
 	 * This will give priority to the templates when de-duping.
 	 */
 	addon?: boolean;
+	/**
+	 * Any message(s) to be rendered after actions are successfully completed.
+	 */
+	nextSteps?: string[];
 }
 
 /**
@@ -52,11 +56,13 @@ export type Action = (config: ActionConfig) => Promise<string> | string;
 
 export type ActionRunner = (config: ActionRunnerConfig) => Promise<string>;
 
+type InputIndex = ParsedArgs & Answers & DataRecord;
 /**
- * Input from command line arguments and/or prompts
+ * Input from command line arguments, prompts, and generator data
  */
-export type Input = ParsedArgs & Answers;
-
+export type Input = {
+	[Property in keyof InputIndex]: InputIndex[Property];
+};
 export interface TemplateData {
 	templateDirs: string[];
 	addon: boolean;

@@ -229,9 +229,21 @@ To see this list at any time, use the --help command.`);
 
 	it('should not console.log if "silent" arg is true', async ({ logSpy }) => {
 		process.argv = ['node', 'bin.js', 'next-wp', '--silent'];
-
 		await main(parseArgs(), decoupledKitGenerators);
 
 		expect(logSpy).toHaveBeenCalledTimes(0);
+	});
+
+	it('should console.log any nextSteps', async ({ logSpy }) => {
+		process.argv = ['node', 'bin.js', 'tailwindcss-addon'];
+
+		await main(parseArgs(), decoupledKitGenerators);
+
+		expect(logSpy).toHaveBeenNthCalledWith(
+			3,
+			`➡️ ${chalk.cyan(
+				'Follow the guide at this link to complete your tailwindcss configuration:',
+			)} ${chalk.bold.underline('https://tailwindcss.com/docs/installation')}`,
+		);
 	});
 });
