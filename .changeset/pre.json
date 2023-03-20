@@ -15,5 +15,8 @@
     "@pantheon-systems/next-wordpress-starter": "2.0.1",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "proud-eels-dress",
+    "weak-beers-talk"
+  ]
 }
