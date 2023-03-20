@@ -106,6 +106,7 @@ To see this list at any time, use the --help command.`);
 
 	const actions = [];
 	const templateData: TemplateData[] = [];
+	const nextSteps: string[] = [];
 	// gather actions and template data from user input/prompts
 	for (const g of generatorsToRun) {
 		const generator = decoupledKitGenerators.find(
@@ -130,6 +131,8 @@ To see this list at any time, use the --help command.`);
 		// gather all actions and templates
 		actions.push(...generator.actions);
 		templateData.push(templateObj);
+		// gather all nextSteps
+		generator.nextSteps && nextSteps.push(...generator.nextSteps);
 	}
 	// pass the handlebars instance into data so it is available
 	// to any action that needs it
@@ -147,6 +150,7 @@ To see this list at any time, use the --help command.`);
 			chalk.bgGreen.black('Your project was generated with:'),
 			`\n\t${chalk.cyan(generatorsToRun.join('\n\t'))}`,
 		);
+	args?.silent || nextSteps.forEach((step) => console.log(`➡️ ${step}`));
 	args?.silent ||
 		console.log(
 			`${chalk.yellow('cd')} into ${chalk.bold.magenta(
