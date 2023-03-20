@@ -1,58 +1,23 @@
 # Pantheon Decoupled Kit Next Drupal Starter
 
-There are two ways to get started with the Next Drupal Starter:
+## Getting Started
 
-**Option 1**: Use `create-next-app`
+To get started with the Next Drupal Starter, use our
+`create-pantheon-decoupled-kit`, or the "CLI". Full documentation for this npm
+package based on [npm init](https://docs.npmjs.com/cli/v8/commands/npm-init) can
+be found
+[here](https://decoupledkit.pantheon.io/docs/frontend-starters/using-the-cli) on
+our docs site.
+
+For a quick start, follow the instructions below:
 
 1. In your terminal, run the following command:
 
 ```bash
-npx create-next-app -e https://github.com/pantheon-systems/next-drupal-starter --use-npm
+npm init pantheon-decoupled-kit next-drupal
 ```
 
 2. Follow the prompts in your terminal to complete the setup.
-
-**Option 2**: Clone the repo
-
-1. Clone this repo:
-
-```bash
-git clone git@github.com:pantheon-systems/next-drupal-starter.git
-```
-
-2. Install node modules
-
-```bash
-cd next-drupal-starter && npm install
-```
-
-For either option, create a `.env.development.local` file and update it with the
-following: (See .env.example for an example)
-
-```
-BACKEND_URL=
-IMAGE_DOMAIN=
-
-# Used to set the debug mode for the DrupalState store(s)
-# If not set, debug mode for the store(s) is set to false
-DEBUG_MODE=
-
-# this value can also bet set in the command line
-# before running commands for example
-# FRONTEND_URL=example.com npm run build
-# If not set, the FRONTEND_URL will default
-# to the value of PANTHEON_ENVIRONMENT_URL
-FRONTEND_URL=
-
-# These variables are needed to enable Preview
-PREVIEW_SECRET=
-CLIENT_ID=
-CLIENT_SECRET=
-```
-
-4. Run `lando start`
-
-5. Open a browser and navigate to `http://drupalnext.lndo.site/`.
 
 ## Pantheon npm Packages
 

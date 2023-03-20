@@ -2,33 +2,22 @@
 
 ## Getting Started
 
-[See the getting started guide](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Gatsby/Gatsby%20%2B%20WordPress/intro.md)
-for a more options to create a new Gatsby + WordPress project from this
-template.
+To get started with the Gatsby Wordpress Starter, use our
+`create-pantheon-decoupled-kit`, or the "CLI". Full documentation for this npm
+package based on [npm init](https://docs.npmjs.com/cli/v8/commands/npm-init) can
+be found
+[here](https://decoupledkit.pantheon.io/docs/frontend-starters/using-the-cli) on
+our docs site.
 
-1. Clone the template repo:
+For a quick start, follow the instructions below:
+
+1. In your terminal, run the following command:
 
 ```bash
-git clone git@github.com:pantheon-systems/gatsby-wordpress-starter.git
+npm init pantheon-decoupled-kit gatsby-wp
 ```
 
-2. Install node modules
-
-```bash
-cd gatsby-wordpress-starter && npm install
-```
-
-3. Save `.env.example` as `.env.development.local` update following lines:
-
-```
-WPGRAPHQL_URL=
-WP_APPLICATION_USERNAME=
-WP_APPLICATION_PASSWORD=
-```
-
-4. Run `npm run develop`
-
-5. Open a browser and navigate to `http://localhost:8000`.
+2. Follow the prompts in your terminal to complete the setup.
 
 ## Lando
 
