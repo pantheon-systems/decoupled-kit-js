@@ -1,4 +1,3 @@
-// next-drupal-search-api-addon
 import { addWithDiff, runLint } from '../actions';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 
