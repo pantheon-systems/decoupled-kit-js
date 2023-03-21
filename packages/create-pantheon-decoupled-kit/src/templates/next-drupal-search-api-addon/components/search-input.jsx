@@ -23,7 +23,7 @@ const SearchInput = () => {
 				value={searchQuery || ''}
 				onChange={(event) => setSearchQuery(event.target.value)}
 				className="py-1 sm:px-5 text-black rounded-full focus:outline-none ring-[1px] ring-black"
-				placeholder="Quick search..."
+				placeholder="Search"
 			/>
 			<button
 				type="submit"
