@@ -1,0 +1,36 @@
+.container {
+  display: flex; 
+  flex-direction: column; 
+  margin: auto; 
+  min-width: var(--lg);
+  font-size: var(--5);
+  font-weight: 400;
+  line-height: var(--8);
+}
+
+.content {
+  margin: var(--x-auto);
+}
+
+.content > ul {
+  padding-left: var(--6);
+}
+
+.content > ul [href] {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.content > ul li {
+  list-style: disc;
+  margin: var(--4) 0;
+  padding-left: var(--3);
+}
+
+/* lg breakpoint */
+@media (min-width: 1024px) { 
+  .content {
+    max-width: var(--md); 
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  } 
+}

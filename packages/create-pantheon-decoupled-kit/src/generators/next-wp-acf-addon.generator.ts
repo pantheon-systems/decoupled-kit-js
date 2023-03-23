@@ -12,6 +12,9 @@ export const nextWpAcfAddon: DecoupledKitGenerator = {
 			default: `${process.cwd()}/next-wp-acf-addon`,
 		},
 	],
-	templates: ['next-wp-acf-addon'],
+	data: {
+		wpAcfAddon: true,
+	},
+	templates: [],
 	actions: [addWithDiff, runLint],
 };
