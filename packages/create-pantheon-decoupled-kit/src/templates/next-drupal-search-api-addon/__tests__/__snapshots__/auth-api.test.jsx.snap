@@ -64,7 +64,7 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
         <form>
           <input
             class="py-1 sm:px-5 text-black rounded-full focus:outline-none ring-[1px] ring-black"
-            placeholder="Quick search..."
+            placeholder="Search"
             value=""
           />
           <button
@@ -230,7 +230,7 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
         <form>
           <input
             class="py-1 sm:px-5 text-black rounded-full focus:outline-none ring-[1px] ring-black"
-            placeholder="Quick search..."
+            placeholder="Search"
             value=""
           />
           <button
