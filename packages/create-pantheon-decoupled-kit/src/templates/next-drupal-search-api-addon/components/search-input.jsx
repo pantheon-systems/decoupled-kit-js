@@ -9,7 +9,7 @@ const SearchInput = () => {
 	const onSearch = (event) => {
 		event.preventDefault();
 
-		if (typeof searchQuery !== 'string') {
+		if (!searchQuery) {
 			return;
 		}
 
@@ -19,20 +19,25 @@ const SearchInput = () => {
 
 	return (
 		<form onSubmit={onSearch}>
-			<input
-				value={searchQuery || ''}
-				onChange={(event) => setSearchQuery(event.target.value)}
-				className="py-1 sm:px-5 text-black rounded-full focus:outline-none ring-[1px] ring-black"
-				placeholder="Search"
-			/>
-			<button
-				type="submit"
-				id="submit-btn"
-				className="ml-1.5 text-black rounded-full ring-[1px] ring-black px-5 py-1 hover:bg-blue-500"
-			>
-				Submit
-			</button>
-		</form>
+			<label htmlFor='search'>
+				<input
+					value={searchQuery || ''}
+					onChange={(event) => setSearchQuery(event.target.value)}
+					className="py-1 sm:px-5 text-black rounded-full focus:outline-none ring-[1px] ring-black"
+					placeholder="Search"
+					id='search'
+					aria-label="Search Bar"
+				/>
+			</label>
+		<button
+			type="submit"
+			id="submit-btn"
+			className="ml-1.5 text-black rounded-full ring-[1px] ring-black px-5 py-1 hover:bg-blue-500"
+			aria-label="Submit Search"
+		>
+			Submit
+		</button>
+	</form>
 	);
 };
 

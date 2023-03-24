@@ -1,5 +1,6 @@
 import { addWithDiff, runLint } from '../actions';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
+import chalk from 'chalk';
 
 export const nextDrupalSearchApiAddon: DecoupledKitGenerator<DefaultAnswers> = {
 	name: 'next-drupal-search-api-addon',
@@ -14,4 +15,9 @@ export const nextDrupalSearchApiAddon: DecoupledKitGenerator<DefaultAnswers> = {
 	],
 	templates: ['next-drupal-search-api-addon'],
 	actions: [addWithDiff, runLint],
+	nextSteps: [
+		`${chalk.cyan(
+			'Run the `update-snapshots` command to implement the latest test coverage',
+		)}`,
+	],
 };
