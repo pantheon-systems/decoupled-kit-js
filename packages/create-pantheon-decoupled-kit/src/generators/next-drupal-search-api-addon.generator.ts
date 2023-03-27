@@ -13,6 +13,10 @@ export const nextDrupalSearchApiAddon: DecoupledKitGenerator<DefaultAnswers> = {
 			default: `${process.cwd()}/next-drupal-search-api-addon`,
 		},
 	],
+	addon: true,
+	data: {
+		appDir: true,
+	},
 	templates: ['next-drupal-search-api-addon'],
 	actions: [addWithDiff, runLint],
 	nextSteps: [
