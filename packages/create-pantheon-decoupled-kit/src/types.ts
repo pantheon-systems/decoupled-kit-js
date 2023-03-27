@@ -11,7 +11,10 @@ declare module 'vitest' {
 /**
  * Generators need prompts to get user data not provided by CLI arguments
  */
-export interface DecoupledKitGenerator<Prompts extends Answers> {
+export interface DecoupledKitGenerator<
+	Prompts = DefaultAnswers,
+	Data = unknown,
+> {
 	/**
 	 * Generator's name. This should be kebab case.
 	 */
@@ -22,8 +25,12 @@ export interface DecoupledKitGenerator<Prompts extends Answers> {
 	description: string;
 	/**
 	 * An array of inquirer prompts
+	 * @template Prompts - the type of the required user input
+	 * @default DefaultAnswers - { outDir: string }
 	 */
-	prompts: QuestionCollection<Prompts>[];
+	prompts: QuestionCollection<
+		Prompts[] extends DefaultAnswers ? Prompts : DefaultAnswers
+	>[];
 	/**
 	 * An array of paths to the generator's templates.
 	 * This should be empty if the generator does not have templates.
@@ -36,7 +43,7 @@ export interface DecoupledKitGenerator<Prompts extends Answers> {
 	/**
 	 * Any extra data that should be passed from the generator to the actions
 	 */
-	data?: DataRecord;
+	data?: Data;
 	/**
 	 * Set to true if the generator is considered an addon.
 	 * This will give priority to the templates when de-duping.
@@ -56,7 +63,7 @@ export type Action = (config: ActionConfig) => Promise<string> | string;
 
 export type ActionRunner = (config: ActionRunnerConfig) => Promise<string>;
 
-type InputIndex = ParsedArgs & Answers & DataRecord;
+type InputIndex = Omit<ParsedArgs, '_'> & Answers;
 /**
  * Input from command line arguments, prompts, and generator data
  */
@@ -72,7 +79,7 @@ export interface MergedPaths {
 	[key: string]: { addon: boolean; base: string };
 }
 
-export interface DefaultAnswers extends Input {
+export interface DefaultAnswers extends Answers {
 	outDir: string;
 }
 
@@ -85,11 +92,6 @@ interface ActionConfig {
 interface ActionRunnerConfig extends ActionConfig {
 	actions: Action[];
 }
-
-type DataMember = string | number | boolean;
-type DataRecord = {
-	[key: string]: DataMember | Record<string, DataRecord | DataMember>;
-};
 
 // TYPE PREDICATES
 

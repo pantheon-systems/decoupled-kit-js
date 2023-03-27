@@ -5,7 +5,16 @@ import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 interface NextDrupalAnswers extends DefaultAnswers {
 	appName: string;
 }
-export const nextDrupal: DecoupledKitGenerator<NextDrupalAnswers> = {
+
+interface NextDrupalData {
+	nextjsKitVersion: string;
+	drupalKitVersion: string;
+}
+
+export const nextDrupal: DecoupledKitGenerator<
+	NextDrupalAnswers,
+	NextDrupalData
+> = {
 	name: 'next-drupal',
 	description: 'Next.js + Drupal starter kit',
 	prompts: [
@@ -17,7 +26,7 @@ export const nextDrupal: DecoupledKitGenerator<NextDrupalAnswers> = {
 		{
 			name: 'outDir',
 			message: 'Where should the output go?',
-			default: ({ appName }: { [key: string]: string }) =>
+			default: ({ appName }: NextDrupalAnswers) =>
 				`${process.cwd()}/${appName.replaceAll(' ', '-').toLowerCase()}`,
 		},
 	],
