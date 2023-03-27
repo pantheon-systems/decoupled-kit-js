@@ -13,8 +13,8 @@ const SearchInput = () => {
 			return;
 		}
 
-		const encodedSearchQuery = encodeURI(searchQuery);	
-		router.push(`/search?=${encodedSearchQuery}`);
+		const encodedSearchQuery = encodeURI(searchQuery);
+		router.push(`/search?q=${encodedSearchQuery}`);
 	};
 
 	return (

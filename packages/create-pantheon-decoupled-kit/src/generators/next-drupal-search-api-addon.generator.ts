@@ -17,7 +17,9 @@ export const nextDrupalSearchApiAddon: DecoupledKitGenerator<DefaultAnswers> = {
 	actions: [addWithDiff, runLint],
 	nextSteps: [
 		`${chalk.cyan(
-			'Run the `update-snapshots` command to implement the latest test coverage',
+			`Run the ${chalk.white.bold(
+				'update-snapshots',
+			)} command to update the snapshot files with the add-on components`,
 		)}`,
 	],
 };

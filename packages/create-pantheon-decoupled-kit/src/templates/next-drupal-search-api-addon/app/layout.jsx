@@ -15,6 +15,14 @@ export default function Layout({ children, footerMenu, preview = false }) {
 		href: url,
 		parent: parent,
 	}));
+
+	const removeRecipes = (value, index) => {
+		if (value.linkText === 'Recipes') {
+			footerMenuItems.splice(index, 1);
+		}
+	};
+	footerMenuItems?.forEach(removeRecipes);
+
 	return (
 		<html lang="en">
 			<body>

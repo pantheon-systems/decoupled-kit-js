@@ -11,6 +11,15 @@ export default function Layout({ children, footerMenu, preview = false }) {
 		href: url,
 		parent: parent,
 	}));
+
+	const removeRecipes = (value, index) => {
+		if (value.linkText === 'Recipes') {
+			footerMenuItems.splice(index, 1);
+		}
+	};
+	footerMenuItems?.forEach(removeRecipes);
+
+
 	return (
 		<div className="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden">
 			{preview && <PreviewRibbon />}
