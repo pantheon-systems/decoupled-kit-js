@@ -89,7 +89,7 @@ The docs site can be run locally with `pnpm --filter './web' start`.
 
 View the site at `http://localhost:3000`
 
-<!-- 
+<!--
 TODOS:
 - Confirm that this package provides types for all exported functions when used
   as an npm package.
@@ -140,24 +140,32 @@ pnpm create pantheon-decoupled-kit next-drupal next-drupal-umami-addon --appName
 Templates are written in the
 [handlebars templating language](https://handlebarsjs.com/). A template does not
 need to be dynamic. Static templates should not use the handlebars file
-extension `.hbs`, but instead should be included in the `templateDir` as is.
+extension `.hbs`, but instead should be included in the template directory as
+is.
 
-A custom generator should satisfy the `DecoupledKitGenerator` type.
+A custom generator should satisfy the `DecoupledKitGenerator` type, as well as
+the following criteria:
 
 - The export must be written in TypeScript.
 - The `DecoupledKitGenerator` type takes in a generic which should extend
   `DefaultAnswers`.
-  - If there are no extra answers to prompt for, use `DefaultAnswers` as the
-    generic.
+  - If the generator uses a custom answer type, define it in the generator and
+    name it `{PascalCaseGeneratorName}Answers`
 - It must allow prompts to be skipped by passing in named command line
   arguments. This should be handled by `main()` automatically.
 - It should use the `addWithDiff` action to write new files.
+- Arbitrary data required for the generator that is not user provided is defined
+  in the `data` object in the generator
+- The filename should be `{skewer-case-generator-name}.generator.ts`.
+- The generator is imported to `/src/generators/index.ts` and added to the
+  `decoupledKitGenerators` array.
 
 ### Adding Partials
 
-Partials should be used when possible. Partials must be added to the
+[Handlebars Partials](https://handlebarsjs.com/guide/#partials) should be used
+when possible. Partials must be added to the
 `create-pantheon-decoupled-kit/src/templates/partials` directory in order to be
-automatically registered to plop's handlebars compiler.
+automatically registered to the handlebars instance.
 
 ### Adding Custom Actions
 
@@ -169,8 +177,11 @@ Actions can be be async if necessary.
 ```typescript
 import type { Action } from '../types';
 
-export const exampleAction: Action = ({ data }) => { ... }
+export const exampleAction: Action = ({ data, templateData, handlebars }) => { ... }
 ```
+
+The `templateData` and `handlebars` parameters are optional and are only
+required if the action needs to render templates with handlebars.
 
 To use the action in a generator, add it to that generator's `actions` array in
 the order in which the action should be called. In other words, if an action is
@@ -183,29 +194,31 @@ explaining what went wrong and if there is any remediation to take to fix it.
 
 Successful actions should return a string `'success'`. If the action can be
 skipped with a flag, like `--noInstall` or `--noLint`, return `'skipped'`. This
-way, the action runner can log clear output on what actions succeeded, which
+way, the action runner can log clear output on which actions succeeded, which
 ones were skipped, and which ones threw errors.
 
 Note: Actions will be pooled together in the `actionRunner` and de-duped to run
 only once. So if multiple generators include the same action in the array, it
-will still only be run once with the data from all prompts. If for some reason
-this is not desireable, please open an issue or discussion topic with your
-use-case for further discussion.
+will only be run once with the data from all prompts and generators. If for some
+reason this is not desireable, please open an issue or discussion topic with
+your use-case for further discussion.
 
 ### The `watch` Script
 
 The `watch` script enables a sort of "developer mode" for a generator's
-templates. The script watches for changes to the template files of the given
-generator or generators. If a template of the given generator changes, the
-generator reruns and outputs any new changes to the configured `outDir`
-directory. Thanks to Hot Module Reloading (HMR), which is enabled by most modern
-frontend frameworks, this feature unlocks the following workflow:
+templates. The script watches for changes to the watch options and the template
+files of the given generator or generators. If a template of the given generator
+changes, the generator reruns and outputs any new changes to the configured
+`outDir` directory. Thanks to Hot Module Reloading (HMR), which is enabled by
+most modern frontend frameworks, this feature unlocks the following workflow:
 
-1. Generate a project in the `starters` workspace of the monorepo
-1. Start the result in dev mode e.g. `pnpm dev:next-wp` and visit the page in a
-   web browser
-1. Make changes to a template file of the given generator
-1. Changes to the template are reflected in the browser
+1. Generate a project in a directory outside of the monorepo
+1. In a new terminal or terminal tab, `cd` into the new project
+1. Install dependencies with your preferred package manager and start the dev
+   server
+1. Open the browser and navigate to the running application
+1. Make changes to a template file of the watched generator or generators
+1. Observe that changes to the template are reflected in the browser
 
 In order to use the `watch` script, configure a `watch.js/ts` file at the root
 of the `./packages/create-pantheon-decoupled-kit` directory. It should export a
@@ -213,6 +226,14 @@ JSON object named `watchOptions` in the shape of
 [minimist `ParsedArgs`](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/f834dd47e704fe7c65a87664864e78332e63bee7/types/minimist/index.d.ts#L80).
 The `watch` script will pick up this file and execute the generators listed in
 order in the `_` array. See the `watch.example.ts` for an example.
+
+We recommended using the watch script with the `noInstall` and `noLint` flags
+set to `true`. After the project is generated, `cd` into the `outDir` and run
+the install command of the package manager of your choice
+
+If the watch script reloads the templates too often, you can increase the
+`debounce` value (in milliseconds) to allow for more time between applying
+changes made to the templates.
 
 Note: It is not possible to `watch` with multiple _project_ generators in the
 `_` array. Subsequent generators must be add-ons.
