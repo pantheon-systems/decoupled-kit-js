@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 const SearchInput = () => {
@@ -29,15 +29,15 @@ const SearchInput = () => {
 					aria-label="Search Bar"
 				/>
 			</label>
-		<button
-			type="submit"
-			id="submit-btn"
-			className="ml-1.5 text-black rounded-full ring-[1px] ring-black px-5 py-1 hover:bg-blue-500"
-			aria-label="Submit Search"
-		>
-			Submit
-		</button>
-	</form>
+			<button
+				type="submit"
+				id="submit-btn"
+				className="ml-1.5 text-black rounded-full ring-[1px] ring-black px-5 py-1 hover:bg-blue-500"
+				aria-label="Submit Search"
+			>
+				Submit
+			</button>
+		</form>
 	);
 };
 
