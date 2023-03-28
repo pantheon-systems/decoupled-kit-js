@@ -5,8 +5,12 @@ import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 interface NextWPAnswers extends DefaultAnswers {
 	appName: string;
 }
+interface NextWpData {
+	nextjsKitVersion: string;
+	wordpressKitVersion: string;
+}
 
-export const nextWp: DecoupledKitGenerator<NextWPAnswers> = {
+export const nextWp: DecoupledKitGenerator<NextWPAnswers, NextWpData> = {
 	name: 'next-wp',
 	description: 'Next.js + WordPress starter kit',
 	prompts: [
@@ -18,7 +22,7 @@ export const nextWp: DecoupledKitGenerator<NextWPAnswers> = {
 		{
 			name: 'outDir',
 			message: 'Where should the output go?',
-			default: ({ appName }: { [key: string]: string }) =>
+			default: ({ appName }: NextWPAnswers) =>
 				`${process.cwd()}/${appName.replaceAll(' ', '-').toLowerCase()}`,
 		},
 	],
