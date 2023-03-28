@@ -4,11 +4,18 @@ import versions from '../pkgVersions.json';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 
 interface GatsbyWPAnswers extends DefaultAnswers {
-	outDir: string;
+	appName: string;
+}
+
+interface GatsbyWPData {
+	gatsbyPnpmPlugin: boolean;
+	wordpressKitVersion: string;
+	otherConfigsVersion: string;
+	eslintConfigVersion: string;
 }
 const pnpm = whichPmRuns()?.name === 'pnpm' ? true : false;
 
-export const gatsbyWp: DecoupledKitGenerator<GatsbyWPAnswers> = {
+export const gatsbyWp: DecoupledKitGenerator<GatsbyWPAnswers, GatsbyWPData> = {
 	name: 'gatsby-wp',
 	description: 'Gatsby + WordPress starter kit',
 	prompts: [
@@ -20,7 +27,7 @@ export const gatsbyWp: DecoupledKitGenerator<GatsbyWPAnswers> = {
 		{
 			name: 'outDir',
 			message: 'Where should the output go?',
-			default: ({ appName }: { [key: string]: string }) =>
+			default: ({ appName }: GatsbyWPAnswers) =>
 				`${process.cwd()}/${appName.replaceAll(' ', '-').toLowerCase()}`,
 		},
 	],

@@ -16,4 +16,4 @@ export const decoupledKitGenerators = [
 	gatsbyWpAcfAddon,
 	tailwindcssAddon,
 	nextDrupalSearchApiAddon,
-] as const;
+];
