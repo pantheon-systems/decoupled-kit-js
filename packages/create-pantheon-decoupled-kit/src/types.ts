@@ -53,10 +53,6 @@ export interface DecoupledKitGenerator<
 	 * Any message(s) to be rendered after actions are successfully completed.
 	 */
 	nextSteps?: string[];
-	/**
-	 * Set to true if the generator is to use the experimental app directory from  Next JS.
-	 */
-	appDir?: boolean;
 }
 
 /**
