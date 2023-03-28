@@ -1,0 +1,34 @@
+.container {
+	margin: var(--x-auto);
+	max-width: var(--sm);
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+}
+
+.content > h1 {
+	font-size: var(--8);
+	font-weight: 800;
+	justify-self: flex-start;
+	margin: var(--10) 0;
+}
+
+.item {
+	display: flex;
+	flex-direction: column;
+	margin: var(--10) auto;
+	padding: var(--3);
+}
+
+.item > h2 {
+	font-size: var(--6);
+	font-weight: 700;
+	justify-content: start;
+	margin-bottom: var(--2);
+}
+
+.item > div {
+	min-width: var(--sm);
+}
