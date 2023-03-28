@@ -1,0 +1,10 @@
+.header {
+	margin: var(--12) auto;
+	font-size: var(--14);
+	font-weight: 800;
+}
+
+.header > h1 {
+	text-align: center;
+	margin: auto 0;
+}

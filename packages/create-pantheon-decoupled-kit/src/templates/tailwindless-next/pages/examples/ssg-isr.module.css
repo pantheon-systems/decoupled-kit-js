@@ -1,0 +1,15 @@
+.container {
+	font-size: var(--5);
+	margin: var(--x-auto);
+	max-width: var(--lg);
+	line-height: var(--10);
+}
+
+/* lg breakpoint */
+@media (max-width: 1024px) {
+	.container {
+		max-width: var(--xs);
+		font-size: var(--4);
+		line-height: var(--8);
+	}
+}

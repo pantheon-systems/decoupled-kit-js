@@ -1,0 +1,41 @@
+.header {
+	display: flex column;
+	width: fit-content;
+	font-size: var(--14);
+	font-weight: 800;
+	margin: var(--20) auto 0;
+	text-align: center;
+}
+
+.header h1 > a {
+	font-weight: 500;
+}
+
+.next {
+	color: var(--blue);
+}
+.next:hover {
+	text-decoration: underline;
+}
+
+.onPantheon {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: fit-content;
+	color: var(--white);
+	background-color: var(--black);
+	margin-top: var(--8);
+	font-size: var(--6);
+	padding: var(--4) var(--7);
+	border-radius: var(--1);
+	font-weight: normal;
+}
+
+/* sm breakpoint */
+@media (max-width: 320px) {
+	.onPantheon {
+		flex-direction: column;
+		margin: var(--x-auto);
+	}
+}

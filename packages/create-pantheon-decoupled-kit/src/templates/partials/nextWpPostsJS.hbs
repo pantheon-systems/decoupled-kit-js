@@ -46,6 +46,23 @@ export async function getPostByUri(uri) {
 					}
 				}
 				content
+		{{#if wpAcfAddon}}
+				relatedContent {
+					relatedContent {
+						... on Post {
+							id
+							uri
+							title
+							featuredImage {
+								node {
+									altText
+									sourceUrl
+								}
+							}
+						}
+					}
+				}
+		{{/if}}
 			}
 		}
 	`;
