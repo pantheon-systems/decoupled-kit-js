@@ -17,22 +17,22 @@ export default function Layout({ children, footerMenu, preview = false }) {
 	}));
 
 	return (
-        {{#if app}}
+		{{#if app}}
 		<html lang="en">
 			<body>
-        {{/if}}
+		{{/if}}
 				<div className="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden">
 					{preview && <PreviewRibbon />}
             		{{#if appDir}}
 					<div className="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-justify-between ps-max-w-screen-md ps-mx-auto">
-                        <Header navItems={navItems} />
+    					<Header navItems={navItems} />
 						<div className="ps-pt-10">
 							<SearchInput />
 						</div>
 					</div>
-                	{{else}}
-                	<Header navItems={navItems} />
-                	{{/if}}
+					{{else}}
+					<Header navItems={navItems} />
+					{{/if}}
 					<main className="mb-auto">{children}</main>
 					<Footer footerMenuItems={footerMenuItems}>
 						<span className="mx-auto">
@@ -53,9 +53,9 @@ export default function Layout({ children, footerMenu, preview = false }) {
 						</span>
 					</Footer>
 				</div>
-        {{#if app}}
+		{{#if app}}
 			</body>
 		</html>
-        {{/if}}
+		{{/if}}
 	);
 }
