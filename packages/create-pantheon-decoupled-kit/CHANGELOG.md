@@ -1,5 +1,23 @@
 # create-pantheon-decoupled-kit
 
+## 0.5.0-canary.1
+
+### Minor Changes
+
+- 34348b43: [next-drupal-search-api-addon] Added a placeholder search route and
+  app layout to the next-drupal app directory.
+- d207fc3a: [next-wp] Added option to create a next-wp starter without
+  tailwindcss [next-wp-acf-addon] Removed explicit templates in favor of
+  handlebars conditional rendering inside of the `next-wp` templates. Also added
+  CSS so this add-on will work with the tailwindless next-wp option
+- 5e486b73: Added a new addon, `next-drupal-search-api-addon`. It includes the
+  beginning of an example implementation of the Drupal Search API
+
+### Patch Changes
+
+- c6e5ba86: Refined the `DecoupledKitGenerator` type generics to provide
+  stronger types on arbitrary data
+
 ## 0.5.0-canary.0
 
 ### Minor Changes
