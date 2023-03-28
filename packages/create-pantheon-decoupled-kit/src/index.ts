@@ -22,7 +22,7 @@ export const parseArgs = (
 	const options: MinimistOptions = {
 		// these options tell minimist which --args are
 		// booleans and which are strings.
-		boolean: ['force', 'silent', 'help', 'version'],
+		boolean: ['force', 'silent', 'help', 'version', 'noTailwindcss'],
 		string: ['appName', 'outDir'],
 		alias: {
 			help: ['h', 'help'],
@@ -55,6 +55,14 @@ export const main = async (
 	if (args?.v || args?.version) {
 		console.log(`v${pkg.version}`);
 		return;
+	}
+
+	// because minimist booleans must be false by default,
+	// we can use noTailwind as a flag to turn off the prompt for
+	// tailwindcss in the generators. This allows for a more intuitive flag,
+	// and a way to get the tailwind-less starter via flag.
+	if (args.noTailwindcss) {
+		args.tailwindcss = false;
 	}
 
 	// get a list of generators to map against positional arguments from the cli
@@ -115,22 +123,36 @@ To see this list at any time, use the --help command.`);
 		// Add any prompts to args object so we don't ask the same
 		// prompt twice
 		Object.assign(args, answers);
+
 		// if generator data exists, add it to the args object
 		generator.data && Object.assign(args, generator.data);
+
+		// filter out tailwindless templates if they are not needed
+		// otherwise, filter out shared tailwind templates
+		if (args.tailwindcss) {
+			generator.templates = generator.templates.filter(
+				(template) => !template.startsWith('tailwindless'),
+			);
+		} else {
+			generator.templates = generator.templates.filter(
+				(template) => template !== 'tailwind-shared',
+			);
+		}
 
 		// this object is used to deduplicate the templates
 		const templateObj: TemplateData = {
 			templateDirs: [...generator.templates],
 			addon: generator.addon || false,
 		};
-
 		// gather all actions and templates
 		actions.push(...generator.actions);
 		templateData.push(templateObj);
+
 		// gather all nextSteps
 		generator.nextSteps && nextSteps.push(...generator.nextSteps);
 		generatorsRan.push(generator.name);
 	}
+
 	// pass the handlebars instance into data so it is available
 	// to any action that needs it
 	const hbs = await getHandlebarsInstance(rootDir);

@@ -71,6 +71,12 @@ export const addWithDiff: Action = async ({
 			// get the contents of the template
 			const temp = handlebars.compile(fs.readFileSync(templatePath, 'utf-8'));
 			sourceContents = temp(data);
+			// prevents writing empty files
+			// useful for files that may be empty
+			// depending on the options selected
+			if (!sourceContents) {
+				continue;
+			}
 		} else {
 			sourceContents = fs.readFileSync(templatePath, 'utf-8');
 		}

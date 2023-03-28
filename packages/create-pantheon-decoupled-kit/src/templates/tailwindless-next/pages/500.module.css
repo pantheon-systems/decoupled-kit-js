@@ -1,0 +1,14 @@
+.errorMessage > * {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	font-size: xx-large;
+}
+
+.errorMessage > span {
+	margin: var(--48) auto 0;
+}
+
+.errorMessage > a {
+	text-decoration: underline;
+}

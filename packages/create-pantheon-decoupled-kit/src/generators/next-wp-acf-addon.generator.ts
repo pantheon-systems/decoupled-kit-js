@@ -11,6 +11,12 @@ export const nextWpAcfAddon: DecoupledKitGenerator = {
 			message: 'Where should the output go?',
 			default: `${process.cwd()}/next-wp-acf-addon`,
 		},
+		{
+			name: 'tailwindcss',
+			message: 'Would you like to include tailwindcss?',
+			type: 'confirm',
+			default: true,
+		},
 	],
 	templates: ['next-wp-acf-addon'],
 	actions: [addWithDiff, runLint],

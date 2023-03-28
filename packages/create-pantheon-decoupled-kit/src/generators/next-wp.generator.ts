@@ -20,6 +20,12 @@ export const nextWp: DecoupledKitGenerator<NextWPAnswers, NextWpData> = {
 			default: 'Next WordPress Starter',
 		},
 		{
+			name: 'tailwindcss',
+			message: 'Would you like to include tailwindcss?',
+			type: 'confirm',
+			default: true,
+		},
+		{
 			name: 'outDir',
 			message: 'Where should the output go?',
 			default: ({ appName }: NextWPAnswers) =>
@@ -29,7 +35,8 @@ export const nextWp: DecoupledKitGenerator<NextWPAnswers, NextWpData> = {
 	data: {
 		nextjsKitVersion: versions['nextjs-kit'],
 		wordpressKitVersion: versions['wordpress-kit'],
+		wp: true,
 	},
-	templates: ['next-wp'],
+	templates: ['next-wp', 'tailwind-shared', 'tailwindless-next'],
 	actions: [addWithDiff, runInstall, runLint],
 };

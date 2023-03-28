@@ -17,7 +17,9 @@
 	"dependencies": {
 		"@pantheon-systems/nextjs-kit": "{{nextjsKitVersion}}",
 		"@pantheon-systems/wordpress-kit": "{{wordpressKitVersion}}",
-		"@tailwindcss/typography": "^0.5.7",
+		{{#if tailwindcss}}
+		{{> tailwindcssDeps}}
+		{{/if}}
 		"dotenv": "^16.0.2",
 		"next": "^13.1.1",
 		"next-seo": "^5.4.0",
@@ -26,16 +28,16 @@
 		"sharp": "^0.31.1"
 	},
 	"devDependencies": {
+		{{#if tailwindcss}}
+		{{> tailwindcssDeps devDeps=true}}
+		{{/if}}
 		"@testing-library/react": "13.4.0",
 		"@vitejs/plugin-react": "^2.1.0",
-		"autoprefixer": "^10.4.12",
 		"c8": "^7.12.0",
 		"eslint": "^8.24.0",
 		"eslint-config-next": "^13.1.1",
 		"msw": "^0.47.3",
-		"postcss": "^8.4.16",
 		"prettier": "^2.7.1",
-		"tailwindcss": "^3.1.8",
 		"typescript": "4.8.4",
 		"vite": "^3.1.4",
 		"vitest": "^0.23.4"
