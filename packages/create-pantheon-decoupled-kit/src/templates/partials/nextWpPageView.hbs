@@ -27,14 +27,14 @@ export default function PageTemplate({ menuItems, page, preview }) {
 						? {
 								src: page.featuredImage?.node.sourceUrl,
 								alt: page.featuredImage?.node.altText,
-						  }
+							}
 						: undefined
 					}
-          {{#if tailwindcss}}
+					{{#if tailwindcss}}
 					contentClassName="ps-wp-content"
-          {{else}}
+					{{else}}
 					contentClassName={styles.content}
-          {{/if}}
+					{{/if}}
 			/>
 		</Layout>
 	);
