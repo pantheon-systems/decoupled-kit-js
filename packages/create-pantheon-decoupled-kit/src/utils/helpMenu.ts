@@ -1,6 +1,6 @@
-import { decoupledKitGenerators } from '../generators';
+import type { DecoupledKitGenerator } from '../types';
 
-export const helpMenu = (generators: typeof decoupledKitGenerators) => {
+export const helpMenu = (generators: DecoupledKitGenerator[]) => {
 	const generatorsList = Object.values(generators).map(({ name }) => name);
 	return `Usage: create-pantheon-decoupled-kit <generator(s) space separated> [options]
 	

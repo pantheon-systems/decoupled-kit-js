@@ -246,4 +246,22 @@ To see this list at any time, use the --help command.`);
 			)} ${chalk.bold.underline('https://tailwindcss.com/docs/installation')}`,
 		);
 	});
+
+	it('should continue to the next generator if a generator is not valid', async ({
+		promptSpy,
+		logSpy,
+	}) => {
+		process.argv = ['node', 'bin.js'];
+		promptSpy.mockImplementationOnce(() => ({
+			generators: ['next-', 'next-wp'],
+		}));
+
+		await main(parseArgs(), decoupledKitGenerators);
+
+		expect(logSpy).toHaveBeenNthCalledWith(
+			2,
+			chalk.bgGreen.black('Your project was generated with:'),
+			`\n\t${chalk.cyan(['next-wp'].join('\n\t'))}`,
+		);
+	});
 });

@@ -1,8 +1,8 @@
 import { addWithDiff, runLint } from '../actions';
-import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
+import type { DecoupledKitGenerator } from '../types';
 import chalk from 'chalk';
 
-export const nextDrupalSearchApiAddon: DecoupledKitGenerator<DefaultAnswers> = {
+export const nextDrupalSearchApiAddon: DecoupledKitGenerator = {
 	name: 'next-drupal-search-api-addon',
 	description:
 		'Example implementation of the Drupal Search API for the next-drupal starter',

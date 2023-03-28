@@ -1,13 +1,8 @@
 import chalk from 'chalk';
 import inquirer, { QuestionCollection } from 'inquirer';
-import minimist, { ParsedArgs, Opts as MinimistOptions } from 'minimist';
-import { decoupledKitGenerators } from './generators';
-import { helpMenu, actionRunner, getHandlebarsInstance } from './utils/index';
-import type {
-	DecoupledKitGenerator,
-	DefaultAnswers,
-	TemplateData,
-} from './types';
+import minimist, { Opts as MinimistOptions, ParsedArgs } from 'minimist';
+import type { DecoupledKitGenerator, TemplateData } from './types';
+import { actionRunner, getHandlebarsInstance, helpMenu } from './utils/index';
 
 import pkg from '../package.json' assert { type: 'json' };
 export const rootDir = new URL('.', import.meta.url).pathname;
@@ -48,7 +43,7 @@ export const parseArgs = (
  */
 export const main = async (
 	args: ParsedArgs,
-	DecoupledKitGenerators: typeof decoupledKitGenerators,
+	DecoupledKitGenerators: DecoupledKitGenerator[],
 ): Promise<void> => {
 	// display the help menu
 	if (args?.help || args?.h) {
@@ -63,7 +58,9 @@ export const main = async (
 	}
 
 	// get a list of generators to map against positional arguments from the cli
-	const generators = decoupledKitGenerators.map((generator) => generator);
+	const generators: DecoupledKitGenerator[] = DecoupledKitGenerators.map(
+		(generator) => generator,
+	);
 	const generatorNames = generators.map(({ name }) => name);
 	// take positional params from minimist args and
 	// check them against valid generators
@@ -106,15 +103,14 @@ To see this list at any time, use the --help command.`);
 
 	const actions = [];
 	const templateData: TemplateData[] = [];
+	const generatorsRan: string[] = [];
 	const nextSteps: string[] = [];
 	// gather actions and template data from user input/prompts
 	for (const g of generatorsToRun) {
-		const generator = decoupledKitGenerators.find(
-			({ name }) => name === g,
-		) as DecoupledKitGenerator<DefaultAnswers>;
-		// ^not in love with the type coercion here, there is likely a better way to type these generators.
-		// using overloads and the Parameters<> type, but this was found somewhat late in refactoring.
-
+		const generator = DecoupledKitGenerators.find(({ name }) => name === g);
+		if (!generator) {
+			continue;
+		}
 		const answers = await inquirer.prompt(generator.prompts, args);
 		// Add any prompts to args object so we don't ask the same
 		// prompt twice
@@ -133,6 +129,7 @@ To see this list at any time, use the --help command.`);
 		templateData.push(templateObj);
 		// gather all nextSteps
 		generator.nextSteps && nextSteps.push(...generator.nextSteps);
+		generatorsRan.push(generator.name);
 	}
 	// pass the handlebars instance into data so it is available
 	// to any action that needs it
@@ -148,7 +145,7 @@ To see this list at any time, use the --help command.`);
 	args?.silent ||
 		console.log(
 			chalk.bgGreen.black('Your project was generated with:'),
-			`\n\t${chalk.cyan(generatorsToRun.join('\n\t'))}`,
+			`\n\t${chalk.cyan(generatorsRan.join('\n\t'))}`,
 		);
 	args?.silent || nextSteps.forEach((step) => console.log(`➡️ ${step}`));
 	args?.silent ||
