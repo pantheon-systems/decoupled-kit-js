@@ -23,7 +23,7 @@ export default function Layout({ children, footerMenu, preview = false }) {
 		{{/if}}
 				<div className="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden">
 					{preview && <PreviewRibbon />}
-            		{{#if appDir}}
+					{{#if appDir}}
 					<div className="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-justify-between ps-max-w-screen-md ps-mx-auto">
     					<Header navItems={navItems} />
 						<div className="ps-pt-10">

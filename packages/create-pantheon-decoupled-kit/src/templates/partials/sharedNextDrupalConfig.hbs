@@ -58,11 +58,11 @@ if (process.env.PANTHEON_UPLOAD_PATH) {
 module.exports = async () => {
 	const locales = await getLocales();
 	const nextConfig = {
-	{{#if appDir}}
+		{{#if appDir}}
 		experimental: {
 			appDir: true,
 		},
-	{{/if}}
+		{{/if}}
 		...(injectedOptions && injectedOptions),
 		env: {
 			backendUrl: backendUrl,
