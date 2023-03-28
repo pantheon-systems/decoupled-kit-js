@@ -1,11 +1,11 @@
 .notFound > * {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  font-size: xx-large;
-  width: 98vw;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	font-size: xx-large;
+	width: 98vw;
 }
 
 .notFound > span {
-  margin: var(--48) auto 0;
+	margin: var(--48) auto 0;
 }

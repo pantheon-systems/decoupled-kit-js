@@ -1,26 +1,26 @@
 .layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
-  min-width: 100dvw;
+	display: flex;
+	flex-direction: column;
+	min-height: 100dvh;
+	min-width: 100dvw;
 }
 
 .layout > main {
-  margin-bottom: auto;
+	margin-bottom: auto;
 }
 
 .footerCopy {
-  margin: var(--x-auto);
+	margin: var(--x-auto);
 }
 
-.footerCopy > [href] {
-  text-decoration: underline;
+.footerCopy > a {
+	text-decoration: underline;
 }
 
-.footerCopy > [href$='nextjs.org/'] {
-  color: var(--wite);
+.footerCopy > a[href$='nextjs.org/'] {
+	color: var(--white);
 }
 
-.footerCopy > [href$='wordpress.com/'] {
-  color: var(--blue);
+.footerCopy > a[href$='wordpress.com/'] {
+	color: var(--blue);
 }

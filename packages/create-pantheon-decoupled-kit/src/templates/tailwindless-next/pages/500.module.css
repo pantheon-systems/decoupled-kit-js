@@ -1,14 +1,14 @@
 .errorMessage > * {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  font-size: xx-large;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	font-size: xx-large;
 }
 
 .errorMessage > span {
-  margin: var(--48) auto 0;
+	margin: var(--48) auto 0;
 }
 
-.errorMessage > [href] {
-  text-decoration: underline;
+.errorMessage > a {
+	text-decoration: underline;
 }
