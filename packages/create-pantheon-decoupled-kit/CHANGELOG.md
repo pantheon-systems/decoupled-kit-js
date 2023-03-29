@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.5.0-canary.2
+
+### Patch Changes
+
+- 6c770bfa: [next-wp] Re-add `tailwindcss` as a dependency as it is required for
+  `@pantheon-systems/wordpress-kit`
+
 ## 0.5.0-canary.1
 
 ### Minor Changes
