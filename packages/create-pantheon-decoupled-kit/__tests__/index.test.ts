@@ -122,6 +122,7 @@ describe('main()', () => {
 				silent: false,
 				help: false,
 				nextjsKitVersion: versions['nextjs-kit'],
+				noTailwindcss: false,
 				h: false,
 				version: false,
 				v: false,
@@ -200,6 +201,7 @@ To see this list at any time, use the --help command.`);
 			gatsbyPnpmPlugin: true,
 			h: false,
 			help: false,
+			noTailwindcss: false,
 			otherConfigsVersion: versions['other'],
 			silent: false,
 			v: false,
@@ -229,9 +231,39 @@ To see this list at any time, use the --help command.`);
 
 	it('should not console.log if "silent" arg is true', async ({ logSpy }) => {
 		process.argv = ['node', 'bin.js', 'next-wp', '--silent'];
-
 		await main(parseArgs(), decoupledKitGenerators);
 
 		expect(logSpy).toHaveBeenCalledTimes(0);
+	});
+
+	it('should console.log any nextSteps', async ({ logSpy }) => {
+		process.argv = ['node', 'bin.js', 'tailwindcss-addon'];
+
+		await main(parseArgs(), decoupledKitGenerators);
+
+		expect(logSpy).toHaveBeenNthCalledWith(
+			3,
+			`➡️ ${chalk.cyan(
+				'Follow the guide at this link to complete your tailwindcss configuration:',
+			)} ${chalk.bold.underline('https://tailwindcss.com/docs/installation')}`,
+		);
+	});
+
+	it('should continue to the next generator if a generator is not valid', async ({
+		promptSpy,
+		logSpy,
+	}) => {
+		process.argv = ['node', 'bin.js'];
+		promptSpy.mockImplementationOnce(() => ({
+			generators: ['next-', 'next-wp'],
+		}));
+
+		await main(parseArgs(), decoupledKitGenerators);
+
+		expect(logSpy).toHaveBeenNthCalledWith(
+			2,
+			chalk.bgGreen.black('Your project was generated with:'),
+			`\n\t${chalk.cyan(['next-wp'].join('\n\t'))}`,
+		);
 	});
 });

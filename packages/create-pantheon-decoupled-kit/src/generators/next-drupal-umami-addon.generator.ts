@@ -1,7 +1,7 @@
 import { addWithDiff, runLint } from '../actions';
-import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
+import type { DecoupledKitGenerator } from '../types';
 
-export const nextDrupalUmamiAddon: DecoupledKitGenerator<DefaultAnswers> = {
+export const nextDrupalUmamiAddon: DecoupledKitGenerator = {
 	name: 'next-drupal-umami-addon',
 	description:
 		"Drupal's Umami profile data and components add-on for the next-drupal starter",

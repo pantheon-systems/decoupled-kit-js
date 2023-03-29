@@ -25,36 +25,26 @@ backend.
 
 ## Creating A New Project With The Template
 
-There are two methods to creating a new project based on the
-`gatsby-wordpress-starter`:`
+To create a project using the latest version of the Gatsby WordPress Starter,
+use our `create-pantheon-decoupled-kit` npm package.
 
-1. Clone the starter repo directly
-2. Use the `gatsby-cli`
+The full documentation for the `create-pantheon-decoupled-kit` can be found
+[here](https://decoupledkit.pantheon.io/docs/frontend-starters/using-the-cli).
 
-To clone the starter directly from GitHub, Visit the repo link
-https://github.com/pantheon-systems/gatsby-wordpress-starter and click on the
-**Code** button to open the clone dropdown and select your preferred method.
+Before you continue, familiarize yourself with our Gatsby WordPress
+[add-ons](http://localhost:3000/docs/frontend-starters/gatsby/gatsby-wordpress/add-ons),
+a suite of optional project expansions that bring new components, features, and
+styling into your starter kit.
 
-To create a new project using the `gatsby-wordpress-starter` as a template,
-[use the `gatsby new` command](https://www.gatsbyjs.com/docs/reference/gatsby-cli/#creating-a-site-from-a-starter).
+To create a new project using `create-pantheon-decoupled-kit`:
 
-```shell
-# if gatsby-cli is installed locally...
-gatsby new my-gatsby-wordpress-starter https://github.com/pantheon-systems/gatsby-wordpress-starter
-# or use npx
-npx gatsby new my-gatsby-wordpress-starter https://github.com/pantheon-systems/gatsby-wordpress-starter
+1. In your terminal, run the following command:
+
+```bash
+npm init pantheon-decoupled-kit gatsby-wordpress
 ```
 
-If you have a package manager preference between npm and yarn, you may need to
-set it in the `gatsby-cli` options before initiating your new project.
-
-```shell
-# set your preferred package manager with the following command
-# for npm
-gatsby options set pm npm
-# for yarn
-gatsby options set pm yarn
-```
+2. Follow the prompts in your terminal to complete the setup.
 
 ## Next Steps
 

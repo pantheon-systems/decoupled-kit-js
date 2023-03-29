@@ -1,0 +1,36 @@
+.container {
+	max-width: var(--md);
+	margin: var(--10) auto 0;
+}
+
+.container > h1 {
+	margin-bottom: var(--4);
+	font-size: var(--12);
+	font-weight: 800;
+}
+
+.container > a {
+	text-decoration: underline;
+	font-size: var(--5);
+	font-weight: 500;
+}
+
+.container > div {
+	margin: var(--x-auto);
+}
+
+.container > div > p {
+	margin-top: var(--12);
+	font-size: var(--5);
+}
+
+/* lg breakpoint */
+@media (max-width: 1024px) {
+	.container {
+		max-width: var(--sm);
+	}
+
+	.container > h1 {
+		font-size: var(--8)
+	}
+}

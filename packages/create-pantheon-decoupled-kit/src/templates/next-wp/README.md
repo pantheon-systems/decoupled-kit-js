@@ -2,44 +2,22 @@
 
 ## Getting Started
 
-There are two ways to get started with the Next WordPress Starter:
+To get started with the Next Wordpress Starter, use our
+`create-pantheon-decoupled-kit`, or the "CLI". Full documentation for this npm
+package based on [npm init](https://docs.npmjs.com/cli/v8/commands/npm-init) can
+be found
+[here](https://decoupledkit.pantheon.io/docs/frontend-starters/using-the-cli) on
+our docs site.
 
-**Option 1**: Use `create-next-app`
+For a quick start, follow the instructions below:
 
 1. In your terminal, run the following command:
 
 ```bash
-npx create-next-app -e https://github.com/pantheon-systems/next-wordpress-starter --use-npm
+npm init pantheon-decoupled-kit next-wp
 ```
 
 2. Follow the prompts in your terminal to complete the setup.
-
-**Option 2**: Clone the repo
-
-1. Clone this repo:
-
-```bash
-git clone git@github.com:pantheon-systems/next-wordpress-starter.git
-```
-
-2. Install node modules
-
-```bash
-cd next-wordpress-starter && npm install
-```
-
-For either option, create a `.env.development.local` file and update it with the
-following: (See .env.example for an example)
-
-```
-WPGRAPHQL_URL=
-IMAGE_DOMAIN=
-```
-
-3. Run `npm run dev` to start in dev mode, or `npm run build && npm start` to
-   start in production mode.
-
-4. Open a browser and navigate to `http://localhost:3000`.
 
 ## Pantheon @pantheon-systems/wordpress-kit
 

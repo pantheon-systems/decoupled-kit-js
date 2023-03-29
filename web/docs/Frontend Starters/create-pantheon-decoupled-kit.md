@@ -61,13 +61,23 @@ results. These `project` generators should be used only in conjunction with
 
 ### Add-ons
 
+There are some utility add-ons that are available to any project. These add-ons
+are:
+
+- tailwindcss-addon
+
+  This add-on will bootstrap a project with dependencies and config files
+  necessary to start using [tailwindcss](https://tailwindcss.com). Minimal
+  additional setup may be required, such as importing the css file or changing
+  the paths in the `tailwind.config.cjs`
+
 Available add-ons per project generator are as follows:
 
 | Project Generator | Available Add-ons       |
 | ----------------- | ----------------------- |
 | next-drupal       | next-drupal-umami-addon |
 | next-wp           | next-wp-acf-addon       |
-| gatsby-wp         | gastby-wp-acf-addon     |
+| gatsby-wp         | gatsby-wp-acf-addon     |
 
 For more detail on the available add-ons and their functionality, see the
 following docs:
