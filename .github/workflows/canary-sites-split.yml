@@ -47,7 +47,7 @@ jobs:
             split_repository: 'next-wordpress-starter-default-canary'
             generator_cmd:
               'next-wp --appName @pantheon-systems/next-wordpress-starter-canary
-              --noInstall --force --silent'
+              --noInstall --tailwindcss --force --silent'
 
           # canary docs site
           - local_path: 'web'
