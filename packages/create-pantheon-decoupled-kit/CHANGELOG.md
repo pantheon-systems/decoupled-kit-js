@@ -1,5 +1,33 @@
 # create-pantheon-decoupled-kit
 
+## 0.5.0
+
+### Minor Changes
+
+- 34348b43: [next-drupal-search-api-addon] Added a placeholder search route and
+  app layout to the next-drupal app directory.
+- d207fc3a: [next-wp] Added option to create a next-wp starter without
+  tailwindcss [next-wp-acf-addon] Removed explicit templates in favor of
+  handlebars conditional rendering inside of the `next-wp` templates. Also added
+  CSS so this add-on will work with the tailwindless next-wp option
+- 5e486b73: Added a new addon, `next-drupal-search-api-addon`. It includes the
+  beginning of an example implementation of the Drupal Search API
+- 5b330046: Added a new action: `addDependencies`. This action allows a
+  generator to add dependencies to the `package.json` at the specified `outDir`.
+
+  Added a new add-on generator: `tailwindcss-addon`. This generator adds
+  necessary dependencies and configs to use with `@pantheon-systems` dependency
+  that rely on `tailwindcss`.
+
+### Patch Changes
+
+- 6c770bfa: [next-wp] Re-add `tailwindcss` as a dependency as it is required for
+  `@pantheon-systems/wordpress-kit`
+- c6e5ba86: Refined the `DecoupledKitGenerator` type generics to provide
+  stronger types on arbitrary data
+- 9c81c0f5: Update project generator READMEs to recommend the
+  `create-pantheon-decoupled-kit` CLI as the default way to create a project
+
 ## 0.5.0-canary.2
 
 ### Patch Changes
