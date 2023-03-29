@@ -16,6 +16,10 @@
     "web": "1.0.0"
   },
   "changesets": [
+    "angry-suns-rest",
+    "fair-emus-accept",
+    "late-hornets-invent",
+    "long-yaks-lie",
     "proud-eels-dress",
     "weak-beers-talk"
   ]
