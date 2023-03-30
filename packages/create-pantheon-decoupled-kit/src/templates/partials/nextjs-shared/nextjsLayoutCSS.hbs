@@ -1,0 +1,30 @@
+.layout {
+	display: flex;
+	flex-direction: column;
+	min-height: 100dvh;
+	min-width: inherit;
+}
+
+.layout > main {
+	margin-bottom: auto;
+}
+
+.footerCopy {
+	margin: var(--x-auto);
+}
+
+.footerCopy > a {
+	text-decoration: underline;
+}
+
+.footerCopy > a[href$='nextjs.org/'] {
+	color: var(--white);
+}
+
+.footerCopy > a[href$={{#if wp}}'wordpress.com/'{{else if drupal}}'drupal.org/'{{/if}}] {
+	color: var(--blue);
+}
+
+.footerCopy > a:hover {
+	color: var(--light-blue);
+}
