@@ -39,12 +39,12 @@ locally:
 - Node.js version 18 LTS. We recommend using
   [nvm](https://github.com/nvm-sh/nvm)
 - [npm](https://docs.npmjs.com/cli/v8/commands/npm) version 9.x.x
-- [pnpm](https://pnpm.io/installation) version 7.26.3
+- [pnpm](https://pnpm.io/installation) version 8.1.0
 
   We recommend using npm. Run the following command to install:
 
   ```bash
-  npm install -g pnpm@7.26.3
+  npm install -g pnpm@8.1.0
   ```
 
 ---
