@@ -1,45 +1,59 @@
 import React from 'react'
 import { withPrefix } from 'gatsby'
-
 import Layout from '../components/layout'
+import { PostGrid } from '../components/grid'
 import Seo from '../components/seo'
-import { withGrid, PostGridItem } from '../components/grid'
+{{#unless tailwindcss}}
+import * as styles from './index.module.css'
+{{/unless}}
 
 const PageHeader = () => (
+	{{#if tailwindcss}}
 	<div className="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit">
 		<h1 className="prose text-4xl text-center h-full">
+	{{else}}
+	<div className={styles.header}>
+		<h1>
+	{{/if}}
 			Welcome to{' '}
 			<a
+				{{#if tailwindcss}}
 				className="text-purple-600 no-underline hover:underline"
+				{{else}}
+				className={styles.gatsby}
+				{{/if}}
 				href="https://www.gatsbyjs.com/"
 			>
 				Gatsby!
 			</a>
 		</h1>
 
+		{{#if tailwindcss}}
 		<div className="text-2xl">
 			<div className="not-prose bg-black text-white rounded flex items-center justify-center p-4">
-				Decoupled WordPress on{' '}
+		{{else}}
+		<div className={styles.onPantheon}>
+		{{/if}}
+				<span>Decoupled WordPress on{' '}</span>
 				<img
 					src={withPrefix('pantheon.png')}
 					alt="Pantheon Logo"
 					width={191}
 					height={60}
 				/>
-			</div>
 		</div>
+		{{#if tailwindcss}}
+		</div>
+		{{/if}}
 	</div>
 )
 
 const Index = ({ pageContext: { posts } }) => {
-	const PostGrid = withGrid(PostGridItem)
-
 	return (
 		<Layout isHomePage>
 			<PageHeader />
-
 			<section>
-				<PostGrid data={posts.slice(0, 12)} />
+				<PostGrid data={posts.slice(0, 12)} contentType="posts" />
 			</section>
 		</Layout>
 	)

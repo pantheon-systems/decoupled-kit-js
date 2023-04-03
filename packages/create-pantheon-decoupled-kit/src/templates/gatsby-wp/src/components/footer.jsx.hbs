@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+{{#unless tailwindcss}}
+import * as styles from './footer.module.css'
+{{/unless}}
 
 const Footer = () => {
 	const menuQuery = useStaticQuery(graphql`
@@ -21,20 +24,32 @@ const Footer = () => {
 		: []
 
 	const FooterMenu = () => (
+		{{#if tailwindcss}}
 		<nav className="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg">
+		{{else}}
+		<nav className={styles.footerNav}>
+		{{/if}}
 			<ul>
 				{nodes.map(({ id, label, path }, i) => {
 					return (
+						{{#if tailwindcss}}
 						<li
 							key={id + i}
 							className="ml-3 list-disc text-blue-300 hover:text-blue-100"
 						>
+						{{else}}
+						<li key={id + i} className={styles.navItem}>
+						{{/if}}
+						{{#if tailwindcss}}
 							<Link
 								className="text-blue-300 hover:text-blue-100 focus:text-purple-600 active:text-purple-300 "
 								to={`/posts${path}`}
 							>
 								{label}
 							</Link>
+						{{else}}
+							<Link to={`/posts${path}`}>{label}</Link>
+						{{/if}}
 						</li>
 					)
 				})}
@@ -43,8 +58,13 @@ const Footer = () => {
 	)
 
 	return (
+		{{#if tailwindcss}}
 		<footer className="w-full text-white bg-black p-4 mt-12">
+		{{else}}
+		<footer className={styles.footer}>
+		{{/if}}
 			<FooterMenu />
+			{{#if tailwindcss}}
 			<div className="flex my-4 p-2">
 				<span className="mx-auto">
 					© {new Date().getFullYear()} Built with{' '}
@@ -63,6 +83,15 @@ const Footer = () => {
 					</a>
 				</span>
 			</div>
+			{{else}}
+			<div className={styles.footerCopy}>
+				<span>
+					© {new Date().getFullYear()} Built with{' '}
+					<a href="https://www.gatsbyjs.com">Gatsby</a> and{' '}
+					<a href="https://wordpress.org/">WordPress</a>
+				</span>
+			</div>
+			{{/if}}
 		</footer>
 	)
 }

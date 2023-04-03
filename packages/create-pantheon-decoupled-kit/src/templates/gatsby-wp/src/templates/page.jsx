@@ -1,9 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-
 import Layout from '../components/layout'
-import Seo from '../components/seo'
 import Page from '../components/page'
+import Seo from '../components/seo'
 
 const PageTemplate = ({ data: { page }, pageContext: { next, previous } }) => {
 	return (
