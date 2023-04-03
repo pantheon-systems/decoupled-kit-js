@@ -1,0 +1,39 @@
+{
+	"jsonapi": {
+		"version": "1.0",
+		"meta": {
+			"links": ["Object"]
+		}
+	},
+	"data": [
+		{
+			"type": "node--article",
+			"id": "bd900d95-0b97-4bd8-ba84-225b3d3810b2",
+			"links": ["Object"],
+			"attributes": ["Object"],
+			"relationships": ["Object"]
+		},
+		{
+			"type": "node--article",
+			"id": "596ac335-6c4a-4d58-b360-776c0048e342",
+			"links": ["Object"],
+			"attributes": ["Object"],
+			"relationships": ["Object"]
+		},
+		{
+			"type": "node--article",
+			"id": "aef37141-7d14-4579-8c63-414388e8b01b",
+			"links": ["Object"],
+			"attributes": ["Object"],
+			"relationships": ["Object"]
+		}
+	],
+	"meta": {
+		"count": 3
+	},
+	"links": {
+		"self": {
+			"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/index/articles_index?filter%5Bfulltext%5D=milk"
+		}
+	}
+}

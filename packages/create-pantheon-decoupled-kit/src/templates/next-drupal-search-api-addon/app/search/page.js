@@ -1,4 +1,11 @@
-export default function SearchPage() {
+import { getDrupalSearchResults } from '../../lib/getDrupalSearchResults';
+
+export default async function SearchPage({ searchParams }) {
+	let data = null;
+	if (searchParams?.q) {
+		data = await getDrupalSearchResults(encodeURI(searchParams.q));
+	}
+
 	return (
 		<main>
 			<div>
