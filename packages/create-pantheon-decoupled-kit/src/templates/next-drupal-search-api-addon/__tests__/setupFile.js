@@ -4,6 +4,8 @@ import { rest } from 'msw';
 import defaultApiIndex from './data/defaultProfileApiIndex.json';
 import defaultArticles from './data/defaultProfileArticles.json';
 import defaultPreview from './data/defaultProfilePreview.json';
+import exampleSearchResultsDefaultIndex from './data/exampleSearchResultsDefaultIndex.json';
+import exampleSearchResultsAltIndex from './data/exampleSearchResultsAltIndex.json';
 
 import oauthToken from './data/oauthToken.json';
 
@@ -46,14 +48,47 @@ const defaultProfileHandlers = [
 	},
 ];
 
-//construct restHandlers
-export const restHandlers = [...defaultProfileHandlers].map(
-	({ endpoint, mockData, method, status }) => {
-		return rest[method](endpoint, (req, res, ctx) => {
-			return res(ctx.status(status), ctx.json(mockData));
-		});
+const drupalSearchResultHandlers = [
+	{
+		endpoint:
+			'https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/index/articles_index?filter[fulltext]=milk',
+		// Base endpoint without query parameters to satisfy MSW `redundant usage of query parameters` warnings
+		baseEndPoint:
+			'https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/index/articles_index',
+		mockData: exampleSearchResultsDefaultIndex,
+		method: 'get',
+		status: 200,
 	},
-);
+	{
+		endpoint:
+			'https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/index/invalid_index?invalid',
+		baseEndPoint:
+			'https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/index/invalid_index',
+		method: 'get',
+		status: 400,
+	},
+	{
+		endpoint:
+			'https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/index/example_index?filter[fulltext]=chocolate',
+		baseEndPoint:
+			'https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/index/example_index',
+		mockData: exampleSearchResultsAltIndex,
+		method: 'get',
+		status: 200,
+	},
+];
+//construct restHandlers
+export const restHandlers = [
+	...defaultProfileHandlers,
+	...drupalSearchResultHandlers,
+].map(({ endpoint, mockData, method, status, baseEndPoint }) => {
+	return rest[method](
+		baseEndPoint ? baseEndPoint : endpoint,
+		(req, res, ctx) => {
+			return res(ctx.status(status), ctx.json(mockData));
+		},
+	);
+});
 
 process.env = {
 	...process.env,
