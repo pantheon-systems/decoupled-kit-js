@@ -1,8 +1,11 @@
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 
 const SearchInput = () => {
-	const [searchQuery, setSearchQuery] = useState('');
+	const searchParams = useSearchParams();
+	const [searchQuery, setSearchQuery] = useState(
+		encodeURI(searchParams.get('q')),
+	);
 
 	const router = useRouter();
 
@@ -19,13 +22,13 @@ const SearchInput = () => {
 
 	return (
 		<form onSubmit={onSearch}>
-			<label htmlFor='search'>
+			<label htmlFor="search">
 				<input
 					value={searchQuery || ''}
 					onChange={(event) => setSearchQuery(event.target.value)}
 					className="py-1 sm:px-5 text-black rounded-full focus:outline-none ring-[1px] ring-black"
 					placeholder="Search"
-					id='search'
+					id="search"
 					aria-label="Search Bar"
 				/>
 			</label>
