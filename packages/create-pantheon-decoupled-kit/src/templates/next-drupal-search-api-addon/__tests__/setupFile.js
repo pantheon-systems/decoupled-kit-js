@@ -51,27 +51,24 @@ const defaultProfileHandlers = [
 const drupalSearchResultHandlers = [
 	{
 		endpoint:
-			'https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/index/articles_index?filter[fulltext]=milk',
+			'https://default/en/jsonapi/index/articles_index?filter[fulltext]=milk',
 		// Base endpoint without query parameters to satisfy MSW `redundant usage of query parameters` warnings
-		baseEndPoint:
-			'https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/index/articles_index',
+		baseEndPoint: 'https://default/en/jsonapi/index/articles_index',
 		mockData: exampleSearchResultsDefaultIndex,
 		method: 'get',
 		status: 200,
 	},
 	{
 		endpoint:
-			'https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/index/invalid_index?invalid',
-		baseEndPoint:
-			'https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/index/invalid_index',
+			'https://default/en/jsonapi/index/invalid_index?filter[fulltext]=chocolate',
+		baseEndPoint: 'https://default/en/jsonapi/index/invalid_index',
 		method: 'get',
 		status: 400,
 	},
 	{
 		endpoint:
-			'https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/index/example_index?filter[fulltext]=chocolate',
-		baseEndPoint:
-			'https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/index/example_index',
+			'https://default/en/jsonapi/index/example_index?filter[fulltext]=chocolate',
+		baseEndPoint: 'https://default/en/jsonapi/index/example_index',
 		mockData: exampleSearchResultsAltIndex,
 		method: 'get',
 		status: 200,

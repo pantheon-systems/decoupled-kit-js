@@ -14,30 +14,30 @@ const SearchInput = () => {
 		}
 
 		const encodedSearchQuery = encodeURI(searchQuery);
-		router.push(`/search?q=${encodedSearchQuery}`);
+		router.push(`/search/${encodedSearchQuery}`);
 	};
 
 	return (
 		<form onSubmit={onSearch}>
-			<label htmlFor='search'>
+			<label htmlFor="search">
 				<input
 					value={searchQuery || ''}
 					onChange={(event) => setSearchQuery(event.target.value)}
 					className="py-1 sm:px-5 text-black rounded-full focus:outline-none ring-[1px] ring-black"
 					placeholder="Search"
-					id='search'
+					id="search"
 					aria-label="Search Bar"
 				/>
 			</label>
-		<button
-			type="submit"
-			id="submit-btn"
-			className="ml-1.5 text-black rounded-full ring-[1px] ring-black px-5 py-1 hover:bg-blue-500"
-			aria-label="Submit Search"
-		>
-			Submit
-		</button>
-	</form>
+			<button
+				type="submit"
+				id="submit-btn"
+				className="ml-1.5 text-black rounded-full ring-[1px] ring-black px-5 py-1 hover:bg-blue-500"
+				aria-label="Submit Search"
+			>
+				Submit
+			</button>
+		</form>
 	);
 };
 
