@@ -35,8 +35,8 @@ export default function PageListTemplate({
 			<div className={styles.content}>
 			{{/if}}
 			{sortedPages ? (
-				sortedPages?.map(({ id, title, body, path }) => (
 				<ul>
+				{sortedPages?.map(({ id, title, body, path }) => (
 					{{#if tailwindcss}}
 					<li className="prose justify-items-start mt-8" key={id}>
 					{{else}}
@@ -60,8 +60,8 @@ export default function PageListTemplate({
 								Read more →
 							</Link>
 						</li>
+						))}
 					</ul>
-						))
 					) : (
 					{{#if tailwindcss}}
 					<h2 className="text-xl text-center mt-14">No pages found 🏜</h2>

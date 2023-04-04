@@ -17,11 +17,11 @@
 	text-decoration: underline;
 }
 
-.footerCopy > a[href$='nextjs.org/'] {
+.footerCopy > a:first-child {
 	color: var(--white);
 }
 
-.footerCopy > a[href$={{#if wp}}'wordpress.com/'{{else if drupal}}'drupal.org/'{{/if}}] {
+.footerCopy > a:last-child {
 	color: var(--blue);
 }
 

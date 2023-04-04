@@ -9,9 +9,6 @@ import { IMAGE_URL } from '../../lib/constants';
 
 import Layout from '../../components/layout';
 import { Recipe } from '@pantheon-systems/nextjs-kit';
-{{#unless tailwindcss}}
-import styles from './recipe.module.css';
-{{/unless}}
 
 export default function RecipeTemplate({
 	recipe,
@@ -49,7 +46,6 @@ export default function RecipeTemplate({
 				}
 				ingredients={field_ingredients}
 				instructions={field_recipe_instruction.value}
-				contentClassName={styles}
 			/>
 		</Layout>
 	);

@@ -11,9 +11,6 @@ import { RecipeGridItem } from '../../components/recipeGridItem';
 import { withGrid } from '@pantheon-systems/nextjs-kit';
 import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
-{{#unless tailwindcss}}
-import styles from './recipe.module.css';
-{{/unless}}
 
 export default function RecipeListTemplate({
 	sortedRecipes,

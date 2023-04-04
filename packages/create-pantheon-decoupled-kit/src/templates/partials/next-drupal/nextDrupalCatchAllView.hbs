@@ -6,7 +6,7 @@ import { IMAGE_URL } from '../lib/constants';
 
 import Link from 'next/link';
 import Layout from '../components/layout';
-import { ContentWithImage } from '@pantheon-systems/nextjs-kit';
+import { ContentWithImage{{#if umami}}, Recipe{{/if}} } from '@pantheon-systems/nextjs-kit';
 {{#unless tailwindcss}}
 import styles from './catch-all.module.css';
 {{/unless}}
