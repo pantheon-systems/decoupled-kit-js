@@ -3,9 +3,7 @@ import { useState } from 'react';
 
 const SearchInput = () => {
 	const searchParams = useSearchParams();
-	const [searchQuery, setSearchQuery] = useState(
-		encodeURI(searchParams.get('q')),
-	);
+	const [searchQuery, setSearchQuery] = useState(searchParams.get('q'));
 
 	const router = useRouter();
 
