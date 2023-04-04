@@ -46,27 +46,28 @@
 	"devDependencies": {
 		"@pantheon-systems/eslint-config": "*",
 		"@pantheon-systems/workspace-configs": "*",
-		"@types/diff": "^5.0.2",
+		"@types/diff": "^5.0.3",
 		"@types/fs-extra": "^11.0.1",
 		"@types/inquirer": "^9.0.3",
 		"@types/klaw": "^3.0.3",
 		"@types/minimist": "^1.2.2",
 		"@types/which-pm-runs": "^1.0.0",
+		"@vitest/coverage-c8": "^0.29.8",
 		"chalk": "^5.2.0",
 		"chokidar": "^3.5.3",
-		"esbuild": "0.17.4",
-		"prettier": "^2.8.3",
-		"rimraf": "^4.1.2",
-		"tsx": "^3.12.3",
-		"vitest": "^0.28.3"
+		"esbuild": "0.17.14",
+		"prettier": "^2.8.7",
+		"rimraf": "^4.4.1",
+		"tsx": "^3.12.6",
+		"vitest": "^0.29.8"
 	},
 	"dependencies": {
 		"diff": "^5.1.0",
-		"fs-extra": "^11.1.0",
+		"fs-extra": "^11.1.1",
 		"handlebars": "^4.7.7",
-		"inquirer": "^9.1.4",
+		"inquirer": "^9.1.5",
 		"klaw": "^4.1.0",
-		"minimist": "^1.2.7",
+		"minimist": "^1.2.8",
 		"which-pm-runs": "^1.1.0"
 	}
 }
