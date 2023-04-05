@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.5.1-canary.0
+
+### Patch Changes
+
+- f50164f8: [gatsby-wp] Update dependencies
+
 ## 0.5.0
 
 ### Minor Changes
