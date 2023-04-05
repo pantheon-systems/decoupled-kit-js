@@ -1,12 +1,5 @@
 # @pantheon-systems/nextjs-kit
 
-## 1.7.2-canary.0
-
-### Patch Changes
-
-- f50164f8: Updated dependencies
-- ed3e4f07: Bug fix for an invalid src prop error expierenced in dev mode.
-
 ## 1.7.1
 
 ### Patch Changes
