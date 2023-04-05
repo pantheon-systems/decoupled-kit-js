@@ -4,11 +4,11 @@ import {
 	getCurrentLocaleStore,
 	globalDrupalStateStores,
 } from '../../lib/stores';
-import { getDrupalSearchResults } from '../../lib/getDrupalSearchResults.js';
+import { getDrupalSearchResults } from '@pantheon-systems/drupal-kit';
 import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
 
-export default function SearchPage({ hrefLang, footerMenu }) {
+export default function SearchPage({ hrefLang, footerMenu, errorMessage }) {
 	return (
 		<Layout footerMenu={footerMenu}>
 			<NextSeo
@@ -18,7 +18,11 @@ export default function SearchPage({ hrefLang, footerMenu }) {
 			/>{' '}
 			<PageHeader title="Search Results" />
 			<div className="mt-12 mx-auto max-w-[50vw]">
-				<h1>Search Page</h1>
+				{errorMessage ? (
+					<p className="text-xl text-center">
+						⚠️Unable to fetch your search results⚠️
+					</p>
+				) : null}
 			</div>
 		</Layout>
 	);
@@ -26,7 +30,13 @@ export default function SearchPage({ hrefLang, footerMenu }) {
 
 export async function getServerSideProps(context) {
 	const origin = process.env.NEXT_PUBLIC_FRONTEND_URL;
-	const { locales, locale } = context;
+	const {
+		locales,
+		locale,
+		res,
+		query: { alias },
+	} = context;
+
 	// if there is more than one language in context.locales,
 	// assume multilanguage is enabled.
 	const multiLanguage = isMultiLanguage(locales);
@@ -38,7 +48,6 @@ export async function getServerSideProps(context) {
 	});
 
 	const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
-	const searchResults = await getDrupalSearchResults(context);
 
 	try {
 		const footerMenu = await store.getObject({
@@ -47,6 +56,15 @@ export async function getServerSideProps(context) {
 			res: context.res,
 			anon: true,
 		});
+
+		const searchResults = alias
+			? await getDrupalSearchResults(
+					process.env.BACKEND_URL,
+					locale,
+					alias[0],
+					res,
+			  )
+			: undefined;
 
 		return {
 			props: {
@@ -58,7 +76,17 @@ export async function getServerSideProps(context) {
 	} catch (error) {
 		console.error('Unable to fetch data for search: ', error);
 		return {
-			notFound: true,
+			props: {
+				footerMenu: [
+					{
+						parent: '',
+						title: 'Home',
+						url: '/',
+					},
+				],
+				hrefLang: '',
+				errorMessage: true,
+			},
 		};
 	}
 }

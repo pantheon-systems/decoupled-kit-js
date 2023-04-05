@@ -1,5 +1,5 @@
 import { Footer, Header, PreviewRibbon } from '@pantheon-systems/nextjs-kit';
-{{#if appDir}}
+{{#if search}}
 import SearchInput from './search-input';
 {{/if}}
 
@@ -17,45 +17,37 @@ export default function Layout({ children, footerMenu, preview = false }) {
 	}));
 
 	return (
-		{{#if app}}
-		<html lang="en">
-			<body>
-		{{/if}}
-				<div className="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden">
-					{preview && <PreviewRibbon />}
-					{{#if appDir}}
-					<div className="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-justify-between ps-max-w-screen-md ps-mx-auto">
-					<Header navItems={navItems} />
-						<div className="ps-pt-10">
-							<SearchInput />
-						</div>
-					</div>
-					{{else}}
-					<Header navItems={navItems} />
-					{{/if}}
-					<main className="mb-auto">{children}</main>
-					<Footer footerMenuItems={footerMenuItems}>
-						<span className="mx-auto">
-							© {new Date().getFullYear()} Built with{' '}
-							<a
-								className="text-white hover:text-blue-100 underline"
-								href="https://nextjs.org/"
-							>
-								Next.js
-							</a>{' '}
-							and{' '}
-							<a
-								className="text-blue-500 underline hover:text-blue-100"
-								href="https://www.drupal.org/"
-							>
-								Drupal
-							</a>
-						</span>
-					</Footer>
+		<div className="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden">
+			{preview && <PreviewRibbon />}
+			{{#if search}}
+			<div className="ps-flex ps-flex-row ps-flex-wrap sm:ps-flex-nowrap ps-justify-between ps-max-w-screen-md ps-mx-auto">
+			<Header navItems={navItems} />
+				<div className="ps-pt-10">
+					<SearchInput />
 				</div>
-		{{#if app}}
-			</body>
-		</html>
-		{{/if}}
+			</div>
+			{{else}}
+			<Header navItems={navItems} />
+			{{/if}}
+			<main className="mb-auto">{children}</main>
+			<Footer footerMenuItems={footerMenuItems}>
+				<span className="mx-auto">
+					© {new Date().getFullYear()} Built with{' '}
+					<a
+						className="text-white hover:text-blue-100 underline"
+						href="https://nextjs.org/"
+					>
+						Next.js
+					</a>{' '}
+					and{' '}
+					<a
+						className="text-blue-500 underline hover:text-blue-100"
+						href="https://www.drupal.org/"
+					>
+						Drupal
+					</a>
+				</span>
+			</Footer>
+		</div>
 	);
 }
