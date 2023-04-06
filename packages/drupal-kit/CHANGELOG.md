@@ -1,5 +1,12 @@
 # @pantheon-systems/drupal-kit
 
+## 4.3.0-canary.1
+
+### Minor Changes
+
+- 89c6bf58: Adds a `getDrupalSearchResults` helper function to query the Drupal
+  Search API.
+
 ## 4.2.2-canary.0
 
 ### Patch Changes

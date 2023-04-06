@@ -1,5 +1,13 @@
 # create-pantheon-decoupled-kit
 
+## 0.6.0-canary.2
+
+### Patch Changes
+
+- f16708d6: [next-drupal] A revised search page in the
+  `next-druapl-search-api-addon` that incorporates the new
+  `getDrupalSearchResultsFunction`
+
 ## 0.6.0-canary.1
 
 ### Minor Changes
