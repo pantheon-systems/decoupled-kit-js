@@ -11,16 +11,15 @@ interface GetDrupalSearchResultsParams {
 }
 
 /**
- * @description Helper function to query the Drupal Search API.
- * @param {string} apiUrl - The base API URL of your query.
- * @param {string} locale - The locale currently in use.
- * @param {string} query - Specific string to search against an index.
- * @param {ServerResponse} response - An HTTP ServerResponse used for cache metadata.
- * @param {string} index - The specific Drupal Search index to be used in the query.
- * @see https://www.drupal.org/docs/contributed-modules/search-api for more information about the Drupal Search API.
- * @returns An array of search results matching the users search term.
+ * Helper function to query the Drupal Search API.
+ * @param apiUrl - The base API URL of your query.
+ * @param locale - The locale currently in use.
+ * @param query - Specific string to search against an index.
+ * @param response - An HTTP ServerResponse used for cache metadata.
+ * @param index - The specific Drupal Search index to be used in the query.
+ * @see {@link https://www.drupal.org/docs/contributed-modules/search-api} for more information about the Drupal Search API.
+ * @returns An array of search results matching the query.
  */
-
 const getDrupalSearchResults = async ({
 	apiUrl,
 	locale,
