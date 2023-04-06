@@ -1,0 +1,87 @@
+import { Footer, Header, PreviewRibbon } from '@pantheon-systems/nextjs-kit';
+{{#if appDir}}
+import SearchInput from './search-input';
+{{/if}}
+{{#unless tailwindcss}}
+import styles from './layout.module.css';
+{{/unless}}
+
+export default function Layout({ children, footerMenu, preview = false }) {
+	const navItems = [
+		{ linkText: '🏠 Home', href: '/' },
+		{ linkText: '📰 Articles', href: '/articles' },
+		{ linkText: '📑 Pages', href: '/pages' },
+		{ linkText: '⚛️ Examples', href: '/examples' },
+	];
+	const footerMenuItems = footerMenu?.map(({ title, url, parent }) => ({
+		linkText: title,
+		href: url,
+		parent: parent,
+	}));
+
+	return (
+		{{#if app}}
+		<html lang="en">
+			<body>
+		{{/if}}
+				{{#if tailwindcss}}
+				<div className="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden">
+					{preview && <PreviewRibbon />}
+					{{#if appDir}}
+					<div className="flex flex-row flex-wrap sm:flex-nowrap justify-between max-w-screen-md mx-auto">
+					<Header navItems={navItems} />
+						<div className="pt-10">
+							<SearchInput />
+						</div>
+					</div>
+					{{else}}
+					<Header navItems={navItems} />
+					{{/if}}
+				{{else}}
+				<div className={styles.layout}>
+					{preview && <PreviewRibbon />}
+					{{#if appDir}}
+					<div className={styles.searchHeaderContainer}>
+					<Header navItems={navItems} />
+						<SearchInput />
+					</div>
+					{{else}}
+					<Header navItems={navItems} />
+					{{/if}}
+				{{/if}}
+					{{#if tailwindcss}}
+					<main className="mb-auto">{children}</main>
+					<Footer footerMenuItems={footerMenuItems}>
+						<span className="mx-auto">
+					{{else}}
+					<main className={styles.main}>{children}</main>
+					<Footer footerMenuItems={footerMenuItems}>
+						<span className={styles.footerCopy}>
+					{{/if}}
+							© {new Date().getFullYear()} Built with{' '}
+							<a
+								{{#if tailwindcss}}
+								className="text-white hover:text-blue-100 underline"
+								{{/if}}
+								href="https://nextjs.org/"
+							>
+								Next.js
+							</a>{' '}
+							and{' '}
+							<a
+								{{#if tailwindcss}}
+								className="text-blue-500 underline hover:text-blue-100"
+								{{/if}}
+								href="https://www.drupal.org/"
+							>
+								Drupal
+							</a>
+						</span>
+					</Footer>
+				</div>
+		{{#if app}}
+			</body>
+		</html>
+		{{/if}}
+	);
+}
