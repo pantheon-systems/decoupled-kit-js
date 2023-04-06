@@ -41,7 +41,12 @@ describe('getDrupalSearchResults()', () => {
 				body: exampleSearchResultsDefaultIndex,
 			},
 		);
-		const data = await getDrupalSearchResults(apiUrl, locale, query, response);
+		const data = await getDrupalSearchResults({
+			apiUrl,
+			locale,
+			query,
+			response,
+		});
 		expect(data).toEqual(exampleSearchResultsDefaultIndex);
 	});
 	it('should return matching search results from a unique index', async () => {
@@ -56,13 +61,13 @@ describe('getDrupalSearchResults()', () => {
 			{ overwriteRoutes: true },
 		);
 
-		const data = await getDrupalSearchResults(
+		const data = await getDrupalSearchResults({
 			apiUrl,
 			locale,
 			query,
 			response,
 			index,
-		);
+		});
 
 		expect(data).toEqual(exampleSearchResultsAltIndex);
 	});
@@ -78,13 +83,13 @@ describe('getDrupalSearchResults()', () => {
 		);
 		try {
 			expect(
-				await getDrupalSearchResults(
+				await getDrupalSearchResults({
 					apiUrl,
 					locale,
 					query,
 					response,
-					invalidIndex,
-				),
+					index: invalidIndex,
+				}),
 			).toThrowError();
 		} catch (error) {
 			expect(error).toEqual(new Error('Failed to fetch data'));
@@ -99,7 +104,7 @@ describe('getDrupalSearchResults()', () => {
 				body: exampleSearchResultsDefaultIndex,
 			},
 		);
-		await getDrupalSearchResults(apiUrl, locale, query, response);
+		await getDrupalSearchResults({ apiUrl, locale, query, response });
 		expect(response.setHeader.mock.calls[0][0]).toBe('Cache-Control');
 		expect(response.setHeader.mock.calls[0][1]).toBe('public, s-maxage=600');
 	});

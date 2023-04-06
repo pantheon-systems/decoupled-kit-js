@@ -2,6 +2,14 @@ import defaultFetch from './defaultFetch';
 import { ServerResponse } from 'http';
 import type { TJsonApiBody } from 'jsona/lib/JsonaTypes';
 
+interface GetDrupalSearchResultsParams {
+	apiUrl: string;
+	locale: string;
+	query: string;
+	response: ServerResponse;
+	index?: string;
+}
+
 /**
  * @description Helper function to query the Drupal Search API.
  * @param {string} apiUrl - The base API URL of your query.
@@ -13,13 +21,13 @@ import type { TJsonApiBody } from 'jsona/lib/JsonaTypes';
  * @returns An array of search results matching the users search term.
  */
 
-const getDrupalSearchResults = async (
-	apiUrl: string,
-	locale: string,
-	query: string,
-	response: ServerResponse,
-	index: string | string = 'articles_index',
-) => {
+const getDrupalSearchResults = async ({
+	apiUrl,
+	locale,
+	query,
+	response,
+	index = 'articles_index',
+}: GetDrupalSearchResultsParams) => {
 	const res = await defaultFetch(
 		`${apiUrl}/${locale}/jsonapi/index/${index}?filter[fulltext]=${encodeURI(
 			query,

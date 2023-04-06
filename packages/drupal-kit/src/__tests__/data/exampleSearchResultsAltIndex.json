@@ -2,23 +2,302 @@
 	"jsonapi": {
 		"version": "1.0",
 		"meta": {
-			"links": ["Object"]
+			"links": {
+				"self": {
+					"href": "http://jsonapi.org/format/1.0/"
+				}
+			}
 		}
 	},
 	"data": [
 		{
 			"type": "node--article",
 			"id": "bd900d95-0b97-4bd8-ba84-225b3d3810b2",
-			"links": ["Object"],
-			"attributes": ["Object"],
-			"relationships": ["Object"]
+			"links": {
+				"self": {
+					"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/bd900d95-0b97-4bd8-ba84-225b3d3810b2?resourceVersion=id%3A24"
+				}
+			},
+			"attributes": {
+				"drupal_internal__nid": 12,
+				"drupal_internal__vid": 24,
+				"langcode": "en",
+				"revision_timestamp": "2023-03-07T20:19:57+00:00",
+				"revision_log": null,
+				"status": true,
+				"title": "Dairy-free and delicious milk chocolate",
+				"created": "2023-03-07T20:19:57+00:00",
+				"changed": "2023-03-07T20:19:57+00:00",
+				"promote": true,
+				"sticky": false,
+				"default_langcode": true,
+				"revision_translation_affected": null,
+				"moderation_state": "published",
+				"path": {
+					"alias": "/articles/dairy-free-and-delicious-milk-chocolate",
+					"pid": 89,
+					"langcode": "en"
+				},
+				"content_translation_source": "und",
+				"content_translation_outdated": false,
+				"body": {
+					"value": "<p>The calendar is full of excuses for chocolate-lovers to indulge, from religious festivals to birthdays - and even World Chocolate Day on the 7th July. But for those who are vegan, or on dairy-free diets, there is no need to miss out, because there are plenty of delicious vegan chocolate varieties on offer.</p>\n<p>Dairy-free milk chocolate is made in largely the same way as regular chocolate, until the point when the milk is added. Cacao beans are roasted for a couple of hours until they develop a rich flavor. The outer shells are removed, and the interior nibs are ground to make a paste that can be mixed with cocoa butter to produce the desired percentage of chocolate. Flavorings, sugar and milk are added in different quantities to get the type of chocolate being produced. The chocolate is grainy at this point and needs to be mashed until it is smooth - this can take days! Finally, it is tempered through a process of heating and cooling until it is ready to eat.</p>\n<p>So, how do vegan chocolatiers get that creamy milk flavor and texture into their products?</p>\n<h2>Rice milk</h2>\n<p>The flavor of rice milk perfectly complements the cocoa beans and it was one of the first dairy milk alternatives to be used to create vegan milk chocolate. Rice milk is made from rice powder and is sometimes combined with hazelnut milk to create the correct texture and taste that is ideal for producing all kinds of chocolate bars.</p>\n<h2>Coconut milk</h2>\n<p>Coconut milk has to be the perfect ingredient for adding creaminess into a chocolate bar. With high fat levels, a sweet, but not overpowering taste and the correct consistency, coconut milk is a great choice for vegan milk chocolate. Chocolate made in this way will melt wonderfully for drizzling or dipping, and the coconut milk adds a slight tropical flavor that works well with other fruit flavors and nuts.</p>\n<h2>Soy milk</h2>\n<p>Soy has long been the mainstay of vegan and vegetarian diets, as it is rich in protein and is available in a wide variety of textures suitable for all kinds of dishes. Soy milk is widely available and is a great alternative to dairy milk in chocolate. It isn&rsquo;t as rich in fat as some vegan milks, but does have a neutral taste that makes it easy to combine with almost any other flavor.</p>\n<h2>Nut milks</h2>\n<p>Milks made from almonds and hazelnuts are easy to find on supermarket shelves, and are perfect for chocolate production. Like soy milk, they can be quite low in fat and therefore a little less creamy, but they have that nutty taste that goes so well with chocolate of all kinds.</p>\n<p>Many manufacturers will use a combination of the above milks to create the perfect consistency for their product. Using this milk mixture they are able to produce all kinds of milk chocolates, including white chocolate.</p>\n",
+					"format": "basic_html",
+					"processed": "<p>The calendar is full of excuses for chocolate-lovers to indulge, from religious festivals to birthdays - and even World Chocolate Day on the 7th July. But for those who are vegan, or on dairy-free diets, there is no need to miss out, because there are plenty of delicious vegan chocolate varieties on offer.</p>\n<p>Dairy-free milk chocolate is made in largely the same way as regular chocolate, until the point when the milk is added. Cacao beans are roasted for a couple of hours until they develop a rich flavor. The outer shells are removed, and the interior nibs are ground to make a paste that can be mixed with cocoa butter to produce the desired percentage of chocolate. Flavorings, sugar and milk are added in different quantities to get the type of chocolate being produced. The chocolate is grainy at this point and needs to be mashed until it is smooth - this can take days! Finally, it is tempered through a process of heating and cooling until it is ready to eat.</p>\n<p>So, how do vegan chocolatiers get that creamy milk flavor and texture into their products?</p>\n<h2>Rice milk</h2>\n<p>The flavor of rice milk perfectly complements the cocoa beans and it was one of the first dairy milk alternatives to be used to create vegan milk chocolate. Rice milk is made from rice powder and is sometimes combined with hazelnut milk to create the correct texture and taste that is ideal for producing all kinds of chocolate bars.</p>\n<h2>Coconut milk</h2>\n<p>Coconut milk has to be the perfect ingredient for adding creaminess into a chocolate bar. With high fat levels, a sweet, but not overpowering taste and the correct consistency, coconut milk is a great choice for vegan milk chocolate. Chocolate made in this way will melt wonderfully for drizzling or dipping, and the coconut milk adds a slight tropical flavor that works well with other fruit flavors and nuts.</p>\n<h2>Soy milk</h2>\n<p>Soy has long been the mainstay of vegan and vegetarian diets, as it is rich in protein and is available in a wide variety of textures suitable for all kinds of dishes. Soy milk is widely available and is a great alternative to dairy milk in chocolate. It isn’t as rich in fat as some vegan milks, but does have a neutral taste that makes it easy to combine with almost any other flavor.</p>\n<h2>Nut milks</h2>\n<p>Milks made from almonds and hazelnuts are easy to find on supermarket shelves, and are perfect for chocolate production. Like soy milk, they can be quite low in fat and therefore a little less creamy, but they have that nutty taste that goes so well with chocolate of all kinds.</p>\n<p>Many manufacturers will use a combination of the above milks to create the perfect consistency for their product. Using this milk mixture they are able to produce all kinds of milk chocolates, including white chocolate.</p>\n",
+					"summary": null
+				}
+			},
+			"relationships": {
+				"node_type": {
+					"data": {
+						"type": "node_type--node_type",
+						"id": "0752b0e5-bc3c-49c3-a445-2b99b016166d",
+						"meta": {
+							"drupal_internal__target_id": "article"
+						}
+					},
+					"links": {
+						"related": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/bd900d95-0b97-4bd8-ba84-225b3d3810b2/node_type?resourceVersion=id%3A24"
+						},
+						"self": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/bd900d95-0b97-4bd8-ba84-225b3d3810b2/relationships/node_type?resourceVersion=id%3A24"
+						}
+					}
+				},
+				"revision_uid": {
+					"data": {
+						"type": "user--user",
+						"id": "89987210-62e5-4cb5-bd1f-77dcc66aa65a",
+						"meta": {
+							"drupal_internal__target_id": 5
+						}
+					},
+					"links": {
+						"related": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/bd900d95-0b97-4bd8-ba84-225b3d3810b2/revision_uid?resourceVersion=id%3A24"
+						},
+						"self": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/bd900d95-0b97-4bd8-ba84-225b3d3810b2/relationships/revision_uid?resourceVersion=id%3A24"
+						}
+					}
+				},
+				"uid": {
+					"data": {
+						"type": "user--user",
+						"id": "89987210-62e5-4cb5-bd1f-77dcc66aa65a",
+						"meta": {
+							"drupal_internal__target_id": 5
+						}
+					},
+					"links": {
+						"related": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/bd900d95-0b97-4bd8-ba84-225b3d3810b2/uid?resourceVersion=id%3A24"
+						},
+						"self": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/bd900d95-0b97-4bd8-ba84-225b3d3810b2/relationships/uid?resourceVersion=id%3A24"
+						}
+					}
+				},
+				"field_media_image": {
+					"data": {
+						"type": "media--image",
+						"id": "35e87cf0-36f0-48c5-a708-2bdee3f281e0",
+						"meta": {
+							"drupal_internal__target_id": 11
+						}
+					},
+					"links": {
+						"related": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/bd900d95-0b97-4bd8-ba84-225b3d3810b2/field_media_image?resourceVersion=id%3A24"
+						},
+						"self": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/bd900d95-0b97-4bd8-ba84-225b3d3810b2/relationships/field_media_image?resourceVersion=id%3A24"
+						}
+					}
+				},
+				"field_tags": {
+					"data": [
+						{
+							"type": "taxonomy_term--tags",
+							"id": "e58b185e-6569-44dc-93c0-aeb0445e2ab7",
+							"meta": {
+								"drupal_internal__target_id": 27
+							}
+						},
+						{
+							"type": "taxonomy_term--tags",
+							"id": "126c8b4b-85b7-4caf-9ac8-d7ed36f41e5a",
+							"meta": {
+								"drupal_internal__target_id": 7
+							}
+						}
+					],
+					"links": {
+						"related": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/bd900d95-0b97-4bd8-ba84-225b3d3810b2/field_tags?resourceVersion=id%3A24"
+						},
+						"self": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/bd900d95-0b97-4bd8-ba84-225b3d3810b2/relationships/field_tags?resourceVersion=id%3A24"
+						}
+					}
+				}
+			}
 		},
 		{
 			"type": "node--article",
 			"id": "596ac335-6c4a-4d58-b360-776c0048e342",
-			"links": ["Object"],
-			"attributes": ["Object"],
-			"relationships": ["Object"]
+			"links": {
+				"self": {
+					"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/596ac335-6c4a-4d58-b360-776c0048e342?resourceVersion=id%3A36"
+				}
+			},
+			"attributes": {
+				"drupal_internal__nid": 18,
+				"drupal_internal__vid": 36,
+				"langcode": "en",
+				"revision_timestamp": "2023-03-07T20:19:57+00:00",
+				"revision_log": null,
+				"status": true,
+				"title": "Give your oatmeal the ultimate makeover",
+				"created": "2023-03-07T20:19:57+00:00",
+				"changed": "2023-03-07T20:19:57+00:00",
+				"promote": true,
+				"sticky": false,
+				"default_langcode": true,
+				"revision_translation_affected": null,
+				"moderation_state": "published",
+				"path": {
+					"alias": "/articles/give-your-oatmeal-the-ultimate-makeover",
+					"pid": 101,
+					"langcode": "en"
+				},
+				"content_translation_source": "und",
+				"content_translation_outdated": false,
+				"body": {
+					"value": "<p>\nIt is vegan, gluten-free, low in fat, high in fiber, and can even lower cholesterol - but oatmeal is boring, right? Well, before you write off that boring jar of oats, you might want to take inspiration from our topping ideas that will take your oatmeal from bland to creatively delicious in just a few minutes.\n</p>\n\n<p>\nCall it oatmeal, porridge, hot cereal, or just plain oats, it is loved the world over; but recently, the humble oat is getting a funky makeover. Long gone are the days of stodgy breakfast bowls of thick gloop, because oats are getting served up as a delicious meal that can suit any time of the day. Trendy build-your-own oatmeal bars are popping up, and they are providing the ultimate oatmeal experience. Diners can choose their oats to be made with milk or water and then go to town with their choice of favorite toppings - sweet, savory, or even spicy.\n</p>\n\n<p>\nIt sounds great, doesn’t it? So before you close the cupboard door on that bland-looking jar of oats, we think you should try some of these scrumptious topping ideas to inspire your very own oatmeal makeover.\n</p>\n\n\n<h2>Soaked dried fruit</h2>\n\n<p>\nSometimes plain dried fruit can be a bit chewy and harsh when combined with creamy oats. But if you simply soak your dried fruit in orange juice overnight, they develop a tang, and they swell up, making them softer and even more delicious. Plus the splash of color can really brighten your day.\n</p>\n\n\n<h2>Porridge crème brûlée</h2>\n\n<p>\nSo simple - but why has no one thought of it before? Put your cooked oatmeal into a ramekin, sprinkle with sugar, and pop under the grill. The sugar will harden, giving you the delight of cracking through the surface and scooping out the creamy deliciousness beneath. If you are really professional, you can use a blow torch.\n</p>\n\n<h2>Super seeds</h2>\n\n<p>\nFor a more savory meal option, cook your oats with water, a little salt, and sprinkle with toasted seeds. You can choose any that you enjoy, but pumpkin seeds, sesame, linseed, and sunflower seeds are especially good. Some supermarkets also sell seed blends to make the job even easier.\n</p>\n\n<h2>Deconstructed carrot cake</h2>\n\n<p>\nCook your oats with grated carrots and a little sugar, then top with a sprinkle of cinnamon, chopped walnuts, and a dollop of sweetened cream cheese. If you don’t love this, there’s something wrong with your taste buds.\n</p>\n\n<h2>Dark chocolate</h2>\n\n<p>\nThis low-sugar delight will meet all of those chocolate cravings and is the perfect dessert. Add a spoonful of cocoa to your oatmeal as it cooks, then top with a few squares of dark chocolate. As it melts, simply swirl into the bowl as artfully as you can. If you are really decadent, a squirt of whipped cream will add further delights.\n</p>\n",
+					"format": "basic_html",
+					"processed": "<p>\nIt is vegan, gluten-free, low in fat, high in fiber, and can even lower cholesterol - but oatmeal is boring, right? Well, before you write off that boring jar of oats, you might want to take inspiration from our topping ideas that will take your oatmeal from bland to creatively delicious in just a few minutes.\n</p>\n<p>\nCall it oatmeal, porridge, hot cereal, or just plain oats, it is loved the world over; but recently, the humble oat is getting a funky makeover. Long gone are the days of stodgy breakfast bowls of thick gloop, because oats are getting served up as a delicious meal that can suit any time of the day. Trendy build-your-own oatmeal bars are popping up, and they are providing the ultimate oatmeal experience. Diners can choose their oats to be made with milk or water and then go to town with their choice of favorite toppings - sweet, savory, or even spicy.\n</p>\n<p>\nIt sounds great, doesn’t it? So before you close the cupboard door on that bland-looking jar of oats, we think you should try some of these scrumptious topping ideas to inspire your very own oatmeal makeover.\n</p>\n<h2>Soaked dried fruit</h2>\n<p>\nSometimes plain dried fruit can be a bit chewy and harsh when combined with creamy oats. But if you simply soak your dried fruit in orange juice overnight, they develop a tang, and they swell up, making them softer and even more delicious. Plus the splash of color can really brighten your day.\n</p>\n<h2>Porridge crème brûlée</h2>\n<p>\nSo simple - but why has no one thought of it before? Put your cooked oatmeal into a ramekin, sprinkle with sugar, and pop under the grill. The sugar will harden, giving you the delight of cracking through the surface and scooping out the creamy deliciousness beneath. If you are really professional, you can use a blow torch.\n</p>\n<h2>Super seeds</h2>\n<p>\nFor a more savory meal option, cook your oats with water, a little salt, and sprinkle with toasted seeds. You can choose any that you enjoy, but pumpkin seeds, sesame, linseed, and sunflower seeds are especially good. Some supermarkets also sell seed blends to make the job even easier.\n</p>\n<h2>Deconstructed carrot cake</h2>\n<p>\nCook your oats with grated carrots and a little sugar, then top with a sprinkle of cinnamon, chopped walnuts, and a dollop of sweetened cream cheese. If you don’t love this, there’s something wrong with your taste buds.\n</p>\n<h2>Dark chocolate</h2>\n<p>\nThis low-sugar delight will meet all of those chocolate cravings and is the perfect dessert. Add a spoonful of cocoa to your oatmeal as it cooks, then top with a few squares of dark chocolate. As it melts, simply swirl into the bowl as artfully as you can. If you are really decadent, a squirt of whipped cream will add further delights.\n</p>\n",
+					"summary": null
+				}
+			},
+			"relationships": {
+				"node_type": {
+					"data": {
+						"type": "node_type--node_type",
+						"id": "0752b0e5-bc3c-49c3-a445-2b99b016166d",
+						"meta": {
+							"drupal_internal__target_id": "article"
+						}
+					},
+					"links": {
+						"related": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/596ac335-6c4a-4d58-b360-776c0048e342/node_type?resourceVersion=id%3A36"
+						},
+						"self": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/596ac335-6c4a-4d58-b360-776c0048e342/relationships/node_type?resourceVersion=id%3A36"
+						}
+					}
+				},
+				"revision_uid": {
+					"data": {
+						"type": "user--user",
+						"id": "89987210-62e5-4cb5-bd1f-77dcc66aa65a",
+						"meta": {
+							"drupal_internal__target_id": 5
+						}
+					},
+					"links": {
+						"related": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/596ac335-6c4a-4d58-b360-776c0048e342/revision_uid?resourceVersion=id%3A36"
+						},
+						"self": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/596ac335-6c4a-4d58-b360-776c0048e342/relationships/revision_uid?resourceVersion=id%3A36"
+						}
+					}
+				},
+				"uid": {
+					"data": {
+						"type": "user--user",
+						"id": "89987210-62e5-4cb5-bd1f-77dcc66aa65a",
+						"meta": {
+							"drupal_internal__target_id": 5
+						}
+					},
+					"links": {
+						"related": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/596ac335-6c4a-4d58-b360-776c0048e342/uid?resourceVersion=id%3A36"
+						},
+						"self": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/596ac335-6c4a-4d58-b360-776c0048e342/relationships/uid?resourceVersion=id%3A36"
+						}
+					}
+				},
+				"field_media_image": {
+					"data": {
+						"type": "media--image",
+						"id": "78a479a6-7ed7-4a80-8131-3f079f8daa33",
+						"meta": {
+							"drupal_internal__target_id": 17
+						}
+					},
+					"links": {
+						"related": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/596ac335-6c4a-4d58-b360-776c0048e342/field_media_image?resourceVersion=id%3A36"
+						},
+						"self": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/596ac335-6c4a-4d58-b360-776c0048e342/relationships/field_media_image?resourceVersion=id%3A36"
+						}
+					}
+				},
+				"field_tags": {
+					"data": [
+						{
+							"type": "taxonomy_term--tags",
+							"id": "e58b185e-6569-44dc-93c0-aeb0445e2ab7",
+							"meta": {
+								"drupal_internal__target_id": 27
+							}
+						},
+						{
+							"type": "taxonomy_term--tags",
+							"id": "cccdf9b2-2ba2-435d-9afd-84570a311fb3",
+							"meta": {
+								"drupal_internal__target_id": 28
+							}
+						},
+						{
+							"type": "taxonomy_term--tags",
+							"id": "c9284d84-3c18-4bbe-965d-fc69b061058e",
+							"meta": {
+								"drupal_internal__target_id": 19
+							}
+						},
+						{
+							"type": "taxonomy_term--tags",
+							"id": "b40120a5-181a-4004-adda-40e6075aae22",
+							"meta": {
+								"drupal_internal__target_id": 4
+							}
+						},
+						{
+							"type": "taxonomy_term--tags",
+							"id": "0a29c50e-9b94-4301-b028-040f03cbed0e",
+							"meta": {
+								"drupal_internal__target_id": 10
+							}
+						}
+					],
+					"links": {
+						"related": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/596ac335-6c4a-4d58-b360-776c0048e342/field_tags?resourceVersion=id%3A36"
+						},
+						"self": {
+							"href": "https://search-api-decoupled-drupal-qa.pantheonsite.io/en/jsonapi/node/article/596ac335-6c4a-4d58-b360-776c0048e342/relationships/field_tags?resourceVersion=id%3A36"
+						}
+					}
+				}
+			}
 		}
 	],
 	"meta": {

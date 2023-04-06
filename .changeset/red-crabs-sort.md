@@ -1,5 +1,6 @@
 ---
-"create-pantheon-decoupled-kit": minor
+'create-pantheon-decoupled-kit': patch
 ---
 
-[next-drupal] A `getDrupalSearchResults` function added to the `next-druapl-search-api-addon` to source user queries and bubble up Surrogate-Key data.
+[next-drupal] A revised search page in the `next-druapl-search-api-addon` that
+incorporates the new `getDrupalSearchResultsFunction`
