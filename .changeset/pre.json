@@ -15,5 +15,12 @@
     "@pantheon-systems/next-wordpress-starter": "2.0.1",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "gold-humans-begin",
+    "hip-oranges-whisper",
+    "real-chicken-taste",
+    "red-crabs-sort",
+    "violet-horses-carry",
+    "young-brooms-argue"
+  ]
 }

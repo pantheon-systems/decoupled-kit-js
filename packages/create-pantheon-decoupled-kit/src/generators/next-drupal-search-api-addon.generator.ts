@@ -3,7 +3,7 @@ import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 import chalk from 'chalk';
 
 interface NextDrupalSearchApiAddonAnswers {
-	appDir: true;
+	search: true;
 }
 
 export const nextDrupalSearchApiAddon: DecoupledKitGenerator<
@@ -22,7 +22,7 @@ export const nextDrupalSearchApiAddon: DecoupledKitGenerator<
 	],
 	addon: true,
 	data: {
-		appDir: true,
+		search: true,
 	},
 	templates: ['next-drupal-search-api-addon'],
 	actions: [addWithDiff, runLint],

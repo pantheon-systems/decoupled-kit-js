@@ -16,7 +16,12 @@
 	padding-left: var(--6);
 }
 
-.content > ul a {
+.content > a {
+	display: inherit;
+	margin-bottom: var(--8);
+}
+
+.content > a, .content > ul a {
 	text-decoration: underline;
 	font-weight: 500;
 }

@@ -4,11 +4,13 @@ import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 
 interface NextDrupalAnswers extends DefaultAnswers {
 	appName: string;
+	tailwindcss: boolean;
 }
 
 interface NextDrupalData {
 	nextjsKitVersion: string;
 	drupalKitVersion: string;
+	drupal: true;
 }
 
 export const nextDrupal: DecoupledKitGenerator<
@@ -24,6 +26,12 @@ export const nextDrupal: DecoupledKitGenerator<
 			default: 'Next Drupal Starter',
 		},
 		{
+			name: 'tailwindcss',
+			message: 'Would you like to include tailwindcss?',
+			type: 'confirm',
+			default: true,
+		},
+		{
 			name: 'outDir',
 			message: 'Where should the output go?',
 			default: ({ appName }: NextDrupalAnswers) =>
@@ -33,7 +41,8 @@ export const nextDrupal: DecoupledKitGenerator<
 	data: {
 		nextjsKitVersion: versions['nextjs-kit'],
 		drupalKitVersion: versions['drupal-kit'],
+		drupal: true,
 	},
-	templates: ['next-drupal'],
+	templates: ['next-drupal', 'tailwind-shared', 'tailwindless-next'],
 	actions: [addWithDiff, runInstall, runLint],
 };
