@@ -27,10 +27,6 @@ jobs:
         with:
           node-version: 18
           cache: 'pnpm'
-      - name: Setup npmrc
-        run:
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >
-          .npmrc
       - name: install dependencies
         run: pnpm install
       - name: create and publish versions
@@ -42,6 +38,7 @@ jobs:
           publish: pnpm ci:publish
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Send custom JSON data to Slack workflow
         id: slack
         uses: slackapi/slack-github-action@v1.23.0

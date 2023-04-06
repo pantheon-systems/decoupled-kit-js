@@ -17,6 +17,7 @@ const external = [
 	'next',
 	'next/link',
 	'next/router',
+	'next/image',
 ];
 
 /** @type {import('vite').defineConfig} */
