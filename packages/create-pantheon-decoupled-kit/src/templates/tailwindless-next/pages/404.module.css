@@ -1,11 +1,9 @@
-.notFound > * {
+.errorMessage {
 	display: flex;
 	flex-direction: column;
-	text-align: center;
-	font-size: xx-large;
-	width: 98vw;
+	font-size: var(--6);
 }
 
-.notFound > span {
+.errorMessage > span {
 	margin: var(--48) auto 0;
 }

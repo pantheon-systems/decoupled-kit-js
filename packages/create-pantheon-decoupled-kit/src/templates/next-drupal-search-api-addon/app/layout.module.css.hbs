@@ -1,0 +1,18 @@
+{{#unless tailwindcss}}
+{{> nextjsLayoutCSS}}
+
+
+.searchHeaderContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: var(--x-auto);
+	justify-content: space-between;
+	max-width: var(--md);
+}
+
+.searchHeaderContainer > div {
+	padding-top: var(--10);
+}
+
+{{/unless}}

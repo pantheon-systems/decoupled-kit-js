@@ -1,0 +1,16 @@
+{{#unless tailwindcss}}
+import styles from './page-header.module.css';
+
+{{/unless}}
+export default function PageHeader({ title }) {
+	return (
+		{{#if tailwindcss}}
+		<header className="prose text-2xl mx-auto mt-20">
+			<h1 className="text-center mx-auto">{title}</h1>
+		{{else}}
+		<header className={styles.header}>
+			<h1>{title}</h1>
+		{{/if}}
+		</header>
+	);
+}
