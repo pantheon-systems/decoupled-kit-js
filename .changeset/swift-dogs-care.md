@@ -1,5 +1,6 @@
 ---
-"create-pantheon-decoupled-kit": minor
+'create-pantheon-decoupled-kit': minor
 ---
 
-[next-drupal] Search term persistence on the search results page for the `next-druapl-search-api-addon`.
+[next-drupal] User entered search term persists on search results page in the
+`next-druapl-search-api-addon`.
