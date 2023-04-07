@@ -7,8 +7,16 @@ import {
 import { getDrupalSearchResults } from '@pantheon-systems/drupal-kit';
 import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
+import { ArticleGrid } from '../../components/grid';
 
-export default function SearchPage({ hrefLang, footerMenu, errorMessage }) {
+export default function SearchPage({
+	hrefLang,
+	footerMenu,
+	errorMessage,
+	searchResults,
+	multiLanguage,
+	locale,
+}) {
 	return (
 		<Layout footerMenu={footerMenu}>
 			<NextSeo
@@ -17,13 +25,22 @@ export default function SearchPage({ hrefLang, footerMenu, errorMessage }) {
 				languageAlternates={hrefLang || false}
 			/>{' '}
 			<PageHeader title="Search Results" />
-			<div className="mt-12 mx-auto max-w-[50vw]">
-				{errorMessage ? (
+			{errorMessage ? (
+				<div className="mt-12 mx-auto max-w-[50vw]">
 					<p className="text-xl text-center">
 						⚠️Unable to fetch your search results⚠️
 					</p>
-				) : null}
-			</div>
+				</div>
+			) : (
+				<section>
+					<ArticleGrid
+						data={searchResults}
+						contentType="articles"
+						multiLanguage={multiLanguage}
+						locale={locale}
+					/>
+				</section>
+			)}
 		</Layout>
 	);
 }
@@ -36,7 +53,6 @@ export async function getServerSideProps(context) {
 		res,
 		query: { alias },
 	} = context;
-	let errorMessage;
 
 	// if there is more than one language in context.locales,
 	// assume multilanguage is enabled.
@@ -49,13 +65,21 @@ export async function getServerSideProps(context) {
 	});
 
 	const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
+
+	let errorMessage;
+	let searchResults;
 	try {
-		const searchResults = alias
-			? await getDrupalSearchResults({
-					apiUrl: process.env.BACKEND_URL,
-					locale: locale,
-					query: alias[0],
-					response: res,
+		searchResults = alias
+			? (
+					await getDrupalSearchResults({
+						apiUrl: process.env.BACKEND_URL,
+						locale: locale,
+						query: alias[0],
+						response: res,
+					})
+			  ).data.map((value) => {
+					// restructure response to match expected article object structure
+					return value.attributes;
 			  })
 			: null;
 	} catch (error) {
@@ -76,7 +100,9 @@ export async function getServerSideProps(context) {
 				footerMenu,
 				hrefLang,
 				multiLanguage,
+				locale: locale,
 				errorMessage: errorMessage ? errorMessage : false,
+				searchResults: searchResults ? searchResults : null,
 			},
 		};
 	} catch (error) {
