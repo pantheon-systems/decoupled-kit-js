@@ -7,7 +7,7 @@ import {
 import { getDrupalSearchResults } from '@pantheon-systems/drupal-kit';
 import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
-import { ArticleGrid } from '../../components/grid';
+import Link from 'next/link';
 
 export default function SearchPage({
 	hrefLang,
@@ -25,22 +25,35 @@ export default function SearchPage({
 				languageAlternates={hrefLang || false}
 			/>{' '}
 			<PageHeader title="Search Results" />
-			{errorMessage ? (
-				<div className="mt-12 mx-auto max-w-[50vw]">
-					<p className="text-xl text-center">
-						⚠️Unable to fetch your search results⚠️
-					</p>
-				</div>
-			) : (
-				<section>
-					<ArticleGrid
-						data={searchResults}
-						contentType="articles"
-						multiLanguage={multiLanguage}
-						locale={locale}
-					/>
-				</section>
-			)}
+			<div className="mt-12 mx-auto max-w-[50vw]">
+				{errorMessage ? (
+					<div className="mt-12 mx-auto max-w-[50vw]">
+						<p className="text-xl text-center">
+							⚠️Unable to fetch your search results⚠️
+						</p>
+					</div>
+				) : (
+					<ul>
+						{searchResults?.map(({ title, body, path }) => (
+							<li className="prose justify-items-start mt-8" key={path?.pid}>
+								<h2>{title}</h2>
+								{body.summary ? (
+									<div dangerouslySetInnerHTML={{ __html: body?.summary }} />
+								) : null}
+								<Link
+									passHref
+									href={`${
+										multiLanguage ? `/${path?.langcode || locale}` : ''
+									}${path.alias}`}
+									className="font-normal underline"
+								>
+									Read more →
+								</Link>
+							</li>
+						))}
+					</ul>
+				)}
+			</div>
 		</Layout>
 	);
 }
