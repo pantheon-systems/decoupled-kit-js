@@ -1,13 +1,13 @@
-import React from 'react';
-import { graphql } from 'gatsby';
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Layout from '../components/layout';
-import Seo from '../components/seo';
-import Post from '../components/post';
-import { withGrid, PostGridItem } from '../components/grid';
+import Layout from '../components/layout'
+import Seo from '../components/seo'
+import Post from '../components/post'
+import { withGrid, PostGridItem } from '../components/grid'
 
 const PostTemplate = ({ data: { previous, next, post } }) => {
-	const PostGrid = withGrid(PostGridItem);
+	const PostGrid = withGrid(PostGridItem)
 
 	return (
 		<Layout>
@@ -18,20 +18,20 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
 						<h2 className="text-center mx-auto">Related Content</h2>
 					</header>
 					<PostGrid
-						data={post.relatedContent.relatedContent.map((item) => ({
+						data={post.relatedContent.relatedContent.map(item => ({
 							post: item,
 						}))}
 					/>
 				</section>
 			) : null}
 		</Layout>
-	);
-};
+	)
+}
 
-export default PostTemplate;
+export default PostTemplate
 
 export function Head({ data: { post } }) {
-	return <Seo title={post.title} description={post.excerpt} />;
+	return <Seo title={post.title} description={post.excerpt} />
 }
 
 export const pageQuery = graphql`
@@ -101,4 +101,4 @@ export const pageQuery = graphql`
 			title
 		}
 	}
-`;
+`
