@@ -80,25 +80,6 @@ export async function getServerSideProps(context) {
 	const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 
 	let errorMessage;
-	let searchResults;
-	try {
-		searchResults = alias
-			? (
-					await getDrupalSearchResults({
-						apiUrl: process.env.BACKEND_URL,
-						locale: locale,
-						query: alias[0],
-						response: res,
-					})
-			  ).data.map((value) => {
-					// restructure response to match expected article object structure
-					return value.attributes;
-			  })
-			: null;
-	} catch (error) {
-		console.error('Unable to fetch data for search results: ', error);
-		errorMessage = true;
-	}
 
 	try {
 		const footerMenu = await store.getObject({
@@ -108,6 +89,26 @@ export async function getServerSideProps(context) {
 			anon: true,
 		});
 
+		const [searchTerm] = alias ? alias : [null];
+		const searchResults = searchTerm
+			? (
+					await getDrupalSearchResults({
+						apiUrl: process.env.BACKEND_URL,
+						locale: locale,
+						query: searchTerm,
+						response: res,
+					})
+			  ).data.map((value) => {
+					// restructure response to match expected article object structure
+					return value.attributes;
+			  })
+			: null;
+
+		// Do not send error unless search term is present so /search remains a valid path
+		if (!searchResults && searchTerm) {
+			errorMessage = true;
+		}
+
 		return {
 			props: {
 				footerMenu,
@@ -115,7 +116,7 @@ export async function getServerSideProps(context) {
 				multiLanguage,
 				locale: locale,
 				errorMessage: errorMessage ? errorMessage : false,
-				searchResults: searchResults ? searchResults : null,
+				searchResults: searchResults,
 			},
 		};
 	} catch (error) {

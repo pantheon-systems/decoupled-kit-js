@@ -1,5 +1,6 @@
 ---
-"create-pantheon-decoupled-kit": patch
+'create-pantheon-decoupled-kit': minor
 ---
 
-[next-drupal] Search page in the `next-druapl-search-api-addon` returns an article gird based off search results.
+[next-druapl-search-api-addon] Search page returns an article gird based off
+search results.
