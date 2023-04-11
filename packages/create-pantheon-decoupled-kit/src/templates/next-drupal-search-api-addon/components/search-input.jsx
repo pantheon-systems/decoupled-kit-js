@@ -2,9 +2,10 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 const SearchInput = () => {
-	const [searchQuery, setSearchQuery] = useState('');
-
 	const router = useRouter();
+	const [searchQuery, setSearchQuery] = useState(
+		router.query?.alias ? router.query?.alias[0] : '',
+	);
 
 	const onSearch = (event) => {
 		event.preventDefault();
