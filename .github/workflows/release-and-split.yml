@@ -78,7 +78,8 @@ jobs:
             split_repository: 'next-drupal-starter'
             generator_cmd:
               'next-drupal next-drupal-umami-addon --appName
-              @pantheon-systems/next-drupal-starter --noInstall --force --silent'
+              @pantheon-systems/next-drupal-starter --noInstall --tailwindcss
+              --force --silent'
           # gatsby-wordpress-starter
           - local_path: 'starters/gatsby-wordpress-starter-generated'
             split_repository: 'gatsby-wordpress-starter'
