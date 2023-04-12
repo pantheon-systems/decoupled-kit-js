@@ -3,24 +3,14 @@
   "tag": "canary",
   "initialVersions": {
     "@pantheon-systems/eslint-config": "0.0.0",
-    "@pantheon-systems/cms-kit": "0.2.1",
+    "@pantheon-systems/cms-kit": "0.2.2",
     "@pantheon-systems/eslint-config-decoupled-kit": "0.1.0",
     "@pantheon-systems/decoupled-kit-configs": "0.1.0",
-    "create-pantheon-decoupled-kit": "0.5.0",
-    "@pantheon-systems/drupal-kit": "4.2.1",
-    "@pantheon-systems/nextjs-kit": "1.7.1",
-    "@pantheon-systems/wordpress-kit": "2.14.1",
-    "@pantheon-systems/gatsby-wordpress-starter": "3.0.1",
-    "@pantheon-systems/next-drupal-starter": "4.0.3",
-    "@pantheon-systems/next-wordpress-starter": "2.0.1",
+    "create-pantheon-decoupled-kit": "0.6.0",
+    "@pantheon-systems/drupal-kit": "4.3.0",
+    "@pantheon-systems/nextjs-kit": "1.7.2",
+    "@pantheon-systems/wordpress-kit": "2.14.2",
     "web": "1.0.0"
   },
-  "changesets": [
-    "gold-humans-begin",
-    "hip-oranges-whisper",
-    "real-chicken-taste",
-    "red-crabs-sort",
-    "violet-horses-carry",
-    "young-brooms-argue"
-  ]
+  "changesets": []
 }
