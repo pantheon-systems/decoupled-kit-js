@@ -84,7 +84,7 @@ jobs:
             split_repository: 'gatsby-wordpress-starter'
             generator_cmd:
               'gatsby-wp --appName @pantheon-systems/gatsby-wordpress-starter
-              --noInstall --force --silent'
+              --noInstall --tailwindcss --force --silent'
           # next-wordpress-starter
           - local_path: 'starters/next-wordpress-starter-generated'
             split_repository: 'next-wordpress-starter'
