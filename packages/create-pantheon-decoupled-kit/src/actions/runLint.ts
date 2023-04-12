@@ -27,13 +27,16 @@ export const runLint: Action = async ({ data }) => {
 			assert: { type: 'json' },
 		});
 		// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-		if (pkg?.scripts?.lint) {
+		if (pkg?.scripts['lint:fix']) {
+			execSync(`${command} lint:fix`, { cwd: data.outDir, stdio: 'inherit' });
+			// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+		} else if (pkg?.scripts['lint']) {
 			execSync(`${command} lint`, { cwd: data.outDir, stdio: 'inherit' });
 		} else {
 			const plugins = isString(data.plugins) && data.plugins;
 			const ignorePattern = isString(data.ignorePattern) && data.ignorePattern;
 			execSync(
-				`npx eslint ${
+				`npx eslint --fix ${
 					ignorePattern ? `--ignore-pattern ${ignorePattern}` : ''
 				} ${plugins ? `--plugin ${plugins}` : ''}`,
 				{ cwd: data.outDir, stdio: 'inherit' },
