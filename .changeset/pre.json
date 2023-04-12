@@ -16,10 +16,12 @@
     "web": "1.0.0"
   },
   "changesets": [
+    "funny-owls-build",
     "gold-humans-begin",
     "hip-oranges-whisper",
     "real-chicken-taste",
     "red-crabs-sort",
+    "swift-dogs-care",
     "violet-horses-carry",
     "young-brooms-argue"
   ]

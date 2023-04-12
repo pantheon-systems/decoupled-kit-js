@@ -1,5 +1,13 @@
 # create-pantheon-decoupled-kit
 
+## 0.6.0-canary.3
+
+### Minor Changes
+
+- 31b84996: [gatsby-wp-acf-addon] Adjust formatting to satisfy lint
+- 822529ee: [next-druapl-search-api-addon] User entered search term persists on
+  search results page.
+
 ## 0.6.0-canary.2
 
 ### Patch Changes
