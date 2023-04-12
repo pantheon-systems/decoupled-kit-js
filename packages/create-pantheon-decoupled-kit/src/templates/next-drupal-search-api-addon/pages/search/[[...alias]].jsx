@@ -26,10 +26,12 @@ export default function SearchPage({
 			/>{' '}
 			<PageHeader title="Search Results" />
 			<div className="mt-12 mx-auto max-w-[50vw]">
-				{errorMessage ? (
+				{errorMessage || !searchResults ? (
 					<div className="mt-12 mx-auto max-w-[50vw]">
 						<p className="text-xl text-center">
-							⚠️Unable to fetch your search results⚠️
+							{!errorMessage
+								? 'Submit a search to view matching results🦜'
+								: '⚠️Unable to fetch your search results⚠️'}
 						</p>
 					</div>
 				) : (
@@ -114,9 +116,9 @@ export async function getServerSideProps(context) {
 				footerMenu,
 				hrefLang,
 				multiLanguage,
-				locale: locale,
+				locale,
 				errorMessage: errorMessage ? errorMessage : false,
-				searchResults: searchResults,
+				searchResults,
 			},
 		};
 	} catch (error) {
