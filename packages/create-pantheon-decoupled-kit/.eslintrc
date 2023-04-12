@@ -3,5 +3,5 @@
 	"parserOptions": {
 		"project": ["./tsconfig.json"]
 	},
-	"ignorePatterns": ["esbuild.js", "src/templates/**/*"]
+	"ignorePatterns": ["esbuild.js"]
 }

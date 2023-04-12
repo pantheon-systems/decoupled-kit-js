@@ -1,6 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
+{{#unless tailwindcss}}
+import * as styles from './paginator.module.css'
+{{/unless}}
 
 /**
  *
@@ -82,9 +85,12 @@ const Paginator = ({
 	const [windowWidth, setWindowWidth] = useState()
 	useEffect(() => {
 		setWindowWidth(window.innerWidth)
-		window.addEventListener('resize', () => {
+		const eventListener = window.addEventListener('resize', () => {
 			setWindowWidth(window.innerWidth)
 		})
+				return () => {
+			window.removeEventListener('resize', eventListener);
+		}; 
 	}, [])
 
 	const handlePageClick = event => {
@@ -121,21 +127,25 @@ const Paginator = ({
 
 		// Create link given the number of
 		// total pages
-		for (let i = 0; i < totalPages; i++) {
-			const pageNumber = Number(i + 1)
+		for (let i = 1; i <= totalPages; i++) {
+			const pageNumber = i
 			const defaultLink = (
 				<Link
 					to={`${navRoute}${routing ? '/' + pageNumber : ''}`}
-					state={{ breakOpen: breakpointsOpen }}
+					state=\{{ breakOpen: breakpointsOpen }}
 					key={pageNumber}
 					onClick={function (event) {
 						handlePageClick(event)
 					}}
+					{{#if tailwindcss}}
 					className={`flex flex-col justify-center text-center no-underline
-          h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 ${
+					h-16 w-12 border-t-2 border-b-2 border-black bg-white hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 ${
 						currentPageQuery === pageNumber && 'border-blue-700 border-2'
 					}
-          `}
+					`}
+					{{else}}
+					className={styles.paginatorBtn}
+					{{/if}}
 					aria-label={
 						currentPageQuery === pageNumber
 							? `Current Page, Page ${pageNumber}`
@@ -148,14 +158,18 @@ const Paginator = ({
 			)
 
 			// separator link
-			if (i === breakStart) {
+			if (pageNumber === breakStart) {
 				if (breakStart + breakAdd >= totalPages) {
 					links.push(defaultLink)
 					continue
 				}
 				links.push(
 					<button
+						{{#if tailwindcss}}
 						className={`hidden md:block h-16 w-12 border-2 border-black bg-slate-200 hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300`}
+						{{else}}
+						className={styles.separatorBtn}
+						{{/if}}
 						onClick={function () {
 							setBreakStart(breakStart + breakAdd)
 							setBreakpointsOpen(true)
@@ -182,13 +196,22 @@ const Paginator = ({
 		}
 		const backActive = offset === 0 ? false : true
 		const nextActive = offset >= totalItems - itemsPerPage ? false : true
+
+		{{#if tailwindcss}}
 		const sharedNextAndBackBtnStyles =
 			'flex flex-col justify-center text-center h-16 w-12 no-underline hover:bg-blue-300 focus:bg-blue-200 focus:border-blue-300 border-t-2 border-b-2 border-black bg-white'
+		{{else}}
+		const sharedNextAndBackBtnStyles = styles.directionalBtns
+		{{/if}}
 		// returns the row of links
 		return (
 			<nav role="navigation" aria-label="Pagination Navigation">
 				<ul
+					{{#if tailwindcss}}
 					className="list-none flex flex-row justify-center mx-auto mt-auto mb-4 [&>li]:p-0"
+					{{else}}
+					className={styles.btnList}	
+					{{/if}}
 					data-testid={`link-wrapper ${nextActive} ${backActive}`}
 				>
 					<li key="back">
@@ -199,10 +222,14 @@ const Paginator = ({
 									? `${navRoute}${routing ? '/' + (currentPageQuery - 1) : ''}`
 									: `${location.pathname}`
 							}
-							state={{ breakOpen: breakpointsOpen }}
+							state=\{{ breakOpen: breakpointsOpen }}
+							{{#if tailwindcss}}
 							className={`${sharedNextAndBackBtnStyles} ${
 								backActive ? '' : 'bg-gray-500'
 							}  border-l-2`}
+							{{else}}
+							className={sharedNextAndBackBtnStyles}
+							{{/if}}
 							id="back-btn"
 							onClick={handlePageClick}
 							aria-label="Go to Previous Page"
@@ -222,10 +249,14 @@ const Paginator = ({
 									? `${navRoute}${routing ? '/' + (currentPageQuery + 1) : ''}`
 									: `${location.pathname}`
 							}
-							state={{ breakOpen: breakpointsOpen }}
+							state=\{{ breakOpen: breakpointsOpen }}
+							{{#if tailwindcss}}
 							className={`${sharedNextAndBackBtnStyles} ${
 								nextActive ? '' : 'bg-gray-500'
 							} border-r-2`}
+							{{else}}
+							className={sharedNextAndBackBtnStyles}
+							{{/if}}
 							id="next-btn"
 							onClick={handlePageClick}
 							aria-label="Go to Next Page"
@@ -238,8 +269,13 @@ const Paginator = ({
 		)
 	}
 	return (
+		{{#if tailwindcss}}
 		<div className="max-w-full">
 			<span className="mb-8 prose-sm font-bold">
+		{{else}}
+		<div>
+			<span className={styles.pageCount}>
+		{{/if}}
 				Page {currentPageQuery}/{totalPages}
 			</span>
 
@@ -247,7 +283,11 @@ const Paginator = ({
 				{/* Component passed in that will render the data */}
 				<Component currentItems={currentItems} />
 			</section>
+			{{#if tailwindcss}}
 			<div className="sticky lg:bottom-12 bottom-4 mt-10">
+			{{else}}
+			<div className={styles.btnContainer}>
+			{{/if}}
 				<RenderLinks />
 			</div>
 		</div>

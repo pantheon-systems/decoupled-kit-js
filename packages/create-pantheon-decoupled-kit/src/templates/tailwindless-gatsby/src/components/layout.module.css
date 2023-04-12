@@ -1,0 +1,53 @@
+.layout {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	min-width: 100vw;
+	height: inherit;
+	margin: var(--x-auto);
+}
+
+.navLinks { 
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: var(--x-auto);
+	font-size: var(--5);
+	list-style: none;
+	justify-content: space-between;
+	max-width: var(--sm);
+	padding: var(--5) var(--10) 0;
+}
+
+.navLinks > * a {
+	text-decoration: none;
+	color: var(--black);
+}
+
+.navLinks > li:first-child {
+	margin-right: auto;
+}
+
+.navLinks :not(li:first-child) > a {
+	justify-self: flex-end;
+	margin: 0 var(--4);
+}
+
+.navLinks a:hover {
+	text-decoration: underline;
+}
+
+.layout > main {
+	max-width: var(--lg);
+	margin: 0 auto auto;
+	margin-bottom: auto;
+}
+
+/* lg breakpoint*/
+@media (max-width: 1024px) {
+	.layout > main {
+		margin: 0;
+		margin-bottom: auto;
+	}
+}
+

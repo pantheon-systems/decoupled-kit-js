@@ -1,0 +1,120 @@
+import React from 'react'
+import { Link } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
+{{#unless tailwindcss}}
+import * as styles from './page.module.css'
+{{/unless}}
+
+const Page = ({
+	page: { title, date, featuredImage, content },
+	next,
+	previous,
+}) => {
+	const imageData = {
+		gatsbyImage:
+			featuredImage?.node?.localFile?.childImageSharp.gatsbyImageData,
+		altText: featuredImage?.node?.altText || title,
+	}
+
+	return (
+		{{#if tailwindcss}}
+		<article className="prose lg:prose-xl mt-10 mx-auto">
+			<h1>{title}</h1>
+			<p className="text-sm text-gray-600">{new Date(date).toDateString()}</p>
+
+			<Link className="font-normal" to="/pages">
+				Pages &rarr;
+			</Link>
+		{{else}}
+		<article className={styles.container}>
+			<h1>{title}</h1>
+			<p className={styles.date}>{new Date(date).toDateString()}</p>
+
+			<Link to="/pages">Pages &rarr;</Link>
+		{{/if}}
+
+			{{#if tailwindcss}}
+			<div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
+				{featuredImage && (
+					<div className="relative w-full rounded-lg shadow-lg overflow-hidden mb-10">
+						<GatsbyImage
+							priority
+							image={imageData.gatsbyImage}
+							layout="fill"
+							objectFit="cover"
+							alt={imageData.altText}
+						/>
+					</div>
+				)}
+			</div>
+
+			{content ? (
+				<div
+					className="break-words mt-12"
+					dangerouslySetInnerHTML=\{{ __html: content }}
+				/>
+			) : (
+				<p>Sorry, no page data was found at this route.</p>
+			)}
+			<hr className="mt-10" />
+			<nav className="flex flex-wrap px-6">
+				{previous && (
+					<Link className="underline font-medium" to={`/pages${previous.uri}`}>
+						← {previous.title}
+					</Link>
+				)}
+				{next && (
+					<Link
+						className="underline font-medium ml-auto"
+						to={`/pages${next.uri}`}
+					>
+						{next.title} →
+					</Link>
+				)}
+			</nav>
+			{{else}}
+			<div className={styles.content}>
+				{featuredImage && (
+					<div className={styles.img}>
+						<GatsbyImage
+							priority
+							image={imageData.featuredImage}
+							layout="fill"
+							objectFit="cover"
+							alt={imageData.altText}
+						/>
+					</div>
+				)}
+			</div>
+
+			{content ? (
+				<div
+					{{#if tailwindcss}}
+					className="break-words mt-12"
+					{{else}}
+					className={styles.paragraphContent}
+					{{/if}}
+					dangerouslySetInnerHTML=\{{ __html: content }}
+				/>
+			) : (
+				<p>Sorry, no page data was found at this route.</p>
+			)}
+			<hr className={styles.hr} />
+			<nav className={styles.nav}>
+				{previous ? (
+					<Link className={styles.next} to={`/pages${previous.uri}`}>
+						← {previous.title}
+					</Link>
+				) : null}
+				{next ? (
+					<Link className={styles.prev} to={`/pages${next.uri}`}>
+						{next.title} →
+					</Link>
+				) : null}
+			</nav>
+			{{/if}}
+		</article>
+	)
+}
+
+export default Page
