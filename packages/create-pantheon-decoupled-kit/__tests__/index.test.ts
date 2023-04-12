@@ -116,6 +116,7 @@ describe('main()', () => {
 			{
 				_: ['next-drupal', 'next-drupal-umami-addon'],
 				appName: 'test',
+				drupal: true,
 				drupalKitVersion: versions['drupal-kit'],
 				outDir: 'test',
 				force: false,

@@ -46,15 +46,14 @@ const defaultProfileHandlers = [
 	},
 ];
 
-
 //construct restHandlers
-export const restHandlers = [
-	...defaultProfileHandlers,
-].map(({ endpoint, mockData, method, status }) => {
-	return rest[method](endpoint, (req, res, ctx) => {
-		return res(ctx.status(status), ctx.json(mockData));
-	});
-});
+export const restHandlers = [...defaultProfileHandlers].map(
+	({ endpoint, mockData, method, status }) => {
+		return rest[method](endpoint, (req, res, ctx) => {
+			return res(ctx.status(status), ctx.json(mockData));
+		});
+	},
+);
 
 process.env = {
 	...process.env,

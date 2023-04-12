@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/cms-kit",
-	"version": "0.2.1",
+	"version": "0.2.2-canary.0",
 	"description": "Pantheon Decoupled Kit's CMS Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -41,13 +41,13 @@
 		"lint-staged": "lint-staged"
 	},
 	"devDependencies": {
-		"@pantheon-systems/workspace-configs": "*",
 		"@pantheon-systems/eslint-config": "*",
+		"@pantheon-systems/workspace-configs": "*",
 		"@rollup/plugin-typescript": "^11.0.0",
-		"c8": "^7.12.0",
+		"@vitest/coverage-c8": "^0.29.8",
 		"eslint-plugin-prettier": "^4.2.1",
-		"prettier": "^2.8.3",
-		"rimraf": "^4.1.2",
-		"vitest": "^0.28.3"
+		"prettier": "^2.8.7",
+		"rimraf": "^4.4.1",
+		"vitest": "^0.29.8"
 	}
 }

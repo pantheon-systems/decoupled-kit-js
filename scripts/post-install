@@ -1,5 +1,11 @@
 #!/bin/sh
-pnpm build:pkgs 
+
+if [ "$CI" = "true" ]; then
+  pnpm build:pkgs
+  else
+	pnpm check-built
+fi
+
 readonly isHooksInstalled="$(git config --get-all core.hooksPath | grep -c .husky)"
 if [ "$isHooksInstalled" = "0" ]; then
   echo "🐾  Installing git hooks..."

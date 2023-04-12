@@ -20,16 +20,12 @@ jobs:
           fetch-depth: 0
       - uses: pnpm/action-setup@v2
         with:
-          version: 7.26.3
+          version: 8.1.0
       - name: Setup nodejs
         uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: 'pnpm'
-      - name: Setup npmrc
-        run:
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >
-          .npmrc
       - name: install dependencies
         run: pnpm install
       - name: create and publish versions
@@ -41,6 +37,7 @@ jobs:
           title: 'Canary Release'
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Send custom JSON data to Slack workflow
         uses: slackapi/slack-github-action@v1.23.0
         id: slack

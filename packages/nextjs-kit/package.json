@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/nextjs-kit",
-	"version": "1.7.1",
+	"version": "1.7.2-canary.0",
 	"description": "Pantheon Decoupled Kit's Next.js Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -42,23 +42,24 @@
 		"lint-staged": "lint-staged"
 	},
 	"devDependencies": {
-		"@pantheon-systems/workspace-configs": "*",
 		"@pantheon-systems/eslint-config": "*",
+		"@pantheon-systems/workspace-configs": "*",
 		"@rollup/plugin-typescript": "^11.0.0",
-		"@testing-library/react": "13.4.0",
-		"@vitejs/plugin-react": "^3.0.1",
-		"autoprefixer": "^10.4.12",
-		"c8": "^7.12.0",
+		"@tailwindcss/typography": "^0.5.9",
+		"@testing-library/react": "14.0.0",
+		"@vitejs/plugin-react": "^3.1.0",
+		"@vitest/coverage-c8": "^0.29.8",
+		"autoprefixer": "^10.4.14",
 		"eslint-plugin-prettier": "^4.2.1",
-		"next": "^13.1.5",
+		"next": "^13.2.4",
 		"postcss": "^8.4.21",
-		"prettier": "^2.8.3",
+		"prettier": "^2.8.7",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"rimraf": "^4.1.2",
-		"tailwindcss": "^3.1.8",
-		"vite": "^4.0.4",
-		"vitest": "^0.28.3"
+		"rimraf": "^4.4.1",
+		"tailwindcss": "^3.3.1",
+		"vite": "^4.2.1",
+		"vitest": "^0.29.8"
 	},
 	"peerDependencies": {
 		"next": "^13.1.1",

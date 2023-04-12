@@ -6,20 +6,24 @@ import Seo from '../components/seo'
 import Post from '../components/post'
 import { withGrid, PostGridItem } from '../components/grid'
 
-const PostTemplate = ({ data: { previous, next, post }, location }) => {
+const PostTemplate = ({ data: { previous, next, post } }) => {
 	const PostGrid = withGrid(PostGridItem)
 
 	return (
 		<Layout>
 			<Post post={post} next={next} previous={previous} />
 			{post.relatedContent?.relatedContent ? (
-                <section>
-                    <header className="prose text-2xl mx-auto mt-20">
+				<section>
+					<header className="prose text-2xl mx-auto mt-20">
 						<h2 className="text-center mx-auto">Related Content</h2>
 					</header>
-					<PostGrid data={post.relatedContent.relatedContent.map(item => ({post: item}))} />
-                </section>
-            ) : null}
+					<PostGrid
+						data={post.relatedContent.relatedContent.map(item => ({
+							post: item,
+						}))}
+					/>
+				</section>
+			) : null}
 		</Layout>
 	)
 }
@@ -61,28 +65,28 @@ export const pageQuery = graphql`
 			relatedContent {
 				fieldGroupName
 				relatedContent {
-				  ... on WpPost {
-					id
-					content
-					title
-					excerpt
-					uri
-					date(formatString: "MMMM DD, YYYY")
-					featuredImage {
-						node {
-							altText
-							localFile {
-								childImageSharp {
-									gatsbyImageData(
-										quality: 100
-										placeholder: TRACED_SVG
-										layout: FULL_WIDTH
-									)
+					... on WpPost {
+						id
+						content
+						title
+						excerpt
+						uri
+						date(formatString: "MMMM DD, YYYY")
+						featuredImage {
+							node {
+								altText
+								localFile {
+									childImageSharp {
+										gatsbyImageData(
+											quality: 100
+											placeholder: TRACED_SVG
+											layout: FULL_WIDTH
+										)
+									}
 								}
 							}
 						}
 					}
-				  }
 				}
 			}
 		}

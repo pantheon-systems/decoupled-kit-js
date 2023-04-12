@@ -4,10 +4,12 @@ import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 
 interface NextWPAnswers extends DefaultAnswers {
 	appName: string;
+	tailwindcss: boolean;
 }
 interface NextWpData {
 	nextjsKitVersion: string;
 	wordpressKitVersion: string;
+	wp: true;
 }
 
 export const nextWp: DecoupledKitGenerator<NextWPAnswers, NextWpData> = {
