@@ -39,6 +39,10 @@
 	background-color: var(--white);
 }
 
+.paginatorBtn[aria-label^="Current Page"] {
+	border: 2px solid var(--blue-700);
+}
+
 .paginatorBtn:hover,
 .directionalBtns:hover,
 .separatorBtn:hover {
@@ -70,9 +74,11 @@
 .directionalBtns[aria-label$="Previous Page"] {
 	border-left: 2px solid;
 }
+
 .directionalBtns[aria-label$="Next Page"] {
 	border-right: 2px solid;
 }
+
 
 
 /* lg breakpoint*/
