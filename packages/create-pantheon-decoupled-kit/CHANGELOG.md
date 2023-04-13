@@ -1,5 +1,15 @@
 # create-pantheon-decoupled-kit
 
+## 0.7.0-canary.0
+
+### Minor Changes
+
+- 5ef6dfe5: [gatsby-wp] Added tailwindless option for the gatsby-wp generator.
+
+  [cli] Some refinements made to the `addWithDiff` action which should no longer
+  leave behind files in case abort is chosen. `runLint` will now use the `--fix`
+  option.
+
 ## 0.6.0
 
 ### Minor Changes

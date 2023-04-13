@@ -12,5 +12,7 @@
     "@pantheon-systems/wordpress-kit": "2.14.2",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "fast-foxes-play"
+  ]
 }
