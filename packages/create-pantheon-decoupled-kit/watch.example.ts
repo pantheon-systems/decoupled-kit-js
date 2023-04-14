@@ -1,11 +1,10 @@
-import path from 'path';
 import type { ParsedArgs } from 'minimist';
+import path from 'path';
 export const watchOptions: ParsedArgs = {
 	_: ['next-wp'],
 	outDir: path.resolve('../../starters/next-wordpress-generated'),
 	appName: 'Next WordPress Watch Example',
-	// any handlebars variable can be injected here, they don't need a prompt.
-	WPGRAPHQL_URL: 'https://myWPSite.pantheonsite.io/wp/graphql',
+	cmsEndpoint: 'https://myWPSite.pantheonsite.io/wp/graphql',
 	// prevent the install step after project generation.
 	// The watch script sets this to true after the initial run.
 	noInstall: true,
