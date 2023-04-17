@@ -1,5 +1,15 @@
 # create-pantheon-decoupled-kit
 
+## 0.7.0-canary.2
+
+### Patch Changes
+
+- a4f18173: - [next-wp-acf-addon] Adjustments to comply with a generated WP
+  backend with ACF enabled for new front end sites projects
+  - [gatsby-wp-acf-addon] Adjustments to comply with a generated WP backend with
+    ACF enabled for new front end sites projects
+- 24906587: [next-drupal][next-drupal-umami-addon] Remove extraneous css file
+
 ## 0.7.0-canary.1
 
 ### Minor Changes
