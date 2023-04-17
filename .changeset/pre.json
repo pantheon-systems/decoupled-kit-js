@@ -12,5 +12,8 @@
     "@pantheon-systems/wordpress-kit": "2.14.2",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "dirty-rats-share",
+    "fast-foxes-play"
+  ]
 }
