@@ -1,10 +1,14 @@
 import React from 'react'
 import Layout from '../components/layout'
 import { Link } from 'gatsby'
+{{#unless tailwindcss}}
+import * as styles from './authApi.module.css';
+{{/unless}}
 
 const AuthApiExampleTemplate = ({ pageContext: { privatePosts } }) => {
 	return (
 		<Layout>
+			{{#if tailwindcss}}
 			<div className="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen">
 				<h1>API Authorization Example</h1>
 
@@ -13,6 +17,16 @@ const AuthApiExampleTemplate = ({ pageContext: { privatePosts } }) => {
 				</Link>
 
 				<div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
+			{{else}}
+			<div className={styles.container}>
+				<h1>API Authorization Example</h1>
+
+				<Link to="/">
+					<span{{#if tailwindcss}} className="w-full underline cursor-pointer"{{/if}}>Home &rarr;</span>
+				</Link>
+
+				<div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
+			{{/if}}
 					{privatePosts?.length > 0 ? (
 						<p>
 							🎉 Gatsby was able to successfully make an authenticated request
@@ -23,12 +37,12 @@ const AuthApiExampleTemplate = ({ pageContext: { privatePosts } }) => {
 							<p>
 								Gatsby was unable to make an authorized request to the WordPress
 								API. Please check your .env.development.local file to ensure
-								that your <code>WP_APPLICATION_USERNAME</code> and
+								that your <code>WP_APPLICATION_USERNAME</code> and{' '}
 								<code>WP_APPLICATION_PASSWORD</code> are set correctly.
 							</p>
 							<p>
 								For more information on how to set these values, please see{' '}
-								<a href="https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Gatsby/Gatsby%20%2B%20WordPress/setting-environment-variables.md">
+								<a href="https://decoupledkit.pantheon.io/docs/frontend-starters/gatsby/gatsby-wordpress/setting-environment-variables">
 									Setting Environment Variables
 								</a>
 							</p>

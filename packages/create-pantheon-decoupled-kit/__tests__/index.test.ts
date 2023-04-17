@@ -199,6 +199,7 @@ To see this list at any time, use the --help command.`);
 			_: ['gatsby-wp'],
 			eslintConfigVersion: versions['eslint'],
 			force: false,
+			gatsby: true,
 			gatsbyPnpmPlugin: true,
 			h: false,
 			help: false,
@@ -208,6 +209,7 @@ To see this list at any time, use the --help command.`);
 			v: false,
 			version: false,
 			wordpressKitVersion: versions['wordpress-kit'],
+			wp: true,
 		};
 
 		await main(parseArgs(), decoupledKitGenerators);
