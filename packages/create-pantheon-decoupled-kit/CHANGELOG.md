@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.7.0-canary.1
+
+### Minor Changes
+
+- fbb80853: [next-druapl-search-api-addon] Search page returns an article gird
+  based off search results.
+
 ## 0.7.0-canary.0
 
 ### Minor Changes
