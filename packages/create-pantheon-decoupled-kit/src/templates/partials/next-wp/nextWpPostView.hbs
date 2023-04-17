@@ -39,7 +39,7 @@ export default function PostTemplate({ menuItems, post, preview }) {
 				{{/if}}
 			/>
 			{{#if wpAcfAddon}}
-			{post.relatedContent?.relatedContent ? (
+			{post.relatedContent?.relatedPosts ? (
 				<section>
 					{{#if tailwindcss}}
 					<header className="prose text-2xl mx-auto mt-20">
@@ -51,7 +51,7 @@ export default function PostTemplate({ menuItems, post, preview }) {
 					</header>
 					<PostGrid
 						contentType="posts"
-						data={post.relatedContent.relatedContent}
+						data={post.relatedContent.relatedPosts}
 					/>
 				</section>
 			) : null}

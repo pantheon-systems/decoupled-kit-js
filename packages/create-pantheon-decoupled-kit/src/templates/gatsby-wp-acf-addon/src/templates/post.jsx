@@ -4,21 +4,20 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import Post from '../components/post'
-import { withGrid, PostGridItem } from '../components/grid'
+import { PostGrid } from '../components/grid'
 
 const PostTemplate = ({ data: { previous, next, post } }) => {
-	const PostGrid = withGrid(PostGridItem)
 
 	return (
 		<Layout>
 			<Post post={post} next={next} previous={previous} />
-			{post.relatedContent?.relatedContent ? (
+			{post.relatedContent?.relatedPosts ? (
 				<section>
 					<header className="prose text-2xl mx-auto mt-20">
 						<h2 className="text-center mx-auto">Related Content</h2>
 					</header>
 					<PostGrid
-						data={post.relatedContent.relatedContent.map(item => ({
+						data={post.relatedContent.relatedPosts.map(item => ({
 							post: item,
 						}))}
 					/>
@@ -64,7 +63,7 @@ export const pageQuery = graphql`
 			}
 			relatedContent {
 				fieldGroupName
-				relatedContent {
+				relatedPosts {
 					... on WpPost {
 						id
 						content
