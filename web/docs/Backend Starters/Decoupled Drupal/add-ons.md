@@ -7,8 +7,10 @@ sidebar_position: 8
 
 ## Decoupled Kit Pantheon Search API
 
-This module provides integration between Front-End sites and Drupal's Search
-API, allowing you to easily search for and find content in your Front-End sites.
+This module automatically configures a Solr search API server for use on
+Pantheon environments and creates an example search index that can be accessed
+via a JSON:API. It can also be used with the Next Drupal Search API add-on to
+simplify the process of configuring search for your decoupled front-end.
 
 ### Installation
 
@@ -35,11 +37,25 @@ them.
 
 ### Usage
 
-Once the Decoupled Kit Pantheon Search API module is installed, it automatically
-creates an **Example Index** with the necessary configuration, such as selecting
-the right entity, content type, and JSON:API endpoint for the index to return
-results. Additionally, this module automatically indexes content, making it an
-out-of-the-box option to start using the search data in front-end sites.
+Once installed, the module automatically creates an **Example Index** with the
+following configuration:
+
+- Datasources: Content
+- Server: Pantheon Search
+- Bundles: Article & Basic page
+- Index Languages: All
+- Fields:
+
+  - Body:
+    - Type: Fulltext
+    - Boost: 1.00
+  - Title:
+    - Type: Fulltext
+    - Boost: 1.50
+
+The module also adds a JSON:API endpoint for the index to return results.
+Additionally, it automatically indexes content, making it an out-of-the-box
+option to start using the search data in front-end sites.
 
 ### Contributing
 
