@@ -98,6 +98,8 @@ npm init pantheon-decoupled-kit next-drupal next-drupal-umami-addon \
   --outDir ./my-new-project-dir \
   # package.json compatible name for the project
   --appName @my-org/my-project \
+  # CMS from which data is sourced
+  --cmsEndpoint 'https://my-cms.pantheonsite.io' \
   # skip all diff prompts -
   # ⚠️ be careful using --force on non-empty directories
   --force \
