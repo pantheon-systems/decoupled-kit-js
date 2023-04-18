@@ -1,7 +1,7 @@
 ---
-id: "LinkProps"
-title: "Interface: LinkProps"
-sidebar_label: "LinkProps"
+id: 'LinkProps'
+title: 'Interface: LinkProps'
+sidebar_label: 'LinkProps'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -18,9 +18,9 @@ The href to apply to the link.
 
 #### Defined in
 
-[packages/nextjs-kit/src/types/index.ts:30](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/nextjs-kit/src/types/index.ts#L30)
+[packages/nextjs-kit/src/types/index.ts:30](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/types/index.ts#L30)
 
-___
+---
 
 ### linkText
 
@@ -30,4 +30,4 @@ The text to display in the link
 
 #### Defined in
 
-[packages/nextjs-kit/src/types/index.ts:26](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/nextjs-kit/src/types/index.ts#L26)
+[packages/nextjs-kit/src/types/index.ts:26](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/types/index.ts#L26)

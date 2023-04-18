@@ -41,7 +41,7 @@ To create a new project using `create-pantheon-decoupled-kit`:
 1. In your terminal, run the following command:
 
 ```bash
-npm init pantheon-decoupled-kit gatsby-wordpress
+npm init pantheon-decoupled-kit -- gatsby-wordpress
 ```
 
 2. Follow the prompts in your terminal to complete the setup.

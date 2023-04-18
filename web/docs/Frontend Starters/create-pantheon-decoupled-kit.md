@@ -43,7 +43,7 @@ If you know which generators you would like to run ahead of time, you can pass
 in generator names as space-separated positional arguments. For example:
 
 ```shell
-npm init pantheon-decoupled-kit next-wp next-wp-acf-addon
+npm init pantheon-decoupled-kit -- next-wp next-wp-acf-addon
 ```
 
 The above command will generate a project with the `next-wp` generator, and the
@@ -92,8 +92,8 @@ To skip any prompts, use a double-dash argument when running the command. For
 example:
 
 ```shell
-  # include generators as space separated positional arguments
-npm init pantheon-decoupled-kit next-drupal next-drupal-umami-addon \
+  # include generators as space separated positional arguments. npm init requires a double dash to allow forwarding options to the command
+npm init pantheon-decoupled-kit -- next-drupal next-drupal-umami-addon \
   # path to the project. This directory will be created if it does not exist
   --outDir ./my-new-project-dir \
   # package.json compatible name for the project

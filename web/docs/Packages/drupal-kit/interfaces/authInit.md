@@ -1,7 +1,7 @@
 ---
-id: "authInit"
-title: "Interface: authInit"
-sidebar_label: "authInit"
+id: 'authInit'
+title: 'Interface: authInit'
+sidebar_label: 'authInit'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -16,10 +16,10 @@ Object representing a fetch initialization object with an Authorization header
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name             | Type     |
+| :--------------- | :------- |
 | `Authorization?` | `string` |
 
 #### Defined in
 
-[drupal-kit/src/types/index.ts:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/drupal-kit/src/types/index.ts#L5)
+[drupal-kit/src/types/index.ts:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/drupal-kit/src/types/index.ts#L5)
