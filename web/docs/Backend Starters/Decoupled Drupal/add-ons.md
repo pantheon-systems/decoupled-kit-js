@@ -12,6 +12,13 @@ Pantheon environments and creates an example search index that can be accessed
 via a JSON:API. It can also be used with the Next Drupal Search API add-on to
 simplify the process of configuring search for your decoupled front-end.
 
+### Before You Begin
+
+Before enabling the Decoupled Kit Pantheon Search API module, you will need to
+enable Pantheon Search on your site. You can do this by following the
+instructions to Enable Access to Pantheon Search in the
+[Pantheon Search documentation](https://docs.pantheon.io/guides/solr-drupal/solr-drupal#enable-access-to-pantheon-search).
+
 ### Installation
 
 To install the Decoupled Kit Pantheon Search API module, you can follow these
