@@ -1,5 +1,12 @@
 # @pantheon-systems/drupal-kit
 
+## 4.3.1-canary.0
+
+### Patch Changes
+
+- 79df700d: Update `getDrupalSearchResults()` function to escape more characters
+  in search queries.
+
 ## 4.3.0
 
 ### Minor Changes
