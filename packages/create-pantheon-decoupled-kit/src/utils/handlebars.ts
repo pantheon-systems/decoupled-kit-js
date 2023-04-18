@@ -1,8 +1,8 @@
 import fs from 'fs-extra';
+import type { HelperDelegate, Template } from 'handlebars';
 import Handlebars from 'handlebars';
 import klaw from 'klaw';
 import path from 'path';
-import type { HelperDelegate, Template } from 'handlebars';
 
 /**
  * Handlebars {@link HelperDelegate}
@@ -26,6 +26,18 @@ export const hbsHelpers: { [key: string]: HelperDelegate } = {
 					.replace(/([a-z])([A-Z])/g, '$1-$2')
 					.replace(/[\s_]+/g, '-')
 					.toLowerCase();
+	},
+	/**
+	 * Appends '/wp/graphql' to the input
+	 * @param txt - handlebars rendered string
+	 * @returns `${txt}/wp/graphql or txt if it already ends with /wp/graphql
+	 */
+	wpGraphql: (txt: string): string => {
+		const wpGraphqlUrlRegex = /\/wp\/graphql\/?$/;
+		// trim trailing /
+		return wpGraphqlUrlRegex.test(txt)
+			? txt
+			: `${txt.replace(/\/$/, '')}/wp/graphql`;
 	},
 };
 
