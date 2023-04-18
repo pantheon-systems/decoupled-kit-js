@@ -40,7 +40,36 @@ a promise containing the data for the JSON:API response
 
 #### Defined in
 
-[drupal-kit/src/lib/defaultFetch.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/drupal-kit/src/lib/defaultFetch.ts#L17)
+[drupal-kit/src/lib/defaultFetch.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/drupal-kit/src/lib/defaultFetch.ts#L16)
+
+---
+
+### getDrupalSearchResults
+
+▸ **getDrupalSearchResults**(`«destructured»`): `Promise`<`TJsonApiBody`\>
+
+Helper function to query the Drupal Search API.
+
+**`See`**
+
+[https://www.drupal.org/docs/contributed-modules/search-api](https://www.drupal.org/docs/contributed-modules/search-api)
+for more information about the Drupal Search API.
+
+#### Parameters
+
+| Name             | Type                           |
+| :--------------- | :----------------------------- |
+| `«destructured»` | `GetDrupalSearchResultsParams` |
+
+#### Returns
+
+`Promise`<`TJsonApiBody`\>
+
+An array of search results matching the query.
+
+#### Defined in
+
+[drupal-kit/src/lib/getDrupalSearchResults.ts:23](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/drupal-kit/src/lib/getDrupalSearchResults.ts#L23)
 
 ---
 
@@ -65,4 +94,4 @@ The current known unique set of surrogate keys.
 
 #### Defined in
 
-cms-kit/dist/src/utils/setSurrogateKeyHeader.d.ts:8
+[cms-kit/src/utils/setSurrogateKeyHeader.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/cms-kit/src/utils/setSurrogateKeyHeader.ts#L17)

@@ -92,7 +92,7 @@ To skip any prompts, use a double-dash argument when running the command. For
 example:
 
 ```shell
-  # include generators as space separated positional arguments. npm v9 requires a double dash before the cli arguments
+  # include generators as space separated positional arguments. npm init requires a double dash to allow forwarding options to the command
 npm init pantheon-decoupled-kit -- next-drupal next-drupal-umami-addon \
   # path to the project. This directory will be created if it does not exist
   --outDir ./my-new-project-dir \
