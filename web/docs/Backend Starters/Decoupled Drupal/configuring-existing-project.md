@@ -2,7 +2,7 @@
 id: 'configuring-existing-project'
 title: 'Configuring an Existing Drupal Project'
 slug: '/backend-starters/decoupled-drupal/configuring-an-existing-project'
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 While we offer a [back-end starter project](./creating-a-new-project) to
