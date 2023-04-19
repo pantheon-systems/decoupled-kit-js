@@ -25,29 +25,29 @@ jobs:
           - local_path: 'starters/next-drupal-starter-umami-canary-generated'
             split_repository: 'next-drupal-starter-umami-canary'
             generator_cmd:
-              'next-drupal next-drupal-umami-addon --appName
-              @pantheon-systems/next-drupal-starter-umami-canary --noInstall
-              --tailwindcss --force --silent'
+              "next-drupal next-drupal-umami-addon --appName
+              @pantheon-systems/next-drupal-starter-umami-canary --cmsEndpoint
+              '' --noInstall --tailwindcss --force --silent"
           # next-drupal-starter default
           - local_path: 'starters/next-drupal-starter-default-canary-generated'
             split_repository: 'next-drupal-starter-default-canary'
             generator_cmd:
-              'next-drupal --appName
-              @pantheon-systems/next-drupal-starter-default-canary --noInstall
-              --tailwindcss --force --silent'
+              "next-drupal --appName
+              @pantheon-systems/next-drupal-starter-default-canary --cmsEndpoint
+              '' --noInstall --tailwindcss --force --silent"
           # gatsby-wordpress-starter
           - local_path: 'starters/gatsby-wordpress-starter-canary-generated'
             split_repository: 'gatsby-wordpress-starter-default-canary'
             generator_cmd:
-              'gatsby-wp --appName
+              "gatsby-wp --appName
               @pantheon-systems/gatsby-wordpress-starter-canary --noInstall
-              --tailwindcss --force --silent'
+              --cmsEndpoint '' --tailwindcss --force --silent"
           # next-wordpress-starter
           - local_path: 'starters/next-wordpress-starter-canary-generated'
             split_repository: 'next-wordpress-starter-default-canary'
             generator_cmd:
-              'next-wp --appName @pantheon-systems/next-wordpress-starter-canary
-              --noInstall --tailwindcss --force --silent'
+              "next-wp --appName @pantheon-systems/next-wordpress-starter-canary
+              --cmsEndpoint '' --noInstall --tailwindcss --force --silent"
 
           # canary docs site
           - local_path: 'web'

@@ -1,6 +1,12 @@
 import { addWithDiff, runInstall, runLint } from '../actions';
 import versions from '../pkgVersions.json';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
+import {
+	appNamePrompt,
+	cmsEndpointPrompt,
+	outDirPrompt,
+	tailwindcssPrompt,
+} from '../utils/sharedPrompts';
 
 interface NextDrupalAnswers extends DefaultAnswers {
 	appName: string;
@@ -13,6 +19,8 @@ interface NextDrupalData {
 	drupal: true;
 }
 
+const outDirDefault = ({ appName }: NextDrupalAnswers) =>
+	`${process.cwd()}/${appName.replaceAll(' ', '-').toLowerCase()}`;
 export const nextDrupal: DecoupledKitGenerator<
 	NextDrupalAnswers,
 	NextDrupalData
@@ -20,23 +28,10 @@ export const nextDrupal: DecoupledKitGenerator<
 	name: 'next-drupal',
 	description: 'Next.js + Drupal starter kit',
 	prompts: [
-		{
-			name: 'appName',
-			message: 'What is the name of your project?',
-			default: 'Next Drupal Starter',
-		},
-		{
-			name: 'tailwindcss',
-			message: 'Would you like to include tailwindcss?',
-			type: 'confirm',
-			default: true,
-		},
-		{
-			name: 'outDir',
-			message: 'Where should the output go?',
-			default: ({ appName }: NextDrupalAnswers) =>
-				`${process.cwd()}/${appName.replaceAll(' ', '-').toLowerCase()}`,
-		},
+		appNamePrompt('Next Drupal Starter'),
+		outDirPrompt(outDirDefault),
+		tailwindcssPrompt,
+		cmsEndpointPrompt,
 	],
 	data: {
 		nextjsKitVersion: versions['nextjs-kit'],

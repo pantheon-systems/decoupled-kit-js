@@ -9,13 +9,17 @@ Note: Options may differ depending on the generator. The following options shoul
 Generators: ${generatorsList.join(', ')}
 
 Options:
-        --help, -h          Show this menu.
-        --version, -v       Shows version number.
-        --silent            Prevent most terminal output.
-        --force             Skips show diff for each file and overwrite any files. Useful for CI
-        --noInstall         Prevents package manager from installing dependencies after running a generator.
-        --noLint            Prevents linting after generating a project.
+        --help, -h             Show this menu.
+        --version, -v          Shows version number.
 
-        --outDir <path>     The directory where the output is generated.
-        --appName <string>  The name of the new app.`;
+    [boolean] - true if present, omit for false
+        --silent               Prevent most terminal output.
+        --force                Skips show diff for each file and overwrite any files. Useful for CI
+        --noInstall            Prevents package manager from installing dependencies after running a generator.
+        --noLint               Prevents linting after generating a project.
+
+    [string]
+        --outDir               The directory where the output is generated.
+        --appName              The name of the new app.
+        --cmsEndpoint          The URL of your CMS backend.`;
 };

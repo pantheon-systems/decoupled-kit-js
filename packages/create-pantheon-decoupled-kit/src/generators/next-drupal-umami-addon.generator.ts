@@ -1,5 +1,10 @@
 import { addWithDiff, runLint } from '../actions';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
+import {
+	cmsEndpointPrompt,
+	outDirPrompt,
+	tailwindcssPrompt,
+} from '../utils/sharedPrompts';
 
 interface NextDrupalUmamiAddonAnswers extends DefaultAnswers {
 	tailwindcss: boolean;
@@ -17,17 +22,9 @@ export const nextDrupalUmamiAddon: DecoupledKitGenerator<
 	description:
 		"Drupal's Umami profile data and components add-on for the next-drupal starter",
 	prompts: [
-		{
-			name: 'outDir',
-			message: 'Where should the output go?',
-			default: `${process.cwd()}/umami-demo`,
-		},
-		{
-			name: 'tailwindcss',
-			message: 'Would you like to include tailwindcss?',
-			type: 'confirm',
-			default: true,
-		},
+		outDirPrompt(`${process.cwd()}/umami-demo`),
+		tailwindcssPrompt,
+		cmsEndpointPrompt,
 	],
 	data: {
 		drupal: true,

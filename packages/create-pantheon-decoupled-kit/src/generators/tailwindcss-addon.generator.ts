@@ -1,6 +1,7 @@
 import chalk from 'chalk';
 import { addWithDiff, addDependencies, runInstall } from '../actions';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
+import { outDirPrompt } from '../utils/sharedPrompts';
 
 const dependencies = {
 	'@tailwindcss/typography': '^0.5.9',
@@ -28,13 +29,7 @@ export const tailwindcssAddon: DecoupledKitGenerator<
 > = {
 	name: 'tailwindcss-addon',
 	description: 'Adds tailwindcss dependencies and config files',
-	prompts: [
-		{
-			name: 'outDir',
-			message: 'Where should the output go?',
-			default: () => `${process.cwd()}/tailwindcss-addon`,
-		},
-	],
+	prompts: [outDirPrompt(`${process.cwd()}/tailwindcss-addon`)],
 	data: {
 		dependencies,
 		devDependencies,
