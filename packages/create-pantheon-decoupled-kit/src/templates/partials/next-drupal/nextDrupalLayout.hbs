@@ -24,7 +24,7 @@ export default function Layout({ children, footerMenu, preview = false }) {
 		<div className="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden">
 			{preview && <PreviewRibbon />}
 			{{#if search}}
-				<div className="flex flex-row flex-wrap sm:flex-nowrap mx-auto sm:w-6/12 w-6/12">
+				<div className="flex flex-row flex-wrap sm:flex-nowrap mx-auto w-6/12">
 			<Header navItems={navItems} />
 				<div className="pt-9">
 					<SearchInput />
