@@ -1,5 +1,14 @@
 # create-pantheon-decoupled-kit
 
+## 0.7.0-canary.3
+
+### Minor Changes
+
+- 27642e12: [next-wp][next-drupal][gatsby-wp] These generators now accept a
+  `--cmsEndpoint` argument which sets the appropriate variable in
+  .env.development.local for local development. These generators will prompt for
+  the endpoint if it is not set when calling the generator.
+
 ## 0.7.0-canary.2
 
 ### Patch Changes

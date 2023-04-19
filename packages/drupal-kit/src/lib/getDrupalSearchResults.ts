@@ -28,7 +28,7 @@ const getDrupalSearchResults = async ({
 	index = 'articles_index',
 }: GetDrupalSearchResultsParams) => {
 	const res = await defaultFetch(
-		`${apiUrl}/${locale}/jsonapi/index/${index}?filter[fulltext]=${encodeURI(
+		`${apiUrl}/${locale}/jsonapi/index/${index}?filter[fulltext]=${encodeURIComponent(
 			query,
 		)}`,
 		{},

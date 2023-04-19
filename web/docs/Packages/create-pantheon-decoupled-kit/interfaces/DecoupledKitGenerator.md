@@ -1,6 +1,6 @@
 ---
 id: 'DecoupledKitGenerator'
-title: 'Interface: DecoupledKitGenerator<Prompts>'
+title: 'Interface: DecoupledKitGenerator<Prompts, Data>'
 sidebar_label: 'DecoupledKitGenerator'
 sidebar_position: 0
 custom_edit_url: null
@@ -10,9 +10,10 @@ Generators need prompts to get user data not provided by CLI arguments
 
 ## Type parameters
 
-| Name      | Type              |
-| :-------- | :---------------- |
-| `Prompts` | extends `Answers` |
+| Name      | Type                                  |
+| :-------- | :------------------------------------ |
+| `Prompts` | [`DefaultAnswers`](DefaultAnswers.md) |
+| `Data`    | `unknown`                             |
 
 ## Properties
 
@@ -24,7 +25,7 @@ An array of actions to run with the prompts and templates
 
 #### Defined in
 
-[src/types.ts:35](https://github.com/pantheon-systems/decoupled-kit-js/blob/89c6e8b8e/packages/create-pantheon-decoupled-kit/src/types.ts#L35)
+[src/types.ts:42](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/create-pantheon-decoupled-kit/src/types.ts#L42)
 
 ---
 
@@ -37,19 +38,19 @@ the templates when de-duping.
 
 #### Defined in
 
-[src/types.ts:44](https://github.com/pantheon-systems/decoupled-kit-js/blob/89c6e8b8e/packages/create-pantheon-decoupled-kit/src/types.ts#L44)
+[src/types.ts:51](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/create-pantheon-decoupled-kit/src/types.ts#L51)
 
 ---
 
 ### data
 
-• `Optional` **data**: `DataRecord`
+• `Optional` **data**: `Data`
 
 Any extra data that should be passed from the generator to the actions
 
 #### Defined in
 
-[src/types.ts:39](https://github.com/pantheon-systems/decoupled-kit-js/blob/89c6e8b8e/packages/create-pantheon-decoupled-kit/src/types.ts#L39)
+[src/types.ts:46](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/create-pantheon-decoupled-kit/src/types.ts#L46)
 
 ---
 
@@ -61,7 +62,7 @@ Description of the generator
 
 #### Defined in
 
-[src/types.ts:22](https://github.com/pantheon-systems/decoupled-kit-js/blob/89c6e8b8e/packages/create-pantheon-decoupled-kit/src/types.ts#L22)
+[src/types.ts:25](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/create-pantheon-decoupled-kit/src/types.ts#L25)
 
 ---
 
@@ -73,19 +74,39 @@ Generator's name. This should be kebab case.
 
 #### Defined in
 
-[src/types.ts:18](https://github.com/pantheon-systems/decoupled-kit-js/blob/89c6e8b8e/packages/create-pantheon-decoupled-kit/src/types.ts#L18)
+[src/types.ts:21](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/create-pantheon-decoupled-kit/src/types.ts#L21)
+
+---
+
+### nextSteps
+
+• `Optional` **nextSteps**: `string`[]
+
+Any message(s) to be rendered after actions are successfully completed.
+
+#### Defined in
+
+[src/types.ts:55](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/create-pantheon-decoupled-kit/src/types.ts#L55)
 
 ---
 
 ### prompts
 
-• **prompts**: `QuestionCollection`<`Prompts`\>[]
+• **prompts**: `QuestionCollection`<[`DefaultAnswers`](DefaultAnswers.md)\>[]
 
 An array of inquirer prompts
 
+**`Template`**
+
+the type of the required user input
+
+**`Default`**
+
+DefaultAnswers - { outDir: string }
+
 #### Defined in
 
-[src/types.ts:26](https://github.com/pantheon-systems/decoupled-kit-js/blob/89c6e8b8e/packages/create-pantheon-decoupled-kit/src/types.ts#L26)
+[src/types.ts:31](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/create-pantheon-decoupled-kit/src/types.ts#L31)
 
 ---
 
@@ -98,4 +119,4 @@ generator does not have templates.
 
 #### Defined in
 
-[src/types.ts:31](https://github.com/pantheon-systems/decoupled-kit-js/blob/89c6e8b8e/packages/create-pantheon-decoupled-kit/src/types.ts#L31)
+[src/types.ts:38](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/create-pantheon-decoupled-kit/src/types.ts#L38)

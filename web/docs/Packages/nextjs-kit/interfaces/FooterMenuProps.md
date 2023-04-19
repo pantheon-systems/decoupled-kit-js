@@ -1,7 +1,7 @@
 ---
-id: "FooterMenuProps"
-title: "Interface: FooterMenuProps"
-sidebar_label: "FooterMenuProps"
+id: 'FooterMenuProps'
+title: 'Interface: FooterMenuProps'
+sidebar_label: 'FooterMenuProps'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -14,9 +14,9 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/footer.tsx:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/nextjs-kit/src/components/footer.tsx#L7)
+[packages/nextjs-kit/src/components/footer.tsx:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/components/footer.tsx#L7)
 
-___
+---
 
 ### footerMenuItems
 
@@ -24,4 +24,4 @@ ___
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/footer.tsx:6](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/nextjs-kit/src/components/footer.tsx#L6)
+[packages/nextjs-kit/src/components/footer.tsx:6](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/components/footer.tsx#L6)

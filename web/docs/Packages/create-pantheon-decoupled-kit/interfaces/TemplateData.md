@@ -1,7 +1,7 @@
 ---
-id: "TemplateData"
-title: "Interface: TemplateData"
-sidebar_label: "TemplateData"
+id: 'TemplateData'
+title: 'Interface: TemplateData'
+sidebar_label: 'TemplateData'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -14,9 +14,9 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/types.ts:62](https://github.com/pantheon-systems/decoupled-kit-js/blob/89c6e8b8e/packages/create-pantheon-decoupled-kit/src/types.ts#L62)
+[src/types.ts:75](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/create-pantheon-decoupled-kit/src/types.ts#L75)
 
-___
+---
 
 ### templateDirs
 
@@ -24,4 +24,4 @@ ___
 
 #### Defined in
 
-[src/types.ts:61](https://github.com/pantheon-systems/decoupled-kit-js/blob/89c6e8b8e/packages/create-pantheon-decoupled-kit/src/types.ts#L61)
+[src/types.ts:74](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/create-pantheon-decoupled-kit/src/types.ts#L74)

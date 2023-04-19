@@ -1,13 +1,12 @@
 ---
-id: "DrupalState"
-title: "Class: DrupalState"
-sidebar_label: "DrupalState"
+id: 'DrupalState'
+title: 'Class: DrupalState'
+sidebar_label: 'DrupalState'
 sidebar_position: 0
 custom_edit_url: null
 ---
 
-Configures DrupalState to integrate
-with a Decoupled Drupal CMS on Pantheon
+Configures DrupalState to integrate with a Decoupled Drupal CMS on Pantheon
 
 **`See`**
 
@@ -23,13 +22,13 @@ DrupalStateConfig for the full list parameters
 
 ### constructor
 
-• **new DrupalState**(`__namedParameters`)
+• **new DrupalState**(`«destructured»`)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `__namedParameters` | `DrupalStateConfig` |
+| Name             | Type                |
+| :--------------- | :------------------ |
+| `«destructured»` | `DrupalStateConfig` |
 
 #### Overrides
 
@@ -37,23 +36,25 @@ DrupalState.constructor
 
 #### Defined in
 
-[drupal-kit/src/lib/PantheonDrupalState.ts:14](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L14)
+[drupal-kit/src/lib/PantheonDrupalState.ts:14](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L14)
 
 ## Methods
 
 ### fetchData
 
-▸ **fetchData**(`endpoint`, `res?`, `anon?`): `Promise`<`void` \| `TJsonApiBody`\>
+▸ **fetchData**(`endpoint`, `res?`, `anon?`): `Promise`<`void` \|
+`TJsonApiBody`\>
 
-If a query is provided, fetches data using apollo-link-json-api, otherwise uses out fetch method.
+If a query is provided, fetches data using apollo-link-json-api, otherwise uses
+out fetch method.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `endpoint` | `string` | `undefined` | the assembled JSON:API endpoint |
-| `res` | `boolean` \| `ServerResponse`<`IncomingMessage`\> | `false` | response object |
-| `anon` | `boolean` | `false` | - |
+| Name       | Type                                              | Default value | Description                     |
+| :--------- | :------------------------------------------------ | :------------ | :------------------------------ |
+| `endpoint` | `string`                                          | `undefined`   | the assembled JSON:API endpoint |
+| `res`      | `boolean` \| `ServerResponse`<`IncomingMessage`\> | `false`       | response object                 |
+| `anon`     | `boolean`                                         | `false`       | -                               |
 
 #### Returns
 
@@ -67,4 +68,4 @@ DrupalState.fetchData
 
 #### Defined in
 
-[drupal-kit/src/lib/PantheonDrupalState.ts:42](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L42)
+[drupal-kit/src/lib/PantheonDrupalState.ts:42](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L42)

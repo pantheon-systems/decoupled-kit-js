@@ -1,11 +1,18 @@
-import { addWithDiff, runInstall, runLint } from '../actions';
 import whichPmRuns from 'which-pm-runs';
+import { addWithDiff, runInstall, runLint } from '../actions';
 import versions from '../pkgVersions.json';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
+import {
+	appNamePrompt,
+	cmsEndpointPrompt,
+	outDirPrompt,
+	tailwindcssPrompt,
+} from '../utils/sharedPrompts';
 
 interface GatsbyWPAnswers extends DefaultAnswers {
 	appName: string;
 	tailwindcss: boolean;
+	cmsEndpoint: string;
 }
 
 interface GatsbyWPData {
@@ -18,27 +25,17 @@ interface GatsbyWPData {
 }
 const pnpm = whichPmRuns()?.name === 'pnpm' ? true : false;
 
+const outDirDefault = ({ appName }: GatsbyWPAnswers) =>
+	`${process.cwd()}/${appName.replaceAll(' ', '-').toLowerCase()}`;
+
 export const gatsbyWp: DecoupledKitGenerator<GatsbyWPAnswers, GatsbyWPData> = {
 	name: 'gatsby-wp',
 	description: 'Gatsby + WordPress starter kit',
 	prompts: [
-		{
-			name: 'appName',
-			message: 'What is the name of your project?',
-			default: 'Gatsby WordPress Starter',
-		},
-		{
-			name: 'outDir',
-			message: 'Where should the output go?',
-			default: ({ appName }: GatsbyWPAnswers) =>
-				`${process.cwd()}/${appName.replaceAll(' ', '-').toLowerCase()}`,
-		},
-		{
-			name: 'tailwindcss',
-			message: 'Would you like to include tailwindcss?',
-			type: 'confirm',
-			default: true,
-		},
+		appNamePrompt('Gatsby WordPress Starter'),
+		outDirPrompt(outDirDefault),
+		tailwindcssPrompt,
+		cmsEndpointPrompt,
 	],
 	data: {
 		gatsbyPnpmPlugin: pnpm,
