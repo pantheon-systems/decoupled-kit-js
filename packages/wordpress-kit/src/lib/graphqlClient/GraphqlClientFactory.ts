@@ -1,9 +1,9 @@
 import { GraphQLClient } from 'graphql-request';
-import type { PatchedRequestInit } from 'graphql-request/dist/types';
+import type { RequestConfig } from 'graphql-request/src/types';
 /**
- * Creates instances of `graphql-request` GraphQLClient with the given options
- * @params endpoint - A WordPress GraphQL endpoint
- * @params options - A RequestInit object. {@link PatchedRequestInit}
+ * Creates instances of `graphql-request` {@link GraphQLClient} with the given options.
+ * @params endpoint - A WordPress GraphQL endpoint.
+ * @params options - A {@link RequestConfig} object.
  */
 class GraphQLClientFactory {
 	/**
@@ -11,11 +11,11 @@ class GraphQLClientFactory {
 	 */
 	endpoint: string;
 	/**
-	 * {@link PatchedRequestInit}
+	 * {@link RequestOptions}
 	 */
-	options: PatchedRequestInit;
+	options: RequestConfig;
 
-	constructor(endpoint: string, options: PatchedRequestInit = {}) {
+	constructor(endpoint: string, options: RequestConfig) {
 		this.endpoint = endpoint;
 		this.options = {
 			...options,
@@ -23,7 +23,7 @@ class GraphQLClientFactory {
 				'Pantheon-SKey': '1',
 			},
 			jsonSerializer:
-				options.method === 'GET'
+				options?.method === 'GET'
 					? { parse: JSON.parse, stringify: JSON.stringify }
 					: undefined,
 		};

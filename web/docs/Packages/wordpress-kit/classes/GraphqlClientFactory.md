@@ -1,37 +1,37 @@
 ---
-id: "GraphqlClientFactory"
-title: "Class: GraphqlClientFactory"
-sidebar_label: "GraphqlClientFactory"
+id: 'GraphqlClientFactory'
+title: 'Class: GraphqlClientFactory'
+sidebar_label: 'GraphqlClientFactory'
 sidebar_position: 0
 custom_edit_url: null
 ---
 
-Creates instances of `graphql-request` GraphQLClient with the given options
+Creates instances of `graphql-request` GraphQLClient with the given options.
 
 **`Params`**
 
-endpoint - A WordPress GraphQL endpoint
+endpoint - A WordPress GraphQL endpoint.
 
 **`Params`**
 
-options - A RequestInit object. PatchedRequestInit
+options - A RequestConfig object.
 
 ## Constructors
 
 ### constructor
 
-• **new GraphqlClientFactory**(`endpoint`, `options?`)
+• **new GraphqlClientFactory**(`endpoint`, `options`)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `endpoint` | `string` |
-| `options` | `PatchedRequestInit` |
+| Name       | Type            |
+| :--------- | :-------------- |
+| `endpoint` | `string`        |
+| `options`  | `RequestConfig` |
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts:18](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts#L18)
+[packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts:18](https://github.com/pantheon-systems/decoupled-kit-js/blob/4c02f3b62/packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts#L18)
 
 ## Properties
 
@@ -43,19 +43,19 @@ A WordPress GraphQL endpoint
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts#L12)
+[packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/4c02f3b62/packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts#L12)
 
-___
+---
 
 ### options
 
-• **options**: `PatchedRequestInit`
+• **options**: `RequestConfig`
 
-PatchedRequestInit
+RequestOptions
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts#L16)
+[packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/4c02f3b62/packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts#L16)
 
 ## Methods
 
@@ -63,7 +63,8 @@ PatchedRequestInit
 
 ▸ **create**(): `GraphQLClient`
 
-Creates an instance of `graphql-request` GraphQLClient based on the endpoint and options
+Creates an instance of `graphql-request` GraphQLClient based on the endpoint and
+options
 
 #### Returns
 
@@ -71,4 +72,4 @@ Creates an instance of `graphql-request` GraphQLClient based on the endpoint and
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts:34](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts#L34)
+[packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts:34](https://github.com/pantheon-systems/decoupled-kit-js/blob/4c02f3b62/packages/wordpress-kit/src/lib/graphqlClient/GraphqlClientFactory.ts#L34)
