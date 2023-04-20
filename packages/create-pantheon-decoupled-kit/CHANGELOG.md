@@ -1,5 +1,13 @@
 # create-pantheon-decoupled-kit
 
+## 0.7.0-canary.4
+
+### Patch Changes
+
+- d7e36603: [next-wp][gatsby-wp] Bump `@pantheon-systems/wordpress-kit` version
+- bf2215e7: [next-drupal-search-api-addon] Updated `<SearchInput />` component
+  styling.
+
 ## 0.7.0-canary.3
 
 ### Minor Changes

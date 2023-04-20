@@ -31,37 +31,39 @@ export default function SearchPage({
 					<span>An error occurred while fetching search results</span>
 				</div>
 			) : (
-				<div className="mt-12 mx-auto max-w-[50vw]">
-					{searchResults?.length > 0 ? (
-						<ul>
-							{searchResults?.map(({ title, body, path }) => (
-								<li className="prose justify-items-start mt-8" key={path?.pid}>
-									<h2>{title}</h2>
-									{body.summary ? (
-										<div dangerouslySetInnerHTML={{ __html: body?.summary }} />
-									) : null}
-									<Link
-										passHref
-										href={`${
-											multiLanguage ? `/${path?.langcode || locale}` : ''
-										}${path.alias}`}
-										className="font-normal underline"
-									>
-										Read more →
-									</Link>
-								</li>
-							))}
-						</ul>
-					) : (
-						<div className="mt-12 mx-auto max-w-[50vw]">
-							<p className="text-xl text-center">
-								{expectedResults
-									? 'No Results Found'
-									: 'Enter a term to start searching'}
-							</p>
-						</div>
-					)}
-				</div>
+				<section className="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen">
+					<div className="max-w-lg mx-auto lg:max-w-screen-lg">
+						{searchResults?.length > 0 ? (
+							<ul>
+								{searchResults?.map(({ title, body, path }) => (
+									<li className="prose justify-items-start mt-8" key={path?.pid}>
+										<h2>{title}</h2>
+										{body.summary ? (
+											<div dangerouslySetInnerHTML={{ __html: body?.summary }} />
+										) : null}
+										<Link
+											passHref
+											href={`${
+												multiLanguage ? `/${path?.langcode || locale}` : ''
+											}${path.alias}`}
+											className="font-normal underline"
+										>
+											Read more →
+										</Link>
+									</li>
+								))}
+							</ul>
+						) : (
+							<div className="mt-12 mx-auto max-w-[50vw]">
+								<p className="text-xl text-center">
+									{expectedResults
+										? 'No Results Found'
+										: 'Enter a term to start searching'}
+								</p>
+							</div>
+						)}
+					</div>
+				</section>
 			)}
 		</Layout>
 	);
