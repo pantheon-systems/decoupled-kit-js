@@ -44,14 +44,13 @@ displays all recipes.
    npm create pantheon-decoupled-kit next-drupal next-drupal-umami-addon
    ```
 1. Continue through the prompts until all actions finish running
-1. Add the necessary environment variables in `.env.development.local` and start
-   your project locally. Observe the new related content section that displays
-   at the bottom of post detail pages
+1. Start your project locally. Observe the new related content section that
+   displays at the bottom of post detail pages
 
 ## Drupal Search API Add-on
 
 This add-on adds necessary components and routes to your Pantheon Decoupled Kit
-Next.js Starter Kit to query the Drupal Search API and display it's response.
+Next.js Starter Kit to query the Drupal Search API and display its response.
 This includes the addition of a search bar component and dedicated search
 results page.
 
@@ -76,8 +75,8 @@ results page.
    npm create pantheon-decoupled-kit next-drupal-search-api-addon --outDir ./my-app-dir
    ```
 1. Follow the terminal prompts, accept the project diff changes
-1. Start your project locally and observe the new related content section that
-   displays at the bottom of post detail pages
+1. Start your project locally. Observe the new search input in the site header
+   along with added content under the `/search` route
 
 #### Building a New Project with the `next-drupal-search-api-addon`
 
@@ -87,6 +86,5 @@ results page.
    npm create pantheon-decoupled-kit next-drupal next-drupal-search-api-addon
    ```
 1. Continue through the prompts until all actions finish running
-1. Add the necessary environment variables in `.env.development.local` and start
-   your project locally. Observe the new related content section that displays
-   at the bottom of post detail pages
+1. Start your project locally. Observe the new search input in the site header
+   along with added content under the `/search` route
