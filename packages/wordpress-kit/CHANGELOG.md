@@ -1,5 +1,11 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.14.3-canary.0
+
+### Patch Changes
+
+- d7e36603: Fixed the type used for GraphQLClientFactory options
+
 ## 2.14.2
 
 ### Patch Changes
