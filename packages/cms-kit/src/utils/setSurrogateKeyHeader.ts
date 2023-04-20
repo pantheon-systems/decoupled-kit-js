@@ -25,9 +25,8 @@ const setSurrogateKeyHeader = (
 			const surrogateKeys = surrogateKeyHeader?.split(' ');
 			const newSurrogateKeys = keys?.split(' ') as string[];
 			// Destructure into a new array in order to de-dupe the array
-			const uniqueKeysArr = [
-				...new Set([...surrogateKeys, ...newSurrogateKeys]),
-			];
+			const uniqueKeysArr = [];
+			uniqueKeysArr.push(...new Set([...surrogateKeys, ...newSurrogateKeys]));
 			const uniqueSurrogateKeys = uniqueKeysArr.join(' ');
 			res.setHeader('Surrogate-Key', uniqueSurrogateKeys);
 			return uniqueSurrogateKeys;

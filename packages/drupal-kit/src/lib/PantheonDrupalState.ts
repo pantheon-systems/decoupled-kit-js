@@ -3,7 +3,11 @@ import { DrupalState } from '@gdwc/drupal-state';
 import defaultFetch from './defaultFetch';
 
 import type { TJsonApiBody } from 'jsona/lib/JsonaTypes';
-import type { DrupalStateConfig } from '@gdwc/drupal-state/src/types/types';
+import type {
+	DrupalStateConfig,
+	GetObjectByPathParams,
+	GetObjectParams,
+} from '@gdwc/drupal-state/src/types/types';
 
 /**
  * Configures DrupalState to integrate
@@ -61,6 +65,17 @@ class PantheonDrupalState extends DrupalState {
 			this.onError,
 			res,
 		)) as TJsonApiBody;
+	}
+
+	async getObject<ReturnedData>(
+		args: GetObjectParams,
+	): Promise<ReturnedData | void> {
+		return (await super.getObject({ ...args })) as ReturnedData | void;
+	}
+	async getObjectByPath<ReturnedData>(
+		args: GetObjectByPathParams,
+	): Promise<ReturnedData | void> {
+		return (await super.getObjectByPath({ ...args })) as ReturnedData | void;
 	}
 }
 
