@@ -108,6 +108,8 @@ npm init pantheon-decoupled-kit -- next-drupal next-drupal-umami-addon \
   # prevent the package manager from running
   # `install` after the project is created
   --noInstall
+  # CMS from which data is sourced
+  --cmsType drupal
 ```
 
 The `outDir` argument is required for each generator. `appName` is only required
