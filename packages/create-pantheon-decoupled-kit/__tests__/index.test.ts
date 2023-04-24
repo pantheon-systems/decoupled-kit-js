@@ -4,7 +4,10 @@ import * as utils from '../src/utils/index';
 const { parseArgs, main } = bin;
 import chalk from 'chalk';
 import inquirer from 'inquirer';
-import { decoupledKitGenerators } from '../src/generators';
+import {
+	decoupledKitGenerators,
+	sharedDecoupledKitGenerators,
+} from '../src/generators';
 import versions from '../src/pkgVersions.json';
 
 import pkg from '../package.json' assert { type: 'json' };
@@ -62,7 +65,11 @@ describe('main()', () => {
 		// --help
 		process.argv = ['node', 'bin.js', '--help'];
 
-		await main(parseArgs(), decoupledKitGenerators);
+		await main(
+			parseArgs(),
+			decoupledKitGenerators,
+			sharedDecoupledKitGenerators,
+		);
 
 		expect(logSpy).toHaveBeenLastCalledWith(
 			utils.helpMenu(decoupledKitGenerators),
@@ -71,7 +78,11 @@ describe('main()', () => {
 		// -h
 		process.argv = ['node', 'bin.js', '-h'];
 
-		await main(parseArgs(), decoupledKitGenerators);
+		await main(
+			parseArgs(),
+			decoupledKitGenerators,
+			sharedDecoupledKitGenerators,
+		);
 
 		expect(logSpy).toHaveBeenLastCalledWith(
 			utils.helpMenu(decoupledKitGenerators),
@@ -84,14 +95,22 @@ describe('main()', () => {
 		// --version
 		process.argv = ['node', 'bin.js', '--version'];
 
-		await main(parseArgs(), decoupledKitGenerators);
+		await main(
+			parseArgs(),
+			decoupledKitGenerators,
+			sharedDecoupledKitGenerators,
+		);
 
 		expect(logSpy).toHaveBeenLastCalledWith(`v${pkg.version}`);
 
 		// -v
 		process.argv = ['node', 'bin.js', '-v'];
 
-		await main(parseArgs(), decoupledKitGenerators);
+		await main(
+			parseArgs(),
+			decoupledKitGenerators,
+			sharedDecoupledKitGenerators,
+		);
 
 		expect(logSpy).toHaveBeenLastCalledWith(`v${pkg.version}`);
 	});
@@ -108,6 +127,7 @@ describe('main()', () => {
 		await bin.main(
 			bin.parseArgs(process.argv.slice(2)),
 			decoupledKitGenerators,
+			sharedDecoupledKitGenerators,
 		);
 
 		expect(parseSpy).toBeCalled;
@@ -129,6 +149,7 @@ describe('main()', () => {
 				v: false,
 			},
 			decoupledKitGenerators,
+			sharedDecoupledKitGenerators,
 		);
 		expect(promptSpy).toHaveBeenCalledTimes(2);
 	});
@@ -139,18 +160,23 @@ describe('main()', () => {
 	}) => {
 		process.argv = ['node', 'bin.js', 'not-valid-generator-name'];
 
+		promptSpy.mockImplementationOnce(() => ({ cmsType: 'wp' }));
 		promptSpy.mockImplementationOnce(() => ({
 			generators: ['next-wp'],
 		}));
 
-		await bin.main(parseArgs(), decoupledKitGenerators);
+		await bin.main(
+			parseArgs(),
+			decoupledKitGenerators,
+			sharedDecoupledKitGenerators,
+		);
 
 		expect(logSpy).toHaveBeenCalledWith(
 			chalk.yellow('No generator found with name not-valid-generator-name.'),
 		);
-		// We expect 2 calls, the first prompts with the list of available generators
-		// the second runs the generator prompts
-		expect(promptSpy).toHaveBeenCalledTimes(2);
+		// We expect 3 calls, the first prompts for the CMS type, the second prompts with the list of available generators
+		// the third runs the generator prompts
+		expect(promptSpy).toHaveBeenCalledTimes(3);
 	});
 
 	it.fails(
@@ -160,7 +186,11 @@ describe('main()', () => {
 			promptSpy.mockImplementationOnce(() => ({
 				generators: [],
 			}));
-			await bin.main(parseArgs(), decoupledKitGenerators);
+			await bin.main(
+				parseArgs(),
+				decoupledKitGenerators,
+				sharedDecoupledKitGenerators,
+			);
 
 			expect(promptSpy).toHaveBeenCalledOnce();
 			expect(mainSpy).toThrowError(`
@@ -180,7 +210,11 @@ To see this list at any time, use the --help command.`);
 				generators: [],
 			}));
 
-			await bin.main(parseArgs(), decoupledKitGenerators);
+			await bin.main(
+				parseArgs(),
+				decoupledKitGenerators,
+				sharedDecoupledKitGenerators,
+			);
 
 			expect(mainSpy).toThrowErrorMatchingInlineSnapshot(
 				chalk.red('Could not find any generators to run.'),
@@ -212,7 +246,11 @@ To see this list at any time, use the --help command.`);
 			wp: true,
 		};
 
-		await main(parseArgs(), decoupledKitGenerators);
+		await main(
+			parseArgs(),
+			decoupledKitGenerators,
+			sharedDecoupledKitGenerators,
+		);
 
 		expect(
 			actionRunnerSpy.mock.lastCall && actionRunnerSpy.mock.lastCall[0].data,
@@ -223,7 +261,11 @@ To see this list at any time, use the --help command.`);
 		process.argv = ['node', 'bin.js', 'next-drupal'];
 		promptSpy.mockImplementationOnce(() => ({ outDir: 'test' }));
 		promptSpy.mockImplementationOnce(() => ({ appName: 'test' }));
-		await main(parseArgs(), decoupledKitGenerators);
+		await main(
+			parseArgs(),
+			decoupledKitGenerators,
+			sharedDecoupledKitGenerators,
+		);
 
 		expect(logSpy).toHaveBeenLastCalledWith(
 			`${chalk.yellow('cd')} into ${chalk.bold.magenta(
@@ -234,7 +276,11 @@ To see this list at any time, use the --help command.`);
 
 	it('should not console.log if "silent" arg is true', async ({ logSpy }) => {
 		process.argv = ['node', 'bin.js', 'next-wp', '--silent'];
-		await main(parseArgs(), decoupledKitGenerators);
+		await main(
+			parseArgs(),
+			decoupledKitGenerators,
+			sharedDecoupledKitGenerators,
+		);
 
 		expect(logSpy).toHaveBeenCalledTimes(0);
 	});
@@ -242,7 +288,11 @@ To see this list at any time, use the --help command.`);
 	it('should console.log any nextSteps', async ({ logSpy }) => {
 		process.argv = ['node', 'bin.js', 'tailwindcss-addon'];
 
-		await main(parseArgs(), decoupledKitGenerators);
+		await main(
+			parseArgs(),
+			decoupledKitGenerators,
+			sharedDecoupledKitGenerators,
+		);
 
 		expect(logSpy).toHaveBeenNthCalledWith(
 			3,
@@ -257,11 +307,16 @@ To see this list at any time, use the --help command.`);
 		logSpy,
 	}) => {
 		process.argv = ['node', 'bin.js'];
+		promptSpy.mockImplementationOnce(() => ({ cmsType: 'wp' }));
 		promptSpy.mockImplementationOnce(() => ({
 			generators: ['next-', 'next-wp'],
 		}));
 
-		await main(parseArgs(), decoupledKitGenerators);
+		await main(
+			parseArgs(),
+			decoupledKitGenerators,
+			sharedDecoupledKitGenerators,
+		);
 
 		expect(logSpy).toHaveBeenNthCalledWith(
 			2,

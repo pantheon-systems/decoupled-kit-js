@@ -23,7 +23,7 @@ export const parseArgs = (
 		// these options tell minimist which --args are
 		// booleans and which are strings.
 		boolean: ['force', 'silent', 'help', 'version', 'noTailwindcss'],
-		string: ['appName', 'outDir', 'cmsEndpoint'],
+		string: ['appName', 'outDir', 'cmsEndpoint', 'cmsType'],
 		alias: {
 			help: ['h', 'help'],
 			version: ['v', 'version'],
@@ -38,12 +38,14 @@ export const parseArgs = (
  * Initializes the CLI prompts based on parsed arguments
  * @param args - {@link ParsedArgs}
  * @param DecoupledKitGenerators - An array of decoupledKitGenerators. @see {@link decoupledKitGenerators}.
+ * @param SharedDecoupledKitGenerators - An array of decoupledKitGenerators that are CMS agnostic. @see {@link decoupledKitGenerators}.
  * @remarks positional args are assumed to be generator names. Multiple generators can be queued up this way. Any number of prompts may be skipped by passing in the prompt name via flag.
  * @returns Runs the actions for the generators given as positional params or if none are found, prompts user to select valid generator from list of DecoupledKitGenerators
  */
 export const main = async (
 	args: ParsedArgs,
 	DecoupledKitGenerators: DecoupledKitGenerator[],
+	SharedDecoupledKitGenerators: DecoupledKitGenerator[],
 ): Promise<void> => {
 	// display the help menu
 	if (args?.help || args?.h) {
@@ -69,6 +71,10 @@ export const main = async (
 	const generators: DecoupledKitGenerator[] = DecoupledKitGenerators.map(
 		(generator) => generator,
 	);
+	const sharedGeneratorNames: string[] = SharedDecoupledKitGenerators.map(
+		(generator) => generator,
+	).map(({ name }) => name);
+
 	const generatorNames = generators.map(({ name }) => name);
 	// take positional params from minimist args and
 	// check them against valid generators
@@ -85,11 +91,39 @@ export const main = async (
 	// If no generators are found in positional params
 	// ask which generators should be run
 	if (!foundGenerators || !foundGenerators.length) {
-		const whichGenerators: QuestionCollection<{ generators: string[] }> = {
+		let cmsType: string;
+		if (!args.cmsType) {
+			const cmsTypePrompt = {
+				name: 'cmsType',
+				message: 'Which CMS are you building for?',
+			};
+			const cmsTypeAnswer: { cmsType: string } = await inquirer.prompt(
+				cmsTypePrompt,
+			);
+			cmsType = cmsTypeAnswer.cmsType.toLowerCase();
+		} else {
+			cmsType = new String(args.cmsType).toLowerCase();
+		}
+
+		// Get CMS specific generators
+		let cmsCompatibleGenerators: string[] = generatorNames.filter((name) =>
+			name.includes(cmsType.includes('wordpress') ? 'wp' : cmsType),
+		);
+
+		// Add CMS agnostic generators as valid options
+		cmsCompatibleGenerators = cmsCompatibleGenerators.concat(
+			sharedGeneratorNames.filter(
+				(name) => cmsCompatibleGenerators.indexOf(name) < 0,
+			),
+		);
+
+		const whichGenerators: QuestionCollection<{
+			generators: string[];
+		}> = {
 			name: 'generators',
 			type: 'checkbox',
 			message: 'Which generator(s) would you like to run?',
-			choices: () => generatorNames,
+			choices: () => cmsCompatibleGenerators,
 		};
 		const answers = await inquirer.prompt(whichGenerators);
 		if (Array.isArray(answers?.generators)) {
