@@ -1,0 +1,38 @@
+import React from 'react'
+import { Link } from 'gatsby'
+import Footer from './footer'
+{{#unless tailwindcss}}
+import * as styles from './layout.module.css'
+{{/unless}}
+
+const Layout = ({ isHomePage, children }) => {
+	return (
+		{{#if tailwindcss}}
+		<div className="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col" data-is-root-path={isHomePage}>
+			<nav className="my-0 pt-10 px-5 text-xl">
+				<ul className="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto">
+		{{else}}
+		<div className={styles.layout} data-is-root-path={isHomePage}>
+			<nav>
+				<ul className={styles.navLinks}>
+		{{/if}}
+					{[
+						['🏠 Home', '/'],
+						['📰 Posts', '/posts'],
+						['📑 Pages', '/pages'],
+						['⚛️ Examples', '/examples'],
+					].map(([title, href], i) => (
+						<li{{#if tailwindcss}} className={`${href === '/' ? 'mr-auto' : 'mx-4'}`}{{/if}} key={`key-${i}`}>
+							<Link{{#if tailwindcss}} className="font-sans hover:underline"{{/if}} to={href}>{title}</Link>
+						</li>
+					))}
+				</ul>
+			</nav>
+			<main{{#if tailwindcss}} className="mb-auto"{{/if}}>{children}</main>
+
+			<Footer />
+		</div>
+	)
+}
+
+export default Layout

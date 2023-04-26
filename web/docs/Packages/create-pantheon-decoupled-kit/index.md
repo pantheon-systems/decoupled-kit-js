@@ -1,7 +1,7 @@
 ---
-id: 'index'
-title: 'decoupled-kit-js'
-sidebar_label: 'Readme'
+id: "index"
+title: "decoupled-kit-js"
+sidebar_label: "Readme"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -62,10 +62,6 @@ generators may be run at a given time. See `watch.example.ts` for an example of
 ## API Reference
 
 <!-- TODO: link to API reference -->
-
-See
-[decoupledkit.pantheon.io](https://decoupledkit.pantheon.io/docs/Packages/create-pantheon-decoupled-kit/)
-for the API reference documentation.
 
 ## Contributing
 

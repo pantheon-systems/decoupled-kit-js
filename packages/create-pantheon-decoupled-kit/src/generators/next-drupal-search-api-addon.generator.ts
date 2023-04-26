@@ -1,6 +1,7 @@
 import { addWithDiff, runLint } from '../actions';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 import chalk from 'chalk';
+import { outDirPrompt } from '../utils/sharedPrompts';
 
 interface NextDrupalSearchApiAddonAnswers {
 	search: true;
@@ -13,13 +14,7 @@ export const nextDrupalSearchApiAddon: DecoupledKitGenerator<
 	name: 'next-drupal-search-api-addon',
 	description:
 		'Example implementation of the Drupal Search API for the next-drupal starter',
-	prompts: [
-		{
-			name: 'outDir',
-			message: 'Where should the output go?',
-			default: `${process.cwd()}/next-drupal-search-api-addon`,
-		},
-	],
+	prompts: [outDirPrompt(`${process.cwd()}/next-drupal-search-api-addon`)],
 	addon: true,
 	data: {
 		search: true,

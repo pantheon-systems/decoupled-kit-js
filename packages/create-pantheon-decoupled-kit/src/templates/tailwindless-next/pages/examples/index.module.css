@@ -36,6 +36,5 @@
 @media (min-width: 1024px) {
 	.content {
 		max-width: var(--md); 
-		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
 }

@@ -3,5 +3,4 @@
 . "$(dirname "$0")/_/husky.sh"
 
 pnpm --workspace-concurrency=1 --filter './packages/**' lint-staged
-pnpm --filter './starters/**' lint
-pnpm test
+pnpm --filter './packages/**' test

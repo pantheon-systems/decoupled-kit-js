@@ -1,13 +1,20 @@
 import chalk from 'chalk';
-import { diffLines, diffJson } from 'diff';
+import { diffJson, diffLines } from 'diff';
 import fs from 'fs-extra';
+import type { QuestionCollection } from 'inquirer';
 import inquirer from 'inquirer';
 import path from 'path';
-import { dedupeTemplates } from '../utils/dedupeTemplates';
-import { isString } from '../types';
-import type { QuestionCollection } from 'inquirer';
-import type { Action, MergedPaths } from '../types';
 import { rootDir } from '..';
+import type { Action, MergedPaths } from '../types';
+import { isString } from '../types';
+import { dedupeTemplates } from '../utils/dedupeTemplates';
+
+interface FilesToWriteData {
+	target: string;
+	templatePath: string;
+	sourceContents: string;
+}
+
 /**
  * 1. dedupe the templates, favoring addons in case 2 paths collide
  * 2. check if the destination path exists or create it. (path to destination + template name minus .hbs) example: ./test/myTest.js
@@ -27,6 +34,7 @@ export const addWithDiff: Action = async ({
 	if (!handlebars || !('template' in handlebars))
 		throw new Error('handlebars is missing from the call to this action.');
 
+	const filesToWrite: FilesToWriteData[] = [];
 	const outcomes: { [key: string]: string[] } = {
 		written: [],
 		skipped: [],
@@ -38,6 +46,19 @@ export const addWithDiff: Action = async ({
 	const templatesToRender: MergedPaths = await dedupeTemplates(templateData);
 	const destinationDir = path.resolve(process.cwd(), data.outDir);
 
+	/**
+	 * @remarks Copy files that pass the filesToCopy regex.
+	 * These files are binary formats so we don't want or need to readFileSync on them
+	 */
+	const writeOrCopy = ({
+		target,
+		templatePath,
+		sourceContents,
+	}: FilesToWriteData) => {
+		filesToCopyRegex.test(target)
+			? fs.copyFileSync(templatePath, target)
+			: fs.writeFileSync(target, sourceContents, 'utf-8');
+	};
 	for await (const template of Object.keys(templatesToRender)) {
 		// the template directory
 		const templatesBaseDir = templatesToRender[template].base;
@@ -84,14 +105,14 @@ export const addWithDiff: Action = async ({
 		// ensure the file exists or readFileSync errors.
 		// We could swallow the error with a try/catch, but this feels a bit cleaner to me.
 		!fileDidExist && fs.createFileSync(target);
+		// get the contents of file at 'target' if there is any
+		const targetContents = fs.readFileSync(target, 'utf-8');
+		// if the target and source are the same, skip diffing or writing the file
+		if (targetContents === sourceContents) {
+			outcomes.sameContent.push(target);
+			continue;
+		}
 		if (!data.force) {
-			// get the contents of file at 'target' if there is any
-			const targetContents = fs.readFileSync(target, 'utf-8');
-			// if the target and source are the same, skip diffing or writing the file
-			if (targetContents === sourceContents) {
-				outcomes.sameContent.push(target);
-				continue;
-			}
 			// do the diff
 			const changes = target.endsWith('.json')
 				? diffJson(targetContents, sourceContents)
@@ -128,9 +149,7 @@ export const addWithDiff: Action = async ({
 			// and we copy it over without a diff
 			switch (answer.writeFile) {
 				case 'yes':
-					filesToCopyRegex.test(target)
-						? fs.writeFileSync(target, sourceContents)
-						: fs.copyFileSync(templatePath, target);
+					filesToWrite.push({ target, sourceContents, templatePath });
 					outcomes.written.push(target);
 					break;
 				case 'skip':
@@ -141,10 +160,8 @@ export const addWithDiff: Action = async ({
 					break;
 				case 'yes to all':
 					data.force = true;
+					filesToWrite.push({ target, sourceContents, templatePath });
 					outcomes.written.push(target);
-					filesToCopyRegex.test(target)
-						? fs.copyFileSync(templatePath, target)
-						: fs.writeFileSync(target, sourceContents, 'utf-8');
 					break;
 				case 'abort':
 					data.silent || console.log(chalk.red('Aborting!'));
@@ -155,12 +172,12 @@ export const addWithDiff: Action = async ({
 			}
 		} else {
 			// if force is true, write the file no questions asked.
-			filesToCopyRegex.test(target)
-				? fs.copyFileSync(templatePath, target)
-				: fs.writeFileSync(target, sourceContents, 'utf-8');
+			filesToWrite.push({ target, sourceContents, templatePath });
 			outcomes.written.push(target);
 		}
 	}
+
+	filesToWrite.forEach(writeOrCopy);
 
 	data.silent ||
 		console.log(`

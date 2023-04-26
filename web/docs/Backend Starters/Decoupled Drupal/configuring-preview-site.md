@@ -2,7 +2,7 @@
 id: 'configuring-preview-site'
 title: 'Configuring a Preview Site'
 slug: '/backend-starters/decoupled-drupal/configuring-preview-site'
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 ## Before You Begin

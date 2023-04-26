@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/drupal-kit",
-	"version": "4.3.0",
+	"version": "4.4.0-canary.1",
 	"description": "Pantheon Decoupled Kit's Drupal Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -57,6 +57,6 @@
 	},
 	"dependencies": {
 		"@gdwc/drupal-state": "^4.2.0",
-		"@pantheon-systems/cms-kit": "^0.2.2"
+		"@pantheon-systems/cms-kit": "^0.2.3-canary.0"
 	}
 }

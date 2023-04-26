@@ -1,0 +1,39 @@
+.container {
+	margin: var(--x-auto);
+	max-width: var(--sm);
+	height: inherit;
+}
+
+.content {
+	height: inherit;
+}
+
+.content > h1 {
+	font-size: var(--9);
+	font-weight: 800;
+	justify-self: flex-start;
+	margin: var(--10) 0;
+}
+
+.item {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: var(--10);
+	padding: var(--3);
+	font-size: var(--5);
+	line-height: var(--8);
+}
+
+.item > h2 {
+	font-size: var(--7);
+	font-weight: 700;
+	justify-content: start;
+	margin-bottom: var(--2);
+}
+
+/* md breakpoint*/
+@media (max-width: 768px) {
+	.container {
+		margin: 0;
+	}
+}

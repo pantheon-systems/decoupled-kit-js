@@ -1,16 +1,14 @@
 ---
-id: "DefaultAnswers"
-title: "Interface: DefaultAnswers"
-sidebar_label: "DefaultAnswers"
+id: 'DefaultAnswers'
+title: 'Interface: DefaultAnswers'
+sidebar_label: 'DefaultAnswers'
 sidebar_position: 0
 custom_edit_url: null
 ---
 
-Input from command line arguments and/or prompts
-
 ## Hierarchy
 
-- [`Input`](../modules.md#input)
+- `Answers`
 
   ↳ **`DefaultAnswers`**
 
@@ -22,4 +20,4 @@ Input from command line arguments and/or prompts
 
 #### Defined in
 
-[src/types.ts:70](https://github.com/pantheon-systems/decoupled-kit-js/blob/89c6e8b8e/packages/create-pantheon-decoupled-kit/src/types.ts#L70)
+[src/types.ts:83](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/create-pantheon-decoupled-kit/src/types.ts#L83)

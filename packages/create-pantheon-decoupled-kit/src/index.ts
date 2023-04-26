@@ -23,7 +23,7 @@ export const parseArgs = (
 		// these options tell minimist which --args are
 		// booleans and which are strings.
 		boolean: ['force', 'silent', 'help', 'version', 'noTailwindcss'],
-		string: ['appName', 'outDir'],
+		string: ['appName', 'outDir', 'cmsEndpoint'],
 		alias: {
 			help: ['h', 'help'],
 			version: ['v', 'version'],

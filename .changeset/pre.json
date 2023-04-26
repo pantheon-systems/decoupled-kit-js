@@ -1,0 +1,29 @@
+{
+  "mode": "exit",
+  "tag": "canary",
+  "initialVersions": {
+    "@pantheon-systems/eslint-config": "0.0.0",
+    "@pantheon-systems/cms-kit": "0.2.2",
+    "@pantheon-systems/eslint-config-decoupled-kit": "0.1.0",
+    "@pantheon-systems/decoupled-kit-configs": "0.1.0",
+    "create-pantheon-decoupled-kit": "0.6.0",
+    "@pantheon-systems/drupal-kit": "4.3.0",
+    "@pantheon-systems/nextjs-kit": "1.7.2",
+    "@pantheon-systems/wordpress-kit": "2.14.2",
+    "web": "1.0.0"
+  },
+  "changesets": [
+    "clever-ties-smile",
+    "dirty-rats-share",
+    "fast-foxes-play",
+    "fluffy-suits-knock",
+    "light-socks-protect",
+    "olive-wolves-call",
+    "perfect-dolphins-relax",
+    "polite-suns-look",
+    "popular-dingos-search",
+    "shaggy-rockets-thank",
+    "thirty-phones-glow",
+    "weak-dragons-agree"
+  ]
+}
