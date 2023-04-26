@@ -69,7 +69,6 @@ export const main = async (
 	const generators: DecoupledKitGenerator[] = DecoupledKitGenerators.map(
 		(generator) => generator,
 	);
-
 	const generatorNames = generators.map(({ name }) => name);
 	// take positional params from minimist args and
 	// check them against valid generators
@@ -86,12 +85,14 @@ export const main = async (
 	// If no generators are found in positional params
 	// ask which generators should be run
 	if (!foundGenerators || !foundGenerators.length) {
-		let cmsType: string | null = null;
-		if (args.cmsType) {
-			cmsType = new String(args.cmsType).toLowerCase();
-		}
+		// check if a cmsType was provided
+		const cmsType: string | null = args.cmsType
+			? new String(args.cmsType).toLowerCase()
+			: null;
 
 		let suggestedGeneratorNames: string[] | null;
+
+		// filter generators if a cmsType was provided
 		if (cmsType) {
 			const suggestedGenerators = generators.filter((generator) => {
 				return generator.cmsType === cmsType || generator.cmsType === 'any';

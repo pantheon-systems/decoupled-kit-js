@@ -210,7 +210,6 @@ To see this list at any time, use the --help command.`);
 			version: false,
 			wordpressKitVersion: versions['wordpress-kit'],
 			wp: true,
-			cmsType: 'wp',
 		};
 
 		await main(parseArgs(), decoupledKitGenerators);

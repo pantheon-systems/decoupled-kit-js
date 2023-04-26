@@ -54,7 +54,7 @@ export interface DecoupledKitGenerator<
 	 */
 	nextSteps?: string[];
 	/**
-	 * Identifies the compatible CMS(s) with a specific generator.
+	 * Identifies a generators compatible CMS(s).
 	 */
 	cmsType: string;
 }

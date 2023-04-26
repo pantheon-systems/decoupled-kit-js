@@ -22,5 +22,5 @@ Options:
         --outDir               The directory where the output is generated.
         --appName              The name of the new app.
         --cmsEndpoint          The URL of your CMS backend.
-        --cmsType              The name of your CMS provider. As of now, wp | drupal are valid.`;
+        --cmsType              The name of your CMS provider. As of now, wp | drupal are supported.`;
 };

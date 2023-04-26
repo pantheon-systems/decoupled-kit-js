@@ -22,14 +22,12 @@ interface GatsbyWPData {
 	eslintConfigVersion: string;
 	wp: true;
 	gatsby: true;
-	cmsType: string;
 }
 const pnpm = whichPmRuns()?.name === 'pnpm' ? true : false;
 
 const outDirDefault = ({ appName }: GatsbyWPAnswers) =>
 	`${process.cwd()}/${appName.replaceAll(' ', '-').toLowerCase()}`;
 
-const cmsType = 'wp';
 export const gatsbyWp: DecoupledKitGenerator<GatsbyWPAnswers, GatsbyWPData> = {
 	name: 'gatsby-wp',
 	description: 'Gatsby + WordPress starter kit',
@@ -46,9 +44,8 @@ export const gatsbyWp: DecoupledKitGenerator<GatsbyWPAnswers, GatsbyWPData> = {
 		eslintConfigVersion: versions['eslint'],
 		wp: true,
 		gatsby: true,
-		cmsType,
 	},
 	templates: ['gatsby-wp', 'tailwindless-gatsby', 'tailwind-shared'],
 	actions: [addWithDiff, runInstall, runLint],
-	cmsType,
+	cmsType: 'wp',
 };
