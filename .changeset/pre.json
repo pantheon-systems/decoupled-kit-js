@@ -1,5 +1,5 @@
 {
-  "mode": "pre",
+  "mode": "exit",
   "tag": "canary",
   "initialVersions": {
     "@pantheon-systems/eslint-config": "0.0.0",
@@ -13,10 +13,13 @@
     "web": "1.0.0"
   },
   "changesets": [
+    "clever-ties-smile",
     "dirty-rats-share",
     "fast-foxes-play",
     "fluffy-suits-knock",
+    "light-socks-protect",
     "olive-wolves-call",
+    "perfect-dolphins-relax",
     "polite-suns-look",
     "popular-dingos-search",
     "shaggy-rockets-thank",
