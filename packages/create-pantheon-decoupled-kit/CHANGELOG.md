@@ -1,5 +1,34 @@
 # create-pantheon-decoupled-kit
 
+## 0.7.0
+
+### Minor Changes
+
+- fbb80853: [next-drupal-search-api-addon] Search page returns an article gird
+  based off search results.
+- 5ef6dfe5: [gatsby-wp] Added tailwindless option for the gatsby-wp generator.
+
+  [cli] Some refinements made to the `addWithDiff` action which should no longer
+  leave behind files in case abort is chosen. `runLint` will now use the `--fix`
+  option.
+
+- 27642e12: [next-wp][next-drupal][gatsby-wp] These generators now accept a
+  `--cmsEndpoint` argument which sets the appropriate variable in
+  .env.development.local for local development. These generators will prompt for
+  the endpoint if it is not set when calling the generator.
+
+### Patch Changes
+
+- a4f18173: - [next-wp-acf-addon] Adjustments to comply with a generated WP
+  backend with ACF enabled for new front end sites projects
+  - [gatsby-wp-acf-addon] Adjustments to comply with a generated WP backend with
+    ACF enabled for new front end sites projects
+- 98321554: Bump `@pantheon-systems/drupal-kit` and `@pantheon-systems/cms-kit`
+- d7e36603: [next-wp][gatsby-wp] Bump `@pantheon-systems/wordpress-kit` version
+- bf2215e7: [next-drupal-search-api-addon] Updated `<SearchInput />` component
+  styling.
+- 24906587: [next-drupal][next-drupal-umami-addon] Remove extraneous css file
+
 ## 0.7.0-canary.5
 
 ### Patch Changes
