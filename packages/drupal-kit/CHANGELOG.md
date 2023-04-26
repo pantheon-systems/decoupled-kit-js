@@ -1,5 +1,17 @@
 # @pantheon-systems/drupal-kit
 
+## 4.4.0-canary.1
+
+### Minor Changes
+
+- 98321554: Overload getObject methods to accept a generic that will be used as
+  the return type
+
+### Patch Changes
+
+- Updated dependencies [98321554]
+  - @pantheon-systems/cms-kit@0.2.3-canary.0
+
 ## 4.3.1-canary.0
 
 ### Patch Changes
