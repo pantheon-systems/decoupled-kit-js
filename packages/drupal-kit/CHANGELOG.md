@@ -1,5 +1,19 @@
 # @pantheon-systems/drupal-kit
 
+## 4.4.0
+
+### Minor Changes
+
+- 98321554: Overload getObject methods to accept a generic that will be used as
+  the return type
+
+### Patch Changes
+
+- 79df700d: Update `getDrupalSearchResults()` function to escape more characters
+  in search queries.
+- Updated dependencies [98321554]
+  - @pantheon-systems/cms-kit@0.2.3
+
 ## 4.4.0-canary.1
 
 ### Minor Changes
