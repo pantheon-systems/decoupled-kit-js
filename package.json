@@ -88,7 +88,8 @@
 			"@pantheon-systems/cms-kit": "workspace:*",
 			"@pantheon-systems/workspace-configs": "workspace:*",
 			"@pantheon-systems/eslint-config": "workspace:*",
-			"trim@<0.0.3": ">=0.0.3"
+			"trim@<0.0.3": ">=0.0.3",
+			"yaml@>=2.0.0-5 <2.2.2": ">=2.2.2"
 		},
 		"auditConfig": {
 			"ignoreCves": [
