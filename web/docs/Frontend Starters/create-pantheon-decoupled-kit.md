@@ -108,7 +108,7 @@ npm init pantheon-decoupled-kit -- next-drupal next-drupal-umami-addon \
   # prevent the package manager from running
   # `install` after the project is created
   --noInstall
-  # CMS from which data is sourced
+  # CMS you are developing for. This flag is used to filter suggested generators by compatibility. As of now, `wp` or `drupal` are valid arguments
   --cmsType drupal
 ```
 

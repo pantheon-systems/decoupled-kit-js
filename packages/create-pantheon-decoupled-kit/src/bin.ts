@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 import { parseArgs, main } from './index';
-import {
-	decoupledKitGenerators,
-	sharedDecoupledKitGenerators,
-} from './generators';
+import { decoupledKitGenerators } from './generators';
 
-await main(parseArgs(), decoupledKitGenerators, sharedDecoupledKitGenerators);
+await main(parseArgs(), decoupledKitGenerators);

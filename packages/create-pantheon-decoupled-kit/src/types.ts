@@ -53,6 +53,10 @@ export interface DecoupledKitGenerator<
 	 * Any message(s) to be rendered after actions are successfully completed.
 	 */
 	nextSteps?: string[];
+	/**
+	 * Identifies the compatible CMS(s) with a specific generator.
+	 */
+	cmsType: string;
 }
 
 /**

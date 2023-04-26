@@ -40,4 +40,5 @@ export const nextDrupal: DecoupledKitGenerator<
 	},
 	templates: ['next-drupal', 'tailwind-shared', 'tailwindless-next'],
 	actions: [addWithDiff, runInstall, runLint],
+	cmsType: 'drupal',
 };

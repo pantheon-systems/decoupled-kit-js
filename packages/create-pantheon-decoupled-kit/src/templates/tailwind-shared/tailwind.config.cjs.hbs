@@ -1,4 +1,6 @@
-{{#if wp}}
+{{isWP = ifWp cmsType}}
+
+{{#if isWp }}
 const { tailwindcssPlugin } = require('@pantheon-systems/wordpress-kit');
 
 

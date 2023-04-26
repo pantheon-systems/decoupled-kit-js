@@ -32,4 +32,5 @@ export const nextDrupalUmamiAddon: DecoupledKitGenerator<
 	addon: true,
 	templates: ['next-drupal-umami-addon'],
 	actions: [addWithDiff, runLint],
+	cmsType: 'drupal',
 };

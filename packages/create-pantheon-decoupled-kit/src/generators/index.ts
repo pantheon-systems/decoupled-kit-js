@@ -17,4 +17,3 @@ export const decoupledKitGenerators = [
 	tailwindcssAddon,
 	nextDrupalSearchApiAddon,
 ];
-export const sharedDecoupledKitGenerators = [tailwindcssAddon];
