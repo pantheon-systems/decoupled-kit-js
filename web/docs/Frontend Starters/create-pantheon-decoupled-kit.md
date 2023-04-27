@@ -108,8 +108,6 @@ npm init pantheon-decoupled-kit -- next-drupal next-drupal-umami-addon \
   # prevent the package manager from running
   # `install` after the project is created
   --noInstall
-  # CMS you are developing for. This flag is used to filter suggested generators by CMS compatibility. As of now, `wp` or `drupal` are valid arguments
-  --cmsType drupal
 ```
 
 The `outDir` argument is required for each generator. `appName` is only required

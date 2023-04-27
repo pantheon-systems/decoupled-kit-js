@@ -56,7 +56,7 @@ export interface DecoupledKitGenerator<
 	/**
 	 * Identifies a generators compatible CMS(s).
 	 */
-	cmsType: string;
+	cmsType: 'wp' | 'drupal' | 'any';
 }
 
 /**

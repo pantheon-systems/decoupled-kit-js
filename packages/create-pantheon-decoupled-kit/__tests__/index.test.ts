@@ -271,4 +271,53 @@ To see this list at any time, use the --help command.`);
 			`\n\t${chalk.cyan(['next-wp'].join('\n\t'))}`,
 		);
 	});
+	it('should show only generators matching a cmsType', async ({
+		promptSpy,
+	}) => {
+		process.argv = ['node', 'bin.js', '--cmsType', 'wp'];
+
+		promptSpy.mockImplementationOnce(() => ({
+			generators: ['next-wp'],
+		}));
+
+		await main(parseArgs(), decoupledKitGenerators);
+		expect(promptSpy).toHaveBeenCalledWith({
+			choices: [
+				'next-wp',
+				'gatsby-wp',
+				'next-wp-acf-addon',
+				'gatsby-wp-acf-addon',
+				'tailwindcss-addon',
+			],
+			message: 'Which generator(s) would you like to run?',
+			name: 'generators',
+			type: 'checkbox',
+		});
+	});
+	it('should show all generators if provided an invalid cmsType', async ({
+		promptSpy,
+	}) => {
+		process.argv = ['node', 'bin.js', '--cmsType', 'durpal'];
+
+		promptSpy.mockImplementationOnce(() => ({
+			generators: ['next-wp'],
+		}));
+
+		await main(parseArgs(), decoupledKitGenerators);
+		expect(promptSpy).toHaveBeenCalledWith({
+			choices: [
+				'next-wp',
+				'gatsby-wp',
+				'next-drupal',
+				'next-drupal-umami-addon',
+				'next-wp-acf-addon',
+				'gatsby-wp-acf-addon',
+				'tailwindcss-addon',
+				'next-drupal-search-api-addon',
+			],
+			message: 'Which generator(s) would you like to run?',
+			name: 'generators',
+			type: 'checkbox',
+		});
+	});
 });

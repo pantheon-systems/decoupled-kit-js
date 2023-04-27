@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import inquirer, { QuestionCollection } from 'inquirer';
 import minimist, { Opts as MinimistOptions, ParsedArgs } from 'minimist';
-import type { DecoupledKitGenerator, TemplateData } from './types';
+import { DecoupledKitGenerator, TemplateData, isString } from './types';
 import { actionRunner, getHandlebarsInstance, helpMenu } from './utils/index';
 
 import pkg from '../package.json' assert { type: 'json' };
@@ -85,29 +85,34 @@ export const main = async (
 	// If no generators are found in positional params
 	// ask which generators should be run
 	if (!foundGenerators || !foundGenerators.length) {
-		// check if a cmsType was provided
-		const cmsType: string | null = args.cmsType
-			? new String(args.cmsType).toLowerCase()
+		let generatorsOfCmsType: string[] = [];
+		const cmsType = isString(args.cmsType)
+			? args.cmsType.toLocaleLowerCase()
 			: null;
 
-		let suggestedGeneratorNames: string[] | null;
-
-		// filter generators if a cmsType was provided
 		if (cmsType) {
-			const suggestedGenerators = generators.filter((generator) => {
-				return generator.cmsType === cmsType || generator.cmsType === 'any';
-			});
-			suggestedGeneratorNames = suggestedGenerators.map(({ name }) => name);
+			if (['wp', 'drupal', 'any'].indexOf(cmsType) == -1) {
+				console.log(
+					chalk.yellow(`Invalid cmsType: ${cmsType}. Showing all generators.`),
+				);
+			} else {
+				generatorsOfCmsType = generators
+					.filter((generator) => {
+						return generator.cmsType === cmsType || generator.cmsType === 'any'
+							? true
+							: false;
+					})
+					.map(({ name }) => name);
+			}
 		}
-
 		const whichGenerators: QuestionCollection<{
 			generators: string[];
 		}> = {
 			name: 'generators',
 			type: 'checkbox',
 			message: 'Which generator(s) would you like to run?',
-			choices: () =>
-				suggestedGeneratorNames ? suggestedGeneratorNames : generatorNames,
+			choices:
+				generatorsOfCmsType.length > 0 ? generatorsOfCmsType : generatorNames,
 		};
 		const answers = await inquirer.prompt(whichGenerators);
 		if (Array.isArray(answers?.generators)) {
