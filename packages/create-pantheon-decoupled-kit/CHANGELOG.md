@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.7.0-canary.5
+
+### Patch Changes
+
+- 98321554: Bump `@pantheon-systems/drupal-kit` and `@pantheon-systems/cms-kit`
+
 ## 0.7.0-canary.4
 
 ### Patch Changes
