@@ -137,6 +137,10 @@ To see this list at any time, use the --help command.`);
 		if (!generator) {
 			continue;
 		}
+
+		if (!args.cmsType) {
+			args.cmsType = generator.cmsType;
+		}
 		const answers = await inquirer.prompt(generator.prompts, args);
 		// Add any prompts to args object so we don't ask the same
 		// prompt twice
