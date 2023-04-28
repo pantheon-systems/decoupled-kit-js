@@ -37,4 +37,5 @@ export const nextWp: DecoupledKitGenerator<NextWPAnswers, NextWpData> = {
 	},
 	templates: ['next-wp', 'tailwind-shared', 'tailwindless-next'],
 	actions: [addWithDiff, runInstall, runLint],
+	cmsType: 'wp',
 };

@@ -28,4 +28,5 @@ export const nextDrupalSearchApiAddon: DecoupledKitGenerator<
 			)} command to update the snapshot files with the add-on components`,
 		)}`,
 	],
+	cmsType: 'drupal',
 };

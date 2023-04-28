@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import inquirer, { QuestionCollection } from 'inquirer';
 import minimist, { Opts as MinimistOptions, ParsedArgs } from 'minimist';
-import type { DecoupledKitGenerator, TemplateData } from './types';
+import { DecoupledKitGenerator, TemplateData, isString } from './types';
 import { actionRunner, getHandlebarsInstance, helpMenu } from './utils/index';
 
 import pkg from '../package.json' assert { type: 'json' };
@@ -23,7 +23,7 @@ export const parseArgs = (
 		// these options tell minimist which --args are
 		// booleans and which are strings.
 		boolean: ['force', 'silent', 'help', 'version', 'noTailwindcss'],
-		string: ['appName', 'outDir', 'cmsEndpoint'],
+		string: ['appName', 'outDir', 'cmsEndpoint', 'cmsType'],
 		alias: {
 			help: ['h', 'help'],
 			version: ['v', 'version'],
@@ -85,11 +85,30 @@ export const main = async (
 	// If no generators are found in positional params
 	// ask which generators should be run
 	if (!foundGenerators || !foundGenerators.length) {
-		const whichGenerators: QuestionCollection<{ generators: string[] }> = {
+		let generatorsOfCmsType: string[] = [];
+		const cmsType = isString(args.cmsType) ? args.cmsType.toLowerCase() : null;
+
+		if (cmsType) {
+			if (['wp', 'drupal', 'any'].indexOf(cmsType) == -1) {
+				console.log(
+					chalk.yellow(`Invalid cmsType: ${cmsType}. Showing all generators.`),
+				);
+			} else {
+				generatorsOfCmsType = generators
+					.filter((generator) => {
+						return generator.cmsType === cmsType || generator.cmsType === 'any';
+					})
+					.map(({ name }) => name);
+			}
+		}
+		const whichGenerators: QuestionCollection<{
+			generators: string[];
+		}> = {
 			name: 'generators',
 			type: 'checkbox',
 			message: 'Which generator(s) would you like to run?',
-			choices: () => generatorNames,
+			choices:
+				generatorsOfCmsType.length > 0 ? generatorsOfCmsType : generatorNames,
 		};
 		const answers = await inquirer.prompt(whichGenerators);
 		if (Array.isArray(answers?.generators)) {
@@ -118,6 +137,10 @@ To see this list at any time, use the --help command.`);
 		const generator = DecoupledKitGenerators.find(({ name }) => name === g);
 		if (!generator) {
 			continue;
+		}
+
+		if (!args.cmsType) {
+			args.cmsType = generator.cmsType;
 		}
 		const answers = await inquirer.prompt(generator.prompts, args);
 		// Add any prompts to args object so we don't ask the same
