@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.8.0-canary.1
+
+### Patch Changes
+
+- 5e8b7212: [gatsby-wp], [next-wp]: Remove tailwind as a dependency for
+  tailwindless wp starters.
+
 ## 0.8.0-canary.0
 
 ### Minor Changes
