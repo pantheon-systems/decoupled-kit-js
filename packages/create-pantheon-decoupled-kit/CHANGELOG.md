@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.8.0-canary.0
+
+### Minor Changes
+
+- ad7b2b33: [cli] The cli now accepts a `--cmsType` argument which filters the
+  suggested generators to only those that are compatible with the provided type.
+
 ## 0.7.0
 
 ### Minor Changes

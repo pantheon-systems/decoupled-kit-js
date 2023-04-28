@@ -12,5 +12,7 @@
     "@pantheon-systems/wordpress-kit": "2.14.3",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "large-tips-crash"
+  ]
 }
