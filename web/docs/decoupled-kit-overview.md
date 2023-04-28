@@ -13,18 +13,15 @@ At a slightly lower level, Decoupled Kit is a series of CMS starter projects, fr
 The `decoupled-kit-js` monorepo is home to all of the open source starter kits and [npm packages](https://www.npmjs.com/search?q=@pantheon-systems/*-kit) which provide a starting point for developers who want an out-of-the-box experience for headless WordPress and Drupal powered by modern JavaScript/TypeScript tools.
 
 ### Starter Kits
-All starter kits are mirrored to standalone GitHub repos available for consumption via your favorite tool that uses GitHub repositories as templates, like `gatsby new` or `create-next-app`. You will find the standalone repo for each starter at `https://github.com/pantheon-systems/{name of starter}`.
+To create a new starter kit locally, use the `create-pantheon-decoupled-kit` npm package. Follow the prompts to build your desired output. See [create-pantheon-decoupled-kit](./Frontend%20Starters/create-pantheon-decoupled-kit.md) for detailed information
 
-For example, the following command uses the `next-wordpress-starter` as a template with `create-next-app`:
+The starters described below represent the output of the base generators, `gatsby-wp`, `next-wp`, and `next-drupal + next-drupal-umami-addon`. These starters include TailwindCSS for styling.
 
- ```bash
-npx create-next-app -e https://github.com/pantheon-systems/next-wordpress-starter
-```
 Read on for a brief overview of each starter. Check each starter's `README.md` for more detailed information.
 
 #### Gatsby WordPress Starter
 
-The [`gastby-wordpress-starter`](https://github.com/pantheon-systems/gatsby-wordpress-starter) is a [Gatsby](https://v4.gatsbyjs.com/docs/) app which consumes data from a WordPress backend with the [WPGraphQL](https://wordpress.org/plugins/wp-graphql/) and [WPGatsby](https://wordpress.org/plugins/wp-gatsby/) plugins, and uses Gatsby as a Static Site Generator. 
+The [`gatsby-wordpress-starter`](https://github.com/pantheon-systems/gatsby-wordpress-starter) is a [Gatsby](https://v4.gatsbyjs.com/docs/) app which consumes data from a WordPress backend with the [WPGraphQL](https://wordpress.org/plugins/wp-graphql/) and [WPGatsby](https://wordpress.org/plugins/wp-gatsby/) plugins, and uses Gatsby as a Static Site Generator.
 
 This starter implements:
 - [`wordpress-kit`](#wordpress-kit)
