@@ -86,9 +86,7 @@ export const main = async (
 	// ask which generators should be run
 	if (!foundGenerators || !foundGenerators.length) {
 		let generatorsOfCmsType: string[] = [];
-		const cmsType = isString(args.cmsType)
-			? args.cmsType.toLocaleLowerCase()
-			: null;
+		const cmsType = isString(args.cmsType) ? args.cmsType.toLowerCase() : null;
 
 		if (cmsType) {
 			if (['wp', 'drupal', 'any'].indexOf(cmsType) == -1) {
@@ -98,9 +96,7 @@ export const main = async (
 			} else {
 				generatorsOfCmsType = generators
 					.filter((generator) => {
-						return generator.cmsType === cmsType || generator.cmsType === 'any'
-							? true
-							: false;
+						return generator.cmsType === cmsType || generator.cmsType === 'any';
 					})
 					.map(({ name }) => name);
 			}

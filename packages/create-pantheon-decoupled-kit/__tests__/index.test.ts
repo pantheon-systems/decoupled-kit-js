@@ -274,6 +274,12 @@ To see this list at any time, use the --help command.`);
 	it('should show only generators matching a cmsType', async ({
 		promptSpy,
 	}) => {
+		const generatorsOfCmsType = decoupledKitGenerators
+			.filter((generator) => {
+				return generator.cmsType === 'wp' || generator.cmsType === 'any';
+			})
+			.map(({ name }) => name);
+
 		process.argv = ['node', 'bin.js', '--cmsType', 'wp'];
 
 		promptSpy.mockImplementationOnce(() => ({
@@ -282,13 +288,7 @@ To see this list at any time, use the --help command.`);
 
 		await main(parseArgs(), decoupledKitGenerators);
 		expect(promptSpy).toHaveBeenCalledWith({
-			choices: [
-				'next-wp',
-				'gatsby-wp',
-				'next-wp-acf-addon',
-				'gatsby-wp-acf-addon',
-				'tailwindcss-addon',
-			],
+			choices: generatorsOfCmsType,
 			message: 'Which generator(s) would you like to run?',
 			name: 'generators',
 			type: 'checkbox',
@@ -297,6 +297,8 @@ To see this list at any time, use the --help command.`);
 	it('should show all generators if provided an invalid cmsType', async ({
 		promptSpy,
 	}) => {
+		const generatorNames = decoupledKitGenerators.map(({ name }) => name);
+
 		process.argv = ['node', 'bin.js', '--cmsType', 'durpal'];
 
 		promptSpy.mockImplementationOnce(() => ({
@@ -305,16 +307,7 @@ To see this list at any time, use the --help command.`);
 
 		await main(parseArgs(), decoupledKitGenerators);
 		expect(promptSpy).toHaveBeenCalledWith({
-			choices: [
-				'next-wp',
-				'gatsby-wp',
-				'next-drupal',
-				'next-drupal-umami-addon',
-				'next-wp-acf-addon',
-				'gatsby-wp-acf-addon',
-				'tailwindcss-addon',
-				'next-drupal-search-api-addon',
-			],
+			choices: generatorNames,
 			message: 'Which generator(s) would you like to run?',
 			name: 'generators',
 			type: 'checkbox',
