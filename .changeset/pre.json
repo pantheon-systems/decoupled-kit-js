@@ -13,6 +13,8 @@
     "web": "1.0.0"
   },
   "changesets": [
-    "large-tips-crash"
+    "cyan-colts-lay",
+    "large-tips-crash",
+    "smooth-bees-pretend"
   ]
 }

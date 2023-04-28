@@ -1,5 +1,11 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.14.4-canary.0
+
+### Patch Changes
+
+- b9491fd0: Add tailwindcss as a project dependency.
+
 ## 2.14.3
 
 ### Patch Changes
