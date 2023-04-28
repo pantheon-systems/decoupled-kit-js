@@ -49,11 +49,13 @@ prompts. Generators will be run in the order they are given. Any number of
 generators may be run at a given time. See `watch.example.ts` for an example of
 `watchOptions`.
 
-<!-- TODO: Link to the doc on decoupledkit.pantheon.io for the create-app usage -->
+See
+[create-pantheon-decoupled-kit](../../Frontend%20Starters/create-pantheon-decoupled-kit.md)
+for more information.
 
 ## API Reference
 
-<!-- TODO: link to API reference -->
+[Visit our docs site](https://decoupledkit.pantheon.io/docs/packages/create-pantheon-decoupled-kit)
 
 ## Contributing
 
