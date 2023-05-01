@@ -39,7 +39,9 @@ export default function Layout({ children, footerMenu, preview = false }) {
 			{{#if search}}
 			<div className={styles.searchHeaderContainer}>
 			<Header navItems={navItems} />
-				<SearchInput />
+				<div>
+					<SearchInput />
+				</div>
 			</div>
 			{{else}}
 			<Header navItems={navItems} />

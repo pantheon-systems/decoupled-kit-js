@@ -28,3 +28,18 @@
 .footerCopy > a:hover {
 	color: var(--light-blue);
 }
+
+{{#if search}}
+.searchHeaderContainer {
+    display: flex; 
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+.searchHeaderContainer > div {
+    padding-top: 2.25rem; 
+}
+{{/if}}
