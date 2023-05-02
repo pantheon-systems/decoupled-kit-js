@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.8.0-canary.2
+
+### Patch Changes
+
+- af0f203c: [next-drupal] Added CSS module based styling to the
+  `next-drupal-search-api-addon`
+
 ## 0.8.0-canary.1
 
 ### Patch Changes
