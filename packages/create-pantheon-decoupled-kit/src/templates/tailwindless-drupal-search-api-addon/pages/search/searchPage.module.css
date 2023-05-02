@@ -22,9 +22,9 @@
 }
 
 .container > ul h2 {
-	font-weight: 700;
+    font-weight: 700;
     font-size: var(--7);
-	margin-bottom: var(--8);
+    margin-bottom: var(--8);
     justify-items: start; 
 }
 
