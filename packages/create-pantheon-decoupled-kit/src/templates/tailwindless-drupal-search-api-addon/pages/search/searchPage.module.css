@@ -1,27 +1,24 @@
 .altResult {
     display: flex; 
-    margin-left: auto;
-    margin-right: auto; 
-    margin-top: 3rem; 
-    font-size: 1.25rem;
-    line-height: 1.75rem; 
+    margin: var(--x-auto);
+    margin-top: var(--12); 
+    font-size: var(--5);
+    line-height: var(--7); 
     text-align: center; 
     flex-direction: column; 
 }
 
 .section {
     display: flex; 
-    margin-left: auto;
-    margin-right: auto; 
-    margin-top: 2.5rem; 
+    margin: var(--x-auto);
+    margin-top: var(--10); 
     flex-direction: column; 
     max-height: 100vh; 
 }
 
 .container {
-    margin-left: auto;
-    margin-right: auto; 
-    max-width: 32rem; 
+    margin: var(--x-auto);
+    max-width: var(--xs); 
 }
 
 .container > ul h2 {
@@ -40,6 +37,6 @@
 		min-width: var(--md);
 	}
     .container {
-        max-width: 1024px; 
+        max-width: var(--lg); 
     }
 }
