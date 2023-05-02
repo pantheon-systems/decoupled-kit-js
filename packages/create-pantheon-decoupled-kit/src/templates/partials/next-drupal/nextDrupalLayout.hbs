@@ -26,9 +26,7 @@ export default function Layout({ children, footerMenu, preview = false }) {
 			{{#if search}}
 			<div className="flex flex-row flex-wrap justify-center mx-auto">
 				<Header navItems={navItems} />
-				<div className="pt-9">
-					<SearchInput />
-				</div>
+				<SearchInput />
 			</div>
 			{{else}}
 			<Header navItems={navItems} />
