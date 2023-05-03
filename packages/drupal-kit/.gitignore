@@ -3,15 +3,13 @@ node_modules
 dist
 dist-ssr
 *.local
+coverage
 
 # CircleCI local run
 process.yml
 
 # TypeDocs
 docs
-
-# Jest
-junit.xml
 
 # VS Code
 .vscode/settings.json

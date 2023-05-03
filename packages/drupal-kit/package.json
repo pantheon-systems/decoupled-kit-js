@@ -33,8 +33,8 @@
 		"watch": "pnpm clean && tsc && vite build --watch",
 		"serve": "vite preview",
 		"typedoc": "typedoc",
-		"test": "jest",
-		"test:ci": "JEST_JUNIT_OUTPUT_DIR='./test-results/jest' jest --ci --reporters=default --reporters=jest-junit",
+		"test": "vitest run --coverage",
+		"test:watch": "vitest",
 		"eslint": "eslint --ext .js,.ts src --ignore-path .gitignore",
 		"eslint:fix": "eslint --ext .js,.ts src --ignore-path .gitignore --fix",
 		"prettier": "prettier \"**/*.{js,ts,md}\" --check --ignore-path ../../.prettierignore",
@@ -48,12 +48,14 @@
 		"@vitest/coverage-c8": "^0.29.8",
 		"isomorphic-fetch": "^3.0.0",
 		"jsona": "^1.11.0",
+		"msw": "^1.2.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"rimraf": "^4.4.1",
 		"typescript": "^4.9.4",
 		"vite": "^4.2.1",
-		"vite-plugin-dts": "^2.1.0"
+		"vite-plugin-dts": "^2.1.0",
+		"vitest": "^0.29.8"
 	},
 	"dependencies": {
 		"@gdwc/drupal-state": "^4.2.0",

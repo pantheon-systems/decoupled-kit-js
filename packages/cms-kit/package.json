@@ -16,10 +16,13 @@
 	"types": "dist/index.d.ts",
 	"main": "./dist/cms-kit.umd.js",
 	"module": "./dist/cms-kit.es.js",
-	"exports": {
-		".": {
-			"import": "./dist/cms-kit.es.js",
-			"require": "./dist/cms-kit.umd.js"
+	".": {
+		"require": {
+			"default": "./cms-kit.cjs"
+		},
+		"import": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
 		}
 	},
 	"prettier": "@pantheon-systems/workspace-configs/prettier",

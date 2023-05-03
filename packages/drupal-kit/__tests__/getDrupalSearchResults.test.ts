@@ -1,22 +1,24 @@
-jest.mock('isomorphic-fetch', () => require('fetch-mock-jest').sandbox());
-const fetchMock = require('isomorphic-fetch');
-fetchMock.config.overwriteRoutes = true;
-global.Headers = fetchMock.Headers;
+import { vi, describe, beforeEach } from 'vitest';
+vi.mock('isomorphic-fetch');
+import { default as fetchMock } from 'isomorphic-fetch';
 
-import getDrupalSearchResults from '../lib/getDrupalSearchResults';
+// fetchMock.config.overwriteRoutes = true;
+// global.Headers = fetchMock.Headers;
+
+import { getDrupalSearchResults } from '../src';
 import exampleSearchResultsDefaultIndex from './data/exampleSearchResultsDefaultIndex.json';
 import exampleSearchResultsAltIndex from './data/exampleSearchResultsAltIndex.json';
 
 const mockResponse: any = () => {
 	const res = {
-		setHeader: jest.fn(),
+		setHeader: vi.fn(),
 	};
 	return res;
 };
 
 describe('getDrupalSearchResults()', () => {
 	beforeEach(() => {
-		fetchMock.mockClear();
+		vi.restoreAllMocks();
 	});
 	const mockContextDefault = {
 		locale: 'en',
