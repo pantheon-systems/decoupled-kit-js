@@ -1,1 +1,1 @@
-export { setSurrogateKeyHeader } from './lib/setSurrogateKeyHeader.js';
+export { setSurrogateKeyHeader } from './lib/setSurrogateKeyHeader';

@@ -10,6 +10,4 @@ export default defineConfig({
 	outDir: './dist',
 	format: ['esm', 'cjs'],
 	minify: true,
-	external: ['node:http'],
-	platform: 'node',
 });

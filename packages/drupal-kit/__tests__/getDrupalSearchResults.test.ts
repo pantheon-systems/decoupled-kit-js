@@ -1,5 +1,5 @@
 import { vi } from 'vitest';
-import { getDrupalSearchResults } from '../src';
+import { getDrupalSearchResults } from '../src/lib/getDrupalSearchResults';
 import exampleSearchResultsAltIndex from './data/exampleSearchResultsAltIndex.json';
 import exampleSearchResultsDefaultIndex from './data/exampleSearchResultsDefaultIndex.json';
 

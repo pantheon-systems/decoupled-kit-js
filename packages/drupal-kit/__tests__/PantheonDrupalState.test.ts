@@ -1,6 +1,6 @@
 import { ServerResponse } from 'node:http';
 import { vi } from 'vitest';
-import { DrupalState } from '../src';
+import { DrupalState } from '../src/lib/PantheonDrupalState.js';
 import indexResponse from './data/apiIndex.json';
 import recipesCollectionObject1 from './data/recipesCollectionObject1.json';
 import recipesCollectionObject1WithParams from './data/recipesCollectionObject1WithParams.json';

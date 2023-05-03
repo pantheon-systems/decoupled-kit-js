@@ -1,5 +1,5 @@
-import defaultFetch from './defaultFetch';
-import { ServerResponse } from 'http';
+import { defaultFetch } from './defaultFetch.js';
+import { ServerResponse } from 'node:http';
 import type { TJsonApiBody } from 'jsona/lib/JsonaTypes';
 
 interface GetDrupalSearchResultsParams {
@@ -20,7 +20,7 @@ interface GetDrupalSearchResultsParams {
  * @see {@link https://www.drupal.org/docs/contributed-modules/search-api} for more information about the Drupal Search API.
  * @returns An array of search results matching the query.
  */
-const getDrupalSearchResults = async ({
+export const getDrupalSearchResults = async ({
 	apiUrl,
 	locale,
 	query,
@@ -40,5 +40,3 @@ const getDrupalSearchResults = async ({
 	}
 	return (await res.json()) as TJsonApiBody;
 };
-
-export default getDrupalSearchResults;
