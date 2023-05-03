@@ -27,7 +27,7 @@ describe('drupalState', () => {
 
 	it('Fetch resource if it does not exist in state', async () => {
 		const store: DrupalState = new DrupalState({
-			apiBase: 'https://dev-ds-demo.pantheonsite.io',
+			apiBase: 'https://default.pantheonsite.io',
 			apiPrefix: 'jsonapi',
 			debug: true,
 		});
@@ -44,7 +44,7 @@ describe('drupalState', () => {
 
 	it('Fetch API index and object if they do not exist in local storage', async () => {
 		const store: DrupalState = new DrupalState({
-			apiBase: 'https://dev-ds-demo.pantheonsite.io',
+			apiBase: 'https://default.pantheonsite.io',
 			apiPrefix: 'jsonapi',
 			debug: true,
 		});
@@ -57,7 +57,7 @@ describe('drupalState', () => {
 
 	it('Fetch resource with authentication', async () => {
 		const store: DrupalState = new DrupalState({
-			apiBase: 'https://dev-ds-demo.pantheonsite.io',
+			apiBase: 'https://default.pantheonsite.io',
 			apiPrefix: 'jsonapi',
 			clientId: '9adc9c69-fa3b-4c21-9cef-fbd345d1a269',
 			clientSecret: 'mysecret',
@@ -79,7 +79,7 @@ describe('drupalState', () => {
 
 	it('Fetch resource object if they do not exist in local storage', async () => {
 		const store: DrupalState = new DrupalState({
-			apiBase: 'https://dev-ds-demo.pantheonsite.io',
+			apiBase: 'https://default.pantheonsite.io',
 			apiPrefix: 'jsonapi',
 			debug: true,
 		});
@@ -98,7 +98,7 @@ describe('drupalState', () => {
 		'Custom onError handler should be called if an error is thrown',
 		async () => {
 			const store: DrupalState = new DrupalState({
-				apiBase: 'https://dev-ds-demo.pantheonsite.io',
+				apiBase: 'https://default.pantheonsite.io',
 				apiPrefix: 'jsonapi',
 				debug: true,
 				onError: mockCustomOnError,
@@ -117,7 +117,7 @@ describe('drupalState', () => {
 
 	it('Confirm that cache control header is set if response object is provided', async () => {
 		const store: DrupalState = new DrupalState({
-			apiBase: 'https://dev-ds-demo.pantheonsite.io',
+			apiBase: 'https://default.pantheonsite.io',
 			apiPrefix: 'jsonapi',
 			debug: true,
 		});
@@ -138,7 +138,7 @@ describe('drupalState', () => {
 
 	it('Fetch object with params', async () => {
 		const store: DrupalState = new DrupalState({
-			apiBase: 'https://dev-ds-demo.pantheonsite.io',
+			apiBase: 'https://default.pantheonsite.io',
 			apiPrefix: 'jsonapi',
 			debug: true,
 		});

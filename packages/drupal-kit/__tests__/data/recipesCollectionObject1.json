@@ -54,7 +54,7 @@
 		},
 		"links": {
 			"self": {
-				"href": "https://dev-ds-demo.pantheonsite.io/en/jsonapi/node/recipe/33386d32-a87c-44b9-b66b-3dd0bfc38dca?resourceVersion=id%3A2"
+				"href": "https://default.pantheonsite.io/en/jsonapi/node/recipe/33386d32-a87c-44b9-b66b-3dd0bfc38dca?resourceVersion=id%3A2"
 			}
 		},
 		"node_type": {
@@ -174,7 +174,7 @@
 		},
 		"links": {
 			"self": {
-				"href": "https://dev-ds-demo.pantheonsite.io/en/jsonapi/node/recipe/50c3e7c9-64a9-453c-9289-278132beb4a2?resourceVersion=id%3A4"
+				"href": "https://default.pantheonsite.io/en/jsonapi/node/recipe/50c3e7c9-64a9-453c-9289-278132beb4a2?resourceVersion=id%3A4"
 			}
 		},
 		"node_type": {
@@ -306,7 +306,7 @@
 		},
 		"links": {
 			"self": {
-				"href": "https://dev-ds-demo.pantheonsite.io/en/jsonapi/node/recipe/616d69df-e9a1-41e9-ac4f-4d5d649f40d4?resourceVersion=id%3A6"
+				"href": "https://default.pantheonsite.io/en/jsonapi/node/recipe/616d69df-e9a1-41e9-ac4f-4d5d649f40d4?resourceVersion=id%3A6"
 			}
 		},
 		"node_type": {
@@ -426,7 +426,7 @@
 		},
 		"links": {
 			"self": {
-				"href": "https://dev-ds-demo.pantheonsite.io/en/jsonapi/node/recipe/21a95a3d-4a83-494f-b7b4-dcfb0f164a74?resourceVersion=id%3A8"
+				"href": "https://default.pantheonsite.io/en/jsonapi/node/recipe/21a95a3d-4a83-494f-b7b4-dcfb0f164a74?resourceVersion=id%3A8"
 			}
 		},
 		"node_type": {
@@ -541,7 +541,7 @@
 		},
 		"links": {
 			"self": {
-				"href": "https://dev-ds-demo.pantheonsite.io/en/jsonapi/node/recipe/510cec29-bc95-4a64-a519-0ca6084529db?resourceVersion=id%3A10"
+				"href": "https://default.pantheonsite.io/en/jsonapi/node/recipe/510cec29-bc95-4a64-a519-0ca6084529db?resourceVersion=id%3A10"
 			}
 		},
 		"node_type": {
@@ -654,7 +654,7 @@
 		},
 		"links": {
 			"self": {
-				"href": "https://dev-ds-demo.pantheonsite.io/en/jsonapi/node/recipe/5d7fbd91-e65c-4328-b51d-53e2b1e852c5?resourceVersion=id%3A12"
+				"href": "https://default.pantheonsite.io/en/jsonapi/node/recipe/5d7fbd91-e65c-4328-b51d-53e2b1e852c5?resourceVersion=id%3A12"
 			}
 		},
 		"node_type": {
@@ -755,7 +755,7 @@
 		},
 		"links": {
 			"self": {
-				"href": "https://dev-ds-demo.pantheonsite.io/en/jsonapi/node/recipe/59895e1a-f6ca-4a88-9cac-488b85e48ef8?resourceVersion=id%3A14"
+				"href": "https://default.pantheonsite.io/en/jsonapi/node/recipe/59895e1a-f6ca-4a88-9cac-488b85e48ef8?resourceVersion=id%3A14"
 			}
 		},
 		"node_type": {
@@ -853,7 +853,7 @@
 		},
 		"links": {
 			"self": {
-				"href": "https://dev-ds-demo.pantheonsite.io/en/jsonapi/node/recipe/0df225bf-9a95-4d5f-ae05-2e6309784808?resourceVersion=id%3A16"
+				"href": "https://default.pantheonsite.io/en/jsonapi/node/recipe/0df225bf-9a95-4d5f-ae05-2e6309784808?resourceVersion=id%3A16"
 			}
 		},
 		"node_type": {
@@ -972,7 +972,7 @@
 		},
 		"links": {
 			"self": {
-				"href": "https://dev-ds-demo.pantheonsite.io/en/jsonapi/node/recipe/da1359f4-2e60-462c-8909-47c3bce11fdf?resourceVersion=id%3A18"
+				"href": "https://default.pantheonsite.io/en/jsonapi/node/recipe/da1359f4-2e60-462c-8909-47c3bce11fdf?resourceVersion=id%3A18"
 			}
 		},
 		"node_type": {

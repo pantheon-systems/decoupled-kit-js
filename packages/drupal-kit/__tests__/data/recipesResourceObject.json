@@ -53,7 +53,7 @@
 	},
 	"links": {
 		"self": {
-			"href": "https://dev-ds-demo.pantheonsite.io/en/jsonapi/node/recipe/50c3e7c9-64a9-453c-9289-278132beb4a2?resourceVersion=id%3A4"
+			"href": "https://default.pantheonsite.io/en/jsonapi/node/recipe/50c3e7c9-64a9-453c-9289-278132beb4a2?resourceVersion=id%3A4"
 		}
 	},
 	"node_type": {
