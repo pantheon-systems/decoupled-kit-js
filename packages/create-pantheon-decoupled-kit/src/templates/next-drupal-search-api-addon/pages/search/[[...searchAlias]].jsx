@@ -46,7 +46,7 @@ export default function SearchPage({
 											passHref
 											href={`${
 												multiLanguage ? `/${path?.langcode || locale}` : ''
-											}${path.alias}`}
+											}${path.searchAlias}`}
 											className={styles.link}
 										>
 											Read more →
@@ -74,7 +74,7 @@ export async function getServerSideProps(context) {
 		locales,
 		locale,
 		res,
-		query: { alias },
+		query: { searchAlias },
 	} = context;
 
 	// if there is more than one language in context.locales,
@@ -99,7 +99,7 @@ export async function getServerSideProps(context) {
 			anon: true,
 		});
 
-		const searchTerm = alias ? [alias] : null;
+		const searchTerm = searchAlias ? [searchAlias] : null;
 		const searchResults = (
 			await getDrupalSearchResults({
 				apiUrl: process.env.BACKEND_URL,

@@ -5,7 +5,7 @@ import styles from './searchInput.module.css';
 const SearchInput = () => {
 	const router = useRouter();
 	const [searchQuery, setSearchQuery] = useState(
-		router.query?.alias ? router.query?.alias[0] : '',
+		router.query?.searchAlias ? router.query?.searchAlias[0] : '',
 	);
 
 	const onSearch = (event) => {
