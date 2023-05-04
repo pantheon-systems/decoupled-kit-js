@@ -21,7 +21,11 @@ import { BaseUtilities, ColorUtilities, FontsUtilities } from './utilities';
 /**
  * Tailwindcss plugin that maps WordPress block editor styles to tailwindcss classes.
  */
-export default plugin(function ({ addUtilities, theme, addComponents }) {
+export const tailwindcssPlugin = plugin(function ({
+	addUtilities,
+	theme,
+	addComponents,
+}) {
 	const color = new ColorUtilities(theme);
 	const font = new FontsUtilities(theme);
 	const base = new BaseUtilities();
@@ -83,4 +87,5 @@ export default plugin(function ({ addUtilities, theme, addComponents }) {
 		separator,
 		columns,
 	]);
-}, mergeToConfig);
+},
+mergeToConfig);

@@ -14,15 +14,15 @@ To install this package to use in your application:
 Modules can be imported or required from the `@pantheon-systems/wordpress-kit`
 package.
 
-### GraphqlClientFactory
+### GraphQLClientFactory
 
 1. Import the module in your JavaScript application:
    ```js
-   import { GraphqlClientFactory } from '@pantheon-systems/wordpress-kit';
+   import { GraphQLClientFactory } from '@pantheon-systems/wordpress-kit';
    ```
 2. Create an instance of the client and specify your API:
    ```js
-   const client = new GraphqlClientFactory(
+   const client = new GraphQLClientFactory(
    	'my.wordpressbackend.com/wp/graphql',
    ).create();
    ```

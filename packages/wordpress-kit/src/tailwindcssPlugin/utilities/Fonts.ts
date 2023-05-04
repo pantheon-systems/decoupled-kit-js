@@ -1,4 +1,4 @@
-import { ThemeType } from '../../../types';
+import { ThemeType } from '../types';
 import { fontSizeList } from '../Constants';
 
 /**

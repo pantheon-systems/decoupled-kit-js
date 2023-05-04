@@ -1,9 +1,9 @@
-import { GraphqlClientFactory } from '@pantheon-systems/wordpress-kit';
+import { GraphQLClientFactory } from '@pantheon-systems/wordpress-kit';
 
-export const client = new GraphqlClientFactory(process.env.backendUrl, {
+export const client = new GraphQLClientFactory(process.env.backendUrl, {
 	method: 'GET',
 }).create();
-export const paginationClient = new GraphqlClientFactory(
+export const paginationClient = new GraphQLClientFactory(
 	'https://dev-decoupled-wp-mock-data.pantheonsite.io/wp/graphql', 
 	{
 		method: 'GET',

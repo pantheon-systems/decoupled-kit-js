@@ -1,6 +1,6 @@
-const { gql, GraphqlClientFactory } = require('@pantheon-systems/wordpress-kit')
+const { gql, GraphQLClientFactory } = require('@pantheon-systems/wordpress-kit')
 
-const paginationClient = new GraphqlClientFactory(
+const paginationClient = new GraphQLClientFactory(
 	'https://dev-decoupled-wp-mock-data.pantheonsite.io/wp/graphql',
 ).create()
 

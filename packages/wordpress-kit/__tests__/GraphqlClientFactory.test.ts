@@ -1,6 +1,6 @@
-import GraphqlClientFactory from '../src/lib/graphqlClient/GraphqlClientFactory';
-import { GraphQLClient, gql } from 'graphql-request';
+import { gql, GraphQLClient } from 'graphql-request';
 import { vi } from 'vitest';
+import { GraphQLClientFactory } from '../src/lib/GraphQLClientFactory';
 import basicPostsQuery from './data/basicPostsQuery.json';
 
 afterEach(() => {
@@ -8,12 +8,12 @@ afterEach(() => {
 });
 
 test('Create graphql-request Client instance from factory', () => {
-	const client = new GraphqlClientFactory('http://my-wp.test/graphql').create();
+	const client = new GraphQLClientFactory('http://my-wp.test/graphql').create();
 	expect(client).toBeInstanceOf(GraphQLClient);
 });
 
 test('request and response middleware add appropriate headers', async () => {
-	const client = new GraphqlClientFactory('http://my-wp.test/graphql').create();
+	const client = new GraphQLClientFactory('http://my-wp.test/graphql').create();
 	const res = await client.rawRequest(gql`
 		query BasicPostsQuery {
 			posts {
@@ -29,8 +29,8 @@ test('request and response middleware add appropriate headers', async () => {
 	expect(res.headers.has('surrogate-key-raw')).toBeTruthy();
 });
 
-test('client is configured for GET requests', async () => {
-	const getClient = new GraphqlClientFactory('http://my-wp.test/graphql', {
+test('client is configured for GET requests', () => {
+	const getClient = new GraphQLClientFactory('http://my-wp.test/graphql', {
 		method: 'GET',
 	});
 

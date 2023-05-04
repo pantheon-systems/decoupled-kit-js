@@ -395,9 +395,6 @@ importers:
       '@pantheon-systems/workspace-configs':
         specifier: workspace:*
         version: link:../../configs
-      '@rollup/plugin-typescript':
-        specifier: ^11.0.0
-        version: 11.0.0(tslib@2.5.0)(typescript@4.9.4)
       '@vitest/coverage-c8':
         specifier: ^0.29.8
         version: 0.29.8(vitest@0.29.8)
