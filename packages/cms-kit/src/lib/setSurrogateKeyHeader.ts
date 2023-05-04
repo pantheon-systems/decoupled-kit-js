@@ -1,4 +1,4 @@
-import { ServerResponse } from 'http';
+import { ServerResponse } from 'node:http';
 /**
  * Type guard to determine if a response is a ServerResponse
  * @param res
@@ -14,7 +14,7 @@ const hasHeaders = (res: any): res is ServerResponse =>
  * @param res The active http.ServerResponse object.
  * @returns The current known unique set of surrogate keys.
  */
-const setSurrogateKeyHeader = (
+export const setSurrogateKeyHeader = (
 	keys: string | null,
 	res: ServerResponse,
 ): string | void => {
@@ -37,5 +37,3 @@ const setSurrogateKeyHeader = (
 		}
 	}
 };
-
-export default setSurrogateKeyHeader;
