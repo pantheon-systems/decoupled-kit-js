@@ -1,7 +1,13 @@
 {{#if devDeps}}	
 "autoprefixer": "^10.4.12",
-"postcss": "^8.4.16",
+"postcss": "^8.4.21",
 "tailwindcss": "^3.1.8",
+{{#if convertCssModules}}
+"postcss-cli": "^10.1.0",
+"postcss-custom-properties": "^13.1.5",
+"css-modules-to-tailwind": "^0.1.7",
+"@csstools/postcss-global-data": "^1.0.3",
+{{/if}}
 {{else}}
 "@tailwindcss/typography": "^0.5.7",
 {{/if}}

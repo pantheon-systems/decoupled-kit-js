@@ -8,9 +8,7 @@ import { getDrupalSearchResults } from '@pantheon-systems/drupal-kit';
 import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
 import Link from 'next/link';
-{{#unless tailwindcss}}
 import styles from './searchPage.module.css';
-{{/unless}}
 
 export default function SearchPage({
 	hrefLang,
@@ -30,42 +28,26 @@ export default function SearchPage({
 			/>
 			<PageHeader title="Search Results" />
 			{error ? (
-				{{#if tailwindcss}}
-				<div className="flex flex-col mx-auto text-xl prose text-center mt-12">
-				{{else}}
 				<div className={styles.altResult}>
-				{{/if}}
 					<span>An error occurred while fetching search results</span>
 				</div>
 			) : (
-				{{#if tailwindcss}}
-				<section className="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen">
-				{{else}}
 				<section className={styles.section}>
-				{{/if}}
-					{{#if tailwindcss}}
-					<div className="max-w-lg mx-auto lg:max-w-screen-lg">
-					{{else}}
 					<div className={styles.container}>
-					{{/if}}
 						{searchResults?.length > 0 ? (
 							<ul>
 								{searchResults?.map(({ title, body, path }) => (
 									<li className="prose justify-items-start mt-8" key={path?.pid}>
 										<h2>{title}</h2>
 										{body.summary ? (
-											<div dangerouslySetInnerHTML=\{{ __html: body?.summary }} />
+											<div dangerouslySetInnerHTML={{ __html: body?.summary }} />
 										) : null}
 										<Link
 											passHref
 											href={`${
 												multiLanguage ? `/${path?.langcode || locale}` : ''
 											}${path.alias}`}
-											{{#if tailwindcss}}
-											className="font-normal underline"
-											{{else}}
 											className={styles.link}
-											{{/if}}
 										>
 											Read more →
 										</Link>
@@ -73,11 +55,7 @@ export default function SearchPage({
 								))}
 							</ul>
 						) : (
-							{{#if tailwindcss}}
-							<div className="flex flex-col mx-auto text-xl prose text-center mt-12">
-							{{else}}
 							<div className={styles.altResult}>
-							{{/if}}
 								{expectedResults
 									? 'No Results Found'
 									: 'Enter a term to start searching'}

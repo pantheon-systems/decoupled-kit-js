@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+{{#if convertCssModules}}
 :root {
 	/* spacing */
 	--px: 1px;
@@ -64,3 +69,4 @@ body, html {
 	max-width: 100dvw;
 	overflow-x: hidden;
 }
+{{/if}}
