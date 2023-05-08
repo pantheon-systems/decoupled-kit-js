@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import chalk from 'chalk';
 import { execSync } from 'child_process';
 import { Action, isString } from '../types';
@@ -8,6 +7,7 @@ import fs from 'fs-extra';
 import klaw from 'klaw';
 import globalData from '@csstools/postcss-global-data';
 import customProperties from 'postcss-custom-properties';
+import { rootDir } from '..';
 
 export const getAllFiles = async (
 	templateDir: string,
@@ -26,7 +26,7 @@ export const getAllFiles = async (
 };
 
 export const convertCSSModules: Action = async ({ data }) => {
-	if (data?.noInstall || !data?.convertCSSModules || !data?.tailwindcss)
+	if (data?.noInstall || !data?.tailwindcss)
 		return 'skipping CSS module conversion';
 	if (!data.outDir || !isString(data?.outDir))
 		throw new Error('outDir is not valid');
@@ -47,7 +47,7 @@ export const convertCSSModules: Action = async ({ data }) => {
 				const { css: result } = await postcss([
 					autoprefixer,
 					globalData({
-						files: [`${data.outDir}/styles/globals.css`],
+						files: [`${rootDir}/templates/styles/variables.css`],
 					}),
 					customProperties({ preserve: false }),
 				]).process(contents, { from: `${data.outDir}${file}` });

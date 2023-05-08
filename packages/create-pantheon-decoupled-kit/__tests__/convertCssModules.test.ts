@@ -18,7 +18,6 @@ describe('convertCSSModules()', () => {
 				outDir: outDir,
 				silent: false,
 				tailwindcss: true,
-				convertCSSModules: true,
 			},
 		});
 
@@ -38,7 +37,6 @@ describe('convertCSSModules()', () => {
 			data: {
 				_: ['test-module-conversion'],
 				tailwindcss: true,
-				convertCSSModules: true,
 			},
 		});
 		expect(convertCSSModulesSpy).toThrow('fail: outDir required');

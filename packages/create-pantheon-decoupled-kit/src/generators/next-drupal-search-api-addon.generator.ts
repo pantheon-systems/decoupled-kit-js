@@ -10,7 +10,6 @@ import { outDirPrompt, tailwindcssPrompt } from '../utils/sharedPrompts';
 
 interface NextDrupalSearchApiAddonAnswers {
 	search: true;
-	convertCSSModules: true;
 }
 
 export const nextDrupalSearchApiAddon: DecoupledKitGenerator<
@@ -27,13 +26,8 @@ export const nextDrupalSearchApiAddon: DecoupledKitGenerator<
 	addon: true,
 	data: {
 		search: true,
-		convertCSSModules: true,
 	},
-	templates: [
-		'next-drupal-search-api-addon',
-		'tailwindless-drupal-search-api-addon',
-		'tailwind-shared',
-	],
+	templates: ['next-drupal-search-api-addon', 'tailwind-shared'],
 	actions: [addWithDiff, runInstall, convertCSSModules, runLint],
 	nextSteps: [
 		`${chalk.cyan(
