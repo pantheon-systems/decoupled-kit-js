@@ -2,15 +2,6 @@ module.exports = {
 	plugins: {
 		tailwindcss:{},
 		autoprefixer:{},
-		{{#if convertCssModules}}
-		'@csstools/postcss-global-data':
-		{ 
-		files: [
-			'./styles/globals.css',
-		],
-		},
-		'postcss-custom-properties':{ preserve: false },
-		{{/if}}
 	},
 }
 

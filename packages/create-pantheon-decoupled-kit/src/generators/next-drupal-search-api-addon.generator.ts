@@ -2,7 +2,7 @@ import {
 	addWithDiff,
 	runLint,
 	runInstall,
-	convertCssModules,
+	convertCSSModules,
 } from '../actions';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 import chalk from 'chalk';
@@ -10,7 +10,7 @@ import { outDirPrompt, tailwindcssPrompt } from '../utils/sharedPrompts';
 
 interface NextDrupalSearchApiAddonAnswers {
 	search: true;
-	convertCssModules: true;
+	convertCSSModules: true;
 }
 
 export const nextDrupalSearchApiAddon: DecoupledKitGenerator<
@@ -27,14 +27,14 @@ export const nextDrupalSearchApiAddon: DecoupledKitGenerator<
 	addon: true,
 	data: {
 		search: true,
-		convertCssModules: true,
+		convertCSSModules: true,
 	},
 	templates: [
 		'next-drupal-search-api-addon',
 		'tailwindless-drupal-search-api-addon',
 		'tailwind-shared',
 	],
-	actions: [addWithDiff, runInstall, convertCssModules, runLint],
+	actions: [addWithDiff, runInstall, convertCSSModules, runLint],
 	nextSteps: [
 		`${chalk.cyan(
 			`Run the ${chalk.white.bold(

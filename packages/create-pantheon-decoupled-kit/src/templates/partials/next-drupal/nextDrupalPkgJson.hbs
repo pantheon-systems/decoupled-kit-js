@@ -9,12 +9,6 @@
 		"lint": "next lint",
 		"test": "vitest run",
 		"update-snapshots": "vitest run --update --silent",
-        {{#if tailwindcss}}
-        {{#if convertCssModules}}
-        "translate-vars": "postcss components/*.css pages/**/*.css --replace",
-		"convert-to-tailwind": "css-modules-to-tailwind pages/**/*.jsx  components/*.jsx --force",
-        {{/if}}
-        {{/if}}
 		"coverage": "vitest run --coverage"
 	},
 	"dependencies": {

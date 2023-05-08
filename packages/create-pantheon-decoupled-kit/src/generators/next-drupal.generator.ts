@@ -2,7 +2,7 @@ import {
 	addWithDiff,
 	runInstall,
 	runLint,
-	convertCssModules,
+	convertCSSModules,
 } from '../actions';
 import versions from '../pkgVersions.json';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
@@ -44,6 +44,6 @@ export const nextDrupal: DecoupledKitGenerator<
 		drupal: true,
 	},
 	templates: ['next-drupal', 'tailwind-shared', 'tailwindless-next'],
-	actions: [addWithDiff, runInstall, convertCssModules, runLint],
+	actions: [addWithDiff, runInstall, convertCSSModules, runLint],
 	cmsType: 'drupal',
 };
