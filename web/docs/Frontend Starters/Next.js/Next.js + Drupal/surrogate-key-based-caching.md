@@ -25,8 +25,8 @@ sequenceDiagram
     participant B as Next.js + drupal-kit
     participant C as Drupal
     A->>B: Request a page that fetches from Drupal
-    B->>C: Add Pantheon-SKey header to request
-    C->>B: Surrogate-Key-Raw header included on response
+    B->>C: Add Fastly-Debug header to request
+    C->>B: Surrogate-Key header included on response
     B->>A: Set Surrogate-Key header on outgoing response to browser
 ```
 

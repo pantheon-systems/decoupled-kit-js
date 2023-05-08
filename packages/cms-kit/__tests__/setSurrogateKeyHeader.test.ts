@@ -6,10 +6,12 @@ const mockResponse = vi.fn().mockImplementation(({ surrogateKeyHeader }) => ({
 	setHeader: () => vi.fn(),
 }));
 
+// Technically the raw key values below would be hashed, but it should have no
+// impact on the tests.
 const collectionKeys =
-	'config:filter.format.basic_html config:user.role.anonymous file:19 file:21 file:23 file:25 file:27 file:29 file:31 file:33 http_response media:10 media:11 media:12 media:13 media:14 media:15 media:16 media:17 node:10 node:11 node:12 node:13 node:14 node:15 node:16 node:17 node_list';
+	'oY1rHsX/3p6DpQK1dAe+ kGUbbVGynpd8ltN0W0Ce config:filter.format.basic_html config:user.role.anonymous file:19 file:21 file:23 file:25 file:27 file:29 file:31 file:33 http_response media:10 media:11 media:12 media:13 media:14 media:15 media:16 media:17 node:10 node:11 node:12 node:13 node:14 node:15 node:16 node:17 node_list';
 const resourceKeys =
-	'config:filter.format.basic_html config:user.role.anonymous http_response node:10';
+	'oY1rHsX/3p6DpQK1dAe+ kGUbbVGynpd8ltN0W0Ce config:filter.format.basic_html config:user.role.anonymous http_response node:10';
 const uniqueKeys =
 	'config:filter.format.basic_html config:user.role.anonymous file:19 file:21 file:23 file:25 file:27 file:29 file:31 file:33 http_response media:10 media:11 media:12 media:13 media:14 media:15 media:16 media:17 node:10 node:11 node:12 node:13 node:14 node:15 node:16 node:17 node_list';
 
@@ -46,8 +48,6 @@ test('ensure keys are unique', () => {
 	});
 	const setHeaderSpy = vi.spyOn(res, 'setHeader');
 
-	expect(setSurrogateKeyHeader(resourceKeys, res)).toBe(
-		removeFirstTwo(uniqueKeys),
-	);
+	expect(setSurrogateKeyHeader(resourceKeys, res)).toBe(uniqueKeys);
 	expect(setHeaderSpy).toHaveBeenCalledTimes(1);
 });
