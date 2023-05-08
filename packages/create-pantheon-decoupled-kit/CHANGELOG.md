@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.8.0-canary.3
+
+### Patch Changes
+
+- ea3c25b2: [next-wp][gatsby-wp] Bump `wordpress-kit` version
+- b9a05706: [next-drupal] Bump `drupal-kit` version
+
 ## 0.8.0-canary.2
 
 ### Patch Changes
