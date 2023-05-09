@@ -1,4 +1,4 @@
-import { ServerResponse } from 'node:http';
+import { ServerResponse } from 'http';
 /**
  * Type guard to determine if a response is a ServerResponse
  * @param res
