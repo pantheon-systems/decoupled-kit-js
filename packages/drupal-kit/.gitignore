@@ -3,6 +3,7 @@ node_modules
 dist
 dist-ssr
 *.local
+coverage
 
 # CircleCI local run
 process.yml
