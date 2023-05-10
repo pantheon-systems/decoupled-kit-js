@@ -1,5 +1,18 @@
 # @pantheon-systems/wordpress-kit
 
+## 2.15.0
+
+### Minor Changes
+
+- ea3c25b2: The `GraphqlCLientFactory` now sets the `Fastly-Debug` header to
+  obtain hashed surrogate keys instead of raw surrogate keys
+
+### Patch Changes
+
+- b9491fd0: Add tailwindcss as a project dependency.
+- Updated dependencies [b9a05706]
+  - @pantheon-systems/cms-kit@0.3.0
+
 ## 2.15.0-canary.1
 
 ### Minor Changes
