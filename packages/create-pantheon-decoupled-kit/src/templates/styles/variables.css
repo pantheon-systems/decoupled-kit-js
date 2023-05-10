@@ -38,6 +38,7 @@
 
 	--x-auto: 0 auto;
 	--y-auto: auto 0;
+	--auto: auto;
 
 	/* screens */
 	--xs: 512px;

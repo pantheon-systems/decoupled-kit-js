@@ -4,55 +4,40 @@ import { Action, isString } from '../types';
 import autoprefixer from 'autoprefixer';
 import postcss from 'postcss';
 import fs from 'fs-extra';
-import klaw from 'klaw';
 import globalData from '@csstools/postcss-global-data';
 import customProperties from 'postcss-custom-properties';
 import { rootDir } from '..';
-
-export const getAllFiles = async (
-	templateDir: string,
-	outDir: string,
-): Promise<string[]> => {
-	const templates: string[] = [];
-
-	// loop through each dir
-	for await (const file of klaw(templateDir)) {
-		if (file.stats.isDirectory()) continue;
-		const templateName = file.path.split(outDir)[1];
-
-		templates.push(templateName);
-	}
-	return templates;
-};
+import { globSync } from 'glob';
+import path from 'path';
 
 export const convertCSSModules: Action = async ({ data }) => {
 	if (data?.noInstall || !data?.tailwindcss)
 		return 'skipping CSS module conversion';
 	if (!data.outDir || !isString(data?.outDir))
 		throw new Error('outDir is not valid');
-	data.silent || console.log(chalk.green('Converting Modules...'));
+	data.silent ||
+		console.log(
+			chalk.green('Converting CSS modules to tailwindcss classes...'),
+		);
 
 	try {
-		const allFiles: string[] = [];
-		const componentFiles = await getAllFiles(
-			`${data.outDir}/components`,
-			data.outDir,
-		);
-		const pageFiles = await getAllFiles(`${data.outDir}/pages`, data.outDir);
-		allFiles.push(...componentFiles);
-		allFiles.push(...pageFiles);
-		for (const file of allFiles) {
-			if (file.includes('.module.css')) {
-				const contents = fs.readFileSync(`${data.outDir}${file}`).toString();
-				const { css: result } = await postcss([
-					autoprefixer,
-					globalData({
-						files: [`${rootDir}/templates/styles/variables.css`],
-					}),
-					customProperties({ preserve: false }),
-				]).process(contents, { from: `${data.outDir}${file}` });
-				fs.writeFileSync(`${data.outDir}${file}`, result);
-			}
+		for await (const file of globSync(
+			path.join(data.outDir, '**/*.module.css'),
+			{
+				ignore: 'node_modules/**',
+			},
+		)) {
+			const contents = fs.readFileSync(file, 'utf-8');
+			const { css: result } = await postcss([
+				autoprefixer,
+				globalData({
+					files: [`${rootDir}/templates/styles/variables.css`],
+				}),
+				customProperties({ preserve: false }),
+			]).process(contents, {
+				from: file,
+			});
+			fs.writeFileSync(file, result);
 		}
 		execSync(
 			`npx css-modules-to-tailwind pages/**/*.jsx components/*.jsx --force`,
