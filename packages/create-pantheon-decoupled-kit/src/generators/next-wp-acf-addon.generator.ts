@@ -12,4 +12,5 @@ export const nextWpAcfAddon: DecoupledKitGenerator = {
 	],
 	templates: ['next-wp-acf-addon'],
 	actions: [addWithDiff, runLint],
+	cmsType: 'wp',
 };

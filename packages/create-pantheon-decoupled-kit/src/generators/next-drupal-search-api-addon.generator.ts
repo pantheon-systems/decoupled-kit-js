@@ -1,7 +1,7 @@
 import { addWithDiff, runLint } from '../actions';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 import chalk from 'chalk';
-import { outDirPrompt } from '../utils/sharedPrompts';
+import { outDirPrompt, tailwindcssPrompt } from '../utils/sharedPrompts';
 
 interface NextDrupalSearchApiAddonAnswers {
 	search: true;
@@ -14,12 +14,18 @@ export const nextDrupalSearchApiAddon: DecoupledKitGenerator<
 	name: 'next-drupal-search-api-addon',
 	description:
 		'Example implementation of the Drupal Search API for the next-drupal starter',
-	prompts: [outDirPrompt(`${process.cwd()}/next-drupal-search-api-addon`)],
+	prompts: [
+		outDirPrompt(`${process.cwd()}/next-drupal-search-api-addon`),
+		tailwindcssPrompt,
+	],
 	addon: true,
 	data: {
 		search: true,
 	},
-	templates: ['next-drupal-search-api-addon'],
+	templates: [
+		'next-drupal-search-api-addon',
+		'tailwindless-drupal-search-api-addon',
+	],
 	actions: [addWithDiff, runLint],
 	nextSteps: [
 		`${chalk.cyan(
@@ -28,4 +34,5 @@ export const nextDrupalSearchApiAddon: DecoupledKitGenerator<
 			)} command to update the snapshot files with the add-on components`,
 		)}`,
 	],
+	cmsType: 'drupal',
 };

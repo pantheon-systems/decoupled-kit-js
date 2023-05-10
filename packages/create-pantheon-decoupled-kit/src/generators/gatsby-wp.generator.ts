@@ -47,4 +47,5 @@ export const gatsbyWp: DecoupledKitGenerator<GatsbyWPAnswers, GatsbyWPData> = {
 	},
 	templates: ['gatsby-wp', 'tailwindless-gatsby', 'tailwind-shared'],
 	actions: [addWithDiff, runInstall, runLint],
+	cmsType: 'wp',
 };

@@ -53,6 +53,10 @@ export interface DecoupledKitGenerator<
 	 * Any message(s) to be rendered after actions are successfully completed.
 	 */
 	nextSteps?: string[];
+	/**
+	 * Identifies a generators compatible CMS(s).
+	 */
+	cmsType: 'wp' | 'drupal' | 'any';
 }
 
 /**

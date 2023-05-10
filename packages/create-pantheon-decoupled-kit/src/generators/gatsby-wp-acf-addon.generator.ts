@@ -9,4 +9,5 @@ export const gatsbyWpAcfAddon: DecoupledKitGenerator = {
 	prompts: [outDirPrompt(`${process.cwd()}/gatsby-wp-acf-addon`)],
 	templates: ['gatsby-wp-acf-addon'],
 	actions: [addWithDiff, runLint],
+	cmsType: 'wp',
 };

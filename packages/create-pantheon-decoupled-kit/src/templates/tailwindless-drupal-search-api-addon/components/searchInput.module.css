@@ -1,0 +1,50 @@
+.container {
+    display: flex; 
+    position: relative; 
+    align-items: stretch; 
+    width: 100%; 
+    padding-top: var(--9);
+}
+
+.searchInput {
+    padding-left: var(--3);
+    padding-right: var(--3); 
+    background-color: transparent; 
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform; 
+    transition-duration: 200ms; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+    font-size: var(--4);
+    line-height: var(--6); 
+    font-weight: 400; 
+    height: 100%; 
+    border-top-left-radius: var(--1);
+    border-bottom-left-radius: var(--1); 
+    border-width: var(--px); 
+    border-style: solid; 
+    outline: 0; 
+}
+
+.searchBtn {
+    display: flex; 
+    position: relative; 
+    padding-top:var(--2_5);
+    padding-bottom: var(--2_5); 
+    padding-left: var(--6);
+    padding-right: var(--6); 
+    color: #ffffff; 
+    background-color: rgb(37 99 235);
+    align-items: center; 
+    border-top-right-radius: var(--1);
+    border-bottom-right-radius: var(--1); 
+    box-shadow: var(--0) var(--1) var(--1_5) -(var(--px)) rgba(0, 0, 0, 0.1), var(--0) var(--0_5) var(--1) -(var(--px)) rgba(0, 0, 0, 0.06); 
+}
+
+.searchBtn:hover {
+    box-shadow: var(--0) var(--2_5) var(--4) -(var(--0_5)) rgba(0, 0, 0, 0.1), var(--0) var(--1) var(--1_5) -(var(--0_5)) rgba(0, 0, 0, 0.05); 
+    background-color: rgb(29 78 216);
+}
+
+.icon {
+    width: var(--5); 
+    height: var(--5); 
+}

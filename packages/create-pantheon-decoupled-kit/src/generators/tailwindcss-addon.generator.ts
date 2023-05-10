@@ -41,4 +41,5 @@ export const tailwindcssAddon: DecoupledKitGenerator<
 			'Follow the guide at this link to complete your tailwindcss configuration:',
 		)} ${chalk.bold.underline('https://tailwindcss.com/docs/installation')}`,
 	],
+	cmsType: 'any',
 };

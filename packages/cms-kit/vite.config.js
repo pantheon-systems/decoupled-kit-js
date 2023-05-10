@@ -25,6 +25,7 @@ export default defineConfig(() => {
 			},
 		},
 		test: {
+			outputTruncateLength: Infinity,
 			globals: true,
 			coverage: {
 				reportsDirectory: `./coverage`,

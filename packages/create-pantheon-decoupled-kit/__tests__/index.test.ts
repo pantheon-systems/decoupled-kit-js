@@ -127,6 +127,7 @@ describe('main()', () => {
 				h: false,
 				version: false,
 				v: false,
+				cmsType: 'drupal',
 			},
 			decoupledKitGenerators,
 		);
@@ -210,6 +211,7 @@ To see this list at any time, use the --help command.`);
 			version: false,
 			wordpressKitVersion: versions['wordpress-kit'],
 			wp: true,
+			cmsType: 'wp',
 		};
 
 		await main(parseArgs(), decoupledKitGenerators);
@@ -268,5 +270,47 @@ To see this list at any time, use the --help command.`);
 			chalk.bgGreen.black('Your project was generated with:'),
 			`\n\t${chalk.cyan(['next-wp'].join('\n\t'))}`,
 		);
+	});
+	it('should show only generators matching a cmsType', async ({
+		promptSpy,
+	}) => {
+		const generatorsOfCmsType = decoupledKitGenerators
+			.filter((generator) => {
+				return generator.cmsType === 'wp' || generator.cmsType === 'any';
+			})
+			.map(({ name }) => name);
+
+		process.argv = ['node', 'bin.js', '--cmsType', 'wp'];
+
+		promptSpy.mockImplementationOnce(() => ({
+			generators: ['next-wp'],
+		}));
+
+		await main(parseArgs(), decoupledKitGenerators);
+		expect(promptSpy).toHaveBeenCalledWith({
+			choices: generatorsOfCmsType,
+			message: 'Which generator(s) would you like to run?',
+			name: 'generators',
+			type: 'checkbox',
+		});
+	});
+	it('should show all generators if provided an invalid cmsType', async ({
+		promptSpy,
+	}) => {
+		const generatorNames = decoupledKitGenerators.map(({ name }) => name);
+
+		process.argv = ['node', 'bin.js', '--cmsType', 'durpal'];
+
+		promptSpy.mockImplementationOnce(() => ({
+			generators: ['next-wp'],
+		}));
+
+		await main(parseArgs(), decoupledKitGenerators);
+		expect(promptSpy).toHaveBeenCalledWith({
+			choices: generatorNames,
+			message: 'Which generator(s) would you like to run?',
+			name: 'generators',
+			type: 'checkbox',
+		});
 	});
 });

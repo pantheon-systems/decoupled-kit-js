@@ -3,13 +3,13 @@ import {
 	setEdgeHeader,
 } from '@pantheon-systems/wordpress-kit';
 /**
- * Helper function to get all unique keys from multiple surrogate-key-raw headers
+ * Helper function to get all unique keys from multiple surrogate-key headers
  * @param {Response['headers']} headers headers from a fetch request
- * @returns {string} a string of unique keys from all surrogate-key-raw headers
+ * @returns {string} a string of unique keys from all surrogate-key headers
  */
 const getSurrogateKeys = ({ headers }) => {
 	const keys = headers
-		.map((header) => header.get('surrogate-key-raw'))
+		.map((header) => header.get('surrogate-key'))
 		.join(' ')
 		.split(' ');
 	const uniqueKeys = [...new Set(keys)].join(' ');
