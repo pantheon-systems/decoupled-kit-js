@@ -37,8 +37,8 @@ export default function SearchPage({
 						{searchResults?.length > 0 ? (
 							<ul>
 								{searchResults?.map(({ title, body, path }) => (
-									<li className="prose justify-items-start mt-8" key={path?.pid}>
-										<h2>{title}</h2>
+									<li key={path?.pid}>
+										<h2  className={styles.listTitle}>{title}</h2>
 										{body.summary ? (
 											<div dangerouslySetInnerHTML={{ __html: body?.summary }} />
 										) : null}

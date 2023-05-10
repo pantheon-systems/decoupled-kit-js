@@ -21,15 +21,15 @@
     max-width: var(--xs); 
 }
 
-.container > ul h2 {
+.link {
+	text-decoration-line: underline;
+}
+
+.listTitle {
     font-weight: 700;
     font-size: var(--7);
     margin-bottom: var(--8);
     justify-items: start; 
-}
-
-.link {
-	text-decoration-line: underline;
 }
 
 @media (min-width: 1024px) { 
