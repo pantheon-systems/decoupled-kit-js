@@ -1,11 +1,9 @@
 import { defineConfig } from 'vite';
-import typescript from '@rollup/plugin-typescript';
 
 const globals = {
 	'graphql-request': 'graphqlRequest',
 	'tailwindcss/plugin': 'tailwindcssPlugin',
 	'@pantheon-systems/cms-kit': 'cmsKit',
-	http: 'http',
 };
 
 const external = [
@@ -13,33 +11,30 @@ const external = [
 	'graphql-request',
 	'tailwindcss/plugin',
 	'@pantheon-systems/cms-kit',
-	'http',
 ];
 
 /** @type {import('vite').defineConfig} */
 export default defineConfig(() => {
 	return {
-		plugins: [typescript()],
 		build: {
 			lib: {
-				entry: './index.ts',
-				name: 'wordpress-kit',
-				formats: ['umd', 'es'],
-				fileName: (format) => `wordpress-kit.${format}.js`,
+				entry: './src/index.ts',
+				name: 'drupal-kit',
+				formats: ['cjs', 'es'],
+				fileName: (format) => `drupal-kit.${format === 'es' ? 'mjs' : 'js'}`,
 			},
 			rollupOptions: {
 				external,
+				treeshake: true,
 				output: {
+					exports: 'named',
 					globals,
 				},
 			},
 		},
 		test: {
 			globals: true,
-			setupFiles: ['./__tests__/setupFile.ts'],
-			coverage: {
-				reportsDirectory: `./coverage`,
-			},
+			setupFiles: ['__tests__/setupFile.ts'],
 		},
 	};
 });

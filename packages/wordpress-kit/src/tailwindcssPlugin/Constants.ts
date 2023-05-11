@@ -1,4 +1,4 @@
-import { Color, FontSize } from '../../types';
+import { Color, FontSize } from './types';
 
 export const colorList: Color[] = [
 	{

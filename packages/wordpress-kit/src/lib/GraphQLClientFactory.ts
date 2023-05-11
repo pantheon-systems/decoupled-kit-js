@@ -5,7 +5,7 @@ import type { RequestConfig } from 'graphql-request/src/types';
  * @params endpoint - A WordPress GraphQL endpoint.
  * @params options - A {@link RequestConfig} object.
  */
-class GraphQLClientFactory {
+export class GraphQLClientFactory {
 	/**
 	 * A WordPress GraphQL endpoint
 	 */
@@ -15,7 +15,7 @@ class GraphQLClientFactory {
 	 */
 	options: RequestConfig;
 
-	constructor(endpoint: string, options: RequestConfig) {
+	constructor(endpoint: string, options?: RequestConfig) {
 		this.endpoint = endpoint;
 		this.options = {
 			...options,
@@ -35,5 +35,3 @@ class GraphQLClientFactory {
 		return new GraphQLClient(this.endpoint, this.options);
 	}
 }
-
-export default GraphQLClientFactory;

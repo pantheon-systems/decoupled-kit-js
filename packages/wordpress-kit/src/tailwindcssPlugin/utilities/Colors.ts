@@ -1,4 +1,4 @@
-import type { GradientColors, ThemeType, Color } from '../../../types';
+import type { Color, GradientColors, ThemeType } from '../types';
 import { colorList, gradientList } from '../Constants';
 
 /**
