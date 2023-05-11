@@ -1,6 +1,6 @@
-import * as actions from '../src/actions/convertCSSModules';
 import { execSync } from 'child_process';
 import type { ParsedArgs } from 'minimist';
+import * as actions from '../src/actions/convertCSSModules';
 
 vi.mock('child_process');
 
@@ -11,10 +11,10 @@ describe('convertCSSModules()', () => {
 		vi.resetAllMocks();
 	});
 
-	it('convertCSSModules to have called css-modules-to-tailwind', async () => {
+	it('should call css-modules-to-tailwind with ./pages and ./components with next generators', async () => {
 		await actions.convertCSSModules({
 			data: {
-				_: ['test-module-conversion'],
+				_: ['next-wp'],
 				outDir: outDir,
 				silent: false,
 				tailwindcss: true,
@@ -22,7 +22,27 @@ describe('convertCSSModules()', () => {
 		});
 
 		expect(vi.mocked(execSync)).toHaveBeenCalledWith(
-			'npx css-modules-to-tailwind pages/**/*.jsx components/*.jsx --force',
+			'npx css-modules-to-tailwind ./pages/**/*.jsx ./components/*.jsx --force',
+			{
+				stdio: 'inherit',
+				cwd: outDir,
+			},
+		);
+	});
+
+	it('should call css-modules-to-tailwind with ./src with gatsby generators', async () => {
+		await actions.convertCSSModules({
+			data: {
+				_: ['gatsby-wp'],
+				outDir: outDir,
+				silent: false,
+				tailwindcss: true,
+				gatsby: true,
+			},
+		});
+
+		expect(vi.mocked(execSync)).toHaveBeenCalledWith(
+			'npx css-modules-to-tailwind ./src/**/*.jsx --force',
 			{
 				stdio: 'inherit',
 				cwd: outDir,

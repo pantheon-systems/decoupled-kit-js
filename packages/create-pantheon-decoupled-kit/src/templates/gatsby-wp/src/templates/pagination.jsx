@@ -1,10 +1,7 @@
-import React from 'react'
 import Layout from '../components/layout'
 import Paginator from '../components/paginator'
 import Seo from '../components/seo'
-{{#unless tailwindcss}}
 import * as styles from './pagination.module.css'
-{{/unless}}
 
 const PaginationPostsExample = ({
 	pageContext: { pagPosts, postsPerPage, routing, breakpoints },
@@ -13,18 +10,9 @@ const PaginationPostsExample = ({
 	const RenderCurrentItems = ({ currentItems }) => {
 		return currentItems.map(item => {
 			return (
-				{{#if tailwindcss}}
-				<article key={item.title} className="flex flex-col p-3 mb-10">
-					<h2 className="justify-start my-auto text-2xl mb-2">{item.title}</h2>
-					<div
-						className="max-w-prose my-2 [&>p]:my-0"
-						dangerouslySetInnerHTML=\{{ __html: item.excerpt }}
-					/>
-				{{else}}
 				<article key={item.title} className={styles.item}>
-					<h2>{item.title}</h2>
-					<div dangerouslySetInnerHTML=\{{ __html: item.excerpt }} />
-				{{/if}}
+					<h2 className={styles.itemTitle}>{item.title}</h2>
+					<div dangerouslySetInnerHTML={{ __html: item.excerpt }} />
 				</article>
 			)
 		})
@@ -32,15 +20,9 @@ const PaginationPostsExample = ({
 
 	return (
 		<Layout>
-			{{#if tailwindcss}}
-			<div className="prose max-w-screen mx-auto">
-				<section className="flex flex-col">
-					<h1 className="my-10">Pagination example</h1>
-			{{else}}
 			<div className={styles.container}>
 				<section className={styles.content}>
-					<h1>Pagination example</h1>
-			{{/if}}
+					<h1 className={styles.title}>Pagination example</h1>
 					<Paginator
 						data={pagPosts}
 						itemsPerPage={postsPerPage}

@@ -1,32 +1,18 @@
-import React from 'react'
-import Layout from '../components/layout'
 import { Link } from 'gatsby'
-{{#unless tailwindcss}}
-import * as styles from './authApi.module.css';
-{{/unless}}
+import Layout from '../components/layout'
+import * as styles from './authApi.module.css'
 
 const AuthApiExampleTemplate = ({ pageContext: { privatePosts } }) => {
 	return (
 		<Layout>
-			{{#if tailwindcss}}
-			<div className="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen">
-				<h1>API Authorization Example</h1>
-
-				<Link to="/">
-					<span className="w-full underline cursor-pointer">Home &rarr;</span>
-				</Link>
-
-				<div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
-			{{else}}
 			<div className={styles.container}>
-				<h1>API Authorization Example</h1>
+				<h1 className={styles.containerTitle}>API Authorization Example</h1>
 
 				<Link to="/">
-					<span{{#if tailwindcss}} className="w-full underline cursor-pointer"{{/if}}>Home &rarr;</span>
+					<span>Home &rarr;</span>
 				</Link>
 
-				<div className="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg">
-			{{/if}}
+				<div className={styles.content}>
 					{privatePosts?.length > 0 ? (
 						<p>
 							🎉 Gatsby was able to successfully make an authenticated request

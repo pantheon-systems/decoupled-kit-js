@@ -39,7 +39,15 @@
 	background-color: var(--white);
 }
 
-.paginatorBtn[aria-label^="Current Page"] {
+.separatorBtn {
+	background-color: var(--slate-200);
+	height: 100%;
+	width: var(--12);
+	border-color: var(--black);
+	border: 2px solid;
+}
+
+.paginatorBtn[aria-label^='Current Page'] {
 	border: 2px solid var(--blue-700);
 }
 
@@ -49,7 +57,7 @@
 	background-color: var(--blue-300);
 }
 
-.paginatorBtn:focus, 
+.paginatorBtn:focus,
 .directionalBtns:focus,
 .separatorBtn:focus {
 	background-color: var(--blue-300);
@@ -63,23 +71,13 @@
 	color: inherit;
 }
 
-.separatorBtn {
-	background-color: var(--slate-200);
-	height: calc(var(--16) + 4px);
-	width: var(--12);
-	border-color: var(--black);
-	border: 2px solid;
-}
-
-.directionalBtns[aria-label$="Previous Page"] {
+.directionalBtns[aria-label$='Previous Page'] {
 	border-left: 2px solid;
 }
 
-.directionalBtns[aria-label$="Next Page"] {
+.directionalBtns[aria-label$='Next Page'] {
 	border-right: 2px solid;
 }
-
-
 
 /* lg breakpoint*/
 @media (max-width: 1024px) {

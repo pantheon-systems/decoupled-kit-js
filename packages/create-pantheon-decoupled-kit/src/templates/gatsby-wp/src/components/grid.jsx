@@ -1,39 +1,19 @@
-import React from 'react'
 import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
-{{#unless tailwindcss}}
 import * as styles from './grid.module.css'
-{{/unless}}
 
-const GradientPlaceholder = () => {{#if tailwindcss}}(
-	<div className="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500" />
-)
-{{else}}
-<div className={styles.gradientPlaceholder} />
+const GradientPlaceholder = () => <div className={styles.gradientPlaceholder} />
 
-{{/if}}
 const withGrid = Component => {
 	const GridedComponent = ({ data, ...props }) => {
 		if (!data || !data.length) {
 			return props.contentType ? (
-				{{#if tailwindcss}}
-				<h2 className="text-xl text-center mt-14">
-					No {props.contentType} found 🏜
-				</h2>
-				{{else}}
 				<h2 className={styles.notFound}>No {props.contentType} found 🏜</h2>
-				{{/if}}
 			) : null
 		}
 
 		return (
-				{{#if tailwindcss}}
-			<div
-				className="mt-12 grid gap-5 max-w-content mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
-			>
-				{{else}}
 			<div className={styles.container}>
-				{{/if}}
 				{data.map((content, i) => {
 					return <Component key={i} content={content} {...props} />
 				})}
@@ -46,21 +26,12 @@ const withGrid = Component => {
 
 const GridItem = ({ href, imgSrc, altText, title }) => {
 	return (
-		{{#if tailwindcss}}
-		<Link to={href} className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500">
-				<div className="flex-shrink-0 relative h-40">
-			{{else}}
 		<Link to={href} className={styles.card}>
 			<div className={styles.cardImg}>
-			{{/if}}
 				{imgSrc ? (
 					<GatsbyImage
 						image={imgSrc}
-						{{#if tailwindcss}}
-						className="h-full w-full"
-						{{else}}
-						style=\{{ height: '100%', width: '100%' }}
-						{{/if}}
+						style={{ height: '100%', width: '100%' }}
 						objectFit="fit"
 						alt={altText}
 					/>
@@ -68,10 +39,7 @@ const GridItem = ({ href, imgSrc, altText, title }) => {
 					<GradientPlaceholder />
 				)}
 			</div>
-			{{#if tailwindcss}} 
-			<h2 className="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900">
-			{{else}}
-			<h2 className={styles.cardTitle}>{{/if}}{title} &rarr;</h2>
+			<h2 className={styles.cardTitle}>{title} &rarr;</h2>
 		</Link>
 	)
 }

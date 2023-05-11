@@ -1,16 +1,12 @@
 .container {
 	margin: var(--12) auto 0;
+	min-width: var(--lg);
 }
 
-.container > h1 {
+.mainTitle {
 	font-size: var(--14);
 	font-weight: 800;
 	margin-bottom: var(--10);
-}
-
-.container > a {
-	color: var(--black);
-	font-size: var(--5);
 }
 
 .date {
@@ -19,19 +15,40 @@
 	color: var(--gray-600);
 }
 
+.img {
+	border-radius: var(--2);
+}
+
+.link, .prev, .next {
+	font-size: var(--5);
+	text-decoration: underline;
+	color: var(--black);
+}
+
+.prev, .next {
+	font-weight: 500;
+}
+
+.next {
+	margin-left: auto;
+}
+
+.prev {
+	margin-right: auto;
+}
+
 .content, .paragraphContent {
 	margin-top: var(--12);
 }
 
 .paragraphContent {
+	{{#if tailwindcss}}
+	@apply prose;
+	{{/if}}
 	overflow-wrap: break-word;
-	line-height: var(--8);
 	font-size: var(--5);
 }
 
-.img > * {
-	border-radius: var(--2);
-}
 
 .hr {
 	width: 100%;
@@ -45,15 +62,6 @@
 	padding: 0 var(--6);
 }
 
-.next {
-	color: var(--black);
-	margin-left: auto;
-}
-
-.prev {
-	color: var(--black);
-	margin-right: auto;
-}
 
 /* lg breakpoint */
 @media (max-width: 1024px) {
@@ -62,7 +70,7 @@
 		max-width: var(--md);
 	}
 
-	.container > h1 {
+	.mainTitle {
 		font-size: var(--9);
 	}
 }

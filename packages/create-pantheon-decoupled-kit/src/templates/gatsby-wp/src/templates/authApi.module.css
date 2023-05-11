@@ -4,7 +4,7 @@
 	line-height: var(--8);
 }
 
-.container > h1 {
+.containerTitle {
 	margin-bottom: var(--12);
 	font-size: var(--12);
 	font-weight: 800;
@@ -17,11 +17,11 @@
 	color: var(--black);
 }
 
-.container > div {
+.content {
 	margin: var(--x-auto);
 }
 
-.container > div > p {
+.content > p {
 	margin-top: var(--12);
 	font-size: var(--5);
 }
@@ -32,7 +32,7 @@
 		max-width: var(--sm);
 	}
 
-	.container > h1 {
+	.containerTitle {
 		font-size: var(--8)
 	}
 }

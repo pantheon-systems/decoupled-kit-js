@@ -7,11 +7,7 @@
 	justify-self: end;
 }
 
-.footerNav > ul li:hover {
-	color: var(--blue-100);
-}
-
-.footer > * a:hover, 
+.footer > * a:hover,
 .footer > * a:first-child:hover,
 .footer > * a:last-child:hover {
 	color: var(--blue-100);
@@ -24,18 +20,22 @@
 	margin: var(--x-auto);
 }
 
-.footerNav > ul li {
+.footerUl {
+	margin-top: var(--4);
+}
+.navItem {
+	margin-left: var(--3);
 	list-style: disc;
 	color: var(--blue-300);
 }
 
-.navItem {
-	margin-left: var(--3);
-}
-
-.navItem > a {
+.navItemLink {
 	color: var(--blue-300);
 	text-decoration: none;
+}
+
+.navItem:hover {
+	color: var(--blue-100);
 }
 
 .footerCopy {
@@ -44,7 +44,7 @@
 	color: var(--white);
 }
 
-.footerCopy > a {
+.footerCopyLink {
 	text-decoration: underline;
 }
 

@@ -1,36 +1,26 @@
-import React from 'react'
+import { PostGrid } from '../components/grid'
 import Layout from '../components/layout'
-import { PageGrid } from '../components/grid'
 import Paginator from '../components/paginator'
 import Seo from '../components/seo'
-{{#unless tailwindcss}}
 import * as styles from './pagesOrPostsIndex.module.css'
-{{/unless}}
 
-const PageIndexTemplate = ({
-	pageContext: { itemsPerPage, routing, pages },
+const PostIndexTemplate = ({
+	pageContext: { posts, routing, itemsPerPage },
 	location,
 }) => {
 	const RenderCurrentItems = ({ currentItems }) => {
-		return <PageGrid data={currentItems} contentType="pages" />
+		return <PostGrid data={currentItems} contentType="posts" />
 	}
 
 	return (
 		<Layout>
-			{{#if tailwindcss}}
-			<header className="prose text-2xl mx-auto mt-20">
-				<h1 className="text-center mx-auto">Pages</h1>
-			</header>
-			<div className="max-w-screen-lg mx-auto">
-			{{else}}
 			<header className={styles.header}>
-				<h1>Pages</h1>
+				<h1 className={styles.headerTitle}>Posts</h1>
 			</header>
 			<div>
-			{{/if}}
 				<section>
 					<Paginator
-						data={pages}
+						data={posts}
 						itemsPerPage={itemsPerPage}
 						location={location}
 						routing={routing}
@@ -42,8 +32,8 @@ const PageIndexTemplate = ({
 	)
 }
 
-export default PageIndexTemplate
+export default PostIndexTemplate
 
 export function Head() {
-	return <Seo title="All pages" />
+	return <Seo title="All posts" />
 }

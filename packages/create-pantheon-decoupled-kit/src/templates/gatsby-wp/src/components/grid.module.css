@@ -6,6 +6,7 @@
 }
 
 .container {
+	max-width: var(--lg);
 	margin-top: var(--12);
 	display: grid;
 	gap: var(--5);
@@ -50,7 +51,7 @@
 	margin-top: var(--14);
 }
 
-/* lg breakpoint*/
+/* lg breakpoint */
 @media (max-width: 1024px) {
 	.container {
 		grid-template-columns: 1fr;

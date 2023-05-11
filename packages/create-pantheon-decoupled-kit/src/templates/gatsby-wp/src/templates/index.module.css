@@ -2,20 +2,21 @@
 	display: flex;
 	flex-direction: column;
 	max-width: fit-content;
-	font-size: var(--7);
-	font-weight: 600;
 	margin: var(--20) auto 0;
 	text-align: center;
 }
 
-.header h1 > a {
-	font-weight: 500;
+.headerTitle {
+	font-size: var(--14);
+	font-weight: 800;
 }
 
 .gatsby {
 	text-decoration: none;
+	font-weight: 500;
 	color: var(--purple);
 }
+
 .gatsby:hover {
 	text-decoration: underline;
 }

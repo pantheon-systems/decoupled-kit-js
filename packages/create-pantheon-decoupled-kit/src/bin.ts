@@ -1,5 +1,9 @@
 #!/usr/bin/env node
-import { parseArgs, main } from './index';
 import { decoupledKitGenerators } from './generators';
+import { main, parseArgs } from './index';
 
-await main(parseArgs(), decoupledKitGenerators);
+try {
+	await main(parseArgs(), decoupledKitGenerators);
+} catch (error) {
+	console.log(error);
+}

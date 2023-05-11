@@ -1,5 +1,6 @@
-import { build } from 'esbuild';
 import chalk from 'chalk';
+import { build } from 'esbuild';
+
 /** @type {import('esbuild').BuildOptions} */
 const buildOptions = {
 	entryPoints: ['./src/bin.ts'],

@@ -1,16 +1,18 @@
 .container {
 	margin: var(--12) auto 0;
+	max-width: var(--md);
 }
 
-.container > h1 {
+.mainTitle {
 	font-size: var(--14);
 	font-weight: 800;
 	margin-bottom: var(--10);
 }
 
-.container > a {
+.link {
 	color: var(--black);
 	font-size: var(--5);
+	text-decoration: underline;
 }
 
 .date {
@@ -24,10 +26,15 @@
 }
 
 .paragraphContent {
+	{{#if tailwindcss}}
+	@apply prose;
+	{{/if}}
 	overflow-wrap: break-word;
+	line-height: var(--8);
+	font-size: var(--5);
 }
 
-.img > * {
+.img {
 	border-radius: var(--2);
 }
 
@@ -60,7 +67,7 @@
 		max-width: var(--md);
 	}
 
-	.container > h1 {
+	.containerTitle {
 		font-size: var(--9);
 	}
 }

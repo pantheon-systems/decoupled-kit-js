@@ -3,7 +3,7 @@
 	max-width: var(--md);
 }
 
-.container > h1 {
+.containerTitle {
 	font-size: var(--14);
 	font-weight: 800;
 	margin-bottom: var(--10);
@@ -21,7 +21,7 @@
 	line-height: var(--8);
 }
 
-.content > ul {
+.list {
 	padding-left: var(--6);
 }
 
@@ -30,13 +30,13 @@
 	margin-bottom: var(--8);
 }
 
-.content > a, .content > ul a {
+.content > a, .list > * a {
 	color: var(--black);
 	text-decoration: underline;
 	font-weight: 500;
 }
 
-.content > ul li {
+.list > li {
 	list-style: disc;
 	margin: var(--4) 0;
 	padding-left: var(--3);
