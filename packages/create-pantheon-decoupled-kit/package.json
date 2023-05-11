@@ -44,7 +44,6 @@
 		"lint-staged": "lint-staged"
 	},
 	"devDependencies": {
-		"@csstools/postcss-global-data": "^1.0.3",
 		"@pantheon-systems/eslint-config": "*",
 		"@pantheon-systems/workspace-configs": "*",
 		"@types/diff": "^5.0.3",
@@ -54,18 +53,17 @@
 		"@types/minimist": "^1.2.2",
 		"@types/which-pm-runs": "^1.0.0",
 		"@vitest/coverage-c8": "^0.29.8",
-		"autoprefixer": "^10.4.14",
 		"chalk": "^5.2.0",
 		"chokidar": "^3.5.3",
 		"esbuild": "0.17.14",
-		"postcss": "^8.4.21",
-		"postcss-custom-properties": "^13.1.5",
 		"prettier": "^2.8.7",
 		"rimraf": "^4.4.1",
 		"tsx": "^3.12.6",
 		"vitest": "^0.29.8"
 	},
 	"dependencies": {
+		"@csstools/postcss-global-data": "^1.0.3",
+		"autoprefixer": "^10.4.14",
 		"diff": "^5.1.0",
 		"fs-extra": "^11.1.1",
 		"glob": "^10.2.3",
@@ -73,6 +71,8 @@
 		"inquirer": "^9.1.5",
 		"klaw": "^4.1.0",
 		"minimist": "^1.2.8",
+		"postcss": "^8.4.21",
+		"postcss-custom-properties": "^13.1.5",
 		"which-pm-runs": "^1.1.0"
 	}
 }

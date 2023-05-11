@@ -200,6 +200,12 @@ importers:
 
   packages/create-pantheon-decoupled-kit:
     dependencies:
+      '@csstools/postcss-global-data':
+        specifier: ^1.0.3
+        version: 1.0.3(postcss@8.4.21)
+      autoprefixer:
+        specifier: ^10.4.14
+        version: 10.4.14(postcss@8.4.21)
       diff:
         specifier: ^5.1.0
         version: 5.1.0
@@ -221,13 +227,16 @@ importers:
       minimist:
         specifier: ^1.2.8
         version: 1.2.8
+      postcss:
+        specifier: ^8.4.21
+        version: 8.4.21
+      postcss-custom-properties:
+        specifier: ^13.1.5
+        version: 13.1.5(postcss@8.4.21)
       which-pm-runs:
         specifier: ^1.1.0
         version: 1.1.0
     devDependencies:
-      '@csstools/postcss-global-data':
-        specifier: ^1.0.3
-        version: 1.0.3(postcss@8.4.21)
       '@pantheon-systems/eslint-config':
         specifier: workspace:*
         version: link:../../configs/eslint
@@ -255,9 +264,6 @@ importers:
       '@vitest/coverage-c8':
         specifier: ^0.29.8
         version: 0.29.8(vitest@0.29.8)
-      autoprefixer:
-        specifier: ^10.4.14
-        version: 10.4.14(postcss@8.4.21)
       chalk:
         specifier: ^5.2.0
         version: 5.2.0
@@ -267,12 +273,6 @@ importers:
       esbuild:
         specifier: 0.17.14
         version: 0.17.14
-      postcss:
-        specifier: ^8.4.21
-        version: 8.4.21
-      postcss-custom-properties:
-        specifier: ^13.1.5
-        version: 13.1.5(postcss@8.4.21)
       prettier:
         specifier: ^2.8.7
         version: 2.8.7
@@ -2306,7 +2306,7 @@ packages:
     dependencies:
       '@csstools/css-parser-algorithms': 2.1.1(@csstools/css-tokenizer@2.1.1)
       '@csstools/css-tokenizer': 2.1.1
-    dev: true
+    dev: false
 
   /@csstools/css-parser-algorithms@2.1.1(@csstools/css-tokenizer@2.1.1):
     resolution: {integrity: sha512-viRnRh02AgO4mwIQb2xQNJju0i+Fh9roNgmbR5xEuG7J3TGgxjnE95HnBLgsFJOJOksvcfxOUCgODcft6Y07cA==}
@@ -2315,12 +2315,12 @@ packages:
       '@csstools/css-tokenizer': ^2.1.1
     dependencies:
       '@csstools/css-tokenizer': 2.1.1
-    dev: true
+    dev: false
 
   /@csstools/css-tokenizer@2.1.1:
     resolution: {integrity: sha512-GbrTj2Z8MCTUv+52GE0RbFGM527xuXZ0Xa5g0Z+YN573uveS4G0qi6WNOMyz3yrFM/jaILTTwJ0+umx81EzqfA==}
     engines: {node: ^14 || ^16 || >=18}
-    dev: true
+    dev: false
 
   /@csstools/postcss-global-data@1.0.3(postcss@8.4.21):
     resolution: {integrity: sha512-x2fZOl7RJJtKC9ZfG+1bdrQKeRfP1a3Ff4uF2/fykNUKly8E8Q7lw7oegsEnqenSEDC1xjk6qXJ/fcJkTAdcNg==}
@@ -2329,7 +2329,7 @@ packages:
       postcss: ^8.4
     dependencies:
       postcss: 8.4.21
-    dev: true
+    dev: false
 
   /@discoveryjs/json-ext@0.5.7:
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
@@ -12180,7 +12180,7 @@ packages:
       '@csstools/css-tokenizer': 2.1.1
       postcss: 8.4.21
       postcss-value-parser: 4.2.0
-    dev: true
+    dev: false
 
   /postcss-discard-comments@5.1.2(postcss@8.4.21):
     resolution: {integrity: sha512-+L8208OVbHVF2UQf1iDmRcbdjJkuBF6IS29yBDSiWUIzpYaAhtNl6JYnYm12FnkeCwQqF5LeklOu6rAqgfBZqQ==}
