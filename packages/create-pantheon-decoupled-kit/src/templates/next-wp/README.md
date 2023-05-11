@@ -79,11 +79,11 @@ profile Be sure to update the snapshot for both profiles.
 This starter uses `GET` for GraphQL requests by default. Editing this
 configuration to use `POST` requests can be done in `/lib/WordPressClient.js`.
 
-To achieve this, set each `GraphqlClientFactory` constructors `method` parameter
+To achieve this, set each `GraphQLClientFactory` constructors `method` parameter
 to equal `POST`.
 
 ```js
-export const client = new GraphqlClientFactory(process.env.backendUrl, {
+export const client = new GraphQLClientFactory(process.env.backendUrl, {
 	method: 'POST',
 }).create();
 ```

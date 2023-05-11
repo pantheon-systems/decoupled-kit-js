@@ -13,25 +13,24 @@
 	"files": [
 		"dist/*"
 	],
-	"types": "dist/index.d.ts",
-	"main": "./dist/wordpress-kit.umd.js",
-	"module": "./dist/wordpress-kit.es.js",
 	"exports": {
 		".": {
-			"import": "./dist/wordpress-kit.es.js",
-			"require": "./dist/wordpress-kit.umd.js"
+			"types": "./dist/index.d.ts",
+			"require": "./dist/drupal-kit.js",
+			"import": "./dist/drupal-kit.mjs"
 		}
 	},
+	"types": "./dist/index.d.ts",
+	"module": "./dist/drupal-kit.mjs",
+	"main": "./dist/drupal-kit.js",
 	"prettier": "@pantheon-systems/workspace-configs/prettier",
 	"typedoc": {
-		"entryPoint": "./index.ts"
+		"entryPoint": "./src/index.ts"
 	},
 	"scripts": {
 		"clean": "pnpm rimraf ./dist",
-		"dev": "vite",
-		"build": "pnpm clean && vite build",
+		"build": "pnpm clean && vite build && tsc --project ./tsconfig.build.json",
 		"watch": "pnpm build && vite build --watch",
-		"serve": "vite preview",
 		"typedoc": "typedoc",
 		"test": "vitest run --coverage",
 		"test:watch": "vitest",
@@ -50,7 +49,6 @@
 	"devDependencies": {
 		"@pantheon-systems/eslint-config": "*",
 		"@pantheon-systems/workspace-configs": "*",
-		"@rollup/plugin-typescript": "^11.0.0",
 		"@vitest/coverage-c8": "^0.29.8",
 		"msw": "^1.2.1",
 		"postcss": "^8.4.21",

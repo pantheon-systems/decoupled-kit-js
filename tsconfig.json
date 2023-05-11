@@ -12,6 +12,8 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noImplicitReturns": true,
+		"pretty": true,
+		"allowSyntheticDefaultImports": true,
 		"baseUrl": "./packages",
 		"paths": {
 			"@pantheon-systems/drupal-kit/*": ["./drupal-kit/*"],

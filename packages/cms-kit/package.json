@@ -13,21 +13,30 @@
 	"files": [
 		"dist/*"
 	],
-	"types": "dist/index.d.ts",
-	"main": "./dist/cms-kit.umd.js",
-	"module": "./dist/cms-kit.es.js",
+	"sideEffects": false,
+	"type": "module",
 	"exports": {
 		".": {
-			"import": "./dist/cms-kit.es.js",
-			"require": "./dist/cms-kit.umd.js"
-		}
+			"require": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.cjs"
+			},
+			"import": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.js"
+			}
+		},
+		"./*": "./dist/*"
 	},
+	"types": "./dist/index.d.ts",
+	"module": "./dist/index.js",
+	"main": "./dist/index.cjs",
 	"prettier": "@pantheon-systems/workspace-configs/prettier",
 	"typedoc": {
-		"entryPoint": "./index.ts"
+		"entryPoint": "./src/index.ts"
 	},
 	"scripts": {
-		"build": "pnpm clean && vite build",
+		"build": "pnpm clean && pnpm tsup",
 		"clean": "pnpm rimraf ./dist",
 		"watch": "pnpm clean && vite build --watch",
 		"typedoc": "typedoc",
@@ -43,11 +52,10 @@
 	"devDependencies": {
 		"@pantheon-systems/eslint-config": "*",
 		"@pantheon-systems/workspace-configs": "*",
-		"@rollup/plugin-typescript": "^11.0.0",
 		"@vitest/coverage-c8": "^0.29.8",
-		"eslint-plugin-prettier": "^4.2.1",
 		"prettier": "^2.8.7",
 		"rimraf": "^4.4.1",
+		"tsup": "^6.7.0",
 		"vitest": "^0.29.8"
 	}
 }

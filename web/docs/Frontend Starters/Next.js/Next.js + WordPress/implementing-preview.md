@@ -52,7 +52,7 @@ authenticated requests. Below is a snippet that exports a function that gets
 private posts.
 
 ```js
-const client = new GraphqlClientFactory(process.env.backendUrl).create();
+const client = new GraphQLClientFactory(process.env.backendUrl).create();
 
 // Encodes the WordPress credentials in a useable format for the auth header
 const getAuthCredentials = () => {
