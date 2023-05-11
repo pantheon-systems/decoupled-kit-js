@@ -1,5 +1,18 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.0-canary.0
+
+### Minor Changes
+
+- 7da989b0: Added a new action: `convertCssModules`. This action allows CSS
+  modules to be converted into Tailwind syntax.
+
+### Patch Changes
+
+- abf7fa7a: [next-drupal] Bump `drupal-kit` version
+- 0a456069: [next-wp][gatsby-wp] Bump `wordpress-kit` version, update import for
+  `GraphQLClientFactory`
+
 ## 0.8.0
 
 ### Minor Changes
