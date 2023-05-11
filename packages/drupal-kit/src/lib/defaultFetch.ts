@@ -1,4 +1,4 @@
-import type { ServerResponse } from 'http';
+import type { ServerResponse } from 'node:http';
 import fetch from 'isomorphic-fetch';
 
 import { setSurrogateKeyHeader } from '@pantheon-systems/cms-kit';
@@ -13,7 +13,7 @@ const defaultCacheControlValue = 'public, s-maxage=600';
  * @param cacheControl optional value to override cache control header, defaults to 'public, s-maxage=600'
  * @returns a promise containing the data for the JSON:API response
  */
-const defaultFetch = (
+export const defaultFetch = (
 	apiUrl: RequestInfo,
 	requestInit: RequestInit = {},
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -53,5 +53,3 @@ const defaultFetch = (
 		.catch((error) => console.error('JSON:API fetch failed', error));
 	return fetchPromise;
 };
-
-export default defaultFetch;
