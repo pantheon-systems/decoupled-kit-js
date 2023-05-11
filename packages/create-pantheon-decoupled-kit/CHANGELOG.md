@@ -1,5 +1,28 @@
 # create-pantheon-decoupled-kit
 
+## 0.8.0
+
+### Minor Changes
+
+- ad7b2b33: [cli] The cli now accepts a `--cmsType` argument which filters the
+  suggested generators to only those that are compatible with the provided type.
+
+### Patch Changes
+
+- af0f203c: [next-drupal] Added CSS module based styling to the
+  `next-drupal-search-api-addon`
+- ea3c25b2: [next-wp][gatsby-wp] Bump `wordpress-kit` version
+- b9a05706: [next-drupal] Bump `drupal-kit` version
+- 5e8b7212: [gatsby-wp], [next-wp]: Remove tailwind as a dependency for
+  tailwindless wp starters.
+
+## 0.8.0-canary.3
+
+### Patch Changes
+
+- ea3c25b2: [next-wp][gatsby-wp] Bump `wordpress-kit` version
+- b9a05706: [next-drupal] Bump `drupal-kit` version
+
 ## 0.8.0-canary.2
 
 ### Patch Changes

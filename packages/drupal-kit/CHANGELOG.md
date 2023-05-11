@@ -1,5 +1,29 @@
 # @pantheon-systems/drupal-kit
 
+## 4.5.0
+
+### Minor Changes
+
+- b9a05706: The `DrupalState` `defaultFetch` now sets the `Fastly-Debug` header
+  to obtain hashed surrogate keys instead of raw surrogate keys
+
+### Patch Changes
+
+- Updated dependencies [b9a05706]
+  - @pantheon-systems/cms-kit@0.3.0
+
+## 4.5.0-canary.0
+
+### Minor Changes
+
+- b9a05706: The `DrupalState` `defaultFetch` now sets the `Fastly-Debug` header
+  to obtain hashed surrogate keys instead of raw surrogate keys
+
+### Patch Changes
+
+- Updated dependencies [b9a05706]
+  - @pantheon-systems/cms-kit@0.3.0-canary.0
+
 ## 4.4.0
 
 ### Minor Changes

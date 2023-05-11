@@ -28,9 +28,9 @@ sequenceDiagram
     participant B as Next.js + wordpress-kit
     participant C as WordPress
     A->>B: Request a page that fetches from WordPress
-    B->>C: Add Pantheon-SKey header to request via GET
-    C->>B: Surrogate-Key-Raw header included on response
-    B->>A: Set Surrogate-Key header on outgoing response to browser
+    B->>C: Add Fastly-Debug header to request via GET
+    C->>B: Surrogate-Key header included on response
+    B->>A: Set Surrogate header on outgoing response to browser
 ```
 
 The `GraphQLClientFactory` class from our `@pantheon-systems/wordpress-kit` npm

@@ -38,6 +38,7 @@
 
 	--x-auto: 0 auto;
 	--y-auto: auto 0;
+	--auto: auto;
 
 	/* screens */
 	--xs: 512px;
@@ -50,17 +51,33 @@
 	/* colors */
 	--white: #FFFFFF;
 	--light-gray: #E2E8F0;
-	--light-blue: #DBEAFE;
+	--gray-600: #4B5563;
+	--blue-100: #DBEAFE;
+	--blue-200: #BFDBFE;
+	--blue-300: #93C5FD;
+	--blue-700: #1D4ED8;
 	--blue: #3B82F6;
 	--indigo: #6366F1;
+	--purple-300: #D8B4FE;
+	--purple: #9333EA;
+	--slate-200: #E2E8F0;
 	--black: #000000;
-	--text-body: #374151;
-	--slate-400: rgb(148 163 184);
 	
 }
 
 body, html {
-	max-height: 100dvh;
-	max-width: 100dvw;
+	font-family: System-UI;
+	padding: 0;
+	margin: 0;
+	min-height: 100vh;
+	min-width: 100vw;
+	height: 100%;
 	overflow-x: hidden;
+}
+
+h1 {
+	margin-inline-end: 0;
+	margin-inline-start: 0;
+	margin-block-end: 0;
+	margin-block-start: 0;
 }

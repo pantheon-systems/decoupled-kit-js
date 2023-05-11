@@ -1,13 +1,11 @@
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-{{#unless tailwindcss}}
 import styles from './searchInput.module.css';
-{{/unless}}
 
 const SearchInput = () => {
 	const router = useRouter();
 	const [searchQuery, setSearchQuery] = useState(
-		router.query?.alias ? router.query?.alias[0] : '',
+		router.query?.searchAlias ? router.query?.searchAlias[0] : '',
 	);
 
 	const onSearch = (event) => {
@@ -23,18 +21,10 @@ const SearchInput = () => {
 
 	return (
 		<form onSubmit={onSearch}>
-			{{#if tailwindcss}}
-			<div className="relative flex w-full items-stretch pt-9">
-			{{else}}
 			<div className={styles.container}>
-			{{/if}}
 				<label  htmlFor="search">
 					<input
-						{{#if tailwindcss}}
-						className="-mr-0.5 h-full rounded-l border border-solid border-neutral-300 bg-transparent px-3 text-base font-normal text-neutral-700 outline-none transition duration-200 ease-in-out focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)]"
-						{{else}}
 						className={styles.searchInput}
-						{{/if}}
 						type="search"
 						value={searchQuery || ''}
 						onChange={(event) => setSearchQuery(event.target.value)}
@@ -45,11 +35,7 @@ const SearchInput = () => {
 				</label>
 
 				<button
-					{{#if tailwindcss}}
-					className="relative flex items-center rounded-r !bg-blue-600 px-6 py-2.5 text-white shadow-md hover:!bg-blue-700 hover:shadow-lg focus:!bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:!bg-blue-800 active:shadow-lg"
-					{{else}}
 					className={styles.searchBtn}
-					{{/if}}
 					type="submit"
 					id="submit-btn"
 					aria-label="Submit Search"
@@ -58,11 +44,7 @@ const SearchInput = () => {
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 20 20"
 						fill="currentColor"
-						{{#if tailwindcss}}
-						className="h-5 w-5"
-						{{else}}
 						className={styles.icon}
-						{{/if}}
 						>
 						<path
 						fillRule="evenodd"

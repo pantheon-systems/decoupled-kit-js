@@ -26,7 +26,7 @@ test('request and response middleware add appropriate headers', async () => {
 		}
 	`);
 	expect(res.data).toEqual(basicPostsQuery);
-	expect(res.headers.has('surrogate-key-raw')).toBeTruthy();
+	expect(res.headers.has('surrogate-key')).toBeTruthy();
 });
 
 test('client is configured for GET requests', () => {
