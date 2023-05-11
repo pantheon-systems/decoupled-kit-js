@@ -1,5 +1,17 @@
 # @pantheon-systems/drupal-kit
 
+## 4.6.0-canary.0
+
+### Minor Changes
+
+- abf7fa7a: Refactored bundle. There should be no changes to consumers of this
+  package
+
+### Patch Changes
+
+- Updated dependencies [3fd37398]
+  - @pantheon-systems/cms-kit@0.3.1-canary.0
+
 ## 4.5.0
 
 ### Minor Changes

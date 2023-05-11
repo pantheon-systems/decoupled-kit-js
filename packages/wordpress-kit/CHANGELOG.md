@@ -1,5 +1,26 @@
 # @pantheon-systems/wordpress-kit
 
+## 3.0.0-canary.0
+
+### Major Changes
+
+- 0a456069: Refactor bundle. Fix typo on export: this is a breaking change.
+
+  ```js
+  import { GraphqlClientFactory } from '@pantheon-systems/wordpress-kit';
+  ```
+
+  is now
+
+  ```js
+  import { GraphQLClientFactory } from '@pantheon-systems/wordpress-kit';
+  ```
+
+### Patch Changes
+
+- Updated dependencies [3fd37398]
+  - @pantheon-systems/cms-kit@0.3.1-canary.0
+
 ## 2.15.0
 
 ### Minor Changes

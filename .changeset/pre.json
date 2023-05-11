@@ -12,5 +12,12 @@
     "@pantheon-systems/wordpress-kit": "2.15.0",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "good-eels-kick",
+    "hungry-coats-flow",
+    "loud-pumpkins-switch",
+    "quick-dancers-cover",
+    "strong-knives-return",
+    "ten-squids-watch"
+  ]
 }
