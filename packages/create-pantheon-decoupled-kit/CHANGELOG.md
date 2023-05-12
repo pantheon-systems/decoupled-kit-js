@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.0-canary.2
+
+### Patch Changes
+
+- f6de3b80: Bump wordpress-kit version
+
 ## 0.9.0-canary.1
 
 ### Patch Changes
