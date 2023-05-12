@@ -16,13 +16,13 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"require": "./dist/drupal-kit.js",
-			"import": "./dist/drupal-kit.mjs"
+			"require": "./dist/wordpress-kit.js",
+			"import": "./dist/wordpress-kit.mjs"
 		}
 	},
 	"types": "./dist/index.d.ts",
-	"module": "./dist/drupal-kit.mjs",
-	"main": "./dist/drupal-kit.js",
+	"module": "./dist/wordpress-kit.mjs",
+	"main": "./dist/wordpress-kit.js",
 	"prettier": "@pantheon-systems/workspace-configs/prettier",
 	"typedoc": {
 		"entryPoint": "./src/index.ts"

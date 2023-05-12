@@ -19,9 +19,9 @@ export default defineConfig(() => {
 		build: {
 			lib: {
 				entry: './src/index.ts',
-				name: 'drupal-kit',
+				name: 'wordpress-kit',
 				formats: ['cjs', 'es'],
-				fileName: (format) => `drupal-kit.${format === 'es' ? 'mjs' : 'js'}`,
+				fileName: (format) => `wordpress-kit.${format === 'es' ? 'mjs' : 'js'}`,
 			},
 			rollupOptions: {
 				external,
