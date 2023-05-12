@@ -1,5 +1,11 @@
 # @pantheon-systems/wordpress-kit
 
+## 3.0.0-canary.1
+
+### Patch Changes
+
+- f6de3b80: Fix exports and vite config
+
 ## 3.0.0-canary.0
 
 ### Major Changes
