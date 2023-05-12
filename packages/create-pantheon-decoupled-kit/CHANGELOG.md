@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.0-canary.1
+
+### Patch Changes
+
+- 14ce5a27: Fix incorrect dependencies
+
 ## 0.9.0-canary.0
 
 ### Minor Changes
