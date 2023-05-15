@@ -23,7 +23,7 @@
 	 * using shadow-lg 
 	 */
 	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-	text-decoration: none;
+	text-decoration-line: none;
 	color: var(--body-text);
 }
 
@@ -34,7 +34,10 @@
 }
 
 .cardTitle {
-	margin: var(--5) var(--4);
+	margin-top: var(--5);
+	margin-bottom: var(--5);
+	margin-left: var(--4);
+	margin-right: var(--4);
 	font-size: var(--5);
 	font-weight: 600;
 }

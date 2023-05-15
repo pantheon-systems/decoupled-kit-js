@@ -18,13 +18,13 @@ const ExamplesPageTemplate = ({ footerMenu, pageContext: { routing } }) => {
 						`pages/examples` directory in your codebase.
 					</p>
 					<ul className={styles.list}>
-						<li>
+						<li className={styles.listItem}>
 							<Link to={`/examples/pagination${routing ? '/1' : ''}`}>
 								Pagination
 							</Link>{' '}
 							- a paginated list with a large dataset.
 						</li>
-						<li>
+						<li className={styles.listItem}>
 							<Link to={`/examples/auth-api`}>API Authorization</Link> -
 							confirms that Gatsby is able to make authenticated requests to
 							WordPress&apos; API.

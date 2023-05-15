@@ -11,7 +11,8 @@ import { rootDir } from '..';
 import { Action, isString } from '../types';
 
 export const convertCSSModules: Action = async ({ data }) => {
-	if (!data?.tailwindcss) return 'skipping CSS module conversion';
+	if (data.noInstall || !data?.tailwindcss)
+		return 'skipping CSS module conversion';
 	if (!data.outDir || !isString(data?.outDir))
 		throw new Error('outDir is not valid');
 	data.silent ||
@@ -41,10 +42,14 @@ export const convertCSSModules: Action = async ({ data }) => {
 		const dirs = data.gatsby
 			? './src/**/*.jsx'
 			: './pages/**/*.jsx ./components/*.jsx';
-		execSync(`npx css-modules-to-tailwind ${dirs} --force`, {
-			cwd: data.outDir,
-			stdio: 'inherit',
-		});
+		execSync(
+			`npx --prefer-online --yes css-modules-to-tailwind ${dirs} --force`,
+			{
+				cwd: data.outDir,
+				stdio: data.silent ? 'ignore' : 'inherit',
+				encoding: 'utf-8',
+			},
+		);
 		return `${chalk.cyan('convertCSSModules:')} ${chalk.green('success')}`;
 	} catch (error) {
 		console.error(

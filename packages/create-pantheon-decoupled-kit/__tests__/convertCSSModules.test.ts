@@ -22,9 +22,10 @@ describe('convertCSSModules()', () => {
 		});
 
 		expect(vi.mocked(execSync)).toHaveBeenCalledWith(
-			'npx css-modules-to-tailwind ./pages/**/*.jsx ./components/*.jsx --force',
+			'npx --prefer-online --yes css-modules-to-tailwind ./pages/**/*.jsx ./components/*.jsx --force',
 			{
 				stdio: 'inherit',
+				encoding: 'utf-8',
 				cwd: outDir,
 			},
 		);
@@ -42,9 +43,10 @@ describe('convertCSSModules()', () => {
 		});
 
 		expect(vi.mocked(execSync)).toHaveBeenCalledWith(
-			'npx css-modules-to-tailwind ./src/**/*.jsx --force',
+			'npx --prefer-online --yes css-modules-to-tailwind ./src/**/*.jsx --force',
 			{
 				stdio: 'inherit',
+				encoding: 'utf-8',
 				cwd: outDir,
 			},
 		);

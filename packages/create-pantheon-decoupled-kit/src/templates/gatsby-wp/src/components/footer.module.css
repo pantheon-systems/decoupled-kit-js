@@ -1,8 +1,7 @@
 .footer {
-	margin-top: auto;
+	margin-top: var(--12);
 	display: flex;
 	flex-direction: column;
-	margin-top: var(--12);
 	background-color: var(--black);
 	justify-self: end;
 }
@@ -17,21 +16,23 @@
 	display: flex;
 	flex-direction: column;
 	min-width: var(--lg);
-	margin: var(--x-auto);
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .footerUl {
 	margin-top: var(--4);
 }
+
 .navItem {
 	margin-left: var(--3);
-	list-style: disc;
+	list-style-type: disc;
 	color: var(--blue-300);
 }
 
 .navItemLink {
 	color: var(--blue-300);
-	text-decoration: none;
+	text-decoration-line: none;
 }
 
 .navItem:hover {
@@ -39,13 +40,16 @@
 }
 
 .footerCopy {
-	margin: var(--4) auto;
+	margin-top: var(--4);
+	margin-bottom: var(--4);
+	margin-left: auto;
+	margin-right: auto;
 	padding: var(--2);
 	color: var(--white);
 }
 
 .footerCopyLink {
-	text-decoration: underline;
+	text-decoration-line: underline;
 }
 
 .footerCopy > * a:first-child {

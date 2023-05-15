@@ -2,7 +2,10 @@
 	display: flex;
 	flex-direction: column;
 	max-width: fit-content;
-	margin: var(--20) auto 0;
+	margin-top: var(--20);
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
 	text-align: center;
 }
 
@@ -12,13 +15,13 @@
 }
 
 .gatsby {
-	text-decoration: none;
+	text-decoration-line: none;
 	font-weight: 500;
 	color: var(--purple);
 }
 
 .gatsby:hover {
-	text-decoration: underline;
+	text-decoration-line: underline;
 }
 
 .onPantheon {
@@ -39,7 +42,10 @@
 @media (max-width: 320px) {
 	.onPantheon {
 		flex-direction: column;
-		margin: var(--x-auto);
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 
