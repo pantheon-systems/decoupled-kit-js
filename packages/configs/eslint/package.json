@@ -21,7 +21,7 @@
 	},
 	"devDependencies": {
 		"@pantheon-systems/workspace-configs": "*",
-		"@pantheon-systems/eslint-config": "*"
+		"@pantheon-systems/eslint-config": "0.0.1-canary.0"
 	},
 	"peerDependencies": {
 		"@typescript-eslint/parser": "^5.49.0",

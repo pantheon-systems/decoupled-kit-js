@@ -1,5 +1,14 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.0-canary.3
+
+### Minor Changes
+
+- ab24262f: [gatsby-wp] Use the convertCSSModules action for the tailwindcss
+  version
+
+  Bump eslint-config version
+
 ## 0.9.0-canary.2
 
 ### Patch Changes

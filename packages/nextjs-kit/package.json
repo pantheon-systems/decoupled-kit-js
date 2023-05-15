@@ -42,7 +42,7 @@
 		"lint-staged": "lint-staged"
 	},
 	"devDependencies": {
-		"@pantheon-systems/eslint-config": "*",
+		"@pantheon-systems/eslint-config": "0.0.1-canary.0",
 		"@pantheon-systems/workspace-configs": "*",
 		"@rollup/plugin-typescript": "^11.0.0",
 		"@tailwindcss/typography": "^0.5.9",
