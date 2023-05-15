@@ -1,9 +1,12 @@
 .container {
-	margin: var(--10) auto;
+	margin-top: var(--10);
+	margin-bottom: var(--10);
+	margin-left: auto;
+	margin-right: auto;
 	max-width: var(--md);
 }
 
-.container > h1 {
+.containerTitle {
 	font-size: var(--14);
 	font-weight: 800;
 	margin-bottom: var(--10);
@@ -15,13 +18,14 @@
 }
 
 .content {
-	margin: var(--x-auto);
+	margin-left: auto;
+	margin-right: auto;
 	font-size: var(--5);
 	font-weight: 400;
 	line-height: var(--8);
 }
 
-.content > ul {
+.list {
 	padding-left: var(--6);
 }
 
@@ -30,14 +34,17 @@
 	margin-bottom: var(--8);
 }
 
-.content > a, .content > ul a {
+.content > a, .list > * a {
 	color: var(--black);
-	text-decoration: underline;
+	text-decoration-line: underline;
 	font-weight: 500;
 }
 
-.content > ul li {
-	list-style: disc;
-	margin: var(--4) 0;
+.listItem {
+	list-style-type: disc;
+	margin-top: var(--4);
+	margin-bottom: var(--4);
+	margin-left: 0;
+	margin-right: 0;
 	padding-left: var(--3);
 }

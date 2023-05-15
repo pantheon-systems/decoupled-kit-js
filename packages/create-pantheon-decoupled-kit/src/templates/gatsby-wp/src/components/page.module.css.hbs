@@ -1,16 +1,21 @@
 .container {
-	margin: var(--12) auto 0;
+	margin-top: var(--12);
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--md);
 }
 
-.container > h1 {
+.mainTitle {
 	font-size: var(--14);
 	font-weight: 800;
 	margin-bottom: var(--10);
 }
 
-.container > a {
+.link {
 	color: var(--black);
 	font-size: var(--5);
+	text-decoration-line: underline;
 }
 
 .date {
@@ -24,23 +29,32 @@
 }
 
 .paragraphContent {
+	{{#if tailwindcss}}
+	@apply prose;
+	{{/if}}
 	overflow-wrap: break-word;
+	line-height: var(--8);
+	font-size: var(--5);
 }
 
-.img > * {
+.img {
 	border-radius: var(--2);
 }
 
 .hr {
 	width: 100%;
-	margin: var(--10) 0;
+	margin-top: var(--10);
+	margin-bottom: var(--10);
+	margin-left: 0;
+	margin-right: 0;
 	opacity: 0.3;
 }
 
 .nav {
 	display: flex;
 	flex-wrap: wrap;
-	padding: 0 var(--6);
+	padding-left: var(--6);
+	padding-right: var(--6);
 }
 
 .next {
@@ -60,7 +74,7 @@
 		max-width: var(--md);
 	}
 
-	.container > h1 {
+	.containerTitle {
 		font-size: var(--9);
 	}
 }

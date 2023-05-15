@@ -1,10 +1,13 @@
 {
-	"extends": "@pantheon-systems/decoupled-kit/react",
+	"extends": [
+		"@pantheon-systems/decoupled-kit/react",
+		"plugin:react/jsx-runtime"
+	],
 	"env": {
 		"browser": true,
 		"node": true
 	},
 	"rules": {
-        "react/prop-types": "off"
-    }
+		"react/prop-types": "off"
+	}
 }

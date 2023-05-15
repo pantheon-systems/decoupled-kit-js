@@ -1,5 +1,8 @@
 .container {
-	margin: var(--x-auto);
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
 	max-width: var(--sm);
 	height: inherit;
 }
@@ -8,11 +11,14 @@
 	height: inherit;
 }
 
-.content > h1 {
+.title {
 	font-size: var(--9);
 	font-weight: 800;
 	justify-self: flex-start;
-	margin: var(--10) 0;
+	margin-top: var(--10);
+	margin-bottom: var(--10);
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .item {
@@ -24,7 +30,7 @@
 	line-height: var(--8);
 }
 
-.item > h2 {
+.itemTitle {
 	font-size: var(--7);
 	font-weight: 700;
 	justify-content: start;

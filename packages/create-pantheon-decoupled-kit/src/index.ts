@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import inquirer, { QuestionCollection } from 'inquirer';
 import minimist, { Opts as MinimistOptions, ParsedArgs } from 'minimist';
-import { DecoupledKitGenerator, TemplateData, isString } from './types';
+import { DecoupledKitGenerator, isString, TemplateData } from './types';
 import { actionRunner, getHandlebarsInstance, helpMenu } from './utils/index';
 
 import pkg from '../package.json' assert { type: 'json' };
@@ -45,6 +45,10 @@ export const main = async (
 	args: ParsedArgs,
 	DecoupledKitGenerators: DecoupledKitGenerator[],
 ): Promise<void> => {
+	process.on('beforeExit', () => {
+		console.log(chalk.yellow('Goodbye.'));
+	});
+
 	// display the help menu
 	if (args?.help || args?.h) {
 		console.log(helpMenu(DecoupledKitGenerators));
@@ -120,12 +124,11 @@ export const main = async (
 	}
 
 	if (!generatorsToRun || !generatorsToRun?.length) {
-		throw new Error(`
-			${chalk.red(
-				'No valid generators were selected. Use positional arguments or choose from the prompt.',
-			)}
+		throw `${chalk.red(
+			'No valid generators were selected. Use positional arguments or choose from the prompt.',
+		)}
 Valid generators are: ${generatorNames.join(', ')}
-To see this list at any time, use the --help command.`);
+To see this list at any time, use the --help command.`;
 	}
 
 	const actions = [];

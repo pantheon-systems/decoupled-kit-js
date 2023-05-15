@@ -1,21 +1,14 @@
-import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-{{#unless tailwindcss}}
 import * as styles from './404.module.css'
-{{/unless}}
 const NotFoundPage = ({ data, location }) => {
 	const siteTitle = data.site.siteMetadata.title
 
 	return (
 		<Layout location={location} title={siteTitle}>
-			{{#if tailwindcss}}
-			<div className="flex flex-col mx-auto text-xl prose text-center mt-12">
-			{{else}}
 			<div className={styles.container}>
-			{{/if}}
 				<h2>404: Could not find the requested page</h2>
 			</div>
 		</Layout>

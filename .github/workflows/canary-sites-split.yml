@@ -40,8 +40,8 @@ jobs:
             split_repository: 'gatsby-wordpress-starter-default-canary'
             generator_cmd:
               "gatsby-wp --appName
-              @pantheon-systems/gatsby-wordpress-starter-canary --noInstall
-              --cmsEndpoint '' --tailwindcss --force --silent"
+              @pantheon-systems/gatsby-wordpress-starter-canary --cmsEndpoint ''
+              --tailwindcss --force --silent"
           # next-wordpress-starter
           - local_path: 'starters/next-wordpress-starter-canary-generated'
             split_repository: 'next-wordpress-starter-default-canary'

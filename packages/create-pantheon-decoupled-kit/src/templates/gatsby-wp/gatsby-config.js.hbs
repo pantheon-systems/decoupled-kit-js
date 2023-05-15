@@ -33,6 +33,7 @@ process.env.PANTHEON_CMS_ENDPOINT =
 let url = process.env.WPGRAPHQL_URL || process.env.PANTHEON_CMS_ENDPOINT
 
 module.exports = {
+	jsxRuntime: 'automatic',
 	...(injectedOptions && injectedOptions),
 	/**
 	 * Adding plugins to this array adds them to your Gatsby site.

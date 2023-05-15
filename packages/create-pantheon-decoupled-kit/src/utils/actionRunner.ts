@@ -16,7 +16,10 @@ export const actionRunner: ActionRunner = async ({
 			data.silent || console.log(result);
 		} catch (error) {
 			console.log(chalk.red('Something went wrong: '));
-			throw error;
+			if (error instanceof Error) {
+				console.log(error.message);
+			}
+			process.exit(1);
 		}
 	}
 	return 'All actions successfully completed.';

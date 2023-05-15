@@ -2,25 +2,27 @@
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	min-width: 100vw;
 	height: inherit;
-	margin: var(--x-auto);
+	width: inherit;
+	margin-right: auto;
+	margin-left: auto;
 }
 
-.navLinks { 
+.navLinks {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	margin: var(--x-auto);
+	margin-right: auto;
+	margin-left: auto;
 	font-size: var(--5);
-	list-style: none;
+	list-style-type: none;
 	justify-content: space-between;
 	max-width: var(--sm);
 	padding: var(--5) var(--10) 0;
 }
 
-.navLinks > * a {
-	text-decoration: none;
+.links {
+	text-decoration-line: none;
 	color: var(--black);
 }
 
@@ -30,24 +32,29 @@
 
 .navLinks :not(li:first-child) > a {
 	justify-self: flex-end;
-	margin: 0 var(--4);
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: var(--4);
+	margin-right: var(--4);
 }
 
 .navLinks a:hover {
-	text-decoration: underline;
+	text-decoration-line: underline;
 }
 
-.layout > main {
-	max-width: var(--lg);
-	margin: 0 auto auto;
+.layoutMain {
+	margin-top: 0;
+	margin-left: auto;
+	margin-right: auto;
 	margin-bottom: auto;
 }
 
 /* lg breakpoint*/
 @media (max-width: 1024px) {
-	.layout > main {
-		margin: 0;
+	.layoutMain {
+		margin-top: 0;
+		margin-left: 0;
+		margin-right: 0;
 		margin-bottom: auto;
 	}
 }
-
