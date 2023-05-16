@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.0-canary.4
+
+### Patch Changes
+
+- fe847220: [next-wp] Fix global css template
+
 ## 0.9.0-canary.3
 
 ### Minor Changes
