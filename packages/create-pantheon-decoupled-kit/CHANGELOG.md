@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.0-canary.5
+
+### Patch Changes
+
+- dffc487c: [gatsby-wp-acf-addon] Use css modules by default, retain tailwindcss
+  option
+
 ## 0.9.0-canary.4
 
 ### Patch Changes
