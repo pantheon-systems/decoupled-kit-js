@@ -1,5 +1,5 @@
 .container {
-	display: flex; 
+	display: flex;
 	flex-direction: column;
 	margin: auto;
 	min-width: var(--lg);
@@ -9,7 +9,10 @@
 }
 
 .content {
-	margin: var(--x-auto);
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .content > ul {
@@ -21,8 +24,9 @@
 	margin-bottom: var(--8);
 }
 
-.content > a, .content > ul a {
-	text-decoration: underline;
+.content > a,
+.content > ul a {
+	text-decoration-line: underline;
 	font-weight: 500;
 }
 
@@ -35,6 +39,6 @@
 /* lg breakpoint */
 @media (min-width: 1024px) {
 	.content {
-		max-width: var(--md); 
+		max-width: var(--md);
 	}
 }

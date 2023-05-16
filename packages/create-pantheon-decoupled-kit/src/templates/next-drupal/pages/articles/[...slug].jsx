@@ -9,9 +9,7 @@ import { IMAGE_URL } from '../../lib/constants';
 
 import { ContentWithImage } from '@pantheon-systems/nextjs-kit';
 import Layout from '../../components/layout';
-{{#unless tailwindcss}}
 import styles from './[...slug].module.css';
-{{/unless}}
 
 export default function ArticleTemplate({
 	article,
@@ -40,9 +38,7 @@ export default function ArticleTemplate({
 							}
 						: undefined
 				}
-				{{#unless tailwindcss}}
 				contentClassName={styles.content}
-				{{/unless}}
 			/>
 		</Layout>
 	);

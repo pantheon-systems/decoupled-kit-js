@@ -22,7 +22,7 @@ describe('convertCSSModules()', () => {
 		});
 
 		expect(vi.mocked(execSync)).toHaveBeenCalledWith(
-			'npx --prefer-online --yes css-modules-to-tailwind ./pages/**/*.jsx ./components/*.jsx --force',
+			'npx --prefer-online --yes css-modules-to-tailwind ./pages/**/*.jsx ./pages/*.jsx ./components/*.jsx --force',
 			{
 				stdio: 'inherit',
 				encoding: 'utf-8',

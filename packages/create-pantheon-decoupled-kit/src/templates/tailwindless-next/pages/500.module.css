@@ -10,5 +10,5 @@
 }
 
 .errorMessage > a {
-	text-decoration: underline;
+	text-decoration-line: underline;
 }

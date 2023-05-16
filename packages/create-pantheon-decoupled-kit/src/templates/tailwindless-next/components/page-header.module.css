@@ -6,5 +6,8 @@
 
 .header > h1 {
 	text-align: center;
-	margin: auto 0;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 0;
+	margin-right: 0;
 }

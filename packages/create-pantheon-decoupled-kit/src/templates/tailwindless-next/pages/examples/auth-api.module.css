@@ -10,7 +10,7 @@
 }
 
 .container > a {
-	text-decoration: underline;
+	text-decoration-line: underline;
 	font-size: var(--5);
 	font-weight: 500;
 }
@@ -31,6 +31,6 @@
 	}
 
 	.container > h1 {
-		font-size: var(--8)
+		font-size: var(--8);
 	}
 }

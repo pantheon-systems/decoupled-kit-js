@@ -1,19 +1,11 @@
 import Link from 'next/link';
-{{#unless tailwindcss}}
 import styles from './500.module.css';
-{{/unless}}
 
 export default function Custom500() {
 	return (
-		{{#if tailwindcss}}
-		<div className="flex flex-col mx-auto prose-xl mt-20 w-fit">
-			<span className="text-center">🛑 There was an error on the server 🛑</span>
-			<Link href="/" className="underline">
-		{{else}}	
 		<div className={styles.errorMessage}>
 			<span>🛑 There was an error on the server 🛑</span>
 			<Link href="/">
-		{{/if}}
 				Go Home
 			</Link>
 		</div>

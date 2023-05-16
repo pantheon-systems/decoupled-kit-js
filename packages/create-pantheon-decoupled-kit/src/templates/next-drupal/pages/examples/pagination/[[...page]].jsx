@@ -1,17 +1,15 @@
 import { DrupalState } from '@pantheon-systems/drupal-kit';
 
+import { BUILD_MODE } from '../../../lib/constants';
 import {
 	getCurrentLocaleStore,
 	globalDrupalStateStores,
 } from '../../../lib/stores';
-import { BUILD_MODE } from '../../../lib/constants';
 
 import { Paginator } from '@pantheon-systems/nextjs-kit';
 import Head from 'next/head';
 import Layout from '../../../components/layout';
-{{#unless tailwindcss}}
-import styles from "./pagination.module.css";
-{{/unless}}
+import styles from './pagination.module.css';
 
 // To use your configured backend, use:
 // const drupalUrl = DRUPAL_URL
@@ -28,22 +26,9 @@ export default function PaginationExampleTemplate({ data, footerMenu }) {
 	const RenderCurrentItems = ({ currentItems }) => {
 		return currentItems.map((item) => {
 			return (
-				{{#if tailwindcss}}
-				<article
-					key={item.id}
-					className="flex flex-col p-3 w-fit mx-auto mb-10"
-				>
-					<h2 className="justify-start my-auto text-2xl mb-2">{item.title}</h2>
-					<p className="max-w-prose my-2">
-						{item?.body.value.substr(0, 150)}...
-					</p>
-					{{else}}
 				<article key={item.title} className={styles.item}>
-          <h2>{item.title}</h2>
-					<p>
-						{item?.body.value.substr(0, 150)}...
-					</p>
-				{{/if}}
+					<h2>{item.title}</h2>
+					<p>{item?.body.value.substr(0, 150)}...</p>
 				</article>
 			);
 		});
@@ -56,19 +41,13 @@ export default function PaginationExampleTemplate({ data, footerMenu }) {
 				<meta name="description" content="Powered by Pantheon Decoupled Kit" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			{{#if tailwindcss}}
-			<div className="prose max-w-screen mx-auto">
-				<section className="flex flex-col">
-					<h1 className="my-10">Pagination example</h1>
-			{{else}}
 			<div className={styles.container}>
-        <section className={styles.content}>
-          <h1>Pagination example</h1>
-			{{/if}}
+				<section className={styles.content}>
+					<h1>Pagination example</h1>
 					<Paginator
 						data={data}
 						itemsPerPage={itemsPerPage}
-						breakpoints=\{{ start: 6, end: 12, add: 6 }}
+						breakpoints={{ start: 6, end: 12, add: 6 }}
 						routing
 						Component={RenderCurrentItems}
 					/>

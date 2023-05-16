@@ -2,9 +2,7 @@ import { Footer, Header, PreviewRibbon } from '@pantheon-systems/nextjs-kit';
 {{#if search}}
 import SearchInput from './search-input';
 {{/if}}
-{{#unless tailwindcss}}
 import styles from './layout.module.css';
-{{/unless}}
 
 export default function Layout({ children, footerMenu, preview = false }) {
 	const navItems = [
@@ -20,18 +18,6 @@ export default function Layout({ children, footerMenu, preview = false }) {
 	}));
 
 	return (
-		{{#if tailwindcss}}
-		<div className="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden">
-			{preview && <PreviewRibbon />}
-			{{#if search}}
-			<div className="flex flex-row flex-wrap justify-center mx-auto">
-				<Header navItems={navItems} />
-				<SearchInput />
-			</div>
-			{{else}}
-			<Header navItems={navItems} />
-			{{/if}}
-		{{else}}
 		<div className={styles.layout}>
 			{preview && <PreviewRibbon />}
 			{{#if search}}
@@ -42,16 +28,9 @@ export default function Layout({ children, footerMenu, preview = false }) {
 			{{else}}
 			<Header navItems={navItems} />
 			{{/if}}
-		{{/if}}
-			{{#if tailwindcss}}
-			<main className="mb-auto">{children}</main>
-			<Footer footerMenuItems={footerMenuItems}>
-				<span className="mx-auto">
-			{{else}}
 			<main className={styles.main}>{children}</main>
 			<Footer footerMenuItems={footerMenuItems}>
 				<span className={styles.footerCopy}>
-			{{/if}}
 					© {new Date().getFullYear()} Built with{' '}
 					<a
 						{{#if tailwindcss}}
