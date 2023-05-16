@@ -11,8 +11,7 @@ import { rootDir } from '..';
 import { Action, isString } from '../types';
 
 export const convertCSSModules: Action = async ({ data }) => {
-	if (data?.noInstall || !data?.tailwindcss)
-		return 'skipping CSS module conversion';
+	if (!data?.tailwindcss) return 'skipping CSS module conversion';
 	if (!data.outDir || !isString(data?.outDir))
 		throw new Error('outDir is not valid');
 	data.silent ||

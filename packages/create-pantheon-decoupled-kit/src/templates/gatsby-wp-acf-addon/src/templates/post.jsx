@@ -1,20 +1,19 @@
-import React from 'react'
 import { graphql } from 'gatsby'
 
-import Layout from '../components/layout'
-import Seo from '../components/seo'
-import Post from '../components/post'
 import { PostGrid } from '../components/grid'
+import Layout from '../components/layout'
+import Post from '../components/post'
+import Seo from '../components/seo'
+import * as styles from './post.module.css'
 
 const PostTemplate = ({ data: { previous, next, post } }) => {
-
 	return (
 		<Layout>
 			<Post post={post} next={next} previous={previous} />
 			{post.relatedContent?.relatedPosts ? (
 				<section>
-					<header className="prose text-2xl mx-auto mt-20">
-						<h2 className="text-center mx-auto">Related Content</h2>
+					<header className={styles.header}>
+						<h2 className={styles.headerTitle}>Related Content</h2>
 					</header>
 					<PostGrid
 						data={post.relatedContent.relatedPosts.map(item => ({

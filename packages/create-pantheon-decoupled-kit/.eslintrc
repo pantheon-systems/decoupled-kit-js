@@ -2,5 +2,6 @@
 	"extends": "@pantheon-systems/eslint-config",
 	"parserOptions": {
 		"project": ["./tsconfig.json"]
-	}
+	},
+	"ignorePatterns": ["/src/templates/**/*.jsx"]
 }

@@ -3,7 +3,8 @@
 	margin-bottom: 0;
 	margin-left: auto;
 	margin-right: auto;
-	max-width: var(--md);
+	max-width: var(--lg);
+	min-width: var(--md);
 }
 
 .mainTitle {
@@ -57,13 +58,21 @@
 	padding-right: var(--6);
 }
 
-.next {
+.link, .prev, .next {
+	font-size: var(--5);
+	text-decoration-line: underline;
 	color: var(--black);
+}
+
+.prev, .next {
+	font-weight: 500;
+}
+
+.next {
 	margin-left: auto;
 }
 
 .prev {
-	color: var(--black);
 	margin-right: auto;
 }
 
