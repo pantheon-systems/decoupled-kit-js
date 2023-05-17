@@ -1,16 +1,10 @@
 import Layout from '../components/layout';
-{{#unless tailwindcss}}
 import styles from './404.module.css';
-{{/unless}}
 
 export default function Custom404() {
 	return (
 		<Layout>
-			{{#if tailwindcss}}
-			<div className="flex flex-col mx-auto text-xl prose text-center mt-12">
-			{{else}}
 			<div className={styles.errorMessage}>
-			{{/if}}
 				<span>404: Could not find the requested page</span>
 			</div>
 		</Layout>

@@ -1,14 +1,12 @@
-import { NextSeo } from 'next-seo';
 import { sortDate } from '@pantheon-systems/nextjs-kit';
+import { NextSeo } from 'next-seo';
 import { isMultiLanguage } from '../lib/isMultiLanguage';
 import { getCurrentLocaleStore, globalDrupalStateStores } from '../lib/stores';
 
-import { ArticleGrid } from '../components/grid';
 import Image from 'next/image';
+import { ArticleGrid } from '../components/grid';
 import Layout from '../components/layout';
-{{#unless tailwindcss}}
 import styles from './index.module.css';
-{{/unless}}
 
 export default function HomepageTemplate({
 	sortedArticles,
@@ -17,47 +15,25 @@ export default function HomepageTemplate({
 	multiLanguage,
 }) {
 	const HomepageHeader = () => (
-		{{#if tailwindcss}}
-		<div className="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit">
-			<h1 className="prose text-4xl text-center h-full">
+		<div className={styles.header}>
+			<h1>
 				Welcome to{' '}
-				<a
-					className="text-blue-600 no-underline hover:underline"
-					href="https://nextjs.org"
-				>
+				<a className={styles.next} href="https://nextjs.org">
 					Next.js!
 				</a>
 			</h1>
-			<div className="text-2xl">
-				<div className="bg-black text-white rounded flex items-center justify-center p-4">
-					Decoupled Drupal on{' '}
-			{{else}}
-			<div className={styles.header}>
-				<h1>
-					Welcome to{' '}
-					<a
-						className={styles.next}
-						href="https://nextjs.org"
-					>
-						Next.js!
-					</a>
-			</h1>
 			<div className={styles.onPantheon}>
-				<span>Decoupled Drupal on{' '}</span>
-			{{/if}}
-					<Image
-						src="/pantheon.png"
-						alt="Pantheon Logo"
-						style=\{{
-							margin: 0,
-						}}
-						width={191}
-						height={60}
-					/>
-				</div>
-			{{#if tailwindcss}}	
+				<span>Decoupled Drupal on </span>
+				<Image
+					src="/pantheon.png"
+					alt="Pantheon Logo"
+					style={{
+						margin: 0,
+					}}
+					width={191}
+					height={60}
+				/>
 			</div>
-			{{/if}}
 		</div>
 	);
 
