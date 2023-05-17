@@ -19,7 +19,7 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"import": "./dist/drupal-kit.js",
+			"import": "./dist/drupal-kit.mjs",
 			"require": "./dist/drupal-kit.js"
 		}
 	},
@@ -29,10 +29,8 @@
 	},
 	"scripts": {
 		"clean": "pnpm rimraf ./dist",
-		"dev": "vite",
 		"build": "pnpm clean && vite build && tsc --project ./tsconfig.build.json",
 		"watch": "pnpm clean && tsc && vite build --watch",
-		"serve": "vite preview",
 		"typedoc": "typedoc",
 		"test": "vitest run --coverage",
 		"test:watch": "vitest",
