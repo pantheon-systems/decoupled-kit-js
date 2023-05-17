@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/eslint-config",
-	"version": "0.0.1-canary.0",
+	"version": "0.0.0",
 	"description": "Eslint configs for the @pantheon-systems decoupled SDK npm packages",
 	"license": "GPL-3.0-or-later",
 	"private": true,
