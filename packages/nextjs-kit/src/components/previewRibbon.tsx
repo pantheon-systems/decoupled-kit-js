@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
-// import Image from 'next/image';
+import Link from 'next/link.js';
+import { useState } from 'react';
 
 export interface PreviewRibbonProps {
 	clearPreviewRoute?: string;
@@ -8,7 +7,7 @@ export interface PreviewRibbonProps {
 
 export const PreviewRibbon: React.FC<PreviewRibbonProps> = ({
 	clearPreviewRoute = '/api/clear-preview',
-}) => {
+}: PreviewRibbonProps) => {
 	const [show, setShow] = useState(true);
 
 	return (

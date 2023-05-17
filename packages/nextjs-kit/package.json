@@ -13,24 +13,25 @@
 	"files": [
 		"dist/*"
 	],
-	"types": "dist/index.d.ts",
-	"main": "./dist/nextjs-kit.umd.js",
-	"module": "./dist/nextjs-kit.es.js",
+	"types": "./dist/index.d.ts",
+	"main": "./dist/nextjs-kit.js",
+	"module": "./dist/nextjs-kit.mjs",
 	"exports": {
 		".": {
-			"require": "./dist/nextjs-kit.umd.js",
-			"import": "./dist/nextjs-kit.es.js"
+			"types": "./dist/index.d.ts",
+			"require": "./dist/nextjs-kit.js",
+			"import": "./dist/nextjs-kit.mjs"
 		},
 		"./style.css": "./dist/style.css"
 	},
 	"prettier": "@pantheon-systems/workspace-configs/prettier",
 	"typedoc": {
-		"entryPoint": "./index.ts"
+		"entryPoint": "./src/index.ts"
 	},
 	"scripts": {
-		"build": "pnpm clean && vite build",
 		"clean": "pnpm rimraf ./dist",
-		"watch": "vite build --watch",
+		"build": "pnpm clean && vite build && tsc --project ./tsconfig.build.json",
+		"watch": "pnpm clean && tsc && vite build --watch",
 		"typedoc": "typedoc",
 		"test": "vitest run",
 		"test:watch": "vitest",
@@ -44,14 +45,13 @@
 	"devDependencies": {
 		"@pantheon-systems/eslint-config": "0.0.1-canary.0",
 		"@pantheon-systems/workspace-configs": "*",
-		"@rollup/plugin-typescript": "^11.0.0",
 		"@tailwindcss/typography": "^0.5.9",
 		"@testing-library/react": "14.0.0",
 		"@vitejs/plugin-react": "^3.1.0",
 		"@vitest/coverage-c8": "^0.29.8",
 		"autoprefixer": "^10.4.14",
 		"eslint-plugin-prettier": "^4.2.1",
-		"next": "^13.2.4",
+		"next": "^13.4.2",
 		"postcss": "^8.4.21",
 		"prettier": "^2.8.7",
 		"react": "18.2.0",
