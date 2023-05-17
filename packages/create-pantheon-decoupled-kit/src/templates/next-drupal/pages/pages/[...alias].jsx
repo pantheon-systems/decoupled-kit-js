@@ -19,7 +19,7 @@ export default function PageTemplate({ page, footerMenu, hrefLang, preview }) {
 				languageAlternates={hrefLang}
 			/>
 			<article className={styles.container}>
-				<h1>{page.title}</h1>
+				<h1 className={styles.containerTitle}>{page.title}</h1>
 				<Link passHref href="/pages" className="font-normal">
 					Pages &rarr;
 				</Link>

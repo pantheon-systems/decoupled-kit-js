@@ -28,23 +28,17 @@ export default function Layout({ children, footerMenu, preview = false }) {
 			{{else}}
 			<Header navItems={navItems} />
 			{{/if}}
-			<main className={styles.main}>{children}</main>
+			<main className={styles.layoutMain}>{children}</main>
 			<Footer footerMenuItems={footerMenuItems}>
 				<span className={styles.footerCopy}>
 					© {new Date().getFullYear()} Built with{' '}
 					<a
-						{{#if tailwindcss}}
-						className="text-white hover:text-blue-100 underline"
-						{{/if}}
 						href="https://nextjs.org/"
 					>
 						Next.js
 					</a>{' '}
 					and{' '}
 					<a
-						{{#if tailwindcss}}
-						className="text-blue-500 underline hover:text-blue-100"
-						{{/if}}
 						href="https://www.drupal.org/"
 					>
 						Drupal

@@ -31,7 +31,7 @@ export default function Layout({ children, footerMenu, preview }) {
 		<div className={styles.layout}>
 			{preview && <PreviewRibbon />}
 			<Header navItems={navItems} />
-			<main className={styles.main}>{children}</main>
+			<main className={styles.layoutMain}>{children}</main>
 			<Footer footerMenuItems={footerMenuItems}>
 				<span className={styles.footerCopy}>
 					© {new Date().getFullYear()} Built with{' '}
