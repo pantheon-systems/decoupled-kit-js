@@ -1,18 +1,16 @@
-import { useRouter } from 'next/router';
-import { NextSeo } from 'next-seo';
-import { isMultiLanguage } from '../../lib/isMultiLanguage.js';
 import { sortDate } from '@pantheon-systems/nextjs-kit';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import { isMultiLanguage } from '../../lib/isMultiLanguage.js';
 import {
 	getCurrentLocaleStore,
 	globalDrupalStateStores,
-} from '../../lib/stores';
+} from '../../lib/stores.js';
 
+import Link from 'next/link';
 import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
-import Link from 'next/link';
-{{#unless tailwindcss}}
 import styles from './index.module.css';
-{{/unless}}
 
 export default function PageListTemplate({
 	hrefLang,
@@ -29,46 +27,30 @@ export default function PageListTemplate({
 				languageAlternates={hrefLang || false}
 			/>{' '}
 			<PageHeader title="Pages" />
-			{{#if tailwindcss}}
-			<div className="mt-12 mx-auto max-w-[50vw]">
-			{{else}}
 			<div className={styles.content}>
-			{{/if}}
-			{sortedPages ? (
-				<ul>
-				{sortedPages?.map(({ id, title, body, path }) => (
-					{{#if tailwindcss}}
-					<li className="prose justify-items-start mt-8" key={id}>
-					{{else}}
-					<li key={id}>
-					{{/if}}
-						<h2>{title}</h2>
-						{body.summary ? (
-							<div dangerouslySetInnerHTML=\{{ __html: body?.summary }} />
-							) : null}
-							<Link
-								passHref
-								href={`${
-									multiLanguage ? `/${path?.langcode || locale}` : ''
-								}${path.alias}`}
-								{{#if tailwindcss}}
-								className="font-normal underline"
-								{{else}}
-								className={styles.link}
-								{{/if}}
-							>
-								Read more →
-							</Link>
-						</li>
+				{sortedPages ? (
+					<ul>
+						{sortedPages?.map(({ id, title, body, path }) => (
+							<li key={id}>
+								<h2>{title}</h2>
+								{body.summary ? (
+									<div dangerouslySetInnerHTML={{ __html: body?.summary }} />
+								) : null}
+								<Link
+									passHref
+									href={`${
+										multiLanguage ? `/${path?.langcode || locale}` : ''
+									}${path.alias}`}
+									className={styles.link}
+								>
+									Read more →
+								</Link>
+							</li>
 						))}
 					</ul>
-					) : (
-					{{#if tailwindcss}}
-					<h2 className="text-xl text-center mt-14">No pages found 🏜</h2>
-					{{else}}
+				) : (
 					<h2 className={styles.notFound}>No pages found 🏜</h2>
-					{{/if}}
-					)}
+				)}
 			</div>
 		</Layout>
 	);

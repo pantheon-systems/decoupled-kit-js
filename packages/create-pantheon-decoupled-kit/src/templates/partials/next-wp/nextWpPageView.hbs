@@ -1,15 +1,11 @@
 import { NextSeo } from 'next-seo';
 import { ContentWithImage } from '@pantheon-systems/nextjs-kit';
 import { setOutgoingHeaders } from '../../lib/setOutgoingHeaders';
-import { IMAGE_URL } from '../../lib/constants';
-
 import Layout from '../../components/layout';
 
 import { getFooterMenu } from '../../lib/Menus';
 import { getPageByUri, getPagePreview } from '../../lib/Pages';
-{{#unless tailwindcss}}
 import styles from './page.module.css';
-{{/unless}}
 
 export default function PageTemplate({ menuItems, page, preview }) {
 	return (
@@ -30,11 +26,7 @@ export default function PageTemplate({ menuItems, page, preview }) {
 							}
 						: undefined
 					}
-					{{#if tailwindcss}}
-					contentClassName="ps-wp-content"
-					{{else}}
 					contentClassName={styles.content}
-					{{/if}}
 			/>
 		</Layout>
 	);

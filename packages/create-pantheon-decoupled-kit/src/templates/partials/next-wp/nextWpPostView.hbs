@@ -4,14 +4,11 @@ import { setOutgoingHeaders } from '../../lib/setOutgoingHeaders';
 
 import Layout from '../../components/layout';
 import { getFooterMenu } from '../../lib/Menus';
-import { IMAGE_URL } from '../../lib/constants';
 import { getPostByUri, getPostPreview } from '../../lib/Posts';
 {{#if wpAcfAddon}}
 import { PostGrid } from '../../components/grid';
 {{/if}}
-{{#unless tailwindcss}}
 import styles from './[...slug].module.css';
-{{/unless}}
 
 export default function PostTemplate({ menuItems, post, preview }) {
 	return (
@@ -32,22 +29,13 @@ export default function PostTemplate({ menuItems, post, preview }) {
 						  }
 						: undefined
 				}
-				{{#if tailwindcss}}
-				contentClassName="ps-wp-content"
-				{{else}}
 				contentClassName={styles.content}
-				{{/if}}
 			/>
 			{{#if wpAcfAddon}}
 			{post.relatedContent?.relatedPosts ? (
 				<section>
-					{{#if tailwindcss}}
-					<header className="prose text-2xl mx-auto mt-20">
-						<h2 className="text-center mx-auto">Related Content</h2>
-					{{else}}
 					<header className={styles.acfHeader}>
 						<h2>Related Content</h2>
-					{{/if}}
 					</header>
 					<PostGrid
 						contentType="posts"

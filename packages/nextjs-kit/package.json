@@ -43,7 +43,7 @@
 		"lint-staged": "lint-staged"
 	},
 	"devDependencies": {
-		"@pantheon-systems/eslint-config": "0.0.1-canary.0",
+		"@pantheon-systems/eslint-config": "*",
 		"@pantheon-systems/workspace-configs": "*",
 		"@tailwindcss/typography": "^0.5.9",
 		"@testing-library/react": "14.0.0",

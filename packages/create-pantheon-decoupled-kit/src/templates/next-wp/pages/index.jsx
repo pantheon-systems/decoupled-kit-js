@@ -1,57 +1,33 @@
 import { NextSeo } from 'next-seo';
-import { setOutgoingHeaders } from '../lib/setOutgoingHeaders';
 import Image from 'next/image';
-import Layout from '../components/layout';
 import { PostGrid } from '../components/grid';
+import Layout from '../components/layout';
 import { getFooterMenu } from '../lib/Menus';
 import { getLatestPosts } from '../lib/Posts';
-{{#unless tailwindcss}}
+import { setOutgoingHeaders } from '../lib/setOutgoingHeaders';
 import styles from './index.module.css';
-{{/unless}}
 
 export default function Home({ menuItems, posts }) {
 	const HomepageHeader = () => (
-		{{#if tailwindcss}}
-		<div className="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit">
-			<h1 className="prose text-4xl text-center h-full">
-				Welcome to{' '}
-				<a
-					className="text-blue-600 no-underline hover:underline"
-					href="https://nextjs.org"
-				>
-					Next.js!
-				</a>
-			</h1>
-			<div className="text-2xl">
-				<div className="bg-black text-white rounded flex items-center justify-center p-4">
-					Decoupled WordPress on{' '}
-		{{else}}
 		<div className={styles.header}>
 			<h1>
 				Welcome to{' '}
-				<a
-					className={styles.next}
-					href="https://nextjs.org"
-				>
+				<a className={styles.next} href="https://nextjs.org">
 					Next.js!
 				</a>
 			</h1>
 			<div className={styles.onPantheon}>
-				<span>Decoupled WordPress on{" "}</span>
-		{{/if}}
-					<Image
-						src="/pantheon.png"
-						alt="Pantheon Logo"
-						style=\{{
-							margin: 0,
-						}}
-						width={191}
-						height={60}
-					/>
-				</div>
-			{{#if tailwindcss}}
+				<span>Decoupled WordPress on </span>
+				<Image
+					src="/pantheon.png"
+					alt="Pantheon Logo"
+					style={{
+						margin: 0,
+					}}
+					width={191}
+					height={60}
+				/>
 			</div>
-			{{/if}}
 		</div>
 	);
 
