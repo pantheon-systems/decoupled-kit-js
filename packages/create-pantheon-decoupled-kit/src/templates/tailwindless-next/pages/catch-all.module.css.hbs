@@ -1,35 +1,41 @@
 {{#if drupal}}
-	.container {
-		display: flex;
-		flex-direction: column;
-		margin: var(--10) auto 0;
-		max-width: var(--md);
-	}
+.container {
+	display: flex;
+	flex-direction: column;
+	margin: var(--10) auto 0;
+	max-width: var(--md);
+}
 
-	.container > h1 {
-		font-size: var(--14);
-		font-weight: 800;
-		margin-bottom: var(--12);
-	}
+.containerTitle {
+	font-size: var(--14);
+	font-weight: 800;
+	margin-bottom: var(--12);
+}
 
-	.container >  h1 + a {
-		text-decoration-line: underline;
-		font-size: var(--5);
-	}
+.container >  h1 + a {
+	text-decoration-line: underline;
+	font-size: var(--5);
+}
 
-	.content {
-		margin-top: var(--12);
-		color: var(--text-body);
-	}
+.content {
+	margin-top: var(--12);
+	color: var(--text-body);
+}
 
-	.content > * > a {
-		text-decoration-line: underline;
-		font-weight: 500;
-	}
+.content > * > a {
+	text-decoration-line: underline;
+	font-weight: 500;
+}
 
-	.content > p {
-		margin-bottom: var(--4);
-		font-size: var(--5);
-	}
+.content > p {
+	margin-bottom: var(--4);
+	font-size: var(--5);
+}
+
+.noContent {
+	margin-top: var(--14);
+	font-size: var(--6);
+	text-align: center;
+}
 
 {{/if}}

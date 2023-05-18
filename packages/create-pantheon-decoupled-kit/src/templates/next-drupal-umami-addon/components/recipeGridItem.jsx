@@ -1,10 +1,8 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import { IMAGE_URL } from '../lib/constants';
-import { GradientPlaceholder } from './grid'
-{{#unless tailwindcss}}
+import { GradientPlaceholder } from './grid';
 import styles from './grid.module.css';
-{{/unless}}
 
 // For use with withGrid
 export const RecipeGridItem = ({ content: recipe, multiLanguage, locale }) => {
@@ -16,39 +14,22 @@ export const RecipeGridItem = ({ content: recipe, multiLanguage, locale }) => {
 				recipe.path.alias
 			}`}
 		>
-			{{#if tailwindcss}}
-			<div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500">
-				<div className="flex-shrink-0 relative h-40">
-			{{else}}
 			<div className={styles.card}>
 				<div className={styles.cardImg}>
-			{{/if}}
 					{imgSrc !== null ? (
 						<Image
 							src={IMAGE_URL + imgSrc}
 							fill
-							style=\{{ objectFit: 'cover' }}
+							style={{ objectFit: 'cover' }}
 							alt={recipe.title}
 						/>
 					) : (
 						<GradientPlaceholder />
 					)}
 				</div>
-				{{#if tailwindcss}}
-				<h2 className="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900">
-					{recipe.title} &rarr;
-				</h2>
-				{{else}}
-				<h2 className={styles.cardTitle}>
-					{recipe.title} &rarr;
-				</h2>
-				{{/if}}
+				<h2 className={styles.cardTitle}>{recipe.title} &rarr;</h2>
 				{recipe?.field_recipe_category?.length > 0 ? (
-					{{#if tailwindcss}}
-					<span className="text-right pb-2 pr-3 text-sm text-slate-400">
-					{{else}}
 					<span className={styles.recipeCategory}>
-					{{/if}}
 						{recipe?.field_recipe_category[0].name}
 					</span>
 				) : null}
