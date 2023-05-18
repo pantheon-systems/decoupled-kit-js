@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import inquirer, { QuestionCollection } from 'inquirer';
 import minimist, { Opts as MinimistOptions, ParsedArgs } from 'minimist';
-import { DecoupledKitGenerator, isString, TemplateData } from './types';
+import { DecoupledKitGenerator, TemplateData, isString } from './types';
 import { actionRunner, getHandlebarsInstance, helpMenu } from './utils/index';
 
 import pkg from '../package.json' assert { type: 'json' };
@@ -153,13 +153,8 @@ To see this list at any time, use the --help command.`;
 		// if generator data exists, add it to the args object
 		generator.data && Object.assign(args, generator.data);
 
-		// filter out tailwindless templates if they are not needed
-		// otherwise, filter out shared tailwind templates
-		if (args.tailwindcss) {
-			generator.templates = generator.templates.filter(
-				(template) => !template.startsWith('tailwindless'),
-			);
-		} else {
+		// filter out shared tailwind templates if needed
+		if (!args.tailwindcss) {
 			generator.templates = generator.templates.filter(
 				(template) => template !== 'tailwind-shared',
 			);

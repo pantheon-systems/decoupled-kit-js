@@ -1,7 +1,5 @@
-import { Header, Footer, PreviewRibbon } from '@pantheon-systems/nextjs-kit';
-{{#unless tailwindcss}}
+import { Footer, Header, PreviewRibbon } from '@pantheon-systems/nextjs-kit';
 import styles from './layout.module.css';
-{{/unless}}
 
 export default function Layout({ children, footerMenu, preview }) {
 	const navItems = [
@@ -30,21 +28,12 @@ export default function Layout({ children, footerMenu, preview }) {
 	}));
 
 	return (
-		{{#if tailwindcss}}
-		<div className="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden">
-			{preview && <PreviewRibbon />}
-			<Header navItems={navItems} />
-			<main className="mb-auto">{children}</main>
-			<Footer footerMenuItems={footerMenuItems}>
-				<span className="mx-auto">
-		{{else}}
 		<div className={styles.layout}>
 			{preview && <PreviewRibbon />}
 			<Header navItems={navItems} />
-			<main className={styles.main}>{children}</main>
+			<main className={styles.layoutMain}>{children}</main>
 			<Footer footerMenuItems={footerMenuItems}>
 				<span className={styles.footerCopy}>
-		{{/if}}
 					© {new Date().getFullYear()} Built with{' '}
 					<a
 						className="text-white hover:text-blue-100 underline"

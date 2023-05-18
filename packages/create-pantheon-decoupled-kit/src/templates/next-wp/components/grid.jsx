@@ -1,48 +1,31 @@
-import Link from 'next/link';
+import { withGrid } from '@pantheon-systems/nextjs-kit';
 import Image from 'next/image';
+import Link from 'next/link';
 import { IMAGE_URL } from '../lib/constants';
 import { getUrlPath } from '../lib/getUrlPath';
-import { withGrid } from '@pantheon-systems/nextjs-kit';
-{{#unless tailwindcss}}
-import styles from "./grid.module.css";
-{{/unless}}
+import styles from './grid.module.css';
 
 const GradientPlaceholder = () => (
-	{{#if tailwindcss}}
-	<div className="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500" />
-	{{else}}
 	<div className={styles.gradientPlaceholder} />
-	{{/if}}
 );
 
 const GridItem = ({ href, imgSrc, altText, title }) => {
 	return (
 		<Link passHref href={href}>
-		{{#if tailwindcss}}
-			<div className="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500">
-				<div className="flex-shrink-0 relative h-40">
-			{{else}}
 			<div className={styles.card}>
 				<div className={styles.cardImg}>
-			{{/if}}
 					{imgSrc !== null ? (
 						<Image
 							src={IMAGE_URL + imgSrc}
 							fill
 							alt={altText}
-							style=\{{ objectFit: "cover" }}
+							style={{ objectFit: 'cover' }}
 						/>
 					) : (
 						<GradientPlaceholder />
 					)}
 				</div>
-			{{#if tailwindcss}} 
-				<h2 className="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900">
-			{{else}}
-				<h2 className={styles.cardTitle}>
-			{{/if}}
-					{title} &rarr;
-				</h2>
+				<h2 className={styles.cardTitle}>{title} &rarr;</h2>
 			</div>
 		</Link>
 	);

@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.0-canary.6
+
+### Minor Changes
+
+- e042730c: - [next-wp] Uses css modules by default, retain tailwindcss option
+  - [next-druapl] Uses css modules by default, retain tailwindcss option
+
 ## 0.9.0-canary.5
 
 ### Patch Changes

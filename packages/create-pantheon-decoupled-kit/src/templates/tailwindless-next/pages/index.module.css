@@ -15,7 +15,7 @@
 	color: var(--blue);
 }
 .next:hover {
-	text-decoration: underline;
+	text-decoration-line: underline;
 }
 
 .onPantheon {
@@ -27,7 +27,10 @@
 	background-color: var(--black);
 	margin-top: var(--8);
 	font-size: var(--6);
-	padding: var(--4) var(--7);
+	padding-top: var(--4);
+	padding-bottom: var(--4);
+	padding-left: var(--7);
+	padding-right: var(--7);
 	border-radius: var(--1);
 	font-weight: normal;
 }

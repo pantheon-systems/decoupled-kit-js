@@ -1,10 +1,13 @@
 .header {
 	margin: var(--12) auto;
-	font-size: var(--14);
-	font-weight: 800;
 }
 
-.header > h1 {
+.headerTitle {
 	text-align: center;
-	margin: auto 0;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 0;
+	margin-right: 0;
+	font-size: var(--14);
+	font-weight: 800;
 }

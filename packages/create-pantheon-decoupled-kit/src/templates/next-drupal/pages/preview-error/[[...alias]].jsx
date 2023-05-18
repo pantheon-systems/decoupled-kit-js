@@ -6,9 +6,7 @@ import {
 	getCurrentLocaleStore,
 	globalDrupalStateStores,
 } from '../../lib/stores';
-{{#unless tailwindcss}}
 import styles from './preview-error.module.css';
-{{/unless}}
 
 export default function PreviewError({ footerMenu, preview }) {
 	const {
@@ -16,14 +14,8 @@ export default function PreviewError({ footerMenu, preview }) {
 	} = useRouter();
 	return (
 		<Layout footerMenu={footerMenu} preview={true}>
-			{{#if tailwindcss}}
-			<div className="flex flex-col mx-auto prose-xl mt-20 w-1/2">
-			{{else}}
 			<div className={styles.container}>
-			{{/if}}
-				<h2{{#if tailwindcss}} className="text-center"{{/if}}>
-					🛑 {error ? error : 'There was an error on the server'} 🛑
-				</h2>
+				<h2>🛑 {error ? error : 'There was an error on the server'} 🛑</h2>
 				{message ? <p>{message}</p> : null}
 				<Link href="/" className="underline">
 					Go Home
