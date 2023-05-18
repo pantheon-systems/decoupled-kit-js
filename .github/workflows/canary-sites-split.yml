@@ -34,7 +34,7 @@ jobs:
             generator_cmd:
               "next-drupal --appName
               @pantheon-systems/next-drupal-starter-default-canary --cmsEndpoint
-              '' --noInstall --tailwindcss --force --silent"
+              '' --tailwindcss --force --silent"
           # gatsby-wordpress-starter
           - local_path: 'starters/gatsby-wordpress-starter-canary-generated'
             split_repository: 'gatsby-wordpress-starter-default-canary'
@@ -47,7 +47,7 @@ jobs:
             split_repository: 'next-wordpress-starter-default-canary'
             generator_cmd:
               "next-wp --appName @pantheon-systems/next-wordpress-starter-canary
-              --cmsEndpoint '' --noInstall --tailwindcss --force --silent"
+              --cmsEndpoint '' --tailwindcss --force --silent"
 
           # canary docs site
           - local_path: 'web'

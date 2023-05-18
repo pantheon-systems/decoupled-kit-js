@@ -1,4 +1,4 @@
-import { sortDate } from '../lib/sortDate';
+import { sortDate } from '../src/utils/sortDate';
 const unsortedDates = [
 	{
 		date: '2021-06-17T15:12:39+00:00',
