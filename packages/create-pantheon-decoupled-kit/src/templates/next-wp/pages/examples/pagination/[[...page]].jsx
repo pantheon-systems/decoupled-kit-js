@@ -1,6 +1,9 @@
 import { Paginator } from '@pantheon-systems/nextjs-kit';
 import { NextSeo } from 'next-seo';
 import Layout from '../../../components/layout';
+import { getFooterMenu } from '../../../lib/Menus';
+import { paginationPostsQuery } from '../../../lib/PostsPagination';
+import { setOutgoingHeaders } from '../../../lib/setOutgoingHeaders';
 
 import styles from './pagination.module.css';
 
