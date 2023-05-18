@@ -2,9 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { IMAGE_URL } from '../lib/constants';
 import { withGrid } from '@pantheon-systems/nextjs-kit';
-import styles from "./grid.module.css";
+import styles from './grid.module.css';
 
-const GradientPlaceholder = () => (
+export const GradientPlaceholder = () => (
 	<div className={styles.gradientPlaceholder} />
 );
 
@@ -35,9 +35,7 @@ export const ArticleGridItem = ({
 						<GradientPlaceholder />
 					)}
 				</div>
-				<h2 className={styles.cardTitle}>
-					{article.title} &rarr;
-				</h2>
+				<h2 className={styles.cardTitle}>{article.title} &rarr;</h2>
 			</div>
 		</Link>
 	);
