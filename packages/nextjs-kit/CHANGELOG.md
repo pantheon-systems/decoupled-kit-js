@@ -1,5 +1,12 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.7.3-canary.0
+
+### Patch Changes
+
+- aea5653d: Fixed package.json exports field and updated build and file
+  structure in line with our other packages
+
 ## 1.7.2
 
 ### Patch Changes
