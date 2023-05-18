@@ -1,5 +1,13 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.0-canary.7
+
+### Patch Changes
+
+- aea5653d: Bump nextjs-kit version
+- 05d75735: Use `lint --fix` for nextjs generators
+- 94373c6c: Bump drupal-kit version
+
 ## 0.9.0-canary.6
 
 ### Minor Changes

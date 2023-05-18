@@ -1,5 +1,11 @@
 # @pantheon-systems/drupal-kit
 
+## 4.6.0-canary.1
+
+### Patch Changes
+
+- 94373c6c: Fix package.json typo
+
 ## 4.6.0-canary.0
 
 ### Minor Changes

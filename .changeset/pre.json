@@ -13,19 +13,24 @@
     "web": "1.0.0"
   },
   "changesets": [
+    "curvy-buckets-juggle",
+    "fast-days-accept",
     "four-foxes-check",
     "good-eels-kick",
     "hungry-coats-flow",
     "large-apes-cross",
     "loud-pumpkins-switch",
+    "metal-hornets-prove",
     "ninety-cooks-melt",
     "quick-dancers-cover",
+    "sour-windows-relax",
     "strange-shrimps-learn",
     "strong-knives-return",
     "ten-squids-watch",
     "thick-hotels-check",
     "thirty-walls-joke",
     "tidy-rocks-brake",
-    "twelve-hats-grin"
+    "twelve-hats-grin",
+    "twelve-kids-fix"
   ]
 }
