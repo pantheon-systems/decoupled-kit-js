@@ -1,5 +1,16 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.0-canary.8
+
+### Minor Changes
+
+- ddacd2a5: Use css modules by default for the next-drupal-umami-addon, retain
+  tailwindcss option
+
+### Patch Changes
+
+- 65689a68: - [next-wp] Update imports for Pagination example
+
 ## 0.9.0-canary.7
 
 ### Patch Changes
