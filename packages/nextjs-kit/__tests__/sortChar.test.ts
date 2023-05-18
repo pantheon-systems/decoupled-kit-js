@@ -1,4 +1,4 @@
-import { sortChar } from '../lib/sortChar';
+import { sortChar } from '../src/utils/sortChar';
 
 const unsortedNum = [
 	{

@@ -1,7 +1,7 @@
-import { screen, render, fireEvent } from '@testing-library/react';
-import { Paginator } from '../../components/paginator';
-import examplePaginationData from '../data/examplePaginationData.json';
 import React from 'react';
+import { screen, render, fireEvent } from '@testing-library/react';
+import { Paginator } from '../../src/components/paginator';
+import examplePaginationData from '../data/examplePaginationData.json';
 import { vi } from 'vitest';
 
 vi.mock('next/router', () => ({

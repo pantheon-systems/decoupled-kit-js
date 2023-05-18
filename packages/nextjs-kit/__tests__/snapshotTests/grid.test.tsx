@@ -1,22 +1,13 @@
+import React from 'react';
 import { render } from '@testing-library/react';
-
-import { withGrid } from '../../components/grid';
+import { withGrid } from '../../src/components/grid';
 import exampleGridData from '../data/exampleGridData.json';
 
 /**
  * @vitest-environment jsdom
  */
 
-interface GridifyProps {
-	content: {
-		title: string;
-		body: string;
-	};
-}
-
-const Gridify: React.FC<GridifyProps> = ({
-	content,
-}: GridifyProps): JSX.Element => {
+const Gridify = ({ content }): JSX.Element => {
 	return (
 		<div>
 			<h1>{content.title}</h1>

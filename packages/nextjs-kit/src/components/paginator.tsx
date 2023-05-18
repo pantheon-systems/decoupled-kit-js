@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router.js';
+import { useEffect, useState } from 'react';
 
 /**
  * Options type for {@link Paginator}
@@ -129,14 +129,16 @@ export const Paginator = <Type extends object>({
 			setOffset(Number(newOffset));
 		}
 
-		routing &&
+		void (
+			routing &&
 			router.push(
 				`${currentRoute}/${currentPageQuery}`,
 				`${currentRoute}/${currentPageQuery}`,
 				{
 					shallow: true,
 				},
-			);
+			)
+		);
 	}, [data, offset, itemsPerPage, breakStart, currentPageQuery, totalItems]);
 
 	// track window width to appropriately hide and show buttons on small viewports

@@ -19,7 +19,7 @@
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"import": "./dist/drupal-kit.js",
+			"import": "./dist/drupal-kit.mjs",
 			"require": "./dist/drupal-kit.js"
 		}
 	},
@@ -29,10 +29,8 @@
 	},
 	"scripts": {
 		"clean": "pnpm rimraf ./dist",
-		"dev": "vite",
 		"build": "pnpm clean && vite build && tsc --project ./tsconfig.build.json",
 		"watch": "pnpm clean && tsc && vite build --watch",
-		"serve": "vite preview",
 		"typedoc": "typedoc",
 		"test": "vitest run --coverage",
 		"test:watch": "vitest",
@@ -43,7 +41,7 @@
 		"lint-staged": "lint-staged"
 	},
 	"devDependencies": {
-		"@pantheon-systems/eslint-config": "0.0.1-canary.0",
+		"@pantheon-systems/eslint-config": "*",
 		"@pantheon-systems/workspace-configs": "*",
 		"@types/isomorphic-fetch": "^0.0.36",
 		"@vitest/coverage-c8": "^0.29.8",
