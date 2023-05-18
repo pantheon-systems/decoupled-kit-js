@@ -1,6 +1,6 @@
+import React from 'react';
 import { render } from '@testing-library/react';
-
-import { Footer } from '../../components/footer';
+import { Footer } from '../../src/components/footer';
 
 /**
  * @vitest-environment jsdom
