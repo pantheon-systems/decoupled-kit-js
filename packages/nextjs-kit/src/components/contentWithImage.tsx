@@ -1,5 +1,5 @@
 import Image, { type ImageProps } from 'next/image.js';
-import { useRouter } from 'next/router.js';
+import { useRouter } from 'next/compat/router.js';
 
 export interface ContentProps {
 	title: string;
@@ -43,7 +43,7 @@ export const ContentWithImage: React.FC<ContentProps> = ({
 				{date ? <p className="ps-text-sm ps-text-gray-600">{date}</p> : null}
 
 				<a
-					onClick={() => router.back()}
+					onClick={() => router?.back()}
 					className="ps-font-normal ps-cursor-pointer"
 				>
 					Back &rarr;

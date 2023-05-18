@@ -3,18 +3,15 @@ import { defineConfig } from 'vitest/config';
 
 const globals = {
 	react: 'react',
-	'react-dom': 'reactDom',
-	next: 'next',
-	'react/jsx-runtime': 'jsx',
+	'react/jsx-runtime': 'jsxRuntime',
 	'next/image': 'Image',
+	'next/compat/router': 'Router',
 	'next/link': 'Link',
-	'next/router': 'Router',
 };
 const external = [
 	'react',
 	'react-dom',
 	'react/jsx-runtime',
-	'next',
 	'next/link',
 	'next/router',
 	'next/image',
@@ -28,7 +25,7 @@ export default defineConfig(() => {
 			lib: {
 				entry: './src/index.ts',
 				name: 'nextjs-kit',
-				formats: ['cjs', 'es'],
+				formats: ['es', 'cjs'],
 				fileName: (format) => `nextjs-kit.${format === 'es' ? 'mjs' : 'js'}`,
 			},
 			rollupOptions: {

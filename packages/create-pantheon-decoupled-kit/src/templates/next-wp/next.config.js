@@ -55,6 +55,10 @@ const nextConfig = {
 		domains: [imageDomain],
 	},
 	output: 'standalone',
+	transpilePackages: [
+		'@pantheon-systems/nextjs-kit',
+		'@pantheon-systems/wordpress-kit',
+	],
 };
 
 module.exports = nextConfig;
