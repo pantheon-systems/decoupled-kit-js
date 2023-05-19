@@ -84,7 +84,7 @@ module.exports = async () => {
 				},
 			];
 		},
-		transpilePackages: ['@pantheon-systems/drupal-kit'],
+		transpilePackages: ['@pantheon-systems/nextjs-kit', '@pantheon-systems/drupal-kit']
 	};
 
 	return nextConfig;

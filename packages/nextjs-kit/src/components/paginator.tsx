@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router.js';
+import { useRouter } from 'next/compat/router.js';
 import { useEffect, useState } from 'react';
 
 /**
@@ -100,10 +100,11 @@ export const Paginator = <Type extends object>({
 	const router = useRouter();
 	// get current path from router.pathname
 	// and trim off catchalls
-	const currentRoute = router.pathname.replace(/\/{1}\[{1,2}.*\]{1,2}$/, '');
-	const routeKey = Object.keys(router.query)[0];
+	const currentRoute =
+		router?.pathname.replace(/\/{1}\[{1,2}.*\]{1,2}$/, '') || '';
+	const routeKey = router?.query ? Object.keys(router.query)[0] : '';
 	const [currentPageQuery, setCurrentPageQuery] = useState<number>(
-		Number(router.query[routeKey]) || 1,
+		Number(router?.query[routeKey]) || 1,
 	);
 
 	const [offset, setOffset] = useState<number>(
@@ -131,7 +132,7 @@ export const Paginator = <Type extends object>({
 
 		void (
 			routing &&
-			router.push(
+			router?.push(
 				`${currentRoute}/${currentPageQuery}`,
 				`${currentRoute}/${currentPageQuery}`,
 				{

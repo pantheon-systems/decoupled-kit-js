@@ -1,20 +1,18 @@
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vitest/config';
+import { defineConfig } from 'vite';
 
 const globals = {
 	react: 'react',
 	'react-dom': 'reactDom',
-	next: 'next',
-	'react/jsx-runtime': 'jsx',
+	'react/jsx-runtime': 'jsxRuntime',
 	'next/image': 'Image',
+	'next/compat/router': 'Router',
 	'next/link': 'Link',
-	'next/router': 'Router',
 };
 const external = [
 	'react',
 	'react-dom',
 	'react/jsx-runtime',
-	'next',
 	'next/link',
 	'next/router',
 	'next/image',
@@ -28,8 +26,8 @@ export default defineConfig(() => {
 			lib: {
 				entry: './src/index.ts',
 				name: 'nextjs-kit',
-				formats: ['cjs', 'es'],
-				fileName: (format) => `nextjs-kit.${format === 'es' ? 'mjs' : 'js'}`,
+				formats: ['cjs', 'umd'],
+				fileName: (format) => `nextjs-kit.${format === 'cjs' ? 'cjs' : 'js'}`,
 			},
 			rollupOptions: {
 				external,
