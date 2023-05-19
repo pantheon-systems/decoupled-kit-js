@@ -1,5 +1,12 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.7.3-canary.1
+
+### Patch Changes
+
+- 0cb2a7ac: Use next/compat/router to work around issues with useRouter in next
+  13.4.x
+
 ## 1.7.3-canary.0
 
 ### Patch Changes
