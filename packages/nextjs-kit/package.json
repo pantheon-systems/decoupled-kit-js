@@ -14,13 +14,13 @@
 		"dist/*"
 	],
 	"types": "./dist/index.d.ts",
-	"main": "./dist/nextjs-kit.js",
-	"module": "./dist/nextjs-kit.mjs",
+	"main": "./dist/nextjs-kit.cjs",
+	"module": "./dist/nextjs-kit.js",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"require": "./dist/nextjs-kit.js",
-			"import": "./dist/nextjs-kit.mjs"
+			"require": "./dist/nextjs-kit.cjs",
+			"import": "./dist/nextjs-kit.js"
 		},
 		"./style.css": "./dist/style.css"
 	},
@@ -51,7 +51,7 @@
 		"@vitest/coverage-c8": "^0.29.8",
 		"autoprefixer": "^10.4.14",
 		"eslint-plugin-prettier": "^4.2.1",
-		"next": "^13.4.2",
+		"next": "~13.1.5",
 		"postcss": "^8.4.21",
 		"prettier": "^2.8.7",
 		"react": "18.2.0",
@@ -62,7 +62,7 @@
 		"vitest": "^0.29.8"
 	},
 	"peerDependencies": {
-		"next": "^13.1.1",
+		"next": "^13.1.5",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"tailwindcss": "^3.1.8"

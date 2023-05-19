@@ -32,7 +32,6 @@ exports[`<ContentWithImage /> > should render 'contentWithImage' 1`] = `
           alt="Pizza Image"
           data-nimg="fill"
           decoding="async"
-          fetchpriority="high"
           sizes="100vw"
           src="/_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.i%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=3840&q=75"
           srcset="/_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.i%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.i%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.i%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.i%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.i%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.i%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.i%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fdev-decoupled-wordpress-qa.pantheonsite.i%2Fwp-content%2Fuploads%2F2022%2F08%2Fpizza.jpeg&w=3840&q=75 3840w"
