@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.0-canary.10
+
+### Patch Changes
+
+- 293d3fc7: [next-drupal] Handle encoded URI components in /api/preview
+
 ## 0.9.0-canary.9
 
 ### Patch Changes
