@@ -86,6 +86,7 @@ export const Paginator = <Type extends object>({
 	routing,
 	Component,
 }: PaginationProps<Type>) => {
+	const router = useRouter();
 	// configurable breakpoints
 	// This value will be the start of the separator.
 	const [breakStart, setBreakStart] = useState<number | null>(
@@ -97,7 +98,6 @@ export const Paginator = <Type extends object>({
 	// how many buttons to add when the separator is clicked
 	const breakAdd = breakpoints?.add || null;
 
-	const router = useRouter();
 	// get current path from router.pathname
 	// and trim off catchalls
 	const currentRoute =
