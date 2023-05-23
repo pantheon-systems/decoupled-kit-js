@@ -1,5 +1,15 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.0-canary.11
+
+### Patch Changes
+
+- 5a786d0a: Bump nextjs-kit and wordpress-kit versions
+- 5dd257c9: [next-wp-acf-addon] Use convertCSSModules action for the tailwindcss
+  option. [next-drupal] Add prettier as devDependency and prettier scripts to
+  package.json
+- c6beaeb1: Fix prettier scripts
+
 ## 0.9.0-canary.10
 
 ### Patch Changes
