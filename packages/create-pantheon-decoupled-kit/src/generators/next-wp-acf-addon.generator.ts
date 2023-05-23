@@ -1,4 +1,4 @@
-import { addWithDiff, runLint } from '../actions';
+import { addWithDiff, convertCSSModules, runLint } from '../actions';
 import type { DecoupledKitGenerator } from '../types';
 import { outDirPrompt, tailwindcssPrompt } from '../utils/sharedPrompts';
 
@@ -11,6 +11,6 @@ export const nextWpAcfAddon: DecoupledKitGenerator = {
 		tailwindcssPrompt,
 	],
 	templates: ['next-wp-acf-addon'],
-	actions: [addWithDiff, runLint],
+	actions: [addWithDiff, convertCSSModules, runLint],
 	cmsType: 'wp',
 };
