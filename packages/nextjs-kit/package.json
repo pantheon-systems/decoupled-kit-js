@@ -14,13 +14,13 @@
 		"dist/*"
 	],
 	"types": "./dist/index.d.ts",
-	"main": "./dist/nextjs-kit.cjs",
-	"module": "./dist/nextjs-kit.js",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"require": "./dist/nextjs-kit.cjs",
-			"import": "./dist/nextjs-kit.js"
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
 		},
 		"./style.css": "./dist/style.css"
 	},
@@ -30,8 +30,8 @@
 	},
 	"scripts": {
 		"clean": "pnpm rimraf ./dist",
-		"build": "pnpm clean && vite build && tsc --project ./tsconfig.build.json",
-		"watch": "pnpm clean && tsc && vite build --watch",
+		"build": "pnpm clean && pnpm tsup",
+		"watch": "pnpm clean && tsc && pnpm tsup --watch",
 		"typedoc": "typedoc",
 		"test": "vitest run",
 		"test:watch": "vitest",
@@ -47,24 +47,23 @@
 		"@pantheon-systems/workspace-configs": "*",
 		"@tailwindcss/typography": "^0.5.9",
 		"@testing-library/react": "14.0.0",
-		"@vitejs/plugin-react": "^3.1.0",
 		"@vitest/coverage-c8": "^0.29.8",
 		"autoprefixer": "^10.4.14",
 		"eslint-plugin-prettier": "^4.2.1",
-		"next": "~13.1.5",
-		"postcss": "^8.4.21",
+		"next": "13.4.3",
+		"postcss": "^8.4.23",
 		"prettier": "^2.8.7",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"rimraf": "^4.4.1",
-		"tailwindcss": "^3.3.1",
-		"vite": "^4.2.1",
+		"tailwindcss": "^3.3.2",
+		"tsup": "^6.7.0",
 		"vitest": "^0.29.8"
 	},
 	"peerDependencies": {
 		"next": "^13.1.5",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"tailwindcss": "^3.1.8"
+		"tailwindcss": "^3.3.2"
 	}
 }
