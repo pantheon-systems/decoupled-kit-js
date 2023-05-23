@@ -144,7 +144,7 @@ const config = {
 							},
 							{
 								label: 'Create a Decoupled WordPress Backend',
-								to: '/docs/backend-starters/decoupled-drupal/creating-a-new-project',
+								to: '/docs/backend-starters/decoupled-wordpress/creating-a-new-project',
 							},
 						],
 					},
