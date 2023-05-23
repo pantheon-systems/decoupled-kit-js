@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.0-canary.12
+
+### Patch Changes
+
+- 703a2663: [next-wp] Add .prettierrc
+
 ## 0.9.0-canary.11
 
 ### Patch Changes
