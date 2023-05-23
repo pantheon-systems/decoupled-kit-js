@@ -1,5 +1,12 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.7.3-canary.2
+
+### Patch Changes
+
+- 5a786d0a: Use tsup for bundle - vite was not properly externalizing some
+  packages leading to errors in the bundle
+
 ## 1.7.3-canary.1
 
 ### Patch Changes
