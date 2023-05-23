@@ -1,5 +1,5 @@
-import Image, { type ImageProps } from 'next/image.js';
 import { useRouter } from 'next/compat/router.js';
+import Image, { type ImageProps } from 'next/image.js';
 
 export interface ContentProps {
 	title: string;
@@ -42,14 +42,14 @@ export const ContentWithImage: React.FC<ContentProps> = ({
 				<h1>{title}</h1>
 				{date ? <p className="ps-text-sm ps-text-gray-600">{date}</p> : null}
 
-				<a
+				<button
 					onClick={() => router?.back()}
-					className="ps-font-normal ps-cursor-pointer"
+					className="ps-font-normal ps-underline ps-cursor-pointer"
 				>
 					Back &rarr;
-				</a>
+				</button>
 			</section>
-			<div className="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg ps-shadow-lg [&*>img]:ps-rounded-lg">
+			<div className="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg [&*>img]:ps-rounded-lg">
 				{imageProps ? (
 					<div className="ps-relative ps-mb-10 ps-min-h-[50vh]">
 						<Image
