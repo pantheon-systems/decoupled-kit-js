@@ -1,5 +1,11 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.7.3-canary.3
+
+### Patch Changes
+
+- e0f1a510: Added React types to devDependencies
+
 ## 1.7.3-canary.2
 
 ### Patch Changes

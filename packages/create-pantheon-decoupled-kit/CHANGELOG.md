@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.0-canary.13
+
+### Patch Changes
+
+- e0f1a510: Bump nextjs-kit version
+
 ## 0.9.0-canary.12
 
 ### Patch Changes
