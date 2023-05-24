@@ -10,7 +10,7 @@ export const Grid = ({
 	children,
 }: {
 	cols?: number;
-	children?: JSX.Element[];
+	children?: React.ReactNode;
 }) => {
 	return (
 		<div
@@ -57,7 +57,7 @@ export const Grid = ({
  * ```
  */
 export const withGrid = <Props extends object>(
-	Component: React.ElementType,
+	Component: React.ComponentType,
 ) => {
 	/**
 	 * @param props.data - The to be passed to the Component as the content prop
@@ -74,7 +74,7 @@ export const withGrid = <Props extends object>(
 	}: {
 		data?: Type[];
 		cols?: number;
-		FallbackComponent?: React.ElementType;
+		FallbackComponent?: React.ComponentType;
 	} & { [Property in keyof Props]: Props[Property] }): JSX.Element => {
 		return (
 			<>
