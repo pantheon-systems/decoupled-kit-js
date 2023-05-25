@@ -1,6 +1,7 @@
 import type { Answers, QuestionCollection } from 'inquirer';
 import type { ParsedArgs } from 'minimist';
 import type { SpyInstance } from 'vitest';
+import { taggedTemplateHelpers as helpers } from './utils';
 
 declare module 'vitest' {
 	export interface TestContext {
@@ -95,6 +96,31 @@ interface ActionConfig {
 
 interface ActionRunnerConfig extends ActionConfig {
 	actions: Action[];
+}
+
+/**
+ * Helper utilities for template literal templates
+ */
+type Helpers = typeof helpers;
+
+/**
+ * Arguments for the {@link TemplateFn}
+ */
+interface TemplateFnArgs<Data extends Input> {
+	data: Data;
+	utils: Helpers;
+}
+
+/**
+ * A tagged template literal function with data and utils context
+ */
+export declare type TemplateFn = <Data extends Input>({
+	data,
+	utils,
+}: TemplateFnArgs<Data>) => string;
+
+export interface TemplateImport {
+	default: TemplateFn;
 }
 
 // TYPE PREDICATES
