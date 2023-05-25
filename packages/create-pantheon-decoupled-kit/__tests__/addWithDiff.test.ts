@@ -29,6 +29,9 @@ const globalData = {
 	outDir: outDir('empty'),
 	force: false,
 	silent: false,
+	y: true,
+	z: false,
+	empty: true,
 };
 
 describe('addWithDiff()', () => {
@@ -46,6 +49,8 @@ test input
 			'test-withDiff.js': `console.log('Hello World')`,
 			'.gitignore':
 				'#this file should be renamed to .gitignore when it is written with the addWithDiff action',
+			'test-ts-template.ts': `const x = 'I am a string';
+console.log(x);`,
 		};
 		await fs.ensureDir(path.resolve(outDir('populated')));
 		Object.keys(populated).forEach((key) => {
@@ -131,7 +136,7 @@ test input
 			templateData,
 		});
 		expect(handlebarsSpy).toHaveBeenCalledTimes(2);
-		expect(promptSpy).toHaveBeenCalledTimes(5);
+		expect(promptSpy).toHaveBeenCalledTimes(6);
 	});
 
 	it('should should a diff and prompt for each different file when the target exists', async ({
@@ -146,6 +151,7 @@ test input
 		data.outDir = outDir('populated');
 		data.anotherInput = 'Testing a different output';
 		data.diffInput = 'this input is also different';
+		data.z = true;
 		await actions.addWithDiff({ data, templateData, handlebars });
 
 		expect(addWithDiffSpy).toHaveBeenLastCalledWith({
@@ -154,7 +160,7 @@ test input
 			handlebars,
 		});
 		expect(handlebarsSpy).toHaveBeenCalledTimes(2);
-		expect(promptSpy).toHaveBeenCalledTimes(2);
+		expect(promptSpy).toHaveBeenCalledTimes(3);
 	});
 
 	it('should only prompt the user once if answer is "yes to all"', async ({
@@ -227,7 +233,7 @@ test input
 		await actions.addWithDiff({ data, templateData, handlebars });
 
 		expect(addWithDiffSpy).toHaveBeenCalledOnce();
-		expect(unlinkSyncSpy).toHaveBeenCalledTimes(5);
+		expect(unlinkSyncSpy).toHaveBeenCalledTimes(6);
 	});
 
 	it('should exit on abort', async ({ promptSpy, logSpy, addWithDiffSpy }) => {
@@ -259,5 +265,19 @@ test input
 		expect(addWithDiffSpy).toHaveBeenCalledOnce();
 		expect(promptSpy).toHaveBeenCalledTimes(1);
 		expect(fs.existsSync(`${outDir('empty')}/.gitignore`)).toBeTruthy();
+	});
+
+	it('should not render blank files', async ({ promptSpy, addWithDiffSpy }) => {
+		vi.mocked(inquirer.prompt).mockImplementation(async () => ({
+			writeFile: 'yes to all',
+		}));
+		const data = Object.assign({}, globalData);
+		data.outDir = outDir('populated');
+		const pathToFile = path.join(outDir('populated'), 'test-can-be-empty.ts');
+
+		await actions.addWithDiff({ data, templateData, handlebars });
+		expect(promptSpy).toHaveBeenCalledTimes(1);
+		expect(addWithDiffSpy).toHaveBeenCalled();
+		expect(fs.existsSync(pathToFile)).toBeFalsy();
 	});
 });
