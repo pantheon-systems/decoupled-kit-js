@@ -1,16 +1,16 @@
-import { PageGrid } from '../components/grid'
-import Layout from '../components/layout'
-import Paginator from '../components/paginator'
-import Seo from '../components/seo'
-import * as styles from './pagesOrPostsIndex.module.css'
+import { PageGrid } from '../components/grid';
+import Layout from '../components/layout';
+import Paginator from '../components/paginator';
+import Seo from '../components/seo';
+import * as styles from './pagesOrPostsIndex.module.css';
 
 const PageIndexTemplate = ({
 	pageContext: { itemsPerPage, routing, pages },
 	location,
 }) => {
 	const RenderCurrentItems = ({ currentItems }) => {
-		return <PageGrid data={currentItems} contentType="pages" />
-	}
+		return <PageGrid data={currentItems} contentType="pages" />;
+	};
 
 	return (
 		<Layout>
@@ -29,11 +29,11 @@ const PageIndexTemplate = ({
 				</section>
 			</div>
 		</Layout>
-	)
-}
+	);
+};
 
-export default PageIndexTemplate
+export default PageIndexTemplate;
 
 export function Head() {
-	return <Seo title="All pages" />
+	return <Seo title="All pages" />;
 }

@@ -12,8 +12,6 @@ coverage
 dist
 public
 
-*.d.ts
-
 # handlebars templates
 *.hbs
 **/__tests__/fixtures/**

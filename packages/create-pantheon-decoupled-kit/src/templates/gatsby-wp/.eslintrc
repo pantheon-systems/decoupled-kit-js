@@ -3,6 +3,9 @@
 		"@pantheon-systems/decoupled-kit/react",
 		"plugin:react/jsx-runtime"
 	],
+	"parserOptions": {
+		"project": ["./tsconfig.json"]
+	},
 	"env": {
 		"browser": true,
 		"node": true

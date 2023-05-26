@@ -47,7 +47,7 @@ export const addWithDiff: Action = async ({
 
 	const filesToCopyRegex =
 		/(gif|jpg|jpeg|tiff|png|svg|ashx|ico|pdf|jar|eot|woff|ttf|woff2)$/;
-	const templateFilesRegex = /(\.(css|jsx|tsx|ts|js)\.(js|ts))$/;
+	const templateFilesRegex = /(\.(css|jsx|tsx|ts|js|json)\.(js|ts))$/;
 	const templatesToRender: MergedPaths = await dedupeTemplates(templateData);
 	const destinationDir = path.resolve(process.cwd(), data.outDir);
 

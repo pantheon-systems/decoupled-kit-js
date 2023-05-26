@@ -1,8 +1,8 @@
-import { graphql, Link, useStaticQuery } from 'gatsby'
-import * as styles from './footer.module.css'
+import { graphql, Link, useStaticQuery } from 'gatsby';
+import * as styles from './footer.module.css';
 
 const Footer = () => {
-	const menuQuery = useStaticQuery(graphql`
+	const menuQuery = useStaticQuery<Queries.MenuQueryQuery>(graphql`
 		query MenuQuery {
 			wpMenu(name: { eq: "Example Menu" }) {
 				id
@@ -15,26 +15,26 @@ const Footer = () => {
 				}
 			}
 		}
-	`)
+	`);
 	const nodes = menuQuery?.wpMenu?.menuItems?.nodes
 		? menuQuery.wpMenu.menuItems.nodes
-		: []
+		: [];
 
 	const FooterMenu = () => (
 		<nav className={styles.footerNav}>
 			<ul className={styles.footerUl}>
-				{nodes.map(({ id, label, path }, i) => {
+				{nodes.map(({ id, label, path }) => {
 					return (
-						<li key={id + i} className={styles.navItem}>
-							<Link className={styles.navItemLink} to={`/posts${path}`}>
+						<li key={id} className={styles.navItem}>
+							<Link className={styles.navItemLink} to={`/posts${path || ''}`}>
 								{label}
 							</Link>
 						</li>
-					)
+					);
 				})}
 			</ul>
 		</nav>
-	)
+	);
 
 	return (
 		<footer className={styles.footer}>
@@ -52,7 +52,7 @@ const Footer = () => {
 				</span>
 			</div>
 		</footer>
-	)
-}
+	);
+};
 
-export default Footer
+export default Footer;
