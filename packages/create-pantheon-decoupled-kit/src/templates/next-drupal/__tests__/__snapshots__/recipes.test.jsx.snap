@@ -75,18 +75,18 @@ exports[`Umami <RecipeListTemplate /> > should render recipes 1`] = `
             href="/recipes/vegan-chocolate-and-nut-brownies"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f shrink-0 h-40 relative shrink-0 h-40 relative"
               >
                 <img
                   alt="Vegan chocolate and nut brownies"
-                  src="https://umami/sites/default/files/vegan-chocolate-nut-brownies.jpg"
+                  src="https://default/sites/default/files/vegan-chocolate-nut-brownies.jpg"
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f font-semibold py-4 px-6 font-semibold py-4 px-6"
               >
                 Vegan chocolate and nut brownies →
               </h2>
@@ -101,18 +101,18 @@ exports[`Umami <RecipeListTemplate /> > should render recipes 1`] = `
             href="/recipes/watercress-soup"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f shrink-0 h-40 relative shrink-0 h-40 relative"
               >
                 <img
                   alt="Watercress soup"
-                  src="https://umami/sites/default/files/watercress-soup-umami.jpg"
+                  src="https://default/sites/default/files/watercress-soup-umami.jpg"
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f font-semibold py-4 px-6 font-semibold py-4 px-6"
               >
                 Watercress soup →
               </h2>
@@ -127,18 +127,18 @@ exports[`Umami <RecipeListTemplate /> > should render recipes 1`] = `
             href="/recipes/victoria-sponge-cake"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f shrink-0 h-40 relative shrink-0 h-40 relative"
               >
                 <img
                   alt="Victoria sponge cake"
-                  src="https://umami/sites/default/files/victoria-sponge-umami.jpg"
+                  src="https://default/sites/default/files/victoria-sponge-umami.jpg"
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f font-semibold py-4 px-6 font-semibold py-4 px-6"
               >
                 Victoria sponge cake →
               </h2>
@@ -153,18 +153,18 @@ exports[`Umami <RecipeListTemplate /> > should render recipes 1`] = `
             href="/recipes/gluten-free-pizza"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f shrink-0 h-40 relative shrink-0 h-40 relative"
               >
                 <img
                   alt="Gluten free pizza"
-                  src="https://umami/sites/default/files/pizza-umami.jpg"
+                  src="https://default/sites/default/files/pizza-umami.jpg"
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f font-semibold py-4 px-6 font-semibold py-4 px-6"
               >
                 Gluten free pizza →
               </h2>
@@ -179,18 +179,18 @@ exports[`Umami <RecipeListTemplate /> > should render recipes 1`] = `
             href="/recipes/thai-green-curry"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f shrink-0 h-40 relative shrink-0 h-40 relative"
               >
                 <img
                   alt="Thai green curry"
-                  src="https://umami/sites/default/files/thai-green-curry-umami.jpg"
+                  src="https://default/sites/default/files/thai-green-curry-umami.jpg"
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f font-semibold py-4 px-6 font-semibold py-4 px-6"
               >
                 Thai green curry →
               </h2>
@@ -205,18 +205,18 @@ exports[`Umami <RecipeListTemplate /> > should render recipes 1`] = `
             href="/recipes/crema-catalana"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f shrink-0 h-40 relative shrink-0 h-40 relative"
               >
                 <img
                   alt="Crema catalana"
-                  src="https://umami/sites/default/files/crema-catalana-umami.jpg"
+                  src="https://default/sites/default/files/crema-catalana-umami.jpg"
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f font-semibold py-4 px-6 font-semibold py-4 px-6"
               >
                 Crema catalana →
               </h2>
@@ -231,18 +231,18 @@ exports[`Umami <RecipeListTemplate /> > should render recipes 1`] = `
             href="/recipes/fiery-chili-sauce"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f shrink-0 h-40 relative shrink-0 h-40 relative"
               >
                 <img
                   alt="Fiery chili sauce"
-                  src="https://umami/sites/default/files/chili-sauce-umami.jpg"
+                  src="https://default/sites/default/files/chili-sauce-umami.jpg"
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f font-semibold py-4 px-6 font-semibold py-4 px-6"
               >
                 Fiery chili sauce →
               </h2>
@@ -257,18 +257,18 @@ exports[`Umami <RecipeListTemplate /> > should render recipes 1`] = `
             href="/recipes/deep-mediterranean-quiche"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f shrink-0 h-40 relative shrink-0 h-40 relative"
               >
                 <img
                   alt="Deep mediterranean quiche"
-                  src="https://umami/sites/default/files/mediterranean-quiche-umami.jpg"
+                  src="https://default/sites/default/files/mediterranean-quiche-umami.jpg"
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f font-semibold py-4 px-6 font-semibold py-4 px-6"
               >
                 Deep mediterranean quiche →
               </h2>
@@ -283,18 +283,18 @@ exports[`Umami <RecipeListTemplate /> > should render recipes 1`] = `
             href="/recipes/borscht-with-pork-ribs"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f shrink-0 h-40 relative shrink-0 h-40 relative"
               >
                 <img
                   alt="Borscht with pork ribs"
-                  src="https://umami/sites/default/files/borscht-with-pork-ribs-umami.jpg"
+                  src="https://default/sites/default/files/borscht-with-pork-ribs-umami.jpg"
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f font-semibold py-4 px-6 font-semibold py-4 px-6"
               >
                 Borscht with pork ribs →
               </h2>
@@ -309,18 +309,18 @@ exports[`Umami <RecipeListTemplate /> > should render recipes 1`] = `
             href="/recipes/super-easy-vegetarian-pasta-bake"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f shrink-0 h-40 relative shrink-0 h-40 relative"
               >
                 <img
                   alt="Super easy vegetarian pasta bake-test"
-                  src="https://umami/sites/default/files/veggie-pasta-bake-umami.jpg"
+                  src="https://default/sites/default/files/veggie-pasta-bake-umami.jpg"
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f font-semibold py-4 px-6 font-semibold py-4 px-6"
               >
                 Super easy vegetarian pasta bake-test →
               </h2>
@@ -483,7 +483,7 @@ exports[`Umami <RecipeTemplate /> > should render recipe 1`] = `
         >
           <img
             alt="Vegan chocolate and nut brownies"
-            src="https://umami/sites/default/files/vegan-chocolate-nut-brownies.jpg"
+            src="https://default/sites/default/files/vegan-chocolate-nut-brownies.jpg"
           />
         </div>
         <div

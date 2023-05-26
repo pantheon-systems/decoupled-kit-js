@@ -1,9 +1,9 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<PageListTemplate /> > should render pages 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+    class="_layout_522a10 flex flex-col"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -56,59 +56,50 @@ exports[`<PageListTemplate /> > should render pages 1`] = `
       </nav>
     </div>
     <main
-      class="mb-auto"
+      class="_layoutMain_522a10 mb-auto"
     >
        
       <header
-        class="prose text-2xl mx-auto mt-20"
+        class="_header_be6ffb"
       >
         <h1
-          class="text-center mx-auto"
+          class="_headerTitle_be6ffb font-extrabold my-auto mx-0 text-center"
         >
           Pages
         </h1>
       </header>
       <div
-        class="mt-12 mx-auto max-w-[50vw]"
+        class="_content_69eda7 flex flex-col max-w-screen-md"
       >
         <ul>
-          <li
-            class="prose justify-items-start mt-8"
-          >
+          <li>
             <h2>
               About Umami
             </h2>
-            <div />
             <a
-              class="font-normal underline"
+              class="_link_69eda7 underline"
               href="/about-umami"
             >
               Read more →
             </a>
           </li>
-          <li
-            class="prose justify-items-start mt-8"
-          >
+          <li>
             <h2>
               Top Level Page
             </h2>
-            <div />
             <a
-              class="font-normal underline"
+              class="_link_69eda7 underline"
               href="/about"
             >
               Read more →
             </a>
           </li>
-          <li
-            class="prose justify-items-start mt-8"
-          >
+          <li>
             <h2>
               Nested Top Level Page
             </h2>
-            <div />
             <a
-              class="font-normal underline"
+              class="_link_69eda7 underline"
               href="/nested/page"
             >
               Read more →
@@ -160,18 +151,16 @@ exports[`<PageListTemplate /> > should render pages 1`] = `
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="mx-auto"
+          class="_footerCopy_522a10 my-0 mx-auto"
         >
           © 2023 Built with 
           <a
-            class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
           >
             Next.js
           </a>
            and 
           <a
-            class="text-blue-500 underline hover:text-blue-100"
             href="https://www.drupal.org/"
           >
             Drupal
@@ -186,7 +175,7 @@ exports[`<PageListTemplate /> > should render pages 1`] = `
 exports[`<PageTemplate /> > should render page 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+    class="_layout_522a10 flex flex-col"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -239,12 +228,14 @@ exports[`<PageTemplate /> > should render page 1`] = `
       </nav>
     </div>
     <main
-      class="mb-auto"
+      class="_layoutMain_522a10 mb-auto"
     >
       <article
-        class="prose lg:prose-xl mt-10 mx-auto"
+        class="_container_01b1ad flex flex-col max-w-screen-md"
       >
-        <h1>
+        <h1
+          class="_containerTitle_01b1ad font-extrabold mb-6"
+        >
           About Umami
         </h1>
         <a
@@ -254,26 +245,24 @@ exports[`<PageTemplate /> > should render page 1`] = `
           Pages →
         </a>
         <div
-          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+          class="_content_01b1ad"
         >
-          <div>
-            <p>
-              Umami is a fictional food magazine that has been created to demonstrate how you might build a Drupal site using functionality provided 'out of the box'.
-            </p>
-            
+          <p>
+            Umami is a fictional food magazine that has been created to demonstrate how you might build a Drupal site using functionality provided 'out of the box'.
+          </p>
+          
 
-            <p>
-              For more information visit 
-              <a
-                href="https://www.drupal.org/docs/umami-drupal-demonstration-installation-profile"
-              >
-                https://www.drupal.org/docs/umami-drupal-demonstration-installation-profile
-              </a>
-              .
-            </p>
-            
+          <p>
+            For more information visit 
+            <a
+              href="https://www.drupal.org/docs/umami-drupal-demonstration-installation-profile"
+            >
+              https://www.drupal.org/docs/umami-drupal-demonstration-installation-profile
+            </a>
+            .
+          </p>
+          
 
-          </div>
         </div>
       </article>
     </main>
@@ -320,18 +309,16 @@ exports[`<PageTemplate /> > should render page 1`] = `
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="mx-auto"
+          class="_footerCopy_522a10 my-0 mx-auto"
         >
           © 2023 Built with 
           <a
-            class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
           >
             Next.js
           </a>
            and 
           <a
-            class="text-blue-500 underline hover:text-blue-100"
             href="https://www.drupal.org/"
           >
             Drupal

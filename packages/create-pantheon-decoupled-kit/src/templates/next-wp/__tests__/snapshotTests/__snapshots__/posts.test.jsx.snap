@@ -1,9 +1,9 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<PostListTemplate /> > should render with posts 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+    class="_layout_522a10 flex flex-col"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -56,20 +56,18 @@ exports[`<PostListTemplate /> > should render with posts 1`] = `
       </nav>
     </div>
     <main
-      class="mb-auto"
+      class="_layoutMain_522a10 mb-auto"
     >
-      <header
-        class="prose text-2xl mx-auto mt-20"
-      >
-        <h1
-          class="text-center mx-auto"
+      <div>
+        <header
+          class="_header_be6ffb"
         >
-          Posts
-        </h1>
-      </header>
-      <div
-        class="max-w-screen-lg mx-auto"
-      >
+          <h1
+            class="_headerTitle_be6ffb font-extrabold my-auto mx-0 text-center"
+          >
+            Posts
+          </h1>
+        </header>
         <section>
           <div
             class="ps-max-w-full"
@@ -82,10 +80,10 @@ exports[`<PostListTemplate /> > should render with posts 1`] = `
                   href="/posts/example-post-with-image"
                 >
                   <div
-                    class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+                    class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
                   >
                     <div
-                      class="flex-shrink-0 relative h-40"
+                      class="_cardImg_91079f shrink-0 h-40 relative"
                     >
                       <img
                         alt="Example Post with Image"
@@ -93,7 +91,7 @@ exports[`<PostListTemplate /> > should render with posts 1`] = `
                       />
                     </div>
                     <h2
-                      class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                      class="_cardTitle_91079f font-semibold py-4 px-6"
                     >
                       Example Post with Image →
                     </h2>
@@ -103,17 +101,17 @@ exports[`<PostListTemplate /> > should render with posts 1`] = `
                   href="/posts/hello-world"
                 >
                   <div
-                    class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+                    class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
                   >
                     <div
-                      class="flex-shrink-0 relative h-40"
+                      class="_cardImg_91079f shrink-0 h-40 relative"
                     >
                       <div
-                        class="w-full h-full bg-gradient-to-b from-blue-100 to-blue-500"
+                        class="_gradientPlaceholder_91079f"
                       />
                     </div>
                     <h2
-                      class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                      class="_cardTitle_91079f font-semibold py-4 px-6"
                     >
                       Hello world! →
                     </h2>
@@ -140,7 +138,7 @@ exports[`<PostListTemplate /> > should render with posts 1`] = `
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="mx-auto"
+          class="_footerCopy_522a10 my-0 mx-auto"
         >
           © 2023 Built with 
           <a
@@ -166,7 +164,7 @@ exports[`<PostListTemplate /> > should render with posts 1`] = `
 exports[`<PostTemplate /> > should render a post 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+    class="_layout_522a10 flex flex-col"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -219,7 +217,7 @@ exports[`<PostTemplate /> > should render a post 1`] = `
       </nav>
     </div>
     <main
-      class="mb-auto"
+      class="_layoutMain_522a10 mb-auto"
     >
       <article
         class="ps-prose ps-max-w-none xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-py-4 ps-px-12"
@@ -235,31 +233,26 @@ exports[`<PostTemplate /> > should render a post 1`] = `
           >
             Tue Sep 13 2022
           </p>
-          <a
-            class="ps-font-normal ps-cursor-pointer"
+          <button
+            class="ps-font-normal ps-underline ps-cursor-pointer"
           >
             Back →
-          </a>
+          </button>
         </section>
         <div
-          class="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg ps-shadow-lg [&*>img]:ps-rounded-lg"
+          class="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg [&*>img]:ps-rounded-lg"
         >
           <div
             class="ps-relative ps-mb-10 ps-min-h-[50vh]"
           >
             <img
               alt="Example Post with Image"
-              data-nimg="fill"
-              decoding="async"
-              sizes="100vw"
-              src="/_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=3840&q=75"
-              srcset="/_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fdev-cobs-decoupled-wp.pantheonsite.io%2Fapp%2Fuploads%2F2022%2F09%2Fpizza.jpeg&w=3840&q=75 3840w"
-              style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
+              src="https://dev-cobs-decoupled-wp.pantheonsite.io/app/uploads/2022/09/pizza.jpeg"
             />
           </div>
         </div>
         <div
-          class="ps-break-words ps-mt-12 ps-wp-content"
+          class="ps-break-words ps-mt-12 _content_bddb62 text-gray-700 max-w-screen-lg"
         >
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -281,7 +274,7 @@ exports[`<PostTemplate /> > should render a post 1`] = `
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="mx-auto"
+          class="_footerCopy_522a10 my-0 mx-auto"
         >
           © 2023 Built with 
           <a

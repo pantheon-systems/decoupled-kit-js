@@ -1,9 +1,9 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<PaginationExampleTemplate /> > should render the Pagination Example page 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+    class="_layout_522a10 flex flex-col"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -56,17 +56,15 @@ exports[`<PaginationExampleTemplate /> > should render the Pagination Example pa
       </nav>
     </div>
     <main
-      class="mb-auto"
+      class="_layoutMain_522a10 mb-auto"
     >
       <div
-        class="prose max-w-screen mx-auto"
+        class="_container_08078b"
       >
         <section
-          class="flex flex-col"
+          class="_content_08078b"
         >
-          <h1
-            class="my-10"
-          >
+          <h1>
             Pagination example
           </h1>
           <div
@@ -79,16 +77,12 @@ exports[`<PaginationExampleTemplate /> > should render the Pagination Example pa
             </h3>
             <section>
               <article
-                class="flex flex-col p-3 mb-10"
+                class="_item_08078b"
               >
-                <h2
-                  class="justify-start my-auto text-2xl mb-2"
-                >
+                <h2>
                   Ut culpa iste voluptas consequatur
                 </h2>
-                <div
-                  class="max-w-prose my-2 [&>p]:my-0"
-                >
+                <div>
                   <p>
                     Consequuntur omnis assumenda voluptate aut quam. Dolorem aut aspernatur voluptas delectus. Commodi quia veniam voluptatem vitae rem Assumenda qui non in et facere tempora Corrupti Ut inventore id voluptates sed Mollitia magnam nihil numquam nostrum Nostrum et praesentium ullam ut accusamus Velit eos perferendis error fuga in necessitatibus Nostrum laboriosam iste Sint itaque est facilis […]
                   </p>
@@ -97,16 +91,12 @@ exports[`<PaginationExampleTemplate /> > should render the Pagination Example pa
                 </div>
               </article>
               <article
-                class="flex flex-col p-3 mb-10"
+                class="_item_08078b"
               >
-                <h2
-                  class="justify-start my-auto text-2xl mb-2"
-                >
+                <h2>
                   Totam aliquam recusandae autem ipsa
                 </h2>
-                <div
-                  class="max-w-prose my-2 [&>p]:my-0"
-                >
+                <div>
                   <p>
                     Ipsam molestias est omnis.
                   </p>
@@ -125,16 +115,12 @@ exports[`<PaginationExampleTemplate /> > should render the Pagination Example pa
                 </div>
               </article>
               <article
-                class="flex flex-col p-3 mb-10"
+                class="_item_08078b"
               >
-                <h2
-                  class="justify-start my-auto text-2xl mb-2"
-                >
+                <h2>
                   Et ipsa accusantium voluptatem nostrum maiores
                 </h2>
-                <div
-                  class="max-w-prose my-2 [&>p]:my-0"
-                >
+                <div>
                   <p>
                     Perspiciatis ut modi et.
                   </p>
@@ -148,16 +134,12 @@ exports[`<PaginationExampleTemplate /> > should render the Pagination Example pa
                 </div>
               </article>
               <article
-                class="flex flex-col p-3 mb-10"
+                class="_item_08078b"
               >
-                <h2
-                  class="justify-start my-auto text-2xl mb-2"
-                >
+                <h2>
                   Odio vel voluptas pariatur quas pariatur dicta
                 </h2>
-                <div
-                  class="max-w-prose my-2 [&>p]:my-0"
-                >
+                <div>
                   <p>
                     Vel qui.
                   </p>
@@ -166,16 +148,12 @@ exports[`<PaginationExampleTemplate /> > should render the Pagination Example pa
                 </div>
               </article>
               <article
-                class="flex flex-col p-3 mb-10"
+                class="_item_08078b"
               >
-                <h2
-                  class="justify-start my-auto text-2xl mb-2"
-                >
+                <h2>
                   Quia quos eum assumenda alias quisquam a
                 </h2>
-                <div
-                  class="max-w-prose my-2 [&>p]:my-0"
-                >
+                <div>
                   <p>
                     Molestias ab voluptate voluptas alias nesciunt commodi. Qui beatae et vel dolore in blanditiis Voluptatem est rerum odit Rerum esse magnam sapiente Ut sunt tempore et expedita nihil et ut Tempore nihil et tenetur Asperiores Deserunt quidem omnis minus commodi molestiae et quam Nulla ab quia voluptatem et officiis ullam quo. Aliquam eum enim aliquam […]
                   </p>
@@ -312,7 +290,7 @@ exports[`<PaginationExampleTemplate /> > should render the Pagination Example pa
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="mx-auto"
+          class="_footerCopy_522a10 my-0 mx-auto"
         >
           © 2023 Built with 
           <a

@@ -3,85 +3,67 @@
 exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthenticated 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+    class="undefined flex flex-col mx-auto min-h-screen"
   >
-    <div
-      class="my-0 pt-10 px-5 text-xl"
-    >
-      <nav>
-        <ul
-          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
-        >
-          <li
-            class="mr-auto"
-          >
-            <a
-              class="font-sans hover:underline"
-              href="/"
-            >
-              🏠 Home
-            </a>
-          </li>
-          <li
-            class="mx-4"
-          >
-            <a
-              class="font-sans hover:underline"
-              href="/posts"
-            >
-              📰 Posts
-            </a>
-          </li>
-          <li
-            class="mx-4"
-          >
-            <a
-              class="font-sans hover:underline"
-              href="/pages"
-            >
-              📑 Pages
-            </a>
-          </li>
-          <li
-            class="mx-4"
-          >
-            <a
-              class="font-sans hover:underline"
-              href="/examples"
-            >
-              ⚛️ Examples
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <main
-      class="mb-auto"
-    >
-      <div
-        class="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen"
+    <nav>
+      <ul
+        class="undefined flex flex-row flex-wrap justify-between list-none mx-auto max-w-screen-sm"
       >
+        <li>
+          <a
+            class="undefined text-black no-underline"
+            href="/"
+          >
+            🏠 Home
+          </a>
+        </li>
+        <li>
+          <a
+            class="undefined text-black no-underline"
+            href="/posts"
+          >
+            📰 Posts
+          </a>
+        </li>
+        <li>
+          <a
+            class="undefined text-black no-underline"
+            href="/pages"
+          >
+            📑 Pages
+          </a>
+        </li>
+        <li>
+          <a
+            class="undefined text-black no-underline"
+            href="/examples"
+          >
+            ⚛️ Examples
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <div>
         <h1>
           API Authorization Example
         </h1>
         <a
           href="/"
         >
-          <span
-            class="w-full underline cursor-pointer"
-          >
+          <span>
             Home →
           </span>
         </a>
         <div
-          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+          class="undefined mx-auto"
         >
           <p>
             Gatsby was unable to make an authorized request to the WordPress API. Please check your .env.development.local file to ensure that your 
             <code>
               WP_APPLICATION_USERNAME
             </code>
-             and
+             and 
             <code>
               WP_APPLICATION_PASSWORD
             </code>
@@ -90,7 +72,7 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
           <p>
             For more information on how to set these values, please see 
             <a
-              href="https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Gatsby/Gatsby%20%2B%20WordPress/setting-environment-variables.md"
+              href="https://decoupledkit.pantheon.io/docs/frontend-starters/gatsby/gatsby-wordpress/setting-environment-variables"
             >
               Setting Environment Variables
             </a>
@@ -99,40 +81,29 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
       </div>
     </main>
     <footer
-      class="w-full text-white bg-black p-4 mt-12"
+      class="undefined bg-black flex flex-col justify-self-end mt-12"
     >
       <nav
-        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+        class="undefined flex flex-col mx-auto"
       >
-        <ul>
-          <li
-            class="ml-3 list-disc text-blue-300 hover:text-blue-100"
-          >
-            <a
-              class="text-blue-300 hover:text-blue-100 focus:text-purple-600 active:text-purple-300 "
-              href="/posts/example-post-with-image/"
-            >
-              Example Post with Image
-            </a>
-          </li>
-        </ul>
+        <ul
+          class="undefined mt-4"
+        />
       </nav>
       <div
-        class="flex my-4 p-2"
+        class="undefined text-white my-4 mx-auto p-2"
       >
-        <span
-          class="mx-auto"
-        >
+        <span>
           © 2023 Built with 
           <a
-            class="text-purple-300 underline hover:text-blue-100"
+            class="undefined underline"
             href="https://www.gatsbyjs.com"
           >
             Gatsby
           </a>
            and 
           <a
-            class="text-blue-200 underline hover:text-blue-100"
+            class="undefined underline"
             href="https://wordpress.org/"
           >
             WordPress
@@ -147,78 +118,60 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
 exports[`<AuthApiExampleTemplate /> > should render a success message if authenticated 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col"
+    class="undefined flex flex-col mx-auto min-h-screen"
   >
-    <div
-      class="my-0 pt-10 px-5 text-xl"
-    >
-      <nav>
-        <ul
-          class="flex flex-row flex-wrap sm:flex-nowrap list-none justify-between max-w-screen-sm mx-auto"
-        >
-          <li
-            class="mr-auto"
-          >
-            <a
-              class="font-sans hover:underline"
-              href="/"
-            >
-              🏠 Home
-            </a>
-          </li>
-          <li
-            class="mx-4"
-          >
-            <a
-              class="font-sans hover:underline"
-              href="/posts"
-            >
-              📰 Posts
-            </a>
-          </li>
-          <li
-            class="mx-4"
-          >
-            <a
-              class="font-sans hover:underline"
-              href="/pages"
-            >
-              📑 Pages
-            </a>
-          </li>
-          <li
-            class="mx-4"
-          >
-            <a
-              class="font-sans hover:underline"
-              href="/examples"
-            >
-              ⚛️ Examples
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <main
-      class="mb-auto"
-    >
-      <div
-        class="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen"
+    <nav>
+      <ul
+        class="undefined flex flex-row flex-wrap justify-between list-none mx-auto max-w-screen-sm"
       >
+        <li>
+          <a
+            class="undefined text-black no-underline"
+            href="/"
+          >
+            🏠 Home
+          </a>
+        </li>
+        <li>
+          <a
+            class="undefined text-black no-underline"
+            href="/posts"
+          >
+            📰 Posts
+          </a>
+        </li>
+        <li>
+          <a
+            class="undefined text-black no-underline"
+            href="/pages"
+          >
+            📑 Pages
+          </a>
+        </li>
+        <li>
+          <a
+            class="undefined text-black no-underline"
+            href="/examples"
+          >
+            ⚛️ Examples
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <div>
         <h1>
           API Authorization Example
         </h1>
         <a
           href="/"
         >
-          <span
-            class="w-full underline cursor-pointer"
-          >
+          <span>
             Home →
           </span>
         </a>
         <div
-          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
+          class="undefined mx-auto"
         >
           <p>
             🎉 Gatsby was able to successfully make an authenticated request to WordPress! 🎉
@@ -227,40 +180,29 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
       </div>
     </main>
     <footer
-      class="w-full text-white bg-black p-4 mt-12"
+      class="undefined bg-black flex flex-col justify-self-end mt-12"
     >
       <nav
-        class="flex flex-col max-w-lg mx-auto lg:max-w-screen-lg"
+        class="undefined flex flex-col mx-auto"
       >
-        <ul>
-          <li
-            class="ml-3 list-disc text-blue-300 hover:text-blue-100"
-          >
-            <a
-              class="text-blue-300 hover:text-blue-100 focus:text-purple-600 active:text-purple-300 "
-              href="/posts/example-post-with-image/"
-            >
-              Example Post with Image
-            </a>
-          </li>
-        </ul>
+        <ul
+          class="undefined mt-4"
+        />
       </nav>
       <div
-        class="flex my-4 p-2"
+        class="undefined text-white my-4 mx-auto p-2"
       >
-        <span
-          class="mx-auto"
-        >
+        <span>
           © 2023 Built with 
           <a
-            class="text-purple-300 underline hover:text-blue-100"
+            class="undefined underline"
             href="https://www.gatsbyjs.com"
           >
             Gatsby
           </a>
            and 
           <a
-            class="text-blue-200 underline hover:text-blue-100"
+            class="undefined underline"
             href="https://wordpress.org/"
           >
             WordPress

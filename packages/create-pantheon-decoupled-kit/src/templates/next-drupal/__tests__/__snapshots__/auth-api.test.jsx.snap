@@ -1,9 +1,9 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthenticated 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+    class="_layout_522a10 flex flex-col"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -56,10 +56,10 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
       </nav>
     </div>
     <main
-      class="mb-auto"
+      class="_layoutMain_522a10 mb-auto"
     >
       <div
-        class="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen"
+        class="_container_a039d7"
       >
         <h1>
           API Authorization Example
@@ -67,15 +67,11 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
         <a
           href="/"
         >
-          <span
-            class="w-full underline cursor-pointer"
-          >
+          <span>
             Home →
           </span>
         </a>
-        <div
-          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
-        >
+        <div>
           <p>
             Next.js was unable to make an authorized request to the Drupal API. Please check your .env.development.local file to ensure that your 
             <code>
@@ -121,18 +117,16 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="mx-auto"
+          class="_footerCopy_522a10 my-0 mx-auto"
         >
           © 2023 Built with 
           <a
-            class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
           >
             Next.js
           </a>
            and 
           <a
-            class="text-blue-500 underline hover:text-blue-100"
             href="https://www.drupal.org/"
           >
             Drupal
@@ -147,7 +141,7 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
 exports[`<AuthApiExampleTemplate /> > should render a success message if authenticated 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+    class="_layout_522a10 flex flex-col"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -200,10 +194,10 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
       </nav>
     </div>
     <main
-      class="mb-auto"
+      class="_layoutMain_522a10 mb-auto"
     >
       <div
-        class="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen"
+        class="_container_a039d7"
       >
         <h1>
           API Authorization Example
@@ -211,15 +205,11 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
         <a
           href="/"
         >
-          <span
-            class="w-full underline cursor-pointer"
-          >
+          <span>
             Home →
           </span>
         </a>
-        <div
-          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
-        >
+        <div>
           <p>
             🎉 Next.js was able to successfully make an authenticated request to Drupal! 🎉
           </p>
@@ -249,18 +239,16 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="mx-auto"
+          class="_footerCopy_522a10 my-0 mx-auto"
         >
           © 2023 Built with 
           <a
-            class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
           >
             Next.js
           </a>
            and 
           <a
-            class="text-blue-500 underline hover:text-blue-100"
             href="https://www.drupal.org/"
           >
             Drupal

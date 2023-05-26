@@ -1,9 +1,9 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthenticated 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+    class="_layout_522a10 flex flex-col"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -56,10 +56,10 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
       </nav>
     </div>
     <main
-      class="mb-auto"
+      class="_layoutMain_522a10 mb-auto"
     >
       <div
-        class="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen"
+        class="_container_a039d7"
       >
         <h1>
           API Authorization Example
@@ -67,21 +67,17 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
         <a
           href="/"
         >
-          <span
-            class="w-full underline cursor-pointer"
-          >
+          <span>
             Home →
           </span>
         </a>
-        <div
-          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
-        >
+        <div>
           <p>
             Next.js was unable to make an authorized request to the WordPress API. Please check your .env.development.local file to ensure that your 
             <code>
               WP_APPLICATION_USERNAME
             </code>
-             and
+             and 
             <code>
               WP_APPLICATION_PASSWORD
             </code>
@@ -90,7 +86,7 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
           <p>
             For more information on how to set these values, please see 
             <a
-              href="https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Frontend%20Starters/Next.js/Next.js%20%2B%20WordPress/setting-environment-variables.md"
+              href="https://decoupledkit.pantheon.io/docs/frontend-starters/nextjs/nextjs-wordpress/setting-environment-variables"
             >
               Setting Environment Variables
             </a>
@@ -110,7 +106,7 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="mx-auto"
+          class="_footerCopy_522a10 my-0 mx-auto"
         >
           © 2023 Built with 
           <a
@@ -136,7 +132,7 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
 exports[`<AuthApiExampleTemplate /> > should render a success message if authenticated 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+    class="_layout_522a10 flex flex-col"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -189,10 +185,10 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
       </nav>
     </div>
     <main
-      class="mb-auto"
+      class="_layoutMain_522a10 mb-auto"
     >
       <div
-        class="prose lg:prose-xl mt-10 flex flex-col mx-auto max-h-screen"
+        class="_container_a039d7"
       >
         <h1>
           API Authorization Example
@@ -200,15 +196,11 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
         <a
           href="/"
         >
-          <span
-            class="w-full underline cursor-pointer"
-          >
+          <span>
             Home →
           </span>
         </a>
-        <div
-          class="mt-12 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-screen-lg"
-        >
+        <div>
           <p>
             🎉 Next.js was able to successfully make an authenticated request to WordPress! 🎉
           </p>
@@ -227,7 +219,7 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="mx-auto"
+          class="_footerCopy_522a10 my-0 mx-auto"
         >
           © 2023 Built with 
           <a

@@ -1,9 +1,9 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<PaginationExampleTemplate /> > should render the Pagination Example page 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+    class="_layout_522a10 flex flex-col"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -56,17 +56,15 @@ exports[`<PaginationExampleTemplate /> > should render the Pagination Example pa
       </nav>
     </div>
     <main
-      class="mb-auto"
+      class="_layoutMain_522a10 mb-auto"
     >
       <div
-        class="prose max-w-screen mx-auto"
+        class="_container_08078b"
       >
         <section
-          class="flex flex-col"
+          class="_content_08078b"
         >
-          <h1
-            class="my-10"
-          >
+          <h1>
             Pagination example
           </h1>
           <div
@@ -79,144 +77,104 @@ exports[`<PaginationExampleTemplate /> > should render the Pagination Example pa
             </h3>
             <section>
               <article
-                class="flex flex-col p-3 w-fit mx-auto mb-10"
+                class="_item_08078b"
               >
-                <h2
-                  class="justify-start my-auto text-2xl mb-2"
-                >
+                <h2>
                   Usitas
                 </h2>
-                <p
-                  class="max-w-prose my-2"
-                >
+                <p>
                   Comis defui ex ille lobortis molior premo ulciscor. Diam huic iustum mauris quia voco. Commodo ibidem iriure nibh nostrud olim scisco vereor. Conventi...
                 </p>
               </article>
               <article
-                class="flex flex-col p-3 w-fit mx-auto mb-10"
+                class="_item_08078b"
               >
-                <h2
-                  class="justify-start my-auto text-2xl mb-2"
-                >
+                <h2>
                   Comis Ex
                 </h2>
-                <p
-                  class="max-w-prose my-2"
-                >
+                <p>
                   Brevitas conventio cui dolor minim os. Amet lenis quibus. Adipiscing exerci ille immitto lucidus roto valetudo volutpat. Caecus causa dolore eros eum ...
                 </p>
               </article>
               <article
-                class="flex flex-col p-3 w-fit mx-auto mb-10"
+                class="_item_08078b"
               >
-                <h2
-                  class="justify-start my-auto text-2xl mb-2"
-                >
+                <h2>
                   Caecus Enim Macto Persto
                 </h2>
-                <p
-                  class="max-w-prose my-2"
-                >
+                <p>
                   Blandit erat luptatum praesent refoveo veniam. Bene distineo veniam. Eu facilisi feugiat ille. Molior nunc proprius turpis. Abdo eu similis. Accumsan ...
                 </p>
               </article>
               <article
-                class="flex flex-col p-3 w-fit mx-auto mb-10"
+                class="_item_08078b"
               >
-                <h2
-                  class="justify-start my-auto text-2xl mb-2"
-                >
+                <h2>
                   In
                 </h2>
-                <p
-                  class="max-w-prose my-2"
-                >
+                <p>
                   Adipiscing at ex hos. Ratis refero tamen. Amet interdico jus pala rusticus typicus. Gravis importunus interdico iriure pala paratus paulatim populus r...
                 </p>
               </article>
               <article
-                class="flex flex-col p-3 w-fit mx-auto mb-10"
+                class="_item_08078b"
               >
-                <h2
-                  class="justify-start my-auto text-2xl mb-2"
-                >
+                <h2>
                   Appellatio Eros Letalis
                 </h2>
-                <p
-                  class="max-w-prose my-2"
-                >
+                <p>
                   Conventio in interdico saluto vulputate. Camur commoveo elit feugiat macto meus nutus similis utinam vulputate. Paulatim premo usitas. Consectetuer er...
                 </p>
               </article>
               <article
-                class="flex flex-col p-3 w-fit mx-auto mb-10"
+                class="_item_08078b"
               >
-                <h2
-                  class="justify-start my-auto text-2xl mb-2"
-                >
+                <h2>
                   Dolus Iaceo Tum Verto
                 </h2>
-                <p
-                  class="max-w-prose my-2"
-                >
+                <p>
                   Jumentum neo quidne tincidunt ut. Iaceo ideo jugis velit. Adipiscing damnum euismod neque pertineo praemitto tation te valde valetudo. Capto enim leni...
                 </p>
               </article>
               <article
-                class="flex flex-col p-3 w-fit mx-auto mb-10"
+                class="_item_08078b"
               >
-                <h2
-                  class="justify-start my-auto text-2xl mb-2"
-                >
+                <h2>
                   Defui Exputo Gilvus Suscipit
                 </h2>
-                <p
-                  class="max-w-prose my-2"
-                >
+                <p>
                   Capto diam iaceo pertineo plaga quidem quidne suscipere ullamcorper virtus. Antehabeo distineo eu euismod iusto letalis natu sino suscipit. Appellatio...
                 </p>
               </article>
               <article
-                class="flex flex-col p-3 w-fit mx-auto mb-10"
+                class="_item_08078b"
               >
-                <h2
-                  class="justify-start my-auto text-2xl mb-2"
-                >
+                <h2>
                   Eros Iriure Venio Vulpes
                 </h2>
-                <p
-                  class="max-w-prose my-2"
-                >
+                <p>
                   Adipiscing conventio fere iaceo magna quidne sed. Facilisis ratis scisco uxor. Elit exerci ymo zelus. Comis ea nutus pala quae refero sudo te ut. Aute...
                 </p>
               </article>
               <article
-                class="flex flex-col p-3 w-fit mx-auto mb-10"
+                class="_item_08078b"
               >
-                <h2
-                  class="justify-start my-auto text-2xl mb-2"
-                >
+                <h2>
                   Eligo Praemitto
                 </h2>
-                <p
-                  class="max-w-prose my-2"
-                >
+                <p>
                   Erat haero iaceo nibh odio ratis roto. Aptent typicus valde. Aliquam macto melior quadrum suscipere. Facilisis fere nibh paulatim tego vicis.
 
 Erat et...
                 </p>
               </article>
               <article
-                class="flex flex-col p-3 w-fit mx-auto mb-10"
+                class="_item_08078b"
               >
-                <h2
-                  class="justify-start my-auto text-2xl mb-2"
-                >
+                <h2>
                   Abluo Aliquam Inhibeo Luptatum
                 </h2>
-                <p
-                  class="max-w-prose my-2"
-                >
+                <p>
                   Abluo defui odio vel. Dolus ludus molior ullamcorper. Et letalis meus utrum uxor vel. Ad amet defui hos imputo praesent roto ut uxor. Augue erat eum l...
                 </p>
               </article>
@@ -452,18 +410,16 @@ Erat et...
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="mx-auto"
+          class="_footerCopy_522a10 my-0 mx-auto"
         >
           © 2023 Built with 
           <a
-            class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
           >
             Next.js
           </a>
            and 
           <a
-            class="text-blue-500 underline hover:text-blue-100"
             href="https://www.drupal.org/"
           >
             Drupal

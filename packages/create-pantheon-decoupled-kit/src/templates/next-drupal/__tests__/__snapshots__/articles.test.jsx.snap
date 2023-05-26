@@ -1,9 +1,9 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<ArticleTemplate /> > should render articles 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+    class="_layout_522a10 flex flex-col"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -56,7 +56,7 @@ exports[`<ArticleTemplate /> > should render articles 1`] = `
       </nav>
     </div>
     <main
-      class="mb-auto"
+      class="_layoutMain_522a10 mb-auto"
     >
       <article
         class="ps-prose ps-max-w-none xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-py-4 ps-px-12"
@@ -67,31 +67,26 @@ exports[`<ArticleTemplate /> > should render articles 1`] = `
           <h1>
             This is an Example Article
           </h1>
-          <a
-            class="ps-font-normal ps-cursor-pointer"
+          <button
+            class="ps-font-normal ps-underline ps-cursor-pointer"
           >
             Back →
-          </a>
+          </button>
         </section>
         <div
-          class="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg ps-shadow-lg [&*>img]:ps-rounded-lg"
+          class="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg [&*>img]:ps-rounded-lg"
         >
           <div
             class="ps-relative ps-mb-10 ps-min-h-[50vh]"
           >
             <img
               alt="This is an Example Article"
-              data-nimg="fill"
-              decoding="async"
-              sizes="100vw"
-              src="/_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=1200&q=75"
-              srcset="/_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=320&q=75 320w, /_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=420&q=75 420w, /_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=768&q=75 768w, /_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=1024&q=75 1024w, /_next/image?url=https%3A%2F%2Fdefault%2Fsites%2Fdefault%2Ffiles%2Fpizza.jpg&w=1200&q=75 1200w"
-              style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
+              src="https://default/sites/default/files/pizza.jpg"
             />
           </div>
         </div>
         <div
-          class="ps-break-words ps-mt-12 ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto"
+          class="ps-break-words ps-mt-12 _content_11ae3b text-gray-700 max-w-screen-lg"
         >
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper dignissim cras tincidunt lobortis feugiat. Augue lacus viverra vitae congue eu consequat ac felis. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Pulvinar elementum integer enim neque. At tempor commodo ullamcorper a lacus vestibulum. Nec tincidunt praesent semper feugiat nibh. Nisl nisi scelerisque eu ultrices vitae auctor eu augue ut. Bibendum neque egestas congue quisque egestas diam. Pellentesque elit ullamcorper dignissim cras.
@@ -134,18 +129,16 @@ exports[`<ArticleTemplate /> > should render articles 1`] = `
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="mx-auto"
+          class="_footerCopy_522a10 my-0 mx-auto"
         >
           © 2023 Built with 
           <a
-            class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
           >
             Next.js
           </a>
            and 
           <a
-            class="text-blue-500 underline hover:text-blue-100"
             href="https://www.drupal.org/"
           >
             Drupal
@@ -160,7 +153,7 @@ exports[`<ArticleTemplate /> > should render articles 1`] = `
 exports[`<SSRArticlesListTemplate /> > should render articles 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+    class="_layout_522a10 flex flex-col"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -213,13 +206,13 @@ exports[`<SSRArticlesListTemplate /> > should render articles 1`] = `
       </nav>
     </div>
     <main
-      class="mb-auto"
+      class="_layoutMain_522a10 mb-auto"
     >
       <header
-        class="prose text-2xl mx-auto mt-20"
+        class="_header_be6ffb"
       >
         <h1
-          class="text-center mx-auto"
+          class="_headerTitle_be6ffb font-extrabold my-auto mx-0 text-center"
         >
           Articles
         </h1>
@@ -232,10 +225,10 @@ exports[`<SSRArticlesListTemplate /> > should render articles 1`] = `
             href="/articles/example-article"
           >
             <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="flex-shrink-0 relative h-40"
+                class="_cardImg_91079f shrink-0 h-40 relative"
               >
                 <img
                   alt="This is an Example Article"
@@ -243,7 +236,7 @@ exports[`<SSRArticlesListTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                class="_cardTitle_91079f font-semibold py-4 px-6"
               >
                 This is an Example Article →
               </h2>
@@ -275,18 +268,16 @@ exports[`<SSRArticlesListTemplate /> > should render articles 1`] = `
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="mx-auto"
+          class="_footerCopy_522a10 my-0 mx-auto"
         >
           © 2023 Built with 
           <a
-            class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
           >
             Next.js
           </a>
            and 
           <a
-            class="text-blue-500 underline hover:text-blue-100"
             href="https://www.drupal.org/"
           >
             Drupal

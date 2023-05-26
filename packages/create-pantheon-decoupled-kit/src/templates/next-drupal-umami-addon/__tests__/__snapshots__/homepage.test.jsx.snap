@@ -1,9 +1,9 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<HomepageTemplate /> > should render articles 1`] = `
 <DocumentFragment>
   <div
-    class="min-h-screen max-h-screen min-w-screen max-w-screen flex flex-col overflow-x-hidden"
+    class="_layout_522a10 flex flex-col"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -56,35 +56,31 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
       </nav>
     </div>
     <main
-      class="mb-auto"
+      class="_layoutMain_522a10 mb-auto"
     >
       <div
-        class="prose sm:prose-xl mt-20 flex flex-col mx-auto max-w-fit"
+        class="_header_19d181 font-extrabold text-center w-fit"
       >
-        <h1
-          class="prose text-4xl text-center h-full"
-        >
+        <h1>
           Welcome to 
           <a
-            class="text-blue-600 no-underline hover:underline"
+            class="_next_19d181 text-blue-500"
             href="https://nextjs.org"
           >
             Next.js!
           </a>
         </h1>
         <div
-          class="text-2xl"
+          class="_onPantheon_19d181"
         >
-          <div
-            class="bg-black text-white rounded flex items-center justify-center p-4"
-          >
+          <span>
             Decoupled Drupal on 
-            <img
-              alt="Pantheon Logo"
-              src="/pantheon.png"
-              width="191"
-            />
-          </div>
+          </span>
+          <img
+            alt="Pantheon Logo"
+            src="/pantheon.png"
+            width="191"
+          />
         </div>
       </div>
       <section>
@@ -95,10 +91,10 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
             href="/articles/give-it-a-go-and-grow-your-own-herbs"
           >
             <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="flex-shrink-0 relative h-40"
+                class="_cardImg_91079f shrink-0 h-40 relative"
               >
                 <img
                   alt="Give it a go and grow your own herbs"
@@ -106,7 +102,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                class="_cardTitle_91079f font-semibold py-4 px-6"
               >
                 Give it a go and grow your own herbs →
               </h2>
@@ -116,10 +112,10 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
             href="/articles/the-real-deal-for-supermarket-savvy-shopping"
           >
             <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="flex-shrink-0 relative h-40"
+                class="_cardImg_91079f shrink-0 h-40 relative"
               >
                 <img
                   alt="The real deal for supermarket savvy shopping"
@@ -127,7 +123,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                class="_cardTitle_91079f font-semibold py-4 px-6"
               >
                 The real deal for supermarket savvy shopping →
               </h2>
@@ -137,10 +133,10 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
             href="/articles/baking-mishaps-our-troubleshooting-tips"
           >
             <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="flex-shrink-0 relative h-40"
+                class="_cardImg_91079f shrink-0 h-40 relative"
               >
                 <img
                   alt="Baking mishaps - our troubleshooting tips"
@@ -148,7 +144,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                class="_cardTitle_91079f font-semibold py-4 px-6"
               >
                 Baking mishaps - our troubleshooting tips →
               </h2>
@@ -158,10 +154,10 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
             href="/articles/skip-the-spirits-with-delicious-mocktails"
           >
             <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="flex-shrink-0 relative h-40"
+                class="_cardImg_91079f shrink-0 h-40 relative"
               >
                 <img
                   alt="Skip the spirits with delicious mocktails"
@@ -169,7 +165,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                class="_cardTitle_91079f font-semibold py-4 px-6"
               >
                 Skip the spirits with delicious mocktails →
               </h2>
@@ -179,10 +175,10 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
             href="/articles/give-your-oatmeal-the-ultimate-makeover"
           >
             <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="flex-shrink-0 relative h-40"
+                class="_cardImg_91079f shrink-0 h-40 relative"
               >
                 <img
                   alt="Give your oatmeal the ultimate makeover"
@@ -190,7 +186,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                class="_cardTitle_91079f font-semibold py-4 px-6"
               >
                 Give your oatmeal the ultimate makeover →
               </h2>
@@ -200,10 +196,10 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
             href="/articles/the-umami-guide-to-our-favourite-mushrooms"
           >
             <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="flex-shrink-0 relative h-40"
+                class="_cardImg_91079f shrink-0 h-40 relative"
               >
                 <img
                   alt="The Umami guide to our favorite mushrooms"
@@ -211,7 +207,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                class="_cardTitle_91079f font-semibold py-4 px-6"
               >
                 The Umami guide to our favorite mushrooms →
               </h2>
@@ -221,10 +217,10 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
             href="/articles/lets-hear-it-for-carrots"
           >
             <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="flex-shrink-0 relative h-40"
+                class="_cardImg_91079f shrink-0 h-40 relative"
               >
                 <img
                   alt="Let's hear it for carrots "
@@ -232,7 +228,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                class="_cardTitle_91079f font-semibold py-4 px-6"
               >
                 Let's hear it for carrots  →
               </h2>
@@ -242,10 +238,10 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
             href="/articles/dairy-free-and-delicious-milk-chocolate"
           >
             <div
-              class="flex flex-col rounded-lg shadow-lg overflow-hidden cursor-pointer border-2 h-full hover:border-indigo-500"
+              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
             >
               <div
-                class="flex-shrink-0 relative h-40"
+                class="_cardImg_91079f shrink-0 h-40 relative"
               >
                 <img
                   alt="Dairy-free and delicious milk chocolate"
@@ -253,7 +249,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="my-4 mx-6 text-xl leading-7 font-semibold text-gray-900"
+                class="_cardTitle_91079f font-semibold py-4 px-6"
               >
                 Dairy-free and delicious milk chocolate →
               </h2>
@@ -305,18 +301,16 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="mx-auto"
+          class="_footerCopy_522a10 my-0 mx-auto"
         >
           © 2023 Built with 
           <a
-            class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
           >
             Next.js
           </a>
            and 
           <a
-            class="text-blue-500 underline hover:text-blue-100"
             href="https://www.drupal.org/"
           >
             Drupal
