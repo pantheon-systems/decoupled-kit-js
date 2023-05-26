@@ -81,13 +81,19 @@ jobs:
       - run:
           name: remove node_modules and pnpm-lock.yml
           command: rm -rf node_modules pnpm-lock.yml
-      # build and test packages so that we don't commit a breaking change
+      # build and test packages and starters so that we don't commit a breaking change
       - run:
           name: install overrides and build
           command: pnpm install --frozen-lockfile=false
       - run:
           name: test packages
           command: pnpm --filter './packages/*' test
+      - run:
+          name: generate starters
+          command: |
+            pnpm generate-starters
+            pnpm i
+            pnpm --filter './starters/**' test
       - run:
           name: exit if no fixes
           command: |
