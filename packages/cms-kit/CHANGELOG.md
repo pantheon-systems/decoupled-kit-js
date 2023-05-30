@@ -1,5 +1,12 @@
 # @pantheon-systems/cms-kit
 
+## 0.3.1
+
+### Patch Changes
+
+- 3fd37398: Refactored bundle. There should be no changes to consumers of this
+  package
+
 ## 0.3.1-canary.0
 
 ### Patch Changes
