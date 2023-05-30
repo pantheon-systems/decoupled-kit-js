@@ -1,7 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
-import type { ImageProps } from 'next/image';
-import { useRouter } from 'next/router';
+import Image, { type ImageProps } from 'next/image.js';
+import { useRouter } from 'next/compat/router.js';
 
 export interface RecipeProps {
 	title: string;
@@ -46,7 +44,7 @@ export const Recipe: React.FC<RecipeProps> = ({
 				<h1>{title}</h1>
 				<div className="ps-flex ps-flex-row ps-justify-between">
 					<a
-						onClick={() => router.back()}
+						onClick={() => router?.back()}
 						className="ps-font-normal ps-cursor-pointer"
 					>
 						Back &rarr;
@@ -98,5 +96,3 @@ export const Recipe: React.FC<RecipeProps> = ({
 		</article>
 	);
 };
-
-export default Recipe;

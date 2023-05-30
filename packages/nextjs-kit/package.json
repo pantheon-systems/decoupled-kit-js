@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/nextjs-kit",
-	"version": "1.7.2",
+	"version": "1.7.3-canary.3",
 	"description": "Pantheon Decoupled Kit's Next.js Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -13,24 +13,25 @@
 	"files": [
 		"dist/*"
 	],
-	"types": "dist/index.d.ts",
-	"main": "./dist/nextjs-kit.umd.js",
-	"module": "./dist/nextjs-kit.es.js",
+	"types": "./dist/index.d.ts",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
 	"exports": {
 		".": {
-			"require": "./dist/nextjs-kit.umd.js",
-			"import": "./dist/nextjs-kit.es.js"
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
 		},
 		"./style.css": "./dist/style.css"
 	},
 	"prettier": "@pantheon-systems/workspace-configs/prettier",
 	"typedoc": {
-		"entryPoint": "./index.ts"
+		"entryPoint": "./src/index.ts"
 	},
 	"scripts": {
-		"build": "pnpm clean && vite build",
 		"clean": "pnpm rimraf ./dist",
-		"watch": "vite build --watch",
+		"build": "pnpm clean && pnpm tsup",
+		"watch": "pnpm clean && tsc && pnpm tsup --watch",
 		"typedoc": "typedoc",
 		"test": "vitest run",
 		"test:watch": "vitest",
@@ -44,27 +45,27 @@
 	"devDependencies": {
 		"@pantheon-systems/eslint-config": "*",
 		"@pantheon-systems/workspace-configs": "*",
-		"@rollup/plugin-typescript": "^11.0.0",
 		"@tailwindcss/typography": "^0.5.9",
 		"@testing-library/react": "14.0.0",
-		"@vitejs/plugin-react": "^3.1.0",
+		"@types/react": "^18.2.6",
+		"@types/react-dom": "^18.2.4",
 		"@vitest/coverage-c8": "^0.29.8",
 		"autoprefixer": "^10.4.14",
 		"eslint-plugin-prettier": "^4.2.1",
-		"next": "^13.2.4",
-		"postcss": "^8.4.21",
+		"next": "13.4.3",
+		"postcss": "^8.4.23",
 		"prettier": "^2.8.7",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"rimraf": "^4.4.1",
-		"tailwindcss": "^3.3.1",
-		"vite": "^4.2.1",
+		"tailwindcss": "^3.3.2",
+		"tsup": "^6.7.0",
 		"vitest": "^0.29.8"
 	},
 	"peerDependencies": {
-		"next": "^13.1.1",
+		"next": "^13.1.5",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"tailwindcss": "^3.1.8"
+		"tailwindcss": "^3.3.2"
 	}
 }

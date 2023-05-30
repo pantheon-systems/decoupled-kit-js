@@ -17,4 +17,3 @@ public
 # handlebars templates
 *.hbs
 **/__tests__/fixtures/**
-**/templates/**

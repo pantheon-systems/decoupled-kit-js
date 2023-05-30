@@ -1,5 +1,3 @@
-import React from 'react';
-
 /**
  *
  * @param props.cols - The number of columns in the grid, this is an optional prop which will default to 3 if not provided
@@ -12,7 +10,7 @@ export const Grid = ({
 	children,
 }: {
 	cols?: number;
-	children?: JSX.Element[];
+	children?: React.ReactNode;
 }) => {
 	return (
 		<div
@@ -51,14 +49,16 @@ export const Grid = ({
  * 			 <ArticleGrid
  * 				 data={myArticles}
  * 				 cols={4}
- * 				 FallbackComponent={<span>No Data Found</span>}
+ * 				 FallbackComponent={() => <span>No Data Found</span>}
  * 			 />
  * 		 </>
  * 	 )
  * }
  * ```
  */
-export const withGrid = (Component: React.ElementType) => {
+export const withGrid = <Props extends object>(
+	Component: React.ComponentType,
+) => {
 	/**
 	 * @param props.data - The to be passed to the Component as the content prop
 	 * @param props.cols - The number of columns to build a grid with. This is an optional prop which will default to 3 if not provided
@@ -74,8 +74,8 @@ export const withGrid = (Component: React.ElementType) => {
 	}: {
 		data?: Type[];
 		cols?: number;
-		FallbackComponent?: React.ElementType;
-	}): JSX.Element => {
+		FallbackComponent?: React.ComponentType;
+	} & { [Property in keyof Props]: Props[Property] }): JSX.Element => {
 		return (
 			<>
 				{data ? (

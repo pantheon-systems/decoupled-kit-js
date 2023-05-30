@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/compat/router.js';
+import { useEffect, useState } from 'react';
 
 /**
  * Options type for {@link Paginator}
@@ -86,6 +86,7 @@ export const Paginator = <Type extends object>({
 	routing,
 	Component,
 }: PaginationProps<Type>) => {
+	const router = useRouter();
 	// configurable breakpoints
 	// This value will be the start of the separator.
 	const [breakStart, setBreakStart] = useState<number | null>(
@@ -97,13 +98,13 @@ export const Paginator = <Type extends object>({
 	// how many buttons to add when the separator is clicked
 	const breakAdd = breakpoints?.add || null;
 
-	const router = useRouter();
 	// get current path from router.pathname
 	// and trim off catchalls
-	const currentRoute = router.pathname.replace(/\/{1}\[{1,2}.*\]{1,2}$/, '');
-	const routeKey = Object.keys(router.query)[0];
+	const currentRoute =
+		router?.pathname.replace(/\/{1}\[{1,2}.*\]{1,2}$/, '') || '';
+	const routeKey = router?.query ? Object.keys(router.query)[0] : '';
 	const [currentPageQuery, setCurrentPageQuery] = useState<number>(
-		Number(router.query[routeKey]) || 1,
+		Number(router?.query[routeKey]) || 1,
 	);
 
 	const [offset, setOffset] = useState<number>(
@@ -129,14 +130,16 @@ export const Paginator = <Type extends object>({
 			setOffset(Number(newOffset));
 		}
 
-		routing &&
-			router.push(
+		void (
+			routing &&
+			router?.push(
 				`${currentRoute}/${currentPageQuery}`,
 				`${currentRoute}/${currentPageQuery}`,
 				{
 					shallow: true,
 				},
-			);
+			)
+		);
 	}, [data, offset, itemsPerPage, breakStart, currentPageQuery, totalItems]);
 
 	// track window width to appropriately hide and show buttons on small viewports

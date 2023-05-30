@@ -1,6 +1,6 @@
-import { ServerResponse } from 'http';
+import { ServerResponse } from 'node:http';
 import { DrupalState } from '@gdwc/drupal-state';
-import defaultFetch from './defaultFetch';
+import { defaultFetch } from './defaultFetch';
 
 import type { TJsonApiBody } from 'jsona/lib/JsonaTypes';
 import type {
@@ -79,4 +79,4 @@ class PantheonDrupalState extends DrupalState {
 	}
 }
 
-export default PantheonDrupalState;
+export { PantheonDrupalState as DrupalState };

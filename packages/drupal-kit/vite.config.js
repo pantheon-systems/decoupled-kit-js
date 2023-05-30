@@ -1,5 +1,5 @@
-import { defineConfig } from 'vitest/config';
-import dts from 'vite-plugin-dts';
+import { defineConfig } from 'vite';
+// import dts from 'vite-plugin-dts';
 
 const globals = {
 	'isomorphic-fetch': 'isomorphicFetch',
@@ -15,20 +15,25 @@ const external = [
 /** @type {import('vite').defineConfig} */
 export default defineConfig(() => {
 	return {
-		plugins: [dts({ insertTypesEntry: true })],
 		build: {
 			lib: {
-				entry: './index.ts',
+				entry: './src/index.ts',
 				name: 'drupal-kit',
-				formats: ['umd', 'es'],
-				fileName: (format) => `drupal-kit.${format}.js`,
+				formats: ['cjs', 'es'],
+				fileName: (format) => `drupal-kit.${format === 'es' ? 'mjs' : 'js'}`,
 			},
 			rollupOptions: {
 				external,
+				treeshake: true,
 				output: {
+					exports: 'named',
 					globals,
 				},
 			},
+		},
+		test: {
+			globals: true,
+			setupFiles: ['__tests__/setupFile.ts'],
 		},
 	};
 });

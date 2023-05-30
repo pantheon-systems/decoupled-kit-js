@@ -1,3 +1,4 @@
+/** @type {import('eslint').ESLint.ConfigData} */
 module.exports = {
 	root: true,
 	parser: '@typescript-eslint/parser',
@@ -23,6 +24,6 @@ module.exports = {
 		'jest.config.*',
 		'lint-staged.config.*',
 		'/dist',
-		'/node_modules'
+		'/node_modules',
 	],
 };

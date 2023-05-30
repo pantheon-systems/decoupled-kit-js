@@ -7,7 +7,7 @@ const defaultCacheControlValue = 'public, s-maxage=600';
  * @param options.res response object
  * @param options.cacheControl optional value to override cache control header, defaults to 'public, s-maxage=600'
  */
-const setEdgeHeader = ({
+export const setEdgeHeader = ({
 	res,
 	cacheControl = defaultCacheControlValue,
 }: {
@@ -16,5 +16,3 @@ const setEdgeHeader = ({
 }) => {
 	res.setHeader('Cache-Control', cacheControl);
 };
-
-export default setEdgeHeader;

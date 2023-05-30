@@ -1,4 +1,4 @@
-import { addWithDiff, runLint } from '../actions';
+import { addWithDiff, convertCSSModules, runLint } from '../actions';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 import {
 	cmsEndpointPrompt,
@@ -31,6 +31,6 @@ export const nextDrupalUmamiAddon: DecoupledKitGenerator<
 	},
 	addon: true,
 	templates: ['next-drupal-umami-addon'],
-	actions: [addWithDiff, runLint],
+	actions: [addWithDiff, convertCSSModules, runLint],
 	cmsType: 'drupal',
 };

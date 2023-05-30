@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/wordpress-kit",
-	"version": "2.15.0",
+	"version": "3.0.0-canary.2",
 	"description": "Pantheon Decoupled Kit's WordPress Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -13,25 +13,24 @@
 	"files": [
 		"dist/*"
 	],
-	"types": "dist/index.d.ts",
-	"main": "./dist/wordpress-kit.umd.js",
-	"module": "./dist/wordpress-kit.es.js",
 	"exports": {
 		".": {
-			"import": "./dist/wordpress-kit.es.js",
-			"require": "./dist/wordpress-kit.umd.js"
+			"types": "./dist/index.d.ts",
+			"require": "./dist/wordpress-kit.js",
+			"import": "./dist/wordpress-kit.mjs"
 		}
 	},
+	"types": "./dist/index.d.ts",
+	"module": "./dist/wordpress-kit.mjs",
+	"main": "./dist/wordpress-kit.js",
 	"prettier": "@pantheon-systems/workspace-configs/prettier",
 	"typedoc": {
-		"entryPoint": "./index.ts"
+		"entryPoint": "./src/index.ts"
 	},
 	"scripts": {
 		"clean": "pnpm rimraf ./dist",
-		"dev": "vite",
-		"build": "pnpm clean && vite build",
+		"build": "pnpm clean && vite build && tsc --project ./tsconfig.build.json",
 		"watch": "pnpm build && vite build --watch",
-		"serve": "vite preview",
 		"typedoc": "typedoc",
 		"test": "vitest run --coverage",
 		"test:watch": "vitest",
@@ -42,18 +41,17 @@
 		"lint-staged": "lint-staged"
 	},
 	"dependencies": {
-		"@pantheon-systems/cms-kit": "^0.3.0",
+		"@pantheon-systems/cms-kit": "^0.3.1-canary.0",
 		"graphql": "^16.6.0",
 		"graphql-request": "^5.2.0",
-		"tailwindcss": "^3.1.6"
+		"tailwindcss": "^3.3.2"
 	},
 	"devDependencies": {
 		"@pantheon-systems/eslint-config": "*",
 		"@pantheon-systems/workspace-configs": "*",
-		"@rollup/plugin-typescript": "^11.0.0",
 		"@vitest/coverage-c8": "^0.29.8",
 		"msw": "^1.2.1",
-		"postcss": "^8.4.21",
+		"postcss": "^8.4.23",
 		"rimraf": "^4.4.1",
 		"vitest": "^0.29.8"
 	}

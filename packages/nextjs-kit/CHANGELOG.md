@@ -1,5 +1,32 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.7.3-canary.3
+
+### Patch Changes
+
+- e0f1a510: Added React types to devDependencies
+
+## 1.7.3-canary.2
+
+### Patch Changes
+
+- 5a786d0a: Use tsup for bundle - vite was not properly externalizing some
+  packages leading to errors in the bundle
+
+## 1.7.3-canary.1
+
+### Patch Changes
+
+- 0cb2a7ac: Use next/compat/router to work around issues with useRouter in next
+  13.4.x
+
+## 1.7.3-canary.0
+
+### Patch Changes
+
+- aea5653d: Fixed package.json exports field and updated build and file
+  structure in line with our other packages
+
 ## 1.7.2
 
 ### Patch Changes

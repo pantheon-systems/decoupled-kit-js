@@ -1,5 +1,10 @@
 import whichPmRuns from 'which-pm-runs';
-import { addWithDiff, runInstall, runLint } from '../actions';
+import {
+	addWithDiff,
+	convertCSSModules,
+	runInstall,
+	runLint,
+} from '../actions';
 import versions from '../pkgVersions.json';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 import {
@@ -45,7 +50,7 @@ export const gatsbyWp: DecoupledKitGenerator<GatsbyWPAnswers, GatsbyWPData> = {
 		wp: true,
 		gatsby: true,
 	},
-	templates: ['gatsby-wp', 'tailwindless-gatsby', 'tailwind-shared'],
-	actions: [addWithDiff, runInstall, runLint],
+	templates: ['gatsby-wp', 'tailwind-shared'],
+	actions: [addWithDiff, runInstall, convertCSSModules, runLint],
 	cmsType: 'wp',
 };

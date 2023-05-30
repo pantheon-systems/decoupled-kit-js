@@ -1,5 +1,112 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.0-canary.13
+
+### Patch Changes
+
+- e0f1a510: Bump nextjs-kit version
+
+## 0.9.0-canary.12
+
+### Patch Changes
+
+- 703a2663: [next-wp] Add .prettierrc
+
+## 0.9.0-canary.11
+
+### Patch Changes
+
+- 5a786d0a: Bump nextjs-kit and wordpress-kit versions
+- 5dd257c9: [next-wp-acf-addon] Use convertCSSModules action for the tailwindcss
+  option. [next-drupal] Add prettier as devDependency and prettier scripts to
+  package.json
+- c6beaeb1: Fix prettier scripts
+
+## 0.9.0-canary.10
+
+### Patch Changes
+
+- 293d3fc7: [next-drupal] Handle encoded URI components in /api/preview
+
+## 0.9.0-canary.9
+
+### Patch Changes
+
+- 0cb2a7ac: Bump nextjs-kit version
+
+## 0.9.0-canary.8
+
+### Minor Changes
+
+- ddacd2a5: Use css modules by default for the next-drupal-umami-addon, retain
+  tailwindcss option
+
+### Patch Changes
+
+- 65689a68: - [next-wp] Update imports for Pagination example
+
+## 0.9.0-canary.7
+
+### Patch Changes
+
+- aea5653d: Bump nextjs-kit version
+- 05d75735: Use `lint --fix` for nextjs generators
+- 94373c6c: Bump drupal-kit version
+
+## 0.9.0-canary.6
+
+### Minor Changes
+
+- e042730c: - [next-wp] Uses css modules by default, retain tailwindcss option
+  - [next-druapl] Uses css modules by default, retain tailwindcss option
+
+## 0.9.0-canary.5
+
+### Patch Changes
+
+- dffc487c: [gatsby-wp-acf-addon] Use css modules by default, retain tailwindcss
+  option
+
+## 0.9.0-canary.4
+
+### Patch Changes
+
+- fe847220: [next-wp] Fix global css template
+
+## 0.9.0-canary.3
+
+### Minor Changes
+
+- ab24262f: [gatsby-wp] Use the convertCSSModules action for the tailwindcss
+  version
+
+  Bump eslint-config version
+
+## 0.9.0-canary.2
+
+### Patch Changes
+
+- f6de3b80: Bump wordpress-kit version
+
+## 0.9.0-canary.1
+
+### Patch Changes
+
+- 14ce5a27: Fix incorrect dependencies
+
+## 0.9.0-canary.0
+
+### Minor Changes
+
+- 7da989b0: Added a new action: `convertCssModules`. This action allows CSS
+  modules to be converted into Tailwind syntax.
+
+### Patch Changes
+
+- abf7fa7a: [next-drupal] Bump `drupal-kit` version
+- 0a456069: [next-wp][gatsby-wp] Bump `wordpress-kit` version, update import for
+  `GraphQLClientFactory`
+
 ## 0.8.0
 
 ### Minor Changes

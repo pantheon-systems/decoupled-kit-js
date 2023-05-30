@@ -7,9 +7,7 @@ import { IMAGE_URL } from '../lib/constants';
 import Link from 'next/link';
 import Layout from '../components/layout';
 import { ContentWithImage{{#if umami}}, Recipe{{/if}} } from '@pantheon-systems/nextjs-kit';
-{{#unless tailwindcss}}
 import styles from './catch-all.module.css';
-{{/unless}}
 
 export default function CatchAllRoute({
 	pageData,
@@ -25,20 +23,8 @@ export default function CatchAllRoute({
 			} = pageData;
 			return (
 				<>
-					{{#if tailwindcss}}
-					<article className="prose lg:prose-xl mt-10 mx-auto">
-						<h1>{title}</h1>
-						<Link passHref href="/pages" className="font-normal">
-							Pages &rarr;
-						</Link>
-							<div
-								className="mt-12 max-w-lg mx-auto lg:max-w-screen-lg"
-								dangerouslySetInnerHTML=\{{ __html: processed }}
-							/>
-					</article>
-					{{else}}
 					<article className={styles.container}>
-						<h1>{title}</h1>
+						<h1 className={styles.containerTitle}>{title}</h1>
 						<Link passHref href="/pages">
 							Pages &rarr;
 						</Link>
@@ -47,7 +33,6 @@ export default function CatchAllRoute({
 								dangerouslySetInnerHTML=\{{ __html: processed }}
 							/>
 					</article>
-					{{/if}}
 				</>
 			);
 		}
@@ -110,7 +95,7 @@ export default function CatchAllRoute({
 		{{/if}}
 		return (
 			<>
-				<h2 className="text-xl text-center mt-14">No content found 🏜</h2>
+				<h2 className={styles.noContent}>No content found 🏜</h2>
 			</>
 		);
 	};

@@ -1,5 +1,4 @@
-import React from 'react';
-import Link from 'next/link';
+import Link from 'next/link.js';
 import { LinkProps } from '../types';
 
 export interface HeaderProps {

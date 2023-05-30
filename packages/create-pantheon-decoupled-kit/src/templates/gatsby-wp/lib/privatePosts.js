@@ -1,9 +1,9 @@
-const { gql, GraphqlClientFactory } = require('@pantheon-systems/wordpress-kit')
+const { gql, GraphQLClientFactory } = require('@pantheon-systems/wordpress-kit')
 
 const wpGraphqlEndpoint =
 	process.env.WPGRAPHQL_URL || process.env.PANTHEON_CMS_ENDPOINT
 
-const client = new GraphqlClientFactory(wpGraphqlEndpoint).create()
+const client = new GraphQLClientFactory(wpGraphqlEndpoint).create()
 
 async function privatePostsQuery() {
 	const credentials = `${process.env.WP_APPLICATION_USERNAME}:${process.env.WP_APPLICATION_PASSWORD}`

@@ -1,6 +1,6 @@
 {
 	"name": "create-pantheon-decoupled-kit",
-	"version": "0.8.0",
+	"version": "0.9.0-canary.13",
 	"description": "Pantheon Decoupled Kit CLI",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -62,12 +62,17 @@
 		"vitest": "^0.29.8"
 	},
 	"dependencies": {
+		"@csstools/postcss-global-data": "^1.0.3",
+		"autoprefixer": "^10.4.14",
 		"diff": "^5.1.0",
 		"fs-extra": "^11.1.1",
+		"glob": "^10.2.3",
 		"handlebars": "^4.7.7",
 		"inquirer": "^9.1.5",
 		"klaw": "^4.1.0",
 		"minimist": "^1.2.8",
+		"postcss": "^8.4.21",
+		"postcss-custom-properties": "^13.1.5",
 		"which-pm-runs": "^1.1.0"
 	}
 }

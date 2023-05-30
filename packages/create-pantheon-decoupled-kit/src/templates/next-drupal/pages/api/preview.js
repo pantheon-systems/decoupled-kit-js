@@ -26,7 +26,8 @@ const preview = async (req, res) => {
 	// or the only store if using a monolingual backend
 	const [store] = globalDrupalStateStores.filter(({ defaultLocale }) => {
 		const regex = new RegExp(`/${defaultLocale}/`);
-		return defaultLocale ? regex.test(req.url) : true;
+		const decodedUrl = decodeURIComponent(req.url);
+		return defaultLocale ? regex.test(decodedUrl) : true;
 	});
 	// verify the content exists
 	let content;

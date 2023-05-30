@@ -1,4 +1,4 @@
-import setSurrogateKeyHeader from '../src/utils/setSurrogateKeyHeader';
+import { setSurrogateKeyHeader } from '../src/lib/setSurrogateKeyHeader';
 import { vi } from 'vitest';
 // Mock the response object
 const mockResponse = vi.fn().mockImplementation(({ surrogateKeyHeader }) => ({

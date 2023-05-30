@@ -1,5 +1,6 @@
 import * as utils from '../src/utils';
 import * as actions from '../src/actions';
+import process from 'process';
 const { addWithDiff, runInstall, runLint } = actions;
 
 vi.mock('../src/actions', () => ({
@@ -34,6 +35,9 @@ const globalData = {
 describe('actionRunner()', () => {
 	beforeEach((context) => {
 		context.actionRunnerSpy = vi.spyOn(utils, 'actionRunner');
+		context.processSpy = vi
+			.spyOn(process, 'exit')
+			.mockImplementationOnce(vi.fn());
 	});
 	afterEach(() => {
 		vi.restoreAllMocks();
@@ -54,7 +58,7 @@ describe('actionRunner()', () => {
 
 	it.fails(
 		'should throw an error if an action throws an error',
-		async ({ actionRunnerSpy }) => {
+		async ({ actionRunnerSpy, processSpy }) => {
 			vi.mocked(addWithDiff).mockImplementationOnce(() => {
 				throw new Error('outDir is not valid');
 			});
@@ -74,6 +78,7 @@ describe('actionRunner()', () => {
 			expect(runInstall).toHaveBeenCalledTimes(0);
 			expect(runLint).toHaveBeenCalledTimes(0);
 			expect(actionRunnerSpy).toHaveBeenCalledOnce();
+			expect(processSpy).toHaveBeenCalledWith(1);
 		},
 	);
 });

@@ -33,7 +33,7 @@ sequenceDiagram
     B->>A: Set Surrogate header on outgoing response to browser
 ```
 
-The `GraphqlClientFactory` class from our `@pantheon-systems/wordpress-kit` npm
+The `GraphQLClientFactory` class from our `@pantheon-systems/wordpress-kit` npm
 package adds the `Pantheon-Skey` header to each request and uses the GET method
 by default to take advantage of WPGraphQL Smart Cache network caching. Responses
 from WordPress will contain the `Surrogate-Key` header. With these keys, your

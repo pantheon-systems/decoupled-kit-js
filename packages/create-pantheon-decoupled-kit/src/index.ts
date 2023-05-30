@@ -45,6 +45,10 @@ export const main = async (
 	args: ParsedArgs,
 	DecoupledKitGenerators: DecoupledKitGenerator[],
 ): Promise<void> => {
+	process.on('beforeExit', () => {
+		console.log(chalk.yellow('Goodbye.'));
+	});
+
 	// display the help menu
 	if (args?.help || args?.h) {
 		console.log(helpMenu(DecoupledKitGenerators));
@@ -120,12 +124,11 @@ export const main = async (
 	}
 
 	if (!generatorsToRun || !generatorsToRun?.length) {
-		throw new Error(`
-			${chalk.red(
-				'No valid generators were selected. Use positional arguments or choose from the prompt.',
-			)}
+		throw `${chalk.red(
+			'No valid generators were selected. Use positional arguments or choose from the prompt.',
+		)}
 Valid generators are: ${generatorNames.join(', ')}
-To see this list at any time, use the --help command.`);
+To see this list at any time, use the --help command.`;
 	}
 
 	const actions = [];
@@ -150,13 +153,8 @@ To see this list at any time, use the --help command.`);
 		// if generator data exists, add it to the args object
 		generator.data && Object.assign(args, generator.data);
 
-		// filter out tailwindless templates if they are not needed
-		// otherwise, filter out shared tailwind templates
-		if (args.tailwindcss) {
-			generator.templates = generator.templates.filter(
-				(template) => !template.startsWith('tailwindless'),
-			);
-		} else {
+		// filter out shared tailwind templates if needed
+		if (!args.tailwindcss) {
 			generator.templates = generator.templates.filter(
 				(template) => template !== 'tailwind-shared',
 			);

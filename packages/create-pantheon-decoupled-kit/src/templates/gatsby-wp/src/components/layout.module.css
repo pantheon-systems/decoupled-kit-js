@@ -1,0 +1,60 @@
+.layout {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	height: inherit;
+	width: inherit;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.navLinks {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: var(--5);
+	list-style-type: none;
+	justify-content: space-between;
+	max-width: var(--sm);
+	padding: var(--5) var(--10) 0;
+}
+
+.links {
+	text-decoration-line: none;
+	color: var(--black);
+}
+
+.navLinks > li:first-child {
+	margin-right: auto;
+}
+
+.navLinks :not(li:first-child) > a {
+	justify-self: flex-end;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: var(--4);
+	margin-right: var(--4);
+}
+
+.navLinks a:hover {
+	text-decoration-line: underline;
+}
+
+.layoutMain {
+	margin-top: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: auto;
+}
+
+/* lg breakpoint*/
+@media (max-width: 1024px) {
+	.layoutMain {
+		margin-top: 0;
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: auto;
+	}
+}

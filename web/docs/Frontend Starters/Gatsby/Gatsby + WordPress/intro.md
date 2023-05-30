@@ -29,10 +29,10 @@ To create a project using the latest version of the Gatsby WordPress Starter,
 use our `create-pantheon-decoupled-kit` npm package.
 
 The full documentation for the `create-pantheon-decoupled-kit` can be found
-[here](https://decoupledkit.pantheon.io/docs/frontend-starters/using-the-cli).
+[here](../../create-pantheon-decoupled-kit.md).
 
 Before you continue, familiarize yourself with our Gatsby WordPress
-[add-ons](http://localhost:3000/docs/frontend-starters/gatsby/gatsby-wordpress/add-ons),
+[add-ons](./add-ons.md),
 a suite of optional project expansions that bring new components, features, and
 styling into your starter kit.
 
@@ -41,7 +41,7 @@ To create a new project using `create-pantheon-decoupled-kit`:
 1. In your terminal, run the following command:
 
 ```bash
-npm init pantheon-decoupled-kit -- gatsby-wordpress
+npm init pantheon-decoupled-kit -- gatsby-wp
 ```
 
 2. Follow the prompts in your terminal to complete the setup.

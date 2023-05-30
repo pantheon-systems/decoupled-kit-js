@@ -1,5 +1,4 @@
-import React from 'react';
-import Link from 'next/link';
+import Link from 'next/link.js';
 import type { FooterMenuItem } from '../types';
 
 export interface FooterMenuProps {
@@ -43,7 +42,7 @@ export const Footer: React.FC<FooterMenuProps> = ({
 	children,
 }: FooterMenuProps) => {
 	const FooterMenu = () => {
-		const menuArr = [];
+		const menuArr: JSX.Element[] = [];
 		if (footerMenuItems) {
 			// some not so great code to account for nested menu elements
 			for (let i = 0; i < footerMenuItems.length; i++) {

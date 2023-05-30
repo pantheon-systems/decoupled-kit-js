@@ -1,0 +1,9 @@
+.header {
+	margin-top: var(--12);
+	text-align: center;
+}
+
+.headerTitle {
+	font-size: var(--14);
+	font-weight: 800;
+}

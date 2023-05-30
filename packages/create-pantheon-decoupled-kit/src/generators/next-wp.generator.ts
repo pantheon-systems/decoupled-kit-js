@@ -1,4 +1,9 @@
-import { addWithDiff, runInstall, runLint } from '../actions';
+import {
+	addWithDiff,
+	convertCSSModules,
+	runInstall,
+	runLint,
+} from '../actions';
 import versions from '../pkgVersions.json';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 import {
@@ -36,6 +41,6 @@ export const nextWp: DecoupledKitGenerator<NextWPAnswers, NextWpData> = {
 		wp: true,
 	},
 	templates: ['next-wp', 'tailwind-shared', 'tailwindless-next'],
-	actions: [addWithDiff, runInstall, runLint],
+	actions: [addWithDiff, runInstall, convertCSSModules, runLint],
 	cmsType: 'wp',
 };

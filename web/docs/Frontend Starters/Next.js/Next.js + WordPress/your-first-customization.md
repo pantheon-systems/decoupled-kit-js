@@ -36,13 +36,13 @@ fetch data from WordPress. Be sure to use as few instances of the client as
 possible. Here is an example of how to use the client:
 
 ```js title=lib/wordpress-client.js
-import { GraphqlClientFactory } from '@pantheon-systems/wordpress-kit';
+import { GraphQLClientFactory } from '@pantheon-systems/wordpress-kit';
 
 // you may need to expose this variable in your next.config.js
 // see https://nextjs.org/docs/api-reference/next.config.js/environment-variables
 const myWordPressGraphQLEndpoint = process.env.WPGRAPHQL_URL;
 
-export const client = new GraphqlClientFactory(
+export const client = new GraphQLClientFactory(
 	myWordPressGraphQLEndpoint,
 ).create();
 ```
