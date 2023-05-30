@@ -2,16 +2,11 @@
 
 exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthenticated 1`] = `
 <DocumentFragment>
-  <div
-    class="undefined flex flex-col mx-auto min-h-screen"
-  >
+  <div>
     <nav>
-      <ul
-        class="undefined flex flex-row flex-wrap justify-between list-none mx-auto max-w-screen-sm"
-      >
+      <ul>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/"
           >
             🏠 Home
@@ -19,7 +14,6 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/posts"
           >
             📰 Posts
@@ -27,7 +21,6 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/pages"
           >
             📑 Pages
@@ -35,7 +28,6 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/examples"
           >
             ⚛️ Examples
@@ -55,9 +47,7 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
             Home →
           </span>
         </a>
-        <div
-          class="undefined mx-auto"
-        >
+        <div>
           <p>
             Gatsby was unable to make an authorized request to the WordPress API. Please check your .env.development.local file to ensure that your 
             <code>
@@ -80,30 +70,20 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
         </div>
       </div>
     </main>
-    <footer
-      class="undefined bg-black flex flex-col justify-self-end mt-12"
-    >
-      <nav
-        class="undefined flex flex-col mx-auto"
-      >
-        <ul
-          class="undefined mt-4"
-        />
+    <footer>
+      <nav>
+        <ul />
       </nav>
-      <div
-        class="undefined text-white my-4 mx-auto p-2"
-      >
+      <div>
         <span>
           © 2023 Built with 
           <a
-            class="undefined underline"
             href="https://www.gatsbyjs.com"
           >
             Gatsby
           </a>
            and 
           <a
-            class="undefined underline"
             href="https://wordpress.org/"
           >
             WordPress
@@ -117,16 +97,11 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
 
 exports[`<AuthApiExampleTemplate /> > should render a success message if authenticated 1`] = `
 <DocumentFragment>
-  <div
-    class="undefined flex flex-col mx-auto min-h-screen"
-  >
+  <div>
     <nav>
-      <ul
-        class="undefined flex flex-row flex-wrap justify-between list-none mx-auto max-w-screen-sm"
-      >
+      <ul>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/"
           >
             🏠 Home
@@ -134,7 +109,6 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/posts"
           >
             📰 Posts
@@ -142,7 +116,6 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/pages"
           >
             📑 Pages
@@ -150,7 +123,6 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/examples"
           >
             ⚛️ Examples
@@ -170,39 +142,27 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
             Home →
           </span>
         </a>
-        <div
-          class="undefined mx-auto"
-        >
+        <div>
           <p>
             🎉 Gatsby was able to successfully make an authenticated request to WordPress! 🎉
           </p>
         </div>
       </div>
     </main>
-    <footer
-      class="undefined bg-black flex flex-col justify-self-end mt-12"
-    >
-      <nav
-        class="undefined flex flex-col mx-auto"
-      >
-        <ul
-          class="undefined mt-4"
-        />
+    <footer>
+      <nav>
+        <ul />
       </nav>
-      <div
-        class="undefined text-white my-4 mx-auto p-2"
-      >
+      <div>
         <span>
           © 2023 Built with 
           <a
-            class="undefined underline"
             href="https://www.gatsbyjs.com"
           >
             Gatsby
           </a>
            and 
           <a
-            class="undefined underline"
             href="https://wordpress.org/"
           >
             WordPress

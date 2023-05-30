@@ -3,7 +3,7 @@
 exports[`<HomepageTemplate /> > should render articles 1`] = `
 <DocumentFragment>
   <div
-    class="_layout_522a10 flex flex-col"
+    class="_layout_522a10"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -56,15 +56,15 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
       </nav>
     </div>
     <main
-      class="_layoutMain_522a10 mb-auto"
+      class="_layoutMain_522a10"
     >
       <div
-        class="_header_19d181 font-extrabold text-center w-fit"
+        class="_header_19d181"
       >
         <h1>
           Welcome to 
           <a
-            class="_next_19d181 text-blue-500"
+            class="_next_19d181"
             href="https://nextjs.org"
           >
             Next.js!
@@ -91,10 +91,10 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
             href="/articles/give-it-a-go-and-grow-your-own-herbs"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f"
               >
                 <img
                   alt="Give it a go and grow your own herbs"
@@ -102,7 +102,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f"
               >
                 Give it a go and grow your own herbs →
               </h2>
@@ -112,10 +112,10 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
             href="/articles/the-real-deal-for-supermarket-savvy-shopping"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f"
               >
                 <img
                   alt="The real deal for supermarket savvy shopping"
@@ -123,7 +123,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f"
               >
                 The real deal for supermarket savvy shopping →
               </h2>
@@ -133,10 +133,10 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
             href="/articles/baking-mishaps-our-troubleshooting-tips"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f"
               >
                 <img
                   alt="Baking mishaps - our troubleshooting tips"
@@ -144,7 +144,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f"
               >
                 Baking mishaps - our troubleshooting tips →
               </h2>
@@ -154,10 +154,10 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
             href="/articles/skip-the-spirits-with-delicious-mocktails"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f"
               >
                 <img
                   alt="Skip the spirits with delicious mocktails"
@@ -165,7 +165,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f"
               >
                 Skip the spirits with delicious mocktails →
               </h2>
@@ -175,10 +175,10 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
             href="/articles/give-your-oatmeal-the-ultimate-makeover"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f"
               >
                 <img
                   alt="Give your oatmeal the ultimate makeover"
@@ -186,7 +186,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f"
               >
                 Give your oatmeal the ultimate makeover →
               </h2>
@@ -196,10 +196,10 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
             href="/articles/the-umami-guide-to-our-favourite-mushrooms"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f"
               >
                 <img
                   alt="The Umami guide to our favorite mushrooms"
@@ -207,7 +207,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f"
               >
                 The Umami guide to our favorite mushrooms →
               </h2>
@@ -217,10 +217,10 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
             href="/articles/lets-hear-it-for-carrots"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f"
               >
                 <img
                   alt="Let's hear it for carrots "
@@ -228,7 +228,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f"
               >
                 Let's hear it for carrots  →
               </h2>
@@ -238,10 +238,10 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
             href="/articles/dairy-free-and-delicious-milk-chocolate"
           >
             <div
-              class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+              class="_card_91079f"
             >
               <div
-                class="_cardImg_91079f shrink-0 h-40 relative"
+                class="_cardImg_91079f"
               >
                 <img
                   alt="Dairy-free and delicious milk chocolate"
@@ -249,7 +249,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
                 />
               </div>
               <h2
-                class="_cardTitle_91079f font-semibold py-4 px-6"
+                class="_cardTitle_91079f"
               >
                 Dairy-free and delicious milk chocolate →
               </h2>
@@ -301,7 +301,7 @@ exports[`<HomepageTemplate /> > should render articles 1`] = `
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="_footerCopy_522a10 my-0 mx-auto"
+          class="_footerCopy_522a10"
         >
           © 2023 Built with 
           <a

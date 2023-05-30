@@ -3,7 +3,7 @@
 exports[`<PageListTemplate /> > should render pages 1`] = `
 <DocumentFragment>
   <div
-    class="_layout_522a10 flex flex-col"
+    class="_layout_522a10"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -56,20 +56,20 @@ exports[`<PageListTemplate /> > should render pages 1`] = `
       </nav>
     </div>
     <main
-      class="_layoutMain_522a10 mb-auto"
+      class="_layoutMain_522a10"
     >
        
       <header
         class="_header_be6ffb"
       >
         <h1
-          class="_headerTitle_be6ffb font-extrabold my-auto mx-0 text-center"
+          class="_headerTitle_be6ffb"
         >
           Pages
         </h1>
       </header>
       <div
-        class="_content_69eda7 flex flex-col max-w-screen-md"
+        class="_content_69eda7"
       >
         <ul>
           <li>
@@ -77,7 +77,7 @@ exports[`<PageListTemplate /> > should render pages 1`] = `
               About Umami
             </h2>
             <a
-              class="_link_69eda7 underline"
+              class="_link_69eda7"
               href="/about-umami"
             >
               Read more →
@@ -88,7 +88,7 @@ exports[`<PageListTemplate /> > should render pages 1`] = `
               Top Level Page
             </h2>
             <a
-              class="_link_69eda7 underline"
+              class="_link_69eda7"
               href="/about"
             >
               Read more →
@@ -99,7 +99,7 @@ exports[`<PageListTemplate /> > should render pages 1`] = `
               Nested Top Level Page
             </h2>
             <a
-              class="_link_69eda7 underline"
+              class="_link_69eda7"
               href="/nested/page"
             >
               Read more →
@@ -151,7 +151,7 @@ exports[`<PageListTemplate /> > should render pages 1`] = `
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="_footerCopy_522a10 my-0 mx-auto"
+          class="_footerCopy_522a10"
         >
           © 2023 Built with 
           <a
@@ -175,7 +175,7 @@ exports[`<PageListTemplate /> > should render pages 1`] = `
 exports[`<PageTemplate /> > should render page 1`] = `
 <DocumentFragment>
   <div
-    class="_layout_522a10 flex flex-col"
+    class="_layout_522a10"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -228,13 +228,13 @@ exports[`<PageTemplate /> > should render page 1`] = `
       </nav>
     </div>
     <main
-      class="_layoutMain_522a10 mb-auto"
+      class="_layoutMain_522a10"
     >
       <article
-        class="_container_01b1ad flex flex-col max-w-screen-md"
+        class="_container_01b1ad"
       >
         <h1
-          class="_containerTitle_01b1ad font-extrabold mb-6"
+          class="_containerTitle_01b1ad"
         >
           About Umami
         </h1>
@@ -309,7 +309,7 @@ exports[`<PageTemplate /> > should render page 1`] = `
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="_footerCopy_522a10 my-0 mx-auto"
+          class="_footerCopy_522a10"
         >
           © 2023 Built with 
           <a

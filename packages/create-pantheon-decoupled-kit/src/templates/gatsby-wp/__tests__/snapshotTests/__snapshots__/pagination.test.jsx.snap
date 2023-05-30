@@ -2,16 +2,11 @@
 
 exports[`<PaginationPostsExample /> > check back button works 1`] = `
 <DocumentFragment>
-  <div
-    class="undefined flex flex-col mx-auto min-h-screen"
-  >
+  <div>
     <nav>
-      <ul
-        class="undefined flex flex-row flex-wrap justify-between list-none mx-auto max-w-screen-sm"
-      >
+      <ul>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/"
           >
             🏠 Home
@@ -19,7 +14,6 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/posts"
           >
             📰 Posts
@@ -27,7 +21,6 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/pages"
           >
             📑 Pages
@@ -35,7 +28,6 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/examples"
           >
             ⚛️ Examples
@@ -46,24 +38,16 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
     <main>
       <div>
         <section>
-          <h1
-            class="undefined font-extrabold my-10 mx-0"
-          >
+          <h1>
             Pagination example
           </h1>
           <div>
-            <span
-              class="undefined text-gray-700 font-semibold"
-            >
+            <span>
               Page 1/10
             </span>
             <section>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Ut culpa iste voluptas consequatur
                 </h2>
                 <div>
@@ -74,12 +58,8 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Totam aliquam recusandae autem ipsa
                 </h2>
                 <div>
@@ -100,12 +80,8 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Et ipsa accusantium voluptatem nostrum maiores
                 </h2>
                 <div>
@@ -121,12 +97,8 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Odio vel voluptas pariatur quas pariatur dicta
                 </h2>
                 <div>
@@ -137,12 +109,8 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Quia quos eum assumenda alias quisquam a
                 </h2>
                 <div>
@@ -153,12 +121,8 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Rerum et consectetur accusamus quod
                 </h2>
                 <div>
@@ -174,12 +138,8 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Neque doloremque dolor et nesciunt
                 </h2>
                 <div>
@@ -190,12 +150,8 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Voluptatum pariatur qui aut magni et sequi
                 </h2>
                 <div>
@@ -206,12 +162,8 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Iusto voluptatem sed voluptas pariatur sequi
                 </h2>
                 <div>
@@ -227,12 +179,8 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Aut iusto dolores suscipit
                 </h2>
                 <div>
@@ -255,13 +203,11 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
                 role="navigation"
               >
                 <ul
-                  class="undefined self-start flex flex-row justify-center list-none mb-0 mx-auto mt-auto p-0"
                   data-testid="link-wrapper true false"
                 >
                   <li>
                     <a
                       aria-label="Go to Previous Page"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/1"
                       id="back-btn"
                       state="[object Object]"
@@ -273,7 +219,6 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
                     <a
                       aria-current="true"
                       aria-label="Current Page, Page 1"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/1"
                       state="[object Object]"
                     >
@@ -284,7 +229,6 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 2"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/2"
                       state="[object Object]"
                     >
@@ -295,7 +239,6 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 3"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/3"
                       state="[object Object]"
                     >
@@ -306,7 +249,6 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 4"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/4"
                       state="[object Object]"
                     >
@@ -324,7 +266,6 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 8"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/8"
                       state="[object Object]"
                     >
@@ -335,7 +276,6 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 9"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/9"
                       state="[object Object]"
                     >
@@ -346,7 +286,6 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 10"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/10"
                       state="[object Object]"
                     >
@@ -356,7 +295,6 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
                   <li>
                     <a
                       aria-label="Go to Next Page"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/2"
                       id="next-btn"
                       state="[object Object]"
@@ -371,30 +309,20 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
         </section>
       </div>
     </main>
-    <footer
-      class="undefined bg-black flex flex-col justify-self-end mt-12"
-    >
-      <nav
-        class="undefined flex flex-col mx-auto"
-      >
-        <ul
-          class="undefined mt-4"
-        />
+    <footer>
+      <nav>
+        <ul />
       </nav>
-      <div
-        class="undefined text-white my-4 mx-auto p-2"
-      >
+      <div>
         <span>
           © 2023 Built with 
           <a
-            class="undefined underline"
             href="https://www.gatsbyjs.com"
           >
             Gatsby
           </a>
            and 
           <a
-            class="undefined underline"
             href="https://wordpress.org/"
           >
             WordPress
@@ -408,16 +336,11 @@ exports[`<PaginationPostsExample /> > check back button works 1`] = `
 
 exports[`<PaginationPostsExample /> > check next button works 1`] = `
 <DocumentFragment>
-  <div
-    class="undefined flex flex-col mx-auto min-h-screen"
-  >
+  <div>
     <nav>
-      <ul
-        class="undefined flex flex-row flex-wrap justify-between list-none mx-auto max-w-screen-sm"
-      >
+      <ul>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/"
           >
             🏠 Home
@@ -425,7 +348,6 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/posts"
           >
             📰 Posts
@@ -433,7 +355,6 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/pages"
           >
             📑 Pages
@@ -441,7 +362,6 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/examples"
           >
             ⚛️ Examples
@@ -452,24 +372,16 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
     <main>
       <div>
         <section>
-          <h1
-            class="undefined font-extrabold my-10 mx-0"
-          >
+          <h1>
             Pagination example
           </h1>
           <div>
-            <span
-              class="undefined text-gray-700 font-semibold"
-            >
+            <span>
               Page 2/10
             </span>
             <section>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   At voluptatum est numquam qui nulla
                 </h2>
                 <div>
@@ -480,12 +392,8 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Consequatur ut omnis omnis officiis eos
                 </h2>
                 <div>
@@ -496,12 +404,8 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Dolorum illo dolor quaerat illo molestias reprehenderit
                 </h2>
                 <div>
@@ -512,12 +416,8 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Sequi unde consequatur omnis sunt nihil
                 </h2>
                 <div>
@@ -533,12 +433,8 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Dolorum consequuntur voluptatem id mollitia fugit
                 </h2>
                 <div>
@@ -549,12 +445,8 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Rerum earum repellendus dolorem
                 </h2>
                 <div>
@@ -565,12 +457,8 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Culpa quia perferendis beatae
                 </h2>
                 <div>
@@ -581,12 +469,8 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Fuga occaecati provident sint quia est
                 </h2>
                 <div>
@@ -602,12 +486,8 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Quibusdam veniam alias quo
                 </h2>
                 <div>
@@ -623,12 +503,8 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Eligendi possimus quia quas dolore suscipit
                 </h2>
                 <div>
@@ -646,13 +522,11 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
                 role="navigation"
               >
                 <ul
-                  class="undefined self-start flex flex-row justify-center list-none mb-0 mx-auto mt-auto p-0"
                   data-testid="link-wrapper true true"
                 >
                   <li>
                     <a
                       aria-label="Go to Previous Page"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/1"
                       id="back-btn"
                       state="[object Object]"
@@ -664,7 +538,6 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 1"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/1"
                       state="[object Object]"
                     >
@@ -675,7 +548,6 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
                     <a
                       aria-current="true"
                       aria-label="Current Page, Page 2"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/2"
                       state="[object Object]"
                     >
@@ -686,7 +558,6 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 3"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/3"
                       state="[object Object]"
                     >
@@ -697,7 +568,6 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 4"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/4"
                       state="[object Object]"
                     >
@@ -715,7 +585,6 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 8"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/8"
                       state="[object Object]"
                     >
@@ -726,7 +595,6 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 9"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/9"
                       state="[object Object]"
                     >
@@ -737,7 +605,6 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 10"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/10"
                       state="[object Object]"
                     >
@@ -747,7 +614,6 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
                   <li>
                     <a
                       aria-label="Go to Next Page"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/3"
                       id="next-btn"
                       state="[object Object]"
@@ -762,30 +628,20 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
         </section>
       </div>
     </main>
-    <footer
-      class="undefined bg-black flex flex-col justify-self-end mt-12"
-    >
-      <nav
-        class="undefined flex flex-col mx-auto"
-      >
-        <ul
-          class="undefined mt-4"
-        />
+    <footer>
+      <nav>
+        <ul />
       </nav>
-      <div
-        class="undefined text-white my-4 mx-auto p-2"
-      >
+      <div>
         <span>
           © 2023 Built with 
           <a
-            class="undefined underline"
             href="https://www.gatsbyjs.com"
           >
             Gatsby
           </a>
            and 
           <a
-            class="undefined underline"
             href="https://wordpress.org/"
           >
             WordPress
@@ -799,16 +655,11 @@ exports[`<PaginationPostsExample /> > check next button works 1`] = `
 
 exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
 <DocumentFragment>
-  <div
-    class="undefined flex flex-col mx-auto min-h-screen"
-  >
+  <div>
     <nav>
-      <ul
-        class="undefined flex flex-row flex-wrap justify-between list-none mx-auto max-w-screen-sm"
-      >
+      <ul>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/"
           >
             🏠 Home
@@ -816,7 +667,6 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/posts"
           >
             📰 Posts
@@ -824,7 +674,6 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/pages"
           >
             📑 Pages
@@ -832,7 +681,6 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/examples"
           >
             ⚛️ Examples
@@ -843,24 +691,16 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
     <main>
       <div>
         <section>
-          <h1
-            class="undefined font-extrabold my-10 mx-0"
-          >
+          <h1>
             Pagination example
           </h1>
           <div>
-            <span
-              class="undefined text-gray-700 font-semibold"
-            >
+            <span>
               Page 1/10
             </span>
             <section>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Ut culpa iste voluptas consequatur
                 </h2>
                 <div>
@@ -871,12 +711,8 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Totam aliquam recusandae autem ipsa
                 </h2>
                 <div>
@@ -897,12 +733,8 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Et ipsa accusantium voluptatem nostrum maiores
                 </h2>
                 <div>
@@ -918,12 +750,8 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Odio vel voluptas pariatur quas pariatur dicta
                 </h2>
                 <div>
@@ -934,12 +762,8 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Quia quos eum assumenda alias quisquam a
                 </h2>
                 <div>
@@ -950,12 +774,8 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Rerum et consectetur accusamus quod
                 </h2>
                 <div>
@@ -971,12 +791,8 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Neque doloremque dolor et nesciunt
                 </h2>
                 <div>
@@ -987,12 +803,8 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Voluptatum pariatur qui aut magni et sequi
                 </h2>
                 <div>
@@ -1003,12 +815,8 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Iusto voluptatem sed voluptas pariatur sequi
                 </h2>
                 <div>
@@ -1024,12 +832,8 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
 
                 </div>
               </article>
-              <article
-                class="undefined flex flex-col leading-8 mb-10 p-3"
-              >
-                <h2
-                  class="undefined font-bold mb-2"
-                >
+              <article>
+                <h2>
                   Aut iusto dolores suscipit
                 </h2>
                 <div>
@@ -1052,13 +856,11 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
                 role="navigation"
               >
                 <ul
-                  class="undefined self-start flex flex-row justify-center list-none mb-0 mx-auto mt-auto p-0"
                   data-testid="link-wrapper true false"
                 >
                   <li>
                     <a
                       aria-label="Go to Previous Page"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/1"
                       id="back-btn"
                       state="[object Object]"
@@ -1070,7 +872,6 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
                     <a
                       aria-current="true"
                       aria-label="Current Page, Page 1"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/1"
                       state="[object Object]"
                     >
@@ -1081,7 +882,6 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 2"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/2"
                       state="[object Object]"
                     >
@@ -1092,7 +892,6 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 3"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/3"
                       state="[object Object]"
                     >
@@ -1103,7 +902,6 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 4"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/4"
                       state="[object Object]"
                     >
@@ -1121,7 +919,6 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 8"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/8"
                       state="[object Object]"
                     >
@@ -1132,7 +929,6 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 9"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/9"
                       state="[object Object]"
                     >
@@ -1143,7 +939,6 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
                     <a
                       aria-current="false"
                       aria-label="Go to Page 10"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/10"
                       state="[object Object]"
                     >
@@ -1153,7 +948,6 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
                   <li>
                     <a
                       aria-label="Go to Next Page"
-                      class="undefined bg-white border-black text-black flex flex-col h-16 justify-center text-center no-underline w-12"
                       href="/examples/pagination/2"
                       id="next-btn"
                       state="[object Object]"
@@ -1168,30 +962,20 @@ exports[`<PaginationPostsExample /> > should render the paginated data 1`] = `
         </section>
       </div>
     </main>
-    <footer
-      class="undefined bg-black flex flex-col justify-self-end mt-12"
-    >
-      <nav
-        class="undefined flex flex-col mx-auto"
-      >
-        <ul
-          class="undefined mt-4"
-        />
+    <footer>
+      <nav>
+        <ul />
       </nav>
-      <div
-        class="undefined text-white my-4 mx-auto p-2"
-      >
+      <div>
         <span>
           © 2023 Built with 
           <a
-            class="undefined underline"
             href="https://www.gatsbyjs.com"
           >
             Gatsby
           </a>
            and 
           <a
-            class="undefined underline"
             href="https://wordpress.org/"
           >
             WordPress

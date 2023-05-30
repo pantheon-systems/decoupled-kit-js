@@ -2,16 +2,11 @@
 
 exports[`<PageIndexTemplate /> > should render with pages 1`] = `
 <DocumentFragment>
-  <div
-    class="undefined flex flex-col mx-auto min-h-screen"
-  >
+  <div>
     <nav>
-      <ul
-        class="undefined flex flex-row flex-wrap justify-between list-none mx-auto max-w-screen-sm"
-      >
+      <ul>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/"
           >
             🏠 Home
@@ -19,7 +14,6 @@ exports[`<PageIndexTemplate /> > should render with pages 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/posts"
           >
             📰 Posts
@@ -27,7 +21,6 @@ exports[`<PageIndexTemplate /> > should render with pages 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/pages"
           >
             📑 Pages
@@ -35,7 +28,6 @@ exports[`<PageIndexTemplate /> > should render with pages 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/examples"
           >
             ⚛️ Examples
@@ -44,52 +36,36 @@ exports[`<PageIndexTemplate /> > should render with pages 1`] = `
       </ul>
     </nav>
     <main>
-      <header
-        class="undefined mt-12 text-center"
-      >
-        <h1
-          class="undefined font-extrabold"
-        >
+      <header>
+        <h1>
           Pages
         </h1>
       </header>
       <div>
         <section>
           <div>
-            <span
-              class="undefined text-gray-700 font-semibold"
-            >
+            <span>
               Page 1/1
             </span>
             <section>
               <div>
                 <a
-                  class="undefined rounded-lg cursor-pointer overflow-x-hidden no-underline"
                   href="/pages/test-page/"
                 >
-                  <div
-                    class="undefined shrink-0 h-40 relative"
-                  >
+                  <div>
                     <div />
                   </div>
-                  <h2
-                    class="undefined font-semibold my-5 mx-4"
-                  >
+                  <h2>
                     Test Page →
                   </h2>
                 </a>
                 <a
-                  class="undefined rounded-lg cursor-pointer overflow-x-hidden no-underline"
                   href="/pages/sample-page/"
                 >
-                  <div
-                    class="undefined shrink-0 h-40 relative"
-                  >
+                  <div>
                     <div />
                   </div>
-                  <h2
-                    class="undefined font-semibold my-5 mx-4"
-                  >
+                  <h2>
                     Sample Page →
                   </h2>
                 </a>
@@ -100,30 +76,20 @@ exports[`<PageIndexTemplate /> > should render with pages 1`] = `
         </section>
       </div>
     </main>
-    <footer
-      class="undefined bg-black flex flex-col justify-self-end mt-12"
-    >
-      <nav
-        class="undefined flex flex-col mx-auto"
-      >
-        <ul
-          class="undefined mt-4"
-        />
+    <footer>
+      <nav>
+        <ul />
       </nav>
-      <div
-        class="undefined text-white my-4 mx-auto p-2"
-      >
+      <div>
         <span>
           © 2023 Built with 
           <a
-            class="undefined underline"
             href="https://www.gatsbyjs.com"
           >
             Gatsby
           </a>
            and 
           <a
-            class="undefined underline"
             href="https://wordpress.org/"
           >
             WordPress

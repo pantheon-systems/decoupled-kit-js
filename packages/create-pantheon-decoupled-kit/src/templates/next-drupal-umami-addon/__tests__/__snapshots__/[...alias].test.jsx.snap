@@ -3,7 +3,7 @@
 exports[`<CatchAllRoute /> > should render a page 1`] = `
 <DocumentFragment>
   <div
-    class="_layout_522a10 flex flex-col"
+    class="_layout_522a10"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -56,13 +56,13 @@ exports[`<CatchAllRoute /> > should render a page 1`] = `
       </nav>
     </div>
     <main
-      class="_layoutMain_522a10 mb-auto"
+      class="_layoutMain_522a10"
     >
       <article
-        class="_container_8c5f6a flex flex-col max-w-screen-md"
+        class="_container_8c5f6a"
       >
         <h1
-          class="_containerTitle_8c5f6a font-extrabold mb-12"
+          class="_containerTitle_8c5f6a"
         >
           Top Level Page
         </h1>
@@ -72,7 +72,7 @@ exports[`<CatchAllRoute /> > should render a page 1`] = `
           Pages →
         </a>
         <div
-          class="_content_8c5f6a text-gray-700 mt-12"
+          class="_content_8c5f6a"
         >
           <p>
             This is an about page. It should be available as a top level route like 
@@ -129,7 +129,7 @@ exports[`<CatchAllRoute /> > should render a page 1`] = `
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="_footerCopy_522a10 my-0 mx-auto"
+          class="_footerCopy_522a10"
         >
           © 2023 Built with 
           <a
@@ -153,7 +153,7 @@ exports[`<CatchAllRoute /> > should render a page 1`] = `
 exports[`<CatchAllRoute /> > should render a recipe 1`] = `
 <DocumentFragment>
   <div
-    class="_layout_522a10 flex flex-col"
+    class="_layout_522a10"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -206,7 +206,7 @@ exports[`<CatchAllRoute /> > should render a recipe 1`] = `
       </nav>
     </div>
     <main
-      class="_layoutMain_522a10 mb-auto"
+      class="_layoutMain_522a10"
     >
       <article
         class="ps-prose lg:ps-prose-xl ps-mt-10 ps-mx-auto h-fit ps-p-4 sm:ps-p-0"
@@ -359,7 +359,7 @@ exports[`<CatchAllRoute /> > should render a recipe 1`] = `
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="_footerCopy_522a10 my-0 mx-auto"
+          class="_footerCopy_522a10"
         >
           © 2023 Built with 
           <a
@@ -383,7 +383,7 @@ exports[`<CatchAllRoute /> > should render a recipe 1`] = `
 exports[`<CatchAllRoute /> > should render an article 1`] = `
 <DocumentFragment>
   <div
-    class="_layout_522a10 flex flex-col"
+    class="_layout_522a10"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -436,7 +436,7 @@ exports[`<CatchAllRoute /> > should render an article 1`] = `
       </nav>
     </div>
     <main
-      class="_layoutMain_522a10 mb-auto"
+      class="_layoutMain_522a10"
     >
       <article
         class="ps-prose ps-max-w-none xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-py-4 ps-px-12"
@@ -554,7 +554,7 @@ exports[`<CatchAllRoute /> > should render an article 1`] = `
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="_footerCopy_522a10 my-0 mx-auto"
+          class="_footerCopy_522a10"
         >
           © 2023 Built with 
           <a

@@ -2,16 +2,11 @@
 
 exports[`<PostTemplate /> > should render with a post 1`] = `
 <DocumentFragment>
-  <div
-    class="undefined flex flex-col mx-auto min-h-screen"
-  >
+  <div>
     <nav>
-      <ul
-        class="undefined flex flex-row flex-wrap justify-between list-none mx-auto max-w-screen-sm"
-      >
+      <ul>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/"
           >
             🏠 Home
@@ -19,7 +14,6 @@ exports[`<PostTemplate /> > should render with a post 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/posts"
           >
             📰 Posts
@@ -27,7 +21,6 @@ exports[`<PostTemplate /> > should render with a post 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/pages"
           >
             📑 Pages
@@ -35,7 +28,6 @@ exports[`<PostTemplate /> > should render with a post 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/examples"
           >
             ⚛️ Examples
@@ -48,9 +40,7 @@ exports[`<PostTemplate /> > should render with a post 1`] = `
         <h1>
           Example Post with Image
         </h1>
-        <p
-          class="undefined text-gray-600 leading-8"
-        >
+        <p>
           Mon Oct 10 2022
         </p>
         <a
@@ -59,11 +49,9 @@ exports[`<PostTemplate /> > should render with a post 1`] = `
           Posts →
         </a>
         <div>
-          <div
-            class="undefined rounded-lg"
-          >
+          <div>
             <div
-              class="gatsby-image-wrapper gatsby-image-wrapper-constrained undefined rounded-lg"
+              class="gatsby-image-wrapper gatsby-image-wrapper-constrained"
               data-gatsby-image-wrapper=""
               style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
             >
@@ -115,12 +103,8 @@ exports[`<PostTemplate /> > should render with a post 1`] = `
         <p>
           Sorry, no page data was found at this route.
         </p>
-        <hr
-          class="undefined my-10 mx-0 opacity-30 w-full"
-        />
-        <nav
-          class="undefined flex flex-wrap"
-        >
+        <hr />
+        <nav>
           <a
             href="/posts/hello-world/"
           >
@@ -129,30 +113,20 @@ exports[`<PostTemplate /> > should render with a post 1`] = `
         </nav>
       </article>
     </main>
-    <footer
-      class="undefined bg-black flex flex-col justify-self-end mt-12"
-    >
-      <nav
-        class="undefined flex flex-col mx-auto"
-      >
-        <ul
-          class="undefined mt-4"
-        />
+    <footer>
+      <nav>
+        <ul />
       </nav>
-      <div
-        class="undefined text-white my-4 mx-auto p-2"
-      >
+      <div>
         <span>
           © 2023 Built with 
           <a
-            class="undefined underline"
             href="https://www.gatsbyjs.com"
           >
             Gatsby
           </a>
            and 
           <a
-            class="undefined underline"
             href="https://wordpress.org/"
           >
             WordPress

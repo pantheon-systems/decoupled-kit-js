@@ -13,7 +13,7 @@ const generateStarters = () => {
 			outDir: './starters/next-drupal-starter',
 			generators: 'next-drupal next-drupal-umami-addon',
 			cmsEndpoint,
-			options,
+			options: tailwindless,
 		},
 		{
 			appName: 'next-wordpress-starter',
@@ -27,7 +27,7 @@ const generateStarters = () => {
 			outDir: './starters/gatsby-wordpress-starter',
 			generators: 'gatsby-wp',
 			cmsEndpoint,
-			options,
+			options: tailwindless,
 		},
 	];
 

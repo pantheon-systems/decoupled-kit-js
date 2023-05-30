@@ -2,16 +2,11 @@
 
 exports[`<PageTemplate /> > should render with a page 1`] = `
 <DocumentFragment>
-  <div
-    class="undefined flex flex-col mx-auto min-h-screen"
-  >
+  <div>
     <nav>
-      <ul
-        class="undefined flex flex-row flex-wrap justify-between list-none mx-auto max-w-screen-sm"
-      >
+      <ul>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/"
           >
             🏠 Home
@@ -19,7 +14,6 @@ exports[`<PageTemplate /> > should render with a page 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/posts"
           >
             📰 Posts
@@ -27,7 +21,6 @@ exports[`<PageTemplate /> > should render with a page 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/pages"
           >
             📑 Pages
@@ -35,7 +28,6 @@ exports[`<PageTemplate /> > should render with a page 1`] = `
         </li>
         <li>
           <a
-            class="undefined text-black no-underline"
             href="/examples"
           >
             ⚛️ Examples
@@ -45,14 +37,10 @@ exports[`<PageTemplate /> > should render with a page 1`] = `
     </nav>
     <main>
       <article>
-        <h1
-          class="undefined font-extrabold mb-10"
-        >
+        <h1>
           Test Page
         </h1>
-        <p
-          class="undefined text-gray-600 leading-8"
-        >
+        <p>
           Invalid Date
         </p>
         <a
@@ -64,12 +52,8 @@ exports[`<PageTemplate /> > should render with a page 1`] = `
         <p>
           Sorry, no page data was found at this route.
         </p>
-        <hr
-          class="undefined my-10 mx-0 opacity-30 w-full"
-        />
-        <nav
-          class="undefined flex flex-wrap px-6"
-        >
+        <hr />
+        <nav>
           <a
             href="/pagesundefined"
           >
@@ -78,30 +62,20 @@ exports[`<PageTemplate /> > should render with a page 1`] = `
         </nav>
       </article>
     </main>
-    <footer
-      class="undefined bg-black flex flex-col justify-self-end mt-12"
-    >
-      <nav
-        class="undefined flex flex-col mx-auto"
-      >
-        <ul
-          class="undefined mt-4"
-        />
+    <footer>
+      <nav>
+        <ul />
       </nav>
-      <div
-        class="undefined text-white my-4 mx-auto p-2"
-      >
+      <div>
         <span>
           © 2023 Built with 
           <a
-            class="undefined underline"
             href="https://www.gatsbyjs.com"
           >
             Gatsby
           </a>
            and 
           <a
-            class="undefined underline"
             href="https://wordpress.org/"
           >
             WordPress
