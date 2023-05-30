@@ -5,6 +5,8 @@ import { resolve } from 'node:path';
 const generateStarters = () => {
 	const cmsEndpoint = '';
 	const options = '--force --noInstall --tailwindcss';
+	const tailwindless = '--force --noInstall --no-tailwindcss';
+
 	const inputs = [
 		{
 			appName: 'next-drupal-starter',
@@ -18,7 +20,7 @@ const generateStarters = () => {
 			outDir: './starters/next-wordpress-starter',
 			generators: 'next-wp',
 			cmsEndpoint,
-			options,
+			options: tailwindless,
 		},
 		{
 			appName: 'gatsby-wordpress-starter',

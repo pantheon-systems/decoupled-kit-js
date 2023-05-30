@@ -3,7 +3,7 @@
 exports[`<PaginationExampleTemplate /> > should render the Pagination Example page 1`] = `
 <DocumentFragment>
   <div
-    class="_layout_522a10 flex flex-col"
+    class="_layout_522a10"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -56,7 +56,7 @@ exports[`<PaginationExampleTemplate /> > should render the Pagination Example pa
       </nav>
     </div>
     <main
-      class="_layoutMain_522a10 mb-auto"
+      class="_layoutMain_522a10"
     >
       <div
         class="_container_08078b"
@@ -290,7 +290,7 @@ exports[`<PaginationExampleTemplate /> > should render the Pagination Example pa
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="_footerCopy_522a10 my-0 mx-auto"
+          class="_footerCopy_522a10"
         >
           © 2023 Built with 
           <a

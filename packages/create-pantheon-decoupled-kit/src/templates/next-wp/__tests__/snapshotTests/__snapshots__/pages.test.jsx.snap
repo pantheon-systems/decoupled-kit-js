@@ -3,7 +3,7 @@
 exports[`<PageListTemplate /> > should render with pages 1`] = `
 <DocumentFragment>
   <div
-    class="_layout_522a10 flex flex-col"
+    class="_layout_522a10"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -56,7 +56,7 @@ exports[`<PageListTemplate /> > should render with pages 1`] = `
       </nav>
     </div>
     <main
-      class="_layoutMain_522a10 mb-auto"
+      class="_layoutMain_522a10"
     >
       <div>
         <section>
@@ -64,7 +64,7 @@ exports[`<PageListTemplate /> > should render with pages 1`] = `
             class="_header_be6ffb"
           >
             <h1
-              class="_headerTitle_be6ffb font-extrabold my-auto mx-0 text-center"
+              class="_headerTitle_be6ffb"
             >
               Pages
             </h1>
@@ -80,17 +80,17 @@ exports[`<PageListTemplate /> > should render with pages 1`] = `
                   href="/pages/sample-page"
                 >
                   <div
-                    class="_card_91079f rounded-lg cursor-pointer h-full overflow-x-hidden"
+                    class="_card_91079f"
                   >
                     <div
-                      class="_cardImg_91079f shrink-0 h-40 relative"
+                      class="_cardImg_91079f"
                     >
                       <div
                         class="_gradientPlaceholder_91079f"
                       />
                     </div>
                     <h2
-                      class="_cardTitle_91079f font-semibold py-4 px-6"
+                      class="_cardTitle_91079f"
                     >
                        →
                     </h2>
@@ -117,7 +117,7 @@ exports[`<PageListTemplate /> > should render with pages 1`] = `
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="_footerCopy_522a10 my-0 mx-auto"
+          class="_footerCopy_522a10"
         >
           © 2023 Built with 
           <a
@@ -143,7 +143,7 @@ exports[`<PageListTemplate /> > should render with pages 1`] = `
 exports[`<PageTemplate /> > should render a page 1`] = `
 <DocumentFragment>
   <div
-    class="_layout_522a10 flex flex-col"
+    class="_layout_522a10"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -196,7 +196,7 @@ exports[`<PageTemplate /> > should render a page 1`] = `
       </nav>
     </div>
     <main
-      class="_layoutMain_522a10 mb-auto"
+      class="_layoutMain_522a10"
     >
       <article
         class="ps-prose ps-max-w-none xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-py-4 ps-px-12"
@@ -222,7 +222,7 @@ exports[`<PageTemplate /> > should render a page 1`] = `
           class="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg [&*>img]:ps-rounded-lg"
         />
         <div
-          class="ps-break-words ps-mt-12 _content_01b1ad text-gray-700 max-w-screen-md"
+          class="ps-break-words ps-mt-12 _content_01b1ad"
         >
           
 
@@ -292,7 +292,7 @@ exports[`<PageTemplate /> > should render a page 1`] = `
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="_footerCopy_522a10 my-0 mx-auto"
+          class="_footerCopy_522a10"
         >
           © 2023 Built with 
           <a

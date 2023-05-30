@@ -3,7 +3,7 @@
 exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthenticated 1`] = `
 <DocumentFragment>
   <div
-    class="_layout_522a10 flex flex-col"
+    class="_layout_522a10"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -56,7 +56,7 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
       </nav>
     </div>
     <main
-      class="_layoutMain_522a10 mb-auto"
+      class="_layoutMain_522a10"
     >
       <div
         class="_container_a039d7"
@@ -106,7 +106,7 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="_footerCopy_522a10 my-0 mx-auto"
+          class="_footerCopy_522a10"
         >
           © 2023 Built with 
           <a
@@ -132,7 +132,7 @@ exports[`<AuthApiExampleTemplate /> > should render a failure message if unauthe
 exports[`<AuthApiExampleTemplate /> > should render a success message if authenticated 1`] = `
 <DocumentFragment>
   <div
-    class="_layout_522a10 flex flex-col"
+    class="_layout_522a10"
   >
     <div
       class="ps-my-0 ps-pt-10 ps-px-5 ps-text-xl"
@@ -185,7 +185,7 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
       </nav>
     </div>
     <main
-      class="_layoutMain_522a10 mb-auto"
+      class="_layoutMain_522a10"
     >
       <div
         class="_container_a039d7"
@@ -219,7 +219,7 @@ exports[`<AuthApiExampleTemplate /> > should render a success message if authent
         class="ps-flex ps-my-4 ps-p-2"
       >
         <span
-          class="_footerCopy_522a10 my-0 mx-auto"
+          class="_footerCopy_522a10"
         >
           © 2023 Built with 
           <a
