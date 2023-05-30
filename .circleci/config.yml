@@ -35,11 +35,18 @@ jobs:
           paths:
             - ~/.pnpm-store
       - run:
-          name: Build Packages
-          command: pnpm build:pkgs
+          name: Build Packages and Starters
+          command: |
+            pnpm build:pkgs
+            pnpm generate-starters
+            pnpm install --ignore-scripts
       - run:
           name: Run Tests
-          command: pnpm test
+          command: |
+            pnpm test
+            rm -r ./starters
+            rm pnpm-lock.yaml
+            pnpm i --ignore-scripts
       - slack/notify:
           branch_pattern: main, canary
           event: fail
@@ -81,19 +88,13 @@ jobs:
       - run:
           name: remove node_modules and pnpm-lock.yml
           command: rm -rf node_modules pnpm-lock.yml
-      # build and test packages and starters so that we don't commit a breaking change
+      # build and test packages so that we don't commit a breaking change
       - run:
           name: install overrides and build
           command: pnpm install --frozen-lockfile=false
       - run:
           name: test packages
           command: pnpm --filter './packages/*' test
-      - run:
-          name: generate starters
-          command: |
-            pnpm generate-starters
-            pnpm i
-            pnpm --filter './starters/**' test
       - run:
           name: exit if no fixes
           command: |

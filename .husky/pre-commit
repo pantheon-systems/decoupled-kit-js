@@ -5,8 +5,8 @@
 pnpm --workspace-concurrency=1 --filter './packages/**' lint-staged
 pnpm --filter './packages/**' test
 pnpm generate-starters
-pnpm i
+pnpm i --ignore-scripts
 pnpm --filter './starters/**' test
 rm -r ./starters
 rm pnpm-lock.yaml
-pnpm i
+pnpm i --ignore-scripts
