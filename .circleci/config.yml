@@ -39,7 +39,7 @@ jobs:
           command: |
             pnpm build:pkgs
             pnpm generate-starters
-            pnpm install --ignore-scripts
+            pnpm install --ignore-scripts --no-frozen-lockfile
       - run:
           name: Run Tests
           command: |
