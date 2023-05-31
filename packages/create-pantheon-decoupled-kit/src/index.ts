@@ -2,8 +2,8 @@ import chalk from 'chalk';
 import inquirer, { QuestionCollection } from 'inquirer';
 import minimist, { Opts as MinimistOptions, ParsedArgs } from 'minimist';
 import {
-	DecoupledKitGenerator,
-	TemplateData,
+	type DecoupledKitGenerator,
+	type TemplateData,
 	isDrupalCms,
 	isString,
 	isWpCms,
@@ -108,9 +108,8 @@ export const main = async (
 				generatorsOfCmsType = generators
 					.filter((generator) => {
 						return (
-							isDrupalCms(generator.cmsType.toString()) ===
-								isDrupalCms(cmsType) ||
-							isWpCms(generator.cmsType.toString()) === isWpCms(cmsType) ||
+							isDrupalCms(generator.cmsType) === isDrupalCms(cmsType) ||
+							isWpCms(generator.cmsType) === isWpCms(cmsType) ||
 							generator.cmsType === 'any'
 						);
 					})
