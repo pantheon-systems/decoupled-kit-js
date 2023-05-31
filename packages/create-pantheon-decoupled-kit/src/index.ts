@@ -1,7 +1,13 @@
 import chalk from 'chalk';
 import inquirer, { QuestionCollection } from 'inquirer';
 import minimist, { Opts as MinimistOptions, ParsedArgs } from 'minimist';
-import { DecoupledKitGenerator, TemplateData, isString } from './types';
+import {
+	DecoupledKitGenerator,
+	DrupalCMS,
+	TemplateData,
+	WordpressCMS,
+	isString,
+} from './types';
 import { actionRunner, getHandlebarsInstance, helpMenu } from './utils/index';
 
 import pkg from '../package.json' assert { type: 'json' };
@@ -85,6 +91,14 @@ export const main = async (
 		return;
 	});
 
+	function isDrupalCms(value: string): value is DrupalCMS {
+		return ['drupal', 'd9', 'd10'].includes(value);
+	}
+
+	function isWpCms(value: string): value is WordpressCMS {
+		return ['wordpress', 'wp'].includes(value);
+	}
+
 	const generatorsToRun: string[] = [];
 	// If no generators are found in positional params
 	// ask which generators should be run
@@ -93,14 +107,20 @@ export const main = async (
 		const cmsType = isString(args.cmsType) ? args.cmsType.toLowerCase() : null;
 
 		if (cmsType) {
-			if (['wp', 'drupal', 'any'].indexOf(cmsType) == -1) {
+			if (
+				['wp', 'wordpress', 'drupal', 'd9', 'd10', 'any'].indexOf(cmsType) == -1
+			) {
 				console.log(
 					chalk.yellow(`Invalid cmsType: ${cmsType}. Showing all generators.`),
 				);
 			} else {
 				generatorsOfCmsType = generators
 					.filter((generator) => {
-						return generator.cmsType === cmsType || generator.cmsType === 'any';
+						return (
+							isDrupalCms(generator.cmsType) === isDrupalCms(cmsType) ||
+							isWpCms(generator.cmsType) === isWpCms(cmsType) ||
+							generator.cmsType === 'any'
+						);
 					})
 					.map(({ name }) => name);
 			}

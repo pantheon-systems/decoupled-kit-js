@@ -56,8 +56,14 @@ export interface DecoupledKitGenerator<
 	/**
 	 * Identifies a generators compatible CMS(s).
 	 */
-	cmsType: 'wp' | 'drupal' | 'any';
+	cmsType: DrupalCMS | WordpressCMS | 'any';
 }
+
+/**
+ * Valid CMS Type Options
+ */
+export type DrupalCMS = 'd9' | 'd10' | 'drupal';
+export type WordpressCMS = 'wp' | 'wordpress';
 
 /**
  * An action that takes in the data, templates, and an instance of handlebars
