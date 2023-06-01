@@ -12,5 +12,7 @@
     "@pantheon-systems/wordpress-kit": "3.0.0",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "soft-tools-rescue"
+  ]
 }

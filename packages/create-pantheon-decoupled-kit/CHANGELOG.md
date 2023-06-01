@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.1-canary.0
+
+### Patch Changes
+
+- 2e9032db: [cli] Add aliases for wordpress and drupal CMS types.
+
 ## 0.9.0
 
 ### Minor Changes
