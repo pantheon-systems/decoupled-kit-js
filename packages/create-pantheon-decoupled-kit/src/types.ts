@@ -56,8 +56,16 @@ export interface DecoupledKitGenerator<
 	/**
 	 * Identifies a generators compatible CMS(s).
 	 */
-	cmsType: 'wp' | 'drupal' | 'any';
+	cmsType: CMSType['Drupal'] | CMSType['WordPress'] | 'any';
 }
+
+/**
+ * Valid CMS Type Options
+ */
+type CMSType = {
+	Drupal: 'd9' | 'd10' | 'drupal';
+	WordPress: 'wp' | 'wordpress';
+};
 
 /**
  * An action that takes in the data, templates, and an instance of handlebars
@@ -108,4 +116,20 @@ export const isString = (arg: unknown): arg is string => {
 		return true;
 	}
 	return false;
+};
+
+/**
+ * @param value a string
+ * @returns true if the variable matches a Drupal alias in {@link CMSType['Drupal']}, false otherwise
+ */
+export const isDrupalCms = (value: string): value is CMSType['Drupal'] => {
+	return ['drupal', 'd9', 'd10'].includes(value);
+};
+
+/**
+ * @param value a string
+ * @returns true if the variable matches a WordPress alias in {@link CMSType['WordPress']}, false otherwise
+ */
+export const isWpCms = (value: string): value is CMSType['WordPress'] => {
+	return ['wordpress', 'wp'].includes(value);
 };
