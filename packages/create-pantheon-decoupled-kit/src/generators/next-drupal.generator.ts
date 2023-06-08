@@ -1,16 +1,10 @@
-import {
-	addWithDiff,
-	runInstall,
-	runLint,
-	convertCSSModules,
-} from '../actions';
+import { addWithDiff, runInstall, runLint } from '../actions';
 import versions from '../pkgVersions.json';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 import {
 	appNamePrompt,
 	cmsEndpointPrompt,
 	outDirPrompt,
-	tailwindcssPrompt,
 } from '../utils/sharedPrompts';
 
 interface NextDrupalAnswers extends DefaultAnswers {
@@ -30,12 +24,11 @@ export const nextDrupal: DecoupledKitGenerator<
 	NextDrupalAnswers,
 	NextDrupalData
 > = {
-	name: 'next-drupal',
+	name: 'next-drupal-app',
 	description: 'Next.js + Drupal starter kit',
 	prompts: [
-		appNamePrompt('Next Drupal Starter'),
+		appNamePrompt('Next Drupal App Starter'),
 		outDirPrompt(outDirDefault),
-		tailwindcssPrompt,
 		cmsEndpointPrompt,
 	],
 	data: {
@@ -43,7 +36,7 @@ export const nextDrupal: DecoupledKitGenerator<
 		drupalKitVersion: versions['drupal-kit'],
 		drupal: true,
 	},
-	templates: ['next-drupal', 'tailwind-shared', 'tailwindless-next'],
-	actions: [addWithDiff, runInstall, convertCSSModules, runLint],
+	templates: ['next-drupal-app'],
+	actions: [addWithDiff, runInstall, runLint],
 	cmsType: 'drupal',
 };
