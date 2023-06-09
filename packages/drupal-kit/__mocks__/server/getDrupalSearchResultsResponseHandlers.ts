@@ -1,21 +1,21 @@
 import { rest } from 'msw';
-import exampleSearchResultsDefaultIndex from '../../__tests__/data/exampleSearchResultsDefaultIndex.json';
 import exampleSearchResultsAltIndex from '../../__tests__/data/exampleSearchResultsAltIndex.json';
+import exampleSearchResultsDefaultIndex from '../../__tests__/data/exampleSearchResultsDefaultIndex.json';
 
 const apiEndpoint = 'https://default.pantheonsite.io';
 
 const defaultSearchResultsResponseHandler = rest.get<
 	typeof exampleSearchResultsDefaultIndex
->(`${apiEndpoint}/en/jsonapi/index/articles_index`, (req, res, ctx) => {
-	if (req.url.searchParams.get('filter[fulltext]') === 'milk') {
+>(`${apiEndpoint}/en/jsonapi/index/example_index`, (req, res, ctx) => {
+	if (req.url.searchParams.get('filter[fulltext]') === 'chocolate') {
 		return res(ctx.status(200), ctx.json(exampleSearchResultsDefaultIndex));
 	}
 	return;
 });
 const exampleSearchResultsResponseHandler = rest.get<
 	typeof exampleSearchResultsAltIndex
->(`${apiEndpoint}/en/jsonapi/index/example_index`, (req, res, ctx) => {
-	if (req.url.searchParams.get('filter[fulltext]') === 'chocolate') {
+>(`${apiEndpoint}/en/jsonapi/index/articles_index`, (req, res, ctx) => {
+	if (req.url.searchParams.get('filter[fulltext]') === 'milk') {
 		return res(ctx.status(200), ctx.json(exampleSearchResultsAltIndex));
 	}
 	return;
