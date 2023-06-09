@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.1-canary.1
+
+### Patch Changes
+
+- 38dac70f: [next-drupal] Fix broken search result links
+
 ## 0.9.1-canary.0
 
 ### Patch Changes

@@ -13,6 +13,8 @@
     "web": "1.0.0"
   },
   "changesets": [
-    "soft-tools-rescue"
+    "pretty-waves-float",
+    "soft-tools-rescue",
+    "stupid-terms-travel"
   ]
 }
