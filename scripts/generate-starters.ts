@@ -8,8 +8,8 @@ const generateStarters = () => {
 	const inputs = [
 		{
 			appName: 'next-drupal-starter',
-			outDir: './starters/next-drupal-starter',
-			generators: 'next-drupal next-drupal-umami-addon',
+			outDir: './starters/next-drupal-app-starter',
+			generators: 'next-drupal-app',
 			cmsEndpoint,
 			options,
 		},
