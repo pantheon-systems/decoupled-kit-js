@@ -1,6 +1,6 @@
-import { defaultFetch } from './defaultFetch.js';
-import { ServerResponse } from 'node:http';
 import type { TJsonApiBody } from 'jsona/lib/JsonaTypes';
+import { ServerResponse } from 'node:http';
+import { defaultFetch } from './defaultFetch.js';
 
 interface GetDrupalSearchResultsParams {
 	apiUrl: string;
@@ -25,7 +25,7 @@ export const getDrupalSearchResults = async ({
 	locale,
 	query,
 	response,
-	index = 'articles_index',
+	index = 'example_index',
 }: GetDrupalSearchResultsParams) => {
 	const res = await defaultFetch(
 		`${apiUrl}/${locale}/jsonapi/index/${index}?filter[fulltext]=${encodeURIComponent(
