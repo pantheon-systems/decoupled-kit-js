@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.1
+
+### Patch Changes
+
+- 38dac70f: [next-drupal] Fix broken search result links
+- 2e9032db: [cli] Add aliases for wordpress and drupal CMS types.
+
 ## 0.9.1-canary.1
 
 ### Patch Changes

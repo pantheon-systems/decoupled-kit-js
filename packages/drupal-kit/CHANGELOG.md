@@ -1,5 +1,12 @@
 # @pantheon-systems/drupal-kit
 
+## 4.6.1
+
+### Patch Changes
+
+- 46f987cf: [drupal-kit] Update `getDrupalSearchResults` to use `example_index`
+  as the default index to fetch.
+
 ## 4.6.1-canary.0
 
 ### Patch Changes
