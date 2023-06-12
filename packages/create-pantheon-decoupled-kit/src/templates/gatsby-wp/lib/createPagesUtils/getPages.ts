@@ -28,7 +28,10 @@ export const getPages = async ({
 							node {
 								localFile {
 									childImageSharp {
-										gatsbyImageData
+										gatsbyImageData(
+											placeholder: TRACED_SVG
+											aspectRatio: 1.77778 # 16/9
+										)
 									}
 								}
 							}

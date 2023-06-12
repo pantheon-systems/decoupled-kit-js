@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import * as styles from './page.module.css';
 
 const Page = ({
@@ -12,8 +12,7 @@ const Page = ({
 	previous: Queries.WpPageEdge['previous'];
 }) => {
 	const title = page?.title;
-	const featuredImage =
-		page?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData;
+	const featuredImage = getImage(page?.featuredImage?.node?.localFile);
 	const altText = page?.featuredImage?.node?.altText || title;
 
 	return (

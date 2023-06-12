@@ -37,7 +37,6 @@ export const getPosts = async ({
 										gatsbyImageData(
 											placeholder: TRACED_SVG
 											aspectRatio: 1.77778 # 16/9
-											
 										)
 									}
 								}
