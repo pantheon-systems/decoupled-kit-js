@@ -36,7 +36,7 @@ DrupalState.constructor
 
 #### Defined in
 
-[drupal-kit/src/lib/PantheonDrupalState.ts:14](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L14)
+[drupal-kit/src/lib/PantheonDrupalState.ts:18](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L18)
 
 ## Methods
 
@@ -68,4 +68,65 @@ DrupalState.fetchData
 
 #### Defined in
 
-[drupal-kit/src/lib/PantheonDrupalState.ts:42](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L42)
+[drupal-kit/src/lib/PantheonDrupalState.ts:46](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L46)
+
+---
+
+### getObject
+
+▸ **getObject**<`ReturnedData`\>(`args`): `Promise`<`void` \| `ReturnedData`\>
+
+#### Type parameters
+
+| Name           |
+| :------------- |
+| `ReturnedData` |
+
+#### Parameters
+
+| Name   | Type              |
+| :----- | :---------------- |
+| `args` | `GetObjectParams` |
+
+#### Returns
+
+`Promise`<`void` \| `ReturnedData`\>
+
+#### Overrides
+
+DrupalState.getObject
+
+#### Defined in
+
+[drupal-kit/src/lib/PantheonDrupalState.ts:70](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L70)
+
+---
+
+### getObjectByPath
+
+▸ **getObjectByPath**<`ReturnedData`\>(`args`): `Promise`<`void` \|
+`ReturnedData`\>
+
+#### Type parameters
+
+| Name           |
+| :------------- |
+| `ReturnedData` |
+
+#### Parameters
+
+| Name   | Type                    |
+| :----- | :---------------------- |
+| `args` | `GetObjectByPathParams` |
+
+#### Returns
+
+`Promise`<`void` \| `ReturnedData`\>
+
+#### Overrides
+
+DrupalState.getObjectByPath
+
+#### Defined in
+
+[drupal-kit/src/lib/PantheonDrupalState.ts:75](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L75)
