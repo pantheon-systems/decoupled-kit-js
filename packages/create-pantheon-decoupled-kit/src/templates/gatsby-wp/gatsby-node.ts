@@ -81,7 +81,7 @@ export const createPages = async ({
 			posts: paginationPosts,
 			createPage,
 			routing,
-			componentPath: path.resolve(`./src/templates/pagination.jsx`),
+			componentPath: path.resolve(`./src/templates/pagination.tsx`),
 		});
 	}
 	// /examples/
