@@ -16812,38 +16812,4 @@ declare namespace Queries {
 			} | null;
 		} | null;
 	};
-
-	type PostByIdQueryVariables = Exact<{
-		id: Scalars['String'];
-		previousPostId: InputMaybe<Scalars['String']>;
-		nextPostId: InputMaybe<Scalars['String']>;
-	}>;
-
-	type PostByIdQuery = {
-		readonly post: {
-			readonly id: string;
-			readonly excerpt: string | null;
-			readonly content: string | null;
-			readonly title: string | null;
-			readonly date: string | null;
-			readonly featuredImage: {
-				readonly node: {
-					readonly altText: string | null;
-					readonly localFile: {
-						readonly childImageSharp: {
-							readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData;
-						} | null;
-					} | null;
-				};
-			} | null;
-		} | null;
-		readonly previous: {
-			readonly uri: string | null;
-			readonly title: string | null;
-		} | null;
-		readonly next: {
-			readonly uri: string | null;
-			readonly title: string | null;
-		} | null;
-	};
 }

@@ -3,10 +3,10 @@ import Footer from './footer';
 import * as styles from './layout.module.css';
 
 const Layout = ({
-	isHomePage,
+	isHomePage = false,
 	children,
 }: {
-	isHomePage: boolean;
+	isHomePage?: boolean;
 	children: React.ReactNode;
 }) => {
 	const navItems = [
