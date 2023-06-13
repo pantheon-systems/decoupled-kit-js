@@ -1,5 +1,6 @@
+import { sanitize } from 'dompurify';
 import { Link } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import * as styles from './post.module.css';
 
 const Post = ({
@@ -12,7 +13,8 @@ const Post = ({
 	previous: Queries.WpPostEdge['previous'];
 }) => {
 	const title = post?.title;
-	const featuredImage = getImage(post?.featuredImage?.node?.localFile);
+	const featuredImage =
+		post?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData;
 	const altText = post?.featuredImage?.node?.altText || title;
 	console.log(featuredImage);
 	return (
@@ -41,7 +43,7 @@ const Post = ({
 			{post?.content ? (
 				<div
 					className={styles.paragraphContent}
-					dangerouslySetInnerHTML={{ __html: post.content }}
+					dangerouslySetInnerHTML={{ __html: sanitize(post.content) }}
 				/>
 			) : (
 				<p>Sorry, no post data was found at this route.</p>

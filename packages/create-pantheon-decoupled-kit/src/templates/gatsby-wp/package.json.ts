@@ -21,6 +21,7 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		"lint": "eslint --ext .js,.ts,.jsx,.tsx src --ignore-path .gitignore"
 	},
 	"dependencies": {
+		"dompurify": "^3.0.3",
 		"gatsby": "^4.25.0",
 		"gatsby-plugin-dts-css-modules": "^3.0.0",
 		"gatsby-plugin-image": "^2.25.0",
@@ -49,6 +50,7 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		"@pantheon-systems/eslint-config-decoupled-kit": "${data.eslintConfigVersion}",
 		"@pantheon-systems/wordpress-kit": "${data.wordpressKitVersion}",
 		"@testing-library/react": "13.4.0",
+		"@types/dompurify": "^3.0.2",
 		"@types/node": "^18.16.16",
 		"@types/react": "^18.2.7",
 		"@types/react-dom": "^18.2.4",

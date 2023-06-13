@@ -1,5 +1,6 @@
+import { sanitize } from 'dompurify';
 import { Link } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import * as styles from './page.module.css';
 
 const Page = ({
@@ -12,7 +13,8 @@ const Page = ({
 	previous: Queries.WpPageEdge['previous'];
 }) => {
 	const title = page?.title;
-	const featuredImage = getImage(page?.featuredImage?.node?.localFile);
+	const featuredImage =
+		page?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData;
 	const altText = page?.featuredImage?.node?.altText || title;
 
 	return (
@@ -41,7 +43,7 @@ const Page = ({
 			{page?.content ? (
 				<div
 					className={styles.paragraphContent}
-					dangerouslySetInnerHTML={{ __html: page?.content }}
+					dangerouslySetInnerHTML={{ __html: sanitize(page.content) }}
 				/>
 			) : (
 				<p>Sorry, no page data was found at this route.</p>

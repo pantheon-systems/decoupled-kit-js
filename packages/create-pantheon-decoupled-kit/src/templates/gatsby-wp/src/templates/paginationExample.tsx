@@ -1,3 +1,4 @@
+import { sanitize } from 'dompurify';
 import type { Breakpoints, PaginatorLocation, Post } from '../../lib/types';
 import Layout from '../components/layout';
 import Paginator from '../components/paginator';
@@ -25,7 +26,7 @@ const PaginationPostsExample = ({
 							<article key={item.title} className={styles.item}>
 								<h2 className={styles.itemTitle}>{item.title}</h2>
 								<div
-									dangerouslySetInnerHTML={{ __html: String(item.excerpt) }}
+									dangerouslySetInnerHTML={{ __html: sanitize(item.excerpt) }}
 								/>
 							</article>
 						);
