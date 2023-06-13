@@ -2,7 +2,7 @@
 // but make sure other ts files are linted
 module.exports = {
 	'./src/templates/**/*.ts.ts': [
-		`eslint --fix --config ./.eslintrc --ignore-pattern **/src/templates/**/*.{d.ts,ts,jsx,tsx}`,
+		`eslint --fix --config ./.eslintrc --ignore-pattern **/src/templates/**/*.{d.ts,ts,jsx,tsx,snap}`,
 		`prettier --write --ignore-path ../../.prettierignore`,
 	],
 	'./src/**/*': [

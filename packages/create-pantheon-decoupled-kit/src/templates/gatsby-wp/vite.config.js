@@ -4,7 +4,7 @@ export default defineConfig(() => {
 	return {
 		test: {
 			globals: true,
-			setupFiles: './__tests__/setupFile.js',
+			setupFiles: './__tests__/setupFile.ts',
 			environment: 'jsdom',
 			coverage: {
 				reportsDirectory: `./coverage`,
