@@ -5,7 +5,11 @@ import {
 	convertCSSModules,
 } from '../actions';
 import versions from '../pkgVersions.json';
-import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
+import type {
+	DecoupledKitGenerator,
+	DefaultAnswers,
+	NextDrupalData,
+} from '../types';
 import {
 	appNamePrompt,
 	cmsEndpointPrompt,
@@ -16,12 +20,6 @@ import {
 interface NextDrupalAnswers extends DefaultAnswers {
 	appName: string;
 	tailwindcss: boolean;
-}
-
-interface NextDrupalData {
-	nextjsKitVersion: string;
-	drupalKitVersion: string;
-	drupal: true;
 }
 
 const outDirDefault = ({ appName }: NextDrupalAnswers) =>

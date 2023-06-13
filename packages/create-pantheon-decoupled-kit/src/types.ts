@@ -1,5 +1,4 @@
 import type { Answers, QuestionCollection } from 'inquirer';
-import type { ParsedArgs } from 'minimist';
 import type { SpyInstance } from 'vitest';
 import { taggedTemplateHelpers as helpers } from './utils';
 
@@ -7,6 +6,31 @@ declare module 'vitest' {
 	export interface TestContext {
 		[key: string]: SpyInstance;
 	}
+}
+
+export interface GatsbyWPData {
+	gatsbyPnpmPlugin: boolean;
+	wordpressKitVersion: string;
+	otherConfigsVersion: string;
+	eslintConfigVersion: string;
+	wp: true;
+	gatsby: true;
+}
+
+export interface NextDrupalUmamiAddonData {
+	drupal: true;
+}
+
+export interface NextDrupalData {
+	nextjsKitVersion: string;
+	drupalKitVersion: string;
+	drupal: true;
+}
+
+export interface NextWpData {
+	nextjsKitVersion: string;
+	wordpressKitVersion: string;
+	wp: true;
 }
 
 /**
@@ -68,13 +92,27 @@ export type Action = (config: ActionConfig) => Promise<string> | string;
 
 export type ActionRunner = (config: ActionRunnerConfig) => Promise<string>;
 
-type InputIndex = Omit<ParsedArgs, '_'> & Answers;
+type InputIndex = GatsbyWPData &
+	NextDrupalData &
+	NextDrupalUmamiAddonData &
+	NextWpData & {
+		force: boolean;
+		silent: boolean;
+		appName: string;
+		outDir: string;
+		templateRootDir: string;
+		tailwindcss: boolean;
+	};
+
 /**
  * Input from command line arguments, prompts, and generator data
  */
 export type Input = {
-	[Property in keyof InputIndex]: InputIndex[Property];
+	[Property in keyof InputIndex]: InputIndex[Property] extends true
+		? boolean
+		: InputIndex[Property];
 };
+
 export interface TemplateData {
 	templateDirs: string[];
 	addon: boolean;
@@ -101,7 +139,7 @@ interface ActionRunnerConfig extends ActionConfig {
 /**
  * Helper utilities for template literal templates
  */
-type Helpers = typeof helpers;
+export type Helpers = typeof helpers;
 
 /**
  * Arguments for the {@link TemplateFn}
