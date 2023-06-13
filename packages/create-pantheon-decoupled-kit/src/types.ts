@@ -139,7 +139,7 @@ interface ActionRunnerConfig extends ActionConfig {
 /**
  * Helper utilities for template literal templates
  */
-export type Helpers = typeof helpers;
+type Helpers = typeof helpers;
 
 /**
  * Arguments for the {@link TemplateFn}
