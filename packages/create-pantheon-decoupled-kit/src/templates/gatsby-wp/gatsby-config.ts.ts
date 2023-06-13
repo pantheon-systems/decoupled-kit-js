@@ -110,10 +110,7 @@ const config: GatsbyConfig = {
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		//To learn more, visit: https://gatsby.dev/offline
 		// 'gatsby-plugin-offline',
-		${utils.if(
-			data.gatsbyPnpmPlugin,
-			utils.trailingComma(utils.quotes('gatsby-plugin-pnpm')),
-		)}
+		${utils.if(data.gatsbyPnpmPlugin, `'gatsby-plugin-pnpm',`)}
 	],
 };
 

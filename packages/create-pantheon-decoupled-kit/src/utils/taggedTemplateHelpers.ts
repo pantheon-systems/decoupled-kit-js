@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import type { Input } from '@cli/src/types';
 export const taggedTemplateHelpers = {
 	/**
 	 * @param condition - a single key of an {@link Input}
@@ -6,31 +8,12 @@ export const taggedTemplateHelpers = {
 	 */
 	if: (condition: unknown, value: string) => (condition ? value : ''),
 	/**
-	 * @param value - the value to render
-	 * @returns the value wrapped in single quotes
-	 */
-	quotes: (
-		value: string | TemplateStringsArray,
-		type: 'single' | 'double' = 'single',
-	) => {
-		const result = value.toString();
-		return type === 'single' ? `'${result}'` : `"${result}"`;
-	},
-	/**
 	 * Useful for nested backticks
 	 * @param value - the value to render
 	 * @returns the value wrapped in backticks
 	 */
 	backticks: (value: string | TemplateStringsArray) => {
 		return `\`${value.toString()}\``;
-	},
-	/**
-	 * Useful for adding properties to objects
-	 * @param value - the value to render
-	 * @returns the value with a trailing comma
-	 */
-	trailingComma: (value: string) => {
-		return `${value},`;
 	},
 	/**
 	 * Transforms input into a valid package.json `name`

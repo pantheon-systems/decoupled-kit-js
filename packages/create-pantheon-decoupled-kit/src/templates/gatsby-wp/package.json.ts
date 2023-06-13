@@ -1,14 +1,18 @@
-{
-	{{> sharedPkgJsonFields}}
+import { TemplateFn } from '@cli/src/types';
+import { sharedPkgJsonField } from '@partials/pkg-shared/sharedPkgJsonFields';
+import { tailwindcssDeps } from '@partials/pkg-shared/tailwindcssDeps';
+
+const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
+	${sharedPkgJsonField(utils.pkgName(data.appName))}
 	"scripts": {
 		"build": "gatsby build",
 		"develop": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop -H 0.0.0.0",
-		"format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+		"format": "prettier --write '**/*.{js,jsx,ts,tsx,json,md}'",
 		"start": "npm run develop",
 		"serve": "gatsby serve -p 8000",
 		"clean": "gatsby clean",
-		"prettier": "prettier \"**/*.{js,jsx,md}\" --check --ignore-path .prettierignore",
-		"prettier:fix": "prettier \"**/*.{js,jsx,,md}\" --write --ignore-path .prettierignore",
+		"prettier": "prettier '**/*.{js,jsx,md}' --check --ignore-path .prettierignore",
+		"prettier:fix": "prettier '**/*.{js,jsx,,md}' --write --ignore-path .prettierignore",
 		"test": "vitest run",
 		"test:watch": "vitest",
 		"update-snapshots": "vitest run --update --silent",
@@ -22,9 +26,7 @@
 		"gatsby-plugin-image": "^2.25.0",
 		"gatsby-plugin-manifest": "^4.25.0",
 		"gatsby-plugin-offline": "^5.25.0",
-		{{#if gatsbyPnpmPlugin}}
-		"gatsby-plugin-pnpm": "^1.2.10",
-		{{/if}}
+		${utils.if(data.gatsbyPnpmPlugin, `"gatsby-plugin-pnpm": "^1.2.10",`)}
 		"gatsby-plugin-postcss": "^5.25.0",
 		"gatsby-plugin-sharp": "^4.25.0",
 		"gatsby-plugin-typescript": "^4.25.0",
@@ -40,14 +42,12 @@
 		"typeface-montserrat": "1.1.13"
 	},
 	"devDependencies": {
-		{{#if tailwindcss}}
-		{{> tailwindcssDeps devDeps=true}}
-		{{> tailwindcssDeps}}
-		{{/if}}
+		${utils.if(data.tailwindcss, tailwindcssDeps(true))}
+		${utils.if(data.tailwindcss, tailwindcssDeps(false))}
 		"@babel/core": "^7.21.4",
-		"@pantheon-systems/decoupled-kit-configs": "{{otherConfigsVersion}}",
-		"@pantheon-systems/eslint-config-decoupled-kit": "{{eslintConfigVersion}}",
-		"@pantheon-systems/wordpress-kit": "{{wordpressKitVersion}}",
+		"@pantheon-systems/decoupled-kit-configs": "${data.otherConfigsVersion}",
+		"@pantheon-systems/eslint-config-decoupled-kit": "${data.eslintConfigVersion}",
+		"@pantheon-systems/wordpress-kit": "${data.wordpressKitVersion}",
 		"@testing-library/react": "13.4.0",
 		"@types/node": "^18.16.16",
 		"@types/react": "^18.2.7",
@@ -69,4 +69,6 @@
 		"vitest": "^0.28.3",
 		"webpack": "^5.74.0"
 	}
-}
+}`;
+
+export default json;

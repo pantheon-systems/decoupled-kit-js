@@ -100,7 +100,8 @@ export const addWithDiff: Action = async ({
 		} else if (templateFilesRegex.test(templatePath)) {
 			target = target.replace(/\.(js|ts)$/, '');
 			const temp = ((await import(templatePath)) as TemplateImport).default;
-			sourceContents = temp({ data, utils: helpers });
+			// replace empty new lines created by utils.if
+			sourceContents = temp({ data, utils: helpers }).replace(/\t{1,}\n/g, '');
 		} else {
 			sourceContents = fs.readFileSync(templatePath, 'utf-8');
 		}

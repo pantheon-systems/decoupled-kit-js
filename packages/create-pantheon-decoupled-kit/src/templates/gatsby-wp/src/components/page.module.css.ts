@@ -1,3 +1,6 @@
+import { TemplateFn } from '@cli/src/types';
+
+const css: TemplateFn = ({ data, utils }) => /* CSS */ `
 .container {
 	margin-top: var(--12);
 	margin-bottom: 0;
@@ -30,9 +33,7 @@
 }
 
 .paragraphContent {
-	{{#if tailwindcss}}
-	@apply prose;
-	{{/if}}
+	${utils.if(data.tailwindcss, '@apply prose;')}
 	overflow-wrap: break-word;
 	line-height: var(--8);
 	font-size: var(--5);
@@ -87,3 +88,6 @@
 		font-size: var(--9);
 	}
 }
+`;
+
+export default css;
