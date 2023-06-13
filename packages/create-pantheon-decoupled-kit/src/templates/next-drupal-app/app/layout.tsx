@@ -1,16 +1,27 @@
-import { Inter } from 'next/font/google';
-import './globals.css';
+'use client';
+import '@pantheon-systems/nextjs-kit/style.css';
 
-const inter = Inter({ subsets: ['latin'] });
+import { Header } from '@pantheon-systems/nextjs-kit';
+
+import './globals.css';
 
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
+	const navItems = [
+		{ linkText: '🏠 Home', href: '/' },
+		{ linkText: '📰 Articles', href: '/articles' },
+		{ linkText: '📑 Pages', href: '/pages' },
+		{ linkText: '⚛️ Examples', href: '/examples' },
+	];
 	return (
 		<html lang="en">
-			<body className={inter.className}>{children}</body>
+			<body>
+				<Header navItems={navItems} />
+				<div>{children}</div>
+			</body>
 		</html>
 	);
 }
