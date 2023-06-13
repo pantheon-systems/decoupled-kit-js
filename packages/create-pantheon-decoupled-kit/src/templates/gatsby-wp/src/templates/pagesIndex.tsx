@@ -1,3 +1,4 @@
+import { PaginatorLocation } from '../../lib/types';
 import { PageGrid } from '../components/grid';
 import Layout from '../components/layout';
 import Paginator from '../components/paginator';
@@ -5,10 +6,21 @@ import Seo from '../components/seo';
 import * as styles from './pagesOrPostsIndex.module.css';
 
 const PageIndexTemplate = ({
-	pageContext: { itemsPerPage, routing, pages },
+	pageContext: { pages, routing, itemsPerPage },
 	location,
+}: {
+	pageContext: {
+		pages: Queries.WpPageEdge[];
+		routing: boolean;
+		itemsPerPage: number;
+	};
+	location: PaginatorLocation;
 }) => {
-	const RenderCurrentItems = ({ currentItems }) => {
+	const RenderCurrentItems = ({
+		currentItems,
+	}: {
+		currentItems: Queries.WpPageEdge[];
+	}) => {
 		return <PageGrid data={currentItems} contentType="pages" />;
 	};
 
@@ -35,5 +47,5 @@ const PageIndexTemplate = ({
 export default PageIndexTemplate;
 
 export function Head() {
-	return <Seo title="All pages" />;
+	return <Seo title="Pages" description="All pages" />;
 }

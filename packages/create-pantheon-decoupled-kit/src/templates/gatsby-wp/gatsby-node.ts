@@ -51,7 +51,7 @@ export const createPages = async ({
 			pages: pagesPages,
 			createPage,
 			routing,
-			componentPath: path.resolve(`./src/templates/pagesIndex.jsx`),
+			componentPath: path.resolve(`./src/templates/pagesIndex.tsx`),
 		});
 	}
 
@@ -88,12 +88,12 @@ export const createPages = async ({
 	createExamplesPage({
 		createPage,
 		routing,
-		componentPath: path.resolve('./src/templates/examples.jsx'),
+		componentPath: path.resolve('./src/templates/examples.tsx'),
 	});
 	// /examples/auth-api
 	createAuthApiPage({
 		createPage,
 		privatePosts,
-		componentPath: path.resolve('./src/templates/authApi.jsx'),
+		componentPath: path.resolve('./src/templates/authApi.tsx'),
 	});
 };

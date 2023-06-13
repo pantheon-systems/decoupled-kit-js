@@ -1,10 +1,14 @@
-import { Link } from 'gatsby'
-import Layout from '../components/layout'
-import * as styles from './examples.module.css'
+import { Link } from 'gatsby';
+import Layout from '../components/layout';
+import * as styles from './examples.module.css';
 
-const ExamplesPageTemplate = ({ footerMenu, pageContext: { routing } }) => {
+const ExamplesPageTemplate = ({
+	pageContext: { routing },
+}: {
+	pageContext: { routing: boolean };
+}) => {
 	return (
-		<Layout footerMenu={footerMenu}>
+		<Layout>
 			<div className={styles.container}>
 				<h1 className={styles.containerTitle}>Examples</h1>
 				<Link to="/">
@@ -33,7 +37,7 @@ const ExamplesPageTemplate = ({ footerMenu, pageContext: { routing } }) => {
 				</div>
 			</div>
 		</Layout>
-	)
-}
+	);
+};
 
-export default ExamplesPageTemplate
+export default ExamplesPageTemplate;

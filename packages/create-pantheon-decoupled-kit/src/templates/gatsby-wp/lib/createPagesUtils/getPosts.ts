@@ -9,10 +9,7 @@ import { type GatsbyGraphQLHelper } from '../types';
 export const getPosts = async ({
 	graphql,
 	reporter,
-	imageWidth = 1200,
-}: GatsbyGraphQLHelper & { imageWidth: number; imageHeight: number }): Promise<
-	Queries.WpPostConnection['edges'] | void
-> => {
+}: GatsbyGraphQLHelper): Promise<Queries.WpPostConnection['edges'] | void> => {
 	const graphqlResult = await graphql<Queries.WpPostConnection>(/* GraphQL */ `
 		query WpPosts {
 			# Query all WordPress posts sorted by date

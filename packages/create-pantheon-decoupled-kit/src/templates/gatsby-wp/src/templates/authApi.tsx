@@ -1,8 +1,13 @@
-import { Link } from 'gatsby'
-import Layout from '../components/layout'
-import * as styles from './authApi.module.css'
+import { Link } from 'gatsby';
+import { PrivatePosts } from '../../lib/types';
+import Layout from '../components/layout';
+import * as styles from './authApi.module.css';
 
-const AuthApiExampleTemplate = ({ pageContext: { privatePosts } }) => {
+const AuthApiExampleTemplate = ({
+	pageContext: { privatePosts },
+}: {
+	pageContext: { privatePosts: PrivatePosts[] };
+}) => {
 	return (
 		<Layout>
 			<div className={styles.container}>
@@ -37,7 +42,7 @@ const AuthApiExampleTemplate = ({ pageContext: { privatePosts } }) => {
 				</div>
 			</div>
 		</Layout>
-	)
-}
+	);
+};
 
-export default AuthApiExampleTemplate
+export default AuthApiExampleTemplate;
