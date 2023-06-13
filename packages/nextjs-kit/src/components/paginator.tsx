@@ -36,7 +36,7 @@ export interface PaginationProps<Type> {
 	/**
 	 * The React component to render for each datum
 	 */
-	Component: React.FC<{ currentItems: Type[] }>;
+	Component: React.ElementType;
 }
 
 /**
