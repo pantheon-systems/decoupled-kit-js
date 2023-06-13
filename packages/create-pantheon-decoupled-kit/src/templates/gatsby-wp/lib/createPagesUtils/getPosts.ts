@@ -10,7 +10,9 @@ export const getPosts = async ({
 	graphql,
 	reporter,
 }: GatsbyGraphQLHelper): Promise<Queries.WpPostConnection['edges'] | void> => {
-	const graphqlResult = await graphql<Queries.WpPostConnection>(/* GraphQL */ `
+	const graphqlResult = await graphql<{
+		allWpPost: Queries.WpPostConnection;
+	}>(/* GraphQL */ `
 		query WpPosts {
 			# Query all WordPress posts sorted by date
 			allWpPost(sort: { fields: [date], order: DESC }) {
@@ -58,8 +60,8 @@ export const getPosts = async ({
 		return;
 	}
 
-	if (graphqlResult?.data?.allWpPost) {
-		return graphqlResult.data.allWpPost.edges;
+	if (graphqlResult?.data?.allWpPost?.edges) {
+		return graphqlResult.data?.allWpPost?.edges;
 	} else {
 		reporter.error('No Posts data found.');
 		return;

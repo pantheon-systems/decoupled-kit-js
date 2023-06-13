@@ -9,7 +9,9 @@ export const getPages = async ({
 	graphql,
 	reporter,
 }: GatsbyGraphQLHelper): Promise<Queries.WpPageConnection['edges'] | void> => {
-	const graphqlResult = await graphql<Queries.WpPageConnection>(/* GraphQL */ `
+	const graphqlResult = await graphql<{
+		allWpPage: Queries.WpPageConnection;
+	}>(/* GraphQL */ `
 		query WpPages {
 			allWpPage(sort: { fields: [date], order: DESC }) {
 				edges {
@@ -55,7 +57,7 @@ export const getPages = async ({
 		return;
 	}
 
-	if (graphqlResult?.data?.allWpPage) {
+	if (graphqlResult?.data?.allWpPage?.edges) {
 		return graphqlResult.data.allWpPage.edges;
 	} else {
 		reporter.error('No Pages data found.');
