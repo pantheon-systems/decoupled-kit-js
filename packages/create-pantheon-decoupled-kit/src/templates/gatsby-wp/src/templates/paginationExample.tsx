@@ -17,17 +17,23 @@ const PaginationPostsExample = ({
 	location: PaginatorLocation;
 }) => {
 	const RenderCurrentItems = ({ currentItems }: { currentItems: Post[] }) => {
-		return currentItems?.length > 0 ? (
-			currentItems.map((item) => {
-				return (
-					<article key={item.title} className={styles.item}>
-						<h2 className={styles.itemTitle}>{item.title}</h2>
-						<div dangerouslySetInnerHTML={{ __html: String(item.excerpt) }} />
-					</article>
-				);
-			})
-		) : (
-			<span>There are no items to display</span>
+		return (
+			<>
+				{currentItems?.length > 0 ? (
+					currentItems.map((item) => {
+						return (
+							<article key={item.title} className={styles.item}>
+								<h2 className={styles.itemTitle}>{item.title}</h2>
+								<div
+									dangerouslySetInnerHTML={{ __html: String(item.excerpt) }}
+								/>
+							</article>
+						);
+					})
+				) : (
+					<span>There are no items to display</span>
+				)}
+			</>
 		);
 	};
 

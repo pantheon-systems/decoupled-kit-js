@@ -7,7 +7,7 @@ export const usePagination = <DataType>({
 	itemsPerPage,
 	routing,
 	location,
-}: Omit<PaginatorProps<DataType>, 'Component'>) => {
+}: Omit<PaginatorProps<DataType[]>, 'Component'>) => {
 	// Track if breakpoint links have been opened
 	const openStart = location?.state?.breakOpen
 		? Number(breakpoints?.start) + Number(breakpoints?.add)
@@ -37,9 +37,9 @@ export const usePagination = <DataType>({
 	const navRoute = routing ? currentPath?.replace(/\/\d+$/, '') : currentPath;
 
 	const [offset, setOffset] = useState((currentPageQuery - 1) * itemsPerPage);
-	const [currentItems, setCurrentItems] = useState<DataType[]>([]);
-	const [totalItems] = useState(data?.length);
-	const [totalPages] = useState(Math.ceil(data?.length / itemsPerPage));
+	const [currentItems, setCurrentItems] = useState(data);
+	const totalItems = Number(data?.length);
+	const totalPages = Math.ceil(data?.length / itemsPerPage);
 
 	return {
 		breakStart,

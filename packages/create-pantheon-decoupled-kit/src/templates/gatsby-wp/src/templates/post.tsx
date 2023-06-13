@@ -21,7 +21,9 @@ export default PostTemplate;
 export function Head({
 	pageContext: { node: post },
 }: {
-	pageContext: { node: Queries.WpPostEdge['node'] };
+	pageContext: { node: Queries.WpPost };
 }) {
-	return <Seo title={post?.title} description={post?.excerpt} />;
+	return (
+		<Seo title={String(post?.title)} description={String(post?.excerpt)} />
+	);
 }

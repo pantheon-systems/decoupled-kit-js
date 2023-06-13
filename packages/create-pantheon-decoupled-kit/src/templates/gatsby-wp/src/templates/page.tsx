@@ -19,8 +19,8 @@ export default PageTemplate;
 export function Head({
 	pageContext: { node: page },
 }: {
-	pageContext: { node: Queries.WpPageEdge['node'] };
+	pageContext: { node: Queries.WpPage };
 }) {
 	// Todo - add truncated content as description
-	return <Seo title={page?.title} />;
+	return <Seo title={String(page?.title)} />;
 }

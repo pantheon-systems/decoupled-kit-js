@@ -40,22 +40,18 @@ export interface Breakpoints {
 }
 
 export type PaginatorLocation = WindowLocation<{
-	breakpoints: Breakpoints;
-	breakOpen: boolean;
+	breakpoints?: Breakpoints;
+	breakOpen?: boolean;
 }>;
 
 export interface PaginatorProps<DataType> {
 	data: DataType;
-	breakpoints: Breakpoints;
+	breakpoints?: Breakpoints;
 	itemsPerPage: number;
 	routing: boolean;
 	/**
 	 * The component used to render the list of currentItems
 	 */
-	Component: ({
-		currentItems,
-	}: {
-		currentItems: DataType;
-	}) => React.JSX.Element | React.JSX.Element[];
+	Component: React.FC<{ currentItems: DataType }>;
 	location: PaginatorLocation;
 }

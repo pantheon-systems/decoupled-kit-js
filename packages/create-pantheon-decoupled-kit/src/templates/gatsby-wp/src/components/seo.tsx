@@ -7,11 +7,11 @@ import { graphql, useStaticQuery } from 'gatsby';
  * @see {@link https://www.gatsbyjs.com/docs/use-static-query/}
  */
 const Seo = ({
-	description,
 	title,
+	description,
 }: {
-	description: string;
 	title: string;
+	description?: string;
 }) => {
 	const {
 		wp: { generalSettings },

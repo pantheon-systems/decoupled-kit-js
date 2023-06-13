@@ -16,11 +16,12 @@ import * as styles from './paginator.module.css';
  * note: (`add` * x) + `start` = `end` where x is a number of clicks it takes to fill in all of the links
  * For example: If there are 25 links and the start = 5 and end = 25, then add should be 5 or 10.
  * ***
- * @param props.routing If true, shallow routing will be enabled. Check the examples/pagination route to see it in action
+ * @param props.routing If true, the URL will change with each page.
+ * If false, only the content will change.
  * @param props.Component React Component that takes in currentItems as props and maps over them.
  * currentItems is a subset of data, so any component that works for data will work here.
- * @param location holds flag variable to track breakpoint state
- * @param navRoute route of the page using the paginator
+ * @param props.location holds flag variable to track breakpoint state
+ * @param props.navRoute route of the page using the paginator
  * @returns Component with data rendered by the passed in Component and page links
  */
 const Paginator = <DataType,>({
@@ -30,7 +31,7 @@ const Paginator = <DataType,>({
 	Component,
 	routing,
 	location,
-}: PaginatorProps<DataType>) => {
+}: PaginatorProps<DataType[]>) => {
 	const {
 		breakStart,
 		setBreakStart,

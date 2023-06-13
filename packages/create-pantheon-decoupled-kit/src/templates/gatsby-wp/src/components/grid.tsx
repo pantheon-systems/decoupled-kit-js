@@ -6,14 +6,25 @@ const GradientPlaceholder = () => (
 	<div className={styles.gradientPlaceholder} />
 );
 
-const withGrid = <Props,>(Component: React.ElementType) => {
-	const GridedComponent = <DataType,>({
+/**
+ * A HOC that displays the Component as a grid
+ * @param Component The component used to display the content
+ * @returns Returns a grid of the Component mapped over data
+ */
+const withGrid = <DataType,>(Component: React.FC<{ content: DataType }>) => {
+	/**
+	 *
+	 * @param params.data - the data to map into the grid
+	 * @param params.FallbackComponent - a component to display if there is no data
+	 * @returns the data in a Component in a grid
+	 */
+	const GridedComponent = <Props,>({
 		data,
 		FallbackComponent,
 		...props
 	}: {
 		data?: DataType[];
-		FallbackComponent?: React.ElementType;
+		FallbackComponent?: React.FC;
 	} & { [Property in keyof Props]: Props[Property] }) => {
 		return (
 			<div className={styles.container}>
@@ -31,6 +42,9 @@ const withGrid = <Props,>(Component: React.ElementType) => {
 	return GridedComponent;
 };
 
+/**
+ * A generic GridItem
+ */
 const GridItem = ({
 	href,
 	imgSrc,
@@ -65,43 +79,42 @@ const GridItem = ({
 	);
 };
 
-const PostGridItem = ({
-	content: { node },
-}: {
-	content: { node: Queries.WpPostEdge['node'] };
-}) => {
+/**
+ * A grid item for WpPosts
+ */
+const PostGridItem = ({ content }: { content: Queries.WpPostEdge }) => {
+	const title = content?.node?.title || '';
 	const imgSrc =
-		node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData ||
-		null;
-	const altText = node?.featuredImage?.node.altText || node?.title || '';
-	const path = node?.uri || '';
+		content?.node?.featuredImage?.node?.localFile?.childImageSharp
+			?.gatsbyImageData || null;
+	const altText = content?.node?.featuredImage?.node.altText || title || '';
+	const path = content?.node?.uri || '';
 	return (
 		<GridItem
 			href={`/posts${path}`}
 			imgSrc={imgSrc}
 			altText={altText}
-			title={node?.title}
+			title={title}
 		/>
 	);
 };
 
-const PageGridItem = ({
-	content: { node },
-}: {
-	content: { node: Queries.WpPageEdge['node'] };
-}) => {
+/**
+ * A grid item for WpPages
+ */
+const PageGridItem = ({ content }: { content: Queries.WpPageEdge }) => {
+	const title = String(content?.node?.title) || '';
 	const imgSrc =
-		node?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData ||
-		null;
-	const altText = node?.featuredImage?.node.altText || node.title;
-	const path = node?.uri || '';
-
+		content?.node?.featuredImage?.node?.localFile?.childImageSharp
+			?.gatsbyImageData || null;
+	const altText = content?.node?.featuredImage?.node.altText || title || '';
+	const path = content?.node?.uri || '';
 	return (
 		<GridItem
 			href={`/pages${path}`}
 			imgSrc={imgSrc}
 			altText={altText}
-			title={node?.title}
+			title={title}
 		/>
 	);
 };
