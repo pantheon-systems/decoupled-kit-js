@@ -1,5 +1,4 @@
-import type { WindowLocation } from '@reach/router';
-import type { Breakpoints, PostsQuery } from '../../lib/types';
+import type { Breakpoints, PaginatorLocation, Post } from '../../lib/types';
 import Layout from '../components/layout';
 import Paginator from '../components/paginator';
 import Seo from '../components/seo';
@@ -10,24 +9,26 @@ const PaginationPostsExample = ({
 	location,
 }: {
 	pageContext: {
-		posts: PostsQuery;
+		posts: Post[];
 		postsPerPage: number;
 		routing: boolean;
 		breakpoints: Breakpoints;
 	};
-	location: WindowLocation;
+	location: PaginatorLocation;
 }) => {
-	const RenderCurrentItems = ({ currentItems }) => {
-		return currentItems?.length > 0
-			? currentItems.map((item) => {
-					return (
-						<article key={item.title} className={styles.item}>
-							<h2 className={styles.itemTitle}>{item.title}</h2>
-							<div dangerouslySetInnerHTML={{ __html: item.excerpt }} />
-						</article>
-					);
-			  })
-			: null;
+	const RenderCurrentItems = ({ currentItems }: { currentItems: Post[] }) => {
+		return currentItems?.length > 0 ? (
+			currentItems.map((item) => {
+				return (
+					<article key={item.title} className={styles.item}>
+						<h2 className={styles.itemTitle}>{item.title}</h2>
+						<div dangerouslySetInnerHTML={{ __html: String(item.excerpt) }} />
+					</article>
+				);
+			})
+		) : (
+			<span>There are no items to display</span>
+		);
 	};
 
 	return (
@@ -52,5 +53,10 @@ const PaginationPostsExample = ({
 export default PaginationPostsExample;
 
 export function Head() {
-	return <Seo title="Paginated Posts Example" />;
+	return (
+		<Seo
+			title="Paginated Posts Example"
+			description="An example page with paginated data."
+		/>
+	);
 }
