@@ -9,6 +9,7 @@ overrides:
   '@pantheon-systems/eslint-config': workspace:*
   trim@<0.0.3: '>=0.0.3'
   yaml@<2.2.2: '>=2.2.2'
+  vite@>=4.3.0 <4.3.9: '>=4.3.9'
 
 importers:
 

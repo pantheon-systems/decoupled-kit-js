@@ -16,16 +16,16 @@ describe('getDrupalSearchResults()', () => {
 	});
 	const mockContextDefault = {
 		locale: 'en',
-		query: 'milk',
+		query: 'chocolate',
 		apiUrl: 'https://default.pantheonsite.io',
 		response: mockResponse(),
 	};
 	const mockContextAlt = {
 		locale: 'en',
-		query: 'chocolate',
+		query: 'milk',
 		apiUrl: 'https://default.pantheonsite.io',
 		response: mockResponse(),
-		index: 'example_index',
+		index: 'articles_index',
 	};
 	it('should return matching search results from the default index', async () => {
 		const { locale, query, apiUrl, response } = mockContextDefault;
