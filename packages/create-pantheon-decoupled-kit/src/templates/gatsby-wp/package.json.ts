@@ -46,9 +46,13 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		${utils.if(data.tailwindcss, tailwindcssDeps(true))}
 		${utils.if(data.tailwindcss, tailwindcssDeps(false))}
 		"@babel/core": "^7.21.4",
-		"@pantheon-systems/decoupled-kit-configs": "${data.otherConfigsVersion}",
-		"@pantheon-systems/eslint-config-decoupled-kit": "${data.eslintConfigVersion}",
-		"@pantheon-systems/wordpress-kit": "${data.wordpressKitVersion}",
+		"@pantheon-systems/decoupled-kit-configs": "${String(
+			data.otherConfigsVersion,
+		)}",
+		"@pantheon-systems/eslint-config-decoupled-kit": "${String(
+			data.eslintConfigVersion,
+		)}",
+		"@pantheon-systems/wordpress-kit": "${String(data.wordpressKitVersion)}",
 		"@testing-library/react": "13.4.0",
 		"@types/dompurify": "^3.0.2",
 		"@types/node": "^18.16.16",

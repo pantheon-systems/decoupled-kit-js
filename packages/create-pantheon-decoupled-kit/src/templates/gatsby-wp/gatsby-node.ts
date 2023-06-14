@@ -44,7 +44,7 @@ export const createPages = async ({
 		createIndividualPagePages({
 			pages: pagesPages,
 			createPage,
-			componentPath: path.resolve(`./src/templates/page.tsx`),
+			componentPath: path.resolve(`./src/templates/pageTemplate.tsx`),
 		});
 		// page/[page]
 		createPageIndex({
@@ -67,7 +67,7 @@ export const createPages = async ({
 		createIndividualPostPages({
 			posts: postPages,
 			createPage,
-			componentPath: path.resolve(`./src/templates/post.tsx`),
+			componentPath: path.resolve(`./src/templates/postTemplate.tsx`),
 		});
 		// /post/
 		createPostIndex({

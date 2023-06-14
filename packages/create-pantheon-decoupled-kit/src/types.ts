@@ -96,10 +96,11 @@ type InputIndex = GatsbyWPData &
 	NextDrupalData &
 	NextDrupalUmamiAddonData &
 	NextWpData & {
-		force: boolean;
-		silent: boolean;
+		_: string[];
 		appName: string;
 		outDir: string;
+		force: boolean;
+		silent: boolean;
 		templateRootDir: string;
 		tailwindcss: boolean;
 	};
@@ -108,7 +109,7 @@ type InputIndex = GatsbyWPData &
  * Input from command line arguments, prompts, and generator data
  */
 export type Input = {
-	[Property in keyof InputIndex]: InputIndex[Property] extends true
+	[Property in keyof InputIndex]?: InputIndex[Property] extends true
 		? boolean
 		: InputIndex[Property];
 };

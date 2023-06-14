@@ -51,12 +51,12 @@ const Post = ({
 			<hr className={styles.hr} />
 			<nav className={styles.nav}>
 				{previous ? (
-					<Link className={styles.prev} to={`/posts${previous?.uri}`}>
+					<Link className={styles.prev} to={`/posts${String(previous?.uri)}`}>
 						← {previous.title}
 					</Link>
 				) : null}
 				{next ? (
-					<Link className={styles.next} to={`/posts${next?.uri}`}>
+					<Link className={styles.next} to={`/posts${String(next?.uri)}`}>
 						{next.title} →
 					</Link>
 				) : null}

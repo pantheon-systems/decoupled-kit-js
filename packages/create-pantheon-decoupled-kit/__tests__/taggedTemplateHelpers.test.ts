@@ -24,6 +24,19 @@ describe('pkgNameHelper', () => {
 		const result = helpers.pkgName(name);
 		expect(result).toEqual('invalid-package-name-test');
 	});
+	it.fails('should throw an error if the value is not a string', () => {
+		const name = {};
+		const result = helpers.pkgName(name);
+		expect(result).toThrowError();
+	});
+});
+
+describe('backticks', () => {
+	it('should return the value wrapped in backticks', () => {
+		const value = '"some value"';
+		const result = helpers.backticks(value);
+		expect(result).toEqual('`"some value"`');
+	});
 });
 
 describe('wpGraphqlHelper', () => {

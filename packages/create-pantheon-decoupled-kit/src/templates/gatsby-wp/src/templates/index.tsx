@@ -1,4 +1,4 @@
-import { Link, withPrefix } from 'gatsby';
+import { withPrefix } from 'gatsby';
 import { PostGrid } from '../components/grid';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
