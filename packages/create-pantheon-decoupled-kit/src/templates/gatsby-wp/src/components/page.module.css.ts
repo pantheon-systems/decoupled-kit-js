@@ -1,4 +1,4 @@
-import { TemplateFn } from '@cli/src/types';
+import { TemplateFn } from '@cli/types';
 
 const css: TemplateFn = ({ data, utils }) => /* CSS */ `
 .container {

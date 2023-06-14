@@ -1,4 +1,4 @@
-import { TemplateFn } from '@cli/src/types';
+import { TemplateFn } from '@cli/types';
 const stringAsVar = /* ts */ `console.log('I am another string');`;
 
 const ts: TemplateFn = ({ data, utils }) => /* ts */ `const x = 'I am a string';

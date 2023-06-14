@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import type { Input } from '@cli/src/types';
+import type { Input } from '@cli/types';
 export const taggedTemplateHelpers = {
 	/**
 	 * @param condition - a single key of an {@link Input}

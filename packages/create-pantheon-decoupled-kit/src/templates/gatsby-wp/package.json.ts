@@ -1,6 +1,6 @@
-import { TemplateFn } from '@cli/src/types';
-import { sharedPkgJsonField } from '@partials/pkg-shared/sharedPkgJsonFields';
-import { tailwindcssDeps } from '@partials/pkg-shared/tailwindcssDeps';
+import { TemplateFn } from '@cli/types';
+import { sharedPkgJsonField } from '@partials/pkg-shared/sharedPkgJsonFieldsT';
+import { tailwindcssDeps } from '@partials/pkg-shared/tailwindcssDepsT';
 
 const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 	${sharedPkgJsonField(utils.pkgName(data.appName))}

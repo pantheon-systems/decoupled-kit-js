@@ -1,4 +1,4 @@
-import { type TemplateFn } from '@cli/src/types';
+import { type TemplateFn } from '@cli/types';
 
 const ts: TemplateFn = ({
 	data,

@@ -3,5 +3,10 @@
 	"compilerOptions": {
 		"types": ["vitest/globals"],
 		"jsx": "react-jsx",
+		"baseUrl": "./",
+		"paths": {
+			"@cli/*": ["./src/*"],
+			"@partials/*": ["./src/templates/partials/*"]
+		}
 	}
 }

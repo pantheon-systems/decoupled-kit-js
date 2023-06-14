@@ -11,7 +11,11 @@ import {
 	type MergedPaths,
 	type TemplateImport,
 } from '../types';
-import { dedupeTemplates, taggedTemplateHelpers as helpers } from '../utils';
+import {
+	dedupeTemplates,
+	taggedTemplateHelpers as helpers,
+	TAGGED_TEMPLATE_REGEX,
+} from '../utils';
 
 interface FilesToWriteData {
 	target: string;
@@ -47,7 +51,7 @@ export const addWithDiff: Action = async ({
 
 	const filesToCopyRegex =
 		/(gif|jpg|jpeg|tiff|png|svg|ashx|ico|pdf|jar|eot|woff|ttf|woff2)$/;
-	const templateFilesRegex = /(\.(css|jsx|tsx|ts|js|json)\.(js|ts))$/;
+	const templateFilesRegex = TAGGED_TEMPLATE_REGEX;
 	const templatesToRender: MergedPaths = await dedupeTemplates(templateData);
 	const destinationDir = path.resolve(process.cwd(), data.outDir);
 

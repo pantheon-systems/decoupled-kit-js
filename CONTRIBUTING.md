@@ -319,7 +319,7 @@ the following:
 <!-- prettier-ignore -->
 ```typescript
 // src/templates/example-templates/index.ts.ts
-import type { TemplateFn } from '@cli/src/types';
+import type { TemplateFn } from '@cli/types';
 
 const ts: TemplateFn = ({ data, utils }) =>`
 ${utils.if(!arbitraryBoolean, `import { someModule } from '../somewhere';`)}}
