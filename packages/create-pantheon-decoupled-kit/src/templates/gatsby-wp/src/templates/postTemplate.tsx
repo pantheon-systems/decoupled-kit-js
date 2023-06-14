@@ -7,7 +7,6 @@ const PostTemplate = ({
 }: {
 	pageContext: Queries.WpPostEdge;
 }) => {
-	console.log(node, previous, next);
 	return (
 		<Layout isHomePage={false}>
 			<Post post={node} next={next} previous={previous} />

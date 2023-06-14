@@ -54,6 +54,7 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		)}",
 		"@pantheon-systems/wordpress-kit": "${String(data.wordpressKitVersion)}",
 		"@testing-library/react": "13.4.0",
+		"@types/dompurify": "^3.0.2",
 		"@types/node": "^18.16.16",
 		"@types/react": "^18.2.7",
 		"@types/react-dom": "^18.2.4",

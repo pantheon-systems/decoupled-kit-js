@@ -12,10 +12,10 @@ const Page = ({
 	next: Queries.WpPageEdge['next'];
 	previous: Queries.WpPageEdge['previous'];
 }) => {
-	const title = page?.title;
+	const title = page?.title as string;
 	const featuredImage =
 		page?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData;
-	const altText = page?.featuredImage?.node?.altText || title;
+	const altText = (page?.featuredImage?.node?.altText as string) || title;
 
 	return (
 		<article className={styles.container}>

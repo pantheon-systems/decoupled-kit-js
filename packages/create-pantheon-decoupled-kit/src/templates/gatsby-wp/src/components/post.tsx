@@ -12,16 +12,17 @@ const Post = ({
 	next: Queries.WpPostEdge['next'];
 	previous: Queries.WpPostEdge['previous'];
 }) => {
-	const title = post?.title;
+	const title = post?.title as string;
 	const featuredImage =
 		post?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData;
-	const altText = post?.featuredImage?.node?.altText || title;
-	console.log(featuredImage);
+	const altText = (post?.featuredImage?.node?.altText as string) || title;
+
 	return (
 		<article className={styles.container}>
 			<h1 className={styles.mainTitle}>{post?.title}</h1>
-			<p className={styles.date}>{new Date(post?.date).toDateString()}</p>
-
+			{post?.date ? (
+				<p className={styles.date}>{new Date(post.date).toDateString()}</p>
+			) : null}
 			<Link className={styles.link} to="/posts">
 				Posts &rarr;
 			</Link>
