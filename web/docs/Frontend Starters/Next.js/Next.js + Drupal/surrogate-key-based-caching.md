@@ -38,6 +38,15 @@ cache when the content in Drupal changes.
 
 ## How To Ensure Headers Are Set On Custom Routes
 
+:::note
+
+The Decoupled Kit
+[Drupal Back-end Starter Project](../../../Backend%20Starters/Decoupled%20Drupal/creating-new-project.md)
+and [Drupal Next.js Starter Kit](./intro.md) handle the configuration below
+automatically.
+
+:::
+
 - The Drupal backend has the
   [Pantheon Advanced Page Cache module](https://www.drupal.org/project/pantheon_advanced_page_cache)
   installed.
