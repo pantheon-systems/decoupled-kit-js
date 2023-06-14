@@ -1,4 +1,4 @@
-import { sanitize } from 'dompurify';
+import { sanitize } from 'isomorphic-dompurify';
 import type { Breakpoints, PaginatorLocation, Post } from '../../lib/types';
 import Layout from '../components/layout';
 import Paginator from '../components/paginator';

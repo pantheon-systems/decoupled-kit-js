@@ -21,7 +21,6 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		"lint": "eslint --ext .js,.ts,.jsx,.tsx src --ignore-path .gitignore"
 	},
 	"dependencies": {
-		"dompurify": "^3.0.3",
 		"gatsby": "^4.25.0",
 		"gatsby-plugin-dts-css-modules": "^3.0.0",
 		"gatsby-plugin-image": "^2.25.0",
@@ -35,6 +34,7 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		"gatsby-source-wordpress": "^6.25.2",
 		"gatsby-transformer-sharp": "^4.25.0",
 		"graphql": "^15.0.0",
+		"isomorphic-dompurify": "^1.6.0",
 		"lodash": "^4.17.21",
 		"mitt": "^3.0.0",
 		"react": "18.2.0",
@@ -54,7 +54,6 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		)}",
 		"@pantheon-systems/wordpress-kit": "${String(data.wordpressKitVersion)}",
 		"@testing-library/react": "13.4.0",
-		"@types/dompurify": "^3.0.2",
 		"@types/node": "^18.16.16",
 		"@types/react": "^18.2.7",
 		"@types/react-dom": "^18.2.4",

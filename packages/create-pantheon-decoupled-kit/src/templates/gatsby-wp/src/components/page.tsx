@@ -1,4 +1,4 @@
-import { sanitize } from 'dompurify';
+import { sanitize } from 'isomorphic-dompurify';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import * as styles from './page.module.css';
