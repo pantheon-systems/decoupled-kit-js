@@ -25,13 +25,19 @@ sidebar_position: 0
 
   - Via the Pantheon Dashboard at this link:
 
-    - [Decoupled Drupal Composer Managed](https://dashboard.pantheon.io/sites/create?upstream_id=c76c0e51-ad85-41d7-b095-a98a75869760)
+    - [Decoupled Drupal 9 Composer Managed](https://dashboard.pantheon.io/sites/create?upstream_id=c76c0e51-ad85-41d7-b095-a98a75869760)
+    - [Decoupled Drupal 10 Composer Managed](https://dashboard.pantheon.io/sites/create?upstream_id=19a917a4-c56e-44d6-98a1-49e7f779e678)
 
   - Or Alternatively via Terminus:
 
-    ```
-    terminus site:create my-new-site "Describe Site" --org='My Team Name' c76c0e51-ad85-41d7-b095-a98a75869760
-    ```
+    - Drupal 9
+      ```
+      terminus site:create my-new-site "Describe Site" --org='My Team Name' c76c0e51-ad85-41d7-b095-a98a75869760
+      ```
+    - Drupal 10
+      ```
+      terminus site:create my-new-site "Describe Site" --org='My Team Name' 19a917a4-c56e-44d6-98a1-49e7f779e678
+      ```
 
   :::note
 
@@ -151,7 +157,7 @@ the authenticated user's namespace, you can use the `--org` option.
 For information on additional options, consult the
 [command options section of the build tools documentation](https://github.com/pantheon-systems/terminus-build-tools-plugin#command-options).
 
-## Updating to Drupal 10
+## Updating from Drupal 9 to Drupal 10
 
 To update a
 [Decoupled Drupal Composer Managed](https://dashboard.pantheon.io/sites/create?upstream_id=c76c0e51-ad85-41d7-b095-a98a75869760)

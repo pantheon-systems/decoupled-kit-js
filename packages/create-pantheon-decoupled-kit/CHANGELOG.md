@@ -1,5 +1,63 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.1
+
+### Patch Changes
+
+- 38dac70f: [next-drupal] Fix broken search result links
+- 2e9032db: [cli] Add aliases for wordpress and drupal CMS types.
+
+## 0.9.1-canary.1
+
+### Patch Changes
+
+- 38dac70f: [next-drupal] Fix broken search result links
+
+## 0.9.1-canary.0
+
+### Patch Changes
+
+- 2e9032db: [cli] Add aliases for wordpress and drupal CMS types.
+
+## 0.9.0
+
+### Minor Changes
+
+- e042730c: - [next-wp] Uses css modules by default, retain tailwindcss option
+  - [next-druapl] Uses css modules by default, retain tailwindcss option
+- ddacd2a5: Use css modules by default for the next-drupal-umami-addon, retain
+  tailwindcss option
+- 7da989b0: Added a new action: `convertCssModules`. This action allows CSS
+  modules to be converted into Tailwind syntax.
+- ab24262f: [gatsby-wp] Use the convertCSSModules action for the tailwindcss
+  version
+
+  Bump eslint-config version
+
+### Patch Changes
+
+- 5a786d0a: Bump nextjs-kit and wordpress-kit versions
+- aea5653d: Bump nextjs-kit version
+- 65689a68: - [next-wp] Update imports for Pagination example
+- 0cb2a7ac: Bump nextjs-kit version
+- abf7fa7a: [next-drupal] Bump `drupal-kit` version
+- 5dd257c9: [next-wp-acf-addon] Use convertCSSModules action for the tailwindcss
+  option. [next-drupal] Add prettier as devDependency and prettier scripts to
+  package.json
+- e0f1a510: Bump nextjs-kit version
+- fe847220: [next-wp] Fix global css template
+- c6beaeb1: Fix prettier scripts
+- 703a2663: [next-wp] Add .prettierrc
+- 05d75735: Use `lint --fix` for nextjs generators
+- dffc487c: [gatsby-wp-acf-addon] Use css modules by default, retain tailwindcss
+  option
+- 0a456069: [next-wp][gatsby-wp] Bump `wordpress-kit` version, update import for
+  `GraphQLClientFactory`
+- f6de3b80: Bump wordpress-kit version
+- 14ce5a27: Fix incorrect dependencies
+- 94373c6c: Bump drupal-kit version
+- 293d3fc7: [next-drupal] Handle encoded URI components in /api/preview
+
 ## 0.9.0-canary.13
 
 ### Patch Changes

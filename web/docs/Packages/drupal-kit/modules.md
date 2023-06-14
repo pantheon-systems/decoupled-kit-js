@@ -10,10 +10,6 @@ custom_edit_url: null
 
 - [DrupalState](classes/DrupalState.md)
 
-## Interfaces
-
-- [authInit](interfaces/authInit.md)
-
 ## Functions
 
 ### defaultFetch
@@ -40,7 +36,7 @@ a promise containing the data for the JSON:API response
 
 #### Defined in
 
-[drupal-kit/src/lib/defaultFetch.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/drupal-kit/src/lib/defaultFetch.ts#L16)
+[drupal-kit/src/lib/defaultFetch.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/drupal-kit/src/lib/defaultFetch.ts#L16)
 
 ---
 
@@ -69,7 +65,7 @@ An array of search results matching the query.
 
 #### Defined in
 
-[drupal-kit/src/lib/getDrupalSearchResults.ts:23](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/drupal-kit/src/lib/getDrupalSearchResults.ts#L23)
+[drupal-kit/src/lib/getDrupalSearchResults.ts:23](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/drupal-kit/src/lib/getDrupalSearchResults.ts#L23)
 
 ---
 
@@ -94,4 +90,4 @@ The current known unique set of surrogate keys.
 
 #### Defined in
 
-[cms-kit/src/utils/setSurrogateKeyHeader.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/cms-kit/src/utils/setSurrogateKeyHeader.ts#L17)
+cms-kit/dist/lib/setSurrogateKeyHeader.d.ts:9
