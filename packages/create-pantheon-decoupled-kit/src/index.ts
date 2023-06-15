@@ -28,7 +28,7 @@ export const parseArgs = (
 	const options: MinimistOptions = {
 		// these options tell minimist which --args are
 		// booleans and which are strings.
-		boolean: ['force', 'silent', 'help', 'version', 'noTailwindcss'],
+		boolean: ['force', 'silent', 'help', 'version', 'noTailwindcss', 'js'],
 		string: ['appName', 'outDir', 'cmsEndpoint', 'cmsType'],
 		alias: {
 			help: ['h', 'help'],
@@ -73,6 +73,13 @@ export const main = async (
 	// and a way to get the tailwind-less starter via flag.
 	if (args.noTailwindcss) {
 		args.tailwindcss = false;
+	}
+
+	// similarly, to the noTailwindcss/tailwindcss flags,
+	// setting the --js flag to true
+	// turns the ts flag false
+	if (args.js) {
+		args.ts = false;
 	}
 
 	// get a list of generators to map against positional arguments from the cli

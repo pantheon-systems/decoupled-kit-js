@@ -111,6 +111,9 @@ type InputIndex = GatsbyWPData &
 		silent: boolean;
 		templateRootDir: string;
 		tailwindcss: boolean;
+		noInstall: boolean;
+		noLint: boolean;
+		ts: boolean;
 	};
 
 /**
