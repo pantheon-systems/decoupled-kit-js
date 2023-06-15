@@ -15,7 +15,7 @@ const json = () => /* JSON */ `{
 	"include": [
 		"./lib/**/*",
 		"./src/**/*",
-		"./gatsby-*.ts",
+		"./gatsby-*.*",
 		"./plugins/**/*",
 		"./*.d.ts",
 		"__tests__/**/*"
