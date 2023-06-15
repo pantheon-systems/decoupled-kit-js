@@ -1,3 +1,4 @@
+import { convertTStoJS } from '@cli/actions/convertTStoJS';
 import whichPmRuns from 'which-pm-runs';
 import {
 	addWithDiff,
@@ -14,6 +15,7 @@ import type {
 import {
 	appNamePrompt,
 	cmsEndpointPrompt,
+	tsPrompt,
 	outDirPrompt,
 	tailwindcssPrompt,
 } from '../utils/sharedPrompts';
@@ -22,6 +24,7 @@ interface GatsbyWPAnswers extends DefaultAnswers {
 	appName: string;
 	tailwindcss: boolean;
 	cmsEndpoint: string;
+	ts: boolean;
 }
 
 const pnpm = whichPmRuns()?.name === 'pnpm' ? true : false;
@@ -35,6 +38,7 @@ export const gatsbyWp: DecoupledKitGenerator<GatsbyWPAnswers, GatsbyWPData> = {
 	prompts: [
 		appNamePrompt('Gatsby WordPress Starter'),
 		outDirPrompt(outDirDefault),
+		tsPrompt,
 		tailwindcssPrompt,
 		cmsEndpointPrompt,
 	],
@@ -47,6 +51,6 @@ export const gatsbyWp: DecoupledKitGenerator<GatsbyWPAnswers, GatsbyWPData> = {
 		gatsby: true,
 	},
 	templates: ['gatsby-wp', 'tailwind-shared'],
-	actions: [addWithDiff, runInstall, convertCSSModules, runLint],
+	actions: [addWithDiff, runInstall, convertCSSModules, convertTStoJS, runLint],
 	cmsType: 'wp',
 };

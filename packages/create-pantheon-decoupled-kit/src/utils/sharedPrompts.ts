@@ -27,3 +27,10 @@ export const cmsEndpointPrompt = {
 	validate: (answer: string) =>
 		/^https:\/\//.test(answer) || 'cmsEndpoint must start with https://',
 };
+
+export const tsPrompt: ConfirmQuestion = {
+	name: 'ts',
+	message: 'Would you like to use TypeScript?',
+	type: 'confirm',
+	default: true,
+};
