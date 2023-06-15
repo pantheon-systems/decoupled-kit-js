@@ -31,9 +31,7 @@ const Page = ({
 					<div>
 						<GatsbyImage
 							className={styles.img}
-							priority
 							image={featuredImage}
-							layout="fill"
 							objectFit="cover"
 							alt={altText}
 						/>

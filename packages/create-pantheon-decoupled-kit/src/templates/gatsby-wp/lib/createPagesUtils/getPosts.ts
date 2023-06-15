@@ -34,7 +34,7 @@ export const getPosts = async ({
 								localFile {
 									childImageSharp {
 										gatsbyImageData(
-											placeholder: TRACED_SVG
+											placeholder: DOMINANT_COLOR
 											aspectRatio: 1.77778 # 16/9
 										)
 									}

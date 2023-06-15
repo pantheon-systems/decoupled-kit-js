@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Gatsby from 'gatsby';
-import { vi } from 'vitest';
+import { vi, beforeEach } from 'vitest';
 
 import { data } from './data/wpMenu.json';
 

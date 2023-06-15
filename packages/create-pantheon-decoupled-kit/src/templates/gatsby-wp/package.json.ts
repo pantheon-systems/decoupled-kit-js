@@ -17,8 +17,8 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		"test:watch": "vitest",
 		"update-snapshots": "vitest run --update --silent",
 		"coverage": "vitest run --coverage",
-		"lint:fix": "eslint --ext .js,.ts,.jsx,.tsx src --fix --ignore-path .gitignore",
-		"lint": "eslint --ext .js,.ts,.jsx,.tsx src --ignore-path .gitignore"
+		"lint:fix": "eslint --ext .js,.ts,.jsx,.tsx . --fix --ignore-path .gitignore",
+		"lint": "eslint --ext .js,.ts,.jsx,.tsx . --ignore-path .gitignore"
 	},
 	"dependencies": {
 		"gatsby": "^4.25.0",
@@ -55,13 +55,16 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		"@pantheon-systems/wordpress-kit": "${String(data.wordpressKitVersion)}",
 		"@testing-library/react": "13.4.0",
 		"@types/dompurify": "^3.0.2",
+		"@types/lodash": "^4.14.195",
 		"@types/node": "^18.16.16",
+		"@types/reach__router": "^1.3.11",
 		"@types/react": "^18.2.7",
 		"@types/react-dom": "^18.2.4",
 		"@typescript-eslint/eslint-plugin": "^5.13.0",
 		"@typescript-eslint/parser": ">=5.49.0",
 		"@vitest/coverage-c8": "^0.28.3",
 		"babel-eslint": "^10.0.0",
+		"dotenv": "^16.1.4",
 		"dumper.js": "^1.3.1",
 		"eslint": "^8.32.0",
 		"eslint-config-prettier": "^8.5.0",

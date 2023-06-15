@@ -17,7 +17,9 @@ const Seo = ({
 		wp: { generalSettings },
 		wpUser,
 	} = useStaticQuery<{
-		wp: { generalSettings: Queries.WpGeneralSettings };
+		wp: {
+			generalSettings: Queries.WpGeneralSettings;
+		};
 		wpUser: Queries.WpUser;
 	}>(
 		graphql`
@@ -30,7 +32,7 @@ const Seo = ({
 				}
 				# if there's more than one user this would need to be filtered to the main user
 				wpUser {
-					twitter: name
+					name
 				}
 			}
 		`,
@@ -52,7 +54,7 @@ const Seo = ({
 			<meta property="og:description" content={metaDescription} />
 			<meta property="og:type" content="website" />
 			<meta name="twitter:card" content="summary" />
-			<meta name="twitter:creator" content={String(wpUser?.twitter) || ''} />
+			<meta name="twitter:creator" content={wpUser?.name || ''} />
 			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={metaDescription} />
 		</>

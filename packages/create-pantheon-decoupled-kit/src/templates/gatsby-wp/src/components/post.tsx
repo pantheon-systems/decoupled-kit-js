@@ -31,9 +31,7 @@ const Post = ({
 					<div className={styles.img}>
 						<GatsbyImage
 							className={styles.img}
-							priority="true"
 							image={featuredImage}
-							layout="fill"
 							objectFit="cover"
 							alt={altText}
 						/>
