@@ -1,14 +1,14 @@
 ---
-id: "modules"
-title: "decoupled-kit-js"
-sidebar_label: "Exports"
+id: 'modules'
+title: 'decoupled-kit-js'
+sidebar_label: 'Exports'
 sidebar_position: 0.5
 custom_edit_url: null
 ---
 
 ## Classes
 
-- [GraphqlClientFactory](classes/GraphqlClientFactory.md)
+- [GraphQLClientFactory](classes/GraphQLClientFactory.md)
 
 ## Type Aliases
 
@@ -18,18 +18,18 @@ custom_edit_url: null
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `hexDefault` | `string` |
-| `name` | `string` |
+| Name              | Type     |
+| :---------------- | :------- |
+| `hexDefault`      | `string` |
+| `name`            | `string` |
 | `tailwindDefault` | `string` |
-| `themeName` | `string` |
+| `themeName`       | `string` |
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:220](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L220)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:220](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L220)
 
-___
+---
 
 ### ColorConfig
 
@@ -37,32 +37,32 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `cyanBluishGray?` | `string` |
-| `darkGray?` | `string` |
-| `foreground?` | `string` |
-| `lightGray?` | `string` |
-| `lightGreenCyan?` | `string` |
-| `luminousVividAmber?` | `string` |
+| Name                   | Type     |
+| :--------------------- | :------- |
+| `cyanBluishGray?`      | `string` |
+| `darkGray?`            | `string` |
+| `foreground?`          | `string` |
+| `lightGray?`           | `string` |
+| `lightGreenCyan?`      | `string` |
+| `luminousVividAmber?`  | `string` |
 | `luminousVividOrange?` | `string` |
-| `paleCyanBlue?` | `string` |
-| `palePink?` | `string` |
-| `primary?` | `string` |
-| `secondary?` | `string` |
-| `stripes?` | `string` |
-| `tertiary?` | `string` |
-| `vividCyanBlue?` | `string` |
-| `vividGreenCyan?` | `string` |
-| `vividPurple?` | `string` |
-| `vividRed?` | `string` |
-| `white?` | `string` |
+| `paleCyanBlue?`        | `string` |
+| `palePink?`            | `string` |
+| `primary?`             | `string` |
+| `secondary?`           | `string` |
+| `stripes?`             | `string` |
+| `tertiary?`            | `string` |
+| `vividCyanBlue?`       | `string` |
+| `vividGreenCyan?`      | `string` |
+| `vividPurple?`         | `string` |
+| `vividRed?`            | `string` |
+| `white?`               | `string` |
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:4](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L4)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:4](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L4)
 
-___
+---
 
 ### FontSize
 
@@ -70,17 +70,17 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `default` | `string` |
-| `name` | `string` |
+| Name       | Type     |
+| :--------- | :------- |
+| `default`  | `string` |
+| `name`     | `string` |
 | `tailwind` | `string` |
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:227](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L227)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:227](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L227)
 
-___
+---
 
 ### FontSizeConfig
 
@@ -88,18 +88,18 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type     |
+| :----- | :------- |
 | `4xl?` | `string` |
 | `7xl?` | `string` |
-| `sm?` | `string` |
-| `xl?` | `string` |
+| `sm?`  | `string` |
+| `xl?`  | `string` |
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:30](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L30)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:30](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L30)
 
-___
+---
 
 ### GradientColors
 
@@ -107,16 +107,16 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `color` | `string` |
+| Name       | Type     |
+| :--------- | :------- |
+| `color`    | `string` |
 | `position` | `string` |
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:233](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L233)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:233](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L233)
 
-___
+---
 
 ### PaddingConfig
 
@@ -124,26 +124,27 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name           | Type     |
+| :------------- | :------- |
 | `backgroundX?` | `string` |
 | `backgroundY?` | `string` |
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:25](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L25)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:25](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L25)
 
-___
+---
 
 ### TailwindcssConfig
 
-Ƭ **TailwindcssConfig**: `Config` & [`WordPressMapConfig`](modules.md#wordpressmapconfig)
+Ƭ **TailwindcssConfig**: `Config` &
+[`WordPressMapConfig`](modules.md#wordpressmapconfig)
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:238](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L238)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:238](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L238)
 
-___
+---
 
 ### ThemeType
 
@@ -155,16 +156,16 @@ ___
 
 ##### Type parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | `PartialThemeConfig` \| `undefined` |
+| Name | Type                                |
+| :--- | :---------------------------------- |
+| `T`  | `PartialThemeConfig` \| `undefined` |
 
 ##### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `path?` | `string` |
-| `defaultValue?` | `T` |
+| Name            | Type     |
+| :-------------- | :------- |
+| `path?`         | `string` |
+| `defaultValue?` | `T`      |
 
 ##### Returns
 
@@ -172,9 +173,9 @@ ___
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:246](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L246)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:246](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L246)
 
-___
+---
 
 ### WordPressMapConfig
 
@@ -182,48 +183,49 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `theme?` | { `colors?`: [`ColorConfig`](modules.md#colorconfig) ; `extend?`: { `colors?`: [`ColorConfig`](modules.md#colorconfig) ; `fontSize?`: [`FontSizeConfig`](modules.md#fontsizeconfig) ; `padding?`: [`PaddingConfig`](modules.md#paddingconfig)  } ; `fontSize?`: [`FontSizeConfig`](modules.md#fontsizeconfig) ; `padding?`: [`PaddingConfig`](modules.md#paddingconfig)  } |
-| `theme.colors?` | [`ColorConfig`](modules.md#colorconfig) |
-| `theme.extend?` | { `colors?`: [`ColorConfig`](modules.md#colorconfig) ; `fontSize?`: [`FontSizeConfig`](modules.md#fontsizeconfig) ; `padding?`: [`PaddingConfig`](modules.md#paddingconfig)  } |
-| `theme.extend.colors?` | [`ColorConfig`](modules.md#colorconfig) |
-| `theme.extend.fontSize?` | [`FontSizeConfig`](modules.md#fontsizeconfig) |
-| `theme.extend.padding?` | [`PaddingConfig`](modules.md#paddingconfig) |
-| `theme.fontSize?` | [`FontSizeConfig`](modules.md#fontsizeconfig) |
-| `theme.padding?` | [`PaddingConfig`](modules.md#paddingconfig) |
+| Name                     | Type                                                                                                                                                                                                                                                                                                                                                                     |
+| :----------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `theme?`                 | { `colors?`: [`ColorConfig`](modules.md#colorconfig) ; `extend?`: { `colors?`: [`ColorConfig`](modules.md#colorconfig) ; `fontSize?`: [`FontSizeConfig`](modules.md#fontsizeconfig) ; `padding?`: [`PaddingConfig`](modules.md#paddingconfig) } ; `fontSize?`: [`FontSizeConfig`](modules.md#fontsizeconfig) ; `padding?`: [`PaddingConfig`](modules.md#paddingconfig) } |
+| `theme.colors?`          | [`ColorConfig`](modules.md#colorconfig)                                                                                                                                                                                                                                                                                                                                  |
+| `theme.extend?`          | { `colors?`: [`ColorConfig`](modules.md#colorconfig) ; `fontSize?`: [`FontSizeConfig`](modules.md#fontsizeconfig) ; `padding?`: [`PaddingConfig`](modules.md#paddingconfig) }                                                                                                                                                                                            |
+| `theme.extend.colors?`   | [`ColorConfig`](modules.md#colorconfig)                                                                                                                                                                                                                                                                                                                                  |
+| `theme.extend.fontSize?` | [`FontSizeConfig`](modules.md#fontsizeconfig)                                                                                                                                                                                                                                                                                                                            |
+| `theme.extend.padding?`  | [`PaddingConfig`](modules.md#paddingconfig)                                                                                                                                                                                                                                                                                                                              |
+| `theme.fontSize?`        | [`FontSizeConfig`](modules.md#fontsizeconfig)                                                                                                                                                                                                                                                                                                                            |
+| `theme.padding?`         | [`PaddingConfig`](modules.md#paddingconfig)                                                                                                                                                                                                                                                                                                                              |
 
 #### Defined in
 
-[packages/wordpress-kit/src/types/index.ts:37](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/types/index.ts#L37)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:37](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L37)
 
 ## Variables
 
 ### tailwindcssPlugin
 
-• **tailwindcssPlugin**: `Object`
+• `Const` **tailwindcssPlugin**: `Object`
 
-Tailwindcss plugin that maps WordPress block editor styles to tailwindcss classes.
+Tailwindcss plugin that maps WordPress block editor styles to tailwindcss
+classes.
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/tailwindcssPlugin/index.ts:24](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/lib/tailwindcssPlugin/index.ts#L24)
+[packages/wordpress-kit/src/tailwindcssPlugin/index.ts:24](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/wordpress-kit/src/tailwindcssPlugin/index.ts#L24)
 
 ## Functions
 
 ### setEdgeHeader
 
-▸ **setEdgeHeader**(`__namedParameters`): `void`
+▸ **setEdgeHeader**(`«destructured»`): `void`
 
 Sets response headers for edge caching.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `__namedParameters` | `Object` |
-| `__namedParameters.cacheControl?` | `string` |
-| `__namedParameters.res` | `ServerResponse`<`IncomingMessage`\> |
+| Name              | Type                                 |
+| :---------------- | :----------------------------------- |
+| `«destructured»`  | `Object`                             |
+| › `cacheControl?` | `string`                             |
+| › `res`           | `ServerResponse`<`IncomingMessage`\> |
 
 #### Returns
 
@@ -231,9 +233,9 @@ Sets response headers for edge caching.
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/setEdgeHeader.ts:11](https://github.com/pantheon-systems/decoupled-kit-js/blob/b8ccc359/packages/wordpress-kit/src/lib/setEdgeHeader.ts#L11)
+[packages/wordpress-kit/src/lib/setEdgeHeader.ts:10](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/wordpress-kit/src/lib/setEdgeHeader.ts#L10)
 
-___
+---
 
 ### setSurrogateKeyHeader
 
@@ -243,10 +245,10 @@ Adds an aggregated list of surrogate keys in the working response.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `keys` | ``null`` \| `string` | Value for surrogate-key header in API response. |
-| `res` | `ServerResponse`<`IncomingMessage`\> | The active http.ServerResponse object. |
+| Name   | Type                                 | Description                                     |
+| :----- | :----------------------------------- | :---------------------------------------------- |
+| `keys` | `null` \| `string`                   | Value for surrogate-key header in API response. |
+| `res`  | `ServerResponse`<`IncomingMessage`\> | The active http.ServerResponse object.          |
 
 #### Returns
 
@@ -256,4 +258,4 @@ The current known unique set of surrogate keys.
 
 #### Defined in
 
-packages/cms-kit/dist/src/utils/setSurrogateKeyHeader.d.ts:8
+packages/cms-kit/dist/lib/setSurrogateKeyHeader.d.ts:9

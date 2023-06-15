@@ -1,3 +1,4 @@
+import path from 'node:path';
 import { defineConfig } from 'vitest/config';
 
 /** @type {import('vite').defineConfig} */
@@ -32,6 +33,11 @@ export default defineConfig(() => {
 				reportsDirectory: `./coverage`,
 			},
 			include: ['./__tests__**/*.test.*'],
+		},
+		resolve: {
+			alias: {
+				'@cli': path.resolve(__dirname, './src'),
+			},
 		},
 	};
 });

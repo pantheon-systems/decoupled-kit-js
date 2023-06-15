@@ -1,14 +1,19 @@
 {
-	"wpMenu": {
-		"id": "dGVybToy",
-		"menuItems": {
-			"nodes": [
-				{
-					"id": "cG9zdDo4",
-					"path": "/example-post-with-image/",
-					"label": "Example Post with Image"
-				}
-			]
+	"data": {
+		"wpMenu": {
+			"id": "dGVybToy",
+			"menuItems": {
+				"nodes": [
+					{
+						"id": "cG9zdDo4",
+						"path": "/example-post-with-image/",
+						"label": "Example Post with Image"
+					}
+				]
+			}
 		}
+	},
+	"extensions": {
+		"enableRefresh": "true"
 	}
 }

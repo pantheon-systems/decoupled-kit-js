@@ -43,7 +43,7 @@ describe('convertCSSModules()', () => {
 		});
 
 		expect(vi.mocked(execSync)).toHaveBeenCalledWith(
-			'npx --prefer-online --yes css-modules-to-tailwind ./src/**/*.jsx --force',
+			'npx --prefer-online --yes css-modules-to-tailwind ./src/**/*.jsx ./src/**/*.tsx --force',
 			{
 				stdio: 'inherit',
 				encoding: 'utf-8',

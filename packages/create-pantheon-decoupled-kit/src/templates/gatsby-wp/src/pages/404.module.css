@@ -2,3 +2,9 @@
 	display: flex;
 	max-width: var(--sm);
 }
+
+.notFound {
+	margin-top: var(--8);
+	font-size: var(--6);
+	font-weight: bold;
+}

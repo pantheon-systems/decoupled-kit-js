@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/recipe.tsx:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/components/recipe.tsx#L8)
+[packages/nextjs-kit/src/components/recipe.tsx:6](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/recipe.tsx#L6)
 
 ---
 
@@ -24,7 +24,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/recipe.tsx:15](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/components/recipe.tsx#L15)
+[packages/nextjs-kit/src/components/recipe.tsx:13](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/recipe.tsx#L13)
 
 ---
 
@@ -41,7 +41,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/recipe.tsx:11](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/components/recipe.tsx#L11)
+[packages/nextjs-kit/src/components/recipe.tsx:9](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/recipe.tsx#L9)
 
 ---
 
@@ -51,7 +51,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/recipe.tsx:9](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/components/recipe.tsx#L9)
+[packages/nextjs-kit/src/components/recipe.tsx:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/recipe.tsx#L7)
 
 ---
 
@@ -61,7 +61,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/recipe.tsx:10](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/components/recipe.tsx#L10)
+[packages/nextjs-kit/src/components/recipe.tsx:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/recipe.tsx#L8)
 
 ---
 
@@ -71,4 +71,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/recipe.tsx:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/components/recipe.tsx#L7)
+[packages/nextjs-kit/src/components/recipe.tsx:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/recipe.tsx#L5)
