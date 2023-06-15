@@ -2,7 +2,7 @@ name: wp-gatsby-frontend
 
 services:
   node:
-    type: node:14
+    type: node:18
     port: 8000
     build:
       - npm install

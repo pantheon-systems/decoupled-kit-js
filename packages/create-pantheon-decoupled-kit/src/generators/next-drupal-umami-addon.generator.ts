@@ -1,5 +1,9 @@
 import { addWithDiff, convertCSSModules, runLint } from '../actions';
-import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
+import type {
+	DecoupledKitGenerator,
+	DefaultAnswers,
+	NextDrupalUmamiAddonData,
+} from '../types';
 import {
 	cmsEndpointPrompt,
 	outDirPrompt,
@@ -8,10 +12,6 @@ import {
 
 interface NextDrupalUmamiAddonAnswers extends DefaultAnswers {
 	tailwindcss: boolean;
-}
-
-interface NextDrupalUmamiAddonData {
-	drupal: true;
 }
 
 export const nextDrupalUmamiAddon: DecoupledKitGenerator<

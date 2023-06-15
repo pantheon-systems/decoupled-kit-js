@@ -3,11 +3,15 @@
 		"@pantheon-systems/decoupled-kit/react",
 		"plugin:react/jsx-runtime"
 	],
+	"parserOptions": {
+		"project": ["./tsconfig.json"]
+	},
 	"env": {
 		"browser": true,
 		"node": true
 	},
 	"rules": {
-		"react/prop-types": "off"
+		"react/prop-types": "off",
+		"no-mixed-spaces-and-tabs": ["error", "smart-tabs"]
 	}
 }

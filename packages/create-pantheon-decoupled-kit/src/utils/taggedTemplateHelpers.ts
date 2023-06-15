@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { Input, isString } from '@cli/types';
 export const taggedTemplateHelpers = {
 	/**
 	 * @param condition - a single key of an {@link Input}
@@ -6,11 +8,21 @@ export const taggedTemplateHelpers = {
 	 */
 	if: (condition: unknown, value: string) => (condition ? value : ''),
 	/**
+	 * Useful for nested backticks
+	 * @param value - the value to render
+	 * @returns the value wrapped in backticks
+	 */
+	backticks: (value: string | TemplateStringsArray) => {
+		return `\`${value.toString()}\``;
+	},
+	/**
 	 * Transforms input into a valid package.json `name`
 	 * @param value - the value to transform
 	 * @returns a valid package.json name
 	 */
-	pkgName: (value: string): string => {
+	pkgName: (value: unknown): string => {
+		if (!isString(value))
+			throw new TypeError(`Expected string, received ${typeof value}`);
 		// see https://github.com/dword-design/package-name-regex/blob/2fcb7887bdcf2815ce38f51f9bc333101ab2fd31/src/index.js#L1
 		const npmNameRegex =
 			/^(@[a-z0-9-~][a-z0-9-._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/;

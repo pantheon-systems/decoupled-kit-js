@@ -11,7 +11,11 @@ import {
 	type MergedPaths,
 	type TemplateImport,
 } from '../types';
-import { dedupeTemplates, taggedTemplateHelpers as helpers } from '../utils';
+import {
+	dedupeTemplates,
+	taggedTemplateHelpers as helpers,
+	TAGGED_TEMPLATE_REGEX,
+} from '../utils';
 
 interface FilesToWriteData {
 	target: string;
@@ -47,7 +51,7 @@ export const addWithDiff: Action = async ({
 
 	const filesToCopyRegex =
 		/(gif|jpg|jpeg|tiff|png|svg|ashx|ico|pdf|jar|eot|woff|ttf|woff2)$/;
-	const templateFilesRegex = /(\.(css|jsx|tsx|ts|js)\.(js|ts))$/;
+	const templateFilesRegex = TAGGED_TEMPLATE_REGEX;
 	const templatesToRender: MergedPaths = await dedupeTemplates(templateData);
 	const destinationDir = path.resolve(process.cwd(), data.outDir);
 
@@ -100,7 +104,8 @@ export const addWithDiff: Action = async ({
 		} else if (templateFilesRegex.test(templatePath)) {
 			target = target.replace(/\.(js|ts)$/, '');
 			const temp = ((await import(templatePath)) as TemplateImport).default;
-			sourceContents = temp({ data, utils: helpers });
+			// replace empty new lines created by utils.if
+			sourceContents = temp({ data, utils: helpers }).replace(/\t{1,}\n/g, '');
 		} else {
 			sourceContents = fs.readFileSync(templatePath, 'utf-8');
 		}

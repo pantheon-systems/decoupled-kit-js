@@ -5,7 +5,11 @@ import {
 	runLint,
 } from '../actions';
 import versions from '../pkgVersions.json';
-import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
+import type {
+	DecoupledKitGenerator,
+	DefaultAnswers,
+	NextWpData,
+} from '../types';
 import {
 	appNamePrompt,
 	cmsEndpointPrompt,
@@ -16,11 +20,6 @@ import {
 interface NextWPAnswers extends DefaultAnswers {
 	appName: string;
 	tailwindcss: boolean;
-}
-interface NextWpData {
-	nextjsKitVersion: string;
-	wordpressKitVersion: string;
-	wp: true;
 }
 
 const outDirDefault = ({ appName }: NextWPAnswers) =>

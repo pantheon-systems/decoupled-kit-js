@@ -39,7 +39,7 @@ export const convertCSSModules: Action = async ({ data }) => {
 			fs.writeFileSync(file, result);
 		}
 		const dirs = data.gatsby
-			? './src/**/*.jsx'
+			? './src/**/*.jsx ./src/**/*.tsx'
 			: './pages/**/*.jsx ./pages/*.jsx ./components/*.jsx';
 		execSync(
 			`npx --prefer-online --yes css-modules-to-tailwind ${dirs} --force`,

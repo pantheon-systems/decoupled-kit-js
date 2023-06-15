@@ -54,4 +54,5 @@ const watcher = chokidar
 // clean up watcher to avoid memory leaks during HMR
 process.on('exit', () => {
 	watcher.close().catch(console.error);
+	process.removeAllListeners('beforeExit');
 });

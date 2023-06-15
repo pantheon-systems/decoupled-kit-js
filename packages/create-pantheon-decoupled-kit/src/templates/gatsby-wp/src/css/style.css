@@ -48,23 +48,24 @@
 	--2xl: 1536px;
 
 	/* colors */
-	--white: #FFFFFF;
-	--light-gray: #E2E8F0;
-	--gray-600: #4B5563;
-	--blue-100: #DBEAFE;
-	--blue-200: #BFDBFE;
-	--blue-300: #93C5FD;
-	--blue-700: #1D4ED8;
-	--blue: #3B82F6;
-	--indigo: #6366F1;
-	--purple-300: #D8B4FE;
-	--purple: #9333EA;
-	--slate-200: #E2E8F0;
+	--white: #ffffff;
+	--light-gray: #e2e8f0;
+	--gray-600: #4b5563;
+	--blue-100: #dbeafe;
+	--blue-200: #bfdbfe;
+	--blue-300: #93c5fd;
+	--blue-700: #1d4ed8;
+	--blue: #3b82f6;
+	--indigo: #6366f1;
+	--purple-300: #d8b4fe;
+	--purple: #9333ea;
+	--slate-200: #e2e8f0;
 	--black: #000000;
-	
 }
 
-body, html {
+body,
+html {
+	box-sizing: border-box;
 	font-family: System-UI;
 	padding: 0;
 	margin: 0;
