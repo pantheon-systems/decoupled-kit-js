@@ -18,7 +18,7 @@ const json = () => /* JSON */ `{
 		"./gatsby-*.*",
 		"./plugins/**/*",
 		"./*.d.ts",
-		"__tests__/**/*"
+		"./__tests__/**/*"
 	]
 }`;
 

@@ -2,7 +2,7 @@ import React from 'react';
 import * as Gatsby from 'gatsby';
 import { vi } from 'vitest';
 
-import { wpMenu } from './data/wpMenu.json';
+import { data } from './data/wpMenu.json';
 
 vi.mock('gatsby', async () => {
 	const gatsby = await vi.importActual<typeof Gatsby>('gatsby');
@@ -30,7 +30,7 @@ beforeEach(() => {
 	// to simulate the Footer menu query
 	useStaticQuery.mockImplementation(() => {
 		return {
-			wpMenu,
+			wpMenu: data.wpMenu,
 		};
 	});
 });
