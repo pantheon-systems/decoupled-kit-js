@@ -1,5 +1,12 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.7.4-canary.0
+
+### Patch Changes
+
+- 368c8e09: [nextjs-kit] Restructure bundle to enable the use of package
+  components in RSC.
+
 ## 1.7.3
 
 ### Patch Changes
