@@ -1,5 +1,5 @@
 ---
-'create-pantheon-decoupled-kit': patch
+'create-pantheon-decoupled-kit': minor
 ---
 
 [gatsby-wp] Ensure templates work in TS and JS contexts
