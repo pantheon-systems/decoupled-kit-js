@@ -1,6 +1,6 @@
 import { execSync } from 'child_process';
 import type { ParsedArgs } from 'minimist';
-import * as actions from '../src/actions';
+import * as actions from '../src/actions/convertCSSModules';
 
 vi.mock('child_process');
 
@@ -11,8 +11,8 @@ describe('convertCSSModules()', () => {
 		vi.resetAllMocks();
 	});
 
-	it('should call css-modules-to-tailwind with ./pages and ./components with next generators', () => {
-		actions.convertCSSModules({
+	it('should call css-modules-to-tailwind with ./pages and ./components with next generators', async () => {
+		await actions.convertCSSModules({
 			data: {
 				_: ['next-wp'],
 				outDir: outDir,
@@ -31,8 +31,8 @@ describe('convertCSSModules()', () => {
 		);
 	});
 
-	it('should call css-modules-to-tailwind with ./src with gatsby generators', () => {
-		actions.convertCSSModules({
+	it('should call css-modules-to-tailwind with ./src with gatsby generators', async () => {
+		await actions.convertCSSModules({
 			data: {
 				_: ['gatsby-wp'],
 				outDir: outDir,
@@ -52,10 +52,10 @@ describe('convertCSSModules()', () => {
 		);
 	});
 
-	it.fails('should throw if outDir is not defined', () => {
+	it.fails('should throw if outDir is not defined', async () => {
 		const convertCSSModulesSpy = vi.spyOn(actions, 'convertCSSModules');
 
-		actions.convertCSSModules({
+		await actions.convertCSSModules({
 			data: {
 				_: ['test-module-conversion'],
 				tailwindcss: true,
@@ -64,7 +64,7 @@ describe('convertCSSModules()', () => {
 		expect(convertCSSModulesSpy).toThrow('fail: outDir required');
 	});
 
-	it.fails('should throw if there is an error', () => {
+	it.fails('should throw if there is an error', async () => {
 		const data: ParsedArgs = { _: [], outDir: outDir };
 
 		const convertCSSModulesSpy = vi.spyOn(actions, 'convertCSSModules');
@@ -72,7 +72,7 @@ describe('convertCSSModules()', () => {
 			throw new Error('Some error happened');
 		});
 
-		actions.convertCSSModules({ data });
+		await actions.convertCSSModules({ data });
 		expect(convertCSSModulesSpy).toThrowError();
 		expect(convertCSSModulesSpy).toThrow('Some error happened');
 	});
