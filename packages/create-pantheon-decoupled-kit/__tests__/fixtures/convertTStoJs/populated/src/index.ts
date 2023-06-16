@@ -1,4 +1,4 @@
-import { add } from "./module";
+import { add } from './module';
 
-export { jsx } from './jsx'
+export { jsx } from './jsx';
 export const number = add(1, 2);
