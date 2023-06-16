@@ -1,5 +1,4 @@
 // you can remove these imports if using TypeScript
-// a
 import { describe, it, expect } from 'vitest';
 import { getPaginationPaths } from '../../lib/createPagesUtils';
 

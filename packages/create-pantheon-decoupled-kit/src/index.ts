@@ -75,7 +75,7 @@ export const main = async (
 		args.tailwindcss = false;
 	}
 
-	// similarly, to the noTailwindcss/tailwindcss flags,
+	// similar to the noTailwindcss/tailwindcss flags,
 	// setting the --js flag to true
 	// turns the ts flag false
 	if (args.js) {
