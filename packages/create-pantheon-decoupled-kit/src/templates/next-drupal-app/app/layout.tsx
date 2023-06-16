@@ -1,7 +1,6 @@
-'use client';
 import '@pantheon-systems/nextjs-kit/style.css';
 
-import { Header } from '@pantheon-systems/nextjs-kit';
+import { Header } from '@pantheon-systems/nextjs-kit/dist/components/header';
 
 import './globals.css';
 

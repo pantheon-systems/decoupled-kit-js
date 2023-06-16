@@ -101,9 +101,9 @@ describe('main()', () => {
 		mainSpy,
 		promptSpy,
 	}) => {
-		process.argv = ['node', 'bin.js', 'next-drupal-app', '--appName', 'test'];
+		process.argv = ['node', 'bin.js', 'next-drupal', 'next-drupal-umami-addon'];
 		promptSpy.mockImplementationOnce(() => ({ outDir: 'test' }));
-		// promptSpy.mockImplementationOnce(() => ({ appName: 'test' }));
+		promptSpy.mockImplementationOnce(() => ({ appName: 'test' }));
 
 		await bin.main(
 			bin.parseArgs(process.argv.slice(2)),
@@ -114,7 +114,7 @@ describe('main()', () => {
 		expect(parseSpy).toBeCalledWith(process.argv.slice(2));
 		expect(mainSpy).toHaveBeenLastCalledWith(
 			{
-				_: ['next-drupal-app'],
+				_: ['next-drupal', 'next-drupal-umami-addon'],
 				appName: 'test',
 				drupal: true,
 				drupalKitVersion: versions['drupal-kit'],
@@ -131,7 +131,7 @@ describe('main()', () => {
 			},
 			decoupledKitGenerators,
 		);
-		expect(promptSpy).toHaveBeenCalledTimes(1);
+		expect(promptSpy).toHaveBeenCalledTimes(2);
 	});
 
 	it('should ask for user input if there is no valid generator to run', async ({
@@ -222,7 +222,7 @@ To see this list at any time, use the --help command.`);
 	});
 
 	it('should log changes', async ({ logSpy, promptSpy }) => {
-		process.argv = ['node', 'bin.js', 'next-drupal-app'];
+		process.argv = ['node', 'bin.js', 'next-drupal'];
 		promptSpy.mockImplementationOnce(() => ({ outDir: 'test' }));
 		promptSpy.mockImplementationOnce(() => ({ appName: 'test' }));
 		await main(parseArgs(), decoupledKitGenerators);
