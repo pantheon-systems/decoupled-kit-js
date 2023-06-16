@@ -1,13 +1,13 @@
+import { getDrupalSearchResults } from '@pantheon-systems/drupal-kit';
 import { NextSeo } from 'next-seo';
+import Link from 'next/link';
+import Layout from '../../components/layout';
+import PageHeader from '../../components/page-header';
 import { isMultiLanguage } from '../../lib/isMultiLanguage.js';
 import {
 	getCurrentLocaleStore,
 	globalDrupalStateStores,
 } from '../../lib/stores';
-import { getDrupalSearchResults } from '@pantheon-systems/drupal-kit';
-import Layout from '../../components/layout';
-import PageHeader from '../../components/page-header';
-import Link from 'next/link';
 import styles from './searchPage.module.css';
 
 export default function SearchPage({
@@ -38,15 +38,17 @@ export default function SearchPage({
 							<ul>
 								{searchResults?.map(({ title, body, path }) => (
 									<li key={path?.pid}>
-										<h2  className={styles.listTitle}>{title}</h2>
+										<h2 className={styles.listTitle}>{title}</h2>
 										{body.summary ? (
-											<div dangerouslySetInnerHTML={{ __html: body?.summary }} />
+											<div
+												dangerouslySetInnerHTML={{ __html: body?.summary }}
+											/>
 										) : null}
 										<Link
 											passHref
 											href={`${
 												multiLanguage ? `/${path?.langcode || locale}` : ''
-											}${path.searchAlias}`}
+											}${path.alias}`}
 											className={styles.link}
 										>
 											Read more →

@@ -32,7 +32,7 @@ This should account for Drupal and WordPress menus
 
 #### Defined in
 
-[packages/nextjs-kit/src/types/index.ts:39](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/types/index.ts#L39)
+[packages/nextjs-kit/src/types.ts:39](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/types.ts#L39)
 
 ---
 
@@ -42,7 +42,7 @@ This should account for Drupal and WordPress menus
 
 #### Defined in
 
-[packages/nextjs-kit/src/types/index.ts:33](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/types/index.ts#L33)
+[packages/nextjs-kit/src/types.ts:33](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/types.ts#L33)
 
 ## Functions
 
@@ -79,7 +79,7 @@ A component with a featured image and content passed by the user
 
 #### Defined in
 
-node_modules/.pnpm/@types+react@18.0.31/node_modules/@types/react/index.d.ts:521
+node_modules/.pnpm/@types+react@18.2.6/node_modules/@types/react/ts5.0/index.d.ts:515
 
 ---
 
@@ -121,7 +121,7 @@ A footer component with a nav menu
 
 #### Defined in
 
-node_modules/.pnpm/@types+react@18.0.31/node_modules/@types/react/index.d.ts:521
+node_modules/.pnpm/@types+react@18.2.6/node_modules/@types/react/ts5.0/index.d.ts:515
 
 ---
 
@@ -134,7 +134,7 @@ node_modules/.pnpm/@types+react@18.0.31/node_modules/@types/react/index.d.ts:521
 | Name             | Type        |
 | :--------------- | :---------- |
 | `«destructured»` | `Object`    |
-| › `children?`    | `Element`[] |
+| › `children?`    | `ReactNode` |
 | › `cols?`        | `number`    |
 
 #### Returns
@@ -146,7 +146,7 @@ HOC component
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/grid.tsx:10](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/components/grid.tsx#L10)
+[packages/nextjs-kit/src/components/grid.tsx:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/grid.tsx#L8)
 
 ---
 
@@ -187,7 +187,7 @@ A header component with a nav menu
 
 #### Defined in
 
-node_modules/.pnpm/@types+react@18.0.31/node_modules/@types/react/index.d.ts:521
+node_modules/.pnpm/@types+react@18.2.6/node_modules/@types/react/ts5.0/index.d.ts:515
 
 ---
 
@@ -232,7 +232,7 @@ Component with data rendered by the passed in Component and page buttons
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:82](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/components/paginator.tsx#L82)
+[packages/nextjs-kit/src/components/paginator.tsx:82](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/paginator.tsx#L82)
 
 ---
 
@@ -254,7 +254,7 @@ Component with data rendered by the passed in Component and page buttons
 
 #### Defined in
 
-node_modules/.pnpm/@types+react@18.0.31/node_modules/@types/react/index.d.ts:521
+node_modules/.pnpm/@types+react@18.2.6/node_modules/@types/react/ts5.0/index.d.ts:515
 
 ---
 
@@ -290,7 +290,7 @@ A recipe component with content and an optional image passed by the user
 
 #### Defined in
 
-node_modules/.pnpm/@types+react@18.0.31/node_modules/@types/react/index.d.ts:521
+node_modules/.pnpm/@types+react@18.2.6/node_modules/@types/react/ts5.0/index.d.ts:515
 
 ---
 
@@ -314,7 +314,7 @@ An array of data sorted by the given key and direction
 
 #### Defined in
 
-[packages/nextjs-kit/src/lib/sortChar.ts:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/lib/sortChar.ts#L12)
+[packages/nextjs-kit/src/utils/sortChar.ts:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/utils/sortChar.ts#L12)
 
 ---
 
@@ -339,15 +339,16 @@ An array of data sorted by the given key and direction
 
 #### Defined in
 
-[packages/nextjs-kit/src/lib/sortDate.ts:11](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/lib/sortDate.ts#L11)
+[packages/nextjs-kit/src/utils/sortDate.ts:11](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/utils/sortDate.ts#L11)
 
 ---
 
 ### withGrid
 
-▸ **withGrid**(`Component`): <Type\>(`__namedParameters`: {
-`FallbackComponent?`: `ElementType`<`any`\> ; `cols?`: `number` ; `data?`:
-`Type`[] }) => `Element`
+▸ **withGrid**<`Props`\>(`Component`): <Type\>(`__namedParameters`: {
+`FallbackComponent?`: `ComponentType`<{}\> ; `cols?`: `number` ; `data?`:
+`Type`[] } & { [Property in string \| number \| symbol]: Props[Property] }) =>
+`Element`
 
 **`Remarks`**
 
@@ -377,18 +378,24 @@ const MyPage = ({ myArticles }) => {
 			 <ArticleGrid
 				 data={myArticles}
 				 cols={4}
-				 FallbackComponent={<span>No Data Found</span>}
+				 FallbackComponent={() => <span>No Data Found</span>}
 			 />
 		 </>
 	 )
 }
 ```
 
+#### Type parameters
+
+| Name    | Type             |
+| :------ | :--------------- |
+| `Props` | extends `object` |
+
 #### Parameters
 
-| Name        | Type                  | Description                                                           |
-| :---------- | :-------------------- | :-------------------------------------------------------------------- |
-| `Component` | `ElementType`<`any`\> | A component that takes in content that is to be displayed on the grid |
+| Name        | Type                 | Description                                                           |
+| :---------- | :------------------- | :-------------------------------------------------------------------- |
+| `Component` | `ComponentType`<{}\> | A component that takes in content that is to be displayed on the grid |
 
 #### Returns
 
@@ -410,12 +417,9 @@ A Higher Order Component that returns the data mapped to the Component in a grid
 
 ##### Parameters
 
-| Name                   | Type                  |
-| :--------------------- | :-------------------- |
-| `«destructured»`       | `Object`              |
-| › `FallbackComponent?` | `ElementType`<`any`\> |
-| › `cols?`              | `number`              |
-| › `data?`              | `Type`[]              |
+| Name             | Type                                                                                                                                                   |
+| :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `«destructured»` | { `FallbackComponent?`: `ComponentType`<{}\> ; `cols?`: `number` ; `data?`: `Type`[] } & { [Property in string \| number \| symbol]: Props[Property] } |
 
 ##### Returns
 
@@ -425,4 +429,4 @@ The component passed to withGrid in a grid with the given number of columns
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/grid.tsx:61](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/nextjs-kit/src/components/grid.tsx#L61)
+[packages/nextjs-kit/src/components/grid.tsx:59](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/grid.tsx#L59)
