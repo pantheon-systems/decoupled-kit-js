@@ -10,7 +10,7 @@ import customProperties from 'postcss-custom-properties';
 import { rootDir } from '..';
 import { Action, isString } from '../types';
 
-export const convertCSSModules: Action = ({ data }) => {
+export const convertCSSModules: Action = async ({ data }) => {
 	if (!data?.tailwindcss) return 'skipping CSS module conversion';
 	if (!data.outDir || !isString(data?.outDir))
 		throw new Error('outDir is not valid');
@@ -20,11 +20,14 @@ export const convertCSSModules: Action = ({ data }) => {
 		);
 
 	try {
-		for (const file of globSync(path.join(data.outDir, '**/*.module.css'), {
-			ignore: 'node_modules/**',
-		})) {
+		for await (const file of globSync(
+			path.join(data.outDir, '**/*.module.css'),
+			{
+				ignore: 'node_modules/**',
+			},
+		)) {
 			const contents = fs.readFileSync(file, 'utf-8');
-			const { css: result } = postcss([
+			const { css: result } = await postcss([
 				autoprefixer,
 				globalData({
 					files: [`${rootDir}/templates/styles/variables.css`],
