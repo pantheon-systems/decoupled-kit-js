@@ -1,11 +1,12 @@
-import { nextWp } from './next-wp.generator';
-import { nextDrupal } from './next-drupal.generator';
-import { gatsbyWp } from './gatsby-wp.generator';
-import { nextDrupalUmamiAddon } from './next-drupal-umami-addon.generator';
-import { nextWpAcfAddon } from './next-wp-acf-addon.generator';
 import { gatsbyWpAcfAddon } from './gatsby-wp-acf-addon.generator';
-import { tailwindcssAddon } from './tailwindcss-addon.generator';
+import { gatsbyWp } from './gatsby-wp.generator';
+import { nextDrupalApp } from './next-drupal-app.generator';
 import { nextDrupalSearchApiAddon } from './next-drupal-search-api-addon.generator';
+import { nextDrupalUmamiAddon } from './next-drupal-umami-addon.generator';
+import { nextDrupal } from './next-drupal.generator';
+import { nextWpAcfAddon } from './next-wp-acf-addon.generator';
+import { nextWp } from './next-wp.generator';
+import { tailwindcssAddon } from './tailwindcss-addon.generator';
 
 export const decoupledKitGenerators = [
 	nextWp,
@@ -16,4 +17,5 @@ export const decoupledKitGenerators = [
 	gatsbyWpAcfAddon,
 	tailwindcssAddon,
 	nextDrupalSearchApiAddon,
+	nextDrupalApp,
 ];
