@@ -22,6 +22,41 @@
 			"import": "./dist/index.mjs",
 			"require": "./dist/index.js"
 		},
+		"./dist/components/header": {
+			"types": "./dist/components/header.d.ts",
+			"import": "./dist/components/header.mjs",
+			"require": "./dist/components/header.js"
+		},
+		"./dist/components/footer": {
+			"types": "./dist/components/footer.d.ts",
+			"import": "./dist/components/footer.mjs",
+			"require": "./dist/components/footer.js"
+		},
+		"./dist/components/contentWithImage": {
+			"types": "./dist/components/contentWithImage.d.ts",
+			"import": "./dist/components/contentWithImage.mjs",
+			"require": "./dist/components/contentWithImage.js"
+		},
+		"./dist/components/grid": {
+			"types": "./dist/components/grid.d.ts",
+			"import": "./dist/components/grid.mjs",
+			"require": "./dist/components/grid.js"
+		},
+		"./dist/components/paginator": {
+			"types": "./dist/components/paginator.d.ts",
+			"import": "./dist/components/paginator.mjs",
+			"require": "./dist/components/paginator.js"
+		},
+		"./dist/components/previewRibbon": {
+			"types": "./dist/components/previewRibbon.d.ts",
+			"import": "./dist/components/previewRibbon.mjs",
+			"require": "./dist/components/previewRibbon.js"
+		},
+		"./dist/components/recipe": {
+			"types": "./dist/components/recipe.d.ts",
+			"import": "./dist/components/recipe.mjs",
+			"require": "./dist/components/recipe.js"
+		},
 		"./style.css": "./dist/style.css"
 	},
 	"prettier": "@pantheon-systems/workspace-configs/prettier",
