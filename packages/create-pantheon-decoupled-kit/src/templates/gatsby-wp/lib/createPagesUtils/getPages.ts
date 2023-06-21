@@ -13,7 +13,7 @@ export const getPages = async ({
 		allWpPage: Queries.WpPageConnection;
 	}>(/* GraphQL */ `
 		query WpPages {
-			allWpPage(sort: { fields: [date], order: DESC }) {
+			allWpPage(sort: { date: DESC }) {
 				edges {
 					previous {
 						id

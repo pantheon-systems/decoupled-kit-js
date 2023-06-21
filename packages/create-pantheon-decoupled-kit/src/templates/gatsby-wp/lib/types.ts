@@ -1,4 +1,4 @@
-import { type WindowLocation } from '@reach/router';
+import { type WindowLocation } from '@gatsbyjs/reach-router';
 import { type CreatePagesArgs } from 'gatsby';
 
 interface QueryType<Type> {

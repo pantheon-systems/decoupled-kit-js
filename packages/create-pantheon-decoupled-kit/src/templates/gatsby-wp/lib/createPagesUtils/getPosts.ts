@@ -15,7 +15,7 @@ export const getPosts = async ({
 	}>(/* GraphQL */ `
 		query WpPosts {
 			# Query all WordPress posts sorted by date
-			allWpPost(sort: { fields: [date], order: DESC }) {
+			allWpPost(sort: { date: DESC }) {
 				edges {
 					previous {
 						id
