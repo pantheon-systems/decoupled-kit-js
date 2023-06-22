@@ -70,10 +70,6 @@ module.exports = async () => {
 		images: {
 			domains: [imageDomain],
 		},
-		i18n: {
-			locales: locales,
-			defaultLocale: 'en',
-		},
 		output: 'standalone',
 		async rewrites() {
 			return [
