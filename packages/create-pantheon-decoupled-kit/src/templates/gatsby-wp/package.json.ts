@@ -36,14 +36,11 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		"lodash": "^4.17.21",
 		"mitt": "^3.0.0",
 		"react": "18.2.0",
-		"react-dom": "18.2.0",
-		"typeface-merriweather": "1.1.13",
-		"typeface-montserrat": "1.1.13"
+		"react-dom": "18.2.0"
 	},
 	"devDependencies": {
 		${utils.if(data.tailwindcss, tailwindcssDeps(true))}
 		${utils.if(data.tailwindcss, tailwindcssDeps(false))}
-		"@babel/core": "^7.21.4",
 		"@pantheon-systems/decoupled-kit-configs": "${String(
 			data.otherConfigsVersion,
 		)}",
@@ -62,9 +59,7 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		"@typescript-eslint/parser": "^5.60.0",
 		"@vitejs/plugin-react": "^4.0.1",
 		"@vitest/coverage-c8": "^0.32.2",
-		"babel-eslint": "^10.1.0",
 		"dotenv": "^16.3.1",
-		"dumper.js": "^1.3.1",
 		"eslint": "^8.43.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-jsx-a11y": "^6.7.1",
@@ -74,8 +69,7 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		"jsdom": "^22.1.0",
 		"prettier": "^2.8.8",
 		"typescript": "4.9.4",
-		"vitest": "^0.32.2",
-		"webpack": "^5.87.0"
+		"vitest": "^0.32.2"
 	}
 }`;
 
