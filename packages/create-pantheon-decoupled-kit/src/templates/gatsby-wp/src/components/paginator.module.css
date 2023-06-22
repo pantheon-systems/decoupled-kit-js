@@ -1,3 +1,14 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	min-height: 80vh;
+	margin-bottom: auto;
+}
+
+.componentContainer {
+	min-height: 80vh;
+}
+
 .pageCount {
 	font-size: var(--4);
 	font-weight: 600;

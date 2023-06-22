@@ -240,7 +240,7 @@ const Paginator = <DataType,>({
 			<span className={styles.pageCount}>
 				Page {currentPageQuery}/{totalPages}
 			</span>
-			<section>
+			<section className={styles.componentContainer}>
 				{/* Component passed in that will render the data */}
 				<Component currentItems={currentItems} />
 			</section>

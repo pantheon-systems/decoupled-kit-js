@@ -11,7 +11,7 @@ const ExamplesPageTemplate = ({
 		<Layout>
 			<div className={styles.container}>
 				<h1 className={styles.containerTitle}>Examples</h1>
-				<Link to="/">
+				<Link to="/" className={styles.link}>
 					<span>Home &rarr;</span>
 				</Link>
 				<div className={styles.content}>
@@ -23,14 +23,19 @@ const ExamplesPageTemplate = ({
 					</p>
 					<ul className={styles.list}>
 						<li className={styles.listItem}>
-							<Link to={`/examples/pagination${routing ? '/1' : ''}`}>
+							<Link
+								to={`/examples/pagination${routing ? '/1' : ''}`}
+								className={styles.link}
+							>
 								Pagination
 							</Link>{' '}
 							- a paginated list with a large dataset.
 						</li>
 						<li className={styles.listItem}>
-							<Link to={`/examples/auth-api`}>API Authorization</Link> -
-							confirms that Gatsby is able to make authenticated requests to
+							<Link to={`/examples/auth-api`} className={styles.link}>
+								API Authorization
+							</Link>{' '}
+							- confirms that Gatsby is able to make authenticated requests to
 							WordPress&apos; API.
 						</li>
 					</ul>

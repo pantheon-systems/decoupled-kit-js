@@ -12,7 +12,8 @@
 	margin-bottom: var(--10);
 }
 
-.container > a {
+.link {
+	text-decoration-line: underline;
 	font-size: var(--5);
 	color: var(--black);
 }
@@ -34,7 +35,8 @@
 	margin-bottom: var(--8);
 }
 
-.content > a, .list > * a {
+.content > a,
+.list > * a {
 	color: var(--black);
 	text-decoration-line: underline;
 	font-weight: 500;
