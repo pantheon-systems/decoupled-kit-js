@@ -35,7 +35,7 @@ const Index = ({
 			<PageHeader />
 			<section>
 				<PostGrid
-					data={posts.slice(0, 12)}
+					data={posts.slice(0, 12).map(({ node }) => node)}
 					FallbackComponent={() => <span>🏜 Posts not found</span>}
 				/>
 			</section>

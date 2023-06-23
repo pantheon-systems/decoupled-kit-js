@@ -19,7 +19,7 @@ const PostIndexTemplate = ({
 	const RenderCurrentItems = ({
 		currentItems,
 	}: {
-		currentItems: Queries.WpPostEdge[];
+		currentItems: Queries.WpPost[];
 	}) => {
 		return <PostGrid data={currentItems} contentType="posts" />;
 	};
@@ -32,7 +32,7 @@ const PostIndexTemplate = ({
 			<div>
 				<section>
 					<Paginator
-						data={posts}
+						data={posts.map(({ node }) => node)}
 						itemsPerPage={itemsPerPage}
 						location={location}
 						routing={routing}

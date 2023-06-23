@@ -19,7 +19,7 @@ const PageIndexTemplate = ({
 	const RenderCurrentItems = ({
 		currentItems,
 	}: {
-		currentItems: Queries.WpPageEdge[];
+		currentItems: Queries.WpPage[];
 	}) => {
 		return <PageGrid data={currentItems} contentType="pages" />;
 	};
@@ -32,7 +32,7 @@ const PageIndexTemplate = ({
 			<div>
 				<section>
 					<Paginator
-						data={pages}
+						data={pages.map(({ node }) => node)}
 						itemsPerPage={itemsPerPage}
 						location={location}
 						routing={routing}
