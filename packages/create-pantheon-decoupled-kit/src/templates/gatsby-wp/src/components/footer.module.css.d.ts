@@ -6,3 +6,4 @@ export const navItem: string;
 export const navItemLink: string;
 export const footerCopy: string;
 export const footerCopyLink: string;
+export const footerCopyLinks: string;

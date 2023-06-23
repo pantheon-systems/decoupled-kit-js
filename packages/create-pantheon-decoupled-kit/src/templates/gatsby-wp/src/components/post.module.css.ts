@@ -6,7 +6,6 @@ const css: TemplateFn = ({ data, utils }) => /* CSS */ `.container {
 	margin-right: auto;
 	margin-bottom: 0;
 	max-width: var(--lg);
-	min-width: var(--md);
 }
 
 .mainTitle {

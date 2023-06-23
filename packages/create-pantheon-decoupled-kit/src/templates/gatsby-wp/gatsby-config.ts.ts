@@ -4,8 +4,8 @@ const ts: TemplateFn = ({
 	data,
 	utils,
 }) => /* ts */ `import { GatsbyConfig } from 'gatsby';
-import path from 'node:path';
 import dotenv from 'dotenv';
+import path from 'node:path';
 
 // initialize .env.development.local vars
 dotenv.config({
@@ -55,6 +55,7 @@ const config: GatsbyConfig = {
 	// Learn more at: https://gatsby.dev/graphql-typegen
 	graphqlTypegen: true,
 	jsxRuntime: 'automatic',
+	trailingSlash: 'ignore',
 	// Adding plugins to this array adds them to your Gatsby site.
 	// Gatsby has a rich ecosystem of plugins.
 	// If you need any more you can search here: https://www.gatsbyjs.com/plugins/
@@ -85,7 +86,7 @@ const config: GatsbyConfig = {
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				name: 'assets',
-				path: ${utils.backticks('${__dirname}/content/assets')},
+				path: path.resolve(process.cwd(), 'content', 'assets'),
 			},
 		},
 		// See https://www.gatsbyjs.com/plugins/gatsby-plugin-image/?=plugin-image for more info
@@ -94,22 +95,6 @@ const config: GatsbyConfig = {
 		'gatsby-plugin-image',
 		'gatsby-plugin-postcss',
 		'gatsby-plugin-dts-css-modules',
-		{
-			// See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
-			resolve: 'gatsby-plugin-manifest',
-			options: {
-				name: 'Gatsby Starter WordPress',
-				short_name: 'GatsbyJS & WP',
-				start_url: '/',
-				background_color: '#ffffff',
-				theme_color: '#663399',
-				display: 'minimal-ui',
-				icon: 'static/favicon.ico',
-			},
-		},
-		// this (optional) plugin enables Progressive Web App + Offline functionality
-		//To learn more, visit: https://gatsby.dev/offline
-		// 'gatsby-plugin-offline',
 		${utils.if(data.gatsbyPnpmPlugin, `'gatsby-plugin-pnpm',`)}
 	],
 };

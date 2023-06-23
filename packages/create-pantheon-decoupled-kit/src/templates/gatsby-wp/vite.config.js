@@ -1,19 +1,21 @@
-import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
+import { configDefaults, defineConfig } from 'vitest/config';
 
-export default defineConfig(() => {
-	return {
-		test: {
-			globals: true,
-			setupFiles: './__tests__/setupFile.ts',
-			environment: 'jsdom',
-			coverage: {
-				reportsDirectory: `./coverage`,
-			},
+/** @type {import('vitest/config').defineConfig} */
+export default defineConfig({
+	plugins: [react()],
+	test: {
+		globals: true,
+		setupFiles: './__tests__/setupFile',
+		environment: 'jsdom',
+		coverage: {
+			reportsDirectory: `./coverage`,
 		},
-		define: {
-			'process.env.backendUrl': JSON.stringify(
-				'https://my-wordpress-site.pantheon.io/wp/graphql',
-			),
-		},
-	};
+		exclude: [...configDefaults.exclude, './__tests__/setupFile.*'],
+	},
+	define: {
+		'process.env.backendUrl': JSON.stringify(
+			'https://my-wordpress-site.pantheon.io/wp/graphql',
+		),
+	},
 });

@@ -13,7 +13,7 @@ export const getPages = async ({
 		allWpPage: Queries.WpPageConnection;
 	}>(/* GraphQL */ `
 		query WpPages {
-			allWpPage(sort: { fields: [date], order: DESC }) {
+			allWpPage(sort: { date: DESC }) {
 				edges {
 					previous {
 						id
@@ -31,6 +31,7 @@ export const getPages = async ({
 								localFile {
 									childImageSharp {
 										gatsbyImageData(
+											layout: CONSTRAINED
 											placeholder: TRACED_SVG
 											aspectRatio: 1.77778 # 16/9
 										)

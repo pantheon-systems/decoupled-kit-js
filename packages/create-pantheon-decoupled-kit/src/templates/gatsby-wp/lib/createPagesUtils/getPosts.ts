@@ -15,7 +15,7 @@ export const getPosts = async ({
 	}>(/* GraphQL */ `
 		query WpPosts {
 			# Query all WordPress posts sorted by date
-			allWpPost(sort: { fields: [date], order: DESC }) {
+			allWpPost(sort: { date: DESC }) {
 				edges {
 					previous {
 						id
@@ -34,6 +34,7 @@ export const getPosts = async ({
 								localFile {
 									childImageSharp {
 										gatsbyImageData(
+											layout: CONSTRAINED
 											placeholder: TRACED_SVG
 											aspectRatio: 1.77778 # 16/9
 										)

@@ -40,7 +40,7 @@ const Footer = () => {
 		<footer className={styles.footer}>
 			<FooterMenu />
 			<div className={styles.footerCopy}>
-				<span>
+				<span className={styles.footerCopyLinks}>
 					© {new Date().getFullYear()} Built with{' '}
 					<a className={styles.footerCopyLink} href="https://www.gatsbyjs.com">
 						Gatsby

@@ -42,7 +42,7 @@ export const convertCSSModules: Action = async ({ data }) => {
 			? './src/**/*.jsx ./src/**/*.tsx'
 			: './pages/**/*.jsx ./pages/*.jsx ./components/*.jsx';
 		execSync(
-			`npx --prefer-online --yes css-modules-to-tailwind ${dirs} --force`,
+			`npx --prefer-online --yes css-modules-to-tailwind@0.1.9 ${dirs} --force`,
 			{
 				cwd: data.outDir,
 				stdio: data.silent ? 'ignore' : 'inherit',
