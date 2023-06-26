@@ -51,10 +51,6 @@ export const main = async (
 	args: ParsedArgs,
 	DecoupledKitGenerators: DecoupledKitGenerator[],
 ): Promise<void> => {
-	process.on('beforeExit', () => {
-		console.log(chalk.yellow('Goodbye.'));
-	});
-
 	// display the help menu
 	if (args?.help || args?.h) {
 		console.log(helpMenu(DecoupledKitGenerators));

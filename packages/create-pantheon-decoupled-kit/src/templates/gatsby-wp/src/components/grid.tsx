@@ -82,13 +82,13 @@ const GridItem = ({
 /**
  * A grid item for WpPosts
  */
-const PostGridItem = ({ content }: { content: Queries.WpPostEdge }) => {
-	const title = content?.node?.title || '';
+const PostGridItem = ({ content }: { content: Queries.WpPost }) => {
+	const title = content?.title || '';
 	const imgSrc =
-		content?.node?.featuredImage?.node?.localFile?.childImageSharp
-			?.gatsbyImageData || null;
-	const altText = content?.node?.featuredImage?.node.altText || title || '';
-	const path = content?.node?.uri || '';
+		content?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData ||
+		null;
+	const altText = content?.featuredImage?.node.altText || title || '';
+	const path = content?.uri || '';
 	return (
 		<GridItem
 			href={`/posts${path}`}
@@ -102,13 +102,13 @@ const PostGridItem = ({ content }: { content: Queries.WpPostEdge }) => {
 /**
  * A grid item for WpPages
  */
-const PageGridItem = ({ content }: { content: Queries.WpPageEdge }) => {
-	const title = String(content?.node?.title) || '';
+const PageGridItem = ({ content }: { content: Queries.WpPage }) => {
+	const title = content?.title || '';
 	const imgSrc =
-		content?.node?.featuredImage?.node?.localFile?.childImageSharp
-			?.gatsbyImageData || null;
-	const altText = content?.node?.featuredImage?.node.altText || title || '';
-	const path = content?.node?.uri || '';
+		content?.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData ||
+		null;
+	const altText = content?.featuredImage?.node.altText || title || '';
+	const path = content?.uri || '';
 	return (
 		<GridItem
 			href={`/pages${path}`}

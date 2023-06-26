@@ -32,7 +32,7 @@ export const getPages = async ({
 									childImageSharp {
 										gatsbyImageData(
 											layout: CONSTRAINED
-											placeholder: TRACED_SVG
+											placeholder: DOMINANT_COLOR
 											aspectRatio: 1.77778 # 16/9
 										)
 									}

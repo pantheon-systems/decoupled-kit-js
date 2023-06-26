@@ -1,4 +1,8 @@
-import { type GatsbyGraphQLHelper } from '../types';
+import type { TemplateFn } from '@cli/types';
+import { wpPostsQuery } from '@partials/gatsby-wp/wpPostsQuery';
+
+const ts: TemplateFn =
+	() => /* ts */ `import { type GatsbyGraphQLHelper } from '../types';
 
 /**
  * Query the Gatsby GraphQL layer for WordPress Posts
@@ -12,50 +16,11 @@ export const getPosts = async ({
 }: GatsbyGraphQLHelper): Promise<Queries.WpPostConnection['edges'] | void> => {
 	const graphqlResult = await graphql<{
 		allWpPost: Queries.WpPostConnection;
-	}>(/* GraphQL */ `
-		query WpPosts {
-			# Query all WordPress posts sorted by date
-			allWpPost(sort: { date: DESC }) {
-				edges {
-					previous {
-						id
-						title
-						uri
-					}
-					node {
-						id
-						uri
-						title
-						content
-						date
-						excerpt
-						featuredImage {
-							node {
-								localFile {
-									childImageSharp {
-										gatsbyImageData(
-											layout: CONSTRAINED
-											placeholder: TRACED_SVG
-											aspectRatio: 1.77778 # 16/9
-										)
-									}
-								}
-							}
-						}
-					}
-					next {
-						id
-						title
-						uri
-					}
-				}
-			}
-		}
-	`);
+	}>(/* GraphQL */${wpPostsQuery(false)});
 
 	if (graphqlResult.errors) {
 		reporter.panicOnBuild(
-			`There was an error loading your posts`,
+			'There was an error loading your posts',
 			graphqlResult.errors as Error,
 		);
 		return;
@@ -68,3 +33,6 @@ export const getPosts = async ({
 		return;
 	}
 };
+`;
+
+export default ts;
