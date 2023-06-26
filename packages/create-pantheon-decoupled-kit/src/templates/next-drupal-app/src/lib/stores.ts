@@ -1,13 +1,18 @@
-import { DRUPAL_URL } from './constants';
 import { DrupalState } from '@pantheon-systems/drupal-kit';
 
 // For each locale, make an instance of DrupalState (LocaleStore)
-export const makeLocaleStores = ({ locales, debug = false } : {locales: string[], debug: boolean}) =>
+export const makeLocaleStores = ({
+	locales,
+	debug = false,
+}: {
+	locales: string[];
+	debug: boolean;
+}) =>
 	locales.length > 1
 		? locales.map(
 				(locale) =>
 					new DrupalState({
-						apiBase: DRUPAL_URL,
+						apiBase: process.env.backendUrl,
 						defaultLocale: locale,
 						debug: debug,
 						clientId: process.env.CLIENT_ID,
@@ -16,37 +21,32 @@ export const makeLocaleStores = ({ locales, debug = false } : {locales: string[]
 		  )
 		: [
 				new DrupalState({
-					apiBase: DRUPAL_URL,
+					apiBase: process.env.backendUrl,
 					debug: debug,
 					clientId: process.env.CLIENT_ID,
 					clientSecret: process.env.CLIENT_SECRET,
 				}),
 		  ];
 
-// exporting so we can reuse in
-// getStaticProps and getServerSideProps
 /**
- * @type {DrupalState[]}
- * @remarks These stores have auth enabled. Authenticated and anonymous request control takes place on the level of the request.
+ * @returns DrupalState[]
+ * @remarks These stores may have auth enabled. Authenticated and anonymous request control takes place on the level of the request.
  * @see {@link https://project.pages.drupalcode.org/drupal_state/en/getting-objects/} for more information.
- *
  */
 export const globalDrupalStateStores = makeLocaleStores({
-	locales: process.env.locales as unknown as string[],
-	debug: process.env.DEBUG_MODE as unknown as boolean || false,
+	locales: process.env.locales,
+	debug: process.env.DEBUG_MODE,
 });
-
-// Helper functions
-type StoreLocale = {
-	defaultLocale: string
-}
 /**
  * Helper function to get the store based on current locale
- * @param {string} currentLocale the current locale of the page
- * @param {array} localeStores the global stores either from useDSContext or globalDrupalStateStores
- * @returns {DrupalState} a single PantheonDrupalState store
+ * @param currentLocale - the current locale of the page
+ * @param localeStores - the global stores either from useDSContext or globalDrupalStateStores
+ * @returns DrupalState a single PantheonDrupalState store
  */
-export const getCurrentLocaleStore = (currentLocale: string, localeStores: StoreLocale[]) => {
+export const getCurrentLocaleStore = (
+	currentLocale: string,
+	localeStores: DrupalState[],
+) => {
 	// check store locale and return the store that matches
 	// or for monolingual sites return the store
 	const [store] =

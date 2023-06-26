@@ -1,0 +1,20 @@
+.footerCopy {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.footerCopyLinks > a:first-child {
+	color: var(--purple-300);
+}
+
+.footerCopyLinks > a:last-child {
+	color: var(--blue-200);
+}
+
+.footerCopyLinks > * a:hover,
+.footerCopyLinks > * a:first-child:hover,
+.footerCopyLinks > * a:last-child:hover {
+	color: var(--blue-100);
+}
