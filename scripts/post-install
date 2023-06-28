@@ -1,10 +1,6 @@
 #!/bin/sh
 
-if [ "$CI" = "true" ]; then
-  pnpm build:pkgs
-  else
-	pnpm check-built
-fi
+pnpm build:pkgs
 
 readonly isHooksInstalled="$(git config --get-all core.hooksPath | grep -c .husky)"
 if [ "$isHooksInstalled" = "0" ]; then

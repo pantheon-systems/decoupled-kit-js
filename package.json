@@ -25,7 +25,6 @@
 		"build:wp-kit": "pnpm --filter wordpress-kit build",
 		"build:pkgs": "pnpm --filter './packages/**' build",
 		"build:starters": "pnpm --filter './starters/**' build",
-		"check-built": "pnpm ./scripts/check-built.ts",
 		"ci:publish": "changeset publish",
 		"ci:version": "./scripts/ci-version",
 		"dev:gatsby-wp": "pnpm --filter './starters/gatsby-wordpress-starter' develop",
