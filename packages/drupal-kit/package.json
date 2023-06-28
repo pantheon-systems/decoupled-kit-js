@@ -52,7 +52,7 @@
 		"vitest": "^0.29.8"
 	},
 	"dependencies": {
-		"@gdwc/drupal-state": "^4.2.0",
+		"@gdwc/drupal-state": "4.2.3",
 		"@pantheon-systems/cms-kit": "^0.3.1"
 	}
 }
