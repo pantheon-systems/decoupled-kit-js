@@ -64,13 +64,7 @@ automatically.
 For example, the following code could be used to set the headers necessary for
 cache purging on an article list page:
 
-1. In `next.config.js`, add the following to the `nextConfig` object:
-
-```js title="next.config.js"
-transpilePackages: ['@pantheon-systems/drupal-kit'],
-```
-
-2. In your article list page, create an instance of DrupalState:
+1. In your article list page, create an instance of DrupalState:
 
 ```js title="src/pages/articles/index.js"
 import { DrupalState } from '@pantheon-systems/drupal-kit';
@@ -80,7 +74,7 @@ const store = new DrupalState({
 });
 ```
 
-3. In `getSeverSideProps` use the `store` instance to fetch data from Drupal and
+2. In `getSeverSideProps` use the `store` instance to fetch data from Drupal and
    provide the outgoing response object:
 
 ```js title="src/pages/articles/index.js"
