@@ -1,6 +1,6 @@
-import { NextSeo } from 'next-seo';
+import { setOutgoingHeaders } from '@pantheon-systems/wordpress-kit';
 import { ContentWithImage } from '@pantheon-systems/nextjs-kit';
-import { setOutgoingHeaders } from '../../lib/setOutgoingHeaders';
+import { NextSeo } from 'next-seo';
 import Layout from '../../components/layout';
 
 import { getFooterMenu } from '../../lib/Menus';

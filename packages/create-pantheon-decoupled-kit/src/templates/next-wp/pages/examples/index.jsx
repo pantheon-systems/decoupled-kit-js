@@ -1,6 +1,6 @@
+import { setOutgoingHeaders } from '@pantheon-systems/wordpress-kit';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
-import { setOutgoingHeaders } from '../../lib/setOutgoingHeaders';
 
 import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
