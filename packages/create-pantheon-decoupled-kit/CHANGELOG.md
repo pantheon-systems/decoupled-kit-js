@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.2-canary.0
+
+### Patch Changes
+
+- 53831e97: Bump `@pantheon-systems/drupal-kit` version
+- 22b9b841: Bump `@pantheon-systems/nextjs-kit` version
+
 ## 0.9.1
 
 ### Patch Changes
