@@ -18,8 +18,8 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		"coverage": "vitest run --coverage"
 	},
 	"dependencies": {
-		"@pantheon-systems/drupal-kit": "${String(data.drupalKitVersion)}",
-		"@pantheon-systems/nextjs-kit":  "${String(data.nextjsKitVersion)}",
+		"@pantheon-systems/drupal-kit": "${data.drupalKitVersion}",
+		"@pantheon-systems/nextjs-kit":  "${data.nextjsKitVersion}",
 		"dotenv": "^16.0.2",
 		"@formatjs/intl-localematcher": "^0.4.0",
 		"negotiator": "^0.6.3",

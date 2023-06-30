@@ -14,7 +14,7 @@ type FooterData = {
 	parent: string;
 };
 
-async function getData(locale: string) {
+const getData = async (locale: string) => {
 	const store = getCurrentLocaleStore(locale, globalDrupalStateStores);
 	const footerMenu = await store?.getObject<FooterData[]>({
 		objectName: 'menu_items--main',
@@ -22,7 +22,7 @@ async function getData(locale: string) {
 	});
 
 	return footerMenu;
-}
+};
 
 export default async function RootLayout({
 	children,

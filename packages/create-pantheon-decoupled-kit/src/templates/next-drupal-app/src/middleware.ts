@@ -2,7 +2,7 @@ import { match as matchLocale } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
-import getLocales from '../scripts/get-locales';
+import { getLocales } from './lib/stores';
 
 export const i18n = {
 	defaultLocale: 'en',
@@ -22,13 +22,15 @@ function getLocale(
 	return matchLocale(languages, locales, i18n.defaultLocale);
 }
 
-export async function middleware(request: NextRequest) {
+export const middleware = async (request: NextRequest) => {
 	const pathname = request.nextUrl.pathname;
 	const locales = await getLocales();
 
 	if (
 		[
 			'/favicon.ico',
+			'collapse.svg',
+			'pantheon.png',
 			// Your other files in `public`
 		].includes(pathname)
 	)
@@ -50,7 +52,7 @@ export async function middleware(request: NextRequest) {
 			new URL(`/${locale}/${pathname}`, request.url),
 		);
 	}
-}
+};
 
 export const config = {
 	// Matcher ignoring `/_next/` and `/api/`
