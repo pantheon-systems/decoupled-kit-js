@@ -1,4 +1,3 @@
-//import { localhost } from './graphqlLink';
 import { graphql } from 'msw';
 import basicPostsQueryData from '../../__tests__/data/basicPostsQuery.json';
 
