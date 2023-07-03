@@ -10,8 +10,8 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		"start": "node .next/standalone/server.js",
 		"build:mono": "next build",
 		"start:mono": "next start",
-		"lint": "next lint",
-		"lint:fix": "next lint --fix && npm run prettier:fix",
+		"lint": "npm run build-scripts && next lint",
+		"lint:fix": "npm run build-scripts && next lint --fix && npm run prettier:fix",
 		"prettier": "prettier '**/*.{js,jsx,md}' --check --ignore-path .prettierignore",
 		"prettier:fix": "prettier '**/*.{js,jsx,,md}' --write --ignore-path .prettierignore",
 		"test": "vitest run",
@@ -19,10 +19,10 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		"coverage": "vitest run --coverage"
 	},
 	"dependencies": {
+		"@formatjs/intl-localematcher": "^0.4.0",
 		"@pantheon-systems/drupal-kit": "${data.drupalKitVersion}",
 		"@pantheon-systems/nextjs-kit":  "${data.nextjsKitVersion}",
 		"dotenv": "^16.0.2",
-		"@formatjs/intl-localematcher": "^0.4.0",
 		"negotiator": "^0.6.3",
 		"next": "^13.4.4",
 		"next-seo": "^5.15.0",
