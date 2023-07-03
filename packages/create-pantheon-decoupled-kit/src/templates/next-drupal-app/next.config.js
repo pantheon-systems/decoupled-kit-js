@@ -1,5 +1,5 @@
 const path = require('path');
-const getLocales = require('./scripts/get-locales');
+const getLocales = require('./scripts/get-locales.js');
 
 // Load the .env file for local development
 // .env.development.local by default
@@ -69,10 +69,6 @@ module.exports = async () => {
 		reactStrictMode: true,
 		images: {
 			domains: [imageDomain],
-		},
-		i18n: {
-			locales: locales,
-			defaultLocale: 'en',
 		},
 		output: 'standalone',
 		async rewrites() {

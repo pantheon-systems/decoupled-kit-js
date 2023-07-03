@@ -1,5 +1,3 @@
-const fetch = require('isomorphic-fetch');
-
 const getLocales = async () => {
 	try {
 		const res = await fetch(
@@ -12,11 +10,16 @@ const getLocales = async () => {
 			return ['en'];
 		}
 	} catch (error) {
-		console.error('There was an error fetching language data.', error.message);
-		!process.env.BACKEND_URL && console.error('>> Ensure BACKEND_URL is set in .env.development.local')
+		console.error('There was an error fetching language data.');
+		if (error instanceof Error) {
+			console.log(error.message);
+		}
+		!process.env.BACKEND_URL &&
+			console.error('>> Ensure BACKEND_URL is set in .env.development.local');
 		console.log("Defaulting locale to ['en']");
 		return ['en'];
 	}
 };
+
 
 module.exports = getLocales;
