@@ -1,4 +1,4 @@
-declare global {
+export declare global {
 	namespace NodeJS {
 		interface ProcessEnv {
 			locales: string[];
@@ -7,5 +7,3 @@ declare global {
 		}
 	}
 }
-
-export {};
