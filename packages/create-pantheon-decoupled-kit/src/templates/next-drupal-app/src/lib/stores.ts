@@ -1,28 +1,5 @@
 import { DrupalState } from '@pantheon-systems/drupal-kit';
 
-export const getLocales = async () => {
-	try {
-		const res = await fetch(
-			`${process.env.backendUrl}/jsonapi/configurable_language/configurable_language`,
-		);
-
-		if (res.status === 200) {
-			return ['en', 'es'];
-		} else {
-			return ['en'];
-		}
-	} catch (error) {
-		console.error('There was an error fetching language data.');
-		if (error instanceof Error) {
-			console.log(error.message);
-		}
-		!process.env.BACKEND_URL &&
-			console.error('>> Ensure BACKEND_URL is set in .env.development.local');
-		console.log("Defaulting locale to ['en']");
-		return ['en'];
-	}
-};
-
 // For each locale, make an instance of DrupalState (LocaleStore)
 export const makeLocaleStores = ({
 	locales,
@@ -57,15 +34,9 @@ export const makeLocaleStores = ({
  * @see {@link https://project.pages.drupalcode.org/drupal_state/en/getting-objects/} for more information.
  */
 export const globalDrupalStateStores = makeLocaleStores({
-	locales: ['en', 'es'],
-	debug: false,
+	locales: process.env.locales,
+	debug: process.env.DEBUG_MODE,
 });
-// export const globalDrupalStateStores = () => {
-// 	return makeLocaleStores({
-// 		locales: ['en', 'es'],
-// 		debug: false,
-// 	});
-// };
 /**
  * Helper function to get the store based on current locale
  * @param currentLocale - the current locale of the page

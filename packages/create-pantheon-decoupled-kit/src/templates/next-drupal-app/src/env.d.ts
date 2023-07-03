@@ -3,6 +3,9 @@ declare global {
 		interface ProcessEnv {
 			locales: string[];
 			DEBUG_MODE: boolean;
+			backendUrl: string;
 		}
 	}
 }
+
+export {};

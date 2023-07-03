@@ -1,4 +1,5 @@
 const path = require('path');
+const getLocales = require('./scripts/get-locales.js');
 
 // Load the .env file for local development
 // .env.development.local by default
@@ -55,12 +56,15 @@ if (process.env.PANTHEON_UPLOAD_PATH) {
 }
 
 module.exports = async () => {
+	const locales = await getLocales();
 	const nextConfig = {
 		...(injectedOptions && injectedOptions),
 		env: {
 			backendUrl: backendUrl,
 			// set imageUrl if IMAGE_DOMAIN is set in env vars to override default
 			imageUrl: `https://${imageDomain}`,
+			// makes locales available to lib/stores.js
+			locales: locales,
 		},
 		reactStrictMode: true,
 		images: {

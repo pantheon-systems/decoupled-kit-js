@@ -2,16 +2,15 @@ import { match as matchLocale } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
-import { getLocales } from './lib/stores';
 
 export const i18n = {
 	defaultLocale: 'en',
 } as const;
 
-function getLocale(
+const getLocale = (
 	request: NextRequest,
 	locales: string[],
-): string | undefined {
+): string | undefined => {
 	// Negotiator expects plain object so we need to transform headers
 	const negotiatorHeaders: Record<string, string> = {};
 	request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
@@ -24,13 +23,13 @@ function getLocale(
 
 export const middleware = async (request: NextRequest) => {
 	const pathname = request.nextUrl.pathname;
-	const locales = await getLocales();
+	const locales = process.env.locales;
 
 	if (
 		[
 			'/favicon.ico',
-			'collapse.svg',
-			'pantheon.png',
+			'/collapse.svg',
+			'/pantheon.png',
 			// Your other files in `public`
 		].includes(pathname)
 	)

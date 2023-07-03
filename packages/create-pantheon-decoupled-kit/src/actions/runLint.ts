@@ -27,6 +27,13 @@ export const runLint: Action = async ({ data }) => {
 			assert: { type: 'json' },
 		});
 		// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+		if (pkg?.scripts['build-scripts']) {
+			execSync(`${command}  build-scripts`, {
+				cwd: data.outDir,
+				stdio: 'inherit',
+			});
+		}
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
 		if (pkg?.scripts['lint:fix']) {
 			execSync(`${command} lint:fix`, { cwd: data.outDir, stdio: 'inherit' });
 			// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access

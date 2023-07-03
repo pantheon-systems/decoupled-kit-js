@@ -4,8 +4,9 @@ import { sharedPkgJsonField } from '@partials/pkg-shared/sharedPkgJsonFieldsT';
 const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 	${sharedPkgJsonField(utils.pkgName(data.appName))}
 	"scripts": {
-		"dev": "next dev",
-		"build": "next build && cp -r .next/static .next/standalone/.next && cp -r public .next/standalone",
+		"dev": "npm run build-scripts && next dev",
+		"build": "npm run build-scripts && next build && cp -r .next/static .next/standalone/.next && cp -r public .next/standalone",
+		"build-scripts": "tsc ./scripts/*.ts",
 		"start": "node .next/standalone/server.js",
 		"build:mono": "next build",
 		"start:mono": "next start",
