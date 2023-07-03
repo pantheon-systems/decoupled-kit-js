@@ -13,8 +13,10 @@
     "web": "1.0.0"
   },
   "changesets": [
+    "angry-hairs-talk",
     "healthy-numbers-judge",
     "lucky-socks-attend",
-    "rotten-hotels-provide"
+    "rotten-hotels-provide",
+    "short-balloons-battle"
   ]
 }
