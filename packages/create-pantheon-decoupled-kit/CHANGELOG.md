@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.2-canary.2
+
+### Patch Changes
+
+- a14bb97e: [next-drupal, next-wp] Pin `next` to `13.4.7` for stability
+
 ## 0.9.2-canary.1
 
 ### Patch Changes
