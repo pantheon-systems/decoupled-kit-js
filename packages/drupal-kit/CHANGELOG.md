@@ -1,5 +1,11 @@
 # @pantheon-systems/drupal-kit
 
+## 4.6.2
+
+### Patch Changes
+
+- 53831e97: Bump `@gdwc/drupal-state` to v4.2.3 and pin the dependency
+
 ## 4.6.2-canary.0
 
 ### Patch Changes
