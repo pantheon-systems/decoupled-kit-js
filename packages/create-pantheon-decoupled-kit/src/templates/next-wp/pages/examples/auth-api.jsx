@@ -1,7 +1,6 @@
-import { gql } from '@pantheon-systems/wordpress-kit';
+import { gql, setOutgoingHeaders } from '@pantheon-systems/wordpress-kit';
 import Head from 'next/head';
 import Link from 'next/link';
-import { setOutgoingHeaders } from '../../lib/setOutgoingHeaders';
 
 import Layout from '../../components/layout';
 

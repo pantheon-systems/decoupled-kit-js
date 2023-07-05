@@ -1,5 +1,12 @@
 # @pantheon-systems/wordpress-kit
 
+## 3.1.0-canary.0
+
+### Minor Changes
+
+- 1a210584: Added a new function, `setOutgoingHeaders`, which combines
+  `setSurrogateKeyHeader` and `setEdgeHeader` into one call.
+
 ## 3.0.0
 
 ### Major Changes

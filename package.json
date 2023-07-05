@@ -25,7 +25,6 @@
 		"build:wp-kit": "pnpm --filter wordpress-kit build",
 		"build:pkgs": "pnpm --filter './packages/**' build",
 		"build:starters": "pnpm --filter './starters/**' build",
-		"check-built": "pnpm ./scripts/check-built.ts",
 		"ci:publish": "changeset publish",
 		"ci:version": "./scripts/ci-version",
 		"dev:gatsby-wp": "pnpm --filter './starters/gatsby-wordpress-starter' develop",
@@ -61,7 +60,7 @@
 		"@types/jest": "^29.5.0",
 		"@types/node": "^18.16.14",
 		"@types/react": "18.2.6",
-		"@types/react-dom": "^18.2.4",
+		"@types/react-dom": "18.2.6",
 		"@typescript-eslint/eslint-plugin": "^5.57.0",
 		"@typescript-eslint/parser": "^5.57.0",
 		"eslint": "^8.37.0",
@@ -91,7 +90,8 @@
 			"@pantheon-systems/eslint-config": "workspace:*",
 			"trim@<0.0.3": ">=0.0.3",
 			"yaml@<2.2.2": ">=2.2.2",
-			"vite@>=4.3.0 <4.3.9": ">=4.3.9"
+			"vite@>=4.3.0 <4.3.9": ">=4.3.9",
+			"semver@<7.5.2": ">=7.5.2"
 		},
 		"auditConfig": {
 			"ignoreCves": [

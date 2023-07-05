@@ -7,7 +7,7 @@ import type {
 	DrupalStateConfig,
 	GetObjectByPathParams,
 	GetObjectParams,
-} from '@gdwc/drupal-state/src/types/types';
+} from '@gdwc/drupal-state/dist/src/types/types';
 
 /**
  * Configures DrupalState to integrate

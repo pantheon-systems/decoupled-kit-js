@@ -84,6 +84,7 @@ import {
 	GraphQLClientFactory,
 	setEdgeHeader,
 	setSurrogateKeyHeader,
+	setOutgoingHeaders,
 } from '@pantheon-systems/wordpress-kit';
 
 const client = new GraphQLClientFactory(
@@ -129,12 +130,10 @@ export async function getServerSideProps({ res }) {
 		headers,
 	} = await client.rawRequest(query, { totalPosts: 100 });
 	const posts = edges.map(({ node }) => node);
-	const keys = headers.get('surrogate-key');
 
 	// Add unique surrogate keys to outgoing response
-	keys && setSurrogateKeyHeader(keys, res);
-	// Set cache control header to ensure response is cached at edge
-	setEdgeHeader({ res });
+	// and set cache control header to ensure response is cached at edge
+	setOutgoingHeaders({ headers, res });
 
 	return { props: { posts } };
 }

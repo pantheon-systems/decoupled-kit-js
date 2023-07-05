@@ -1,5 +1,26 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.2-canary.2
+
+### Patch Changes
+
+- a14bb97e: [next-drupal, next-wp] Pin `next` to `13.4.7` for stability
+
+## 0.9.2-canary.1
+
+### Patch Changes
+
+- 1a210584: [next-wp] Bump `@pantheon-systems/wordpress-kit` version and moved
+  `setOutgoingHeaders` to `@pantheon-systems/wordpress-kit`. Updated imports to
+  reflect this change.
+
+## 0.9.2-canary.0
+
+### Patch Changes
+
+- 53831e97: Bump `@pantheon-systems/drupal-kit` version
+- 22b9b841: Bump `@pantheon-systems/nextjs-kit` version
+
 ## 0.9.1
 
 ### Patch Changes
