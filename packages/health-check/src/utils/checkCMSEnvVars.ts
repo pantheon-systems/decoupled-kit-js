@@ -1,19 +1,27 @@
-import { CMS_ENV_VARS } from '../constants';
+type CMS_ENV_VARS = 'BACKEND_URL' | 'PANTHEON_CMS_ENDPOINT';
 
+/**
+ * Check that at least one of the required env vars is set
+ * @param env - process.env
+ * @returns an object with a boolean if at least one of the required backendVars is set, and the endpoints that are set
+ */
 export const checkCMSEnvVars = (env: typeof process.env) => {
-	const backendVars = Object.entries(env)
+	const backendVars: {
+		[key in CMS_ENV_VARS]?: string;
+	} = {};
+	Object.entries(env)
 		.filter(([key]) => {
-			if (Object.keys(CMS_ENV_VARS).includes(key)) {
+			if (['BACKEND_URL', 'PANTHEON_CMS_ENDPOINT'].includes(key)) {
 				return true;
 			}
 			return false;
 		})
-		.map(([key, value]) => ({ [key]: value })) as {
-		[key in keyof typeof CMS_ENV_VARS]?: string;
-	}[];
+		.forEach(([key, value]) => {
+			Object.assign(backendVars, { [key]: value });
+		});
 
 	return {
-		isSet: backendVars.length > 0,
+		isSet: Object.keys(backendVars).length > 0,
 		endpoints: backendVars,
 	};
 };
