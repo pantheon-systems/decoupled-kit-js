@@ -1,24 +1,24 @@
-import { fetcher } from './fetcher';
-import { CMSEndpointObject } from '../types';
+import { isEndpointValid } from './isEndpointValid';
 
-export const checkDecoupledRouter = async (
-	cmsEndpoints: CMSEndpointObject<'hasUmami'>[],
-) => {
-	const results = [];
+/**
+ * Checks the path `/router/translate-path?path={some article}` on the cmsEndpoint.
+ * The article fetched depends on the hasUmami boolean.
+ * @param cmsEndpoint - the cmsEndpoint
+ * @param hasUmami - boolean indicating that the cms has the umami demo data
+ * @returns true if the decoupled router exists on the cmsEndpoint
+ */
+export const checkDecoupledRouter = async ({
+	cmsEndpoint,
+	hasUmami,
+}: {
+	cmsEndpoint: URL;
+	hasUmami: boolean;
+}) => {
+	cmsEndpoint.pathname = '/router/translate-path';
+	cmsEndpoint.searchParams.set('format', '_json');
+	hasUmami
+		? cmsEndpoint.searchParams.set('path', 'articles/lets-hear-it-for-carrots')
+		: cmsEndpoint.searchParams.set('path', 'articles/example-article');
 
-	for await (const { hasUmami, endpoint, envVar } of cmsEndpoints) {
-		if (endpoint && envVar) {
-			const url = new URL(endpoint);
-			url.pathname = '/router/translate-path';
-			url.searchParams.set('format', '_json');
-			hasUmami
-				? url.searchParams.set('path', 'articles/lets-hear-it-for-carrots')
-				: url.searchParams.set('path', 'articles/example-article');
-
-			results.push({ endpoint: url, ...(await fetcher(url, envVar)) });
-		} else {
-			results.push({ endpoint, isValid: false, envVar });
-		}
-	}
-	return results;
+	return await isEndpointValid(cmsEndpoint);
 };

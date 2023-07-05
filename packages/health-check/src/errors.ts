@@ -35,3 +35,23 @@ export class DecoupledRouterError extends HealthCheckError {
 		super(message);
 	}
 }
+
+export class DecoupledMenuError extends HealthCheckError {
+	constructor(
+		endpointType: string,
+		message = `Decoupled Menu Endpoint not valid for ${endpointType}.
+		{insert helpful message}`,
+	) {
+		super(message);
+	}
+}
+
+export class AuthorizationError extends HealthCheckError {
+	constructor(
+		varName: string,
+		message = `${varName} is required but not set.
+		Set ${varName} as an environment variable[]`,
+	) {
+		super(message);
+	}
+}

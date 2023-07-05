@@ -1,15 +1,11 @@
-import { fetcher } from './fetcher';
-export const checkMenuItemEndpoints = async (
-	cmsEndpoints: {
-		[key in 'endpoint' | 'envVar']: string;
-	}[],
-) => {
-	const results = [];
+import { isEndpointValid } from './isEndpointValid';
 
-	for await (const { endpoint, envVar } of cmsEndpoints) {
-		const url = new URL(endpoint);
-		url.pathname = '/jsonapi/menu_items/footer';
-		results.push({ endpoint, ...(await fetcher(url, envVar)) });
-	}
-	return results;
+/**
+ * Checks the path `/jsonapi/menu_items/footer` on the cmsEndpoint
+ * @param cmsEndpoint - the cmsEndpoint
+ * @returns true if the endpoint is valid
+ */
+export const checkMenuItemEndpoints = async (cmsEndpoint: URL) => {
+	cmsEndpoint.pathname = '/jsonapi/menu_items/footer';
+	return await isEndpointValid(cmsEndpoint);
 };

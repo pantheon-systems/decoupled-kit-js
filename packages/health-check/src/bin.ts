@@ -2,104 +2,120 @@
 import dotenv from 'dotenv';
 import {
 	BackendNotSetError,
+	DecoupledMenuError,
 	DecoupledRouterError,
 	InvalidCMSEndpointError,
 } from './errors';
 import { checkAuthentication } from './utils/checkAuthentication';
-import { checkCMSEndpoints } from './utils/checkCMSEndpoints';
+import { checkCMSEndpoint } from './utils/checkCMSEndpoint';
 import { checkCMSEnvVars } from './utils/checkCMSEnvVars';
 import { checkDecoupledRouter } from './utils/checkDecoupledRouter';
 import { checkLanguageSettings } from './utils/checkLanguageSettings';
 import { checkMenuItemEndpoints } from './utils/checkMenuItemEndpoint';
+import { checkPreviewEndpoint } from './utils/checkPreviewEndpoint';
 import { resolveDotenvFile } from './utils/dotenvUtils';
-
-const logSuccess = (message: string) => console.log(`|__✅ ${message}`);
-const logWarn = (message: string) => console.log(`|__⛔️ ${message}`);
+import { log } from './utils/logger';
 
 const main = async () => {
-	dotenv.config({
-		path: resolveDotenvFile(),
-	});
+	// resolve .env if it exists or not NODE_ENV=production
+	if (process.env.NODE_ENV !== 'production') {
+		dotenv.config({
+			path: resolveDotenvFile(),
+		});
+	} else {
+		console.log('Production environment detected, skipping .env* resolution.');
+	}
 
-	console.log('⏳ Checking for a CMS endpoint(s)...');
+	console.log('⏳ Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...');
 	const cmsEnvVars = checkCMSEnvVars(process.env);
 
 	if (!cmsEnvVars.isSet) {
 		throw new BackendNotSetError();
 	} else {
-		const setEndpoints = cmsEnvVars.endpoints.map((obj) => Object.keys(obj));
-		logSuccess(
+		const setEndpoints = Object.keys(cmsEnvVars.endpoints);
+		log.success(
 			`${setEndpoints.join(' and ')} ${
 				setEndpoints.length > 1 ? 'are' : 'is'
 			} set!`,
 		);
+		if (Object.keys(cmsEnvVars.endpoints).length > 1) {
+			log.warn(
+				`Both PANTHEON_CMS_ENDPOINT and BACKEND_URL are set.\n|__Using BACKEND_URL for remaining checks.`,
+			);
+		}
 	}
 
-	const CMSEndpoints = await checkCMSEndpoints(cmsEnvVars.endpoints);
-	console.log('⏳ Validating CMS endpoint...');
-	const invalidEndpoints: string[] = [];
-	CMSEndpoints.forEach(({ isValid, envVar }) => {
-		if (!isValid) {
-			invalidEndpoints.push(envVar);
-		} else {
-			logSuccess(`${envVar} is valid!`);
-		}
-	});
+	// Use BACKEND_URL only if both are set.
+	const [[envVar, endpoint]] =
+		Object.keys(cmsEnvVars.endpoints).length > 1
+			? Object.entries(cmsEnvVars.endpoints).filter(
+					([key]) => key === 'BACKEND_URL',
+			  )
+			: Object.entries(cmsEnvVars.endpoints);
+	const cmsEndpoint = new URL(endpoint);
 
-	if (invalidEndpoints.length > 0) {
-		throw new InvalidCMSEndpointError(invalidEndpoints.join(' and '));
+	console.log('⏳ Validating CMS endpoint...');
+	const isValidEndpoint = await checkCMSEndpoint(cmsEndpoint);
+	if (!isValidEndpoint) {
+		throw new InvalidCMSEndpointError(envVar);
+	} else {
+		log.success(`${envVar} is valid!`);
 	}
 
 	// determines which article to attempt to fetch with
 	// the decoupledRouter and decoupledMenu checks
-	const cmsEnvVarsLangCheck = await checkLanguageSettings(CMSEndpoints);
-
-	// TODO:
+	const hasUmami = await checkLanguageSettings(cmsEndpoint);
 	console.log('⏳ Validating Decoupled Router endpoint...');
-	const decoupledRouterCheck = await checkDecoupledRouter(cmsEnvVarsLangCheck);
-	decoupledRouterCheck.forEach(({ isValid, envVar }) => {
-		if (!isValid) {
-			invalidEndpoints.push(envVar);
-		} else {
-			logSuccess(`${envVar} Decoupled Router is valid!`);
-		}
+	const decoupledRouterIsValid = await checkDecoupledRouter({
+		cmsEndpoint,
+		hasUmami,
 	});
-	if (invalidEndpoints.length > 0) {
-		throw new DecoupledRouterError(invalidEndpoints.join(' and '));
+	if (!decoupledRouterIsValid) {
+		throw new DecoupledRouterError(envVar);
+	} else {
+		log.success(`${envVar} Decoupled Router is valid!`);
 	}
-	// TODO:
-	console.log('⏳ Validating Menu Item endpoint...');
-	const menuItemEndpointCheck = await checkMenuItemEndpoints(
-		cmsEnvVarsLangCheck,
-	);
-	menuItemEndpointCheck.forEach(({ isValid, envVar }) => {
-		if (!isValid) {
-			invalidEndpoints.push(envVar);
-		} else {
-			logSuccess(`${envVar} Menu Items endpoint is valid!`);
-		}
-	});
-	// TODO:
-	console.log('⏳ (optional) Validating authentication...');
-	const authCheck = await checkAuthentication(process.env, CMSEndpoints);
-	const unauthorizedEndpoints: string[] = [];
-	authCheck.forEach(({ envVar, auth }) => {
-		if (!auth) {
-			unauthorizedEndpoints.push(envVar);
-		} else {
-			logSuccess(`${envVar} auth is valid!`);
-		}
-	});
-	if (unauthorizedEndpoints.length > 0) {
-		unauthorizedEndpoints.forEach((v) => {
-			logWarn(`Auth not valid for ${v}`);
-		});
-	}
-	// TODO:
-	console.log('⏳ Validating preview endpoint...');
-	console.log('🚀 Ready to launch!');
-};
 
+	console.log('⏳ Validating Menu Item endpoint...');
+	const menuItemEndpointIsValid = await checkMenuItemEndpoints(cmsEndpoint);
+	if (!menuItemEndpointIsValid) {
+		throw new DecoupledMenuError(envVar);
+	} else {
+		log.success(`${envVar} Menu Items endpoint is valid!`);
+	}
+
+	console.log('⏳ Validating authentication...');
+	const { access_token } = await checkAuthentication({
+		env: process.env,
+		cmsEndpoint,
+	});
+	if (!access_token) {
+		log.warn('Auth not valid.');
+		log.suggest('Ensure the CLIENT_ID and CLIENT_SECRET are correct.');
+	} else {
+		log.success(`${envVar} auth is valid!`);
+	}
+
+	if (!access_token) {
+		console.log(
+			'|__⏭  Skipping preview endpoint validation -- authorization required.',
+		);
+	} else {
+		console.log('⏳ Validating preview endpoint...');
+		const previewCheck = await checkPreviewEndpoint({
+			cmsEndpoint,
+			access_token,
+		});
+		if (!previewCheck.preview) {
+			previewCheck.cause
+				? log.warn(previewCheck.cause)
+				: log.warn('Could not fetch preview site.');
+		} else {
+			log.success('Auth is valid!');
+		}
+	}
+	console.log('🚀 Ready to build!');
+};
 try {
 	await main();
 } catch (error) {
