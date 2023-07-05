@@ -1,5 +1,13 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.2-canary.1
+
+### Patch Changes
+
+- 1a210584: [next-wp] Bump `@pantheon-systems/wordpress-kit` version and moved
+  `setOutgoingHeaders` to `@pantheon-systems/wordpress-kit`. Updated imports to
+  reflect this change.
+
 ## 0.9.2-canary.0
 
 ### Patch Changes

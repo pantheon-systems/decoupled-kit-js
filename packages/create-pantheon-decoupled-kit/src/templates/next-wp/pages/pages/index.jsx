@@ -1,5 +1,5 @@
+import { setOutgoingHeaders } from '@pantheon-systems/wordpress-kit';
 import { NextSeo } from 'next-seo';
-import { setOutgoingHeaders } from '../../lib/setOutgoingHeaders';
 
 import { Paginator } from '@pantheon-systems/nextjs-kit';
 import { PageGrid } from '../../components/grid.jsx';

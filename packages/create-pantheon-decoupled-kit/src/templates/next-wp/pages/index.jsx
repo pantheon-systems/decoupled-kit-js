@@ -1,10 +1,10 @@
+import { setOutgoingHeaders } from '@pantheon-systems/wordpress-kit';
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import { PostGrid } from '../components/grid';
 import Layout from '../components/layout';
 import { getFooterMenu } from '../lib/Menus';
 import { getLatestPosts } from '../lib/Posts';
-import { setOutgoingHeaders } from '../lib/setOutgoingHeaders';
 import styles from './index.module.css';
 
 export default function Home({ menuItems, posts }) {
