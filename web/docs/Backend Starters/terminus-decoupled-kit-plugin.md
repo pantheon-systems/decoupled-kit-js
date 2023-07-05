@@ -52,11 +52,11 @@ The following arguments can be provided to the decoupled-kit:create command:
 decoupled-kit:create [options] [--] <site_name> <label> [<upstream_id>]
 ```
 
-| Argument    | Description                                                                                                                                |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| site_name   | Site name                                                                                                                                  |
-| label       | Site label                                                                                                                                 |
-| upstream_id | Upstream name or UUID. -If you don't provide an Upstream ID, the value of the --cms option will be used to determine the default Upstream. |
+| Argument    | Description                                                                                                                               |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| site_name   | Site name                                                                                                                                 |
+| label       | Site label                                                                                                                                |
+| upstream_id | Upstream name or UUID. If you don't provide an Upstream ID, the value of the --cms option will be used to determine the default Upstream. |
 
 Example:
 
