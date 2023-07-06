@@ -11,7 +11,7 @@ import { checkCMSEndpoint } from './utils/checkCMSEndpoint';
 import { checkCMSEnvVars } from './utils/checkCMSEnvVars';
 import { checkDecoupledRouter } from './utils/checkDecoupledRouter';
 import { checkLanguageSettings } from './utils/checkLanguageSettings';
-import { checkMenuItemEndpoints } from './utils/checkMenuItemEndpoint';
+import { checkMenuItemEndpoint } from './utils/checkMenuItemEndpoint';
 import { checkPreviewEndpoint } from './utils/checkPreviewEndpoint';
 import { log } from './utils/logger';
 import { resolveDotenvFile } from './utils/resolveDotenvFile';
@@ -77,7 +77,7 @@ const main = async () => {
 	}
 
 	console.log('⏳ Validating Menu Item endpoint...');
-	const menuItemEndpointIsValid = await checkMenuItemEndpoints(cmsEndpoint);
+	const menuItemEndpointIsValid = await checkMenuItemEndpoint(cmsEndpoint);
 	if (!menuItemEndpointIsValid) {
 		throw new DecoupledMenuError(envVar);
 	} else {

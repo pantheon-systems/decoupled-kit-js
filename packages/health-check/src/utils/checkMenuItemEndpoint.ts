@@ -5,7 +5,7 @@ import { isEndpointValid } from './isEndpointValid';
  * @param cmsEndpoint - the cmsEndpoint
  * @returns true if the endpoint is valid
  */
-export const checkMenuItemEndpoints = async (cmsEndpoint: URL) => {
+export const checkMenuItemEndpoint = async (cmsEndpoint: URL) => {
 	cmsEndpoint.pathname = '/jsonapi/menu_items/footer';
 	return await isEndpointValid(cmsEndpoint);
 };

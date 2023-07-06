@@ -1,15 +1,17 @@
 import { rest } from 'msw';
 
 const endpoint = 'https://drupal.test';
+const umamiEndpoint = 'https://umami.drupal.test';
 const invalidEndpoint = 'https://invalid.drupal.test';
 
 const jsonapiIndexHandler = rest.get(
 	`${endpoint}/jsonapi`,
 	() => new Response(null, { status: 200 }),
 );
+
 const invalidJsonapiIndexHandler = rest.get(
-	`${endpoint}/jsonapi`,
-	() => new Response(null, { status: 200 }),
+	`${invalidEndpoint}/jsonapi`,
+	() => new Response(null, { status: 404 }),
 );
 
 const authHandler = rest.post(`${endpoint}/oauth/token`, ({ request }) => {
@@ -33,13 +35,23 @@ const decoupledRouterHandler = rest.get(
 	() => new Response(null, { status: 200 }),
 );
 
+const umamiDecoupledRouterHandler = rest.get(
+	`${umamiEndpoint}/router/translate-path`,
+	() => new Response(null, { status: 200 }),
+);
+
+const invalidDecoupledRouterHandler = rest.get(
+	`${invalidEndpoint}/router/translate-path`,
+	() => new Response(null, { status: 404 }),
+);
+
 const defaultLanguageSettingsHandler = rest.get(
 	`${endpoint}/jsonapi/configurable_language/configurable_language`,
 	() => new Response(null, { status: 404 }),
 );
 
 const umamiLanguageSettingsHandler = rest.get(
-	`https://umami.drupal.test/jsonapi/configurable_language/configurable_language`,
+	`${umamiEndpoint}/jsonapi/configurable_language/configurable_language`,
 	() => new Response(null, { status: 200 }),
 );
 
@@ -48,18 +60,27 @@ const menuItemHandler = rest.get(
 	() => new Response(null, { status: 200 }),
 );
 
+const invalidMenuItemHandler = rest.get(
+	`${invalidEndpoint}/jsonapi/menu_items/footer`,
+	() => new Response(null, { status: 404 }),
+);
+
 const previewHandler = rest.get(`${endpoint}/node/1/preview`, ({ request }) => {
-	if (request.headers.get('Authorization')) {
-		return new Response(null, { status: 200 });
-	} else {
+	if (request.headers.get('Authorization')?.endsWith('Bearer')) {
 		return new Response(null, { status: 401 });
+	} else {
+		return new Response(null, { status: 200 });
 	}
 });
 
 export const drupalRequestHandlers = [
 	jsonapiIndexHandler,
+	invalidJsonapiIndexHandler,
 	authHandler,
 	decoupledRouterHandler,
+	umamiDecoupledRouterHandler,
+	invalidDecoupledRouterHandler,
+	invalidMenuItemHandler,
 	defaultLanguageSettingsHandler,
 	umamiLanguageSettingsHandler,
 	menuItemHandler,
