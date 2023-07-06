@@ -17,7 +17,7 @@ export const checkAuthentication = async ({
 	if (!clientID) {
 		log.warn('CLIENT_ID is required but not set.');
 		log.suggest(
-			`Get the CLIENT_ID here: 🔗 ${cmsEndpoint.host}/admin/config/services/consumer`,
+			`Get the CLIENT_ID here: 🔗 https://${cmsEndpoint.host}/admin/config/services/consumer`,
 		);
 	}
 	const clientSecret = env['CLIENT_SECRET'];
