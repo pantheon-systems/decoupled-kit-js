@@ -35,7 +35,9 @@
 		"@pantheon-systems/eslint-config": "*",
 		"@pantheon-systems/workspace-configs": "*",
 		"esbuild": "0.17.14",
-		"rimraf": "^4.4.1"
+		"msw": "^1.2.1",
+		"rimraf": "^4.4.1",
+		"vitest": "^0.29.8"
 	},
 	"dependencies": {
 		"dotenv": "^16.0.3"
