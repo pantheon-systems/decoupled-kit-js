@@ -13,8 +13,8 @@ import { checkDecoupledRouter } from './utils/checkDecoupledRouter';
 import { checkLanguageSettings } from './utils/checkLanguageSettings';
 import { checkMenuItemEndpoints } from './utils/checkMenuItemEndpoint';
 import { checkPreviewEndpoint } from './utils/checkPreviewEndpoint';
-import { resolveDotenvFile } from './utils/dotenvUtils';
 import { log } from './utils/logger';
+import { resolveDotenvFile } from './utils/resolveDotenvFile';
 
 const main = async () => {
 	// resolve .env if it exists or not NODE_ENV=production
@@ -40,7 +40,7 @@ const main = async () => {
 		);
 		if (Object.keys(cmsEnvVars.endpoints).length > 1) {
 			log.warn(
-				`Both PANTHEON_CMS_ENDPOINT and BACKEND_URL are set.\n|__Using BACKEND_URL for remaining checks.`,
+				`Both PANTHEON_CMS_ENDPOINT and BACKEND_URL are set.\n|____Using BACKEND_URL for remaining checks.`,
 			);
 		}
 	}
@@ -73,7 +73,7 @@ const main = async () => {
 	if (!decoupledRouterIsValid) {
 		throw new DecoupledRouterError(envVar);
 	} else {
-		log.success(`${envVar} Decoupled Router is valid!`);
+		log.success('Decoupled Router is valid!');
 	}
 
 	console.log('⏳ Validating Menu Item endpoint...');
@@ -81,7 +81,7 @@ const main = async () => {
 	if (!menuItemEndpointIsValid) {
 		throw new DecoupledMenuError(envVar);
 	} else {
-		log.success(`${envVar} Menu Items endpoint is valid!`);
+		log.success('Menu Items endpoint is valid!');
 	}
 
 	console.log('⏳ Validating authentication...');
@@ -93,12 +93,12 @@ const main = async () => {
 		log.warn('Auth not valid.');
 		log.suggest('Ensure the CLIENT_ID and CLIENT_SECRET are correct.');
 	} else {
-		log.success(`${envVar} auth is valid!`);
+		log.success('Auth is valid!');
 	}
 
 	if (!access_token) {
 		console.log(
-			'|__⏭  Skipping preview endpoint validation -- authorization required.',
+			'⏭  Skipping preview endpoint validation -- authorization required.',
 		);
 	} else {
 		console.log('⏳ Validating preview endpoint...');
@@ -111,7 +111,7 @@ const main = async () => {
 				? log.warn(previewCheck.cause)
 				: log.warn('Could not fetch preview site.');
 		} else {
-			log.success('Auth is valid!');
+			log.success('Preview is valid!');
 		}
 	}
 	console.log('🚀 Ready to build!');

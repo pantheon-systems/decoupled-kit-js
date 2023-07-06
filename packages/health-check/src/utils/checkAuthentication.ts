@@ -17,14 +17,14 @@ export const checkAuthentication = async ({
 	if (!clientID) {
 		log.warn('CLIENT_ID is required but not set.');
 		log.suggest(
-			`Get the CLIENT_ID here:\n🔗 ${cmsEndpoint.host}/admin/config/services/consumer`,
+			`Get the CLIENT_ID here: 🔗 ${cmsEndpoint.host}/admin/config/services/consumer`,
 		);
 	}
 	const clientSecret = env['CLIENT_SECRET'];
 	if (!clientSecret) {
 		log.warn('CLIENT_SECRET is required but not set.');
 		log.suggest(
-			`Set a new CLIENT_SECRET here by clicking edit:\n🔗 https://${cmsEndpoint.host}/admin/config/services/consumer`,
+			`Set a new CLIENT_SECRET here by clicking edit: 🔗 https://${cmsEndpoint.host}/admin/config/services/consumer`,
 		);
 	}
 	try {
