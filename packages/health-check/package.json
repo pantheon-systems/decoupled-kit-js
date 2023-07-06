@@ -24,7 +24,8 @@
 	"scripts": {
 		"build": "pnpm clean && node ./esbuild.mjs",
 		"clean": "pnpm rimraf ./dist",
-		"go": "pnpm ./src/bin.ts",
+		"test": "vitest run --coverage",
+		"test:watch": "vitest --coverage",
 		"eslint": "eslint --ext .js,.ts src --ignore-path .gitignore",
 		"eslint:fix": "eslint --ext .js,.ts src --ignore-path .gitignore --fix",
 		"prettier": "prettier \"**/*.{js,ts,md}\" --check --ignore-path ../../.prettierignore",
@@ -34,12 +35,14 @@
 	"devDependencies": {
 		"@pantheon-systems/eslint-config": "*",
 		"@pantheon-systems/workspace-configs": "*",
-		"esbuild": "0.17.14",
-		"msw": "^1.2.1",
-		"rimraf": "^4.4.1",
-		"vitest": "^0.29.8"
+		"@types/node": "^18.16.14",
+		"@vitest/coverage-c8": "^0.29.8",
+		"esbuild": "^0.18.11",
+		"msw": "^1.2.2",
+		"rimraf": "^5.0.1",
+		"vitest": "^0.33.0"
 	},
 	"dependencies": {
-		"dotenv": "^16.0.3"
+		"dotenv": "^16.3.1"
 	}
 }
