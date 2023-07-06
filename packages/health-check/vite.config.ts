@@ -1,14 +1,13 @@
-import { defineConfig, defaultExclude } from 'vitest/config';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
 	test: {
 		globals: true,
+		setupFiles: '/__tests__/setupFile.ts',
 		coverage: {
-			provider: 'c8',
+			provider: 'v8',
 			reportsDirectory: 'coverage',
-			exclude: ['**/__mocks__/**'],
+			exclude: ['**/__mocks__/**', '**/__tests__/**'],
 		},
-		setupFiles: ['./__tests__/setupFile.ts'],
-		exclude: [...defaultExclude, './__tests__/setupFile'],
 	},
 });

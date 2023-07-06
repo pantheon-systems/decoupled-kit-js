@@ -1,3 +1,4 @@
+import { vi } from 'vitest';
 import { resolveDotenvFile } from '../src/utils/resolveDotenvFile';
 
 const cwd = process.cwd();
