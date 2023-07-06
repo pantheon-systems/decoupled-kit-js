@@ -1,8 +1,6 @@
-import { server } from '../__mocks__';
+import { server } from '../__mocks__/server';
 
-beforeAll(() => {
-	server.listen({ onUnhandledRequest: 'error' });
-});
+beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
 
 //  Close server after all tests
 afterAll(() => server.close());
