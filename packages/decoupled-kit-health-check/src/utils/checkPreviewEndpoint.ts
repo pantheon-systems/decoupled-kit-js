@@ -34,7 +34,7 @@ export const checkPreviewEndpoint = async ({
 					preview: false,
 					// @ts-expect-error - cannot easily check for instanceof SystemError
 					cause: `Attempted to preview "${String(error?.cause?.hostname)}".
-|____💡 Ensure there is a preview site with that hostname configured. at 🔗 https://${
+|____ Ensure there is a preview site with that hostname configured. at 🔗 https://${
 						cmsEndpoint.host
 					}/admin/structure/dp-preview-site`,
 				};
