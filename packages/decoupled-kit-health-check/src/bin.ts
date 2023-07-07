@@ -13,6 +13,7 @@ import { checkDecoupledRouter } from './utils/checkDecoupledRouter';
 import { checkLanguageSettings } from './utils/checkLanguageSettings';
 import { checkMenuItemEndpoint } from './utils/checkMenuItemEndpoint';
 import { checkPreviewEndpoint } from './utils/checkPreviewEndpoint';
+import { checkPreviewSecret } from './utils/checkPreviewSecret';
 import { log } from './utils/logger';
 import { resolveDotenvFile } from './utils/resolveDotenvFile';
 
@@ -26,7 +27,7 @@ const main = async () => {
 		console.log('Production environment detected, skipping .env* resolution.');
 	}
 
-	console.log('⏳ Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...');
+	console.log('Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...');
 	const cmsEnvVars = checkCMSEnvVars(process.env);
 
 	if (!cmsEnvVars.isSet) {
@@ -54,10 +55,13 @@ const main = async () => {
 			: Object.entries(cmsEnvVars.endpoints);
 	const cmsEndpoint = new URL(endpoint);
 
-	console.log('⏳ Validating CMS endpoint...');
+	console.log('Validating CMS endpoint...');
 	const isValidEndpoint = await checkCMSEndpoint(cmsEndpoint);
 	if (!isValidEndpoint) {
-		throw new InvalidCMSEndpointError(envVar);
+		throw new InvalidCMSEndpointError({
+			endpointType: envVar,
+			endpoint: cmsEndpoint.hostname,
+		});
 	} else {
 		log.success(`${envVar} is valid!`);
 	}
@@ -65,26 +69,32 @@ const main = async () => {
 	// determines which article to attempt to fetch with
 	// the decoupledRouter and decoupledMenu checks
 	const hasUmami = await checkLanguageSettings(cmsEndpoint);
-	console.log('⏳ Validating Decoupled Router endpoint...');
+	console.log('Validating Decoupled Router endpoint...');
 	const decoupledRouterIsValid = await checkDecoupledRouter({
 		cmsEndpoint,
 		hasUmami,
 	});
 	if (!decoupledRouterIsValid) {
-		throw new DecoupledRouterError(envVar);
+		throw new DecoupledRouterError({
+			endpointType: envVar,
+			endpoint: cmsEndpoint.hostname,
+		});
 	} else {
 		log.success('Decoupled Router is valid!');
 	}
 
-	console.log('⏳ Validating Menu Item endpoint...');
+	console.log('Validating Menu Item endpoint...');
 	const menuItemEndpointIsValid = await checkMenuItemEndpoint(cmsEndpoint);
 	if (!menuItemEndpointIsValid) {
-		throw new DecoupledMenuError(envVar);
+		throw new DecoupledMenuError({
+			endpointType: envVar,
+			endpoint: cmsEndpoint.hostname,
+		});
 	} else {
 		log.success('Menu Items endpoint is valid!');
 	}
 
-	console.log('⏳ Validating authentication...');
+	console.log('Validating authentication...');
 	const { access_token } = await checkAuthentication({
 		env: process.env,
 		cmsEndpoint,
@@ -92,16 +102,22 @@ const main = async () => {
 	if (!access_token) {
 		log.warn('Auth not valid.');
 		log.suggest('Ensure the CLIENT_ID and CLIENT_SECRET are correct.');
-	} else {
-		log.success('Auth is valid!');
-	}
-
-	if (!access_token) {
 		console.log(
 			'⏭  Skipping preview endpoint validation -- authorization required.',
 		);
 	} else {
-		console.log('⏳ Validating preview endpoint...');
+		log.success('Auth is valid!');
+		console.log('Checking for PREVIEW_SECRET...');
+		const previewSecretIsSet = checkPreviewSecret(process.env);
+		if (!previewSecretIsSet) {
+			log.warn('PREVIEW_SECRET env var is not set.');
+			log.suggest(
+				`To set a new secret, go to 🔗 https://${cmsEndpoint.host}/admin/structure/dp-preview-site and edit the preview site you want to use.`,
+			);
+		} else {
+			log.success('PREVIEW_SECRET is set.');
+		}
+		console.log('Validating preview endpoint...');
 		const previewCheck = await checkPreviewEndpoint({
 			cmsEndpoint,
 			access_token,
@@ -114,6 +130,7 @@ const main = async () => {
 			log.success('Preview is valid!');
 		}
 	}
+
 	console.log('🚀 Ready to build!');
 };
 try {
