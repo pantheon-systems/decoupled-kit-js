@@ -15,7 +15,7 @@
 	],
 	"type": "module",
 	"bin": {
-		"health-check": "./dist/bin.js"
+		"health-check": "./dist/bin.mjs"
 	},
 	"prettier": "@pantheon-systems/workspace-configs/prettier",
 	"typedoc": {
