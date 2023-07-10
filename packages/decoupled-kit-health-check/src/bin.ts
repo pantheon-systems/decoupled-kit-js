@@ -53,7 +53,9 @@ const main = async () => {
 					([key]) => key === 'BACKEND_URL',
 			  )
 			: Object.entries(cmsEnvVars.endpoints);
-	const cmsEndpoint = new URL(endpoint);
+	const cmsEndpoint = /^https:\/\//.test(endpoint)
+		? new URL(endpoint)
+		: new URL(`https://${endpoint}`);
 
 	console.log('Validating CMS endpoint...');
 	const isValidEndpoint = await checkCMSEndpoint(cmsEndpoint);
