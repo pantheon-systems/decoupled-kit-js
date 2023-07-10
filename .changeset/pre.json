@@ -14,6 +14,8 @@
     "@pantheon-systems/decoupled-kit-health-check": "0.0.0"
   },
   "changesets": [
+    "blue-trainers-knock",
+    "grumpy-lamps-act",
     "heavy-meals-hang",
     "quiet-pugs-rhyme"
   ]
