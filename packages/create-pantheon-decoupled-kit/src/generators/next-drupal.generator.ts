@@ -21,6 +21,7 @@ interface NextDrupalAnswers extends DefaultAnswers {
 interface NextDrupalData {
 	nextjsKitVersion: string;
 	drupalKitVersion: string;
+	dkHealthCheckVersion: string;
 	drupal: true;
 }
 
@@ -41,6 +42,7 @@ export const nextDrupal: DecoupledKitGenerator<
 	data: {
 		nextjsKitVersion: versions['nextjs-kit'],
 		drupalKitVersion: versions['drupal-kit'],
+		dkHealthCheckVersion: versions['decoupled-kit-health-check'],
 		drupal: true,
 	},
 	templates: ['next-drupal', 'tailwind-shared', 'tailwindless-next'],
