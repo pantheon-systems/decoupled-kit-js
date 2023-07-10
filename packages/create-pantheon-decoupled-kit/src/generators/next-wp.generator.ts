@@ -20,6 +20,7 @@ interface NextWPAnswers extends DefaultAnswers {
 interface NextWpData {
 	nextjsKitVersion: string;
 	wordpressKitVersion: string;
+	dkHealthCheckVersion: string;
 	wp: true;
 }
 
@@ -38,6 +39,7 @@ export const nextWp: DecoupledKitGenerator<NextWPAnswers, NextWpData> = {
 	data: {
 		nextjsKitVersion: versions['nextjs-kit'],
 		wordpressKitVersion: versions['wordpress-kit'],
+		dkHealthCheckVersion: versions['decoupled-kit-health-check'],
 		wp: true,
 	},
 	templates: ['next-wp', 'tailwind-shared', 'tailwindless-next'],

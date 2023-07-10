@@ -6,7 +6,7 @@ import { log } from './logger';
  * @param cmsEndpoint - the cmsEndpoint
  * @returns the access_token if authorized, else an empty string.
  */
-export const checkAuthentication = async ({
+export const checkDrupalAuthentication = async ({
 	env,
 	cmsEndpoint,
 }: {
@@ -53,5 +53,65 @@ export const checkAuthentication = async ({
 		}
 	} catch (error) {
 		return { access_token: '' };
+	}
+};
+
+/**
+ * Checks for WP_APPLICATION_USERNAME and WP_APPLICATION_PASSWORD on
+ * process.env, and attempts to fetch a private post to determine if
+ * credentials are correct.
+ * @param env - process.env
+ * @param cmsEndpoint - the cmsEndpoint
+ * @returns true if the credentials can fetch authorized content, else false.
+ */
+export const checkWPAuthentication = async ({
+	env,
+	cmsEndpoint,
+}: {
+	env: typeof process.env;
+	cmsEndpoint: URL;
+}) => {
+	const wpUsername = env['WP_APPLICATION_USERNAME'];
+	if (!wpUsername) {
+		log.warn('WP_APPLICATION_USERNAME is required but not set.');
+		log.suggest(
+			`Get the WP_APPLICATION_USERNAME here: 🔗 https://${cmsEndpoint.host}/wp/wp-admin/users.php`,
+		);
+	}
+	const wpSecret = env['WP_APPLICATION_PASSWORD'];
+	if (!wpSecret) {
+		log.warn('WP_APPLICATION_PASSWORD is required but not set.');
+		log.suggest(
+			`Set a new WP_APPLICATION_PASSWORD here by clicking edit: 🔗 https://${cmsEndpoint.host}/wp/wp-admin/users.php`,
+		);
+	}
+	try {
+		const credentials = `${wpUsername}:${wpSecret}`;
+		const encodedCredentials = Buffer.from(credentials, 'binary').toString(
+			'base64',
+		);
+		const query = /* graphql */ `query LatestPostsQuery {
+			posts(where: { status: PRIVATE }) {
+				edges {
+					node {
+						id
+					}
+				}
+			}
+		}`;
+		cmsEndpoint.searchParams.set('query', query);
+		const res = await fetch(cmsEndpoint, {
+			headers: { Authorization: `Basic ${encodedCredentials}` },
+		});
+		const payload = (await res.json()) as {
+			data: { posts: { edges: unknown[] } };
+		};
+		if (payload.data.posts.edges.length > 0) {
+			return { credentials: encodedCredentials };
+		} else {
+			return { credentials: '' };
+		}
+	} catch (error) {
+		return { credentials: '' };
 	}
 };
