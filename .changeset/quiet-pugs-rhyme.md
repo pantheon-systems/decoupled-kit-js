@@ -1,5 +1,5 @@
 ---
-'@pantheon-systems/health-check': minor
+'@pantheon-systems/decoupled-kit-health-check': minor
 ---
 
 Initial release
