@@ -10,7 +10,10 @@
     "@pantheon-systems/drupal-kit": "4.6.2",
     "@pantheon-systems/nextjs-kit": "1.7.4",
     "@pantheon-systems/wordpress-kit": "3.1.0",
-    "web": "1.0.0"
+    "web": "1.0.0",
+    "@pantheon-systems/decoupled-kit-health-check": "0.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "quiet-pugs-rhyme"
+  ]
 }
