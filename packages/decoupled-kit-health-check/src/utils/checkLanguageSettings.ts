@@ -8,5 +8,5 @@ import { isEndpointValid } from './isEndpointValid';
 export const checkLanguageSettings = async (cmsEndpoint: URL) => {
 	const url = new URL(cmsEndpoint);
 	url.pathname = '/jsonapi/configurable_language/configurable_language';
-	return await isEndpointValid(url);
+	return await isEndpointValid({ cmsEndpoint: url, type: 'rest' });
 };
