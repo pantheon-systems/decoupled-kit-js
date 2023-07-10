@@ -1,0 +1,51 @@
+{
+	"name": "@pantheon-systems/decoupled-kit-health-check",
+	"version": "0.0.0",
+	"description": "Pantheon Decoupled Kit's Health Check",
+	"license": "GPL-3.0-or-later",
+	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
+	"bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pantheon-systems/decoupled-kit-js"
+	},
+	"author": "@pantheon-systems",
+	"files": [
+		"dist/*"
+	],
+	"type": "module",
+	"bin": {
+		"health-check": "./dist/bin.mjs"
+	},
+	"prettier": "@pantheon-systems/workspace-configs/prettier",
+	"typedoc": {
+		"entryPoint": "./src/bin.ts"
+	},
+	"scripts": {
+		"build": "pnpm clean && node ./esbuild.mjs",
+		"clean": "pnpm rimraf ./dist",
+		"test": "vitest run --coverage",
+		"test:watch": "vitest --coverage",
+		"eslint": "eslint --ext .js,.ts src --ignore-path .gitignore",
+		"eslint:fix": "eslint --ext .js,.ts src --ignore-path .gitignore --fix",
+		"prettier": "prettier \"**/*.{js,ts,md}\" --check --ignore-path ../../.prettierignore",
+		"prettier:fix": "prettier \"**/*.{js,ts,md}\" --write --ignore-path ../../.prettierignore",
+		"lint-staged": "lint-staged"
+	},
+	"devDependencies": {
+		"@pantheon-systems/eslint-config": "*",
+		"@pantheon-systems/workspace-configs": "*",
+		"@types/node": "^18.16.14",
+		"@vitest/coverage-v8": "^0.33.0",
+		"esbuild": "^0.18.11",
+		"msw": "next",
+		"rimraf": "^5.0.1",
+		"vitest": "^0.33.0"
+	},
+	"dependencies": {
+		"dotenv": "^16.3.1"
+	},
+		"engines": {
+			"node": ">=18"
+		}
+}
