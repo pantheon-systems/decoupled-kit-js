@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.3-canary.1
+
+### Patch Changes
+
+- 8527330f: Bump `@pantheon-systems/decoupled-kit-health-check` version
+
 ## 0.9.3-canary.0
 
 ### Patch Changes
