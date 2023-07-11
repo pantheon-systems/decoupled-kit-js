@@ -55,15 +55,19 @@ export const nextDrupalHealthCheck = async () => {
 					([key]) => key === 'BACKEND_URL',
 			  )
 			: Object.entries(cmsEnvVars.endpoints);
-	const cmsEndpoint = /^https:\/\//.test(endpoint)
-		? new URL(endpoint)
-		: new URL(`https://${endpoint}`);
+	const getCmsEndpoint = () =>
+		/^https:\/\//.test(endpoint)
+			? new URL(endpoint)
+			: new URL(`https://${endpoint}`);
 
 	console.log('Validating CMS endpoint...');
-	const isValidEndpoint = await checkCMSEndpoint({ cmsEndpoint, type: 'rest' });
+	const isValidEndpoint = await checkCMSEndpoint({
+		cmsEndpoint: getCmsEndpoint(),
+		type: 'rest',
+	});
 	if (!isValidEndpoint) {
 		throw new InvalidCMSEndpointError({
-			endpoint: cmsEndpoint.host,
+			endpoint: getCmsEndpoint().host,
 			endpointType: envVar,
 		});
 	} else {
@@ -72,15 +76,15 @@ export const nextDrupalHealthCheck = async () => {
 
 	// determines which article to attempt to fetch with
 	// the decoupledRouter and decoupledMenu checks
-	const hasUmami = await checkLanguageSettings(cmsEndpoint);
+	const hasUmami = await checkLanguageSettings(getCmsEndpoint());
 	console.log('Validating Decoupled Router endpoint...');
 	const decoupledRouterIsValid = await checkDecoupledRouter({
-		cmsEndpoint,
+		cmsEndpoint: getCmsEndpoint(),
 		hasUmami,
 	});
 	if (!decoupledRouterIsValid) {
 		throw new DecoupledRouterError({
-			endpoint: cmsEndpoint.host,
+			endpoint: getCmsEndpoint().host,
 			endpointType: envVar,
 		});
 	} else {
@@ -89,12 +93,12 @@ export const nextDrupalHealthCheck = async () => {
 
 	console.log('Validating Menu Item endpoint...');
 	const menuItemEndpointIsValid = await checkMenuItemEndpoint({
-		cmsEndpoint,
+		cmsEndpoint: getCmsEndpoint(),
 		type: 'rest',
 	});
 	if (!menuItemEndpointIsValid) {
 		throw new DecoupledMenuError({
-			endpoint: cmsEndpoint.host,
+			endpoint: getCmsEndpoint().host,
 			endpointType: envVar,
 		});
 	} else {
@@ -104,7 +108,7 @@ export const nextDrupalHealthCheck = async () => {
 	console.log('Validating authentication...');
 	const { access_token } = await checkDrupalAuthentication({
 		env: process.env,
-		cmsEndpoint,
+		cmsEndpoint: getCmsEndpoint(),
 	});
 	if (!access_token) {
 		log.warn('Auth not valid.');
@@ -119,14 +123,16 @@ export const nextDrupalHealthCheck = async () => {
 		if (!previewSecretIsSet) {
 			log.warn('PREVIEW_SECRET env var is not set.');
 			log.suggest(
-				`To set a new secret, go to 🔗 https://${cmsEndpoint.host}/admin/structure/dp-preview-site and edit the preview site you want to use.`,
+				`To set a new secret, go to 🔗 https://${
+					getCmsEndpoint().host
+				}/admin/structure/dp-preview-site and edit the preview site you want to use.`,
 			);
 		} else {
 			log.success('PREVIEW_SECRET is set.');
 		}
 		console.log('Validating preview endpoint...');
 		const previewCheck = await checkDrupalPreviewEndpoint({
-			cmsEndpoint,
+			cmsEndpoint: getCmsEndpoint(),
 			access_token,
 		});
 		if (!previewCheck.preview) {
