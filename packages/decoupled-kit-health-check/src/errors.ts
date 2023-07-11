@@ -8,9 +8,9 @@ class HealthCheckError extends Error {
 
 export class BackendNotSetError extends HealthCheckError {
 	constructor(
+		endpointType: string,
 		message = `No backend set: 
-	The PANTHEON_CMS_ENDPOINT or BACKEND_URL environment variable must be set to fetch data.
-{insert helpful message}`,
+	The PANTHEON_CMS_ENDPOINT or ${endpointType} environment variable must be set to fetch data.`,
 	) {
 		super(message);
 	}

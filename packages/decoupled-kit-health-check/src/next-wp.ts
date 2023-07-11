@@ -30,7 +30,7 @@ export const nextWPHealthCheck = async () => {
 	});
 
 	if (!cmsEnvVars.isSet) {
-		throw new BackendNotSetError();
+		throw new BackendNotSetError('WPGRAPHQL_URL');
 	} else {
 		const setEndpoints = Object.keys(cmsEnvVars.endpoints);
 		log.success(
