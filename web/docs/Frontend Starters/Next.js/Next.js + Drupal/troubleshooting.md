@@ -198,3 +198,14 @@ const params =
 
 After making these changes, images should now display correctly within your
 articles.
+
+## Disabling the Decoupled Kit Health Check
+
+After you begin editing content in your Drupal CMS, you may find the
+`@pantheon-systems/decoupled-kit-health-check` unnecessary. If you would like to
+remove it from the build step, follow the steps below:
+
+1. In a text editor, open the `package.json`
+2. Find the `"scripts"` and remove `"decoupled-kit-health-check": "npx --prefer-offline @pantheon-systems/decoupled-kit-health-check drupal"`
+3. Edit the `"build"` script and remove `npm run decoupled-kit-health-check && ` from the beginning of the script
+4. Find the `"devDependencies"` and remove `@pantheon-systems/decoupled-kit-health-check`, Or in a terminal, run `npm rm @pantheon-systems/decoupled-kit-health-check`

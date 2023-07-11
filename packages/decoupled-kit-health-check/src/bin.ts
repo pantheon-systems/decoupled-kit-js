@@ -22,7 +22,9 @@ try {
 				console.log('No valid framework detected. Exiting 👋');
 		}
 	} else {
-		throw new Error('No cms type selected. Expected drupal or wordpress');
+		throw new Error(
+			'No cms selected. Expected "drupal" or "wordpress" as an argument',
+		);
 	}
 } catch (error) {
 	if (error instanceof Error) {

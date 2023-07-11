@@ -33,7 +33,7 @@ export const nextDrupalHealthCheck = async () => {
 	});
 
 	if (!cmsEnvVars.isSet) {
-		throw new BackendNotSetError();
+		throw new BackendNotSetError('BACKEND_URL');
 	} else {
 		const setEndpoints = Object.keys(cmsEnvVars.endpoints);
 		log.success(
