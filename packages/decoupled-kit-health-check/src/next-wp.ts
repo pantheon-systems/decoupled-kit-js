@@ -51,17 +51,18 @@ export const nextWPHealthCheck = async () => {
 					([key]) => key === 'WPGRAPHQL_URL',
 			  )
 			: Object.entries(cmsEnvVars.endpoints);
-	const cmsEndpoint = /^https:\/\//.test(endpoint)
-		? new URL(endpoint)
-		: new URL(`https://${endpoint}`);
+	const getCmsEndpoint = () =>
+		/^https:\/\//.test(endpoint)
+			? new URL(endpoint)
+			: new URL(`https://${endpoint}`);
 	console.log('Validating CMS endpoint...');
 	const isValidEndpoint = await checkCMSEndpoint({
-		cmsEndpoint,
+		cmsEndpoint: getCmsEndpoint(),
 		type: 'graphql',
 	});
 	if (!isValidEndpoint) {
 		throw new InvalidCMSEndpointError({
-			endpoint: cmsEndpoint.host,
+			endpoint: getCmsEndpoint().host,
 			endpointType: envVar,
 		});
 	} else {
@@ -70,12 +71,12 @@ export const nextWPHealthCheck = async () => {
 
 	console.log('Validating Example Menu query...');
 	const menuItemEndpointIsValid = await checkMenuItemEndpoint({
-		cmsEndpoint,
+		cmsEndpoint: getCmsEndpoint(),
 		type: 'graphql',
 	});
 	if (!menuItemEndpointIsValid) {
 		throw new DecoupledMenuError({
-			endpoint: cmsEndpoint.host,
+			endpoint: getCmsEndpoint().host,
 			endpointType: envVar,
 		});
 	} else {
@@ -85,7 +86,7 @@ export const nextWPHealthCheck = async () => {
 	console.log('Validating authentication...');
 	const { credentials } = await checkWPAuthentication({
 		env: process.env,
-		cmsEndpoint,
+		cmsEndpoint: getCmsEndpoint(),
 	});
 	if (!credentials) {
 		log.warn('Auth not valid.');
@@ -101,14 +102,16 @@ export const nextWPHealthCheck = async () => {
 		if (!previewSecretIsSet) {
 			log.warn('PREVIEW_SECRET env var is not set.');
 			log.suggest(
-				`To set a new secret, go to 🔗 https://${cmsEndpoint.host}/wp/wp-admin/options-general.php?page=preview_sites and edit the preview site you want to use.`,
+				`To set a new secret, go to 🔗 https://${
+					getCmsEndpoint().host
+				}/wp/wp-admin/options-general.php?page=preview_sites and edit the preview site you want to use.`,
 			);
 		} else {
 			log.success('PREVIEW_SECRET is set.');
 		}
 		console.log('Validating preview endpoint...');
 		const previewCheck = await checkWPPreviewEndpoint({
-			cmsEndpoint,
+			cmsEndpoint: getCmsEndpoint(),
 			credentials,
 		});
 		if (!previewCheck) {

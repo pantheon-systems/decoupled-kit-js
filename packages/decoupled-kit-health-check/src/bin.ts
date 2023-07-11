@@ -21,6 +21,8 @@ try {
 			default:
 				console.log('No valid framework detected. Exiting 👋');
 		}
+	} else {
+		throw new Error('No cms type selected. Expected drupal or wordpress');
 	}
 } catch (error) {
 	if (error instanceof Error) {
