@@ -51,10 +51,13 @@ export const nextWPHealthCheck = async () => {
 					([key]) => key === 'WPGRAPHQL_URL',
 			  )
 			: Object.entries(cmsEnvVars.endpoints);
-	const getCmsEndpoint = () =>
-		/^https:\/\//.test(endpoint)
-			? new URL(endpoint)
-			: new URL(`https://${endpoint}`);
+	const getCmsEndpoint = () => {
+		let url;
+		url = /^https:\/\//.test(endpoint) ? endpoint : `https://${endpoint}`;
+		// ensure the url ends with /wp/graphql
+		url = /\/wp\/graphql$/.test(url) ? url : `${url}/wp/graphql`;
+		return new URL(url);
+	};
 	console.log('Validating CMS endpoint...');
 	const isValidEndpoint = await checkCMSEndpoint({
 		cmsEndpoint: getCmsEndpoint(),
