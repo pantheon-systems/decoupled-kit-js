@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.3-canary.3
+
+### Patch Changes
+
+- c85ddced: [next-wp] Fix missing comma in package.json
+
 ## 0.9.3-canary.2
 
 ### Patch Changes
