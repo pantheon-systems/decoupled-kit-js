@@ -20,5 +20,5 @@ export const checkDecoupledRouter = async ({
 		? cmsEndpoint.searchParams.set('path', 'articles/lets-hear-it-for-carrots')
 		: cmsEndpoint.searchParams.set('path', 'articles/example-article');
 
-	return await isEndpointValid(cmsEndpoint);
+	return await isEndpointValid({ cmsEndpoint, type: 'rest' });
 };

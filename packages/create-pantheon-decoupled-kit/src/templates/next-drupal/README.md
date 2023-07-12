@@ -54,6 +54,13 @@ Any fetch calls should be mocked with
 [`msw`](https://mswjs.io/docs/basics/request-matching) in
 [setupFile.js](./__tests__/setupFile.js).
 
+## Decoupled Kit Health Check
+
+The `@pantheon-systems/decoupled-kit-health-check` will run before your `build`
+and ensure the backend is setup for success. Helpful instructions will guide you
+in case anything in the health check fails. To disable the health check, see
+[Disabling the Decoupled Kit Health Check](https://live-decoupled-kit-docs.appa.pantheon.site/docs/frontend-starters/nextjs/nextjs-drupal/troubleshooting#disabling-the-decoupled-kit-health-check).
+
 ### Commands
 
 This section assumes the package manager in use is `npm`. If you are not using

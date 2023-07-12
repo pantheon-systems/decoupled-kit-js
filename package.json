@@ -17,6 +17,7 @@
 		"build:all": "pnpm build:pkgs && pnpm build:starters",
 		"build:cli": "pnpm --filter create-pantheon-decoupled-kit build",
 		"build:cms-kit": "pnpm --filter cms-kit build",
+		"build:dkhc": "pnpm --filter decoupled-kit-health-check build",
 		"build:drupal-kit": "pnpm --filter drupal-kit build",
 		"build:gatsby-wp": "pnpm --filter gatsby-wordpress-starter build",
 		"build:nextjs-kit": "pnpm --filter nextjs-kit build",

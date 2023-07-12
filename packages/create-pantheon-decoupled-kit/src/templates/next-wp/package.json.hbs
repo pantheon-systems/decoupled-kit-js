@@ -2,7 +2,7 @@
 	{{> sharedPkgJsonFields}}
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build && cp -r .next/static .next/standalone/.next && cp -r public .next/standalone",
+		"build": "npm run decoupled-kit-health-check && next build && cp -r .next/static .next/standalone/.next && cp -r public .next/standalone",
 		"start": "node .next/standalone/server.js",
 		"build:mono": "next build",
 		"start:mono": "next start",
@@ -14,6 +14,7 @@
 		"test:watch": "vitest",
 		"update-snapshots": "vitest run --update --silent",
 		"coverage": "vitest run --coverage"
+		"decoupled-kit-health-check": "npx --prefer-offline @pantheon-systems/decoupled-kit-health-check wordpress"
 	},
 	"dependencies": {
 		"@pantheon-systems/nextjs-kit": "{{nextjsKitVersion}}",
@@ -29,6 +30,7 @@
 		"sharp": "^0.31.1"
 	},
 	"devDependencies": {
+		"@pantheon-systems/decoupled-kit-health-check": "{{dkHealthCheckVersion}}",
 		{{#if tailwindcss}}
 		{{> tailwindcssDeps devDeps=true}}
 		{{/if}}
