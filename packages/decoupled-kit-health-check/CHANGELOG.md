@@ -1,5 +1,12 @@
 # @pantheon-systems/decoupled-kit-health-check
 
+## 0.1.0-canary.3
+
+### Patch Changes
+
+- a0dce89a: Ensure the pathname is set to `/wp/graphql` by default for the
+  wordpress health-check
+
 ## 0.1.0-canary.2
 
 ### Minor Changes

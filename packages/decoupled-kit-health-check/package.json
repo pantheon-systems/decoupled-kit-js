@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/decoupled-kit-health-check",
-	"version": "0.1.0-canary.2",
+	"version": "0.1.0-canary.3",
 	"description": "Pantheon Decoupled Kit's Health Check",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
