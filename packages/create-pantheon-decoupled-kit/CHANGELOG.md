@@ -1,5 +1,16 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.3-canary.2
+
+### Patch Changes
+
+- 7bf7e5f3: [next-wp] Added the `@pantheon-systems/decoupled-kit-health-check`
+  package as a dev dependency to the `next-wp` template. The health check will
+  run before a build to check critical endpoints for availability
+
+  [next-wp, next-drupal] Updated the README to include information about the
+  `@pantheon-systems/decoupled-kit-health-check` and
+
 ## 0.9.3-canary.1
 
 ### Patch Changes
