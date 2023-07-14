@@ -23,7 +23,7 @@ const preview = async (req, res) => {
 	if (test) {
 		// validate the secret
 		if (secret !== process.env.PREVIEW_SECRET) {
-			return res.status(500).json(PREVIEW_SECRET_DOES_NOT_MATCH);
+			return res.status(401).json(PREVIEW_SECRET_DOES_NOT_MATCH);
 		}
 
 		// validate the content
@@ -39,13 +39,13 @@ const preview = async (req, res) => {
 					'Error verifying preview content in pages/api/preview:\n',
 					error,
 				);
-			return res.status(500).json({
+			return res.status(404).json({
 				error: 'Could not verify preview content',
 				message: error.message,
 			});
 		}
 		if (!content) {
-			return res.status(500).json(CONTENT_NOT_FOUND);
+			return res.status(404).json(CONTENT_NOT_FOUND);
 		}
 		return res.status(200).json({
 			message: `Preview is valid for ${slug}`,
