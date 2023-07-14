@@ -1,5 +1,16 @@
 # create-pantheon-decoupled-kit
 
+## 0.9.3-canary.5
+
+### Patch Changes
+
+- 104f0057: [next-wp] Added logic to `api/preview.js` that returns JSON which
+  indicates if there are any issues with the preview route or secret if the
+  `test=true` queryparam exists on the request URL.
+- 2cd84152: [next-drupal] Added logic to `api/preview.js` that returns JSON
+  which indicates if there are any issues with the preview route or secret if
+  the `test=true` query param exists on the request URL.
+
 ## 0.9.3-canary.4
 
 ### Patch Changes
