@@ -16,16 +16,13 @@ const preview = async (req, res) => {
 
 	if (test) {
 		if (secret !== process.env.PREVIEW_SECRET) {
-			console.log(secret, process.env.PREVIEW_SECRET);
 			return res.status(401).json(PREVIEW_SECRET_DOES_NOT_MATCH);
 		}
-
-		const message = `Preview successful for ${uri}`;
 
 		try {
 			if (content_type === 'post') {
 				const { post } = await getPostPreview(id);
-				if (post.post) {
+				if (!post) {
 					return res.status(404).json(CONTENT_NOT_FOUND);
 				}
 			}
@@ -35,7 +32,7 @@ const preview = async (req, res) => {
 					return res.status(404).json(CONTENT_NOT_FOUND);
 				}
 			}
-			return res.status(200).json({ message });
+			return res.status(200).json({ message: `Preview successful for ${uri}` });
 		} catch (error) {
 			return res.status(404).json(CONTENT_NOT_FOUND);
 		}
