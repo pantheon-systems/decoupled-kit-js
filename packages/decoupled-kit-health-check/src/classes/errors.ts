@@ -47,13 +47,3 @@ Also ensure that the JSON:API Menu Items module is enabled.`,
 		super(message);
 	}
 }
-
-export class AuthorizationError extends HealthCheckError {
-	constructor(
-		varName: string,
-		message = `${varName} is required but not set.
-		Set ${varName} as an environment variable`,
-	) {
-		super(message);
-	}
-}

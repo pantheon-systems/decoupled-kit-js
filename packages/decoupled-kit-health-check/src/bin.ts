@@ -1,19 +1,29 @@
 #!/usr/bin/env node
-import { nextDrupalHealthCheck } from './next-drupal';
-import { nextWPHealthCheck } from './next-wp';
+import { NextDrupalHealthCheck } from './classes/NextDrupalHealthCheck';
+import { NextWordPressHealthCheck } from './classes/NextWordPressHealthCheck';
 import { getFramework } from './utils/getFramework';
 
 const [cms] = process.argv.slice(2, 3);
 
 try {
 	if (/(drupal|d(9|10))/.test(cms)) {
-		await nextDrupalHealthCheck();
+		const HC = new NextDrupalHealthCheck({ env: process.env });
+		await HC.validateEndpoint()
+			.then((hc) => hc.validateMenu())
+			.then((hc) => hc.validateRouter())
+			.then((hc) => hc.validateAuth())
+			.then((hc) => hc.validatePreview());
 	} else if (/(wordpress|wp)/.test(cms)) {
 		const framework = getFramework();
 		switch (framework) {
-			case 'next':
-				await nextWPHealthCheck();
+			case 'next': {
+				const HC = new NextWordPressHealthCheck({ env: process.env });
+				await HC.validateEndpoint()
+					.then((hc) => hc.validateMenu())
+					.then((hc) => hc.validateAuth())
+					.then((hc) => hc.validatePreview());
 				break;
+			}
 			case 'gatsby':
 				console.log('running gatsby-wp');
 				break;
@@ -26,6 +36,8 @@ try {
 			'No cms selected. Expected "drupal" or "wordpress" as an argument',
 		);
 	}
+	console.log('🚀 Ready to build!');
+	process.exit(0);
 } catch (error) {
 	if (error instanceof Error) {
 		console.log(error.message);
