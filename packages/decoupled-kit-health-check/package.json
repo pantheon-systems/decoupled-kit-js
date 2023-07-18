@@ -22,7 +22,7 @@
 		"entryPoint": "./src/bin.ts"
 	},
 	"scripts": {
-		"build": "pnpm clean && node ./esbuild.mjs",
+		"build": "pnpm eslint && pnpm clean && node ./esbuild.mjs",
 		"clean": "pnpm rimraf ./dist",
 		"test": "vitest run --coverage",
 		"test:watch": "vitest --coverage",

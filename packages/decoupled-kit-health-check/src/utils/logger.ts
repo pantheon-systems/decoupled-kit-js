@@ -1,4 +1,4 @@
-export const log = {
+export const logger = {
 	success: (message: string) => console.log(`|__✅ ${message}`),
 	warn: (message: string) => console.log(`|__💡 ${message}`),
 	suggest: (message: string) => console.log(`|____ ${message}`),
