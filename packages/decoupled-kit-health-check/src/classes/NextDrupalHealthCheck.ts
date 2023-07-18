@@ -58,7 +58,7 @@ export class NextDrupalHealthCheck extends DrupalHealthCheck {
 		const areMultipleVarsSet = Object.keys(backendVars).length > 1;
 
 		if (!isVarSet) {
-			throw new BackendNotSetError('BACKEND_URL');
+			throw new BackendNotSetError({ envVar: 'BACKEND_URL' });
 		} else {
 			const setEndpoints = Object.keys(backendVars);
 			this.log.success(
@@ -104,7 +104,9 @@ export class NextDrupalHealthCheck extends DrupalHealthCheck {
 	}
 	async validateEndpoint() {
 		console.log('Validating CMS endpoint...');
-		const endpointIsValid = await this.checkFor200(this.getURL());
+		const cmsEndpoint = this.getURL();
+		cmsEndpoint.pathname = '/jsonapi';
+		const endpointIsValid = await this.checkFor200(cmsEndpoint);
 		if (endpointIsValid) {
 			this.log.success(`${this.envVar} is valid!`);
 			return this;
@@ -188,6 +190,7 @@ export class NextDrupalHealthCheck extends DrupalHealthCheck {
 			if (access_token) {
 				this.#access_token = access_token;
 				this.log.success('Auth is valid!');
+				return this;
 			} else {
 				this.#access_token = '';
 			}
@@ -214,6 +217,10 @@ export class NextDrupalHealthCheck extends DrupalHealthCheck {
 					this.getURL().host
 				}/admin/structure/dp-preview-site and edit the preview site you want to use.`,
 			);
+			console.log(
+				'⏭  Skipping preview endpoint validation -- PREVIEW_SECRET required.',
+			);
+			return this;
 		} else {
 			this.log.success('PREVIEW_SECRET is set.');
 		}
@@ -229,6 +236,7 @@ export class NextDrupalHealthCheck extends DrupalHealthCheck {
 			});
 			if (res.ok) {
 				this.log.success('Preview is valid!');
+				return this;
 			}
 		} catch (error) {
 			if (error instanceof Error) {
