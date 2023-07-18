@@ -56,7 +56,7 @@ export class NextWordPressHealthCheck extends WordPressHealthCheck {
 		const areMultipleVarsSet = Object.keys(backendVars).length > 1;
 
 		if (!isVarSet) {
-			throw new BackendNotSetError('WPGRAPHQL_URL');
+			throw new BackendNotSetError({ envVar: 'WPGRAPHQL_URL' });
 		} else {
 			const setEndpoints = Object.keys(backendVars);
 			this.log.success(
@@ -189,6 +189,7 @@ export class NextWordPressHealthCheck extends WordPressHealthCheck {
 			if (payload.data.posts.edges.length > 0) {
 				this.#credentials = encodedCredentials;
 				this.log.success('Auth is valid!');
+				return this;
 			} else {
 				this.#credentials = '';
 			}
@@ -216,6 +217,10 @@ export class NextWordPressHealthCheck extends WordPressHealthCheck {
 					this.getURL().host
 				}/admin/structure/dp-preview-site and edit the preview site you want to use.`,
 			);
+			console.log(
+				'⏭  Skipping preview endpoint validation -- PREVIEW_SECRET required.',
+			);
+			return this;
 		} else {
 			this.log.success('PREVIEW_SECRET is set.');
 		}
@@ -246,6 +251,7 @@ export class NextWordPressHealthCheck extends WordPressHealthCheck {
 			};
 			if (payload?.data?.post) {
 				this.log.success('Preview is valid!');
+				return this;
 			}
 		} catch (error) {
 			void error;
