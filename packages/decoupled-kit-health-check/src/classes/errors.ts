@@ -8,9 +8,9 @@ class HealthCheckError extends Error {
 
 export class BackendNotSetError extends HealthCheckError {
 	constructor(
-		endpointType: string,
+		{ envVar }: { envVar: string },
 		message = `No backend set: 
-	The PANTHEON_CMS_ENDPOINT or ${endpointType} environment variable must be set to fetch data.`,
+	The PANTHEON_CMS_ENDPOINT or ${envVar} environment variable must be set to fetch data.`,
 	) {
 		super(message);
 	}
@@ -43,16 +43,6 @@ export class DecoupledMenuError extends HealthCheckError {
 		message = `Decoupled Menu Endpoint not valid for ${endpointType}.
 Check that ${endpoint} is valid and provides a 200 response.
 Also ensure that the JSON:API Menu Items module is enabled.`,
-	) {
-		super(message);
-	}
-}
-
-export class AuthorizationError extends HealthCheckError {
-	constructor(
-		varName: string,
-		message = `${varName} is required but not set.
-		Set ${varName} as an environment variable`,
 	) {
 		super(message);
 	}
