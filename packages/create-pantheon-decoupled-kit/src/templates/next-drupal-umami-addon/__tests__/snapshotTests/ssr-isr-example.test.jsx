@@ -17,7 +17,7 @@ vi.mock('next/router', () => ({
 
 describe('<SSGISRExampleTemplate />', () => {
 	it(`should render articles`, () => {
-		const data = { articles: umamiEnArticlesData, footerMenu: umamiFooterMenu }
+		const data = { articles: umamiEnArticlesData, footerMenu: umamiFooterMenu };
 
 		const { asFragment } = render(
 			<SSGISRExampleTemplate

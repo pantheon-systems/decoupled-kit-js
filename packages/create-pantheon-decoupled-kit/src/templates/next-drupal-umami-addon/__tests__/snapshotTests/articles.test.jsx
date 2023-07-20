@@ -20,8 +20,8 @@ vi.mock('next/router', () => ({
 
 describe('<SSRArticlesListTemplate />', () => {
 	it(`should render articles`, () => {
-		const data = { articles: umamiEnArticlesData, footerMenu: umamiFooterMenu }
-		
+		const data = { articles: umamiEnArticlesData, footerMenu: umamiFooterMenu };
+
 		const { asFragment } = render(
 			<SSRArticlesListTemplate
 				sortedArticles={data.articles}
@@ -33,7 +33,10 @@ describe('<SSRArticlesListTemplate />', () => {
 });
 describe('<ArticleTemplate />', () => {
 	it(`should render articles`, () => {
-		const data = { article: umamiEnArticlesData[0], footerMenu: umamiFooterMenu }
+		const data = {
+			article: umamiEnArticlesData[0],
+			footerMenu: umamiFooterMenu,
+		};
 
 		const { asFragment } = render(
 			<ArticleTemplate article={data.article} footerMenu={data.footerMenu} />,
