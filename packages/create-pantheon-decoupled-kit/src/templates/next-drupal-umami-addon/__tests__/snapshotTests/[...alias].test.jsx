@@ -37,7 +37,6 @@ describe('<CatchAllRoute />', () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	
 	it(`should render a recipe`, () => {
 		const data = { pageData: topLevelRecipeData, footerMenu: footerMenu };
 
@@ -46,5 +45,4 @@ describe('<CatchAllRoute />', () => {
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
-	
 });

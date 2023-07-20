@@ -87,5 +87,4 @@ export const tailwindcssPlugin = plugin(function ({
 		separator,
 		columns,
 	]);
-},
-mergeToConfig);
+}, mergeToConfig);
