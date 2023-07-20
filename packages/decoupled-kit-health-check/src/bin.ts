@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { GatsbyWordPressHealthCheck } from './classes/GatsbyWordPressHealthCheck';
 import { NextDrupalHealthCheck } from './classes/NextDrupalHealthCheck';
 import { NextWordPressHealthCheck } from './classes/NextWordPressHealthCheck';
 import { getFramework } from './utils/getFramework';
@@ -25,7 +26,13 @@ try {
 				break;
 			}
 			case 'gatsby':
-				console.log('running gatsby-wp');
+				{
+					const HC = new GatsbyWordPressHealthCheck({ env: process.env });
+					await HC.validateEndpoint()
+						.then((hc) => hc.validateWPGatsbyPlugin())
+						.then((hc) => hc.validateMenu())
+						.then((hc) => hc.validateAuth());
+				}
 				break;
 			case 'none':
 			default:

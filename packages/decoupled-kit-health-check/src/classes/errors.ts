@@ -47,3 +47,14 @@ Also ensure that the JSON:API Menu Items module is enabled.`,
 		super(message);
 	}
 }
+
+export class WPGatsbyPluginError extends HealthCheckError {
+	constructor(
+		{ envVar, endpoint }: { envVar: string; endpoint: string },
+		message = `WP Gatsby Plugin not active for ${envVar}.
+Enable the WP Gatsby plugin at 🔗 https://${endpoint}/wp/wp-admin/plugins.php, 
+then clear the cache at 🔗 https://${endpoint}/wp/wp-admin/options-general.php?page=pantheon-cache`,
+	) {
+		super(message);
+	}
+}
