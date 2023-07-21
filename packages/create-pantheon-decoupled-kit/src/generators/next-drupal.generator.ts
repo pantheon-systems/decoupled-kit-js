@@ -8,7 +8,7 @@ import versions from '../pkgVersions.json';
 import type {
 	DecoupledKitGenerator,
 	DefaultAnswers,
-	NextDrupalData,
+	BaseGeneratorData,
 } from '../types';
 import {
 	appNamePrompt,
@@ -26,7 +26,7 @@ const outDirDefault = ({ appName }: NextDrupalAnswers) =>
 	`${process.cwd()}/${appName.replaceAll(' ', '-').toLowerCase()}`;
 export const nextDrupal: DecoupledKitGenerator<
 	NextDrupalAnswers,
-	NextDrupalData
+	BaseGeneratorData
 > = {
 	name: 'next-drupal',
 	description: 'Next.js + Drupal starter kit',

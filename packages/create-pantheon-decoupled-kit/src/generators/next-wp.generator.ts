@@ -8,7 +8,7 @@ import versions from '../pkgVersions.json';
 import type {
 	DecoupledKitGenerator,
 	DefaultAnswers,
-	NextWpData,
+	BaseGeneratorData,
 } from '../types';
 import {
 	appNamePrompt,
@@ -25,7 +25,7 @@ interface NextWPAnswers extends DefaultAnswers {
 const outDirDefault = ({ appName }: NextWPAnswers) =>
 	`${process.cwd()}/${appName.replaceAll(' ', '-').toLowerCase()}`;
 
-export const nextWp: DecoupledKitGenerator<NextWPAnswers, NextWpData> = {
+export const nextWp: DecoupledKitGenerator<NextWPAnswers, BaseGeneratorData> = {
 	name: 'next-wp',
 	description: 'Next.js + WordPress starter kit',
 	prompts: [

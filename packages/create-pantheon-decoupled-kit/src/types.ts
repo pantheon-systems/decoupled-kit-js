@@ -8,29 +8,26 @@ declare module 'vitest' {
 	}
 }
 
-export interface GatsbyWPData {
+type DrupalOrWP = {
+	[key in 'drupal' | 'wp']?: boolean;
+};
+
+/**
+ * @example
+ * ```
+ * {
+ * 	drupalKitVersion: versions['drupal-kit'],
+ * 	drupal: true
+ * }
+ * ```
+ */
+export type BaseGeneratorData = {
+	[key: `${string}Version`]: string;
+} & DrupalOrWP;
+
+export interface GatsbyWPData extends BaseGeneratorData {
 	gatsbyPnpmPlugin: boolean;
-	wordpressKitVersion: string;
-	otherConfigsVersion: string;
-	eslintConfigVersion: string;
-	wp: true;
 	gatsby: true;
-}
-
-export interface NextDrupalUmamiAddonData {
-	drupal: true;
-}
-
-export interface NextDrupalData {
-	nextjsKitVersion: string;
-	drupalKitVersion: string;
-	drupal: true;
-}
-
-export interface NextWpData {
-	nextjsKitVersion: string;
-	wordpressKitVersion: string;
-	wp: true;
 }
 
 /**
@@ -100,16 +97,16 @@ export type Action = (config: ActionConfig) => Promise<string> | string;
 
 export type ActionRunner = (config: ActionRunnerConfig) => Promise<string>;
 
-type InputIndex = GatsbyWPData &
-	NextDrupalData &
-	NextDrupalUmamiAddonData &
-	NextWpData & {
+type InputIndex = BaseGeneratorData &
+	GatsbyWPData & {
 		_: string[];
 		appName: string;
 		outDir: string;
+		templateRootDir: string;
+		noInstall: boolean;
+		noLint: boolean;
 		force: boolean;
 		silent: boolean;
-		templateRootDir: string;
 		tailwindcss: boolean;
 	};
 
@@ -117,9 +114,7 @@ type InputIndex = GatsbyWPData &
  * Input from command line arguments, prompts, and generator data
  */
 export type Input = {
-	[Property in keyof InputIndex]?: InputIndex[Property] extends true
-		? boolean
-		: InputIndex[Property];
+	[Property in keyof InputIndex]?: InputIndex[Property];
 };
 
 export interface TemplateData {
@@ -170,17 +165,12 @@ export interface TemplateImport {
 	default: TemplateFn;
 }
 
-// TYPE PREDICATES
-
 /**
  * @param arg a variable
  * @returns true if the variable is a string, false otherwise
  */
 export const isString = (arg: unknown): arg is string => {
-	if (typeof arg === 'string') {
-		return true;
-	}
-	return false;
+	return typeof arg === 'string';
 };
 
 /**

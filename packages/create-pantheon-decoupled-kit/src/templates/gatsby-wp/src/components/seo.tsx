@@ -19,22 +19,20 @@ const Seo = ({
 	} = useStaticQuery<{
 		wp: { generalSettings: Queries.WpGeneralSettings };
 		wpUser: Queries.WpUser;
-	}>(
-		graphql`
-			query {
-				wp {
-					generalSettings {
-						title
-						description
-					}
-				}
-				# if there's more than one user this would need to be filtered to the main user
-				wpUser {
-					twitter: name
+	}>(graphql`
+		query {
+			wp {
+				generalSettings {
+					title
+					description
 				}
 			}
-		`,
-	);
+			# if there's more than one user this would need to be filtered to the main user
+			wpUser {
+				twitter: name
+			}
+		}
+	`);
 
 	const metaDescription = description || String(generalSettings?.description);
 	const defaultTitle = generalSettings?.title;

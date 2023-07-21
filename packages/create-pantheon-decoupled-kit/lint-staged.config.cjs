@@ -1,14 +1,12 @@
-// TODO ensure only tagged templates are linted
-// but make sure other ts files are linted
 module.exports = {
 	// lint tagged templates
-	'./src/templates/**/*.{ts,tsx,css,json}.ts': [
-		`eslint --fix --config ./.eslintrc --ignore-pattern **/src/templates/**/*.{d.ts,ts,jsx,tsx,snap}`,
+	'./src/templates/**/*.{module.css,ts,tsx,json}.ts': [
+		`eslint --fix --config ./.eslintrc --no-eslintrc  --ignore-path .gitignore`,
 		`prettier --write --ignore-path ../../.prettierignore`,
 	],
 	// lint everything except templates
-	'./src/**/*': [
-		`eslint --fix --config ./.eslintrc --ignore-pattern **/src/templates/**/*`,
+	'"./src/*.ts" "./src/actions/**" "./src/generators/**"  "./src/utils/**"': [
+		`eslint --fix --config ./.eslintrc --no-eslintrc  --ignore-path .gitignore`,
 		`prettier --write --ignore-path ../../.prettierignore`,
 	],
 };

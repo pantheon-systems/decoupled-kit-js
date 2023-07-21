@@ -2,7 +2,7 @@ import { addWithDiff, convertCSSModules, runLint } from '../actions';
 import type {
 	DecoupledKitGenerator,
 	DefaultAnswers,
-	NextDrupalUmamiAddonData,
+	BaseGeneratorData,
 } from '../types';
 import {
 	cmsEndpointPrompt,
@@ -16,7 +16,7 @@ interface NextDrupalUmamiAddonAnswers extends DefaultAnswers {
 
 export const nextDrupalUmamiAddon: DecoupledKitGenerator<
 	NextDrupalUmamiAddonAnswers,
-	NextDrupalUmamiAddonData
+	BaseGeneratorData
 > = {
 	name: 'next-drupal-umami-addon',
 	description:
