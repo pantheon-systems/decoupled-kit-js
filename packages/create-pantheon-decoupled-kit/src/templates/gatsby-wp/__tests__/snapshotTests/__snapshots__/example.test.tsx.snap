@@ -1,14 +1,18 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<Index /> > should render with posts 1`] = `
 <DocumentFragment>
   <div
+    class="undefined flex flex-col mx-auto min-h-screen"
     data-is-root-path="true"
   >
     <nav>
-      <ul>
+      <ul
+        class="undefined flex flex-row flex-wrap justify-between list-none mx-auto max-w-screen-sm"
+      >
         <li>
           <a
+            class="text-black no-underline"
             href="/"
           >
             🏠 Home
@@ -16,6 +20,7 @@ exports[`<Index /> > should render with posts 1`] = `
         </li>
         <li>
           <a
+            class="text-black no-underline"
             href="/posts"
           >
             📰 Posts
@@ -23,6 +28,7 @@ exports[`<Index /> > should render with posts 1`] = `
         </li>
         <li>
           <a
+            class="text-black no-underline"
             href="/pages"
           >
             📑 Pages
@@ -30,6 +36,7 @@ exports[`<Index /> > should render with posts 1`] = `
         </li>
         <li>
           <a
+            class="text-black no-underline"
             href="/examples"
           >
             ⚛️ Examples
@@ -39,9 +46,12 @@ exports[`<Index /> > should render with posts 1`] = `
     </nav>
     <main>
       <div>
-        <h1>
+        <h1
+          class="undefined font-extrabold"
+        >
           Welcome to 
           <a
+            class="text-purple-600 font-medium no-underline"
             href="https://www.gatsbyjs.com/"
           >
             Gatsby!
@@ -62,9 +72,12 @@ exports[`<Index /> > should render with posts 1`] = `
       <section>
         <div>
           <a
+            class="undefined rounded-lg cursor-pointer overflow-x-hidden no-underline"
             href="/posts/example-post-with-image/"
           >
-            <div>
+            <div
+              class="shrink-0 h-40 relative"
+            >
               <div
                 class="gatsby-image-wrapper gatsby-image-wrapper-constrained"
                 data-gatsby-image-wrapper=""
@@ -77,7 +90,7 @@ exports[`<Index /> > should render with posts 1`] = `
                     alt=""
                     aria-hidden="true"
                     role="presentation"
-                    src="data:image/svg+xml;charset=utf-8,%3Csvg height='360' width='640' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+                    src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='360'%20width='640'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
                     style="max-width: 100%; display: block; position: static;"
                   />
                 </div>
@@ -112,37 +125,65 @@ exports[`<Index /> > should render with posts 1`] = `
                 </script>
               </div>
             </div>
-            <h2>
+            <h2
+              class="undefined font-semibold my-5 mx-4"
+            >
               Example Post with Image →
             </h2>
           </a>
           <a
+            class="undefined rounded-lg cursor-pointer overflow-x-hidden no-underline"
             href="/posts/hello-world/"
           >
-            <div>
+            <div
+              class="shrink-0 h-40 relative"
+            >
               <div />
             </div>
-            <h2>
+            <h2
+              class="undefined font-semibold my-5 mx-4"
+            >
               Hello world! →
             </h2>
           </a>
         </div>
       </section>
     </main>
-    <footer>
-      <nav>
-        <ul />
+    <footer
+      class="bg-black flex flex-col justify-self-end mt-12"
+    >
+      <nav
+        class="undefined flex flex-col mx-auto"
+      >
+        <ul
+          class="mt-4"
+        >
+          <li
+            class="text-blue-300 list-disc ml-3"
+          >
+            <a
+              class="text-blue-300 no-underline"
+              href="/posts/example-post-with-image/"
+            >
+              Example Post with Image
+            </a>
+          </li>
+        </ul>
       </nav>
-      <div>
+      <div
+        class="text-white my-4 mx-auto p-2"
+      >
         <span>
           © 2023 Built with 
           <a
+            class="underline"
             href="https://www.gatsbyjs.com"
           >
             Gatsby
           </a>
            and 
           <a
+            class="underline"
             href="https://wordpress.org/"
           >
             WordPress

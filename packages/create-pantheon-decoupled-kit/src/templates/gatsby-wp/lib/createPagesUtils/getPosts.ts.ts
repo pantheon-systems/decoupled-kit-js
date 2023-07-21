@@ -1,8 +1,9 @@
 import type { TemplateFn } from '@cli/types';
 import { wpPostsQuery } from '@partials/gatsby-wp/wpPostsQuery';
 
-const ts: TemplateFn =
-	() => /* ts */ `import { type GatsbyGraphQLHelper } from '../types';
+const ts: TemplateFn = ({
+	utils,
+}) => /* ts */ `import { type GatsbyGraphQLHelper } from '../types';
 
 /**
  * Query the Gatsby GraphQL layer for WordPress Posts
@@ -16,7 +17,7 @@ export const getPosts = async ({
 }: GatsbyGraphQLHelper): Promise<Queries.WpPostConnection['edges'] | void> => {
 	const graphqlResult = await graphql<{
 		allWpPost: Queries.WpPostConnection;
-	}>(/* GraphQL */${wpPostsQuery(false)});
+	}>(/* GraphQL */${utils.backticks(wpPostsQuery(false))});
 
 	if (graphqlResult.errors) {
 		reporter.panicOnBuild(
