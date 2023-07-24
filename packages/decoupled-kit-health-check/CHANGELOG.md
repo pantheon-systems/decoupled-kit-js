@@ -1,5 +1,12 @@
 # @pantheon-systems/decoupled-kit-health-check
 
+## 0.1.0-canary.4
+
+### Patch Changes
+
+- 86d23e83: No external facing changes, but the interals for this package have
+  been refactored.
+
 ## 0.1.0-canary.3
 
 ### Patch Changes
