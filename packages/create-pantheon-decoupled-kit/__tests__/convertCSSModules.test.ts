@@ -11,7 +11,7 @@ describe('convertCSSModules()', () => {
 		vi.resetAllMocks();
 	});
 
-	it('should call css-modules-to-tailwind with ./pages and ./components with next generators', async () => {
+	it('should call css-modules-to-tailwind@0.1.9 with ./pages and ./components with next generators', async () => {
 		await actions.convertCSSModules({
 			data: {
 				_: ['next-wp'],
@@ -22,7 +22,7 @@ describe('convertCSSModules()', () => {
 		});
 
 		expect(vi.mocked(execSync)).toHaveBeenCalledWith(
-			'npx --prefer-online --yes css-modules-to-tailwind ./pages/**/*.jsx ./pages/*.jsx ./components/*.jsx --force',
+			'npx --prefer-online --yes css-modules-to-tailwind@0.1.9 ./pages/**/*.jsx ./pages/*.jsx ./components/*.jsx --force',
 			{
 				stdio: 'inherit',
 				encoding: 'utf-8',
@@ -31,7 +31,7 @@ describe('convertCSSModules()', () => {
 		);
 	});
 
-	it('should call css-modules-to-tailwind with ./src with gatsby generators', async () => {
+	it('should call css-modules-to-tailwind@0.1.9 with ./src with gatsby generators', async () => {
 		await actions.convertCSSModules({
 			data: {
 				_: ['gatsby-wp'],
@@ -43,7 +43,7 @@ describe('convertCSSModules()', () => {
 		});
 
 		expect(vi.mocked(execSync)).toHaveBeenCalledWith(
-			'npx --prefer-online --yes css-modules-to-tailwind ./src/**/*.jsx --force',
+			'npx --prefer-online --yes css-modules-to-tailwind@0.1.9 ./src/**/*.jsx ./src/**/*.tsx --force',
 			{
 				stdio: 'inherit',
 				encoding: 'utf-8',

@@ -54,10 +54,13 @@ describe('runEsLint()', () => {
 		}));
 
 		await actions.runLint({ data });
-		expect(vi.mocked(execSync)).toHaveBeenCalledWith('npx eslint --fix  ', {
-			stdio: 'inherit',
-			cwd: outDir('withoutLint'),
-		});
+		expect(vi.mocked(execSync)).toHaveBeenCalledWith(
+			'npx eslint --ext {js,ts} --fix',
+			{
+				stdio: 'inherit',
+				cwd: outDir('withoutLint'),
+			},
+		);
 		expect(whichPMRuns).toHaveBeenCalledOnce();
 	});
 

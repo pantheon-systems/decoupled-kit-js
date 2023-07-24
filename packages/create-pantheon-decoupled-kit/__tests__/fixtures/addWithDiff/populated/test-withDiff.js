@@ -1,1 +1,1 @@
-console.log('Hello World')
+console.log('this line will be rendered to the template')

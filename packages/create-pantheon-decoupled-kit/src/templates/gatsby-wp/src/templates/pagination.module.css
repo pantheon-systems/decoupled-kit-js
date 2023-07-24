@@ -5,6 +5,7 @@
 	margin-right: auto;
 	max-width: var(--sm);
 	height: inherit;
+	min-height: 80vh;
 }
 
 .content {

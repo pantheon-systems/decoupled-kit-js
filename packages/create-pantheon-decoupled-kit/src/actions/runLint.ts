@@ -33,14 +33,10 @@ export const runLint: Action = async ({ data }) => {
 		} else if (pkg?.scripts['lint']) {
 			execSync(`${command} lint`, { cwd: data.outDir, stdio: 'inherit' });
 		} else {
-			const plugins = isString(data.plugins) && data.plugins;
-			const ignorePattern = isString(data.ignorePattern) && data.ignorePattern;
-			execSync(
-				`npx eslint --fix ${
-					ignorePattern ? `--ignore-pattern ${ignorePattern}` : ''
-				} ${plugins ? `--plugin ${plugins}` : ''}`,
-				{ cwd: data.outDir, stdio: 'inherit' },
-			);
+			execSync(`npx eslint --ext {js,ts} --fix`, {
+				cwd: data.outDir,
+				stdio: 'inherit',
+			});
 		}
 	} catch (error) {
 		console.error(chalk.red('There was a problem linting:'));

@@ -3,5 +3,7 @@
 	"parserOptions": {
 		"project": ["./tsconfig.json"]
 	},
-	"ignorePatterns": ["/src/templates/**/*.jsx"]
+	"rules": {
+		"@typescript-eslint/restrict-template-expressions": "warn"
+	}
 }
