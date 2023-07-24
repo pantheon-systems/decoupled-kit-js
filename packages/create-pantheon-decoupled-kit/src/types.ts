@@ -103,6 +103,7 @@ type InputIndex = BaseGeneratorData &
 		appName: string;
 		outDir: string;
 		templateRootDir: string;
+		cmsEndpoint: string;
 		noInstall: boolean;
 		noLint: boolean;
 		force: boolean;
@@ -114,7 +115,7 @@ type InputIndex = BaseGeneratorData &
  * Input from command line arguments, prompts, and generator data
  */
 export type Input = {
-	[Property in keyof InputIndex]?: InputIndex[Property];
+	[Property in keyof InputIndex]: InputIndex[Property];
 };
 
 export interface TemplateData {
