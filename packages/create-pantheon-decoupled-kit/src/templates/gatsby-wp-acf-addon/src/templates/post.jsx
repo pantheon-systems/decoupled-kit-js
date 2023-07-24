@@ -1,10 +1,10 @@
-import { graphql } from 'gatsby'
+import { graphql } from 'gatsby';
 
-import { PostGrid } from '../components/grid'
-import Layout from '../components/layout'
-import Post from '../components/post'
-import Seo from '../components/seo'
-import * as styles from './post.module.css'
+import { PostGrid } from '../components/grid';
+import Layout from '../components/layout';
+import Post from '../components/post';
+import Seo from '../components/seo';
+import * as styles from './post.module.css';
 
 const PostTemplate = ({ data: { previous, next, post } }) => {
 	return (
@@ -16,20 +16,20 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
 						<h2 className={styles.headerTitle}>Related Content</h2>
 					</header>
 					<PostGrid
-						data={post.relatedContent.relatedPosts.map(item => ({
+						data={post.relatedContent.relatedPosts.map((item) => ({
 							post: item,
 						}))}
 					/>
 				</section>
 			) : null}
 		</Layout>
-	)
-}
+	);
+};
 
-export default PostTemplate
+export default PostTemplate;
 
 export function Head({ data: { post } }) {
-	return <Seo title={post.title} description={post.excerpt} />
+	return <Seo title={post.title} description={post.excerpt} />;
 }
 
 export const pageQuery = graphql`
@@ -99,4 +99,4 @@ export const pageQuery = graphql`
 			title
 		}
 	}
-`
+`;

@@ -10,9 +10,9 @@ vi.mock('next/image');
  * @vitest-environment jsdom
  */
 
-describe( '<HomepageTemplate />', () => {
+describe('<HomepageTemplate />', () => {
 	it(`should render articles`, () => {
-		const data = { articles: umamiEnArticlesData, footerMenu: umamiFooterMenu }
+		const data = { articles: umamiEnArticlesData, footerMenu: umamiFooterMenu };
 
 		const { asFragment } = render(
 			<HomepageTemplate

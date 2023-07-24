@@ -16,7 +16,7 @@ vi.mock('next/router', () => ({
 
 describe(`Umami <ExamplesPageTemplate />`, () => {
 	it(`should render`, () => {
-		const data ={ footerMenu: umamiFooterMenu }
+		const data = { footerMenu: umamiFooterMenu };
 
 		const { asFragment } = render(
 			<ExamplesPageTemplate footerMenu={data.footerMenu} />,

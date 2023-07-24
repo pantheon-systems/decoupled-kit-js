@@ -16,7 +16,7 @@ describe('getPaths()', () => {
 			'articles',
 			false,
 		);
-		
+
 		expect(paths).toEqual(defaultProfilePaths);
 	});
 	it('should return an empty array if failGracefully is true', async () => {

@@ -18,7 +18,6 @@ describe('getPaths()', () => {
 		);
 
 		expect(paths).toEqual(umamiPaths);
-		
 	});
 	it('should return an empty array if failGracefully is true', async () => {
 		const paths = await getPaths(

@@ -34,5 +34,4 @@ describe('<CatchAllRoute />', () => {
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
-
 });

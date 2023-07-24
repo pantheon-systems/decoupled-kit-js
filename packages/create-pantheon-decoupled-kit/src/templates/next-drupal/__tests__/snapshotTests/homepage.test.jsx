@@ -13,9 +13,9 @@ vi.mock('next/image');
 describe('<HomepageTemplate />', () => {
 	it('should render articles', () => {
 		const data = {
-						articles: defaultProfileArticlesData,
-						footerMenu: defaultProfileFooterMenu,
-				  };
+			articles: defaultProfileArticlesData,
+			footerMenu: defaultProfileFooterMenu,
+		};
 
 		const { asFragment } = render(
 			<HomepageTemplate

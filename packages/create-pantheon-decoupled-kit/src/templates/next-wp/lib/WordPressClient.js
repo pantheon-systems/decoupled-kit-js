@@ -4,7 +4,7 @@ export const client = new GraphQLClientFactory(process.env.backendUrl, {
 	method: 'GET',
 }).create();
 export const paginationClient = new GraphQLClientFactory(
-	'https://dev-decoupled-wp-mock-data.pantheonsite.io/wp/graphql', 
+	'https://dev-decoupled-wp-mock-data.pantheonsite.io/wp/graphql',
 	{
 		method: 'GET',
 	},

@@ -19,9 +19,9 @@ vi.mock('next/router', () => ({
 describe('<PageListTemplate />', () => {
 	it('should render pages', () => {
 		const data = {
-						pages: defaultProfilePagesData,
-						footerMenu: defaultProfileFooterMenu,
-				  };
+			pages: defaultProfilePagesData,
+			footerMenu: defaultProfileFooterMenu,
+		};
 
 		const { asFragment } = render(
 			<PageListTemplate
@@ -35,9 +35,9 @@ describe('<PageListTemplate />', () => {
 describe('<PageTemplate />', () => {
 	it('should render a page', () => {
 		const data = {
-						page: defaultProfilePagesData[0],
-						footerMenu: defaultProfileFooterMenu,
-				  };
+			page: defaultProfilePagesData[0],
+			footerMenu: defaultProfileFooterMenu,
+		};
 
 		const { asFragment } = render(
 			<PageTemplate page={data.page} footerMenu={data.footerMenu} />,

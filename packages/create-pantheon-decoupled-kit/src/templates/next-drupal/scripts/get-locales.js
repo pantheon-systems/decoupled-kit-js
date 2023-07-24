@@ -13,7 +13,8 @@ const getLocales = async () => {
 		}
 	} catch (error) {
 		console.error('There was an error fetching language data.', error.message);
-		!process.env.BACKEND_URL && console.error('>> Ensure BACKEND_URL is set in .env.development.local')
+		!process.env.BACKEND_URL &&
+			console.error('>> Ensure BACKEND_URL is set in .env.development.local');
 		console.log("Defaulting locale to ['en']");
 		return ['en'];
 	}
