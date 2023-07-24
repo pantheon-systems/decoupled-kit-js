@@ -1,5 +1,26 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.0-canary.6
+
+### Minor Changes
+
+- 71c84419: [gatsby-wp] Use TypeScript by default [cli] Begin transitioning to
+  tagged template literal templates away from handlebars
+- 71c84419: [gatsby-wp] Starters created using the `gatsby-wp` generator are now
+  in TypeScript
+
+### Patch Changes
+
+- 71c84419: [gatsby-wp] Upgraded the gatsby-wp templates to use gatsby v5
+- 71c84419: [gatsby-wp-acf-addon] Rewrite templates in TypeScript
+
+  [gatsby-wp] Move some templates to partials
+
+- 71c84419: Add support for tagged template literal templates in addition to
+  handlebars templates. This is in effort to smooth out developer experience
+  when writing templates for the generators. This change is meant to be
+  backwards compatible so handlebars templates should still work.
+
 ## 0.9.3-canary.5
 
 ### Patch Changes
