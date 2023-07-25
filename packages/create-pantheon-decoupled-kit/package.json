@@ -39,7 +39,7 @@
 		"watch": "pnpm tsx watch --clear-screen=false ./scripts/watchTemplates.ts",
 		"eslint": "pnpm eslint:templates && pnpm eslint:non-templates",
 		"eslint:fix": "pnpm eslint:templates:fix && pnpm eslint:non-templates:fix",
-		"eslint:templates": "eslint \"./src/templates/**/*.{module.css,ts,tsx,json}.ts\" --config ./.eslintrc --no-eslintrc --ignore-path .gitignore",
+		"eslint:templates": "eslint \"./src/templates/**/*.{module.css,ts,tsx,json,env.*}.ts\" --config ./.eslintrc --no-eslintrc --ignore-path .gitignore",
 		"eslint:non-templates": "eslint \"./src/*.ts\" \"./src/actions/**\" \"./src/generators/**\"  \"./src/utils/**\" --config ./.eslintrc --no-eslintrc --ignore-path .gitignore",
 		"eslint:templates:fix": "pnpm eslint:templates --fix",
 		"eslint:non-templates:fix": "pnpm eslint:non-templates --fix",

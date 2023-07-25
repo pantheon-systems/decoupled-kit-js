@@ -8,7 +8,9 @@ const buildOptions = {
 	entryPoints: [
 		'./src/bin.ts',
 		// compile tagged templates to js
-		...(await glob('./src/templates/**/*.{css,jsx,tsx,ts,js,json}.ts')),
+		...(await glob('./src/templates/**/*.{css,jsx,tsx,ts,js,json,env.*}.ts', {
+			dot: true,
+		})),
 	],
 	bundle: true,
 	platform: 'node',

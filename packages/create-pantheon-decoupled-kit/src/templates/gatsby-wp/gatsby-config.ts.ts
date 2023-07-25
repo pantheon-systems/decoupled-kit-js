@@ -42,7 +42,7 @@ const cmsEndpoint = process.env.PANTHEON_CMS_ENDPOINT || '';
 process.env.PANTHEON_CMS_ENDPOINT =
 	cmsEndpoint && cmsEndpoint.startsWith('https://')
 		? process.env.PANTHEON_CMS_ENDPOINT
-		: ${utils.backticks('https://${cmsEndpoint}}/wp/graphql')};
+		: ${utils.backticks('https://${cmsEndpoint}/wp/graphql')};
 
 // Use URL from .env if it exists, otherwise fall back on the
 // Pantheon CMS endpoint

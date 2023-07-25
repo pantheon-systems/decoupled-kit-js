@@ -1,6 +1,6 @@
 module.exports = {
 	// lint tagged templates
-	'./src/templates/**/*.{module.css,ts,tsx,json}.ts': [
+	'./src/templates/**/*.{module.css,ts,tsx,json,env.*}.ts': [
 		`eslint --fix --config ./.eslintrc --no-eslintrc  --ignore-path .gitignore`,
 		`prettier --write --ignore-path ../../.prettierignore`,
 	],
