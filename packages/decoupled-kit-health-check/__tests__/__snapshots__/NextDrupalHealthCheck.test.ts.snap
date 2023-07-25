@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`NextDrupalHealthCheck > should pass for a valid BACKEND_URLR and invalid auth 1`] = `
+exports[`NextDrupalHealthCheck > should pass for a valid BACKEND_URL and invalid auth 1`] = `
 [
   "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
   "No .env* file found, assuming production environment.",
