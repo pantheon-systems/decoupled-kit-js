@@ -1,4 +1,6 @@
-.layout {
+import { taggedTemplateHelpers as utils } from '@cli/utils';
+
+export const layoutCSSModules = (search: boolean) => `.layout {
 	display: flex;
 	flex-direction: column;
 	min-height: 100dvh;
@@ -32,12 +34,13 @@
 	color: var(--blue-100);
 }
 
-{{#if search}}
-.searchHeaderContainer {
-	display: flex; 
-	margin: var(--x-auto);
-	flex-direction: row; 
-	flex-wrap: wrap; 
-	justify-content: center; 
-}
-{{/if}}
+${utils.if(
+	search,
+	`.searchHeaderContainer {
+    display: flex; 
+    margin: var(--x-auto);
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}`,
+)}`;
