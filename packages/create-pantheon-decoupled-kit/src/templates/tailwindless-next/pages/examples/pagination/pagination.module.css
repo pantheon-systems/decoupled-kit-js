@@ -32,3 +32,16 @@
 .item > div {
 	min-width: var(--sm);
 }
+
+.noData {
+	margin-top: var(--12);
+}
+
+.pre {
+	display: inline;
+}
+
+.link {
+	text-decoration-line: underline;
+	color: var(--blue);
+}
