@@ -5,7 +5,7 @@ import { tailwindcssDeps } from '@partials/pkg-shared/tailwindcssDepsT';
 const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 	${sharedPkgJsonField(utils.pkgName(data.appName))}
 	"scripts": {
-		"build": "gatsby build",
+		"build": "npm run decoupled-kit-health-check && gatsby build",
 		"develop": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop -H 0.0.0.0",
 		"format": "prettier --write '**/*.{js,jsx,ts,tsx,json,md}'",
 		"start": "npm run develop",
@@ -18,7 +18,8 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		"update-snapshots": "vitest run --update --silent",
 		"coverage": "vitest run --coverage",
 		"lint:fix": "eslint --ext .js,.ts,.jsx,.tsx src --fix --ignore-path .gitignore",
-		"lint": "eslint --ext .js,.ts,.jsx,.tsx src --ignore-path .gitignore"
+		"lint": "eslint --ext .js,.ts,.jsx,.tsx src --ignore-path .gitignore",
+		"decoupled-kit-health-check": "npx --prefer-offline @pantheon-systems/decoupled-kit-health-check wordpress"
 	},
 	"dependencies": {
 		"gatsby": "^5.11.0",
@@ -41,13 +42,10 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 	"devDependencies": {
 		${utils.if(data.tailwindcss, tailwindcssDeps(true))}
 		${utils.if(data.tailwindcss, tailwindcssDeps(false))}
-		"@pantheon-systems/decoupled-kit-configs": "${String(
-			data.otherConfigsVersion,
-		)}",
-		"@pantheon-systems/eslint-config-decoupled-kit": "${String(
-			data.eslintConfigVersion,
-		)}",
-		"@pantheon-systems/wordpress-kit": "${String(data.wordpressKitVersion)}",
+		"@pantheon-systems/decoupled-kit-configs": "${data.otherConfigsVersion}",
+		"@pantheon-systems/decoupled-kit-health-check": "${data.dkHealthCheckVersion}",
+		"@pantheon-systems/eslint-config-decoupled-kit": "${data.eslintConfigVersion}",
+		"@pantheon-systems/wordpress-kit": "${data.wordpressKitVersion}",
 		"@testing-library/react": "13.4.0",
 		"@types/dompurify": "^3.0.2",
 		"@types/gatsbyjs__reach-router": "^2.0.0",

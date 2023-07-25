@@ -6,4 +6,4 @@
 as a dev dependency to the `next-wp` template. The health check will run
 before a build to check critical endpoints for availability
 
-[next-wp, next-drupal] Updated the README to include information about the `@pantheon-systems/decoupled-kit-health-check` and 
+[next-wp, next-drupal] Updated the README to include information about the `@pantheon-systems/decoupled-kit-health-check`
