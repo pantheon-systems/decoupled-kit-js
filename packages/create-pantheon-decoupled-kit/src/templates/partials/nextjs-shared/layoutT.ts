@@ -74,7 +74,6 @@ ${utils.if(search, `import SearchInput from './search-input';`)}
 export default function Layout({ children, footerMenu, preview }) {
 ${utils.if(cmsType === 'wp', wpLayout)}
 ${utils.if(cmsType === 'drupal', drupalLayout)}
-
 	return (
 		<div className={styles.layout}>
 			{preview && <PreviewRibbon />}

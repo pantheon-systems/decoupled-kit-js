@@ -1,7 +1,7 @@
 import { taggedTemplateHelpers as utils } from '@cli/utils';
 
-export const searchInputTemplate = () => /* tsx */ `
-import { useRouter } from 'next/router';
+export const searchInputTemplate =
+	() => /* tsx */ `import { useRouter } from 'next/router';
 import { useState } from 'react';
 import styles from './searchInput.module.css';
 

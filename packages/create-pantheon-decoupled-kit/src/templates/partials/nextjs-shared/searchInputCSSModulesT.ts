@@ -51,5 +51,6 @@ export const searchInputCSSModules = () => `.container {
 .icon {
 	width: var(--5); 
 	height: var(--5); 
-}	
+}
+	
 `;
