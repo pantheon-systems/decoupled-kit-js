@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.0-canary.7
+
+### Patch Changes
+
+- a328f582: [gatsby-wp] Use new tagged template for .env.development.local and
+  fix typo in gatsby-config
+
 ## 0.10.0-canary.6
 
 ### Minor Changes
