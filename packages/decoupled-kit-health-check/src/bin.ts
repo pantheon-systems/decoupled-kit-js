@@ -6,6 +6,12 @@ import { getFramework } from './utils/getFramework';
 
 const [cms] = process.argv.slice(2, 3);
 
+if (!global.fetch) {
+	const nodeFetch = (await import('node-fetch')).default;
+	// @ts-expect-error node-fetch is not 1:1 on types with fetch
+	global.fetch = nodeFetch;
+}
+
 try {
 	if (/(drupal|d(9|10))/.test(cms)) {
 		const HC = new NextDrupalHealthCheck({ env: process.env });
