@@ -30,6 +30,10 @@ export interface GatsbyWPData extends BaseGeneratorData {
 	gatsby: true;
 }
 
+export interface SearchApiData extends BaseGeneratorData {
+	search: boolean;
+}
+
 /**
  * Generators need prompts to get user data not provided by CLI arguments
  */
@@ -98,7 +102,8 @@ export type Action = (config: ActionConfig) => Promise<string> | string;
 export type ActionRunner = (config: ActionRunnerConfig) => Promise<string>;
 
 type InputIndex = BaseGeneratorData &
-	GatsbyWPData & {
+	GatsbyWPData &
+	SearchApiData & {
 		_: string[];
 		appName: string;
 		outDir: string;
@@ -109,6 +114,7 @@ type InputIndex = BaseGeneratorData &
 		force: boolean;
 		silent: boolean;
 		tailwindcss: boolean;
+		cmsType: CMSType['Drupal'] | CMSType['WordPress'];
 	};
 
 /**

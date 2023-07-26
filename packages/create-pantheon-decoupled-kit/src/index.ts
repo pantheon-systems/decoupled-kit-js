@@ -2,11 +2,12 @@ import chalk from 'chalk';
 import inquirer, { QuestionCollection } from 'inquirer';
 import minimist, { Opts as MinimistOptions, ParsedArgs } from 'minimist';
 import {
-	type DecoupledKitGenerator,
-	type TemplateData,
+	Input,
 	isDrupalCms,
 	isString,
 	isWpCms,
+	type DecoupledKitGenerator,
+	type TemplateData,
 } from './types';
 import { actionRunner, getHandlebarsInstance, helpMenu } from './utils/index';
 
@@ -188,7 +189,7 @@ To see this list at any time, use the --help command.`;
 	const actionsResult = await actionRunner({
 		actions,
 		templateData,
-		data: args,
+		data: args as Input,
 		handlebars: hbs,
 	});
 	args?.silent || console.log(chalk.blueBright(actionsResult));
