@@ -1,5 +1,17 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.0-canary.9
+
+### Minor Changes
+
+- 7f18b23e: [cli] - Add generator for a next-wp-search-api-add-on
+  [next-wp-search-api-add-on] - Add's <SearchInput /> component to the layout
+  and header of the next-wp starter.
+
+### Patch Changes
+
+- 40a97692: Bump `@pantheon-systems/decoupled-kit-health-check` version
+
 ## 0.10.0-canary.8
 
 ### Patch Changes

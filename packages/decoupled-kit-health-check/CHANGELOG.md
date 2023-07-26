@@ -1,5 +1,11 @@
 # @pantheon-systems/decoupled-kit-health-check
 
+## 0.1.0-canary.6
+
+### Minor Changes
+
+- 40a97692: Support node >=14
+
 ## 0.1.0-canary.5
 
 ### Minor Changes

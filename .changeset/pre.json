@@ -14,15 +14,18 @@
     "@pantheon-systems/decoupled-kit-health-check": "0.0.0"
   },
   "changesets": [
+    "big-points-sniff",
     "blue-trainers-knock",
     "cool-worms-drive",
     "fifty-pants-peel",
     "five-tools-cross",
+    "good-apples-wonder",
     "gorgeous-terms-pay",
     "grumpy-lamps-act",
     "healthy-brooms-camp",
     "heavy-meals-hang",
     "little-feet-drop",
+    "long-ducks-scream",
     "nervous-cats-flow",
     "nervous-peas-suffer",
     "plenty-pillows-drop",
