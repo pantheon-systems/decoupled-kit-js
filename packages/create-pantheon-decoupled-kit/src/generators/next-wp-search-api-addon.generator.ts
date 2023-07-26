@@ -8,19 +8,19 @@ import {
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
 import { outDirPrompt, tailwindcssPrompt } from '../utils/sharedPrompts';
 
-export const nextDrupalSearchApiAddon: DecoupledKitGenerator<DefaultAnswers> = {
-	name: 'next-drupal-search-api-addon',
+export const nextWpSearchApiAddon: DecoupledKitGenerator<DefaultAnswers> = {
+	name: 'next-wp-search-api-addon',
 	description:
-		'Example implementation of the Drupal Search API for the next-drupal starter',
+		'Example implementation of the WordPress Search API for the next-wp starter',
 	prompts: [
-		outDirPrompt(`${process.cwd()}/next-drupal-search-api-addon`),
+		outDirPrompt(`${process.cwd()}/next-wp-search-api-addon`),
 		tailwindcssPrompt,
 	],
 	addon: true,
 	data: {
 		search: true,
 	},
-	templates: ['next-drupal-search-api-addon', 'tailwind-shared'],
+	templates: ['next-wp-search-api-addon', 'tailwind-shared'],
 	actions: [addWithDiff, runInstall, convertCSSModules, runLint],
 	nextSteps: [
 		`${chalk.cyan(
@@ -29,5 +29,5 @@ export const nextDrupalSearchApiAddon: DecoupledKitGenerator<DefaultAnswers> = {
 			)} command to update the snapshot files with the add-on components`,
 		)}`,
 	],
-	cmsType: 'drupal',
+	cmsType: 'wp',
 };
