@@ -1,6 +1,6 @@
 import { taggedTemplateHelpers as utils } from '@cli/utils';
 
-export const layoutCSSModules = (search: boolean) => `.layout {
+export const layoutCSSModules = (search: boolean) => /* css */ `.layout {
 	display: flex;
 	flex-direction: column;
 	min-height: 100dvh;

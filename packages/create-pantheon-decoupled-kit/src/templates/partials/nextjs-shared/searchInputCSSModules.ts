@@ -1,4 +1,4 @@
-export const searchInputCSSModules = () => `.container {
+export const searchInputCSSModules = () => /* css */ `.container {
 	display: flex; 
 	position: relative; 
 	align-items: stretch; 
@@ -52,5 +52,5 @@ export const searchInputCSSModules = () => `.container {
 	width: var(--5); 
 	height: var(--5); 
 }
-	
+
 `;

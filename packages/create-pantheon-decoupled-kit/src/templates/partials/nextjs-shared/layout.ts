@@ -1,6 +1,6 @@
 import { taggedTemplateHelpers as utils } from '@cli/utils';
 
-const drupalLayout = `
+const drupalLayout = /* jsx */ `
 const navItems = [
     { linkText: '🏠 Home', href: '/' },
     { linkText: '📰 Articles', href: '/articles' },
@@ -13,7 +13,7 @@ const footerMenuItems = footerMenu?.map(({ title, url, parent }) => ({
     parent: parent,
 }));
 `;
-const wpLayout = `
+const wpLayout = /* jsx */ `
 	const navItems = [
 		{
 			linkText: '🏠 Home',
@@ -40,7 +40,7 @@ const wpLayout = `
 	}));
 `;
 
-const wpSig = `		<a
+const wpSig = /* jsx */ `		<a
 						className="text-white hover:text-blue-100 underline"
 						href="https://nextjs.org/"
 					>
@@ -53,7 +53,7 @@ const wpSig = `		<a
 					>
 						WordPress
 					</a>`;
-const drupalSig = `<a
+const drupalSig = /* jsx */ `<a
 						href="https://nextjs.org/"
 					>
 						Next.js
@@ -65,10 +65,13 @@ const drupalSig = `<a
 						Drupal
 					</a>`;
 
-export const layoutTemplate = (
-	search: boolean,
-	cmsType: string,
-) => /* jsx */ `import { Footer, Header, PreviewRibbon } from '@pantheon-systems/nextjs-kit';
+export const layoutTemplate = ({
+	search,
+	cmsType,
+}: {
+	search: boolean;
+	cmsType: string;
+}) => /* jsx */ `import { Footer, Header, PreviewRibbon } from '@pantheon-systems/nextjs-kit';
 import styles from './layout.module.css';
 ${utils.if(search, `import SearchInput from './search-input';`)}
 export default function Layout({ children, footerMenu, preview }) {
@@ -77,10 +80,14 @@ ${utils.if(cmsType === 'drupal', drupalLayout)}
 	return (
 		<div className={styles.layout}>
 			{preview && <PreviewRibbon />}
-			<div className={styles.searchHeaderContainer}>
+			${utils.if(
+				search,
+				`<div className={styles.searchHeaderContainer}>
 				<Header navItems={navItems} />
 				<SearchInput />
-			</div>
+			</div>`,
+			)}
+			${utils.if(!search, `<Header navItems={navItems} />`)}
 			<main className={styles.layoutMain}>{children}</main>
 			<Footer footerMenuItems={footerMenuItems}>
 				<span className={styles.footerCopy}>
