@@ -36,7 +36,7 @@ export const layoutCSSModules = (search: boolean) => /* css */ `.layout {
 
 ${utils.if(
 	search,
-	`.searchHeaderContainer {
+	/* css */ `.searchHeaderContainer {
     display: flex; 
     margin: var(--x-auto);
     flex-direction: row; 

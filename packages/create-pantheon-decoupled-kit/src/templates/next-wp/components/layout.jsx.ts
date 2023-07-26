@@ -1,10 +1,10 @@
-import { layoutTemplate } from '@cli/templates/partials/nextjs-shared/layout';
-import { TemplateFn } from '@cli/types';
+import { TemplateFn, isWpCms } from '@cli/types';
+import { layoutTemplate } from '@partials/nextjs-shared/layout';
 
 const jsx: TemplateFn = ({ data }) =>
 	/* jsx */ `${layoutTemplate({
 		search: data.search,
-		cmsType: data.cmsType,
+		cmsType: isWpCms(data.cmsType) ? 'wp' : 'false',
 	})}`;
 
 export default jsx;

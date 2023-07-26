@@ -1,6 +1,6 @@
-import { searchInputCSSModules } from '@cli/templates/partials/nextjs-shared/searchInputCSSModules';
 import { TemplateFn } from '@cli/types';
+import { searchInputCSSModules } from '@partials/nextjs-shared/searchInputCSSModules';
 
-const css: TemplateFn = () => /* css */ `${searchInputCSSModules()}`;
+const css: TemplateFn = () => `${searchInputCSSModules()}`;
 
 export default css;

@@ -1,6 +1,6 @@
-import { searchInputTemplate } from '@cli/templates/partials/nextjs-shared/searchInput';
 import { TemplateFn } from '@cli/types';
+import { searchInputTemplate } from '@partials/nextjs-shared/searchInput';
 
-const jsx: TemplateFn = () => /* jsx */ `${searchInputTemplate()}`;
+const jsx: TemplateFn = () => `${searchInputTemplate()}`;
 
 export default jsx;

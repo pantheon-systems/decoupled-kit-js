@@ -3,6 +3,7 @@
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
     "streetsidesoftware.code-spell-checker",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "bierner.comment-tagged-templates"
   ]
 }

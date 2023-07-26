@@ -1,10 +1,10 @@
-import { layoutTemplate } from '@cli/templates/partials/nextjs-shared/layout';
-import { TemplateFn } from '@cli/types';
+import { TemplateFn, isDrupalCms } from '@cli/types';
+import { layoutTemplate } from '@partials/nextjs-shared/layout';
 
 const jsx: TemplateFn = ({ data }) =>
 	/* jsx */ `${layoutTemplate({
 		search: data.search,
-		cmsType: data.cmsType,
+		cmsType: isDrupalCms(data.cmsType) ? 'drupal' : 'false',
 	})}`;
 
 export default jsx;
