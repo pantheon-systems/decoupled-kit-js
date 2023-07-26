@@ -1,3 +1,4 @@
+import { isDrupalCms, isWpCms } from '@cli/types';
 import { taggedTemplateHelpers as utils } from '@cli/utils';
 
 const drupalLayout = /* jsx */ `
@@ -75,8 +76,8 @@ export const layoutTemplate = ({
 import styles from './layout.module.css';
 ${utils.if(search, `import SearchInput from './search-input';`)}
 export default function Layout({ children, footerMenu, preview }) {
-${utils.if(cmsType === 'wp', wpLayout)}
-${utils.if(cmsType === 'drupal', drupalLayout)}
+${utils.if(isWpCms(cmsType), wpLayout)}
+${utils.if(isDrupalCms(cmsType), drupalLayout)}
 	return (
 		<div className={styles.layout}>
 			{preview && <PreviewRibbon />}
