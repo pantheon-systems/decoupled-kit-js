@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.0-canary.8
+
+### Patch Changes
+
+- e4c17b86: [gatsby-wp] Add healthcheck script, bump
+  `@pantheon-systems/decoupled-kit-healthcheck` version
+
 ## 0.10.0-canary.7
 
 ### Patch Changes

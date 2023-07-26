@@ -10,7 +10,7 @@ describe('NextDrupalHealthCheck', () => {
 		delete process.env['CLIENT_SECRET'];
 		delete process.env['PREVIEW_SECRET'];
 	});
-	it('should pass for a valid BACKEND_URLR and invalid auth', async ({
+	it('should pass for a valid BACKEND_URL and invalid auth', async ({
 		logSpy,
 	}) => {
 		process.env['BACKEND_URL'] = 'https://drupal.test';

@@ -1,5 +1,11 @@
 # @pantheon-systems/decoupled-kit-health-check
 
+## 0.1.0-canary.5
+
+### Minor Changes
+
+- d0ff8fa4: Add support for the Gatsby + WordPress starter
+
 ## 0.1.0-canary.4
 
 ### Patch Changes

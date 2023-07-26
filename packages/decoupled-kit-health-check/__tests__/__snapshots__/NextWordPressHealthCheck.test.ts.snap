@@ -50,11 +50,10 @@ exports[`NextWordPressHealthCheck > should pass for a valid backend and valid au
   "Validating Menu Item endpoint...",
   "|__✅ Menu Items endpoint is valid!",
   "Validating authentication...",
-  "|__💡 WP_APPLICATION_PASSWORD is required for preview but is not set.",
-  "|____ Set a new WP_APPLICATION_PASSWORD here by clicking edit: 🔗 https://wordpress.test/wp/wp-admin/users.php",
-  "|__💡 Auth not valid.",
-  "|____ Ensure the WP_APPLICATION_USERNAME and WP_APPLICATION_PASSWORD are correct.",
-  "⏭  Skipping preview endpoint validation -- authorization required.",
+  "|__✅ Auth is valid!",
+  "Checking for PREVIEW_SECRET...",
+  "|__✅ PREVIEW_SECRET is set.",
+  "|__✅ Preview is valid!",
 ]
 `;
 
@@ -68,11 +67,11 @@ exports[`NextWordPressHealthCheck > should pass for a valid backend and valid au
   "Validating Menu Item endpoint...",
   "|__✅ Menu Items endpoint is valid!",
   "Validating authentication...",
-  "|__💡 WP_APPLICATION_PASSWORD is required for preview but is not set.",
-  "|____ Set a new WP_APPLICATION_PASSWORD here by clicking edit: 🔗 https://wordpress.test/wp/wp-admin/users.php",
-  "|__💡 Auth not valid.",
-  "|____ Ensure the WP_APPLICATION_USERNAME and WP_APPLICATION_PASSWORD are correct.",
-  "⏭  Skipping preview endpoint validation -- authorization required.",
+  "|__✅ Auth is valid!",
+  "Checking for PREVIEW_SECRET...",
+  "|__💡 PREVIEW_SECRET env var is not set.",
+  "|____ To set a new secret, go to 🔗 https://wordpress.test/admin/structure/dp-preview-site and edit the preview site you want to use.",
+  "⏭  Skipping preview endpoint validation -- PREVIEW_SECRET required.",
 ]
 `;
 
