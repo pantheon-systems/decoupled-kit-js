@@ -2,8 +2,8 @@
 
 exports[`NextWordPressHealthCheck > should pass for a valid PANTHEON_CMS_ENDPOINT and invalid auth 1`] = `
 [
-  "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
   "No .env* file found, assuming production environment.",
+  "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
   "|__✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
   "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
@@ -22,8 +22,8 @@ exports[`NextWordPressHealthCheck > should pass for a valid PANTHEON_CMS_ENDPOIN
 
 exports[`NextWordPressHealthCheck > should pass for a valid WPGRAPHQL_URL and invalid auth 1`] = `
 [
-  "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
   "No .env* file found, assuming production environment.",
+  "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
   "|__✅ WPGRAPHQL_URL is set!",
   "Validating CMS endpoint...",
   "|__✅ WPGRAPHQL_URL is valid!",
@@ -42,8 +42,8 @@ exports[`NextWordPressHealthCheck > should pass for a valid WPGRAPHQL_URL and in
 
 exports[`NextWordPressHealthCheck > should pass for a valid backend and valid auth 1`] = `
 [
-  "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
   "No .env* file found, assuming production environment.",
+  "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
   "|__✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
   "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
@@ -59,8 +59,8 @@ exports[`NextWordPressHealthCheck > should pass for a valid backend and valid au
 
 exports[`NextWordPressHealthCheck > should pass for a valid backend and valid auth but no preview secret 1`] = `
 [
-  "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
   "No .env* file found, assuming production environment.",
+  "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
   "|__✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
   "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
@@ -77,8 +77,8 @@ exports[`NextWordPressHealthCheck > should pass for a valid backend and valid au
 
 exports[`NextWordPressHealthCheck > should show a helpful error message if the backend is invalid 1`] = `
 [
-  "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
   "No .env* file found, assuming production environment.",
+  "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
   "|__✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
   "|__❌ PANTHEON_CMS_ENDPOINT could not be fetched from.
