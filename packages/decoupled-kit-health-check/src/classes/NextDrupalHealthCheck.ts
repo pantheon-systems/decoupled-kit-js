@@ -25,11 +25,6 @@ export class NextDrupalHealthCheck extends DrupalHealthCheck {
 	 */
 	constructor({ env }: { env: typeof process.env }) {
 		super();
-		this.clientID = env['CLIENT_ID'];
-		this.#clientSecret = env['CLIENT_SECRET'];
-		this.#previewSecret = env['PREVIEW_SECRET'];
-
-		console.log('Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...');
 		if (process.env.NODE_ENV !== 'production') {
 			dotenv.config({
 				path: resolveDotenvFile(),
@@ -39,6 +34,11 @@ export class NextDrupalHealthCheck extends DrupalHealthCheck {
 				'Production environment detected, skipping .env* resolution.',
 			);
 		}
+		this.clientID = env['CLIENT_ID'];
+		this.#clientSecret = env['CLIENT_SECRET'];
+		this.#previewSecret = env['PREVIEW_SECRET'];
+
+		console.log('Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...');
 		const keys = ['BACKEND_URL', 'PANTHEON_CMS_ENDPOINT'];
 		const backendVars: {
 			[key in 'BACKEND_URL' | 'PANTHEON_CMS_ENDPOINT']?: string;

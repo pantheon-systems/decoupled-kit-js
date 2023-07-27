@@ -2,8 +2,8 @@
 
 exports[`NextDrupalHealthCheck > should pass for a valid BACKEND_URL and invalid auth 1`] = `
 [
-  "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
   "No .env* file found, assuming production environment.",
+  "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
   "|__✅ BACKEND_URL is set!",
   "Validating CMS endpoint...",
   "|__✅ BACKEND_URL is valid!",
@@ -23,8 +23,8 @@ exports[`NextDrupalHealthCheck > should pass for a valid BACKEND_URL and invalid
 
 exports[`NextDrupalHealthCheck > should pass for a valid PANTHEON_CMS_ENDPOINT and invalid auth 1`] = `
 [
-  "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
   "No .env* file found, assuming production environment.",
+  "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
   "|__✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
   "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
@@ -44,8 +44,8 @@ exports[`NextDrupalHealthCheck > should pass for a valid PANTHEON_CMS_ENDPOINT a
 
 exports[`NextDrupalHealthCheck > should pass for a valid backend and valid auth 1`] = `
 [
-  "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
   "No .env* file found, assuming production environment.",
+  "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
   "|__✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
   "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
@@ -62,8 +62,8 @@ exports[`NextDrupalHealthCheck > should pass for a valid backend and valid auth 
 
 exports[`NextDrupalHealthCheck > should pass for a valid backend and valid auth but no preview secret 1`] = `
 [
-  "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
   "No .env* file found, assuming production environment.",
+  "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
   "|__✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
   "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
@@ -81,8 +81,8 @@ exports[`NextDrupalHealthCheck > should pass for a valid backend and valid auth 
 
 exports[`NextDrupalHealthCheck > should show a helpful error message if the backend is invalid 1`] = `
 [
-  "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
   "No .env* file found, assuming production environment.",
+  "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
   "|__✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
   "|__❌ PANTHEON_CMS_ENDPOINT could not be fetched from.

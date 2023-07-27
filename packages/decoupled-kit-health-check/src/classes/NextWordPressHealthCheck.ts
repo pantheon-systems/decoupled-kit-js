@@ -23,11 +23,6 @@ export class NextWordPressHealthCheck extends WordPressHealthCheck {
 	 */
 	constructor({ env }: { env: typeof process.env }) {
 		super();
-		this.appUsername = env['WP_APPLICATION_USERNAME'];
-		this.#appPassword = env['WP_APPLICATION_PASSWORD'];
-		this.#previewSecret = env['PREVIEW_SECRET'];
-
-		console.log('Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...');
 		if (process.env.NODE_ENV !== 'production') {
 			dotenv.config({
 				path: resolveDotenvFile(),
@@ -37,6 +32,11 @@ export class NextWordPressHealthCheck extends WordPressHealthCheck {
 				'Production environment detected, skipping .env* resolution.',
 			);
 		}
+		this.appUsername = env['WP_APPLICATION_USERNAME'];
+		this.#appPassword = env['WP_APPLICATION_PASSWORD'];
+		this.#previewSecret = env['PREVIEW_SECRET'];
+
+		console.log('Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...');
 		const keys = ['WPGRAPHQL_URL', 'PANTHEON_CMS_ENDPOINT'];
 		const backendVars: {
 			[key in 'WPGRAPHQL_URL' | 'PANTHEON_CMS_ENDPOINT']?: string;
