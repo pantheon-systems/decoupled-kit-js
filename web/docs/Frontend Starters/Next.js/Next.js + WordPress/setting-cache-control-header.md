@@ -14,7 +14,7 @@ Next.js application using the `wordpress-kit`.
 ## Setting Cache-Control Headers with WordPress Kit
 
 The `@pantheon-systems/wordpress-kit` npm package exports a function,
-`setEdgeHeaders`, which takes in a response object and a cache-control header
+`setEdgeHeader`, which takes in a response object and a cache-control header
 value. The value is then set to the response object's headers so that when the
 request is sent along it will be cached at the edge.
 
@@ -27,7 +27,7 @@ Cache-Control: public, s-maxage=600
 To override the default, you may pass in your own cache-control header:
 
 ```jsx title=pages/example/index.js
-import { setEdgeHeaders } from '@pantheon-systems/wordpress-kit';
+import { setEdgeHeader } from '@pantheon-systems/wordpress-kit';
 
 export default function MyPage(props) {
 	// Page component here...
@@ -37,11 +37,11 @@ export async function getServerSideProps(context) {
 	// the response object from the server context
 	const { res } = context;
 
-	// setEdgeHeaders accepts an optional string which is a cache-control header
+	// setEdgeHeader accepts an optional string which is a cache-control header
 	const myCacheControlHeader = 'public, max-age=604800, must-revalidate';
 
-	// Call setEdgeHeaders with the res object and your desired cache-control header
-	setEdgeHeaders({ res, cacheControl: myCacheControlHeader });
+	// Call setEdgeHeader with the res object and your desired cache-control header
+	setEdgeHeader({ res, cacheControl: myCacheControlHeader });
 
 	// Fetch data and return props...
 }
