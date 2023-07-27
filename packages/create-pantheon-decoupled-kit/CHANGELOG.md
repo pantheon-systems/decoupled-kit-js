@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.0-canary.11
+
+### Patch Changes
+
+- f9756fbc: [next-wp-search-api-addon] Add Search Results page
+
 ## 0.10.0-canary.10
 
 ### Patch Changes
