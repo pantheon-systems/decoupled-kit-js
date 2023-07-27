@@ -1,5 +1,11 @@
 # @pantheon-systems/decoupled-kit-health-check
 
+## 0.1.0-canary.7
+
+### Patch Changes
+
+- ba64c8b2: Ensure .env vars are loaded if NODE_ENV is not production
+
 ## 0.1.0-canary.6
 
 ### Minor Changes
