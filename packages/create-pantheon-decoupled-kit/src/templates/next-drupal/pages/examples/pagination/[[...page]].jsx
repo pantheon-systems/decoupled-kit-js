@@ -55,14 +55,11 @@ export default function PaginationExampleTemplate({ data, footerMenu }) {
 							/>
 						</>
 					) : (
-						<p className={styles.noData}>
+						<div className={styles.noData}>
 							This example relies on data from{' '}
-							<pre className={styles.pre}>
-								https://dev-ds-demo.pantheonsite.io
-							</pre>
-							. If you&apos;re seeing this message, it may be unreachable. Try
-							building again when it is reachable or create your own data with
-							the{' '}
+							<code>https://dev-ds-demo.pantheonsite.io</code>. If you&apos;re
+							seeing this message, it may be unreachable. Try building again
+							when it is reachable or create your own data with the{' '}
 							<a
 								className={styles.link}
 								href="https://www.drupal.org/project/faker"
@@ -71,7 +68,7 @@ export default function PaginationExampleTemplate({ data, footerMenu }) {
 								Faker Drupal Module
 							</a>
 							.
-						</p>
+						</div>
 					)}
 				</section>
 			</div>
