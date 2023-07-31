@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.0-canary.13
+
+### Patch Changes
+
+- 17cf4481: [next-wp] Pagination example fails gracefully. If the mock content
+  can not be reached, a message is displayed at the /examples/pagination route.
+
 ## 0.10.0-canary.12
 
 ### Patch Changes
