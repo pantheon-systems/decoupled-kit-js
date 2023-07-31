@@ -13,6 +13,19 @@ export const createPaginationExamplePage = ({
 	routing: boolean;
 	componentPath: string;
 }) => {
+	if (!posts.length) {
+		createPage({
+			path: '/examples/pagination',
+			component: componentPath,
+			context: {
+				posts,
+				postsPerPage: 0,
+				routing: false,
+				breakpoints: {},
+			},
+		});
+		return;
+	}
 	const postsPerPage = 5;
 	const postsChunkedIntoArchivePages = chunk(posts, postsPerPage);
 
