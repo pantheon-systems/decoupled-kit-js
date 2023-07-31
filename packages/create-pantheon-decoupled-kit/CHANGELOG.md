@@ -1,5 +1,13 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.0-canary.12
+
+### Patch Changes
+
+- bf9e7728: [next-drupal] Pagination example fails gracefully. If the mock
+  content can not be reached, a message is displayed at the /examples/pagination
+  route.
+
 ## 0.10.0-canary.11
 
 ### Patch Changes
