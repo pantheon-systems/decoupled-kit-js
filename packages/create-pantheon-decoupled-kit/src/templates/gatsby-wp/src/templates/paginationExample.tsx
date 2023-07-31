@@ -23,13 +23,8 @@ const PaginationPostsExample = ({
 				{currentItems?.length > 0 ? (
 					currentItems.map((item) => {
 						return (
-							<article
-								key={item.title}
-								className={`${styles.item} flex flex-col leading-8 mb-10 p-3`}
-							>
-								<h2 className={`${styles.itemTitle} font-bold mb-2`}>
-									{item.title}
-								</h2>
+							<article key={item.title} className={styles.item}>
+								<h2 className={styles.itemTitle}>{item.title}</h2>
 								<div
 									dangerouslySetInnerHTML={{ __html: sanitize(item.excerpt) }}
 								/>
@@ -49,9 +44,7 @@ const PaginationPostsExample = ({
 				<section className={styles.content}>
 					{posts.length > 0 ? (
 						<>
-							<h1 className={`${styles.title} font-extrabold my-10 mx-0`}>
-								Pagination example
-							</h1>
+							<h1 className={styles.title}>Pagination example</h1>
 							<Paginator
 								data={posts}
 								itemsPerPage={postsPerPage}
