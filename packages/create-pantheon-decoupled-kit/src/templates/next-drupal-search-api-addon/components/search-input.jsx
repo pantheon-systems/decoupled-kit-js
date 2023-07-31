@@ -1,7 +1,4 @@
-import { taggedTemplateHelpers as utils } from '@cli/utils';
-
-export const searchInputTemplate =
-	() => /* jsx */ `import { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import styles from './searchInput.module.css';
 
@@ -19,7 +16,7 @@ const SearchInput = () => {
 		}
 
 		const encodedSearchQuery = encodeURI(searchQuery);
-		router.push( ${utils.backticks('/search/${encodedSearchQuery}')});
+		router.push(`/search/${encodedSearchQuery}`);
 	};
 
 	return (
@@ -62,4 +59,3 @@ const SearchInput = () => {
 };
 
 export default SearchInput;
-`;
