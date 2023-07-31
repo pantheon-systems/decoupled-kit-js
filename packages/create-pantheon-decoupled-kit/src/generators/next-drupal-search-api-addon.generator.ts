@@ -1,14 +1,21 @@
-import chalk from 'chalk';
 import {
 	addWithDiff,
-	convertCSSModules,
-	runInstall,
 	runLint,
+	runInstall,
+	convertCSSModules,
 } from '../actions';
 import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
+import chalk from 'chalk';
 import { outDirPrompt, tailwindcssPrompt } from '../utils/sharedPrompts';
 
-export const nextDrupalSearchApiAddon: DecoupledKitGenerator<DefaultAnswers> = {
+interface NextDrupalSearchApiAddonAnswers {
+	search: true;
+}
+
+export const nextDrupalSearchApiAddon: DecoupledKitGenerator<
+	DefaultAnswers,
+	NextDrupalSearchApiAddonAnswers
+> = {
 	name: 'next-drupal-search-api-addon',
 	description:
 		'Example implementation of the Drupal Search API for the next-drupal starter',
