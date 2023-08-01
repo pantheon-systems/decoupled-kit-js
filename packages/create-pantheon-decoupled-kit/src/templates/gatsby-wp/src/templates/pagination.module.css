@@ -38,6 +38,15 @@
 	margin-bottom: var(--2);
 }
 
+.noData {
+	margin-top: var(--12);
+}
+
+.link {
+	text-decoration-line: underline;
+	color: var(--blue);
+}
+
 /* md breakpoint*/
 @media (max-width: 768px) {
 	.container {

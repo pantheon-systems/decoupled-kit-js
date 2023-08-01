@@ -42,15 +42,35 @@ const PaginationPostsExample = ({
 		<Layout>
 			<div className={styles.container}>
 				<section className={styles.content}>
-					<h1 className={styles.title}>Pagination example</h1>
-					<Paginator
-						data={posts}
-						itemsPerPage={postsPerPage}
-						location={location}
-						breakpoints={breakpoints}
-						routing={routing}
-						Component={RenderCurrentItems}
-					/>
+					{posts.length > 0 ? (
+						<>
+							<h1 className={styles.title}>Pagination example</h1>
+							<Paginator
+								data={posts}
+								itemsPerPage={postsPerPage}
+								location={location}
+								breakpoints={breakpoints}
+								routing={routing}
+								Component={RenderCurrentItems}
+							/>
+						</>
+					) : (
+						<p className={styles.noData}>
+							This example relies on data from{' '}
+							<code>https://dev-decoupled-wp-mock-data.pantheonsite.io</code>.
+							If you&apos;re seeing this message, it may be unreachable. Try
+							building again when it is reachable or create your own data with
+							the{' '}
+							<a
+								className={styles.link}
+								href="https://wordpress.org/plugins/fakerpress/"
+								rel="noopener"
+							>
+								FakerPress Plugin
+							</a>
+							.
+						</p>
+					)}
 				</section>
 			</div>
 		</Layout>
