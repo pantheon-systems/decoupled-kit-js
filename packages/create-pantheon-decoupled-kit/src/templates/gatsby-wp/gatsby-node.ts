@@ -87,7 +87,9 @@ export const createPages = async ({
 	// /examples/
 	createExamplesPage({
 		createPage,
-		routing,
+		// set routing to false if there are no pagination posts to
+		// avoid setting an incorrect link
+		routing: paginationPosts.length > 0 ? routing : false,
 		componentPath: path.resolve('./src/templates/examples.tsx'),
 	});
 	// /examples/auth-api
