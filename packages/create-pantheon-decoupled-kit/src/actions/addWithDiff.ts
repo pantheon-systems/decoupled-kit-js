@@ -5,9 +5,17 @@ import type { QuestionCollection } from 'inquirer';
 import inquirer from 'inquirer';
 import path from 'path';
 import { rootDir } from '..';
-import type { Action, MergedPaths } from '../types';
-import { isString } from '../types';
-import { dedupeTemplates } from '../utils/dedupeTemplates';
+import {
+	isString,
+	type Action,
+	type MergedPaths,
+	type TemplateImport,
+} from '../types';
+import {
+	dedupeTemplates,
+	taggedTemplateHelpers as helpers,
+	TAGGED_TEMPLATE_REGEX,
+} from '../utils';
 
 interface FilesToWriteData {
 	target: string;
@@ -43,6 +51,7 @@ export const addWithDiff: Action = async ({
 
 	const filesToCopyRegex =
 		/(gif|jpg|jpeg|tiff|png|svg|ashx|ico|pdf|jar|eot|woff|ttf|woff2)$/;
+	const templateFilesRegex = TAGGED_TEMPLATE_REGEX;
 	const templatesToRender: MergedPaths = await dedupeTemplates(templateData);
 	const destinationDir = path.resolve(process.cwd(), data.outDir);
 
@@ -92,14 +101,19 @@ export const addWithDiff: Action = async ({
 			// get the contents of the template
 			const temp = handlebars.compile(fs.readFileSync(templatePath, 'utf-8'));
 			sourceContents = temp(data);
-			// prevents writing empty files
-			// useful for files that may be empty
-			// depending on the options selected
-			if (!sourceContents) {
-				continue;
-			}
+		} else if (templateFilesRegex.test(templatePath)) {
+			target = target.replace(/\.(js|ts)$/, '');
+			const temp = ((await import(templatePath)) as TemplateImport).default;
+			// replace empty new lines created by utils.if
+			sourceContents = temp({ data, utils: helpers }).replace(/\t{1,}\n/g, '');
 		} else {
 			sourceContents = fs.readFileSync(templatePath, 'utf-8');
+		}
+		// prevents writing empty files
+		// useful for files that may be empty
+		// depending on the options selected
+		if (!sourceContents) {
+			continue;
 		}
 		const fileDidExist = fs.existsSync(target);
 		// ensure the file exists or readFileSync errors.

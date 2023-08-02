@@ -135,13 +135,24 @@ To create the project with the `next-drupal-umami` demo data, use the
 pnpm create pantheon-decoupled-kit next-drupal next-drupal-umami-addon --appName my-next-drupal-umami --outDir ./next-drupal-umami
 ```
 
-### Creating a Generator
+### Templates
 
-Templates are written in the
-[handlebars templating language](https://handlebarsjs.com/). A template does not
-need to be dynamic. Static templates should not use the handlebars file
-extension `.hbs`, but instead should be included in the template directory as
-is.
+New templates are written using
+[tagged template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals).
+A template does not need to be dynamic. Static templates should use the normal
+file extension for that file. Dynamic templates should export a default function
+with the `TemplateFn` signature which can be seen in detail at
+`create-pantheon-decoupled-kit/src/types.ts`. These files will end in two file
+extensions: the desired extension and .ts. So for a `.tsx` file, the filename
+for the template would look like `templateName.tsx.ts`. When the generators are
+run, the `addWithDiff` action will run the default function and remove the `.ts`
+extension from the filename, writing the contents to `templateName.tsx` in the
+desired output location.
+
+Some old templates are written using handlebars. These templates will be
+replaced with the new tagged template pattern.
+
+### Creating a Generator
 
 A custom generator should satisfy the `DecoupledKitGenerator` type, as well as
 the following criteria:
@@ -172,15 +183,19 @@ the `addon` field set to `true`.
 One caveat to keep in mind when writing an add-on: templates that exist with the
 same path in both an add-on and a project generator will favor the add-on.
 Meaning, if there are two generators being run and both have an
-`src/example/index.ts.hbs`, the add-on's `src/example/index.ts` will be the one
+`src/example/index.ts.ts`, the add-on's `src/example/index.ts` will be the one
 rendered.
 
 ### Adding Partials
 
-[Handlebars Partials](https://handlebarsjs.com/guide/#partials) should be used
-when possible to reduce duplication of code across multiple files. Partials must
-be added to the `create-pantheon-decoupled-kit/src/templates/partials` directory
-in order to be automatically registered to the handlebars instance.
+New partials should be written in TypeScript. They should accept any arguments
+required for that partial only.
+
+```typescript
+// create-pantheon-decoupled-kit/src/templates/partials/examples/myPartial.ts
+export const myPartial = (someDynamicArg: string) =>
+	`console.log('${someDynamicArg}')`;
+```
 
 ### Adding Custom Actions
 
@@ -241,50 +256,58 @@ and arbitrary data needed by the template:
  * This example uses os to show how to conditionally
  * and dynamically set data.
  */
-import os from 'node:os'
-import type { DefaultAnswers, DecoupledKitGenerator } from '../types.ts'
+import os from 'node:os';
+import type { DefaultAnswers, DecoupledKitGenerator } from '../types.ts';
 
 interface ExampleAnswers extends DefaultAnswers {
-  requiredUserInput: string;
+	requiredUserInput: string;
 }
 
 interface ExampleData {
-  arbitraryBoolean: boolean;
-  arbitraryObject: {
-    someValue: string;
-    anotherValue: number;
-  },
-  optionalData?: string
+	arbitraryBoolean: boolean;
+	arbitraryObject: {
+		someValue: string;
+		anotherValue: number;
+	};
+	optionalData?: string;
 }
 
-
-export const exampleGenerator: DecoupledKitGenerator<ExampleAnswers, ExampleData> = {
-  name: 'decoupled-kit-example',
-  prompts: [
-    name: 'requiredUserInput',
-    message: 'This message is displayed when this prompt is run',
-    default: (({ outDir }: ExampleAnswers) => {
-      /**
-       * previous answers are available to make
-       * parts of the prompt dynamic if necessary
-       */
-      return `${outDir.replaceAll('/', '-')}`
-    })
-  ],
-  data: {
-    arbitraryBoolean: true,
-    arbitraryObject: {
-      // arbitrary data can be dynamic
-      someValue: os.arch(),
-      anotherValue: os.freemem()
-    }
-    // data can be added based on arbitrary conditions
-    ...(os.platform() === 'darwin' && {
-      optionalData: 'This data will only be included if the OS platform is darwin'
-    })
-  },
-  templates: ['example-templates']
-}
+export const exampleGenerator: DecoupledKitGenerator<
+	ExampleAnswers,
+	ExampleData
+> = {
+	name: 'decoupled-kit-example',
+	description: 'example generator',
+	prompts: [
+		{
+			name: 'requiredUserInput',
+			message: 'This message is displayed when this prompt is run',
+			default: ({ outDir }: ExampleAnswers) => {
+				/**
+				 * previous answers are available to make
+				 * parts of the prompt dynamic if necessary
+				 */
+				return `${outDir.replaceAll('/', '-')}`;
+			},
+		},
+	],
+	data: {
+		arbitraryBoolean: true,
+		arbitraryObject: {
+			// arbitrary data can be dynamic
+			someValue: os.arch(),
+			anotherValue: os.freemem(),
+		},
+		// data can be added based on arbitrary conditions
+		...(os.platform() === 'darwin' && {
+			optionalData:
+				'This data will only be included if the OS platform is darwin',
+		}),
+	},
+	templates: ['example-templates'],
+	actions: [addWithDiff],
+	cmsType: 'any',
+};
 ```
 
 The templates in the `templates` array will need to be defined in
@@ -294,19 +317,22 @@ renders the templates. An example of utilize this data could like something like
 the following:
 
 <!-- prettier-ignore -->
-```handlebars
-// src/templates/example-templates/index.ts.hbs
-{{#unless arbitraryBoolean}}
+```typescript
+// src/templates/example-templates/index.ts.ts
+import type { TemplateFn } from '@cli/types';
+
+const ts: TemplateFn = ({ data, utils }) =>`
+${utils.if(!arbitraryBoolean, `import { someModule } from '../somewhere';`)}}
 	import { someModule } from '../somewhere';
-{{/unless}}
 
-const {{arbitraryObject.someValue}} = '{{arbitraryObject.anotherValue}}'
+const ${data.arbitraryObject.someValue} = '${data.arbitraryObject.anotherValue}'
 
-{{#if optionalData}}
-	console.log('{{optionalData}}')
-{{/if}}
+${utils.if(data.optionalData, `console.log('${data.optionalData}')`)}
 
-console.log('{{requiredUserInput}}')
+console.log('${requiredUserInput}')
+`
+export default ts;
+
 ```
 
 Stepping through this contrived example template:
@@ -315,9 +341,6 @@ Stepping through this contrived example template:
 1. Set a variable with the name of `arbitraryObject.someValue` to a value of
    `arbitraryObject.anotherValue` as a string.
 1. If `optionalData` is present, console.log the value of it.
-
-Explore
-[this template in the handlebars playground](<https://handlebarsjs.com/playground.html#format=1&currentExample=%7B%22template%22%3A%22%7B%7B%23unless%20arbitraryBoolean%7D%7D%5Cnimport%20%7B%20someModule%20%7D%20from%20'..%2Fsomewhere'%3B%5Cn%7B%7B%2Funless%7D%7D%5Cn%5Cnconst%20%7B%7BarbitraryObject.someValue%7D%7D%20%3D%20'%7B%7BarbitraryObject.anotherValue%7D%7D'%5Cn%5Cn%7B%7B%23if%20optionalData%7D%7D%5Cn%5Ctconsole.log('%7B%7BoptionalData%7D%7D')%5Cn%7B%7B%2Fif%7D%7D%5Cn%5Cnconsole.log('%7B%7BrequiredUserInput%7D%7D')%22%2C%22partials%22%3A%5B%5D%2C%22input%22%3A%22%7B%5Cn%5CtarbitraryBoolean%3A%20false%2C%5Cn%20%20%20%20arbitraryObject%3A%20%7B%5Cn%20%20%20%20%5CtsomeValue%3A%20'hello'%2C%5Cn%20%20%20%20%5CtanotherValue%3A%20'world'%2C%5Cn%20%20%7D%2C%5Cn%20%20optionalData%3A%20''%2C%5Cn%20%20requiredUserInput%3A%20'I%20am%20required!'%5Cn%20%20%20%20%5Cn%7D%5Cn%22%2C%22output%22%3A%22import%20%7B%20someModule%20%7D%20from%20'..%2Fsomewhere'%3B%5Cn%5Cnconst%20hello%20%3D%20'world'%5Cn%5Cn%5Cnconsole.log('I%20am%20required!')%22%2C%22preparationScript%22%3A%22%5Cn%22%2C%22handlebarsVersion%22%3A%224.7.7%22%7D>).
 
 ### The `watch` Script
 

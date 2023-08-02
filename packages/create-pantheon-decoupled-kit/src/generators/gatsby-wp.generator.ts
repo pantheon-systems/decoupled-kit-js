@@ -6,7 +6,11 @@ import {
 	runLint,
 } from '../actions';
 import versions from '../pkgVersions.json';
-import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
+import type {
+	DecoupledKitGenerator,
+	DefaultAnswers,
+	GatsbyWPData,
+} from '../types';
 import {
 	appNamePrompt,
 	cmsEndpointPrompt,
@@ -20,14 +24,6 @@ interface GatsbyWPAnswers extends DefaultAnswers {
 	cmsEndpoint: string;
 }
 
-interface GatsbyWPData {
-	gatsbyPnpmPlugin: boolean;
-	wordpressKitVersion: string;
-	otherConfigsVersion: string;
-	eslintConfigVersion: string;
-	wp: true;
-	gatsby: true;
-}
 const pnpm = whichPmRuns()?.name === 'pnpm' ? true : false;
 
 const outDirDefault = ({ appName }: GatsbyWPAnswers) =>
@@ -44,6 +40,7 @@ export const gatsbyWp: DecoupledKitGenerator<GatsbyWPAnswers, GatsbyWPData> = {
 	],
 	data: {
 		gatsbyPnpmPlugin: pnpm,
+		dkHealthCheckVersion: versions['decoupled-kit-health-check'],
 		wordpressKitVersion: versions['wordpress-kit'],
 		otherConfigsVersion: versions['other'],
 		eslintConfigVersion: versions['eslint'],

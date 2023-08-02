@@ -51,7 +51,7 @@ describe('getPreview()', () => {
 			},
 		};
 		await getPreview(mockContext, 'node--article', '');
-		
+
 		const dataFromState =
 			globalDrupalStateStores[0].getState()['node--articleResources'][
 				'00517b73-f66c-43eb-93b1-444a68ab97d8'

@@ -38,6 +38,13 @@ should have unit tests or snapshot tests where applicable. Snapshot tests are
 using
 [`@testing-library/react`](https://testing-library.com/docs/react-testing-library/intro/).
 
+## Decoupled Kit Health Check
+
+The `@pantheon-systems/decoupled-kit-health-check` will run before your `build`
+and ensure the backend is setup for success. Helpful instructions will guide you
+in case anything in the health check fails. To disable the health check, see
+[Disabling the Decoupled Kit Health Check](https://live-decoupled-kit-docs.appa.pantheon.site/docs/frontend-starters/nextjs/nextjs-wordpress/troubleshooting#disabling-the-decoupled-kit-health-check).
+
 ### Commands
 
 This section assumes the package manager in use is `npm`. If you are not using

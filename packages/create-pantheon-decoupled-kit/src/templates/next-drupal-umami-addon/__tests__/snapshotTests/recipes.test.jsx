@@ -44,4 +44,3 @@ describe(`Umami <RecipeTemplate />`, () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
-

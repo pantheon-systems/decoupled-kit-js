@@ -47,7 +47,7 @@
 		"@vitest/coverage-c8": "^0.29.8",
 		"isomorphic-fetch": "^3.0.0",
 		"jsona": "^1.11.0",
-		"msw": "^1.2.1",
+		"msw": "^1.2.3",
 		"rimraf": "^4.4.1",
 		"vitest": "^0.29.8"
 	},

@@ -5,7 +5,11 @@ import {
 	runLint,
 } from '../actions';
 import versions from '../pkgVersions.json';
-import type { DecoupledKitGenerator, DefaultAnswers } from '../types';
+import type {
+	DecoupledKitGenerator,
+	DefaultAnswers,
+	BaseGeneratorData,
+} from '../types';
 import {
 	appNamePrompt,
 	cmsEndpointPrompt,
@@ -17,16 +21,11 @@ interface NextWPAnswers extends DefaultAnswers {
 	appName: string;
 	tailwindcss: boolean;
 }
-interface NextWpData {
-	nextjsKitVersion: string;
-	wordpressKitVersion: string;
-	wp: true;
-}
 
 const outDirDefault = ({ appName }: NextWPAnswers) =>
 	`${process.cwd()}/${appName.replaceAll(' ', '-').toLowerCase()}`;
 
-export const nextWp: DecoupledKitGenerator<NextWPAnswers, NextWpData> = {
+export const nextWp: DecoupledKitGenerator<NextWPAnswers, BaseGeneratorData> = {
 	name: 'next-wp',
 	description: 'Next.js + WordPress starter kit',
 	prompts: [
@@ -38,6 +37,7 @@ export const nextWp: DecoupledKitGenerator<NextWPAnswers, NextWpData> = {
 	data: {
 		nextjsKitVersion: versions['nextjs-kit'],
 		wordpressKitVersion: versions['wordpress-kit'],
+		dkHealthCheckVersion: versions['decoupled-kit-health-check'],
 		wp: true,
 	},
 	templates: ['next-wp', 'tailwind-shared', 'tailwindless-next'],

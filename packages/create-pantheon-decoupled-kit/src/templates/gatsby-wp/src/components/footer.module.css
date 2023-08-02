@@ -6,16 +6,10 @@
 	justify-self: end;
 }
 
-.footer > * a:hover,
-.footer > * a:first-child:hover,
-.footer > * a:last-child:hover {
-	color: var(--blue-100);
-}
-
 .footerNav {
 	display: flex;
 	flex-direction: column;
-	min-width: var(--lg);
+	min-width: 40vw;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -52,10 +46,16 @@
 	text-decoration-line: underline;
 }
 
-.footerCopy > * a:first-child {
+.footerCopyLinks > a:first-child {
 	color: var(--purple-300);
 }
 
-.footerCopy > * a:last-child {
+.footerCopyLinks > a:last-child {
 	color: var(--blue-200);
+}
+
+.footerCopyLinks > * a:hover,
+.footerCopyLinks > * a:first-child:hover,
+.footerCopyLinks > * a:last-child:hover {
+	color: var(--blue-100);
 }

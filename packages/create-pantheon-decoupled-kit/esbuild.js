@@ -1,9 +1,17 @@
-import chalk from 'chalk';
 import { build } from 'esbuild';
+import chalk from 'chalk';
+import { glob } from 'glob';
+import tsPaths from 'esbuild-ts-paths';
 
 /** @type {import('esbuild').BuildOptions} */
 const buildOptions = {
-	entryPoints: ['./src/bin.ts'],
+	entryPoints: [
+		'./src/bin.ts',
+		// compile tagged templates to js
+		...(await glob('./src/templates/**/*.{css,jsx,tsx,ts,js,json,env.*}.ts', {
+			dot: true,
+		})),
+	],
 	bundle: true,
 	platform: 'node',
 	packages: 'external',
@@ -14,6 +22,8 @@ const buildOptions = {
 	supported: {
 		'import-assertions': true,
 	},
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-call
+	plugins: [tsPaths('./tsconfig.json')],
 };
 try {
 	await build(buildOptions);

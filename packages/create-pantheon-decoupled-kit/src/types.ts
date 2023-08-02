@@ -1,11 +1,33 @@
 import type { Answers, QuestionCollection } from 'inquirer';
-import type { ParsedArgs } from 'minimist';
 import type { SpyInstance } from 'vitest';
+import { taggedTemplateHelpers as helpers } from './utils';
 
 declare module 'vitest' {
 	export interface TestContext {
 		[key: string]: SpyInstance;
 	}
+}
+
+type DrupalOrWP = {
+	[key in 'drupal' | 'wp']?: boolean;
+};
+
+/**
+ * @example
+ * ```
+ * {
+ * 	drupalKitVersion: versions['drupal-kit'],
+ * 	drupal: true
+ * }
+ * ```
+ */
+export type BaseGeneratorData = {
+	[key: `${string}Version`]: string;
+} & DrupalOrWP;
+
+export interface GatsbyWPData extends BaseGeneratorData {
+	gatsbyPnpmPlugin: boolean;
+	gatsby: true;
 }
 
 /**
@@ -75,13 +97,27 @@ export type Action = (config: ActionConfig) => Promise<string> | string;
 
 export type ActionRunner = (config: ActionRunnerConfig) => Promise<string>;
 
-type InputIndex = Omit<ParsedArgs, '_'> & Answers;
+type InputIndex = BaseGeneratorData &
+	GatsbyWPData & {
+		_: string[];
+		appName: string;
+		outDir: string;
+		templateRootDir: string;
+		cmsEndpoint: string;
+		noInstall: boolean;
+		noLint: boolean;
+		force: boolean;
+		silent: boolean;
+		tailwindcss: boolean;
+	};
+
 /**
  * Input from command line arguments, prompts, and generator data
  */
 export type Input = {
 	[Property in keyof InputIndex]: InputIndex[Property];
 };
+
 export interface TemplateData {
 	templateDirs: string[];
 	addon: boolean;
@@ -105,17 +141,37 @@ interface ActionRunnerConfig extends ActionConfig {
 	actions: Action[];
 }
 
-// TYPE PREDICATES
+/**
+ * Helper utilities for template literal templates
+ */
+type Helpers = typeof helpers;
+
+/**
+ * Arguments for the {@link TemplateFn}
+ */
+interface TemplateFnArgs<Data extends Input> {
+	data: Data;
+	utils: Helpers;
+}
+
+/**
+ * A tagged template literal function with data and utils context
+ */
+export declare type TemplateFn = <Data extends Input>({
+	data,
+	utils,
+}: TemplateFnArgs<Data>) => string;
+
+export interface TemplateImport {
+	default: TemplateFn;
+}
 
 /**
  * @param arg a variable
  * @returns true if the variable is a string, false otherwise
  */
 export const isString = (arg: unknown): arg is string => {
-	if (typeof arg === 'string') {
-		return true;
-	}
-	return false;
+	return typeof arg === 'string';
 };
 
 /**

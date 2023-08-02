@@ -1,34 +1,74 @@
 import { globalDrupalStateStores } from '../../lib/stores';
 
+const PREVIEW_SECRET_DOES_NOT_MATCH = {
+	error: 'Preview secret does not match',
+	message:
+		'Check that your PREVIEW_SECRET environment variable matches the preview secret generated when creating the preview site in Drupal.',
+};
+const CONTENT_NOT_FOUND = {
+	error: 'Requested preview path does not exist',
+	message: 'Make sure the content is published',
+};
+
 const preview = async (req, res) => {
-	const { secret, slug, objectName } = req.query;
+	const { secret, slug, objectName, test, locale } = req.query;
+	// returns the store that matches the locale found in the accept-language header
+	// or the only store if using a monolingual backend
+	const [store] = globalDrupalStateStores.filter(({ defaultLocale }) => {
+		const regex = new RegExp(`/${defaultLocale}/`);
+		const detectedLocale = locale ? `/${locale}/` : decodeURIComponent(req.url);
+		return defaultLocale ? regex.test(detectedLocale) : true;
+	});
+
+	if (test) {
+		// validate the secret
+		if (secret !== process.env.PREVIEW_SECRET) {
+			return res.status(401).json(PREVIEW_SECRET_DOES_NOT_MATCH);
+		}
+
+		// validate the content
+		let content;
+		try {
+			content = await store.getObjectByPath({
+				objectName,
+				path: slug,
+			});
+		} catch (error) {
+			process.env.DEBUG_MODE &&
+				console.error(
+					'Error verifying preview content in pages/api/preview:\n',
+					error,
+				);
+			return res.status(404).json({
+				error: 'Could not verify preview content',
+				message: error.message,
+			});
+		}
+		if (!content) {
+			return res.status(404).json(CONTENT_NOT_FOUND);
+		}
+		return res.status(200).json({
+			message: `Preview is valid for ${slug}`,
+		});
+	}
 	// Check the secret and next parameters
 	// This secret should only be known to this API route and the CMS
 	if (secret !== process.env.PREVIEW_SECRET) {
 		return res.redirect(
 			`/preview-error/?error=${encodeURIComponent(
-				'Preview secret does not match',
-			)}&message=${encodeURIComponent(
-				'Check that your PREVIEW_SECRET environment variable matches the preview secret generated when creating the preview site in Drupal.',
-			)}`,
+				PREVIEW_SECRET_DOES_NOT_MATCH.error,
+			)}&message=${encodeURIComponent(PREVIEW_SECRET_DOES_NOT_MATCH.message)}`,
 		);
 	}
 
 	if (!slug) {
 		return res.redirect(
 			`/preview-error/?error=${encodeURIComponent(
-				'Requested preview path does not exist',
-			)}&message=${encodeURIComponent('Make sure the content is published')}`,
+				CONTENT_NOT_FOUND.error,
+			)}&message=${encodeURIComponent(CONTENT_NOT_FOUND.message)}`,
 		);
 	}
 
-	// returns the store that matches the locale found in the requested url
-	// or the only store if using a monolingual backend
-	const [store] = globalDrupalStateStores.filter(({ defaultLocale }) => {
-		const regex = new RegExp(`/${defaultLocale}/`);
-		const decodedUrl = decodeURIComponent(req.url);
-		return defaultLocale ? regex.test(decodedUrl) : true;
-	});
 	// verify the content exists
 	let content;
 	try {
@@ -53,8 +93,8 @@ const preview = async (req, res) => {
 	if (!content) {
 		return res.redirect(
 			`/preview-error/?error=${encodeURIComponent(
-				'Requested preview content does not exist',
-			)}&message=${encodeURIComponent('Make sure the content is published')}`,
+				CONTENT_NOT_FOUND.error,
+			)}&message=${encodeURIComponent(CONTENT_NOT_FOUND.message)}`,
 		);
 	}
 

@@ -116,6 +116,8 @@ describe('main()', () => {
 			{
 				_: ['next-drupal', 'next-drupal-umami-addon'],
 				appName: 'test',
+				cmsType: 'drupal',
+				dkHealthCheckVersion: versions['decoupled-kit-health-check'],
 				drupal: true,
 				drupalKitVersion: versions['drupal-kit'],
 				outDir: 'test',
@@ -127,7 +129,6 @@ describe('main()', () => {
 				h: false,
 				version: false,
 				v: false,
-				cmsType: 'drupal',
 			},
 			decoupledKitGenerators,
 		);
@@ -198,6 +199,7 @@ To see this list at any time, use the --help command.`);
 		process.argv = ['node', 'bin.js', 'gatsby-wp'];
 		const data = {
 			_: ['gatsby-wp'],
+			dkHealthCheckVersion: versions['decoupled-kit-health-check'],
 			eslintConfigVersion: versions['eslint'],
 			force: false,
 			gatsby: true,

@@ -1,5 +1,135 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.0-canary.14
+
+### Patch Changes
+
+- e3817f2b: [gatsby-wp] Pagination example fails gracefully. If the mock content
+  can not be reached, a message is displayed at the /examples/pagination route.
+
+## 0.10.0-canary.13
+
+### Patch Changes
+
+- 17cf4481: [next-wp] Pagination example fails gracefully. If the mock content
+  can not be reached, a message is displayed at the /examples/pagination route.
+
+## 0.10.0-canary.12
+
+### Patch Changes
+
+- bf9e7728: [next-drupal] Pagination example fails gracefully. If the mock
+  content can not be reached, a message is displayed at the /examples/pagination
+  route.
+
+## 0.10.0-canary.11
+
+### Patch Changes
+
+- f9756fbc: [next-wp-search-api-addon] Add Search Results page
+
+## 0.10.0-canary.10
+
+### Patch Changes
+
+- ba64c8b2: Bump `@pantheon-systems/decoupled-kit-health-check` version
+
+## 0.10.0-canary.9
+
+### Minor Changes
+
+- 7f18b23e: [cli] - Add generator for a next-wp-search-api-add-on
+  [next-wp-search-api-add-on] - Add's <SearchInput /> component to the layout
+  and header of the next-wp starter.
+
+### Patch Changes
+
+- 40a97692: Bump `@pantheon-systems/decoupled-kit-health-check` version
+
+## 0.10.0-canary.8
+
+### Patch Changes
+
+- e4c17b86: [gatsby-wp] Add healthcheck script, bump
+  `@pantheon-systems/decoupled-kit-healthcheck` version
+
+## 0.10.0-canary.7
+
+### Patch Changes
+
+- a328f582: [gatsby-wp] Use new tagged template for .env.development.local and
+  fix typo in gatsby-config
+
+## 0.10.0-canary.6
+
+### Minor Changes
+
+- 71c84419: [gatsby-wp] Use TypeScript by default [cli] Begin transitioning to
+  tagged template literal templates away from handlebars
+- 71c84419: [gatsby-wp] Starters created using the `gatsby-wp` generator are now
+  in TypeScript
+
+### Patch Changes
+
+- 71c84419: [gatsby-wp] Upgraded the gatsby-wp templates to use gatsby v5
+- 71c84419: [gatsby-wp-acf-addon] Rewrite templates in TypeScript
+
+  [gatsby-wp] Move some templates to partials
+
+- 71c84419: Add support for tagged template literal templates in addition to
+  handlebars templates. This is in effort to smooth out developer experience
+  when writing templates for the generators. This change is meant to be
+  backwards compatible so handlebars templates should still work.
+
+## 0.9.3-canary.5
+
+### Patch Changes
+
+- 104f0057: [next-wp] Added logic to `api/preview.js` that returns JSON which
+  indicates if there are any issues with the preview route or secret if the
+  `test=true` queryparam exists on the request URL.
+- 2cd84152: [next-drupal] Added logic to `api/preview.js` that returns JSON
+  which indicates if there are any issues with the preview route or secret if
+  the `test=true` query param exists on the request URL.
+
+## 0.9.3-canary.4
+
+### Patch Changes
+
+- a0dce89a: Bump `@pantheon-systems/decoupled-kit-health-check` version
+
+## 0.9.3-canary.3
+
+### Patch Changes
+
+- c85ddced: [next-wp] Fix missing comma in package.json
+
+## 0.9.3-canary.2
+
+### Patch Changes
+
+- 7bf7e5f3: [next-wp] Added the `@pantheon-systems/decoupled-kit-health-check`
+  package as a dev dependency to the `next-wp` template. The health check will
+  run before a build to check critical endpoints for availability
+
+  [next-wp, next-drupal] Updated the README to include information about the
+  `@pantheon-systems/decoupled-kit-health-check` and
+
+## 0.9.3-canary.1
+
+### Patch Changes
+
+- 8527330f: Bump `@pantheon-systems/decoupled-kit-health-check` version
+
+## 0.9.3-canary.0
+
+### Patch Changes
+
+- 3c064545: [next-drupal] Added the
+  `@pantheon-systems/decoupled-kit-health-check` package as a dev dependency to
+  the `next-drupal` template. The health check will run before a build to check
+  critical endpoints for availability
+
 ## 0.9.2
 
 ### Patch Changes

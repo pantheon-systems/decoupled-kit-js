@@ -18,7 +18,7 @@ vi.mock('next/router', () => ({
 
 describe('<PageListTemplate />', () => {
 	it(`should render pages`, () => {
-		const data = { pages: umamiEnPagesData, footerMenu: umamiFooterMenu }
+		const data = { pages: umamiEnPagesData, footerMenu: umamiFooterMenu };
 
 		const { asFragment } = render(
 			<PageListTemplate
@@ -31,8 +31,8 @@ describe('<PageListTemplate />', () => {
 });
 describe('<PageTemplate />', () => {
 	it(`should render page`, () => {
-		const data = { page: umamiEnPagesData[0], footerMenu: umamiFooterMenu }
-		
+		const data = { page: umamiEnPagesData[0], footerMenu: umamiFooterMenu };
+
 		const { asFragment } = render(
 			<PageTemplate page={data.page} footerMenu={data.footerMenu} />,
 		);

@@ -10,7 +10,6 @@ vi.mock('next/image');
  * @vitest-environment jsdom
  */
 
-
 describe('<HomepageTemplate />', () => {
 	it('should render with posts', () => {
 		const { asFragment } = render(

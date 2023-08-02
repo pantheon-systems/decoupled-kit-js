@@ -1,49 +1,72 @@
-[
-	{
-		"post": {
-			"excerpt": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n",
-			"uri": "/example-post-with-image/",
-			"featuredImage": {
-				"node": {
-					"sourceUrl": "https://dev-decoupled-wordpress-qa.pantheonsite.io/app/uploads/2022/10/pizza.jpeg",
-					"altText": "",
-					"localFile": {
-						"childImageSharp": {
-							"gatsbyImageData": {
-								"layout": "constrained",
-								"backgroundColor": "#f8d8b8",
-								"images": {
-									"fallback": {
-										"src": "/static/045d1d479eed7ff0a5984b59c75d98b9/0f1c0/pizza.jpg",
-										"srcSet": "/static/045d1d479eed7ff0a5984b59c75d98b9/c898a/pizza.jpg 160w,\n/static/045d1d479eed7ff0a5984b59c75d98b9/2278c/pizza.jpg 320w,\n/static/045d1d479eed7ff0a5984b59c75d98b9/0f1c0/pizza.jpg 640w",
-										"sizes": "(min-width: 640px) 640px, 100vw"
-									},
-									"sources": [
-										{
-											"srcSet": "/static/045d1d479eed7ff0a5984b59c75d98b9/c0299/pizza.webp 160w,\n/static/045d1d479eed7ff0a5984b59c75d98b9/378b7/pizza.webp 320w,\n/static/045d1d479eed7ff0a5984b59c75d98b9/3c3fb/pizza.webp 640w",
-											"type": "image/webp",
-											"sizes": "(min-width: 640px) 640px, 100vw"
+{
+	"data": {
+		"allWpPost": {
+			"edges": [
+				{
+					"previous": null,
+					"node": {
+						"id": "cG9zdDo3",
+						"uri": "/example-post-with-image/",
+						"title": "Example Post with Image",
+						"content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n",
+						"date": "2023-02-02T15:47:00",
+						"excerpt": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>\n",
+						"featuredImage": {
+							"node": {
+								"localFile": {
+									"childImageSharp": {
+										"gatsbyImageData": {
+											"layout": "constrained",
+											"backgroundColor": "#f8d8b8",
+											"images": {
+												"fallback": {
+													"src": "/static/045d1d479eed7ff0a5984b59c75d98b9/3440d/pizza.jpg",
+													"srcSet": "/static/045d1d479eed7ff0a5984b59c75d98b9/e51a0/pizza.jpg 160w,\n/static/045d1d479eed7ff0a5984b59c75d98b9/b4dad/pizza.jpg 320w,\n/static/045d1d479eed7ff0a5984b59c75d98b9/3440d/pizza.jpg 640w",
+													"sizes": "(min-width: 640px) 640px, 100vw"
+												},
+												"sources": [
+													{
+														"srcSet": "/static/045d1d479eed7ff0a5984b59c75d98b9/67032/pizza.webp 160w,\n/static/045d1d479eed7ff0a5984b59c75d98b9/c0bcc/pizza.webp 320w,\n/static/045d1d479eed7ff0a5984b59c75d98b9/17574/pizza.webp 640w",
+														"type": "image/webp",
+														"sizes": "(min-width: 640px) 640px, 100vw"
+													}
+												]
+											},
+											"width": 640,
+											"height": 360
 										}
-									]
-								},
-								"width": 640,
-								"height": 360
+									}
+								}
 							}
 						}
+					},
+					"next": {
+						"id": "cG9zdDox",
+						"title": "Hello world!",
+						"uri": "/hello-world/"
 					}
+				},
+				{
+					"previous": {
+						"id": "cG9zdDo3",
+						"title": "Example Post with Image",
+						"uri": "/example-post-with-image/"
+					},
+					"node": {
+						"id": "cG9zdDox",
+						"uri": "/hello-world/",
+						"title": "Hello world!",
+						"content": "\n<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing! </p>\n\n\n\n<p></p>\n",
+						"date": "2023-02-02T15:46:58",
+						"excerpt": "<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>\n",
+						"featuredImage": null
+					},
+					"next": null
 				}
-			},
-			"date": "October 10, 2022",
-			"title": "Example Post with Image"
+			]
 		}
 	},
-	{
-		"post": {
-			"excerpt": "<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>\n",
-			"uri": "/hello-world/",
-			"featuredImage": null,
-			"date": "October 10, 2022",
-			"title": "Hello world!"
-		}
+	"extensions": {
+		"enableRefresh": "true"
 	}
-]
+}

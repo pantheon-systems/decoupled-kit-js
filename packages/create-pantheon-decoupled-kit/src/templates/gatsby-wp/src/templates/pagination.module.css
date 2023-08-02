@@ -5,6 +5,7 @@
 	margin-right: auto;
 	max-width: var(--sm);
 	height: inherit;
+	min-height: 80vh;
 }
 
 .content {
@@ -35,6 +36,15 @@
 	font-weight: 700;
 	justify-content: start;
 	margin-bottom: var(--2);
+}
+
+.noData {
+	margin-top: var(--12);
+}
+
+.link {
+	text-decoration-line: underline;
+	color: var(--blue);
 }
 
 /* md breakpoint*/
