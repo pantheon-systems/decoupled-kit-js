@@ -71,7 +71,7 @@ Some example tests are provided.
 The `@pantheon-systems/decoupled-kit-health-check` will run before your `build`
 and ensure the backend is setup for success. Helpful instructions will guide you
 in case anything in the health check fails. To disable the health check, see
-[Disabling the Decoupled Kit Health Check](https://live-decoupled-kit-docs.appa.pantheon.site/docs/frontend-starters/gatsby/gatsby-wordpress/troubleshooting#disabling-the-decoupled-kit-health-check).
+[Disabling the Decoupled Kit Health Check](https://decoupledkit.pantheon.io/docs/frontend-starters/gatsby/gatsby-wordpress/troubleshooting#disabling-the-decoupled-kit-health-check).
 
 
 ### Commands
