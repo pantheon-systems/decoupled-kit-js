@@ -2,7 +2,7 @@
 id: 'add-ons'
 title: 'Add-ons'
 slug: '/backend-starters/decoupled-wordpress/add-ons'
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 ## Decoupled Kit ACF Plugin
