@@ -3,6 +3,7 @@ import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
+import { DRUPAL_URL } from '../../lib/constants';
 import { isMultiLanguage } from '../../lib/isMultiLanguage.js';
 import {
 	getCurrentLocaleStore,
@@ -104,7 +105,7 @@ export async function getServerSideProps(context) {
 		const searchTerm = searchAlias ? [searchAlias] : null;
 		const searchResults = (
 			await getDrupalSearchResults({
-				apiUrl: process.env.BACKEND_URL,
+				apiUrl: DRUPAL_URL,
 				locale: locale,
 				query: searchTerm,
 				response: res,
