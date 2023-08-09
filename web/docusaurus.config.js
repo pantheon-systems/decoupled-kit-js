@@ -18,6 +18,47 @@ const cliTypeDocOptions = generateTypeDocOptions(
 );
 const environmentUrl = process.env.PANTHEON_ENVIRONMENT_URL;
 
+const typedocPlugins = environmentUrl
+	? []
+	: [
+			[
+				'docusaurus-plugin-typedoc',
+				{
+					id: 'api-1',
+					...drupalKitTypedocOptions,
+					cleanOutputDir: true,
+				},
+			],
+			[
+				'docusaurus-plugin-typedoc',
+				{
+					id: 'api-2',
+					...wordpressKitTypedocOptions,
+				},
+			],
+			[
+				'docusaurus-plugin-typedoc',
+				{
+					id: 'api-3',
+					...cmskitTypedocOptions,
+				},
+			],
+			[
+				'docusaurus-plugin-typedoc',
+				{
+					id: 'api-4',
+					...nextjskitTypedocOptions,
+				},
+			],
+			[
+				'docusaurus-plugin-typedoc',
+				{
+					id: 'api-5',
+					...cliTypeDocOptions,
+				},
+			],
+	  ];
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
 	title: 'Pantheon Decoupled Kit',
@@ -39,46 +80,8 @@ const config = {
 
 	plugins: [
 		// Prevent trying to generate api reference when building on the platform
-		...(environmentUrl
-			? []
-			: [
-					[
-						'docusaurus-plugin-typedoc',
-						{
-							id: 'api-1',
-							...drupalKitTypedocOptions,
-							cleanOutputDir: true,
-						},
-					],
-					[
-						'docusaurus-plugin-typedoc',
-						{
-							id: 'api-2',
-							...wordpressKitTypedocOptions,
-						},
-					],
-					[
-						'docusaurus-plugin-typedoc',
-						{
-							id: 'api-3',
-							...cmskitTypedocOptions,
-						},
-					],
-					[
-						'docusaurus-plugin-typedoc',
-						{
-							id: 'api-4',
-							...nextjskitTypedocOptions,
-						},
-					],
-					[
-						'docusaurus-plugin-typedoc',
-						{
-							id: 'api-5',
-							...cliTypeDocOptions,
-						},
-					],
-			  ]),
+		...typedocPlugins,
+		require.resolve('docusaurus-lunr-search'),
 	],
 
 	presets: [
