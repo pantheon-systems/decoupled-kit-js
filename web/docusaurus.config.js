@@ -90,6 +90,7 @@ const config = {
 					sidebarPath: require.resolve('./sidebars.js'),
 					editUrl:
 						'https://github.com/pantheon-systems/decoupled-kit-js/edit/canary/web/',
+					path: 'docs',
 				},
 				// blog: {
 				//   showReadingTime: true,
@@ -120,12 +121,6 @@ const config = {
 					src: 'img/pantheon_logo.png',
 				},
 				items: [
-					{
-						type: 'doc',
-						docId: 'decoupled-kit-overview',
-						position: 'left',
-						label: 'Docs',
-					},
 					{
 						href: 'https://github.com/pantheon-systems/decoupled-kit-js',
 						label: 'GitHub',
@@ -208,6 +203,7 @@ const config = {
 					src: 'img/B_Fist-Tagline.png',
 					srcDark: 'img/W_Fist-Tagline.png',
 					alt: 'Pantheon Systems Logo',
+					width: 200,
 				},
 				copyright: `Copyright © ${new Date().getFullYear()} Pantheon. Built with Docusaurus.`,
 			},

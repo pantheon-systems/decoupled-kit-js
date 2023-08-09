@@ -1,7 +1,7 @@
 ---
-slug: /decoupled-kit-overview
+slug: /
 title: Decoupled Kit Overview
-sidebar_position: 0
+sidebar_position: 0.5
 ---
 
 Decoupled Kit is a collection of utilities for building a decoupled front-end that sources data from a CMS back-end. Conceptually, a ‘“Kit” is a combination of a compatible CMS back end and JavaScript front end. For example, we have kits with WordPress + Gatsby, WordPress + Next.js, and Drupal +Next.js. 
