@@ -16,5 +16,8 @@
     "next-wordpress-starter": "0.1.0",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "eleven-coins-dance",
+    "tiny-kangaroos-yawn"
+  ]
 }

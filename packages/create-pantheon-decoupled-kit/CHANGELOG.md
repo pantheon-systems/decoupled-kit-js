@@ -1,5 +1,13 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.1-canary.0
+
+### Patch Changes
+
+- 2fa14b06: [gatsby-wp] Update README
+- 78042c44: next-drupal-search-api-addon - `BACKEND_URL` not required for
+  successful search queries.
+
 ## 0.10.0
 
 ### Minor Changes
