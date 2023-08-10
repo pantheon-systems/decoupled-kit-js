@@ -38,3 +38,9 @@ any static contents hosting service.
 ## Search
 
 The docs site now includes search powered by this Docusaurus plugin: https://github.com/praveenn77/docusaurus-lunr-search
+It only works in production. To try it locally (from the root of the monorepo):
+
+```shell
+# set this env var to prevent typedoc API reference from being generated
+PANTHEON_ENVIRONMENT_URL=true pnpm -F web build && pnpm -F web serve
+```

@@ -16,6 +16,11 @@ const cliTypeDocOptions = generateTypeDocOptions(
 		compilerOptions: { skipLibCheck: true },
 	},
 );
+const dkhcTypedocOptions = generateTypeDocOptions(
+	'decoupled-kit-health-check',
+	5,
+);
+
 const environmentUrl = process.env.PANTHEON_ENVIRONMENT_URL;
 
 const typedocPlugins = environmentUrl
@@ -55,6 +60,13 @@ const typedocPlugins = environmentUrl
 				{
 					id: 'api-5',
 					...cliTypeDocOptions,
+				},
+			],
+			[
+				'docusaurus-plugin-typedoc',
+				{
+					id: 'api-6',
+					...dkhcTypedocOptions,
 				},
 			],
 	  ];
@@ -159,13 +171,17 @@ const config = {
 							},
 							{
 								label: 'Next.js + Drupal',
-								to: 'docs/frontend-starters/nextjs/nextjs-drupal/introduction',
+								to: '/docs/frontend-starters/nextjs/nextjs-drupal/introduction',
 							},
 						],
 					},
 					{
 						title: 'npm Packages',
 						items: [
+							{
+								label: 'create-pantheon-decoupled-kit',
+								to: '/docs/Packages/create-pantheon-decoupled-kit',
+							},
 							{
 								label: 'wordpress-kit',
 								to: '/docs/Packages/wordpress-kit',
