@@ -2,7 +2,6 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import isInternalUrl from '@docusaurus/isInternalUrl';
-import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
 // This component was swizzled from the core Docusaurus theme and modified
