@@ -197,7 +197,7 @@ const config = {
 						],
 					},
 					{
-						title: 'Community',
+						title: 'Pantheon',
 						items: [
 							{
 								label: 'Slack',
@@ -208,12 +208,12 @@ const config = {
 								href: 'https://github.com/pantheon-systems/decoupled-kit-js/discussions',
 							},
 							{
-								label: 'Pantheon Community Forum',
-								href: 'https://discuss.pantheon.io/',
+								label: 'Pantheon Community Hub',
+								href: 'https://community.pantheon.io/forum/',
 							},
 							{
-								label: 'Twitter',
-								href: 'https://twitter.com/getpantheon',
+								label: 'Pantheon Documentation',
+								href: 'https://docs.pantheon.io',
 							},
 						],
 					},

@@ -1,6 +1,7 @@
 ---
 slug: /contributing
 title: Contributing
+sidebar_position: 4
 ---
 
 # Pantheon Systems Decoupled Kits
