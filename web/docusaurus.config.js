@@ -16,7 +16,60 @@ const cliTypeDocOptions = generateTypeDocOptions(
 		compilerOptions: { skipLibCheck: true },
 	},
 );
+const dkhcTypedocOptions = generateTypeDocOptions(
+	'decoupled-kit-health-check',
+	5,
+);
+
 const environmentUrl = process.env.PANTHEON_ENVIRONMENT_URL;
+
+const typedocPlugins = environmentUrl
+	? []
+	: [
+			[
+				'docusaurus-plugin-typedoc',
+				{
+					id: 'api-1',
+					...drupalKitTypedocOptions,
+					cleanOutputDir: true,
+				},
+			],
+			[
+				'docusaurus-plugin-typedoc',
+				{
+					id: 'api-2',
+					...wordpressKitTypedocOptions,
+				},
+			],
+			[
+				'docusaurus-plugin-typedoc',
+				{
+					id: 'api-3',
+					...cmskitTypedocOptions,
+				},
+			],
+			[
+				'docusaurus-plugin-typedoc',
+				{
+					id: 'api-4',
+					...nextjskitTypedocOptions,
+				},
+			],
+			[
+				'docusaurus-plugin-typedoc',
+				{
+					id: 'api-5',
+					...cliTypeDocOptions,
+				},
+			],
+			[
+				'docusaurus-plugin-typedoc',
+				{
+					id: 'api-6',
+					...dkhcTypedocOptions,
+				},
+			],
+	  ];
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -39,46 +92,8 @@ const config = {
 
 	plugins: [
 		// Prevent trying to generate api reference when building on the platform
-		...(environmentUrl
-			? []
-			: [
-					[
-						'docusaurus-plugin-typedoc',
-						{
-							id: 'api-1',
-							...drupalKitTypedocOptions,
-							cleanOutputDir: true,
-						},
-					],
-					[
-						'docusaurus-plugin-typedoc',
-						{
-							id: 'api-2',
-							...wordpressKitTypedocOptions,
-						},
-					],
-					[
-						'docusaurus-plugin-typedoc',
-						{
-							id: 'api-3',
-							...cmskitTypedocOptions,
-						},
-					],
-					[
-						'docusaurus-plugin-typedoc',
-						{
-							id: 'api-4',
-							...nextjskitTypedocOptions,
-						},
-					],
-					[
-						'docusaurus-plugin-typedoc',
-						{
-							id: 'api-5',
-							...cliTypeDocOptions,
-						},
-					],
-			  ]),
+		...typedocPlugins,
+		require.resolve('docusaurus-lunr-search'),
 	],
 
 	presets: [
@@ -90,6 +105,7 @@ const config = {
 					sidebarPath: require.resolve('./sidebars.js'),
 					editUrl:
 						'https://github.com/pantheon-systems/decoupled-kit-js/edit/canary/web/',
+					path: 'docs',
 				},
 				// blog: {
 				//   showReadingTime: true,
@@ -120,12 +136,6 @@ const config = {
 					src: 'img/pantheon_logo.png',
 				},
 				items: [
-					{
-						type: 'doc',
-						docId: 'decoupled-kit-overview',
-						position: 'left',
-						label: 'Docs',
-					},
 					{
 						href: 'https://github.com/pantheon-systems/decoupled-kit-js',
 						label: 'GitHub',
@@ -161,13 +171,17 @@ const config = {
 							},
 							{
 								label: 'Next.js + Drupal',
-								to: 'docs/frontend-starters/nextjs/nextjs-drupal/introduction',
+								to: '/docs/frontend-starters/nextjs/nextjs-drupal/introduction',
 							},
 						],
 					},
 					{
 						title: 'npm Packages',
 						items: [
+							{
+								label: 'create-pantheon-decoupled-kit',
+								to: '/docs/Packages/create-pantheon-decoupled-kit',
+							},
 							{
 								label: 'wordpress-kit',
 								to: '/docs/Packages/wordpress-kit',
@@ -208,6 +222,7 @@ const config = {
 					src: 'img/B_Fist-Tagline.png',
 					srcDark: 'img/W_Fist-Tagline.png',
 					alt: 'Pantheon Systems Logo',
+					width: 200,
 				},
 				copyright: `Copyright © ${new Date().getFullYear()} Pantheon. Built with Docusaurus.`,
 			},
