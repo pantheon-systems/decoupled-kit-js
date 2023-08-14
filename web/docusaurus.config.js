@@ -212,7 +212,7 @@ const config = {
 								href: 'https://community.pantheon.io/forum/',
 							},
 							{
-								label: 'Pantheon Documentation',
+								label: 'Pantheon Platform Documentation',
 								href: 'https://docs.pantheon.io',
 							},
 						],
