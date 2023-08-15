@@ -21,6 +21,12 @@ export default function OverviewCardList() {
 			href: '/docs/packages',
 			type: 'category',
 		},
+		{
+			label: 'Decoupled on Pantheon',
+			description: 'Documentation for Pantheon Front-End Sites',
+			href: 'https://docs.pantheon.io/guides/decoupled/',
+			type: 'link',
+		},
 	];
 
 	return <DocCardList_Custom items={items} />;
