@@ -215,7 +215,7 @@ export class NextWordPressHealthCheck extends WordPressHealthCheck {
 			this.log.suggest(
 				`To set a new secret, go to 🔗 https://${
 					this.getURL().host
-				}/admin/structure/dp-preview-site and edit the preview site you want to use.`,
+				}/wp/wp-admin/options-general.php?page=preview_sites and edit the preview site you want to use.`,
 			);
 			console.log(
 				'⏭  Skipping preview endpoint validation -- PREVIEW_SECRET required.',
