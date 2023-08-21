@@ -34,6 +34,10 @@ export interface SearchApiData extends BaseGeneratorData {
 	search: boolean;
 }
 
+export interface WPAcfData extends BaseGeneratorData {
+	wpAcfAddon: boolean;
+}
+
 /**
  * Generators need prompts to get user data not provided by CLI arguments
  */
@@ -103,7 +107,8 @@ export type ActionRunner = (config: ActionRunnerConfig) => Promise<string>;
 
 type InputIndex = BaseGeneratorData &
 	GatsbyWPData &
-	SearchApiData & {
+	SearchApiData &
+	WPAcfData & {
 		_: string[];
 		appName: string;
 		outDir: string;
