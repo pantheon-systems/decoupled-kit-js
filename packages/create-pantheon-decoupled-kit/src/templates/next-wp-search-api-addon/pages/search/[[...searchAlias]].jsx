@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
 import { getFooterMenu } from '../../lib/Menus';
-import { getSearchedPosts } from '../../lib/Posts';
+import { getSearchedPosts } from '../../lib/Posts.js';
 import styles from './searchPage.module.css';
 
 export default function PageTemplate({
@@ -70,6 +70,7 @@ export async function getServerSideProps(context) {
 		const { menuItems } = await getFooterMenu();
 
 		let res = [];
+		// Execute query if search term is present
 		if (searchTerm) {
 			expectedResults = true;
 			const { posts } = await getSearchedPosts(searchTerm[0]);

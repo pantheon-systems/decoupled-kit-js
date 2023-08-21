@@ -1,6 +1,6 @@
 import { taggedTemplateHelpers as utils } from '@cli/utils';
 
-const postUriAcf = /* jsx */ `
+const postUriAcf = /* js */ `
 export async function getPostByUri(uri) {
 	const uriString = uri.join('/');
 	const query = gql ${utils.backticks`
@@ -43,7 +43,7 @@ export async function getPostByUri(uri) {
 }
 `;
 
-const postUri = /* jsx */ `
+const postUri = /* js */ `
 export async function getPostByUri(uri) {
 	const uriString = uri.join();
 	const query = gql ${utils.backticks`
@@ -70,7 +70,7 @@ export async function getPostByUri(uri) {
 	return { post, headers };
 }
 `;
-const searchQuery = /* jsx */ `
+const searchQuery = /* js */ `
 export async function getSearchedPosts(searchTerm) {
 	const query = gql ${utils.backticks`
 		query LatestPostsQuery($searchTerm: String) {
@@ -104,7 +104,7 @@ export const postQueryTemplate = ({
 }: {
 	search: boolean;
 	wpAcfAddon: boolean;
-}) => /* jsx */ `import { gql } from '@pantheon-systems/wordpress-kit';
+}) => /* js */ `import { gql } from '@pantheon-systems/wordpress-kit';
 import { client, getAuthCredentials } from './WordPressClient';
 
 export async function getLatestPosts(totalPosts) {
