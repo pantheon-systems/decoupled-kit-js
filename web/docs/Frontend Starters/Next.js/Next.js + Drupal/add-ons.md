@@ -2,7 +2,7 @@
 id: 'next-drupal-add-ons'
 title: 'Add-ons'
 slug: '/frontend-starters/nextjs/nextjs-drupal/add-ons'
-sidebar_position: 8
+sidebar_position: 7
 ---
 
 ## Drupal Umami Demo Data Add-on
