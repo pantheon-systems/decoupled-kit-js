@@ -4,7 +4,7 @@ import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
 import { getFooterMenu } from '../../lib/Menus';
 import { getSearchedPosts } from '../../lib/Posts';
-import styles from './searchPage.module.css.ts';
+import styles from './searchPage.module.css';
 
 export default function PageTemplate({
 	menuItems,
@@ -36,7 +36,7 @@ export default function PageTemplate({
 										) : null}
 										<Link
 											passHref
-											href={`/posts/${uri}`}
+											href={`/posts${uri}`}
 											className={styles.link}
 										>
 											Read more →
