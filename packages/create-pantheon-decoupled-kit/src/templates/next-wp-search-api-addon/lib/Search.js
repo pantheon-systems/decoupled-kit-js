@@ -3,7 +3,7 @@ import { client } from './WordPressClient';
 
 export async function getSearchResults(searchTerm) {
 	const query = gql`
-		query LatestPostsQuery($searchTerm: String) {
+		query SearchResultsQuery($searchTerm: String) {
 			posts(where: { search: $searchTerm }) {
 				edges {
 					node {
