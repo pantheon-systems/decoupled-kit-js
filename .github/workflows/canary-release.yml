@@ -28,6 +28,10 @@ jobs:
           cache: 'pnpm'
       - name: install dependencies
         run: pnpm install
+      - name: setup git user
+        run: |
+          git config --global user.email "decoupled-service-user@pantheon.io"
+          git config --global user.name "pantheon-decoupled-service-user"
       - name: create and publish versions
         uses: changesets/action@v1
         with:
@@ -36,7 +40,7 @@ jobs:
           commit: 'canary-release'
           title: 'Canary Release'
           setupGitUser: false
-          
+
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
