@@ -99,4 +99,11 @@ describe('NextWordPressHealthCheck', () => {
 		const result = logSpy.mock.calls.map(([call]) => call);
 		expect(result).toMatchSnapshot();
 	});
+	it('should handle a trailing slash in the URL', async () => {
+		process.env['WPGRAPHQL_URL'] = 'wordpress.test/wp/graphql/';
+		const HC = new NextWordPressHealthCheck({ env: process.env });
+		const url = HC.getURL();
+
+		expect(url.href).toEqual('https://wordpress.test/wp/graphql');
+	});
 });
