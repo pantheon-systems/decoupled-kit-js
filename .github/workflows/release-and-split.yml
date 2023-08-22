@@ -7,10 +7,6 @@ on:
     tags:
       - '*'
 
-permissions:
-  pull-requests: write
-  contents: read
-
 jobs:
   release:
     name: version and publish
