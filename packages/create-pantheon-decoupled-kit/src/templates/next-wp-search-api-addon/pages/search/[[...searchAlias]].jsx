@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
 import { getFooterMenu } from '../../lib/Menus';
-import { getSearchedPosts } from '../../lib/Posts.js';
+import { getSearchResults } from '../../lib/Search';
 import styles from './searchPage.module.css';
 
 export default function PageTemplate({
@@ -28,21 +28,31 @@ export default function PageTemplate({
 					<div className={styles.container}>
 						{searchResults?.length > 0 ? (
 							<ul>
-								{searchResults?.map(({ title, excerpt, uri, postId }) => (
-									<li key={postId}>
-										<h2 className={styles.listTitle}>{title}</h2>
-										{excerpt ? (
-											<div dangerouslySetInnerHTML={{ __html: excerpt }} />
-										) : null}
-										<Link
-											passHref
-											href={`/posts${uri}`}
-											className={styles.link}
-										>
-											Read more →
-										</Link>
-									</li>
-								))}
+								{searchResults?.map(
+									({ title, summary, uri, databaseId, contentType }) => (
+										<li key={databaseId}>
+											<h2 className={styles.listTitle}>{title}</h2>
+											{summary ? (
+												<div
+													dangerouslySetInnerHTML={{
+														__html: `${summary.substr(0, 150)}...`,
+													}}
+												/>
+											) : null}
+											<Link
+												passHref
+												href={
+													contentType.node.name === 'post'
+														? `/posts${uri}`
+														: `/pages${uri}`
+												}
+												className={styles.link}
+											>
+												Read more →
+											</Link>
+										</li>
+									),
+								)}
 							</ul>
 						) : (
 							<div className={styles.altResult}>
@@ -70,11 +80,10 @@ export async function getServerSideProps(context) {
 		const { menuItems } = await getFooterMenu();
 
 		let res = [];
-		// Execute query if search term is present
 		if (searchTerm) {
 			expectedResults = true;
-			const { posts } = await getSearchedPosts(searchTerm[0]);
-			res = posts;
+			const { searchResults } = await getSearchResults(searchTerm[0]);
+			res = searchResults;
 		}
 
 		return {

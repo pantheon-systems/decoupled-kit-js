@@ -28,7 +28,8 @@ export const searchPageCSSModules = () => /* css */ `.altResult {
 .listTitle {
 	font-weight: 700;
 	font-size: var(--7);
-	margin-bottom: var(--8);
+	margin-bottom: var(--4);
+	margin-top: var(--4);
 	justify-items: start;
 }
 
