@@ -2,7 +2,7 @@
 id: 'gatsby-wordpress-troubleshooting'
 title: 'Troubleshooting'
 slug: '/frontend-starters/gatsby/gatsby-wordpress/troubleshooting'
-sidebar_position: 4
+sidebar_position: 5
 ---
 ## Before You Begin
 

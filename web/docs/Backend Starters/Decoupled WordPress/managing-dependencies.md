@@ -2,7 +2,7 @@
 id: 'wordpress-managing-dependencies'
 title: 'Managing WordPress Dependencies'
 slug: '/backend-starters/decoupled-wordpress/managing-wordpress-dependencies'
-sidebar_position: 3
+sidebar_position: 6
 ---
 
 This WordPress Project uses [composer](https://getcomposer.org) to manage

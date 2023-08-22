@@ -2,7 +2,7 @@
 id: 'configuring-existing-project'
 title: 'Configuring an Existing WordPress Project'
 slug: '/backend-starters/decoupled-wordpress/configuring-an-existing-project'
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 While we offer a back-end starter project for use with our front-end starter

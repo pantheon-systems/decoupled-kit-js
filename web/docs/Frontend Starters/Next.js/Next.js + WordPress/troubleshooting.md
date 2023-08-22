@@ -2,7 +2,7 @@
 id: 'next-wordpress-troubleshooting'
 title: 'Troubleshooting'
 slug: '/frontend-starters/nextjs/nextjs-wordpress/troubleshooting'
-sidebar_position: 5
+sidebar_position: 8
 ---
 
 ## Before You Begin
