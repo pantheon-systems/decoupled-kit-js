@@ -7,6 +7,10 @@ on:
     tags:
       - '*'
 
+permissions:
+  pull-requests: write
+  contents: read
+
 jobs:
   release:
     name: version and publish
@@ -29,10 +33,6 @@ jobs:
           cache: 'pnpm'
       - name: install dependencies
         run: pnpm install
-      - name: setup git user
-        run: |
-          git config --global user.email "decoupled-service-user@pantheon.io"
-          git config --global user.name "pantheon-decoupled-service-user"
       - name: create and publish versions
         uses: changesets/action@v1
         with:
@@ -40,7 +40,6 @@ jobs:
           commit: 'Update versions'
           title: 'Update versions'
           publish: pnpm ci:publish
-          setupGitUser: false
 
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
