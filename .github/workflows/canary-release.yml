@@ -5,6 +5,10 @@ on:
     branches:
       - canary
 
+permissions:
+  pull-requests: write
+  contents: write
+
 # Releases a canary tagged version of the packages
 jobs:
   canary_release:
