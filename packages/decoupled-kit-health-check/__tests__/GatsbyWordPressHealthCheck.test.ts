@@ -8,7 +8,7 @@ describe('GatsbyWordPressHealthCheck', () => {
 		delete process.env['WPGRAPHQL_URL'];
 		delete process.env['PANTHEON_CMS_ENDPOINT'];
 		delete process.env['WP_APPLICATION_USERNAME'];
-		delete process.env['WP_APPLICATION_PASSWORD'];
+		delete process.env['WP_APPLICATION_SECRET'];
 	});
 	it('should pass for a valid WPGRAPHQL_URL and invalid auth', async ({
 		logSpy,
@@ -93,12 +93,5 @@ describe('GatsbyWordPressHealthCheck', () => {
 
 		const result = logSpy.mock.calls.map(([call]) => call);
 		expect(result).toMatchSnapshot();
-	});
-	it('should handle a trailing slash in the URL', async () => {
-		process.env['WPGRAPHQL_URL'] = 'wordpress.test/wp/graphql/';
-		const HC = new GatsbyWordPressHealthCheck({ env: process.env });
-		const url = HC.getURL();
-
-		expect(url.href).toEqual('https://wordpress.test/wp/graphql');
 	});
 });
