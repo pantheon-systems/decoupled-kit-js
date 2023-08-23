@@ -1,5 +1,12 @@
 # @pantheon-systems/decoupled-kit-health-check
 
+## 0.1.1-canary.0
+
+### Patch Changes
+
+- c3f35a8b: Fix link to WordPress preview site settings
+- 911a7d48: Fix trailing slash on WPGRAPHQL_URL fails the healthcheck
+
 ## 0.1.0
 
 ### Minor Changes
