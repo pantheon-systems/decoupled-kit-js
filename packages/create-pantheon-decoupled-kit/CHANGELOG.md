@@ -1,5 +1,13 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.1-canary.1
+
+### Patch Changes
+
+- 911a7d48: Bump `@pantheon-systems/decoupled-kit-health-check` version
+- c7259e5e: [next-wp][gatsby-wp][next-drupal] Add comments describing each env
+  var in the `.env.example`
+
 ## 0.10.1-canary.0
 
 ### Patch Changes

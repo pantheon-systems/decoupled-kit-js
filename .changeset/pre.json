@@ -17,7 +17,11 @@
     "web": "1.0.0"
   },
   "changesets": [
+    "clever-chefs-exist",
     "eleven-coins-dance",
+    "five-news-train",
+    "happy-eggs-rescue",
+    "nice-candles-unite",
     "tiny-kangaroos-yawn"
   ]
 }
