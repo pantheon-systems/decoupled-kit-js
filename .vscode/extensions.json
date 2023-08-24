@@ -1,8 +1,9 @@
 {
-  "recommendations": [
-    "esbenp.prettier-vscode",
-    "dbaeumer.vscode-eslint",
-    "streetsidesoftware.code-spell-checker",
-    "redhat.vscode-yaml"
-  ]
+	"recommendations": [
+		"esbenp.prettier-vscode",
+		"dbaeumer.vscode-eslint",
+		"streetsidesoftware.code-spell-checker",
+		"redhat.vscode-yaml",
+		"unifiedjs.vscode-mdx"
+	]
 }

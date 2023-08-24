@@ -7,6 +7,10 @@ on:
     tags:
       - '*'
 
+permissions:
+  pull-requests: write
+  contents: write
+
 jobs:
   release:
     name: version and publish
@@ -36,6 +40,7 @@ jobs:
           commit: 'Update versions'
           title: 'Update versions'
           publish: pnpm ci:publish
+
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

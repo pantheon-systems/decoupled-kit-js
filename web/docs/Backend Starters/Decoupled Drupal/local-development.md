@@ -2,7 +2,7 @@
 id: 'drupal-local-development'
 title: 'Local Development'
 slug: '/backend-starters/decoupled-drupal/local-development'
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 ## Before You Begin

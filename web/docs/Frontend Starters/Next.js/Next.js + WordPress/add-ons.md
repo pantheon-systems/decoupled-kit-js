@@ -2,7 +2,7 @@
 id: 'next-wordpress-add-ons'
 title: 'Add-ons'
 slug: '/frontend-starters/nextjs/nextjs-wordpress/add-ons'
-sidebar_position: 8
+sidebar_position: 7
 ---
 
 ## WordPress Advanced Custom Fields Next.js Add-on

@@ -2,7 +2,7 @@
 id: 'next-drupal-surrogate-key-caching'
 title: 'Surrogate Key Based Cache Purging'
 slug: '/frontend-starters/nextjs/nextjs-drupal/next-drupal-surrogate-key-caching'
-sidebar_position: 7
+sidebar_position: 5
 ---
 
 ## Before You Begin

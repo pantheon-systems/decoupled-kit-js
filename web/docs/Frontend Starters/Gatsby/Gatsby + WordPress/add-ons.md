@@ -2,7 +2,7 @@
 id: 'gatsby-wordpress-add-ons'
 title: 'Add-ons'
 slug: '/frontend-starters/gatsby/gatsby-wordpress/add-ons'
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 ## WordPress Advanced Custom Fields Gatsby Add-on

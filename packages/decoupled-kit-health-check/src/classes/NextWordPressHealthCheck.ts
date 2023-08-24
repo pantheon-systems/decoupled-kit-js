@@ -75,16 +75,15 @@ export class NextWordPressHealthCheck extends WordPressHealthCheck {
 			? Object.entries(backendVars).filter(([key]) => key === 'WPGRAPHQL_URL')
 			: Object.entries(backendVars);
 
-		let url;
-		url = /^https:\/\//.test(endpoint) ? endpoint : `https://${endpoint}`;
-		// ensure the url ends with /wp/graphql
-		url = /\/wp\/graphql$/.test(url) ? url : `${url}/wp/graphql`;
+		const url = /^https:\/\//.test(endpoint) ? endpoint : `https://${endpoint}`;
 
 		this.endpoint = url;
 		this.envVar = envVar;
 	}
 	getURL() {
-		return new URL(this.endpoint);
+		const url = new URL(this.endpoint);
+		url.pathname = '/wp/graphql';
+		return url;
 	}
 	async checkFor200(url: URL) {
 		try {
@@ -215,7 +214,7 @@ export class NextWordPressHealthCheck extends WordPressHealthCheck {
 			this.log.suggest(
 				`To set a new secret, go to 🔗 https://${
 					this.getURL().host
-				}/admin/structure/dp-preview-site and edit the preview site you want to use.`,
+				}/wp/wp-admin/options-general.php?page=preview_sites and edit the preview site you want to use.`,
 			);
 			console.log(
 				'⏭  Skipping preview endpoint validation -- PREVIEW_SECRET required.',

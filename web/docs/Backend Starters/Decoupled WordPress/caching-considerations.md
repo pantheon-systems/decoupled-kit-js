@@ -2,7 +2,7 @@
 id: 'caching-considerations'
 title: 'Caching Considerations'
 slug: '/backend-starters/decoupled-wordpress/caching-considerations'
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 With the appropriate configuration, WordPress can be configured to cache GraphQL
