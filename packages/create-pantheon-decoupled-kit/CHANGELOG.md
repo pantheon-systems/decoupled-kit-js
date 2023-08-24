@@ -1,5 +1,16 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.1
+
+### Patch Changes
+
+- 2fa14b06: [gatsby-wp] Update README
+- bbc872eb: Bump `@pantheon-systems/decoupled-kit-health-check` version
+- c7259e5e: [next-wp][gatsby-wp][next-drupal] Add comments describing each env
+  var in the `.env.example`
+- 78042c44: next-drupal-search-api-addon - `BACKEND_URL` not required for
+  successful search queries.
+
 ## 0.10.1-canary.1
 
 ### Patch Changes
