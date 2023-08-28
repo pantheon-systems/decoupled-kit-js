@@ -1,5 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Input, isString } from '@cli/types';
+
+/**
+ * Valid langs for markdown code-fences
+ */
+type Lang = 'bash' | 'js' | 'ts' | 'tsx' | 'jsx' | 'graphql';
+
 export const taggedTemplateHelpers = {
 	/**
 	 * @param condition - a single key of an {@link Input}
@@ -47,5 +53,21 @@ export const taggedTemplateHelpers = {
 		return wpGraphqlUrlRegex.test(value)
 			? value
 			: `${value.replace(/\/$/, '')}/wp/graphql`;
+	},
+	md: {
+		/**
+		 * Markdown code-fence helper
+		 * @param options.lang - the language used in the code fence {@link Lang}
+		 * @param options.value - the code inside of the code fence
+		 * @returns the value wrapped in a markdown code fence
+		 */
+		codeFence: ({ lang, value }: { lang: Lang; value: string }) => {
+			let result = '```';
+			result += `${lang}\n`;
+			result += `${value}\n`;
+			result += '```';
+
+			return result;
+		},
 	},
 };

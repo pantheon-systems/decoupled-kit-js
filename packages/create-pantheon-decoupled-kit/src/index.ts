@@ -7,6 +7,7 @@ import {
 	isDrupalCms,
 	isString,
 	isWpCms,
+	Input,
 } from './types';
 import { actionRunner, getHandlebarsInstance, helpMenu } from './utils/index';
 
@@ -188,7 +189,7 @@ To see this list at any time, use the --help command.`;
 	const actionsResult = await actionRunner({
 		actions,
 		templateData,
-		data: args,
+		data: args as Input,
 		handlebars: hbs,
 	});
 	args?.silent || console.log(chalk.blueBright(actionsResult));
