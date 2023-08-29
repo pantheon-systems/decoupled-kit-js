@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.2-canary.1
+
+### Patch Changes
+
+- 793e6268: Fix logo alignment in READMEs
+
 ## 0.10.2-canary.0
 
 ### Patch Changes
