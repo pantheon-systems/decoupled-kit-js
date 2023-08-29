@@ -9,8 +9,11 @@ type CmsType = 'drupal' | 'wordpress';
  */
 export const readmeHeader = (
 	starterName: StarterName,
-) => /* md */ `<div style="display:flex;flex-direction:column">
-	<img src="https://raw.githubusercontent.com/pantheon-systems/decoupled-kit-js/canary/web/static/img/B_Fist-Tagline.png" height="120" style="background:#ffffff;border-radius:8px;margin:auto;display:flex;" alt="Pantheon.io logo featuring a fist capturing lighting. Pantheon™, The Platform for Extraordinary Websites.">
+) => /* md */ `<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pantheon-systems/decoupled-kit-js/canary/web/static/img/B_Fist-Tagline.png">
+  <img height="120" alt="Pantheon.io logo featuring a fist capturing lighting. Pantheon™, The Platform for Extraordinary Websites." src="https://raw.githubusercontent.com/pantheon-systems/decoupled-kit-js/canary/web/static/img/W_Fist-Tagline.png">
+</picture>
 	<a href="https://decoupledkit.pantheon.io/docs#${starterName
 		.split(' ')
 		.join('-')
