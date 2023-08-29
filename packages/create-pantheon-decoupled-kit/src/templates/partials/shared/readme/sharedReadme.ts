@@ -1,16 +1,21 @@
 import { taggedTemplateHelpers as utils } from '@cli/utils';
 
 type GeneratorName = 'next-wp' | 'next-drupal' | 'gatsby-wp';
+type StarterName = 'Next WordPress' | 'Next Drupal' | 'Gatsby WordPress';
 type CmsType = 'drupal' | 'wordpress';
 
 /**
  * The header section for the starter kit READMEs
  */
-export const readmeHeader =
-	() => /* md */ `<div style="display:flex;flex-direction:column">
+export const readmeHeader = (
+	starterName: StarterName,
+) => /* md */ `<div style="display:flex;flex-direction:column">
 	<img src="https://raw.githubusercontent.com/pantheon-systems/decoupled-kit-js/canary/web/static/img/B_Fist-Tagline.png" height="120" style="background:#ffffff;border-radius:8px;margin:auto;display:flex;" alt="Pantheon.io logo featuring a fist capturing lighting. Pantheon™, The Platform for Extraordinary Websites.">
-	<a href="https://pantheon.io">
-		<h1 style="margin:auto;" align="center">Pantheon</h1>
+	<a href="https://decoupledkit.pantheon.io/docs#${starterName
+		.split(' ')
+		.join('-')
+		.toLowerCase()}-starter">
+		<h1 style="margin:auto;" align="center">${starterName} Starter</h1>
 	</a>
 </div>
 
@@ -23,12 +28,12 @@ For more information on using the starter on Pantheon Front-End Sites, visit [th
  * @param starterName one of Next WordPress, Next Drupal, or Gatsby WordPress
  */
 export const gettingStarted = (
-	starterName: 'Next WordPress' | 'Next Drupal' | 'Gatsby WordPress',
+	starterName: StarterName,
 ) => /* md */ `## Getting Started
 
 The ${starterName} starter requires Node.js and is built and tested on the LTS version which can be found on the [Node.js downloads page](https://nodejs.org/en/download).
 
-The starter kit supports npm, pnpm, and yarn. If you created the starer via the Pantheon Front-End Sites dashboard, it will use npm by default. To change this, delete the \`package-lock.json\` \`node-modules\` folder, then run the install command of your preferred package manager.
+The starter kit supports npm, pnpm, and yarn. If you created the starer via the Pantheon Front-End Sites dashboard, it will use npm by default. To change this, delete the \`package-lock.json\` file and the \`node-modules\` folder, then run the install command of your preferred package manager.
 
 If you created the starter via \`create-pantheon-decoupled-kit\`, it will detect the package manager used to run the command and use it install the starter's dependencies unless the \`--noInstall\` flag was used.`;
 
@@ -162,7 +167,7 @@ export const graphqlPostRequest =
 This starter uses \`GET\` for GraphQL requests by default in order to utilize the [WPGraphQL Smart Cache Network Cache](https://github.com/wp-graphql/wp-graphql-smart-cache/blob/main/docs/network-cache.md#network-cache). Editing this
 configuration to use \`POST\` requests can be done in \`/lib/WordPressClient.js\`.
 
-To achieve this, set each \`GraphQLClientFactory\` constructors \`method\` parameter
+To achieve this, set each \`GraphQLClientFactory\` constructor's \`method\` parameter
 to equal \`POST\`.
 
 ${utils.md.codeFence({

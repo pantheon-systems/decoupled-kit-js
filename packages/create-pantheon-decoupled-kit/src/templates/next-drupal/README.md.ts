@@ -9,9 +9,11 @@ import {
 	readmeHeader,
 } from '@partials/shared/readme/sharedReadme';
 
-const md: TemplateFn = () => /* md */ `${readmeHeader()}
+const starterName = 'Next Drupal';
 
-${gettingStarted('Next Drupal')}
+const md: TemplateFn = () => /* md */ `${readmeHeader(starterName)}
+
+${gettingStarted(starterName)}
 
 ## \`@pantheon-systems\` npm Packages
 
