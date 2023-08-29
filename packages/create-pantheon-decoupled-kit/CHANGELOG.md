@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.2-canary.0
+
+### Patch Changes
+
+- 6b616fb9: [next-wp][next-drupal][gatsby-wp] Update READMEs
+
 ## 0.10.1
 
 ### Patch Changes
