@@ -30,7 +30,7 @@ if (process.env.WPGRAPHQL_URL === undefined) {
 	backendUrl = process.env.WPGRAPHQL_URL;
 	imageDomain =
 		process.env.IMAGE_DOMAIN ||
-		process.env.WPGRAPHQL_URL.replace(/\/wp\/graphql$/, '').replace(
+		process.env.WPGRAPHQL_URL.replace(/\/wp\/graphql/, '').replace(
 			/^https?:\/\//,
 			'',
 		);
