@@ -1,4 +1,3 @@
-import type { TemplateFn } from '@cli/types';
 import {
 	commands,
 	createPantheonDecoupledKitNpmPackage,
@@ -7,7 +6,8 @@ import {
 	healthCheck,
 	lando,
 	readmeHeader,
-} from '@partials/shared/readme/sharedReadme';
+} from '@partials/readme-shared';
+import type { TemplateFn } from '@cli/types';
 
 const starterName = 'Next Drupal';
 

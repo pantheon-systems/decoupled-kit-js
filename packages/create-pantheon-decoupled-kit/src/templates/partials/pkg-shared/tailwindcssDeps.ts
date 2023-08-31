@@ -1,4 +1,4 @@
-export const tailwindcssDeps = (devDeps: boolean) => {
+export const tailwindcssDeps = (devDeps: boolean): string => {
 	if (devDeps) {
 		return `"autoprefixer": "^10.4.12",
 		"postcss": "^8.4.21",
