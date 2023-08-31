@@ -1,9 +1,9 @@
-import { rest } from 'msw';
+import { http } from 'msw';
 
 const endpoint = 'https://wordpress.test/wp/graphql';
 const invalidEndpoint = 'https://invalid.wordpress.test/wp/graphql';
 
-const validResponses = rest.get(`${endpoint}`, ({ request }) => {
+const validResponses = http.get(`${endpoint}`, ({ request }) => {
 	const url = new URL(request.url);
 	const authQuery = /* graphql */ `query LatestPostsQuery {
 				posts(where: { status: PRIVATE }) {
@@ -177,13 +177,13 @@ const validResponses = rest.get(`${endpoint}`, ({ request }) => {
 	}
 });
 
-const invalidResponses = rest.get(`${invalidEndpoint}`, () => {
+const invalidResponses = http.get(`${invalidEndpoint}`, () => {
 	return new Response(JSON.stringify({ errors: [{ message: 'Not found' }] }), {
 		status: 404,
 	});
 });
 
-const noWPGatsbyPlugin = rest.get(
+const noWPGatsbyPlugin = http.get(
 	`https://wordpress.test.no-plugin/wp/graphql`,
 	({ request }) => {
 		const url = new URL(request.url);

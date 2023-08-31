@@ -324,8 +324,8 @@ importers:
         specifier: ^0.18.11
         version: 0.18.11
       msw:
-        specifier: next
-        version: 0.0.0-fetch.rc-15(typescript@5.1.6)
+        specifier: 0.0.0-fetch.rc-17
+        version: 0.0.0-fetch.rc-17(typescript@5.1.6)
       rimraf:
         specifier: ^5.0.1
         version: 5.0.1
@@ -13077,8 +13077,8 @@ packages:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     dev: false
 
-  /msw@0.0.0-fetch.rc-15(typescript@5.1.6):
-    resolution: {integrity: sha512-apgcCzSmsbJ1rUDpmhrjQAZDzEwOvfZD2VyBZVu6YMD+ovm8ow1buVzRE25IvzrtfIklN/fDbVavTa5lhqX4uQ==}
+  /msw@0.0.0-fetch.rc-17(typescript@5.1.6):
+    resolution: {integrity: sha512-42nt60YOyNKDPNOF4SkMFwnsMKAy5FPjeQv9pXXjtFvx8cr9bJMnWGXD+3RISp8qZpxD1drkMCYmMLlW6N67FQ==}
     engines: {node: '>=18'}
     hasBin: true
     requiresBuild: true
