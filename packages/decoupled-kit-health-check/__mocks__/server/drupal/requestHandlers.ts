@@ -1,20 +1,20 @@
-import { rest } from 'msw';
+import { http } from 'msw';
 
 const endpoint = 'https://drupal.test';
 const umamiEndpoint = 'https://umami.drupal.test';
 const invalidEndpoint = 'https://invalid.drupal.test';
 
-const jsonapiIndexHandler = rest.get(
+const jsonapiIndexHandler = http.get(
 	`${endpoint}/jsonapi`,
 	() => new Response(null, { status: 200 }),
 );
 
-const invalidJsonapiIndexHandler = rest.get(
+const invalidJsonapiIndexHandler = http.get(
 	`${invalidEndpoint}/jsonapi`,
 	() => new Response(null, { status: 404 }),
 );
 
-const authHandler = rest.post(`${endpoint}/oauth/token`, ({ request }) => {
+const authHandler = http.post(`${endpoint}/oauth/token`, ({ request }) => {
 	const url = new URL(request.url);
 	if (
 		url.searchParams.get('client_id') &&
@@ -30,42 +30,64 @@ const authHandler = rest.post(`${endpoint}/oauth/token`, ({ request }) => {
 	}
 });
 
-const decoupledRouterHandler = rest.get(
+const decoupledRouterHandler = http.get(
 	`${endpoint}/router/translate-path`,
-	() => new Response(null, { status: 200 }),
+	() =>
+		new Response(
+			JSON.stringify({
+				message:
+					'unable to translate empty path. Please send a ?path query string parameter with your request.',
+			}),
+			{ status: 404 },
+		),
 );
 
-const umamiDecoupledRouterHandler = rest.get(
+const umamiDecoupledRouterHandler = http.get(
 	`${umamiEndpoint}/router/translate-path`,
-	() => new Response(null, { status: 200 }),
+	() =>
+		new Response(
+			JSON.stringify({
+				message:
+					'Unable to translate empty path. Please send a ?path query string parameter with your request.',
+			}),
+			{ status: 404 },
+		),
 );
 
-const invalidDecoupledRouterHandler = rest.get(
+const invalidDecoupledRouterHandler = http.get(
 	`${invalidEndpoint}/router/translate-path`,
-	() => new Response(null, { status: 404 }),
+	() =>
+		new Response(
+			'<html><body><h1>Some html to mock the 404 response without decoupled router</h1></body></html>',
+			{ status: 404 },
+		),
 );
 
-const defaultLanguageSettingsHandler = rest.get(
+const defaultLanguageSettingsHandler = http.get(
 	`${endpoint}/jsonapi/configurable_language/configurable_language`,
 	() => new Response(null, { status: 404 }),
 );
+const invalidLanguageSettingsHandler = http.get(
+	`${invalidEndpoint}/jsonapi/configurable_language/configurable_language`,
+	() => new Response(null, { status: 404 }),
+);
 
-const umamiLanguageSettingsHandler = rest.get(
+const umamiLanguageSettingsHandler = http.get(
 	`${umamiEndpoint}/jsonapi/configurable_language/configurable_language`,
 	() => new Response(null, { status: 200 }),
 );
 
-const menuItemHandler = rest.get(
+const menuItemHandler = http.get(
 	`${endpoint}/jsonapi/menu_items/footer`,
 	() => new Response(null, { status: 200 }),
 );
 
-const invalidMenuItemHandler = rest.get(
+const invalidMenuItemHandler = http.get(
 	`${invalidEndpoint}/jsonapi/menu_items/footer`,
 	() => new Response(null, { status: 404 }),
 );
 
-const previewHandler = rest.get(`${endpoint}/node/1/preview`, ({ request }) => {
+const previewHandler = http.get(`${endpoint}/node/1/preview`, ({ request }) => {
 	if (request.headers.get('Authorization')?.endsWith('Bearer')) {
 		return new Response(null, { status: 401 });
 	} else {
@@ -76,6 +98,7 @@ const previewHandler = rest.get(`${endpoint}/node/1/preview`, ({ request }) => {
 export const drupalRequestHandlers = [
 	jsonapiIndexHandler,
 	invalidJsonapiIndexHandler,
+	invalidLanguageSettingsHandler,
 	authHandler,
 	decoupledRouterHandler,
 	umamiDecoupledRouterHandler,

@@ -131,22 +131,24 @@ export class NextDrupalHealthCheck extends DrupalHealthCheck {
 		});
 	}
 	async validateRouter() {
+		console.log('Validating Decoupled Router module...');
 		await this.checkForUmami();
 		const cmsEndpoint = this.getURL();
 		cmsEndpoint.pathname = '/router/translate-path';
-		cmsEndpoint.searchParams.set('format', '_json');
-		this.hasUmami
-			? cmsEndpoint.searchParams.set(
-					'path',
-					'articles/lets-hear-it-for-carrots',
-			  )
-			: cmsEndpoint.searchParams.set('path', 'articles/example-article');
 
-		const isDecoupledRouterValid = await this.checkFor200(cmsEndpoint);
-		if (isDecoupledRouterValid) {
-			this.log.success('Decoupled Router is valid!');
-			return this;
+		try {
+			const res = await fetch(cmsEndpoint);
+			const { message } = (await res?.json()) as { message?: string };
+			// If request to /router/translate-path with no query param results in a 404 with a message, the router module is installed.
+			// a 404 with no message means the router module is not installed.
+			if (message) {
+				this.log.success('Decoupled Router is valid!');
+				return this;
+			}
+		} catch (error) {
+			void error;
 		}
+
 		throw new DecoupledRouterError({
 			endpoint: this.getURL().host,
 			endpointType: this.envVar,
