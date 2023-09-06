@@ -104,4 +104,27 @@ describe('NextDrupalHealthCheck', () => {
 		const result = logSpy.mock.calls.map(([call]) => call);
 		expect(result).toMatchSnapshot();
 	});
+	it('should show a helpful error message if the decoupled router is not available', async ({
+		logSpy,
+	}) => {
+		process.env['PANTHEON_CMS_ENDPOINT'] = 'invalid.drupal.test';
+		const HC = new NextDrupalHealthCheck({ env: process.env });
+		vi.spyOn(HC, 'validateEndpoint').mockImplementationOnce(async () => {
+			console.log('Validating CMS endpoint...');
+			HC.log.success('PANTHEON_CMS_ENDPOINT is valid!');
+			return HC;
+		});
+		vi.spyOn(HC, 'validateMenu').mockImplementationOnce(async () => {
+			console.log('Validating Menu Item endpoint...');
+			HC.log.success('Menu Items endpoint is valid!');
+			return HC;
+		});
+		await HC.validateEndpoint()
+			.then((hc) => hc.validateMenu())
+			.then((hc) => hc.validateRouter())
+			.catch((err) => console.log(err.message));
+
+		const result = logSpy.mock.calls.map(([call]) => call);
+		expect(result).toMatchSnapshot();
+	});
 });

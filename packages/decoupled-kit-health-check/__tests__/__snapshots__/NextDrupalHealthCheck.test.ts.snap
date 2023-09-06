@@ -9,6 +9,7 @@ exports[`NextDrupalHealthCheck > should pass for a valid BACKEND_URL and invalid
   "|__✅ BACKEND_URL is valid!",
   "Validating Menu Item endpoint...",
   "|__✅ Menu Items endpoint is valid!",
+  "Validating Decoupled Router module...",
   "|__✅ Decoupled Router is valid!",
   "Validating authentication...",
   "|__💡 CLIENT_ID is required for preview but is not set.",
@@ -30,6 +31,7 @@ exports[`NextDrupalHealthCheck > should pass for a valid PANTHEON_CMS_ENDPOINT a
   "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
   "Validating Menu Item endpoint...",
   "|__✅ Menu Items endpoint is valid!",
+  "Validating Decoupled Router module...",
   "|__✅ Decoupled Router is valid!",
   "Validating authentication...",
   "|__💡 CLIENT_ID is required for preview but is not set.",
@@ -51,6 +53,7 @@ exports[`NextDrupalHealthCheck > should pass for a valid backend and valid auth 
   "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
   "Validating Menu Item endpoint...",
   "|__✅ Menu Items endpoint is valid!",
+  "Validating Decoupled Router module...",
   "|__✅ Decoupled Router is valid!",
   "Validating authentication...",
   "|__✅ Auth is valid!",
@@ -69,6 +72,7 @@ exports[`NextDrupalHealthCheck > should pass for a valid backend and valid auth 
   "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
   "Validating Menu Item endpoint...",
   "|__✅ Menu Items endpoint is valid!",
+  "Validating Decoupled Router module...",
   "|__✅ Decoupled Router is valid!",
   "Validating authentication...",
   "|__✅ Auth is valid!",
@@ -87,5 +91,21 @@ exports[`NextDrupalHealthCheck > should show a helpful error message if the back
   "Validating CMS endpoint...",
   "|__❌ PANTHEON_CMS_ENDPOINT could not be fetched from.
 Check that invalid.drupal.test is valid and provides a 200 response",
+]
+`;
+
+exports[`NextDrupalHealthCheck > should show a helpful error message if the decoupled router is not available 1`] = `
+[
+  "No .env* file found, assuming production environment.",
+  "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
+  "|__✅ PANTHEON_CMS_ENDPOINT is set!",
+  "Validating CMS endpoint...",
+  "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
+  "Validating Menu Item endpoint...",
+  "|__✅ Menu Items endpoint is valid!",
+  "Validating Decoupled Router module...",
+  "|__❌ Decoupled Router not detected for PANTHEON_CMS_ENDPOINT.
+Check that invalid.drupal.test is valid and provides a 200 response.
+Also ensure that the Decoupled Router module is enabled.",
 ]
 `;
