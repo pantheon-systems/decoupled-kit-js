@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.3-canary.1
+
+### Patch Changes
+
+- 3e853174: [next-wp][next-drupal][gatsby-wp] Add `engines` field to
+  package.json
+
 ## 0.10.3-canary.0
 
 ### Patch Changes
