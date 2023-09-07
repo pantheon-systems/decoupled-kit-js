@@ -40,10 +40,10 @@ export const gatsbyWp: DecoupledKitGenerator<GatsbyWPAnswers, GatsbyWPData> = {
 	],
 	data: {
 		gatsbyPnpmPlugin: pnpm,
-		dkHealthCheckVersion: versions['decoupled-kit-health-check'],
+		decoupledKitHealthCheckVersion: versions['decoupled-kit-health-check'],
 		wordpressKitVersion: versions['wordpress-kit'],
-		otherConfigsVersion: versions['other'],
-		eslintConfigVersion: versions['eslint'],
+		otherVersion: versions['other'],
+		eslintVersion: versions['eslint'],
 		wp: true,
 		gatsby: true,
 	},

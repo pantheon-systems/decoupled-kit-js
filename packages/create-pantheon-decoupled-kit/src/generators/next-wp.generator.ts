@@ -37,7 +37,7 @@ export const nextWp: DecoupledKitGenerator<NextWPAnswers, BaseGeneratorData> = {
 	data: {
 		nextjsKitVersion: versions['nextjs-kit'],
 		wordpressKitVersion: versions['wordpress-kit'],
-		dkHealthCheckVersion: versions['decoupled-kit-health-check'],
+		decoupledKitHealthCheckVersion: versions['decoupled-kit-health-check'],
 		wp: true,
 	},
 	templates: ['next-wp', 'tailwind-shared', 'tailwindless-next'],

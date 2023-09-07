@@ -1,6 +1,6 @@
+import { tailwindcssDeps } from '@partials/pkg-shared/tailwindcssDeps';
 import { TemplateFn } from '@cli/types';
-import { sharedPkgJsonField } from '@partials/pkg-shared/sharedPkgJsonFieldsT';
-import { tailwindcssDeps } from '@partials/pkg-shared/tailwindcssDepsT';
+import { sharedPkgJsonField } from '@partials/pkg-shared/sharedPkgJsonFields';
 
 const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 	${sharedPkgJsonField(utils.pkgName(data.appName))}
@@ -22,6 +22,7 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		"decoupled-kit-health-check": "npx --prefer-offline @pantheon-systems/decoupled-kit-health-check wordpress"
 	},
 	"dependencies": {
+		${utils.if(data.tailwindcss, tailwindcssDeps(false))}
 		"gatsby": "^5.11.0",
 		"gatsby-plugin-dts-css-modules": "^3.0.0",
 		"gatsby-plugin-image": "^3.11.0",
@@ -41,10 +42,11 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 	},
 	"devDependencies": {
 		${utils.if(data.tailwindcss, tailwindcssDeps(true))}
-		${utils.if(data.tailwindcss, tailwindcssDeps(false))}
-		"@pantheon-systems/decoupled-kit-configs": "${data.otherConfigsVersion}",
-		"@pantheon-systems/decoupled-kit-health-check": "${data.dkHealthCheckVersion}",
-		"@pantheon-systems/eslint-config-decoupled-kit": "${data.eslintConfigVersion}",
+		"@pantheon-systems/decoupled-kit-configs": "${data.otherVersion}",
+		"@pantheon-systems/decoupled-kit-health-check": "${
+			data.decoupledKitHealthCheckVersion
+		}",
+		"@pantheon-systems/eslint-config-decoupled-kit": "${data.eslintVersion}",
 		"@pantheon-systems/wordpress-kit": "${data.wordpressKitVersion}",
 		"@testing-library/react": "13.4.0",
 		"@types/dompurify": "^3.0.2",

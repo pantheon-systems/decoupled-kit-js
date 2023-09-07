@@ -6,4 +6,7 @@ export const sharedPkgJsonField = (appName: string) => `"name": "${appName}",
 	"homepage": "",
 	"bugs": "",
 	"repository": "",
-	"author": "",`;
+	"author": "",
+	"engines": {
+		"node": "18"
+	},`;
