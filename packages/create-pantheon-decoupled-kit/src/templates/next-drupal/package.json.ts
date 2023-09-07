@@ -40,6 +40,7 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		"c8": "^7.12.0",
 		"eslint": "^8.24.0",
 		"eslint-config-next": "13.4.7",
+		"jsdom": "^22.1.0",
 		"msw": "^1.0.0",
 		"prettier": "^2.7.1",
 		"typescript": "4.8.4",
