@@ -26,7 +26,7 @@ type CamelCase<T extends string> = T extends `${infer First}-${infer Rest}`
 type PackageVersionKeys = `${CamelCase<keyof typeof pkgVersions>}Version`;
 
 type PackageVersionData = {
-	[key in PackageVersionKeys]?: string;
+	[key in PackageVersionKeys]: string;
 };
 
 /**
@@ -39,7 +39,7 @@ type PackageVersionData = {
  * }
  * ```
  */
-export type BaseGeneratorData = PackageVersionData & DrupalOrWP;
+export type BaseGeneratorData = Partial<PackageVersionData> & DrupalOrWP;
 
 export interface GatsbyWPData extends BaseGeneratorData {
 	gatsbyPnpmPlugin: boolean;
@@ -116,8 +116,9 @@ export type ActionRunner = (config: ActionRunnerConfig) => Promise<string>;
 /**
  * Input from command line arguments, prompts, and generator data
  */
-type InputIndex = BaseGeneratorData &
-	GatsbyWPData & {
+type InputIndex = DrupalOrWP &
+	GatsbyWPData &
+	PackageVersionData & {
 		_: string[];
 		appName: string;
 		outDir: string;
