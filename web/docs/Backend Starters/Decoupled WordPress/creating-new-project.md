@@ -5,7 +5,22 @@ slug: '/backend-starters/decoupled-wordpress/creating-a-new-project'
 sidebar_position: 0
 ---
 
-### Installing using Upstream
+## Installing using Upstream
+
+Clone the repo to start using our decoupled WordPress template:
+
+```bash
+git clone git@github.com:pantheon-upstreams/decoupled-wordpress-composer-managed.git
+```
+
+:::pantheon
+
+The following options are available when using the
+[Pantheon Platform](https://pantheon.io):
+
+:::
+
+If you are deploying to pantheon, you may also choose one of the following options:
 
 - Create from Decoupled WordPress Composer Managed upstream:
 
@@ -15,7 +30,7 @@ sidebar_position: 0
 
   - Or Alternatively via Terminus:
 
-    ```
+    ```bash
     terminus site:create my-new-site "Describe Site" --org='My Team Name' c9f5e5c0-248f-4205-b63a-d2729572dd1f
     ```
 
