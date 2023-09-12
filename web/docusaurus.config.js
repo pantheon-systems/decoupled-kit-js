@@ -106,6 +106,21 @@ const config = {
 					editUrl:
 						'https://github.com/pantheon-systems/decoupled-kit-js/edit/canary/web/',
 					path: 'docs',
+					// overwrite admonitions to add custom 'pantheon' keyword
+					admonitions: {
+						tag: ':::',
+						keywords: [
+							'info',
+							'success',
+							'danger',
+							'note',
+							'tip',
+							'warning',
+							'important',
+							'caution',
+							'pantheon',
+						]
+					}
 				},
 				// blog: {
 				//   showReadingTime: true,

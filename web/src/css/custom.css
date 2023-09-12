@@ -60,3 +60,36 @@ EFD121
 	background-color: #ffffff;
 	border-radius: 100px;
 }
+
+/* :::pantheon admonition icon styles */
+.cls-1 {
+	fill: #efd11e;
+}
+
+.cls-2 {
+	fill: #231f20;
+}
+
+.cls-3 {
+	background-color: #000000;
+	border-radius: 15px;
+}
+
+html[data-theme='dark'] .cls-3 {
+	background-color: #ffffff;
+}
+
+/* :::pantheon admonition styles */
+.alert--pantheon {
+	--ifm-alert-background-color: var(--ifm-color-primary);
+	--ifm-alert-background-color-highlight: var(--ifm-color-primary-darkest);
+	--ifm-alert-foreground-color: var(--ifm-color-primary-lightest);
+	--ifm-alert-border-color: var(--ifm-color-primary-darkest);
+}
+
+html[data-theme='dark'] .alert--pantheon {
+	--ifm-alert-background-color: var(--ifm-color-primary);
+	--ifm-alert-background-color-highlight: var(--ifm-color-primary-lightest);
+	--ifm-alert-foreground-color: var(--ifm-color-primary-darkest);
+	--ifm-alert-border-color: var(--ifm-color-primary-lightest);
+}
