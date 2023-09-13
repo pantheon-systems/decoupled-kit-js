@@ -1,5 +1,20 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.3-canary.1
+
+### Patch Changes
+
+- 3e853174: [next-wp][next-drupal][gatsby-wp] Add `engines` field to
+  package.json
+
+## 0.10.3-canary.0
+
+### Patch Changes
+
+- 15d7593e: Bump `@pantheon-systems/decoupled-kit-health-check`
+- 7d3513ca: [next-wp] Fixed a bug where a trailing slash on WPGRAPHQL_URL could
+  break the IMAGE_DOMAIN used for the `next/image` component.
+
 ## 0.10.2
 
 ### Patch Changes

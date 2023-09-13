@@ -1,4 +1,3 @@
-import type { TemplateFn } from '@cli/types';
 import {
 	commands,
 	createPantheonDecoupledKitNpmPackage,
@@ -8,7 +7,8 @@ import {
 	lando,
 	readmeHeader,
 	wordpressKitNpmPackage,
-} from '@partials/shared/readme/sharedReadme';
+} from '@partials/readme-shared';
+import type { TemplateFn } from '@cli/types';
 
 const starterName = 'Next WordPress';
 

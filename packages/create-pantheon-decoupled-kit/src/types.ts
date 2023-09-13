@@ -1,3 +1,4 @@
+import pkgVersions from '@cli/pkgVersions.json';
 import type { Answers, QuestionCollection } from 'inquirer';
 import type { SpyInstance } from 'vitest';
 import { taggedTemplateHelpers as helpers } from './utils';
@@ -13,6 +14,23 @@ type DrupalOrWP = {
 };
 
 /**
+ * Converts a kebab-case string to camel case
+ */
+type CamelCase<T extends string> = T extends `${infer First}-${infer Rest}`
+	? `${Lowercase<First>}${Capitalize<CamelCase<Rest>>}`
+	: Lowercase<T>;
+
+/**
+ * Camel case keys to use for the package versions in BaseGeneratorData
+ */
+type PackageVersionKeys = `${CamelCase<keyof typeof pkgVersions>}Version`;
+
+type PackageVersionData = {
+	[key in PackageVersionKeys]: string;
+};
+
+/**
+ * Base data that is passed to all generators
  * @example
  * ```
  * {
@@ -21,9 +39,7 @@ type DrupalOrWP = {
  * }
  * ```
  */
-export type BaseGeneratorData = {
-	[key: `${string}Version`]: string;
-} & DrupalOrWP;
+export type BaseGeneratorData = Partial<PackageVersionData> & DrupalOrWP;
 
 export interface GatsbyWPData extends BaseGeneratorData {
 	gatsbyPnpmPlugin: boolean;
@@ -97,8 +113,12 @@ export type Action = (config: ActionConfig) => Promise<string> | string;
 
 export type ActionRunner = (config: ActionRunnerConfig) => Promise<string>;
 
-type InputIndex = BaseGeneratorData &
-	GatsbyWPData & {
+/**
+ * Input from command line arguments, prompts, and generator data
+ */
+type InputIndex = DrupalOrWP &
+	GatsbyWPData &
+	PackageVersionData & {
 		_: string[];
 		appName: string;
 		outDir: string;

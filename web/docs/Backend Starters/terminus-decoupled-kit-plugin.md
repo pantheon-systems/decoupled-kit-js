@@ -7,6 +7,8 @@ slug: '/backend-starters/terminus-decoupled-kit'
 
 # Terminus Decoupled Kit Plugin
 
+:::pantheon
+
 The Terminus Decoupled Kit Plugin provides commands useful for creating
 decoupled projects on [Pantheon](https://pantheon.io) using pre-configured
 starter kits.
@@ -19,6 +21,8 @@ The `decoupled-kit:create` command guides you through the following tasks:
   project. This codebase will be automatically configured for local development,
   and can later be deployed to Pantheon using the
   [import repository workflow](https://docs.pantheon.io/guides/decoupled/no-starter-kit/import-repo).
+
+:::
 
 ## Requirements
 
