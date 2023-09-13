@@ -1,5 +1,12 @@
 # @pantheon-systems/decoupled-kit-health-check
 
+## 0.1.2
+
+### Patch Changes
+
+- 15d7593e: [NextDruaplHealthCheck] Fixed potential false negatives when
+  checking for decoupled router
+
 ## 0.1.2-canary.0
 
 ### Patch Changes
