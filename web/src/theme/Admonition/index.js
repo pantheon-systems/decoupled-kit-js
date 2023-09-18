@@ -57,7 +57,7 @@ function CautionIcon() {
 function PantheonIcon() {
 	return (
 		<svg
-      className="cls-3"
+			className="cls-3"
 			id="Layer_1"
 			data-name="Layer 1"
 			xmlns="http://www.w3.org/2000/svg"

@@ -4,7 +4,7 @@
 		"types": ["vitest/globals"]
 	},
 	"include": [
-		"src",
+		"src/**/*.ts",
 		"vite.config.ts",
 		"__tests__/vitest.d.ts",
 		"__tests__/**/*.test.ts"

@@ -20,7 +20,8 @@ The following options are available when using the
 
 :::
 
-If you are deploying to pantheon, you may also choose one of the following options:
+If you are deploying to pantheon, you may also choose one of the following
+options:
 
 - Create from Decoupled WordPress Composer Managed upstream:
 

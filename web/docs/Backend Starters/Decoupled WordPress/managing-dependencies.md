@@ -52,5 +52,5 @@ Alternatively, composer security updates can be applied automatically using the
 (Composer Lock Updater) Plugin. This plugin automatically creates pull requests
 based on composer.lock updates. If your project was created using our
 recommended terminus
-[build tools project create command](creating-new-project.md) then this plugin
-has been configured automatically.
+[build tools project create command](./creating-a-new-project.md) then this
+plugin has been configured automatically.

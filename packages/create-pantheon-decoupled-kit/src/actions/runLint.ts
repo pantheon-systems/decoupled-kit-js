@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import chalk from 'chalk';
 import { execSync } from 'child_process';
 import path from 'path';

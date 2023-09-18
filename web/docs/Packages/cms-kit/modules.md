@@ -1,6 +1,6 @@
 ---
 id: 'modules'
-title: 'decoupled-kit-js'
+title: '@pantheon-systems/cms-kit'
 sidebar_label: 'Exports'
 sidebar_position: 0.5
 custom_edit_url: null
@@ -29,4 +29,4 @@ The current known unique set of surrogate keys.
 
 #### Defined in
 
-[lib/setSurrogateKeyHeader.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/cms-kit/src/lib/setSurrogateKeyHeader.ts#L17)
+[lib/setSurrogateKeyHeader.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/cms-kit/src/lib/setSurrogateKeyHeader.ts#L17)

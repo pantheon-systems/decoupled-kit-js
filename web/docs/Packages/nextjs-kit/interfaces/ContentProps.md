@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/contentWithImage.tsx:6](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/contentWithImage.tsx#L6)
+[packages/nextjs-kit/src/components/contentWithImage.tsx:6](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/contentWithImage.tsx#L6)
 
 ---
 
@@ -24,7 +24,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/contentWithImage.tsx:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/contentWithImage.tsx#L12)
+[packages/nextjs-kit/src/components/contentWithImage.tsx:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/contentWithImage.tsx#L12)
 
 ---
 
@@ -34,7 +34,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/contentWithImage.tsx:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/contentWithImage.tsx#L7)
+[packages/nextjs-kit/src/components/contentWithImage.tsx:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/contentWithImage.tsx#L7)
 
 ---
 
@@ -51,7 +51,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/contentWithImage.tsx:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/contentWithImage.tsx#L8)
+[packages/nextjs-kit/src/components/contentWithImage.tsx:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/contentWithImage.tsx#L8)
 
 ---
 
@@ -61,4 +61,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/contentWithImage.tsx:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/contentWithImage.tsx#L5)
+[packages/nextjs-kit/src/components/contentWithImage.tsx:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/contentWithImage.tsx#L5)

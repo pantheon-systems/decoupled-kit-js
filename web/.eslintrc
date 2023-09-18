@@ -1,3 +1,7 @@
 {
-  "extends": ["@pantheon-systems/eslint-config"]
+	"extends": ["@pantheon-systems/eslint-config/react"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  }
 }

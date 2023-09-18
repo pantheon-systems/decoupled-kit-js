@@ -1,6 +1,6 @@
 ---
 id: 'modules'
-title: 'decoupled-kit-js'
+title: '@pantheon-systems/drupal-kit'
 sidebar_label: 'Exports'
 sidebar_position: 0.5
 custom_edit_url: null
@@ -36,7 +36,36 @@ a promise containing the data for the JSON:API response
 
 #### Defined in
 
-[drupal-kit/src/lib/defaultFetch.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/drupal-kit/src/lib/defaultFetch.ts#L16)
+[packages/drupal-kit/src/lib/defaultFetch.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/drupal-kit/src/lib/defaultFetch.ts#L16)
+
+---
+
+### fetchJsonapiEndpoint
+
+▸ **fetchJsonapiEndpoint**(`apiUrl`, `requestInit?`, `onError?`, `res?`,
+`fetch?`): `Promise`<`void` \| `Response`\>
+
+fetch data from a JSON:API endpoint
+
+#### Parameters
+
+| Name           | Type                                              | Description                                  |
+| :------------- | :------------------------------------------------ | :------------------------------------------- |
+| `apiUrl`       | `string`                                          | the api url for the JSON:API endpoint        |
+| `requestInit?` | `Object`                                          | fetch initialization object                  |
+| `onError?`     | (`err`: `Error`) => `void`                        | custom error handler defaults to throw error |
+| `res?`         | `boolean` \| `ServerResponse`<`IncomingMessage`\> | response object                              |
+| `fetch?`       | `fetchAdapter`                                    | fetch compatible function                    |
+
+#### Returns
+
+`Promise`<`void` \| `Response`\>
+
+a promise containing the data for the JSON:API response
+
+#### Defined in
+
+node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/fetch/fetchJsonapiEndpoint.d.ts:18
 
 ---
 
@@ -45,11 +74,6 @@ a promise containing the data for the JSON:API response
 ▸ **getDrupalSearchResults**(`«destructured»`): `Promise`<`TJsonApiBody`\>
 
 Helper function to query the Drupal Search API.
-
-**`See`**
-
-[https://www.drupal.org/docs/contributed-modules/search-api](https://www.drupal.org/docs/contributed-modules/search-api)
-for more information about the Drupal Search API.
 
 #### Parameters
 
@@ -63,9 +87,14 @@ for more information about the Drupal Search API.
 
 An array of search results matching the query.
 
+**`See`**
+
+[https://www.drupal.org/docs/contributed-modules/search-api](https://www.drupal.org/docs/contributed-modules/search-api)
+for more information about the Drupal Search API.
+
 #### Defined in
 
-[drupal-kit/src/lib/getDrupalSearchResults.ts:23](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/drupal-kit/src/lib/getDrupalSearchResults.ts#L23)
+[packages/drupal-kit/src/lib/getDrupalSearchResults.ts:23](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/drupal-kit/src/lib/getDrupalSearchResults.ts#L23)
 
 ---
 
@@ -90,4 +119,34 @@ The current known unique set of surrogate keys.
 
 #### Defined in
 
-cms-kit/dist/lib/setSurrogateKeyHeader.d.ts:9
+packages/cms-kit/dist/lib/setSurrogateKeyHeader.d.ts:9
+
+---
+
+### translatePath
+
+▸ **translatePath**(`apiUrl`, `path`, `requestInit?`, `res?`, `fetch?`,
+`onError?`): `Promise`<`void` \| `TJsonApiBody`\>
+
+helper function to make it easier to resolve a path to an entity ID
+
+#### Parameters
+
+| Name           | Type                                              | Description                          |
+| :------------- | :------------------------------------------------ | :----------------------------------- |
+| `apiUrl`       | `string`                                          | the api url for the JON:API endpoint |
+| `path`         | `string`                                          | the path to the node                 |
+| `requestInit?` | `Object`                                          | fetch initialization object          |
+| `res?`         | `boolean` \| `ServerResponse`<`IncomingMessage`\> | response object                      |
+| `fetch?`       | `fetchAdapter`                                    | fetch compatible function            |
+| `onError?`     | (`err`: `Error`) => `void`                        | -                                    |
+
+#### Returns
+
+`Promise`<`void` \| `TJsonApiBody`\>
+
+a promise containing the data for the JSON:API response
+
+#### Defined in
+
+node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/fetch/translatePath.d.ts:17

@@ -15,7 +15,7 @@ displays all recipes.
 ### Before You Begin
 
 - Create a Drupal site with our
-  [Backend Starter](../../../Backend%20Starters/Decoupled%20Drupal/creating-new-project.md).
+  [Backend Starter](../../../Backend%20Starters/Decoupled%20Drupal/creating-a-new-project.mdx).
   Use the "Installing with Umami Demo Data" section to ensure you have the
   correct dataset
 - Familiarize yourself with the
@@ -57,7 +57,7 @@ results page.
 ### Before You Begin
 
 - Create a Drupal site with our
-  [Backend Starter](../../../Backend%20Starters/Decoupled%20Drupal/creating-new-project.md).
+  [Backend Starter](../../../Backend%20Starters/Decoupled%20Drupal/creating-a-new-project.mdx).
 - Enable the
   [Decoupled Kit Pantheon Search API](../../../Backend%20Starters/Decoupled%20Drupal/add-ons#decoupled-kit-pantheon-search-api)
 - Familiarize yourself with the
