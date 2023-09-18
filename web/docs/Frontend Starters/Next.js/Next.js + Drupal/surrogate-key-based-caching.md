@@ -41,7 +41,7 @@ cache when the content in Drupal changes.
 :::note
 
 The Decoupled Kit
-[Drupal Back-end Starter Project](../../../Backend%20Starters/Decoupled%20Drupal/creating-new-project.md)
+[Drupal Back-end Starter Project](../../../Backend%20Starters/Decoupled%20Drupal/creating-a-new-project.mdx)
 and [Drupal Next.js Starter Kit](./intro.md) handle the configuration below
 automatically.
 

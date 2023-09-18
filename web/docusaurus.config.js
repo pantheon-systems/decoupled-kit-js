@@ -1,75 +1,13 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
 require('dotenv').config();
+
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const generateTypeDocOptions = require('./generateTypedocOptions.js');
-
-const drupalKitTypedocOptions = generateTypeDocOptions('drupal-kit', 0);
-const wordpressKitTypedocOptions = generateTypeDocOptions('wordpress-kit', 1);
-const cmskitTypedocOptions = generateTypeDocOptions('cms-kit', 2);
-const nextjskitTypedocOptions = generateTypeDocOptions('nextjs-kit', 3);
-const cliTypeDocOptions = generateTypeDocOptions(
-	'create-pantheon-decoupled-kit',
-	4,
-	{
-		compilerOptions: { skipLibCheck: true },
-	},
-);
-const dkhcTypedocOptions = generateTypeDocOptions(
-	'decoupled-kit-health-check',
-	5,
-);
+const typeDocOptions = require('./generateTypedocOptions.js');
 
 const environmentUrl = process.env.PANTHEON_ENVIRONMENT_URL;
 
-const typedocPlugins = environmentUrl
-	? []
-	: [
-			[
-				'docusaurus-plugin-typedoc',
-				{
-					id: 'api-1',
-					...drupalKitTypedocOptions,
-					cleanOutputDir: true,
-				},
-			],
-			[
-				'docusaurus-plugin-typedoc',
-				{
-					id: 'api-2',
-					...wordpressKitTypedocOptions,
-				},
-			],
-			[
-				'docusaurus-plugin-typedoc',
-				{
-					id: 'api-3',
-					...cmskitTypedocOptions,
-				},
-			],
-			[
-				'docusaurus-plugin-typedoc',
-				{
-					id: 'api-4',
-					...nextjskitTypedocOptions,
-				},
-			],
-			[
-				'docusaurus-plugin-typedoc',
-				{
-					id: 'api-5',
-					...cliTypeDocOptions,
-				},
-			],
-			[
-				'docusaurus-plugin-typedoc',
-				{
-					id: 'api-6',
-					...dkhcTypedocOptions,
-				},
-			],
-	  ];
+const typedocPlugins = environmentUrl ? [] : [...typeDocOptions];
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -119,8 +57,8 @@ const config = {
 							'important',
 							'caution',
 							'pantheon',
-						]
-					}
+						],
+					},
 				},
 				// blog: {
 				//   showReadingTime: true,

@@ -5,7 +5,7 @@ module.exports = {
 		'./index.js',
 		'plugin:react/recommended',
 		'plugin:react-hooks/recommended',
-		'plugin:react/jsx-runtime'
+		'plugin:react/jsx-runtime',
 	],
 	settings: {
 		react: {
