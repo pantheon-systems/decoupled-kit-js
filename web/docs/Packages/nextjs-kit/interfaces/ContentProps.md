@@ -1,7 +1,7 @@
 ---
-id: "ContentProps"
-title: "Interface: ContentProps"
-sidebar_label: "ContentProps"
+id: 'ContentProps'
+title: 'Interface: ContentProps'
+sidebar_label: 'ContentProps'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -16,7 +16,7 @@ custom_edit_url: null
 
 [packages/nextjs-kit/src/components/contentWithImage.tsx:6](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/contentWithImage.tsx#L6)
 
-___
+---
 
 ### contentClassName
 
@@ -26,7 +26,7 @@ ___
 
 [packages/nextjs-kit/src/components/contentWithImage.tsx:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/contentWithImage.tsx#L12)
 
-___
+---
 
 ### date
 
@@ -36,7 +36,7 @@ ___
 
 [packages/nextjs-kit/src/components/contentWithImage.tsx:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/contentWithImage.tsx#L7)
 
-___
+---
 
 ### imageProps
 
@@ -44,16 +44,16 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
-| `alt?` | `string` |
-| `src` | `string` \| `StaticImport` |
+| Name   | Type                       |
+| :----- | :------------------------- |
+| `alt?` | `string`                   |
+| `src`  | `string` \| `StaticImport` |
 
 #### Defined in
 
 [packages/nextjs-kit/src/components/contentWithImage.tsx:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/contentWithImage.tsx#L8)
 
-___
+---
 
 ### title
 

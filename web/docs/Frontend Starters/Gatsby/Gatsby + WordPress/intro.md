@@ -32,9 +32,8 @@ The full documentation for the `create-pantheon-decoupled-kit` can be found
 [here](../../create-pantheon-decoupled-kit.md).
 
 Before you continue, familiarize yourself with our Gatsby WordPress
-[add-ons](./add-ons.md),
-a suite of optional project expansions that bring new components, features, and
-styling into your starter kit.
+[add-ons](./add-ons.md), a suite of optional project expansions that bring new
+components, features, and styling into your starter kit.
 
 To create a new project using `create-pantheon-decoupled-kit`:
 

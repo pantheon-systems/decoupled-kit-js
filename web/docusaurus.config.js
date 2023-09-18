@@ -30,10 +30,7 @@ const config = {
 	},
 	themes: ['@docusaurus/theme-mermaid'],
 
-	plugins: [
-		...typedocPlugins,
-		require.resolve('docusaurus-lunr-search'),
-	],
+	plugins: [...typedocPlugins, require.resolve('docusaurus-lunr-search')],
 
 	presets: [
 		[

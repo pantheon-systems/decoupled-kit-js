@@ -1,7 +1,7 @@
 ---
-id: "HealthCheckBase"
-title: "Class: HealthCheckBase"
-sidebar_label: "HealthCheckBase"
+id: 'HealthCheckBase'
+title: 'Class: HealthCheckBase'
+sidebar_label: 'HealthCheckBase'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -22,7 +22,7 @@ custom_edit_url: null
 
 [packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:9](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L9)
 
-___
+---
 
 ### envVar
 
@@ -32,7 +32,7 @@ ___
 
 [packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:10](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L10)
 
-___
+---
 
 ### log
 
@@ -40,11 +40,11 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type                            |
+| :-------- | :------------------------------ |
 | `success` | (`message`: `string`) => `void` |
 | `suggest` | (`message`: `string`) => `void` |
-| `warn` | (`message`: `string`) => `void` |
+| `warn`    | (`message`: `string`) => `void` |
 
 #### Defined in
 
@@ -60,8 +60,8 @@ Check the url for a 200 response
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name  | Type  | Description                                      |
+| :---- | :---- | :----------------------------------------------- |
 | `url` | `URL` | a URL with defined pathname and/or search params |
 
 #### Returns
@@ -72,7 +72,7 @@ Check the url for a 200 response
 
 [packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:24](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L24)
 
-___
+---
 
 ### getURL
 
@@ -88,11 +88,12 @@ Uses `this.endpoint` to return a new URL
 
 [packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:19](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L19)
 
-___
+---
 
 ### validateAuth
 
-▸ `Abstract` **validateAuth**(): `Promise`<[`HealthCheckBase`](HealthCheckBase.md)\>
+▸ `Abstract` **validateAuth**():
+`Promise`<[`HealthCheckBase`](HealthCheckBase.md)\>
 
 Validate the provided credentials
 
@@ -104,46 +105,54 @@ Validate the provided credentials
 
 [packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:32](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L32)
 
-___
+---
 
 ### validateEndpoint
 
-▸ `Abstract` **validateEndpoint**(): `Promise`<[`InvalidCMSEndpointError`](InvalidCMSEndpointError.md) \| [`HealthCheckBase`](HealthCheckBase.md)\>
+▸ `Abstract` **validateEndpoint**():
+`Promise`<[`InvalidCMSEndpointError`](InvalidCMSEndpointError.md) \|
+[`HealthCheckBase`](HealthCheckBase.md)\>
 
 Validate the set endpoint
 
 #### Returns
 
-`Promise`<[`InvalidCMSEndpointError`](InvalidCMSEndpointError.md) \| [`HealthCheckBase`](HealthCheckBase.md)\>
+`Promise`<[`InvalidCMSEndpointError`](InvalidCMSEndpointError.md) \|
+[`HealthCheckBase`](HealthCheckBase.md)\>
 
 #### Defined in
 
 [packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:15](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L15)
 
-___
+---
 
 ### validateMenu
 
-▸ `Abstract` **validateMenu**(): `Promise`<[`DecoupledMenuError`](DecoupledMenuError.md) \| [`HealthCheckBase`](HealthCheckBase.md)\>
+▸ `Abstract` **validateMenu**():
+`Promise`<[`DecoupledMenuError`](DecoupledMenuError.md) \|
+[`HealthCheckBase`](HealthCheckBase.md)\>
 
 Validate the menu query or endpoint
 
 #### Returns
 
-`Promise`<[`DecoupledMenuError`](DecoupledMenuError.md) \| [`HealthCheckBase`](HealthCheckBase.md)\>
+`Promise`<[`DecoupledMenuError`](DecoupledMenuError.md) \|
+[`HealthCheckBase`](HealthCheckBase.md)\>
 
 #### Defined in
 
 [packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:28](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L28)
 
-___
+---
 
 ### validatePreview
 
-▸ `Abstract` **validatePreview**(): `Promise`<[`HealthCheckBase`](HealthCheckBase.md)\>
+▸ `Abstract` **validatePreview**():
+`Promise`<[`HealthCheckBase`](HealthCheckBase.md)\>
 
-Validate the preview secret is set and preview is configured at the endpoint by fetching preview content.
-Should be skipped if credentials are not validated in `this.validateAuth()`.
+Validate the preview secret is set and preview is configured at the endpoint by
+fetching preview content. Should be skipped if credentials are not validated in
+`this.validateAuth()`.
 
 #### Returns
 

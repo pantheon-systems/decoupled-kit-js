@@ -1,7 +1,7 @@
 ---
-id: "GraphQLClientFactory"
-title: "Class: GraphQLClientFactory"
-sidebar_label: "GraphQLClientFactory"
+id: 'GraphQLClientFactory'
+title: 'Class: GraphQLClientFactory'
+sidebar_label: 'GraphQLClientFactory'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -24,9 +24,9 @@ options - A RequestConfig object.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `endpoint` | `string` |
+| Name       | Type            |
+| :--------- | :-------------- |
+| `endpoint` | `string`        |
 | `options?` | `RequestConfig` |
 
 #### Defined in
@@ -45,7 +45,7 @@ A WordPress GraphQL endpoint
 
 [packages/wordpress-kit/src/lib/GraphQLClientFactory.ts:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/wordpress-kit/src/lib/GraphQLClientFactory.ts#L12)
 
-___
+---
 
 ### options
 
@@ -63,7 +63,8 @@ RequestOptions
 
 ▸ **create**(): `GraphQLClient`
 
-Creates an instance of `graphql-request` GraphQLClient based on the endpoint and options
+Creates an instance of `graphql-request` GraphQLClient based on the endpoint and
+options
 
 #### Returns
 

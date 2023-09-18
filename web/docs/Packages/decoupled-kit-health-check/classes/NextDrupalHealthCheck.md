@@ -1,7 +1,7 @@
 ---
-id: "NextDrupalHealthCheck"
-title: "Class: NextDrupalHealthCheck"
-sidebar_label: "NextDrupalHealthCheck"
+id: 'NextDrupalHealthCheck'
+title: 'Class: NextDrupalHealthCheck'
+sidebar_label: 'NextDrupalHealthCheck'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -18,15 +18,15 @@ custom_edit_url: null
 
 • **new NextDrupalHealthCheck**(`env`)
 
-Resolves .env file if it exists and check for
-required environment variables, and sets the endpoint
+Resolves .env file if it exists and check for required environment variables,
+and sets the endpoint
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `env` | `Object` | process.env |
-| `env.env` | `ProcessEnv` | - |
+| Name      | Type         | Description |
+| :-------- | :----------- | :---------- |
+| `env`     | `Object`     | process.env |
+| `env.env` | `ProcessEnv` | -           |
 
 #### Overrides
 
@@ -38,15 +38,15 @@ DrupalHealthCheck.constructor
 
 ## Properties
 
-### #access\_token
+### #access_token
 
-• `Private` **#access\_token**: `undefined` \| `string` = `undefined`
+• `Private` **#access_token**: `undefined` \| `string` = `undefined`
 
 #### Defined in
 
 [packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:20](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L20)
 
-___
+---
 
 ### #clientSecret
 
@@ -56,7 +56,7 @@ ___
 
 [packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L16)
 
-___
+---
 
 ### #previewSecret
 
@@ -66,7 +66,7 @@ ___
 
 [packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L17)
 
-___
+---
 
 ### clientID
 
@@ -80,7 +80,7 @@ DrupalHealthCheck.clientID
 
 [packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:15](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L15)
 
-___
+---
 
 ### endpoint
 
@@ -94,7 +94,7 @@ DrupalHealthCheck.endpoint
 
 [packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:13](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L13)
 
-___
+---
 
 ### envVar
 
@@ -108,7 +108,7 @@ DrupalHealthCheck.envVar
 
 [packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:14](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L14)
 
-___
+---
 
 ### hasUmami
 
@@ -122,7 +122,7 @@ DrupalHealthCheck.hasUmami
 
 [packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:19](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L19)
 
-___
+---
 
 ### log
 
@@ -130,11 +130,11 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type                            |
+| :-------- | :------------------------------ |
 | `success` | (`message`: `string`) => `void` |
 | `suggest` | (`message`: `string`) => `void` |
-| `warn` | (`message`: `string`) => `void` |
+| `warn`    | (`message`: `string`) => `void` |
 
 #### Overrides
 
@@ -152,8 +152,8 @@ DrupalHealthCheck.log
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name  | Type  |
+| :---- | :---- |
 | `url` | `URL` |
 
 #### Returns
@@ -168,7 +168,7 @@ DrupalHealthCheck.checkFor200
 
 [packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:87](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L87)
 
-___
+---
 
 ### checkForUmami
 
@@ -186,7 +186,7 @@ DrupalHealthCheck.checkForUmami
 
 [packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:99](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L99)
 
-___
+---
 
 ### getURL
 
@@ -204,11 +204,12 @@ DrupalHealthCheck.getURL
 
 [packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:84](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L84)
 
-___
+---
 
 ### validateAuth
 
-▸ **validateAuth**(): `Promise`<[`NextDrupalHealthCheck`](NextDrupalHealthCheck.md)\>
+▸ **validateAuth**():
+`Promise`<[`NextDrupalHealthCheck`](NextDrupalHealthCheck.md)\>
 
 #### Returns
 
@@ -222,11 +223,12 @@ DrupalHealthCheck.validateAuth
 
 [packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:158](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L158)
 
-___
+---
 
 ### validateEndpoint
 
-▸ **validateEndpoint**(): `Promise`<[`NextDrupalHealthCheck`](NextDrupalHealthCheck.md)\>
+▸ **validateEndpoint**():
+`Promise`<[`NextDrupalHealthCheck`](NextDrupalHealthCheck.md)\>
 
 #### Returns
 
@@ -240,11 +242,12 @@ DrupalHealthCheck.validateEndpoint
 
 [packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:105](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L105)
 
-___
+---
 
 ### validateMenu
 
-▸ **validateMenu**(): `Promise`<[`NextDrupalHealthCheck`](NextDrupalHealthCheck.md)\>
+▸ **validateMenu**():
+`Promise`<[`NextDrupalHealthCheck`](NextDrupalHealthCheck.md)\>
 
 #### Returns
 
@@ -258,11 +261,12 @@ DrupalHealthCheck.validateMenu
 
 [packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:119](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L119)
 
-___
+---
 
 ### validatePreview
 
-▸ **validatePreview**(): `Promise`<[`NextDrupalHealthCheck`](NextDrupalHealthCheck.md)\>
+▸ **validatePreview**():
+`Promise`<[`NextDrupalHealthCheck`](NextDrupalHealthCheck.md)\>
 
 #### Returns
 
@@ -276,11 +280,12 @@ DrupalHealthCheck.validatePreview
 
 [packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:207](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L207)
 
-___
+---
 
 ### validateRouter
 
-▸ **validateRouter**(): `Promise`<[`NextDrupalHealthCheck`](NextDrupalHealthCheck.md)\>
+▸ **validateRouter**():
+`Promise`<[`NextDrupalHealthCheck`](NextDrupalHealthCheck.md)\>
 
 #### Returns
 

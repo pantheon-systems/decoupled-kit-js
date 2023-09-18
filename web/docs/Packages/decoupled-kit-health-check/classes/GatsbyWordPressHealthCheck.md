@@ -1,7 +1,7 @@
 ---
-id: "GatsbyWordPressHealthCheck"
-title: "Class: GatsbyWordPressHealthCheck"
-sidebar_label: "GatsbyWordPressHealthCheck"
+id: 'GatsbyWordPressHealthCheck'
+title: 'Class: GatsbyWordPressHealthCheck'
+sidebar_label: 'GatsbyWordPressHealthCheck'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -18,15 +18,15 @@ custom_edit_url: null
 
 • **new GatsbyWordPressHealthCheck**(`env`)
 
-Resolves .env file if it exists and check for
-required environment variables, and sets the endpoint
+Resolves .env file if it exists and check for required environment variables,
+and sets the endpoint
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `env` | `Object` | process.env |
-| `env.env` | `ProcessEnv` | - |
+| Name      | Type         | Description |
+| :-------- | :----------- | :---------- |
+| `env`     | `Object`     | process.env |
+| `env.env` | `ProcessEnv` | -           |
 
 #### Overrides
 
@@ -46,7 +46,7 @@ WordPressHealthCheck.constructor
 
 [packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L16)
 
-___
+---
 
 ### appUsername
 
@@ -60,7 +60,7 @@ WordPressHealthCheck.appUsername
 
 [packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:15](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L15)
 
-___
+---
 
 ### endpoint
 
@@ -74,7 +74,7 @@ WordPressHealthCheck.endpoint
 
 [packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:13](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L13)
 
-___
+---
 
 ### envVar
 
@@ -88,7 +88,7 @@ WordPressHealthCheck.envVar
 
 [packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:14](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L14)
 
-___
+---
 
 ### log
 
@@ -96,11 +96,11 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type                            |
+| :-------- | :------------------------------ |
 | `success` | (`message`: `string`) => `void` |
 | `suggest` | (`message`: `string`) => `void` |
-| `warn` | (`message`: `string`) => `void` |
+| `warn`    | (`message`: `string`) => `void` |
 
 #### Overrides
 
@@ -118,8 +118,8 @@ WordPressHealthCheck.log
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name  | Type  |
+| :---- | :---- |
 | `url` | `URL` |
 
 #### Returns
@@ -134,7 +134,7 @@ WordPressHealthCheck.checkFor200
 
 [packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:86](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L86)
 
-___
+---
 
 ### getURL
 
@@ -152,11 +152,12 @@ WordPressHealthCheck.getURL
 
 [packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:81](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L81)
 
-___
+---
 
 ### validateAuth
 
-▸ **validateAuth**(): `Promise`<[`GatsbyWordPressHealthCheck`](GatsbyWordPressHealthCheck.md)\>
+▸ **validateAuth**():
+`Promise`<[`GatsbyWordPressHealthCheck`](GatsbyWordPressHealthCheck.md)\>
 
 #### Returns
 
@@ -170,11 +171,12 @@ WordPressHealthCheck.validateAuth
 
 [packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:144](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L144)
 
-___
+---
 
 ### validateEndpoint
 
-▸ **validateEndpoint**(): `Promise`<[`GatsbyWordPressHealthCheck`](GatsbyWordPressHealthCheck.md)\>
+▸ **validateEndpoint**():
+`Promise`<[`GatsbyWordPressHealthCheck`](GatsbyWordPressHealthCheck.md)\>
 
 #### Returns
 
@@ -188,11 +190,12 @@ WordPressHealthCheck.validateEndpoint
 
 [packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:103](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L103)
 
-___
+---
 
 ### validateMenu
 
-▸ **validateMenu**(): `Promise`<[`GatsbyWordPressHealthCheck`](GatsbyWordPressHealthCheck.md)\>
+▸ **validateMenu**():
+`Promise`<[`GatsbyWordPressHealthCheck`](GatsbyWordPressHealthCheck.md)\>
 
 #### Returns
 
@@ -206,11 +209,12 @@ WordPressHealthCheck.validateMenu
 
 [packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:117](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L117)
 
-___
+---
 
 ### validatePreview
 
-▸ **validatePreview**(): `Promise`<[`GatsbyWordPressHealthCheck`](GatsbyWordPressHealthCheck.md)\>
+▸ **validatePreview**():
+`Promise`<[`GatsbyWordPressHealthCheck`](GatsbyWordPressHealthCheck.md)\>
 
 #### Returns
 
@@ -224,11 +228,12 @@ WordPressHealthCheck.validatePreview
 
 [packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:223](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L223)
 
-___
+---
 
 ### validateWPGatsbyPlugin
 
-▸ **validateWPGatsbyPlugin**(): `Promise`<[`GatsbyWordPressHealthCheck`](GatsbyWordPressHealthCheck.md)\>
+▸ **validateWPGatsbyPlugin**():
+`Promise`<[`GatsbyWordPressHealthCheck`](GatsbyWordPressHealthCheck.md)\>
 
 #### Returns
 

@@ -1,7 +1,7 @@
 ---
-id: "SortOptions"
-title: "Interface: SortOptions"
-sidebar_label: "SortOptions"
+id: 'SortOptions'
+title: 'Interface: SortOptions'
+sidebar_label: 'SortOptions'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -20,11 +20,11 @@ The data to be sorted
 
 [packages/nextjs-kit/src/types.ts:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/types.ts#L8)
 
-___
+---
 
 ### direction
 
-• **direction**: ``"desc"`` \| ``"asc"`` \| ``"ASC"`` \| ``"DESC"``
+• **direction**: `"desc"` \| `"asc"` \| `"ASC"` \| `"DESC"`
 
 The direction to sort the data
 
@@ -32,7 +32,7 @@ The direction to sort the data
 
 [packages/nextjs-kit/src/types.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/types.ts#L16)
 
-___
+---
 
 ### key
 

@@ -1,7 +1,7 @@
 ---
-id: "BackendNotSetError"
-title: "Class: BackendNotSetError"
-sidebar_label: "BackendNotSetError"
+id: 'BackendNotSetError'
+title: 'Class: BackendNotSetError'
+sidebar_label: 'BackendNotSetError'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -20,11 +20,11 @@ custom_edit_url: null
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name             | Type     |
+| :--------------- | :------- |
 | `«destructured»` | `Object` |
-| › `envVar` | `string` |
-| `message` | `string` |
+| › `envVar`       | `string` |
+| `message`        | `string` |
 
 #### Overrides
 
@@ -48,7 +48,7 @@ HealthCheckError.cause
 
 node_modules/.pnpm/typescript@5.2.2/node_modules/typescript/lib/lib.es2022.error.d.ts:24
 
-___
+---
 
 ### message
 
@@ -62,7 +62,7 @@ HealthCheckError.message
 
 node_modules/.pnpm/typescript@5.2.2/node_modules/typescript/lib/lib.es5.d.ts:1068
 
-___
+---
 
 ### name
 
@@ -76,7 +76,7 @@ HealthCheckError.name
 
 node_modules/.pnpm/typescript@5.2.2/node_modules/typescript/lib/lib.es5.d.ts:1067
 
-___
+---
 
 ### stack
 
@@ -90,11 +90,12 @@ HealthCheckError.stack
 
 node_modules/.pnpm/typescript@5.2.2/node_modules/typescript/lib/lib.es5.d.ts:1069
 
-___
+---
 
 ### prepareStackTrace
 
-▪ `Static` `Optional` **prepareStackTrace**: (`err`: `Error`, `stackTraces`: `CallSite`[]) => `any`
+▪ `Static` `Optional` **prepareStackTrace**: (`err`: `Error`, `stackTraces`:
+`CallSite`[]) => `any`
 
 #### Type declaration
 
@@ -104,9 +105,9 @@ Optional override for formatting stack traces
 
 ##### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `err` | `Error` |
+| Name          | Type         |
+| :------------ | :----------- |
+| `err`         | `Error`      |
 | `stackTraces` | `CallSite`[] |
 
 ##### Returns
@@ -125,7 +126,7 @@ HealthCheckError.prepareStackTrace
 
 node_modules/.pnpm/@types+node@18.16.14/node_modules/@types/node/globals.d.ts:11
 
-___
+---
 
 ### stackTraceLimit
 
@@ -149,9 +150,9 @@ Create .stack property on a target object
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `targetObject` | `object` |
+| Name              | Type       |
+| :---------------- | :--------- |
+| `targetObject`    | `object`   |
 | `constructorOpt?` | `Function` |
 
 #### Returns

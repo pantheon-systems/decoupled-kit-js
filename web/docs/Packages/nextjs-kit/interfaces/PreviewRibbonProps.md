@@ -1,7 +1,7 @@
 ---
-id: "PreviewRibbonProps"
-title: "Interface: PreviewRibbonProps"
-sidebar_label: "PreviewRibbonProps"
+id: 'PreviewRibbonProps'
+title: 'Interface: PreviewRibbonProps'
+sidebar_label: 'PreviewRibbonProps'
 sidebar_position: 0
 custom_edit_url: null
 ---

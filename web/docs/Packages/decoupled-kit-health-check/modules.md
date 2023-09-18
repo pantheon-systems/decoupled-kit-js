@@ -1,7 +1,7 @@
 ---
-id: "modules"
-title: "@pantheon-systems/decoupled-kit-health-check"
-sidebar_label: "Exports"
+id: 'modules'
+title: '@pantheon-systems/decoupled-kit-health-check'
+sidebar_label: 'Exports'
 sidebar_position: 0.5
 custom_edit_url: null
 ---
@@ -26,11 +26,11 @@ custom_edit_url: null
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type                            |
+| :-------- | :------------------------------ |
 | `success` | (`message`: `string`) => `void` |
 | `suggest` | (`message`: `string`) => `void` |
-| `warn` | (`message`: `string`) => `void` |
+| `warn`    | (`message`: `string`) => `void` |
 
 #### Defined in
 
@@ -40,24 +40,24 @@ custom_edit_url: null
 
 ### getFramework
 
-▸ **getFramework**(): ``"none"`` \| ``"next"`` \| ``"gatsby"``
+▸ **getFramework**(): `"none"` \| `"next"` \| `"gatsby"`
 
 #### Returns
 
-``"none"`` \| ``"next"`` \| ``"gatsby"``
+`"none"` \| `"next"` \| `"gatsby"`
 
 #### Defined in
 
 [packages/decoupled-kit-health-check/src/utils/getFramework.ts:4](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/utils/getFramework.ts#L4)
 
-___
+---
 
 ### resolveDotenvFile
 
 ▸ **resolveDotenvFile**(): `undefined` \| `string`
 
-Resolves the path to a .env or .env.development.local
-file in the current directory (where the health-check script was called)
+Resolves the path to a .env or .env.development.local file in the current
+directory (where the health-check script was called)
 
 #### Returns
 

@@ -1,13 +1,12 @@
 ---
-id: "DrupalState"
-title: "Class: DrupalState"
-sidebar_label: "DrupalState"
+id: 'DrupalState'
+title: 'Class: DrupalState'
+sidebar_label: 'DrupalState'
 sidebar_position: 0
 custom_edit_url: null
 ---
 
-Configures DrupalState to integrate
-with a Decoupled Drupal CMS on Pantheon
+Configures DrupalState to integrate with a Decoupled Drupal CMS on Pantheon
 
 **`See`**
 
@@ -27,8 +26,8 @@ DrupalStateConfig for the full list parameters
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name             | Type                |
+| :--------------- | :------------------ |
 | `«destructured»` | `DrupalStateConfig` |
 
 #### Overrides
@@ -53,7 +52,7 @@ DrupalState.apiBase
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:8
 
-___
+---
 
 ### apiPrefix
 
@@ -67,7 +66,7 @@ DrupalState.apiPrefix
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:9
 
-___
+---
 
 ### apiRoot
 
@@ -81,7 +80,7 @@ DrupalState.apiRoot
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:11
 
-___
+---
 
 ### auth
 
@@ -95,7 +94,7 @@ DrupalState.auth
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:15
 
-___
+---
 
 ### debug
 
@@ -109,7 +108,7 @@ DrupalState.debug
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:17
 
-___
+---
 
 ### defaultLocale
 
@@ -123,7 +122,7 @@ DrupalState.defaultLocale
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:10
 
-___
+---
 
 ### destroy
 
@@ -137,7 +136,7 @@ DrupalState.destroy
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:22
 
-___
+---
 
 ### fetchAdapter
 
@@ -151,7 +150,7 @@ DrupalState.fetchAdapter
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:14
 
-___
+---
 
 ### getState
 
@@ -165,7 +164,7 @@ DrupalState.getState
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:19
 
-___
+---
 
 ### noStore
 
@@ -179,7 +178,7 @@ DrupalState.noStore
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:25
 
-___
+---
 
 ### onError
 
@@ -191,8 +190,8 @@ ___
 
 ##### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name  | Type    |
+| :---- | :------ |
 | `err` | `Error` |
 
 ##### Returns
@@ -207,7 +206,7 @@ DrupalState.onError
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:24
 
-___
+---
 
 ### setState
 
@@ -221,7 +220,7 @@ DrupalState.setState
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:20
 
-___
+---
 
 ### store
 
@@ -235,7 +234,7 @@ DrupalState.store
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:18
 
-___
+---
 
 ### subscribe
 
@@ -271,7 +270,7 @@ DrupalState.assembleApiRoot
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:31
 
-___
+---
 
 ### assembleEndpoint
 
@@ -281,11 +280,11 @@ Assembles a correctly formatted JSON:API endpoint URL.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `indexHref` | `string` | a JSON:API resource endpoint |
-| `id?` | `string` | id of an individual resource |
-| `params?` | `string` \| `DrupalJsonApiParams` | user provided JSON:API parameter string or DrupalJsonApiParams object |
+| Name        | Type                              | Description                                                           |
+| :---------- | :-------------------------------- | :-------------------------------------------------------------------- |
+| `indexHref` | `string`                          | a JSON:API resource endpoint                                          |
+| `id?`       | `string`                          | id of an individual resource                                          |
+| `params?`   | `string` \| `DrupalJsonApiParams` | user provided JSON:API parameter string or DrupalJsonApiParams object |
 
 #### Returns
 
@@ -301,7 +300,7 @@ DrupalState.assembleEndpoint
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:39
 
-___
+---
 
 ### fetchApiIndex
 
@@ -311,8 +310,8 @@ Wraps fetch/fetchApiIndex function so it can be overridden.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type     |
+| :-------- | :------- |
 | `apiRoot` | `string` |
 
 #### Returns
@@ -327,21 +326,23 @@ DrupalState.fetchApiIndex
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:49
 
-___
+---
 
 ### fetchData
 
-▸ **fetchData**(`endpoint`, `res?`, `anon?`): `Promise`<`void` \| `TJsonApiBody`\>
+▸ **fetchData**(`endpoint`, `res?`, `anon?`): `Promise`<`void` \|
+`TJsonApiBody`\>
 
-If a query is provided, fetches data using apollo-link-json-api, otherwise uses out fetch method.
+If a query is provided, fetches data using apollo-link-json-api, otherwise uses
+out fetch method.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `endpoint` | `string` | `undefined` | the assembled JSON:API endpoint |
-| `res` | `boolean` \| `ServerResponse`<`IncomingMessage`\> | `false` | response object |
-| `anon` | `boolean` | `false` | - |
+| Name       | Type                                              | Default value | Description                     |
+| :--------- | :------------------------------------------------ | :------------ | :------------------------------ |
+| `endpoint` | `string`                                          | `undefined`   | the assembled JSON:API endpoint |
+| `res`      | `boolean` \| `ServerResponse`<`IncomingMessage`\> | `false`       | response object                 |
+| `anon`     | `boolean`                                         | `false`       | -                               |
 
 #### Returns
 
@@ -357,22 +358,23 @@ DrupalState.fetchData
 
 [packages/drupal-kit/src/lib/PantheonDrupalState.ts:46](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L46)
 
-___
+---
 
 ### fetchJsonapiEndpoint
 
-▸ **fetchJsonapiEndpoint**(`endpoint`, `requestInit`, `onError`, `res`): `Promise`<`void` \| `Response`\>
+▸ **fetchJsonapiEndpoint**(`endpoint`, `requestInit`, `onError`, `res`):
+`Promise`<`void` \| `Response`\>
 
 Wraps fetch/fetchJsonapiEndpoint function so it can be overridden.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `endpoint` | `string` |
-| `requestInit` | `undefined` \| {} |
-| `onError` | (`err`: `Error`) => `void` |
-| `res` | `boolean` \| `ServerResponse`<`IncomingMessage`\> |
+| Name          | Type                                              |
+| :------------ | :------------------------------------------------ |
+| `endpoint`    | `string`                                          |
+| `requestInit` | `undefined` \| {}                                 |
+| `onError`     | (`err`: `Error`) => `void`                        |
+| `res`         | `boolean` \| `ServerResponse`<`IncomingMessage`\> |
 
 #### Returns
 
@@ -386,7 +388,7 @@ DrupalState.fetchJsonapiEndpoint
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:54
 
-___
+---
 
 ### getAuthHeader
 
@@ -409,7 +411,7 @@ DrupalState.getAuthHeader
 
 node_modules/.pnpm/@gdwc+drupal-state@4.2.3_react@18.2.0/node_modules/@gdwc/drupal-state/dist/src/DrupalState.d.ts:45
 
-___
+---
 
 ### getObject
 
@@ -417,14 +419,14 @@ ___
 
 #### Type parameters
 
-| Name |
-| :------ |
+| Name           |
+| :------------- |
 | `ReturnedData` |
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type              |
+| :----- | :---------------- |
 | `args` | `GetObjectParams` |
 
 #### Returns
@@ -439,22 +441,23 @@ DrupalState.getObject
 
 [packages/drupal-kit/src/lib/PantheonDrupalState.ts:70](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L70)
 
-___
+---
 
 ### getObjectByPath
 
-▸ **getObjectByPath**<`ReturnedData`\>(`args`): `Promise`<`void` \| `ReturnedData`\>
+▸ **getObjectByPath**<`ReturnedData`\>(`args`): `Promise`<`void` \|
+`ReturnedData`\>
 
 #### Type parameters
 
-| Name |
-| :------ |
+| Name           |
+| :------------- |
 | `ReturnedData` |
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name   | Type                    |
+| :----- | :---------------------- |
 | `args` | `GetObjectByPathParams` |
 
 #### Returns

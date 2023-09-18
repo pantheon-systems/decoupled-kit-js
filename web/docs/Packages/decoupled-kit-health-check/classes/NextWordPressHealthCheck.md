@@ -1,7 +1,7 @@
 ---
-id: "NextWordPressHealthCheck"
-title: "Class: NextWordPressHealthCheck"
-sidebar_label: "NextWordPressHealthCheck"
+id: 'NextWordPressHealthCheck'
+title: 'Class: NextWordPressHealthCheck'
+sidebar_label: 'NextWordPressHealthCheck'
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -18,15 +18,15 @@ custom_edit_url: null
 
 • **new NextWordPressHealthCheck**(`env`)
 
-Resolves .env file if it exists and check for
-required environment variables, and sets the endpoint
+Resolves .env file if it exists and check for required environment variables,
+and sets the endpoint
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `env` | `Object` | process.env |
-| `env.env` | `ProcessEnv` | - |
+| Name      | Type         | Description |
+| :-------- | :----------- | :---------- |
+| `env`     | `Object`     | process.env |
+| `env.env` | `ProcessEnv` | -           |
 
 #### Overrides
 
@@ -46,7 +46,7 @@ WordPressHealthCheck.constructor
 
 [packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts:15](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts#L15)
 
-___
+---
 
 ### #credentials
 
@@ -56,7 +56,7 @@ ___
 
 [packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts:18](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts#L18)
 
-___
+---
 
 ### #previewSecret
 
@@ -66,7 +66,7 @@ ___
 
 [packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts#L16)
 
-___
+---
 
 ### appUsername
 
@@ -80,7 +80,7 @@ WordPressHealthCheck.appUsername
 
 [packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts:14](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts#L14)
 
-___
+---
 
 ### endpoint
 
@@ -94,7 +94,7 @@ WordPressHealthCheck.endpoint
 
 [packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts#L12)
 
-___
+---
 
 ### envVar
 
@@ -108,7 +108,7 @@ WordPressHealthCheck.envVar
 
 [packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts:13](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts#L13)
 
-___
+---
 
 ### log
 
@@ -116,11 +116,11 @@ ___
 
 #### Type declaration
 
-| Name | Type |
-| :------ | :------ |
+| Name      | Type                            |
+| :-------- | :------------------------------ |
 | `success` | (`message`: `string`) => `void` |
 | `suggest` | (`message`: `string`) => `void` |
-| `warn` | (`message`: `string`) => `void` |
+| `warn`    | (`message`: `string`) => `void` |
 
 #### Overrides
 
@@ -138,8 +138,8 @@ WordPressHealthCheck.log
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
+| Name  | Type  |
+| :---- | :---- |
 | `url` | `URL` |
 
 #### Returns
@@ -154,7 +154,7 @@ WordPressHealthCheck.checkFor200
 
 [packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts:88](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts#L88)
 
-___
+---
 
 ### getURL
 
@@ -172,11 +172,12 @@ WordPressHealthCheck.getURL
 
 [packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts:83](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts#L83)
 
-___
+---
 
 ### validateAuth
 
-▸ **validateAuth**(): `Promise`<[`NextWordPressHealthCheck`](NextWordPressHealthCheck.md)\>
+▸ **validateAuth**():
+`Promise`<[`NextWordPressHealthCheck`](NextWordPressHealthCheck.md)\>
 
 #### Returns
 
@@ -190,11 +191,12 @@ WordPressHealthCheck.validateAuth
 
 [packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts:146](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts#L146)
 
-___
+---
 
 ### validateEndpoint
 
-▸ **validateEndpoint**(): `Promise`<[`NextWordPressHealthCheck`](NextWordPressHealthCheck.md)\>
+▸ **validateEndpoint**():
+`Promise`<[`NextWordPressHealthCheck`](NextWordPressHealthCheck.md)\>
 
 #### Returns
 
@@ -208,11 +210,12 @@ WordPressHealthCheck.validateEndpoint
 
 [packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts:105](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts#L105)
 
-___
+---
 
 ### validateMenu
 
-▸ **validateMenu**(): `Promise`<[`NextWordPressHealthCheck`](NextWordPressHealthCheck.md)\>
+▸ **validateMenu**():
+`Promise`<[`NextWordPressHealthCheck`](NextWordPressHealthCheck.md)\>
 
 #### Returns
 
@@ -226,11 +229,12 @@ WordPressHealthCheck.validateMenu
 
 [packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts:119](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextWordPressHealthCheck.ts#L119)
 
-___
+---
 
 ### validatePreview
 
-▸ **validatePreview**(): `Promise`<[`NextWordPressHealthCheck`](NextWordPressHealthCheck.md)\>
+▸ **validatePreview**():
+`Promise`<[`NextWordPressHealthCheck`](NextWordPressHealthCheck.md)\>
 
 #### Returns
 

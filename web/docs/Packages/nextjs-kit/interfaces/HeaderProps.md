@@ -1,7 +1,7 @@
 ---
-id: "HeaderProps"
-title: "Interface: HeaderProps"
-sidebar_label: "HeaderProps"
+id: 'HeaderProps'
+title: 'Interface: HeaderProps'
+sidebar_label: 'HeaderProps'
 sidebar_position: 0
 custom_edit_url: null
 ---
