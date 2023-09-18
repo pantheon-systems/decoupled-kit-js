@@ -1,7 +1,7 @@
 ---
-id: 'ContentProps'
-title: 'Interface: ContentProps'
-sidebar_label: 'ContentProps'
+id: "ContentProps"
+title: "Interface: ContentProps"
+sidebar_label: "ContentProps"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -14,9 +14,9 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/contentWithImage.tsx:6](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/contentWithImage.tsx#L6)
+[packages/nextjs-kit/src/components/contentWithImage.tsx:6](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/contentWithImage.tsx#L6)
 
----
+___
 
 ### contentClassName
 
@@ -24,9 +24,9 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/contentWithImage.tsx:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/contentWithImage.tsx#L12)
+[packages/nextjs-kit/src/components/contentWithImage.tsx:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/contentWithImage.tsx#L12)
 
----
+___
 
 ### date
 
@@ -34,9 +34,9 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/contentWithImage.tsx:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/contentWithImage.tsx#L7)
+[packages/nextjs-kit/src/components/contentWithImage.tsx:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/contentWithImage.tsx#L7)
 
----
+___
 
 ### imageProps
 
@@ -44,16 +44,16 @@ custom_edit_url: null
 
 #### Type declaration
 
-| Name   | Type                       |
-| :----- | :------------------------- |
-| `alt?` | `string`                   |
-| `src`  | `string` \| `StaticImport` |
+| Name | Type |
+| :------ | :------ |
+| `alt?` | `string` |
+| `src` | `string` \| `StaticImport` |
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/contentWithImage.tsx:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/contentWithImage.tsx#L8)
+[packages/nextjs-kit/src/components/contentWithImage.tsx:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/contentWithImage.tsx#L8)
 
----
+___
 
 ### title
 
@@ -61,4 +61,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/contentWithImage.tsx:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/contentWithImage.tsx#L5)
+[packages/nextjs-kit/src/components/contentWithImage.tsx:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/contentWithImage.tsx#L5)

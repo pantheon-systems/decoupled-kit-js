@@ -1,7 +1,7 @@
 ---
-id: 'RecipeProps'
-title: 'Interface: RecipeProps'
-sidebar_label: 'RecipeProps'
+id: "RecipeProps"
+title: "Interface: RecipeProps"
+sidebar_label: "RecipeProps"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -14,9 +14,9 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/recipe.tsx:6](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/recipe.tsx#L6)
+[packages/nextjs-kit/src/components/recipe.tsx:6](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/recipe.tsx#L6)
 
----
+___
 
 ### children
 
@@ -24,9 +24,9 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/recipe.tsx:13](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/recipe.tsx#L13)
+[packages/nextjs-kit/src/components/recipe.tsx:13](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/recipe.tsx#L13)
 
----
+___
 
 ### imageProps
 
@@ -34,16 +34,16 @@ custom_edit_url: null
 
 #### Type declaration
 
-| Name   | Type                       |
-| :----- | :------------------------- |
-| `alt?` | `string`                   |
-| `src`  | `string` \| `StaticImport` |
+| Name | Type |
+| :------ | :------ |
+| `alt?` | `string` |
+| `src` | `string` \| `StaticImport` |
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/recipe.tsx:9](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/recipe.tsx#L9)
+[packages/nextjs-kit/src/components/recipe.tsx:9](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/recipe.tsx#L9)
 
----
+___
 
 ### ingredients
 
@@ -51,9 +51,9 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/recipe.tsx:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/recipe.tsx#L7)
+[packages/nextjs-kit/src/components/recipe.tsx:7](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/recipe.tsx#L7)
 
----
+___
 
 ### instructions
 
@@ -61,9 +61,9 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/recipe.tsx:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/recipe.tsx#L8)
+[packages/nextjs-kit/src/components/recipe.tsx:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/recipe.tsx#L8)
 
----
+___
 
 ### title
 
@@ -71,4 +71,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/recipe.tsx:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/recipe.tsx#L5)
+[packages/nextjs-kit/src/components/recipe.tsx:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/recipe.tsx#L5)

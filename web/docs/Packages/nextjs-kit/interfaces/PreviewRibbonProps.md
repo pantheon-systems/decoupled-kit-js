@@ -1,7 +1,7 @@
 ---
-id: 'PreviewRibbonProps'
-title: 'Interface: PreviewRibbonProps'
-sidebar_label: 'PreviewRibbonProps'
+id: "PreviewRibbonProps"
+title: "Interface: PreviewRibbonProps"
+sidebar_label: "PreviewRibbonProps"
 sidebar_position: 0
 custom_edit_url: null
 ---
@@ -14,4 +14,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/previewRibbon.tsx:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/previewRibbon.tsx#L5)
+[packages/nextjs-kit/src/components/previewRibbon.tsx:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/previewRibbon.tsx#L5)
