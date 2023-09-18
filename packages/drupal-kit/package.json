@@ -44,12 +44,12 @@
 		"@pantheon-systems/eslint-config": "*",
 		"@pantheon-systems/workspace-configs": "*",
 		"@types/isomorphic-fetch": "^0.0.36",
-		"@vitest/coverage-c8": "^0.29.8",
+		"@vitest/coverage-v8": "^0.34.4",
 		"isomorphic-fetch": "^3.0.0",
 		"jsona": "^1.11.0",
 		"msw": "^1.2.3",
 		"rimraf": "^4.4.1",
-		"vitest": "^0.29.8"
+		"vitest": "^0.34.4"
 	},
 	"dependencies": {
 		"@gdwc/drupal-state": "4.2.3",

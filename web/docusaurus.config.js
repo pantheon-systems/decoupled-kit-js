@@ -7,6 +7,8 @@ const typeDocOptions = require('./generateTypedocOptions.js');
 
 const environmentUrl = process.env.PANTHEON_ENVIRONMENT_URL;
 
+// Prevent trying to generate api reference when building on the platform:
+// if the PANTHEON_ENVIRONMENT_URL is set, we won't generate new API reference
 const typedocPlugins = environmentUrl ? [] : [...typeDocOptions];
 
 /** @type {import('@docusaurus/types').Config} */
@@ -29,7 +31,6 @@ const config = {
 	themes: ['@docusaurus/theme-mermaid'],
 
 	plugins: [
-		// Prevent trying to generate api reference when building on the platform
 		...typedocPlugins,
 		require.resolve('docusaurus-lunr-search'),
 	],

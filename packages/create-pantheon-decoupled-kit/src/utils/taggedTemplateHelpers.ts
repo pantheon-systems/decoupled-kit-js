@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Input, isString } from '@cli/types';
+import { isString } from '@cli/types';
 
 /**
  * Valid langs for markdown code-fences
@@ -8,7 +7,7 @@ type Lang = 'bash' | 'js' | 'ts' | 'tsx' | 'jsx' | 'graphql';
 
 export const taggedTemplateHelpers = {
 	/**
-	 * @param condition - a single key of an {@link Input}
+	 * @param condition - the condition to check
 	 * @param value - the value to render if the condition is true
 	 * @returns the value if it a string, or an empty string
 	 */
@@ -29,6 +28,7 @@ export const taggedTemplateHelpers = {
 	pkgName: (value: unknown): string => {
 		if (!isString(value))
 			throw new TypeError(`Expected string, received ${typeof value}`);
+
 		// see https://github.com/dword-design/package-name-regex/blob/2fcb7887bdcf2815ce38f51f9bc333101ab2fd31/src/index.js#L1
 		const npmNameRegex =
 			/^(@[a-z0-9-~][a-z0-9-._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/;

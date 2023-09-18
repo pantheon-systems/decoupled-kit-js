@@ -1,6 +1,8 @@
-import * as utils from '../src/utils';
-import * as actions from '../src/actions';
 import process from 'process';
+import * as actions from '../src/actions';
+import * as utils from '../src/utils';
+import { sharedTestData } from './sharedTestData';
+
 const { addWithDiff, runInstall, runLint } = actions;
 
 vi.mock('../src/actions', () => ({
@@ -21,17 +23,6 @@ const handlebars = await utils.getHandlebarsInstance(
 	`${process.cwd()}/__tests__/`,
 );
 
-const globalData = {
-	_: ['test-diff'],
-	anotherInput: 'Testing the diff',
-	diffInput: 'this line will be rendered to the template',
-	// 'workaround' for tests to work
-	templateRootDir: `${process.cwd()}/__tests__/`,
-	outDir: `test`,
-	force: false,
-	silent: false,
-};
-
 describe('actionRunner()', () => {
 	beforeEach((context) => {
 		context.actionRunnerSpy = vi.spyOn(utils, 'actionRunner');
@@ -45,7 +36,7 @@ describe('actionRunner()', () => {
 	it('should run the actions provided', async ({ actionRunnerSpy }) => {
 		const result = await utils.actionRunner({
 			actions: [addWithDiff, runInstall, runLint],
-			data: globalData,
+			data: sharedTestData,
 			templateData,
 			handlebars,
 		});
@@ -62,7 +53,7 @@ describe('actionRunner()', () => {
 			vi.mocked(addWithDiff).mockImplementationOnce(() => {
 				throw new Error('outDir is not valid');
 			});
-			const data = Object.assign({}, globalData);
+			const data = Object.assign({}, sharedTestData);
 			data.outDir = '';
 
 			await utils.actionRunner({

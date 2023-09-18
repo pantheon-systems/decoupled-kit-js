@@ -6,6 +6,7 @@ import inquirer from 'inquirer';
 import path from 'path';
 import process from 'process';
 import { rimraf } from 'rimraf';
+import { sharedTestData } from './sharedTestData';
 
 vi.mock('inquirer');
 
@@ -20,11 +21,12 @@ const templateData = [
 		templateDirs: [`${process.cwd()}/__tests__/templates/addWithDiff`],
 	},
 ];
-const globalData = {
+const addWithDiffData = {
+	...sharedTestData,
 	_: ['test-diff'],
 	anotherInput: 'Testing the diff',
 	diffInput: 'this line will be rendered to the template',
-	// 'workaround' for tests to work
+	// for tests to work
 	templateRootDir: `${process.cwd()}/__tests__/`,
 	outDir: outDir('empty'),
 	force: false,
@@ -82,7 +84,7 @@ console.log(x);`,
 	it.fails(
 		'should throw an error if outDir is not valid',
 		async ({ addWithDiffSpy }) => {
-			const data = Object.assign({}, globalData);
+			const data = Object.assign({}, addWithDiffData);
 			data.outDir = '';
 			await actions.addWithDiff({ data, handlebars, templateData });
 			expect(addWithDiffSpy).toThrowError('outDir is not valid');
@@ -93,7 +95,7 @@ console.log(x);`,
 		'should throw an error if templateData is not valid',
 		async ({ addWithDiffSpy }) => {
 			await actions.addWithDiff({
-				data: globalData,
+				data: addWithDiffData,
 				handlebars,
 				templateData: [],
 			});
@@ -107,7 +109,7 @@ console.log(x);`,
 		'should throw an error if handlebars is not valid',
 		async ({ addWithDiffSpy }) => {
 			await actions.addWithDiff({
-				data: globalData,
+				data: addWithDiffData,
 				handlebars: {} as any,
 				templateData,
 			});
@@ -125,7 +127,7 @@ console.log(x);`,
 		vi.mocked(inquirer.prompt).mockImplementation(async () => ({
 			writeFile: 'yes',
 		}));
-		const data = Object.assign({}, globalData);
+		const data = Object.assign({}, addWithDiffData);
 		data.outDir = outDir('empty');
 
 		await actions.addWithDiff({ data, handlebars, templateData });
@@ -147,7 +149,7 @@ console.log(x);`,
 		vi.mocked(inquirer.prompt).mockImplementation(async () => ({
 			writeFile: 'yes',
 		}));
-		const data = Object.assign({}, globalData);
+		const data = Object.assign({}, addWithDiffData);
 		data.outDir = outDir('populated');
 		data.anotherInput = 'Testing a different output';
 		data.diffInput = 'this input is also different';
@@ -171,7 +173,7 @@ console.log(x);`,
 		vi.mocked(inquirer.prompt).mockImplementation(async () => ({
 			writeFile: 'yes to all',
 		}));
-		const data = Object.assign({}, globalData);
+		const data = Object.assign({}, addWithDiffData);
 		data.anotherInput = 'Testing a different output';
 		data.diffInput = 'this input is also different';
 		data.outDir = outDir('empty');
@@ -186,7 +188,7 @@ console.log(x);`,
 		promptSpy,
 		addWithDiffSpy,
 	}) => {
-		const data = Object.assign({}, globalData);
+		const data = Object.assign({}, addWithDiffData);
 		data.anotherInput = 'Testing a different output';
 		data.diffInput = 'this input is also different';
 		data.outDir = outDir('empty');
@@ -203,7 +205,7 @@ console.log(x);`,
 		logSpy,
 		addWithDiffSpy,
 	}) => {
-		const data = Object.assign({}, globalData);
+		const data = Object.assign({}, addWithDiffData);
 		data.anotherInput = 'Testing a different output';
 		data.diffInput = 'this input is also different';
 		data.outDir = outDir('empty');
@@ -225,7 +227,7 @@ console.log(x);`,
 		}));
 		const unlinkSyncSpy = vi.spyOn(fs, 'unlinkSync');
 
-		const data = Object.assign({}, globalData);
+		const data = Object.assign({}, addWithDiffData);
 		data.anotherInput = 'Testing a different output';
 		data.diffInput = 'this input is also different';
 		data.outDir = outDir('empty');
@@ -240,7 +242,7 @@ console.log(x);`,
 		vi.mocked(inquirer.prompt).mockImplementation(async () => ({
 			writeFile: 'abort',
 		}));
-		const data = Object.assign({}, globalData);
+		const data = Object.assign({}, addWithDiffData);
 		data.anotherInput = 'Testing a different output';
 		data.diffInput = 'this input is also different';
 		data.outDir = outDir('empty');
@@ -258,7 +260,7 @@ console.log(x);`,
 		vi.mocked(inquirer.prompt).mockImplementation(async () => ({
 			writeFile: 'yes to all',
 		}));
-		const data = Object.assign({}, globalData);
+		const data = Object.assign({}, addWithDiffData);
 		data.outDir = outDir('empty');
 
 		await actions.addWithDiff({ data, templateData, handlebars });
@@ -271,7 +273,7 @@ console.log(x);`,
 		vi.mocked(inquirer.prompt).mockImplementation(async () => ({
 			writeFile: 'yes to all',
 		}));
-		const data = Object.assign({}, globalData);
+		const data = Object.assign({}, addWithDiffData);
 		data.outDir = outDir('populated');
 		const pathToFile = path.join(outDir('populated'), 'test-can-be-empty.ts');
 
