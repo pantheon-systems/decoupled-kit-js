@@ -86,6 +86,7 @@
 			"@pantheon-systems/cms-kit": "workspace:*",
 			"@pantheon-systems/workspace-configs": "workspace:*",
 			"@pantheon-systems/eslint-config": "workspace:*",
+			"@pantheon-systems/eslint-config-decoupled-kit": "workspace:*",
 			"trim@<0.0.3": ">=0.0.3",
 			"yaml@<2.2.2": ">=2.2.2",
 			"vite@>=4.3.0 <4.3.9": ">=4.3.9",

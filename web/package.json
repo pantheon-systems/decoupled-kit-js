@@ -51,7 +51,7 @@
 		]
 	},
 	"devDependencies": {
-		"@pantheon-systems/eslint-config": "*",
+		"@pantheon-systems/eslint-config-decoupled-kit": "*",
 		"@types/react": "17.0.58",
 		"docusaurus-plugin-typedoc": "^0.20.1",
 		"dotenv": "^16.0.3",
