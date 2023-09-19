@@ -7,6 +7,7 @@ overrides:
   '@pantheon-systems/cms-kit': workspace:*
   '@pantheon-systems/workspace-configs': workspace:*
   '@pantheon-systems/eslint-config': workspace:*
+  '@pantheon-systems/eslint-config-decoupled-kit': workspace:*
   trim@<0.0.3: '>=0.0.3'
   yaml@<2.2.2: '>=2.2.2'
   vite@>=4.3.0 <4.3.9: '>=4.3.9'
@@ -500,9 +501,9 @@ importers:
         specifier: ^17.0.0
         version: 17.0.0(react@17.0.0)
     devDependencies:
-      '@pantheon-systems/eslint-config':
+      '@pantheon-systems/eslint-config-decoupled-kit':
         specifier: workspace:*
-        version: link:../configs/eslint
+        version: link:../packages/configs/eslint
       '@types/react':
         specifier: 17.0.58
         version: 17.0.58
