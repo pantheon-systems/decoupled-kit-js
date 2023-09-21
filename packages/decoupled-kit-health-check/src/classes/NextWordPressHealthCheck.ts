@@ -204,7 +204,7 @@ export class NextWordPressHealthCheck extends WordPressHealthCheck {
 	async validatePreview() {
 		if (!this.#credentials) {
 			console.log(
-				'⏭  Skipping preview endpoint validation -- authorization required.',
+				'⎩⏭  Skipping preview endpoint validation -- authorization required.',
 			);
 			return this;
 		}
@@ -217,7 +217,7 @@ export class NextWordPressHealthCheck extends WordPressHealthCheck {
 				}/wp/wp-admin/options-general.php?page=preview_sites and edit the preview site you want to use.`,
 			);
 			console.log(
-				'⏭  Skipping preview endpoint validation -- PREVIEW_SECRET required.',
+				'⎩⏭  Skipping preview endpoint validation -- PREVIEW_SECRET required.',
 			);
 			return this;
 		} else {
