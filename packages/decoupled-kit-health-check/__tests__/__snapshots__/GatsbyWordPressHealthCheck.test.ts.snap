@@ -4,18 +4,18 @@ exports[`GatsbyWordPressHealthCheck > should pass for a valid PANTHEON_CMS_ENDPO
 [
   "No .env* file found, assuming production environment.",
   "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is set!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
-  "|__✅ WP Gatsby plugin is active!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is valid!",
+  "⎩✅ WP Gatsby plugin is active!",
   "Validating Menu Item endpoint...",
-  "|__✅ Menu Items endpoint is valid!",
+  "⎩✅ Menu Items endpoint is valid!",
   "Validating authentication...",
-  "|__💡 Auth not valid.",
-  "|__💡 WP_APPLICATION_USERNAME is not set.",
-  "|____ Get the WP_APPLICATION_USERNAME here: 🔗 https://wordpress.test/wp/wp-admin/users.php",
-  "|__💡 WP_APPLICATION_PASSWORD is not set.",
-  "|____ Set a new WP_APPLICATION_PASSWORD here by clicking edit: 🔗 https://wordpress.test/wp/wp-admin/users.php",
+  "⎩💡 Auth not valid.",
+  "⎩💡 WP_APPLICATION_USERNAME is not set.",
+  "⎩ Get the WP_APPLICATION_USERNAME here: 🔗 https://wordpress.test/wp/wp-admin/users.php",
+  "⎩💡 WP_APPLICATION_PASSWORD is not set.",
+  "⎩ Set a new WP_APPLICATION_PASSWORD here by clicking edit: 🔗 https://wordpress.test/wp/wp-admin/users.php",
 ]
 `;
 
@@ -23,18 +23,18 @@ exports[`GatsbyWordPressHealthCheck > should pass for a valid WPGRAPHQL_URL and 
 [
   "No .env* file found, assuming production environment.",
   "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
-  "|__✅ WPGRAPHQL_URL is set!",
+  "⎩✅ WPGRAPHQL_URL is set!",
   "Validating CMS endpoint...",
-  "|__✅ WPGRAPHQL_URL is valid!",
-  "|__✅ WP Gatsby plugin is active!",
+  "⎩✅ WPGRAPHQL_URL is valid!",
+  "⎩✅ WP Gatsby plugin is active!",
   "Validating Menu Item endpoint...",
-  "|__✅ Menu Items endpoint is valid!",
+  "⎩✅ Menu Items endpoint is valid!",
   "Validating authentication...",
-  "|__💡 Auth not valid.",
-  "|__💡 WP_APPLICATION_USERNAME is not set.",
-  "|____ Get the WP_APPLICATION_USERNAME here: 🔗 https://wordpress.test/wp/wp-admin/users.php",
-  "|__💡 WP_APPLICATION_PASSWORD is not set.",
-  "|____ Set a new WP_APPLICATION_PASSWORD here by clicking edit: 🔗 https://wordpress.test/wp/wp-admin/users.php",
+  "⎩💡 Auth not valid.",
+  "⎩💡 WP_APPLICATION_USERNAME is not set.",
+  "⎩ Get the WP_APPLICATION_USERNAME here: 🔗 https://wordpress.test/wp/wp-admin/users.php",
+  "⎩💡 WP_APPLICATION_PASSWORD is not set.",
+  "⎩ Set a new WP_APPLICATION_PASSWORD here by clicking edit: 🔗 https://wordpress.test/wp/wp-admin/users.php",
 ]
 `;
 
@@ -42,14 +42,14 @@ exports[`GatsbyWordPressHealthCheck > should pass for a valid backend and valid 
 [
   "No .env* file found, assuming production environment.",
   "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is set!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
-  "|__✅ WP Gatsby plugin is active!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is valid!",
+  "⎩✅ WP Gatsby plugin is active!",
   "Validating Menu Item endpoint...",
-  "|__✅ Menu Items endpoint is valid!",
+  "⎩✅ Menu Items endpoint is valid!",
   "Validating authentication...",
-  "|__✅ Auth is valid!",
+  "⎩✅ Auth is valid!",
 ]
 `;
 
@@ -57,9 +57,9 @@ exports[`GatsbyWordPressHealthCheck > should show a helpful error message if the
 [
   "No .env* file found, assuming production environment.",
   "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is set!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
-  "|__❌ PANTHEON_CMS_ENDPOINT could not be fetched from.
+  "⎩❌ PANTHEON_CMS_ENDPOINT could not be fetched from.
 Check that invalid.wordpress.test is valid and provides a 200 response",
 ]
 `;
@@ -68,10 +68,10 @@ exports[`GatsbyWordPressHealthCheck > should show a helpful error message if the
 [
   "No .env* file found, assuming production environment.",
   "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
-  "|__✅ WPGRAPHQL_URL is set!",
+  "⎩✅ WPGRAPHQL_URL is set!",
   "Validating CMS endpoint...",
-  "|__✅ WPGRAPHQL_URL is valid!",
-  "|__❌ WP Gatsby Plugin not active for WPGRAPHQL_URL.
+  "⎩✅ WPGRAPHQL_URL is valid!",
+  "⎩❌ WP Gatsby Plugin not active for WPGRAPHQL_URL.
 Enable the WP Gatsby plugin at 🔗 https://wordpress.test.no-plugin/wp/wp-admin/plugins.php, 
 then clear the cache at 🔗 https://wordpress.test.no-plugin/wp/wp-admin/options-general.php?page=pantheon-cache",
 ]

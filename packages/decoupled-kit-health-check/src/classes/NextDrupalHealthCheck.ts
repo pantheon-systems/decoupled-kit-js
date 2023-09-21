@@ -207,7 +207,7 @@ export class NextDrupalHealthCheck extends DrupalHealthCheck {
 	async validatePreview() {
 		if (!this.#access_token) {
 			console.log(
-				'⏭  Skipping preview endpoint validation -- authorization required.',
+				'⎩⏭  Skipping preview endpoint validation -- authorization required.',
 			);
 			return this;
 		}

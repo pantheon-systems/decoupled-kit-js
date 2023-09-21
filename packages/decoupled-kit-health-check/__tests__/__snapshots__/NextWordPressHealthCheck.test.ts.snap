@@ -4,19 +4,19 @@ exports[`NextWordPressHealthCheck > should pass for a valid PANTHEON_CMS_ENDPOIN
 [
   "No .env* file found, assuming production environment.",
   "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is set!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is valid!",
   "Validating Menu Item endpoint...",
-  "|__✅ Menu Items endpoint is valid!",
+  "⎩✅ Menu Items endpoint is valid!",
   "Validating authentication...",
-  "|__💡 WP_APPLICATION_USERNAME is required for preview but is not set.",
-  "|____ Get the WP_APPLICATION_USERNAME here: 🔗 https://wordpress.test/wp/wp-admin/users.php",
-  "|__💡 WP_APPLICATION_PASSWORD is required for preview but is not set.",
-  "|____ Set a new WP_APPLICATION_PASSWORD here by clicking edit: 🔗 https://wordpress.test/wp/wp-admin/users.php",
-  "|__💡 Auth not valid.",
-  "|____ Ensure the WP_APPLICATION_USERNAME and WP_APPLICATION_PASSWORD are correct.",
-  "⏭  Skipping preview endpoint validation -- authorization required.",
+  "⎩💡 WP_APPLICATION_USERNAME is required for preview but is not set.",
+  "⎩ Get the WP_APPLICATION_USERNAME here: 🔗 https://wordpress.test/wp/wp-admin/users.php",
+  "⎩💡 WP_APPLICATION_PASSWORD is required for preview but is not set.",
+  "⎩ Set a new WP_APPLICATION_PASSWORD here by clicking edit: 🔗 https://wordpress.test/wp/wp-admin/users.php",
+  "⎩💡 Auth not valid.",
+  "⎩ Ensure the WP_APPLICATION_USERNAME and WP_APPLICATION_PASSWORD are correct.",
+  "⎩⏭  Skipping preview endpoint validation -- authorization required.",
 ]
 `;
 
@@ -24,19 +24,19 @@ exports[`NextWordPressHealthCheck > should pass for a valid WPGRAPHQL_URL and in
 [
   "No .env* file found, assuming production environment.",
   "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
-  "|__✅ WPGRAPHQL_URL is set!",
+  "⎩✅ WPGRAPHQL_URL is set!",
   "Validating CMS endpoint...",
-  "|__✅ WPGRAPHQL_URL is valid!",
+  "⎩✅ WPGRAPHQL_URL is valid!",
   "Validating Menu Item endpoint...",
-  "|__✅ Menu Items endpoint is valid!",
+  "⎩✅ Menu Items endpoint is valid!",
   "Validating authentication...",
-  "|__💡 WP_APPLICATION_USERNAME is required for preview but is not set.",
-  "|____ Get the WP_APPLICATION_USERNAME here: 🔗 https://wordpress.test/wp/wp-admin/users.php",
-  "|__💡 WP_APPLICATION_PASSWORD is required for preview but is not set.",
-  "|____ Set a new WP_APPLICATION_PASSWORD here by clicking edit: 🔗 https://wordpress.test/wp/wp-admin/users.php",
-  "|__💡 Auth not valid.",
-  "|____ Ensure the WP_APPLICATION_USERNAME and WP_APPLICATION_PASSWORD are correct.",
-  "⏭  Skipping preview endpoint validation -- authorization required.",
+  "⎩💡 WP_APPLICATION_USERNAME is required for preview but is not set.",
+  "⎩ Get the WP_APPLICATION_USERNAME here: 🔗 https://wordpress.test/wp/wp-admin/users.php",
+  "⎩💡 WP_APPLICATION_PASSWORD is required for preview but is not set.",
+  "⎩ Set a new WP_APPLICATION_PASSWORD here by clicking edit: 🔗 https://wordpress.test/wp/wp-admin/users.php",
+  "⎩💡 Auth not valid.",
+  "⎩ Ensure the WP_APPLICATION_USERNAME and WP_APPLICATION_PASSWORD are correct.",
+  "⎩⏭  Skipping preview endpoint validation -- authorization required.",
 ]
 `;
 
@@ -44,16 +44,16 @@ exports[`NextWordPressHealthCheck > should pass for a valid backend and valid au
 [
   "No .env* file found, assuming production environment.",
   "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is set!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is valid!",
   "Validating Menu Item endpoint...",
-  "|__✅ Menu Items endpoint is valid!",
+  "⎩✅ Menu Items endpoint is valid!",
   "Validating authentication...",
-  "|__✅ Auth is valid!",
+  "⎩✅ Auth is valid!",
   "Checking for PREVIEW_SECRET...",
-  "|__✅ PREVIEW_SECRET is set.",
-  "|__✅ Preview is valid!",
+  "⎩✅ PREVIEW_SECRET is set.",
+  "⎩✅ Preview is valid!",
 ]
 `;
 
@@ -61,17 +61,17 @@ exports[`NextWordPressHealthCheck > should pass for a valid backend and valid au
 [
   "No .env* file found, assuming production environment.",
   "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is set!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is valid!",
   "Validating Menu Item endpoint...",
-  "|__✅ Menu Items endpoint is valid!",
+  "⎩✅ Menu Items endpoint is valid!",
   "Validating authentication...",
-  "|__✅ Auth is valid!",
+  "⎩✅ Auth is valid!",
   "Checking for PREVIEW_SECRET...",
-  "|__💡 PREVIEW_SECRET env var is not set.",
-  "|____ To set a new secret, go to 🔗 https://wordpress.test/wp/wp-admin/options-general.php?page=preview_sites and edit the preview site you want to use.",
-  "⏭  Skipping preview endpoint validation -- PREVIEW_SECRET required.",
+  "⎩💡 PREVIEW_SECRET env var is not set.",
+  "⎩ To set a new secret, go to 🔗 https://wordpress.test/wp/wp-admin/options-general.php?page=preview_sites and edit the preview site you want to use.",
+  "⎩⏭  Skipping preview endpoint validation -- PREVIEW_SECRET required.",
 ]
 `;
 
@@ -79,9 +79,9 @@ exports[`NextWordPressHealthCheck > should show a helpful error message if the b
 [
   "No .env* file found, assuming production environment.",
   "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is set!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
-  "|__❌ PANTHEON_CMS_ENDPOINT could not be fetched from.
+  "⎩❌ PANTHEON_CMS_ENDPOINT could not be fetched from.
 Check that invalid.wordpress.test is valid and provides a 200 response",
 ]
 `;

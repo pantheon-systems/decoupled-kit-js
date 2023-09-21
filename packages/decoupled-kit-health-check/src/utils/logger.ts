@@ -1,5 +1,5 @@
 export const logger = {
-	success: (message: string) => console.log(`|__✅ ${message}`),
-	warn: (message: string) => console.log(`|__💡 ${message}`),
-	suggest: (message: string) => console.log(`|____ ${message}`),
+	success: (message: string) => console.log(`⎩✅ ${message}`),
+	warn: (message: string) => console.log(`⎩💡 ${message}`),
+	suggest: (message: string) => console.log(`⎩ ${message}`),
 };

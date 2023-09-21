@@ -4,7 +4,12 @@ import { NextDrupalHealthCheck } from './classes/NextDrupalHealthCheck';
 import { NextWordPressHealthCheck } from './classes/NextWordPressHealthCheck';
 import { getFramework } from './utils/getFramework';
 
-const [cms] = process.argv.slice(2, 3);
+if (process.env.NO_DKHC) {
+	console.log('⏭ Skipping Decoupled Kit Health Check: NO_DKHC is set');
+	process.exit(0);
+}
+
+const [cms] = process.argv.slice(2, 3) ?? [];
 
 if (!global.fetch) {
 	const nodeFetch = (await import('node-fetch')).default;
@@ -49,7 +54,7 @@ try {
 			'No cms selected. Expected "drupal" or "wordpress" as an argument',
 		);
 	}
-	console.log('🚀 Ready to build!');
+	console.log('⎩🚀 Ready to build!');
 	process.exit(0);
 } catch (error) {
 	if (error instanceof Error) {
