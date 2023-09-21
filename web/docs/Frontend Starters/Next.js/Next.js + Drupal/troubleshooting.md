@@ -199,7 +199,16 @@ const params =
 After making these changes, images should now display correctly within your
 articles.
 
-## Disabling the Decoupled Kit Health Check
+## Decoupled Kit Health Check is Failing Valid Builds
+
+### Opt Out With an Environment Variable
+
+To opt out of the health check, set the `NO_DKHC` environment variable. If this
+variable is set to anything, the health check will be skipped.
+
+Unset the variable to continue running the health check before the build step.
+
+### Remove the Health Check
 
 After you begin editing content in your Drupal CMS, you may find the
 `@pantheon-systems/decoupled-kit-health-check` unnecessary. If you would like to
