@@ -13,5 +13,10 @@
     "@pantheon-systems/wordpress-kit": "3.1.0",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "curvy-hairs-deliver",
+    "good-fans-invent",
+    "tall-foxes-eat",
+    "yellow-gorillas-jump"
+  ]
 }

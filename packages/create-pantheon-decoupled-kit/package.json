@@ -1,6 +1,6 @@
 {
 	"name": "create-pantheon-decoupled-kit",
-	"version": "0.10.3",
+	"version": "0.10.4-canary.0",
 	"description": "Pantheon Decoupled Kit CLI",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -46,7 +46,7 @@
 	},
 	"devDependencies": {
 		"@pantheon-systems/eslint-config": "*",
-		"@pantheon-systems/wordpress-kit": "*",
+		"@pantheon-systems/wordpress-kit": "3.1.1-canary.0",
 		"@pantheon-systems/workspace-configs": "*",
 		"@types/diff": "^5.0.3",
 		"@types/fs-extra": "^11.0.1",
