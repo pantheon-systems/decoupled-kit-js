@@ -1,5 +1,13 @@
 # @pantheon-systems/drupal-kit
 
+## 4.6.3-canary.0
+
+### Patch Changes
+
+- 5cf51bed: Upgraded `vitest`
+- Updated dependencies [5cf51bed]
+  - @pantheon-systems/cms-kit@0.3.2-canary.0
+
 ## 4.6.2
 
 ### Patch Changes
