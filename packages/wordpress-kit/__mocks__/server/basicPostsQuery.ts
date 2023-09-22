@@ -4,7 +4,7 @@ import basicPostsQueryData from '../../__tests__/data/basicPostsQuery.json';
 export const basicPostsQuery = graphql.query<typeof basicPostsQueryData>(
 	'BasicPostsQuery',
 	(req, res, ctx) => {
-		if (req.headers.has('Fastly-Debug')) {
+		if (req.headers.has('Pantheon-SKey')) {
 			return res(
 				ctx.data(basicPostsQueryData),
 				ctx.set(

@@ -19,22 +19,29 @@ installed.
 
 ## How It Works
 
+:::pantheon
+
+The following diagram shows the request/response for a Pantheon Front-End Site
+which is fetching data from Drupal also hosted on Pantheon
+
+:::
+
 ```mermaid
 sequenceDiagram
 	participant A as Client
     participant B as Next.js + drupal-kit
     participant C as Drupal
     A->>B: Request a page that fetches from Drupal
-    B->>C: Add Fastly-Debug header to request
+    B->>C: Add Pantheon-SKey header to request
     C->>B: Surrogate-Key header included on response
     B->>A: Set Surrogate-Key header on outgoing response to browser
 ```
 
 The `PantheonDrupalState` class from our `@pantheon-systems/drupal-kit` npm
-package includes an adapted fetch method which adds the `Fastly-Debug` header to
-each request to Drupal. Responses from Drupal will contain the `Surrogate-Key`
-header. With these keys, your frontend can be instructed to purge content from a
-cache when the content in Drupal changes.
+package includes an adapted fetch method which adds the `Pantheon-SKey` header
+to each request to Drupal. Responses from Drupal will contain the
+`Surrogate-Key` header. With these keys, your frontend can be instructed to
+purge content from a cache when the content in Drupal changes.
 
 ## How To Ensure Headers Are Set On Custom Routes
 

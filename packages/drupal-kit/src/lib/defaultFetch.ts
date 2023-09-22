@@ -29,7 +29,7 @@ export const defaultFetch = (
 	// and set appropriate cache-control headers on the active response.
 	if (res && typeof res !== 'boolean') {
 		// Ensure api response contains surrogate key headers.
-		headers.set('Fastly-Debug', '1');
+		headers.set('Pantheon-SKey', '1');
 		res.setHeader('Cache-Control', cacheControl);
 	}
 
