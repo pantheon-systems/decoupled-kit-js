@@ -14,6 +14,7 @@ overrides:
   semver@<7.5.2: '>=7.5.2'
   semver@>=7.0.0 <7.5.2: '>=7.5.2'
   word-wrap@<1.2.4: '>=1.2.4'
+  graphql@>=16.3.0 <16.8.1: '>=16.8.1'
 
 importers:
 
