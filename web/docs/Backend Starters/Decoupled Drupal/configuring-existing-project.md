@@ -6,10 +6,10 @@ sidebar_position: 1
 ---
 
 While we offer a [backend starter project](./creating-a-new-project) to simplify
-the process of configuring a Drupal site for use with our front-end starter
-kits, you may instead prefer to use an existing Drupal project. Follow the steps
-below to configure an existing Drupal project to work with one of our front-end
-starter kits.
+the process of configuring a Drupal site for use with our frontend starter kits,
+you may instead prefer to use an existing Drupal project. Follow the steps below
+to configure an existing Drupal project to work with one of our frontend starter
+kits.
 
 ## Before You Begin
 
@@ -17,7 +17,7 @@ These instructions assume that you have already installed Drupal using your
 preferred method.
 
 The amount of necessary configuration will vary depending on the features you
-intend to use within your front-end starter kit. As a result, the instructions
+intend to use within your frontend starter kit. As a result, the instructions
 below are broken down into three related sections.
 
 ## 1. Configuring Basic Builds
@@ -68,10 +68,10 @@ Our starter kits assume that there is at least one published article and page in
 your Drupal backend. If your site does not have any article or page content, you
 should create some before proceeding.
 
-### Set the Necessary Front-End Environment Variables
+### Set the Necessary Frontend Environment Variables
 
 At this point, your Drupal site should be configured to allow data to be sourced
-anonymously by the front-end starter kit. Within your front-end project you will
+anonymously by the frontend starter kit. Within your frontend project you will
 also need to set the necessary environment variables to source data from your
 Drupal backend. For anonymous data sourcing you will need to set at least the
 `BACKEND_URL` and `IMAGE_DOMAIN` variables.
@@ -143,13 +143,13 @@ composer require drupal/simple_oauth
   generate public and private keys to be used with the module. For the
   directory, specify `sites/default/files/private` or the path of your choice.
 - Under the Consumer entities settings (Configuration > Web services >
-  Consumers), create a consumer for use with your front-end site.
+  Consumers), create a consumer for use with your frontend site.
   - Provide a label for the consumer.
   - Specify a Client ID and note this for later use.
   - Associate a user with the consumer.
   - Specify a Secret and note this for later use.
 
-### Set the Necessary Front-End Environment Variables
+### Set the Necessary Frontend Environment Variables
 
 For authenticated data sourcing you will need to set the `CLIENT_ID` and
 `CLIENT_SECRET` variables.
@@ -158,7 +158,7 @@ For authenticated data sourcing you will need to set the `CLIENT_ID` and
 
 ## 3. Configuring Preview
 
-If you would like to preview content managed in Drupal on your front-end site,
+If you would like to preview content managed in Drupal on your frontend site,
 follow the additional steps below.
 
 ### Add and Enable Dependencies
@@ -184,7 +184,7 @@ also has the following permissions:
 See the instructions for
 [creating a new preview site configuration](../../backend-starters/decoupled-drupal/configuring-preview-site#creating-a-new-preview-site-configuration).
 
-### Set the Necessary Front-End Environment Variables
+### Set the Necessary Frontend Environment Variables
 
 For preview you will need to set the `PREVIEW_SECRET` variable.
 

@@ -5,10 +5,10 @@ slug: '/backend-starters/decoupled-wordpress/configuring-an-existing-project'
 sidebar_position: 1
 ---
 
-While we offer a backend starter project for use with our front-end starter
-kits, you may instead prefer to use an existing WordPress project. Follow the
-steps below to configure an existing WordPress project to work with one of our
-front-end starter kits.
+While we offer a backend starter project for use with our frontend starter kits,
+you may instead prefer to use an existing WordPress project. Follow the steps
+below to configure an existing WordPress project to work with one of our
+frontend starter kits.
 
 ## Before You begin
 
@@ -19,7 +19,7 @@ preferred method.
 
 - Install and activate the
   [WPGraphQL Plugin](https://wordpress.org/plugins/wp-graphql/).
-- If you are planning on using the Gatsby WordPress front-end starter kit,
+- If you are planning on using the Gatsby WordPress frontend starter kit,
   install and activate the
   [WPGatsby Plugin](https://wordpress.org/plugins/wp-gatsby/). This plugin is
   not required for the Next.js and WordPress starter kit.
@@ -36,10 +36,10 @@ with the name 'Example Menu'. If a menu with this name does not exist, the
 footer menu will not display. The footer component in the starter kit can be
 customized to source data from a different menu.
 
-## Set the Necessary Front-End Environment Variables
+## Set the Necessary Frontend Environment Variables
 
 At this point, your WordPress site should be configured to work with one of our
-front-end starter kits. Within your front-end project you will also need to set
+frontend starter kits. Within your frontend project you will also need to set
 the necessary environment variables to source data from your WordPress backend.
 
 - [Instructions for the Next.js and WordPress starter kit](../../Frontend%20Starters/Next.js/Next.js%20%2B%20WordPress/setting-environment-variables.md)
