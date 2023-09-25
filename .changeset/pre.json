@@ -14,8 +14,10 @@
     "web": "1.0.0"
   },
   "changesets": [
+    "bright-bottles-end",
     "curvy-hairs-deliver",
     "good-fans-invent",
+    "nasty-spoons-attack",
     "tall-foxes-eat",
     "yellow-gorillas-jump"
   ]
