@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.4-canary.1
+
+### Patch Changes
+
+- da7ebb26: Bump `@pantheon-systems/wordpress-kit` and
+  `@pantheon-systems/drupal-kit`
+
 ## 0.10.4-canary.0
 
 ### Patch Changes

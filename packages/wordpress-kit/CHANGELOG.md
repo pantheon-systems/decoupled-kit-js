@@ -1,5 +1,12 @@
 # @pantheon-systems/wordpress-kit
 
+## 3.1.1-canary.1
+
+### Patch Changes
+
+- da7ebb26: Use `Pantheon-SKey` instead of `Fastly-Debug` header to obtain the
+  surrogate-key header
+
 ## 3.1.1-canary.0
 
 ### Patch Changes
