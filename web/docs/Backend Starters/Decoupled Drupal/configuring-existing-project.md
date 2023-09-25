@@ -5,11 +5,11 @@ slug: '/backend-starters/decoupled-drupal/configuring-an-existing-project'
 sidebar_position: 1
 ---
 
-While we offer a [back-end starter project](./creating-a-new-project) to
-simplify the process of configuring a Drupal site for use with our front-end
-starter kits, you may instead prefer to use an existing Drupal project. Follow
-the steps below to configure an existing Drupal project to work with one of our
-front-end starter kits.
+While we offer a [backend starter project](./creating-a-new-project) to simplify
+the process of configuring a Drupal site for use with our front-end starter
+kits, you may instead prefer to use an existing Drupal project. Follow the steps
+below to configure an existing Drupal project to work with one of our front-end
+starter kits.
 
 ## Before You Begin
 
@@ -65,15 +65,15 @@ or automatically using the
 ### Create Supporting Content
 
 Our starter kits assume that there is at least one published article and page in
-your Drupal back-end. If your site does not have any article or page content,
-you should create some before proceeding.
+your Drupal backend. If your site does not have any article or page content, you
+should create some before proceeding.
 
 ### Set the Necessary Front-End Environment Variables
 
 At this point, your Drupal site should be configured to allow data to be sourced
 anonymously by the front-end starter kit. Within your front-end project you will
 also need to set the necessary environment variables to source data from your
-Drupal back-end. For anonymous data sourcing you will need to set at least the
+Drupal backend. For anonymous data sourcing you will need to set at least the
 `BACKEND_URL` and `IMAGE_DOMAIN` variables.
 
 - [Instructions for the Next.js and Drupal starter kit](../../frontend-starters/nextjs/nextjs-drupal/setting-environment-variables)

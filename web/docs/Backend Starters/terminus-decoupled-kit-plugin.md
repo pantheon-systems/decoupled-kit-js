@@ -15,7 +15,7 @@ starter kits.
 
 The `decoupled-kit:create` command guides you through the following tasks:
 
-- Creating a new site on Pantheon for the CMS back-end of your choice.
+- Creating a new site on Pantheon for the CMS backend of your choice.
 - Optionally installing your CMS.
 - Creating a front-end codebase that sources data from your newly created CMS
   project. This codebase will be automatically configured for local development,
@@ -39,7 +39,7 @@ terminus self:plugin:install pantheon-systems/terminus-decoupled-kit-plugin
 
 ### decoupled-kit:create
 
-Creates a back-end CMS site on Pantheon and a front-end codebase that sources
+Creates a backend CMS site on Pantheon and a front-end codebase that sources
 data from the CMS site.
 
 To run interactively:

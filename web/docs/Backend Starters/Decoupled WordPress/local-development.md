@@ -12,7 +12,7 @@ The example local environment configurations outlined below are based on
 [Lando installation instructions](https://docs.lando.dev/getting-started/installation.html).
 
 Depending on your role, you may only need a local backend environment, or you
-may instead prefer a local environment that can run both the back-end and
+may instead prefer a local environment that can run both the backend and
 front-end. The following sections outline the steps to set up a local
 environment for each of these use cases.
 
