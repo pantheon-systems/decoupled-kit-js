@@ -22,19 +22,26 @@ installed.
 
 ## How It Works
 
+:::pantheon
+
+The following diagram shows the request/response for a Pantheon Front-End Site
+which is fetching data from WordPress also hosted on Pantheon
+
+:::
+
 ```mermaid
 sequenceDiagram
 	participant A as Client
     participant B as Next.js + wordpress-kit
     participant C as WordPress
     A->>B: Request a page that fetches from WordPress
-    B->>C: Add Fastly-Debug header to request via GET
+    B->>C: Add Pantheon-SKey header to request via GET
     C->>B: Surrogate-Key header included on response
     B->>A: Set Surrogate header on outgoing response to browser
 ```
 
 The `GraphQLClientFactory` class from our `@pantheon-systems/wordpress-kit` npm
-package adds the `Fastly-Debug` header to each request and uses the GET method
+package adds the `Pantheon-SKey` header to each request and uses the GET method
 by default to take advantage of WPGraphQL Smart Cache network caching. Responses
 from WordPress will contain the `Surrogate-Key` header. With these keys, your
 frontend can be instructed to purge content from a cache when the content in
@@ -62,7 +69,7 @@ automatically.
   installed and configured
 - The route fetches data using the `@pantheon-systems/wordpress-kit` Graphql
   client or requests to WordPress are made using the GET method and include the
-  `Fastly-Debug: 1` header
+  `Pantheon-SKey: 1` header
   - in order to see the headers, you must use the `client.rawRequest()` method.
 - The headers must be added to the outgoing response from Next.js in
   `getServerSideProps` (see
