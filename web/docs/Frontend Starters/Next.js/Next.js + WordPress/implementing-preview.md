@@ -27,16 +27,19 @@ your WordPress instance. To do so, follow these instructions:
 1. Scroll down to the Application Passwords section and name your application
    password.
 1. Your new `WP_APPLICATION_PASSWORD` will be shown on screen. Copy this value
-   somewhere safe.
+   somewhere safe. At anytime a new application password can be generated via
+   the **Regenerate Variables** action in the preview site list.
 1. We now have a client that can use our preview site. To configure the preview
-   site, navigate to **Settings** > **Preview Sites** and click the **ADD
-   PREVIEW SITE** button. Note: You will need the Pantheon Decoupled WordPress
-   Preview Plugin installed and activated on your instance.
+   site, navigate to **Settings** > **Pantheon Front-End Sites** and click the
+   **ADD PREVIEW SITE** button. Note: You will need the Pantheon Decoupled
+   WordPress Preview Plugin installed and activated on your instance.
 1. Set the URL to point to http(s)://{YOUR_SITE_URL}/api/preview replacing
    `{YOUR_SITE_URL}` with the URL of your frontend site, or `localhost:3000` for
    testing preview locally.
 1. Set a secret for the Preview Site and note this value down as your
    `PREVIEW_SECRET`.
+1. All environment variables needed to configure your Front-End Site can be
+   accessed via the **Environment Variables** action in the preview site table.
 
 Now you have all of the credentials needed to make authenticated requests to the
 WordPress instance, including the ability to preview content!
