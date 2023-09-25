@@ -36,7 +36,7 @@ DrupalState.constructor
 
 #### Defined in
 
-[packages/drupal-kit/src/lib/PantheonDrupalState.ts:18](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L18)
+[packages/drupal-kit/src/lib/PantheonDrupalState.ts:18](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L18)
 
 ## Properties
 
@@ -356,7 +356,7 @@ DrupalState.fetchData
 
 #### Defined in
 
-[packages/drupal-kit/src/lib/PantheonDrupalState.ts:46](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L46)
+[packages/drupal-kit/src/lib/PantheonDrupalState.ts:46](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L46)
 
 ---
 
@@ -439,7 +439,7 @@ DrupalState.getObject
 
 #### Defined in
 
-[packages/drupal-kit/src/lib/PantheonDrupalState.ts:70](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L70)
+[packages/drupal-kit/src/lib/PantheonDrupalState.ts:70](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L70)
 
 ---
 
@@ -470,4 +470,4 @@ DrupalState.getObjectByPath
 
 #### Defined in
 
-[packages/drupal-kit/src/lib/PantheonDrupalState.ts:75](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L75)
+[packages/drupal-kit/src/lib/PantheonDrupalState.ts:75](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L75)

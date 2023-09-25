@@ -18,7 +18,7 @@ The data to be sorted
 
 #### Defined in
 
-[packages/nextjs-kit/src/types.ts:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/types.ts#L8)
+[packages/nextjs-kit/src/types.ts:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/nextjs-kit/src/types.ts#L8)
 
 ---
 
@@ -30,7 +30,7 @@ The direction to sort the data
 
 #### Defined in
 
-[packages/nextjs-kit/src/types.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/types.ts#L16)
+[packages/nextjs-kit/src/types.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/nextjs-kit/src/types.ts#L16)
 
 ---
 
@@ -42,4 +42,4 @@ The key on which to sort
 
 #### Defined in
 
-[packages/nextjs-kit/src/types.ts:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/types.ts#L12)
+[packages/nextjs-kit/src/types.ts:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/nextjs-kit/src/types.ts#L12)
