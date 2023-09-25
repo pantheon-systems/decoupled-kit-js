@@ -21,7 +21,8 @@
 		"serve": "docusaurus serve",
 		"write-translations": "docusaurus write-translations",
 		"write-heading-ids": "docusaurus write-heading-ids",
-		"prettier:fix": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --write --ignore-path ../.prettierignore"
+		"prettier:fix": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --write --ignore-path ../.prettierignore",
+		"lint-staged": "lint-staged"
 	},
 	"dependencies": {
 		"@algolia/client-search": "^4.16.0",
