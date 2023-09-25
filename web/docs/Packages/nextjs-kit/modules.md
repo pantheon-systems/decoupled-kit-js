@@ -32,7 +32,7 @@ This should account for Drupal and WordPress menus
 
 #### Defined in
 
-[packages/nextjs-kit/src/types.ts:39](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/types.ts#L39)
+[packages/nextjs-kit/src/types.ts:39](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/nextjs-kit/src/types.ts#L39)
 
 ---
 
@@ -42,7 +42,7 @@ This should account for Drupal and WordPress menus
 
 #### Defined in
 
-[packages/nextjs-kit/src/types.ts:33](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/types.ts#L33)
+[packages/nextjs-kit/src/types.ts:33](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/nextjs-kit/src/types.ts#L33)
 
 ## Functions
 
@@ -146,7 +146,7 @@ HOC component
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/grid.tsx:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/grid.tsx#L8)
+[packages/nextjs-kit/src/components/grid.tsx:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/nextjs-kit/src/components/grid.tsx#L8)
 
 ---
 
@@ -232,7 +232,7 @@ for a full example implementation
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:82](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/paginator.tsx#L82)
+[packages/nextjs-kit/src/components/paginator.tsx:82](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/nextjs-kit/src/components/paginator.tsx#L82)
 
 ---
 
@@ -314,7 +314,7 @@ An array of data sorted by the given key and direction
 
 #### Defined in
 
-[packages/nextjs-kit/src/utils/sortChar.ts:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/utils/sortChar.ts#L12)
+[packages/nextjs-kit/src/utils/sortChar.ts:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/nextjs-kit/src/utils/sortChar.ts#L12)
 
 ---
 
@@ -339,7 +339,7 @@ An array of data sorted by the given key and direction
 
 #### Defined in
 
-[packages/nextjs-kit/src/utils/sortDate.ts:11](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/utils/sortDate.ts#L11)
+[packages/nextjs-kit/src/utils/sortDate.ts:11](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/nextjs-kit/src/utils/sortDate.ts#L11)
 
 ---
 
@@ -431,4 +431,4 @@ const MyPage = ({ myArticles }) => {
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/grid.tsx:59](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/nextjs-kit/src/components/grid.tsx#L59)
+[packages/nextjs-kit/src/components/grid.tsx:59](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/nextjs-kit/src/components/grid.tsx#L59)

@@ -34,7 +34,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/utils/logger.ts:1](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/utils/logger.ts#L1)
+[packages/decoupled-kit-health-check/src/utils/logger.ts:1](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/utils/logger.ts#L1)
 
 ## Functions
 
@@ -48,7 +48,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/utils/getFramework.ts:4](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/utils/getFramework.ts#L4)
+[packages/decoupled-kit-health-check/src/utils/getFramework.ts:4](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/utils/getFramework.ts#L4)
 
 ---
 
@@ -67,4 +67,4 @@ the path to a .env file or undefined
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/utils/resolveDotenvFile.ts:20](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/utils/resolveDotenvFile.ts#L20)
+[packages/decoupled-kit-health-check/src/utils/resolveDotenvFile.ts:20](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/utils/resolveDotenvFile.ts#L20)

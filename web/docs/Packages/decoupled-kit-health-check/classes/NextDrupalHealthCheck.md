@@ -34,7 +34,7 @@ DrupalHealthCheck.constructor
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:26](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L26)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:26](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L26)
 
 ## Properties
 
@@ -44,7 +44,7 @@ DrupalHealthCheck.constructor
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:20](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L20)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:20](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L20)
 
 ---
 
@@ -54,7 +54,7 @@ DrupalHealthCheck.constructor
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L16)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L16)
 
 ---
 
@@ -64,7 +64,7 @@ DrupalHealthCheck.constructor
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L17)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L17)
 
 ---
 
@@ -78,7 +78,7 @@ DrupalHealthCheck.clientID
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:15](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L15)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:15](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L15)
 
 ---
 
@@ -92,7 +92,7 @@ DrupalHealthCheck.endpoint
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:13](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L13)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:13](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L13)
 
 ---
 
@@ -106,7 +106,7 @@ DrupalHealthCheck.envVar
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:14](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L14)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:14](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L14)
 
 ---
 
@@ -120,7 +120,7 @@ DrupalHealthCheck.hasUmami
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:19](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L19)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:19](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L19)
 
 ---
 
@@ -142,7 +142,7 @@ DrupalHealthCheck.log
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:18](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L18)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:18](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L18)
 
 ## Methods
 
@@ -166,7 +166,7 @@ DrupalHealthCheck.checkFor200
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:87](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L87)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:87](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L87)
 
 ---
 
@@ -184,7 +184,7 @@ DrupalHealthCheck.checkForUmami
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:99](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L99)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:99](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L99)
 
 ---
 
@@ -202,7 +202,7 @@ DrupalHealthCheck.getURL
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:84](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L84)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:84](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L84)
 
 ---
 
@@ -221,7 +221,7 @@ DrupalHealthCheck.validateAuth
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:158](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L158)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:158](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L158)
 
 ---
 
@@ -240,7 +240,7 @@ DrupalHealthCheck.validateEndpoint
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:105](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L105)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:105](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L105)
 
 ---
 
@@ -259,7 +259,7 @@ DrupalHealthCheck.validateMenu
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:119](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L119)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:119](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L119)
 
 ---
 
@@ -278,7 +278,7 @@ DrupalHealthCheck.validatePreview
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:207](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L207)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:207](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L207)
 
 ---
 
@@ -297,4 +297,4 @@ DrupalHealthCheck.validateRouter
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:133](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L133)
+[packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts:133](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/NextDrupalHealthCheck.ts#L133)

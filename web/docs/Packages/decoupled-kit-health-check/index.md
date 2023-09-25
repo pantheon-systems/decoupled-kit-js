@@ -54,3 +54,9 @@ In the directory of your `next-wordpress` or `gatsby-wordpress` project:
 ```bash
 npx @pantheon-systems/decoupled-kit-health-check wordpress
 ```
+
+## Opt Out
+
+To opt out of the health check without changing any configuration in the
+`package.json`, set the `NO_DKHC` environment variable. If this variable is set
+to anything, the health check will be skipped.

@@ -33,7 +33,7 @@ HealthCheckError.constructor
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/errors.ts:52](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/errors.ts#L52)
+[packages/decoupled-kit-health-check/src/classes/errors.ts:52](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/decoupled-kit-health-check/src/classes/errors.ts#L52)
 
 ## Properties
 
