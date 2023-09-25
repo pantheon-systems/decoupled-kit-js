@@ -14,7 +14,7 @@
 		"docusaurus": "docusaurus",
 		"start": "docusaurus start",
 		"build": "docusaurus build",
-		"generate-typedoc": "docusaurus generate-typedoc",
+		"generate-typedoc": "docusaurus generate-typedoc && pnpm prettier:fix",
 		"swizzle": "docusaurus swizzle",
 		"deploy": "docusaurus deploy",
 		"clear": "docusaurus clear",

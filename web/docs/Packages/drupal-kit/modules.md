@@ -36,7 +36,7 @@ a promise containing the data for the JSON:API response
 
 #### Defined in
 
-[packages/drupal-kit/src/lib/defaultFetch.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/drupal-kit/src/lib/defaultFetch.ts#L16)
+[packages/drupal-kit/src/lib/defaultFetch.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/drupal-kit/src/lib/defaultFetch.ts#L16)
 
 ---
 
@@ -94,7 +94,7 @@ for more information about the Drupal Search API.
 
 #### Defined in
 
-[packages/drupal-kit/src/lib/getDrupalSearchResults.ts:23](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/drupal-kit/src/lib/getDrupalSearchResults.ts#L23)
+[packages/drupal-kit/src/lib/getDrupalSearchResults.ts:23](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/drupal-kit/src/lib/getDrupalSearchResults.ts#L23)
 
 ---
 

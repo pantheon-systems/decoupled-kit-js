@@ -14,4 +14,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/header.tsx:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/nextjs-kit/src/components/header.tsx#L5)
+[packages/nextjs-kit/src/components/header.tsx:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/nextjs-kit/src/components/header.tsx#L5)

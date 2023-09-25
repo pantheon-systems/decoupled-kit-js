@@ -40,7 +40,7 @@ does an action, like installing dependencies or formatting generated code
 
 #### Defined in
 
-[src/types.ts:111](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L111)
+[src/types.ts:111](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L111)
 
 ---
 
@@ -64,7 +64,7 @@ does an action, like installing dependencies or formatting generated code
 
 #### Defined in
 
-[src/types.ts:113](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L113)
+[src/types.ts:113](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L113)
 
 ---
 
@@ -85,7 +85,7 @@ Base data that is passed to all generators
 
 #### Defined in
 
-[src/types.ts:38](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L38)
+[src/types.ts:38](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L38)
 
 ---
 
@@ -97,7 +97,7 @@ Input from command line arguments, prompts, and generator data
 
 #### Defined in
 
-[src/types.ts:142](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L142)
+[src/types.ts:142](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L142)
 
 ---
 
@@ -131,7 +131,7 @@ A tagged template literal function with data and utils context
 
 #### Defined in
 
-[src/types.ts:185](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L185)
+[src/types.ts:185](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L185)
 
 ## Variables
 
@@ -145,7 +145,7 @@ A tagged template literal function with data and utils context
 
 #### Defined in
 
-[src/utils/constants.ts:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/utils/constants.ts#L5)
+[src/utils/constants.ts:5](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/utils/constants.ts#L5)
 
 ---
 
@@ -161,7 +161,7 @@ Handlebars HelperDelegate
 
 #### Defined in
 
-[src/utils/handlebars.ts:10](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/utils/handlebars.ts#L10)
+[src/utils/handlebars.ts:10](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/utils/handlebars.ts#L10)
 
 ---
 
@@ -171,7 +171,7 @@ Handlebars HelperDelegate
 
 #### Defined in
 
-[src/index.ts:15](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/index.ts#L15)
+[src/index.ts:15](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/index.ts#L15)
 
 ---
 
@@ -192,7 +192,7 @@ Handlebars HelperDelegate
 
 #### Defined in
 
-[src/utils/taggedTemplateHelpers.ts:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/utils/taggedTemplateHelpers.ts#L8)
+[src/utils/taggedTemplateHelpers.ts:8](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/utils/taggedTemplateHelpers.ts#L8)
 
 ## Functions
 
@@ -212,7 +212,7 @@ Handlebars HelperDelegate
 
 #### Defined in
 
-[src/types.ts:113](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L113)
+[src/types.ts:113](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L113)
 
 ---
 
@@ -234,7 +234,7 @@ Adds any dependencies and/or devDependencies from the data field
 
 #### Defined in
 
-[src/types.ts:111](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L111)
+[src/types.ts:111](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L111)
 
 ---
 
@@ -264,7 +264,7 @@ Adds any dependencies and/or devDependencies from the data field
 
 #### Defined in
 
-[src/types.ts:111](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L111)
+[src/types.ts:111](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L111)
 
 ---
 
@@ -287,7 +287,7 @@ does an action, like installing dependencies or formatting generated code
 
 #### Defined in
 
-[src/types.ts:111](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L111)
+[src/types.ts:111](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L111)
 
 ---
 
@@ -318,7 +318,7 @@ MergedPaths
 
 #### Defined in
 
-[src/utils/dedupeTemplates.ts:70](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/utils/dedupeTemplates.ts#L70)
+[src/utils/dedupeTemplates.ts:70](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/utils/dedupeTemplates.ts#L70)
 
 ---
 
@@ -346,7 +346,7 @@ resolves to {rootDir}/templates/partials
 
 #### Defined in
 
-[src/utils/handlebars.ts:119](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/utils/handlebars.ts#L119)
+[src/utils/handlebars.ts:119](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/utils/handlebars.ts#L119)
 
 ---
 
@@ -366,7 +366,7 @@ resolves to {rootDir}/templates/partials
 
 #### Defined in
 
-[src/utils/helpMenu.ts:3](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/utils/helpMenu.ts#L3)
+[src/utils/helpMenu.ts:3](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/utils/helpMenu.ts#L3)
 
 ---
 
@@ -389,7 +389,7 @@ otherwise
 
 #### Defined in
 
-[src/types.ts:206](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L206)
+[src/types.ts:206](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L206)
 
 ---
 
@@ -411,7 +411,7 @@ true if the variable is a string, false otherwise
 
 #### Defined in
 
-[src/types.ts:198](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L198)
+[src/types.ts:198](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L198)
 
 ---
 
@@ -434,7 +434,7 @@ otherwise
 
 #### Defined in
 
-[src/types.ts:214](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L214)
+[src/types.ts:214](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L214)
 
 ---
 
@@ -471,7 +471,7 @@ prompt name via flag.
 
 #### Defined in
 
-[src/index.ts:51](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/index.ts#L51)
+[src/index.ts:51](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/index.ts#L51)
 
 ---
 
@@ -501,7 +501,7 @@ Parses CLI arguments using `minimist`
 
 #### Defined in
 
-[src/index.ts:23](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/index.ts#L23)
+[src/index.ts:23](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/index.ts#L23)
 
 ---
 
@@ -524,7 +524,7 @@ does an action, like installing dependencies or formatting generated code
 
 #### Defined in
 
-[src/types.ts:111](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L111)
+[src/types.ts:111](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L111)
 
 ---
 
@@ -547,4 +547,4 @@ does an action, like installing dependencies or formatting generated code
 
 #### Defined in
 
-[src/types.ts:111](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L111)
+[src/types.ts:111](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L111)

@@ -25,7 +25,7 @@ An array of actions to run with the prompts and templates
 
 #### Defined in
 
-[src/types.ts:76](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L76)
+[src/types.ts:76](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L76)
 
 ---
 
@@ -38,7 +38,7 @@ the templates when de-duping.
 
 #### Defined in
 
-[src/types.ts:85](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L85)
+[src/types.ts:85](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L85)
 
 ---
 
@@ -51,7 +51,7 @@ Identifies a generators compatible CMS(s).
 
 #### Defined in
 
-[src/types.ts:93](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L93)
+[src/types.ts:93](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L93)
 
 ---
 
@@ -63,7 +63,7 @@ Any extra data that should be passed from the generator to the actions
 
 #### Defined in
 
-[src/types.ts:80](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L80)
+[src/types.ts:80](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L80)
 
 ---
 
@@ -75,7 +75,7 @@ Description of the generator
 
 #### Defined in
 
-[src/types.ts:59](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L59)
+[src/types.ts:59](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L59)
 
 ---
 
@@ -87,7 +87,7 @@ Generator's name. This should be kebab case.
 
 #### Defined in
 
-[src/types.ts:55](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L55)
+[src/types.ts:55](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L55)
 
 ---
 
@@ -99,7 +99,7 @@ Any message(s) to be rendered after actions are successfully completed.
 
 #### Defined in
 
-[src/types.ts:89](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L89)
+[src/types.ts:89](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L89)
 
 ---
 
@@ -121,7 +121,7 @@ DefaultAnswers - { outDir: string };
 
 #### Defined in
 
-[src/types.ts:65](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L65)
+[src/types.ts:65](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L65)
 
 ---
 
@@ -134,4 +134,4 @@ generator does not have templates.
 
 #### Defined in
 
-[src/types.ts:72](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L72)
+[src/types.ts:72](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L72)

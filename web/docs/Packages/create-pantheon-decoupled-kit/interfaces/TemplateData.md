@@ -14,7 +14,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/types.ts:148](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L148)
+[src/types.ts:148](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L148)
 
 ---
 
@@ -24,4 +24,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/types.ts:147](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L147)
+[src/types.ts:147](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L147)

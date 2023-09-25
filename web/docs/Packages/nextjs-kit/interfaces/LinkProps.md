@@ -18,7 +18,7 @@ The href to apply to the link.
 
 #### Defined in
 
-[packages/nextjs-kit/src/types.ts:30](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/nextjs-kit/src/types.ts#L30)
+[packages/nextjs-kit/src/types.ts:30](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/nextjs-kit/src/types.ts#L30)
 
 ---
 
@@ -30,4 +30,4 @@ The text to display in the link
 
 #### Defined in
 
-[packages/nextjs-kit/src/types.ts:26](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/nextjs-kit/src/types.ts#L26)
+[packages/nextjs-kit/src/types.ts:26](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/nextjs-kit/src/types.ts#L26)

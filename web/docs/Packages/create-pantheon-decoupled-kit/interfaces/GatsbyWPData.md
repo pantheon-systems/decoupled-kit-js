@@ -81,7 +81,7 @@ BaseGeneratorData.eslintVersion
 
 #### Defined in
 
-[src/types.ts:42](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L42)
+[src/types.ts:42](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L42)
 
 ---
 
@@ -91,7 +91,7 @@ BaseGeneratorData.eslintVersion
 
 #### Defined in
 
-[src/types.ts:41](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/create-pantheon-decoupled-kit/src/types.ts#L41)
+[src/types.ts:41](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L41)
 
 ---
 

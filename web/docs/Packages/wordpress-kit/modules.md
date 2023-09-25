@@ -27,7 +27,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:220](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L220)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:220](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L220)
 
 ---
 
@@ -60,7 +60,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:4](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L4)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:4](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L4)
 
 ---
 
@@ -78,7 +78,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:227](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L227)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:227](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L227)
 
 ---
 
@@ -97,7 +97,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:30](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L30)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:30](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L30)
 
 ---
 
@@ -114,7 +114,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:233](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L233)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:233](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L233)
 
 ---
 
@@ -131,7 +131,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:25](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L25)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:25](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L25)
 
 ---
 
@@ -142,7 +142,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:238](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L238)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:238](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L238)
 
 ---
 
@@ -173,7 +173,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:246](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L246)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:246](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L246)
 
 ---
 
@@ -196,7 +196,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:37](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L37)
+[packages/wordpress-kit/src/tailwindcssPlugin/types.ts:37](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/wordpress-kit/src/tailwindcssPlugin/types.ts#L37)
 
 ## Variables
 
@@ -216,7 +216,7 @@ classes.
 
 #### Defined in
 
-[packages/wordpress-kit/src/tailwindcssPlugin/index.ts:24](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/wordpress-kit/src/tailwindcssPlugin/index.ts#L24)
+[packages/wordpress-kit/src/tailwindcssPlugin/index.ts:24](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/wordpress-kit/src/tailwindcssPlugin/index.ts#L24)
 
 ## Functions
 
@@ -282,7 +282,7 @@ Sets response headers for edge caching.
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/setEdgeHeader.ts:10](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/wordpress-kit/src/lib/setEdgeHeader.ts#L10)
+[packages/wordpress-kit/src/lib/setEdgeHeader.ts:10](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/wordpress-kit/src/lib/setEdgeHeader.ts#L10)
 
 ---
 
@@ -307,7 +307,7 @@ content
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/setOutgoingHeaders.ts:23](https://github.com/pantheon-systems/decoupled-kit-js/blob/c3dc8b3da/packages/wordpress-kit/src/lib/setOutgoingHeaders.ts#L23)
+[packages/wordpress-kit/src/lib/setOutgoingHeaders.ts:23](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/wordpress-kit/src/lib/setOutgoingHeaders.ts#L23)
 
 ---
 
