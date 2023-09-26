@@ -1,6 +1,6 @@
-import { tailwindcssDeps } from '@partials/pkg-shared/tailwindcssDeps';
 import { TemplateFn } from '@cli/types';
 import { sharedPkgJsonField } from '@partials/pkg-shared/sharedPkgJsonFields';
+import { tailwindcssDeps } from '@partials/pkg-shared/tailwindcssDeps';
 
 const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 	${sharedPkgJsonField(utils.pkgName(data.appName))}
@@ -48,28 +48,28 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		}",
 		"@pantheon-systems/eslint-config-decoupled-kit": "${data.eslintVersion}",
 		"@pantheon-systems/wordpress-kit": "${data.wordpressKitVersion}",
-		"@testing-library/react": "13.4.0",
+		"@testing-library/react": "14.0.0",
 		"@types/dompurify": "^3.0.2",
 		"@types/gatsbyjs__reach-router": "^2.0.0",
 		"@types/lodash": "^4.14.195",
 		"@types/node": "^18.16.16",
 		"@types/react": "^18.2.13",
 		"@types/react-dom": "^18.2.6",
-		"@typescript-eslint/eslint-plugin": "^5.60.0",
-		"@typescript-eslint/parser": "^5.60.0",
+		"@typescript-eslint/eslint-plugin": "^6.7.3",
+		"@typescript-eslint/parser": "^6.7.3",
 		"@vitejs/plugin-react": "^4.0.1",
-		"@vitest/coverage-c8": "^0.32.2",
+		"@vitest/coverage-v8": "^0.34.5",
 		"dotenv": "^16.3.1",
 		"eslint": "^8.43.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-jsx-a11y": "^6.7.1",
-		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-prettier": "^5.0.0",
 		"eslint-plugin-react": "^7.32.2",
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"jsdom": "^22.1.0",
-		"prettier": "^2.8.8",
-		"typescript": "4.9.4",
-		"vitest": "^0.32.2"
+		"prettier": "^3.0.3",
+		"typescript": "5.2.2",
+		"vitest": "^0.34.5"
 	}
 }`;
 
