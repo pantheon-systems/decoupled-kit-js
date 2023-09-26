@@ -1,8 +1,9 @@
 // @ts-check
 require('dotenv').config();
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const {
+	themes: { darkCodeTheme, lightCodeTheme },
+} = require('prism-react-renderer');
 const typeDocOptions = require('./generateTypedocOptions.js');
 
 const environmentUrl = process.env.PANTHEON_ENVIRONMENT_URL;
