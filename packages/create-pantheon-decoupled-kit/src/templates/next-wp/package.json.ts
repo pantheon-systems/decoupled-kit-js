@@ -26,27 +26,26 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		${utils.if(data.tailwindcss, tailwindcssDeps(false))}
 		"dotenv": "^16.0.2",
 		"next": "13.4.7",
-		"next-seo": "^5.15.0",
+		"next-seo": "^6.1.0",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"sharp": "^0.31.3"
+		"sharp": "^0.32.6"
 	},
 	"devDependencies": {
 		"@pantheon-systems/decoupled-kit-health-check": "${
 			data.decoupledKitHealthCheckVersion
 		}",
 		${utils.if(data.tailwindcss, tailwindcssDeps(true))}
-		"@testing-library/react": "13.4.0",
-		"@vitejs/plugin-react": "^3.0.1",
-		"c8": "^7.12.0",
+		"@testing-library/react": "14.0.0",
+		"@vitejs/plugin-react": "^4.1.0",
 		"eslint": "^8.24.0",
 		"eslint-config-next": "13.4.7",
 		"jsdom": "^22.1.0",
-		"msw": "^1.0.0",
+		"msw": "^1.3.1",
 		"prettier": "^2.7.1",
 		"typescript": "4.8.4",
 		"vite": "^4.0.4",
-		"vitest": "^0.28.3"
+		"vitest": "^0.34.5"
 	}
 }`;
 
