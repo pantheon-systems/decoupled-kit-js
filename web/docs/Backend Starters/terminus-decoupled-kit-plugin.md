@@ -15,9 +15,9 @@ starter kits.
 
 The `decoupled-kit:create` command guides you through the following tasks:
 
-- Creating a new site on Pantheon for the CMS back-end of your choice.
+- Creating a new site on Pantheon for the CMS backend of your choice.
 - Optionally installing your CMS.
-- Creating a front-end codebase that sources data from your newly created CMS
+- Creating a frontend codebase that sources data from your newly created CMS
   project. This codebase will be automatically configured for local development,
   and can later be deployed to Pantheon using the
   [import repository workflow](https://docs.pantheon.io/guides/decoupled/no-starter-kit/import-repo).
@@ -39,8 +39,8 @@ terminus self:plugin:install pantheon-systems/terminus-decoupled-kit-plugin
 
 ### decoupled-kit:create
 
-Creates a back-end CMS site on Pantheon and a front-end codebase that sources
-data from the CMS site.
+Creates a backend CMS site on Pantheon and a frontend codebase that sources data
+from the CMS site.
 
 To run interactively:
 
@@ -95,12 +95,12 @@ Creates a new site named `site`, human-readably labeled `label`, associated with
 ## Related Projects
 
 - [Create Pantheon Decoupled Kit](https://www.npmjs.com/package/create-pantheon-decoupled-kit) -
-  NodeJS CLI used to create and upgrade front-end codebases based on Pantheon
+  NodeJS CLI used to create and upgrade frontend codebases based on Pantheon
   starter kits. Used by this terminus plugin and can also be used independently.
 
 ## Known Limitations
 
-- Currently this terminus plugin creates your front-end codebase, but does not
-  automatically deploy it to Pantheon. You can deploy your front-end codebase to
+- Currently this terminus plugin creates your frontend codebase, but does not
+  automatically deploy it to Pantheon. You can deploy your frontend codebase to
   Pantheon using the
   [import repository workflow](https://docs.pantheon.io/guides/decoupled/no-starter-kit/import-repo).

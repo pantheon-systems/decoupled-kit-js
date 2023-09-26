@@ -52,7 +52,7 @@ WordPress changes.
 :::note
 
 The Decoupled Kit
-[WordPress Back-end Starter Project](../../../Backend%20Starters/Decoupled%20WordPress/creating-a-new-project.md)
+[WordPress Backend Starter Project](../../../Backend%20Starters/Decoupled%20WordPress/creating-a-new-project.md)
 and [WordPress Next.js Starter Kit](./intro.md) handle the configuration below
 automatically.
 

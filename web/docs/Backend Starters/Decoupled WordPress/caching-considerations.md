@@ -7,9 +7,9 @@ sidebar_position: 3
 
 With the appropriate configuration, WordPress can be configured to cache GraphQL
 requests on a CDN until the underlying content changes. This can improve
-performance for front-end sites that rely on these endpoints, and also reduce
-the load on your CMS in cases where a large amount of API requests will be made
-in a short period of time, like a full site build process.
+performance for frontend sites that rely on these endpoints, and also reduce the
+load on your CMS in cases where a large amount of API requests will be made in a
+short period of time, like a full site build process.
 
 ## Using the Backend Starter Project
 
@@ -64,9 +64,9 @@ composer require wpackagist-plugin/pantheon-advanced-page-cache
 
 - In the WordPress dashboard, enable the Pantheon Advanced Page Cache plugin.
 
-### Taking Advantage of GraphQL Caching on the Front-end
+### Taking Advantage of GraphQL Caching on the Frontend
 
 For details on how to make full use of WPGraphQL Network Caching in your
-front-end application, see the
+frontend application, see the
 [Surrogate Key Based Cache Purging](/docs/frontend-starters/nextjs/nextjs-wordpress/next-wordpress-surrogate-key-caching)
-entry in the Front-end Starters section of the documentation.
+entry in the Frontend Starters section of the documentation.

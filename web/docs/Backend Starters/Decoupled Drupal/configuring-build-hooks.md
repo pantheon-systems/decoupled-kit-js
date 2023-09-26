@@ -8,7 +8,7 @@ sidebar_position: 4
 ## What Are Build Hooks?
 
 The [Build Hooks](https://www.drupal.org/project/build_hooks) module has the
-capability to trigger builds in one or more front-end sites when any content
+capability to trigger builds in one or more frontend sites when any content
 changes occur, such as creating, updating, or deleting.
 
 ## Installing the Build Hooks Module
