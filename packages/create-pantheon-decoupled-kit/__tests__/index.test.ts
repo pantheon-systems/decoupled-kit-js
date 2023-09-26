@@ -9,8 +9,6 @@ import versions from '../src/pkgVersions.json';
 
 import pkg from '../package.json' assert { type: 'json' };
 
-vi.mock('inquirer');
-
 describe('parseArgs()', () => {
 	it('should parse args from the command line', () => {
 		process.argv = [
@@ -46,7 +44,9 @@ describe('main()', () => {
 		context.parseSpy = vi.spyOn(bin, 'parseArgs');
 		context.mainSpy = vi.spyOn(bin, 'main');
 		context.actionRunnerSpy = vi.spyOn(utils, 'actionRunner');
-		context.promptSpy = vi.spyOn(inquirer, 'prompt');
+		context.promptSpy = vi
+			.spyOn(inquirer, 'prompt')
+			.mockImplementation(async () => ({}));
 		context.logSpy = vi.spyOn(console, 'log');
 		context.errorSpy = vi.spyOn(console, 'error');
 
@@ -141,7 +141,7 @@ describe('main()', () => {
 	}) => {
 		process.argv = ['node', 'bin.js', 'not-valid-generator-name'];
 
-		promptSpy.mockImplementationOnce(() => ({
+		promptSpy.mockImplementationOnce(async () => ({
 			generators: ['next-wp'],
 		}));
 
