@@ -20,7 +20,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:9](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L9)
+[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:9](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L9)
 
 ---
 
@@ -30,7 +30,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:10](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L10)
+[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:10](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L10)
 
 ---
 
@@ -48,7 +48,7 @@ custom_edit_url: null
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:11](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L11)
+[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:11](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L11)
 
 ## Methods
 
@@ -70,7 +70,7 @@ Check the url for a 200 response
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:24](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L24)
+[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:24](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L24)
 
 ---
 
@@ -86,7 +86,7 @@ Uses `this.endpoint` to return a new URL
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:19](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L19)
+[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:19](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L19)
 
 ---
 
@@ -103,7 +103,7 @@ Validate the provided credentials
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:32](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L32)
+[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:32](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L32)
 
 ---
 
@@ -122,7 +122,7 @@ Validate the set endpoint
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:15](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L15)
+[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:15](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L15)
 
 ---
 
@@ -141,7 +141,7 @@ Validate the menu query or endpoint
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:28](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L28)
+[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:28](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L28)
 
 ---
 
@@ -160,4 +160,4 @@ fetching preview content. Should be skipped if credentials are not validated in
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:37](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L37)
+[packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts:37](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/HealthCheckBase.ts#L37)

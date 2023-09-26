@@ -10,7 +10,7 @@ sidebar_position: 8
 This module automatically configures a Solr search API server for use on
 Pantheon environments and creates an example search index that can be accessed
 via a JSON:API. It can also be used with the Next Drupal Search API add-on to
-simplify the process of configuring search for your decoupled front-end.
+simplify the process of configuring search for your decoupled frontend.
 
 ### Before You Begin
 
@@ -62,7 +62,7 @@ following configuration:
 
 The module also adds a JSON:API endpoint for the index to return results.
 Additionally, it automatically indexes content, making it an out-of-the-box
-option to start using the search data in front-end sites.
+option to start using the search data in frontend sites.
 
 ### Contributing
 

@@ -34,7 +34,7 @@ WordPressHealthCheck.constructor
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:23](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L23)
+[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:23](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L23)
 
 ## Properties
 
@@ -44,7 +44,7 @@ WordPressHealthCheck.constructor
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L16)
+[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L16)
 
 ---
 
@@ -58,7 +58,7 @@ WordPressHealthCheck.appUsername
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:15](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L15)
+[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:15](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L15)
 
 ---
 
@@ -72,7 +72,7 @@ WordPressHealthCheck.endpoint
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:13](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L13)
+[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:13](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L13)
 
 ---
 
@@ -86,7 +86,7 @@ WordPressHealthCheck.envVar
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:14](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L14)
+[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:14](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L14)
 
 ---
 
@@ -108,7 +108,7 @@ WordPressHealthCheck.log
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L17)
+[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:17](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L17)
 
 ## Methods
 
@@ -132,7 +132,7 @@ WordPressHealthCheck.checkFor200
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:86](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L86)
+[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:86](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L86)
 
 ---
 
@@ -150,7 +150,7 @@ WordPressHealthCheck.getURL
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:81](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L81)
+[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:81](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L81)
 
 ---
 
@@ -169,7 +169,7 @@ WordPressHealthCheck.validateAuth
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:144](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L144)
+[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:144](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L144)
 
 ---
 
@@ -188,7 +188,7 @@ WordPressHealthCheck.validateEndpoint
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:103](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L103)
+[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:103](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L103)
 
 ---
 
@@ -207,7 +207,7 @@ WordPressHealthCheck.validateMenu
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:117](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L117)
+[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:117](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L117)
 
 ---
 
@@ -226,7 +226,7 @@ WordPressHealthCheck.validatePreview
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:223](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L223)
+[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:223](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L223)
 
 ---
 
@@ -241,4 +241,4 @@ WordPressHealthCheck.validatePreview
 
 #### Defined in
 
-[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:200](https://github.com/pantheon-systems/decoupled-kit-js/blob/5049fc03/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L200)
+[packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts:200](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/decoupled-kit-health-check/src/classes/GatsbyWordPressHealthCheck.ts#L200)

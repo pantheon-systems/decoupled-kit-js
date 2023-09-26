@@ -20,7 +20,7 @@ export class GraphQLClientFactory {
 		this.options = {
 			...options,
 			headers: {
-				'Fastly-Debug': '1',
+				'Pantheon-SKey': '1',
 			},
 			jsonSerializer:
 				options?.method === 'GET'

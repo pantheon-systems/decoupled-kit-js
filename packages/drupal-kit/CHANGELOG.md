@@ -1,5 +1,12 @@
 # @pantheon-systems/drupal-kit
 
+## 4.6.3-canary.1
+
+### Patch Changes
+
+- da7ebb26: Use `Pantheon-SKey` instead of `Fastly-Debug` header to obtain the
+  surrogate-key header
+
 ## 4.6.3-canary.0
 
 ### Patch Changes
