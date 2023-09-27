@@ -52,10 +52,10 @@
 	"devDependencies": {
 		"@pantheon-systems/eslint-config": "*",
 		"@pantheon-systems/workspace-configs": "*",
-		"@vitest/coverage-v8": "^0.34.4",
-		"prettier": "^2.8.7",
-		"rimraf": "^4.4.1",
-		"tsup": "^6.7.0",
-		"vitest": "^0.34.4"
+		"@vitest/coverage-v8": "^0.34.5",
+		"prettier": "^3.0.3",
+		"rimraf": "^5.0.4",
+		"tsup": "^7.2.0",
+		"vitest": "^0.34.5"
 	}
 }
