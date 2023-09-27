@@ -12,9 +12,9 @@ The example local environment configurations outlined below are based on
 [Lando installation instructions](https://docs.lando.dev/getting-started/installation.html).
 
 Depending on your role, you may only need a local backend environment, or you
-may instead prefer a local environment that can run both the back-end and
-front-end. The following sections outline the steps to set up a local
-environment for each of these use cases.
+may instead prefer a local environment that can run both the backend and
+frontend. The following sections outline the steps to set up a local environment
+for each of these use cases.
 
 ## Backend Only Setup
 
@@ -70,18 +70,17 @@ tooling:
 Note: Replace `%SITE-NAME%`, `%PANTHEON_SITE_ID%`, and `%PORT-NUMBER%`, with
 site name, site id and required port number for the frontend site.
 
-- Clone the Front-end Site code base into the `./frontend` directory. You will
-  most likely want to add this directory to your `.gitignore` file for the
-  project.
+- Clone the frontend code base into the `./frontend` directory. You will most
+  likely want to add this directory to your `.gitignore` file for the project.
   ```
   cd frontend
   git clone git@github.com:pantheon-systems/example-fe-site.git .
   ```
 - Consult `.env.example` to create the required environment variables files for
-  your Front-end Site.
+  your frontend site.
 - Run `lando start` to start the containers.
 - Install the Drupal site and select profiles like:
   pantheon_decoupled_umami_demo & pantheon_decoupled_profile.
-- To start your Front-end site, run `lando npm run develop`. It will now be
+- To start your frontend site, run `lando npm run develop`. It will now be
   available at the URL specified in the `proxy` section of the `.lando.yml`
   file.

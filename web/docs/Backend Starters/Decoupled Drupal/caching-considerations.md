@@ -7,7 +7,7 @@ sidebar_position: 3
 
 With the appropriate configuration, Drupal can be configured to cache JSON:API
 endpoints until the underlying content changes. These same routes can also be
-cached on a CDN. This can improve performance for front-end sites that rely on
+cached on a CDN. This can improve performance for frontend sites that rely on
 these API endpoints, and also reduce the load on your CMS in cases where a large
 amount of API requests will be made in a short period of time, like a full site
 build process.

@@ -3,14 +3,15 @@
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern
 static website generator.
 
-All commands listed below should be run from the root of the monorepo (decoupled-kit-js).
-You may also run individual scripts from the root of the monorepo with a pnpm filter and the name of the command:
+All commands listed below should be run from the root of the monorepo
+(decoupled-kit-js). You may also run individual scripts from the root of the
+monorepo with a pnpm filter and the name of the command:
+
 ```shell
 pnpm -F web clear
 ```
 
 ### Installation
-
 
 ```shell
 pnpm i
@@ -37,8 +38,9 @@ any static contents hosting service.
 
 ## Search
 
-The docs site now includes search powered by this Docusaurus plugin: https://github.com/praveenn77/docusaurus-lunr-search
-It only works in production. To try it locally (from the root of the monorepo):
+The docs site now includes search powered by this Docusaurus plugin:
+https://github.com/praveenn77/docusaurus-lunr-search It only works in
+production. To try it locally (from the root of the monorepo):
 
 ```shell
 # set this env var to prevent typedoc API reference from being generated

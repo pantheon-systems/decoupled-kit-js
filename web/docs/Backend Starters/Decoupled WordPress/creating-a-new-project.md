@@ -20,7 +20,8 @@ The following options are available when using the
 
 :::
 
-If you are deploying to pantheon, you may also choose one of the following options:
+If you are deploying to pantheon, you may also choose one of the following
+options:
 
 - Create from Decoupled WordPress Composer Managed upstream:
 
@@ -48,3 +49,29 @@ If you are deploying to pantheon, you may also choose one of the following optio
 Visit the Site by clicking on the **Visit Development Site** button to Install
 via the UI—selecting. The same can be done via
 [`terminus remote:wp`](https://pantheon.io/docs/terminus/commands/remote-wp).
+
+## Completing Your Configuration
+
+:::pantheon Pantheon Front-End Sites
+
+The following will be available when the **pantheon-decoupled** plugin is being
+used:
+
+:::
+
+Once logged into the development site, a message will display directing you to
+the **Pantheon Front-End Sites** settings page. Through this settings page, the
+following steps should be completed to fully configure your project:
+
+- Edit the example preview site, or create a new preview site. See the
+  instructions for
+  [creating a new preview site](../../backend-starters/decoupled-wordpress/configuring-preview-site).
+- In the preview site list, select the **Regenerate Variables** action next to
+  your new preview site. Proceed through this modal and copy the generated
+  application password.
+- All other environment variables needed to configure your Front-End Site can be
+  accessed via the **Environment Variables** action in the preview site table.
+
+See your starter kit's related **Setting Environment Variables** documentation
+for more information on how to set these variables in your local development
+environment or on the Pantheon Dashboard.

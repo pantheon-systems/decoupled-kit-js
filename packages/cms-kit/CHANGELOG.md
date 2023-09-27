@@ -1,5 +1,11 @@
 # @pantheon-systems/cms-kit
 
+## 0.3.2-canary.0
+
+### Patch Changes
+
+- 5cf51bed: Upgraded `vitest`
+
 ## 0.3.1
 
 ### Patch Changes

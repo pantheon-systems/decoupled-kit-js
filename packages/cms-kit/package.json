@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/cms-kit",
-	"version": "0.3.1",
+	"version": "0.3.2-canary.0",
 	"description": "Pantheon Decoupled Kit's CMS Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -52,10 +52,10 @@
 	"devDependencies": {
 		"@pantheon-systems/eslint-config": "*",
 		"@pantheon-systems/workspace-configs": "*",
-		"@vitest/coverage-c8": "^0.29.8",
+		"@vitest/coverage-v8": "^0.34.4",
 		"prettier": "^2.8.7",
 		"rimraf": "^4.4.1",
 		"tsup": "^6.7.0",
-		"vitest": "^0.29.8"
+		"vitest": "^0.34.4"
 	}
 }

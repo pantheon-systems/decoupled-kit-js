@@ -1,3 +1,10 @@
 {
-  "extends": ["@pantheon-systems/eslint-config"]
+	"extends": ["@pantheon-systems/eslint-config-decoupled-kit/react"],
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"rules": {
+		"react/prop-types": [false]
+	}
 }

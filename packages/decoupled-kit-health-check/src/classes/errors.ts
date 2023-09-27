@@ -1,6 +1,6 @@
 class HealthCheckError extends Error {
 	constructor(message: string) {
-		super(`|__❌ ${message}`);
+		super(`⎩❌ ${message}`);
 		// no need to show the stack for these errors
 		this.stack = undefined;
 	}

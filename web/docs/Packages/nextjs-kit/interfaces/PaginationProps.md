@@ -24,7 +24,7 @@ The React component to render for each datum
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:39](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/paginator.tsx#L39)
+[packages/nextjs-kit/src/components/paginator.tsx:39](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/nextjs-kit/src/components/paginator.tsx#L39)
 
 ---
 
@@ -52,7 +52,7 @@ end = 25, then add should be 5 or 10.
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:27](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/paginator.tsx#L27)
+[packages/nextjs-kit/src/components/paginator.tsx:27](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/nextjs-kit/src/components/paginator.tsx#L27)
 
 ---
 
@@ -64,7 +64,7 @@ The type of data to paginate
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/paginator.tsx#L12)
+[packages/nextjs-kit/src/components/paginator.tsx:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/nextjs-kit/src/components/paginator.tsx#L12)
 
 ---
 
@@ -76,7 +76,7 @@ Number of items per page
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/paginator.tsx#L16)
+[packages/nextjs-kit/src/components/paginator.tsx:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/nextjs-kit/src/components/paginator.tsx#L16)
 
 ---
 
@@ -89,4 +89,4 @@ If true, uses Next.js shallow routing
 
 #### Defined in
 
-[packages/nextjs-kit/src/components/paginator.tsx:35](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/nextjs-kit/src/components/paginator.tsx#L35)
+[packages/nextjs-kit/src/components/paginator.tsx:35](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/nextjs-kit/src/components/paginator.tsx#L35)

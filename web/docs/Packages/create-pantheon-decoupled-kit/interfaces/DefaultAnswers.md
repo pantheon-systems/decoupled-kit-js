@@ -20,4 +20,4 @@ custom_edit_url: null
 
 #### Defined in
 
-[src/types.ts:95](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/create-pantheon-decoupled-kit/src/types.ts#L95)
+[src/types.ts:156](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/create-pantheon-decoupled-kit/src/types.ts#L156)

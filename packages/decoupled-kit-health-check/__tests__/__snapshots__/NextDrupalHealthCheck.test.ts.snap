@@ -4,21 +4,21 @@ exports[`NextDrupalHealthCheck > should pass for a valid BACKEND_URL and invalid
 [
   "No .env* file found, assuming production environment.",
   "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
-  "|__✅ BACKEND_URL is set!",
+  "⎩✅ BACKEND_URL is set!",
   "Validating CMS endpoint...",
-  "|__✅ BACKEND_URL is valid!",
+  "⎩✅ BACKEND_URL is valid!",
   "Validating Menu Item endpoint...",
-  "|__✅ Menu Items endpoint is valid!",
+  "⎩✅ Menu Items endpoint is valid!",
   "Validating Decoupled Router module...",
-  "|__✅ Decoupled Router is valid!",
+  "⎩✅ Decoupled Router is valid!",
   "Validating authentication...",
-  "|__💡 CLIENT_ID is required for preview but is not set.",
-  "|____ Get the CLIENT_ID here: 🔗 https://drupal.test/admin/config/services/consumer",
-  "|__💡 CLIENT_SECRET is required for preview but is not set.",
-  "|____ Set a new CLIENT_SECRET here by clicking edit: 🔗 https://drupal.test/admin/config/services/consumer",
-  "|__💡 Auth not valid.",
-  "|____ Ensure the CLIENT_ID and CLIENT_SECRET are correct.",
-  "⏭  Skipping preview endpoint validation -- authorization required.",
+  "⎩💡 CLIENT_ID is required for preview but is not set.",
+  "⎩ Get the CLIENT_ID here: 🔗 https://drupal.test/admin/config/services/consumer",
+  "⎩💡 CLIENT_SECRET is required for preview but is not set.",
+  "⎩ Set a new CLIENT_SECRET here by clicking edit: 🔗 https://drupal.test/admin/config/services/consumer",
+  "⎩💡 Auth not valid.",
+  "⎩ Ensure the CLIENT_ID and CLIENT_SECRET are correct.",
+  "⎩⏭  Skipping preview endpoint validation -- authorization required.",
 ]
 `;
 
@@ -26,21 +26,21 @@ exports[`NextDrupalHealthCheck > should pass for a valid PANTHEON_CMS_ENDPOINT a
 [
   "No .env* file found, assuming production environment.",
   "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is set!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is valid!",
   "Validating Menu Item endpoint...",
-  "|__✅ Menu Items endpoint is valid!",
+  "⎩✅ Menu Items endpoint is valid!",
   "Validating Decoupled Router module...",
-  "|__✅ Decoupled Router is valid!",
+  "⎩✅ Decoupled Router is valid!",
   "Validating authentication...",
-  "|__💡 CLIENT_ID is required for preview but is not set.",
-  "|____ Get the CLIENT_ID here: 🔗 https://drupal.test/admin/config/services/consumer",
-  "|__💡 CLIENT_SECRET is required for preview but is not set.",
-  "|____ Set a new CLIENT_SECRET here by clicking edit: 🔗 https://drupal.test/admin/config/services/consumer",
-  "|__💡 Auth not valid.",
-  "|____ Ensure the CLIENT_ID and CLIENT_SECRET are correct.",
-  "⏭  Skipping preview endpoint validation -- authorization required.",
+  "⎩💡 CLIENT_ID is required for preview but is not set.",
+  "⎩ Get the CLIENT_ID here: 🔗 https://drupal.test/admin/config/services/consumer",
+  "⎩💡 CLIENT_SECRET is required for preview but is not set.",
+  "⎩ Set a new CLIENT_SECRET here by clicking edit: 🔗 https://drupal.test/admin/config/services/consumer",
+  "⎩💡 Auth not valid.",
+  "⎩ Ensure the CLIENT_ID and CLIENT_SECRET are correct.",
+  "⎩⏭  Skipping preview endpoint validation -- authorization required.",
 ]
 `;
 
@@ -48,18 +48,18 @@ exports[`NextDrupalHealthCheck > should pass for a valid backend and valid auth 
 [
   "No .env* file found, assuming production environment.",
   "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is set!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is valid!",
   "Validating Menu Item endpoint...",
-  "|__✅ Menu Items endpoint is valid!",
+  "⎩✅ Menu Items endpoint is valid!",
   "Validating Decoupled Router module...",
-  "|__✅ Decoupled Router is valid!",
+  "⎩✅ Decoupled Router is valid!",
   "Validating authentication...",
-  "|__✅ Auth is valid!",
+  "⎩✅ Auth is valid!",
   "Checking for PREVIEW_SECRET...",
-  "|__✅ PREVIEW_SECRET is set.",
-  "|__✅ Preview is valid!",
+  "⎩✅ PREVIEW_SECRET is set.",
+  "⎩✅ Preview is valid!",
 ]
 `;
 
@@ -67,18 +67,18 @@ exports[`NextDrupalHealthCheck > should pass for a valid backend and valid auth 
 [
   "No .env* file found, assuming production environment.",
   "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is set!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is valid!",
   "Validating Menu Item endpoint...",
-  "|__✅ Menu Items endpoint is valid!",
+  "⎩✅ Menu Items endpoint is valid!",
   "Validating Decoupled Router module...",
-  "|__✅ Decoupled Router is valid!",
+  "⎩✅ Decoupled Router is valid!",
   "Validating authentication...",
-  "|__✅ Auth is valid!",
+  "⎩✅ Auth is valid!",
   "Checking for PREVIEW_SECRET...",
-  "|__💡 PREVIEW_SECRET env var is not set.",
-  "|____ To set a new secret, go to 🔗 https://drupal.test/admin/structure/dp-preview-site and edit the preview site you want to use.",
+  "⎩💡 PREVIEW_SECRET env var is not set.",
+  "⎩ To set a new secret, go to 🔗 https://drupal.test/admin/structure/dp-preview-site and edit the preview site you want to use.",
   "⏭  Skipping preview endpoint validation -- PREVIEW_SECRET required.",
 ]
 `;
@@ -87,9 +87,9 @@ exports[`NextDrupalHealthCheck > should show a helpful error message if the back
 [
   "No .env* file found, assuming production environment.",
   "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is set!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
-  "|__❌ PANTHEON_CMS_ENDPOINT could not be fetched from.
+  "⎩❌ PANTHEON_CMS_ENDPOINT could not be fetched from.
 Check that invalid.drupal.test is valid and provides a 200 response",
 ]
 `;
@@ -98,13 +98,13 @@ exports[`NextDrupalHealthCheck > should show a helpful error message if the deco
 [
   "No .env* file found, assuming production environment.",
   "Checking for PANTHEON_CMS_ENDPOINT or BACKEND_URL...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is set!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is set!",
   "Validating CMS endpoint...",
-  "|__✅ PANTHEON_CMS_ENDPOINT is valid!",
+  "⎩✅ PANTHEON_CMS_ENDPOINT is valid!",
   "Validating Menu Item endpoint...",
-  "|__✅ Menu Items endpoint is valid!",
+  "⎩✅ Menu Items endpoint is valid!",
   "Validating Decoupled Router module...",
-  "|__❌ Decoupled Router not detected for PANTHEON_CMS_ENDPOINT.
+  "⎩❌ Decoupled Router not detected for PANTHEON_CMS_ENDPOINT.
 Check that invalid.drupal.test is valid and provides a 200 response.
 Also ensure that the Decoupled Router module is enabled.",
 ]

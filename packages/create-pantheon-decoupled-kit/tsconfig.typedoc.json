@@ -1,0 +1,20 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"types": ["vitest/globals"],
+		"jsx": "react-jsx",
+		"baseUrl": "./",
+		"paths": {
+			"@cli/*": ["./src/*"],
+			"@partials/*": ["./src/templates/partials/*"]
+		}
+	},
+	"exclude": [
+		"node_modules",
+		"dist",
+		"scripts",
+		"./src/templates/*",
+		"__tests__",
+		"__mocks__"
+	]
+}

@@ -1,14 +1,10 @@
 import pkgVersions from '@cli/pkgVersions.json';
 import type { Answers, QuestionCollection } from 'inquirer';
-import type { SpyInstance } from 'vitest';
 import { taggedTemplateHelpers as helpers } from './utils';
 
-declare module 'vitest' {
-	export interface TestContext {
-		[key: string]: SpyInstance;
-	}
-}
-
+/**
+ * A boolean value passed to the generator to identify the CMS
+ */
 type DrupalOrWP = {
 	[key in 'drupal' | 'wp']?: boolean;
 };
@@ -105,6 +101,9 @@ type CMSType = {
 	WordPress: 'wp' | 'wordpress';
 };
 
+type DependencyConfig = {
+	[key in 'dependencies' | 'devDependencies']?: Record<string, string>;
+};
 /**
  * An action that takes in the data, templates, and an instance of handlebars
  * and does an action, like installing dependencies or formatting generated code
@@ -113,12 +112,18 @@ export type Action = (config: ActionConfig) => Promise<string> | string;
 
 export type ActionRunner = (config: ActionRunnerConfig) => Promise<string>;
 
+type VariousData = {
+	[key: string]: string | string[] | boolean | Record<string, unknown>;
+};
+
 /**
  * Input from command line arguments, prompts, and generator data
  */
 type InputIndex = DrupalOrWP &
 	GatsbyWPData &
-	PackageVersionData & {
+	PackageVersionData &
+	DependencyConfig &
+	Partial<VariousData> & {
 		_: string[];
 		appName: string;
 		outDir: string;

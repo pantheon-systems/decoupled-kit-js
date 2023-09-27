@@ -31,7 +31,7 @@ options - A RequestConfig object.
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/GraphQLClientFactory.ts:18](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/wordpress-kit/src/lib/GraphQLClientFactory.ts#L18)
+[packages/wordpress-kit/src/lib/GraphQLClientFactory.ts:18](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/wordpress-kit/src/lib/GraphQLClientFactory.ts#L18)
 
 ## Properties
 
@@ -43,7 +43,7 @@ A WordPress GraphQL endpoint
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/GraphQLClientFactory.ts:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/wordpress-kit/src/lib/GraphQLClientFactory.ts#L12)
+[packages/wordpress-kit/src/lib/GraphQLClientFactory.ts:12](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/wordpress-kit/src/lib/GraphQLClientFactory.ts#L12)
 
 ---
 
@@ -55,7 +55,7 @@ RequestOptions
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/GraphQLClientFactory.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/wordpress-kit/src/lib/GraphQLClientFactory.ts#L16)
+[packages/wordpress-kit/src/lib/GraphQLClientFactory.ts:16](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/wordpress-kit/src/lib/GraphQLClientFactory.ts#L16)
 
 ## Methods
 
@@ -72,4 +72,4 @@ options
 
 #### Defined in
 
-[packages/wordpress-kit/src/lib/GraphQLClientFactory.ts:34](https://github.com/pantheon-systems/decoupled-kit-js/blob/ddd6c3538/packages/wordpress-kit/src/lib/GraphQLClientFactory.ts#L34)
+[packages/wordpress-kit/src/lib/GraphQLClientFactory.ts:34](https://github.com/pantheon-systems/decoupled-kit-js/blob/32b3f2995/packages/wordpress-kit/src/lib/GraphQLClientFactory.ts#L34)
