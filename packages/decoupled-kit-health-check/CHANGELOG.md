@@ -1,5 +1,16 @@
 # @pantheon-systems/decoupled-kit-health-check
 
+## 0.2.0
+
+### Minor Changes
+
+- e791c027: Added the option to opt out of running the health check by setting
+  the `NO_DKHC` environment variable
+
+### Patch Changes
+
+- 5cf51bed: Upgraded `vitest`
+
 ## 0.2.0-canary.0
 
 ### Minor Changes
