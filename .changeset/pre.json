@@ -1,0 +1,17 @@
+{
+  "mode": "pre",
+  "tag": "canary",
+  "initialVersions": {
+    "@pantheon-systems/eslint-config": "0.0.0",
+    "@pantheon-systems/cms-kit": "0.3.2",
+    "@pantheon-systems/eslint-config-decoupled-kit": "0.1.1",
+    "@pantheon-systems/decoupled-kit-configs": "0.1.0",
+    "create-pantheon-decoupled-kit": "0.10.4",
+    "@pantheon-systems/decoupled-kit-health-check": "0.2.0",
+    "@pantheon-systems/drupal-kit": "4.6.3",
+    "@pantheon-systems/nextjs-kit": "1.7.5",
+    "@pantheon-systems/wordpress-kit": "3.1.1",
+    "web": "1.0.0"
+  },
+  "changesets": []
+}
