@@ -1,5 +1,14 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.4
+
+### Patch Changes
+
+- da7ebb26: Bump `@pantheon-systems/wordpress-kit` and
+  `@pantheon-systems/drupal-kit`
+- 5cf51bed: Some internal changes to types for better API reference generation
+- e791c027: Bump `@pantheon-systems/decoupled-kit-health-check` version
+
 ## 0.10.4-canary.1
 
 ### Patch Changes

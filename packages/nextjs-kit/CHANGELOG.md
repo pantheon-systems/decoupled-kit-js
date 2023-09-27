@@ -1,5 +1,11 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.7.5
+
+### Patch Changes
+
+- 5cf51bed: Upgraded `vitest`
+
 ## 1.7.5-canary.0
 
 ### Patch Changes
