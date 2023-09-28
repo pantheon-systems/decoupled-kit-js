@@ -13,5 +13,15 @@
     "@pantheon-systems/wordpress-kit": "3.1.1",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "angry-poets-smell",
+    "cuddly-beds-worry",
+    "fifty-squids-listen",
+    "green-laws-battle",
+    "hot-windows-decide",
+    "loud-fireants-begin",
+    "many-lies-retire",
+    "odd-countries-carry",
+    "yellow-guests-remember"
+  ]
 }
