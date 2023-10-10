@@ -1,7 +1,5 @@
 name: Setup Playwright
-description:
-  Setups up Playwright and the monorepo to run regression tests against
-  generated starters
+description: Setups up Playwright and the monorepo to run regression tests against generated starters
 
 inputs:
   local_path:
@@ -14,6 +12,7 @@ outputs:
 
 runs:
   using: 'composite'
+  steps:
     - name: Restore cached starter
       id: cache-starter-restore
       uses: actions/cache/restore@v3
