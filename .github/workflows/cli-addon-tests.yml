@@ -22,19 +22,19 @@ jobs:
         # define package to repository map
         include:
           # next-drupal-starter-search
-          - local_path: 'starters/next-drupal-search'
+          - local_path: 'ci-starters/next-drupal-search'
             label: 'next-drupal-search'
             generator_cmd: 'next-drupal next-drupal-umami-addon next-drupal-search-api-addon --appName @pantheon-systems/next-drupal-search-starter --cmsEndpoint ${{ vars.BACKEND_URL }} --tailwindcss --force --silent'
             test_cmd: test:next-drupal-search
             start_cmd: HOSTNAME=0.0.0.0 npm run start
             # gatsby-wordpress-starter example matrix entry
-          - local_path: 'starters/gatsby-wordpress-starter-generated'
+          - local_path: 'ci-starters/gatsby-wordpress-starter-generated'
             label: 'gatsby-wordpress-starter'
             generator_cmd: 'gatsby-wp --appName @pantheon-systems/gatsby-wordpress-starter --cmsEndpoint ${{ vars.WPGRAPHQL_URL }} --tailwindcss --force --silent'
             test_cmd: test:gatsby-wp
             start_cmd: npm run serve
             # next-wordpress-starter example matrix entry
-          - local_path: 'starters/next-wordpress-starter-generated'
+          - local_path: 'ci-starters/next-wordpress-starter-generated'
             label: 'next-wordpress-starter'
             generator_cmd: 'next-wp --appName @pantheon-systems/next-wordpress-starter --cmsEndpoint ${{ vars.WPGRAPHQL_URL }} --tailwindcss --force --silent'
             test_cmd: test:next-wp
