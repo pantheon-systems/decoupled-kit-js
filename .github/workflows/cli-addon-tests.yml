@@ -50,7 +50,7 @@ jobs:
 
       # run the command to generate the starter in the matrix.local_path directory
       - name: Generate starter
-        run: pnpm create-pantheon-decoupled-kit ${{ matrix.generator_cmd }} --outDir ./${{ matrix.local_path }}
+        run: pnpm create-pantheon-decoupled-kit ${{ matrix.generator_cmd }} --outDir ~/${{ matrix.local_path }}
 
       - name: Build and run the starter
         run: |
