@@ -76,11 +76,12 @@ jobs:
         if: always()
         run: |
           git config user.name 'pantheon-decoupled-service-user'
-          git config user.email 'pantheon-service-user@pantheon.io'
-          git switch -c update-snapshots
+          git config user.email 'decoupled-service-user@pantheon.io'
+          git fetch upstream update-snapshots
+          git switch update-snapshots
           git add ./ci-tests
           git commit -m "Update ${{ matrix.label }} snapshots"
-          git push origin update-snapshots -u
+          git push
 
       - name: Create PR for snapshots
         if: always()
