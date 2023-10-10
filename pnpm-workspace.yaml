@@ -4,3 +4,5 @@ packages:
   - 'configs/**'
   - 'web'
   - '!packages/create-pantheon-decoupled-kit/__tests__/**'
+  # prevents the ci-tests and ci-starters from using the root pnpm-lock.yaml
+  - '!ci*'
