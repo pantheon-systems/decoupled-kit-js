@@ -73,6 +73,7 @@ jobs:
         run: pnpm -F ci-tests ${{ matrix.test_cmd }}
 
       - name: Create PR for snapshots
+        if: always()
         uses: peter-evans/create-pull-request@v5
         with:
           add-paths: './ci-tests'

@@ -59,6 +59,7 @@ jobs:
           cd $REPO_PATH
 
       - name: Cache generated starter
+        if: always()
         uses: actions/cache/save@v3
         id: cache-starter-save
         with:
