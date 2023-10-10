@@ -17,7 +17,7 @@ runs:
       id: cache-starter-restore
       uses: actions/cache/restore@v3
       with:
-        path: ./${{ inputs.local_path }}
+        path: ~/${{ inputs.local_path }}
         key: ${{ inputs.local_path }}-${{ hashFiles('./package-lock.json') }}
 
     - name: Install Node.js

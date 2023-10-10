@@ -65,11 +65,11 @@ jobs:
         uses: actions/cache/save@v3
         id: cache-starter-save
         with:
-          path: ./${{ matrix.local_path }}
+          path: ~/${{ matrix.local_path }}
           key: ${{ steps.setup.outputs.starter-cache-key }}
 
       - name: Run tests
-        run: npm run ${{ matrix.test_cmd }}
+        run: pnpm -F ci-tests ${{ matrix.test_cmd }}
 
       - name: Commit new or updated snapshots
         if: always()

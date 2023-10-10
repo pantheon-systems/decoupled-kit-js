@@ -72,6 +72,12 @@ importers:
         specifier: ^4.4.9
         version: 4.4.9(@types/node@18.18.0)
 
+  ci-tests:
+    devDependencies:
+      '@playwright/test':
+        specifier: ^1.38.1
+        version: 1.38.1
+
   configs:
     dependencies:
       prettier:
