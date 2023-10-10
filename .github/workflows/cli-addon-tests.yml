@@ -72,16 +72,28 @@ jobs:
       - name: Run tests
         run: pnpm -F ci-tests ${{ matrix.test_cmd }}
 
+      # we're commiting the changes outside of the create-pull-request action
+      # so that we can batch the commits on the same PR
+      # otherwise the action overwrites the commits and we end up with a PR with a single commit
+      - name: Commit changes
+        if: always()
+        run: |
+          git config user.name 'pantheon-decoupled-service-user'
+          git config user.email 'pantheon-service-user@pantheon.io'
+          git add ./ci-tests
+          git commit -m "Update ${{ matrix.label }} snapshots"
+
       - name: Create PR for snapshots
         if: always()
         uses: peter-evans/create-pull-request@v5
         with:
           add-paths: './ci-tests'
-          commit-message: Update ${{ matrix.label }} snapshots
-          comitter: pantheon-decoupled-service-user <decoupled-service-user@pantheon.io>
+          # commit-message: Update ${{ matrix.label }} snapshots
+          # committer: pantheon-decoupled-service-user <decoupled-service-user@pantheon.io>
           author: pantheon-decoupled-service-user <decoupled-service-user@pantheon.io>
           branch: update-snapshots
-          body: New snapshots for cli add-on regression tests
+          title: "[CI] Update snapshots"
+          body: "New snapshots for cli add-on regression tests"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
