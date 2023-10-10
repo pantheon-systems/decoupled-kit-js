@@ -44,6 +44,7 @@ runs:
         restore-keys: |
           ${{ runner.os }}-pnpm-store-
 
+    # TODO: cache the built packages?
     - name: Install dependencies
       shell: bash
       run: pnpm install

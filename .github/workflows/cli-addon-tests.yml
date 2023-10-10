@@ -86,7 +86,7 @@ jobs:
           # use a new branch/PR for each matrix entry
           # since the action does not support
           # multiple commits in a single PR
-          branch-suffix: short-commit-hash
+          branch-suffix: random
           # TODO: for testing only: remove this before merging this feature
           draft: true
 
