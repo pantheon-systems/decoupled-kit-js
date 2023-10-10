@@ -30,13 +30,13 @@ jobs:
           - local_path: 'starters/gatsby-wordpress-starter-generated'
             label: 'gatsby-wordpress-starter'
             generator_cmd: 'gatsby-wp --appName @pantheon-systems/gatsby-wordpress-starter --cmsEndpoint ${{ vars.WPGRAPHQL_URL_ACF }} --tailwindcss --force --silent --noInstall'
-            test_cmd: test:gatsby-wp
+            test_cmd: test:gatsby-wp-acf
             start_cmd: npm run serve
             # next-wordpress-starter example matrix entry
           - local_path: 'starters/next-wordpress-starter-generated'
             label: 'next-wordpress-starter'
             generator_cmd: 'next-wp --appName @pantheon-systems/next-wordpress-starter --cmsEndpoint ${{ vars.WPGRAPHQL_URL_ACF }} --tailwindcss --force --silent --noInstall'
-            test_cmd: test:next-wp
+            test_cmd: test:next-wp-acf
             start_cmd: HOSTNAME=0.0.0.0 npm run start
     steps:
       - name: Checkout code
@@ -98,6 +98,9 @@ jobs:
           fetch: --all
           message: Update ${{ matrix.label }} snapshot
           pathspec_error_handling: ignore
+          # use a new branch to avoid pushing to main
+          # TODO: open a PR from this branch to canary
+          new_branch: update-${{ matrix.label }}-snapshots
 
           # Arguments for the git pull command. By default, the action does not pull.
           # Default: ''

@@ -5,10 +5,10 @@
 	"scripts": {
 		"test:next-drupal-search": "playwright test tests/next-drupal-search.spec.ts",
 		"test:next-wp-acf": "playwright test tests/next-wp-acf.spec.ts",
-		"test:gatsby-wp-act": "playwright test tests/gatsby-wp-acf.spec.ts",
+		"test:gatsby-wp-acf": "playwright test tests/gatsby-wp-acf.spec.ts",
 		"update-snapshots:next-drupal-search": "playwright test tests/next-drupal-search.spec.ts",
 		"update-snapshots:next-wp-acf": "playwright test tests/next-wp-acf.spec.ts",
-		"update-snapshots:gatsby-wp-act": "playwright test tests/gatsby-wp-acf.spec.ts"
+		"update-snapshots:gatsby-wp-acf": "playwright test tests/gatsby-wp-acf.spec.ts"
 	},
 	"keywords": [],
 	"author": "pantheon-systems",
