@@ -75,21 +75,23 @@ jobs:
       # we're commiting the changes outside of the create-pull-request action
       # so that we can batch the commits on the same PR
       # otherwise the action overwrites the commits and we end up with a PR with a single commit
-      - name: Commit changes
-        if: always()
-        run: |
-          git config user.name 'pantheon-decoupled-service-user'
-          git config user.email 'decoupled-service-user@pantheon.io'
-          git fetch origin update-snapshots
-          git switch update-snapshots
-          git add ./ci-tests
-          git commit -m "Update ${{ matrix.label }} snapshots"
-          git push
+      # - name: Commit changes
+      #   if: always()
+      #   run: |
+      #     git config user.name 'pantheon-decoupled-service-user'
+      #     git config user.email 'decoupled-service-user@pantheon.io'
+      #     git fetch origin update-snapshots
+      #     git switch update-snapshots
+      #     git add ./ci-tests
+      #     git commit -m "Update ${{ matrix.label }} snapshots"
+      #     git push
 
       - name: Create PR for snapshots
         if: always()
         uses: technote-space/create-pr-action@v2
         with:
+          EXECUTE_COMMANDS: |
+            git add ./ci-tests
           COMMIT_MESSAGE: Update ${{ matrix.label }} snapshots
           COMMIT_NAME: pantheon-decoupled-service-user
           COMMIT_EMAIL: decoupled-service-user@pantheon.io
