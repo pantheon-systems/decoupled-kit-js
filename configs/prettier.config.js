@@ -7,4 +7,13 @@ module.exports = {
 	printWidth: 80,
 	arrowParens: 'always',
 	bracketSameLine: false,
+	overrides: [
+		{
+			files: ['.github/**/*.yml'],
+			options: {
+				useTabs: false,
+				printWidth: 300,
+			},
+		},
+	],
 };
