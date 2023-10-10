@@ -82,7 +82,7 @@ jobs:
 
       - name: Create PR for snapshots
         if: always()
-        uses: technote-space/create-pr-action
+        uses: technote-space/create-pr-action@v2
         with:
           COMMIT_MESSAGE: Update ${{ matrix.label }} snapshots
           COMMIT_NAME: pantheon-decoupled-service-user
