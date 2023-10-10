@@ -68,41 +68,12 @@ jobs:
       - name: Run tests
         run: pnpm -F ci-tests ${{ matrix.test_cmd }}
 
-      - name: Commit updated snapshots
-        if: always()
-        uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
+      - name: Create PR for snapshots
+        uses: peter-evans/create-pull-request@v5
         with:
-          # The arguments for the `git add` command (see the paragraph below for more info)
-          # Default: '.'
-          add: './ci-tests'
-
-          # The name of the user that will be displayed as the author of the commit.
-          # Default: depends on the default_author input
-          author_name: pantheon-decoupled-service-user
-
-          # The email of the user that will be displayed as the author of the commit.
-          # Default: depends on the default_author input
-          author_email: decoupled-service-user@pantheon.io
-
-          # The name of the custom committer you want to use, if different from the author of the commit.
-          # Default: the name of the author (set with either author_name or default_author)
-          committer_name: pantheon-decoupled-service-user
-
-          # The email of the custom committer you want to use, if different from the author of the commit.
-          # Default: the email of the author (set with either author_email or default_author)
-          committer_email: decoupled-service-user@pantheon.io
-          cwd: './'
-          fetch: --all
-          message: Update ${{ matrix.label }} snapshot
-          # use a new branch to avoid pushing to main
-          # TODO: open a PR from this branch to canary
-          new_branch: update-${{ matrix.label }}-snapshots
-          pathspec_error_handling: ignore
-
-          # Arguments for the git pull command. By default, the action does not pull.
-          # Default: ''
-          # pull: "--ff"
-          push: true
-          # Arguments for the git push --tags command (any additional argument will be added after --tags)
-          # Default: ''
-          # tag_push: '--force'
+          add-paths: './ci-tests'
+          commit-message: Update ${{ matrix.label }} snapshots
+          comitter: pantheon-decoupled-service-user <decoupled-service-user@pantheon.io>
+          author: pantheon-decoupled-service-user <decoupled-service-user@pantheon.io>
+          branch: update-snapshots
+          body: New snapshots for cli add-on regression tests
