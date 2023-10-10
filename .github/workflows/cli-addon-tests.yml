@@ -29,13 +29,13 @@ jobs:
             # gatsby-wordpress-starter example matrix entry
           - local_path: 'starters/gatsby-wordpress-starter-generated'
             label: 'gatsby-wordpress-starter'
-            generator_cmd: 'gatsby-wp --appName @pantheon-systems/gatsby-wordpress-starter --cmsEndpoint ${{ vars.WPGRAPHQL_URL }} --tailwindcss --force --silent --noInstall'
+            generator_cmd: 'gatsby-wp --appName @pantheon-systems/gatsby-wordpress-starter --cmsEndpoint ${{ vars.WPGRAPHQL_URL_ACF }} --tailwindcss --force --silent --noInstall'
             test_cmd: test:gatsby-wp
             start_cmd: npm run serve
             # next-wordpress-starter example matrix entry
           - local_path: 'starters/next-wordpress-starter-generated'
             label: 'next-wordpress-starter'
-            generator_cmd: 'next-wp --appName @pantheon-systems/next-wordpress-starter --cmsEndpoint ${{ vars.WPGRAPHQL_URL }} --tailwindcss --force --silent --noInstall'
+            generator_cmd: 'next-wp --appName @pantheon-systems/next-wordpress-starter --cmsEndpoint ${{ vars.WPGRAPHQL_URL_ACF }} --tailwindcss --force --silent --noInstall'
             test_cmd: test:next-wp
             start_cmd: HOSTNAME=0.0.0.0 npm run start
     steps:
@@ -56,7 +56,7 @@ jobs:
         run: |
           REPO_PATH=$(pwd)
           cd ~/${{ matrix.local_path }}
-          npm install
+          npm install --legacy-peer-deps
           npm run build
           ${{ matrix.start_cmd }} &
           cd $REPO_PATH
