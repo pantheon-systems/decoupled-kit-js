@@ -1,5 +1,11 @@
 # @pantheon-systems/eslint-config-decoupled-kit
 
+## 0.1.2
+
+### Patch Changes
+
+- e7cc1e0c: Bump peer dependency requirements
+
 ## 0.1.2-canary.0
 
 ### Patch Changes
