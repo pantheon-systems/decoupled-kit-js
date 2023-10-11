@@ -7,7 +7,7 @@ permissions:
 on:
   schedule:
     - cron: '0 0 * * *' # Runs every day at midnight UTC
-  # test branch: remove this before merging this feature
+  # test branch: TODO: remove this before merging this feature
   push:
     branches:
       - feat/cli-regression-tests
@@ -87,8 +87,6 @@ jobs:
           branch: update-snapshots/${{ matrix.label }}
           title: '[CI] Update ${{ matrix.label }} snapshots'
           body: New snapshots for cli add-on regression tests
-          delete-branch: true
-          draft: true
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
