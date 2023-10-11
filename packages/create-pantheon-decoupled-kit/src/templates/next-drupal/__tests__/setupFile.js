@@ -57,6 +57,8 @@ export const restHandlers = [...defaultProfileHandlers].map(
 
 process.env = {
 	...process.env,
+	// workaround – tests are not seeing locales as an array with react testing library 14 and latest vitest
+	locales: ['en', 'es'],
 	__NEXT_IMAGE_OPTS: {
 		deviceSizes: [320, 420, 768, 1024, 1200],
 		imageSizes: [],

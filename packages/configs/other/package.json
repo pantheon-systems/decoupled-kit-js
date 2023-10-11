@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/decoupled-kit-configs",
-	"version": "0.1.0",
+	"version": "0.1.1-canary.0",
 	"description": "Various configs for the Pantheon Decoupled Kit starter kits",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -25,6 +25,6 @@
 		"@pantheon-systems/workspace-configs": "*"
 	},
 	"peerDependencies": {
-		"prettier": ">=2.5.1"
+		"prettier": ">=3"
 	}
 }
