@@ -13,13 +13,6 @@ outputs:
 runs:
   using: 'composite'
   steps:
-    - name: Restore cached starter
-      id: cache-starter-restore
-      uses: actions/cache/restore@v3
-      with:
-        path: ~/${{ inputs.local_path }}
-        key: ${{ inputs.local_path }}-${{ hashFiles(format('{0}/package-lock.json', inputs.local_path)) }}
-
     - name: Install Node.js
       uses: actions/setup-node@v3
       with:

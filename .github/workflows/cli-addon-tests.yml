@@ -7,13 +7,11 @@ permissions:
 on:
   schedule:
     - cron: '0 0 * * *' # Runs every day at midnight UTC
-  # test branch: TODO: remove this before merging this feature
   push:
     branches:
+      # test branch: TODO: remove this before merging this feature
       - feat/cli-regression-tests
-  # on release, update the snapshots
-  release:
-    types: [published]
+      - canary
 
 jobs:
   cli-regression-tests:
@@ -62,16 +60,9 @@ jobs:
           ${{ matrix.start_cmd }} &
           cd $REPO_PATH
 
-      - name: Cache generated starter
-        uses: actions/cache/save@v3
-        id: cache-starter-save
-        with:
-          path: ~/${{ matrix.local_path }}
-          key: ${{ steps.setup.outputs.starter-cache-key }}
-
       - name: Run tests
         # should run update-snapshots:{matrix.label} or test:{matrix.label} depending on the event
-        run: pnpm -F ci-tests $([[ ${{ github.event_name }} == 'release' ]] && echo 'update-snapshots' || echo 'test'):${{ matrix.label }}
+        run: pnpm -F ci-tests $([[ ${{ github.event_name }} == 'push' ]] && echo 'update-snapshots' || echo 'test'):${{ matrix.label }}
 
       - name: Create PR for snapshots
         if: always()
@@ -86,11 +77,11 @@ jobs:
           # multiple commits in a single PR
           branch: update-snapshots/${{ matrix.label }}
           title: '[CI] Update ${{ matrix.label }} snapshots'
-          body: New snapshots for cli add-on regression tests
+          body: New or updated snapshots for cli add-on regression tests for the ${{ matrix.label }} starter.
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
-        if: failure() || ${{ github.event_name }} !== 'release'
+        if: failure() || ${{ github.event_name }} != 'push'
         with:
           name: playwright-report
           path: playwright-report/
