@@ -69,7 +69,11 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           add-paths: './ci-tests'
-          commit-message: '[skip ci] Update ${{ matrix.label }} snapshots'
+          commit-message: |
+            [skip ci] Update ${{ matrix.label }} snapshots
+
+
+            skip-checks: true
           committer: pantheon-decoupled-service-user <decoupled-service-user@pantheon.io>
           author: pantheon-decoupled-service-user <decoupled-service-user@pantheon.io>
           # use a new branch/PR for each matrix entry
