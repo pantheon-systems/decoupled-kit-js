@@ -5,7 +5,7 @@ metaframework packages like nextjs-kit and gatsby-kit, or on its own.
 
 ## Installation
 
-To install this package to use in your application, install it and it's peer
+To install this package to use in your application, install it and its peer
 dependencies:
 
 ```bash
@@ -15,8 +15,8 @@ npm install tailwindcss daisyui -D
 
 ## Usage
 
-Modules can be imported or required from the `@pantheon-systems/cms-kit`
-package. For example, to use the `setSurrogateKeyHeader` utility:
+Modules can be imported or required from the `@pantheon-systems/react-kit`
+package. For example, to use the `Button` component:
 
 ```js
 import { Button } from '@pantheon-systems/react-kit/Button';
