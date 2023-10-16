@@ -4,6 +4,7 @@
 		"dbaeumer.vscode-eslint",
 		"streetsidesoftware.code-spell-checker",
 		"redhat.vscode-yaml",
-		"unifiedjs.vscode-mdx"
+		"unifiedjs.vscode-mdx",
+		"bradlc.vscode-tailwindcss"
 	]
 }
