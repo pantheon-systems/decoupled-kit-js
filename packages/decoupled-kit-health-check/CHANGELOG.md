@@ -1,5 +1,11 @@
 # @pantheon-systems/decoupled-kit-health-check
 
+## 0.2.1
+
+### Patch Changes
+
+- f044f00f: Update dependencies
+
 ## 0.2.1-canary.0
 
 ### Patch Changes

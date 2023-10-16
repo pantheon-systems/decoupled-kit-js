@@ -1,5 +1,11 @@
 # @pantheon-systems/cms-kit
 
+## 0.3.3
+
+### Patch Changes
+
+- b62a6484: Update dependencies
+
 ## 0.3.3-canary.0
 
 ### Patch Changes
