@@ -60,8 +60,12 @@ const packages = [
 		sidebarPosition: 3,
 	},
 	{
-		packageName: 'create-pantheon-decoupled-kit',
+		packageName: 'react-kit',
 		sidebarPosition: 4,
+	},
+	{
+		packageName: 'create-pantheon-decoupled-kit',
+		sidebarPosition: 5,
 		configOptions: {
 			entryPoints: ['../packages/create-pantheon-decoupled-kit/index.ts'],
 			tsconfig:
@@ -70,7 +74,7 @@ const packages = [
 	},
 	{
 		packageName: 'decoupled-kit-health-check',
-		sidebarPosition: 5,
+		sidebarPosition: 6,
 	},
 ];
 
