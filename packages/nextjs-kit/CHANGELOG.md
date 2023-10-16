@@ -1,5 +1,12 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.7.7-canary.0
+
+### Patch Changes
+
+- 13fac516: Bump `@types/react` and `@types/react-dom` to ensure the same
+  version as react-kit is used
+
 ## 1.7.6
 
 ### Patch Changes
