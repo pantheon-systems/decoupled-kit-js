@@ -11,7 +11,11 @@
     "@pantheon-systems/drupal-kit": "4.6.4",
     "@pantheon-systems/nextjs-kit": "1.7.6",
     "@pantheon-systems/wordpress-kit": "3.1.2",
-    "web": "1.0.0"
+    "web": "1.0.0",
+    "ci-tests": "0.1.0",
+    "@pantheon-systems/react-kit": "0.1.0"
   },
-  "changesets": []
+  "changesets": [
+    "dry-rice-pay"
+  ]
 }
