@@ -1,5 +1,8 @@
 {
-	"extends": "@pantheon-systems/eslint-config/react",
+	"extends": [
+		"plugin:storybook/recommended",
+		"@pantheon-systems/eslint-config/react"
+	],
 	"parserOptions": {
 		"project": "./tsconfig.json"
 	}

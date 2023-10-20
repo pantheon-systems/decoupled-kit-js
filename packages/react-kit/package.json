@@ -23,7 +23,8 @@
 				"types": "./dist/components/*.d.cts",
 				"default": "./dist/components/*.cjs"
 			}
-		}
+		},
+		"./styles.css": "./dist/index.css"
 	},
 	"sideEffects": false,
 	"type": "module",
@@ -43,22 +44,36 @@
 		"eslint:fix": "eslint --ext .js,.ts,.jsx,.tsx src --fix --ignore-path .gitignore",
 		"prettier": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --check --ignore-path ../../.prettierignore",
 		"prettier:fix": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --write --ignore-path ../../.prettierignore",
-		"lint-staged": "lint-staged"
+		"lint-staged": "lint-staged",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build"
 	},
 	"devDependencies": {
 		"@pantheon-systems/eslint-config": "*",
 		"@pantheon-systems/workspace-configs": "*",
+		"@storybook/addon-essentials": "^7.5.1",
+		"@storybook/addon-interactions": "^7.5.1",
+		"@storybook/addon-links": "^7.5.1",
+		"@storybook/addon-onboarding": "^1.0.8",
+		"@storybook/blocks": "^7.5.1",
+		"@storybook/react": "^7.5.1",
+		"@storybook/react-vite": "^7.5.1",
+		"@storybook/testing-library": "^0.2.2",
 		"@testing-library/react": "14.0.0",
 		"@types/react": "^18.2.28",
 		"@types/react-dom": "^18.2.13",
+		"@vitejs/plugin-react": "^4.1.0",
 		"@vitest/coverage-v8": "^0.34.5",
 		"autoprefixer": "^10.4.16",
 		"daisyui": "^3.9.2",
+		"eslint-plugin-storybook": "^0.6.15",
 		"postcss": "^8.4.30",
 		"prettier": "^3.0.3",
+		"prop-types": "^15.8.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"rimraf": "^5.0.4",
+		"storybook": "^7.5.1",
 		"tailwindcss": "^3.3.3",
 		"tsup": "^7.2.0",
 		"vitest": "^0.34.5"

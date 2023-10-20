@@ -1,3 +1,7 @@
-export const Button = () => {
-	return <button className="ps-btn">Hello world</button>;
+interface ButtonProps {
+	children: React.ReactNode;
+}
+
+export const DemoButton = ({ children }: ButtonProps) => {
+	return <button className="ps-btn">{children}</button>;
 };
