@@ -42,10 +42,12 @@ jobs:
           - local_path: 'web'
             split_repository: 'decoupled-kit-docs-canary'
             generator_cmd: ''
+
           # react-kit storybook
           - local_path: 'packages/react-kit'
             split_repository: 'storybook-react-kit'
             generator_cmd: ''
+            build: true
 
     steps:
       - name: Checkout code
@@ -69,6 +71,14 @@ jobs:
         run: |
           mkdir -p ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows
           cp ${{ github.workspace }}/.github/templates/trigger-e2e.yml.template ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows/trigger-e2e.yml
+      
+      - name: Build Storybook
+        if: ${{ matrix.build == true }}
+        run: |
+          pnpm -F ./${{ matrix.local_path }} build-storybook
+          cp ${{ github.workspace }}/.github/templates/empty-package.json ${{ github.workspace }}/${{ matrix.local_path }}/package.json
+          rm -rf !${{ github.workspace }}/${{ matrix.local_path }}/storybook-static
+
 
       - name: Split repos
         uses: 'danharrin/monorepo-split-github-action@v2.3.0'
@@ -91,13 +101,13 @@ jobs:
           # For posting a rich message using Block Kit
           payload: |
             {
-              "text": "GitHub Action result: ${{ job.status }}\n${{ github.ref }}",
+              "text": "GitHub Action result: ${{ job.status }}\n${{ matrix.split_repository }}",
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "GitHub Action result: ${{ job.status }}\n${{ github.ref }}"
+                    "text": "GitHub Action result: ${{ job.status }}\n${{ matrix.split_repository }}"
                   }
                 }
               ]

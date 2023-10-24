@@ -1,0 +1,13 @@
+{
+	"name": "storybook",
+	"private": true,
+	"version": "0.0.0",
+	"description": "For deploying static sites with no dependencies or build step",
+	"scripts": {
+		"noop": ":",
+		"build": "npm run noop",
+		"start": "npm run noop"
+	},
+	"author": "pantheon-systems",
+	"license": "GPL-3.0-or-later"
+}
