@@ -58,13 +58,13 @@ jobs:
         if: ${{ matrix.generator_cmd != '' }}
         uses: ./.github/actions/setup-node
         with:
-          pnpm: false
+          pnpm: 'false'
 
       - name: Setup node and pmpm
         if: ${{ matrix.build == true }}
         uses: ./.github/actions/setup-node
         with:
-          pnpm: true
+          pnpm: 'true'
 
         # install canary version of the CLI
         # run the command to generate the starter in the matrix.local_path directory
@@ -104,6 +104,7 @@ jobs:
           user_email: 'decoupled-service-user@pantheon.io'
 
       - name: Send custom JSON data to Slack workflow
+        if: always()
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
         with:
