@@ -44,7 +44,7 @@ jobs:
             generator_cmd: ''
           # react-kit storybook
           - local_path: 'packages/react-kit'
-            split_repository: 'storyboook-react-kit'
+            split_repository: 'storybook-react-kit'
             generator_cmd: ''
 
     steps:
