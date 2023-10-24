@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
-import { Button } from '@components/Button';
+import { DemoButton } from '@components/Button';
 
 describe('<Button />', () => {
 	it("should render 'Button'", () => {
-		const { asFragment } = render(<Button />);
+		const { asFragment } = render(<DemoButton>Hello world</DemoButton>);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
