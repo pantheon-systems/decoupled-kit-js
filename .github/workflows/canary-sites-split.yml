@@ -42,10 +42,13 @@ jobs:
           - local_path: 'web'
             split_repository: 'decoupled-kit-docs-canary'
             generator_cmd: ''
+
           # react-kit storybook
           - local_path: 'packages/react-kit'
+            out_path: 'storybook/react-kit'
             split_repository: 'storybook-react-kit'
             generator_cmd: ''
+            build: true
 
     steps:
       - name: Checkout code
@@ -70,11 +73,21 @@ jobs:
           mkdir -p ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows
           cp ${{ github.workspace }}/.github/templates/trigger-e2e.yml.template ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows/trigger-e2e.yml
 
+        # build storybook, copy output to a clean dir with the empty package.json
+      - name: Build Storybook
+        if: ${{ matrix.build == true }}
+        run: |
+          pnpm -F ./${{ matrix.local_path }} build-storybook
+          mkdir -p ./${{ matrix.out_path }}}
+          cp  ${{ github.workspace }}/.github/templates/empty-package.json ./${{ matrix.out_path }}/package.json
+          mv ./${{ matrix.local_path }}/storybook-static ./${{ matrix.out_path }}/storybook-static
+
+
       - name: Split repos
         uses: 'danharrin/monorepo-split-github-action@v2.3.0'
         with:
-          # ↓ split <local_path> directory
-          package_directory: '${{ matrix.local_path }}'
+          # ↓ split <local_path> or <out_path> directory
+          package_directory: ${{ !matrix.out_path && matrix.local_path || matrix.out_path }}
 
           # ↓ into https://github.com/org/split_repository repository
           repository_organization: 'pantheon-systems'
@@ -91,13 +104,13 @@ jobs:
           # For posting a rich message using Block Kit
           payload: |
             {
-              "text": "GitHub Action result: ${{ job.status }}\n${{ github.ref }}",
+              "text": "GitHub Action result: ${{ job.status }}\n${{ matrix.split_repository }}",
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "GitHub Action result: ${{ job.status }}\n${{ github.ref }}"
+                    "text": "GitHub Action result: ${{ job.status }}\n${{ matrix.split_repository }}"
                   }
                 }
               ]
