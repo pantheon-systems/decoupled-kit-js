@@ -85,7 +85,7 @@ jobs:
         if: ${{ matrix.build == true }}
         run: |
           pnpm -F ./${{ matrix.local_path }} build-storybook
-          mkdir -p ./${{ matrix.out_path }}}
+          mkdir -p ./${{ matrix.out_path }}
           cp  ${{ github.workspace }}/.github/templates/empty-package.json ./${{ matrix.out_path }}/package.json
           mv ./${{ matrix.local_path }}/storybook-static ./${{ matrix.out_path }}/storybook-static
 
