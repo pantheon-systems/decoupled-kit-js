@@ -1,0 +1,43 @@
+name: Setup node
+description: Setup the monorepo and install node, optionally install pnpm
+
+inputs:
+  pnpm:
+    description: If true, also set up pnpm
+    default: 'true'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install pnpm
+      if: inputs.pnpm == true
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8.8.0
+        run_install: false
+
+    - name: Get pnpm store directory
+      if: inputs.pnpm == true
+      shell: bash
+      run: |
+        echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+    - name: Setup pnpm cache
+      if: inputs.pnpm == true
+      uses: actions/cache@v3
+      with:
+        path: ${{ env.STORE_PATH }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
+
+    - name: Install dependencies
+      if: inputs.pnpm == true
+      shell: bash
+      run: pnpm install

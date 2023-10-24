@@ -56,9 +56,16 @@ jobs:
 
       - name: Setup node
         if: ${{ matrix.generator_cmd != '' }}
-        uses: actions/setup-node@v3
+        uses: ./.github/actions/setup-node
         with:
-          node-version: 18
+          pnpm: false
+
+      - name: Setup node and pmpm
+        if: ${{ matrix.build == true }}
+        uses: ./.github/actions/setup-node
+        with:
+          pnpm: true
+
         # install canary version of the CLI
         # run the command to generate the starter in the matrix.local_path directory
       - name: Generate starter
@@ -81,7 +88,6 @@ jobs:
           mkdir -p ./${{ matrix.out_path }}}
           cp  ${{ github.workspace }}/.github/templates/empty-package.json ./${{ matrix.out_path }}/package.json
           mv ./${{ matrix.local_path }}/storybook-static ./${{ matrix.out_path }}/storybook-static
-
 
       - name: Split repos
         uses: 'danharrin/monorepo-split-github-action@v2.3.0'
