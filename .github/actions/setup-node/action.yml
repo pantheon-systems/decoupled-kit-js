@@ -4,7 +4,6 @@ description: Setup the monorepo and install node, optionally install pnpm
 inputs:
   pnpm:
     description: If true, also set up pnpm
-    default: 'true'
     required: true
 
 runs:
