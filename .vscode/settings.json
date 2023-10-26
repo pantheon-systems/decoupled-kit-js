@@ -3,5 +3,7 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.codeActionsOnSave": {
 		"source.organizeImports": true
-	}
+	},
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"eslint.workingDirectories": [{ "mode": "auto" }]
 }

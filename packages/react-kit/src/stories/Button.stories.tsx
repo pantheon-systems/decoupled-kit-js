@@ -1,26 +1,67 @@
+import { Button } from '@components/Button';
 import type { Meta, StoryObj } from '@storybook/react';
 
-// @components alias works for build and dev but eslint complains
-import { DemoButton } from '../components/Button';
-
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-const meta = {
-	title: 'Button',
-	component: DemoButton,
+const meta: Meta<typeof Button> = {
+	title: 'Button/Button',
+	component: Button,
 	parameters: {
-		// Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
 		layout: 'centered',
 	},
-	// This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
 	tags: ['autodocs'],
-} satisfies Meta<typeof DemoButton>;
+	args: {
+		children: 'Button',
+	},
+	argTypes: {
+		type: {
+			control: {
+				type: 'radio',
+			},
+			options: ['primary', 'secondary'],
+		},
+		size: {
+			defaultValue: 'large',
+			control: {
+				type: 'radio',
+			},
+			options: ['small', 'large'],
+		},
+		className: {
+			if: { arg: 'type', neq: 'icon' },
+			control: {
+				type: 'text',
+			},
+		},
+	},
+};
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Demo: Story = {
+export const Default: Story = {
 	args: {
-		children: 'Example text',
+		type: 'primary',
+		children: 'Button Text',
+	},
+	argTypes: {
+		children: {
+			control: {
+				type: 'text',
+			},
+		},
+	},
+};
+
+export const Secondary: Story = {
+	args: {
+		type: 'secondary',
+		children: 'Button Text',
+	},
+	argTypes: {
+		children: {
+			control: {
+				type: 'text',
+			},
+		},
 	},
 };

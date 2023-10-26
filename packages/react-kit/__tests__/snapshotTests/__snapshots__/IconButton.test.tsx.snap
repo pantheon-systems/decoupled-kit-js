@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<IconButton /> > should render an IconButton 1`] = `
+<DocumentFragment>
+  <button
+    class="rk-btn rk-h-10 rk-max-h-10 rk-min-h-fit rk-rounded-full rk-border-none rk-bg-white rk-p-2 rk-text-black	hover:rk-bg-neutral-100 hover:rk-text-neutral-900 active:rk-bg-neutral-300 [&>*:first-child]:rk-w-6"
+  >
+    <img
+      alt="Search"
+      src="/mock/search/icon.svg"
+    />
+  </button>
+</DocumentFragment>
+`;

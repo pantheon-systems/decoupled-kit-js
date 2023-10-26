@@ -7,6 +7,7 @@ module.exports = {
 	printWidth: 80,
 	arrowParens: 'always',
 	bracketSameLine: false,
+	plugins: ['prettier-plugin-tailwindcss'],
 	overrides: [
 		{
 			files: ['.github/**/*.yml'],

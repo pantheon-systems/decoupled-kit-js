@@ -31,3 +31,7 @@ To see the API reference for `@pantheon-systems/react-kit`,
 
 Please see the
 [Contributing guide in our monorepo](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/CONTRIBUTING.md)
+
+### Development Notes
+
+- the `rk` prefix is used for tailwindcss and daisyui classes

@@ -1,9 +1,31 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Button /> > should render 'Button' 1`] = `
+exports[`<Button /> > should render 'a' with an href 1`] = `
+<DocumentFragment>
+  <a
+    class="rk-btn rk-capitalize rk-bg-neutral-900 rk-text-white rk-rounded-lg hover:rk-bg-neutral-700 hover:rk-border-neutral-700 hover:rk-text-white active:rk-bg-neutral-500 rk-px-4 rk-h-10"
+    data-test="true"
+    href="/test"
+  >
+    Hello world
+  </a>
+</DocumentFragment>
+`;
+
+exports[`<Button /> > should render 'button' 1`] = `
 <DocumentFragment>
   <button
-    class="ps-btn"
+    class="rk-btn rk-capitalize rk-bg-neutral-900 rk-text-white rk-rounded-lg hover:rk-bg-neutral-700 hover:rk-border-neutral-700 hover:rk-text-white active:rk-bg-neutral-500 rk-px-4 rk-h-10"
+  >
+    Hello world
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Button /> > should use the type provided 1`] = `
+<DocumentFragment>
+  <button
+    class="rk-btn rk-capitalize rk-bg-white rk-text-neutral-900 rk-rounded-lg rk-btn-outline hover:rk-bg-neutral-100 hover:rk-text-neutral-900 hover:rk-border-neutral-900 active:rk-bg-neutral-300 rk-px-4 rk-h-10"
   >
     Hello world
   </button>
