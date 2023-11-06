@@ -38,8 +38,8 @@ export const Recipe: React.FC<RecipeProps> = ({
 	children,
 }: RecipeProps) => {
 	const router = useRouter();
+	// TODO: Remove once https://github.com/vercel/next.js/issues/52216 is resolved.
 	let ResolvedImage = Image;
-
 	if ('default' in ResolvedImage) {
 		ResolvedImage = (ResolvedImage as unknown as { default: typeof Image })
 			.default;

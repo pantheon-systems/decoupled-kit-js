@@ -35,8 +35,8 @@ export const ContentWithImage: React.FC<ContentProps> = ({
 	contentClassName = 'ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto',
 }: ContentProps) => {
 	const router = useRouter();
+	// TODO: Remove once https://github.com/vercel/next.js/issues/52216 is resolved.
 	let ResolvedImage = Image;
-
 	if ('default' in ResolvedImage) {
 		ResolvedImage = (ResolvedImage as unknown as { default: typeof Image })
 			.default;
