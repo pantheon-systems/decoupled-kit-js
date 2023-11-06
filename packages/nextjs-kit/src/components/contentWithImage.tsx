@@ -35,7 +35,12 @@ export const ContentWithImage: React.FC<ContentProps> = ({
 	contentClassName = 'ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto',
 }: ContentProps) => {
 	const router = useRouter();
+	let ResolvedImage = Image;
 
+	if ('default' in ResolvedImage) {
+		ResolvedImage = (ResolvedImage as unknown as { default: typeof Image })
+			.default;
+	}
 	return (
 		<article className="ps-prose ps-max-w-none xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-mx-auto ps-py-4 ps-px-12">
 			<section className="ps-prose xs:ps-prose-xs md:ps-prose-md lg:ps-prose-lg ps-mt-10 ps-max-w-screen lg:ps-max-w-screen-lg md:ps-max-w-screen-md sm:ps-max-w-screen-sm ps-mx-auto">
@@ -52,7 +57,7 @@ export const ContentWithImage: React.FC<ContentProps> = ({
 			<div className="ps-mt-12 ps-max-w-screen ps-mx-auto lg:ps-max-w-screen-lg [&*>img]:ps-rounded-lg">
 				{imageProps ? (
 					<div className="ps-relative ps-mb-10 ps-min-h-[50vh]">
-						<Image
+						<ResolvedImage
 							priority
 							src={imageProps.src}
 							style={{
