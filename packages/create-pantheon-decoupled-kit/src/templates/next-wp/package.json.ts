@@ -25,7 +25,7 @@ const json: TemplateFn = ({ data, utils }) => /* JSON */ `{
 		"@pantheon-systems/wordpress-kit": "${data.wordpressKitVersion}",
 		${utils.if(data.tailwindcss, tailwindcssDeps(false))}
 		"dotenv": "^16.0.2",
-		"next": "13.4.7",
+		"next": "13.5.6",
 		"next-seo": "^6.1.0",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
