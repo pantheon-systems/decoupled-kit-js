@@ -16,6 +16,7 @@
     "@pantheon-systems/react-kit": "0.1.0"
   },
   "changesets": [
-    "dry-rice-pay"
+    "dry-rice-pay",
+    "eight-lamps-yawn"
   ]
 }
