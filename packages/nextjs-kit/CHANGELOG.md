@@ -1,5 +1,11 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.7.7-canary.1
+
+### Patch Changes
+
+- 9df9a05c: Update starters and `nextjs-kit` to use next 13.5.6.
+
 ## 1.7.7-canary.0
 
 ### Patch Changes
