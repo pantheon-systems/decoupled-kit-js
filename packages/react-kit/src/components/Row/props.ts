@@ -1,9 +1,12 @@
 export interface RowProps {
-	type: 'flex' | 'grid';
+	children?: React.ReactNode;
 	className?: string;
 	flexOptions?: {
 		direction: 'row' | 'col';
-		wrap: boolean;
+		grow?: boolean;
+		reverse?: boolean;
+		shrink?: boolean;
+		wrap?: boolean;
 	};
-	children?: React.ReactNode;
+	type: 'flex' | 'grid';
 }

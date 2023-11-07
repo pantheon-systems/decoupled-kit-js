@@ -1,9 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
+import CloseIcon from '@assets/icons/close.svg';
+import HamburgerMenu from '@assets/icons/hamburger-menu.svg';
+import SearchIcon from '@assets/icons/search.svg';
 import { IconButton } from '@components/Button';
-import CloseIcon from '@stories/assets/icons/close.svg';
-import HamburgerMenu from '@stories/assets/icons/hamburger-menu.svg';
-import SearchIcon from '@stories/assets/icons/search.svg';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const Icon = ({
 	src,

@@ -3,49 +3,32 @@
 exports[`<Header /> > should open the nav overlay 1`] = `
 <DocumentFragment>
   <div>
-    <nav
-      aria-label="Main"
-      class="rk-z-10 rk-flex rk-flex-row rk-py-4"
+    <header
+      class="rk-z-10 rk-flex rk-flex-row rk-items-center rk-py-4 lg:rk-menu-horizontal lg:rk-w-full"
     >
-      <h1>
-        <span>
-          ExampleLogo
-        </span>
-      </h1>
-      <ul
-        class="rk-lg:menu-horizontal rk-w-full rk-items-center rk-hidden rk-flex-wrap lg:rk-flex"
+      <span>
+        ExampleLogo
+      </span>
+      <div
+        class="rk-w-full lg:rk-menu-horizontal lg:k-flex rk-hidden rk-flex-wrap"
       >
-        <li
-          class="rk-mx-2 rk-mb-8 rk-w-full rk-justify-start rk-text-lg rk-text-black lg:rk-mb-0 lg:rk-w-fit"
+        <nav
+          aria-label="Main"
+          class="rk-flex rk-flex-row rk-items-center rk-mr-auto lg:rk-w-2/3"
         >
-          <a
-            class="rk-link-hover rk-w-full rk-text-left rk-flex rk-w-full rk-min-w-full sm:rk-w-fit rk-font-bold"
-            href="/"
-          >
-            Home
-          </a>
-        </li>
-        <li
-          class="rk-mx-2 rk-mb-8 rk-w-full rk-justify-start rk-text-lg rk-text-black lg:rk-mb-0 lg:rk-w-fit"
+          <ul
+            class="lg:rk-menu-horizontal rk-hidden rk-flex-wrap lg:rk-flex"
+          />
+        </nav>
+        <nav
+          aria-label="Secondary"
+          class="rk-flex rk-flex-row rk-items-center lg:rk-w-1/3 lg:rk-justify-end"
         >
-          <a
-            class="rk-link-hover rk-w-full rk-text-left rk-flex rk-w-full rk-min-w-full sm:rk-w-fit"
-            href="/articles"
-          >
-            Articles
-          </a>
-        </li>
-        <li
-          class="rk-mx-2 rk-mb-8 rk-w-full rk-justify-start rk-text-lg rk-text-black lg:rk-mb-0 lg:rk-w-fit"
-        >
-          <a
-            class="rk-link-hover rk-w-full rk-text-left rk-flex rk-w-full rk-min-w-full sm:rk-w-fit"
-            href="/pages"
-          >
-            Pages
-          </a>
-        </li>
-      </ul>
+          <ul
+            class="lg:rk-menu-horizontal rk-hidden rk-flex-wrap lg:rk-flex"
+          />
+        </nav>
+      </div>
       <button
         aria-hidden="false"
         class="rk-btn rk-h-10 rk-max-h-10 rk-min-h-fit rk-rounded-full rk-border-none rk-bg-white rk-p-2 rk-text-black	hover:rk-bg-neutral-100 hover:rk-text-neutral-900 active:rk-bg-neutral-300 [&>*:first-child]:rk-w-6 rk-ml-auto rk-flex lg:rk-hidden"
@@ -85,7 +68,7 @@ exports[`<Header /> > should open the nav overlay 1`] = `
           />
         </svg>
       </button>
-    </nav>
+    </header>
   </div>
 </DocumentFragment>
 `;
@@ -93,52 +76,35 @@ exports[`<Header /> > should open the nav overlay 1`] = `
 exports[`<Header /> > should open the nav overlay 2`] = `
 <DocumentFragment>
   <div>
-    <nav
-      aria-label="Main"
-      class="rk-z-10 rk-flex rk-flex-row rk-py-4"
+    <header
+      class="rk-z-10 rk-flex rk-flex-row rk-items-center rk-py-4 lg:rk-menu-horizontal lg:rk-w-full"
     >
-      <h1>
-        <span>
-          ExampleLogo
-        </span>
-      </h1>
-      <ul
-        class="rk-lg:menu-horizontal rk-w-full rk-items-center  rk-menu-vertical rk-absolute rk-left-0 rk-top-[72px] rk-z-10 rk-h-[calc(100%_-_72px)] rk-w-full rk-overflow-y-auto rk-overflow-x-hidden rk-px-4 rk-pt-8 sm:rk-px-6 lg:rk-px-12"
+      <span>
+        ExampleLogo
+      </span>
+      <div
+        class="rk-w-full lg:rk-menu-horizontal rk-menu-vertical rk-absolute rk-bottom-0 rk-left-0 rk-z-10 rk-h-[calc(100%_-_72px)] rk-flex-col rk-overflow-y-auto rk-overflow-x-hidden rk-px-4 rk-pb-4 rk-pt-8 sm:rk-px-6 lg:rk-px-12"
       >
-        <li
-          class="rk-mx-2 rk-mb-8 rk-w-full rk-justify-start rk-text-lg rk-text-black lg:rk-mb-0 lg:rk-w-fit"
+        <nav
+          aria-label="Main"
+          class="rk-flex rk-flex-row rk-items-center rk-mr-auto lg:rk-w-2/3"
         >
-          <a
-            class="rk-link-hover rk-w-full rk-text-left rk-flex rk-w-full rk-min-w-full sm:rk-w-fit rk-font-bold"
-            href="/"
-          >
-            Home
-          </a>
-        </li>
-        <li
-          class="rk-mx-2 rk-mb-8 rk-w-full rk-justify-start rk-text-lg rk-text-black lg:rk-mb-0 lg:rk-w-fit"
+          <ul
+            class="lg:rk-menu-horizontal rk-menu-vertical rk-w-full"
+          />
+        </nav>
+        <nav
+          aria-label="Secondary"
+          class="rk-flex rk-flex-row rk-items-center lg:rk-w-1/3 lg:rk-justify-end"
         >
-          <a
-            class="rk-link-hover rk-w-full rk-text-left rk-flex rk-w-full rk-min-w-full sm:rk-w-fit"
-            href="/articles"
-          >
-            Articles
-          </a>
-        </li>
-        <li
-          class="rk-mx-2 rk-mb-8 rk-w-full rk-justify-start rk-text-lg rk-text-black lg:rk-mb-0 lg:rk-w-fit"
-        >
-          <a
-            class="rk-link-hover rk-w-full rk-text-left rk-flex rk-w-full rk-min-w-full sm:rk-w-fit"
-            href="/pages"
-          >
-            Pages
-          </a>
-        </li>
-      </ul>
+          <ul
+            class="lg:rk-menu-horizontal rk-menu-vertical rk-w-full"
+          />
+        </nav>
+      </div>
       <button
         aria-hidden="false"
-        class="rk-btn rk-h-10 rk-max-h-10 rk-min-h-fit rk-rounded-full rk-border-none rk-bg-white rk-p-2 rk-text-black	hover:rk-bg-neutral-100 hover:rk-text-neutral-900 active:rk-bg-neutral-300 [&>*:first-child]:rk-w-6 rk-ml-auto lg:rk-flex"
+        class="rk-btn rk-h-10 rk-max-h-10 rk-min-h-fit rk-rounded-full rk-border-none rk-bg-white rk-p-2 rk-text-black	hover:rk-bg-neutral-100 hover:rk-text-neutral-900 active:rk-bg-neutral-300 [&>*:first-child]:rk-w-6 rk-ml-auto rk-flex"
         data-testid="close-nav"
       >
         <svg
@@ -166,7 +132,7 @@ exports[`<Header /> > should open the nav overlay 2`] = `
           />
         </svg>
       </button>
-    </nav>
+    </header>
   </div>
 </DocumentFragment>
 `;
@@ -175,49 +141,32 @@ exports[`<Header /> > should open the nav overlay 3`] = `<DocumentFragment />`;
 
 exports[`<Header /> > should render Header 1`] = `
 <DocumentFragment>
-  <nav
-    aria-label="Main"
-    class="rk-z-10 rk-flex rk-flex-row rk-py-4"
+  <header
+    class="rk-z-10 rk-flex rk-flex-row rk-items-center rk-py-4 lg:rk-menu-horizontal lg:rk-w-full"
   >
-    <h1>
-      <span>
-        ExampleLogo
-      </span>
-    </h1>
-    <ul
-      class="rk-lg:menu-horizontal rk-w-full rk-items-center rk-hidden rk-flex-wrap lg:rk-flex"
+    <span>
+      ExampleLogo
+    </span>
+    <div
+      class="rk-w-full lg:rk-menu-horizontal lg:k-flex rk-hidden rk-flex-wrap"
     >
-      <li
-        class="rk-mx-2 rk-mb-8 rk-w-full rk-justify-start rk-text-lg rk-text-black lg:rk-mb-0 lg:rk-w-fit"
+      <nav
+        aria-label="Main"
+        class="rk-flex rk-flex-row rk-items-center rk-mr-auto lg:rk-w-2/3"
       >
-        <a
-          class="rk-link-hover rk-w-full rk-text-left rk-flex rk-w-full rk-min-w-full sm:rk-w-fit rk-font-bold"
-          href="/"
-        >
-          Home
-        </a>
-      </li>
-      <li
-        class="rk-mx-2 rk-mb-8 rk-w-full rk-justify-start rk-text-lg rk-text-black lg:rk-mb-0 lg:rk-w-fit"
+        <ul
+          class="lg:rk-menu-horizontal rk-hidden rk-flex-wrap lg:rk-flex"
+        />
+      </nav>
+      <nav
+        aria-label="Secondary"
+        class="rk-flex rk-flex-row rk-items-center lg:rk-w-1/3 lg:rk-justify-end"
       >
-        <a
-          class="rk-link-hover rk-w-full rk-text-left rk-flex rk-w-full rk-min-w-full sm:rk-w-fit"
-          href="/articles"
-        >
-          Articles
-        </a>
-      </li>
-      <li
-        class="rk-mx-2 rk-mb-8 rk-w-full rk-justify-start rk-text-lg rk-text-black lg:rk-mb-0 lg:rk-w-fit"
-      >
-        <a
-          class="rk-link-hover rk-w-full rk-text-left rk-flex rk-w-full rk-min-w-full sm:rk-w-fit"
-          href="/pages"
-        >
-          Pages
-        </a>
-      </li>
-    </ul>
+        <ul
+          class="lg:rk-menu-horizontal rk-hidden rk-flex-wrap lg:rk-flex"
+        />
+      </nav>
+    </div>
     <button
       aria-hidden="true"
       class="rk-btn rk-h-10 rk-max-h-10 rk-min-h-fit rk-rounded-full rk-border-none rk-bg-white rk-p-2 rk-text-black	hover:rk-bg-neutral-100 hover:rk-text-neutral-900 active:rk-bg-neutral-300 [&>*:first-child]:rk-w-6 rk-ml-auto rk-flex lg:rk-hidden"
@@ -257,6 +206,6 @@ exports[`<Header /> > should render Header 1`] = `
         />
       </svg>
     </button>
-  </nav>
+  </header>
 </DocumentFragment>
 `;

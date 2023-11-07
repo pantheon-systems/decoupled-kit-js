@@ -1,43 +1,49 @@
-'use strict';
+import PantheonLogo from '@assets/pantheon-fist-blk.png';
 import { Button } from '@components/Button';
 import { Header as NavHeader } from '@components/Header';
 import { Row } from '@components/Row';
-import PantheonLogo from '@stories/assets/pantheon-fist-blk.png';
 import type { Meta, StoryObj } from '@storybook/react';
 import clsx from 'clsx';
 
 const Logo = () => {
 	return (
-		<a href="/">
-			<img
-				src={PantheonLogo}
-				width="40"
-				height="40"
-				alt="Pantheon Systems"
-				className="lg:rk-mr-8"
-			/>
-		</a>
+		<>
+			<a href="/">
+				<img
+					src={PantheonLogo}
+					width="40"
+					height="40"
+					alt="Pantheon Systems"
+					className="lg:rk-mr-8"
+				/>
+			</a>
+		</>
 	);
 };
 
 const Header = ({
-	children,
+	mainNavItems,
+	secondaryNavItems,
 	Logo,
 }: {
-	children: React.ReactNode;
+	mainNavItems: React.ReactNode;
+	secondaryNavItems: React.ReactNode;
 	Logo: React.ElementType;
 	manyItems?: boolean;
 }) => {
 	return (
-		<Row type="flex" className="rk-bg-white">
-			<NavHeader overlayStyles="rk-bg-white" Logo={Logo}>
-				{children}
-			</NavHeader>
+		<Row type="flex" className="rk-mx-auto rk-bg-white">
+			<NavHeader
+				overlayStyles="rk-bg-white"
+				Logo={Logo}
+				mainNavItems={mainNavItems}
+				secondaryNavItems={secondaryNavItems}
+			/>
 		</Row>
 	);
 };
 
-const NavItems = ({ manyItems }: { manyItems?: boolean }) => {
+const MainNavItems = ({ manyItems }: { manyItems?: boolean }) => {
 	const navItems = [
 		['Home', '/'],
 		['Articles', '/articles'],
@@ -86,32 +92,37 @@ const NavItems = ({ manyItems }: { manyItems?: boolean }) => {
 		</li>
 	));
 
-	Items.push(
-		<li>
-			<hr
-				className="divide-x rk-my-8 rk-flex rk-w-full lg:rk-hidden"
-				key="hr"
-			/>
-		</li>,
-		<li
-			className="rk-mb-3 rk-mr-auto lg:rk-mb-0 lg:rk-ml-auto lg:rk-mr-0"
-			key="docs"
-		>
-			<Button
-				Element="a"
-				href="https://decoupledkit.pantheon.io"
-				type="secondary"
-			>
-				Docs
-			</Button>
-		</li>,
-		<li className="rk-mr-auto lg:rk-mx-3 lg:rk-mr-0" key="examples">
-			<Button Element="a" href="/examples">
-				Examples
-			</Button>
-		</li>,
-	);
 	return Items;
+};
+
+const SecondaryNavItems = () => {
+	return (
+		<>
+			<li>
+				<hr
+					className="divide-x rk-my-8 rk-ml-auto rk-flex rk-w-full rk-min-w-full lg:rk-hidden"
+					key="hr"
+				/>
+			</li>
+			<li
+				className="rk-mb-3 rk-mr-auto lg:rk-mb-0 lg:rk-ml-auto lg:rk-mr-0"
+				key="docs"
+			>
+				<Button
+					Element="a"
+					href="https://decoupledkit.pantheon.io"
+					type="secondary"
+				>
+					Docs
+				</Button>
+			</li>
+			<li className="rk-mr-auto lg:rk-mx-3 lg:rk-mr-0" key="examples">
+				<Button Element="a" href="/examples">
+					Examples
+				</Button>
+			</li>
+		</>
+	);
 };
 
 const meta: Meta<typeof Header> = {
@@ -122,17 +133,23 @@ const meta: Meta<typeof Header> = {
 	},
 	args: {
 		Logo,
-		children: <NavItems />,
+		mainNavItems: <MainNavItems />,
+		secondaryNavItems: <SecondaryNavItems />,
 	},
 	argTypes: {
-		children: {
+		mainNavItems: {
 			control: {
 				type: 'radio',
 			},
 			options: ['Default', 'Many'],
 			mapping: {
-				Default: <NavItems />,
-				Many: <NavItems manyItems />,
+				Default: <MainNavItems />,
+				Many: <MainNavItems manyItems />,
+			},
+		},
+		secondaryNavItems: {
+			table: {
+				disable: true,
 			},
 		},
 	},

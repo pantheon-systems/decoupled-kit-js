@@ -24,7 +24,7 @@ export const Button = React.forwardRef<ButtonElement, ButtonProps>(
 		const Component = asChild ? Slot : Element;
 
 		const BUTTON_STYLES = {
-			base: 'rk-btn rk-capitalize',
+			base: clsx('rk-capitalize rk-align-start rk-text-sm'),
 			type: {
 				primary: clsx(
 					'rk-bg-neutral-900 rk-text-white rk-rounded-lg hover:rk-bg-neutral-700 hover:rk-border-neutral-700 hover:rk-text-white active:rk-bg-neutral-500',
@@ -34,8 +34,8 @@ export const Button = React.forwardRef<ButtonElement, ButtonProps>(
 				),
 			},
 			size: {
-				small: clsx('rk-px-4 rk-h-10'),
-				large: clsx('rk-px-8 rk-h-12'),
+				small: clsx('rk-btn rk-btn-sm rk-px-4 rk-h-10'),
+				large: clsx('rk-btn rk-px-8 rk-h-12'),
 			},
 		};
 

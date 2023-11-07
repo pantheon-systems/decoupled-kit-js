@@ -1,4 +1,4 @@
-import { Props } from 'focus-trap-react';
+import { Props as FocusTrapProps } from 'focus-trap-react';
 export interface NavHeaderProps {
 	/**
 	 * A logo component to render in the header.
@@ -18,9 +18,13 @@ export interface NavHeaderProps {
 	 */
 	Logo: React.ElementType;
 	/**
-	 * the nav items. Should be <li> elements.
+	 * Items to render for the main navigation. Should be <li> elements.
 	 */
-	children?: React.ReactNode;
+	mainNavItems?: React.ReactNode;
+	/**
+	 * Secondary. Should be <li> elements.
+	 */
+	secondaryNavItems?: React.ReactNode;
 	/**
 	 * Styles to be applied to the mobile nav overlay.
 	 */
@@ -29,5 +33,8 @@ export interface NavHeaderProps {
 	 * Styles to be applied to the omnipresent navbar.
 	 */
 	navbarStyles?: string;
-	focusTrapOptions?: Props['focusTrapOptions'];
+	/**
+	 * Options to pass to the FocusTrap component used to trap focus within the mobile nav overlay.
+	 */
+	focusTrapOptions?: FocusTrapProps['focusTrapOptions'];
 }
