@@ -1,6 +1,6 @@
 import { Slot } from '@radix-ui/react-slot';
 
-export interface BaseButtonProps {
+export type BaseButtonProps = Readonly<{
 	/**
 	 * Use the child element as the element rendered for the button.
 	 * Useful for a styling Link components as buttons.
@@ -15,33 +15,34 @@ export interface BaseButtonProps {
 	 * </Button>
 	 * ```
 	 */
-	readonly asChild?: boolean;
+	asChild?: boolean;
 	/**
 	 * Button content
 	 */
-	readonly children?: React.ReactNode;
-	readonly className?: string;
+	children?: React.ReactNode;
+	className?: string;
 	/**
 	 * other props like onClick etc.
 	 */
-	readonly [key: string]: unknown;
-}
+	[key: string]: unknown;
+}>;
 
-export interface ButtonProps extends BaseButtonProps {
-	/**
-	 * Sometimes we want a button style but semantically need a link.
-	 * @remarks Use asChild to use the child component as rendered element.
-	 */
-	readonly Element?: 'button' | 'a';
-	/**
-	 * Button type
-	 */
-	readonly type?: 'primary' | 'secondary';
-	/**
-	 * Button size
-	 */
-	readonly size?: 'small' | 'large';
-}
+export type ButtonProps = BaseButtonProps &
+	Readonly<{
+		/**
+		 * Sometimes we want a button style but semantically need a link.
+		 * @remarks Use asChild to use the child component as rendered element.
+		 */
+		Element?: 'button' | 'a';
+		/**
+		 * Button type
+		 */
+		type?: 'primary' | 'secondary';
+		/**
+		 * Button size
+		 */
+		size?: 'small' | 'large';
+	}>;
 
 export type BaseButtonElement = React.ElementRef<'button'> &
 	React.ElementRef<typeof Slot>;

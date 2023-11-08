@@ -12,17 +12,6 @@ const meta = {
 			control: 'select',
 			options: ['grid', 'flex'],
 		},
-		flexOptions: {
-			control: {
-				type: 'object',
-			},
-			options: {
-				direction: ['row', 'row-reverse', 'col', 'col-reverse'],
-				wrap: [true, false],
-				shrink: [true, false],
-				grow: [true, false],
-			},
-		},
 		className: {
 			table: {
 				disable: true,
@@ -64,14 +53,27 @@ export const Grid: Story = {
 export const Flex_Wrap: Story = {
 	args: {
 		type: 'flex',
-		flexOptions: { wrap: true, direction: 'row', shrink: false, grow: false },
+		flexOptions: {
+			wrap: true,
+			direction: 'row',
+			shrink: false,
+			grow: false,
+			reverse: true,
+		},
 		children: <TestChildren />,
 	},
 };
+
 export const Flex_No_Wrap: Story = {
 	args: {
 		type: 'flex',
-		flexOptions: { wrap: false, direction: 'row', shrink: false, grow: false },
+		flexOptions: {
+			wrap: false,
+			direction: 'row',
+			shrink: false,
+			grow: false,
+			reverse: false,
+		},
 		children: <TestChildren />,
 	},
 };

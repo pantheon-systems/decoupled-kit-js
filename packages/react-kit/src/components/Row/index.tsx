@@ -1,19 +1,21 @@
 import clsx from 'clsx';
 import React from 'react';
-import { RowProps } from './props';
+import { RowElement, RowProps } from './props';
 
-type RowElement = React.ElementRef<'div'>;
-
+/**
+ * @see {@link https://live-storybook-react-kit.appa.pantheon.site/?path=/docs/row--docs}
+ */
 export const Row = React.forwardRef<RowElement, RowProps>(
 	(
 		{
 			type,
 			className,
-			flexOptions: { direction, wrap, shrink, grow } = {
+			flexOptions: { direction, wrap, shrink, grow, reverse } = {
 				direction: 'row',
 				wrap: false,
 				shrink: false,
 				grow: false,
+				reverse: false,
 			},
 			children,
 		},
@@ -32,17 +34,19 @@ export const Row = React.forwardRef<RowElement, RowProps>(
 				'2xl:rk-grid-cols-16',
 			),
 			flex: clsx(
+				'rk-flex',
 				`rk-flex-${direction}`,
 				wrap && 'rk-flex-wrap',
 				grow && 'rk-flex-grow',
 				shrink && 'rk-flex-shrink',
+				reverse && `rk-flex-${direction}-reverse`,
 			),
 		};
 
 		return (
 			<div
 				ref={forwardedRef}
-				className={clsx(ROW_STYLES[type], ROW_STYLES.margin, className)}
+				className={clsx(className, ROW_STYLES[type], ROW_STYLES.margin)}
 			>
 				{children}
 			</div>
