@@ -1,6 +1,12 @@
 # Pantheon Systems Decoupled Kits
 
+Tests:
 [![CircleCI](https://circleci.com/gh/pantheon-systems/decoupled-kit-js/tree/canary.svg?style=svg)](https://circleci.com/gh/pantheon-systems/decoupled-kit-js/tree/canary)
+
+![Headless regression testing](https://github.com/pantheon-systems/decoupled-kit-js/actions/workflows/cli-addon-tests.yml/badge.svg)
+![Canary Release](https://github.com/pantheon-systems/decoupled-kit-js/actions/workflows/canary-release.yml/badge.svg)
+![Split Canary Sites](https://github.com/pantheon-systems/decoupled-kit-js/actions/workflows/canary-sites-split.yml/badge.svg)
+![Starter Split and Changesets](https://github.com/pantheon-systems/decoupled-kit-js/actions/workflows/release-and-split.yml/badge.svg)
 
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
