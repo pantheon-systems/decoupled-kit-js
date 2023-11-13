@@ -86,7 +86,7 @@ jobs:
         if: failure() || ${{ github.event_name }} != 'push'
         with:
           name: ${{ matrix.label }}-playwright-report
-          path: ci-tests/playwright-report
+          path: ${{ github.workspace }}/ci-tests/playwright-report
           retention-days: 30
 
       - name: Send Slack message
