@@ -36,6 +36,7 @@
 		"generate-starters": "pnpm ./scripts/generate-starters.ts",
 		"postinstall": "pnpm ./scripts/post-install",
 		"serve:gatsby-wp": "pnpm --filter './starters/gatsby-wordpress-starter' serve",
+		"storybook:react-kit": "pnpm --filter react-kit storybook",
 		"start:docs": "pnpm --filter './web' start",
 		"start:gatsby-wp": "pnpm --filter './starters/gatsby-wordpress-starter' start",
 		"start:next-drupal": "pnpm --filter './starters/next-drupal-starter' start:mono",

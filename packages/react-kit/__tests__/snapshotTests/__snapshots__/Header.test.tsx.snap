@@ -12,11 +12,11 @@ exports[`<Header /> > should open the nav overlay 1`] = `
         ExampleLogo
       </span>
       <div
-        class="rk-w-full rk-justify-around rk-hidden rk-flex-wrap lg:rk-flex"
+        class="rk-w-full rk-hidden rk-flex-wrap lg:rk-flex"
       >
         <nav
           aria-label="Main"
-          class="rk-flex rk-items-center rk-mr-auto lg:rk-w-2/3"
+          class="rk-flex rk-items-center rk-mr-auto lg:rk-w-3/4"
         >
           <ul
             class="lg:rk-menu-horizontal rk-hidden rk-flex-wrap lg:rk-flex"
@@ -24,7 +24,7 @@ exports[`<Header /> > should open the nav overlay 1`] = `
         </nav>
         <nav
           aria-label="Secondary"
-          class="rk-flex rk-items-center lg:rk-w-1/3 lg:rk-justify-end"
+          class="rk-flex rk-items-center lg:rk-w-1/4 lg:rk-justify-end"
         >
           <ul
             class="lg:rk-menu-horizontal rk-hidden rk-flex-wrap lg:rk-flex"
@@ -87,11 +87,11 @@ exports[`<Header /> > should open the nav overlay 2`] = `
         ExampleLogo
       </span>
       <div
-        class="rk-w-full rk-justify-around rk-absolute rk-bottom-0 rk-left-0 rk-z-10 rk-h-[calc(100%_-_72px)] rk-flex-col rk-overflow-y-auto rk-overflow-x-hidden rk-px-4 rk-pb-4 rk-pt-8 sm:rk-px-6 lg:rk-px-12"
+        class="rk-w-full rk-absolute rk-bottom-0 rk-left-0 rk-z-10 rk-h-[calc(100%_-_72px)] rk-flex-col rk-overflow-y-auto rk-overflow-x-hidden rk-px-4 rk-pb-4 rk-pt-8 sm:rk-px-6 lg:rk-px-12"
       >
         <nav
           aria-label="Main"
-          class="rk-flex rk-items-center rk-mr-auto lg:rk-w-2/3"
+          class="rk-flex rk-items-center rk-mr-auto lg:rk-w-3/4"
         >
           <ul
             class="lg:rk-menu-horizontal rk-menu-vertical rk-w-full"
@@ -99,7 +99,7 @@ exports[`<Header /> > should open the nav overlay 2`] = `
         </nav>
         <nav
           aria-label="Secondary"
-          class="rk-flex rk-items-center lg:rk-w-1/3 lg:rk-justify-end"
+          class="rk-flex rk-items-center lg:rk-w-1/4 lg:rk-justify-end"
         >
           <ul
             class="lg:rk-menu-horizontal rk-menu-vertical rk-w-full"
@@ -152,11 +152,11 @@ exports[`<Header /> > should render Header 1`] = `
       ExampleLogo
     </span>
     <div
-      class="rk-w-full rk-justify-around rk-hidden rk-flex-wrap lg:rk-flex"
+      class="rk-w-full rk-hidden rk-flex-wrap lg:rk-flex"
     >
       <nav
         aria-label="Main"
-        class="rk-flex rk-items-center rk-mr-auto lg:rk-w-2/3"
+        class="rk-flex rk-items-center rk-mr-auto lg:rk-w-3/4"
       >
         <ul
           class="lg:rk-menu-horizontal rk-hidden rk-flex-wrap lg:rk-flex"
@@ -164,7 +164,7 @@ exports[`<Header /> > should render Header 1`] = `
       </nav>
       <nav
         aria-label="Secondary"
-        class="rk-flex rk-items-center lg:rk-w-1/3 lg:rk-justify-end"
+        class="rk-flex rk-items-center lg:rk-w-1/4 lg:rk-justify-end"
       >
         <ul
           class="lg:rk-menu-horizontal rk-hidden rk-flex-wrap lg:rk-flex"

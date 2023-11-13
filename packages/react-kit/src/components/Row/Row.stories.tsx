@@ -34,7 +34,7 @@ const TestChildren = ({ items = 16 }: { items?: number }) => {
 	const itemArray = Array.from(Array(items).keys()).map((item, i) => (
 		<div
 			key={item}
-			className="rk-mx-auto rk-flex rk-h-12 rk-w-12 rk-justify-center rk-border-2 rk-border-emerald-400 rk-bg-gray-200 rk-p-3"
+			className="rk-mx-auto rk-flex rk-h-12 rk-w-12 rk-justify-center rk-border-2 rk-border-emerald-400 rk-bg-gray-200 rk-p-3 rk-text-neutral-800"
 		>
 			{i + 1}
 		</div>
@@ -58,7 +58,20 @@ export const Flex_Wrap: Story = {
 			direction: 'row',
 			shrink: false,
 			grow: false,
-			reverse: true,
+			reverse: false,
+		},
+		children: <TestChildren />,
+	},
+};
+export const Flex_Col: Story = {
+	args: {
+		type: 'flex',
+		flexOptions: {
+			wrap: true,
+			direction: 'col',
+			shrink: true,
+			grow: false,
+			reverse: false,
 		},
 		children: <TestChildren />,
 	},

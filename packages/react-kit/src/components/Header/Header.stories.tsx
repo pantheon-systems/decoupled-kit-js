@@ -1,21 +1,14 @@
-import PantheonLogo from '@assets/pantheon-fist-blk.png';
+import PantheonLogo from '@assets/pantheon-fist-blk.svg';
 import { Button } from '@components/Button';
 import { Header as NavHeader } from '@components/Header';
 import { Row } from '@components/Row';
 import type { Meta, StoryObj } from '@storybook/react';
-import clsx from 'clsx';
 
 const Logo = () => {
 	return (
 		<>
 			<a href="/">
-				<img
-					src={PantheonLogo}
-					width="40"
-					height="40"
-					alt="Pantheon Systems"
-					className="lg:rk-mr-8"
-				/>
+				<img src={PantheonLogo} alt="Pantheon Systems" />
 			</a>
 		</>
 	);
@@ -26,8 +19,8 @@ const Header = ({
 	secondaryNavItems,
 	Logo,
 }: {
-	mainNavItems: React.ReactNode;
-	secondaryNavItems: React.ReactNode;
+	mainNavItems: React.ReactNode | [string, string][];
+	secondaryNavItems: React.ReactNode | [string, string][];
 	Logo: React.ElementType;
 	manyItems?: boolean;
 }) => {
@@ -72,25 +65,8 @@ const MainNavItems = ({ manyItems }: { manyItems?: boolean }) => {
 			['Logout', '/logout'],
 		);
 	}
-	const Items = navItems.map(([label, href]) => (
-		<li
-			className="rk-mx-2 rk-mb-8 rk-w-full rk-justify-start rk-text-lg rk-text-black lg:rk-mb-0 lg:rk-w-fit"
-			key={label}
-		>
-			<a
-				className={clsx(
-					'rk-link-hover rk-w-full rk-text-left',
-					'rk-flex rk-w-full rk-min-w-full sm:rk-w-fit',
-					href === '/' && 'rk-font-bold',
-				)}
-				href={href}
-			>
-				{label}
-			</a>
-		</li>
-	));
 
-	return Items;
+	return navItems;
 };
 
 const SecondaryNavItems = () => {
@@ -131,7 +107,7 @@ const meta: Meta<typeof Header> = {
 	},
 	args: {
 		Logo,
-		mainNavItems: <MainNavItems />,
+		mainNavItems: MainNavItems({ manyItems: false }),
 		secondaryNavItems: <SecondaryNavItems />,
 	},
 	argTypes: {
@@ -141,8 +117,8 @@ const meta: Meta<typeof Header> = {
 			},
 			options: ['Default', 'Many'],
 			mapping: {
-				Default: <MainNavItems />,
-				Many: <MainNavItems manyItems />,
+				Default: MainNavItems({ manyItems: false }),
+				Many: MainNavItems({ manyItems: true }),
 			},
 		},
 		secondaryNavItems: {
