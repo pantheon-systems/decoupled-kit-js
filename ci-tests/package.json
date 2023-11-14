@@ -4,6 +4,7 @@
 	"private": true,
 	"description": "Decoupled Kit Playwright tests run in CI",
 	"scripts": {
+		"playwright": "playwright",
 		"test:next-drupal-search": "playwright test tests/next-drupal-search.spec.ts",
 		"test:next-wp-acf": "playwright test tests/next-wp-acf.spec.ts",
 		"test:gatsby-wp-acf": "playwright test tests/gatsby-wp-acf.spec.ts",
