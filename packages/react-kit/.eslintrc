@@ -6,5 +6,8 @@
 	"plugins": ["tailwindcss"],
 	"parserOptions": {
 		"project": "./tsconfig.json"
+	},
+	"rules": {
+		"react/prop-types": "off"
 	}
 }

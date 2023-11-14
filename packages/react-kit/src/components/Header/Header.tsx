@@ -4,7 +4,6 @@ import FocusTrap from 'focus-trap-react';
 import React, { useEffect, useState } from 'react';
 import { CloseSVG, HamburgerMenuSVG } from './HeaderIcons';
 import { NavHeaderProps, isNavTuple } from './props';
-
 /**
  * @see {@link https://live-storybook-react-kit.appa.pantheon.site/?path=/docs/header-header--docs}
  */
@@ -66,11 +65,30 @@ export const Header = ({
 			),
 		};
 
+		const HeaderLogo = () => {
+			if (React.isValidElement(Logo)) {
+				return Logo;
+			} else if (
+				typeof Logo === 'object' &&
+				'src' in Logo &&
+				'alt' in Logo &&
+				'href' in Logo
+			) {
+				const { src, alt, href } = Logo;
+				return (
+					<a href={href} className={Logo?.styles || 'rk-h-10 rk-w-10'}>
+						<img src={src} height="40" alt={alt} />
+					</a>
+				);
+			}
+			return null;
+		};
+
 		const PrimaryNav = () => {
 			if (isNavTuple(mainNavItems)) {
 				return mainNavItems?.map(([label, href]) => (
 					<li
-						className="rk-mb-8 rk-w-full rk-justify-start rk-text-lg rk-text-black lg:rk-mx-2 lg:rk-mb-0 lg:rk-w-fit"
+						className="rk-mb-8 rk-w-full rk-justify-start rk-text-lg rk-text-black lg:rk-mx-4 lg:rk-mb-0 lg:rk-w-fit"
 						key={label}
 					>
 						<a
@@ -115,7 +133,7 @@ export const Header = ({
 					'rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4',
 				)}
 			>
-				<Logo />
+				<HeaderLogo />
 				<div className={clsx(overlayStyles, NAVLIST_STYLES.overlay)}>
 					<nav
 						className={clsx(NAVLIST_STYLES.nav, 'rk-mr-auto lg:rk-w-3/4')}
@@ -125,6 +143,10 @@ export const Header = ({
 							<PrimaryNav />
 						</ul>
 					</nav>
+					<hr
+						className="divide-x rk-mb-8 rk-ml-auto rk-flex rk-w-full rk-min-w-full lg:rk-hidden"
+						key="hr"
+					/>
 					<nav
 						className={clsx(
 							NAVLIST_STYLES.nav,

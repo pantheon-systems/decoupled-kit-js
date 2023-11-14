@@ -3,26 +3,14 @@ import { Button } from '@components/Button';
 import { Header as NavHeader } from '@components/Header';
 import { Row } from '@components/Row';
 import type { Meta, StoryObj } from '@storybook/react';
-
-const Logo = () => {
-	return (
-		<>
-			<a href="/">
-				<img src={PantheonLogo} alt="Pantheon Systems" />
-			</a>
-		</>
-	);
-};
+import { type NavHeaderProps } from './props';
 
 const Header = ({
 	mainNavItems,
 	secondaryNavItems,
 	Logo,
-}: {
-	mainNavItems: React.ReactNode | [string, string][];
-	secondaryNavItems: React.ReactNode | [string, string][];
-	Logo: React.ElementType;
-	manyItems?: boolean;
+}: Pick<NavHeaderProps, 'mainNavItems' | 'secondaryNavItems' | 'Logo'> & {
+	manyItems: boolean;
 }) => {
 	return (
 		<Row type="flex" className="rk-mx-auto rk-bg-white">
@@ -72,14 +60,8 @@ const MainNavItems = ({ manyItems }: { manyItems?: boolean }) => {
 const SecondaryNavItems = () => {
 	return (
 		<>
-			<li>
-				<hr
-					className="divide-x rk-my-8 rk-ml-auto rk-flex rk-w-full rk-min-w-full lg:rk-hidden"
-					key="hr"
-				/>
-			</li>
 			<li
-				className="rk-mb-3 rk-mr-auto lg:rk-mb-0 lg:rk-ml-auto lg:rk-mr-0"
+				className="rk-mb-8 rk-mr-auto lg:rk-mb-0 lg:rk-ml-auto lg:rk-mr-0"
 				key="docs"
 			>
 				<Button
@@ -106,7 +88,7 @@ const meta: Meta<typeof Header> = {
 		layout: 'fullscreen',
 	},
 	args: {
-		Logo,
+		Logo: { src: PantheonLogo, alt: 'Pantheon Systems', href: '/' },
 		mainNavItems: MainNavItems({ manyItems: false }),
 		secondaryNavItems: <SecondaryNavItems />,
 	},

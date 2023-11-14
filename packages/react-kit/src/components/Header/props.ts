@@ -26,7 +26,10 @@ export type NavHeaderProps = Readonly<{
 	 * ```
 	 *
 	 */
-	Logo: React.ElementType;
+	Logo:
+		| { src: string; alt: string; href: string; styles?: string }
+		| React.ReactElement
+		| JSX.Element;
 	/**
 	 * Items to render for the main navigation. Can be a tuple of label and href or a ReactNode.
 	 */

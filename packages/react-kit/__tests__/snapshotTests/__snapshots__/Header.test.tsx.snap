@@ -8,9 +8,6 @@ exports[`<Header /> > should open the nav overlay 1`] = `
     <header
       class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
     >
-      <span>
-        ExampleLogo
-      </span>
       <div
         class="rk-w-full rk-hidden rk-flex-wrap lg:rk-flex"
       >
@@ -22,6 +19,9 @@ exports[`<Header /> > should open the nav overlay 1`] = `
             class="lg:rk-menu-horizontal rk-hidden rk-flex-wrap lg:rk-flex"
           />
         </nav>
+        <hr
+          class="divide-x rk-mb-8 rk-ml-auto rk-flex rk-w-full rk-min-w-full lg:rk-hidden"
+        />
         <nav
           aria-label="Secondary"
           class="rk-flex rk-items-center lg:rk-w-1/4 lg:rk-justify-end"
@@ -83,9 +83,6 @@ exports[`<Header /> > should open the nav overlay 2`] = `
     <header
       class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
     >
-      <span>
-        ExampleLogo
-      </span>
       <div
         class="rk-w-full rk-absolute rk-bottom-0 rk-left-0 rk-z-10 rk-h-[calc(100%_-_72px)] rk-flex-col rk-overflow-y-auto rk-overflow-x-hidden rk-px-4 rk-pb-4 rk-pt-8 sm:rk-px-6 lg:rk-px-12"
       >
@@ -97,6 +94,9 @@ exports[`<Header /> > should open the nav overlay 2`] = `
             class="lg:rk-menu-horizontal rk-menu-vertical rk-w-full"
           />
         </nav>
+        <hr
+          class="divide-x rk-mb-8 rk-ml-auto rk-flex rk-w-full rk-min-w-full lg:rk-hidden"
+        />
         <nav
           aria-label="Secondary"
           class="rk-flex rk-items-center lg:rk-w-1/4 lg:rk-justify-end"
@@ -148,9 +148,6 @@ exports[`<Header /> > should render Header 1`] = `
   <header
     class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
   >
-    <span>
-      ExampleLogo
-    </span>
     <div
       class="rk-w-full rk-hidden rk-flex-wrap lg:rk-flex"
     >
@@ -162,6 +159,9 @@ exports[`<Header /> > should render Header 1`] = `
           class="lg:rk-menu-horizontal rk-hidden rk-flex-wrap lg:rk-flex"
         />
       </nav>
+      <hr
+        class="divide-x rk-mb-8 rk-ml-auto rk-flex rk-w-full rk-min-w-full lg:rk-hidden"
+      />
       <nav
         aria-label="Secondary"
         class="rk-flex rk-items-center lg:rk-w-1/4 lg:rk-justify-end"
