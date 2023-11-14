@@ -30,6 +30,21 @@
 		"eslint-plugin-jsx-a11y": "^6.6.1",
 		"eslint-plugin-prettier": "^5.0.0",
 		"eslint-plugin-react": "^7.31.1",
-		"eslint-plugin-react-hooks": "^4.6.0"
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-refresh": "^0.4.4"
+	},
+	"peerDependenciesMeta": {
+		"eslint-plugin-jsx-a11y": {
+			"optional": true
+		},
+		"eslint-plugin-react": {
+			"optional": true
+		},
+		"eslint-plugin-react-refresh": {
+			"optional": true
+		},
+		"eslint-plugin-react-hooks": {
+			"optional": true
+		}
 	}
 }

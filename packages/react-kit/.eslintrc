@@ -3,7 +3,11 @@
 		"plugin:storybook/recommended",
 		"@pantheon-systems/eslint-config/react"
 	],
+	"plugins": ["tailwindcss"],
 	"parserOptions": {
 		"project": "./tsconfig.json"
+	},
+	"rules": {
+		"react/prop-types": "off"
 	}
 }

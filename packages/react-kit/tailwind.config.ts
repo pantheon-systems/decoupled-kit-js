@@ -6,6 +6,6 @@ export default {
 	theme: {
 		extend: {},
 	},
-	prefix: 'ps-',
+	prefix: 'rk-',
 	plugins: [daisyui],
 } satisfies Config;

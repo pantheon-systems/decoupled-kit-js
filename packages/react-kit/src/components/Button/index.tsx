@@ -1,7 +1,3 @@
-export interface ButtonProps {
-	children: React.ReactNode;
-}
-
-export const DemoButton = ({ children }: ButtonProps) => {
-	return <button className="ps-btn">{children}</button>;
-};
+export { Button } from './Button';
+export { IconButton } from './IconButton';
+export * from './props';

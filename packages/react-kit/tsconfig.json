@@ -1,11 +1,12 @@
 {
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
-		"jsx": "preserve",
+		"jsx": "react-jsx",
 		"types": ["vitest/globals"],
-		"baseUrl": "./src",
 		"paths": {
-			"@components/*": ["./components/*"]
+			"@assets/*": ["./react-kit/src/assets/*"],
+			"@components/*": ["./react-kit/src/components/*"],
+			"@utils/*": ["./react-kit/src/utils/*"]
 		}
 	}
 }

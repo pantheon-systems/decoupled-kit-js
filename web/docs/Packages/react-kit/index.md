@@ -1,3 +1,11 @@
+---
+id: 'index'
+title: '@pantheon-systems/react-kit'
+sidebar_label: 'Readme'
+sidebar_position: 0
+custom_edit_url: null
+---
+
 # Pantheon Systems React Kit
 
 React components built with DaisyUI, a Tailwindcss library, for use in
@@ -35,7 +43,3 @@ Please see the
 ### Development Notes
 
 - the `rk` prefix is used for tailwindcss and daisyui classes
-- New components should be added to the `src/components` directory. Ensure new
-  components are also added to the `react-kit` options in the
-  `web/generateTypeDocOptions.js` file so that all components have their own
-  page in the API reference.

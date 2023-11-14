@@ -7,6 +7,7 @@ module.exports = {
 		'plugin:react-hooks/recommended',
 		'plugin:react/jsx-runtime',
 	],
+	plugins: ['react-refresh'],
 	settings: {
 		react: {
 			version: 'detect',
