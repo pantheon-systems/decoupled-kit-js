@@ -4,13 +4,17 @@ import Link from 'next/link';
 
 import Layout from '../../components/layout';
 
-import { getFooterMenu } from '../../lib/Menus';
+import { getFooterMenu, getHeaderMenu } from '../../lib/Menus';
 import { client } from '../../lib/WordPressClient';
 import styles from './auth-api.module.css';
 
-export default function AuthApiExampleTemplate({ menuItems, privatePosts }) {
+export default function AuthApiExampleTemplate({
+	footerMenuItems,
+	headerMenuItems,
+	privatePosts,
+}) {
 	return (
-		<Layout footerMenu={menuItems}>
+		<Layout footerMenu={footerMenuItems} mainNavItems={headerMenuItems}>
 			<Head>
 				<title>API Authorization Example</title>
 				<meta
@@ -79,15 +83,22 @@ export async function getServerSideProps({ res }) {
 		headers: postHeaders,
 	} = await client.rawRequest(query);
 
-	const { menuItems, menuItemHeaders } = await getFooterMenu();
+	const { footerMenuItems, footerMenuItemHeaders } = await getFooterMenu();
+	const { headerMenuItems, headerMenuItemHeaders } =
+		await getHeaderMenu('Example Menu');
 	const privatePosts = edges.map(({ node }) => node);
 
-	const headers = postHeaders && [menuItemHeaders, postHeaders];
+	const headers = postHeaders && [
+		footerMenuItemHeaders,
+		headerMenuItemHeaders,
+		postHeaders,
+	];
 	setOutgoingHeaders({ headers, res });
 
 	return {
 		props: {
-			menuItems,
+			footerMenuItems,
+			headerMenuItems,
 			privatePosts,
 		},
 	};

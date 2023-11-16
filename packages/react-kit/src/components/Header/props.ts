@@ -7,7 +7,10 @@ import { Props as FocusTrapProps } from 'focus-trap-react';
  * const navItems = [['Home', '/', 'About', '/about',]]
  * ```
  */
-export type NavItem = [string, string];
+export type NavItem = {
+	linkText: string;
+	href: string;
+};
 
 export type NavHeaderProps = Readonly<{
 	/**
@@ -50,6 +53,7 @@ export type NavHeaderProps = Readonly<{
 	 * Options to pass to the FocusTrap component used to trap focus within the mobile nav overlay.
 	 */
 	focusTrapOptions?: FocusTrapProps['focusTrapOptions'];
+	linkComponent?: React.ElementType;
 }>;
 
 /**
@@ -57,15 +61,15 @@ export type NavHeaderProps = Readonly<{
  * @param arg the argument to check
  * @returns true if the arg is a {@link NavItem}
  */
-export const isNavTuple = (arg: unknown): arg is NavItem => {
+export const isNavItemArray = (arg: unknown): arg is NavItem[] => {
 	if (arg instanceof Array) {
 		return arg
 			.map((item) => {
 				return (
-					item instanceof Array &&
-					item.length === 2 &&
-					typeof item[0] === 'string' &&
-					typeof item[1] === 'string'
+					typeof item === 'object' &&
+					item !== null &&
+					'linkText' in item &&
+					'href' in item
 				);
 			})
 			.reduce((acc, curr) => acc && curr, true);

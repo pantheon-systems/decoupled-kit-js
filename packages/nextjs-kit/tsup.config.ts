@@ -3,8 +3,13 @@ import pkgJson from './package.json';
 
 export default defineConfig({
 	tsconfig: './tsconfig.build.json',
-	entry: ['./src/**/*.ts', './src/**/*.tsx', './src/style.css'],
-	splitting: true,
+	entry: [
+		'./src/**/*.ts',
+		'./src/**/*.tsx',
+		'./src/index.ts',
+		'./src/style.css',
+	],
+	splitting: false,
 	treeshake: true,
 	dts: true,
 	clean: true,

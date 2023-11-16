@@ -2,12 +2,16 @@ import { Paginator } from '@pantheon-systems/nextjs-kit';
 import { setOutgoingHeaders } from '@pantheon-systems/wordpress-kit';
 import { NextSeo } from 'next-seo';
 import Layout from '../../../components/layout';
-import { getFooterMenu } from '../../../lib/Menus';
+import { getFooterMenu, getHeaderMenu } from '../../../lib/Menus';
 import { paginationPostsQuery } from '../../../lib/PostsPagination';
 
 import styles from './pagination.module.css';
 
-export default function PaginationExampleTemplate({ menuItems, posts }) {
+export default function PaginationExampleTemplate({
+	footerMenuItems,
+	headerMenuItems,
+	posts,
+}) {
 	const RenderCurrentItems = ({ currentItems }) => {
 		return currentItems.map((item) => {
 			return (
@@ -19,7 +23,7 @@ export default function PaginationExampleTemplate({ menuItems, posts }) {
 		});
 	};
 	return (
-		<Layout footerMenu={menuItems}>
+		<Layout footerMenu={footerMenuItems} mainNavItems={headerMenuItems}>
 			<NextSeo>
 				<title>Pagination example</title>
 				<meta
@@ -65,9 +69,10 @@ export default function PaginationExampleTemplate({ menuItems, posts }) {
 }
 
 export async function getServerSideProps({ res }) {
-	let footerMenuResults, paginationResults;
+	let footerMenuResults, paginationResults, headerMenuResults;
 	try {
 		footerMenuResults = await getFooterMenu();
+		headerMenuResults = await getHeaderMenu('Example Menu');
 		paginationResults = await paginationPostsQuery();
 	} catch (error) {
 		console.error(error.message);
@@ -75,13 +80,16 @@ export async function getServerSideProps({ res }) {
 			console.error('Returning null for pagination example data...');
 	} finally {
 		const headers = [];
-		footerMenuResults?.menuItemHeaders &&
-			headers.push(footerMenuResults.menuItemHeaders);
+		footerMenuResults?.footerMenuItemHeaders &&
+			headers.push(footerMenuResults.footerMenuItemHeaders);
+		headerMenuResults?.headerMenuItemHeaders &&
+			headers.push(footerMenuResults.headerMenuItemHeaders);
 		paginationResults?.headers && headers.push(paginationResults.headers);
 		setOutgoingHeaders({ headers, res });
 		return {
 			props: {
-				menuItems: footerMenuResults?.menuItems || [],
+				footerMenuItems: footerMenuResults?.footerMenuItems || [],
+				headerMenuItems: headerMenuResults?.headerMenuItems || [],
 				posts: paginationResults?.posts || null,
 			},
 		};

@@ -21,10 +21,6 @@
 			"@pantheon-systems/nextjs-kit/*": ["./nextjs-kit/*"],
 			"@pantheon-systems/cms-kit/*": ["./cms-kit/*"],
 			"@pantheon-systems/react-kit/*": ["./react-kit/*"],
-			"@cli/*": ["./create-pantheon-decoupled-kit/src/*"],
-			"@partials/*": [
-				"./create-pantheon-decoupled-kit/src/templates/partials/*"
-			]
 		}
 	}
 }

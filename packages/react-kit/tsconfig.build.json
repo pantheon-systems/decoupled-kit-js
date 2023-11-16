@@ -1,6 +1,8 @@
 {
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
+		"resolvePackageJsonExports": true,
+		"moduleResolution": "Bundler",
 		"jsx": "react-jsx",
 		"paths": {
 			"@components/*": ["./react-kit/src/components/*"],

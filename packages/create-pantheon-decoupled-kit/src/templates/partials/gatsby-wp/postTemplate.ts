@@ -13,14 +13,14 @@ const relatedContentJSX = /* tsx */ `{node?.relatedContent?.relatedPosts ? (
 
 export const postTemplate = (relatedContent: boolean) => /* tsx */ `${utils.if(
 	relatedContent,
-	`import { PostGrid } from '../components/grid';`,
+	/* ts */ `import { PostGrid } from '../components/grid';`,
 )}
 import Layout from '../components/layout';
 import Post from '../components/post';
 import Seo from '../components/seo';
 ${utils.if(
 	relatedContent,
-	`import * as styles from './postTemplate.module.css';`,
+	/* ts */ `import * as styles from './postTemplate.module.css';`,
 )}
 const PostTemplate = ({
 	pageContext: { node, previous, next },
