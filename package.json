@@ -23,6 +23,7 @@
 		"build:nextjs-kit": "pnpm --filter nextjs-kit build",
 		"build:next-drupal": "pnpm --filter next-drupal-starter build:mono",
 		"build:next-wp": "pnpm --filter next-wordpress-starter build:mono",
+		"build:react-kit": "pnpm --filter react-kit build",
 		"build:wp-kit": "pnpm --filter wordpress-kit build",
 		"build:pkgs": "pnpm --filter './packages/**' build",
 		"build:starters": "pnpm --filter './starters/**' build",
@@ -35,15 +36,18 @@
 		"generate-starters": "pnpm ./scripts/generate-starters.ts",
 		"postinstall": "pnpm ./scripts/post-install",
 		"serve:gatsby-wp": "pnpm --filter './starters/gatsby-wordpress-starter' serve",
+		"storybook:react-kit": "pnpm --filter react-kit storybook",
 		"start:docs": "pnpm --filter './web' start",
 		"start:gatsby-wp": "pnpm --filter './starters/gatsby-wordpress-starter' start",
 		"start:next-drupal": "pnpm --filter './starters/next-drupal-starter' start:mono",
 		"start:next-wp": "pnpm --filter './starters/next-wordpress-starter' start:mono",
 		"test": "pnpm recursive test",
 		"update-snapshots:nextjs-kit": "pnpm --filter './packages/nextjs-kit' update-snapshots",
+		"update-snapshots:react-kit": "pnpm --filter react-kit update-snapshots",
 		"watch:cli": "pnpm --filter create-pantheon-decoupled-kit watch",
 		"watch:drupal-kit": "pnpm --filter drupal-kit watch",
 		"watch:nextjs-kit": "pnpm --filter nextjs-kit watch",
+		"watch:react-kit": "pnpm --filter nextjs-kit watch",
 		"watch:wp-kit": "pnpm --filter wordpress-kit watch"
 	},
 	"keywords": [
@@ -57,6 +61,7 @@
 		"@changesets/cli": "^2.26.2",
 		"@pantheon-systems/eslint-config-decoupled-kit": "workspace:*",
 		"@pantheon-systems/workspace-configs": "workspace:*",
+		"@playwright/test": "^1.38.1",
 		"@types/eslint": "^8.44.3",
 		"@types/node": "^18.18.0",
 		"eslint": "^8.50.0",
@@ -67,7 +72,7 @@
 		"tsx": "^3.13.0",
 		"typedoc": "^0.25.1",
 		"typescript": "^5.2.2",
-		"vite": "^4.4.9"
+		"vite": "^4.5.0"
 	},
 	"packageManager": "pnpm@8.8.0",
 	"pnpm": {
@@ -87,11 +92,13 @@
 			"word-wrap@<1.2.4": ">=1.2.4",
 			"graphql@>=16.3.0 <16.8.1": ">=16.8.1",
 			"postcss@<8.4.31": ">=8.4.31",
-			"zod@<=3.22.2": ">=3.22.3"
+			"zod@<=3.22.2": ">=3.22.3",
+			"@babel/traverse@<7.23.2": ">=7.23.2"
 		},
 		"auditConfig": {
 			"ignoreCves": [
-				"CVE-2022-33987"
+				"CVE-2022-33987",
+				"CVE-2023-45857"
 			]
 		}
 	}

@@ -4,3 +4,4 @@ packages:
   - 'configs/**'
   - 'web'
   - '!packages/create-pantheon-decoupled-kit/__tests__/**'
+  - 'ci-tests'

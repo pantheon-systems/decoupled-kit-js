@@ -1,0 +1,67 @@
+name: Setup Playwright
+description: Setups up Playwright and the monorepo to run regression tests against generated starters
+
+inputs:
+  local_path:
+    description: The path to the starter to run tests against
+    required: true
+outputs:
+  starter-cache-key:
+    description: The cache key for the starter
+    value: ${{ steps.cache-starter-restore.outputs.cache-primary-key }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8.8.0
+        run_install: false
+
+    - name: Get pnpm store directory
+      shell: bash
+      run: |
+        echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+    - name: Setup pnpm cache
+      uses: actions/cache@v3
+      with:
+        path: ${{ env.STORE_PATH }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
+
+    # TODO: cache the built packages?
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install
+
+    - name: Store Playwright's Version
+      shell: bash
+      run: |
+        PLAYWRIGHT_VERSION=$(pnpm ls @playwright/test | grep @playwright | sed 's/.*@//')
+        echo "Playwright's Version: $PLAYWRIGHT_VERSION"
+        echo "PLAYWRIGHT_VERSION=$PLAYWRIGHT_VERSION" >> $GITHUB_ENV
+
+    - name: Cache Playwright Browsers for Playwright's Version
+      id: cache-playwright-browsers
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/ms-playwright
+        key: playwright-browsers-${{ env.PLAYWRIGHT_VERSION }}
+
+    - name: Install Playwright
+      if: steps.cache-playwright-browsers.outputs.cache-hit != 'true'
+      shell: bash
+      run: npx playwright install --with-deps
+
+    - name: Link the monorepo CLI
+      shell: bash
+      run: |
+        pnpm link ./packages/create-pantheon-decoupled-kit

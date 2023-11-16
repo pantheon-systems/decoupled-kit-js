@@ -24,35 +24,31 @@ jobs:
           # next-drupal-starter + umami
           - local_path: 'starters/next-drupal-starter-umami-canary-generated'
             split_repository: 'next-drupal-starter-umami-canary'
-            generator_cmd:
-              "next-drupal next-drupal-umami-addon --appName
-              @pantheon-systems/next-drupal-starter-umami-canary --cmsEndpoint
-              '' --tailwindcss --force --silent"
+            generator_cmd: "next-drupal next-drupal-umami-addon --appName @pantheon-systems/next-drupal-starter-umami-canary --cmsEndpoint '' --tailwindcss --force --silent"
           # next-drupal-starter default
           - local_path: 'starters/next-drupal-starter-default-canary-generated'
             split_repository: 'next-drupal-starter-default-canary'
-            generator_cmd:
-              "next-drupal --appName
-              @pantheon-systems/next-drupal-starter-default-canary --cmsEndpoint
-              '' --tailwindcss --force --silent"
+            generator_cmd: "next-drupal --appName @pantheon-systems/next-drupal-starter-default-canary --cmsEndpoint '' --tailwindcss --force --silent"
           # gatsby-wordpress-starter
           - local_path: 'starters/gatsby-wordpress-starter-canary-generated'
             split_repository: 'gatsby-wordpress-starter-default-canary'
-            generator_cmd:
-              "gatsby-wp --appName
-              @pantheon-systems/gatsby-wordpress-starter-canary --cmsEndpoint ''
-              --tailwindcss --force --silent"
+            generator_cmd: "gatsby-wp --appName @pantheon-systems/gatsby-wordpress-starter-canary --cmsEndpoint '' --tailwindcss --force --silent"
           # next-wordpress-starter
           - local_path: 'starters/next-wordpress-starter-canary-generated'
             split_repository: 'next-wordpress-starter-default-canary'
-            generator_cmd:
-              "next-wp --appName @pantheon-systems/next-wordpress-starter-canary
-              --cmsEndpoint '' --tailwindcss --force --silent"
+            generator_cmd: "next-wp --appName @pantheon-systems/next-wordpress-starter-canary --cmsEndpoint '' --tailwindcss --force --silent"
 
           # canary docs site
           - local_path: 'web'
             split_repository: 'decoupled-kit-docs-canary'
             generator_cmd: ''
+
+          # react-kit storybook
+          - local_path: 'packages/react-kit'
+            out_path: 'storybook/react-kit'
+            split_repository: 'storybook-react-kit'
+            generator_cmd: ''
+            build: true
 
     steps:
       - name: Checkout code
@@ -60,9 +56,16 @@ jobs:
 
       - name: Setup node
         if: ${{ matrix.generator_cmd != '' }}
-        uses: actions/setup-node@v3
+        uses: ./.github/actions/setup-node
         with:
-          node-version: 18
+          pnpm: 'false'
+
+      - name: Setup node and pmpm
+        if: ${{ matrix.build == true }}
+        uses: ./.github/actions/setup-node
+        with:
+          pnpm: 'true'
+
         # install canary version of the CLI
         # run the command to generate the starter in the matrix.local_path directory
       - name: Generate starter
@@ -72,15 +75,25 @@ jobs:
           create-pantheon-decoupled-kit ${{ matrix.generator_cmd }} --outDir ./${{ matrix.local_path }}
 
       - name: Add GitHub workflow before split
+        if: ${{ matrix.generator_cmd != '' }}
         run: |
           mkdir -p ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows
           cp ${{ github.workspace }}/.github/templates/trigger-e2e.yml.template ${{ github.workspace }}/${{ matrix.local_path }}/.github/workflows/trigger-e2e.yml
 
+        # build storybook, copy output to a clean dir with the empty package.json
+      - name: Build Storybook
+        if: ${{ matrix.build == true }}
+        run: |
+          pnpm -F ./${{ matrix.local_path }} build-storybook
+          mkdir -p ./${{ matrix.out_path }}
+          cp  ${{ github.workspace }}/.github/templates/empty-package.json ./${{ matrix.out_path }}/package.json
+          mv ./${{ matrix.local_path }}/storybook-static ./${{ matrix.out_path }}/storybook-static
+
       - name: Split repos
         uses: 'danharrin/monorepo-split-github-action@v2.3.0'
         with:
-          # ↓ split <local_path> directory
-          package_directory: '${{ matrix.local_path }}'
+          # ↓ split <local_path> or <out_path> directory
+          package_directory: ${{ !matrix.out_path && matrix.local_path || matrix.out_path }}
 
           # ↓ into https://github.com/org/split_repository repository
           repository_organization: 'pantheon-systems'
@@ -91,19 +104,20 @@ jobs:
           user_email: 'decoupled-service-user@pantheon.io'
 
       - name: Send custom JSON data to Slack workflow
+        if: always()
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
         with:
           # For posting a rich message using Block Kit
           payload: |
             {
-              "text": "GitHub Action result: ${{ job.status }}\n${{ github.ref }}",
+              "text": "GitHub Action result: ${{ job.status }}\n${{ matrix.split_repository }}",
               "blocks": [
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "GitHub Action result: ${{ job.status }}\n${{ github.ref }}"
+                    "text": "GitHub Action result: ${{ job.status }}\n${{ matrix.split_repository }}"
                   }
                 }
               ]

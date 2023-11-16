@@ -3,3 +3,6 @@ node_modules
 .pnpm-store
 .DS_Store
 starters/**
+
+playwright-report
+test-results

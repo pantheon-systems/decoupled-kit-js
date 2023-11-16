@@ -22,5 +22,8 @@
 	},
 	"peerDependencies": {
 		"prettier": ">=3.0.0"
+	},
+	"devDependencies": {
+		"prettier-plugin-tailwindcss": "^0.5.6"
 	}
 }

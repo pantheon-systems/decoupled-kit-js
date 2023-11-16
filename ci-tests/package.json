@@ -1,0 +1,21 @@
+{
+	"name": "ci-tests",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Decoupled Kit Playwright tests run in CI",
+	"scripts": {
+		"playwright": "playwright",
+		"test:next-drupal-search": "playwright test tests/next-drupal-search.spec.ts",
+		"test:next-wp-acf": "playwright test tests/next-wp-acf.spec.ts",
+		"test:gatsby-wp-acf": "playwright test tests/gatsby-wp-acf.spec.ts",
+		"update-snapshots:next-drupal-search": "playwright test tests/next-drupal-search.spec.ts --update-snapshots",
+		"update-snapshots:next-wp-acf": "playwright test tests/next-wp-acf.spec.ts --update-snapshots",
+		"update-snapshots:gatsby-wp-acf": "playwright test tests/gatsby-wp-acf.spec.ts --update-snapshots"
+	},
+	"keywords": [],
+	"author": "pantheon-systems",
+	"license": "GPL-3.0-or-later",
+	"devDependencies": {
+		"@playwright/test": "^1.38.1"
+	}
+}

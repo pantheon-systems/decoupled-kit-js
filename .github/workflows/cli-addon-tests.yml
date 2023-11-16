@@ -1,0 +1,176 @@
+name: Headless Regression Testing
+
+permissions:
+  pull-requests: write
+  contents: write
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight UTC
+  push:
+    branches:
+      - canary
+
+jobs:
+  cli-regression-tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # define package to repository map
+        include:
+          # next-drupal-search
+          - local_path: 'starters/next-drupal-search'
+            label: 'next-drupal-search'
+            generator_cmd: 'next-drupal next-drupal-umami-addon next-drupal-search-api-addon --appName @pantheon-systems/next-drupal-search-starter --cmsEndpoint ${{ vars.BACKEND_URL }} --tailwindcss --force --silent --noInstall'
+            start_cmd: HOSTNAME=0.0.0.0 npm run start
+            # gatsby-wp-acf
+          - local_path: 'starters/gatsby-wordpress-starter-generated'
+            label: 'gatsby-wp-acf'
+            generator_cmd: 'gatsby-wp gatsby-wp-acf-addon --appName @pantheon-systems/gatsby-wordpress-starter --cmsEndpoint ${{ vars.WPGRAPHQL_URL_ACF }} --tailwindcss --force --silent --noInstall'
+            start_cmd: npm run serve
+            # next-wp-acf
+          - local_path: 'starters/next-wordpress-starter-generated'
+            label: 'next-wp-acf'
+            generator_cmd: 'next-wp next-wp-acf-addon --appName @pantheon-systems/next-wordpress-starter --cmsEndpoint ${{ vars.WPGRAPHQL_URL_ACF }} --tailwindcss --force --silent --noInstall'
+            start_cmd: HOSTNAME=0.0.0.0 npm run start
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup
+        id: setup
+        uses: ./.github/actions/setup-playwright
+        with:
+          local_path: ${{ matrix.local_path }}
+
+      # run the command to generate the starter in the matrix.local_path directory
+      - name: Generate starter
+        run: pnpm create-pantheon-decoupled-kit ${{ matrix.generator_cmd }} --outDir ~/${{ matrix.local_path }}
+
+      - name: Build and run the starter
+        run: |
+          REPO_PATH=$(pwd)
+          cd ~/${{ matrix.local_path }}
+          npm install --legacy-peer-deps
+          npm run build
+          ${{ matrix.start_cmd }} &
+          cd $REPO_PATH
+
+      - name: Run tests
+        # should run update-snapshots:{matrix.label} or test:{matrix.label} depending on the event
+        run: pnpm -F ci-tests $([[ ${{ github.event_name }} == 'push' ]] && echo 'update-snapshots' || echo 'test'):${{ matrix.label }}
+
+      - name: Create PR for snapshots
+        if: always()
+        uses: peter-evans/create-pull-request@v5
+        with:
+          add-paths: './ci-tests'
+          commit-message: |
+            [skip ci] Update ${{ matrix.label }} snapshots
+
+
+            skip-checks: true
+          committer: pantheon-decoupled-service-user <decoupled-service-user@pantheon.io>
+          author: pantheon-decoupled-service-user <decoupled-service-user@pantheon.io>
+          # use a new branch/PR for each matrix entry
+          # since the action does not support
+          # multiple commits in a single PR
+          branch: update-snapshots/${{ matrix.label }}
+          title: '[CI] Update ${{ matrix.label }} snapshots'
+          body: New or updated snapshots for cli add-on regression tests for the ${{ matrix.label }} starter.
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        if: failure() || ${{ github.event_name }} != 'push'
+        with:
+          name: ${{ matrix.label }}-playwright-report
+          path: ${{ github.workspace }}/ci-tests/playwright-report
+          retention-days: 30
+
+      - name: Send Slack message
+        if: success()
+        id: slack-success
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "${{ github.workflow }} Succeeded :large_green_circle:",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "${{ matrix.label }}"
+                  }
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "action_id": "basic_success_view",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "View Job"
+                      },
+                      "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
+      - name: Send Slack message
+        if: failure()
+        id: slack-failure
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "${{ github.workflow }} Failed :red_circle:",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "${{ matrix.label }}"
+                  }
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "action_id": "basic_failure_view",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "View Job"
+                      },
+                      "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK

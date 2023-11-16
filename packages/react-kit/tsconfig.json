@@ -1,0 +1,12 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"types": ["vitest/globals"],
+		"paths": {
+			"@assets/*": ["./react-kit/src/assets/*"],
+			"@components/*": ["./react-kit/src/components/*"],
+			"@utils/*": ["./react-kit/src/utils/*"]
+		}
+	}
+}

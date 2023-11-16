@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.6-canary.0
+
+### Patch Changes
+
+- 9df9a05c: Update starters and `nextjs-kit` to use next 13.5.6.
+
 ## 0.10.5
 
 ### Patch Changes

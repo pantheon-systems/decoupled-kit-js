@@ -41,7 +41,7 @@ const generateTypeDocOptions = ({
 	];
 };
 
-// configs to pass into the generateTypeDOcOptions function
+// configs to pass into the generateTypeDocOptions function
 const packages = [
 	{
 		packageName: 'drupal-kit',
@@ -60,8 +60,20 @@ const packages = [
 		sidebarPosition: 3,
 	},
 	{
-		packageName: 'create-pantheon-decoupled-kit',
+		packageName: 'react-kit',
 		sidebarPosition: 4,
+		configOptions: {
+			entryPoints: [
+				'../packages/react-kit/src/components/Button/index.tsx',
+				'../packages/react-kit/src/components/Header/index.tsx',
+				'../packages/react-kit/src/components/Row/index.tsx',
+			],
+			tsconfig: '../packages/react-kit/tsconfig.build.json',
+		},
+	},
+	{
+		packageName: 'create-pantheon-decoupled-kit',
+		sidebarPosition: 5,
 		configOptions: {
 			entryPoints: ['../packages/create-pantheon-decoupled-kit/index.ts'],
 			tsconfig:
@@ -70,7 +82,7 @@ const packages = [
 	},
 	{
 		packageName: 'decoupled-kit-health-check',
-		sidebarPosition: 5,
+		sidebarPosition: 6,
 	},
 ];
 

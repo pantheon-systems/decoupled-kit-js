@@ -1,5 +1,5 @@
-import Image, { type ImageProps } from 'next/image.js';
 import { useRouter } from 'next/compat/router.js';
+import Image, { type ImageProps } from 'next/image.js';
 
 export interface RecipeProps {
 	title: string;
@@ -38,6 +38,12 @@ export const Recipe: React.FC<RecipeProps> = ({
 	children,
 }: RecipeProps) => {
 	const router = useRouter();
+	// TODO: Remove once https://github.com/vercel/next.js/issues/52216 is resolved.
+	let ResolvedImage = Image;
+	if ('default' in ResolvedImage) {
+		ResolvedImage = (ResolvedImage as unknown as { default: typeof Image })
+			.default;
+	}
 	return (
 		<article className="ps-prose lg:ps-prose-xl ps-mt-10 ps-mx-auto h-fit ps-p-4 sm:ps-p-0">
 			<header>
@@ -56,7 +62,7 @@ export const Recipe: React.FC<RecipeProps> = ({
 			</header>
 			{imageProps ? (
 				<div className="ps-relative ps-max-w-lg ps-mx-auto ps-min-w-full ps-h-[50vh] ps-rounded-lg ps-shadow-lg ps-overflow-hidden ps-mt-12 ps-mb-10">
-					<Image
+					<ResolvedImage
 						priority
 						src={imageProps.src}
 						style={{ objectFit: 'cover', padding: '0', margin: 'auto' }}
