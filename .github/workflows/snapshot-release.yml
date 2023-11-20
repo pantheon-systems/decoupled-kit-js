@@ -12,6 +12,7 @@ permissions:
   pull-requests: read
   contents: write
 
+
 jobs:
   snapshot_release:
     name: Snapshot Release
@@ -25,7 +26,7 @@ jobs:
         with:
           username: ${{ github.actor }}
           team: 'decoupled-kit'
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Fail if not authorized
         if: steps.check-authorization.outputs.isTeamMember == 'false'
@@ -55,8 +56,10 @@ jobs:
         run: pnpm changeset pre exit
 
       - name: Version and publish snapshot release
+        id: version-and-publish
         run: |
           echo "TAG_NAME=$(basename ${{ github.head_ref || github.ref_name }})" >> $GITHUB_ENV
+          echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
           pnpm changeset version --snapshot $TAG_NAME
           pnpm changeset publish --snapshot --no-git-tag --tag $TAG_NAME
 
@@ -80,7 +83,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "plain_text",
-                    "text": "Snapshot release for $TAG_NAME released to npm"
+                    "text": "Snapshot release for ${{ steps.version-and-publish.outputs.tag_name }} released to npm"
                   }
                 },
                 {
@@ -123,7 +126,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "plain_text",
-                    "text": "Snapshot release for $TAG_NAME failed"
+                    "text": "Snapshot release for ${{ steps.version-and-publish.outputs.tag_name }} failed"
                   }
                 },
                 {
