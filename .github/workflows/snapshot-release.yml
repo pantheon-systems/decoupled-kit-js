@@ -58,7 +58,7 @@ jobs:
         run: |
           echo "TAG_NAME=$(basename ${{ github.head_ref || github.ref_name }})" >> $GITHUB_ENV
           pnpm changeset version --snapshot $TAG_NAME
-          pnpm changeset publish --snapshot --tag $TAG_NAME
+          pnpm changeset publish --snapshot --no-git-tag --tag $TAG_NAME
 
       - name: Send Slack success message
         if: success()
