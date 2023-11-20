@@ -1,0 +1,147 @@
+name: Snapshot Release
+
+on:
+  push:
+    branches:
+      - feat/*
+  pull_request:
+    branches:
+      - feat/*
+
+permissions:
+  pull-requests: read
+  contents: write
+
+jobs:
+  snapshot_release:
+    name: Snapshot Release
+    runs-on: ubuntu-latest
+
+    steps:
+      # ensure the github.actor is a member of the team to prevent unauthorized releases
+      - name: Check for authorized user
+        uses: tspascoal/get-user-teams-membership@v3
+        id: check-authorization
+        with:
+          username: ${{ github.actor }}
+          team: 'decoupled-kit'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fail if not authorized
+        if: steps.check-authorization.outputs.isTeamMember == 'false'
+        run: exit 1
+          
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup node and pmpm
+        uses: ./.github/actions/setup-node
+        with:
+          pnpm: 'true'
+
+       # there is no action for snapshot releases so we need to add the npm token and run the commands manually  
+      - name: Append npm token to .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            provenance=true
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # https://github.com/changesets/changesets/issues/1195
+      # Snapshots won't work in pre mode so we exit pre mode
+      - name: Exit pre mode
+        run: pnpm changeset pre exit
+
+      - name: Version and publish snapshot release
+        run: |
+          echo "TAG_NAME=$(basename ${{ github.head_ref || github.ref_name }})" >> $GITHUB_ENV
+          pnpm changeset version --snapshot $TAG_NAME
+          pnpm changeset publish -- snapshot --tag $TAG_NAME
+
+      - name: Send Slack success message
+        if: success()
+        id: slack-success
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "${{ github.workflow }} Succeeded :large_green_circle:",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Snapshot release for $TAG_NAME released to npm"
+                  }
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "action_id": "basic_success_view",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "View Job"
+                      },
+                      "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
+      - name: Send Slack failure message
+        if: failure()
+        id: slack-failure
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "${{ github.workflow }} Failed :red_circle:",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Snapshot release for $TAG_NAME failed"
+                  }
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "action_id": "basic_failure_view",
+                      "text": {
+                        "type": "plain_text",
+                        "text": "View Job"
+                      },
+                      "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
