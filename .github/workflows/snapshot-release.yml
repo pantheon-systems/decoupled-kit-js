@@ -54,10 +54,9 @@ jobs:
       - name: Version and publish snapshot release
         id: version-and-publish
         run: |
-          echo "TAG_NAME=$(basename ${{ github.head_ref || github.ref_name }})" >> $GITHUB_ENV
           echo "tag_name=$(basename ${{ github.head_ref || github.ref_name }})" >> $GITHUB_OUTPUT
-          pnpm changeset version --snapshot $TAG_NAME
-          pnpm changeset publish --snapshot --no-git-tag --tag $TAG_NAME
+          pnpm changeset version --snapshot $(basename ${{ github.head_ref || github.ref_name }})
+          pnpm changeset publish --snapshot --no-git-tag --tag $(basename ${{ github.head_ref || github.ref_name }})
 
       - name: Send Slack success message
         if: success()
@@ -79,7 +78,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "plain_text",
-                    "text": "Snapshot release for ${{ steps.version-and-publish.outputs.tag_name }} released to npm"
+                    "text": "${{ steps.version-and-publish.outputs.tag_name }}""
                   }
                 },
                 {
@@ -122,7 +121,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "plain_text",
-                    "text": "Snapshot release for ${{ github.ref }} failed"
+                    "text": "${{ github.ref }}"
                   }
                 },
                 {
