@@ -29,9 +29,12 @@ const preview = async (req, res) => {
 		// validate the content
 		let content;
 		try {
+			//  Clear access token
+			Object.keys(store.token).forEach((v) => (store.token[v] = ''));
 			content = await store.getObjectByPath({
 				objectName,
 				path: slug,
+				refresh: true,
 			});
 		} catch (error) {
 			process.env.DEBUG_MODE &&
@@ -44,6 +47,7 @@ const preview = async (req, res) => {
 				message: error.message,
 			});
 		}
+
 		if (!content) {
 			return res.status(404).json(CONTENT_NOT_FOUND);
 		}
