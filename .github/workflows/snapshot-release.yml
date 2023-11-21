@@ -8,10 +8,7 @@ on:
     branches:
       - feat/*
 
-permissions:
-  pull-requests: read
-  contents: write
-
+permissions: read-all
 
 jobs:
   snapshot_release:
@@ -31,7 +28,7 @@ jobs:
       - name: Fail if not authorized
         if: steps.check-authorization.outputs.isTeamMember == 'false'
         run: exit 1
-          
+
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -40,7 +37,7 @@ jobs:
         with:
           pnpm: 'true'
 
-       # there is no action for snapshot releases so we need to add the npm token and run the commands manually  
+        # there is no action for snapshot releases so we need to add the npm token and run the commands manually
       - name: Append npm token to .npmrc
         run: |
           cat << EOF > "$HOME/.npmrc"
@@ -59,7 +56,7 @@ jobs:
         id: version-and-publish
         run: |
           echo "TAG_NAME=$(basename ${{ github.head_ref || github.ref_name }})" >> $GITHUB_ENV
-          echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
+          echo "tag_name=$(basename ${{ github.head_ref || github.ref_name }})" >> $GITHUB_OUTPUT
           pnpm changeset version --snapshot $TAG_NAME
           pnpm changeset publish --snapshot --no-git-tag --tag $TAG_NAME
 
