@@ -78,7 +78,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "plain_text",
-                    "text": "${{ steps.version-and-publish.outputs.tag_name }}""
+                    "text": "${{ steps.version-and-publish.outputs.tag_name }}"
                   }
                 },
                 {
