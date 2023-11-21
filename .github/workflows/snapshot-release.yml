@@ -22,7 +22,7 @@ jobs:
         id: check-authorization
         with:
           username: ${{ github.actor }}
-          team: 'Decoupled Kit'
+          team: ${{ vars.TEAM_NAME }}
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Fail if not authorized
