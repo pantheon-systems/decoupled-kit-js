@@ -29,6 +29,8 @@ const preview = async (req, res) => {
 		// validate the content
 		let content;
 		try {
+			//  Clear access token
+			delete store.token.accessToken;
 			content = await store.getObjectByPath({
 				objectName,
 				path: slug,
@@ -45,9 +47,6 @@ const preview = async (req, res) => {
 				message: error.message,
 			});
 		}
-
-		//  Clear access token
-		delete store.token.accessToken;
 
 		if (!content) {
 			return res.status(404).json(CONTENT_NOT_FOUND);
