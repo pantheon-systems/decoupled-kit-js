@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.7-canary.0
+
+### Patch Changes
+
+- 1987c292: [next-drupal] Prevent Caching In Test Preview Route
+
 ## 0.10.6
 
 ### Patch Changes

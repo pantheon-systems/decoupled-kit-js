@@ -15,5 +15,7 @@
     "@pantheon-systems/wordpress-kit": "3.1.2",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "tender-geckos-smash"
+  ]
 }
