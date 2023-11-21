@@ -22,7 +22,7 @@ jobs:
         id: check-authorization
         with:
           username: ${{ github.actor }}
-          team: 'decoupled-kit'
+          team: 'Decoupled Kit'
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Fail if not authorized
@@ -37,7 +37,7 @@ jobs:
         with:
           pnpm: 'true'
 
-        # there is no action for snapshot releases so we need to add the npm token and run the commands manually
+      # there is no action for snapshot releases so we need to add the npm token and run the commands manually
       - name: Append npm token to .npmrc
         run: |
           cat << EOF > "$HOME/.npmrc"
@@ -123,7 +123,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "plain_text",
-                    "text": "Snapshot release for ${{ steps.version-and-publish.outputs.tag_name }} failed"
+                    "text": "Snapshot release for ${{ github.ref }} failed"
                   }
                 },
                 {
