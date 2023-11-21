@@ -30,7 +30,7 @@ const preview = async (req, res) => {
 		let content;
 		try {
 			//  Clear access token
-			delete store.token.accessToken;
+			Object.keys(store.token).forEach((v) => (store.token[v] = ''));
 			content = await store.getObjectByPath({
 				objectName,
 				path: slug,
