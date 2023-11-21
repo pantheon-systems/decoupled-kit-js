@@ -32,6 +32,7 @@ const preview = async (req, res) => {
 			content = await store.getObjectByPath({
 				objectName,
 				path: slug,
+				refresh: true,
 			});
 		} catch (error) {
 			process.env.DEBUG_MODE &&
@@ -44,6 +45,10 @@ const preview = async (req, res) => {
 				message: error.message,
 			});
 		}
+
+		//  Clear access token
+		delete store.token.accessToken;
+
 		if (!content) {
 			return res.status(404).json(CONTENT_NOT_FOUND);
 		}
