@@ -16,7 +16,8 @@ Administrator user.
 
 ## Creating a new Preview Site Configuration
 
-1. Go to the **Structure** >> **Preview Sites** section of your Drupal instance.
+1. Go to the **Configuration** >> **Web Services** >> **Front-End Sites**
+   section of your Drupal instance.
 1. Click on **Add preview site** to create a new configuration for your preview
    site.
 1. Fill out the form to set up the Label, URL, Secret, Preview Type, and select
@@ -28,7 +29,8 @@ Administrator user.
 
 ## Editing an existing Preview Site Configuration
 
-1. Go to the **Structure** >> **Preview Sites** section of your Drupal instance.
+1. Go to the **Configuration** >> **Web Services** >> **Front-End Sites**
+   section of your Drupal instance.
 1. Locate the existing preview site you wish to edit, such as the **Example
    NextJS Preview** site.
 1. Click on **Edit** to open the configuration form.
@@ -36,3 +38,10 @@ Administrator user.
    example URL `https://example.site/api/preview` replace `example.site` with
    the URL of your frontend site or use `localhost:3000` for local testing.
 1. Save your changes.
+
+:::note
+
+If you are not using the **pantheon-decoupled** plugin, the **Structure** >>
+**Preview Sites** section will provide comparable configuration.
+
+:::
