@@ -1,13 +1,13 @@
 import dotenv from 'dotenv';
 import { logger } from '../utils/logger';
 import { resolveDotenvFile } from '../utils/resolveDotenvFile';
+import { WordPressHealthCheck } from './HealthCheckBase';
 import {
 	BackendNotSetError,
 	DecoupledMenuError,
 	InvalidCMSEndpointError,
 	WPGatsbyPluginError,
 } from './errors';
-import { WordPressHealthCheck } from './HealthCheckBase';
 
 export class GatsbyWordPressHealthCheck extends WordPressHealthCheck {
 	endpoint: string;
@@ -73,7 +73,10 @@ export class GatsbyWordPressHealthCheck extends WordPressHealthCheck {
 			? Object.entries(backendVars).filter(([key]) => key === 'WPGRAPHQL_URL')
 			: Object.entries(backendVars);
 
-		const url = /^https:\/\//.test(endpoint) ? endpoint : `https://${endpoint}`;
+		const url =
+			/^https:\/\//.test(endpoint) || /^http:\/\//.test(endpoint)
+				? endpoint
+				: `https://${endpoint}`;
 
 		this.endpoint = url;
 		this.envVar = envVar;
