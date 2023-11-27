@@ -66,7 +66,7 @@ export async function getHeaderMenu(id) {
 			);
 		}
 		const headerMenuItems = menu?.menuItems?.edges?.map(({ node }) => node);
-		return { headerMenuItems, headerMenuItemHeaderes: headers };
+		return { headerMenuItems, headerMenuItemHeaders: headers };
 	} catch (error) {
 		console.error(error.message);
 		return [];
