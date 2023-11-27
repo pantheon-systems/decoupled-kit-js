@@ -13,6 +13,14 @@ export const taggedTemplateHelpers = {
 	 */
 	if: (condition: unknown, value: string) => (condition ? value : ''),
 	/**
+	 * @param condition - the condition to check
+	 * @param value1 - the value to render if the condition is true
+	 * @param value2 - the value to render if the condition is false
+	 * @returns value1 if the condition is true, otherwise value2
+	 */
+	ifelse: (condition: unknown, value1: string, value2: string) =>
+		condition ? value1 : value2,
+	/**
 	 * Useful for nested backticks
 	 * @param value - the value to render
 	 * @returns the value wrapped in backticks

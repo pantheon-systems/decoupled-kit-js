@@ -8,12 +8,12 @@ import {
 } from '../../lib/stores';
 import styles from './preview-error.module.css';
 
-export default function PreviewError({ footerMenu, preview }) {
+export default function PreviewError({ navItems, preview }) {
 	const {
 		query: { error, message },
 	} = useRouter();
 	return (
-		<Layout footerMenu={footerMenu} preview={true}>
+		<Layout footerMenu={navItems} mainNavItems={navItems} preview={true}>
 			<div className={styles.container}>
 				<h2>🛑 {error ? error : 'There was an error on the server'} 🛑</h2>
 				{message ? <p>{message}</p> : null}
@@ -30,7 +30,7 @@ export async function getServerSideProps(context) {
 	const lang = context.preview ? context.previewData.previewLang : locale;
 	const store = getCurrentLocaleStore(lang, globalDrupalStateStores);
 
-	const footerMenu = await store.getObject({
+	const navItems = await store.getObject({
 		objectName: 'menu_items--main',
 		refresh: true,
 		res: context.res,
@@ -39,7 +39,7 @@ export async function getServerSideProps(context) {
 
 	return {
 		props: {
-			footerMenu,
+			navItems,
 		},
 	};
 }
