@@ -1,7 +1,6 @@
-import React from 'react';
 import { render } from '@testing-library/react';
-import { Header } from '../../src/components/header';
-
+import { Header } from '../../src/components/Header/index';
+import Link from 'next/link';
 /**
  * @vitest-environment jsdom
  */
@@ -23,7 +22,16 @@ const navItems = [
 
 describe('<Header />', () => {
 	it("should render 'header'", () => {
-		const { asFragment } = render(<Header navItems={navItems} />);
+		const { asFragment } = render(
+			<Header
+				Logo={
+					<Link href="/">
+						<img src={'/test-img-src'} alt="PantheonLogo" />
+					</Link>
+				}
+				mainNavItems={navItems}
+			/>,
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 	});

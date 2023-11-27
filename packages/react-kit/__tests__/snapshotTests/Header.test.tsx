@@ -31,16 +31,21 @@ const NavItems = [
 const TestHeader = () => {
 	return (
 		<Header
-			Logo={Logo}
+			mainNavItems={NavItems}
+			secondaryNavItems={[
+				{
+					linkText: 'a secondary nav item',
+					href: '/secondary-nav-item',
+				},
+			]}
+			Logo={<Logo />}
 			/** https://github.com/focus-trap/focus-trap-react/issues/1002 */
 			focusTrapOptions={{
 				tabbableOptions: {
 					displayCheck: 'none',
 				},
 			}}
-		>
-			{NavItems}
-		</Header>
+		/>
 	);
 };
 describe('<Header />', () => {
@@ -63,6 +68,27 @@ describe('<Header />', () => {
 			const closeBtn = screen.findByTestId('close-nav');
 			expect(asFragment()).toMatchSnapshot();
 			expect(closeBtn).toBeVisible();
+		});
+	});
+	it('the escape key should close the nav', async () => {
+		window.innerWidth = 640;
+		const { asFragment } = render(<TestHeader />);
+
+		const openBtn = await screen.findByTestId('open-nav');
+		expect(openBtn).toBeVisible();
+		expect(asFragment()).toMatchSnapshot();
+
+		fireEvent.click(openBtn);
+
+		waitFor(() => {
+			const closeBtn = screen.findByTestId('close-nav');
+			expect(asFragment()).toMatchSnapshot();
+			expect(closeBtn).toBeVisible();
+		});
+		waitFor(() => {
+			fireEvent.keyUp(window, { key: 'Esc', code: 'Escape' });
+			expect(openBtn).toBeVisible();
+			expect(asFragment()).toMatchSnapshot();
 		});
 	});
 });

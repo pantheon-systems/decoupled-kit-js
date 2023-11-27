@@ -3,10 +3,11 @@
 	"compilerOptions": {
 		"types": ["vitest/globals"],
 		"jsx": "react-jsx",
-		"baseUrl": "./",
 		"paths": {
-			"@cli/*": ["./src/*"],
-			"@partials/*": ["./src/templates/partials/*"]
+			"@cli/*": ["./create-pantheon-decoupled-kit/src/*"],
+			"@partials/*": [
+				"./create-pantheon-decoupled-kit/src/templates/partials/*"
+			]
 		}
 	},
 	"exclude": [

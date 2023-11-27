@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import FocusTrap from 'focus-trap-react';
 import React, { useEffect, useState } from 'react';
 import { CloseSVG, HamburgerMenuSVG } from './HeaderIcons';
-import { NavHeaderProps, isNavTuple } from './props';
+import { NavHeaderProps, isNavItemArray } from './props';
 /**
  * @see {@link https://live-storybook-react-kit.appa.pantheon.site/?path=/docs/header-header--docs}
  */
@@ -14,12 +14,14 @@ export const Header = ({
 	overlayStyles,
 	navbarStyles,
 	focusTrapOptions,
+	linkComponent,
 }: NavHeaderProps) => {
 	const [isOpen, setIsOpen] = useState(false);
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+	const [windowWidth, setWindowWidth] = useState<number>(0);
 	const handleOpen = () => setIsOpen((prev) => !prev);
 
 	const MAX_MOBILE_NAV_WIDTH = 1023;
+	const LinkComponent = linkComponent ? linkComponent : 'a';
 
 	useEffect(() => {
 		const handleKeyUp = (e: KeyboardEvent) => {
@@ -28,17 +30,17 @@ export const Header = ({
 			}
 		};
 		const handleResize = () => {
-			setWindowWidth(window.innerWidth);
+			setWindowWidth(window?.innerWidth);
 			windowWidth > MAX_MOBILE_NAV_WIDTH && setIsOpen(false);
 		};
-		setWindowWidth(window.innerWidth);
+		setWindowWidth(window?.innerWidth);
 
-		window.addEventListener('resize', handleResize);
-		window.addEventListener('keyup', handleKeyUp);
+		window?.addEventListener('resize', handleResize);
+		window?.addEventListener('keyup', handleKeyUp);
 
 		return () => {
-			window.removeEventListener('resize', handleResize);
-			window.removeEventListener('keyup', handleKeyUp);
+			window?.removeEventListener('resize', handleResize);
+			window?.removeEventListener('keyup', handleKeyUp);
 		};
 	}, [windowWidth]);
 
@@ -76,31 +78,36 @@ export const Header = ({
 			) {
 				const { src, alt, href } = Logo;
 				return (
-					<a href={href} className={Logo?.styles || 'rk-h-10 rk-w-10'}>
+					<LinkComponent
+						href={href}
+						className={Logo?.styles || 'rk-h-10 rk-w-10'}
+					>
 						<img src={src} height="40" alt={alt} />
-					</a>
+					</LinkComponent>
 				);
 			}
 			return null;
 		};
 
 		const PrimaryNav = () => {
-			if (isNavTuple(mainNavItems)) {
-				return mainNavItems?.map(([label, href]) => (
+			if (isNavItemArray(mainNavItems)) {
+				return mainNavItems?.map(({ linkText, href }) => (
 					<li
 						className="rk-mb-8 rk-w-full rk-justify-start rk-text-lg rk-text-black lg:rk-mx-4 lg:rk-mb-0 lg:rk-w-fit"
-						key={label}
+						key={linkText}
 					>
-						<a
+						<LinkComponent
 							className={clsx(
 								'rk-link-hover rk-w-full rk-text-left',
 								'rk-flex rk-w-full rk-min-w-full sm:rk-w-fit',
-								window?.location?.pathname === href && 'rk-font-bold',
+								typeof window !== 'undefined' &&
+									window?.location?.pathname === href &&
+									'rk-font-bold',
 							)}
 							href={href}
 						>
-							{label}
-						</a>
+							{linkText}
+						</LinkComponent>
 					</li>
 				));
 			} else {
@@ -109,14 +116,14 @@ export const Header = ({
 		};
 
 		const SecondaryNav = () => {
-			if (isNavTuple(secondaryNavItems)) {
-				return secondaryNavItems?.map(([label, href]) => (
+			if (isNavItemArray(secondaryNavItems)) {
+				return secondaryNavItems?.map(({ linkText, href }) => (
 					<li
 						className="rk-mr-auto first:rk-mb-3 lg:rk-mx-3 lg:rk-mr-0 first:lg:rk-mb-0"
-						key={label}
+						key={linkText}
 					>
-						<Button Element="a" href={href}>
-							{label}
+						<Button asChild href={href}>
+							<LinkComponent>{linkText}</LinkComponent>
 						</Button>
 					</li>
 				));

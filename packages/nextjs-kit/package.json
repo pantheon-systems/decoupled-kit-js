@@ -22,10 +22,15 @@
 			"import": "./dist/index.mjs",
 			"require": "./dist/index.js"
 		},
-		"./dist/components/header": {
-			"types": "./dist/components/header.d.ts",
-			"import": "./dist/components/header.mjs",
-			"require": "./dist/components/header.js"
+		"./dist/components/*": {
+			"import": {
+				"types": "./dist/components/*/index.d.mts",
+				"default": "./dist/components/*/index.mjs"
+			},
+			"require": {
+				"types": "./dist/components/*/index.d.ts",
+				"default": "./dist/components/*/index.js"
+			}
 		},
 		"./dist/components/footer": {
 			"types": "./dist/components/footer.d.ts",
@@ -100,8 +105,11 @@
 	},
 	"peerDependencies": {
 		"next": "^13.5.6",
-		"react": "18.2.0",
-		"react-dom": "18.2.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
 		"tailwindcss": "^3.3.2"
+	},
+	"dependencies": {
+		"@pantheon-systems/react-kit": "*"
 	}
 }

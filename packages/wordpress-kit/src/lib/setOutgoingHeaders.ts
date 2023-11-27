@@ -1,6 +1,6 @@
-import { setEdgeHeader } from './setEdgeHeader';
 import { setSurrogateKeyHeader } from '@pantheon-systems/cms-kit';
 import { ServerResponse } from 'http';
+import { setEdgeHeader } from './setEdgeHeader';
 /**
  * Helper function to get all unique keys from multiple surrogate-key headers
  * @param headers - headers from a fetch request
@@ -8,7 +8,7 @@ import { ServerResponse } from 'http';
  */
 export const getSurrogateKeys = ({ headers }: { headers: Headers[] }) => {
 	const keys = headers
-		.map((header) => header.get('Surrogate-Key'))
+		.map((header) => header?.get('Surrogate-Key'))
 		.join(' ')
 		.split(' ');
 	const uniqueKeys = [...new Set(keys)].join(' ');

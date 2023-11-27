@@ -1,9 +1,9 @@
 {
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
+		"resolvePackageJsonExports": true,
+		"moduleResolution": "Bundler",
 		"jsx": "react-jsx",
-		"declaration": true,
-		"declarationDir": "./dist"
+		"types": ["vitest/globals"],
 	},
-	"exclude": ["**/__tests__/**"]
 }
