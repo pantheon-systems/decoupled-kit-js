@@ -15,15 +15,21 @@ instance.
 1. Create a new consumer or use the default. Copy the UUID of the consumer you
    would like to use.
 1. Click **Edit** on the consumer you are using and add a new secret. Note this
-   value down as well.
+   value down as well. At any time a new `CLIENT_SECRET` can be generated via
+   the **Environment Variables** action in the Front-End Sites administration
+   section.
 1. We now have a client that can use our preview site. To configure the preview
-   site, navigate to **Structure** > **Preview Sites**. Consult
+   site, navigate to **Configuration** >> **Web Services** >> **Front-End
+   Sites** and click the **Add Preview Site** button. Note: You will need the
+   Pantheon Decoupled Plugin installed and activated on your instance.
    [Configuring a Preview Site](../../../Backend%20Starters/Decoupled%20Drupal/configuring-preview-site.md)
    for more information.
 1. Set the URL to point to http(s)://{YOUR_SITE_URL}/api/preview replacing
    `{YOUR_SITE_URL}` with the URL of your frontend site, or `localhost:3000` for
    testing preview locally.
 1. Set a secret for the Preview Site and note this value down.
+1. All environment variables needed to configure your Front-End Site can be
+   accessed via the **Environment Variables** action in the preview site table.
 
 Now you have all of the credentials needed to make authenticated requests to the
 Drupal instance, including the ability to preview content!

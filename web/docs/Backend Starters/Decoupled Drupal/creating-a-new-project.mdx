@@ -188,6 +188,31 @@ the authenticated user's namespace, you can use the `--org` option.
 For information on additional options, consult the
 [command options section of the build tools documentation](https://github.com/pantheon-systems/terminus-build-tools-plugin#command-options).
 
+## Completing Your Configuration
+
+:::pantheon Pantheon Front-End Sites
+
+The following will be available when the **pantheon-decoupled** plugin is being
+used:
+
+:::
+
+Once logged into the development site, a message will display directing you to
+the **Front-End Sites Administration** section. Through this administration
+section, the following steps should be completed to fully configure your
+project:
+
+- Edit the example preview site, or create a new preview site. See the
+  instructions for
+  [creating a new preview site](../../backend-starters/decoupled-drupal/configuring-preview-site).
+- In the preview site list, select the **Environment Variables** action next to
+  your new preview site. Proceed through this modal, generate a new
+  `CLIENT_SECRET` and copy the generated value. All other environment variables
+  needed to configure your Front-End Site will be displayed in this modal.
+- See your starter kit's related **Setting Environment Variables** documentation
+  for more information on how to set these variables in your local development
+  environment or on the Pantheon Dashboard.
+
 ## Updating from Drupal 9 to Drupal 10
 
 To update a
