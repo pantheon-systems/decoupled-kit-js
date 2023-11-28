@@ -27,7 +27,7 @@ describe('GatsbyWordPressHealthCheck', () => {
 	it('should pass for a valid PANTHEON_CMS_ENDPOINT and invalid auth', async ({
 		logSpy,
 	}) => {
-		process.env['PANTHEON_CMS_ENDPOINT'] = 'https://wordpress.test';
+		process.env['PANTHEON_CMS_ENDPOINT'] = 'wordpress.test';
 		const HC = new GatsbyWordPressHealthCheck({ env: process.env });
 		await HC.validateEndpoint()
 			.then((hc) => hc.validateWPGatsbyPlugin())
@@ -39,7 +39,7 @@ describe('GatsbyWordPressHealthCheck', () => {
 		expect(result).toMatchSnapshot();
 	});
 	it('should pass for a valid backend and valid auth', async ({ logSpy }) => {
-		process.env['PANTHEON_CMS_ENDPOINT'] = 'https://wordpress.test';
+		process.env['PANTHEON_CMS_ENDPOINT'] = 'wordpress.test';
 		process.env['WP_APPLICATION_USERNAME'] = 'a1b2c3-d4e5g6';
 		process.env['WP_APPLICATION_PASSWORD'] = 'mysecretsecret';
 
@@ -69,7 +69,7 @@ describe('GatsbyWordPressHealthCheck', () => {
 	it('should show a helpful error message if the backend is invalid', async ({
 		logSpy,
 	}) => {
-		process.env['PANTHEON_CMS_ENDPOINT'] = 'https://invalid.wordpress.test';
+		process.env['PANTHEON_CMS_ENDPOINT'] = 'invalid.wordpress.test';
 		const HC = new GatsbyWordPressHealthCheck({ env: process.env });
 		await HC.validateEndpoint()
 			.then((hc) => hc.validateWPGatsbyPlugin())

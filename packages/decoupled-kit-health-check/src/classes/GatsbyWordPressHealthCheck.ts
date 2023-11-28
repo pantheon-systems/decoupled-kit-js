@@ -73,7 +73,13 @@ export class GatsbyWordPressHealthCheck extends WordPressHealthCheck {
 			? Object.entries(backendVars).filter(([key]) => key === 'WPGRAPHQL_URL')
 			: Object.entries(backendVars);
 
-		this.endpoint = endpoint;
+		const url =
+			envVar === 'PANTHEON_CMS_ENDPOINT'
+				? /^https?:\/\//.test(endpoint)
+					? endpoint
+					: `https://${endpoint}`
+				: endpoint;
+		this.endpoint = url;
 		this.envVar = envVar;
 	}
 	getURL() {
