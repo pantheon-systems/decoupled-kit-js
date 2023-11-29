@@ -3,6 +3,7 @@ import { Button } from '@components/Button';
 import { Header as NavHeader } from '@components/Header';
 import { Row } from '@components/Row';
 import type { Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
 import { type NavHeaderProps } from './props';
 
 const Header = ({
@@ -12,13 +13,21 @@ const Header = ({
 	linkComponent,
 }: Pick<
 	NavHeaderProps,
-	'mainNavItems' | 'secondaryNavItems' | 'Logo' | 'linkComponent'
+	| 'mainNavItems'
+	| 'secondaryNavItems'
+	| 'Logo'
+	| 'linkComponent'
+	| 'mobileNavHandler'
 > & {
 	manyItems: boolean;
 }) => {
+	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const handleOpen = () => setIsOpen((prev) => !prev);
+
 	return (
 		<Row type="flex" className="rk-mx-auto rk-bg-white">
 			<NavHeader
+				mobileNavHandler={[isOpen, handleOpen]}
 				linkComponent={linkComponent}
 				overlayStyles="rk-bg-white"
 				Logo={Logo}

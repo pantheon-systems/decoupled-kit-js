@@ -1,9 +1,18 @@
 import { render } from '@testing-library/react';
-import { Header } from '../../src/components/Header/index';
 import Link from 'next/link';
+import { Header } from '../../src/components/Header/index';
 /**
  * @vitest-environment jsdom
  */
+
+vi.mock('next/router', () => ({
+	useRouter: () => ({
+		events: {
+			on: vi.fn(),
+			off: vi.fn(),
+		},
+	}),
+}));
 
 const navItems = [
 	{

@@ -1,7 +1,7 @@
 import { Button, IconButton } from '@components/Button';
 import clsx from 'clsx';
 import FocusTrap from 'focus-trap-react';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { CloseSVG, HamburgerMenuSVG } from './HeaderIcons';
 import { NavHeaderProps, isNavItemArray } from './props';
 /**
@@ -15,34 +15,22 @@ export const Header = ({
 	navbarStyles,
 	focusTrapOptions,
 	linkComponent,
+	mobileNavHandler: [isOpen, handleOpen],
 }: NavHeaderProps) => {
-	const [isOpen, setIsOpen] = useState(false);
-	const [windowWidth, setWindowWidth] = useState<number>(0);
-	const handleOpen = () => setIsOpen((prev) => !prev);
-
-	const MAX_MOBILE_NAV_WIDTH = 1023;
 	const LinkComponent = linkComponent ? linkComponent : 'a';
 
 	useEffect(() => {
 		const handleKeyUp = (e: KeyboardEvent) => {
 			if (e.key === 'Escape' || e.key === 'Esc') {
-				setIsOpen(false);
+				handleOpen(false);
 			}
 		};
-		const handleResize = () => {
-			setWindowWidth(window?.innerWidth);
-			windowWidth > MAX_MOBILE_NAV_WIDTH && setIsOpen(false);
-		};
-		setWindowWidth(window?.innerWidth);
-
-		window?.addEventListener('resize', handleResize);
-		window?.addEventListener('keyup', handleKeyUp);
+		window.addEventListener('keyup', handleKeyUp);
 
 		return () => {
-			window?.removeEventListener('resize', handleResize);
-			window?.removeEventListener('keyup', handleKeyUp);
+			window.removeEventListener('keyup', handleKeyUp);
 		};
-	}, [windowWidth]);
+	}, [isOpen, handleOpen]);
 
 	/**
 	 * Need to use a ref here so the FocusTrap can work properly.
@@ -55,14 +43,14 @@ export const Header = ({
 			nav: clsx('rk-flex rk-items-center'),
 			ul: clsx(
 				'lg:rk-menu-horizontal',
-				isOpen && windowWidth <= MAX_MOBILE_NAV_WIDTH
-					? 'rk-menu-vertical rk-w-full'
+				isOpen
+					? 'rk-menu-vertical rk-w-full lg:rk-hidden'
 					: 'rk-hidden rk-flex-wrap lg:rk-flex',
 			),
 			overlay: clsx(
 				'rk-w-full',
-				isOpen && windowWidth <= MAX_MOBILE_NAV_WIDTH
-					? 'rk-absolute rk-bottom-0 rk-left-0 rk-z-10 rk-h-[calc(100%_-_72px)] rk-flex-col rk-overflow-y-auto rk-overflow-x-hidden rk-px-4 rk-pb-4 rk-pt-8 sm:rk-px-6 lg:rk-px-12'
+				isOpen
+					? 'rk-absolute rk-bottom-0 rk-left-0 rk-z-10 rk-h-[calc(100%_-_72px)] rk-flex-col rk-overflow-y-auto rk-overflow-x-hidden rk-px-4 rk-pb-4 rk-pt-8 sm:rk-px-6 lg:rk-px-12 lg:rk-hidden'
 					: 'rk-hidden rk-flex-wrap lg:rk-flex',
 			),
 		};
@@ -166,18 +154,18 @@ export const Header = ({
 						</ul>
 					</nav>
 				</div>
-				{isOpen && windowWidth <= MAX_MOBILE_NAV_WIDTH ? (
+				{isOpen ? (
 					<IconButton
-						aria-hidden={isOpen && windowWidth >= MAX_MOBILE_NAV_WIDTH}
+						aria-hidden={!isOpen}
 						onClick={handleOpen}
-						className="rk-ml-auto"
+						className="rk-ml-auto lg:rk-hidden"
 						data-testid="close-nav"
 					>
 						<CloseSVG />
 					</IconButton>
 				) : (
 					<IconButton
-						aria-hidden={!isOpen && windowWidth >= MAX_MOBILE_NAV_WIDTH}
+						aria-hidden={isOpen}
 						onClick={handleOpen}
 						className="rk-ml-auto lg:rk-hidden"
 						data-testid="open-nav"
@@ -192,26 +180,17 @@ export const Header = ({
 	NavList.displayName = 'NavList';
 
 	return (
-		<>
-			{windowWidth > MAX_MOBILE_NAV_WIDTH ? (
+		<FocusTrap
+			active={isOpen}
+			paused={!isOpen}
+			focusTrapOptions={focusTrapOptions}
+		>
+			<div className="rk-w-full">
 				<NavList
 					mainNavItems={mainNavItems}
 					secondaryNavItems={secondaryNavItems}
 				/>
-			) : (
-				<FocusTrap
-					active={isOpen}
-					paused={!isOpen}
-					focusTrapOptions={focusTrapOptions}
-				>
-					<div className="rk-w-full">
-						<NavList
-							mainNavItems={mainNavItems}
-							secondaryNavItems={secondaryNavItems}
-						/>
-					</div>
-				</FocusTrap>
-			)}
-		</>
+			</div>
+		</FocusTrap>
 	);
 };
