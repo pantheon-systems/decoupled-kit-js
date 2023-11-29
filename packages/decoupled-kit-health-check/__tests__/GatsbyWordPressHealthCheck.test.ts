@@ -95,10 +95,24 @@ describe('GatsbyWordPressHealthCheck', () => {
 		expect(result).toMatchSnapshot();
 	});
 	it('should handle a trailing slash in the URL', async () => {
-		process.env['WPGRAPHQL_URL'] = 'wordpress.test/wp/graphql/';
+		process.env['WPGRAPHQL_URL'] = 'https://wordpress.test/wp/graphql/';
 		const HC = new GatsbyWordPressHealthCheck({ env: process.env });
 		const url = HC.getURL();
 
 		expect(url.href).toEqual('https://wordpress.test/wp/graphql');
+	});
+	it('should fail if no protocol is set for the WPGRAPHQL_URL', async ({
+		logSpy,
+	}) => {
+		process.env['WPGRAPHQL_URL'] = 'wordpress.test';
+		const HC = new GatsbyWordPressHealthCheck({ env: process.env });
+		await HC.validateEndpoint()
+			.then((hc) => hc.validateWPGatsbyPlugin())
+			.then((hc) => hc.validateMenu())
+			.then((hc) => hc.validateAuth())
+			.catch((err) => console.log(err.message));
+
+		const result = logSpy.mock.calls.map(([call]) => call);
+		expect(result).toMatchSnapshot();
 	});
 });
