@@ -32,7 +32,6 @@ export default function PageTemplate({ footerMenuItems, headerMenuItems, page, p
 		</Layout>
 	);
 }
-
 export async function getServerSideProps({
 	params: { uri },
 	res,
