@@ -6,6 +6,8 @@ exports[`GatsbyWordPressHealthCheck > should fail if no protocol is set for the 
   "Checking for PANTHEON_CMS_ENDPOINT or WPGRAPHQL_URL...",
   "⎩✅ WPGRAPHQL_URL is set!",
   "Validating CMS endpoint...",
+  "⎩❌ WPGRAPHQL_URL could not be fetched from.
+Check that wordpress.test is valid and provides a 200 response",
 ]
 `;
 

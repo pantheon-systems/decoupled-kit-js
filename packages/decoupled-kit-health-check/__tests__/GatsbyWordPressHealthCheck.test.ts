@@ -110,7 +110,7 @@ describe('GatsbyWordPressHealthCheck', () => {
 			.then((hc) => hc.validateWPGatsbyPlugin())
 			.then((hc) => hc.validateMenu())
 			.then((hc) => hc.validateAuth())
-			.catch(console.error);
+			.catch((err) => console.log(err.message));
 
 		const result = logSpy.mock.calls.map(([call]) => call);
 		expect(result).toMatchSnapshot();

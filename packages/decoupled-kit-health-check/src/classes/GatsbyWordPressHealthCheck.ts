@@ -83,9 +83,16 @@ export class GatsbyWordPressHealthCheck extends WordPressHealthCheck {
 		this.envVar = envVar;
 	}
 	getURL() {
-		const url = new URL(this.endpoint);
-		url.pathname = '/wp/graphql';
-		return url;
+		try {
+			const url = new URL(this.endpoint);
+			url.pathname = '/wp/graphql';
+			return url;
+		} catch (error) {
+			throw new InvalidCMSEndpointError({
+				endpointType: this.envVar,
+				endpoint: this.endpoint,
+			});
+		}
 	}
 	async checkFor200(url: URL) {
 		try {
