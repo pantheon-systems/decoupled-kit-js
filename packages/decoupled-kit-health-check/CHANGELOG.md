@@ -1,5 +1,11 @@
 # @pantheon-systems/decoupled-kit-health-check
 
+## 0.2.2-canary.0
+
+### Patch Changes
+
+- 94f2ef9c: Adjust gatsby health check environment variable valid protocol.
+
 ## 0.2.1
 
 ### Patch Changes

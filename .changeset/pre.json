@@ -16,6 +16,8 @@
     "web": "1.0.0"
   },
   "changesets": [
+    "big-keys-live",
+    "shy-toys-know",
     "tender-geckos-smash"
   ]
 }
