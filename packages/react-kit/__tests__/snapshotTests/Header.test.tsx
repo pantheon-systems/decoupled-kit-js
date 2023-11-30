@@ -42,7 +42,7 @@ const TestHeader = () => {
 					href: '/secondary-nav-item',
 				},
 			]}
-			Logo={<Logo />}
+			Logo={Logo}
 			/** https://github.com/focus-trap/focus-trap-react/issues/1002 */
 			focusTrapOptions={{
 				tabbableOptions: {

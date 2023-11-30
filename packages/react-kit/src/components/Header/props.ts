@@ -1,5 +1,4 @@
 import { Props as FocusTrapProps } from 'focus-trap-react';
-import { type Dispatch } from 'react';
 /**
  * A navigation item is a tuple of a label and a href.
  * @example
@@ -31,8 +30,8 @@ export type NavHeaderProps = Readonly<{
 	 */
 	Logo:
 		| { src: string; alt: string; href: string; styles?: string }
-		| React.ReactElement
-		| JSX.Element;
+		| React.ComponentType
+		| React.ElementType;
 	/**
 	 * Items to render for the main navigation. Can be a tuple of label and href or a ReactNode.
 	 */
@@ -71,7 +70,7 @@ export type NavHeaderProps = Readonly<{
 	 * />
 	 * ```
 	 */
-	mobileNavHandler: [boolean, Dispatch<boolean>];
+	mobileNavHandler: [boolean, () => void];
 }>;
 
 /**

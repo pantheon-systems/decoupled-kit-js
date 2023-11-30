@@ -22,13 +22,20 @@ export const Header = ({
 	useEffect(() => {
 		const handleKeyUp = (e: KeyboardEvent) => {
 			if (e.key === 'Escape' || e.key === 'Esc') {
-				handleOpen(false);
+				handleOpen();
+			}
+		};
+		const handleResize = () => {
+			if (window.innerWidth >= 1024 && isOpen) {
+				handleOpen();
 			}
 		};
 		window.addEventListener('keyup', handleKeyUp);
+		window.addEventListener('resize', handleResize);
 
 		return () => {
 			window.removeEventListener('keyup', handleKeyUp);
+			window.removeEventListener('resize', handleResize);
 		};
 	}, [isOpen, handleOpen]);
 
@@ -56,7 +63,7 @@ export const Header = ({
 		};
 
 		const HeaderLogo = () => {
-			if (React.isValidElement(Logo)) {
+			if (Logo && React.isValidElement(Logo)) {
 				return Logo;
 			} else if (
 				typeof Logo === 'object' &&

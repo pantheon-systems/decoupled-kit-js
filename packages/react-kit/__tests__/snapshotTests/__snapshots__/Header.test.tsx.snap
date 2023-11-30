@@ -8,9 +8,6 @@ exports[`<Header /> > should open the nav overlay 1`] = `
     <header
       class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
     >
-      <span>
-        ExampleLogo
-      </span>
       <div
         class="rk-w-full rk-hidden rk-flex-wrap lg:rk-flex"
       >
@@ -128,9 +125,6 @@ exports[`<Header /> > should open the nav overlay 2`] = `
     <header
       class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
     >
-      <span>
-        ExampleLogo
-      </span>
       <div
         class="rk-w-full rk-absolute rk-bottom-0 rk-left-0 rk-z-10 rk-h-[calc(100%_-_72px)] rk-flex-col rk-overflow-y-auto rk-overflow-x-hidden rk-px-4 rk-pb-4 rk-pt-8 sm:rk-px-6 lg:rk-px-12 lg:rk-hidden"
       >
@@ -241,9 +235,6 @@ exports[`<Header /> > should render Header 1`] = `
     <header
       class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
     >
-      <span>
-        ExampleLogo
-      </span>
       <div
         class="rk-w-full rk-hidden rk-flex-wrap lg:rk-flex"
       >
@@ -363,9 +354,6 @@ exports[`<Header /> > the escape key should close the nav 2`] = `
     <header
       class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
     >
-      <span>
-        ExampleLogo
-      </span>
       <div
         class="rk-w-full rk-hidden rk-flex-wrap lg:rk-flex"
       >
@@ -483,9 +471,6 @@ exports[`<Header /> > the escape key should close the nav 3`] = `
     <header
       class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
     >
-      <span>
-        ExampleLogo
-      </span>
       <div
         class="rk-w-full rk-absolute rk-bottom-0 rk-left-0 rk-z-10 rk-h-[calc(100%_-_72px)] rk-flex-col rk-overflow-y-auto rk-overflow-x-hidden rk-px-4 rk-pb-4 rk-pt-8 sm:rk-px-6 lg:rk-px-12 lg:rk-hidden"
       >
@@ -594,9 +579,6 @@ exports[`<Header /> > the escape key should close the nav 4`] = `
     <header
       class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
     >
-      <span>
-        ExampleLogo
-      </span>
       <div
         class="rk-w-full rk-hidden rk-flex-wrap lg:rk-flex"
       >
@@ -716,9 +698,6 @@ exports[`<Header /> > the escape key should close the nav 6`] = `
     <header
       class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
     >
-      <span>
-        ExampleLogo
-      </span>
       <div
         class="rk-w-full rk-hidden rk-flex-wrap lg:rk-flex"
       >
@@ -836,9 +815,6 @@ exports[`<Header /> > the escape key should close the nav 7`] = `
     <header
       class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
     >
-      <span>
-        ExampleLogo
-      </span>
       <div
         class="rk-w-full rk-absolute rk-bottom-0 rk-left-0 rk-z-10 rk-h-[calc(100%_-_72px)] rk-flex-col rk-overflow-y-auto rk-overflow-x-hidden rk-px-4 rk-pb-4 rk-pt-8 sm:rk-px-6 lg:rk-px-12 lg:rk-hidden"
       >
@@ -949,9 +925,6 @@ exports[`<Header /> > the escape key should close the nav 9`] = `
     <header
       class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
     >
-      <span>
-        ExampleLogo
-      </span>
       <div
         class="rk-w-full rk-absolute rk-bottom-0 rk-left-0 rk-z-10 rk-h-[calc(100%_-_72px)] rk-flex-col rk-overflow-y-auto rk-overflow-x-hidden rk-px-4 rk-pb-4 rk-pt-8 sm:rk-px-6 lg:rk-px-12 lg:rk-hidden"
       >
@@ -1060,9 +1033,6 @@ exports[`<Header /> > the escape key should close the nav 10`] = `
     <header
       class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
     >
-      <span>
-        ExampleLogo
-      </span>
       <div
         class="rk-w-full rk-hidden rk-flex-wrap lg:rk-flex"
       >
@@ -1182,9 +1152,6 @@ exports[`<Header /> > the escape key should close the nav 12`] = `
     <header
       class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
     >
-      <span>
-        ExampleLogo
-      </span>
       <div
         class="rk-w-full rk-hidden rk-flex-wrap lg:rk-flex"
       >
@@ -1302,9 +1269,6 @@ exports[`<Header /> > the escape key should close the nav 13`] = `
     <header
       class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
     >
-      <span>
-        ExampleLogo
-      </span>
       <div
         class="rk-w-full rk-absolute rk-bottom-0 rk-left-0 rk-z-10 rk-h-[calc(100%_-_72px)] rk-flex-col rk-overflow-y-auto rk-overflow-x-hidden rk-px-4 rk-pb-4 rk-pt-8 sm:rk-px-6 lg:rk-px-12 lg:rk-hidden"
       >
@@ -1415,9 +1379,6 @@ exports[`<Header /> > the escape key should close the nav 15`] = `
     <header
       class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
     >
-      <span>
-        ExampleLogo
-      </span>
       <div
         class="rk-w-full rk-absolute rk-bottom-0 rk-left-0 rk-z-10 rk-h-[calc(100%_-_72px)] rk-flex-col rk-overflow-y-auto rk-overflow-x-hidden rk-px-4 rk-pb-4 rk-pt-8 sm:rk-px-6 lg:rk-px-12 lg:rk-hidden"
       >
@@ -1526,9 +1487,6 @@ exports[`<Header /> > the escape key should close the nav 16`] = `
     <header
       class="rk-z-10 rk-flex rk-w-full rk-items-center rk-py-4"
     >
-      <span>
-        ExampleLogo
-      </span>
       <div
         class="rk-w-full rk-hidden rk-flex-wrap lg:rk-flex"
       >

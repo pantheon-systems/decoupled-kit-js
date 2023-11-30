@@ -23,7 +23,6 @@ const Header = ({
 }) => {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 	const handleOpen = () => setIsOpen((prev) => !prev);
-
 	return (
 		<Row type="flex" className="rk-mx-auto rk-bg-white">
 			<NavHeader
