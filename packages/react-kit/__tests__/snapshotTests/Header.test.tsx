@@ -1,6 +1,7 @@
 import { Header } from '@components/Header';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import clsx from 'clsx';
+import { useState } from 'react';
 
 const Logo = () => {
 	return <span>ExampleLogo</span>;
@@ -29,8 +30,11 @@ const NavItems = [
 ));
 
 const TestHeader = () => {
+	const [isOpen, setIsOpen] = useState(false);
+	const handleOpen = () => setIsOpen((prev) => !prev);
 	return (
 		<Header
+			mobileNavHandler={[isOpen, handleOpen]}
 			mainNavItems={NavItems}
 			secondaryNavItems={[
 				{
@@ -38,7 +42,7 @@ const TestHeader = () => {
 					href: '/secondary-nav-item',
 				},
 			]}
-			Logo={<Logo />}
+			Logo={Logo}
 			/** https://github.com/focus-trap/focus-trap-react/issues/1002 */
 			focusTrapOptions={{
 				tabbableOptions: {
@@ -87,8 +91,8 @@ describe('<Header />', () => {
 		});
 		waitFor(() => {
 			fireEvent.keyUp(window, { key: 'Esc', code: 'Escape' });
-			expect(openBtn).toBeVisible();
 			expect(asFragment()).toMatchSnapshot();
+			expect(openBtn).toBeVisible();
 		});
 	});
 });
