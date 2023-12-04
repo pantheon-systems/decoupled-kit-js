@@ -1,5 +1,13 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.7
+
+### Patch Changes
+
+- 94f2ef9c: [decoupled-kit-health-check] Updated gatsby health check environment
+  variable valid protocol.
+- 1987c292: [next-drupal] Prevent Caching In Test Preview Route
+
 ## 0.10.7-canary.1
 
 ### Patch Changes
