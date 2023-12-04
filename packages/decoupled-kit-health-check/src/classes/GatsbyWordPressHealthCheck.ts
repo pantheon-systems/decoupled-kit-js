@@ -1,13 +1,13 @@
 import dotenv from 'dotenv';
 import { logger } from '../utils/logger';
 import { resolveDotenvFile } from '../utils/resolveDotenvFile';
+import { WordPressHealthCheck } from './HealthCheckBase';
 import {
 	BackendNotSetError,
 	DecoupledMenuError,
 	InvalidCMSEndpointError,
 	WPGatsbyPluginError,
 } from './errors';
-import { WordPressHealthCheck } from './HealthCheckBase';
 
 export class GatsbyWordPressHealthCheck extends WordPressHealthCheck {
 	endpoint: string;
@@ -73,15 +73,26 @@ export class GatsbyWordPressHealthCheck extends WordPressHealthCheck {
 			? Object.entries(backendVars).filter(([key]) => key === 'WPGRAPHQL_URL')
 			: Object.entries(backendVars);
 
-		const url = /^https:\/\//.test(endpoint) ? endpoint : `https://${endpoint}`;
-
+		const url =
+			envVar === 'PANTHEON_CMS_ENDPOINT'
+				? /^https?:\/\//.test(endpoint)
+					? endpoint
+					: `https://${endpoint}`
+				: endpoint;
 		this.endpoint = url;
 		this.envVar = envVar;
 	}
 	getURL() {
-		const url = new URL(this.endpoint);
-		url.pathname = '/wp/graphql';
-		return url;
+		try {
+			const url = new URL(this.endpoint);
+			url.pathname = '/wp/graphql';
+			return url;
+		} catch (error) {
+			throw new InvalidCMSEndpointError({
+				endpointType: this.envVar,
+				endpoint: this.endpoint,
+			});
+		}
 	}
 	async checkFor200(url: URL) {
 		try {

@@ -13,7 +13,7 @@ module.exports = {
 			files: ['.github/**/*.yml'],
 			options: {
 				useTabs: false,
-				printWidth: 300,
+				printWidth: Infinity,
 			},
 		},
 	],
