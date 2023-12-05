@@ -9,7 +9,7 @@ exports[`<Footer /> > should render Footer 1`] = `
       class="rk-mb-0.875 rk-mx-auto rk-mt-2 rk-block"
     />
     <h6
-      class="rk-mb-0.875 font-bold rk-text-lg"
+      class="rk-mb-0.875 rk-text-lg rk-font-bold"
     >
       Pantheon Decoupled Kit
     </h6>
