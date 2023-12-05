@@ -20,7 +20,7 @@ export const Footer = ({ Logo, Link }: FooterProps) => {
 				<FooterLogo />
 			</div>
 
-			<h6 className="rk-mb-0.875 font-bold rk-text-lg">
+			<h6 className="rk-mb-0.875 rk-text-lg rk-font-bold">
 				Pantheon Decoupled Kit
 			</h6>
 
