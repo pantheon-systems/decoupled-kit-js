@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Footer /> > should render Footer 1`] = `
+<DocumentFragment>
+  <footer
+    class="rk-mt-16 rk-bg-neutral-800 rk-py-4 rk-text-center rk-text-white"
+  >
+    <div
+      class="rk-mb-0.875 rk-mx-auto rk-mt-2 rk-block"
+    />
+    <h6
+      class="rk-mb-0.875 rk-text-lg rk-font-bold"
+    >
+      Pantheon Decoupled Kit
+    </h6>
+    <p
+      class="rk-mb-0.875 rk-text-sm"
+    >
+      © Pantheon 2013
+    </p>
+    <p
+      class="rk-mb-2 rk-text-xs"
+    >
+      Built with 
+      <a
+        class="rk-underline"
+        href="www.test.com"
+      >
+        Pantheon.io
+      </a>
+    </p>
+  </footer>
+</DocumentFragment>
+`;
