@@ -1,9 +1,9 @@
 import { Button, IconButton } from '@components/Button';
 import clsx from 'clsx';
 import FocusTrap from 'focus-trap-react';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { CloseSVG, HamburgerMenuSVG } from './HeaderIcons';
-import { NavHeaderProps, isNavTuple } from './props';
+import { NavHeaderProps, isNavItemArray } from './props';
 /**
  * @see {@link https://live-storybook-react-kit.appa.pantheon.site/?path=/docs/header-header--docs}
  */
@@ -14,33 +14,30 @@ export const Header = ({
 	overlayStyles,
 	navbarStyles,
 	focusTrapOptions,
+	linkComponent,
+	mobileNavHandler: [isOpen, handleOpen],
 }: NavHeaderProps) => {
-	const [isOpen, setIsOpen] = useState(false);
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-	const handleOpen = () => setIsOpen((prev) => !prev);
-
-	const MAX_MOBILE_NAV_WIDTH = 1023;
+	const LinkComponent = linkComponent ? linkComponent : 'a';
 
 	useEffect(() => {
 		const handleKeyUp = (e: KeyboardEvent) => {
 			if (e.key === 'Escape' || e.key === 'Esc') {
-				setIsOpen(false);
+				handleOpen();
 			}
 		};
 		const handleResize = () => {
-			setWindowWidth(window.innerWidth);
-			windowWidth > MAX_MOBILE_NAV_WIDTH && setIsOpen(false);
+			if (window.innerWidth >= 1024 && isOpen) {
+				handleOpen();
+			}
 		};
-		setWindowWidth(window.innerWidth);
-
-		window.addEventListener('resize', handleResize);
 		window.addEventListener('keyup', handleKeyUp);
+		window.addEventListener('resize', handleResize);
 
 		return () => {
-			window.removeEventListener('resize', handleResize);
 			window.removeEventListener('keyup', handleKeyUp);
+			window.removeEventListener('resize', handleResize);
 		};
-	}, [windowWidth]);
+	}, [isOpen, handleOpen]);
 
 	/**
 	 * Need to use a ref here so the FocusTrap can work properly.
@@ -53,20 +50,20 @@ export const Header = ({
 			nav: clsx('rk-flex rk-items-center'),
 			ul: clsx(
 				'lg:rk-menu-horizontal',
-				isOpen && windowWidth <= MAX_MOBILE_NAV_WIDTH
-					? 'rk-menu-vertical rk-w-full'
+				isOpen
+					? 'rk-menu-vertical rk-w-full lg:rk-hidden'
 					: 'rk-hidden rk-flex-wrap lg:rk-flex',
 			),
 			overlay: clsx(
 				'rk-w-full',
-				isOpen && windowWidth <= MAX_MOBILE_NAV_WIDTH
-					? 'rk-absolute rk-bottom-0 rk-left-0 rk-z-10 rk-h-[calc(100%_-_72px)] rk-flex-col rk-overflow-y-auto rk-overflow-x-hidden rk-px-4 rk-pb-4 rk-pt-8 sm:rk-px-6 lg:rk-px-12'
+				isOpen
+					? 'rk-absolute rk-bottom-0 rk-left-0 rk-z-10 rk-h-[calc(100%_-_72px)] rk-flex-col rk-overflow-y-auto rk-overflow-x-hidden rk-px-4 rk-pb-4 rk-pt-8 sm:rk-px-6 lg:rk-px-12 lg:rk-hidden'
 					: 'rk-hidden rk-flex-wrap lg:rk-flex',
 			),
 		};
 
 		const HeaderLogo = () => {
-			if (React.isValidElement(Logo)) {
+			if (Logo && React.isValidElement(Logo)) {
 				return Logo;
 			} else if (
 				typeof Logo === 'object' &&
@@ -76,31 +73,36 @@ export const Header = ({
 			) {
 				const { src, alt, href } = Logo;
 				return (
-					<a href={href} className={Logo?.styles || 'rk-h-10 rk-w-10'}>
+					<LinkComponent
+						href={href}
+						className={Logo?.styles || 'rk-h-10 rk-w-10'}
+					>
 						<img src={src} height="40" alt={alt} />
-					</a>
+					</LinkComponent>
 				);
 			}
 			return null;
 		};
 
 		const PrimaryNav = () => {
-			if (isNavTuple(mainNavItems)) {
-				return mainNavItems?.map(([label, href]) => (
+			if (isNavItemArray(mainNavItems)) {
+				return mainNavItems?.map(({ linkText, href }) => (
 					<li
 						className="rk-mb-8 rk-w-full rk-justify-start rk-text-lg rk-text-black lg:rk-mx-4 lg:rk-mb-0 lg:rk-w-fit"
-						key={label}
+						key={linkText}
 					>
-						<a
+						<LinkComponent
 							className={clsx(
 								'rk-link-hover rk-w-full rk-text-left',
 								'rk-flex rk-w-full rk-min-w-full sm:rk-w-fit',
-								window?.location?.pathname === href && 'rk-font-bold',
+								typeof window !== 'undefined' &&
+									window?.location?.pathname === href &&
+									'rk-font-bold',
 							)}
 							href={href}
 						>
-							{label}
-						</a>
+							{linkText}
+						</LinkComponent>
 					</li>
 				));
 			} else {
@@ -109,14 +111,14 @@ export const Header = ({
 		};
 
 		const SecondaryNav = () => {
-			if (isNavTuple(secondaryNavItems)) {
-				return secondaryNavItems?.map(([label, href]) => (
+			if (isNavItemArray(secondaryNavItems)) {
+				return secondaryNavItems?.map(({ linkText, href }) => (
 					<li
 						className="rk-mr-auto first:rk-mb-3 lg:rk-mx-3 lg:rk-mr-0 first:lg:rk-mb-0"
-						key={label}
+						key={linkText}
 					>
-						<Button Element="a" href={href}>
-							{label}
+						<Button asChild href={href}>
+							<LinkComponent>{linkText}</LinkComponent>
 						</Button>
 					</li>
 				));
@@ -159,18 +161,18 @@ export const Header = ({
 						</ul>
 					</nav>
 				</div>
-				{isOpen && windowWidth <= MAX_MOBILE_NAV_WIDTH ? (
+				{isOpen ? (
 					<IconButton
-						aria-hidden={isOpen && windowWidth >= MAX_MOBILE_NAV_WIDTH}
+						aria-hidden={!isOpen}
 						onClick={handleOpen}
-						className="rk-ml-auto"
+						className="rk-ml-auto lg:rk-hidden"
 						data-testid="close-nav"
 					>
 						<CloseSVG />
 					</IconButton>
 				) : (
 					<IconButton
-						aria-hidden={!isOpen && windowWidth >= MAX_MOBILE_NAV_WIDTH}
+						aria-hidden={isOpen}
 						onClick={handleOpen}
 						className="rk-ml-auto lg:rk-hidden"
 						data-testid="open-nav"
@@ -185,26 +187,17 @@ export const Header = ({
 	NavList.displayName = 'NavList';
 
 	return (
-		<>
-			{windowWidth > MAX_MOBILE_NAV_WIDTH ? (
+		<FocusTrap
+			active={isOpen}
+			paused={!isOpen}
+			focusTrapOptions={focusTrapOptions}
+		>
+			<div className="rk-w-full">
 				<NavList
 					mainNavItems={mainNavItems}
 					secondaryNavItems={secondaryNavItems}
 				/>
-			) : (
-				<FocusTrap
-					active={isOpen}
-					paused={!isOpen}
-					focusTrapOptions={focusTrapOptions}
-				>
-					<div className="rk-w-full">
-						<NavList
-							mainNavItems={mainNavItems}
-							secondaryNavItems={secondaryNavItems}
-						/>
-					</div>
-				</FocusTrap>
-			)}
-		</>
+			</div>
+		</FocusTrap>
 	);
 };

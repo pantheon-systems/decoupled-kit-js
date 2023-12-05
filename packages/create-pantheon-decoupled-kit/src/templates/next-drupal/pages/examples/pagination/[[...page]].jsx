@@ -17,7 +17,7 @@ import styles from './pagination.module.css';
 // Example paginated data set
 const drupalUrl = 'https://dev-ds-demo.pantheonsite.io';
 
-export default function PaginationExampleTemplate({ data, footerMenu }) {
+export default function PaginationExampleTemplate({ data, navItems }) {
 	// configurable itemsPerPage
 	const itemsPerPage = 10;
 
@@ -35,7 +35,7 @@ export default function PaginationExampleTemplate({ data, footerMenu }) {
 	};
 
 	return (
-		<Layout footerMenu={footerMenu}>
+		<Layout footerMenu={navItems} mainNavItems={navItems}>
 			<Head>
 				<title>Pagination example</title>
 				<meta name="description" content="Powered by Pantheon Decoupled Kit" />
@@ -152,14 +152,14 @@ export async function getStaticProps(context) {
 			context.locale,
 			globalDrupalStateStores,
 		);
-		const footerMenu = await store.getObject({
+		const navItems = await store.getObject({
 			objectName: 'menu_items--main',
 			anon: true,
 		});
 		return {
 			props: {
 				data: data || null,
-				footerMenu,
+				navItems,
 			},
 			revalidate: 60,
 		};

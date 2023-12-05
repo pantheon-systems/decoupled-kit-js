@@ -1,10 +1,18 @@
-import React from 'react';
 import { render } from '@testing-library/react';
-import { Header } from '../../src/components/header';
-
+import Link from 'next/link';
+import { Header } from '../../src/components/Header/index';
 /**
  * @vitest-environment jsdom
  */
+
+vi.mock('next/router', () => ({
+	useRouter: () => ({
+		events: {
+			on: vi.fn(),
+			off: vi.fn(),
+		},
+	}),
+}));
 
 const navItems = [
 	{
@@ -23,7 +31,16 @@ const navItems = [
 
 describe('<Header />', () => {
 	it("should render 'header'", () => {
-		const { asFragment } = render(<Header navItems={navItems} />);
+		const { asFragment } = render(
+			<Header
+				Logo={
+					<Link href="/">
+						<img src={'/test-img-src'} alt="PantheonLogo" />
+					</Link>
+				}
+				mainNavItems={navItems}
+			/>,
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 	});

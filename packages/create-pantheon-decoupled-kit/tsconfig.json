@@ -2,10 +2,12 @@
 	"extends": "../../tsconfig.json",
 	"compilerOptions": {
 		"types": ["vitest/globals"],
-		"baseUrl": "./",
+		"moduleResolution": "Bundler",
 		"paths": {
-			"@cli/*": ["./src/*"],
-			"@partials/*": ["./src/templates/partials/*"]
+			"@cli/*": ["./create-pantheon-decoupled-kit/src/*"],
+			"@partials/*": [
+				"./create-pantheon-decoupled-kit/src/templates/partials/*"
+			]
 		}
 	}
 }

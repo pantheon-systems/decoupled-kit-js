@@ -3,18 +3,31 @@ import { Button } from '@components/Button';
 import { Header as NavHeader } from '@components/Header';
 import { Row } from '@components/Row';
 import type { Meta, StoryObj } from '@storybook/react';
+import { useState } from 'react';
 import { type NavHeaderProps } from './props';
 
 const Header = ({
 	mainNavItems,
 	secondaryNavItems,
 	Logo,
-}: Pick<NavHeaderProps, 'mainNavItems' | 'secondaryNavItems' | 'Logo'> & {
+	linkComponent,
+}: Pick<
+	NavHeaderProps,
+	| 'mainNavItems'
+	| 'secondaryNavItems'
+	| 'Logo'
+	| 'linkComponent'
+	| 'mobileNavHandler'
+> & {
 	manyItems: boolean;
 }) => {
+	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const handleOpen = () => setIsOpen((prev) => !prev);
 	return (
 		<Row type="flex" className="rk-mx-auto rk-bg-white">
 			<NavHeader
+				mobileNavHandler={[isOpen, handleOpen]}
+				linkComponent={linkComponent}
 				overlayStyles="rk-bg-white"
 				Logo={Logo}
 				mainNavItems={mainNavItems}
@@ -26,37 +39,50 @@ const Header = ({
 
 const MainNavItems = ({ manyItems }: { manyItems?: boolean }) => {
 	const navItems = [
-		['Home', '/'],
-		['Articles', '/articles'],
-		['Pages', '/pages'],
+		{ linkText: 'Home', href: '/' },
+		{ linkText: 'Articles', href: '/articles' },
+		{ linkText: 'Pages', href: '/pages' },
 	];
 	if (manyItems) {
 		navItems.push(
-			['About', '/about'],
-			['Services', '/services'],
-			['Contact', '/contact'],
-			['Blog', '/blog'],
-			['Portfolio', '/portfolio'],
-			['FAQ', '/faq'],
-			['Shop', '/shop'],
-			['Events', '/events'],
-			['Gallery', '/gallery'],
-			['Team', '/team'],
-			['Testimonials', '/testimonials'],
-			['Career', '/career'],
-			['Terms of Service', '/terms'],
-			['Privacy Policy', '/privacy'],
-			['Support', '/support'],
-			['Login', '/login'],
-			['Register', '/register'],
-			['Dashboard', '/dashboard'],
-			['Logout', '/logout'],
+			{ linkText: 'About', href: '/about' },
+			{ linkText: 'Services', href: '/services' },
+			{ linkText: 'Contact', href: '/contact' },
+			{ linkText: 'Blog', href: '/blog' },
+			{ linkText: 'Portfolio', href: '/portfolio' },
+			{ linkText: 'FAQ', href: '/faq' },
+			{ linkText: 'Shop', href: '/shop' },
+			{ linkText: 'Events', href: '/events' },
+			{ linkText: 'Gallery', href: '/gallery' },
+			{ linkText: 'Team', href: '/team' },
+			{ linkText: 'Testimonials', href: '/testimonials' },
+			{ linkText: 'Career', href: '/career' },
+			{ linkText: 'Terms of Service', href: '/terms' },
+			{ linkText: 'Privacy Policy', href: '/privacy' },
+			{ linkText: 'Support', href: '/support' },
+			{ linkText: 'Login', href: '/login' },
+			{ linkText: 'Register', href: '/register' },
+			{ linkText: 'Dashboard', href: '/dashboard' },
+			{ linkText: 'Logout', href: '/logout' },
 		);
 	}
 
 	return navItems;
 };
 
+const NoFollowLink = ({
+	children,
+	className,
+}: {
+	children: React.ReactNode;
+	className?: string;
+}) => {
+	return (
+		<a rel="nofollow" className={className} href="javascript:void(0)">
+			{children}
+		</a>
+	);
+};
 const SecondaryNavItems = () => {
 	return (
 		<>
@@ -65,7 +91,7 @@ const SecondaryNavItems = () => {
 				key="docs"
 			>
 				<Button
-					Element="a"
+					Element={NoFollowLink}
 					href="https://decoupledkit.pantheon.io"
 					type="secondary"
 				>
@@ -73,7 +99,7 @@ const SecondaryNavItems = () => {
 				</Button>
 			</li>
 			<li className="rk-mr-auto lg:rk-mx-3 lg:rk-mr-0" key="examples">
-				<Button Element="a" href="/examples">
+				<Button Element={NoFollowLink} href="/examples">
 					Examples
 				</Button>
 			</li>
@@ -91,6 +117,7 @@ const meta: Meta<typeof Header> = {
 		Logo: { src: PantheonLogo, alt: 'Pantheon Systems', href: '/' },
 		mainNavItems: MainNavItems({ manyItems: false }),
 		secondaryNavItems: <SecondaryNavItems />,
+		linkComponent: NoFollowLink,
 	},
 	argTypes: {
 		mainNavItems: {

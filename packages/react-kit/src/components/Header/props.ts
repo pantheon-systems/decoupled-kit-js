@@ -1,5 +1,4 @@
 import { Props as FocusTrapProps } from 'focus-trap-react';
-
 /**
  * A navigation item is a tuple of a label and a href.
  * @example
@@ -7,7 +6,10 @@ import { Props as FocusTrapProps } from 'focus-trap-react';
  * const navItems = [['Home', '/', 'About', '/about',]]
  * ```
  */
-export type NavItem = [string, string];
+export type NavItem = {
+	linkText: string;
+	href: string;
+};
 
 export type NavHeaderProps = Readonly<{
 	/**
@@ -28,8 +30,8 @@ export type NavHeaderProps = Readonly<{
 	 */
 	Logo:
 		| { src: string; alt: string; href: string; styles?: string }
-		| React.ReactElement
-		| JSX.Element;
+		| React.ComponentType
+		| React.ElementType;
 	/**
 	 * Items to render for the main navigation. Can be a tuple of label and href or a ReactNode.
 	 */
@@ -50,6 +52,25 @@ export type NavHeaderProps = Readonly<{
 	 * Options to pass to the FocusTrap component used to trap focus within the mobile nav overlay.
 	 */
 	focusTrapOptions?: FocusTrapProps['focusTrapOptions'];
+	/**
+	 * If a custom link component is required, like for metaframework, pass it here, otherwise an anchor tag will be used.
+	 */
+	linkComponent?: React.ElementType;
+
+	/**
+	 * State and setter for the open state of the mobile nav overlay.
+	 * @example
+	 * ```tsx
+	 * const [isOpen, setIsOpen] = useState(false);
+	 * const handleOpen = () => setIsOpen((prev) => !prev);
+	 *
+	 * <NavHeader
+	 * 	mobileNavHandler={[isOpen, handleOpen]}
+	 * 	...
+	 * />
+	 * ```
+	 */
+	mobileNavHandler: [boolean, () => void];
 }>;
 
 /**
@@ -57,15 +78,15 @@ export type NavHeaderProps = Readonly<{
  * @param arg the argument to check
  * @returns true if the arg is a {@link NavItem}
  */
-export const isNavTuple = (arg: unknown): arg is NavItem => {
+export const isNavItemArray = (arg: unknown): arg is NavItem[] => {
 	if (arg instanceof Array) {
 		return arg
 			.map((item) => {
 				return (
-					item instanceof Array &&
-					item.length === 2 &&
-					typeof item[0] === 'string' &&
-					typeof item[1] === 'string'
+					typeof item === 'object' &&
+					item !== null &&
+					'linkText' in item &&
+					'href' in item
 				);
 			})
 			.reduce((acc, curr) => acc && curr, true);

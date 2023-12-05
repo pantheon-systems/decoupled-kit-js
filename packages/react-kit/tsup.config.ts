@@ -1,10 +1,11 @@
 import { defineConfig } from 'tsup';
+import pkgJson from './package.json';
 
 export default defineConfig({
 	tsconfig: './tsconfig.build.json',
 	entry: [
 		'./src/**/*.{tsx,ts}',
-		'./src/index.css',
+		'./src/styles.css',
 		'!./src/types.d.ts',
 		'!./src/**/*.stories.{tsx,ts}',
 	],
@@ -15,6 +16,9 @@ export default defineConfig({
 	outDir: './dist',
 	format: ['esm', 'cjs'],
 	minify: true,
-	external: ['react', 'react-dom', 'tailwindcss'],
+	external: [
+		...Object.keys(pkgJson.peerDependencies),
+		...Object.keys(pkgJson.devDependencies),
+	],
 	platform: 'neutral',
 });

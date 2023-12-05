@@ -16,5 +16,12 @@ module.exports = {
 				printWidth: Infinity,
 			},
 		},
+		{
+			files: ['.changeset/**/*.md'],
+			options: {
+				// keeps markdown line breaks
+				proseWrap: 'preserve',
+			},
+		},
 	],
 };
