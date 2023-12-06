@@ -1,7 +1,6 @@
 export type FooterProps = Readonly<{
 	/**
 	 * A logo component to render in the footer.
-	 * @remarks should be wrapped in a link to the homepage or other relevant page.
 	 * @example
 	 * ```tsx
 	 * export const Logo = ({ exampleLogo }: { exampleLogo: string }) => {
@@ -18,7 +17,24 @@ export type FooterProps = Readonly<{
 		| React.ReactElement
 		| JSX.Element;
 	/**
-	 * Link used for company website.
+	 * Styles to be passed to the footer component.
 	 */
-	Link: string;
+	className?: string;
+	/**
+	 * Content to be displayed in footer.
+	 * @example
+	 * ```tsx
+	 * const Content = () => {
+	 * 	return (
+	 * 		<>
+	 * 			<div className="rk-text-lg rk-font-bold">Example Company</div>
+	 * 			<div className="rk-pb-8 rk-text-sm">© Example Copyright</div>
+	 * 		</>
+	 * )};
+	 * ```
+	 */
+	Content:
+		| { title: string; copy: string; builtWith: string; builtWithLink: string }
+		| React.ReactElement
+		| JSX.Element;
 }>;

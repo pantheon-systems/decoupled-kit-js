@@ -5,8 +5,15 @@ const Logo = () => {
 	return <span>ExampleLogo</span>;
 };
 
+const Content = {
+	title: 'Test Company',
+	copy: '© Test 2023',
+	builtWith: 'Test.io',
+	builtWithLink: 'https://test.io/',
+};
+
 const TestFooter = () => {
-	return <Footer Logo={Logo} Link="www.test.com"></Footer>;
+	return <Footer Logo={Logo} Content={Content}></Footer>;
 };
 
 describe('<Footer />', () => {
