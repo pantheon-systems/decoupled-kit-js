@@ -23,5 +23,5 @@ export type FooterProps = Readonly<{
 	/**
 	 *  An instance of React.ReactChild
 	 */
-	children: JSX.Element;
+	children: React.ReactNode;
 }>;
