@@ -3,11 +3,30 @@ import { Footer as BottomSignature } from '@components/Footer';
 import type { Meta, StoryObj } from '@storybook/react';
 import { type FooterProps } from './props';
 
-const Footer = ({ Logo, Content }: Pick<FooterProps, 'Logo' | 'Content'>) => {
+const Footer = ({ Logo }: Pick<FooterProps, 'Logo'>) => {
 	return (
 		<div>
-			<BottomSignature Logo={Logo} Content={Content} />
+			<BottomSignature Logo={Logo}>
+				<FooterContent />
+			</BottomSignature>
 		</div>
+	);
+};
+
+const FooterContent = () => {
+	return (
+		<>
+			<div className="rk-text-base rk-font-bold">Pantheon Decoupled Kit</div>
+
+			<div className="rk-pb-8 rk-text-base">© Pantheon 2023</div>
+
+			<div className="rk-pb-16 rk-text-sm">
+				Built with{' '}
+				<a href="https://pantheon.io/" className={'rk-underline'}>
+					Pantheon.io
+				</a>
+			</div>
+		</>
 	);
 };
 
@@ -19,12 +38,6 @@ const meta: Meta<typeof Footer> = {
 	},
 	args: {
 		Logo: { src: PantheonLogo, alt: 'Pantheon Systems', href: '/' },
-		Content: {
-			title: 'Pantheon Decoupled Kit',
-			copy: '© Pantheon 2023',
-			builtWith: 'Pantheon.io',
-			builtWithLink: 'https://pantheon.io/',
-		},
 	},
 	argTypes: {},
 	tags: ['autodocs'],

@@ -4,7 +4,7 @@ export type FooterProps = Readonly<{
 	 * @example
 	 * ```tsx
 	 * export const Logo = ({ exampleLogo }: { exampleLogo: string }) => {
-	 * 	// use the link and image component from your framework if applicable.
+	 * 	// use the image component from your framework if applicable.
 	 * 	return (
 	 * 		<img src={exampleLogo} width="48" height="48" alt="Example Logo" />
 	 * 	);
@@ -21,20 +21,7 @@ export type FooterProps = Readonly<{
 	 */
 	className?: string;
 	/**
-	 * Content to be displayed in footer.
-	 * @example
-	 * ```tsx
-	 * const Content = () => {
-	 * 	return (
-	 * 		<>
-	 * 			<div className="rk-text-lg rk-font-bold">Example Company</div>
-	 * 			<div className="rk-pb-8 rk-text-sm">© Example Copyright</div>
-	 * 		</>
-	 * )};
-	 * ```
+	 *  An instance of React.ReactChild
 	 */
-	Content:
-		| { title: string; copy: string; builtWith: string; builtWithLink: string }
-		| React.ReactElement
-		| JSX.Element;
+	children: JSX.Element;
 }>;

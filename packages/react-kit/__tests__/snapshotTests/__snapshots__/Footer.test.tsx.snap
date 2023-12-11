@@ -3,7 +3,7 @@
 exports[`<Footer /> > should render Footer 1`] = `
 <DocumentFragment>
   <footer
-    class="rk-bg-neutral-800 rk-pt-3.5 rk-text-center rk-text-white"
+    class="rk-bg-neutral-800 rk-text-center rk-text-white"
   >
     <div
       class="rk-text-base rk-font-bold"
@@ -16,12 +16,12 @@ exports[`<Footer /> > should render Footer 1`] = `
       © Test 2023
     </div>
     <div
-      class="rk-pb-14 rk-text-sm"
+      class="rk-pb-16 rk-text-sm"
     >
       Built with 
       <a
         class="rk-underline"
-        href="https://test.io/"
+        href="https://test.io"
       >
         Test.io
       </a>
