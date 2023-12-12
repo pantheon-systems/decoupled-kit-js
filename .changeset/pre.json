@@ -16,5 +16,8 @@
     "kit-72": "0.1.0",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "calm-countries-roll",
+    "eighty-buttons-walk"
+  ]
 }
