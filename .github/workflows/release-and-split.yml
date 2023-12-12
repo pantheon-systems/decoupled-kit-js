@@ -99,7 +99,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
+          # workaround to ensure force pushes to changeset branch use machine account
+          # see https://github.com/changesets/action/issues/70
+          persist-credentials: false
 
       - name: Setup node
         if: ${{ matrix.generator_cmd != '' }}
