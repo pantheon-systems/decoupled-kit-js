@@ -94,7 +94,8 @@
 			"postcss@<8.4.31": ">=8.4.31",
 			"zod@<=3.22.2": ">=3.22.3",
 			"@babel/traverse@<7.23.2": ">=7.23.2",
-			"@adobe/css-tools@<4.3.2": ">=4.3.2"
+			"@adobe/css-tools@<4.3.2": ">=4.3.2",
+			"vite@=4.5.0": ">=4.5.1"
 		},
 		"auditConfig": {
 			"ignoreCves": [
