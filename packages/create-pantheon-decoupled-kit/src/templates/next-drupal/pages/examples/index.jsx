@@ -4,8 +4,8 @@ import Layout from '../../components/layout';
 import PageHeader from '../../components/page-header';
 import { BUILD_MODE } from '../../lib/constants';
 import {
-  getCurrentLocaleStore,
-  globalDrupalStateStores,
+	getCurrentLocaleStore,
+	globalDrupalStateStores,
 } from '../../lib/stores';
 import styles from './index.module.css';
 
