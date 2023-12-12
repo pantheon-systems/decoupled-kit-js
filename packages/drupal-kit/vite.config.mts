@@ -12,7 +12,6 @@ const external = [
 	'@pantheon-systems/cms-kit',
 ];
 
-/** @type {import('vite').defineConfig} */
 export default defineConfig(() => {
 	return {
 		build: {

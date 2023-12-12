@@ -1,7 +1,6 @@
-import { build } from 'esbuild';
 import chalk from 'chalk';
+import { build } from 'esbuild';
 import { glob } from 'glob';
-import tsPaths from 'esbuild-ts-paths';
 
 /** @type {import('esbuild').BuildOptions} */
 const buildOptions = {
@@ -25,8 +24,6 @@ const buildOptions = {
 	supported: {
 		'import-assertions': true,
 	},
-	// eslint-disable-next-line @typescript-eslint/no-unsafe-call
-	plugins: [tsPaths('./tsconfig.json')],
 };
 try {
 	await build(buildOptions);
