@@ -81,22 +81,15 @@ jobs:
           # next-drupal-starter
           - local_path: 'starters/next-drupal-starter-generated'
             split_repository: 'next-drupal-starter'
-            generator_cmd:
-              "next-drupal next-drupal-umami-addon --appName
-              @pantheon-systems/next-drupal-starter --cmsEndpoint ''
-              --tailwindcss --force --silent"
+            generator_cmd: "next-drupal next-drupal-umami-addon --appName @pantheon-systems/next-drupal-starter --cmsEndpoint '' --tailwindcss --force --silent"
           # gatsby-wordpress-starter
           - local_path: 'starters/gatsby-wordpress-starter-generated'
             split_repository: 'gatsby-wordpress-starter'
-            generator_cmd:
-              "gatsby-wp --appName @pantheon-systems/gatsby-wordpress-starter
-              --cmsEndpoint '' --tailwindcss --force --silent"
+            generator_cmd: "gatsby-wp --appName @pantheon-systems/gatsby-wordpress-starter --cmsEndpoint '' --tailwindcss --force --silent"
           # next-wordpress-starter
           - local_path: 'starters/next-wordpress-starter-generated'
             split_repository: 'next-wordpress-starter'
-            generator_cmd:
-              "next-wp --appName @pantheon-systems/next-wordpress-starter
-              --cmsEndpoint '' --tailwindcss --force --silent"
+            generator_cmd: "next-wp --appName @pantheon-systems/next-wordpress-starter --cmsEndpoint '' --tailwindcss --force --silent"
 
             # docs site
           - local_path: 'web'
@@ -105,6 +98,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Setup node
         if: ${{ matrix.generator_cmd != '' }}
