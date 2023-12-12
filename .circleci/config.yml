@@ -7,48 +7,6 @@ orbs:
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  test:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: cimg/node:lts
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    steps:
-      - checkout
-      - restore_cache:
-          # See the configuration reference documentation for more details on using restore_cache and save_cache steps
-          # https://circleci.com/docs/2.0/configuration-reference/?section=reference#save_cache
-          keys:
-            - node-deps-v1-{{ .Branch }}-{{checksum "pnpm-lock.yaml"}}
-      - run:
-          name: install pnpm
-          command: |
-            sudo corepack enable
-            sudo corepack prepare pnpm@8.8.0 --activate
-            pnpm config set store-dir ~/.pnpm-store
-      - run:
-          name: install packages
-          command: pnpm install --ignore-scripts
-      - save_cache:
-          key: node-deps-v1-{{ .Branch }}-{{checksum "pnpm-lock.yaml"}}
-          paths:
-            - ~/.pnpm-store
-      - run:
-          name: Build Packages
-          command: pnpm build:pkgs
-      - run:
-          name: Run Tests
-          command: pnpm test
-      - slack/notify:
-          branch_pattern: main, canary
-          event: fail
-          template: basic_fail_1
-      - slack/notify:
-          branch_pattern: main, canary
-          event: pass
-          template: basic_success_1
-
   audit:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
@@ -138,11 +96,4 @@ workflows:
         - equal: ['nightly audit', << pipeline.schedule.name >>]
     jobs:
       - audit:
-          context: decoupled-slack-secrets
-  orb-free-workflow:
-    when:
-      not: # Run test job when trigger is not the scheduled pipeline
-        equal: [scheduled_pipeline, << pipeline.trigger_source >>]
-    jobs:
-      - test:
           context: decoupled-slack-secrets
