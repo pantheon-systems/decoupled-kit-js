@@ -1,7 +1,6 @@
 import path from 'node:path';
 import { defineConfig } from 'vitest/config';
 
-/** @type {import('vite').defineConfig} */
 export default defineConfig(() => {
 	return {
 		plugins: [
@@ -12,7 +11,6 @@ export default defineConfig(() => {
 				// This can likely be removed once vitest has this support.
 				name: 'remove-import-assertion',
 				transform: (code) => {
-					const stringToFind = `const { default: pkg } = await import(pkgPath, {`;
 					const replace =
 						/const { default: pkg } = await import\(pkgPath, {[\n\t\s]*assert: { type: "json" }[\n\t\s]*}\)/gm;
 					if (replace.test(code)) {
