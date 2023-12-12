@@ -97,10 +97,3 @@ workflows:
     jobs:
       - audit:
           context: decoupled-slack-secrets
-  orb-free-workflow:
-    when:
-      not: # Run test job when trigger is not the scheduled pipeline
-        equal: [scheduled_pipeline, << pipeline.trigger_source >>]
-    jobs:
-      - test:
-          context: decoupled-slack-secrets
