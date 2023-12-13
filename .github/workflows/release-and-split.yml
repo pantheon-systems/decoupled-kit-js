@@ -23,6 +23,10 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          # workaround to ensure force pushes to changeset branch use machine account
+          # see https://github.com/changesets/action/issues/70
+          persist-credentials: false
+          token: ${{ secrets.ACCESS_TOKEN }}
       - uses: pnpm/action-setup@v2
         with:
           version: 8.8.0
@@ -36,6 +40,7 @@ jobs:
       - name: create and publish versions
         uses: changesets/action@v1
         with:
+          setupGitUser: false
           version: pnpm ci:version
           commit: 'Update versions'
           title: 'Update versions'
@@ -98,12 +103,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          # workaround to ensure force pushes to changeset branch use machine account
-          # see https://github.com/changesets/action/issues/70
-          persist-credentials: false
-          token: ${{ secrets.ACCESS_TOKEN }}
-
       - name: Setup node
         if: ${{ matrix.generator_cmd != '' }}
         uses: actions/setup-node@v3
