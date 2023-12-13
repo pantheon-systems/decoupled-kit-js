@@ -1,5 +1,11 @@
 # @pantheon-systems/eslint-config-decoupled-kit
 
+## 0.1.3-canary.0
+
+### Patch Changes
+
+- 983408a2: Update dependencies
+
 ## 0.1.2
 
 ### Patch Changes
