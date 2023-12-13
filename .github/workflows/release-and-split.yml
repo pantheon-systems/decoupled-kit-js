@@ -102,6 +102,7 @@ jobs:
           # workaround to ensure force pushes to changeset branch use machine account
           # see https://github.com/changesets/action/issues/70
           persist-credentials: false
+          token: ${{ secrets.ACCESS_TOKEN }}
 
       - name: Setup node
         if: ${{ matrix.generator_cmd != '' }}
