@@ -49,96 +49,9 @@ jobs:
           event: pass
           template: basic_success_1
 
-  audit:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: cimg/node:lts
-    # run pnpm audit --fix nightly and opens a PR if there are vulns
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - '7f:16:ba:a1:e4:a5:c2:03:d9:3a:2c:9a:0e:a1:e4:99'
-      - checkout
-      - restore_cache:
-          # See the configuration reference documentation for more details on using restore_cache and save_cache steps
-          # https://circleci.com/docs/2.0/configuration-reference/?section=reference#save_cache
-          keys:
-            - node-deps-v1-{{ .Branch }}-{{checksum "pnpm-lock.yaml"}}
-      - run:
-          name: install pnpm
-          command: |
-            sudo corepack enable
-            sudo corepack prepare pnpm@8.8.0 --activate
-            pnpm config set store-dir ~/.pnpm-store
-      - run:
-          name: install packages
-          command: pnpm install --ignore-scripts
-      - run:
-          name: audit dependencies with --fix
-          command: pnpm audit --fix
-      # remove node_modules and pnpm-lock.yml to honor new overrides
-      - run:
-          name: remove node_modules and pnpm-lock.yml
-          command: rm -rf node_modules pnpm-lock.yml
-      # build and test packages so that we don't commit a breaking change
-      - run:
-          name: install overrides and build
-          command: pnpm install --frozen-lockfile=false
-      - run:
-          name: test packages
-          command: pnpm --filter './packages/*' test
-      - run:
-          name: exit if no fixes
-          command: |
-            if [ -z "$(git diff)" ]; then
-              circleci-agent step halt
-            fi
-      # commit package.json and pnpm-lock if there's a diff
-      - run:
-          name: commit overrides
-          command: |
-            git config user.name "$GITHUB_USER"
-            git config user.email "$GITHUB_EMAIL"
-            git switch -c nightly-audit-$(date +"%D")
-            git add package.json pnpm-lock.yaml
-            git commit -m "Nightly audit run at $(date +"%T")"
-            git push origin nightly-audit-$(date +"%D")
-      - slack/notify:
-          branch_pattern: main, canary
-          event: fail
-          template: basic_fail_1
-      - slack/notify:
-          branch_pattern: main, canary
-          event: pass
-          template: basic_success_1
-
-      # create a PR
-      - run:
-          name: open PR
-          command: |
-            curl -X POST \
-            -H "Authorization: token $CIRCLECI_AUDIT_PR_TOKEN" \
-            -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/repos/pantheon-systems/decoupled-kit-js/pulls \
-            -d '{"head":"nightly-audit-'"$(date +"%D")"'","base":"canary", "title": "Nightly Audit on '"$(date +"%D")"'", "body": "Beep Boop 🤖 - Please merge me to dispose of npm gremlins! If this workflow failed, please check the artifacts in Circle CI for more information"}'
-      - run: # should only fail if there are vulns to be addressed manually.
-          name: audit dependencies
-          command: pnpm audit --json > .pnpm_audit.json
-      - store_artifacts:
-          path: .pnpm_audit.json
-
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  nightly-audit:
-    when:
-      and:
-        - equal: [scheduled_pipeline, << pipeline.trigger_source >>]
-        - equal: ['nightly audit', << pipeline.schedule.name >>]
-    jobs:
-      - audit:
-          context: decoupled-slack-secrets
   orb-free-workflow:
     when:
       not: # Run test job when trigger is not the scheduled pipeline
