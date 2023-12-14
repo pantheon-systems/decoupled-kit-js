@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/cms-kit",
-	"version": "0.3.4-canary.0",
+	"version": "0.3.4",
 	"description": "Pantheon Decoupled Kit's CMS Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -50,7 +50,7 @@
 		"lint-staged": "lint-staged"
 	},
 	"devDependencies": {
-		"@pantheon-systems/eslint-config": "0.0.1-canary.0",
+		"@pantheon-systems/eslint-config": "0.0.1",
 		"@pantheon-systems/workspace-configs": "*"
 	}
 }

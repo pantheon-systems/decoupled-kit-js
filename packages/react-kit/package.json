@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/react-kit",
-	"version": "0.2.1-canary.0",
+	"version": "0.2.1",
 	"description": "Pantheon Decoupled Kit's React Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -49,7 +49,7 @@
 		"build-storybook": "storybook build"
 	},
 	"devDependencies": {
-		"@pantheon-systems/eslint-config": "0.0.1-canary.0",
+		"@pantheon-systems/eslint-config": "0.0.1",
 		"@pantheon-systems/workspace-configs": "*",
 		"@storybook/addon-a11y": "^7.5.1",
 		"@storybook/addon-essentials": "^7.5.1",

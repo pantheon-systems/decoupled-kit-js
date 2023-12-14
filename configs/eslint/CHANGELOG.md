@@ -1,5 +1,7 @@
 # @pantheon-systems/eslint-config
 
+## 0.0.1
+
 ## 0.0.1-canary.0
 
 ### Patch Changes

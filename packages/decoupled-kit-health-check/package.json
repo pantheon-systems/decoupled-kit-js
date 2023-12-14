@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/decoupled-kit-health-check",
-	"version": "0.2.3-canary.0",
+	"version": "0.2.3",
 	"description": "Pantheon Decoupled Kit's Health Check",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -31,7 +31,7 @@
 		"update-snapshots": "vitest run -u"
 	},
 	"devDependencies": {
-		"@pantheon-systems/eslint-config": "0.0.1-canary.0",
+		"@pantheon-systems/eslint-config": "0.0.1",
 		"@pantheon-systems/workspace-configs": "*"
 	},
 	"dependencies": {
