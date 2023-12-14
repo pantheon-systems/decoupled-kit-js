@@ -1,5 +1,11 @@
 # @pantheon-systems/react-kit
 
+## 0.2.1
+
+### Patch Changes
+
+- 983408a2: Update dependencies
+
 ## 0.2.1-canary.0
 
 ### Patch Changes

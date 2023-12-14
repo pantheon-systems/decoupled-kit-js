@@ -1,5 +1,11 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.7.8
+
+### Patch Changes
+
+- 983408a2: Update dependencies
+
 ## 1.7.8-canary.0
 
 ### Patch Changes
