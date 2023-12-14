@@ -1,5 +1,13 @@
 # @pantheon-systems/wordpress-kit
 
+## 3.1.3-canary.0
+
+### Patch Changes
+
+- 983408a2: Update dependencies
+- Updated dependencies [983408a2]
+  - @pantheon-systems/cms-kit@0.3.4-canary.0
+
 ## 3.1.2
 
 ### Patch Changes

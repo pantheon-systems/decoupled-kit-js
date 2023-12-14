@@ -5,7 +5,7 @@
 	},
 	"include": [
 		"src/**/*.ts",
-		"vite.config.ts",
+		"vite.config.mts",
 		"__tests__/vitest.d.ts",
 		"__tests__/**/*.test.ts"
 	]

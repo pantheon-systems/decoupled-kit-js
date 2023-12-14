@@ -1,5 +1,18 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.8-canary.1
+
+### Patch Changes
+
+- 983408a2: Update dependencies
+
+## 0.10.8-canary.0
+
+### Patch Changes
+
+- c1e069c4: [gatsby-wp] Fix develop mode infinite loop due to d.ts files
+- 08215f90: Removed ISR example pages and links to those pages from starters.
+
 ## 0.10.7
 
 ### Patch Changes

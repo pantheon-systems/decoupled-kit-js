@@ -6,9 +6,13 @@ const { tailwindcssPlugin } = require('@pantheon-systems/wordpress-kit');
 {{/if}}
 module.exports = {
 	content: [
+		{{#if gatsby}}
+		'./src/{pages,components,templates}/**/*.{jsx,tsx}'
+		{{else}}
 		'./pages/**/*.{js,ts,jsx,tsx}',
 		'./components/**/*.{js,ts,jsx,tsx}',
 		'./src/**/*.{js,jsx,ts,tsx}'
+		{{/if}}
 	],
 	theme: {
 		extend: {},

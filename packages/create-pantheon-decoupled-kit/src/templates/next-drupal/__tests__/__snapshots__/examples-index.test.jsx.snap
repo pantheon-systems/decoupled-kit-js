@@ -90,14 +90,6 @@ exports[`<ExamplesPageTemplate /> > should render the examples page 1`] = `
             </li>
             <li>
               <a
-                href="/examples/ssg-isr"
-              >
-                SSG and ISR
-              </a>
-               - by default, this starter kit is optimized for SSR and Edge Caching on Pantheon. This example is provided for cases where Next.js static generation options would be beneficial.
-            </li>
-            <li>
-              <a
                 href="/examples/pagination"
               >
                 Pagination
@@ -133,14 +125,14 @@ exports[`<ExamplesPageTemplate /> > should render the examples page 1`] = `
         <span
           class="mx-auto"
         >
-          © 2023 Built with 
+          © 2023 Built with
           <a
             class="text-white hover:text-blue-100 underline"
             href="https://nextjs.org/"
           >
             Next.js
           </a>
-           and 
+           and
           <a
             class="text-blue-500 underline hover:text-blue-100"
             href="https://www.drupal.org/"
