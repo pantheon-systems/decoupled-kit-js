@@ -1,5 +1,13 @@
 # @pantheon-systems/drupal-kit
 
+## 4.6.5-canary.0
+
+### Patch Changes
+
+- 983408a2: Update dependencies
+- Updated dependencies [983408a2]
+  - @pantheon-systems/cms-kit@0.3.4-canary.0
+
 ## 4.6.4
 
 ### Patch Changes

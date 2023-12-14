@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/nextjs-kit",
-	"version": "1.7.7",
+	"version": "1.7.8-canary.0",
 	"description": "Pantheon Decoupled Kit's Next.js Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -78,7 +78,7 @@
 		"lint-staged": "lint-staged"
 	},
 	"devDependencies": {
-		"@pantheon-systems/eslint-config": "*",
+		"@pantheon-systems/eslint-config": "0.0.1-canary.0",
 		"@pantheon-systems/workspace-configs": "*",
 		"@tailwindcss/typography": "^0.5.10",
 		"autoprefixer": "^10.4.16",
