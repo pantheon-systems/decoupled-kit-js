@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.9-canary.0
+
+### Patch Changes
+
+- 842575e6: Bump @types/klaw from 3.0.4 to 3.0.6
+- 362d80a7: Bump fs-extra and @types/fs-extra
+
 ## 0.10.8
 
 ### Patch Changes

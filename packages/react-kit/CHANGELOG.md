@@ -1,5 +1,11 @@
 # @pantheon-systems/react-kit
 
+## 0.2.2-canary.0
+
+### Patch Changes
+
+- a60ae885: Bump @storybook/addon-links from 7.5.1 to 7.6.5
+
 ## 0.2.1
 
 ### Patch Changes
