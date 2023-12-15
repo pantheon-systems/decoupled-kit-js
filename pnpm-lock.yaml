@@ -283,8 +283,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       '@types/klaw':
-        specifier: ^3.0.4
-        version: 3.0.4
+        specifier: ^3.0.6
+        version: 3.0.6
       '@types/minimist':
         specifier: ^1.2.2
         version: 1.2.2
@@ -8709,10 +8709,10 @@ packages:
       '@types/node': 18.18.0
     dev: false
 
-  /@types/klaw@3.0.4:
-    resolution: {integrity: sha512-0M5F/WMU9yu2MyRued1VTQvUSwZ3siqYsX6MU7JF7VXRF5RzL0FXWFUrmdrWuGDWmuN6W+SyLhhg1Wp/sXkjtg==}
+  /@types/klaw@3.0.6:
+    resolution: {integrity: sha512-BErW5TrTz4nzt/c3VRGf0Bug4JyQJ1o807F4mAfXfvOzFZ8SKgFeHJ0T28Y1KtqlMEB+cUgN7S7CsyQDQ/qxqg==}
     dependencies:
-      '@types/node': 20.7.0
+      '@types/node': 18.18.0
     dev: true
 
   /@types/lodash@4.14.200:
