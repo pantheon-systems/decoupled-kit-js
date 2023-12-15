@@ -18,5 +18,9 @@
     "next-wordpress-starter": "0.1.0",
     "web": "1.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "six-plums-behave",
+    "stupid-cycles-sparkle",
+    "twenty-toys-walk"
+  ]
 }
