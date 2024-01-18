@@ -1,5 +1,13 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.9-canary.1
+
+### Patch Changes
+
+- fcaa9ee1: eslint and @types/eslint
+- 5e12cf95: Bump eslint and @types/eslint
+- f8721a85: Bump esbuild from 0.19.9 to 0.19.11
+
 ## 0.10.9-canary.0
 
 ### Patch Changes
