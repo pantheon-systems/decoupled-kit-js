@@ -19,8 +19,11 @@
     "web": "1.0.0"
   },
   "changesets": [
+    "dry-years-jog",
     "six-plums-behave",
+    "slimy-ties-divide",
     "stupid-cycles-sparkle",
+    "stupid-paws-notice",
     "twenty-toys-walk"
   ]
 }
