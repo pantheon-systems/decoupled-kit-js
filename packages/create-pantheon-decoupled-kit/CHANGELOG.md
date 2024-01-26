@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.9-canary.2
+
+### Patch Changes
+
+- 3a73d342: Bump @types/which-pm-runs from 1.0.0 to 1.0.2
+
 ## 0.10.9-canary.1
 
 ### Patch Changes
