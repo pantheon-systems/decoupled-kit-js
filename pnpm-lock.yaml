@@ -289,8 +289,8 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2
       '@types/which-pm-runs':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.2
+        version: 1.0.2
       chalk:
         specifier: ^5.3.0
         version: 5.3.0
@@ -6985,8 +6985,8 @@ packages:
   /@types/unist@2.0.8:
     resolution: {integrity: sha512-d0XxK3YTObnWVp6rZuev3c49+j4Lo8g4L1ZRm9z5L0xpoZycUPshHgczK5gsUMaZOstjVYYi09p5gYvUtfChYw==}
 
-  /@types/which-pm-runs@1.0.0:
-    resolution: {integrity: sha512-BXfdlYLWvRhngJbih4N57DjO+63Z7AxiFiip8yq3rD46U7V4I2W538gngPvBsZiMehhD8sfGf4xLI6k7TgXvNw==}
+  /@types/which-pm-runs@1.0.2:
+    resolution: {integrity: sha512-M0ZefeDApctHbjqtATOiixiwafG7pXD3exxnjku4XmX9+2DmONGghv5Z8Pnm0lNLBZKvDQyuG+4pLkH2UkP5gg==}
     dev: true
 
   /@types/ws@8.5.6:
