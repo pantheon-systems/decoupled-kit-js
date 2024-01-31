@@ -8,7 +8,7 @@ sidebar_position: 0
 ## Before You Begin
 
 The Pantheon `next-drupal-starter` uses Next.js and has been tested using
-[nodejs v16 with npm v8](https://nodejs.org/en/download/).
+[nodejs v20 with npm v10](https://nodejs.org/en/download/).
 
 ## Why Use The Next.js Drupal Starter?
 

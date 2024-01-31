@@ -29,7 +29,7 @@ jobs:
       - name: Setup nodejs
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
           cache: 'pnpm'
       - name: install dependencies
         run: pnpm install
@@ -102,7 +102,7 @@ jobs:
         if: ${{ matrix.generator_cmd != '' }}
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
         # install canary version of the CLI
         # run the command to generate the starter in the matrix.local_path directory
       - name: Generate starter

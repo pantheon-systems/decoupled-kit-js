@@ -8,7 +8,7 @@ sidebar_position: 0
 ## Before You Begin
 
 The Pantheon `gatsby-wordpress-starter` uses Gatsby v4 and has been tested using
-[nodejs v16 with npm v8](https://nodejs.org/en/download/). You may want to
+[nodejs v20 with npm v10](https://nodejs.org/en/download/). You may want to
 install the gatsby cli globally, or
 [use `npx`](https://www.npmjs.com/package/npx)
 
