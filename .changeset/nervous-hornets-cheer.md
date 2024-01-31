@@ -2,4 +2,4 @@
 'create-pantheon-decoupled-kit': minor
 ---
 
-[gatsby-wp] Update node version to `lts` in the lando.yml
+[gatsby-wp][next-drupal] Update node version to `lts` in the lando.yml
