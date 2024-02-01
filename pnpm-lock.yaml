@@ -443,8 +443,8 @@ importers:
         specifier: ^10.4.16
         version: 10.4.16(postcss@8.4.32)
       daisyui:
-        specifier: ^3.9.2
-        version: 3.9.2
+        specifier: ^4.6.1
+        version: 4.6.1(postcss@8.4.32)
       eslint-plugin-react-refresh:
         specifier: ^0.4.4
         version: 0.4.4(eslint@8.56.0)
@@ -8868,6 +8868,7 @@ packages:
 
   /colord@2.9.3:
     resolution: {integrity: sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==}
+    dev: false
 
   /colorette@2.0.20:
     resolution: {integrity: sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==}
@@ -9374,6 +9375,11 @@ packages:
       stream-transform: 2.1.3
     dev: true
 
+  /culori@3.3.0:
+    resolution: {integrity: sha512-pHJg+jbuFsCjz9iclQBqyL3B2HLCBF71BwVNujUYEvCeQMvV97R59MNK3R2+jgJ3a1fcZgI9B3vYgz8lzr/BFQ==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: true
+
   /cytoscape-cose-bilkent@4.1.0(cytoscape@3.26.0):
     resolution: {integrity: sha512-wgQlVIUJF13Quxiv5e1gstZ08rnZj2XaLHGoFMYXz7SkNfCDOOteKBE6SYRfA9WxxI/iBc3ajfDoc6hb/MRAHQ==}
     peerDependencies:
@@ -9662,17 +9668,16 @@ packages:
       lodash-es: 4.17.21
     dev: false
 
-  /daisyui@3.9.2:
-    resolution: {integrity: sha512-yJZ1QjHUaL+r9BkquTdzNHb7KIgAJVFh0zbOXql2Wu0r7zx5qZNLxclhjN0WLoIpY+o2h/8lqXg7ijj8oTigOw==}
+  /daisyui@4.6.1(postcss@8.4.32):
+    resolution: {integrity: sha512-IXI8ypN/hkl1AKsag1XPlWt0wfvL4NedTUtUkv/VFP5q/xDbBZrZthq3/9M2yU1egcbbLhp01rluIz0GICUc+g==}
     engines: {node: '>=16.9.0'}
     dependencies:
-      colord: 2.9.3
       css-selector-tokenizer: 0.8.0
-      postcss: 8.4.32
+      culori: 3.3.0
+      picocolors: 1.0.0
       postcss-js: 4.0.1(postcss@8.4.32)
-      tailwindcss: 3.3.3
     transitivePeerDependencies:
-      - ts-node
+      - postcss
     dev: true
 
   /damerau-levenshtein@1.0.8:
