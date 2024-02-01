@@ -61,7 +61,7 @@
 		"@changesets/cli": "^2.26.2",
 		"@pantheon-systems/eslint-config-decoupled-kit": "workspace:*",
 		"@pantheon-systems/workspace-configs": "workspace:*",
-		"@playwright/test": "^1.38.1",
+		"@playwright/test": "^1.41.1",
 		"@testing-library/react": "^14.1.2",
 		"@types/eslint": "^8.56.0",
 		"@types/node": "^18.18.0",
