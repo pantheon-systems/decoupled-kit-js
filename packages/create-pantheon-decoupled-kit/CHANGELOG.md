@@ -1,5 +1,16 @@
 # create-pantheon-decoupled-kit
 
+## 0.11.0-canary.0
+
+### Minor Changes
+
+- cbc4972a: [gatsby-wp][next-drupal] Update node version to `lts` in the
+  lando.yml
+
+### Patch Changes
+
+- 4fa2c875: Bump inquirer and @types/inquirer
+
 ## 0.10.9
 
 ### Patch Changes
