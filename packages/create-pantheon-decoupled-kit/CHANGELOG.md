@@ -1,5 +1,16 @@
 # create-pantheon-decoupled-kit
 
+## 0.10.9
+
+### Patch Changes
+
+- fcaa9ee1: eslint and @types/eslint
+- 5e12cf95: Bump eslint and @types/eslint
+- 842575e6: Bump @types/klaw from 3.0.4 to 3.0.6
+- f8721a85: Bump esbuild from 0.19.9 to 0.19.11
+- 3a73d342: Bump @types/which-pm-runs from 1.0.0 to 1.0.2
+- 362d80a7: Bump fs-extra and @types/fs-extra
+
 ## 0.10.9-canary.2
 
 ### Patch Changes
