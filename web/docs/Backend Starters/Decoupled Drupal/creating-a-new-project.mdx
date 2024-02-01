@@ -82,16 +82,20 @@ The following guide assumes that you are intending to deploy the Drupal site on
 ## Install Drupal:
 
 Visit the Site by clicking on the **Visit Development Site** button to Install
-via the UI—selecting either the `Pantheon Decoupled Profile`, or
-`Pantheon Decoupled Umami Demo` profiles. The same can be done via
+via the UI—selecting the `Pantheon Decoupled Profile` install profile. The same
+can be done via
 [`terminus remote:drush`](https://pantheon.io/docs/terminus/commands/remote-drush).
 
-- The Decoupled Umami Demo must first be added to your project as a dependency
-  using composer:
+## Install Drupal with Umami Demo Data:
 
-  ```bash
-  composer require drupal/pantheon_decoupled_umami_demo
-  ```
+Visit the Site by clicking on the **Visit Development Site** button to Install
+via the UI—selecting the `Demo: Umami Food Magazine` install profile. After
+installing, enable the Pantheon Decoupled module.
+
+Optionally:
+
+- Enable caching under Configuration > Development > Performance
+- Enable the desired theme and admin theme
 
 ## Installing using Build Tools
 
@@ -156,23 +160,6 @@ terminus build:project:create \
   again.
 
 ### Additional Options
-
-#### Installing with Umami Demo Data
-
-The installation command above will create a backend with limited example
-content. To instead create a site with Drupal's Umami demo data set, change the
-profile flag to:
-
-`--profile="pantheon_decoupled_umami_demo"`
-
-In your `terminus build:project:create` command.
-
-- The Decoupled Umami Demo must first be added to your project as a dependency
-  using composer:
-
-  ```bash
-  composer require drupal/pantheon_decoupled_umami_demo
-  ```
 
 #### Using Other Git Hosts or CI Services
 
