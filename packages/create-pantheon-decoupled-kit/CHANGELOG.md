@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.11.0-canary.1
+
+### Patch Changes
+
+- 74f8d94: Bump @types/eslint from 8.56.0 to 8.56.2
+
 ## 0.11.0-canary.0
 
 ### Minor Changes
