@@ -32,7 +32,7 @@
 		"@docusaurus/theme-common": "^2.4.3",
 		"@docusaurus/theme-mermaid": "2.4.3",
 		"@mdx-js/react": "^1.6.22",
-		"clsx": "^2.0.0",
+		"clsx": "^2.1.0",
 		"docusaurus-lunr-search": "^2.3.2",
 		"lunr": "^2.3.9",
 		"prism-react-renderer": "^2.3.1",
