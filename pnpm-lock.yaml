@@ -510,8 +510,8 @@ importers:
         specifier: 2.4.3
         version: 2.4.3(esbuild@0.19.12)(eslint@8.56.0)(react-dom@17.0.2)(react@17.0.2)(typescript@5.3.3)
       '@mdx-js/react':
-        specifier: ^1.6.22
-        version: 1.6.22(react@17.0.2)
+        specifier: ^3.0.1
+        version: 3.0.1(@types/react@17.0.58)(react@17.0.2)
       clsx:
         specifier: ^2.1.0
         version: 2.1.0
@@ -4089,6 +4089,17 @@ packages:
       react: 18.2.0
     dev: true
 
+  /@mdx-js/react@3.0.1(@types/react@17.0.58)(react@17.0.2):
+    resolution: {integrity: sha512-9ZrPIU4MGf6et1m1ov3zKf+q9+deetI51zprKB1D/z3NOb+rUxxtEl3mCjW5wTGh6VhRdwPueh1oRzi6ezkA8A==}
+    peerDependencies:
+      '@types/react': '>=16'
+      react: '>=16'
+    dependencies:
+      '@types/mdx': 2.0.9
+      '@types/react': 17.0.58
+      react: 17.0.2
+    dev: false
+
   /@mdx-js/util@1.6.22:
     resolution: {integrity: sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==}
     dev: false
@@ -6646,7 +6657,6 @@ packages:
 
   /@types/mdx@2.0.9:
     resolution: {integrity: sha512-OKMdj17y8Cs+k1r0XFyp59ChSOwf8ODGtMQ4mnpfz5eFDk1aO41yN3pSKGuvVzmWAkFp37seubY1tzOVpwfWwg==}
-    dev: true
 
   /@types/mime-types@2.1.4:
     resolution: {integrity: sha512-lfU4b34HOri+kAY5UheuFMWPDOI+OPceBSHZKp69gEyTL/mmJ4cnU6Y/rlme3UL3GyOn6Y42hyIEw0/q8sWx5w==}
