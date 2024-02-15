@@ -1,5 +1,11 @@
 # @pantheon-systems/decoupled-kit-health-check
 
+## 0.2.4-canary.0
+
+### Patch Changes
+
+- 1a52f4d: Bump dotenv from 16.3.1 to 16.4.4
+
 ## 0.2.3
 
 ### Patch Changes
