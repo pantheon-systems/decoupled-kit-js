@@ -301,8 +301,8 @@ importers:
   packages/decoupled-kit-health-check:
     dependencies:
       dotenv:
-        specifier: ^16.3.1
-        version: 16.3.1
+        specifier: ^16.4.4
+        version: 16.4.4
       node-fetch:
         specifier: ^3.3.2
         version: 3.3.2
@@ -541,8 +541,8 @@ importers:
         specifier: ^0.20.1
         version: 0.20.1(typedoc-plugin-markdown@3.16.0)(typedoc@0.25.7)
       dotenv:
-        specifier: ^16.3.1
-        version: 16.3.1
+        specifier: ^16.4.4
+        version: 16.4.4
       typedoc:
         specifier: ^0.25.7
         version: 0.25.7(typescript@5.3.3)
@@ -9649,8 +9649,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /dotenv@16.3.1:
-    resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
+  /dotenv@16.4.4:
+    resolution: {integrity: sha512-XvPXc8XAQThSjAbY6cQ/9PcBXmFoWuw1sQ3b8HqUCR6ziGXjkTi//kB9SWa2UwqlgdAIuRqAa/9hVljzPehbYg==}
     engines: {node: '>=12'}
 
   /drupal-jsonapi-params@1.2.3:
@@ -12449,7 +12449,7 @@ packages:
     engines: {node: '>=14.0.0'}
     dependencies:
       app-root-dir: 1.0.2
-      dotenv: 16.3.1
+      dotenv: 16.4.4
       dotenv-expand: 10.0.0
     dev: true
 
@@ -15950,7 +15950,7 @@ packages:
     resolution: {integrity: sha512-ZUyfgGDdFRbZGGJQ1YhiM930Yczz5VlbJObrQLlk24+qNHVQx4OlLcYswEUo3bIyNAbQUIUR9Yr5/Hqjzqb4zA==}
     dependencies:
       '@open-draft/deferred-promise': 2.2.0
-      dotenv: 16.3.1
+      dotenv: 16.4.4
       mime-db: 1.52.0
       outvariant: 1.4.0
     dev: false
