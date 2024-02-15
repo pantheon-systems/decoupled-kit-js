@@ -30,7 +30,7 @@
 		"@pantheon-systems/nextjs-kit": "1.7.0",
 		"@pantheon-systems/wordpress-kit": "2.13.0",
 		"@tailwindcss/typography": "^0.5.9",
-		"dotenv": "^16.0.2",
+		"dotenv": "^16.4.4",
 		"next": "^13.1.5",
 		"next-seo": "^6.4.0",
 		"react": "18.2.0",
