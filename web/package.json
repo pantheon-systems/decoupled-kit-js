@@ -57,7 +57,7 @@
 		"docusaurus-plugin-typedoc": "^0.20.1",
 		"dotenv": "^16.4.4",
 		"typedoc": "^0.25.7",
-		"typedoc-plugin-markdown": "3.16.0"
+		"typedoc-plugin-markdown": "3.17.1"
 	},
 	"peerDependencies": {
 		"@algolia/client-search": "^4.9.1"
