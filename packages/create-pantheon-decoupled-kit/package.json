@@ -68,7 +68,7 @@
 		"klaw": "^4.1.0",
 		"minimist": "^1.2.8",
 		"postcss": "^8.4.30",
-		"postcss-custom-properties": "^13.3.2",
+		"postcss-custom-properties": "^13.3.5",
 		"which-pm-runs": "^1.1.0"
 	}
 }
