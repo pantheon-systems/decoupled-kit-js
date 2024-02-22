@@ -1,5 +1,12 @@
 # create-pantheon-decoupled-kit
 
+## 0.11.0-canary.2
+
+### Patch Changes
+
+- a99565d: Bump postcss-custom-properties from 13.3.2 to 13.3.5
+- c12cb49: Bump chokidar from 3.5.3 to 3.6.0
+
 ## 0.11.0-canary.1
 
 ### Patch Changes
