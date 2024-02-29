@@ -2,7 +2,7 @@ name: drupalnext
 
 services:
   node:
-    type: node:14
+    type: node:lts
     port: 3000
     command: npm run dev
 

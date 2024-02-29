@@ -1,5 +1,29 @@
 # create-pantheon-decoupled-kit
 
+## 0.11.0-canary.2
+
+### Patch Changes
+
+- a99565d: Bump postcss-custom-properties from 13.3.2 to 13.3.5
+- c12cb49: Bump chokidar from 3.5.3 to 3.6.0
+
+## 0.11.0-canary.1
+
+### Patch Changes
+
+- 74f8d94: Bump @types/eslint from 8.56.0 to 8.56.2
+
+## 0.11.0-canary.0
+
+### Minor Changes
+
+- cbc4972a: [gatsby-wp][next-drupal] Update node version to `lts` in the
+  lando.yml
+
+### Patch Changes
+
+- 4fa2c875: Bump inquirer and @types/inquirer
+
 ## 0.10.9
 
 ### Patch Changes

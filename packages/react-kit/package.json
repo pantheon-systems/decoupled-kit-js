@@ -51,8 +51,8 @@
 	"devDependencies": {
 		"@pantheon-systems/eslint-config": "0.0.1",
 		"@pantheon-systems/workspace-configs": "*",
-		"@storybook/addon-a11y": "^7.5.1",
-		"@storybook/addon-essentials": "^7.5.1",
+		"@storybook/addon-a11y": "^7.6.12",
+		"@storybook/addon-essentials": "^7.6.13",
 		"@storybook/addon-interactions": "^7.6.10",
 		"@storybook/addon-links": "^7.6.5",
 		"@storybook/addon-onboarding": "^1.0.8",
@@ -64,20 +64,20 @@
 		"@testing-library/jest-dom": "^6.1.4",
 		"@vitejs/plugin-react-swc": "^3.4.0",
 		"autoprefixer": "^10.4.16",
-		"daisyui": "^3.9.2",
+		"daisyui": "^4.6.1",
 		"eslint-plugin-react-refresh": "^0.4.4",
-		"eslint-plugin-storybook": "^0.6.15",
+		"eslint-plugin-storybook": "^0.8.0",
 		"eslint-plugin-tailwindcss": "^3.13.0",
 		"postcss": "^8.4.30",
 		"tailwindcss": "^3.3.3"
 	},
 	"dependencies": {
 		"@radix-ui/react-slot": "^1.0.2",
-		"clsx": "^2.0.0",
+		"clsx": "^2.1.0",
 		"focus-trap-react": "^10.2.3"
 	},
 	"peerDependencies": {
-		"daisyui": "^3.9.2",
+		"daisyui": "^4.6.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"tailwindcss": "^3.3.3"

@@ -58,13 +58,13 @@
 		"headless-cms-sdk"
 	],
 	"devDependencies": {
-		"@changesets/cli": "^2.26.2",
+		"@changesets/cli": "^2.27.1",
 		"@pantheon-systems/eslint-config-decoupled-kit": "workspace:*",
 		"@pantheon-systems/workspace-configs": "workspace:*",
-		"@playwright/test": "^1.38.1",
-		"@testing-library/react": "^14.1.2",
-		"@types/eslint": "^8.56.0",
-		"@types/node": "^18.18.0",
+		"@playwright/test": "^1.41.2",
+		"@testing-library/react": "^14.2.1",
+		"@types/eslint": "^8.56.2",
+		"@types/node": "^20.11.13",
 		"@types/react": "^18.2.43",
 		"@types/react-dom": "^18.2.17",
 		"@vitest/coverage-v8": "^1.0.4",
@@ -85,7 +85,7 @@
 		"tsx": "^3.13.0",
 		"typedoc": "^0.25.7",
 		"typescript": "^5.2.2",
-		"vite": "^5.0.8",
+		"vite": "^5.0.12",
 		"vitest": "^1.2.2"
 	},
 	"packageManager": "pnpm@8.8.0",

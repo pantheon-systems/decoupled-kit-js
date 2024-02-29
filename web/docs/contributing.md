@@ -19,8 +19,8 @@ sidebar_position: 4
 To configure the monorepo for development, the following should be installed
 locally:
 
-- Nodejs version 18 LTS. We recomemnd using [nvm](https://github.com/nvm-sh/nvm)
-- [npm](https://docs.npmjs.com/cli/v9/commands/npm) version 9.x.x
+- Node.js LTS version. We recommend using [nvm](https://github.com/nvm-sh/nvm)
+- [npm](https://docs.npmjs.com/cli/v9/commands/npm) version 10.x.x
 - [pnpm](https://pnpm.io/installation) version 8.x.x
 
   We recommend using npm. Run the following command to install:

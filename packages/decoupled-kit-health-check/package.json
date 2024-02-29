@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/decoupled-kit-health-check",
-	"version": "0.2.3",
+	"version": "0.2.4-canary.0",
 	"description": "Pantheon Decoupled Kit's Health Check",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -35,7 +35,7 @@
 		"@pantheon-systems/workspace-configs": "*"
 	},
 	"dependencies": {
-		"dotenv": "^16.3.1",
+		"dotenv": "^16.4.4",
 		"node-fetch": "^3.3.2"
 	},
 	"engines": {

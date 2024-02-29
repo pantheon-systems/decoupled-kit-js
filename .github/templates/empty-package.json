@@ -11,6 +11,6 @@
 	"author": "pantheon-systems",
 	"license": "GPL-3.0-or-later",
 	"engines": {
-		"node": "18"
+		"node": "20"
 	}
 }
