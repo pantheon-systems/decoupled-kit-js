@@ -71,7 +71,7 @@
 		"esbuild": "^0.19.11",
 		"eslint": "^8.56.0",
 		"eslint-plugin-prettier": "^5.0.0",
-		"eslint-plugin-tailwindcss": "^3.13.0",
+		"eslint-plugin-tailwindcss": "^3.14.3",
 		"husky": "^8.0.3",
 		"lint-staged": "^14.0.1",
 		"msw": "^2.0.11",
