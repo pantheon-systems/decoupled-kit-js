@@ -101,8 +101,8 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1(typescript@5.3.3)
       tsx:
-        specifier: ^3.13.0
-        version: 3.13.0
+        specifier: ^4.7.1
+        version: 4.7.1
       typedoc:
         specifier: ^0.25.7
         version: 0.25.7(typescript@5.3.3)
@@ -16646,13 +16646,13 @@ packages:
       typescript: 5.3.3
     dev: true
 
-  /tsx@3.13.0:
-    resolution: {integrity: sha512-rjmRpTu3as/5fjNq/kOkOtihgLxuIz6pbKdj9xwP4J5jOLkBxw/rjN5ANw+KyrrOXV5uB7HC8+SrrSJxT65y+A==}
+  /tsx@4.7.1:
+    resolution: {integrity: sha512-8d6VuibXHtlN5E3zFkgY8u4DX7Y3Z27zvvPKVmLon/D4AjuKzarkUBTLDBgj9iTQ0hg5xM7c/mYiRVM+HETf0g==}
+    engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
-      esbuild: 0.18.20
+      esbuild: 0.19.12
       get-tsconfig: 4.7.2
-      source-map-support: 0.5.21
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
