@@ -1,5 +1,13 @@
 # @pantheon-systems/react-kit
 
+## 0.2.3
+
+### Patch Changes
+
+- a3de216: Bump eslint-plugin-react-refresh from 0.4.4 to 0.4.6
+- 4345329: Bump eslint-plugin-tailwindcss from 3.13.0 to 3.15.1
+- 3c8ccba: Bump @vitejs/plugin-react-swc from 3.4.0 to 3.6.0
+
 ## 0.2.3-canary.1
 
 ### Patch Changes
