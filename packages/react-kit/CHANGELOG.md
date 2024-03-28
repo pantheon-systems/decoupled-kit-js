@@ -1,5 +1,11 @@
 # @pantheon-systems/react-kit
 
+## 0.2.3-canary.1
+
+### Patch Changes
+
+- a3de216: Bump eslint-plugin-react-refresh from 0.4.4 to 0.4.6
+
 ## 0.2.3-canary.0
 
 ### Patch Changes

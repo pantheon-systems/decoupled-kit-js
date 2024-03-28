@@ -1,5 +1,13 @@
 # create-pantheon-decoupled-kit
 
+## 0.11.1-canary.0
+
+### Patch Changes
+
+- 7fad03a: Bump postcss-custom-properties from 13.3.5 to 13.3.6
+- ed951f0: Bump @csstools/postcss-global-data from 2.1.0 to 2.1.1
+- e19f9ce: Bump eslint-plugin-prettier from 5.0.0 to 5.1.3
+
 ## 0.11.0
 
 ### Minor Changes

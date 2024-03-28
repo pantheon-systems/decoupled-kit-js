@@ -16,7 +16,11 @@
     "web": "1.0.0"
   },
   "changesets": [
+    "chilled-beds-cheer",
+    "chilly-plants-begin",
     "fast-ducks-speak",
+    "grumpy-snakes-invent",
+    "hip-suits-love",
     "tame-pears-drum"
   ]
 }
