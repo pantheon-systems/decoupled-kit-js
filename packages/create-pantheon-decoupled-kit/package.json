@@ -58,7 +58,7 @@
 		"chokidar": "^3.6.0"
 	},
 	"dependencies": {
-		"@csstools/postcss-global-data": "^2.1.0",
+		"@csstools/postcss-global-data": "^2.1.1",
 		"autoprefixer": "^10.4.16",
 		"diff": "^5.1.0",
 		"fs-extra": "^11.2.0",
