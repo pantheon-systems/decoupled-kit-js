@@ -1,5 +1,11 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.7.9-canary.0
+
+### Patch Changes
+
+- e19f9ce: Bump eslint-plugin-prettier from 5.0.0 to 5.1.3
+
 ## 1.7.8
 
 ### Patch Changes

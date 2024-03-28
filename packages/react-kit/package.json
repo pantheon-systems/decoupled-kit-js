@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/react-kit",
-	"version": "0.2.2",
+	"version": "0.2.3-canary.1",
 	"description": "Pantheon Decoupled Kit's React Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -62,12 +62,12 @@
 		"@storybook/react-vite": "^7.5.1",
 		"@storybook/testing-library": "^0.2.2",
 		"@testing-library/jest-dom": "^6.1.4",
-		"@vitejs/plugin-react-swc": "^3.4.0",
+		"@vitejs/plugin-react-swc": "^3.6.0",
 		"autoprefixer": "^10.4.16",
-		"daisyui": "^4.6.1",
-		"eslint-plugin-react-refresh": "^0.4.4",
+		"daisyui": "^4.7.3",
+		"eslint-plugin-react-refresh": "^0.4.6",
 		"eslint-plugin-storybook": "^0.8.0",
-		"eslint-plugin-tailwindcss": "^3.13.0",
+		"eslint-plugin-tailwindcss": "^3.15.1",
 		"postcss": "^8.4.30",
 		"tailwindcss": "^3.3.3"
 	},
@@ -77,7 +77,7 @@
 		"focus-trap-react": "^10.2.3"
 	},
 	"peerDependencies": {
-		"daisyui": "^4.6.1",
+		"daisyui": "^4.7.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"tailwindcss": "^3.3.3"
