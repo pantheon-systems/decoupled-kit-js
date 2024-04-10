@@ -1,5 +1,11 @@
 # @pantheon-systems/react-kit
 
+## 0.2.4-canary.0
+
+### Patch Changes
+
+- 6f5d1e0: Bump @storybook/addon-interactions from 7.6.10 to 7.6.17
+
 ## 0.2.3
 
 ### Patch Changes
