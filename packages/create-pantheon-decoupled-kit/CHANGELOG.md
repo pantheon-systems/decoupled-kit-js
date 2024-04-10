@@ -1,5 +1,11 @@
 # create-pantheon-decoupled-kit
 
+## 0.11.2-canary.0
+
+### Patch Changes
+
+- 52a7335: Bump diff and @types/diff
+
 ## 0.11.1
 
 ### Patch Changes
