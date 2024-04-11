@@ -413,8 +413,8 @@ importers:
         specifier: ^7.6.17
         version: 7.6.17
       '@storybook/addon-links':
-        specifier: ^7.6.5
-        version: 7.6.5(react@18.2.0)
+        specifier: ^8.0.6
+        version: 8.0.6(react@18.2.0)
       '@storybook/addon-onboarding':
         specifier: ^1.0.8
         version: 1.0.8(react-dom@18.2.0)(react@18.2.0)
@@ -5155,8 +5155,8 @@ packages:
       ts-dedent: 2.2.0
     dev: true
 
-  /@storybook/addon-links@7.6.5(react@18.2.0):
-    resolution: {integrity: sha512-Lx4Ng+iXt0YpIrKGr+nOZlpN9ypOoEDoP/7bZ6m7GXuVAkDm3JrRCBp7e2ZKSKcTxPdjPuO9HVKkIjtqjINlpw==}
+  /@storybook/addon-links@8.0.6(react@18.2.0):
+    resolution: {integrity: sha512-1UBNhQdwm17fXmuUKIsgvT6YenMbaGIYdr/9ApKmIMTKKO+emQ7APlsTbvasutcOkCd57rC1KZRfAHQpgU9wDQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     peerDependenciesMeta:
