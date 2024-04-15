@@ -16,6 +16,6 @@
 	"author": "pantheon-systems",
 	"license": "GPL-3.0-or-later",
 	"devDependencies": {
-		"@playwright/test": "^1.42.1"
+		"@playwright/test": "^1.43.1"
 	}
 }
