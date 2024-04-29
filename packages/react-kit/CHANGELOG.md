@@ -1,5 +1,11 @@
 # @pantheon-systems/react-kit
 
+## 0.2.4-canary.1
+
+### Patch Changes
+
+- 32c341e: Bump autoprefixer from 10.4.16 to 10.4.19
+
 ## 0.2.4-canary.0
 
 ### Patch Changes
