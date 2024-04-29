@@ -1,5 +1,11 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.7.10-canary.0
+
+### Patch Changes
+
+- 32c341e: Bump autoprefixer from 10.4.16 to 10.4.19
+
 ## 1.7.9
 
 ### Patch Changes
