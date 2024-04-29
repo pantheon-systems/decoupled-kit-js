@@ -59,7 +59,7 @@
 	},
 	"dependencies": {
 		"@csstools/postcss-global-data": "^2.1.1",
-		"autoprefixer": "^10.4.16",
+		"autoprefixer": "^10.4.19",
 		"diff": "^5.2.0",
 		"fs-extra": "^11.2.0",
 		"glob": "^10.3.9",
