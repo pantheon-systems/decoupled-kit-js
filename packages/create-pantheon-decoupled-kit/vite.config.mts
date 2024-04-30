@@ -29,6 +29,7 @@ export default defineConfig(() => {
 			globals: true,
 			coverage: {
 				reportsDirectory: `./coverage`,
+				all: false,
 			},
 			include: ['./__tests__**/*.test.*'],
 		},

@@ -1,6 +1,6 @@
 {
 	"name": "create-pantheon-decoupled-kit",
-	"version": "0.11.1",
+	"version": "0.11.2-canary.1",
 	"description": "Pantheon Decoupled Kit CLI",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -48,7 +48,7 @@
 		"@pantheon-systems/eslint-config": "0.0.1",
 		"@pantheon-systems/wordpress-kit": "3.1.3",
 		"@pantheon-systems/workspace-configs": "*",
-		"@types/diff": "^5.0.5",
+		"@types/diff": "^5.0.9",
 		"@types/fs-extra": "^11.0.4",
 		"@types/inquirer": "^9.0.7",
 		"@types/klaw": "^3.0.6",
@@ -59,8 +59,8 @@
 	},
 	"dependencies": {
 		"@csstools/postcss-global-data": "^2.1.1",
-		"autoprefixer": "^10.4.16",
-		"diff": "^5.1.0",
+		"autoprefixer": "^10.4.19",
+		"diff": "^5.2.0",
 		"fs-extra": "^11.2.0",
 		"glob": "^10.3.9",
 		"handlebars": "^4.7.8",
@@ -68,7 +68,7 @@
 		"klaw": "^4.1.0",
 		"minimist": "^1.2.8",
 		"postcss": "^8.4.30",
-		"postcss-custom-properties": "^13.3.6",
+		"postcss-custom-properties": "^13.3.8",
 		"which-pm-runs": "^1.1.0"
 	}
 }

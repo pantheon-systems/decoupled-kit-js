@@ -1,5 +1,18 @@
 # create-pantheon-decoupled-kit
 
+## 0.11.2-canary.1
+
+### Patch Changes
+
+- 4e46032: Bump postcss-custom-properties from 13.3.6 to 13.3.8
+- 32c341e: Bump autoprefixer from 10.4.16 to 10.4.19
+
+## 0.11.2-canary.0
+
+### Patch Changes
+
+- 52a7335: Bump diff and @types/diff
+
 ## 0.11.1
 
 ### Patch Changes
