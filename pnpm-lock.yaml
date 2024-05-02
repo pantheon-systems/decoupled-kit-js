@@ -413,8 +413,8 @@ importers:
         specifier: ^7.6.17
         version: 7.6.17
       '@storybook/addon-links':
-        specifier: ^7.6.17
-        version: 7.6.17(react@18.2.0)
+        specifier: ^7.6.19
+        version: 7.6.19(react@18.2.0)
       '@storybook/addon-onboarding':
         specifier: ^1.0.11
         version: 1.0.11(react-dom@18.2.0)(react@18.2.0)
@@ -5306,15 +5306,15 @@ packages:
       ts-dedent: 2.2.0
     dev: true
 
-  /@storybook/addon-links@7.6.17(react@18.2.0):
-    resolution: {integrity: sha512-iFUwKObRn0EKI0zMETsil2p9a/81rCuSMEWECsi+khkCAs1FUnD2cT6Ag5ydcNcBXsdtdfDJdtXQrkw+TSoStQ==}
+  /@storybook/addon-links@7.6.19(react@18.2.0):
+    resolution: {integrity: sha512-qMIFfcsMf4olxhYUHUV2ZJhxphh6Xpf1DMd0lxKqAibfxl/sX1m0rJkyiqWSBxbCmAy/pwdgqEOJ1lpDUsJ33w==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     peerDependenciesMeta:
       react:
         optional: true
     dependencies:
-      '@storybook/csf': 0.1.2
+      '@storybook/csf': 0.1.4
       '@storybook/global': 5.0.0
       react: 18.2.0
       ts-dedent: 2.2.0
@@ -5575,7 +5575,7 @@ packages:
       '@radix-ui/react-select': 1.2.2(@types/react-dom@18.2.17)(@types/react@18.2.43)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-toolbar': 1.0.4(@types/react-dom@18.2.17)(@types/react@18.2.43)(react-dom@18.2.0)(react@18.2.0)
       '@storybook/client-logger': 7.6.17
-      '@storybook/csf': 0.1.2
+      '@storybook/csf': 0.1.4
       '@storybook/global': 5.0.0
       '@storybook/theming': 7.6.17(react-dom@18.2.0)(react@18.2.0)
       '@storybook/types': 7.6.17
