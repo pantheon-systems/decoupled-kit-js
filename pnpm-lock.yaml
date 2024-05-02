@@ -516,8 +516,8 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0
       docusaurus-lunr-search:
-        specifier: ^2.3.2
-        version: 2.4.2(@docusaurus/core@2.4.3)(react-dom@17.0.2)(react@17.0.2)
+        specifier: ^3.3.2
+        version: 3.3.2(@docusaurus/core@2.4.3)(react-dom@17.0.2)(react@17.0.2)
       lunr:
         specifier: ^2.3.9
         version: 2.3.9
@@ -3356,7 +3356,7 @@ packages:
       react-dom: ^16.8.4 || ^17.0.0
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 18.2.43
+      '@types/react': 18.2.78
       commander: 5.1.0
       joi: 17.10.2
       react: 17.0.2
@@ -6902,9 +6902,6 @@ packages:
   /@types/unist@2.0.10:
     resolution: {integrity: sha512-IfYcSBWE3hLpBg8+X2SEa8LVkJdJEkT2Ese2aaLs3ptGdVtABxndrMaxuFlQ1qdFf9Q5rDvDpxI3WwgvKFAsQA==}
 
-  /@types/unist@2.0.8:
-    resolution: {integrity: sha512-d0XxK3YTObnWVp6rZuev3c49+j4Lo8g4L1ZRm9z5L0xpoZycUPshHgczK5gsUMaZOstjVYYi09p5gYvUtfChYw==}
-
   /@types/uuid@9.0.8:
     resolution: {integrity: sha512-jg+97EGIcY9AGHJJRaaPVgetKDsrTgbRjQ5Msgjh/DQKEFl0DtyRr/VCOyD1T2R1MNeWPK/u7JoGhlDZnKBAfA==}
     dev: true
@@ -9824,13 +9821,13 @@ packages:
     dependencies:
       esutils: 2.0.3
 
-  /docusaurus-lunr-search@2.4.2(@docusaurus/core@2.4.3)(react-dom@17.0.2)(react@17.0.2):
-    resolution: {integrity: sha512-t6Uk45ED5gZ4ma5s5fEzHrf52QmoTpKSC7LnskaSBqyFL3uj5ciW14WOm3nE/dlhkzx+ZphLjOEoRXgkwaSy7Q==}
+  /docusaurus-lunr-search@3.3.2(@docusaurus/core@2.4.3)(react-dom@17.0.2)(react@17.0.2):
+    resolution: {integrity: sha512-+TXfiRAwIAaNwME8bBZvC+osfoXjJSNs5BcZu92lIHoWc3Myct4Nw3jU0FMXQCQGQcQ0FgFqMDoh56LPCLVaxQ==}
     engines: {node: '>= 8.10.0'}
     peerDependencies:
-      '@docusaurus/core': ^2.0.0-alpha.60 || ^2.0.0
-      react: ^16.8.4 || ^17
-      react-dom: ^16.8.4 || ^17
+      '@docusaurus/core': ^2.0.0-alpha.60 || ^2.0.0 || ^3.0.0
+      react: ^16.8.4 || ^17 || ^18
+      react-dom: ^16.8.4 || ^17 || ^18
     dependencies:
       '@docusaurus/core': 2.4.3(@docusaurus/types@2.4.3)(esbuild@0.19.12)(eslint@8.56.0)(react-dom@17.0.2)(react@17.0.2)(typescript@5.3.3)
       autocomplete.js: 0.37.1
@@ -9841,8 +9838,8 @@ packages:
       hogan.js: 3.0.2
       lunr: 2.3.9
       lunr-languages: 1.13.0
+      mark.js: 8.11.1
       minimatch: 3.1.2
-      object-assign: 4.1.1
       react: 17.0.2
       react-dom: 17.0.2(react@17.0.2)
       rehype-parse: 7.0.1
@@ -13309,6 +13306,10 @@ packages:
   /map-or-similar@1.5.0:
     resolution: {integrity: sha512-0aF7ZmVon1igznGI4VS30yugpduQW3y3GkcgGJOp7d8x8QrizhigUxjI/m2UojsXXto+jLAH3KSz+xOJTiORjg==}
     dev: true
+
+  /mark.js@8.11.1:
+    resolution: {integrity: sha512-1I+1qpDt4idfgLQG+BNWmrqku+7/2bi5nLf4YwF8y8zXvmfiTBY3PV3ZibfrjBueCByROpuBjLLFCajqkgYoLQ==}
+    dev: false
 
   /markdown-escapes@1.0.4:
     resolution: {integrity: sha512-8z4efJYk43E0upd0NbVXwgSTQs6cT3T06etieCMEg7dRbzCbxUCK/GHlX8mhHRDcp+OLlHkPKsvqQTCvsRl2cg==}
@@ -17538,7 +17539,7 @@ packages:
   /unified@9.2.2:
     resolution: {integrity: sha512-Sg7j110mtefBD+qunSLO1lqOEKdrwBFBrR6Qd8f4uwkhWNlbkaqwHse6e7QvD3AP/MNoJdEDLaf8OxYyoWgorQ==}
     dependencies:
-      '@types/unist': 2.0.8
+      '@types/unist': 2.0.10
       bail: 1.0.5
       extend: 3.0.2
       is-buffer: 2.0.5
@@ -17601,7 +17602,7 @@ packages:
   /unist-util-visit@2.0.3:
     resolution: {integrity: sha512-iJ4/RczbJMkD0712mGktuGpm/U4By4FfDonL7N/9tATGIF4imikjOuagyMY53tnZq3NP6BcmlrHhEKAfGWjh7Q==}
     dependencies:
-      '@types/unist': 2.0.8
+      '@types/unist': 2.0.10
       unist-util-is: 4.1.0
       unist-util-visit-parents: 3.1.1
 
