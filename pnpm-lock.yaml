@@ -330,8 +330,8 @@ importers:
         specifier: workspace:*
         version: link:../../configs
       '@types/isomorphic-fetch':
-        specifier: ^0.0.36
-        version: 0.0.36
+        specifier: ^0.0.39
+        version: 0.0.39
       isomorphic-fetch:
         specifier: ^3.0.0
         version: 3.0.0
@@ -6618,8 +6618,8 @@ packages:
       rxjs: 7.8.1
     dev: true
 
-  /@types/isomorphic-fetch@0.0.36:
-    resolution: {integrity: sha512-ulw4d+vW1HKn4oErSmNN2HYEcHGq0N1C5exlrMM0CRqX1UUpFhGb5lwiom5j9KN3LBJJDLRmYIZz1ghm7FIzZw==}
+  /@types/isomorphic-fetch@0.0.39:
+    resolution: {integrity: sha512-I0gou/ZdA1vMG7t7gMzL7VYu2xAKU78rW9U1l10MI0nn77pEHq3tQqHQ8hMmXdMpBlkxZOorjI4sO594Z3kKJw==}
     dev: true
 
   /@types/istanbul-lib-coverage@2.0.4:
