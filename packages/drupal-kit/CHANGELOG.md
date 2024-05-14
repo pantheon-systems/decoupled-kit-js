@@ -1,5 +1,11 @@
 # @pantheon-systems/drupal-kit
 
+## 4.6.6-canary.0
+
+### Patch Changes
+
+- b92ea7b: Bump @types/isomorphic-fetch from 0.0.36 to 0.0.39
+
 ## 4.6.5
 
 ### Patch Changes
