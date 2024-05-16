@@ -26,7 +26,7 @@
 	},
 	"dependencies": {
 		"@algolia/client-search": "^4.22.1",
-		"@codesandbox/sandpack-react": "^2.7.1",
+		"@codesandbox/sandpack-react": "^2.13.10",
 		"@docusaurus/core": "2.4.3",
 		"@docusaurus/preset-classic": "2.4.3",
 		"@docusaurus/theme-common": "^2.4.3",
