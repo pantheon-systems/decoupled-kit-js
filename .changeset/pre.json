@@ -16,6 +16,8 @@
     "web": "1.0.0"
   },
   "changesets": [
-    "grumpy-ravens-lie"
+    "clever-avocados-clap",
+    "grumpy-ravens-lie",
+    "neat-teachers-warn"
   ]
 }

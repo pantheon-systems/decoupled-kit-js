@@ -1,5 +1,11 @@
 # @pantheon-systems/react-kit
 
+## 0.2.5-canary.0
+
+### Patch Changes
+
+- 9899f71: Bump clsx from 2.1.0 to 2.1.1
+
 ## 0.2.4
 
 ### Patch Changes

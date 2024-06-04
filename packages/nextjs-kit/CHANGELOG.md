@@ -1,5 +1,11 @@
 # @pantheon-systems/nextjs-kit
 
+## 1.7.11-canary.0
+
+### Patch Changes
+
+- e62f5fd: Bump jsdom from 22.1.0 to 24.1.0
+
 ## 1.7.10
 
 ### Patch Changes
