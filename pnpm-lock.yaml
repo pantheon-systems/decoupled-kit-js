@@ -385,8 +385,8 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2(@types/react@18.2.43)(react@18.2.0)
       clsx:
-        specifier: ^2.1.0
-        version: 2.1.0
+        specifier: ^2.1.1
+        version: 2.1.1
       focus-trap-react:
         specifier: ^10.2.3
         version: 10.2.3(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
@@ -513,8 +513,8 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1(@types/react@17.0.58)(react@17.0.2)
       clsx:
-        specifier: ^2.1.0
-        version: 2.1.0
+        specifier: ^2.1.1
+        version: 2.1.1
       docusaurus-lunr-search:
         specifier: ^2.3.2
         version: 2.4.2(@docusaurus/core@2.4.3)(react-dom@17.0.2)(react@17.0.2)
@@ -8770,8 +8770,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /clsx@2.1.0:
-    resolution: {integrity: sha512-m3iNNWpd9rl3jvvcBnu70ylMdrXt8Vlq4HYadnU5fwcOtvkSQWPmj7amUcDT2qYI7risszBjI5AUIUox9D16pg==}
+  /clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
     dev: false
 
@@ -15154,7 +15154,7 @@ packages:
       react: '>=16.0.0'
     dependencies:
       '@types/prismjs': 1.26.1
-      clsx: 2.1.0
+      clsx: 2.1.1
       react: 17.0.2
     dev: false
 
