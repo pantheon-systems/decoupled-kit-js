@@ -28,7 +28,7 @@
 		"@algolia/client-search": "^4.22.1",
 		"@codesandbox/sandpack-react": "^2.14.0",
 		"@docusaurus/core": "2.4.3",
-		"@docusaurus/preset-classic": "2.4.3",
+		"@docusaurus/preset-classic": "3.4.0",
 		"@docusaurus/theme-common": "^2.4.3",
 		"@docusaurus/theme-mermaid": "2.4.3",
 		"@mdx-js/react": "^3.0.1",
