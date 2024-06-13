@@ -416,8 +416,8 @@ importers:
         specifier: ^7.6.19
         version: 7.6.19(react@18.2.0)
       '@storybook/addon-onboarding':
-        specifier: ^1.0.11
-        version: 1.0.11(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^8.1.8
+        version: 8.1.8(react@18.2.0)
       '@storybook/addon-viewport':
         specifier: ^7.6.19
         version: 7.6.19
@@ -3936,6 +3936,7 @@ packages:
   /@humanwhocodes/config-array@0.11.14:
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
+    deprecated: Use @eslint/config-array instead
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
       debug: 4.3.4
@@ -3953,6 +3954,7 @@ packages:
 
   /@humanwhocodes/object-schema@2.0.3:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
+    deprecated: Use @eslint/object-schema instead
     dev: true
 
   /@isaacs/cliui@8.0.2:
@@ -5310,19 +5312,12 @@ packages:
       tiny-invariant: 1.3.3
     dev: true
 
-  /@storybook/addon-onboarding@1.0.11(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-0Sa7PJDsM6AANOWZX7vq3kgCbS9AZFjr3tfr3bLGfXviwIBKjoZDDdIErJkS3D4mNcDa78lYQvp3PTCKwLIJ9A==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  /@storybook/addon-onboarding@8.1.8(react@18.2.0):
+    resolution: {integrity: sha512-Q88gYehqboB1PrIR1d1nkPfFcq13HuXn9O+VnC+yZIovMUQNedWQJlxfEWPH+mZf4f/6LFXn3DYa67nNM9RScg==}
     dependencies:
-      '@storybook/telemetry': 7.6.7
-      react: 18.2.0
       react-confetti: 6.1.0(react@18.2.0)
-      react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
-      - encoding
-      - supports-color
+      - react
     dev: true
 
   /@storybook/addon-outline@7.6.17:
