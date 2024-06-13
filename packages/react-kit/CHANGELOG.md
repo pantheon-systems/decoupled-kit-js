@@ -1,5 +1,11 @@
 # @pantheon-systems/react-kit
 
+## 0.2.5-canary.1
+
+### Patch Changes
+
+- f3ace84: Bump @vitejs/plugin-react-swc from 3.6.0 to 3.7.0
+
 ## 0.2.5-canary.0
 
 ### Patch Changes
