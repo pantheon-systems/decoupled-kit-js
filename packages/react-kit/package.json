@@ -62,7 +62,7 @@
 		"@storybook/react-vite": "^7.6.17",
 		"@storybook/testing-library": "^0.2.2",
 		"@testing-library/jest-dom": "^6.1.4",
-		"@vitejs/plugin-react-swc": "^3.6.0",
+		"@vitejs/plugin-react-swc": "^3.7.0",
 		"autoprefixer": "^10.4.19",
 		"daisyui": "^4.7.3",
 		"eslint-plugin-react-refresh": "^0.4.6",
