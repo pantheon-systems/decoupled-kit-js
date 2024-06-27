@@ -58,7 +58,7 @@
 		"headless-cms-sdk"
 	],
 	"devDependencies": {
-		"@changesets/cli": "^2.27.1",
+		"@changesets/cli": "^2.27.6",
 		"@pantheon-systems/eslint-config-decoupled-kit": "workspace:*",
 		"@pantheon-systems/workspace-configs": "workspace:*",
 		"@playwright/test": "^1.43.1",
