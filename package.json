@@ -85,7 +85,7 @@
 		"tsx": "^4.15.3",
 		"typedoc": "^0.25.13",
 		"typescript": "^5.2.2",
-		"vite": "^5.0.12",
+		"vite": "^5.0.13",
 		"vitest": "^1.2.2"
 	},
 	"packageManager": "pnpm@8.8.0",
